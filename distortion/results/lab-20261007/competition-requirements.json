@@ -1,0 +1,104 @@
+{
+  "source": "vendor/competition/pango-topic-guide-2026.pdf",
+  "topic": 2,
+  "printed_pages": [
+    10,
+    11,
+    12
+  ],
+  "scope": "Requirements-to-evidence planning; award level is not established by passing these checks.",
+  "requirements": [
+    {
+      "requirement": "Camera acquisition, frame buffering and continuous corrected display",
+      "state": "finite_physical_pass_at_640x480",
+      "evidence": [
+        "cadence-zero-check.json",
+        "cadence-auto-check.json",
+        "cadence-observation.json"
+      ],
+      "remaining": "Long-run stability, end-to-end input-to-display latency and higher-resolution modes"
+    },
+    {
+      "requirement": "Real calibrated radial/tangential model and bilinear resampling",
+      "state": "rtl_and_limited_physical_numerical_pass",
+      "evidence": [
+        "adaptive-twelve-native-check.json",
+        "optical-pair-check.json",
+        "optical-left-adjusted-pair-check.json",
+        "gamma-frame-simulation-check.json"
+      ],
+      "remaining": "Physical edge straightness did not improve in one left-side pose; independent multi-pose optical validation. Nonzero tangential RTL coverage is provided separately by synthetic gamma-frame regression."
+    },
+    {
+      "requirement": "External host or IMU input for arbitrary-angle dynamic correction",
+      "state": "combined_host_camera_all_twelve_angle_finite_physical_and_visual_pass",
+      "evidence": [
+        "host-control-simulation-check.json",
+        "host-angle-native-check.json",
+        "host-client-check.json",
+        "host-angle-13_7-check.json",
+        "host-angle-7_5-check.json",
+        "host-angle-cadence_13_7-check.json",
+        "host-cadence-auto-check.json",
+        "host-cadence-observation.json"
+      ],
+      "remaining": "Physical camera rotation demonstration and full-angle optical acceptance"
+    },
+    {
+      "requirement": "Pipeline acceleration and resource efficiency",
+      "state": "adaptive_physical_gain_and_pipeline_simulation_pass",
+      "evidence": [
+        "physical-rotation-comparison.json",
+        "pipeline-twelve-native-check.json",
+        "pipeline-mapping-check.json"
+      ],
+      "remaining": "Pipeline full routed multi-corner timing, actual controller throughput and resource/thermal comparison"
+    },
+    {
+      "requirement": "Adaptive Gamma or histogram enhancement for strong/low light",
+      "state": "integrated_125mhz_final_timing_and_finite_physical_all_twelve_angle_visual_pass",
+      "evidence": [
+        "adaptive-gamma-simulation-check.json",
+        "gamma-mapping-check.json",
+        "gamma-tagged-simulation-check.json",
+        "gamma-frame-simulation-check.json",
+        "gamma-native-simulation-check.json",
+        "gamma-tone-simulation-check.json",
+        "gamma-video-simulation-check.json",
+        "gamma-board-candidate.json",
+        "gamma-physical-check.json",
+        "gamma-auto-check.json",
+        "gamma-observation.json",
+        "gamma-auto-observation.json"
+      ],
+      "remaining": "Independent matched real strong/low-light image comparisons; quantitative contrast, clipping, noise and optical quality; physical dimming-mode acceptance"
+    },
+    {
+      "requirement": "MTF50/SFR, straightness, edge stretching/discontinuity quality evaluation",
+      "state": "limited_straightness_diagnostics_only",
+      "evidence": [
+        "physical-straightness-diagnostic.json"
+      ],
+      "remaining": "Suitable slanted-edge target, documented measurement method, same-source raw/corrected captures at center and edges; no final optical quality claim"
+    },
+    {
+      "requirement": "Realtime performance, with 1080p30/60 given as examples; measured hardware end-to-end latency",
+      "state": "640x480_zero_angle_18_26_and_twelve_angle_16_11_new_frames_per_second",
+      "evidence": [
+        "cadence-zero-check.json",
+        "cadence-auto-check.json",
+        "throughput-budget.json"
+      ],
+      "remaining": "Camera measured about 22.79fps; remaining capture/bank scheduling and processing cost, higher-resolution camera/DDR/HDMI modes and hardware end-to-end latency. HDMI about 60Hz includes repeated frames."
+    },
+    {
+      "requirement": "Modular source, complete constraints, CDC/memory ownership, performance report and live final demonstration",
+      "state": "source_bound_finite_evidence_and_idle_policy_available",
+      "evidence": [
+        "session.json",
+        "files-sha256.json"
+      ],
+      "remaining": "Final reproducible release, repeated cold boots, bounded thermal acceptance and demo under physical camera/test-card changes"
+    }
+  ]
+}

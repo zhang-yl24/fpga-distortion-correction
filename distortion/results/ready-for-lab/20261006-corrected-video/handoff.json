@@ -1,0 +1,31 @@
+{
+  "recorded_at": "2026-10-06T21:32:40.548343+08:00",
+  "hardware_accessed": false,
+  "target": "corrected_video",
+  "device": "PG2L100H-6IFBG676",
+  "ddr_mhz": 125,
+  "jtag_mhz": 5,
+  "bitstream_sha256": "65E10D09228721AB3E43DE74AA7B74F817095EB479EC9AA7558127F52634F551",
+  "files": {
+    "corrected_video.sbit": "65E10D09228721AB3E43DE74AA7B74F817095EB479EC9AA7558127F52634F551",
+    "corrected_video.rtr": "02C07A482DB4CC5EF444AE53F490441B655D17C3C05F6180868BDF2E42B32F70",
+    "validated-build.json": "6E8F8AD6FC40FD04B83E9E1E6080A153D1F641EC6FEAEBCBD5CCC86D98CA67FF",
+    "corrected_video-pins.json": "6F3D6CF0A5A6E51C83984A639C07492C1B28A1EDE2D37E44446F4B1258F5E05F"
+  },
+  "timing": {
+    "all_constraints_met": true,
+    "core_slow_setup_wns_ns": 0.766,
+    "core_fast_hold_whs_ns": 0.103,
+    "phy1_to_core_fast_hold_whs_ns": 0.175,
+    "lowest_fast_hold_whs_ns": 0.102,
+    "pins_verified": 128
+  },
+  "preflight_without_board": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/program-heartbeat.ps1 -Target corrected_video -ValidateOnly",
+  "next_lab": [
+    "先安装适配散热片、改善通风并取得温度读数，再进行短时运行。",
+    "在 D:/English/FPGA/distortion 重新执行离线下载前校验，再连接开发板，以 5MHz 下载 corrected_video。",
+    "核对实时矫正画面与错误计数，测量有效新增矫正帧率和延迟；当前包未实板验证。"
+  ],
+  "included_features": "Continuous native correction display with the original cache, calibrated bounded radial approximation and no rotation.",
+  "not_included_yet": "Adjacent-beat cache optimization and inverse-rotation prototype are separately simulation-verified; physical timing and board integration remain future work."
+}

@@ -1,0 +1,32 @@
+{
+  "recorded_at": "2026-10-06T14:59:51",
+  "implemented": true,
+  "simulation_verified": true,
+  "hardware_integrated": false,
+  "hardware_programmed": false,
+  "new_frame_pipeline_routed_timing_verified": false,
+  "frame_engine_golden_pixels": 1536,
+  "result_writer_golden_pixels": 1536,
+  "tests": {
+    "result_writer": "PASS result frame storage + write arbitration: three zlib-verified frames, 1536 RGB565 pixels, concurrent capture bursts, whole-burst ownership/fairness, stalls, tag order, WLAST, timeout and reset recovery.",
+    "read_arbiter": "PASS DDR read arbitration: two simultaneous clients, 1/2/8/16-beat bursts, exclusive response routing, display urgency, fair whole-burst grants, address/response stalls, RLAST/RID faults, timeout, unsolicited data and reset recovery.",
+    "frame_engine": "PASS complete remap frame engine: identity/nonlinear/same-bank frames, 1536 independent integer-model pixels, locked parameters, shared display reads, CRC32 publication, bank overlap/alignment rejection, DDR stalls, malformed source response and mid-frame reset recovery."
+  },
+  "output_format": "RGB888 interpolation -> R/B high 5 bits, G high 6 bits -> RGB565 DDR frame",
+  "bank_policy": "Aligned, non-overlapping source/output ranges; parent also locks display bank until release.",
+  "publish_policy": "Only complete frame after ordered pixel storage and write drain; no faulted partial frame published.",
+  "source_sha256": {
+    "rtl/ddr_read_arbiter.v": "59283DD5D5D292CF8DD6D1BFF51B565C13357CE94BDEAD0D467421604C5F72BE",
+    "rtl/ddr_write_arbiter.v": "6D88C289651BC24B5232DD6DCABCE4B9E0379018E52E6AE3CD2BFC70E5732D62",
+    "rtl/ddr_result_writer.v": "4DF600974F4492C4F45BA4350251D614703D6781BC2EE09CFBE402CDA382056B",
+    "rtl/remap_frame_engine.v": "6C4F63EC6A752529FD0E720F5E33938598375CC5B96A6FC766B0D536B4C38C9F",
+    "tests/tb_ddr_read_arbiter.sv": "7201E18F7632A69134313BFB325C0774F5DB39E420F42C7599946F8855ADCDCC",
+    "tests/tb_ddr_result_store.sv": "EF07247B7A3A92CB757B28949F8EC77DBE7096E698BF8DAE03E8FAC0A082FAC2",
+    "tests/tb_remap_frame_engine.sv": "D397448341200C857B1073D857F994E663D8D7F58712544F35E0D16A8B059F30",
+    "tools/generate-result-writer-test.py": "E67F35951B1DCF1A5FC0F69CA5BD5019833744F7359D65F669C3A8AD2070EC67",
+    "tools/generate-frame-engine-test.py": "B70CE5D5AB62B737BBB147149DDAA89CC0AFBAC09317D8D4FD6C771F2FC1B600",
+    "tools/run-frame-store-sim.ps1": "87AD263B1E75D815A3C64E4B6718A4E0B51BCCCCE3EE22C6A6C7A9A2DFED3D8B",
+    "tools/run-frame-engine-sim.ps1": "C749345A7F9A54EDB481DE1D52ADA550707D0F2AE559D3C313BDCD1A8BFE66A8"
+  },
+  "limits": "Integration simulation uses three 32x16 synthetic frames; no measured FPGA correction/FPS/latency or full-board timing pass."
+}

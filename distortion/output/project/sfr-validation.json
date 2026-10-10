@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "optical_acceptance_complete": false,
+  "host_tests": 10,
+  "analytic_cases": [
+    {
+      "sigma_px": 1,
+      "expected_mtf50_cycles_per_pixel": 0.18739062512927757,
+      "measured_mtf50_cycles_per_pixel": 0.18700335975201235,
+      "relative_error": 0.0020666208728320804
+    },
+    {
+      "sigma_px": 1.5,
+      "expected_mtf50_cycles_per_pixel": 0.12492708341951839,
+      "measured_mtf50_cycles_per_pixel": 0.125368988676916,
+      "relative_error": 0.003537305484941634
+    },
+    {
+      "sigma_px": 2,
+      "expected_mtf50_cycles_per_pixel": 0.09369531256463878,
+      "measured_mtf50_cycles_per_pixel": 0.09448611390445774,
+      "relative_error": 0.008440137699240804
+    },
+    {
+      "sigma_px": 3,
+      "expected_mtf50_cycles_per_pixel": 0.06246354170975919,
+      "measured_mtf50_cycles_per_pixel": 0.06373474160759522,
+      "relative_error": 0.02035106980873322
+    }
+  ],
+  "maximum_relative_error": 0.02035106980873322,
+  "source_sha256": {
+    "tools/slanted_edge_analysis.py": "7F6F6564AA7861B86C99D6F90211C782EC2FE196504CBC4365D9DE4737DE7E71",
+    "tools/validate-slanted-edge.py": "52C39F30E546F9B558229E54924801F19E6996B9B877B79665F10CDF0919DA7F",
+    "tests/test_slanted_edge_analysis.py": "CAF4FD90864A2D19DC8C022773F784B18D684766660C908C0383F87B5D2E9939"
+  },
+  "primary_method_sources": [
+    "https://www.imatest.com/imaging/sharpness/",
+    "https://www.imatest.com/2015/04/lsf-correction-factor-for-slanted-edge-mtf-measurements/"
+  ],
+  "limits": "Gaussian validation only. Not ISO-certified, not lens MTF, and not actual corrected-camera sharpness. Printed target, local scale and measured camera response must accompany physical results."
+}

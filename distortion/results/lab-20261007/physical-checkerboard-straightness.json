@@ -1,0 +1,42 @@
+{
+  "all_complete_boards_detected": true,
+  "hardware_accessed_by_analyzer": false,
+  "fresh_physical_same_frame_pairs": 1,
+  "records": [
+    {
+      "pair_id": 2,
+      "source_packet_id": 4,
+      "result_packet_id": 5,
+      "mismatched_pixels": 0,
+      "raw": {
+        "complete_board_detected": true,
+        "corners": 54,
+        "line_count": 15,
+        "point_line_distances": 108,
+        "line_residual_rms_px": 0.0803751414272287,
+        "line_residual_p95_px": 0.17322315133047334,
+        "line_residual_max_px": 0.2079610691631668,
+        "median_neighbor_spacing_px": 25.45987211217647,
+        "normalized_rms_percent_spacing": 0.31569342168371844,
+        "image_sha256": "fb60ada9a931233da709c22dddac3cc36b1e5a520422a339d64ba5ab2f254cc4"
+      },
+      "corrected": {
+        "complete_board_detected": true,
+        "corners": 54,
+        "line_count": 15,
+        "point_line_distances": 108,
+        "line_residual_rms_px": 0.06644675137213678,
+        "line_residual_p95_px": 0.13053207449665422,
+        "line_residual_max_px": 0.17817731718713767,
+        "median_neighbor_spacing_px": 25.428168317101395,
+        "normalized_rms_percent_spacing": 0.2613115917100834,
+        "image_sha256": "74167ae87a7a6fd7809fb68e504ea2e8ea23774e2babf46c1bb4f754a6ae0a2c"
+      },
+      "rms_straightness_change_percent": 17.32922618581346
+    }
+  ],
+  "source_capture_bitstream_sha256": "D669981C80856AFFC2396C21EAD4D60D2CD7E31EE2D7EE10B44AF5E47E49F81B",
+  "method": "OpenCV findChessboardCornersSB, fixed 9x6 inner-corner topology; independent total-least-squares fit to each of 6 rows and 9 columns. 108 point-to-line distances per image. Native-pixel and spacing-normalized results are both reported.",
+  "final_optical_accuracy_verified": false,
+  "limits": "A limited fresh physical pose, not a multi-pose or cross-lens optical acceptance. Corner localization, printed-board flatness, low resolution and resampling affect this straightness metric. New images are not automatically independent of the calibration pose distribution. This capture uses the previously validated zero-rotation corrected_capture binary, not the new overlap/adaptive board candidates."
+}

@@ -1,0 +1,47 @@
+{
+  "recorded_at": "2026-10-06T14:46:33",
+  "target": "calibration_capture",
+  "hardware_verified": true,
+  "bitstream_sha256": "17547966CC6E72487B83BB33B1DCF75409F4F5C1DE061C6B209DCDE95A4099CE",
+  "program_frequency": "5MHz",
+  "resolution": [
+    640,
+    480
+  ],
+  "frame_bytes": 614400,
+  "ddr_core_mhz": 125,
+  "uart_requested_baud": 921600,
+  "uart_actual_baud": 919117.6470588235,
+  "hdmi_preview_resolution": [
+    160,
+    120
+  ],
+  "routed_pins_checked": 128,
+  "all_constraints_met": true,
+  "setup_wns_ns": {
+    "clk_27m->clk_27m": 30.929,
+    "pixel_clk->pixel_clk": 4.022,
+    "camera_pclk->camera_pclk": 9.926,
+    "ddrphy_sysclk->camera_pclk": 6.653,
+    "rst_clk->rst_clk": 5.281,
+    "camera_pclk->ddrphy_sysclk": 6.759,
+    "ddrphy_sysclk->ddrphy_sysclk": 1.793,
+    "phy_dq_sysclk_1->ddrphy_sysclk": 3.119,
+    "phy_dq_sysclk_0->ddrphy_sysclk": 3.789,
+    "ddrphy_sysclk->phy_dq_sysclk_0": 1.388,
+    "ddrphy_sysclk->phy_dq_sysclk_1": 1.91
+  },
+  "saved_frames": 25,
+  "complete_chessboards": 20,
+  "rejected_packets": 0,
+  "discarded_stream_bytes": 130189,
+  "discard_note": "Opening COM5 during a packet requires discarding its tail until the next header; not rejected complete packets.",
+  "five_printed_squares_measured_mm_user_confirmed": 100,
+  "square_mm": 20,
+  "inner_corners": [
+    9,
+    6
+  ],
+  "capture_summary": "distortion/results/calibration-capture-latest.json",
+  "limits": "Dedicated frozen-frame export (~6.8s per transfer), not continuous video FPS. HDMI is a 160x120 preview. End-to-end FPGA correction remains unverified."
+}

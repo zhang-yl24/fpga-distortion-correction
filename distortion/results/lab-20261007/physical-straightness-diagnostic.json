@@ -1,0 +1,58 @@
+{
+  "hardware_accessed": false,
+  "records": [
+    {
+      "pose": "中心",
+      "directory": "D:\\English\\FPGA\\distortion\\captures\\corrected-pairs\\20261007-141622\\pair00000002",
+      "raw_corner_rms_px": 0.0803751414272287,
+      "model_transformed_raw_corner_rms_px": 0.06740660858868291,
+      "detected_fpga_output_corner_rms_px": 0.06644675137213678,
+      "grayscale_conversion_sensitivity": [
+        {
+          "image": "raw-source.png",
+          "gray_pixel_max_difference": 1,
+          "alternate_grayscale_complete_board": true,
+          "alternate_grayscale_corner_rms_px": 0.0791704805516946
+        },
+        {
+          "image": "fpga-corrected.png",
+          "gray_pixel_max_difference": 1,
+          "alternate_grayscale_complete_board": true,
+          "alternate_grayscale_corner_rms_px": 0.06524647857148728
+        }
+      ],
+      "image_sha256": {
+        "raw-source.png": "fb60ada9a931233da709c22dddac3cc36b1e5a520422a339d64ba5ab2f254cc4",
+        "fpga-corrected.png": "74167ae87a7a6fd7809fb68e504ea2e8ea23774e2babf46c1bb4f754a6ae0a2c"
+      }
+    },
+    {
+      "pose": "左侧",
+      "directory": "D:\\English\\FPGA\\distortion\\captures\\corrected-pairs\\20261007-145001\\pair00000002",
+      "raw_corner_rms_px": 0.14681678080156846,
+      "model_transformed_raw_corner_rms_px": 0.13043572463266753,
+      "detected_fpga_output_corner_rms_px": 0.15852906110135379,
+      "grayscale_conversion_sensitivity": [
+        {
+          "image": "raw-source.png",
+          "gray_pixel_max_difference": 1,
+          "alternate_grayscale_complete_board": true,
+          "alternate_grayscale_corner_rms_px": 0.1469790004997097
+        },
+        {
+          "image": "fpga-corrected.png",
+          "gray_pixel_max_difference": 1,
+          "alternate_grayscale_complete_board": true,
+          "alternate_grayscale_corner_rms_px": 0.12285322915501366
+        }
+      ],
+      "image_sha256": {
+        "raw-source.png": "d9baec337bb8dd8aaff552350c08689cedcbd1a8dcc3be81e3efcb813b68e59e",
+        "fpga-corrected.png": "7cb94017e97ddcf068bd4d825bf54fd0af2cd9a1e68f59e9fccbb2321f78c960"
+      }
+    }
+  ],
+  "final_optical_accuracy_verified": false,
+  "method": "BGR image decode then cvtColor(BGR2GRAY), matching the main straightness evaluator. 54 raw corners are analytically transformed by the fitted fisheye model with P=K, then their row/column straightness is compared with raw corners and independently detected FPGA-output corners. Alternate direct grayscale decoding is reported separately as a localization sensitivity check.",
+  "limits": "Two physical poses only. Transforming raw corners removes image resampling from that diagnostic but retains corner localization and fitted-model error. Differences do not uniquely identify a cause, prove optical accuracy, or validate new overlap/adaptive video binaries. No calibration or coefficients were changed."
+}

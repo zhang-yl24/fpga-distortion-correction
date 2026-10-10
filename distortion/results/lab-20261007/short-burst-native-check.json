@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "pixels_checked": 1843200,
+  "source_sha256": {
+    "ddr_short_burst_cache.v": "96729c48b7924686bc5f608384738232cd8210c4a18a7883481fd9c9afd235f3",
+    "short_burst_frame_engine.v": "5591862081426106e784996d14375cb7e4b3f8726da4f1b1489be9ca5d18a208",
+    "ddr_adaptive_result_writer.v": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6"
+  },
+  "cache_bytes": 8192,
+  "cache_lines": 32,
+  "burst_beats": 8,
+  "frames": [
+    {
+      "angle_deg": 0,
+      "crc32": "2c51ebbb",
+      "pixels": 307200,
+      "tiled_16_beat_cycles": 3807193,
+      "short_8_beat_cycles": 3808498,
+      "process_cycle_reduction_from_tiled_percent": -0.03427722208986239,
+      "read_bursts": 2400,
+      "read_payload_bytes": 614400,
+      "read_payload_reduction_from_tiled_percent": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "crc32": "fcab7734",
+      "pixels": 307200,
+      "tiled_16_beat_cycles": 4478433,
+      "short_8_beat_cycles": 4305076,
+      "process_cycle_reduction_from_tiled_percent": 3.8709298542592863,
+      "read_bursts": 18297,
+      "read_payload_bytes": 4684032,
+      "read_payload_reduction_from_tiled_percent": 47.84207525655644
+    },
+    {
+      "angle_deg": -30,
+      "crc32": "69b49c75",
+      "pixels": 307200,
+      "tiled_16_beat_cycles": 4481280,
+      "short_8_beat_cycles": 4310050,
+      "process_cycle_reduction_from_tiled_percent": 3.8210064981433867,
+      "read_bursts": 18300,
+      "read_payload_bytes": 4684800,
+      "read_payload_reduction_from_tiled_percent": 47.177000346380325
+    },
+    {
+      "angle_deg": 90,
+      "crc32": "28c15288",
+      "pixels": 307200,
+      "tiled_16_beat_cycles": 4638182,
+      "short_8_beat_cycles": 4305386,
+      "process_cycle_reduction_from_tiled_percent": 7.1751388798455995,
+      "read_bursts": 30720,
+      "read_payload_bytes": 7864320,
+      "read_payload_reduction_from_tiled_percent": 49.55665024630542
+    },
+    {
+      "angle_deg": -90,
+      "crc32": "7f7ee7ec",
+      "pixels": 307200,
+      "tiled_16_beat_cycles": 4637492,
+      "short_8_beat_cycles": 4305074,
+      "process_cycle_reduction_from_tiled_percent": 7.168055492063385,
+      "read_bursts": 30720,
+      "read_payload_bytes": 7864320,
+      "read_payload_reduction_from_tiled_percent": 49.55665024630542
+    },
+    {
+      "angle_deg": 180,
+      "crc32": "001c0afb",
+      "pixels": 307200,
+      "tiled_16_beat_cycles": 3806491,
+      "short_8_beat_cycles": 3807851,
+      "process_cycle_reduction_from_tiled_percent": -0.0357284438607719,
+      "read_bursts": 2400,
+      "read_payload_bytes": 614400,
+      "read_payload_reduction_from_tiled_percent": 0.0
+    }
+  ],
+  "query_fault_regression_passed": true,
+  "limits": "Isolated six-angle full-frame RTL with sealed real camera sources and synthetic DDR stalls. Byte/CRC output is unchanged. Eight-beat controller compatibility, complete camera/HDMI arbitration, timing, physical bandwidth and FPS remain unverified. This is not an active board target."
+}

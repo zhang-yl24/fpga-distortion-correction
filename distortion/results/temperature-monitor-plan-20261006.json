@@ -1,0 +1,18 @@
+{
+  "source": "D:\\English\\FPGA\\vendor\\board\\盘古100Pro+开发板（MES2L676-100HP）配套资料\\7_doc\\Logos2系列FPGA-UG手册\\UG040009_Logos2系列FPGA模数转换模块（ADC）用户指南V1.3.pdf",
+  "source_sha256": "6d715b5a58b09c1baa6041708ff5858f199c501003ae86ef6eba2ebe2e760223",
+  "document": "Logos2 ADC User Guide V1.3, printed pp.8,17,24",
+  "actual_temperature_measured": false,
+  "readback_plan": "先配置温度通道采样。APB DEN 至少提前 SECEN 两个 DCLK 周期；等待 DRDY 后读取地址 0x40 的温度转换结果，并降低 SECEN。JTAG 与 APB 不同时操作 ADC。加入超时和样本时间戳；零初始化寄存器不能当作已完成的测温。",
+  "code12_conversion": "temperature_celsius = extracted_code12 * 0.1219 - 273.15",
+  "host_decoder": "D:\\English\\FPGA\\distortion\\tools\\decode-logos2-temperature.py",
+  "limits": "Analog behavior, absolute temperature accuracy and alarm behavior require lab verification. Internal-reference ADC readings are approximate until cross-checked; over_temp alone gives no numeric temperature.",
+  "protocol_simulation_passed": true,
+  "adc_register_figure_visually_verified": true,
+  "extraction": "temperature code12=0x40 word[15:4]",
+  "implementation": "rtl/logos2_temperature_monitor.v and rtl/adc_temperature_reader.v; corrected_rotate build underway",
+  "integrated_target": "corrected_rotate",
+  "adapter_simulation_passed": true,
+  "temperature_word_extraction": "0x40 status word bits[15:4], visually verified against official register Fig16",
+  "configuration": "Internal reference, temperature-only continuous scan, offset calibration, 64-sample average, oscillator divide34, temperature alarm and default OT alarm enabled with synchronized status; startup settle and first two conversion indications discarded."
+}

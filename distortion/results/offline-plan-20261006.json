@@ -1,0 +1,51 @@
+{
+  "recorded_at": "2026-10-06T16:08:20.292056+08:00",
+  "hardware_testing_stopped": true,
+  "power_off_requested": true,
+  "physical_power_off_confirmed": false,
+  "thermal_evidence": {
+    "download_over_temp_bit": 1,
+    "user_reports_chip_hot_to_touch": true,
+    "measured_temperature_celsius": null
+  },
+  "verified_today": {
+    "camera_native_dimensions": [
+      640,
+      480
+    ],
+    "same_source_pairs": 2,
+    "pixels_compared": 614400,
+    "pixel_mismatches": 0,
+    "evidence": "D:\\English\\FPGA\\distortion\\results\\corrected-pair-check-20261006.json",
+    "continuous_corrected_hdmi_verified": false
+  },
+  "offline_priorities": [
+    {
+      "order": 1,
+      "task": "修复连续矫正显示版整板时序并生成可复现下载包",
+      "current_state": "本轮离线实现、独立回归和板级构建已完成；详见最新检查点。",
+      "acceptance": "保留 DDR 125MHz、完整原约束；慢角/快角时序全部通过、128 引脚核对、有效位流 SHA256 与构建日志归档。"
+    },
+    {
+      "order": 2,
+      "task": "将两组真实原图和已核对矫正图固化为离线回归样本，优化邻域缓存及 DDR 流水线",
+      "acceptance": "独立整数参考逐像素一致；暂停、异常响应、复位、帧区所有权检查通过；记录每帧周期、突发数、缓存命中率和资源。仿真速度与实测速度分开记录。",
+      "current_state": "本轮离线实现、独立回归和板级构建已完成；详见最新检查点。"
+    },
+    {
+      "order": 3,
+      "task": "开发帧边界参数切换、旋转坐标原型和温度监测方案",
+      "acceptance": "旋转多角度独立参考检查、越界裁剪和单次插值验证；依据官方 ADC 文档确定温度读出与报警，当前无实际温度值。旋转模型和最终光学精度待验证。",
+      "current_state": "本轮离线实现、独立回归和板级构建已完成；详见最新检查点。"
+    }
+  ],
+  "next_lab_sequence": [
+    "冷却、散热片和通风；取得内部 ADC 温度。若有红外、热像仪或温度探头则交叉核对，否则标记未外部校准。",
+    "先以 5MHz 下载 corrected_fast 做短时连续矫正 HDMI/UART 对比，再下载 corrected_rotate。",
+    "KEY0 短按切换角度、长按自动演示；核对画面方向、边缘黑区、帧切换和角度状态。",
+    "采集不少于 12 秒 UART，核对新增帧率 CF、HDMI 刷新 PF、处理周期 CY、错误计数和新鲜温度。",
+    "记录真实性能，再决定是否引入 8×8 分块与重排缓存；随后推进高分辨率和最终光学精度验证。"
+  ],
+  "scope": "当前实板证明限于 640x480 有界径向近似、匹配输入输出 K、无旋转的算术链路；未证明最终光学精度或连续矫正视频性能。",
+  "latest_progress": "D:\\English\\FPGA\\distortion\\results\\offline-development-20261006.json"
+}

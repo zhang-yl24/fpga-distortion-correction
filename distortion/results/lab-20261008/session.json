@@ -1,0 +1,590 @@
+{
+  "recorded_utc": "2026-10-08T11:16:01.290156+00:00",
+  "date": "2026-10-08",
+  "hardware_connected_user_confirmed": true,
+  "previous_sealed_release": "D:\\English\\FPGA\\distortion\\results\\verified\\lab-release-20261007-235334",
+  "current_sram_target": "heartbeat",
+  "current_transfer_checked_on": "2026-10-08T19:07:14.3303078+08:00",
+  "current_state_fresh_today": true,
+  "thermal_policy": "Finite 24-second capture window after download; actual heartbeat download in finally; at least 60 seconds idle between heavy tests.",
+  "native_regression": {
+    "passed": true,
+    "radius_guard": 1976439,
+    "uart_packets": 9,
+    "pixels_compared": 2764800,
+    "modes": [
+      1,
+      2,
+      0
+    ]
+  },
+  "candidate_build": {
+    "validated": true,
+    "sha256": "BAC22FFB6E70659429FF2E31E3C39AE19BC2C044AC8B8C59FC6433501A1A3292",
+    "timing_sha256": "95C16B54712BCF8DE10E6D9870AB077C8B9537A56D410C62A68F1EA3FBC20997",
+    "source_files": 113,
+    "validation_timestamp": "2026-10-08T17:31:01.7712488+08:00",
+    "mapped_global_resources": {
+      "APM": {
+        "used": 72,
+        "available": 240,
+        "pds_percent": 30
+      },
+      "FF": {
+        "used": 15178,
+        "available": 133200,
+        "pds_percent": 12
+      },
+      "LUT": {
+        "used": 16335,
+        "available": 66600,
+        "pds_percent": 25
+      },
+      "DRM": {
+        "used": 48,
+        "available": 155,
+        "pds_percent": 31
+      },
+      "IO": {
+        "used": 128,
+        "available": 300,
+        "pds_percent": 43
+      },
+      "RCKB": {
+        "used": 2,
+        "available": 24,
+        "pds_percent": 9
+      },
+      "SCANCHAIN": {
+        "used": 0,
+        "available": 1,
+        "pds_percent": 0
+      },
+      "USCM": {
+        "used": 5,
+        "available": 32,
+        "pds_percent": 16
+      },
+      "CCS": {
+        "used": 1,
+        "available": 1,
+        "pds_percent": 100
+      },
+      "ADC": {
+        "used": 0,
+        "available": 1,
+        "pds_percent": 0
+      },
+      "DDR_PHY": {
+        "used": 7,
+        "available": 24,
+        "pds_percent": 30
+      },
+      "HSSTLP": {
+        "used": 0,
+        "available": 2,
+        "pds_percent": 0
+      },
+      "GPLL": {
+        "used": 3,
+        "available": 6,
+        "pds_percent": 50
+      },
+      "PPLL": {
+        "used": 2,
+        "available": 6,
+        "pds_percent": 34
+      },
+      "DDRPHY_CPD": {
+        "used": 1,
+        "available": 12,
+        "pds_percent": 9
+      },
+      "HCKB": {
+        "used": 0,
+        "available": 96,
+        "pds_percent": 0
+      },
+      "IOCKB": {
+        "used": 0,
+        "available": 24,
+        "pds_percent": 0
+      },
+      "MRCKB": {
+        "used": 1,
+        "available": 12,
+        "pds_percent": 9
+      },
+      "PCIE": {
+        "used": 0,
+        "available": 1,
+        "pds_percent": 0
+      },
+      "DDRPHY_IOCLK_DIV": {
+        "used": 2,
+        "available": 6,
+        "pds_percent": 34
+      },
+      "ANALOG": {
+        "used": 0,
+        "available": 1,
+        "pds_percent": 0
+      },
+      "TSERDES": {
+        "used": 14,
+        "available": 48,
+        "pds_percent": 30
+      },
+      "KEYRAM": {
+        "used": 0,
+        "available": 1,
+        "pds_percent": 0
+      },
+      "IOBD": {
+        "used": 64,
+        "available": 144,
+        "pds_percent": 45
+      },
+      "IOBS": {
+        "used": 64,
+        "available": 156,
+        "pds_percent": 42
+      }
+    },
+    "pin_count": 128
+  },
+  "captures": [
+    {
+      "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\native-full-20261008\\summary.json",
+      "passed": true,
+      "hardware_accessed": false,
+      "source_kind": "synthetic_same_source",
+      "input_origin": "offline_replay",
+      "target": null,
+      "groups": [
+        {
+          "group_id": 1,
+          "mode": 1,
+          "passed": true,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 24.611776018062425,
+          "mean_luminance_after": 54.89223913022076
+        },
+        {
+          "group_id": 2,
+          "mode": 2,
+          "passed": true,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 243.93117966927124,
+          "mean_luminance_after": 240.08683024799734
+        },
+        {
+          "group_id": 3,
+          "mode": 0,
+          "passed": true,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 126.44182711398295,
+          "mean_luminance_after": 126.44182711398295
+        }
+      ]
+    },
+    {
+      "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\physical-bright-20261008\\summary.json",
+      "passed": true,
+      "hardware_accessed": true,
+      "source_kind": "physical_same_source",
+      "input_origin": "optical_camera_scene",
+      "target": null,
+      "groups": [
+        {
+          "group_id": 1,
+          "mode": 0,
+          "passed": true,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 84.08515986755097,
+          "mean_luminance_after": 84.08515986755097
+        }
+      ]
+    },
+    {
+      "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\physical-bright-warmed-20261008\\summary.json",
+      "passed": true,
+      "hardware_accessed": true,
+      "source_kind": "physical_same_source",
+      "input_origin": "optical_camera_scene",
+      "target": null,
+      "groups": [
+        {
+          "group_id": 1,
+          "mode": 0,
+          "passed": true,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 136.9827481532287,
+          "mean_luminance_after": 136.9827481532287
+        }
+      ]
+    },
+    {
+      "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\physical-dark-warmed-20261008\\summary.json",
+      "passed": true,
+      "hardware_accessed": true,
+      "source_kind": "physical_same_source",
+      "input_origin": "optical_camera_scene",
+      "target": null,
+      "groups": [
+        {
+          "group_id": 1,
+          "mode": 1,
+          "passed": true,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 40.64973861335451,
+          "mean_luminance_after": 71.71657680304278
+        }
+      ]
+    },
+    {
+      "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\unattended-settled-20261008\\summary.json",
+      "passed": true,
+      "hardware_accessed": true,
+      "source_kind": "physical_same_source",
+      "input_origin": "optical_camera_scene",
+      "target": "gamma_capture_settled",
+      "groups": [
+        {
+          "group_id": 1,
+          "mode": 1,
+          "passed": true,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 16.312508819543122,
+          "mean_luminance_after": 36.519698347012515
+        }
+      ]
+    },
+    {
+      "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\sensor-colorbars-20261008\\summary.json",
+      "passed": true,
+      "hardware_accessed": true,
+      "source_kind": "synthetic_same_source",
+      "input_origin": "sensor_internal_test_pattern",
+      "target": "gamma_capture_colorbars",
+      "groups": [
+        {
+          "group_id": 1,
+          "mode": 0,
+          "passed": true,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 120.81268767167343,
+          "mean_luminance_after": 120.81268767167343
+        }
+      ]
+    },
+    {
+      "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\sensor-colorbars-d5-fixed-20261008\\summary.json",
+      "passed": true,
+      "hardware_accessed": true,
+      "source_kind": "synthetic_same_source",
+      "input_origin": "sensor_internal_test_pattern",
+      "target": "gamma_capture_colorbars_d5",
+      "groups": [
+        {
+          "group_id": 1,
+          "mode": 0,
+          "passed": true,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 127.59995208731922,
+          "mean_luminance_after": 127.59995208731922
+        }
+      ]
+    },
+    {
+      "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\optical-d5-fixed-20261008\\summary.json",
+      "passed": true,
+      "hardware_accessed": true,
+      "source_kind": "physical_same_source",
+      "input_origin": "optical_camera_scene",
+      "target": "gamma_capture_settled_d5",
+      "groups": [
+        {
+          "group_id": 1,
+          "mode": 1,
+          "passed": true,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 20.833703617407398,
+          "mean_luminance_after": 43.104590756790635
+        }
+      ]
+    }
+  ],
+  "host_tests": [
+    {
+      "name": "test_gamma_triplets.py",
+      "passed": true,
+      "tests": 9
+    },
+    {
+      "name": "test_tone_pair_analysis.py",
+      "passed": true,
+      "tests": 6
+    },
+    {
+      "name": "test_frozen_gamma_analysis.py",
+      "passed": true,
+      "tests": 7
+    },
+    {
+      "name": "test_pds_source_manifest.py",
+      "passed": true,
+      "tests": 5
+    },
+    {
+      "name": "test_camera_color_candidate_guard.py",
+      "passed": true,
+      "tests": 8
+    },
+    {
+      "name": "test_session_capture_scope.py",
+      "passed": true,
+      "tests": 6
+    },
+    {
+      "name": "test_grid_straightness.py",
+      "passed": true,
+      "tests": 4
+    },
+    {
+      "name": "test_d5_candidate_guard.py",
+      "passed": true,
+      "tests": 6
+    },
+    {
+      "name": "test_completed_angle_coverage.py",
+      "passed": true,
+      "tests": 5
+    }
+  ],
+  "capture_warmup_regression": {
+    "passed": true,
+    "delay_ms_at_125mhz": 2000,
+    "simulation_log_sha256": "BD4531397C234120EFDED049F2E9C81948F6DA4F02A7021F3C61419C8B9E52D3"
+  },
+  "fresh_baseline_recovery": {
+    "passed": true,
+    "hardware_accessed_by_analyzer": false,
+    "samples": 7,
+    "span_seconds": 6.200443,
+    "delta": {
+      "WF": 113,
+      "CF": 114,
+      "PF": 372
+    },
+    "approx_rates_per_second": {
+      "WF": 18.224504281387638,
+      "CF": 18.38578308033797,
+      "PF": 59.9957132095239
+    },
+    "observed_result_angles_deg": [
+      0.0
+    ],
+    "temperature_celsius_range": [
+      44.6433,
+      45.3747
+    ],
+    "max_process_ms_at_125mhz": 30.852056,
+    "limits": "Saved serial evidence only. CF counts new completed remaps; PF includes repeated HDMI refreshes. Host timestamps approximate rates. Internal-reference ADC is an approximate temperature until compared with an external instrument. Optical quality and visible key behavior need direct observation.",
+    "writes": 1,
+    "idle_return_code": 0,
+    "transaction_sha256": "C9F23FD01825D018F84928FFE7189FB0B557B1C12CF0A1FA6E66038C1E2DCEBF"
+  },
+  "physical_tone_modes_verified": [
+    0,
+    1
+  ],
+  "pending_acceptance": [
+    "Physical strong-light same-source compression (mode 2)",
+    "Camera color/white-balance and textured low-light optical quality",
+    "Independent optical edge metrics",
+    "Hardware end-to-end latency",
+    "Higher-resolution pipeline and final route",
+    "Repeated cold-start and bounded thermal stability"
+  ],
+  "physical_image_review": {
+    "review_method": "Visual inspection of saved physical PNGs and weak-light three-panel figure; independent of display observation",
+    "unwarmed_bright": {
+      "capture": "captures/gamma-triplets/physical-bright-20261008/summary.json",
+      "observations": "Strong green cast; source is unsuitable as normal white-paper optical acceptance",
+      "user_display_observation": "User did not notice the display color"
+    },
+    "warmed_bright": {
+      "capture": "captures/gamma-triplets/physical-bright-warmed-20261008/summary.json",
+      "observations": "Center appears gray-white; cyan/green cast and noise remain near edges",
+      "mode": 0,
+      "strong_light_compression_accepted": false
+    },
+    "warmed_dark": {
+      "capture": "captures/gamma-triplets/physical-dark-warmed-20261008/summary.json",
+      "observations": "Gamma increases visible brightness; cyan/green cast and noise are visible and texture is indistinct",
+      "mode": 1,
+      "mean_luminance_before": 40.64973861335451,
+      "mean_luminance_after": 71.71657680304278,
+      "low_light_detail_recovery_accepted": false,
+      "user_display_observation": "User corrected display observation: only a slight green tint, much less than saved figure; user suspects lighting, root cause not verified"
+    },
+    "display_capture_relationship": "gamma_capture HDMI uses camera_preview: ongoing live frames sampled every fourth pixel and row; triplet exports freeze an earlier full frame. These are different times and grids, not a direct HDMI-versus-PNG pixel comparison.",
+    "limits": "Waiting two seconds after camera/DDR readiness was added and verified. Changes across captures are not a controlled proof of startup white-balance as the root cause. Exact digital outputs and brightness changes do not prove color fidelity, recovered detail, temporal noise reduction or optical accuracy."
+  },
+  "camera_color_audit": {
+    "path": "D:\\English\\FPGA\\distortion\\results\\lab-20261008\\camera-color-audit.json",
+    "sha256": "6A60B40EB64770D2E32E6738734408CF7223988A936AE07D54C8DEED0C86E874",
+    "scope": "Fixed-ROI channel statistics and initialization table comparison; no hardware readback or color-fidelity acceptance"
+  },
+  "color_investigation": {
+    "path": "D:\\English\\FPGA\\distortion\\results\\lab-20261008\\color-investigation.json",
+    "sha256": "FF7B9D4074A4954E9AFDD7D1D95546F7BBD4E6B9768C5D565B38727203CE1CB3",
+    "scope": "Read-only ISP register scans and internal sensor pattern; optical color fidelity remains unaccepted"
+  },
+  "grid_straightness": {
+    "path": "D:\\English\\FPGA\\distortion\\results\\lab-20261008\\grid-straightness.json",
+    "sha256": "F92F1DD632FB1A07405A6717D1584C482F4367524AF6A590EFC995788228EF50",
+    "measured_pairs": 1,
+    "full_optical_acceptance": false
+  },
+  "pipeline_placement_attempt": {
+    "Target": "corrected_pipeline_cadence_seed4",
+    "StartedUtc": "2026-10-08T10:16:12.1617191Z",
+    "EndedUtc": "2026-10-08T10:34:13.3306792Z",
+    "DeadlineUtc": "2026-10-08T10:34:12.1617191Z",
+    "OwnedPID": 1684,
+    "TimedOut": true,
+    "ExitCode": 1,
+    "Passed": false,
+    "HardwareAccessed": false
+  },
+  "pipeline_parity_regression": {
+    "path": "D:\\English\\FPGA\\distortion\\results\\lab-20261008\\pipeline-parity-regression.json",
+    "passed": true,
+    "pixels_checked": 3686400,
+    "hardware_accessed": false,
+    "logical_fast_cache_bytes_after": 16384
+  },
+  "pipeline_parity_placement_attempt": {
+    "Target": "corrected_pipeline_parity_cadence",
+    "StartedUtc": "2026-10-08T10:36:52.6729673Z",
+    "EndedUtc": "2026-10-08T10:54:53.9051136Z",
+    "DeadlineUtc": "2026-10-08T10:54:52.6729673Z",
+    "OwnedPID": 26948,
+    "TimedOut": true,
+    "ExitCode": 1,
+    "Passed": false,
+    "HardwareAccessed": false
+  },
+  "d5_correction": {
+    "path": "D:\\English\\FPGA\\distortion\\results\\lab-20261008\\d5-correction.json",
+    "sha256": "E29C9F75F1DAE75D0577355DA18A3B476BC545DE44887022CF871D03D4818247",
+    "physical_restoration_passed": true
+  },
+  "corrected_camera_builds": {
+    "gamma_capture_colorbars_d5": {
+      "bitstream_sha256": "F25E34CA639F94C94467091A9BC71E75B781F5C6C5165C9A121E610625B45803",
+      "timing_sha256": "53C4C10081753566F4A4F07F65C53C36CD9D2AB5D68E5BBAC01D253FFF600AF3",
+      "timestamp": "2026-10-08T18:57:26.9985671+08:00"
+    },
+    "gamma_capture_settled_d5": {
+      "bitstream_sha256": "45832255BB3031CFA86A2DD3BBAC45EF63805319FBE84DAD6D0ECA9A76B74FA0",
+      "timing_sha256": "677DA33DCCDBBC2E3742CE6A1F04EAE9F5E34C2F04843736D4D746397002E396",
+      "timestamp": "2026-10-08T19:00:48.3517770+08:00"
+    },
+    "corrected_gamma_d5": {
+      "bitstream_sha256": "069D8ACEF8DED0CD62D19EE47C83E06910DF35BD0D76A9DF29403A8A14B877CF",
+      "timing_sha256": "00B994EB2351E038143A61E8E8944FC527148A214CFE7F1BA306E9C7EFEB9142",
+      "timestamp": "2026-10-08T19:04:45.3836760+08:00"
+    }
+  },
+  "corrected_gamma_video": {
+    "passed": true,
+    "canonical_result_angles_deg": [
+      0,
+      30,
+      60,
+      90,
+      120,
+      150,
+      180,
+      210,
+      240,
+      270,
+      300,
+      330
+    ],
+    "approx_rates_per_second": {
+      "WF": 15.979413285111598,
+      "CF": 15.979413285111598,
+      "PF": 59.99472025539444
+    },
+    "temperature_celsius_range": [
+      46.7156,
+      49.5193
+    ],
+    "max_process_ms_at_125mhz": 43.882456,
+    "visual_observation_available": false
+  },
+  "historical_camera_color_limit": "Before AA23 correction, DVP D5 was constrained to the adjacent unconnected AA22 pad. Numerical regressions remain as-received input tests; camera color and fresh optical acceptance must use corrected data.",
+  "session_tools_sha256": {
+    "tools/program-heartbeat.ps1": "B8EC234294198376C123DA5F0E5B374F28464A5914D30B0CBB14567673A014FD",
+    "tools/build-pds.ps1": "EF44827BC70F5D218B54E98701B15498B7B0372149CC7971BAA30404DE1803F9",
+    "tools/capture-gamma-triplets.py": "1FD542C1E9C36D2A4E75AE952434B4EB18F4BA5FF592D88A1B10E636ECB64517",
+    "tools/frozen_gamma_analysis.py": "0D96154F86CCC7F74B9FBBD239AE24A237027ECAB24D5CB1911E03B16DA51E41",
+    "tools/validate-gamma-capture.py": "950979D2A13A10E06285AEB03ACD214E881C7A30ABBD7DBAE2C5ADB88228405C",
+    "tools/record-session-20261008.py": "DE3697F721EC909DCF63A4E333AC990DAB81D166B3483E8E545BB407C0DA436A",
+    "tools/pds_source_manifest.py": "E18A21776314DFB49BC1D9CD0A5282235A9F57005255F6DA217E95BDA9B4E0DA",
+    "tools/expand-gamma-capture-sources.py": "AEE6E40ABBB6CD6D49CB6F6D1ED9CACF49CD56505E20E486BBA46B5307B23DC9",
+    "tools/plot-gamma-capture.py": "9EF35B3AC1FC2C1338B4EC9469ABFA15361FE1828DB610C44CC4CDC36FC29DA7",
+    "tools/archive-session-20261008.py": "30EB5AC922C7995246C05847BAA1CFC87AA09426EF95F58D1B8663DBDDFC7537",
+    "tools/audit-camera-color-20261008.py": "19907F57410242262A9E40D85A4A62D99B4FB2E71E8EF12D0E49E01DDD492BF4",
+    "tools/run-capture-warmup-sim.ps1": "82363D5C95426EED6E1CEF2DAF1DAE3EE1C40AE27A4B3CA744FDD0C10BC763B7",
+    "tests/tb_capture_warmup.sv": "13DE9001371FBEAE4E0377AD3CD524A8220DF84C11DEF08407C567F1FBAB4E5B",
+    "tests/test_pds_source_manifest.py": "A82509AC2E135DF23552765EFB12CE03269E0236D20854CDC659FC074295B9B9",
+    "tests/test_frozen_gamma_analysis.py": "B79E85886B90C79D087CD1DB87403F6FE66A2DE9CE732E76E12B0B94673BD759",
+    "tools/prepare-pipeline-cadence-candidate.py": "E0FCA838127CCB34C3546313A068007875AC186858E5243A3E4CA257AE958AEC",
+    "tools/build-pds-bounded.ps1": "DE920EA33196CCA8792E93FD8BC256F6F8A1BA075A61AE198949FE27C6017325",
+    "tools/read-telemetry.ps1": "1AE365A1B231EE8202D2903293325AC01704418B4A26F85D63FEE52073D39497",
+    "tests/test_session_capture_scope.py": "93BE96F50BA83330903D017861E2E6D108A0C7A0339C77BBB072D9B18B29DAC2",
+    "tools/check-grid-straightness.py": "C3BCE72154B04B0EF4B1106E2204F99C0E4F0D774DBA1BD4D4FCEF1741E95DD1",
+    "tests/test_grid_straightness.py": "BC0ECD1F8A912BA28D2B94F7A6E6C7B7CF5DB23FB4F0534C0DF5C7B335D78F1B",
+    "tools/prepare-parity-cache-tests.py": "42442D621D637983A555D38D67C46184DF98EEB9E955616604CC4F22937D7284",
+    "tools/record-pipeline-parity-regression.py": "35D416E5755CB3E8F9E9E15037A9F764F1E4D2BF2E0049A8792DC04D763E4206",
+    "tools/prepare-parity-board-candidate.py": "D946FC61E2AB352DBE54688AF5CDB3BE3FDB1229391036A2A7940CB0914230AD",
+    "tools/host-angle.py": "B2CD0D6D9CFE18015DD4864CEE33842173E864DCC4CF207DD82E2C182F3356F8",
+    "tools/check-d5-video-session.py": "5F9513C7D212158F16CA5ED12175E4683DB22E810533F93FBB99FE36816F1BD6",
+    "tests/test_completed_angle_coverage.py": "9859194D1F6D6AD1E7F6163F043B56578C24DA365810CA3718397A61D96BB8E3",
+    "tools/prepare-camera-color-candidates.py": "53E6D069B630E4E887C2A13C6D2FFBD59AF8B7E60EA8D3C8702C8CDDB23689FA",
+    "tools/validate-camera-color-candidate.py": "E6A760D71C7CA642686EE836A2A8FC6737439238980977C62B54619E11661013",
+    "tools/prepare-camera-color-tests.py": "5A790C89A6A389E4DE0DA83815D5742E8B07711F465C89DCECF5D38F0E844B72",
+    "tools/check-rgb565-rendering.py": "52EC9F0546EFFBE103E6E3EA45B162ED98F0E6E6792A0A327C17BC1E4B4DC4FC",
+    "tools/analyze-sensor-colorbars.py": "E0A25BDB88C072590D0905A9DB3DBDDB2EA4F160A63B4D90FEA2E3926D38166A",
+    "tools/record-camera-color-investigation.py": "E02C5F3E20AFB7D3C6A2782472C976CBA38958699D6E42614DC6B5ED40F85E73",
+    "tools/run-camera-colorbars-sim.ps1": "30F788650EAF59782FD6AF68CA085FD26595059BA5316D890C8E493E6F441F47",
+    "tests/tb_ov5640_colorbars.sv": "4A6DBA20AB22D8D53811BDCDBD5D4A0E627EE472B38C7654086F77B41427584A",
+    "tools/capture-camera-state.py": "4F76D9F5F87EE4A52F9BB72F7155A31C7D243FB43615E17B4FF9E3FAE08DAE87",
+    "tools/prepare-camera-state-probe.py": "34F773B404DEFC74942B2517F5200C85712DFCDF947436842DDC625D6CE48508",
+    "tools/validate-camera-state-probe.py": "AA45097BE3DE1204B36299E2F5BF9B62623164B421C51B363F1D5645DF451BCD",
+    "tools/run-camera-state-scan-sim.ps1": "97E17169063F86A62C64B099CA16408E4CF7D2A041BD97C0A4902FFE83F39797",
+    "tests/tb_camera_state_scan.sv": "1C5511A0A15C43A3BAE472FC6A152D562144AA4CB7CE05981CA9404ECE9F2A77",
+    "tools/plot-camera-state.py": "9271D77A0E3F02B2EA259CBE7FDEBCDCC6FB6E2A32BAAB70251405E0A919D74F",
+    "tests/test_camera_color_candidate_guard.py": "5A7605348A1B30D523244287F2C198CACAEC27E1AAC4E35D4C2CD0FF51F562D2",
+    "tools/record-d5-correction.py": "3945985A9D2CECA37516C039A580D98F282D35F733C1CE4EDBE7568FCD4E6773",
+    "tools/check-dvp-bitplanes.py": "776889DE7E14839F86DA5CC8A4BA35444F5C60F237F3BB5DB508073D106500E1",
+    "tools/prepare-d5-fixed-candidates.py": "33041CCE749F86F29020EDF8C1DD0E6E7E1AAD7E4BFC95B3DC2C1FCA481C7C97",
+    "tests/test_d5_candidate_guard.py": "DFBDC2956078BABBB84482F591B664FC0D4FD4E195D4DD92AF236FF59296A10E",
+    "tools/analyze-rotation-telemetry.py": "2E57C141E31292ECA4EB6B5942D61C2DE3B84A3DC9C8031BC589574F339699DF"
+  }
+}

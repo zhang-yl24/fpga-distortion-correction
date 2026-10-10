@@ -1,0 +1,72 @@
+{
+  "status": "isolated_preparation_only",
+  "hardware_accessed": false,
+  "board_build_started": false,
+  "xclk_hz_from_existing_module_schematic": 24000000,
+  "pll_vco_hz_unchanged": 768000000,
+  "width": 640,
+  "height": 480,
+  "hts_unchanged": 1936,
+  "vts_unchanged": 1088,
+  "current_predicted_fps": 11.39402041808459,
+  "current_measured_sensor_fps": 11.394014878942693,
+  "candidate_predicted_fps": 22.78804083616918,
+  "current_sysclk_hz": 24000000,
+  "candidate_sysclk_hz": 48000000,
+  "register_changes": [
+    {
+      "index": 71,
+      "address": "3A08",
+      "old": "01",
+      "candidate": "00"
+    },
+    {
+      "index": 72,
+      "address": "3A09",
+      "old": "27",
+      "candidate": "F7"
+    },
+    {
+      "index": 73,
+      "address": "3A0A",
+      "old": "00",
+      "candidate": "00"
+    },
+    {
+      "index": 74,
+      "address": "3A0B",
+      "old": "F6",
+      "candidate": "CD"
+    },
+    {
+      "index": 75,
+      "address": "3A0E",
+      "old": "03",
+      "candidate": "04"
+    },
+    {
+      "index": 76,
+      "address": "3A0D",
+      "old": "04",
+      "candidate": "05"
+    },
+    {
+      "index": 250,
+      "address": "3035",
+      "old": "41",
+      "candidate": "21"
+    }
+  ],
+  "existing_source_sha256": {
+    "board\\ov5640_commands.vh": "baa4d3b566f8a1d213430f013079ab9801b8af39644eb0c1c5e6eaad07bde74c",
+    "rtl\\ov5640_init.v": "73855d8f22aac7233be1f9773925befcf55af615e8832d979d59e83aa99fae3c"
+  },
+  "manual": "../vendor/board/盘古100Pro+开发板（MES2L676-100HP）配套资料/4_IC_datasheet/OV5640/OV5640_AF_Imaging_Module_Application_Guide_(DVP_Interface).pdf",
+  "manual_pages": [
+    56,
+    57,
+    59,
+    60
+  ],
+  "limits": "Prediction only. A future board target must use the isolated init module, read back controls, verify actual PCLK against constraints, all 307200 pixels/480 lines, cadence under exposure changes, DDR/video errors and temperature. Does not claim 22.79 fps achieved. Active board/init/table sources are unchanged. HTS/VTS, crop, ISP geometry and calibration coefficients are preserved, but image quality and calibration validity still require physical checks."
+}

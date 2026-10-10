@@ -1,0 +1,100 @@
+{
+  "hardware_accessed": false,
+  "core_clock_hz": 125000000,
+  "current_input": [
+    640,
+    480
+  ],
+  "current_8bit_rgb565_bytes_per_pixel": 2,
+  "current_bank_stride_bytes": 1048576,
+  "latest_isolated_native_simulation": [
+    {
+      "angle_deg": 0,
+      "simulated_cycles_per_pixel": 1.2332845052083334,
+      "vga_simulated_frame_ms_at_125mhz": 3.03092
+    },
+    {
+      "angle_deg": 30,
+      "simulated_cycles_per_pixel": 4.323492838541667,
+      "vga_simulated_frame_ms_at_125mhz": 10.625416
+    },
+    {
+      "angle_deg": -30,
+      "simulated_cycles_per_pixel": 4.30802734375,
+      "vga_simulated_frame_ms_at_125mhz": 10.587408
+    },
+    {
+      "angle_deg": 90,
+      "simulated_cycles_per_pixel": 5.165677083333334,
+      "vga_simulated_frame_ms_at_125mhz": 12.695168
+    },
+    {
+      "angle_deg": -90,
+      "simulated_cycles_per_pixel": 5.168899739583333,
+      "vga_simulated_frame_ms_at_125mhz": 12.703088
+    },
+    {
+      "angle_deg": 180,
+      "simulated_cycles_per_pixel": 1.2352962239583334,
+      "vga_simulated_frame_ms_at_125mhz": 3.035864
+    }
+  ],
+  "target_budgets": [
+    {
+      "width": 640,
+      "height": 480,
+      "target_new_frames_per_second": 30,
+      "output_pixels_per_second": 9216000,
+      "required_average_core_cycles_per_pixel_at_125mhz": 13.563368055555555,
+      "minimum_8bit_dvp_rgb565_byte_clock_hz_excluding_blanking": 18432000,
+      "source_frame_rgb565_bytes": 614400,
+      "suggested_power_of_two_bank_stride_bytes": 1048576,
+      "four_bank_storage_bytes": 4194304,
+      "current_1MiB_bank_stride_fits_frame": true,
+      "current_48MHz_camera_input_constraint_covers_minimum_byte_clock": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "target_new_frames_per_second": 30,
+      "output_pixels_per_second": 27648000,
+      "required_average_core_cycles_per_pixel_at_125mhz": 4.521122685185185,
+      "minimum_8bit_dvp_rgb565_byte_clock_hz_excluding_blanking": 55296000,
+      "source_frame_rgb565_bytes": 1843200,
+      "suggested_power_of_two_bank_stride_bytes": 2097152,
+      "four_bank_storage_bytes": 8388608,
+      "current_1MiB_bank_stride_fits_frame": false,
+      "current_48MHz_camera_input_constraint_covers_minimum_byte_clock": false
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "target_new_frames_per_second": 30,
+      "output_pixels_per_second": 62208000,
+      "required_average_core_cycles_per_pixel_at_125mhz": 2.0093878600823047,
+      "minimum_8bit_dvp_rgb565_byte_clock_hz_excluding_blanking": 124416000,
+      "source_frame_rgb565_bytes": 4147200,
+      "suggested_power_of_two_bank_stride_bytes": 4194304,
+      "four_bank_storage_bytes": 16777216,
+      "current_1MiB_bank_stride_fits_frame": false,
+      "current_48MHz_camera_input_constraint_covers_minimum_byte_clock": false
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "target_new_frames_per_second": 60,
+      "output_pixels_per_second": 124416000,
+      "required_average_core_cycles_per_pixel_at_125mhz": 1.0046939300411524,
+      "minimum_8bit_dvp_rgb565_byte_clock_hz_excluding_blanking": 248832000,
+      "source_frame_rgb565_bytes": 4147200,
+      "suggested_power_of_two_bank_stride_bytes": 4194304,
+      "four_bank_storage_bytes": 16777216,
+      "current_1MiB_bank_stride_fits_frame": false,
+      "current_48MHz_camera_input_constraint_covers_minimum_byte_clock": false
+    }
+  ],
+  "native_proof_sha256": "fab470b978f970a2b858091dde6e98a47f3cb79fb091b9cb2664d48da1695bfd",
+  "latest_native_proof_file": "results\\lab-20261007\\pipeline-hit-native-check.json",
+  "next_architecture_need": "Coordinate math already accepts a ray each enabled cycle. The isolated replicated hit pipeline now supports one resident query per cycle, while misses and image order still determine whole-frame cost. Higher resolution needs controller/bandwidth and physical timing/resource validation, more cache locality, new camera mode and bank geometry. More camera fps alone does not establish the target.",
+  "limits": "Budgets are arithmetic requirements, not achieved hardware performance or sensor maximum ratings. DVP byte-clock minima exclude blanking; actual camera mode, clock electrical limits and FPGA timing must be verified. VGA cycles must not be extrapolated into a claimed higher-resolution fps. 1080p requires new bank geometry, camera mode/intrinsics, HDMI timing and complete timing/optical checks."
+}

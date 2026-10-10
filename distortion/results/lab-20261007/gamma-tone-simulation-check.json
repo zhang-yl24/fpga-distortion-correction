@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "source_sha256": {
+    "rtl\\experimental\\adaptive_gamma_stream.v": "8FC733802CA8CDF55F9E0039EAEF2A16C0F0EFE10AF41F4AC3619715A9D11AF7",
+    "board\\rotation-domain.vh": "92337318BFF93801E8456C99EEB4D81AFD0CE88807514202270D268B21FC9AB5",
+    "rtl\\experimental\\adaptive_gamma_frame_engine.v": "6379B55AE259D68AAB5447D41102F1C93F6CDF674C4994A12F8853A7BC1D5248",
+    "build\\gamma_native_tone_sim\\result.mem": "4F8D4198F2829DB78714B652351D760DF5DDC043E47857CF07848C7999757B5B",
+    "rtl\\video_crc32.vh": "E0510F73BEB1DAC68F3799F99EC729808A6C133A2FA41B1F097386226FD53705",
+    "rtl\\experimental\\gamma_curves.vh": "B5B64E36F30448F39C1A188CD04D35FD98185EE23D5B77510EFF43F0DEEC78EA",
+    "rtl\\bilinear_rgb.v": "AE2128289B9B3A749D6878AC6DB6975AF30479BA897318B4EA5045E238EC593A",
+    "rtl\\bounded_brown_inverse_mapper.v": "D13BAD6E4DEDA11FACE236F2C8C2C6E91B37075A7DE87A33A42BD90F64DD7691",
+    "rtl\\experimental\\ddr_adaptive_result_writer.v": "FAB6D79260CE4B81A54BFD5D6BEFDE535E7AEA1230CE2E5FDD1398655FFC20A6",
+    "rtl\\experimental\\adaptive_gamma_tagged.v": "B3FA1F2C4B07B6E616350D0488AB4478703B1C4AA3773D2A40631ED6C2E91790",
+    "tests\\tb_gamma_native_tone.sv": "030E89898F48A739377A038B2785065647F211C1F792D630E688103127C60486",
+    "rtl\\experimental\\ddr_adaptive_cache.v": "7F77C9AC23C7C3758921C9E815BD0324DA193EEC2A8E5917DB0A44F40C4EC926",
+    "build\\gamma_native_tone_sim\\source.mem": "5EFAC31244800D6F312222E2D1E72B46D72839AA4562B936CF4D9B490B77E8FB",
+    "board\\calibration-trial.vh": "DBA0E58092F92D920AD110C3FA9EFF53988D3C086AF31DE6A582A97500EA0FE5",
+    "rtl\\mul32_pipe.v": "2A026510E5D5A765BAD02906368AA27E4C8CC59F17E69B2D7F2D01819EE737D2",
+    "rtl\\pixel_inverse_rotation.v": "73F13AD31ABAF9E6141888AA0059FF62A878E157E0DD80328F01F1B060D952FD",
+    "build\\gamma_native_tone_sim\\reference.json": "C36B08DA8F1293A0DF2F7025EFD1B11881F0AE3C4BBDBF8CDE6DF564158AE06F",
+    "build\\gamma_native_tone_sim\\modes.mem": "FA3F641EB390053B6448E3511B5BC393E0C015CDF377843DB2FE379E0AB1EDE1",
+    "build\\gamma_native_tone_sim\\crcs.mem": "66239D2B2AC24C945A70F3A51C142E953BB96E32F0A16A2E2CDD8D7BF0AFD66D",
+    "build\\gamma_native_tone_sim\\masks.mem": "8FAB634C4A1634C177417E9654D0B740E19DA78CB336E9A6F1FA5BC76E505C94",
+    "build\\gamma_native_tone_sim\\rotations.mem": "F9D20961513B11F2F3F8BE232191794ADCFA812EE3F48BE7B992331190933446",
+    "rtl\\ddr_remap_sample.v": "BAC1799188CD5E3264A2CD5615B59DD2F20871E180172D20EF922758D2F6D989",
+    "rtl\\experimental\\rotated_remap_core_gamma.v": "3C09ACEE4C91316C48A6359DB1F9E69E9FE4B662C9B1FA520B0404AD9B07B69D"
+  },
+  "simulation_log_sha256": "D2F8766E44C3CD318D042678612C7B3C7F975C4EF9E65CB3D8D2A08EE33FBFA8",
+  "pixels_checked": 921600,
+  "complete_frames": 3,
+  "frames": [
+    {
+      "angle_deg": 7.5,
+      "pixels": 307200,
+      "crc32": "C14C385E",
+      "source_sha256": "32dcf547435bd03c8ece1e1875c3741d676e54d3c65245daec93ae99df3bbcff",
+      "scalar_coordinate_spotchecks": 2052,
+      "masked_pixels": 19947,
+      "matches_previous_six_angle_oracle": false,
+      "tone_mode": 0,
+      "raw_statistic_decision": 1
+    },
+    {
+      "angle_deg": 13.7,
+      "pixels": 307200,
+      "crc32": "83026997",
+      "source_sha256": "20acb20ef0af11f7c00ad6f7d844c75264939ce8339270510ed7890566e7c0de",
+      "scalar_coordinate_spotchecks": 2052,
+      "masked_pixels": 32015,
+      "matches_previous_six_angle_oracle": false,
+      "tone_mode": 0,
+      "raw_statistic_decision": 1
+    },
+    {
+      "angle_deg": -23.45,
+      "pixels": 307200,
+      "crc32": "19A872F5",
+      "source_sha256": "32dcf547435bd03c8ece1e1875c3741d676e54d3c65245daec93ae99df3bbcff",
+      "scalar_coordinate_spotchecks": 2052,
+      "masked_pixels": 46170,
+      "matches_previous_six_angle_oracle": false,
+      "tone_mode": 1,
+      "raw_statistic_decision": 1
+    }
+  ],
+  "scope": "Independent Brown/rotation/interpolation plus exact Gamma/mask oracle. Darkened source is a synthetic channel reduction of real-camera data, not a physical low-light measurement. Actual 640x480 remap/mask/tone/DDR/CRC pipeline, every pixel, explicit mask/tag, frame-locked mode, immutable source, same-bank invalidation, parameter locking and burst stalls checked. No routed timing or physical optical claim."
+}

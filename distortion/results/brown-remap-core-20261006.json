@@ -1,0 +1,52 @@
+{
+  "recorded_at": "2026-10-06T14:26:10",
+  "device": "PG2L100H-6IFBG676",
+  "core_clock_mhz": 125,
+  "standalone_all_constraints_met": false,
+  "standalone_setup_wns_ns": -0.178,
+  "standalone_internal_paths_meet_timing": true,
+  "standalone_internal_setup_wns_ns": 0.999,
+  "test_shell_external_output_constraint_passed": false,
+  "standalone_resources_including_serial_test_shell": {
+    "LUT": 2392,
+    "FF": 6650,
+    "DRM": 4,
+    "APM": 83
+  },
+  "coordinate_pipeline_enabled_stages": 30,
+  "coordinate_pipeline_accepts_one_ray_per_cycle_when_ready": true,
+  "coordinate_vectors_passed": 81036,
+  "composed_pixel_queries_passed": 19086,
+  "exact_multiplier_products_passed": 18873,
+  "simulation_results": {
+    "mul32_sim": "PASS signed 32x32 pipelined multiplier: 18873 full-range products, signed extremes and enable stalls.",
+    "brown_sim": "PASS Brown inverse mapper: 81036 integer Python golden rays, identity/radial/tangential/overflow, signed Q9.22 math, explicit black domain, configuration drain, tagged output backpressure and mid-pipeline reset recovery.",
+    "brown_remap_sim": "PASS composed Brown -> DDR neighbours -> bilinear: 19086 Python golden queries, four neighbours and RGB888 each compared; signed floor, borders, burst boundaries, cache conflicts, bank switch, same-bank new frame, variable DDR stalls, output backpressure, malformed RLAST/RID, timeout, unsolicited responses and mid-burst reset recovery."
+  },
+  "model": "Brown-Conrady radial/tangential, synthetic test parameters",
+  "pixel_format": "source RGB565 expanded by bit replication to RGB888",
+  "coordinates": "Q15.8 pixels and focal lengths, Q1.30 inverse focal, Q9.22 rays/coefficients",
+  "cache": {
+    "lines": 8,
+    "line_bytes": 512,
+    "ddr_beats_per_fill": 16,
+    "ddr_address_unit_bytes": 4,
+    "four_neighbours": true,
+    "independent_border_zero": true
+  },
+  "hardware_integrated": false,
+  "hardware_programmed": false,
+  "real_calibration_available": false,
+  "source_sha256": {
+    "rtl/mul32_pipe.v": "2A026510E5D5A765BAD02906368AA27E4C8CC59F17E69B2D7F2D01819EE737D2",
+    "rtl/brown_inverse_mapper.v": "890A13BDD637E862EF6E68202F06428074480367C938D3B08A9E8C99E5B79F60",
+    "rtl/ddr_neighbour_cache.v": "45E7DDCE2CAB767B4CE3ED3B1EE0056C07FE26363B2484D010B13F3D3383C608",
+    "rtl/ddr_remap_sample.v": "BAC1799188CD5E3264A2CD5615B59DD2F20871E180172D20EF922758D2F6D989",
+    "rtl/brown_remap_core.v": "6BD8B549B4B6CF0BED876E8918A16C1AC0CDF90C8A9D48485605E18C7E63DC1C",
+    "rtl/bilinear_rgb.v": "AE2128289B9B3A749D6878AC6DB6975AF30479BA897318B4EA5045E238EC593A",
+    "board/brown_remap_synthesis_top.v": "43A9F6D78E9847BBAA6284E9EEEA1DBDDF8B011BD375A7B1A80B6716F4B914F0",
+    "board/brown-remap-probe.fdc": "CC899801D6D12F51F76B88A12FC7F3E893D8D84655B3B11B59708F3CA8147CB1"
+  },
+  "limits": "Standalone synthetic test shell only; actual DDR PHY/capture/HDMI integration timing and board correction remain unverified. No fisheye/rotation FPGA datapath. One ray/cycle describes coordinate arithmetic, not the serial DDR sampler or full-frame FPS.",
+  "next": "Connect an output frame store and burst-owner read/write arbiters; export real camera frames, calibrate and compare held-out Brown/fisheye error."
+}

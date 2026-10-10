@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "pixels_checked": 1843200,
+  "source_sha256": {
+    "ddr_adaptive_result_writer.v": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+    "adaptive_tiled_frame_engine.v": "61a4f210a2f80cf8855f17e61a77ad51b8705bd00300dd8834075ff462d2d5c5",
+    "ddr_adaptive_cache.v": "7f77c9ac23c7c3758921c9e815bd0324da193eec2a8e5917db0a44f40c4ec926"
+  },
+  "frames": [
+    {
+      "angle_deg": 0,
+      "crc32": "2c51ebbb",
+      "pixels": 307200,
+      "baseline_cycles": 3807193,
+      "adaptive_cycles": 3807193,
+      "baseline_read_bursts": 1200,
+      "adaptive_read_bursts": 1200,
+      "process_cycle_reduction_percent": 0.0,
+      "read_burst_reduction_percent": 0.0
+    },
+    {
+      "angle_deg": 30,
+      "crc32": "fcab7734",
+      "pixels": 307200,
+      "baseline_cycles": 6271078,
+      "adaptive_cycles": 4478433,
+      "baseline_read_bursts": 130012,
+      "adaptive_read_bursts": 17540,
+      "process_cycle_reduction_percent": 28.58591457481473,
+      "read_burst_reduction_percent": 86.50893763652586
+    },
+    {
+      "angle_deg": -30,
+      "crc32": "69b49c75",
+      "pixels": 307200,
+      "baseline_cycles": 6264927,
+      "adaptive_cycles": 4481280,
+      "baseline_read_bursts": 130020,
+      "adaptive_read_bursts": 17322,
+      "process_cycle_reduction_percent": 28.47035568012205,
+      "read_burst_reduction_percent": 86.67743424088602
+    },
+    {
+      "angle_deg": 90,
+      "crc32": "28c15288",
+      "pixels": 307200,
+      "baseline_cycles": 8621501,
+      "adaptive_cycles": 4638182,
+      "baseline_read_bursts": 231352,
+      "adaptive_read_bursts": 30450,
+      "process_cycle_reduction_percent": 46.202152038258774,
+      "read_burst_reduction_percent": 86.83823783671635
+    },
+    {
+      "angle_deg": -90,
+      "crc32": "7f7ee7ec",
+      "pixels": 307200,
+      "baseline_cycles": 8621683,
+      "adaptive_cycles": 4637492,
+      "baseline_read_bursts": 231352,
+      "adaptive_read_bursts": 30450,
+      "process_cycle_reduction_percent": 46.211290765387695,
+      "read_burst_reduction_percent": 86.83823783671635
+    },
+    {
+      "angle_deg": 180,
+      "crc32": "001c0afb",
+      "pixels": 307200,
+      "baseline_cycles": 3806533,
+      "adaptive_cycles": 3806491,
+      "baseline_read_bursts": 1200,
+      "adaptive_read_bursts": 1200,
+      "process_cycle_reduction_percent": 0.0011033662390413923,
+      "read_burst_reduction_percent": 0.0
+    }
+  ],
+  "scope": "640x480, six real-camera input frames, independent integer-model output and raster CRC. Synthetic DDR stalls; process cycles are not physical frame rate or a higher-resolution claim.",
+  "strategy": "Frame-locked raster near 0/180 degrees; 8x8 tiles otherwise. Sixteen direct-mapped cache lines; eight-row raster reorder buffer."
+}

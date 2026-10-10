@@ -1,0 +1,97 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "pixels_checked": 1843200,
+  "angles": [
+    7.5,
+    13.7,
+    -23.45,
+    89.99,
+    137.25,
+    333.375
+  ],
+  "frames": [
+    {
+      "angle_deg": 7.5,
+      "pixels": 307200,
+      "crc32": "07E93517",
+      "source_sha256": "32dcf547435bd03c8ece1e1875c3741d676e54d3c65245daec93ae99df3bbcff",
+      "scalar_coordinate_spotchecks": 2052,
+      "masked_pixels": 0,
+      "matches_previous_six_angle_oracle": false,
+      "rtl_cycles": 4447094,
+      "rtl_read_bursts": 6298
+    },
+    {
+      "angle_deg": 13.7,
+      "pixels": 307200,
+      "crc32": "77C275BD",
+      "source_sha256": "20acb20ef0af11f7c00ad6f7d844c75264939ce8339270510ed7890566e7c0de",
+      "scalar_coordinate_spotchecks": 2052,
+      "masked_pixels": 0,
+      "matches_previous_six_angle_oracle": false,
+      "rtl_cycles": 4446266,
+      "rtl_read_bursts": 9795
+    },
+    {
+      "angle_deg": -23.45,
+      "pixels": 307200,
+      "crc32": "2A30A7E8",
+      "source_sha256": "32dcf547435bd03c8ece1e1875c3741d676e54d3c65245daec93ae99df3bbcff",
+      "scalar_coordinate_spotchecks": 2052,
+      "masked_pixels": 0,
+      "matches_previous_six_angle_oracle": false,
+      "rtl_cycles": 4459536,
+      "rtl_read_bursts": 14445
+    },
+    {
+      "angle_deg": 89.99,
+      "pixels": 307200,
+      "crc32": "B05CAF47",
+      "source_sha256": "20acb20ef0af11f7c00ad6f7d844c75264939ce8339270510ed7890566e7c0de",
+      "scalar_coordinate_spotchecks": 2052,
+      "masked_pixels": 0,
+      "matches_previous_six_angle_oracle": false,
+      "rtl_cycles": 4638652,
+      "rtl_read_bursts": 30437
+    },
+    {
+      "angle_deg": 137.25,
+      "pixels": 307200,
+      "crc32": "A9B8C910",
+      "source_sha256": "32dcf547435bd03c8ece1e1875c3741d676e54d3c65245daec93ae99df3bbcff",
+      "scalar_coordinate_spotchecks": 2052,
+      "masked_pixels": 0,
+      "matches_previous_six_angle_oracle": false,
+      "rtl_cycles": 4534050,
+      "rtl_read_bursts": 22319
+    },
+    {
+      "angle_deg": 333.375,
+      "pixels": 307200,
+      "crc32": "D9323771",
+      "source_sha256": "20acb20ef0af11f7c00ad6f7d844c75264939ce8339270510ed7890566e7c0de",
+      "scalar_coordinate_spotchecks": 2052,
+      "masked_pixels": 0,
+      "matches_previous_six_angle_oracle": false,
+      "rtl_cycles": 4469140,
+      "rtl_read_bursts": 15863
+    }
+  ],
+  "source_sha256": {
+    "rtl\\bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "rtl\\ddr_remap_sample.v": "bac1799188cd5e3264a2cd5615b59dd2f20871e180172d20ef922758d2f6d989",
+    "rtl\\mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "rtl\\pixel_inverse_rotation.v": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+    "rtl\\bounded_brown_inverse_mapper.v": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691",
+    "rtl\\rotated_remap_core.v": "61b9e40ee265bb74c55db070afeee351979cc080f4f27d8b0fc81d0c3bfa3fb7",
+    "rtl\\experimental\\ddr_adaptive_cache.v": "7f77c9ac23c7c3758921c9e815bd0324da193eec2a8e5917db0a44f40c4ec926",
+    "rtl\\experimental\\adaptive_tiled_frame_engine.v": "61a4f210a2f80cf8855f17e61a77ad51b8705bd00300dd8834075ff462d2d5c5",
+    "rtl\\experimental\\ddr_adaptive_result_writer.v": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+    "tests\\tb_host_angle_native_regression.sv": "3378185fc2b2c4dc3bb52cd2d42319541ad4ef11e17d4983fb08c60605694ce8",
+    "board\\calibration-trial.vh": "dba0e58092f92d920ad110c3fa9eff53988d3c086af31de6a582a97500ea0fe5",
+    "board\\rotation-domain.vh": "92337318bff93801e8456c99eeb4d81afd0ce88807514202270d268b21fc9ab5"
+  },
+  "simulation_sha256": "6842919a4c030fb4ec59d878f1c20489b0c0f51674af53d06f031ecab764d606",
+  "limits": "Six non-step full-size frames with real-camera sources, independent scalar/vector coordinate checks, all RGB565 pixels and CRCs, frame-locked parameters, immutable source and synthetic DDR stalls. UART/CORDIC controller is tested separately; this is not full-board host-control or optical quality validation."
+}

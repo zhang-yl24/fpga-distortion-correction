@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "complete_frames_checked": 12,
+  "pixels_checked": 3072,
+  "traversals": [
+    "raster",
+    "8x8 tiled with nonmonotonic raster-address tags"
+  ],
+  "checks": [
+    "atomic pixel/tag/geometry-mask under output stalls and input gaps",
+    "two-complete-frame hysteresis with frame-locked mode",
+    "real black participates in statistics; explicit geometry mask excluded",
+    "reset and disabled-frame bypass"
+  ],
+  "source_sha256": {
+    "rtl\\experimental\\adaptive_gamma_tagged.v": "B3FA1F2C4B07B6E616350D0488AB4478703B1C4AA3773D2A40631ED6C2E91790",
+    "tests\\tb_gamma_tagged.sv": "A72D8C2DB8E5477B75B9FB1387AED9370BD0940E22BA21848C507983F8849A57",
+    "build\\gamma_sim\\golden.mem": "42C2C1F046A877E5DCE7FB13B94629A3B2003CD21C951D550171EADAEB8B11A9",
+    "rtl\\experimental\\gamma_curves.vh": "B5B64E36F30448F39C1A188CD04D35FD98185EE23D5B77510EFF43F0DEEC78EA",
+    "rtl\\experimental\\adaptive_gamma_stream.v": "8FC733802CA8CDF55F9E0039EAEF2A16C0F0EFE10AF41F4AC3619715A9D11AF7"
+  },
+  "simulation_log_sha256": "AB72259C79BFD9277FBBB67223010911A1C5C1646E4E9D70BB3C4F09A1194629",
+  "limits": "Isolated 16x16 tone/metadata stage using full exhaustive RGB565 golden table. Assumes producer starts tag 0 and ends tag N-1, as the existing raster and 8x8 engines do. Full remapper must transport an explicit geometry mask; DDR writer, frame CRC, integrated timing, live video and optical improvement are not established by this test."
+}

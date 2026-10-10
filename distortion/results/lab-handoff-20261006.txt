@@ -1,0 +1,19 @@
+下次实验室复测（本文件不执行硬件操作）
+
+1. 断电做好散热和通风。保持摄像头J2、3.3V选择、HDMI OUT与UART接法；先冷却再短时测试。
+2. 在 D:/English/FPGA/distortion 执行离线校验：
+   powershell -NoProfile -ExecutionPolicy Bypass -File tools/program-heartbeat.ps1 -Target corrected_fast -ValidateOnly
+3. 开发板连接后，由当次实验室会话明确开始下载：
+   powershell -NoProfile -ExecutionPolicy Bypass -File tools/program-heartbeat.ps1 -Target corrected_fast -Frequency 5MHz
+   powershell -NoProfile -ExecutionPolicy Bypass -File tools/read-telemetry.ps1 -Target corrected_fast -Seconds 16
+   查看矫正实时画面和WF/CF/PF、UF/MF/OW/X；先与原版比较，PF包括重复显示，CF才是新增处理帧。
+4. 旋转/测温版：
+   powershell -NoProfile -ExecutionPolicy Bypass -File tools/program-heartbeat.ps1 -Target corrected_rotate -ValidateOnly
+   powershell -NoProfile -ExecutionPolicy Bypass -File tools/program-heartbeat.ps1 -Target corrected_rotate -Frequency 5MHz
+   按KEY0：短按30°，长按约1秒开启/关闭自动演示，每3秒换角度。
+   powershell -NoProfile -ExecutionPolicy Bypass -File tools/read-telemetry.ps1 -Target corrected_rotate -Seconds 16
+   python tools/analyze-rotation-telemetry.py build/corrected_rotate/telemetry-timed.json --output results/rotated-video-lab-check.json
+5. 先确认TV=1、TF=0、TA小于54000000；TR高12位近似转换温度。若有红外仪、热像仪或温度探头则交叉核对；没有则标记未外部校准。内部参考ADC未经实测校准，85℃是本验收工具可调整的诊断上限，不是芯片额定温度结论。TV=0/TF非零不能当作正常温度；过热先断电处理。
+6. 核对每个角度、黑色边界、帧切换、按键复位/重新上电，记录新增处理帧率与实际可见延迟。光学质量另用中心/边缘棋盘数据评估。
+
+以上命令只有在开发板重新连接、实验室会话开始后执行。本次发布已通过离线检查，仍未实板验证旋转与温度。

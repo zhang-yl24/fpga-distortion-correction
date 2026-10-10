@@ -1,0 +1,172 @@
+{
+  "recorded_utc": "2026-10-08T12:26:29.024437+00:00",
+  "hardware_accessed": false,
+  "stable_target": "corrected_gamma_d5",
+  "stable_bitstream_sha256": "069D8ACEF8DED0CD62D19EE47C83E06910DF35BD0D76A9DF29403A8A14B877CF",
+  "evidence": [
+    {
+      "id": "E01",
+      "claim": "Camera D5 mapping restored",
+      "level": "physical",
+      "value": "14400/14400 white pixels FFFF",
+      "file": "results/lab-20261008/d5-correction.json",
+      "limit": "Remaining color requires a neutral target",
+      "sha256": "E29C9F75F1DAE75D0577355DA18A3B476BC545DE44887022CF871D03D4818247"
+    },
+    {
+      "id": "E02",
+      "claim": "Corrected full-frame remap and Gamma match integer oracle",
+      "level": "physical",
+      "value": "640x480; zero mismatched pixels",
+      "file": "captures/gamma-triplets/optical-d5-fixed-20261008/summary.json",
+      "limit": "Empty-chair scene; no optical quality acceptance",
+      "sha256": "440072EB5265208EB141C63BD11D213D1E506EA823D7C306FA24B704769A703C"
+    },
+    {
+      "id": "E03",
+      "claim": "Corrected stable live 12-angle rotation",
+      "level": "physical_serial",
+      "value": "15.9794 new fps; video error counters zero",
+      "file": "results/lab-20261008/d5-video-check.json",
+      "limit": "38.24-second sampled span; no human visual confirmation",
+      "sha256": "C6CE6ED95A3259B8F8A9A7F810CC10E7768B66F82F5F86F2C4061562D028DC05"
+    },
+    {
+      "id": "E04",
+      "claim": "Stable core final timing and source binding",
+      "level": "final_route",
+      "value": "125 MHz; D5 AA23",
+      "file": "build/corrected_gamma_d5/validated-build.json",
+      "limit": "SRAM transfer; not repeated autonomous Flash boot",
+      "sha256": "1255223EDA0814E9DF6B97F204EA8E8B6AAE552A4D0839CB4F954C7C5078D120"
+    },
+    {
+      "id": "E05",
+      "claim": "Parity cache matches baseline pixels and cadence",
+      "level": "simulation",
+      "value": "3686400 pixels; 12 angles; 2322 queries; 161 stream packets",
+      "file": "results/lab-20261008/pipeline-parity-regression.json",
+      "limit": "Synthetic DDR stalls; historical camera words used as received",
+      "sha256": "3454B3DDD031C5AD528E19865B40B1D292C9772206B2C9C6F5765334801EE8DA"
+    },
+    {
+      "id": "E06",
+      "claim": "Parity cache mapped RAM reduction",
+      "level": "mapped_only",
+      "value": "DRM 36 to 28",
+      "file": "build/corrected_pipeline_parity_cadence/build.log",
+      "limit": "Final route timed out; no valid bitstream or board speed claim",
+      "sha256": "F275309F86B0FE0D07893476DBB6052B99AA428A04D36431E34F7CDF76FC66AC"
+    },
+    {
+      "id": "E07",
+      "claim": "Host protocol and evidence gates",
+      "level": "host_tests",
+      "value": "56 tests passed",
+      "file": "results/lab-20261008/session.json",
+      "limit": "Separate from hardware and optical acceptance",
+      "sha256": "B47089E51B118D4CF2127F93FB1BE5B4A501EFB44CA078C0A2A2B8D63B96973A"
+    },
+    {
+      "id": "E08",
+      "claim": "Slanted-edge diagnostic estimator",
+      "level": "synthetic_validation",
+      "value": "10 tests; maximum Gaussian MTF50 error 2.04%",
+      "file": "output/project/sfr-validation.json",
+      "limit": "No physical edge measurement; not ISO compliance",
+      "sha256": "7B4762B876CC5020C7C0B6B7256EFF67E6A80B4833048902EDEEA79761FA1560"
+    },
+    {
+      "id": "E09",
+      "claim": "Historical center grid collinearity",
+      "level": "historical_diagnostic",
+      "value": "15.87% RMS residual reduction in one complete pair",
+      "file": "results/lab-20261008/grid-straightness.json",
+      "limit": "Pre-D5 correction; two edge pairs incomplete; fresh acceptance pending",
+      "sha256": "F92F1DD632FB1A07405A6717D1584C482F4367524AF6A590EFC995788228EF50"
+    }
+  ],
+  "verified_release": "D:\\English\\FPGA\\distortion\\results\\verified\\lab-release-20261008-191622-981116",
+  "verified_release_files": 875,
+  "last_known_board_target": "heartbeat",
+  "last_actual_idle_confirmation": "2026-10-08T19:07:14.3303078+08:00",
+  "engineering_budgets_not_achieved_performance": [
+    {
+      "width": 640,
+      "height": 480,
+      "target_new_fps": 30,
+      "minimum_dvp_rgb565_byte_clock_hz": 18432000,
+      "core_cycles_per_pixel_budget_at_125mhz": 13.563368055555555,
+      "rgb565_frame_bytes": 614400,
+      "power_of_two_bank_stride_bytes": 1048576,
+      "four_bank_bytes": 4194304,
+      "uncached_four_neighbor_DDR_pixel_traffic_bytes_per_second": 129024000,
+      "current_48mhz_input_constraint_covers_minimum": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "target_new_fps": 15,
+      "minimum_dvp_rgb565_byte_clock_hz": 27648000,
+      "core_cycles_per_pixel_budget_at_125mhz": 9.04224537037037,
+      "rgb565_frame_bytes": 1843200,
+      "power_of_two_bank_stride_bytes": 2097152,
+      "four_bank_bytes": 8388608,
+      "uncached_four_neighbor_DDR_pixel_traffic_bytes_per_second": 193536000,
+      "current_48mhz_input_constraint_covers_minimum": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "target_new_fps": 30,
+      "minimum_dvp_rgb565_byte_clock_hz": 55296000,
+      "core_cycles_per_pixel_budget_at_125mhz": 4.521122685185185,
+      "rgb565_frame_bytes": 1843200,
+      "power_of_two_bank_stride_bytes": 2097152,
+      "four_bank_bytes": 8388608,
+      "uncached_four_neighbor_DDR_pixel_traffic_bytes_per_second": 387072000,
+      "current_48mhz_input_constraint_covers_minimum": false
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "target_new_fps": 30,
+      "minimum_dvp_rgb565_byte_clock_hz": 124416000,
+      "core_cycles_per_pixel_budget_at_125mhz": 2.0093878600823047,
+      "rgb565_frame_bytes": 4147200,
+      "power_of_two_bank_stride_bytes": 4194304,
+      "four_bank_bytes": 16777216,
+      "uncached_four_neighbor_DDR_pixel_traffic_bytes_per_second": 870912000,
+      "current_48mhz_input_constraint_covers_minimum": false
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "target_new_fps": 60,
+      "minimum_dvp_rgb565_byte_clock_hz": 248832000,
+      "core_cycles_per_pixel_budget_at_125mhz": 1.0046939300411524,
+      "rgb565_frame_bytes": 4147200,
+      "power_of_two_bank_stride_bytes": 4194304,
+      "four_bank_bytes": 16777216,
+      "uncached_four_neighbor_DDR_pixel_traffic_bytes_per_second": 1741824000,
+      "current_48mhz_input_constraint_covers_minimum": false
+    }
+  ],
+  "budget_assumptions": "125 MHz core; 8-bit RGB565 DVP requires two bytes/pixel; bank stride is in BYTES. Ideal DDR traffic counts 2-byte source write + four 2-byte neighbours + 2-byte result write + 2-byte display read, excludes arbitration/bursts/repeated display/command overhead. Reuse can reduce reads; misses can increase traffic. A timing constraint is not a measured camera clock or sensor maximum.",
+  "local_deadline": "2026-10-31",
+  "feature_freeze_target": "2026-10-20",
+  "rehearsal_release_target": "2026-10-26",
+  "published_deadline": {
+    "date": "2026-11-04T18:00:00+08:00",
+    "source": "https://jiaowu.buaa.edu.cn/info/1016/9028.htm",
+    "scope": "Published university notice; latest organiser and campus deadlines require confirmation. Preserve earlier user deadline."
+  },
+  "awards": {
+    "target": "National first prize; best engineering and enterprise special award as additional targets",
+    "source": "https://jiaowu.buaa.edu.cn/info/1016/9028.htm",
+    "award_level_established": false
+  },
+  "source_sha256": {
+    "tools/build-project-evidence.py": "3B5B4FAF4ACD312D418A3B76058CE9FBE8F9FB0F3569886962EC149F0AD59075"
+  }
+}

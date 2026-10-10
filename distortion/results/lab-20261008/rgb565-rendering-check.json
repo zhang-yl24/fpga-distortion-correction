@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "rgb565_values_tested": 65536,
+  "png_decoder": "Pillow RGB; encoder OpenCV BGR",
+  "physical_png_files_verified": [
+    "captures\\gamma-triplets\\physical-bright-20261008\\group-00000001\\raw.png",
+    "captures\\gamma-triplets\\physical-bright-20261008\\group-00000001\\before.png",
+    "captures\\gamma-triplets\\physical-bright-20261008\\group-00000001\\after.png",
+    "captures\\gamma-triplets\\physical-bright-warmed-20261008\\group-00000001\\raw.png",
+    "captures\\gamma-triplets\\physical-bright-warmed-20261008\\group-00000001\\before.png",
+    "captures\\gamma-triplets\\physical-bright-warmed-20261008\\group-00000001\\after.png",
+    "captures\\gamma-triplets\\physical-dark-warmed-20261008\\group-00000001\\raw.png",
+    "captures\\gamma-triplets\\physical-dark-warmed-20261008\\group-00000001\\before.png",
+    "captures\\gamma-triplets\\physical-dark-warmed-20261008\\group-00000001\\after.png"
+  ],
+  "source_sha256": {
+    "tools/check-rgb565-rendering.py": "52EC9F0546EFFBE103E6E3EA45B162ED98F0E6E6792A0A327C17BC1E4B4DC4FC",
+    "tools/evaluate-tone-pair.py": "DAACD9FFC571BD99EC8B2F0B9874FFEFD18AFAFA49972D55ED1FF0AE090955D7",
+    "rtl/camera_preview.v": "9CC0A8344A3245F2C986D6AC7BB3ABEA721FBB04DE4404C2025B1DB361A17681"
+  },
+  "limits": "Proves host integer expansion and PNG roundtrip match the HDL concatenation, not physical HDMI transmitter/monitor colorimetry. Frozen export and live preview are different times and sample grids."
+}

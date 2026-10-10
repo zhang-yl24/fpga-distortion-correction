@@ -1,0 +1,25 @@
+{
+  "review_method": "Visual inspection of saved physical PNGs and weak-light three-panel figure; independent of display observation",
+  "unwarmed_bright": {
+    "capture": "captures/gamma-triplets/physical-bright-20261008/summary.json",
+    "observations": "Strong green cast; source is unsuitable as normal white-paper optical acceptance",
+    "user_display_observation": "User did not notice the display color"
+  },
+  "warmed_bright": {
+    "capture": "captures/gamma-triplets/physical-bright-warmed-20261008/summary.json",
+    "observations": "Center appears gray-white; cyan/green cast and noise remain near edges",
+    "mode": 0,
+    "strong_light_compression_accepted": false
+  },
+  "warmed_dark": {
+    "capture": "captures/gamma-triplets/physical-dark-warmed-20261008/summary.json",
+    "observations": "Gamma increases visible brightness; cyan/green cast and noise are visible and texture is indistinct",
+    "mode": 1,
+    "mean_luminance_before": 40.64973861335451,
+    "mean_luminance_after": 71.71657680304278,
+    "low_light_detail_recovery_accepted": false,
+    "user_display_observation": "User corrected display observation: only a slight green tint, much less than saved figure; user suspects lighting, root cause not verified"
+  },
+  "display_capture_relationship": "gamma_capture HDMI uses camera_preview: ongoing live frames sampled every fourth pixel and row; triplet exports freeze an earlier full frame. These are different times and grids, not a direct HDMI-versus-PNG pixel comparison.",
+  "limits": "Waiting two seconds after camera/DDR readiness was added and verified. Changes across captures are not a controlled proof of startup white-balance as the root cause. Exact digital outputs and brightness changes do not prove color fidelity, recovered detail, temporal noise reduction or optical accuracy."
+}

@@ -1,0 +1,170 @@
+PAGE 1
+深圳市小眼睛科技有限公司
+- 1 -
+MES-FMC-LPC-IO 子卡硬件使用手册
+小眼睛科技 MES-FMC-LPC-IO 子卡
+适用于紫光同创 Logos2 系列 PG2L100H/200H-676 开发平台
+适用于紫光同创 Titan2 系列 PG2T390H-900 开发平台
+深圳市小眼睛科技有限公司
+版权所有 侵权必究
+
+PAGE 2
+深圳市小眼睛科技有限公司
+- 2 -
+文档版本修订记录
+版本号 发布日期 修订记录
+V1.1 2025/3/5 初始版本
+公司名称：深圳市小眼睛科技有限公司
+官方淘宝店铺：小眼睛半导体
+淘宝店铺链接：https://shop372525434.taobao.com
+地址：深圳市宝安区西乡街道 F518 时尚创意园
+官方网址：www.meyesemi.com
+* 请关注小眼睛科技官方微信公众号“小眼睛 FPGA”
+我们将不定期更新 FPGA 学习资料和行业资讯
+* 请关注抖音/视频号“小眼睛 FPGA” /B 站“小眼睛半导体”
+海量 FPGA 教学视频免费学习
+** 加入 FPGA 开发者技术交流 QQ 群（442106123）
+与 4000+FPGA 开发者实时沟通
+* 小眼睛 FPGA 已入驻电子发烧友 FPGA 开发者技术社区
+FPGA 相关帖子资源丰富，更有 600W+开发者及小眼睛 FPGA 技术团队
+为大家解决技术难题，让您售后无忧
+网址：https://bbs.elecfans.com/xfpga
+* 微信公众号 * 抖音号 * 视频号
+PAGE 3
+深圳市小眼睛科技有限公司
+- 3 -
+1. MES-FMC-LPC-IO 子卡概述
+FMC-LPC-IO 子卡实物图
+MES-FMC-LPC-IO 子卡采用 ASP-134604-01 连接器，符合 FMC 接口规范，是标准
+的 LPC 接口。
+MES-FMC-LPC-IO 子卡为 FPGA 开发板 FMC 接口扩展 2 路 40pin 扩展 IO，共 68
+个用户 IO，提供丰富的 IO 连接外部设备，MES-FMC-LPC-IO 子卡的 40pin 扩展 IO 与
+小眼睛科技 FPGA 开发板的 40pin IO 线序一致，配套外设模块在 MES-FMC-LPC-IO 子
+卡上可直接连接使用。MES-FMC-LPC-IO 子卡上 6 个 SMA 接口连接一路高速串行收发
+器和一路高速串行收发器参考时钟输入，支持高速数据传输。
+PAGE 4
+深圳市小眼睛科技有限公司
+- 4 -
+2. MES-FMC-LPC-IO 子卡接口
+MES-FMC-LPC-IO 子卡接口说明
+ FMC_LPC 连接器*1 个
+ 40pin 扩展 IO*2 路
+ 高速串行收发器 SMA 接口*1 路
+ 高速串行收发器参考时钟 SMA 接口*1 路
+PAGE 5
+深圳市小眼睛科技有限公司
+- 5 -
+3. MES-FMC-LPC-IO 子卡功能框图
+MES-FMC-LPC-IO 子卡功能框图
+MES-FMC-LPC-IO 子卡所能实现的功能描述如下：
+ 40pin 扩展 IO
+扩展 2 路 2.54mm 标准间距的 40 针的扩展口，共 68 个用户 IO，可连接配套 40pin
+IO 接口的模块，或使用杜邦线连接其他外设模块。
+ 高速串行收发器 SMA 接口
+扩展 1 路高速串行收发器 SMA 接口，共 4 个 SMA 座连接 FPGA 高速串行收发器的
+一路差分 RX/TX。
+ 高速串行收发器参考时钟 SMA 接口
+扩展 1 路高速串行收发器参考时钟 SMA 接口，共 2 个 SMA 座连接 FPGA 高速串行
+收发器的一路差分参考时钟输入接口。
+PAGE 6
+深圳市小眼睛科技有限公司
+- 6 -
+4. MES-FMC-LPC-IO 子卡管脚说明
+4.1. 40pin 扩展 IO 接口
+MES-FMC-LPC-IO 子卡的 40pin 扩展 IO 与小眼睛科技 FPGA 开发板的 40pin IO 线
+序一致，其中 Pin2 为+5V，Pin39 和 Pin40 为+3.3V，Pin1、Pin37 和 Pin38 为 GND，其
+余为 FPGA_IO，可直接连接开发板配套 40Pin 接口的外设模块，如下图所示可连接双目
+摄像头模块、ADDA 模块、PMOD 实验模块等，需注意对应 FPGA IO Bank 供电选择与
+外设模块相同电平标准。
+
+PAGE 7
+深圳市小眼睛科技有限公司
+- 7 -
+40pin 扩展 IO J2 具体的管脚定义如下：
+J2 具体的管脚分配如下表所示：
+J2 信号 FMC 管脚
+PG2L100H/
+200H-676 管脚
+J2 信号 FMC 管脚
+PG2L100H/
+200H-676 管脚
+1 GND / 2 A5V0 /
+3 CLK0_C2M_N V14 4 CLK0_C2M_P U14
+5 LA00_N_CC Y21 6 LA00_P_CC W21
+7 LA02_N T15 8 LA02_P T14
+9 LA04_N W18 10 LA04_P V18
+11 LA07_N U20 12 LA07_P T20
+13 LA15_N Y26 14 LA15_P W25
+15 LA11_N AC24 16 LA11_P AB24
+17 LA01_N_CC Y23 18 LA01_P_CC Y22
+19 LA03_N V17 20 LA03_P V16
+21 LA06_N T18 22 LA06_P T17
+PAGE 8
+深圳市小眼睛科技有限公司
+- 8 -
+23 LA05_N W19 24 LA05_P V19
+25 LA08_N U26 26 LA08_P U25
+27 LA16_N AB25 28 LA16_P AA24
+29 LA12_N AA23 30 LA12_P AA22
+31 LA17_N_CC V21 32 LA17_P_CC U21
+33 LA10_N W23 34 LA10_P V23
+35 LA09_N Y20 36 LA09_P W20
+37 GND / 38 GND /
+39 A3V3 / 40 A3V3 /
+40pin 扩展 IO J3 具体的管脚定义如下：
+注：MES-FMC-LPC-IO 子卡 J3 扩展 IO 部分管脚仅 PG2L200H-676 支持（标“*”号），对应 PG2L100H-676 为 NC
+PAGE 9
+深圳市小眼睛科技有限公司
+- 9 -
+J3 具体的管脚分配如下表所示：
+J3 信号 FMC 管脚
+PG2L100H/
+200H-676 管脚
+J3 信号 FMC 管脚
+PG2L100H/
+200H-676 管脚
+1 GND / 2 A5V0 /
+3* LA28_N AD26 4* LA28_P AD25
+5* LA29_N AC23 6* LA29_P AC22
+7* LA24_N W15 8* LA24_P W14
+9* LA21_N AF18 10* LA21_P AE18
+11* LA33_N AE20 12* LA33_P AD20
+13* LA30_N AF20 14* LA30_P AF19
+15* LA32_N AB20 16* LA32_P AA20
+17 LA18_N_CC V22 18 LA18_P_CC U22
+19* LA27_N AD17 20* LA27_P AC17
+21* LA26_N AF17 22* LA26_P AE17
+23 LA22_N W26 24 LA22_P V26
+25 LA23_N U19 26 LA23_P T19
+27 LA19_N U16 28 LA19_P U15
+29 LA20_N AC26 30 LA20_P AB26
+31* CLK0_M2C_N AD19 32* CLK0_M2C_P AC19
+33 LA14_N AA25 34 LA14_P Y25
+35 LA13_N W24 36 LA13_P V24
+37 GND / 38 GND /
+39 A3V3 / 40 A3V3 /
+注：MES-FMC-LPC-IO 子卡 J3 扩展 IO 部分管脚仅 PG2L200H-676 支持（标“*”号），对应 PG2L100H-676 为 NC
+PAGE 10
+深圳市小眼睛科技有限公司
+- 10 -
+4.2. SMA 接口
+SMA 接口原理图如下：
+SMA 接口对应管脚如下表所示：
+SMA 接口信号 FMC 管脚 PG2L100H/200H-676 管脚
+HSSTRX2P_QL7 DP0_M2C_P AC14
+HSSTRX2N_QL7 DP0_M2C_N AD14
+HSSTTX2P_QL7 DP0_C2M_P AC8
+HSSTTX2N_QL7 DP0_C2M_N AD8
+FMC_LPC_GBTCLK0_M2C_P GBTCLK0_M2C_P AA13
+FMC_LPC_GBTCLK0_M2C_N GBTCLK0_M2C_N AB13
+PAGE 11
+深圳市小眼睛科技有限公司
+- 11 -
+5. IO 电平说明
+MES-FMC-LPC-IO 子 卡 的 IO 电 平 标 准 由 IO 所 属 的 Bank 的 供 电 决 定 ， 以
+PG2L100H-676 开 发 板 及 PG2L200H-676 开 发 板 为 例 ， 扩 展 FMC 接 口 连 接
+MES-FMC-LPC-IO 子卡时，扩展 IO 对应连接 FPGA 的 Bank _L6 和 Bank _L7 的 IO，开
+发板 Bank _L6 和 Bank _L7 的供电可由跳线帽选择连接 3.3V/2.5V/1.8V 供电，可适配多
+种电平标准的外设。
+6. MES-FMC-LPC-IO 子卡尺寸图
+FMC 子卡尺寸图

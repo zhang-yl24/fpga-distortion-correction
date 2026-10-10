@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "tests_passed": 12,
+  "hardware_accessed": false,
+  "source_sha256": {
+    "model/host_protocol.py": "aab3129afa9f8384af8c489a9aa3b097bfdcaf229f2454f3c04da924fd3cbf6b",
+    "tools/host-angle.py": "9b9e08c1efbabed3ac2c469a9fdbf7a2e6fb071c3731984692369006551efbbb",
+    "tests/test_host_protocol.py": "948529cc67ab6bf9be4f24f7083e9cffafed400ca016ff59e1ff86191d12ed62",
+    "tests/test_host_cli.py": "cb1fb6fe92f1e411ed56f3c390fa856f96e33befff1655cffd0ba66f42815b19"
+  },
+  "test_log_sha256": "112a8fc021ccc89412dcd664a4c42d8600e9cac9bdbd0d110aa721e97e574c72",
+  "limits": "UART and heartbeat subprocesses are mocked. Confirms packet compatibility, readiness guard, one-write/no-retry behavior, fresh completed-frame acknowledgement and finally-idle invocation; actual CP2102 writes and heartbeat recovery still require hardware."
+}

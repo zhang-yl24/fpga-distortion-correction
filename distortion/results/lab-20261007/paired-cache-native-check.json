@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "pixels_checked": 1843200,
+  "frames": [
+    {
+      "angle_deg": 0,
+      "pixels": 307200,
+      "crc32": "2c51ebbb",
+      "paired_cycles": 2600020,
+      "previous_short_burst_cycles": 3808498,
+      "adaptive_16_beat_cycles": 3807193,
+      "read_bursts": 2400,
+      "process_ms_at_125mhz": 20.80016,
+      "cycle_reduction_from_short_burst_percent": 31.731091889768614,
+      "cycle_reduction_from_adaptive_16_beat_percent": 31.707691204517342
+    },
+    {
+      "angle_deg": 30,
+      "pixels": 307200,
+      "crc32": "fcab7734",
+      "paired_cycles": 3302642,
+      "previous_short_burst_cycles": 4305076,
+      "adaptive_16_beat_cycles": 4478433,
+      "read_bursts": 18297,
+      "process_ms_at_125mhz": 26.421136,
+      "cycle_reduction_from_short_burst_percent": 23.284931555215284,
+      "cycle_reduction_from_adaptive_16_beat_percent": 26.25451804235991
+    },
+    {
+      "angle_deg": -30,
+      "pixels": 307200,
+      "crc32": "69b49c75",
+      "paired_cycles": 3305874,
+      "previous_short_burst_cycles": 4310050,
+      "adaptive_16_beat_cycles": 4481280,
+      "read_bursts": 18300,
+      "process_ms_at_125mhz": 26.446992,
+      "cycle_reduction_from_short_burst_percent": 23.298476815814205,
+      "cycle_reduction_from_adaptive_16_beat_percent": 26.229247000856905
+    },
+    {
+      "angle_deg": 90,
+      "pixels": 307200,
+      "crc32": "28c15288",
+      "paired_cycles": 3423096,
+      "previous_short_burst_cycles": 4305386,
+      "adaptive_16_beat_cycles": 4638182,
+      "read_bursts": 30720,
+      "process_ms_at_125mhz": 27.384768,
+      "cycle_reduction_from_short_burst_percent": 20.492703790089905,
+      "cycle_reduction_from_adaptive_16_beat_percent": 26.197462712761165
+    },
+    {
+      "angle_deg": -90,
+      "pixels": 307200,
+      "crc32": "7f7ee7ec",
+      "paired_cycles": 3423524,
+      "previous_short_burst_cycles": 4305074,
+      "adaptive_16_beat_cycles": 4637492,
+      "read_bursts": 30720,
+      "process_ms_at_125mhz": 27.388192,
+      "cycle_reduction_from_short_burst_percent": 20.47699993077935,
+      "cycle_reduction_from_adaptive_16_beat_percent": 26.1772527046947
+    },
+    {
+      "angle_deg": 180,
+      "pixels": 307200,
+      "crc32": "001c0afb",
+      "paired_cycles": 2599182,
+      "previous_short_burst_cycles": 3807851,
+      "adaptive_16_beat_cycles": 3806491,
+      "read_bursts": 2400,
+      "process_ms_at_125mhz": 20.793456,
+      "cycle_reduction_from_short_burst_percent": 31.741499339128552,
+      "cycle_reduction_from_adaptive_16_beat_percent": 31.71711163903973
+    }
+  ],
+  "source_sha256": {
+    "rtl\\experimental\\ddr_paired_cache.v": "8d1af2bd133bb378eafa1e3f880f6b5a4efdd5eda77fd90a90200b63c1b6bc3a",
+    "rtl\\experimental\\paired_cache_frame_engine.v": "d843ded09f022a7d681b7c4439583800a8dd22adfa9a1214534c206ce2a00735",
+    "rtl\\experimental\\ddr_adaptive_result_writer.v": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+    "rtl\\experimental\\ddr_paired_video.v": "3c1673d47da92e07211b12b8a0721b512dd32eec8b41f874e198231680600a4c",
+    "tests\\tb_ddr_paired_video.sv": "c7d46587a4d497872cee96585e34a2ef9b10b1018581f249abd38cc5b360dad7"
+  },
+  "query_fault_regression_passed": true,
+  "mixed_burst_camera_hdmi_simulation_passed": true,
+  "strategy": "Direct computed-line tag check, paired horizontal neighbors from one synchronous RAM beat, 32 cache lines with 8-beat bursts; raster near 0/180 and tiles otherwise.",
+  "limits": "Six native frames and 2322 independent query oracles, plus small three-clock camera/DDR/HDMI test with mixed 8/16-beat reads, ownership, CRC, malformed-response and reset checks. Synthetic DDR model; not a board target. Controller compatibility, routed timing, physical bandwidth, FPS and temperature still require validation."
+}

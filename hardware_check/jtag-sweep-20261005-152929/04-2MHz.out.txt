@@ -1,0 +1,17 @@
+Executing : cfg_set_tcl_break -flag true
+Executing : cfg_set_tcl_break -flag true successfully.
+Executing : cfg_connect -ip 127.0.0.1 -port 65420
+Connecting to server[127.0.0.1 : 65420].
+Connect to server[127.0.0.1 : 65420] successfully.
+COMMAND[check version information] execute successfully, takes 1.0 secs.
+The cable List : 
+Cable index 0:USB Cable II/fffffffffffffffe 
+
+COMMAND[get_cable_paras] execute successfully, takes 1.7 secs.
+Executing : cfg_connect -ip 127.0.0.1 -port 65420 successfully.
+Executing : cfg_set_cable_property -index 0 -freq 2MHz
+W: Configuration-4002: Tcl parameter check failed: The input Frequency is not support value, 
+ The cable is supported : 15 MHz 10 MHz 5 MHz 1 MHz 500 KHz 100 KHz .
+E: Configuration-0009: Operation error :
+ cfg_set_cable_property command can't be exec.
+0

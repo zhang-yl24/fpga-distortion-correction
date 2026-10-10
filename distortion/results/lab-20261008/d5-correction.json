@@ -1,0 +1,789 @@
+{
+  "recorded_utc": "2026-10-08T11:16:00.850740+00:00",
+  "hardware_accessed_by_recorder": false,
+  "proven_mapping_error": {
+    "camera_module_net": "CAM2_D5/MCP",
+    "camera_J17_pin": 29,
+    "FMC_J2_pin": 29,
+    "FPGA_pad": "AA23",
+    "old_FPGA_pad": "AA22",
+    "old_connector_pin": 30,
+    "old_pin_not_connected_on_camera_module": true,
+    "sensor_output_enable": "OV5640 D7, 0x3017 bit1; prior physical readback 0x7F enables it"
+  },
+  "mapping_sources": [
+    {
+      "path": "D:\\English\\FPGA\\distortion\\results\\lab-20261008\\d5-schematic\\source-camera.pdf",
+      "sha256": "B306D0B407BFF5975E975741422F09C5274BB2DE7702D0D7BEA7456827A7B592",
+      "page_1_based": 1
+    },
+    {
+      "path": "D:\\English\\FPGA\\distortion\\results\\lab-20261008\\d5-schematic\\source-fmc.pdf",
+      "sha256": "850B5AAB8986F045D53E554E1184DA1F8CC2649D352BB53AAF3CEC92B9482324",
+      "page_1_based": 8
+    }
+  ],
+  "old_data_audit": {
+    "hardware_accessed": false,
+    "wire_mapping": "DVP byte D5 -> RGB565 bits 5 and 13",
+    "source_sha256": {
+      "tools/check-dvp-bitplanes.py": "776889DE7E14839F86DA5CC8A4BA35444F5C60F237F3BB5DB508073D106500E1"
+    },
+    "captures": [
+      {
+        "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\sensor-colorbars-20261008\\group-00000001\\raw.npy",
+        "sha256": "BC16592DF902B7F272E39B0369809171D5D779B974D1FED565C945ECEAA7254A",
+        "pixels": 307200,
+        "one_counts_by_rgb565_bit": [
+          152640,
+          151680,
+          153600,
+          153120,
+          153600,
+          164,
+          192000,
+          153120,
+          153600,
+          153600,
+          153600,
+          153600,
+          153600,
+          161,
+          153600,
+          153600
+        ],
+        "dvp_wire5_low_byte_one_fraction": 0.0005338541666666666,
+        "dvp_wire5_high_byte_one_fraction": 0.0005240885416666666,
+        "target": "gamma_capture_colorbars",
+        "input_origin": "sensor_internal_test_pattern",
+        "white_roi": {
+          "dominant_rgb565": "DFDF",
+          "dominant_count": 14400,
+          "pixels": 14400,
+          "d5_both_byte_bits_set_fraction": 0.0,
+          "all_white_FFFF_fraction": 0.0
+        }
+      },
+      {
+        "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\unattended-settled-20261008\\group-00000001\\raw.npy",
+        "sha256": "BFF013C98C5D05A3A400DA3F871F27417EA15F008EDE4A27F2C99AB64B5A9065",
+        "pixels": 307200,
+        "one_counts_by_rgb565_bit": [
+          121433,
+          77438,
+          28545,
+          5751,
+          1054,
+          0,
+          169396,
+          159532,
+          74263,
+          15959,
+          1422,
+          113438,
+          68377,
+          0,
+          5043,
+          663
+        ],
+        "dvp_wire5_low_byte_one_fraction": 0.0,
+        "dvp_wire5_high_byte_one_fraction": 0.0,
+        "target": "gamma_capture_settled",
+        "input_origin": "optical_camera_scene"
+      },
+      {
+        "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\physical-bright-warmed-20261008\\group-00000001\\raw.npy",
+        "sha256": "8A659F1460CA99761333DC0561902EB5A50BB6F427B34452441349AE1655A9E5",
+        "pixels": 307200,
+        "one_counts_by_rgb565_bit": [
+          148785,
+          169780,
+          93639,
+          92215,
+          214985,
+          12,
+          159893,
+          172564,
+          26853,
+          5265,
+          301935,
+          147825,
+          160157,
+          10,
+          85085,
+          222115
+        ],
+        "dvp_wire5_low_byte_one_fraction": 3.90625e-05,
+        "dvp_wire5_high_byte_one_fraction": 3.255208333333333e-05,
+        "target": null,
+        "input_origin": null
+      },
+      {
+        "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\physical-dark-warmed-20261008\\group-00000001\\raw.npy",
+        "sha256": "CAEAB87326872726E08AC10FBF8639B55674E853AA1F6BE374FECED4540FA1F2",
+        "pixels": 307200,
+        "one_counts_by_rgb565_bit": [
+          151065,
+          154158,
+          160358,
+          86848,
+          0,
+          11,
+          160933,
+          138031,
+          114127,
+          160452,
+          0,
+          155097,
+          149137,
+          9,
+          965,
+          0
+        ],
+        "dvp_wire5_low_byte_one_fraction": 3.580729166666667e-05,
+        "dvp_wire5_high_byte_one_fraction": 2.9296875e-05,
+        "target": null,
+        "input_origin": null
+      },
+      {
+        "path": "D:\\English\\FPGA\\distortion\\captures\\corrected-pairs\\20261007-141622\\pair00000002\\raw-source.rgb565",
+        "sha256": "5D5A5561026D3A531408EE30C783E3347FE9C24B54ECC21BB463E04D1639EBB2",
+        "pixels": 307200,
+        "one_counts_by_rgb565_bit": [
+          148880,
+          151297,
+          150980,
+          91955,
+          145277,
+          4,
+          170704,
+          154215,
+          179299,
+          139839,
+          153284,
+          149950,
+          161934,
+          0,
+          127493,
+          121562
+        ],
+        "dvp_wire5_low_byte_one_fraction": 1.3020833333333334e-05,
+        "dvp_wire5_high_byte_one_fraction": 0.0
+      },
+      {
+        "path": "D:\\English\\FPGA\\distortion\\captures\\corrected-pairs\\20261006-155846\\pair00000005\\raw-source.rgb565",
+        "sha256": "20ACB20EF0AF11F7C00AD6F7D844C75264939CE8339270510ED7890566E7C0DE",
+        "pixels": 307200,
+        "one_counts_by_rgb565_bit": [
+          163786,
+          173179,
+          151316,
+          122510,
+          119539,
+          0,
+          159599,
+          169637,
+          128687,
+          165703,
+          126795,
+          161273,
+          156008,
+          0,
+          185686,
+          65767
+        ],
+        "dvp_wire5_low_byte_one_fraction": 0.0,
+        "dvp_wire5_high_byte_one_fraction": 0.0
+      }
+    ],
+    "limits": "Bit excitation must come from a known pattern; a dark/uniform natural image alone does not establish a missing wire. Historical data remains valid as received but does not certify correct camera bus wiring."
+  },
+  "physical_restoration_passed": true,
+  "corrected_candidate_builds": {
+    "gamma_capture_colorbars_d5": {
+      "bitstream_sha256": "F25E34CA639F94C94467091A9BC71E75B781F5C6C5165C9A121E610625B45803",
+      "timing_sha256": "53C4C10081753566F4A4F07F65C53C36CD9D2AB5D68E5BBAC01D253FFF600AF3",
+      "timestamp": "2026-10-08T18:57:26.9985671+08:00"
+    },
+    "gamma_capture_settled_d5": {
+      "bitstream_sha256": "45832255BB3031CFA86A2DD3BBAC45EF63805319FBE84DAD6D0ECA9A76B74FA0",
+      "timing_sha256": "677DA33DCCDBBC2E3742CE6A1F04EAE9F5E34C2F04843736D4D746397002E396",
+      "timestamp": "2026-10-08T19:00:48.3517770+08:00"
+    },
+    "corrected_gamma_d5": {
+      "bitstream_sha256": "069D8ACEF8DED0CD62D19EE47C83E06910DF35BD0D76A9DF29403A8A14B877CF",
+      "timing_sha256": "00B994EB2351E038143A61E8E8944FC527148A214CFE7F1BA306E9C7EFEB9142",
+      "timestamp": "2026-10-08T19:04:45.3836760+08:00"
+    }
+  },
+  "limits": "Earlier captures and calibration retain the actual received pixels and numerical implementation evidence, but the dropped D5 bit disqualifies their camera color fidelity. Confirm corrected visual behavior and reacquire optical/calibration acceptance data; no retrospective reconstruction of the missing bit.",
+  "pattern": {
+    "folder": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\sensor-colorbars-d5-fixed-20261008",
+    "summary_sha256": "6C30EFB681401DB0F5065A44767343502E68EAFBD24464628A6F00DA2CFF0011",
+    "capture_transfer": {
+      "Frequency": "5MHz",
+      "Device": "PG2L100H",
+      "SHA256": "F25E34CA639F94C94467091A9BC71E75B781F5C6C5165C9A121E610625B45803",
+      "Target": "gamma_capture_colorbars_d5",
+      "Done": true,
+      "CheckedOn": "2026-10-08T18:58:02.4231087+08:00"
+    },
+    "idle_transfer": {
+      "Frequency": "5MHz",
+      "Device": "PG2L100H",
+      "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+      "Target": "heartbeat",
+      "Done": true,
+      "CheckedOn": "2026-10-08T18:59:01.2382444+08:00"
+    },
+    "raw_bitplane_check": {
+      "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\sensor-colorbars-d5-fixed-20261008\\group-00000001\\raw.npy",
+      "sha256": "3196183D0F64733021233A2D9394D8C744A17058E6444CF78424A353CF4E6208",
+      "pixels": 307200,
+      "one_counts_by_rgb565_bit": [
+        152640,
+        151680,
+        153600,
+        153120,
+        153600,
+        226080,
+        192000,
+        153120,
+        153600,
+        153600,
+        153600,
+        153600,
+        153600,
+        153600,
+        153600,
+        153600
+      ],
+      "dvp_wire5_low_byte_one_fraction": 0.7359375,
+      "dvp_wire5_high_byte_one_fraction": 0.5,
+      "target": "gamma_capture_colorbars_d5",
+      "input_origin": "sensor_internal_test_pattern",
+      "white_roi": {
+        "dominant_rgb565": "FFFF",
+        "dominant_count": 14400,
+        "pixels": 14400,
+        "d5_both_byte_bits_set_fraction": 1.0,
+        "all_white_FFFF_fraction": 1.0
+      }
+    },
+    "palette_check": {
+      "hardware_accessed_by_analysis": false,
+      "sensor_generated_input": true,
+      "normal_byte_order": {
+        "central_bar_rgb_medians": [
+          [
+            255.0,
+            255.0,
+            255.0
+          ],
+          [
+            255.0,
+            255.0,
+            99.0
+          ],
+          [
+            82.0,
+            255.0,
+            222.0
+          ],
+          [
+            66.0,
+            255.0,
+            33.0
+          ],
+          [
+            189.0,
+            0.0,
+            222.0
+          ],
+          [
+            173.0,
+            8.0,
+            33.0
+          ],
+          [
+            0.0,
+            4.0,
+            156.0
+          ],
+          [
+            0.0,
+            4.0,
+            0.0
+          ]
+        ],
+        "observed_order": [
+          "white",
+          "yellow",
+          "cyan",
+          "green",
+          "magenta",
+          "red",
+          "blue",
+          "black"
+        ],
+        "max_channel_distance_to_ideal_per_bar": [
+          0.0,
+          99.0,
+          82.0,
+          66.0,
+          66.0,
+          82.0,
+          99.0,
+          4.0
+        ],
+        "within_bar_p05_p95_rgb": [
+          [
+            [
+              255.0,
+              255.0,
+              255.0
+            ],
+            [
+              255.0,
+              255.0,
+              255.0
+            ]
+          ],
+          [
+            [
+              255.0,
+              255.0,
+              99.0
+            ],
+            [
+              255.0,
+              255.0,
+              99.0
+            ]
+          ],
+          [
+            [
+              82.0,
+              255.0,
+              222.0
+            ],
+            [
+              82.0,
+              255.0,
+              222.0
+            ]
+          ],
+          [
+            [
+              66.0,
+              255.0,
+              33.0
+            ],
+            [
+              66.0,
+              255.0,
+              33.0
+            ]
+          ],
+          [
+            [
+              189.0,
+              0.0,
+              222.0
+            ],
+            [
+              189.0,
+              0.0,
+              222.0
+            ]
+          ],
+          [
+            [
+              173.0,
+              8.0,
+              33.0
+            ],
+            [
+              173.0,
+              8.0,
+              33.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              4.0,
+              156.0
+            ],
+            [
+              0.0,
+              4.0,
+              156.0
+            ]
+          ],
+          [
+            [
+              0.0,
+              4.0,
+              0.0
+            ],
+            [
+              0.0,
+              4.0,
+              0.0
+            ]
+          ]
+        ],
+        "order_matches_expected": true,
+        "levels_within_40_codes_of_ideal": false,
+        "accepted": false
+      },
+      "swapped_byte_order_counterexample": {
+        "central_bar_rgb_medians": [
+          [
+            255.0,
+            255.0,
+            255.0
+          ],
+          [
+            239.0,
+            158.0,
+            255.0
+          ],
+          [
+            255.0,
+            105.0,
+            189.0
+          ],
+          [
+            231.0,
+            138.0,
+            57.0
+          ],
+          [
+            24.0,
+            117.0,
+            198.0
+          ],
+          [
+            66.0,
+            150.0,
+            66.0
+          ],
+          [
+            49.0,
+            97.0,
+            0.0
+          ],
+          [
+            33.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "observed_order": [
+          "white",
+          "white",
+          "magenta",
+          "yellow",
+          "blue",
+          "green",
+          "black",
+          "black"
+        ],
+        "max_channel_distance_to_ideal_per_bar": [
+          0.0,
+          97.0,
+          105.0,
+          117.0,
+          117.0,
+          105.0,
+          97.0,
+          33.0
+        ],
+        "within_bar_p05_p95_rgb": [
+          [
+            [
+              255.0,
+              255.0,
+              255.0
+            ],
+            [
+              255.0,
+              255.0,
+              255.0
+            ]
+          ],
+          [
+            [
+              239.0,
+              158.0,
+              255.0
+            ],
+            [
+              239.0,
+              158.0,
+              255.0
+            ]
+          ],
+          [
+            [
+              255.0,
+              105.0,
+              189.0
+            ],
+            [
+              255.0,
+              105.0,
+              189.0
+            ]
+          ],
+          [
+            [
+              231.0,
+              138.0,
+              57.0
+            ],
+            [
+              231.0,
+              138.0,
+              57.0
+            ]
+          ],
+          [
+            [
+              24.0,
+              117.0,
+              198.0
+            ],
+            [
+              24.0,
+              117.0,
+              198.0
+            ]
+          ],
+          [
+            [
+              66.0,
+              150.0,
+              66.0
+            ],
+            [
+              66.0,
+              150.0,
+              66.0
+            ]
+          ],
+          [
+            [
+              49.0,
+              97.0,
+              0.0
+            ],
+            [
+              49.0,
+              97.0,
+              0.0
+            ]
+          ],
+          [
+            [
+              33.0,
+              0.0,
+              0.0
+            ],
+            [
+              33.0,
+              0.0,
+              0.0
+            ]
+          ]
+        ],
+        "order_matches_expected": false,
+        "levels_within_40_codes_of_ideal": false,
+        "accepted": false
+      },
+      "passed": false,
+      "byte_order_color_sequence_check_passed": true,
+      "ideal_level_color_check_passed": false,
+      "capture_summary_sha256": "6C30EFB681401DB0F5065A44767343502E68EAFBD24464628A6F00DA2CFF0011",
+      "limits": "Classifies central regions of 8 internal sensor bars against known colors. Supports DVP/DDR/UART decoding, not optical AWB, illumination fidelity, HDMI transmitter colorimetry or monitor calibration. Synthetic sensor data is not a physical bright-light acceptance."
+    }
+  },
+  "optical": {
+    "folder": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\optical-d5-fixed-20261008",
+    "summary_sha256": "440072EB5265208EB141C63BD11D213D1E506EA823D7C306FA24B704769A703C",
+    "capture_transfer": {
+      "Frequency": "5MHz",
+      "Device": "PG2L100H",
+      "SHA256": "45832255BB3031CFA86A2DD3BBAC45EF63805319FBE84DAD6D0ECA9A76B74FA0",
+      "Target": "gamma_capture_settled_d5",
+      "Done": true,
+      "CheckedOn": "2026-10-08T19:01:23.5969874+08:00"
+    },
+    "idle_transfer": {
+      "Frequency": "5MHz",
+      "Device": "PG2L100H",
+      "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+      "Target": "heartbeat",
+      "Done": true,
+      "CheckedOn": "2026-10-08T19:02:22.5866085+08:00"
+    },
+    "raw_bitplane_check": {
+      "path": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\optical-d5-fixed-20261008\\group-00000001\\raw.npy",
+      "sha256": "6D10FB85435A6850AE4F1E18CC58FCE35203D33793B01A98C185B926D2BD6C59",
+      "pixels": 307200,
+      "one_counts_by_rgb565_bit": [
+        127408,
+        89871,
+        29716,
+        15677,
+        1144,
+        157916,
+        162455,
+        156602,
+        73689,
+        28341,
+        1777,
+        123877,
+        78912,
+        31821,
+        9904,
+        789
+      ],
+      "dvp_wire5_low_byte_one_fraction": 0.5140494791666667,
+      "dvp_wire5_high_byte_one_fraction": 0.103583984375,
+      "target": "gamma_capture_settled_d5",
+      "input_origin": "optical_camera_scene"
+    }
+  },
+  "corrected_gamma_video": {
+    "path": "D:\\English\\FPGA\\distortion\\results\\lab-20261008\\d5-video-check.json",
+    "sha256": "C6CE6ED95A3259B8F8A9A7F810CC10E7768B66F82F5F86F2C4061562D028DC05",
+    "telemetry_acceptance": {
+      "passed": true,
+      "hardware_accessed_by_analyzer": false,
+      "samples": 38,
+      "span_seconds": 38.236698,
+      "delta": {
+        "WF": 611,
+        "CF": 611,
+        "PF": 2294
+      },
+      "approx_rates_per_second": {
+        "WF": 15.979413285111598,
+        "CF": 15.979413285111598,
+        "PF": 59.99472025539444
+      },
+      "observed_result_angles_deg": [
+        0.0,
+        30.0,
+        60.0,
+        90.0,
+        120.0,
+        150.0,
+        180.0,
+        210.0,
+        240.0,
+        270.0,
+        300.0,
+        330.0,
+        360.0
+      ],
+      "temperature_celsius_range": [
+        46.7156,
+        49.5193
+      ],
+      "max_process_ms_at_125mhz": 43.882456,
+      "limits": "Saved serial evidence only. CF counts new completed remaps; PF includes repeated HDMI refreshes. Host timestamps approximate rates. Internal-reference ADC is an approximate temperature until compared with an external instrument. Optical quality and visible key behavior need direct observation.",
+      "raw_completed_angles_deg": [
+        0.0,
+        0.0,
+        29.999999972060323,
+        29.999999972060323,
+        59.999999944120646,
+        59.999999944120646,
+        59.999999944120646,
+        89.99999991618097,
+        89.99999991618097,
+        89.99999991618097,
+        119.99999988824129,
+        119.99999988824129,
+        119.99999988824129,
+        149.9999998603016,
+        149.9999998603016,
+        149.9999998603016,
+        179.99999983236194,
+        179.99999983236194,
+        179.99999983236194,
+        209.99999980442226,
+        209.99999980442226,
+        209.99999980442226,
+        239.99999977648258,
+        239.99999977648258,
+        239.99999977648258,
+        269.9999997485429,
+        269.9999997485429,
+        269.9999997485429,
+        299.9999997206032,
+        299.9999997206032,
+        299.9999997206032,
+        329.99999969266355,
+        329.99999969266355,
+        359.9999996647239,
+        359.9999996647239,
+        359.9999996647239,
+        29.999999636784196,
+        29.999999636784196
+      ],
+      "canonical_result_angles_deg": [
+        0,
+        30,
+        60,
+        90,
+        120,
+        150,
+        180,
+        210,
+        240,
+        270,
+        300,
+        330
+      ],
+      "angle_normalization_tolerance_deg": 0.0001,
+      "target": "corrected_gamma_d5",
+      "capture_transfer": {
+        "Frequency": "5MHz",
+        "Device": "PG2L100H",
+        "SHA256": "069D8ACEF8DED0CD62D19EE47C83E06910DF35BD0D76A9DF29403A8A14B877CF",
+        "Target": "corrected_gamma_d5",
+        "Done": true,
+        "CheckedOn": "2026-10-08T19:05:20.5650861+08:00"
+      },
+      "idle_transfer": {
+        "Frequency": "5MHz",
+        "Device": "PG2L100H",
+        "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+        "Target": "heartbeat",
+        "Done": true,
+        "CheckedOn": "2026-10-08T19:07:14.3303078+08:00"
+      },
+      "transaction_sha256": "A4248DB5EC48B4AAD3EFD938CD137053090B7D20933422EC29F98DA17E0C1806",
+      "hardware_accessed_by_checker": false,
+      "visual_observation_available": false,
+      "source_sha256": {
+        "tools/check-d5-video-session.py": "5F9513C7D212158F16CA5ED12175E4683DB22E810533F93FBB99FE36816F1BD6",
+        "tools/analyze-rotation-telemetry.py": "2E57C141E31292ECA4EB6B5942D61C2DE3B84A3DC9C8031BC589574F339699DF"
+      }
+    },
+    "visual_observation_available": false
+  },
+  "current_sram_target": "heartbeat",
+  "current_connection_checked_on": "2026-10-08T19:07:14.3303078+08:00",
+  "tools_sha256": {
+    "tools/record-d5-correction.py": "3945985A9D2CECA37516C039A580D98F282D35F733C1CE4EDBE7568FCD4E6773",
+    "tools/check-dvp-bitplanes.py": "776889DE7E14839F86DA5CC8A4BA35444F5C60F237F3BB5DB508073D106500E1",
+    "tools/prepare-d5-fixed-candidates.py": "33041CCE749F86F29020EDF8C1DD0E6E7E1AAD7E4BFC95B3DC2C1FCA481C7C97",
+    "tests/test_d5_candidate_guard.py": "DFBDC2956078BABBB84482F591B664FC0D4FD4E195D4DD92AF236FF59296A10E"
+  }
+}

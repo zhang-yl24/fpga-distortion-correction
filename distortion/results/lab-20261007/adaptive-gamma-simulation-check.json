@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "source_sha256": {
+    "rtl\\experimental\\adaptive_gamma_stream.v": "8FC733802CA8CDF55F9E0039EAEF2A16C0F0EFE10AF41F4AC3619715A9D11AF7",
+    "build\\gamma_sim\\reference.json": "23FB1EF0F072816E783179231E32DA840D78A8D8E0BEE23D83B8253E1E527883",
+    "rtl\\experimental\\gamma_curves.vh": "B5B64E36F30448F39C1A188CD04D35FD98185EE23D5B77510EFF43F0DEEC78EA",
+    "tests\\tb_adaptive_gamma.sv": "18714EA0697E5A17D79421AE92035072773F81F05A7D1ED2F741E9DFE5413202",
+    "build\\gamma_sim\\golden.mem": "42C2C1F046A877E5DCE7FB13B94629A3B2003CD21C951D550171EADAEB8B11A9",
+    "tests\\tb_gamma_exhaustive.sv": "3DD3C035B3076FFA07C6AD1EBD16002008234CD0D5678E6849E1C3537F004055"
+  },
+  "logs": {
+    "tb_adaptive_gamma-simulation.log": {
+      "sha256": "A90AC2B81886053DDE4DB6DACB978ADC7042E151C625A3F719ADE692DFD6C0C8",
+      "pass_line": "PASS adaptive Gamma: ten complete raw-statistic frames, two-frame hysteresis, SOF-locked mode, masked-pixel exclusion, disable locking, held output under stalls, malformed-frame rejection and reset recovery."
+    },
+    "tb_gamma_exhaustive-simulation.log": {
+      "sha256": "D514135B505251E855EDE181E4216C9E5046F4D15375B90BF622A2C297188716",
+      "pass_line": "PASS exhaustive Gamma: all 196608 RGB565 values across identity, brighten and dim curves."
+    }
+  },
+  "reference": {
+    "gamma_exponents": [
+      1,
+      0.65,
+      1.45
+    ],
+    "pixels_checked": 196608,
+    "quantization": "Native 5/6/5-bit channels, nearest integer (Python round), endpoints fixed; identity exact.",
+    "limits": "Tone mapping can redistribute brightness but cannot recover saturation or sensor noise."
+  },
+  "limits": "Isolated adaptive RGB565 stream; full video CRC integration, actual brightness/exposure behavior, routed resource/timing and strong-light/night optical comparison remain pending. Gamma cannot recover clipped detail."
+}

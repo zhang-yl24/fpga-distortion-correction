@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-08",
+  "user_correction": "Live monitor has only a slight green tint, not the strong cast shown by the stored frozen snapshot",
+  "primary_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32-ov5640/main/ov5640.c",
+      "functions": ["OV5640_SetLightMode", "OV5640_ColorbarModeConfig"],
+      "relevance": "Official driver uses 0x3406 for automatic/manual AWB and 0x503D=0x80 for internal colorbars."
+    },
+    {
+      "url": "https://raw.githubusercontent.com/espressif/esp32-camera/master/sensors/ov5640.c",
+      "functions": ["set_whitebal", "set_colorbar", "set_exposure_ctrl", "set_gain_ctrl"],
+      "relevance": "Official driver separates AWB enable, automatic gain/exposure and internal pattern enable."
+    },
+    {
+      "url": "https://code.googlesource.com/linux/torvalds/linux/+/refs/heads/master/drivers/media/i2c/ov5640.c",
+      "function": "ov5640_set_ctrl_white_balance",
+      "relevance": "Mainline driver clears 0x3406 bit0 for automatic white balance."
+    }
+  ],
+  "verified_local_findings": [
+    "HDMI preview uses ongoing camera input; saved triplets freeze an earlier full-resolution frame.",
+    "All 65536 host RGB565 expansions equal the camera_preview HDL bit concatenation.",
+    "Independent Pillow decoding of all 9 saved physical PNG files exactly matches corresponding numpy arrays.",
+    "Warmed white-paper center has mean RGB approximately 148/147/140; fixed ROI is not a calibrated neutral-target mask."
+  ],
+  "hypotheses_not_confirmed": [
+    "Exposure/white-balance startup convergence could make an early frozen frame differ from later live preview.",
+    "Lighting spectrum and low-light channel noise could contribute to residual tint.",
+    "Monitor color settings could contribute to appearance; calibrated display measurements are unavailable."
+  ],
+  "planned_discriminating_tests": [
+    "Isolated capture after 8 seconds of sensor readiness with the original optical sensor table.",
+    "Sensor-generated colorbars with enable-register readback and raw RGB565 color classification."
+  ]
+}

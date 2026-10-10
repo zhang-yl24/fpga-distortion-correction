@@ -1,0 +1,955 @@
+{
+  "recorded_utc": "2026-10-08T11:16:01.099336+00:00",
+  "hardware_accessed_by_recorder": false,
+  "user_observation": "Only slight green tint on live monitor; much less than stored frozen image",
+  "png_rendering_check": {
+    "passed": true,
+    "hardware_accessed": false,
+    "rgb565_values_tested": 65536,
+    "png_decoder": "Pillow RGB; encoder OpenCV BGR",
+    "physical_png_files_verified": [
+      "captures\\gamma-triplets\\physical-bright-20261008\\group-00000001\\raw.png",
+      "captures\\gamma-triplets\\physical-bright-20261008\\group-00000001\\before.png",
+      "captures\\gamma-triplets\\physical-bright-20261008\\group-00000001\\after.png",
+      "captures\\gamma-triplets\\physical-bright-warmed-20261008\\group-00000001\\raw.png",
+      "captures\\gamma-triplets\\physical-bright-warmed-20261008\\group-00000001\\before.png",
+      "captures\\gamma-triplets\\physical-bright-warmed-20261008\\group-00000001\\after.png",
+      "captures\\gamma-triplets\\physical-dark-warmed-20261008\\group-00000001\\raw.png",
+      "captures\\gamma-triplets\\physical-dark-warmed-20261008\\group-00000001\\before.png",
+      "captures\\gamma-triplets\\physical-dark-warmed-20261008\\group-00000001\\after.png"
+    ],
+    "source_sha256": {
+      "tools/check-rgb565-rendering.py": "52EC9F0546EFFBE103E6E3EA45B162ED98F0E6E6792A0A327C17BC1E4B4DC4FC",
+      "tools/evaluate-tone-pair.py": "DAACD9FFC571BD99EC8B2F0B9874FFEFD18AFAFA49972D55ED1FF0AE090955D7",
+      "rtl/camera_preview.v": "9CC0A8344A3245F2C986D6AC7BB3ABEA721FBB04DE4404C2025B1DB361A17681"
+    },
+    "limits": "Proves host integer expansion and PNG roundtrip match the HDL concatenation, not physical HDMI transmitter/monitor colorimetry. Frozen export and live preview are different times and sample grids."
+  },
+  "research": {
+    "date": "2026-10-08",
+    "user_correction": "Live monitor has only a slight green tint, not the strong cast shown by the stored frozen snapshot",
+    "primary_sources": [
+      {
+        "url": "https://raw.githubusercontent.com/STMicroelectronics/stm32-ov5640/main/ov5640.c",
+        "functions": [
+          "OV5640_SetLightMode",
+          "OV5640_ColorbarModeConfig"
+        ],
+        "relevance": "Official driver uses 0x3406 for automatic/manual AWB and 0x503D=0x80 for internal colorbars."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/espressif/esp32-camera/master/sensors/ov5640.c",
+        "functions": [
+          "set_whitebal",
+          "set_colorbar",
+          "set_exposure_ctrl",
+          "set_gain_ctrl"
+        ],
+        "relevance": "Official driver separates AWB enable, automatic gain/exposure and internal pattern enable."
+      },
+      {
+        "url": "https://code.googlesource.com/linux/torvalds/linux/+/refs/heads/master/drivers/media/i2c/ov5640.c",
+        "function": "ov5640_set_ctrl_white_balance",
+        "relevance": "Mainline driver clears 0x3406 bit0 for automatic white balance."
+      }
+    ],
+    "verified_local_findings": [
+      "HDMI preview uses ongoing camera input; saved triplets freeze an earlier full-resolution frame.",
+      "All 65536 host RGB565 expansions equal the camera_preview HDL bit concatenation.",
+      "Independent Pillow decoding of all 9 saved physical PNG files exactly matches corresponding numpy arrays.",
+      "Warmed white-paper center has mean RGB approximately 148/147/140; fixed ROI is not a calibrated neutral-target mask."
+    ],
+    "hypotheses_not_confirmed": [
+      "Exposure/white-balance startup convergence could make an early frozen frame differ from later live preview.",
+      "Lighting spectrum and low-light channel noise could contribute to residual tint.",
+      "Monitor color settings could contribute to appearance; calibrated display measurements are unavailable."
+    ],
+    "planned_discriminating_tests": [
+      "Isolated capture after 8 seconds of sensor readiness with the original optical sensor table.",
+      "Sensor-generated colorbars with enable-register readback and raw RGB565 color classification."
+    ]
+  },
+  "captures": [
+    {
+      "folder": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\unattended-settled-20261008",
+      "summary_sha256": "0F6C448D6C43F45C40E960313CF51DCED5CA0EB4DCED6CEE9CE52A2085BF308F",
+      "source_kind": "physical_same_source",
+      "input_origin": "optical_camera_scene",
+      "capture_transfer": {
+        "Frequency": "5MHz",
+        "Device": "PG2L100H",
+        "SHA256": "3E85B6D953EA3F95F775588FA374B3A668EE60A347A22C5B426B6E2AA9162B19",
+        "Target": "gamma_capture_settled",
+        "Done": true,
+        "CheckedOn": "2026-10-08T17:49:04.0389588+08:00"
+      },
+      "idle_transfer": {
+        "Frequency": "5MHz",
+        "Device": "PG2L100H",
+        "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+        "Target": "heartbeat",
+        "Done": true,
+        "CheckedOn": "2026-10-08T17:50:03.0564555+08:00"
+      },
+      "groups": [
+        {
+          "mode": 1,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 16.312508819543122,
+          "mean_luminance_after": 36.519698347012515
+        }
+      ],
+      "capture_transfer_confirmed_to_idle_confirmed_seconds": 59.017497
+    },
+    {
+      "folder": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\sensor-colorbars-20261008",
+      "summary_sha256": "383B64E62220E0AC3AC0267A4724CFCB6D1C12988BDBA271093B360DC04314E2",
+      "source_kind": "synthetic_same_source",
+      "input_origin": "sensor_internal_test_pattern",
+      "capture_transfer": {
+        "Frequency": "5MHz",
+        "Device": "PG2L100H",
+        "SHA256": "57BF8C28FD711E3B0765880921056486D7A4285B803B58BE13C9386D76399737",
+        "Target": "gamma_capture_colorbars",
+        "Done": true,
+        "CheckedOn": "2026-10-08T17:58:49.4879086+08:00"
+      },
+      "idle_transfer": {
+        "Frequency": "5MHz",
+        "Device": "PG2L100H",
+        "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+        "Target": "heartbeat",
+        "Done": true,
+        "CheckedOn": "2026-10-08T17:59:48.4058106+08:00"
+      },
+      "groups": [
+        {
+          "mode": 0,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 120.81268767167343,
+          "mean_luminance_after": 120.81268767167343
+        }
+      ],
+      "capture_transfer_confirmed_to_idle_confirmed_seconds": 58.917902,
+      "sensor-colorbars-check.json": {
+        "hardware_accessed_by_analysis": false,
+        "sensor_generated_input": true,
+        "normal_byte_order": {
+          "central_bar_rgb_medians": [
+            [
+              222.0,
+              251.0,
+              255.0
+            ],
+            [
+              222.0,
+              251.0,
+              99.0
+            ],
+            [
+              82.0,
+              251.0,
+              222.0
+            ],
+            [
+              66.0,
+              251.0,
+              33.0
+            ],
+            [
+              156.0,
+              0.0,
+              222.0
+            ],
+            [
+              140.0,
+              8.0,
+              33.0
+            ],
+            [
+              0.0,
+              0.0,
+              156.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "observed_order": [
+            "white",
+            "yellow",
+            "cyan",
+            "green",
+            "magenta",
+            "red",
+            "blue",
+            "black"
+          ],
+          "max_channel_distance_to_ideal_per_bar": [
+            33.0,
+            99.0,
+            82.0,
+            66.0,
+            99.0,
+            115.0,
+            99.0,
+            0.0
+          ],
+          "within_bar_p05_p95_rgb": [
+            [
+              [
+                222.0,
+                251.0,
+                255.0
+              ],
+              [
+                222.0,
+                251.0,
+                255.0
+              ]
+            ],
+            [
+              [
+                222.0,
+                251.0,
+                99.0
+              ],
+              [
+                222.0,
+                251.0,
+                99.0
+              ]
+            ],
+            [
+              [
+                82.0,
+                251.0,
+                222.0
+              ],
+              [
+                82.0,
+                251.0,
+                222.0
+              ]
+            ],
+            [
+              [
+                66.0,
+                251.0,
+                33.0
+              ],
+              [
+                66.0,
+                251.0,
+                33.0
+              ]
+            ],
+            [
+              [
+                156.0,
+                0.0,
+                222.0
+              ],
+              [
+                156.0,
+                0.0,
+                222.0
+              ]
+            ],
+            [
+              [
+                140.0,
+                8.0,
+                33.0
+              ],
+              [
+                140.0,
+                8.0,
+                33.0
+              ]
+            ],
+            [
+              [
+                0.0,
+                0.0,
+                156.0
+              ],
+              [
+                0.0,
+                0.0,
+                156.0
+              ]
+            ],
+            [
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ]
+            ]
+          ],
+          "order_matches_expected": true,
+          "levels_within_40_codes_of_ideal": false,
+          "accepted": false
+        },
+        "swapped_byte_order_counterexample": {
+          "central_bar_rgb_medians": [
+            [
+              222.0,
+              251.0,
+              255.0
+            ],
+            [
+              206.0,
+              154.0,
+              255.0
+            ],
+            [
+              222.0,
+              105.0,
+              189.0
+            ],
+            [
+              198.0,
+              138.0,
+              57.0
+            ],
+            [
+              24.0,
+              113.0,
+              198.0
+            ],
+            [
+              66.0,
+              146.0,
+              66.0
+            ],
+            [
+              16.0,
+              97.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "observed_order": [
+            "white",
+            "white",
+            "magenta",
+            "yellow",
+            "blue",
+            "green",
+            "black",
+            "black"
+          ],
+          "max_channel_distance_to_ideal_per_bar": [
+            33.0,
+            101.0,
+            105.0,
+            117.0,
+            113.0,
+            109.0,
+            97.0,
+            0.0
+          ],
+          "within_bar_p05_p95_rgb": [
+            [
+              [
+                222.0,
+                251.0,
+                255.0
+              ],
+              [
+                222.0,
+                251.0,
+                255.0
+              ]
+            ],
+            [
+              [
+                206.0,
+                154.0,
+                255.0
+              ],
+              [
+                206.0,
+                154.0,
+                255.0
+              ]
+            ],
+            [
+              [
+                222.0,
+                105.0,
+                189.0
+              ],
+              [
+                222.0,
+                105.0,
+                189.0
+              ]
+            ],
+            [
+              [
+                198.0,
+                138.0,
+                57.0
+              ],
+              [
+                198.0,
+                138.0,
+                57.0
+              ]
+            ],
+            [
+              [
+                24.0,
+                113.0,
+                198.0
+              ],
+              [
+                24.0,
+                113.0,
+                198.0
+              ]
+            ],
+            [
+              [
+                66.0,
+                146.0,
+                66.0
+              ],
+              [
+                66.0,
+                146.0,
+                66.0
+              ]
+            ],
+            [
+              [
+                16.0,
+                97.0,
+                0.0
+              ],
+              [
+                16.0,
+                97.0,
+                0.0
+              ]
+            ],
+            [
+              [
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0
+              ]
+            ]
+          ],
+          "order_matches_expected": false,
+          "levels_within_40_codes_of_ideal": false,
+          "accepted": false
+        },
+        "passed": false,
+        "byte_order_color_sequence_check_passed": true,
+        "ideal_level_color_check_passed": false,
+        "capture_summary_sha256": "383B64E62220E0AC3AC0267A4724CFCB6D1C12988BDBA271093B360DC04314E2",
+        "limits": "Classifies central regions of 8 internal sensor bars against known colors. Supports DVP/DDR/UART decoding, not optical AWB, illumination fidelity, HDMI transmitter colorimetry or monitor calibration. Synthetic sensor data is not a physical bright-light acceptance."
+      }
+    },
+    {
+      "folder": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\sensor-colorbars-d5-fixed-20261008",
+      "summary_sha256": "6C30EFB681401DB0F5065A44767343502E68EAFBD24464628A6F00DA2CFF0011",
+      "source_kind": "synthetic_same_source",
+      "input_origin": "sensor_internal_test_pattern",
+      "capture_transfer": {
+        "Frequency": "5MHz",
+        "Device": "PG2L100H",
+        "SHA256": "F25E34CA639F94C94467091A9BC71E75B781F5C6C5165C9A121E610625B45803",
+        "Target": "gamma_capture_colorbars_d5",
+        "Done": true,
+        "CheckedOn": "2026-10-08T18:58:02.4231087+08:00"
+      },
+      "idle_transfer": {
+        "Frequency": "5MHz",
+        "Device": "PG2L100H",
+        "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+        "Target": "heartbeat",
+        "Done": true,
+        "CheckedOn": "2026-10-08T18:59:01.2382444+08:00"
+      },
+      "groups": [
+        {
+          "mode": 0,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 127.59995208731922,
+          "mean_luminance_after": 127.59995208731922
+        }
+      ],
+      "capture_transfer_confirmed_to_idle_confirmed_seconds": 58.815136,
+      "sensor-colorbars-check.json": {
+        "hardware_accessed_by_analysis": false,
+        "sensor_generated_input": true,
+        "normal_byte_order": {
+          "central_bar_rgb_medians": [
+            [
+              255.0,
+              255.0,
+              255.0
+            ],
+            [
+              255.0,
+              255.0,
+              99.0
+            ],
+            [
+              82.0,
+              255.0,
+              222.0
+            ],
+            [
+              66.0,
+              255.0,
+              33.0
+            ],
+            [
+              189.0,
+              0.0,
+              222.0
+            ],
+            [
+              173.0,
+              8.0,
+              33.0
+            ],
+            [
+              0.0,
+              4.0,
+              156.0
+            ],
+            [
+              0.0,
+              4.0,
+              0.0
+            ]
+          ],
+          "observed_order": [
+            "white",
+            "yellow",
+            "cyan",
+            "green",
+            "magenta",
+            "red",
+            "blue",
+            "black"
+          ],
+          "max_channel_distance_to_ideal_per_bar": [
+            0.0,
+            99.0,
+            82.0,
+            66.0,
+            66.0,
+            82.0,
+            99.0,
+            4.0
+          ],
+          "within_bar_p05_p95_rgb": [
+            [
+              [
+                255.0,
+                255.0,
+                255.0
+              ],
+              [
+                255.0,
+                255.0,
+                255.0
+              ]
+            ],
+            [
+              [
+                255.0,
+                255.0,
+                99.0
+              ],
+              [
+                255.0,
+                255.0,
+                99.0
+              ]
+            ],
+            [
+              [
+                82.0,
+                255.0,
+                222.0
+              ],
+              [
+                82.0,
+                255.0,
+                222.0
+              ]
+            ],
+            [
+              [
+                66.0,
+                255.0,
+                33.0
+              ],
+              [
+                66.0,
+                255.0,
+                33.0
+              ]
+            ],
+            [
+              [
+                189.0,
+                0.0,
+                222.0
+              ],
+              [
+                189.0,
+                0.0,
+                222.0
+              ]
+            ],
+            [
+              [
+                173.0,
+                8.0,
+                33.0
+              ],
+              [
+                173.0,
+                8.0,
+                33.0
+              ]
+            ],
+            [
+              [
+                0.0,
+                4.0,
+                156.0
+              ],
+              [
+                0.0,
+                4.0,
+                156.0
+              ]
+            ],
+            [
+              [
+                0.0,
+                4.0,
+                0.0
+              ],
+              [
+                0.0,
+                4.0,
+                0.0
+              ]
+            ]
+          ],
+          "order_matches_expected": true,
+          "levels_within_40_codes_of_ideal": false,
+          "accepted": false
+        },
+        "swapped_byte_order_counterexample": {
+          "central_bar_rgb_medians": [
+            [
+              255.0,
+              255.0,
+              255.0
+            ],
+            [
+              239.0,
+              158.0,
+              255.0
+            ],
+            [
+              255.0,
+              105.0,
+              189.0
+            ],
+            [
+              231.0,
+              138.0,
+              57.0
+            ],
+            [
+              24.0,
+              117.0,
+              198.0
+            ],
+            [
+              66.0,
+              150.0,
+              66.0
+            ],
+            [
+              49.0,
+              97.0,
+              0.0
+            ],
+            [
+              33.0,
+              0.0,
+              0.0
+            ]
+          ],
+          "observed_order": [
+            "white",
+            "white",
+            "magenta",
+            "yellow",
+            "blue",
+            "green",
+            "black",
+            "black"
+          ],
+          "max_channel_distance_to_ideal_per_bar": [
+            0.0,
+            97.0,
+            105.0,
+            117.0,
+            117.0,
+            105.0,
+            97.0,
+            33.0
+          ],
+          "within_bar_p05_p95_rgb": [
+            [
+              [
+                255.0,
+                255.0,
+                255.0
+              ],
+              [
+                255.0,
+                255.0,
+                255.0
+              ]
+            ],
+            [
+              [
+                239.0,
+                158.0,
+                255.0
+              ],
+              [
+                239.0,
+                158.0,
+                255.0
+              ]
+            ],
+            [
+              [
+                255.0,
+                105.0,
+                189.0
+              ],
+              [
+                255.0,
+                105.0,
+                189.0
+              ]
+            ],
+            [
+              [
+                231.0,
+                138.0,
+                57.0
+              ],
+              [
+                231.0,
+                138.0,
+                57.0
+              ]
+            ],
+            [
+              [
+                24.0,
+                117.0,
+                198.0
+              ],
+              [
+                24.0,
+                117.0,
+                198.0
+              ]
+            ],
+            [
+              [
+                66.0,
+                150.0,
+                66.0
+              ],
+              [
+                66.0,
+                150.0,
+                66.0
+              ]
+            ],
+            [
+              [
+                49.0,
+                97.0,
+                0.0
+              ],
+              [
+                49.0,
+                97.0,
+                0.0
+              ]
+            ],
+            [
+              [
+                33.0,
+                0.0,
+                0.0
+              ],
+              [
+                33.0,
+                0.0,
+                0.0
+              ]
+            ]
+          ],
+          "order_matches_expected": false,
+          "levels_within_40_codes_of_ideal": false,
+          "accepted": false
+        },
+        "passed": false,
+        "byte_order_color_sequence_check_passed": true,
+        "ideal_level_color_check_passed": false,
+        "capture_summary_sha256": "6C30EFB681401DB0F5065A44767343502E68EAFBD24464628A6F00DA2CFF0011",
+        "limits": "Classifies central regions of 8 internal sensor bars against known colors. Supports DVP/DDR/UART decoding, not optical AWB, illumination fidelity, HDMI transmitter colorimetry or monitor calibration. Synthetic sensor data is not a physical bright-light acceptance."
+      }
+    },
+    {
+      "folder": "D:\\English\\FPGA\\distortion\\captures\\gamma-triplets\\optical-d5-fixed-20261008",
+      "summary_sha256": "440072EB5265208EB141C63BD11D213D1E506EA823D7C306FA24B704769A703C",
+      "source_kind": "physical_same_source",
+      "input_origin": "optical_camera_scene",
+      "capture_transfer": {
+        "Frequency": "5MHz",
+        "Device": "PG2L100H",
+        "SHA256": "45832255BB3031CFA86A2DD3BBAC45EF63805319FBE84DAD6D0ECA9A76B74FA0",
+        "Target": "gamma_capture_settled_d5",
+        "Done": true,
+        "CheckedOn": "2026-10-08T19:01:23.5969874+08:00"
+      },
+      "idle_transfer": {
+        "Frequency": "5MHz",
+        "Device": "PG2L100H",
+        "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+        "Target": "heartbeat",
+        "Done": true,
+        "CheckedOn": "2026-10-08T19:02:22.5866085+08:00"
+      },
+      "groups": [
+        {
+          "mode": 1,
+          "bypass_mismatched_pixels": 0,
+          "tone_mismatched_pixels": 0,
+          "mean_luminance_before": 20.833703617407398,
+          "mean_luminance_after": 43.104590756790635
+        }
+      ],
+      "capture_transfer_confirmed_to_idle_confirmed_seconds": 58.989621
+    }
+  ],
+  "limits": "Saved triplets and ongoing monitor preview are different times and sample grids. Unattended optical captures lack controlled lighting and a confirmed neutral target, so cannot establish white-balance causality or light-mode quality.",
+  "probe": {
+    "folder": "D:\\English\\FPGA\\distortion\\captures\\camera-state\\isp-readback-20261008",
+    "summary_sha256": "DEEFCD569B86212A371300909E7CB3A6DC82BA8812BC76C576AB1FFC5DA38B12",
+    "complete_scans": 21,
+    "rows": 504,
+    "capture_transfer": {
+      "Frequency": "5MHz",
+      "Device": "PG2L100H",
+      "SHA256": "ABACC9BA80B292213D9E26382506E90F033CF3D5105713230C59257FAC1B6E54",
+      "Target": "camera_isp_probe",
+      "Done": true,
+      "CheckedOn": "2026-10-08T18:01:24.0890790+08:00"
+    },
+    "idle_transfer": {
+      "Frequency": "5MHz",
+      "Device": "PG2L100H",
+      "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+      "Target": "heartbeat",
+      "Done": true,
+      "CheckedOn": "2026-10-08T18:02:15.8500785+08:00"
+    },
+    "all_scans_awb_aec_agc_automatic": true,
+    "first_rgb_gain_codes": [
+      "0400",
+      "0400",
+      "0400"
+    ],
+    "last_rgb_gain_codes": [
+      "05BE",
+      "0400",
+      "05BE"
+    ],
+    "first_agc_code": "0020",
+    "last_agc_code": "00F8",
+    "limits": "Observed gain adaptation in this run does not prove the root cause of an earlier frozen frame. Individual register rows are non-atomic; no calibrated color target or controlled illumination."
+  },
+  "simulation_logs": {
+    "camera_colorbars_sim": {
+      "sha256": "D00D9EBF3A85C7DCB6C80C4F85E904B1561A04B02713238197157A010E547BFC",
+      "passed": true
+    },
+    "preview_sim": {
+      "sha256": "8C019415A7CC0AD6F35C3C8A381D0EFCC5ED80D06263E937A72866A065C30B67",
+      "passed": true
+    }
+  },
+  "current_board_target": "heartbeat",
+  "current_transfer_checked_on": "2026-10-08T19:07:14.3303078+08:00",
+  "d5_mapping_correction": {
+    "path": "D:\\English\\FPGA\\distortion\\results\\lab-20261008\\d5-correction.json",
+    "sha256": "E29C9F75F1DAE75D0577355DA18A3B476BC545DE44887022CF871D03D4818247",
+    "physical_restoration_passed": true,
+    "limits": "Pin correction restores the missing data bit; residual optical color and white balance need controlled neutral-target acceptance."
+  },
+  "tools_sha256": {
+    "tools/prepare-camera-color-candidates.py": "53E6D069B630E4E887C2A13C6D2FFBD59AF8B7E60EA8D3C8702C8CDDB23689FA",
+    "tools/validate-camera-color-candidate.py": "E6A760D71C7CA642686EE836A2A8FC6737439238980977C62B54619E11661013",
+    "tools/prepare-camera-color-tests.py": "5A790C89A6A389E4DE0DA83815D5742E8B07711F465C89DCECF5D38F0E844B72",
+    "tools/check-rgb565-rendering.py": "52EC9F0546EFFBE103E6E3EA45B162ED98F0E6E6792A0A327C17BC1E4B4DC4FC",
+    "tools/analyze-sensor-colorbars.py": "E0A25BDB88C072590D0905A9DB3DBDDB2EA4F160A63B4D90FEA2E3926D38166A",
+    "tools/record-camera-color-investigation.py": "E02C5F3E20AFB7D3C6A2782472C976CBA38958699D6E42614DC6B5ED40F85E73",
+    "tools/capture-gamma-triplets.py": "1FD542C1E9C36D2A4E75AE952434B4EB18F4BA5FF592D88A1B10E636ECB64517",
+    "tools/run-camera-colorbars-sim.ps1": "30F788650EAF59782FD6AF68CA085FD26595059BA5316D890C8E493E6F441F47",
+    "tests/tb_ov5640_colorbars.sv": "4A6DBA20AB22D8D53811BDCDBD5D4A0E627EE472B38C7654086F77B41427584A",
+    "tools/build-pds.ps1": "EF44827BC70F5D218B54E98701B15498B7B0372149CC7971BAA30404DE1803F9",
+    "tools/program-heartbeat.ps1": "B8EC234294198376C123DA5F0E5B374F28464A5914D30B0CBB14567673A014FD",
+    "tools/capture-camera-state.py": "4F76D9F5F87EE4A52F9BB72F7155A31C7D243FB43615E17B4FF9E3FAE08DAE87",
+    "tools/prepare-camera-state-probe.py": "34F773B404DEFC74942B2517F5200C85712DFCDF947436842DDC625D6CE48508",
+    "tools/validate-camera-state-probe.py": "AA45097BE3DE1204B36299E2F5BF9B62623164B421C51B363F1D5645DF451BCD",
+    "tools/run-camera-state-scan-sim.ps1": "97E17169063F86A62C64B099CA16408E4CF7D2A041BD97C0A4902FFE83F39797",
+    "tests/tb_camera_state_scan.sv": "1C5511A0A15C43A3BAE472FC6A152D562144AA4CB7CE05981CA9404ECE9F2A77",
+    "tools/plot-camera-state.py": "9271D77A0E3F02B2EA259CBE7FDEBCDCC6FB6E2A32BAAB70251405E0A919D74F",
+    "tests/test_camera_color_candidate_guard.py": "5A7605348A1B30D523244287F2C198CACAEC27E1AAC4E35D4C2CD0FF51F562D2"
+  }
+}

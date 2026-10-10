@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "hardware_accessed_by_recovery": false,
+  "target": "corrected_capture",
+  "bitstream_sha256": "D669981C80856AFFC2396C21EAD4D60D2CD7E31EE2D7EE10B44AF5E47E49F81B",
+  "pairs": [
+    {
+      "pair_id": 2,
+      "source_packet_id": 4,
+      "result_packet_id": 5,
+      "raw_crc32": "029177A2",
+      "fpga_crc32": "19105EB1",
+      "software_crc32": "19105EB1",
+      "pixels_compared": 307200,
+      "mismatched_pixels": 0,
+      "max_rgb_channel_difference": 0,
+      "different_from_passthrough_pixels": 202185,
+      "directory": "D:\\English\\FPGA\\distortion\\captures\\corrected-pairs\\20261007-141622\\pair00000002"
+    }
+  ],
+  "coordinates_sha256": "23af48cb162f5767c693db3412ce7ded266094515fc219775cfbbcb628b6b364",
+  "capture_tool_finished_cleanly": false,
+  "automatic_idle_attempt_passed": false,
+  "packet_parser_final_state_available": false,
+  "idle_recovery_verified": true,
+  "idle_recovery_transfer": {
+    "Frequency": "5MHz",
+    "Device": "PG2L100H",
+    "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+    "Target": "heartbeat",
+    "Done": true,
+    "CheckedOn": "2026-10-07T14:18:10.3644948+08:00"
+  },
+  "recovery_reason": "Complete saved raw/FPGA/golden pixels survived the idle-helper failure. SHA/length/CRC and byte equality rechecked. Windows PowerShell child lacked built-in Get-FileHash because it inherited PowerShell 7 module paths. A separate actual heartbeat recovery completed. Do not claim a clean original capture exit or a known packet rejection count.",
+  "limits": "One fresh same-frame zero-rotation pixel comparison from the existing corrected_capture binary. New overlap/adaptive video binaries and final optical accuracy are not covered."
+}

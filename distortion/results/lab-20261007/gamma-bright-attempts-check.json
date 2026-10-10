@@ -1,0 +1,88 @@
+{
+  "hardware_accessed_by_recorder": false,
+  "attempts": [
+    {
+      "scene": "initial lamp/white-paper attempt",
+      "finite_video_and_command_passed": true,
+      "desired_mode": 2,
+      "desired_mode_observed": false,
+      "observed_modes": [
+        0
+      ],
+      "gamma_completed_frames_delta": 296,
+      "physical_check": {
+        "passed": true,
+        "hardware_accessed_by_recorder": false,
+        "target": "corrected_gamma",
+        "angle_deg": 7.499999972060323,
+        "bitstream_sha256": "00FEAB7E372C6D5FD9EB8EBE6D75B492586F083CF33DC0FE6E0D86DD53654438",
+        "one_write_controller_and_new_processed_frame_ack": true,
+        "observed_new_frames": 296,
+        "observation_span_seconds": 18.601069,
+        "approx_new_frame_rate_fps": 15.913063921218722,
+        "max_process_ms_at_125mhz": 37.063976,
+        "temperature_celsius_range": [
+          46.34989999999999,
+          48.17840000000001
+        ],
+        "idle_transfer": {
+          "Frequency": "5MHz",
+          "Device": "PG2L100H",
+          "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+          "Target": "heartbeat",
+          "Done": true,
+          "CheckedOn": "2026-10-07T23:27:44.4724641+08:00"
+        },
+        "wrapper_finished_cleanly": true,
+        "wrapper_failure": null,
+        "limits": "Actual CP2102 UART command and new completed-frame phase acknowledgement plus finite error-free telemetry. User screen confirmation is separate. RA is processed result phase, not a directly measured on-screen phase or input-to-display latency. Internal ADC temperature is approximate."
+      }
+    },
+    {
+      "scene": "second lamp/white-paper attempt, user held scene through test",
+      "finite_video_and_command_passed": true,
+      "desired_mode": 2,
+      "desired_mode_observed": false,
+      "observed_modes": [
+        0
+      ],
+      "gamma_completed_frames_delta": 342,
+      "physical_check": {
+        "passed": true,
+        "hardware_accessed_by_recorder": false,
+        "target": "corrected_gamma",
+        "angle_deg": 0.0,
+        "bitstream_sha256": "00FEAB7E372C6D5FD9EB8EBE6D75B492586F083CF33DC0FE6E0D86DD53654438",
+        "one_write_controller_and_new_processed_frame_ack": true,
+        "observed_new_frames": 342,
+        "observation_span_seconds": 18.600691,
+        "approx_new_frame_rate_fps": 18.386413709039086,
+        "max_process_ms_at_125mhz": 30.850512,
+        "temperature_celsius_range": [
+          47.32510000000002,
+          49.15359999999998
+        ],
+        "idle_transfer": {
+          "Frequency": "5MHz",
+          "Device": "PG2L100H",
+          "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+          "Target": "heartbeat",
+          "Done": true,
+          "CheckedOn": "2026-10-07T23:34:08.9622762+08:00"
+        },
+        "wrapper_finished_cleanly": true,
+        "wrapper_failure": null,
+        "limits": "Actual CP2102 UART command and new completed-frame phase acknowledgement plus finite error-free telemetry. User screen confirmation is separate. RA is processed result phase, not a directly measured on-screen phase or input-to-display latency. Internal ADC temperature is approximate."
+      }
+    }
+  ],
+  "dimming_physical_acceptance_passed": false,
+  "screen_observation": {
+    "source": "direct_user_reply",
+    "scope": "second bright-paper finite test",
+    "user_reply": "画面正常，无明显异常",
+    "normal_picture": true,
+    "limits": "Screen stability only; dimming mode did not activate."
+  },
+  "limits": "Scene appearance is not measured sensor exposure. White-paper tests did not activate mode2. Diagnostic raw capture uses an earlier camera configuration and a later frame with clothing/background visible; it cannot prove the statistics of the Gamma white-paper scene."
+}

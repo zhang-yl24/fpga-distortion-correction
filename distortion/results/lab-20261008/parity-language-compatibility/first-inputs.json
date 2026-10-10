@@ -1,0 +1,55 @@
+{
+  "hardware_accessed": false,
+  "suite": {
+    "query": {
+      "work_directory": "D:\\English\\FPGA\\distortion\\build\\pipeline_parity_query_sim",
+      "runner": "tools/run-pipeline-parity-query-sim.ps1"
+    },
+    "stream": {
+      "work_directory": "D:\\English\\FPGA\\distortion\\build\\pipeline_parity_stream_sim",
+      "runner": "tools/run-pipeline-parity-stream-sim.ps1"
+    },
+    "native": {
+      "work_directory": "D:\\English\\FPGA\\distortion\\build\\pipeline_parity_native_sim",
+      "runner": "tools/run-pipeline-parity-native-sim.ps1"
+    }
+  },
+  "source_sha256": {
+    "rtl/experimental/ddr_pipeline_parity_cache.v": "9E8A24D5719C5D2A7ED34CD7E5233D804D4C8F15FE321DA8B698062581FDCF66",
+    "rtl/experimental/ddr_pipeline_serial_cache.v": "4C1341418A989F619558684CFAF80906C844264834882B715594B31337DB9E9F",
+    "rtl/experimental/pipeline_hit_frame_engine.v": "5313D51F2F8E288FE8B449B27CD1DA9972FBC53D1266D161DFA045462A10FE42",
+    "rtl/experimental/ddr_adaptive_result_writer.v": "FAB6D79260CE4B81A54BFD5D6BEFDE535E7AEA1230CE2E5FDD1398655FFC20A6",
+    "tests/tb_pipeline_parity_query.sv": "3CFDD0F72ED315399FD9C6F063D5C4B88C8DFB51DFFF6D62BA7EDCECBE70E7D5",
+    "tests/tb_pipeline_hit_stream.sv": "76E965FF32C311544D95DBBCEDB3F75C9F02530927865534676A25AB61309077",
+    "tests/tb_pipeline_twelve_native_regression.sv": "9A139CD67C1D1A3A200E27670513E1079F0A56C064F7AF1FFA9D1D7C12A750CF",
+    "board/calibration-trial.vh": "DBA0E58092F92D920AD110C3FA9EFF53988D3C086AF31DE6A582A97500EA0FE5",
+    "board/rotation-domain.vh": "92337318BFF93801E8456C99EEB4D81AFD0CE88807514202270D268B21FC9AB5",
+    "rtl/cordic-constants.vh": "4684D5145777A11D1974E5E0A9D77CD41D3D13FD574B17CF2AE7494F02BE8234",
+    "rtl/bilinear_rgb.v": "AE2128289B9B3A749D6878AC6DB6975AF30479BA897318B4EA5045E238EC593A",
+    "rtl/ddr_remap_sample.v": "BAC1799188CD5E3264A2CD5615B59DD2F20871E180172D20EF922758D2F6D989",
+    "rtl/mul32_pipe.v": "2A026510E5D5A765BAD02906368AA27E4C8CC59F17E69B2D7F2D01819EE737D2",
+    "rtl/pixel_inverse_rotation.v": "73F13AD31ABAF9E6141888AA0059FF62A878E157E0DD80328F01F1B060D952FD",
+    "rtl/bounded_brown_inverse_mapper.v": "D13BAD6E4DEDA11FACE236F2C8C2C6E91B37075A7DE87A33A42BD90F64DD7691",
+    "rtl/rotated_remap_core.v": "61B9E40EE265BB74C55DB070AFEEE351979CC080F4F27D8B0FC81D0C3BFA3FB7",
+    "tools/run-pipeline-parity-query-sim.ps1": "BB4FC2904F836EBF03958809623AA54A48E4B54E3EB1C932FC7E68B235AB5152",
+    "build/pipeline_parity_query_sim/counts.vh": "4F098F310BBE951CD4AD04C492221479B146D60677DDF73E67D74BED872EAC68",
+    "build/pipeline_parity_query_sim/frame0.mem": "12BE2A97198735FD9E24440F3BE7A036A4ACED506D0200B2AD7402AD4D3D6519",
+    "build/pipeline_parity_query_sim/frame1.mem": "4F9D0A674D23F18E13E7D949ACBD72287587999B94278F82BFBDE3EF4714C63C",
+    "build/pipeline_parity_query_sim/frame2.mem": "12BE2A97198735FD9E24440F3BE7A036A4ACED506D0200B2AD7402AD4D3D6519",
+    "build/pipeline_parity_query_sim/mapped.mem": "60A05E419489F74754C86BB3AA45CA4FF49510B90A2B9B47C804F926F4456C8B",
+    "build/pipeline_parity_query_sim/reference.json": "86CF9BCB730FBD5E1792F26FD919134820B3B817F0044E012A4A80FB5BC4B005",
+    "build/pipeline_parity_query_sim/rotations.mem": "3220418E5E42C76C76245FAE2690581CF0301976EF3F93A68384BA515FC3E734",
+    "build/pipeline_parity_query_sim/vectors.mem": "4E2EACC0AE2A17233C0D49B4D14A752485E73D6A7FD399DA90E9E604AFA2C68C",
+    "tools/run-pipeline-parity-stream-sim.ps1": "2AE8FA6920CFFF81C20726E211ED54900DFC19B2977D715610CEBBC5B6F9AC97",
+    "tools/run-pipeline-parity-native-sim.ps1": "A283F8A7FFB4184129EB51EFCE4B3197899501C924C2BD6D233956EDE8A35520",
+    "build/pipeline_parity_native_sim/crcs.mem": "6293A41E3BA64EF2D3386170E8776C91C0A9CF8EC57CB9C794EE0486B42FFD0A",
+    "build/pipeline_parity_native_sim/reference.json": "42D5D42932BC0FBE488BB3788B7A59CBBE8DDF7FD408C5BD4B130003D65E17C3",
+    "build/pipeline_parity_native_sim/result.mem": "780BA4919D4C93D3D783EB9C01F50F3F5B635461248AE395ACD450E45546395D",
+    "build/pipeline_parity_native_sim/rotations.mem": "EA1432CCD5F141E1D2EFC3F4E3D35F5F3EBE2E643382D80ED1B244183D863E5F",
+    "build/pipeline_parity_native_sim/source.mem": "E04150926F20626BC7656C8C98819A491A04BE5AD0E0D0969E9D4952D705934A"
+  },
+  "logical_fast_cache_bytes_before": 32768,
+  "logical_fast_cache_bytes_after": 16384,
+  "serial_cache_bytes": 8192,
+  "physical_resources_verified": false
+}

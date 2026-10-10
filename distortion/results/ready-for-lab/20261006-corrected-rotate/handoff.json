@@ -1,0 +1,55 @@
+{
+  "recorded_at": "2026-10-06T23:40:53.535693+08:00",
+  "target": "corrected_rotate",
+  "hardware_accessed": false,
+  "downloaded": false,
+  "device": "PG2L100H-6IFBG676",
+  "ddr_mhz": 125,
+  "jtag_mhz": 5,
+  "files": {
+    "corrected_rotate.sbit": "B0D3389A9CBAE342FF2A8EDB4EE34DAE5B11476AEBE354614F93211DD0530C10",
+    "corrected_rotate.rtr": "DBBF8BD1609796AFF216BFFFC64CCD6F619AAAFDDB35B1CEBC5D92BB2965B8AC",
+    "validated-build.json": "D35C0B751B9E4AA22E1DADA4916E55E28D428D410059D965CC12DDB16BF4902D",
+    "corrected_rotate-pins.json": "0FBB1ACB99A9BE37A4F3164C39F26F7169201CC4FEBA8223F31AE6FF1194EDC8"
+  },
+  "timing": {
+    "Setup Summary(Slow Corner):": {
+      "minimum_slack_ns": 0.538,
+      "clock_pairs": {
+        "clk_27m -> clk_27m": 26.779,
+        "pixel_clk -> pixel_clk": 0.985,
+        "ddrphy_sysclk -> pixel_clk": 6.151,
+        "camera_pclk -> camera_pclk": 8.697,
+        "ddrphy_sysclk -> camera_pclk": 6.962,
+        "rst_clk -> rst_clk": 5.291,
+        "ddrphy_sysclk -> ddrphy_sysclk": 0.538,
+        "pixel_clk -> ddrphy_sysclk": 5.382,
+        "camera_pclk -> ddrphy_sysclk": 6.782,
+        "phy_dq_sysclk_0 -> ddrphy_sysclk": 3.701,
+        "phy_dq_sysclk_1 -> ddrphy_sysclk": 2.372,
+        "ddrphy_sysclk -> phy_dq_sysclk_0": 1.347,
+        "ddrphy_sysclk -> phy_dq_sysclk_1": 1.153
+      }
+    },
+    "Hold Summary(Fast Corner):": {
+      "minimum_slack_ns": 0.102,
+      "clock_pairs": {
+        "clk_27m -> clk_27m": 0.117,
+        "pixel_clk -> pixel_clk": 0.204,
+        "camera_pclk -> camera_pclk": 0.118,
+        "rst_clk -> rst_clk": 0.134,
+        "ddrphy_sysclk -> ddrphy_sysclk": 0.102,
+        "phy_dq_sysclk_0 -> ddrphy_sysclk": 0.431,
+        "phy_dq_sysclk_1 -> ddrphy_sysclk": 0.127,
+        "ddrphy_sysclk -> phy_dq_sysclk_0": 0.124,
+        "ddrphy_sysclk -> phy_dq_sysclk_1": 0.11
+      }
+    }
+  },
+  "verified_pins": 129,
+  "resource_usage_csv": "Logic Utilization,LUT,FF,DRM,APM,Distributed RAM,HSSTHP,USCM,HCKB,RCKB\nUsed,14571,17630,16,83,179,NA,5,0,2\nAvailable,66600,133200,155,240,19900,NA,32,96,24\nUtilization(%),22%,14%,11%,35%,1%,NA,16%,0%,9%",
+  "bitstream_sha256": "B0D3389A9CBAE342FF2A8EDB4EE34DAE5B11476AEBE354614F93211DD0530C10",
+  "preflight": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/program-heartbeat.ps1 -Target corrected_rotate -ValidateOnly",
+  "scope": "Native 640x480 calibrated bounded radial approximation, arithmetic coordinates, one bilinear interpolation. Final optical accuracy/high-resolution throughput unproven.",
+  "features": "adjacent-neighbour same-beat cache reuse; CORDIC full-circle rotation, KEY0 30-degree steps and long-press demo, ADC temperature telemetry"
+}

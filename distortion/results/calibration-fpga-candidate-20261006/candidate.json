@@ -1,0 +1,86 @@
+{
+  "source_calibration": "D:\\English\\FPGA\\distortion\\results\\calibration-output-camera-20261006.json",
+  "image_size": [
+    640,
+    480
+  ],
+  "calibrated_model": "fisheye2",
+  "K": [
+    [
+      603.8338315566718,
+      0.0,
+      305.4597491949699
+    ],
+    [
+      0.0,
+      603.1459495113646,
+      245.82173339638524
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "D": [
+    0.42125381735224365,
+    -0.08439042303121991,
+    0.0,
+    0.0
+  ],
+  "output_K": [
+    [
+      603.8338315566718,
+      0.0,
+      305.4597491949699
+    ],
+    [
+      0.0,
+      603.1459495113646,
+      245.82173339638524
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "hardware_coordinate_model": "three-term Brown radial polynomial surrogate, tangential terms zero",
+  "radial_coefficients": [
+    0.08496255428269951,
+    -0.26210829029719984,
+    0.17952439185695085
+  ],
+  "integer_config": [
+    78198,
+    62930,
+    78198,
+    62930,
+    154581,
+    154405,
+    1778207,
+    1780235,
+    356359,
+    -1099362,
+    752980,
+    0,
+    0
+  ],
+  "coordinate_error_metrics": {
+    "floating_polynomial_max_coordinate_error_px": 0.14577849753324024,
+    "integer_mapper_max_coordinate_error_px": 0.14614261967801606,
+    "integer_mapper_rms_coordinate_error_px": 0.007543231346031988,
+    "integer_mapper_95th_percentile_coordinate_error_px": 0.011478677323728483,
+    "full_image_coordinates_checked": 307200,
+    "arithmetic_invalid_coordinates": 0
+  },
+  "maximum_coordinate_error_gate_px": 0.25,
+  "passed": true,
+  "hardware_programmed": false,
+  "calibration_cross_validation_mean_px": 0.3090890056032277,
+  "calibration_cross_validation_max_px": 0.5269848360756588,
+  "matched_output_K_between_fold_map_sd_p95_px": 0.2078743427991867,
+  "valid_normalized_radius_max": 0.68645729294507,
+  "rotation_degrees": 0,
+  "limits": "Coordinate approximation error against the fitted model, not measured corrected-image accuracy. Bounded to this 640x480 field and matched output K; no exact fisheye or rotation FPGA path."
+}

@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "recorded_at": "2026-10-07T21:31:19.102751+08:00",
+  "hardware_verified": false,
+  "source_sha256": {
+    "rtl/experimental/uart_rx_control.v": "F13E5D2F2A2EF4D5293DCB62F4FDB8FED7028D53C8E9C28177F5811A7BE3B7B2",
+    "rtl/experimental/rotation_command_parser.v": "AF02B996BB073D8F00F560B8CC8D0E1D1CB4B92CA321A6DDFD65C5FB70849D20",
+    "rtl/experimental/rotation_host_control.v": "422E466A03DE513BAA119D9D3E061DD6E47AB635903C7A843DFA43A725E0C5AD",
+    "rtl/cordic_sincos.v": "2AD2994B1FE808F2AF0028C7CCDFD98BE9D727772F4A24CA213586C9A1C1591F",
+    "tests/tb_host_control.sv": "E8167DBF6B28D5A36C3EC84444F6A76F96DFB4E88176D99250FC4C8D00D6A09C",
+    "tests/tb_host_control_concurrent.sv": "5BFC1D6293C948B7181C7DE312EE7F9CEFEDCCAD90053B04EE1634A74C4277C5",
+    "build/host_control_sim/counts.vh": "E9B2F74407F3C07DED91CAD260A4A0C8125B389DA8107A0A90AE3F77956D73A0",
+    "build/host_control_sim/golden.mem": "5759C094F72C867804D6433AB7809A25A624A815285A4CEBA92C6E66A96D794D",
+    "build/host_control_sim/packets.mem": "47F046A13E675F728625B0CEF13B58DFF8457F9C281C738825E19E4AD3394327",
+    "build/host_control_sim/reference.json": "71AD9532DF37E2DC15651B89CDE51F9D8137396B1D580779AADDD2724D0C1073"
+  },
+  "logs": {
+    "simulation.log": {
+      "sha256": "3358FEE4A9409A298D0D5857639625C7EF6343B5010B1AD7DC53759A2D6C7B11",
+      "pass_line": "PASS host control: 16 arbitrary angles, exact CORDIC pairs, 63/64/65-cycle UART bits, start glitch, bad stop/break, CRC/version/opcode/sequence rejection, duplicate suppression, partial timeout, command hold/overflow, auto start/stop and mid-byte reset recovery."
+    },
+    "concurrent-simulation.log": {
+      "sha256": "B22EC7780FF9DC017DA87B84844DED9DF8C52E4ADA2AE23A888F3630671C2313",
+      "pass_line": "PASS concurrent host control: in-flight request coalescing, same-cycle superseded CORDIC result rejection, exact atomic pairs, KEY0 short/long coexistence and host override of auto."
+    }
+  },
+  "reference": {
+    "angles": [
+      0,
+      7.5,
+      13.7,
+      -23.45,
+      89.99,
+      90.01,
+      137.25,
+      179.999,
+      -178.125,
+      225.125,
+      271.875,
+      359.99,
+      0.125,
+      45.625,
+      112.345,
+      333.375
+    ],
+    "phases": [
+      0,
+      89478485,
+      163447367,
+      4015197899,
+      1073622519,
+      1073861129,
+      1637456282,
+      2147471718,
+      2169853269,
+      2685845868,
+      3243595093,
+      4294847991,
+      1491308,
+      544327452,
+      1340328058,
+      3977318673
+    ],
+    "crc": "CRC16/CCITT-FALSE init=FFFF poly=1021, version through argument, little-endian wire CRC"
+  },
+  "scope": "UART parser and atomic CORDIC/KEY0 controller simulation only; no board RX pin, CDC telemetry acknowledgement, arbitrary-angle full-frame or physical display validation yet."
+}

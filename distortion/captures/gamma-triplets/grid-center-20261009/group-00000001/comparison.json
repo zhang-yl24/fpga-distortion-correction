@@ -1,0 +1,81 @@
+{
+  "group_id": 1,
+  "mode": 0,
+  "expected_mode_after_frozen_warmup": 0,
+  "mode_matches_frozen_statistics": true,
+  "packet_ids": [
+    16,
+    17,
+    18
+  ],
+  "crc32": [
+    "CB8FA717",
+    "3D7380B1",
+    "3D7380B1"
+  ],
+  "pixels_per_image": 307200,
+  "bypass_mismatched_pixels": 0,
+  "tone": {
+    "exact_tone_pixels_passed": true,
+    "mismatched_pixels": 0,
+    "shape": [
+      480,
+      640
+    ],
+    "valid_samples": 304721,
+    "excluded_geometry_samples": 2479,
+    "provenance": {
+      "source_kind": "physical_same_source",
+      "source_frame_identity": "group:1:raw-crc:CB8FA717",
+      "before_source_frame_identity": "group:1:raw-crc:CB8FA717",
+      "after_source_frame_identity": "group:1:raw-crc:CB8FA717",
+      "angle_deg": 0.0,
+      "mode": 0
+    },
+    "provenance_independently_verified": false,
+    "before": {
+      "mean_luminance_code": 133.30822293179662,
+      "p05_p50_p95": [
+        23.0,
+        152.0,
+        198.0
+      ],
+      "luminance_std_code": 61.839120211697264,
+      "percentile_contrast_code_p95_minus_p05": 175.0,
+      "dark_fraction_y_lt_64": 0.21314579566226155,
+      "bright_fraction_y_ge_192": 0.15503690260927208,
+      "any_channel_at_max_fraction": 0.0,
+      "all_channels_at_max_fraction": 0.0,
+      "all_channels_at_zero_fraction": 0.00010173240439615255
+    },
+    "after": {
+      "mean_luminance_code": 133.30822293179662,
+      "p05_p50_p95": [
+        23.0,
+        152.0,
+        198.0
+      ],
+      "luminance_std_code": 61.839120211697264,
+      "percentile_contrast_code_p95_minus_p05": 175.0,
+      "dark_fraction_y_lt_64": 0.21314579566226155,
+      "bright_fraction_y_ge_192": 0.15503690260927208,
+      "any_channel_at_max_fraction": 0.0,
+      "all_channels_at_max_fraction": 0.0,
+      "all_channels_at_zero_fraction": 0.00010173240439615255
+    },
+    "limits": "Single same-source tone comparison. Distribution contrast is not resolution, MTF or temporal noise. An endpoint code is not proof of sensor saturation. Metadata alone does not independently prove capture provenance. Tone mapping cannot recover lost highlights or establish low-light detail recovery."
+  },
+  "passed": true,
+  "limits": "One immutable source and two bypass warmup passes. Protocol/RTL evidence supports pairing; CRC alone is not proof of source provenance. No realtime rate, optical resolution, temporal noise or recovered highlight claim.",
+  "files_sha256": {
+    "after.npy": "4556d04c66042936bfbf53772b1c8ef86fafd7723e4c3f44f3632ecd516de9e4",
+    "after.png": "e9bfbdcd79c1747089a467298d97ff3eeafa3b5542adf751a6c2e339f67ed2b7",
+    "before.npy": "4556d04c66042936bfbf53772b1c8ef86fafd7723e4c3f44f3632ecd516de9e4",
+    "before.png": "e9bfbdcd79c1747089a467298d97ff3eeafa3b5542adf751a6c2e339f67ed2b7",
+    "mask.npy": "c967aef135db8134dc04eab2e8e44604b21b2d1f5b13abea5563f10547cc380a",
+    "raw.npy": "c12eb2470621d45b7a6bb8293b04a5313d9431afaa1bd4a73a3b609dcec96c89",
+    "raw.png": "3baf643fe4c64b0652a03feef06e814500bf92156dad61639f1419c4a2a5a3a9",
+    "reference.npy": "4556d04c66042936bfbf53772b1c8ef86fafd7723e4c3f44f3632ecd516de9e4",
+    "reference.png": "e9bfbdcd79c1747089a467298d97ff3eeafa3b5542adf751a6c2e339f67ed2b7"
+  }
+}

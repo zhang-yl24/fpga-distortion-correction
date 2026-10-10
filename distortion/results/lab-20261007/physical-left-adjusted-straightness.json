@@ -1,0 +1,62 @@
+{
+  "all_complete_boards_detected": true,
+  "hardware_accessed_by_analyzer": false,
+  "fresh_physical_same_frame_pairs": 1,
+  "records": [
+    {
+      "pair_id": 2,
+      "source_packet_id": 4,
+      "result_packet_id": 5,
+      "mismatched_pixels": 0,
+      "raw": {
+        "complete_board_detected": true,
+        "corners": 54,
+        "line_count": 15,
+        "point_line_distances": 108,
+        "line_residual_rms_px": 0.14681678080156846,
+        "line_residual_p95_px": 0.29085632148120055,
+        "line_residual_max_px": 0.49828545160438836,
+        "median_neighbor_spacing_px": 29.725070260288152,
+        "corner_centroid_xy": [
+          122.38084023087113,
+          238.32622937802915
+        ],
+        "corner_bounds_xyxy": [
+          39.12822723388672,
+          118.07669830322266,
+          202.25843811035156,
+          356.6275634765625
+        ],
+        "normalized_rms_percent_spacing": 0.4939156729183968,
+        "image_sha256": "d9baec337bb8dd8aaff552350c08689cedcbd1a8dcc3be81e3efcb813b68e59e"
+      },
+      "corrected": {
+        "complete_board_detected": true,
+        "corners": 54,
+        "line_count": 15,
+        "point_line_distances": 108,
+        "line_residual_rms_px": 0.15852906110135379,
+        "line_residual_p95_px": 0.3123483090698167,
+        "line_residual_max_px": 0.8033917136436002,
+        "median_neighbor_spacing_px": 29.369105633976712,
+        "corner_centroid_xy": [
+          123.55640291284632,
+          238.37827004326715
+        ],
+        "corner_bounds_xyxy": [
+          41.752784729003906,
+          119.09540557861328,
+          202.77841186523438,
+          356.0227966308594
+        ],
+        "normalized_rms_percent_spacing": 0.5397817116975933,
+        "image_sha256": "7cb94017e97ddcf068bd4d825bf54fd0af2cd9a1e68f59e9fccbb2321f78c960"
+      },
+      "rms_straightness_change_percent": -7.977480663886216
+    }
+  ],
+  "source_capture_bitstream_sha256": "D669981C80856AFFC2396C21EAD4D60D2CD7E31EE2D7EE10B44AF5E47E49F81B",
+  "method": "OpenCV findChessboardCornersSB, fixed 9x6 inner-corner topology; independent total-least-squares fit to each of 6 rows and 9 columns. 108 point-to-line distances per image. Native-pixel and spacing-normalized results are both reported.",
+  "final_optical_accuracy_verified": false,
+  "limits": "A limited fresh physical pose, not a multi-pose or cross-lens optical acceptance. Corner localization, printed-board flatness, low resolution and resampling affect this straightness metric. New images are not automatically independent of the calibration pose distribution. This capture uses the previously validated zero-rotation corrected_capture binary, not the new overlap/adaptive board candidates."
+}

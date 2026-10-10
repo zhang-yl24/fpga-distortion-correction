@@ -1,0 +1,35 @@
+{
+  "output_size": [
+    640,
+    480
+  ],
+  "model": "synthetic Brown test, raster output",
+  "trace_valid_neighbours": 1228800,
+  "configurations": [
+    {
+      "cache_lines": 8,
+      "hits": 1209543,
+      "misses": 19257,
+      "miss_burst_bytes": 9859584,
+      "minimum_no_stall_core_cycles": 5856969,
+      "optimistic_minimum_frame_ms_at_125mhz": 46.856
+    },
+    {
+      "cache_lines": 16,
+      "hits": 1211882,
+      "misses": 16918,
+      "miss_burst_bytes": 8662016,
+      "minimum_no_stall_core_cycles": 5817206,
+      "optimistic_minimum_frame_ms_at_125mhz": 46.538
+    },
+    {
+      "cache_lines": 32,
+      "hits": 1218492,
+      "misses": 10308,
+      "miss_burst_bytes": 5277696,
+      "minimum_no_stall_core_cycles": 5704836,
+      "optimistic_minimum_frame_ms_at_125mhz": 45.639
+    }
+  ],
+  "limits": "Address trace and state-machine lower bound only; omits actual DDR latency, arbitration, capture/output writes, and board timing. It is not measured throughput. This serial neighbourhood reader must be optimized for higher-resolution/high-FPS goals."
+}

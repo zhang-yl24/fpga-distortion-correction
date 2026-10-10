@@ -1,0 +1,123 @@
+{
+  "recorded_utc": "2026-10-09T14:56:34.870208+00:00",
+  "date": "20261009",
+  "baseline": {
+    "passed": true,
+    "hardware_accessed_by_analyzer": false,
+    "samples": 23,
+    "span_seconds": 22.732846,
+    "delta": {
+      "WF": 418,
+      "CF": 418,
+      "PF": 1364
+    },
+    "approx_rates_per_second": {
+      "WF": 18.38749094592028,
+      "CF": 18.38749094592028,
+      "PF": 60.00128624458196
+    },
+    "observed_result_angles_deg": [
+      0.0
+    ],
+    "temperature_celsius_range": [
+      41.7177,
+      44.2776
+    ],
+    "max_process_ms_at_125mhz": 30.851456,
+    "limits": "Saved serial evidence only. CF counts new completed remaps; PF includes repeated HDMI refreshes. Host timestamps approximate rates. Internal-reference ADC is an approximate temperature until compared with an external instrument. Optical quality and visible key behavior need direct observation."
+  },
+  "baseline_visual_observation": {
+    "origin": "Direct user reply in this chat on 2026-10-09",
+    "question": "修正 D5 后的稳定版已下载，正在做24秒短测。请看显示器并挥手：画面是否正常、实时变化？白色或灰色物体是否仍明显偏绿，有没有明显花屏或撕裂？结束后自动待机。",
+    "answer": "一切正常",
+    "scope": "corrected_gamma_d5, zero-degree finite baseline",
+    "limits": "Qualitative visual observation; not calibrated color accuracy, complete angle coverage or prolonged reliability."
+  },
+  "grid_poses": [
+    {
+      "pose": "center",
+      "complete": true,
+      "raw_rms_px": 0.1907681257898812,
+      "corrected_rms_px": 0.1547979944084906,
+      "pixel_rms_reduction_percent": 18.855420019699405,
+      "span_normalized_rms_reduction_percent": 15.348701545109558,
+      "source_crc32": "CB8FA717"
+    },
+    {
+      "pose": "left",
+      "complete": false,
+      "raw_rms_px": null,
+      "corrected_rms_px": null,
+      "pixel_rms_reduction_percent": null,
+      "span_normalized_rms_reduction_percent": null,
+      "source_crc32": "03C2F032"
+    },
+    {
+      "pose": "left-adjusted",
+      "complete": true,
+      "raw_rms_px": 0.13105659318746277,
+      "corrected_rms_px": 0.1254945556418901,
+      "pixel_rms_reduction_percent": 4.243996742397194,
+      "span_normalized_rms_reduction_percent": 3.897750768329967,
+      "source_crc32": "0002EC4C"
+    },
+    {
+      "pose": "right",
+      "complete": true,
+      "raw_rms_px": 0.13824060202966174,
+      "corrected_rms_px": 0.11498396425492653,
+      "pixel_rms_reduction_percent": 16.82330475510018,
+      "span_normalized_rms_reduction_percent": 13.774325054761057,
+      "source_crc32": "BD25B6A0"
+    }
+  ],
+  "neutral_center": {
+    "samples": 76800,
+    "mean_rgb_code": [
+      145.47848958333333,
+      145.9080078125,
+      137.03653645833333
+    ],
+    "median_rgb_code": [
+      148.0,
+      146.0,
+      140.0
+    ],
+    "green_minus_red_code": 0.4295182291666606,
+    "green_minus_blue_code": 8.871471354166658,
+    "any_channel_at_max_fraction": 0.0,
+    "all_channels_zero_fraction": 0.0
+  },
+  "builds": {
+    "corrected_gamma_d5": {
+      "bitstream_sha256": "069D8ACEF8DED0CD62D19EE47C83E06910DF35BD0D76A9DF29403A8A14B877CF",
+      "timing_sha256": "00B994EB2351E038143A61E8E8944FC527148A214CFE7F1BA306E9C7EFEB9142",
+      "source_manifest_available": true
+    },
+    "gamma_capture_settled_d5": {
+      "bitstream_sha256": "45832255BB3031CFA86A2DD3BBAC45EF63805319FBE84DAD6D0ECA9A76B74FA0",
+      "timing_sha256": "677DA33DCCDBBC2E3742CE6A1F04EAE9F5E34C2F04843736D4D746397002E396",
+      "source_manifest_available": true
+    },
+    "heartbeat": {
+      "bitstream_sha256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+      "timing_sha256": null,
+      "source_manifest_available": false
+    }
+  },
+  "last_actual_idle_transfer": {
+    "Frequency": "5MHz",
+    "Device": "PG2L100H",
+    "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+    "Target": "heartbeat",
+    "Done": true,
+    "CheckedOn": "2026-10-09T22:55:08.0936534+08:00"
+  },
+  "full_optical_acceptance": false,
+  "limits": "One captured source per pose; no repetition statistics, full-field acceptance, MTF or color accuracy claim. HDMI refresh differs from newly corrected frame rate. ADC is an estimate. SRAM recovery is not Flash autonomous boot.",
+  "source_sha256": {
+    "tools/native_optical_audit.py": "22762439BC567BEBDA057DB71F3E2E3741EE96326A60905FDFB7BA7596B1F06B",
+    "tools/record_optical_session.py": "042D1224FBA1D2CE1BF66FEE687C4F7C574671ACDAF6B262994A81FEFB10431F",
+    "tests/test_native_optical_audit.py": "D2E214549BDEC4F18EB56FB63376800226C3F4673B817F8206AEDAA0AE99BDA7"
+  }
+}

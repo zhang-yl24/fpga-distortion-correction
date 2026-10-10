@@ -1,0 +1,93 @@
+{
+  "hardware_accessed_by_analyzer": false,
+  "input_origin": "optical_camera_scene",
+  "target": "gamma_capture_settled_d5",
+  "scene_label": "user-confirmed-evenly-lit-matte-white-paper",
+  "group_id": 1,
+  "source_crc32": "EAD6E9EB",
+  "summary_sha256": "C007409B7E27A918321500858647DD688BCDE1C3ACC5DEEAC61708AE442E0F5B",
+  "comparison_sha256": "9AC2E46E876EC886DDFD75967EB42659B2E564691695CEB07F05CE5C9AFF5428",
+  "capture_transfer": {
+    "Frequency": "5MHz",
+    "Device": "PG2L100H",
+    "SHA256": "45832255BB3031CFA86A2DD3BBAC45EF63805319FBE84DAD6D0ECA9A76B74FA0",
+    "Target": "gamma_capture_settled_d5",
+    "Done": true,
+    "CheckedOn": "2026-10-09T22:39:27.6969711+08:00"
+  },
+  "idle_transfer": {
+    "Frequency": "5MHz",
+    "Device": "PG2L100H",
+    "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+    "Target": "heartbeat",
+    "Done": true,
+    "CheckedOn": "2026-10-09T22:40:27.0589822+08:00"
+  },
+  "kind": "neutral",
+  "numerical_regression_passed": true,
+  "full_optical_acceptance": false,
+  "roi_xywh": [
+    160,
+    120,
+    320,
+    240
+  ],
+  "statistics": {
+    "raw": {
+      "samples": 76800,
+      "mean_rgb_code": [
+        145.47848958333333,
+        145.9080078125,
+        137.03653645833333
+      ],
+      "median_rgb_code": [
+        148.0,
+        146.0,
+        140.0
+      ],
+      "green_minus_red_code": 0.4295182291666606,
+      "green_minus_blue_code": 8.871471354166658,
+      "any_channel_at_max_fraction": 0.0,
+      "all_channels_zero_fraction": 0.0
+    },
+    "before": {
+      "samples": 76800,
+      "mean_rgb_code": [
+        145.5858203125,
+        146.09880208333334,
+        137.13212239583333
+      ],
+      "median_rgb_code": [
+        148.0,
+        146.0,
+        140.0
+      ],
+      "green_minus_red_code": 0.5129817708333348,
+      "green_minus_blue_code": 8.966679687500005,
+      "any_channel_at_max_fraction": 0.0,
+      "all_channels_zero_fraction": 0.0
+    },
+    "after": {
+      "samples": 76800,
+      "mean_rgb_code": [
+        145.5858203125,
+        146.09880208333334,
+        137.13212239583333
+      ],
+      "median_rgb_code": [
+        148.0,
+        146.0,
+        140.0
+      ],
+      "green_minus_red_code": 0.5129817708333348,
+      "green_minus_blue_code": 8.966679687500005,
+      "any_channel_at_max_fraction": 0.0,
+      "all_channels_zero_fraction": 0.0
+    }
+  },
+  "limits": "Descriptive channel code differences on user-positioned white paper. Not calibrated color error or proof that a ROI is entirely neutral. Lighting spectrum, exposure and quantization matter; Gamma is not white-balance correction.",
+  "source_sha256": {
+    "tools/native_optical_audit.py": "22762439BC567BEBDA057DB71F3E2E3741EE96326A60905FDFB7BA7596B1F06B",
+    "tools/check-grid-straightness.py": "C3BCE72154B04B0EF4B1106E2204F99C0E4F0D774DBA1BD4D4FCEF1741E95DD1"
+  }
+}

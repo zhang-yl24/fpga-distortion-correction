@@ -1,0 +1,30 @@
+# CAMERA INTERFACE DRAFT ONLY; not included in heartbeat and not yet programmed.
+# Requires matching Double_DVP_OV5640 J17 pinout, FMC J2, 3.3V IO Bank supply.
+# Read camera silicon ID before choosing OV5640 initialization registers.
+# Sources: vendor camera schematic DOUBLE-DVP-OV5640-1113.pdf and FMC J2 table.
+# The camera module supplies its own 24MHz XCLK (U27); no FPGA XCLK pin here.
+foreach {port pin} {
+    cam_data[7] V14
+    cam_sda U14
+    cam_data[5] Y21
+    cam_scl W21
+    cam_data[4] T15
+    cam_data[0] T14
+    cam_href W18
+    cam_data[6] V18
+    cam_data[1] U20
+    cam_rst_n T20
+    cam_data[2] Y26
+    cam_data[3] W25
+    cam_vsync Y23
+    cam_pclk Y22
+} {
+    define_attribute "p:$port" {PAP_IO_LOC} $pin
+    define_attribute "p:$port" {PAP_IO_VCCIO} {3.3}
+    define_attribute "p:$port" {PAP_IO_STANDARD} {LVCMOS33}
+}
+# SCCB SDA must be open drain (drive 0 or Z); never push-pull high.
+# The module schematic pulls CAM1_PWDN down with R6; J17 pins 15/16 are NC.
+# Do not invent an FPGA power-down connection on J17 pin 16.
+# PCLK frequency and input delays must be constrained from the selected sensor
+# mode and datasheet before any top-level camera bitstream is generated.

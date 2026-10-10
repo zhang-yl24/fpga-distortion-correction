@@ -1,0 +1,19 @@
+# Standalone timing probe ONLY, not a physical board wiring prescription.
+# D18 is a clock-capable package pin; synthetic 125MHz tests the internal core.
+# Actual board oscillator is 27MHz and actual DDR core clock comes from its IP.
+create_clock -name core_clk -period 8.0 [get_ports clk]
+set_input_delay -clock core_clk -max 2.0 [get_ports {rst_n serial_in}]
+set_input_delay -clock core_clk -min 0.0 [get_ports {rst_n serial_in}]
+set_output_delay -clock core_clk -max 2.0 [get_ports serial_out]
+set_output_delay -clock core_clk -min 0.0 [get_ports serial_out]
+define_attribute {p:clk} {PAP_IO_LOC} {D18}
+define_attribute {p:rst_n} {PAP_IO_LOC} {C18}
+define_attribute {p:serial_in} {PAP_IO_LOC} {A20}
+define_attribute {p:serial_out} {PAP_IO_LOC} {C19}
+define_attribute {p:serial_out} {PAP_IO_REGISTER} {TRUE}
+define_attribute {p:serial_out} {PAP_IO_SLEW} {FAST}
+define_attribute {p:serial_out} {PAP_IO_DRIVE} {16}
+foreach name {clk rst_n serial_in serial_out} {
+    define_attribute "p:$name" {PAP_IO_STANDARD} {LVCMOS33}
+    define_attribute "p:$name" {PAP_IO_VCCIO} {3.3}
+}

@@ -1,0 +1,111 @@
+{
+  "recorded_utc": "2026-10-08T09:03:01.742361+00:00",
+  "passed": true,
+  "source_kind": "physical_same_source",
+  "hardware_accessed": true,
+  "groups": [
+    {
+      "group_id": 1,
+      "mode": 0,
+      "expected_mode_after_frozen_warmup": 0,
+      "mode_matches_frozen_statistics": true,
+      "packet_ids": [
+        16,
+        17,
+        18
+      ],
+      "crc32": [
+        "AD856786",
+        "EF6451B9",
+        "EF6451B9"
+      ],
+      "pixels_per_image": 307200,
+      "bypass_mismatched_pixels": 0,
+      "tone": {
+        "exact_tone_pixels_passed": true,
+        "mismatched_pixels": 0,
+        "shape": [
+          480,
+          640
+        ],
+        "valid_samples": 304721,
+        "excluded_geometry_samples": 2479,
+        "provenance": {
+          "source_kind": "physical_same_source",
+          "source_frame_identity": "group:1:raw-crc:AD856786",
+          "before_source_frame_identity": "group:1:raw-crc:AD856786",
+          "after_source_frame_identity": "group:1:raw-crc:AD856786",
+          "angle_deg": 0.0,
+          "mode": 0
+        },
+        "provenance_independently_verified": false,
+        "before": {
+          "mean_luminance_code": 84.08515986755097,
+          "p05_p50_p95": [
+            67.0,
+            83.0,
+            103.0
+          ],
+          "luminance_std_code": 12.370896571575782,
+          "percentile_contrast_code_p95_minus_p05": 36.0,
+          "dark_fraction_y_lt_64": 0.009572691084631515,
+          "bright_fraction_y_ge_192": 0.0,
+          "any_channel_at_max_fraction": 0.0,
+          "all_channels_at_max_fraction": 0.0,
+          "all_channels_at_zero_fraction": 0.00010829578532493658
+        },
+        "after": {
+          "mean_luminance_code": 84.08515986755097,
+          "p05_p50_p95": [
+            67.0,
+            83.0,
+            103.0
+          ],
+          "luminance_std_code": 12.370896571575782,
+          "percentile_contrast_code_p95_minus_p05": 36.0,
+          "dark_fraction_y_lt_64": 0.009572691084631515,
+          "bright_fraction_y_ge_192": 0.0,
+          "any_channel_at_max_fraction": 0.0,
+          "all_channels_at_max_fraction": 0.0,
+          "all_channels_at_zero_fraction": 0.00010829578532493658
+        },
+        "limits": "Single same-source tone comparison. Distribution contrast is not resolution, MTF or temporal noise. An endpoint code is not proof of sensor saturation. Metadata alone does not independently prove capture provenance. Tone mapping cannot recover lost highlights or establish low-light detail recovery."
+      },
+      "passed": true,
+      "limits": "One immutable source and two bypass warmup passes. Protocol/RTL evidence supports pairing; CRC alone is not proof of source provenance. No realtime rate, optical resolution, temporal noise or recovered highlight claim.",
+      "files_sha256": {
+        "after.npy": "ba62ad707198359e1f5803a9d687e36cc0d80ba7897dd0f853817aa418e93d0a",
+        "after.png": "93cb238179dcb66074027e8d6b9e73a1804846bfd0b7c8553fed6bf571c1c21d",
+        "before.npy": "ba62ad707198359e1f5803a9d687e36cc0d80ba7897dd0f853817aa418e93d0a",
+        "before.png": "93cb238179dcb66074027e8d6b9e73a1804846bfd0b7c8553fed6bf571c1c21d",
+        "mask.npy": "c967aef135db8134dc04eab2e8e44604b21b2d1f5b13abea5563f10547cc380a",
+        "raw.npy": "a25d36cfabb8952656b2e2448f14b334b9b14afc00fff651434b17e58f7f0f1c",
+        "raw.png": "f7ad47cc50a9a8591ee789c83fade3889a840a6bdcbda75fc83c83511c9dbf65",
+        "reference.npy": "ba62ad707198359e1f5803a9d687e36cc0d80ba7897dd0f853817aa418e93d0a",
+        "reference.png": "93cb238179dcb66074027e8d6b9e73a1804846bfd0b7c8553fed6bf571c1c21d"
+      }
+    }
+  ],
+  "scene_label": "illuminated-white-paper",
+  "reference_sha256": "28a70b6ad7f43f33cfd69074637a52a0174af1249c927e4a860d9f374ff66509",
+  "capture_transfer": {
+    "Frequency": "5MHz",
+    "Device": "PG2L100H",
+    "SHA256": "4F9410DA9FCD1FC0B98A9A4E0B3B6B8E1B7DF53B81C084B05BF9585ECB72652C",
+    "Target": "gamma_capture",
+    "Done": true,
+    "CheckedOn": "2026-10-08T17:03:38.1257968+08:00"
+  },
+  "idle_transfer": {
+    "Frequency": "5MHz",
+    "Device": "PG2L100H",
+    "SHA256": "DF7EEC4B4E38441183B45BAF8B38D8414FDD456A5EB78FB3AEB1FD94B361B360",
+    "Target": "heartbeat",
+    "Done": true,
+    "CheckedOn": "2026-10-08T17:04:29.0842928+08:00"
+  },
+  "rejected_packets": 0,
+  "discarded_stream_bytes": 0,
+  "incomplete_groups": 0,
+  "orphan_packets": 0
+}

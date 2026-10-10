@@ -1,0 +1,30 @@
+// atan(2^-i) as signed phase units, one full turn = 2^32.
+function signed [31:0] atan_phase(input [4:0] index);
+    case(index)
+        5'd0:atan_phase=32'sh20000000;
+        5'd1:atan_phase=32'sh12e4051e;
+        5'd2:atan_phase=32'sh09fb385b;
+        5'd3:atan_phase=32'sh051111d4;
+        5'd4:atan_phase=32'sh028b0d43;
+        5'd5:atan_phase=32'sh0145d7e1;
+        5'd6:atan_phase=32'sh00a2f61e;
+        5'd7:atan_phase=32'sh00517c55;
+        5'd8:atan_phase=32'sh0028be53;
+        5'd9:atan_phase=32'sh00145f2f;
+        5'd10:atan_phase=32'sh000a2f98;
+        5'd11:atan_phase=32'sh000517cc;
+        5'd12:atan_phase=32'sh00028be6;
+        5'd13:atan_phase=32'sh000145f3;
+        5'd14:atan_phase=32'sh0000a2fa;
+        5'd15:atan_phase=32'sh0000517d;
+        5'd16:atan_phase=32'sh000028be;
+        5'd17:atan_phase=32'sh0000145f;
+        5'd18:atan_phase=32'sh00000a30;
+        5'd19:atan_phase=32'sh00000518;
+        5'd20:atan_phase=32'sh0000028c;
+        5'd21:atan_phase=32'sh00000146;
+        5'd22:atan_phase=32'sh000000a3;
+        5'd23:atan_phase=32'sh00000051;
+        default:atan_phase=0;
+    endcase
+endfunction
