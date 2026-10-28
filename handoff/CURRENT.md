@@ -1,5 +1,13 @@
 # 当前交接点
 
+## 新候选本机最终 STA 已生成；原生八帧与定向 hold 试验仍在运行
+
+本机 `rowpipe-20261028-a` 已完成综合/映射/布局布线/最终STA，主域setup最差+.447ns，slow/fast hold各1失败（−.037/−.222ns），recovery分别245/234；fast少11项是该角同一35端点组中11项非负，不是检查消失。54/110项缺输入/输出延迟及CDC/RDC缺口仍保留，不能上板签核。结果 `distortion/results/board1080-rowpipe-timing-20261028.json`，详见 `handoff/BOARD1080_TIMING_20261028.md`。当前PDS2023与历史2022不同，不能把+.116→+.447当作受控的单变量提升。
+
+完整流程最初快照copy在预解析报Flow0163，runtime后仍形成与最终ADF相同的快照并生成完整报告；原失败未改写，CleanFlow=false。准备器后续已加Tcl存在性guard和36项CPU测试。原准备器/runner副本留本轮build以绑定实际旧哈希。针对唯一hold的增量尝试B/C/D分别遇到输入DB阶段/Place上下文/报告入口重跑前置的问题，未宣布hold改善；原基线未改。现仅一次新的完整流程E使用相同源码/约束与200ps时钟树hold目标，等待实际新十类报告。没有位流或硬件操作。
+
+当前 `local-native-20261028-a` 是新rowpipe源码自己的1920×1080八帧回归，尚未完成；已有4帧实际扫描CRC匹配、第五帧矫正完成，不能提前当8帧通过。采购与60fps预算分别见 `handoff/CAMERA_PROCUREMENT_20261028.md`、`handoff/BOARD1080_PERFORMANCE_BUDGET.md`；现阶段以实板稳定1080p30为保底，60fps需流水结构/接口配套改进。
+
 ## 直接推进源码：地址流水已接入独立1080P整链
 
 `codex/board1080-rowpipe` 合并前两条本机开发线，将已有 rowpipe 接入 CDC-reset System；新顶层/sampler及109项独立闭包保留原入口。11项CPU测试及本机新的32×16八帧整链通过（4096像素/CRC、反压、切帧、故障隔离、公共复位），实际compile/elaborate/simulate均0。原记录及哈希摘要见 `distortion/results/board1080-rowpipe-small-20261028.json`、`handoff/BOARD1080_ROWPIPE.md`。未新跑此候选native八帧/STA，不借用旧回归；未接板。源码使用不依赖队友旧报告，下一步以本候选生成自己的最终STA和逐端点清单。
