@@ -10,13 +10,26 @@ import cv2
 import numpy as np
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from tools.native_scene_diagnostics import (ROOT, analyze_words, analyze_capture, load_verified_frame,
+SOURCE_ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(SOURCE_ROOT))
+from tools import native_scene_diagnostics as diagnostics
+from tools.native_scene_diagnostics import (analyze_words, analyze_capture, load_verified_frame,
                                              canonical_sha, digest)
 
 
 IDENTITY = {'camera_id': 'SYNTHETIC', 'lens_id': 'SYNTHETIC-LENS', 'profile_id': 'synthetic-scene',
             'capture_mode_id': 'synthetic-rgb565', 'eye': 'CAM2'}
+
+
+@pytest.fixture
+def build_project(tmp_path, monkeypatch):
+    # Keep the build closure inside its own project, wherever pytest puts tmp_path.
+    project = tmp_path/'project'
+    reference = project/'board/corrected_gamma_d5-pins.json'
+    reference.parent.mkdir(parents=True)
+    reference.write_bytes((SOURCE_ROOT/'board/corrected_gamma_d5-pins.json').read_bytes())
+    monkeypatch.setattr(diagnostics, 'ROOT', project)
+    return project
 
 
 def capture(tmp_path, words, index=0, binding=None, build_record=None):
@@ -41,16 +54,16 @@ def capture(tmp_path, words, index=0, binding=None, build_record=None):
     return meta, record
 
 
-def build_fixture(tmp_path, size):
-    source, pins, bitstream, timing, manifest, binding_path = [tmp_path/name for name in
+def build_fixture(project, size):
+    source, pins, bitstream, timing, manifest, binding_path = [project/name for name in
         ('source.v', 'pins.json', 'synthetic.sbit', 'timing.txt', 'validated-build.json', 'binding.json')]
     source.write_text('// SYNTHETIC TEST SOURCE', encoding='utf-8')
-    pins.write_bytes((ROOT/'board/corrected_gamma_d5-pins.json').read_bytes())
+    pins.write_bytes((project/'board/corrected_gamma_d5-pins.json').read_bytes())
     bitstream.write_bytes(b'SYNTHETIC BITSTREAM FIXTURE, NEVER PROGRAM')
     timing.write_text('SYNTHETIC TEST FIXTURE All Constraints Met', encoding='utf-8')
     contract = {'protocol': 'PGFRAME1', 'payload_role': 'native_raw', 'geometry_applied': False, 'image_size': size}
     manifest.write_text(json.dumps({'SHA256': digest(bitstream), 'TimingSHA256': digest(timing),
-        'RawCaptureContract': contract, 'SourceSHA256': {str(path.relative_to(ROOT)): digest(path) for path in (source, pins)}}), encoding='utf-8')
+        'RawCaptureContract': contract, 'SourceSHA256': {str(path.relative_to(project)): digest(path) for path in (source, pins)}}), encoding='utf-8')
     binding = {**IDENTITY, 'schema': 1, 'image_size': size, 'pixel_format': 'RGB565_LE',
         'build_binding': {key: {'path': str(path), 'sha256': digest(path)} for key, path in
                           (('validated_build', manifest), ('bitstream', bitstream), ('pinout', pins), ('timing_report', timing))}}
@@ -135,8 +148,8 @@ def test_truncation_and_tampering_are_rejected(tmp_path, case):
         load_verified_frame(meta, expected_metadata_sha256=old_meta_sha if case == 'metadata_sha' else None)
 
 
-def test_build_role_sources_and_identity_are_independently_reread(tmp_path):
-    binding_path, binding, build, source, manifest = build_fixture(tmp_path, [24, 16])
+def test_build_role_sources_and_identity_are_independently_reread(tmp_path, build_project):
+    binding_path, binding, build, source, manifest = build_fixture(build_project, [24, 16])
     meta, record = capture(tmp_path, np.arange(16*24, dtype=np.uint16).reshape(16, 24), binding=binding, build_record=build)
     report, _ = analyze_capture([meta], binding_path=binding_path)
     assert report['native_source_contracts_verified']
@@ -146,8 +159,8 @@ def test_build_role_sources_and_identity_are_independently_reread(tmp_path):
         analyze_capture([meta], binding_path=binding_path)
 
 
-def test_identity_and_raw_role_mismatch_are_rejected(tmp_path):
-    binding_path, binding, build, source, manifest = build_fixture(tmp_path, [24, 16])
+def test_identity_and_raw_role_mismatch_are_rejected(tmp_path, build_project):
+    binding_path, binding, build, source, manifest = build_fixture(build_project, [24, 16])
     meta, record = capture(tmp_path, np.arange(16*24, dtype=np.uint16).reshape(16, 24), binding=binding, build_record=build)
     binding['lens_id'] = 'OTHER-LENS'
     binding_path.write_text(json.dumps(binding), encoding='utf-8')
@@ -155,8 +168,8 @@ def test_identity_and_raw_role_mismatch_are_rejected(tmp_path):
         analyze_capture([meta], binding_path=binding_path)
 
 
-def test_build_declaring_corrected_payload_cannot_verify_as_native_raw(tmp_path):
-    binding_path, binding, build, source, manifest = build_fixture(tmp_path, [24, 16])
+def test_build_declaring_corrected_payload_cannot_verify_as_native_raw(tmp_path, build_project):
+    binding_path, binding, build, source, manifest = build_fixture(build_project, [24, 16])
     changed = json.loads(manifest.read_text())
     changed['RawCaptureContract']['payload_role'] = 'corrected'
     manifest.write_text(json.dumps(changed), encoding='utf-8')
