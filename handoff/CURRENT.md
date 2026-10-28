@@ -1,5 +1,11 @@
 # 当前交接点
 
+## 直接推进源码：地址流水已接入独立1080P整链
+
+`codex/board1080-rowpipe` 合并前两条本机开发线，将已有 rowpipe 接入 CDC-reset System；新顶层/sampler及109项独立闭包保留原入口。11项CPU测试及本机新的32×16八帧整链通过（4096像素/CRC、反压、切帧、故障隔离、公共复位），实际compile/elaborate/simulate均0。原记录及哈希摘要见 `distortion/results/board1080-rowpipe-small-20261028.json`、`handoff/BOARD1080_ROWPIPE.md`。未新跑此候选native八帧/STA，不借用旧回归；未接板。源码使用不依赖队友旧报告，下一步以本候选生成自己的最终STA和逐端点清单。
+
+用户询问输入选择已核：赛题允许HDMI或摄像头，没有强制OV5640，但需真实相机标定及实时演示。当前主链是HDMI1080p30；实际8bit DVP模组的RGB565不能由芯片宣传1080p30直接推定。依据见 `handoff/VIDEO_INPUT_DECISION.md`。
+
 ## 本机离板 DDR 对照完成：2026-10-28
 
 本地分支 `codex/ddr-recovery-diagnosis` 基于 `890d21e`。新增只读 CPU 审计及 24 项测试，确认当前 HMIC_S 1.10 的 IDF/371 参数、74 综合源与仓库官方示例一致。官方旧报告六组跨时钟异步排除计数各34/3/35/84/4/84，合计244；尚无队友最新详细 XML，不能由计数认定与当前失败端点逐一相同。结果 `distortion/results/ddr-reference-audit-20261028.json`。
