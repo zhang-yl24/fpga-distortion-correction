@@ -12,6 +12,8 @@ rowpipe 将 y×WIDTH 乘积注册，再相加 x/邻域偏移，针对原地址�
 
 本轮实际验证：11 项 CPU 闭包/来源拒绝/配置恢复测试通过；Vivado 2017.4 编译、展开、仿真均退出 0，新的 32×16 八帧整链通过，4096 像素与独立 CPU golden 一致，最终排空、故障隔离及公共复位恢复通过。原始记录在 `distortion/build/board1080-rowpipe-reproduction/local-small-20261028-a/board1080-system-simulation.json`，哈希摘要见 `distortion/results/board1080-rowpipe-small-20261028.json`。
 
-该结果仅证明小尺寸整链；未新跑本候选的 native 八帧或最终 STA，不借用旧版本 1080P 回归宣称新版本通过。也没有生成位流或操作开发板。DDR 内部 recovery、外部 IO 和真实光学输入仍须分别解决。
+新候选随后完成自己的原生1920×1080八帧回归：16588800像素/CRC一致、稳态30.000fps、无丢帧/输出下溢/CRC错误，银行复用和最终排空通过。最坏3816061个125MHz周期，37项源/33输入及衍生文件前后无漂移，compile/elaborate/simulate均0。结果见 `distortion/results/board1080-rowpipe-native-20261028.json`。逐帧处理周期与旧版相同，rowpipe没有直接提升吞吐；小尺寸测试承担故障/复位注入，native有意只跑正常八帧流，不能混淆这两种覆盖。
 
-下一步使用此候选生成本机最终 STA，获取自己的逐端点失败清单并评估地址路径余量；同源小尺寸结果也可用于后续 native 八帧入口。DDR 首个 PLL 的原始复位不可直接与该 PLL 的 LOCK 相与后再反馈给整个 IP，以免启动死锁。内部训练复位的处理须分别核实 gate/首有效边沿关系。
+本机最终STA也已生成：主域slow setup +0.447ns，但hold每角仍1项−0.037/−0.222ns、recovery slow245/fast234。随后完整200ps时钟树hold定向试验退出0、无原生错误，十表与原试验完全相同，无收益；见 `handoff/BOARD1080_HOLDFIX_20261028.md`。没有生成位流或操作开发板，DDR/IO/CDC与真实光学输入仍未签核。不同PDS版本不能把旧+.116与新+.447当作单变量因果提升。
+
+下一步按 `handoff/DDR_IP_CONSTRAINT_PLAN.md` 在独立候选中集成适用的IP内部具体reset例外，保留自研CDC与真实数据setup/hold；入口1项另处理。DDR首个PLL的原始复位不可直接与该PLL的LOCK相与后反馈给整个IP，以免启动死锁。官方IP约束可作设计依据，但不能照搬全局board27异步组隐藏边界。当前30fps保底与60fps改造预算见 `handoff/BOARD1080_PERFORMANCE_BUDGET.md`。

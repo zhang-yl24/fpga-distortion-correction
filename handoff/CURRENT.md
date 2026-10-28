@@ -1,12 +1,14 @@
 # 当前交接点
 
-## 新候选本机最终 STA 已生成；原生八帧与定向 hold 试验仍在运行
+## 新候选原生1080P八帧通过；完整时序仍有已知失败
 
 本机 `rowpipe-20261028-a` 已完成综合/映射/布局布线/最终STA，主域setup最差+.447ns，slow/fast hold各1失败（−.037/−.222ns），recovery分别245/234；fast少11项是该角同一35端点组中11项非负，不是检查消失。54/110项缺输入/输出延迟及CDC/RDC缺口仍保留，不能上板签核。结果 `distortion/results/board1080-rowpipe-timing-20261028.json`，详见 `handoff/BOARD1080_TIMING_20261028.md`。当前PDS2023与历史2022不同，不能把+.116→+.447当作受控的单变量提升。
 
-完整流程最初快照copy在预解析报Flow0163，runtime后仍形成与最终ADF相同的快照并生成完整报告；原失败未改写，CleanFlow=false。准备器后续已加Tcl存在性guard和36项CPU测试。原准备器/runner副本留本轮build以绑定实际旧哈希。针对唯一hold的增量尝试B/C/D分别遇到输入DB阶段/Place上下文/报告入口重跑前置的问题，未宣布hold改善；原基线未改。现仅一次新的完整流程E使用相同源码/约束与200ps时钟树hold目标，等待实际新十类报告。没有位流或硬件操作。
+完整流程最初快照copy在预解析报Flow0163，runtime后仍形成与最终ADF相同的快照并生成完整报告；原失败未改写，CleanFlow=false。准备器后续已加Tcl存在性guard和36项CPU测试。原准备器/runner副本留本轮build以绑定实际旧哈希。针对唯一hold的增量尝试B/C/D分别遇到输入DB阶段/Place上下文/报告入口重跑前置的问题；一次新的完整流程E退出0/830.572s、CleanFlow=true、输入无漂移，100→200ps两阶段确实执行，但十类汇总与A完全相同，无时序收益。结果见 `distortion/results/board1080-rowpipe-holdfix-20261028.json`、`handoff/BOARD1080_HOLDFIX_20261028.md`。没有位流或硬件操作。
 
-当前 `local-native-20261028-a` 是新rowpipe源码自己的1920×1080八帧回归，尚未完成；已有4帧实际扫描CRC匹配、第五帧矫正完成，不能提前当8帧通过。采购与60fps预算分别见 `handoff/CAMERA_PROCUREMENT_20261028.md`、`handoff/BOARD1080_PERFORMANCE_BUDGET.md`；现阶段以实板稳定1080p30为保底，60fps需流水结构/接口配套改进。
+`local-native-20261028-a` 新rowpipe源码自己的1920×1080八帧回归已完成：compile/elaborate/simulate均0，16588800逐像素/CRC/实际RTL扫描通过，8个ID/银行复用/最终排空通过，drop/overflow/no_free/underflow/CRC错全0。稳态30.000fps、扫描间隔抖动1ps，最坏3816061周期（30.528488ms）；与旧版逐帧周期相同，没有直接提速。37项源/33输入/衍生文件及日志/结果hash均核实，耗时4343.018s。回执 `distortion/results/board1080-rowpipe-native-20261028.json`；23项与板级闭包共有的模块/头hash一致，仍是合成参数+行为DDR模型，不是实板fps。相关88项CPU测试与当前远端CI通过。
+
+下一步按 `handoff/DDR_IP_CONSTRAINT_PLAN.md` 把同配置官方约束限定到IP内部具体reset/training路径，并分别修入口RDC和真实PHY数据hold；不能复制全局board27/free_clk异步组切掉自研CDC。无需等待队友旧报告才继续开发。采购与实测60fps预算见 `handoff/CAMERA_PROCUREMENT_20261028.md`、`handoff/BOARD1080_PERFORMANCE_BUDGET.md`；先保住实板1080p30，60fps需要结构性改动及输入/输出配套。
 
 ## 直接推进源码：地址流水已接入独立1080P整链
 
