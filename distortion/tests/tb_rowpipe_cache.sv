@@ -45,6 +45,14 @@ module rowpipe_cache_exerciser(output reg finished=0);
     integer cov_bad_rid=0,cov_early_last=0,cov_missing_last=0,cov_unsolicited=0,cov_queued_fault=0;
     integer cov_slow_empty=0,cov_lower_read=0;
     integer cov_last_frame_request=0,cov_last_frame_pending=0,cov_last_frame_out_stall=0,cov_last_frame_refill=0;
+    integer metadata_phase=0,metadata_inputs=0,metadata_all_field_changes=0;
+    integer metadata_warm_outputs=0,metadata_warm_first=-1,metadata_warm_last=-1;
+    integer metadata_stalled_outputs=0,metadata_mixed_outputs=0;
+    integer metadata_input_stall=0,metadata_output_hold=0,metadata_pre_hold=0,metadata_query_hold=0;
+    integer metadata_fast_queries=0,metadata_slow_queries=0,metadata_hit_miss_switches=0;
+    reg metadata_previous_valid=0,metadata_mixed_previous_valid=0,metadata_previous_slow=0;
+    reg signed [23:0] metadata_previous_x,metadata_previous_y;
+    reg [24:0] metadata_previous_tag;
 
     function automatic [15:0] word565(input integer pos,input integer bank,input integer epoch);
         word565=(pos*73+16'h05a3+(pos>>7)*337+(pos^(pos>>4))*11+
@@ -126,6 +134,16 @@ module rowpipe_cache_exerciser(output reg finished=0);
                         expected_rgb(($signed(in_x)>>>8)+1,($signed(in_y)>>>8)+1,active_bank,active_epoch),
                         in_x[7:0],in_y[7:0],in_tag};
                     sent<=sent+1;
+                    if(metadata_phase!=0)begin
+                        metadata_inputs=metadata_inputs+1;
+                        if(metadata_phase<=2 && metadata_previous_valid &&
+                           in_x[23:8]!=metadata_previous_x[23:8] && in_y[23:8]!=metadata_previous_y[23:8] &&
+                           in_x[7:0]!=metadata_previous_x[7:0] && in_y[7:0]!=metadata_previous_y[7:0] &&
+                           in_tag!=metadata_previous_tag)
+                            metadata_all_field_changes=metadata_all_field_changes+1;
+                        metadata_previous_valid=1;metadata_previous_x=in_x;
+                        metadata_previous_y=in_y;metadata_previous_tag=in_tag;
+                    end
                 end
                 if(out_valid&&!out_ready)cov_out_stall=cov_out_stall+1;
                 if(out_valid&&out_ready)begin
@@ -133,6 +151,27 @@ module rowpipe_cache_exerciser(output reg finished=0);
                         $fatal(1,"SCATTER4 independent four-neighbour oracle mismatch query%0d",received);
                     if(out_tag[24])cov_tag_high=cov_tag_high+1;else cov_tag_low=cov_tag_low+1;
                     received<=received+1;cov_normal_outputs=cov_normal_outputs+1;
+                    case(metadata_phase)
+                        1:begin
+                            if(metadata_warm_outputs==0)metadata_warm_first=ticks;
+                            metadata_warm_last=ticks;metadata_warm_outputs=metadata_warm_outputs+1;
+                        end
+                        2:metadata_stalled_outputs=metadata_stalled_outputs+1;
+                        3:metadata_mixed_outputs=metadata_mixed_outputs+1;
+                    endcase
+                end
+                if(metadata_phase==2)begin
+                    if(in_valid&&!in_ready)metadata_input_stall=metadata_input_stall+1;
+                    if(out_valid&&!out_ready)metadata_output_hold=metadata_output_hold+1;
+                    if(dut.inner.pre_valid&&!dut.inner.pre_to_query)metadata_pre_hold=metadata_pre_hold+1;
+                    if(dut.inner.query_valid&&!dut.inner.accept_query)metadata_query_hold=metadata_query_hold+1;
+                end
+                if(metadata_phase==3 && dut.inner.accept_query)begin
+                    if(dut.inner.accept_fast)metadata_fast_queries=metadata_fast_queries+1;
+                    if(dut.inner.accept_slow)metadata_slow_queries=metadata_slow_queries+1;
+                    if(metadata_mixed_previous_valid && metadata_previous_slow!=dut.inner.accept_slow)
+                        metadata_hit_miss_switches=metadata_hit_miss_switches+1;
+                    metadata_mixed_previous_valid=1;metadata_previous_slow=dut.inner.accept_slow;
                 end
             end
             out_held<=checking&&out_valid&&!out_ready;held_output<={p00,p10,p01,p11,fx,fy,out_tag};
@@ -482,6 +521,71 @@ module rowpipe_cache_exerciser(output reg finished=0);
             $fatal(1,"ROWPIPE warm hit pipeline did not sustain1 query/output per clock count%0d span%0d",stream_outputs,stream_last-stream_first);
         $display("PASS ROWPIPE warmed first-latency4 and64 consecutive actual outputs at1 per clock");
 
+        // Vary every metadata field on adjacent accepted warm queries. The two
+        // priming queries populate rows0/1/2 without a direct-map index alias;
+        // the existing independent pixel/metadata scoreboard checks every output.
+        reset_all();select_frame(0);fast_unthrottled=1;
+        query(16*256,0,25'h0001000);drain();
+        query(16*256,1*256,25'h0001001);drain();before_bursts=bursts;
+        metadata_phase=1;
+        @(negedge clk);in_valid=1;
+        for(integer q=0;q<32;q=q+1)begin
+            in_x=(16+q)*256+((q*37+11)&255);
+            in_y=(q%2)*256+((q*53+7)&255);
+            in_tag=25'h0020000+q+((q%2)*25'h1000000);
+            do @(posedge clk);while(!in_ready);
+            @(negedge clk);
+        end
+        in_valid=0;drain();metadata_phase=0;
+        if(bursts!=before_bursts || metadata_warm_outputs!=32 || metadata_warm_last-metadata_warm_first!=31)
+            $fatal(1,"ROWPIPE varying warm metadata did not sustain32 outputs/31 cycles without DDR refill");
+        $display("PASS ROWPIPE varying warm metadata:32 distinct XY/fraction/TAG queries,32 outputs/31 cycles, independent four-neighbour scoreboard");
+
+        // Fill all elastic stages with different queries while the first output
+        // is held, then resume with periodic downstream stalls. Input metadata
+        // stays fixed until each handshake, even when FIFO/pre/query are full.
+        metadata_phase=2;fast_unthrottled=0;force_output_stall=1;
+        fork
+            begin
+                @(negedge clk);in_valid=1;
+                for(integer q=0;q<24;q=q+1)begin
+                    in_x=(16+q)*256+((q*37+11)&255);
+                    in_y=(q%2)*256+((q*53+7)&255);
+                    in_tag=25'h0030000+q+((q%2)*25'h1000000);
+                    do @(posedge clk);while(!in_ready);
+                    @(negedge clk);
+                end
+                in_valid=0;
+            end
+            begin
+                wait(out_valid&&!out_ready);repeat(12)@(negedge clk);
+                force_output_stall=0;
+            end
+        join
+        drain();metadata_phase=0;
+        if(bursts!=before_bursts || metadata_stalled_outputs!=24 || metadata_all_field_changes!=55 ||
+           metadata_input_stall==0 || metadata_output_hold==0 || metadata_pre_hold==0 || metadata_query_hold==0)
+            $fatal(1,"ROWPIPE varying metadata backpressure/stage-hold coverage missing or warm cache refilled");
+        $display("PASS ROWPIPE varying metadata backpressure:24 distinct queries,55 adjacent all-field changes, FIFO/pre/query/output holds and independent scoreboard");
+
+        // row128 aliases row0's cache indices. Queue hit -> miss -> hit queries
+        // with new fractions/tags, so the slow refill must drain the fast path
+        // and resume it without shifting another query's coordinates or tags.
+        metadata_phase=3;
+        @(negedge clk);in_valid=1;
+        for(integer q=0;q<12;q=q+1)begin
+            in_x=(20+q)*256+((q*71+5)&255);
+            in_y=((q%3==0) ? 0:CONFLICT_Y)*256+((q*97+3)&255);
+            in_tag=25'h0040000+q+((q%2)*25'h1000000);
+            do @(posedge clk);while(!in_ready);
+            @(negedge clk);
+        end
+        in_valid=0;drain();metadata_phase=0;
+        if(metadata_inputs!=68 || metadata_mixed_outputs!=12 || bursts<=before_bursts ||
+           metadata_fast_queries==0 || metadata_slow_queries==0 || metadata_hit_miss_switches<2)
+            $fatal(1,"ROWPIPE varying metadata hit/miss transition coverage or exact query/output count missing");
+        $display("PASS ROWPIPE varying metadata hit-miss:12 queued queries, actual fast/slow switches, independent pixels/fractions/TAG order");
+
         fault_case(1,8'h03);fault_case(2,8'h03);fault_case(3,8'h03);fault_case(4,8'h04);
         $display("PASS SCATTER4 RID/early-RLAST/missing-final-RLAST/unsolicited-R sticky wrapper quarantine");
         if(cov_ar_stall==0 || cov_r_gap==0 || cov_out_stall==0 || cov_input_stall==0 ||
@@ -505,7 +609,8 @@ module rowpipe_cache_exerciser(output reg finished=0);
            cov_query_refill==0 || cov_pending_pre==0 || first_latency!=4 || stream_outputs!=64)
             $fatal(1,"ROWPIPE added-stage arithmetic/stall/refill/frame/latency coverage vacuous");
         summary=$fopen("rowpipe-main-summary.json","w");
-        $fdisplay(summary,"{\"passed\":true,\"width\":1920,\"height\":1080,\"sparse_queries_only\":true,\"numeric_checks\":%0d,\"pre_hold\":%0d,\"query_hold\":%0d,\"pre_refill\":%0d,\"query_refill\":%0d,\"pending_pre\":%0d,\"first_valid_latency_cycles\":%0d,\"stream_outputs\":%0d,\"stream_span_cycles\":%0d,\"fault_cases\":4,\"ar_stall\":%0d,\"output_stall\":%0d,\"ram_checks\":%0d,\"reset_last_scatter\":%0d}",cov_numeric_total,cov_pre_hold,cov_query_hold,cov_pre_refill,cov_query_refill,cov_pending_pre,first_latency,stream_outputs,stream_last-stream_first,cov_ar_stall,cov_out_stall,cov_ram_verified,cov_last_reset);
+        $fdisplay(summary,"{\"passed\":true,\"width\":1920,\"height\":1080,\"sparse_queries_only\":true,\"numeric_checks\":%0d,\"pre_hold\":%0d,\"query_hold\":%0d,\"pre_refill\":%0d,\"query_refill\":%0d,\"pending_pre\":%0d,\"first_valid_latency_cycles\":%0d,\"stream_outputs\":%0d,\"stream_span_cycles\":%0d,\"fault_cases\":4,\"ar_stall\":%0d,\"output_stall\":%0d,\"ram_checks\":%0d,\"reset_last_scatter\":%0d,",cov_numeric_total,cov_pre_hold,cov_query_hold,cov_pre_refill,cov_query_refill,cov_pending_pre,first_latency,stream_outputs,stream_last-stream_first,cov_ar_stall,cov_out_stall,cov_ram_verified,cov_last_reset);
+        $fdisplay(summary,"\"metadata_inputs\":%0d,\"metadata_warm_outputs\":%0d,\"metadata_warm_span_cycles\":%0d,\"metadata_stalled_outputs\":%0d,\"metadata_all_field_changes\":%0d,\"metadata_input_stall\":%0d,\"metadata_output_hold\":%0d,\"metadata_pre_hold\":%0d,\"metadata_query_hold\":%0d,\"metadata_mixed_outputs\":%0d,\"metadata_fast_queries\":%0d,\"metadata_slow_queries\":%0d,\"metadata_hit_miss_switches\":%0d}",metadata_inputs,metadata_warm_outputs,metadata_warm_last-metadata_warm_first,metadata_stalled_outputs,metadata_all_field_changes,metadata_input_stall,metadata_output_hold,metadata_pre_hold,metadata_query_hold,metadata_mixed_outputs,metadata_fast_queries,metadata_slow_queries,metadata_hit_miss_switches);
         $fclose(summary);finished=1;
     end
     initial begin #8000000;$fatal(1,"SCATTER4 directed regression bounded timeout");end
