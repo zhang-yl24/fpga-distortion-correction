@@ -1,0 +1,1279 @@
+{
+  "Schema": 1,
+  "Scope": "PDS2023.2RebuildOfOfficialDDRExampleWithOfficialClockExceptions",
+  "RecordedUTC": "2026-10-28T14:24:19.827827+00:00",
+  "DiagnosticOnly": true,
+  "HardwareAccessed": false,
+  "BitstreamGenerated": false,
+  "HardwareReleaseAllowed": false,
+  "PhysicalTimingReady": false,
+  "Current1080RecoveryResolved": false,
+  "Current1080EndpointIdentityProven": false,
+  "AllReportedTimingChecksMet": false,
+  "PDSVersion": "2023.2-SP3 build 154097",
+  "HistoricalPDSVersion": "2022.2-SP6.4 build 146967",
+  "CrossVersionComparison": true,
+  "SourceCount": 92,
+  "InputSHA256": {
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/pnr/ddr3_test.pds": "3470cf4f1a6610b88804d29e8a5efa725484a6448ad334185a8f1109d69a3855",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/ddr3_test.idf": "b600d6102995be4e76b060dd45786b5e1497bd2e7499bbc04b870de9355f2747",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/pnr/ddr_test.fdc": "bc33ed3e0096b32092384d3e55a1adceec9b954f35a491c1c07325e0f30846e7",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/pnr/ddr3_test.rcf": "01a316eaa22fb40512d6d7948533b18296e2cc2860469bbf1ae8dbf0fe872002",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/prbs15_64bit_v1_0.v": "0bb5df486165bf0be77eb6c6f2d460beb578918c06db1c795c5d44ec8cf7be94",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/prbs31_128bit_v1_0.v": "6f792d3091347a3bf00268fd0752e3c049fc80c8790457b6e7da767e0b2bf6a7",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/axi_bist_top_v1_0.v": "583f88c5a115bdb6ec81d7217e71bedbfd250a6f2a7f7cbab19f2eb7b3648605",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/test_main_ctrl_v1_0.v": "1d9a5ba7a6fed34ae09a6f46b0e3f7e2f24c17ef02110eca1c270c2422769eb0",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/test_rd_ctrl_v1_0.v": "d1bc613b0102efb2e13eefbc131d62ad4cde63ce7f3cf6fc781268de707e9ade",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/test_wr_ctrl_v1_0.v": "a455e81d4ee494006b25b466537e5eb7d9acfb28d24f4f5531365e1a00145913",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/uart_rd_lock.v": "be38038d97b69a8ca670119354155e9d74bb6d4dd8c184b610201d50f864555a",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/test_ddr.v": "a8337c66fc91c575b2dd23fd00b5fbd15081dbad06e3f969cdc6f4438accbae0",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/uart_ctrl_32bit/ips2l_clk_gen_32bit.v": "62f78ac1c82ca75f06a5d6242e06488ee3035f2d2abc6ba19af44060972f914c",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/uart_ctrl_32bit/ips2l_cmd_parser_32bit.v": "937308c48f9ffe9ccd29df4b03e68a439b5906807a94fc7c2b6f6773784eeea1",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/uart_ctrl_32bit/ips2l_seu_rs232_intf.v": "b23d375b33a3c1d212e92dda8ce58704231e7ed7b72a2a9780c942ffba8316c2",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/uart_ctrl_32bit/ips2l_seu_uart_rx.v": "2679f4d666d200c95b7c13c0a48798b99777ac16b3d9b458cbe026b6ca63d5f2",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/uart_ctrl_32bit/ips2l_seu_uart_tx.v": "82967062eaa2b3f600de286ad74f4d186d3885793a0ccf1cd1b69b01a5a622e5",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/uart_ctrl_32bit/ips2l_uart_ctrl_32bit.v": "235d9d78dc1bea4c0106e1d43a7bf57649463d5a1fca781a907b48cec736b6a5",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/uart_ctrl_32bit/ips2l_uart_ctrl_top_32bit.v": "3fb1f73b4ebf27b90b3efae421d3076af2eda5566cffd4de9f30b9f63f11daf9",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/uart_ctrl_32bit/ips2l_ver_ctrl_32bit.v": "26793896296ed2b35ffdd04f55ff3db50fadd7b2e69396e247e52e8ec4821ea0",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/adc/adc.v": "d096e3b3a34c142b44eb9edbb67b0dc07743557d1c2da1576f20542cd1da7d34",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/example_design/rtl/adc/adc_ctrl.v": "aec7278db10399f195a3f4df3624323441596db1614266b2152f929fa5d0983a",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ips2l_rst_sync_v1_3.vp": "64b8d83f15f2ff373e6b1040405c42051d8761bd1857dec719c884c2eb59361a",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrlvl_v1_0.vp": "00c086bd729be3ab8287f6eb786cfb3549c97aa92f8465c608b8fc2477df3edc",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrcal_v1_7.vp": "0a8cb0bb70bd40809260c50bcb85d092c16fea5d9ab2e4fbbe647ccbd1bfb1b0",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wdata_path_adj_v1_10.vp": "85f625ed4a09964442e8616074eea9e4757e43b4217589bb9e2f289c9748b272",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_upcal_v1_0.vp": "afbca3503da609f7951ad7fbef386bd007f403c89f52377211ba521967c94455",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_training_ctrl_v1_0.vp": "777e8ee9d8d819fdcf04b39b5a5d6086c52369a7f19f04dbd0d06f7a7d3d6110",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_slice_rddata_align_v1_0.vp": "befb44f07d851524109a6dc8e17c5b8062694aa274ed8dbc4f7326b8fe1c443e",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_reset_ctrl_v1_3.vp": "17189b59ed5307c4a27ec35485b33af5c98a89e6ee7f9c5d85aaed9c03a77163",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rdcal_v1_10.vp": "6b4c7f3c24a4750ac69b4e7882617105c6e31f02da712aaa87932b8561ccea2b",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_main_ctrl_v1_10.vp": "39d5024d7364b441340b131d265d0648d8b7c1f92cc417424d7c584413c5f4a6",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_init_v1_0.vp": "817f9f32b2260a4c35af446e89ff4c2d4b065381b25cb2020c538d22b4a45088",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_info_v1_0.vp": "0794201be97885e7695a16b6c35848655b08c4bf191405d26417126512ce4aa8",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gatecal_v1_10.vp": "b6859250ca098e81ff05bcab08dfe8ffee77648218e90c040a1dd3838a0671f2",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gate_update_ctrl_v1_3.vp": "ce20eb3b9cbe3b392d8be0aa1d6787247bc7b2d91af36a1f734f35c9eb03d642",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_eyecal_v1_5.vp": "31977dd34339d163ecbd8b9949ac4b65f0eaa6fbcd9a75d787400ae73f7f51d2",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_drift_ctrl_v1_0.vp": "8ea99ac6decf6fe14c0585b4f121d7a1acc17290d7a1c68725d984e704e277bc",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqsi_rdel_cal_v1_3.vp": "ef7e57755ab7558b1b518aa73999384368f349efe7077cf9283e0911e711ac1a",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_rddata_align_v1_10.vp": "c0cab4287a7a7b6b720977c1c5f9259c5f48f8da18e9a3ca1173a073b1ccf025",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_gate_coarse_cal_v1_0.vp": "950a0010929854894c2c92d9f3f8e9dce0fee6985fee70d4160540a058853ede",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dll_update_ctrl_v1_3.vp": "bc4e8f402d2fb98920e050a3c1514d44ec959877217d7865a30b22b7da73cac6",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dfi_v1_3.vp": "9828a1ef43a864d287a7a317910fe330bfc904f44e8f60c8773aafa1d8c1534e",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gpll_phase_v1_0.vp": "ef8ebe3742d23848bd2a1492d4901f886ce49aa98dbc295873b67e4116ba8524",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrlvl_v1_10.vp": "871874f4af0f068571416916898f83eb07052e6e015c5800ffdf65d67620cf7e",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp": "b7a9757c252f74c4b57eb0fb74738c57e4eed3e669ddd7ffeeca1acedd330b2e",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_v1_10.vp": "e13e33d97ecbfea1838c4dd28e7f9f1c57dcb974606179523be46bba75344d50",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_dqs_gate_cal_v1_10.vp": "8764275d4eeb8d1765b3a09aba527d6d3bf3e46f5e1d17eefc685d7e0dbe1520",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_ctrl_v1_3.vp": "56f52683adbe720c7d43da1a9f199f4ab3add3f3b5960e3f687f87f60267c161",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_lock_v1_0.vp": "a6696f8e79e2d132a6e76ad4997d5366d6c9cf8f05c60f77feff1b47b50d0090",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_control_path_adj_v1_10.vp": "8cdd7b9ec01c143882217b038cbf840d77e52ee3037e629e75e10b03fc223a38",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_top_v1_10.vp": "04faf434cef120b5d712911dfc97c8f498901b0679fba720b806f596d688bded",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_mux_v1_0.vp": "676e36319e7ce80b93e3543e255d53708d9fc71606587a6e692eab1ec82ecaed",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_debounce_v1_0.vp": "bff7ed95c8d305dfb88e6002c6de8453a21c72c03a5a0521a76ddd105598dc4d",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_clk_phase_adj_v1_0.vp": "dd1dbae71726d968df475fe7fbb2b7321411fa67786092c0dc2e065edcf39382",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_gpll_v1_3.vp": "3fecc367573a4b5bd158e1a8ff106c5c401c5f180143e8e5abe6bb068e5078d2",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_ppll_v1_0.vp": "34bb46106b84eab147f130bd7526f1486d35caeb40b0258cd59656e50d19dddd",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_apb_cross_v1_2.vp": "62f7d55354a8afe4d02bc6f6d6dc30fc8e9960d3b21709988b887acc99d09cf5",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_calib_delay_v1_2.vp": "a52e992b9766b6cb22ed23aa01d1cc5ac9b6a429a8e49de7a13ac51dd70e9784",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_cfg_apb_v1_2.vp": "482cb280a614f70209f1d07892fdd773a259d2ca0f23e8f38b85a9faf00513b9",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_bm_v1_2.vp": "bfbd472dd8b427fe6b003dd510f73db89f915ac92d31fe8a779c40f9d4e56bee",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_rowaddr_v1_2.vp": "4ac4721747b13020e1895be6265e55df90968f05beb8056279589039394bb9be",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_sm_v1_2.vp": "d7e710e3ed4d1807fb0bdd4d84c264817247a4da41123c72439c555573821f49",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_top_v1_2.vp": "26ab4e142f555602c023f62b19df52056c6d51da5052401254066cae0655ddaa",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_back_ctrl_v1_2.vp": "fe7b340b41d80ec7428cc38329a41864bcf5c209a6310610d09c7bc8579e541f",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp": "dab35fa172243ecbb5426a8ebccc2c168368ea0a6ea0558c909b815d781b17d6",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_out_v1_2.vp": "9471082e23170b144dc619f7f7e08c94b8a03378f72da388f744d6acb728928b",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_top_v1_2.vp": "21b1f0e3b4660e1078b47000bfe50022346414f5d5e713ac9e522a4f39f76548",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dfi_v1_2.vp": "abf138d692e634fabe5f569b98d897dfece8a8ae66cee1dba830a56d7e255df1",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_lp_v1_2.vp": "7a80ccb1e053e5c9d8f389169359570f256d709ff2e4ad2c51fda7a7a6a4239d",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_mrs_v1_2.vp": "f78133bc021a57cf469773daaf102817fc37069447e8accc80afa1f4b20b0ad6",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_prefetch_fifo_v1_2.vp": "ee3aa91e980fb3dd08231cf1806a28edf759f4ea8248adfd44407d607519b9e4",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_rdatapath_v1_2.vp": "72dd8ece021f4ee74fd576c1628c4f7d3606ef632f0e68b9569a288a092a6b0f",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_reg_fifo2_v1_2.vp": "bc9cff65e4002a51af0c20c2f0a9b9f17dacde5157b58691bbfb1c44348ee08a",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_ui_axi_v1_2a.vp": "145b69395412be2553835f9278cdf1cb1703d3beeb914abf7d985e3c69f817fb",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdatapath_v1_2.vp": "db648e90ff607ca2f9e2b5cca048de417439888d0b906288e0cec7cf038d9dee",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_align_v1_2.vp": "1645e9eb7fac3c9c13cd3e0d7367f132293f9cec16835ce188c6345993d2b730",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_dcp_v1_2.vp": "3f30be0f49f78f09915743995c950fa6ff8de5f14598ebc8802e73b5c6d140ee",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wrapper_v1_2b.vp": "d35010f49be551fb15ab2655cbeffcaaaa74fdf3ccb0754b033fc979d615e805",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_com_timing_v1_2.vp": "e3f19c4be6352ab64f07426973387f2876c540ee992f6eac9d3f2d470b3d49c2",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_timing_v1_2.vp": "c632619f042bebb4f059df7f20eee90eb2b51b81210430cb37d01958ad3cd30f",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_v1_2.vp": "ab87b7718bffc4fb2a2b27765576187f09b5266bbca7fc393c43c6dec96ff379",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act2wr_pass_v1_2.vp": "1b3874b059923481f292ba382ad156f7dcdd9ad39da6c86dddd480290ccce498",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act_pass_v1_2.vp": "9f32b6936e039c15f7b07b74480179d39d1b3787965e1b90bd067a7ede7fdd4c",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_pre_pass_v1_2.vp": "e40a64caec9725c231cd88dde69973eab3aca38c9d2e66a2c5c0bbddf3103ae0",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_rd_pass_v1_2.vp": "78b1de719a43ee0fc80e1a5464f7284439d91f1d4b3f83ef2ae5611920293988",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_ref_pass_v1_2.vp": "c79dde6f9a682c55aff7bb89c4863f76a069b874fb154dff7d3e4d4a7a88f9d1",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_wr_pass_v1_2.vp": "ea3470ca984554d4908ec950314f9242042417c6c4c6b3fd05ac5d6daab98c90",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_trc_timing_v1_2.vp": "7234241e5968f91ec6e396794f0bb80f6c7d1bca2038aa004d5078d3937953da",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/ips2l_distributed_fifo_v1_0.vp": "d6c0b0d8560b0f22128b4883933944fc686fd7597cfea0d6c545cc6af56c0b7a",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_ctr_v1_0.vp": "fe31c8f44bea653ab20bb1830ad4f8ed41566e9cfef354bd5e2d48c7682f353d",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_v1_0_distributed_fifo_v1_0.vp": "867ac91a1485dfe613a81f372d788e784bba8cd4b0497e56986135e92685ba73",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_sdpram_v1_0_distributed_fifo_v1_0.vp": "3561bbbbd4e4432a538c3d20818d262b4f1e5517c48296f6b1b4cc8afdd19aef",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/ddr3_test.v": "3c5441b4bff33dff73811c3a025ede3b6348cb5779e21778653659b6cbfb84e0",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/ddr3_test_ddrphy_top.v": "a95c28f225d2984401a798f673efff209154ae5beb8a7356d303136b71ea49d5",
+    "vendor/reference/ddr/2_9_ddr3_test/2_9_ddr3_test/ddr3_test/ipcore/ddr3_test/rtl/ddrphy/ddr3_test_slice_top_v1_10.v": "69d4135c367efbb73f83c82ecd9871519e19b0d5c48bce2df0eac6b3dff50b87"
+  },
+  "Execution": {
+    "started_utc": "2026-10-28T13:12:16.080876+00:00",
+    "command": [
+      "D:/pango/PDS_2023.2/bin/pds_shell.exe",
+      "-file",
+      "P:/distortion/build/ddr-reference-sta-20261028-a/full-reference.tcl",
+      "-work_dir",
+      "P:/distortion/build/ddr-reference-sta-20261028-a",
+      "-project_name",
+      "ddr_reference_sta"
+    ],
+    "hardware_accessed": false,
+    "bitstream_requested": false,
+    "return_code": 0,
+    "owned_pid": 34252,
+    "source_drift": [],
+    "elapsed_seconds": 772.004,
+    "ended_utc": "2026-10-28T13:25:08.084945+00:00",
+    "logs": {
+      "build-stdout.log": "18b9e2495dd793623f34e299c97009e8fee8b80994ab365c05c97effc037812b",
+      "build-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "FreshPCF": {
+    "CommandCount": 86,
+    "CommandsIdenticalToArchivedPCF": true,
+    "BoundInGeneratedProject": true,
+    "ReferenceSHA256": "a6fb40e4e441babcf4097b532baecda4a6315912ccc6ce592df2626f128a54e6",
+    "CurrentSHA256": "307e26dea4c378b2212a005af9b76af2d844cd6d035164c4981caba76869829d"
+  },
+  "RCF": {
+    "BoundInGeneratedProject": true,
+    "PriorNetCommandsSucceeded": true,
+    "Targets": [
+      "I_ips_ddr_top/u_ddrphy_top/ddrphy_ioclk_gate [0]",
+      "I_ips_ddr_top/u_ddrphy_top/ddrphy_ioclk_gate [1]"
+    ],
+    "PositivePerNetApplicationProven": false
+  },
+  "FinalSTAReadsPNRDatabase": true,
+  "STAADFBeforeAndAfterHashRecorded": false,
+  "Timing": {
+    "XML": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGA国赛\\fpga-distortion-correction\\distortion\\build\\ddr-reference-sta-20261028-a\\report_timing\\rtr.db",
+      "SHA256": "b25e1cf48d6bf2d8cf160d44fe637d5c4dea426a379ceb2efcff8c38bcad4846"
+    },
+    "TimingSummaryCounts": {
+      "slow_setup": {
+        "Groups": 7,
+        "FailingGroups": 0,
+        "FailedChecks": 0,
+        "TotalChecks": 21168
+      },
+      "slow_hold": {
+        "Groups": 7,
+        "FailingGroups": 1,
+        "FailedChecks": 2,
+        "TotalChecks": 21168
+      },
+      "slow_recovery": {
+        "Groups": 3,
+        "FailingGroups": 0,
+        "FailedChecks": 0,
+        "TotalChecks": 5556
+      },
+      "slow_removal": {
+        "Groups": 3,
+        "FailingGroups": 0,
+        "FailedChecks": 0,
+        "TotalChecks": 5556
+      },
+      "slow_mpw": {
+        "Groups": 7,
+        "FailingGroups": 0,
+        "FailedChecks": 0,
+        "TotalChecks": 5840
+      },
+      "fast_setup": {
+        "Groups": 7,
+        "FailingGroups": 0,
+        "FailedChecks": 0,
+        "TotalChecks": 21168
+      },
+      "fast_hold": {
+        "Groups": 7,
+        "FailingGroups": 1,
+        "FailedChecks": 2,
+        "TotalChecks": 21168
+      },
+      "fast_recovery": {
+        "Groups": 3,
+        "FailingGroups": 0,
+        "FailedChecks": 0,
+        "TotalChecks": 5556
+      },
+      "fast_removal": {
+        "Groups": 3,
+        "FailingGroups": 0,
+        "FailedChecks": 0,
+        "TotalChecks": 5556
+      },
+      "fast_mpw": {
+        "Groups": 7,
+        "FailingGroups": 0,
+        "FailedChecks": 0,
+        "TotalChecks": 5840
+      }
+    },
+    "TimingSummaries": {
+      "slow_setup": [
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_sysclk_1",
+          "WNS(ns)": "0.654",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "420"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "ddrphy_sysclk",
+          "WNS(ns)": "1.021",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "18378"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_sysclk_0",
+          "WNS(ns)": "1.076",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "196"
+        },
+        {
+          "Launch Clock": "phy_dq_sysclk_1",
+          "Capture Clock": "ddrphy_sysclk",
+          "WNS(ns)": "3.760",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "260"
+        },
+        {
+          "Launch Clock": "phy_dq_sysclk_0",
+          "Capture Clock": "ddrphy_sysclk",
+          "WNS(ns)": "4.554",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "1"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "rst_clk",
+          "WNS(ns)": "4.850",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "526"
+        },
+        {
+          "Launch Clock": "free_clk",
+          "Capture Clock": "free_clk",
+          "WNS(ns)": "14.491",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "1387"
+        }
+      ],
+      "slow_hold": [
+        {
+          "Launch Clock": "phy_dq_sysclk_1",
+          "Capture Clock": "ddrphy_sysclk",
+          "WHS(ns)": "-0.138",
+          "THS(ns)": "-0.178",
+          "Failing Endpoints": "2",
+          "Total Endpoints": "260"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "ddrphy_sysclk",
+          "WHS(ns)": "0.075",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "18378"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "rst_clk",
+          "WHS(ns)": "0.134",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "526"
+        },
+        {
+          "Launch Clock": "free_clk",
+          "Capture Clock": "free_clk",
+          "WHS(ns)": "0.173",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "1387"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_sysclk_0",
+          "WHS(ns)": "0.290",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "196"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_sysclk_1",
+          "WHS(ns)": "0.293",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "420"
+        },
+        {
+          "Launch Clock": "phy_dq_sysclk_0",
+          "Capture Clock": "ddrphy_sysclk",
+          "WHS(ns)": "0.719",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "1"
+        }
+      ],
+      "slow_recovery": [
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "ddrphy_sysclk",
+          "WNS(ns)": "4.099",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "4859"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "rst_clk",
+          "WNS(ns)": "5.072",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "120"
+        },
+        {
+          "Launch Clock": "free_clk",
+          "Capture Clock": "free_clk",
+          "WNS(ns)": "16.355",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "577"
+        }
+      ],
+      "slow_removal": [
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "ddrphy_sysclk",
+          "WHS(ns)": "0.311",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "4859"
+        },
+        {
+          "Launch Clock": "free_clk",
+          "Capture Clock": "free_clk",
+          "WHS(ns)": "0.330",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "577"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "rst_clk",
+          "WHS(ns)": "0.385",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "120"
+        }
+      ],
+      "slow_mpw": [
+        {
+          "Clock": "phy_dq_clk_0",
+          "WPWS": "0.035",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "35"
+        },
+        {
+          "Clock": "phy_dq_clk_1",
+          "WPWS": "0.035",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "84"
+        },
+        {
+          "Clock": "phy_dq_sysclk_0",
+          "WPWS": "1.850",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "35"
+        },
+        {
+          "Clock": "phy_dq_sysclk_1",
+          "WPWS": "2.400",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "84"
+        },
+        {
+          "Clock": "ddrphy_sysclk",
+          "WPWS": "3.800",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "4903"
+        },
+        {
+          "Clock": "rst_clk",
+          "WPWS": "3.800",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "121"
+        },
+        {
+          "Clock": "free_clk",
+          "WPWS": "9.800",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "578"
+        }
+      ],
+      "fast_setup": [
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_sysclk_1",
+          "WNS(ns)": "3.136",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "420"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_sysclk_0",
+          "WNS(ns)": "3.416",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "196"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "ddrphy_sysclk",
+          "WNS(ns)": "3.691",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "18378"
+        },
+        {
+          "Launch Clock": "phy_dq_sysclk_1",
+          "Capture Clock": "ddrphy_sysclk",
+          "WNS(ns)": "5.137",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "260"
+        },
+        {
+          "Launch Clock": "phy_dq_sysclk_0",
+          "Capture Clock": "ddrphy_sysclk",
+          "WNS(ns)": "5.535",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "1"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "rst_clk",
+          "WNS(ns)": "6.064",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "526"
+        },
+        {
+          "Launch Clock": "free_clk",
+          "Capture Clock": "free_clk",
+          "WNS(ns)": "16.651",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "1387"
+        }
+      ],
+      "fast_hold": [
+        {
+          "Launch Clock": "phy_dq_sysclk_1",
+          "Capture Clock": "ddrphy_sysclk",
+          "WHS(ns)": "-0.341",
+          "THS(ns)": "-0.612",
+          "Failing Endpoints": "2",
+          "Total Endpoints": "260"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_sysclk_1",
+          "WHS(ns)": "0.019",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "420"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_sysclk_0",
+          "WHS(ns)": "0.020",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "196"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "ddrphy_sysclk",
+          "WHS(ns)": "0.061",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "18378"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "rst_clk",
+          "WHS(ns)": "0.085",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "526"
+        },
+        {
+          "Launch Clock": "free_clk",
+          "Capture Clock": "free_clk",
+          "WHS(ns)": "0.134",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "1387"
+        },
+        {
+          "Launch Clock": "phy_dq_sysclk_0",
+          "Capture Clock": "ddrphy_sysclk",
+          "WHS(ns)": "0.216",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "1"
+        }
+      ],
+      "fast_recovery": [
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "ddrphy_sysclk",
+          "WNS(ns)": "5.446",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "4859"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "rst_clk",
+          "WNS(ns)": "6.050",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "120"
+        },
+        {
+          "Launch Clock": "free_clk",
+          "Capture Clock": "free_clk",
+          "WNS(ns)": "17.611",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "577"
+        }
+      ],
+      "fast_removal": [
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "ddrphy_sysclk",
+          "WHS(ns)": "0.216",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "4859"
+        },
+        {
+          "Launch Clock": "free_clk",
+          "Capture Clock": "free_clk",
+          "WHS(ns)": "0.231",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "577"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "rst_clk",
+          "WHS(ns)": "0.265",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "120"
+        }
+      ],
+      "fast_mpw": [
+        {
+          "Clock": "phy_dq_clk_0",
+          "WPWS": "0.035",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "35"
+        },
+        {
+          "Clock": "phy_dq_clk_1",
+          "WPWS": "0.035",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "84"
+        },
+        {
+          "Clock": "phy_dq_sysclk_0",
+          "WPWS": "1.850",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "35"
+        },
+        {
+          "Clock": "phy_dq_sysclk_1",
+          "WPWS": "2.400",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "84"
+        },
+        {
+          "Clock": "ddrphy_sysclk",
+          "WPWS": "3.800",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "4903"
+        },
+        {
+          "Clock": "rst_clk",
+          "WPWS": "3.800",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "121"
+        },
+        {
+          "Clock": "free_clk",
+          "WPWS": "9.800",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "578"
+        }
+      ]
+    },
+    "ClockSummary": [
+      {
+        "Clock Name": "free_clk",
+        "Type": "Declared",
+        "Period": "20.0000",
+        "Frequency": "50.0000MHz",
+        "Rise": "0.0000",
+        "Fall": "10.0000",
+        "Clock Load": "590",
+        "Non-clock Load": "0",
+        "Source": "",
+        "Targets": "{ free_clk }"
+      },
+      {
+        "Clock Name": "ref_clk",
+        "Type": "Declared",
+        "Period": "8.0000",
+        "Frequency": "125.0000MHz",
+        "Rise": "0.0000",
+        "Fall": "4.0000",
+        "Clock Load": "0",
+        "Non-clock Load": "4",
+        "Source": "",
+        "Targets": "{ ref_clk_p }"
+      },
+      {
+        "Clock Name": "rst_clk",
+        "Type": "Generated",
+        "Period": "8.0000",
+        "Frequency": "125.0000MHz",
+        "Rise": "0.0000",
+        "Fall": "4.0000",
+        "Clock Load": "159",
+        "Non-clock Load": "0",
+        "Source": "ref_clk",
+        "Targets": "{ I_ips_ddr_top/u_ddrphy_top/rst_clk_gpll/u_gpll/gpll_inst/CLKOUT0 }"
+      },
+      {
+        "Clock Name": "ddrphy_sysclk",
+        "Type": "Generated",
+        "Period": "8.0000",
+        "Frequency": "125.0000MHz",
+        "Rise": "0.0000",
+        "Fall": "4.0000",
+        "Clock Load": "5214",
+        "Non-clock Load": "1",
+        "Source": "ref_clk",
+        "Targets": "{ I_ips_ddr_top/u_ddrphy_top/ddrphy_gpll/u_gpll/gpll_inst/CLKOUT0 }"
+      },
+      {
+        "Clock Name": "phy_dq_clk_0",
+        "Type": "Generated",
+        "Period": "1.0000",
+        "Frequency": "1000.0000MHz",
+        "Rise": "0.0000",
+        "Fall": "0.5000",
+        "Clock Load": "35",
+        "Non-clock Load": "1",
+        "Source": "ref_clk",
+        "Targets": "{ I_ips_ddr_top/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[0].ddrphy_ppll/u_ppll/ppll_inst/CLKOUTPHY }"
+      },
+      {
+        "Clock Name": "phy_dq_sysclk_0",
+        "Type": "Generated",
+        "Period": "8.0000",
+        "Frequency": "125.0000MHz",
+        "Rise": "2.0000",
+        "Fall": "6.0000",
+        "Clock Load": "35",
+        "Non-clock Load": "0",
+        "Source": "phy_dq_clk_0",
+        "Targets": "{ I_ips_ddr_top/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[0].u_ddrphy_ioclkdiv/ddrphy_ioclk_div_inst/CLKOUT }"
+      },
+      {
+        "Clock Name": "phy_dq_clk_1",
+        "Type": "Generated",
+        "Period": "1.0000",
+        "Frequency": "1000.0000MHz",
+        "Rise": "0.0000",
+        "Fall": "0.5000",
+        "Clock Load": "84",
+        "Non-clock Load": "1",
+        "Source": "ref_clk",
+        "Targets": "{ I_ips_ddr_top/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[1].ddrphy_ppll/u_ppll/ppll_inst/CLKOUTPHY }"
+      },
+      {
+        "Clock Name": "phy_dq_sysclk_1",
+        "Type": "Generated",
+        "Period": "8.0000",
+        "Frequency": "125.0000MHz",
+        "Rise": "2.0000",
+        "Fall": "6.0000",
+        "Clock Load": "84",
+        "Non-clock Load": "0",
+        "Source": "phy_dq_clk_1",
+        "Targets": "{ I_ips_ddr_top/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[1].u_ddrphy_ioclkdiv/ddrphy_ioclk_div_inst/CLKOUT }"
+      }
+    ],
+    "ClockInteractions": [
+      {
+        "Launch Clock": "free_clk",
+        "Capture Clock": "free_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "14.491",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "1964",
+        "WHS(ns)": "0.173",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "1964"
+      },
+      {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "free_clk",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Asynchronous Groups",
+        "WNS(ns)": "",
+        "TNS(ns)": "",
+        "Failing End Point(TNS)": "",
+        "Total End Point(TNS)": "65",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "65"
+      },
+      {
+        "Launch Clock": "free_clk",
+        "Capture Clock": "rst_clk",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Asynchronous Groups",
+        "WNS(ns)": "",
+        "TNS(ns)": "",
+        "Failing End Point(TNS)": "",
+        "Total End Point(TNS)": "8",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "8"
+      },
+      {
+        "Launch Clock": "rst_clk",
+        "Capture Clock": "rst_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "4.850",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "646",
+        "WHS(ns)": "0.134",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "646"
+      },
+      {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "rst_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Asynchronous Groups",
+        "WNS(ns)": "",
+        "TNS(ns)": "",
+        "Failing End Point(TNS)": "",
+        "Total End Point(TNS)": "5",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "5"
+      },
+      {
+        "Launch Clock": "phy_dq_sysclk_0",
+        "Capture Clock": "rst_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Asynchronous Groups",
+        "WNS(ns)": "",
+        "TNS(ns)": "",
+        "Failing End Point(TNS)": "",
+        "Total End Point(TNS)": "1",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "1"
+      },
+      {
+        "Launch Clock": "free_clk",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Asynchronous Groups",
+        "WNS(ns)": "",
+        "TNS(ns)": "",
+        "Failing End Point(TNS)": "",
+        "Total End Point(TNS)": "569",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "569"
+      },
+      {
+        "Launch Clock": "rst_clk",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Asynchronous Groups",
+        "WNS(ns)": "",
+        "TNS(ns)": "",
+        "Failing End Point(TNS)": "",
+        "Total End Point(TNS)": "43",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "43"
+      },
+      {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "1.021",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "23237",
+        "WHS(ns)": "0.075",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "23237"
+      },
+      {
+        "Launch Clock": "phy_dq_sysclk_0",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "4.554",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "1",
+        "WHS(ns)": "0.719",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "1"
+      },
+      {
+        "Launch Clock": "phy_dq_sysclk_1",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "3.760",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "260",
+        "WHS(ns)": "-0.138",
+        "THS(ns)": "-0.178",
+        "Failing End Point(THS)": "2",
+        "Total End Point(THS)": "260"
+      },
+      {
+        "Launch Clock": "rst_clk",
+        "Capture Clock": "phy_dq_clk_0",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Asynchronous Groups",
+        "WNS(ns)": "",
+        "TNS(ns)": "",
+        "Failing End Point(TNS)": "",
+        "Total End Point(TNS)": "34",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "34"
+      },
+      {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "phy_dq_clk_0",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Asynchronous Groups",
+        "WNS(ns)": "",
+        "TNS(ns)": "",
+        "Failing End Point(TNS)": "",
+        "Total End Point(TNS)": "3",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "3"
+      },
+      {
+        "Launch Clock": "rst_clk",
+        "Capture Clock": "phy_dq_sysclk_0",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Asynchronous Groups",
+        "WNS(ns)": "",
+        "TNS(ns)": "",
+        "Failing End Point(TNS)": "",
+        "Total End Point(TNS)": "35",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "35"
+      },
+      {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "phy_dq_sysclk_0",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "1.076",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "196",
+        "WHS(ns)": "0.290",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "196"
+      },
+      {
+        "Launch Clock": "rst_clk",
+        "Capture Clock": "phy_dq_clk_1",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Asynchronous Groups",
+        "WNS(ns)": "",
+        "TNS(ns)": "",
+        "Failing End Point(TNS)": "",
+        "Total End Point(TNS)": "84",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "84"
+      },
+      {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "phy_dq_clk_1",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Asynchronous Groups",
+        "WNS(ns)": "",
+        "TNS(ns)": "",
+        "Failing End Point(TNS)": "",
+        "Total End Point(TNS)": "4",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "4"
+      },
+      {
+        "Launch Clock": "rst_clk",
+        "Capture Clock": "phy_dq_sysclk_1",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Asynchronous Groups",
+        "WNS(ns)": "",
+        "TNS(ns)": "",
+        "Failing End Point(TNS)": "",
+        "Total End Point(TNS)": "84",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "84"
+      },
+      {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "phy_dq_sysclk_1",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "0.654",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "420",
+        "WHS(ns)": "0.293",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "420"
+      }
+    ],
+    "InteractionStatusCounts": {
+      "Timed": 7,
+      "Asynchronous Groups": 12
+    },
+    "ClockNames": [
+      "board27",
+      "ddrphy_sysclk",
+      "phy_dq_clk_0",
+      "phy_dq_clk_1",
+      "phy_dq_sysclk_0",
+      "phy_dq_sysclk_1",
+      "ref_clk",
+      "rst_clk"
+    ],
+    "SameClockSetupHoldCoverage": {
+      "ddrphy_sysclk": [
+        "fast_hold",
+        "fast_setup",
+        "slow_hold",
+        "slow_setup"
+      ],
+      "rst_clk": [
+        "fast_hold",
+        "fast_setup",
+        "slow_hold",
+        "slow_setup"
+      ],
+      "board27": [
+        "fast_hold",
+        "fast_setup",
+        "slow_hold",
+        "slow_setup"
+      ]
+    },
+    "ClocksWithoutFullSameClockSetupHold": [
+      "phy_dq_clk_0",
+      "phy_dq_clk_1",
+      "phy_dq_sysclk_0",
+      "phy_dq_sysclk_1",
+      "ref_clk"
+    ],
+    "NoSameClockRowIsNotPass": true,
+    "ExcludedDDRClockPairs": [
+      {
+        "LaunchClock": "rst_clk",
+        "CaptureClock": "phy_dq_clk_0",
+        "TNSChecks": 34,
+        "THSChecks": 34
+      },
+      {
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_clk_0",
+        "TNSChecks": 3,
+        "THSChecks": 3
+      },
+      {
+        "LaunchClock": "rst_clk",
+        "CaptureClock": "phy_dq_sysclk_0",
+        "TNSChecks": 35,
+        "THSChecks": 35
+      },
+      {
+        "LaunchClock": "rst_clk",
+        "CaptureClock": "phy_dq_clk_1",
+        "TNSChecks": 84,
+        "THSChecks": 84
+      },
+      {
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_clk_1",
+        "TNSChecks": 4,
+        "THSChecks": 4
+      },
+      {
+        "LaunchClock": "rst_clk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "TNSChecks": 84,
+        "THSChecks": 84
+      }
+    ],
+    "ExactSixExcludedDDRClockPairsObserved": true,
+    "ExcludedDDRTNSChecks": 244,
+    "ExcludedDDRTHSChecks": 244,
+    "CountUnits": "Per-check/per-corner counts, not unique FFs. TNS and THS are separate and are never added."
+  },
+  "CheckTimingSummary": [
+    {
+      "Check": "no_clock",
+      "Number of Issues": "0"
+    },
+    {
+      "Check": "virtual_clock",
+      "Number of Issues": "1"
+    },
+    {
+      "Check": "unexpandable_clocks",
+      "Number of Issues": "0"
+    },
+    {
+      "Check": "no_input_delay",
+      "Number of Issues": "34"
+    },
+    {
+      "Check": "no_output_delay",
+      "Number of Issues": "78"
+    },
+    {
+      "Check": "partial_input_delay",
+      "Number of Issues": "0"
+    },
+    {
+      "Check": "partial_output_delay",
+      "Number of Issues": "0"
+    },
+    {
+      "Check": "io_min_max_delay_consistency",
+      "Number of Issues": "0"
+    },
+    {
+      "Check": "input_delay_assigned_to_clock",
+      "Number of Issues": "0"
+    },
+    {
+      "Check": "loops",
+      "Number of Issues": "0"
+    },
+    {
+      "Check": "latch_loops",
+      "Number of Issues": "0"
+    },
+    {
+      "Check": "latchs",
+      "Number of Issues": "0"
+    }
+  ],
+  "Artifacts": {
+    "distortion/build/ddr-reference-sta-20261028-a/build-stderr.log": {
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Bytes": 0,
+      "MTimeUTC": "2026-10-28T13:12:16.083851+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/build-stdout.log": {
+      "SHA256": "18b9e2495dd793623f34e299c97009e8fee8b80994ab365c05c97effc037812b",
+      "Bytes": 2417490,
+      "MTimeUTC": "2026-10-28T13:25:07.898524+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/ddr_reference_sta.pds": {
+      "SHA256": "2a80684d5acf18a84a549d4c3a0dfa2905737beedb3715acf18c31d62081e6e8",
+      "Bytes": 39467,
+      "MTimeUTC": "2026-10-28T13:25:07.922555+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/device_map/test_ddr.pcf": {
+      "SHA256": "307e26dea4c378b2212a005af9b76af2d844cd6d035164c4981caba76869829d",
+      "Bytes": 7604,
+      "MTimeUTC": "2026-10-28T13:16:10.383747+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/execution.json": {
+      "SHA256": "7e0e3520bbae56ab61c19e6aac8ccdafe8276858d44067ae90f1a9e7e93edff2",
+      "Bytes": 734,
+      "MTimeUTC": "2026-10-28T13:25:08.105453+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/full-reference.tcl": {
+      "SHA256": "8fe677936b0aba724fc00be65eb7d8076906241e3dbc3f974a4afa7b04bc871f",
+      "Bytes": 13221,
+      "MTimeUTC": "2026-10-28T13:11:45.429766+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/place_route/plr.db": {
+      "SHA256": "898951799395ed68d166b2805d068b1656e91f0a101c8a75730fd08ac2889c01",
+      "Bytes": 413467,
+      "MTimeUTC": "2026-10-28T13:19:21.025599+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/place_route/ror.db": {
+      "SHA256": "ee6e15251e4c65144c811237e80b918ab93020ba777c80af522c8470680dd29d",
+      "Bytes": 390506,
+      "MTimeUTC": "2026-10-28T13:24:12.232721+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/place_route/run_place.log": {
+      "SHA256": "9e0e659ada125741148a58c7d53c16d7ffb292f16292edcad7120283c4402ab2",
+      "Bytes": 43555,
+      "MTimeUTC": "2026-10-28T13:19:20.833207+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/place_route/run_route.log": {
+      "SHA256": "8d3d99a5d8d30d57e2f9d664050edb58a1f6dcb10c655ac30aabda852eec5462",
+      "Bytes": 12392,
+      "MTimeUTC": "2026-10-28T13:21:50.401470+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/place_route/run_route_optimize.log": {
+      "SHA256": "6fa18d605c10bd7e970ee9ca35ec5c9e6cd4f94cb72b5624e38523a8471c1c54",
+      "Bytes": 6882,
+      "MTimeUTC": "2026-10-28T13:24:12.049565+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/place_route/rur.db": {
+      "SHA256": "1d0162a08a226ebeb1e19cd9c6fa59fd4b3e78331978d3aa860b90bbabe4ffeb",
+      "Bytes": 391511,
+      "MTimeUTC": "2026-10-28T13:21:50.578009+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/place_route/test_ddr_pnr.adf": {
+      "SHA256": "b1d5d8425243b2a522dbe34c3a2e0ba5a92c75adad94003886c47fb5d2f7513a",
+      "Bytes": 6756838,
+      "MTimeUTC": "2026-10-28T13:24:11.070714+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/place_route/test_ddr_prr_place.prt": {
+      "SHA256": "0428b7792ebb71b27ccfc4dd3222ecc974e3e372ebdb6656d0debd5e32cf2fa2",
+      "Bytes": 15491,
+      "MTimeUTC": "2026-10-28T13:19:12.618947+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/place_route/test_ddr_prr_route.prt": {
+      "SHA256": "0428b7792ebb71b27ccfc4dd3222ecc974e3e372ebdb6656d0debd5e32cf2fa2",
+      "Bytes": 15491,
+      "MTimeUTC": "2026-10-28T13:21:27.843240+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/place_route/test_ddr_prr_route_optimize.prt": {
+      "SHA256": "0428b7792ebb71b27ccfc4dd3222ecc974e3e372ebdb6656d0debd5e32cf2fa2",
+      "Bytes": 15491,
+      "MTimeUTC": "2026-10-28T13:23:49.953669+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/place_route/test_ddr_route_optimize.netlist": {
+      "SHA256": "a68409e1618ffcf068e7143f978ccad251b891214282fd9a2a5ccd86c4e2adad",
+      "Bytes": 2816312,
+      "MTimeUTC": "2026-10-28T13:24:11.137524+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/plan.json": {
+      "SHA256": "57addb78125e2708e5156518581f0d4faebabadd166837a42db3e69eb7b74343",
+      "Bytes": 19362,
+      "MTimeUTC": "2026-10-28T13:11:45.479377+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/report_timing/rtr.db": {
+      "SHA256": "b25e1cf48d6bf2d8cf160d44fe637d5c4dea426a379ceb2efcff8c38bcad4846",
+      "Bytes": 28336495,
+      "MTimeUTC": "2026-10-28T13:25:03.191734+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/report_timing/run.log": {
+      "SHA256": "d5552d03d424138f690414e3da9c199c6a86d3e9f46c6c68bfa02cee9439e5f8",
+      "Bytes": 11492,
+      "MTimeUTC": "2026-10-28T13:25:01.804728+00:00"
+    },
+    "distortion/build/ddr-reference-sta-20261028-a/report_timing/test_ddr.rtr": {
+      "SHA256": "ba85bc359445d561f4893b2455251e9fc731bf127c832efd3411889d7645f31d",
+      "Bytes": 5758111,
+      "MTimeUTC": "2026-10-28T13:25:01.803246+00:00"
+    }
+  },
+  "Limits": [
+    "This is the standalone official DDR example, not the current 1080P candidate.",
+    "Official asynchronous exceptions exclude 244 TNS and 244 THS checks separately; zero reported recovery failures does not establish reset/training release safety.",
+    "Two hold checks fail in each corner; native exit 0 only confirms report generation.",
+    "34 input-delay and 78 output-delay issues remain.",
+    "The historical/current 1080P 245 failures are not resolved by this run.",
+    "Final ADF hash was captured after STA; no historical before/after hash proof is inferred."
+  ]
+}

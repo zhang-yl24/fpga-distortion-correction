@@ -1,5 +1,13 @@
 # 当前交接点
 
+## 本机离板 DDR 对照完成：2026-10-28
+
+本地分支 `codex/ddr-recovery-diagnosis` 基于 `890d21e`。新增只读 CPU 审计及 24 项测试，确认当前 HMIC_S 1.10 的 IDF/371 参数、74 综合源与仓库官方示例一致。官方旧报告六组跨时钟异步排除计数各34/3/35/84/4/84，合计244；尚无队友最新详细 XML，不能由计数认定与当前失败端点逐一相同。结果 `distortion/results/ddr-reference-audit-20261028.json`。
+
+本机 PDS 2023.2-SP3 在独立 `distortion/build/ddr-reference-sta-20261028-a` 用官方92项 HDL、原 FDC/RCF 完成综合→映射→布局布线→最终 STA，真实退出0/772.004s、输入无漂移。fresh PCF 86条有效指令与原件相同。报告实际 slow/fast 各2项 hold失败（−0.138/−0.341ns），其余8类汇总零失败；六组244项异步排除及34/78项缺 IO 延迟仍在。工具退出0仅表示生成报告成功，不是完整时序通过。原始报告与最终 ADF 均在本机；21项输出/日志哈希及全输入见 `distortion/results/ddr-reference-pds2023-20261028.json`。
+
+此为跨版本官方示例对照，未生成位流或操作开发板，不替代当前1080P候选每角245项 recovery 的详细结果。下一步先取得队友既有最终 XML/文本、实际约束、ADF与日志，逐组/逐端点核对，并向厂商确认例外所需的训练和复位释放保证；未直接应用宽异步组。详细说明及离板生成报告步骤见 `handoff/DDR_RECOVERY_DIAGNOSIS.md`。
+
 ## 最新完成：FPGA-1028-LATENCY-CONTRACT-ONE
 
 priority2确有直接回归缺口，新增独立合成`test_assess_1080_latency.py`14项：有效及等阈值、负延迟、两路时间tie/回退、字段/类型/非有限值、超限、已有记录身份/event_id契约及缺证据UNMEASURED/无效记录FAIL。首跑13过1 error，真实定位巨大整数时间差的OverflowError；仅局部改毫秒换算为整数分母并将无法表示的超限延迟转ValueError，未改阈值/规则。允许巨大epoch的小差值以及可表示的有限商，未添加绝对时钟或frame_id要求。
