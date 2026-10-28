@@ -13,6 +13,7 @@ import json
 import math
 from pathlib import Path
 import struct
+import zlib
 
 IDENTITY = ("camera_id", "lens_id", "profile_id", "capture_mode_id")
 CHECKS = ("native_input", "calibration", "quality", "throughput", "external_latency", "stability")
@@ -123,6 +124,11 @@ class Context:
         if identity(value) != self.ident:
             raise ValueError("camera/lens/profile/capture mode/size/format differ")
 
+    def check_declared_origin(self, value, name):
+        if self.kind == "physical_observation" and (value.get("evidence_kind") == "synthetic_tool_test" or
+                                                   value.get("synthetic_tool_fixture") is True):
+            raise ValueError(name + " explicitly declares synthetic evidence; cannot relabel it physical")
+
     def reference(self, value, name, base=None):
         if value is None:
             raise MissingEvidence(name + " artifact is missing")
@@ -141,7 +147,9 @@ class Context:
     def data(self, section, name):
         section = obj(section, name)
         if "record" in section:
-            return obj(read_json(self.reference(section["record"], name + ".record")), name + " record")
+            data = obj(read_json(self.reference(section["record"], name + ".record")), name + " record")
+            self.check_declared_origin(data, name)
+            return data
         if self.kind == "synthetic_tool_test":
             return section
         raise MissingEvidence(name + " requires a hash-bound external record, not inline declarations")
@@ -268,12 +276,30 @@ def external_latency(data, requirements):
         b = integer(row.get("output_event_ns"), "output_event_ns")
         if b < a:
             raise ValueError("output event precedes input event")
-        inputs.append(a); outputs.append(b); latencies.append((b-a)/1e6)
+        try:
+            latency_ms = (b-a)/1_000_000
+        except OverflowError as error:
+            # An unrepresentable millisecond interval exceeds any finite limit
+            # accepted by Context; return a failed record rather than crashing.
+            raise ValueError("external end-to-end delay exceeds the declared limit") from error
+        inputs.append(a); outputs.append(b); latencies.append(latency_ms)
     if any(b <= a for a, b in zip(inputs, inputs[1:])) or any(b <= a for a, b in zip(outputs, outputs[1:])):
         raise ValueError("external event timestamps must strictly increase")
     if max(latencies) > requirements["maximum_external_latency_ms"]:
         raise ValueError("external end-to-end delay exceeds the declared limit")
     return {"events": len(rows), "minimum_latency_ms": min(latencies), "maximum_latency_ms": max(latencies)}
+
+
+def check_png_geometry(path, size, name):
+    """Check the PNG IHDR, not decoded pixels or raw-to-PNG equivalence."""
+    with path.open("rb") as stream:
+        header = stream.read(33)
+    if (len(header) != 33 or header[:8] != b"\x89PNG\r\n\x1a\n" or
+            header[8:16] != b"\x00\x00\x00\rIHDR" or
+            zlib.crc32(header[12:29]) != struct.unpack(">I", header[29:33])[0]):
+        raise ValueError(name + " has an invalid PNG IHDR/signature/CRC")
+    if struct.unpack(">II", header[16:24]) != tuple(size):
+        raise ValueError(name + " PNG dimensions differ from the declared native mode")
 
 
 def native_input(section, ctx):
@@ -282,6 +308,7 @@ def native_input(section, ctx):
     image = ctx.reference(section.get("image"), "native original image")
     meta_path = ctx.reference(section.get("metadata"), "native metadata")
     meta = obj(read_json(meta_path), "native metadata")
+    ctx.check_declared_origin(meta, "native metadata")
     if meta.get("source_kind") not in ("physical_native_camera", "physical_hdmi_receiver") or meta.get("hardware_accessed") is not True:
         raise ValueError("replay/simulation or unknown source is not a physical native-input record")
     if meta.get("geometry_applied") is not False or meta.get("upstream_raw_contract_hash_bound") is not True or meta.get("upstream_payload_role") != "native_raw":
@@ -297,10 +324,7 @@ def native_input(section, ctx):
         raise ValueError("hash-bound build raw contract differs from the declared native mode")
     if digest(meta.get("raw_sha256"), "metadata raw_sha256") != sha(raw) or digest(meta.get("image_sha256"), "metadata image_sha256") != sha(image):
         raise ValueError("native metadata pixel-file SHA differs")
-    with image.open("rb") as stream:
-        header = stream.read(24)
-    if len(header) != 24 or header[:8] != b"\x89PNG\r\n\x1a\n" or struct.unpack(">II", header[16:24]) != (w, h):
-        raise ValueError("native original PNG dimensions/signature differ")
+    check_png_geometry(image, [w, h], "native original")
     return {"source_kind": meta["source_kind"], "image_size": [w, h],
             "identity_basis": "Hash-bound operator declaration; not independent sensor/eye or electrical identity verification.",
             "pixel_equivalence_rechecked": False}
@@ -311,6 +335,7 @@ def calibration(section, ctx):
     dataset_path = ctx.reference(section.get("dataset_manifest"), "calibration dataset")
     profile, dataset = read_json(profile_path), read_json(dataset_path)
     for value in (profile, dataset):
+        ctx.check_declared_origin(value, "calibration profile/dataset")
         if any(value.get(key) != ctx.ident[key] for key in IDENTITY) or value.get("image_size") != ctx.ident["image_size"]:
             raise ValueError("calibration identity/mode/size differs; old VGA calibration cannot qualify 1080")
     if profile.get("model") != "fisheye" or profile.get("provenance") != "real_chessboard_captures":
@@ -363,8 +388,28 @@ def calibration(section, ctx):
             split_hashes[split].add(value)
         if split == "train":
             training_poses.add(pose)
-        ctx.reference({"path": view.get("path"), "sha256": value}, "calibration original image", dataset_path.parent)
-        ctx.reference({"path": view.get("metadata_path"), "sha256": view.get("metadata_sha256")}, "calibration original metadata", dataset_path.parent)
+        image = ctx.reference({"path": view.get("path"), "sha256": value}, "calibration original image", dataset_path.parent)
+        meta_path = ctx.reference({"path": view.get("metadata_path"), "sha256": view.get("metadata_sha256")}, "calibration original metadata", dataset_path.parent)
+        # Aggregate profile booleans cannot override contradictory per-view records.
+        meta = obj(read_json(meta_path), "calibration capture metadata")
+        ctx.check_declared_origin(meta, "calibration capture metadata")
+        if meta.get("source_kind") != "physical_native_camera" or meta.get("hardware_accessed") is not True or meta.get("geometry_applied") is not False:
+            raise ValueError("calibration view has no untouched physical camera capture record")
+        binding = obj(meta.get("identity_binding"), "calibration metadata identity")
+        if any(binding.get(key) != ctx.ident[key] for key in IDENTITY):
+            raise ValueError("calibration view capture identity/mode differs")
+        if ([integer(meta.get("width"), "capture width", minimum=1),
+             integer(meta.get("height"), "capture height", minimum=1)] != ctx.ident["image_size"] or
+                meta.get("pixel_format") != "RGB565_LE"):
+            raise ValueError("calibration view capture size/pixel format differs")
+        if digest(meta.get("image_sha256"), "capture image_sha256") != value:
+            raise ValueError("calibration view metadata PNG hash differs")
+        expected_contract = {"protocol": "PGFRAME1", "payload_role": "native_raw",
+                             "geometry_applied": False, "image_size": ctx.ident["image_size"]}
+        if (meta.get("upstream_raw_contract_hash_bound") is not True or meta.get("upstream_payload_role") != "native_raw" or
+                obj(meta.get("build_binding"), "capture build_binding").get("raw_capture_contract") != expected_contract):
+            raise ValueError("calibration view lacks the calibrator's native raw contract")
+        check_png_geometry(image, ctx.ident["image_size"], "calibration original")
     if counts["train"] < 12 or counts["held_out"] < 3 or len(training_poses) < 12:
         raise ValueError("existing minimum 12 distinct train poses + 3 held-out views is unmet")
     for split, field in (("train", "training_image_sha256"), ("held_out", "held_out_image_sha256")):
@@ -379,14 +424,17 @@ def calibration(section, ctx):
         if any(integer(value, "corner count") < minimum for row in rows for value in row):
             raise ValueError("source-image edge/3x3 coverage is incomplete")
     return {**counts, "distinct_training_poses": len(training_poses),
-            "note": "Reuses existing calibrator evidence; does not refit, weaken gates, accept optics or grant hardware release."}
+            "note": "Rechecks per-view declarations, identity, PNG hash/IHDR and native raw contract. Reuses the calibrator's fit/coverage audit; does not re-decode raw/PNG pixels, re-fit, accept optics or grant hardware release."}
 
 
 def quality(section, ctx):
     ctx.same_mode(section.get("identity"))
     original = ctx.reference(section.get("original"), "optical original")
     corrected = ctx.reference(section.get("corrected"), "same-source corrected image")
+    check_png_geometry(original, ctx.ident["image_size"], "optical original")
+    check_png_geometry(corrected, ctx.ident["image_size"], "optical corrected")
     metadata = read_json(ctx.reference(section.get("capture_metadata"), "optical capture metadata"))
+    ctx.check_declared_origin(metadata, "optical capture metadata")
     if metadata.get("hardware_accessed") is not True or metadata.get("geometry_applied") is not False or metadata.get("source_kind") not in ("physical_native_camera", "physical_hdmi_receiver"):
         raise ValueError("optical original has no untouched physical capture record")
     if metadata.get("image_sha256") != sha(original) or [metadata.get("width"), metadata.get("height")] != ctx.ident["image_size"]:
@@ -395,6 +443,7 @@ def quality(section, ctx):
     if any(binding.get(key) != ctx.ident[key] for key in IDENTITY):
         raise ValueError("optical capture identity/mode differs")
     report = read_json(ctx.reference(section.get("measurement_record"), "line/detail measurement record"))
+    ctx.check_declared_origin(report, "line/detail measurement record")
     ctx.same_mode(report.get("identity"))
     for key in ("chart_id", "lighting_id", "exposure_id"):
         if text(section.get(key), key) != text(report.get(key), "measurement " + key):
@@ -410,7 +459,7 @@ def quality(section, ctx):
     if line > ctx.req["maximum_line_deviation_px"] or detail < ctx.req["minimum_detail_score"]:
         raise ValueError("line/detail record is below the declared engineering thresholds")
     return {"line_max_deviation_px": line, "detail_score": detail,
-            "note": "Record checks only; no image analysis/SFR/MTF recomputation or professional optical acceptance is performed."}
+            "note": "Record and PNG IHDR checks only; no pixel decode, image analysis/SFR/MTF recomputation or professional optical acceptance is performed."}
 
 
 def assess(manifest, *, base_dir):

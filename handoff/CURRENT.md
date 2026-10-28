@@ -1,5 +1,25 @@
 # 当前交接点
 
+## 最新完成：FPGA-1028-LATENCY-CONTRACT-ONE
+
+priority2确有直接回归缺口，新增独立合成`test_assess_1080_latency.py`14项：有效及等阈值、负延迟、两路时间tie/回退、字段/类型/非有限值、超限、已有记录身份/event_id契约及缺证据UNMEASURED/无效记录FAIL。首跑13过1 error，真实定位巨大整数时间差的OverflowError；仅局部改毫秒换算为整数分母并将无法表示的超限延迟转ValueError，未改阈值/规则。允许巨大epoch的小差值以及可表示的有限商，未添加绝对时钟或frame_id要求。
+
+最终新14+原27同口径41项PASS，CLI0/14.638s；三个synthetic CLI均预期exit1，局部延迟分别PASS/UNMEASURED/FAIL，真实检查全UNMEASURED/五false。不重复上一22项(对应未改标定模块)、RTL/PDS/DDR或Git。总回执`distortion/build/offline-20261024/latency-contract-20261028-a/result.json`含实际命令/输入/日志SHA；root唯一共享写者，一条`latency_contract_review`只读high反证线已完成。最终工具SHA dd5298abb97f5b6d0ac868ec2cd98331995aa9635bba93347fb4a5370a5593aa。
+
+上一27项helper bb397e…及本轮红测源码分别保存在本轮`before-assess_1080_evidence.py`、`before-test_assess_1080_latency.py`，旧回执/失败不覆写，前两处修复及其旧测试源码不改。板继续断电，+.191/native8、+.144、DDR和原B无修改；所有正式false。真实数据与现场条件沿用`distortion/output/project/1031验收证据清单.md`，不新增采集/上板计划：待厂家动态训练协议、IO/CDC与真实输入源条件及另行硬件审核；真实延迟仍需同源外部事件原始观测/身份/时间口径与不确定度人工复核，记录检查不能替代测量。若没有这些新证据，不继续无限扩展离线细节。
+
+## 最新完成：FPGA-1028-ACCEPTANCE-GAP-ONE 两处验收入口修复
+
+仅离板CPU工程，根`distortion/build/offline-20261024/acceptance-gap-20261028-a`。root唯一共享写者；`acceptance_inventory`(high请求)只写a-inventory，`acceptance_counterexamples`(xhigh请求)只写b-counter，均已完成。查现有assess/audit-calibration/check_calibration_view/evaluate-physical-checkerboard及相关测试后，仅选实际图片几何与来源绑定两处；未重复标定拟合、DDR归档、RTL或PDS，没有Git写入。
+
+`assess_1080_evidence.py`最终SHA `bb397e7641b49683a7fd77a11d70c321f89aa76087e9a2ec0a6b834e8e951ad4`：原图/校正图/标定逐图核PNG IHDR尺寸、签名和头CRC；逐图metadata核真实相机来源声明、untouched、身份/模式/格式/尺寸、图像SHA及既有PGFRAME1 native_raw契约。明确合成标记的附件不能仅换顶层physical标签提升记录。仍只检查记录/头，不重做raw→PNG像素解码、角点/拟合/覆盖计算、光学或来源认证。新增`test_assess_1080_artifacts.py`，原15项测试源码未改。
+
+实际最终27项unittest/0/14.459s，相关calibrator+单姿态22项pytest/0/2.505s；两个旧反例(1×1冒1080、逐图metadata错误而aggregate为true)从局部PASS→FAIL。最终三个CLI均exit1为预期：两个拒绝反例、一个六类记录全PASS的synthetic正例；真实检查全UNMEASURED及五false。命令/日志/逐输入SHA在`root-tests/combined-assess-c.json`、`related-capture-a.json`、`final-cli-runs.json`，总索引`result.json`。首轮新测试因沙箱默认TEMP权限报37个error、外层GBK输出错误，原log/receipt保留；改用本批准目录内临时文件后通过，未改系统权限/环境设置。中间25项PASS及旧助手反例回执均保留，不覆写成最终版本。
+
+旧helper e0bf99…快照在`root-tests/before-assess_1080_evidence.py`与b-counter，10/27工具回执仍绑定旧SHA，不声称旧全工具清单与当前helper相同。已核本helper不在原B计划/+.191板级源闭包内；原B、+.191/c65+d961准确native8、+.144对照、DDR-IP-only及headtail原件未改。正式硬件/标定/新镜头/画质false；20候选图仍未接受(11 train、重复/漏角、3×3上方右侧不足、VGA development)，没有新增实物1080/光学/端到端测量。
+
+下一具体顺序：先取得厂商DDR动态训练/首有效边沿及IO/CDC缺口依据、确认真实原生1080输入模式，再另审硬件。以后真实数据到手：先逐图raw/PNG/metadata与当前身份绑定及单姿态质量→预先分train/held_out并补完整覆盖→同源矫正画质→独立外部事件延迟/变化刺激新帧与长稳记录→用本入口核记录。此顺序不是新上板/采集授权；当前无需用户接板。
+
 ## FPGA-1028-GIT-AUTHORIZED-RESUME-ONE：已撤销午间暂停；先审查同步main，再恢复离线工程
 
 用户明确授权原私有仓库main逐path审查/暂存/commit/push，不强推、不覆盖远端新提交。初核本地/远端HEAD均feccb488...，暂存区空，未发现本标记既有提交；Git与工程写入串行，未启动新EDA。372项原待审文件无已知secret/受限源码标记，vendor无修改；精确范围及排除理由在本轮审查清单，受限/机器/构建资料留本地。
