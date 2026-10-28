@@ -52,3 +52,12 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: python -m pytest -q -p no:cacheprovider distortion/tests/test_audit_ddr_reference.py
+      - name: Run 1080 evidence and simulation-tool CPU tests
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python -m pytest -q -p no:cacheprovider \
+            distortion/tests/test_assess_1080_artifacts.py \
+            distortion/tests/test_assess_1080_latency.py \
+            distortion/tests/test_assess_1080_evidence.py \
+            distortion/tests/test_simulation_tools.py
