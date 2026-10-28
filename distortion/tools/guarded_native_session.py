@@ -24,6 +24,7 @@ import program_idle_heartbeat as idle
 ROOT = Path(__file__).resolve().parents[1]
 TARGET = 'raw_camera_capture_cam2_guarded'
 BUILD_TAG = 0x52473201
+RECOVERY_CLIENT_TIMEOUT_SECONDS = 90.
 
 
 @dataclass(frozen=True)
@@ -482,7 +483,8 @@ def prepare_plan(review_binding, build_dir, workdir, *, port, scenario='capture'
             stream.write(text)
         program['tcl'][stage] = {'path': str(path), 'sha256': hw.sha(path)}
     hw._new_json(program_work/'plan.json', program)
-    exit_plan = idle.prepare_plan(run, pds_bin=pds, frequency=frequency)
+    exit_plan = idle.prepare_plan(run, pds_bin=pds, frequency=frequency,
+                                  timeout_seconds=RECOVERY_CLIENT_TIMEOUT_SECONDS)
     _check_tcl(program, hw._scripts)
     _check_tcl(exit_plan, idle._scripts)
     plan = {'schema': 1, 'operation': 'bounded_guarded_native_then_heartbeat',
@@ -994,6 +996,9 @@ def _serial(port):
 
 def _validate_exit(plan):
     exit_plan = plan['idle_plan']
+    budget = idle.validate_program_budget(exit_plan)
+    if budget['client_timeout_seconds'] != RECOVERY_CLIENT_TIMEOUT_SECONDS:
+        raise ValueError('heartbeat recovery client timeout differs from the fixed guarded budget')
     if (exit_plan.get('target') != 'heartbeat' or exit_plan.get('operation') != 'volatile_sram_only'
             or exit_plan.get('frequency') != plan['frequency']
             or not Path(exit_plan['workdir']).resolve().is_relative_to(Path(plan['workdir']).resolve())
@@ -1087,7 +1092,8 @@ def execute_plan(plan):
         if attempted:
             result['idle_restoration_attempted'] = True
             try:
-                result['idle_program'] = idle.execute_plan(plan['idle_plan'], timeout_seconds=90.)
+                result['idle_program'] = idle.execute_plan(plan['idle_plan'],
+                    timeout_seconds=RECOVERY_CLIENT_TIMEOUT_SECONDS)
                 result['hardware_accessed'] |= bool(result['idle_program'].get('hardware_accessed'))
                 result['idle_done_confirmed'] = bool(result['idle_program'].get('passed')
                                                      and result['idle_program'].get('done_confirmed'))

@@ -417,6 +417,8 @@ def test_default_plan_has_no_hardware_and_binds_fresh_guarded_role(planned):
     plan, _, _, _ = planned
     assert plan['executed'] is False and plan['hardware_accessed'] is False
     assert plan['host_session'] != 0
+    assert plan['idle_plan']['program_budget']['client_timeout_seconds'] == 90.
+    assert host.idle.validate_program_budget(plan['idle_plan']) == plan['idle_plan']['program_budget']
     binding = host.capture.load_json(plan['program_plan']['validation']['binding_path'])
     assert binding['connection_review']['programmed_bound_bitstream'] is False
     assert binding['guarded_control_contract'] == gp.GUARDED_CONTROL_CONTRACT
@@ -529,6 +531,23 @@ def test_modified_sealed_plan_rejected_before_any_hardware(planned, monkeypatch)
     plan['frames'] = 3
     monkeypatch.setattr(host, 'execute_program', lambda p: pytest.fail('must not program'))
     with pytest.raises(ValueError, match='changed'): host.execute_plan(plan)
+
+
+@pytest.mark.parametrize('change', ['missing', 'altered', 'different-timeout'])
+def test_recovery_budget_rejected_before_active_program_even_if_reserialized(planned, monkeypatch, change):
+    plan, _, _, save = planned
+    exit_plan = plan['idle_plan']
+    if change == 'missing':
+        exit_plan.pop('program_budget')
+    elif change == 'altered':
+        exit_plan['program_budget']['wire_seconds'] += 1
+    else:
+        exit_plan['program_budget'] = host.idle.program_budget(exit_plan['validation'], exit_plan['frequency'], 100.)
+    save(Path(plan['workdir'])/'plan.json', plan)
+    save(Path(exit_plan['workdir'])/'plan.json', exit_plan)
+    monkeypatch.setattr(host, 'execute_program', lambda p: pytest.fail('must reject recovery budget before active program'))
+    with pytest.raises(ValueError, match='budget'):
+        host.execute_plan(plan)
 
 
 def test_direct_guarded_program_rejects_100khz_before_any_process(planned):

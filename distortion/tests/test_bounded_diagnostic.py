@@ -2,7 +2,6 @@
 from pathlib import Path
 import copy
 import json
-import shutil
 import sys
 import types
 
@@ -256,24 +255,56 @@ def test_known_legacy_aa22_probe_is_always_forbidden():
         diagnostic.validate_target('camera_isp_probe')
 
 
-def test_probe_clone_rejects_an_extra_dependency():
-    names = diagnostic.hw.load_json(ROOT/'board/camera_isp_probe_d5-sources.json')
+@pytest.fixture
+def probe_clone(tmp_path, monkeypatch):
+    """Bind real clone checks to synthetic sources, never a local PDS build."""
+    project = tmp_path/'synthetic-probe-project'
+    original = diagnostic.hw.load_json(ROOT/'board/camera_isp_probe-sources.json')
+    cloned = [name.replace('camera_isp_probe', 'camera_isp_probe_d5') for name in original]
+    assert len(original) == 16
+    original_text = {
+        'board/camera_isp_probe.v': '// SYNTHETIC SOURCE FIXTURE\nmodule camera_isp_probe(); endmodule\n',
+        'board/camera_isp_probe.fdc': 'define_attribute {p:cam_data[5]} {PAP_IO_LOC} {AA22}\n',
+        'board/camera_isp_probe-pins.json': json.dumps({'clk_27m': 'D18', 'cam_data[5]': 'AA22'}),
+        'board/build-camera_isp_probe.tcl': '# SYNTHETIC SOURCE FIXTURE\nset top camera_isp_probe\n',
+        'board/camera_isp_probe-sources.json': json.dumps(original),
+    }
+    cloned_text = {
+        'board/camera_isp_probe_d5.v': '// SYNTHETIC SOURCE FIXTURE\nmodule camera_isp_probe_d5(); endmodule\n',
+        'board/camera_isp_probe_d5.fdc': 'define_attribute {p:cam_data[5]} {PAP_IO_LOC} {AA23}\n',
+        'board/camera_isp_probe_d5-pins.json': json.dumps({'clk_27m': 'D18', 'cam_data[5]': 'AA23'}),
+        'board/build-camera_isp_probe_d5.tcl': '# SYNTHETIC SOURCE FIXTURE\nset top camera_isp_probe_d5\n',
+        'board/camera_isp_probe_d5-sources.json': json.dumps(cloned),
+    }
+    for name in original:
+        path = project/name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(original_text.get(name, '// SYNTHETIC SOURCE FIXTURE: '+name+'\n'), encoding='utf-8')
+    for name, text in cloned_text.items():
+        (project/name).write_text(text, encoding='utf-8')
+    legacy = project/'build/camera_isp_probe/validated-build.json'
+    legacy.parent.mkdir(parents=True)
+    legacy.write_text(json.dumps({
+        'synthetic': True, 'purpose': 'clone validation unit test only; no PDS build or hardware approval',
+        'SourceSHA256': {name: diagnostic.hw.sha(project/name) for name in original},
+    }), encoding='utf-8')
+    monkeypatch.setattr(diagnostic, 'ROOT', project)
+    # Change only the fixture identity; keep the production hash and clone checks real.
+    monkeypatch.setitem(diagnostic.CAMERA_ARTIFACT_SHA, 'validated-build.json', diagnostic.hw.sha(legacy).upper())
+    return {'project': project, 'cloned': cloned}
+
+
+def test_probe_clone_rejects_an_extra_dependency(probe_clone):
+    names = probe_clone['cloned']
+    assert diagnostic._validate_probe_clone(names) == set(names)
     with pytest.raises(ValueError, match='exact legacy 16-file'):
         diagnostic._validate_probe_clone(names+['rtl/another_candidate.v'])
 
 
-def test_probe_clone_rejects_extra_rtl_changes(tmp_path, monkeypatch):
-    original = diagnostic.hw.load_json(ROOT/'board/camera_isp_probe-sources.json')
-    cloned = diagnostic.hw.load_json(ROOT/'board/camera_isp_probe_d5-sources.json')
-    names = set(original+cloned+['build/camera_isp_probe/validated-build.json'])
-    project = tmp_path/'cloned-project'
-    for name in names:
-        destination = project/name
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(ROOT/name, destination)
-    monkeypatch.setattr(diagnostic, 'ROOT', project)
-    assert len(diagnostic._validate_probe_clone(cloned)) == 16
-    top = project/'board/camera_isp_probe_d5.v'
+def test_probe_clone_rejects_extra_rtl_changes(probe_clone):
+    cloned = probe_clone['cloned']
+    assert diagnostic._validate_probe_clone(cloned) == set(cloned)
+    top = probe_clone['project']/'board/camera_isp_probe_d5.v'
     top.write_text(top.read_text(encoding='utf-8-sig')+'\n// EXTRA UNREVIEWED CHANGE\n', encoding='utf-8')
     with pytest.raises(ValueError, match='differs from the exact'):
         diagnostic._validate_probe_clone(cloned)
