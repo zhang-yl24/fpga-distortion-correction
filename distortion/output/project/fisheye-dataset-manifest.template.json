@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "camera_id": "REPLACE_PHYSICAL_CAMERA_ID",
+  "lens_id": "REPLACE_CURRENT_PHYSICAL_LENS_ID",
+  "profile_id": "REPLACE_NEW_INTRINSIC_PROFILE_ID",
+  "capture_mode_id": "REPLACE_VERIFIED_SENSOR_MODE_ID",
+  "provenance": "template_only_no_real_captures",
+  "image_size": null,
+  "board": {"cols": null, "rows": null, "square_mm": null},
+  "model_scope": {"projection": "forward_rectilinear", "maximum_ray_angle_deg": null},
+  "required_coverage_cells": [[0,0], [0,1], [0,2], [1,0], [1,1], [1,2], [2,0], [2,1], [2,2]],
+  "view_template": {
+    "view_id": "REPLACE_VIEW_ID",
+    "pose_id": "REPLACE_GLOBALLY_DISTINCT_PHYSICAL_POSE_ID",
+    "session_id": "REPLACE_CAPTURE_SESSION_ID",
+    "split": "train",
+    "path": "REPLACE_NATIVE_PNG_PATH",
+    "sha256": "REPLACE_NATIVE_PNG_SHA256",
+    "metadata_path": "REPLACE_NATIVE_CAPTURE_METADATA_PATH",
+    "metadata_sha256": "REPLACE_METADATA_SHA256"
+  },
+  "views": [],
+  "instructions": [
+    "Template values are placeholders. Confirm actual image mode, measured chessboard square size and the physical camera/lens connection before capturing.",
+    "An example initial dataset could use image_size=[640,480] and a 9-by-6 inner-corner board with measured 20mm squares; these are examples only, not current camera or target measurements. Choose the supported forward ray-angle request separately after inspecting actual coverage.",
+    "Use native_camera_capture.py native PNG/raw RGB565/metadata records; the calibrator checks image SHA, metadata SHA, raw SHA/CRC, unmodified RGB565 pixels and declared identity.",
+    "Set provenance=real_sensor_captures only for current physical captures. UART replays remain offline/unverified and cannot become real-lens ready.",
+    "Copy view_template to views, assigning every image a view_id, global physical pose_id and session_id. Choose split=train, model_selection or held_out explicitly before fitting.",
+    "Provide at least 12 distinct training poses and 3 separate held_out poses; collect many more views spanning the required source-image cells and edges for independent acceptance.",
+    "Only train views fit K/D. Model_selection views may review the fixed model but are never refitted; all train and model_selection hashes are included in calibration_image_sha256 for downstream stereo leakage checks.",
+    "A pose cannot occur in held_out and train/model_selection even under different filenames. Identical hashes and near-identical held-out corner poses are rejected.",
+    "All metadata identity_binding fields must exactly match camera_id/lens_id/profile_id/capture_mode_id; hashes bind an operator-declared connection and do not independently prove sensor/eye identity.",
+    "maximum_ray_angle_deg is an engineering domain request, not a measured lens FOV. It must remain below 90 degrees. The current OpenCV forward model cannot certify a seller's 200-degree full/rear-hemisphere field.",
+    "The output is a flat four-coefficient fisheye profile directly accepted by wideangle_mapping_audit.py and stereo_fisheye_calibrate.py. It never permits hardware programming by itself."
+  ]
+}

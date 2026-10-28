@@ -1,0 +1,35 @@
+{
+  "target": "thermal_idle",
+  "source_files": [
+    "rtl/logos2_temperature_monitor.v",
+    "rtl/adc_temperature_reader.v",
+    "rtl/uart_tx.v",
+    "rtl/thermal_idle_telemetry.v",
+    "board/thermal_idle.v",
+    "board/thermal_idle.fdc",
+    "board/thermal_idle-pins.json",
+    "board/build-thermal_idle.tcl"
+  ],
+  "SourceSHA256": {
+    "rtl/logos2_temperature_monitor.v": "005C18DA5B65BB3387D07D17C40829E1411B2FA60FB91AEE1408D581BB646E0A",
+    "rtl/adc_temperature_reader.v": "26D3245B994B6F2BA53C8E69235EB446F99A832F0442BCA809D403E8AD065BA7",
+    "rtl/uart_tx.v": "0A691C35B88D4305D9C74C4ACD8676DEFA09C8C5AAE7D7EE653C561F40B49D2B",
+    "rtl/thermal_idle_telemetry.v": "84045D6A8538DAC4A7AC8E20A5A030291F942B0BE32498DFA64B12BCE57674EC",
+    "board/thermal_idle.v": "C2E8C3268DD0CF9834EF9D17783AD01E47476781A13242250DFAD3FE7D9724AC",
+    "board/thermal_idle.fdc": "AB40E1BBAE5C72A134906F18A689761C9B1A13496164E882BA7D0567FD763F7F",
+    "board/thermal_idle-pins.json": "3E2E571E25D7B111B6AE59DD0300F239E11BD9B75B9DE9C329E3FD86D3D0C5DC",
+    "board/build-thermal_idle.tcl": "CBD11E67D2C313020AAD8AF4882B5FABA28E91E141E9A41E5F562943E01D4BDC"
+  },
+  "ThermalIdleContract": {
+    "protocol": "THERMAL_IDLE_V1",
+    "uart_baud": 921600,
+    "clock_hz": 27000000,
+    "period_cycles": 13500000,
+    "camera_outputs": false,
+    "ddr_outputs": false,
+    "hdmi_outputs": false
+  },
+  "HardwareAccessed": false,
+  "ThermalSafetyVerified": false,
+  "limits": "Temperature-readback diagnostic candidate only. CRC-protected snapshots expose ADC validity/fault/alarm status; no measured temperature, thermal safety, autonomous supervision or JTAG mode-3 alarm interpretation is implied."
+}

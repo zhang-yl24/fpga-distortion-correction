@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "profile_id": null,
+  "change_kind": null,
+  "sensor_model": null,
+  "lens_model": null,
+  "camera_count": null,
+  "interface": null,
+  "synchronization": null,
+  "electrical": {
+    "io_voltage_v": null,
+    "power_voltage_v": null,
+    "pinout_reference": null,
+    "io_compatibility_evidence": null
+  },
+  "input_mode": {
+    "width": null,
+    "height": null,
+    "fps": null,
+    "pixel_format": null,
+    "bus_width_bits": null,
+    "pclk_hz": null
+  },
+  "verification": {
+    "identity": null,
+    "interface": null,
+    "electrical": null,
+    "pinout": null,
+    "capture_mode": null,
+    "synchronization": null,
+    "new_lens_calibration": null,
+    "candidate_configuration": null,
+    "io_level_compatibility": null
+  },
+  "evidence_notes": null,
+  "usage_note": "For one camera only, synchronization may explicitly be not-applicable-single-camera. Evaluate --scope raw-capture to collect new calibration; --scope corrected requires new_lens_calibration. Sensor supply/DOVDD rail, interface signal level and FPGA bank voltage/IOSTANDARD are different facts. For a declared non-3.3-V DVP signal level, add verification.io_level_compatibility=true and electrical.io_compatibility_evidence from an explicit device/adapter/bank compatibility review; verification.electrical is still required. This tool does not decide device voltage thresholds. All verification declarations must refer to the selected candidate/scope."
+}

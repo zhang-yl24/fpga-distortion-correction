@@ -1,0 +1,159 @@
+{
+  "camera_id": "replacement-20261026-cam2",
+  "lens_id": "replacement-20261026-lens-cam2",
+  "profile_id": "replacement-20261026-cam2-vga-uncalibrated",
+  "capture_mode_id": "reference-vga-rgb565-cam2-guarded",
+  "schema": 1,
+  "provenance": "real_sensor_captures",
+  "image_size": [
+    640,
+    480
+  ],
+  "board": {
+    "cols": 11,
+    "rows": 8,
+    "square_mm": 1.0,
+    "coordinate_unit": "square",
+    "legacy_square_mm_field_semantics": "Numeric uniform grid scale only:1.0 square, NOT a measured1.0mm length. Used by the existing object-point API.",
+    "operator_label": "12*9-15",
+    "nominal_label_square_mm": 15,
+    "measured_square_mm": null,
+    "metric_scale_verified": false
+  },
+  "model_scope": {
+    "projection": "forward_rectilinear",
+    "maximum_ray_angle_deg": 80.0,
+    "scope_basis": "Explicit engineering support request to be checked against fitted model and held-out observations; not a measured lens FOV.",
+    "merchant_200_degree_claim_verified": false
+  },
+  "required_coverage_cells": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ]
+  ],
+  "views": [],
+  "view_template": {
+    "view_id": "REPLACE_UNIQUE_VIEW_ID",
+    "pose_id": "REPLACE_EXPLICIT_GLOBAL_PHYSICAL_POSE_ID",
+    "session_id": "REPLACE_CAPTURE_SESSION_ID",
+    "split": "train",
+    "path": "REPLACE_NATIVE_PNG_PATH",
+    "sha256": "REPLACE_NATIVE_PNG_SHA256",
+    "metadata_path": "REPLACE_NATIVE_METADATA_PATH",
+    "metadata_sha256": "REPLACE_NATIVE_METADATA_SHA256"
+  },
+  "collector_split_mapping": {
+    "train": "train",
+    "holdout": "held_out",
+    "held_out": "held_out",
+    "unassigned": "REQUIRES_EXPLICIT_ASSIGNMENT_BEFORE_FITTING"
+  },
+  "predeclared_pose_order": [
+    {
+      "pose_id": "gp200-replacement-cam2-T01",
+      "split": "train"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-T02",
+      "split": "train"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-T03",
+      "split": "train"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-T04",
+      "split": "train"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-T05",
+      "split": "train"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-T06",
+      "split": "train"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-T07",
+      "split": "train"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-T08",
+      "split": "train"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-T09",
+      "split": "train"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-T10",
+      "split": "train"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-T11",
+      "split": "train"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-T12",
+      "split": "train"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-H01",
+      "split": "held_out"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-H02",
+      "split": "held_out"
+    },
+    {
+      "pose_id": "gp200-replacement-cam2-H03",
+      "split": "held_out"
+    }
+  ],
+  "fit_command": "python distortion/tools/calibrate_fisheye_profile.py <manifest_with_actual_views.json> --output <fresh_profile.json>",
+  "instructions": [
+    "Fill views with actual current bound PNG/raw/metadata records and their SHA256 after the batch. No placeholders may enter a fit.",
+    "Single-camera K/D and pixel reprojection residuals do not need a metric square length. The existing API calls its uniform scale field square_mm;1.0 here explicitly denotes one grid square, not a physical millimeter.",
+    "No metric translation, baseline or object dimension may be claimed from this unit-square dataset. The current single-eye profile exports K/D, not metric extrinsics; any later stereo board definition must carry its own correct unit.",
+    "The board label15mm remains nominal and unmeasured; this is recorded rather than used as a fitting prerequisite.",
+    "80deg is a requested forward-ray support interval, not an estimated/measured200deg lens field. Numerical domain and held-out checks may reject it; any narrower candidate must state its crop/support explicitly.",
+    "Keep the unchanged minimum12 distinct training poses plus3 held-out views and the required source-image3x3 coverage gates. Only training images fit K/D.",
+    "Preserve each explicit physical pose and split; collector holdout is translated explicitly to calibrator held_out. Do not infer split or novelty from frame number/filename; static duplicates remain one pose.",
+    "Do not automatically reuse the earlier T01 image as an extra pose if the new batch already contains T01. Select at most one good image per declared pose; retain all originals.",
+    "The original same-pose pair has complete88-corner detection but contributes central coverage only. Additional edge and independent held-out coverage is still required.",
+    "This template is executable with the existing calibrator once actual views are supplied. It changes no source, count, coverage, hold-out or hardware-release gate."
+  ]
+}

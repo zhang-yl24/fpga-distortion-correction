@@ -2,6 +2,7 @@
 from pathlib import Path
 import importlib.util
 import json
+import os
 import shutil
 import sys
 import tempfile
@@ -13,6 +14,7 @@ sys.path.insert(0,str(ROOT/'tools'))
 spec=importlib.util.spec_from_file_location('native_audit',ROOT/'tools/native_optical_audit.py')
 audit=importlib.util.module_from_spec(spec);spec.loader.exec_module(audit)
 SOURCE=ROOT/'captures/gamma-triplets/grid-center-20261009'
+TEST_WORKDIR=Path(os.environ.get('FPGA_TEST_WORKDIR',str(ROOT/'build'))).resolve()
 
 class NativeAuditTests(unittest.TestCase):
     def test_corrected_optical_capture(self):
@@ -47,14 +49,14 @@ class NativeAuditTests(unittest.TestCase):
         return dest/'group-00000001'
 
     def test_changed_pixels_rejected(self):
-        with tempfile.TemporaryDirectory(dir=ROOT/'build',prefix='native-audit-test-') as temp:
+        with tempfile.TemporaryDirectory(dir=TEST_WORKDIR,prefix='native-audit-test-') as temp:
             folder=self.fixture(temp)
             p=folder/'raw.npy';pixels=np.load(p);pixels[0,0]^=1;np.save(p,pixels)
             with self.assertRaisesRegex(ValueError,'Pixels/mask changed'):
                 audit.load_group(folder)
 
     def test_changed_uart_crc_rejected(self):
-        with tempfile.TemporaryDirectory(dir=ROOT/'build',prefix='native-audit-test-') as temp:
+        with tempfile.TemporaryDirectory(dir=TEST_WORKDIR,prefix='native-audit-test-') as temp:
             folder=self.fixture(temp);p=folder/'comparison.json'
             data=audit.read(p);data['crc32'][0]='00000000';p.write_text(json.dumps(data))
             with self.assertRaisesRegex(ValueError,'CRC differs'):

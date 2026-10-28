@@ -1,0 +1,47 @@
+{
+  "Target": "cam1_transaction_probe",
+  "source_files": [
+    "rtl/experimental/ov5640_cadence_diagnostic_init.v",
+    "rtl/reg16_i2c.v",
+    "rtl/uart_tx.v",
+    "board/ov5640_cadence_trial_commands.vh",
+    "board/cam1_transaction_probe.v",
+    "board/cam1_transaction_probe.fdc",
+    "board/cam1_transaction_probe-pins.json",
+    "board/build-cam1_transaction_probe.tcl"
+  ],
+  "SourceSHA256": {
+    "rtl/experimental/ov5640_cadence_diagnostic_init.v": "E6740C69DE616BD27478E39BC206D1A8891BD8FFD6AF0A92D9805E8B9BF7F3D2",
+    "rtl/reg16_i2c.v": "7DB5335DEE7D64EDDF3905008A1CD64262889D0A9EBEF63C74D4612D70A5A580",
+    "rtl/uart_tx.v": "0A691C35B88D4305D9C74C4ACD8676DEFA09C8C5AAE7D7EE653C561F40B49D2B",
+    "board/ov5640_cadence_trial_commands.vh": "53428872AA14E6120EED93D876C889EF5155B3C196C014DB77C4578B2BD50674",
+    "board/cam1_transaction_probe.v": "5FB2F09750F788F3F5EA2AE92AE8BD1C66115BA44AD156EDDD28214995A342E3",
+    "board/cam1_transaction_probe.fdc": "96FDC2E06D294B8238B5C8ECFBBD0C7B7866C89BF0DAE29FF3D16F04AF7E4A6B",
+    "board/cam1_transaction_probe-pins.json": "154943259045E94EAFE2489729A1C712D684A69E5CE5DB4E7F99CDC67AF9A352",
+    "board/build-cam1_transaction_probe.tcl": "D3C49E4D33414EFDBF5AA62CC35407477C2A71B07175F6F3C3E85A898612956C"
+  },
+  "ReferenceSourceSHA256": {
+    "board/raw_camera_capture_cam1_guarded.fdc": "E910693AC8ADC725D717AF97A3E4CFA0388777B64E5F6E5863246FED3BCAA44C",
+    "board/raw_camera_capture_cam1_guarded-pins.json": "3D1AFC93D302B79A4B5F9757F26E1CCE752E8E416A928DAD72A720E587E4C8FA"
+  },
+  "DiagnosticContract": {
+    "protocol": "PGCAMD01",
+    "packet_bytes": 64,
+    "crc32_cover_bytes": 56,
+    "baud": 921600,
+    "clock_hz": 27000000,
+    "quarter_cycles": 68,
+    "pad_mask": 32752,
+    "readonly_failed_probe_addresses": [
+      12298,
+      12299,
+      12312
+    ],
+    "raw_frames": false,
+    "ddr_outputs": false,
+    "hdmi_outputs": false
+  },
+  "HardwareAccessed": false,
+  "SourceKind": "camera_transaction_diagnostic",
+  "limits": "Register-only CAM1 diagnostic. Fixed3 failed-state reads never clear original FAILED status. No RAW/DDR/HDMI, input-mode/optics/synchronization or temperature-safety acceptance. Digital2FF pad levels are not measured voltages/waveforms. Offline SRAM file only; no Flash or hardware operation."
+}

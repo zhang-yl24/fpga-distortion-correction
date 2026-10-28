@@ -1,12 +1,12 @@
 from pathlib import Path
-import sys,tempfile,unittest
+import os,sys,tempfile,unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
 from pds_source_manifest import expand_sources
 
 
 class SourceManifestTests(unittest.TestCase):
     def setUp(self):
-        self.base=(Path(__file__).resolve().parents[1]/'build/source_manifest_tests').resolve()
+        self.base=Path(os.environ.get('FPGA_TEST_WORKDIR',str(Path(__file__).resolve().parents[1]/'build/source_manifest_tests'))).resolve()
         self.base.mkdir(parents=True,exist_ok=True)
         self.temp=tempfile.TemporaryDirectory(dir=self.base);self.root=Path(self.temp.name).resolve()
         assert self.root.is_relative_to(self.base)

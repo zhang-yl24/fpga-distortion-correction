@@ -1,0 +1,316 @@
+{
+  "contract": {
+    "protocol": "PGGUARD02",
+    "version": 2,
+    "command_magic": "A55A",
+    "command_bytes": 16,
+    "command_crc": "CRC16/CCITT-FALSE",
+    "command_crc_cover_start": 2,
+    "command_crc_cover_end_exclusive": 14,
+    "status_magic": "PGSTAT02",
+    "status_bytes": 128,
+    "status_crc": "CRC32-IEEE",
+    "status_crc_cover_start": 0,
+    "status_crc_cover_end_exclusive": 120,
+    "status_trailer": "ST02",
+    "build_tag": 1380397569,
+    "core_clock_hz": 125000000,
+    "max_grant_frames": 3,
+    "max_lease_ms": 24000,
+    "sequence_policy": "same_session_half_range_forward_consumes_semantic_rejections",
+    "grant_ack_policy": "actual_lease_feedback_only",
+    "open_policy": "idle_no_fault_nonzero_session",
+    "query_renews_lease": false,
+    "cryptographic_authentication": false
+  },
+  "opcodes": {
+    "OPEN": 15,
+    "GRANT": 16,
+    "STOP": 17,
+    "QUERY": 18
+  },
+  "results": {
+    "NONE": 0,
+    "ACCEPTED": 1,
+    "DUPLICATE": 2,
+    "BAD_VERSION": 16,
+    "BAD_CRC": 17,
+    "RX_FRAMING": 18,
+    "RX_TIMEOUT": 19,
+    "NO_SESSION": 32,
+    "SESSION_MISMATCH": 33,
+    "OLD_SEQ": 34,
+    "SEQ_CONFLICT": 35,
+    "BAD_OPCODE": 48,
+    "BAD_ARG": 49,
+    "NOT_IDLE": 50,
+    "FAULT": 51,
+    "NOT_READY": 52,
+    "GRANT_REJECTED": 53,
+    "GRANT_TIMEOUT": 54,
+    "BUSY": 55
+  },
+  "stop_reasons": {
+    "NONE": 0,
+    "FRAME_BUDGET": 1,
+    "LEASE_EXPIRED": 2,
+    "OPERATOR_STOP": 3,
+    "INTERLOCK": 4,
+    "CORE_FAULT": 5,
+    "INVALID_GRANT": 6
+  },
+  "status_fields": [
+    {
+      "name": "uptime_ms",
+      "offset": 16,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "session_id",
+      "offset": 20,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "last_received_seq",
+      "offset": 24,
+      "bytes": 2,
+      "format": "<H"
+    },
+    {
+      "name": "last_accepted_seq",
+      "offset": 26,
+      "bytes": 2,
+      "format": "<H"
+    },
+    {
+      "name": "last_opcode",
+      "offset": 28,
+      "bytes": 1,
+      "format": "<B"
+    },
+    {
+      "name": "last_result",
+      "offset": 29,
+      "bytes": 1,
+      "format": "<B"
+    },
+    {
+      "name": "flag_bits",
+      "offset": 30,
+      "bytes": 2,
+      "format": "<H"
+    },
+    {
+      "name": "accepted_commands",
+      "offset": 32,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "rejected_commands",
+      "offset": 36,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "duplicate_commands",
+      "offset": 40,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "rx_errors",
+      "offset": 44,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "admitted_frames",
+      "offset": 48,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "completed_frames",
+      "offset": 52,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "remaining_frames",
+      "offset": 56,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "remaining_cycles",
+      "offset": 60,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "held_frame_id",
+      "offset": 64,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "source_crc32",
+      "offset": 68,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "written_beats",
+      "offset": 72,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "temperature_raw",
+      "offset": 76,
+      "bytes": 2,
+      "format": "<H"
+    },
+    {
+      "name": "temperature_code",
+      "offset": 78,
+      "bytes": 2,
+      "format": "<H"
+    },
+    {
+      "name": "temperature_age_27mhz",
+      "offset": 80,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "temperature_samples",
+      "offset": 84,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "temperature_conversions",
+      "offset": 88,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "sensor_id",
+      "offset": 92,
+      "bytes": 2,
+      "format": "<H"
+    },
+    {
+      "name": "camera_error",
+      "offset": 94,
+      "bytes": 1,
+      "format": "<B"
+    },
+    {
+      "name": "raw_fault",
+      "offset": 95,
+      "bytes": 1,
+      "format": "<B"
+    },
+    {
+      "name": "camera_failed_address",
+      "offset": 96,
+      "bytes": 2,
+      "format": "<H"
+    },
+    {
+      "name": "camera_observed",
+      "offset": 98,
+      "bytes": 1,
+      "format": "<B"
+    },
+    {
+      "name": "camera_expected",
+      "offset": 99,
+      "bytes": 1,
+      "format": "<B"
+    },
+    {
+      "name": "camera_writes",
+      "offset": 100,
+      "bytes": 2,
+      "format": "<H"
+    },
+    {
+      "name": "camera_noacks",
+      "offset": 102,
+      "bytes": 2,
+      "format": "<H"
+    },
+    {
+      "name": "stop_reason",
+      "offset": 104,
+      "bytes": 1,
+      "format": "<B"
+    },
+    {
+      "name": "raw_state",
+      "offset": 105,
+      "bytes": 1,
+      "format": "<B"
+    },
+    {
+      "name": "adc_fault",
+      "offset": 106,
+      "bytes": 1,
+      "format": "<B"
+    },
+    {
+      "name": "adc_alarm",
+      "offset": 107,
+      "bytes": 1,
+      "format": "<B"
+    },
+    {
+      "name": "snapshot_seq",
+      "offset": 108,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "safety_snapshot_age_core",
+      "offset": 112,
+      "bytes": 4,
+      "format": "<I"
+    },
+    {
+      "name": "requested_frames",
+      "offset": 116,
+      "bytes": 2,
+      "format": "<H"
+    },
+    {
+      "name": "lease_ms",
+      "offset": 118,
+      "bytes": 2,
+      "format": "<H"
+    }
+  ],
+  "status_flags": {
+    "camera_ready": 0,
+    "ddr_ready": 1,
+    "warmup_ready": 2,
+    "safety_ok": 3,
+    "armed": 4,
+    "inflight": 5,
+    "bank_locked": 6,
+    "raw_failed": 7,
+    "requires_reset": 8,
+    "draining": 9,
+    "temp_valid": 10,
+    "temp_failed": 11,
+    "temp_over_temp": 12,
+    "temp_stale": 13,
+    "camera_failed": 14,
+    "core_idle": 15
+  }
+}

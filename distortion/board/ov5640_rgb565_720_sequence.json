@@ -1,0 +1,4502 @@
+{
+  "Target": "ov5640_rgb565_720_register_candidate",
+  "ImageSize": [
+    1280,
+    720
+  ],
+  "CompleteOrderedRegisterSequence": true,
+  "NominalXVCLKHz": 24000000,
+  "XVCLKMeasured": false,
+  "NominalPCLKModelHz": 42000000,
+  "UpperPCLKModelHzAt27MHz": 47250000,
+  "NominalFPSModel": 14.99914290611965,
+  "MeasuredFPS": null,
+  "HardwareReleaseAllowed": false,
+  "ConfiguredIsNotModeReady": true,
+  "ClockActivityAndLineFreshnessMonitorImplemented": false,
+  "MissingModeAdmissionGate": "PCLK-domain activity/CDC plus exact2560 bytes x720 lines and freshness; no raw grant may depend on configured alone",
+  "ClockActionAudit": {
+    "schema": 1,
+    "static_model_passed": true,
+    "hardware_accessed": false,
+    "hardware_release_allowed": false,
+    "complete_720_initialization": false,
+    "nominal_XVCLK_hz": 24000000,
+    "upper_XVCLK_hz": 27000000,
+    "XVCLK_measured_hz": null,
+    "local_VCO_upper_limit_hz": 800000000,
+    "unknown_intervals": [
+      {
+        "epoch": 0,
+        "reset_action": 0,
+        "first_control_write_action": 9,
+        "first_control_read_check_action": 10,
+        "physical_VCO_before_control_proven": false
+      }
+    ],
+    "bypass_or_standby_proves_VCO_off": false,
+    "PLL_lock_observed": null,
+    "PLL_settling_guarantee_source": null,
+    "all_actions_analog_validated": false,
+    "low_VCO_model_caveat": {
+      "local_minimum_usable_VCO_guaranteed_hz": null,
+      "Linux_inferred_lower_bound_hz": 500000000,
+      "Linux_inference_is_guaranteed_local_spec": false,
+      "low_VCO_usability_or_lock_verified": false,
+      "static_changed_states_below_inferred_lower_at_upper_input": [
+        {
+          "action_index": 9,
+          "VCO_model_hz": 420000000.0,
+          "upper_VCO_model_hz": 472500000.0
+        },
+        {
+          "action_index": 11,
+          "VCO_model_hz": 336000000.0,
+          "upper_VCO_model_hz": 378000000.0
+        }
+      ]
+    },
+    "declared_read_check_count": 13,
+    "supplied_observation_count": 0,
+    "observations_are_independently_verified_hardware": false,
+    "errors": [],
+    "trace": [
+      {
+        "action_index": 0,
+        "op": "reset",
+        "epoch": 0,
+        "VCO_model_hz": null
+      },
+      {
+        "action_index": 1,
+        "op": "read_check",
+        "address": 12342,
+        "mask": 255,
+        "expected": 105,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      },
+      {
+        "action_index": 2,
+        "op": "read_check",
+        "address": 12343,
+        "mask": 31,
+        "expected": 3,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      },
+      {
+        "action_index": 3,
+        "op": "rmw",
+        "address": 12547,
+        "mask": 2,
+        "value": 0,
+        "outside_mask_preserved_by_RMW_contract": true,
+        "VCO_model_hz": null,
+        "RMW_pre_read": null,
+        "RMW_pre_read_evidence": "declared_runtime_read_preserve_contract",
+        "RMW_expected_full_written_byte_from_supplied_pre_read": null,
+        "RMW_execution_verified_on_hardware": false
+      },
+      {
+        "action_index": 4,
+        "op": "read_check",
+        "address": 12547,
+        "mask": 2,
+        "expected": 0,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      },
+      {
+        "action_index": 5,
+        "op": "rmw",
+        "address": 12296,
+        "mask": 64,
+        "value": 64,
+        "outside_mask_preserved_by_RMW_contract": true,
+        "VCO_model_hz": null,
+        "RMW_pre_read": null,
+        "RMW_pre_read_evidence": "declared_runtime_read_preserve_contract",
+        "RMW_expected_full_written_byte_from_supplied_pre_read": null,
+        "RMW_execution_verified_on_hardware": false
+      },
+      {
+        "action_index": 6,
+        "op": "read_check",
+        "address": 12296,
+        "mask": 64,
+        "expected": 64,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      },
+      {
+        "action_index": 7,
+        "op": "rmw",
+        "address": 12345,
+        "mask": 128,
+        "value": 128,
+        "outside_mask_preserved_by_RMW_contract": true,
+        "VCO_model_hz": null,
+        "RMW_pre_read": null,
+        "RMW_pre_read_evidence": "declared_runtime_read_preserve_contract",
+        "RMW_expected_full_written_byte_from_supplied_pre_read": null,
+        "RMW_execution_verified_on_hardware": false
+      },
+      {
+        "action_index": 8,
+        "op": "read_check",
+        "address": 12345,
+        "mask": 128,
+        "expected": 128,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      },
+      {
+        "action_index": 9,
+        "op": "rmw",
+        "address": 12343,
+        "mask": 31,
+        "value": 22,
+        "outside_mask_preserved_by_RMW_contract": true,
+        "VCO_model_hz": 420000000.0,
+        "RMW_pre_read": null,
+        "RMW_pre_read_evidence": "declared_runtime_read_preserve_contract",
+        "RMW_expected_full_written_byte_from_supplied_pre_read": null,
+        "RMW_execution_verified_on_hardware": false,
+        "multiplier": 105,
+        "predivider": 6,
+        "upper_VCO_model_hz": 472500000.0
+      },
+      {
+        "action_index": 10,
+        "op": "read_check",
+        "address": 12343,
+        "mask": 31,
+        "expected": 22,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      },
+      {
+        "action_index": 11,
+        "op": "write",
+        "address": 12342,
+        "mask": 255,
+        "value": 84,
+        "outside_mask_preserved_by_RMW_contract": false,
+        "VCO_model_hz": 336000000.0,
+        "RMW_pre_read": null,
+        "RMW_pre_read_evidence": null,
+        "RMW_expected_full_written_byte_from_supplied_pre_read": null,
+        "RMW_execution_verified_on_hardware": false,
+        "multiplier": 84,
+        "predivider": 6,
+        "upper_VCO_model_hz": 378000000.0
+      },
+      {
+        "action_index": 12,
+        "op": "read_check",
+        "address": 12342,
+        "mask": 255,
+        "expected": 84,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      },
+      {
+        "action_index": 13,
+        "op": "rmw",
+        "address": 12340,
+        "mask": 15,
+        "value": 8,
+        "outside_mask_preserved_by_RMW_contract": true,
+        "VCO_model_hz": null,
+        "RMW_pre_read": null,
+        "RMW_pre_read_evidence": "declared_runtime_read_preserve_contract",
+        "RMW_expected_full_written_byte_from_supplied_pre_read": null,
+        "RMW_execution_verified_on_hardware": false
+      },
+      {
+        "action_index": 14,
+        "op": "read_check",
+        "address": 12340,
+        "mask": 15,
+        "expected": 8,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      },
+      {
+        "action_index": 15,
+        "op": "write",
+        "address": 12341,
+        "mask": 255,
+        "value": 64,
+        "outside_mask_preserved_by_RMW_contract": false,
+        "VCO_model_hz": null,
+        "RMW_pre_read": null,
+        "RMW_pre_read_evidence": null,
+        "RMW_expected_full_written_byte_from_supplied_pre_read": null,
+        "RMW_execution_verified_on_hardware": false
+      },
+      {
+        "action_index": 16,
+        "op": "read_check",
+        "address": 12341,
+        "mask": 255,
+        "expected": 64,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      },
+      {
+        "action_index": 17,
+        "op": "rmw",
+        "address": 12552,
+        "mask": 63,
+        "value": 1,
+        "outside_mask_preserved_by_RMW_contract": true,
+        "VCO_model_hz": null,
+        "RMW_pre_read": null,
+        "RMW_pre_read_evidence": "declared_runtime_read_preserve_contract",
+        "RMW_expected_full_written_byte_from_supplied_pre_read": null,
+        "RMW_execution_verified_on_hardware": false
+      },
+      {
+        "action_index": 18,
+        "op": "read_check",
+        "address": 12552,
+        "mask": 63,
+        "expected": 1,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      },
+      {
+        "action_index": 19,
+        "op": "rmw",
+        "address": 12343,
+        "mask": 31,
+        "value": 19,
+        "outside_mask_preserved_by_RMW_contract": true,
+        "VCO_model_hz": 672000000.0,
+        "RMW_pre_read": null,
+        "RMW_pre_read_evidence": "declared_runtime_read_preserve_contract",
+        "RMW_expected_full_written_byte_from_supplied_pre_read": null,
+        "RMW_execution_verified_on_hardware": false,
+        "multiplier": 84,
+        "predivider": 3,
+        "upper_VCO_model_hz": 756000000.0
+      },
+      {
+        "action_index": 20,
+        "op": "read_check",
+        "address": 12343,
+        "mask": 31,
+        "expected": 19,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      },
+      {
+        "action_index": 21,
+        "op": "rmw",
+        "address": 12345,
+        "mask": 128,
+        "value": 0,
+        "outside_mask_preserved_by_RMW_contract": true,
+        "VCO_model_hz": null,
+        "RMW_pre_read": null,
+        "RMW_pre_read_evidence": "declared_runtime_read_preserve_contract",
+        "RMW_expected_full_written_byte_from_supplied_pre_read": null,
+        "RMW_execution_verified_on_hardware": false
+      },
+      {
+        "action_index": 22,
+        "op": "read_check",
+        "address": 12345,
+        "mask": 128,
+        "expected": 0,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      },
+      {
+        "action_index": 23,
+        "op": "rmw",
+        "address": 12547,
+        "mask": 2,
+        "value": 2,
+        "outside_mask_preserved_by_RMW_contract": true,
+        "VCO_model_hz": null,
+        "RMW_pre_read": null,
+        "RMW_pre_read_evidence": "declared_runtime_read_preserve_contract",
+        "RMW_expected_full_written_byte_from_supplied_pre_read": null,
+        "RMW_execution_verified_on_hardware": false
+      },
+      {
+        "action_index": 24,
+        "op": "read_check",
+        "address": 12547,
+        "mask": 2,
+        "expected": 2,
+        "evidence": "declared_expectation_only",
+        "observed": null,
+        "bus_error": null,
+        "hardware_readback_verified": false
+      }
+    ],
+    "final_clock_model_if_all_declared_read_checks_succeed": {
+      "VCO_nominal_hz": 672000000.0,
+      "VCO_upper_hz": 756000000.0,
+      "PCLK_nominal_hz": 42000000.0,
+      "PCLK_upper_hz": 47250000.0,
+      "physical_frequency_or_lock_verified": false
+    },
+    "unimplemented_required_work": [
+      "source-bound common720 initialization/crop/HTS/VTS/AEC/banding",
+      "supported PLL settling/lock evidence; no delay or lock bit invented",
+      "unique final wake and complete post-wake read checks",
+      "PCLK-domain activity and exact2560-byte by720-line freshness monitor/CDC",
+      "new RTL/host contract/final timing and separately authorized hardware acceptance"
+    ],
+    "limits": "Conditional static register-action model only. Initial reset/default interval and register-switch transients are not bounded physical VCO proof. Pre6 stages472.5/378MHz at27MHz input are below the Linux-inferred500MHz lower bound; local minimum usability and analog lock are unproven. Static upper-bound acceptance does not validate every analog action. Expected read checks are not measurements. RMW preserves undocumented bits by declared contract or supplied unverified pre-read, not hardware proof; a masked match alone cannot excuse a write-data NACK. Standby/bypass is not PLL power-off. No complete720 recipe, RTL, PCLK implementation, measured clock, frame rate, optics or hardware release."
+  },
+  "ClockActions": [
+    {
+      "op": "reset"
+    },
+    {
+      "op": "read_check",
+      "address": 12342,
+      "mask": 255,
+      "expected": 105
+    },
+    {
+      "op": "read_check",
+      "address": 12343,
+      "mask": 31,
+      "expected": 3
+    },
+    {
+      "op": "rmw",
+      "address": 12547,
+      "mask": 2,
+      "value": 0
+    },
+    {
+      "op": "read_check",
+      "address": 12547,
+      "mask": 2,
+      "expected": 0
+    },
+    {
+      "op": "rmw",
+      "address": 12296,
+      "mask": 64,
+      "value": 64
+    },
+    {
+      "op": "read_check",
+      "address": 12296,
+      "mask": 64,
+      "expected": 64
+    },
+    {
+      "op": "rmw",
+      "address": 12345,
+      "mask": 128,
+      "value": 128
+    },
+    {
+      "op": "read_check",
+      "address": 12345,
+      "mask": 128,
+      "expected": 128
+    },
+    {
+      "op": "rmw",
+      "address": 12343,
+      "mask": 31,
+      "value": 22
+    },
+    {
+      "op": "read_check",
+      "address": 12343,
+      "mask": 31,
+      "expected": 22
+    },
+    {
+      "op": "write",
+      "address": 12342,
+      "mask": 255,
+      "value": 84
+    },
+    {
+      "op": "read_check",
+      "address": 12342,
+      "mask": 255,
+      "expected": 84
+    },
+    {
+      "op": "rmw",
+      "address": 12340,
+      "mask": 15,
+      "value": 8
+    },
+    {
+      "op": "read_check",
+      "address": 12340,
+      "mask": 15,
+      "expected": 8
+    },
+    {
+      "op": "write",
+      "address": 12341,
+      "mask": 255,
+      "value": 64
+    },
+    {
+      "op": "read_check",
+      "address": 12341,
+      "mask": 255,
+      "expected": 64
+    },
+    {
+      "op": "rmw",
+      "address": 12552,
+      "mask": 63,
+      "value": 1
+    },
+    {
+      "op": "read_check",
+      "address": 12552,
+      "mask": 63,
+      "expected": 1
+    },
+    {
+      "op": "rmw",
+      "address": 12343,
+      "mask": 31,
+      "value": 19
+    },
+    {
+      "op": "read_check",
+      "address": 12343,
+      "mask": 31,
+      "expected": 19
+    },
+    {
+      "op": "rmw",
+      "address": 12345,
+      "mask": 128,
+      "value": 0
+    },
+    {
+      "op": "read_check",
+      "address": 12345,
+      "mask": 128,
+      "expected": 0
+    },
+    {
+      "op": "rmw",
+      "address": 12547,
+      "mask": 2,
+      "value": 2
+    },
+    {
+      "op": "read_check",
+      "address": 12547,
+      "mask": 2,
+      "expected": 2
+    }
+  ],
+  "Actions": [
+    {
+      "index": 0,
+      "op": 5,
+      "address": 12296,
+      "mask": 0,
+      "value": 130,
+      "delay_ms": 20,
+      "source": "RGB software reset; final-data NACK cannot be verified as a self-clearing reset"
+    },
+    {
+      "index": 1,
+      "op": 3,
+      "address": 12298,
+      "mask": 255,
+      "value": 86,
+      "delay_ms": 0,
+      "source": "silicon ID high"
+    },
+    {
+      "index": 2,
+      "op": 3,
+      "address": 12299,
+      "mask": 255,
+      "value": 64,
+      "delay_ms": 0,
+      "source": "silicon ID low"
+    },
+    {
+      "index": 3,
+      "op": 3,
+      "address": 12342,
+      "mask": 255,
+      "value": 105,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 4,
+      "op": 3,
+      "address": 12343,
+      "mask": 31,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 5,
+      "op": 2,
+      "address": 12547,
+      "mask": 2,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 6,
+      "op": 3,
+      "address": 12547,
+      "mask": 2,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 7,
+      "op": 2,
+      "address": 12296,
+      "mask": 64,
+      "value": 64,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 8,
+      "op": 3,
+      "address": 12296,
+      "mask": 64,
+      "value": 64,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 9,
+      "op": 2,
+      "address": 12345,
+      "mask": 128,
+      "value": 128,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 10,
+      "op": 3,
+      "address": 12345,
+      "mask": 128,
+      "value": 128,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 11,
+      "op": 2,
+      "address": 12343,
+      "mask": 31,
+      "value": 22,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 12,
+      "op": 3,
+      "address": 12343,
+      "mask": 31,
+      "value": 22,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 13,
+      "op": 1,
+      "address": 12342,
+      "mask": 255,
+      "value": 84,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 14,
+      "op": 3,
+      "address": 12342,
+      "mask": 255,
+      "value": 84,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 15,
+      "op": 2,
+      "address": 12340,
+      "mask": 15,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 16,
+      "op": 3,
+      "address": 12340,
+      "mask": 15,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 17,
+      "op": 1,
+      "address": 12341,
+      "mask": 255,
+      "value": 64,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 18,
+      "op": 3,
+      "address": 12341,
+      "mask": 255,
+      "value": 64,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 19,
+      "op": 2,
+      "address": 12552,
+      "mask": 63,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 20,
+      "op": 3,
+      "address": 12552,
+      "mask": 63,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 21,
+      "op": 2,
+      "address": 12343,
+      "mask": 31,
+      "value": 19,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 22,
+      "op": 3,
+      "address": 12343,
+      "mask": 31,
+      "value": 19,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 23,
+      "op": 2,
+      "address": 12345,
+      "mask": 128,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 24,
+      "op": 3,
+      "address": 12345,
+      "mask": 128,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 25,
+      "op": 2,
+      "address": 12547,
+      "mask": 2,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 26,
+      "op": 3,
+      "address": 12547,
+      "mask": 2,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "reviewed conditional84/4 clock action"
+    },
+    {
+      "index": 27,
+      "op": 1,
+      "address": 13872,
+      "mask": 0,
+      "value": 54,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index3"
+    },
+    {
+      "index": 28,
+      "op": 1,
+      "address": 13873,
+      "mask": 0,
+      "value": 14,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index4"
+    },
+    {
+      "index": 29,
+      "op": 1,
+      "address": 13874,
+      "mask": 0,
+      "value": 226,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index5"
+    },
+    {
+      "index": 30,
+      "op": 1,
+      "address": 13875,
+      "mask": 0,
+      "value": 18,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index6"
+    },
+    {
+      "index": 31,
+      "op": 1,
+      "address": 13857,
+      "mask": 0,
+      "value": 224,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index7"
+    },
+    {
+      "index": 32,
+      "op": 1,
+      "address": 14084,
+      "mask": 0,
+      "value": 160,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index8"
+    },
+    {
+      "index": 33,
+      "op": 1,
+      "address": 14083,
+      "mask": 0,
+      "value": 90,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index9"
+    },
+    {
+      "index": 34,
+      "op": 1,
+      "address": 14101,
+      "mask": 0,
+      "value": 120,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index10"
+    },
+    {
+      "index": 35,
+      "op": 1,
+      "address": 14103,
+      "mask": 0,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index11"
+    },
+    {
+      "index": 36,
+      "op": 1,
+      "address": 14091,
+      "mask": 0,
+      "value": 96,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index12"
+    },
+    {
+      "index": 37,
+      "op": 1,
+      "address": 14085,
+      "mask": 0,
+      "value": 26,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index13"
+    },
+    {
+      "index": 38,
+      "op": 1,
+      "address": 14597,
+      "mask": 0,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index14"
+    },
+    {
+      "index": 39,
+      "op": 1,
+      "address": 14598,
+      "mask": 0,
+      "value": 16,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index15"
+    },
+    {
+      "index": 40,
+      "op": 1,
+      "address": 14593,
+      "mask": 0,
+      "value": 10,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index16"
+    },
+    {
+      "index": 41,
+      "op": 1,
+      "address": 14129,
+      "mask": 0,
+      "value": 18,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index17"
+    },
+    {
+      "index": 42,
+      "op": 1,
+      "address": 13824,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index18"
+    },
+    {
+      "index": 43,
+      "op": 1,
+      "address": 13825,
+      "mask": 0,
+      "value": 51,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index19"
+    },
+    {
+      "index": 44,
+      "op": 1,
+      "address": 12333,
+      "mask": 0,
+      "value": 96,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index20"
+    },
+    {
+      "index": 45,
+      "op": 1,
+      "address": 13856,
+      "mask": 0,
+      "value": 82,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index21"
+    },
+    {
+      "index": 46,
+      "op": 1,
+      "address": 14107,
+      "mask": 0,
+      "value": 32,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index22"
+    },
+    {
+      "index": 47,
+      "op": 1,
+      "address": 18204,
+      "mask": 0,
+      "value": 80,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index23"
+    },
+    {
+      "index": 48,
+      "op": 1,
+      "address": 14867,
+      "mask": 0,
+      "value": 67,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index24"
+    },
+    {
+      "index": 49,
+      "op": 1,
+      "address": 14872,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index25"
+    },
+    {
+      "index": 50,
+      "op": 1,
+      "address": 14873,
+      "mask": 0,
+      "value": 248,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index26"
+    },
+    {
+      "index": 51,
+      "op": 1,
+      "address": 13877,
+      "mask": 0,
+      "value": 19,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index27"
+    },
+    {
+      "index": 52,
+      "op": 1,
+      "address": 13878,
+      "mask": 0,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index28"
+    },
+    {
+      "index": 53,
+      "op": 1,
+      "address": 13876,
+      "mask": 0,
+      "value": 64,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index29"
+    },
+    {
+      "index": 54,
+      "op": 1,
+      "address": 13858,
+      "mask": 0,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index30"
+    },
+    {
+      "index": 55,
+      "op": 1,
+      "address": 15361,
+      "mask": 0,
+      "value": 52,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index31"
+    },
+    {
+      "index": 56,
+      "op": 1,
+      "address": 15364,
+      "mask": 0,
+      "value": 40,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index32"
+    },
+    {
+      "index": 57,
+      "op": 1,
+      "address": 15365,
+      "mask": 0,
+      "value": 152,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index33"
+    },
+    {
+      "index": 58,
+      "op": 1,
+      "address": 15366,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index34"
+    },
+    {
+      "index": 59,
+      "op": 1,
+      "address": 15368,
+      "mask": 0,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index36"
+    },
+    {
+      "index": 60,
+      "op": 1,
+      "address": 15369,
+      "mask": 0,
+      "value": 44,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index37"
+    },
+    {
+      "index": 61,
+      "op": 1,
+      "address": 15370,
+      "mask": 0,
+      "value": 156,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index38"
+    },
+    {
+      "index": 62,
+      "op": 1,
+      "address": 15371,
+      "mask": 0,
+      "value": 64,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index39"
+    },
+    {
+      "index": 63,
+      "op": 1,
+      "address": 14088,
+      "mask": 0,
+      "value": 100,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index66"
+    },
+    {
+      "index": 64,
+      "op": 1,
+      "address": 16385,
+      "mask": 0,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index79"
+    },
+    {
+      "index": 65,
+      "op": 1,
+      "address": 12288,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index81"
+    },
+    {
+      "index": 66,
+      "op": 1,
+      "address": 12292,
+      "mask": 0,
+      "value": 255,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index83"
+    },
+    {
+      "index": 67,
+      "op": 1,
+      "address": 12334,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index86"
+    },
+    {
+      "index": 68,
+      "op": 1,
+      "address": 17422,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index92"
+    },
+    {
+      "index": 69,
+      "op": 1,
+      "address": 20480,
+      "mask": 0,
+      "value": 167,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index97"
+    },
+    {
+      "index": 70,
+      "op": 1,
+      "address": 20864,
+      "mask": 0,
+      "value": 255,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index99"
+    },
+    {
+      "index": 71,
+      "op": 1,
+      "address": 20865,
+      "mask": 0,
+      "value": 242,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index100"
+    },
+    {
+      "index": 72,
+      "op": 1,
+      "address": 20866,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index101"
+    },
+    {
+      "index": 73,
+      "op": 1,
+      "address": 20867,
+      "mask": 0,
+      "value": 20,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index102"
+    },
+    {
+      "index": 74,
+      "op": 1,
+      "address": 20868,
+      "mask": 0,
+      "value": 37,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index103"
+    },
+    {
+      "index": 75,
+      "op": 1,
+      "address": 20869,
+      "mask": 0,
+      "value": 36,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index104"
+    },
+    {
+      "index": 76,
+      "op": 1,
+      "address": 20870,
+      "mask": 0,
+      "value": 9,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index105"
+    },
+    {
+      "index": 77,
+      "op": 1,
+      "address": 20871,
+      "mask": 0,
+      "value": 9,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index106"
+    },
+    {
+      "index": 78,
+      "op": 1,
+      "address": 20872,
+      "mask": 0,
+      "value": 9,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index107"
+    },
+    {
+      "index": 79,
+      "op": 1,
+      "address": 20873,
+      "mask": 0,
+      "value": 117,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index108"
+    },
+    {
+      "index": 80,
+      "op": 1,
+      "address": 20874,
+      "mask": 0,
+      "value": 84,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index109"
+    },
+    {
+      "index": 81,
+      "op": 1,
+      "address": 20875,
+      "mask": 0,
+      "value": 224,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index110"
+    },
+    {
+      "index": 82,
+      "op": 1,
+      "address": 20876,
+      "mask": 0,
+      "value": 178,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index111"
+    },
+    {
+      "index": 83,
+      "op": 1,
+      "address": 20877,
+      "mask": 0,
+      "value": 66,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index112"
+    },
+    {
+      "index": 84,
+      "op": 1,
+      "address": 20878,
+      "mask": 0,
+      "value": 61,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index113"
+    },
+    {
+      "index": 85,
+      "op": 1,
+      "address": 20879,
+      "mask": 0,
+      "value": 86,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index114"
+    },
+    {
+      "index": 86,
+      "op": 1,
+      "address": 20880,
+      "mask": 0,
+      "value": 70,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index115"
+    },
+    {
+      "index": 87,
+      "op": 1,
+      "address": 20881,
+      "mask": 0,
+      "value": 248,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index116"
+    },
+    {
+      "index": 88,
+      "op": 1,
+      "address": 20882,
+      "mask": 0,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index117"
+    },
+    {
+      "index": 89,
+      "op": 1,
+      "address": 20883,
+      "mask": 0,
+      "value": 112,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index118"
+    },
+    {
+      "index": 90,
+      "op": 1,
+      "address": 20884,
+      "mask": 0,
+      "value": 240,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index119"
+    },
+    {
+      "index": 91,
+      "op": 1,
+      "address": 20885,
+      "mask": 0,
+      "value": 240,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index120"
+    },
+    {
+      "index": 92,
+      "op": 1,
+      "address": 20886,
+      "mask": 0,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index121"
+    },
+    {
+      "index": 93,
+      "op": 1,
+      "address": 20887,
+      "mask": 0,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index122"
+    },
+    {
+      "index": 94,
+      "op": 1,
+      "address": 20888,
+      "mask": 0,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index123"
+    },
+    {
+      "index": 95,
+      "op": 1,
+      "address": 20889,
+      "mask": 0,
+      "value": 18,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index124"
+    },
+    {
+      "index": 96,
+      "op": 1,
+      "address": 20890,
+      "mask": 0,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index125"
+    },
+    {
+      "index": 97,
+      "op": 1,
+      "address": 20891,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index126"
+    },
+    {
+      "index": 98,
+      "op": 1,
+      "address": 20892,
+      "mask": 0,
+      "value": 6,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index127"
+    },
+    {
+      "index": 99,
+      "op": 1,
+      "address": 20893,
+      "mask": 0,
+      "value": 130,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index128"
+    },
+    {
+      "index": 100,
+      "op": 1,
+      "address": 20894,
+      "mask": 0,
+      "value": 56,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index129"
+    },
+    {
+      "index": 101,
+      "op": 1,
+      "address": 21377,
+      "mask": 0,
+      "value": 30,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index130"
+    },
+    {
+      "index": 102,
+      "op": 1,
+      "address": 21378,
+      "mask": 0,
+      "value": 91,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index131"
+    },
+    {
+      "index": 103,
+      "op": 1,
+      "address": 21379,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index132"
+    },
+    {
+      "index": 104,
+      "op": 1,
+      "address": 21380,
+      "mask": 0,
+      "value": 10,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index133"
+    },
+    {
+      "index": 105,
+      "op": 1,
+      "address": 21381,
+      "mask": 0,
+      "value": 126,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index134"
+    },
+    {
+      "index": 106,
+      "op": 1,
+      "address": 21382,
+      "mask": 0,
+      "value": 136,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index135"
+    },
+    {
+      "index": 107,
+      "op": 1,
+      "address": 21383,
+      "mask": 0,
+      "value": 124,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index136"
+    },
+    {
+      "index": 108,
+      "op": 1,
+      "address": 21384,
+      "mask": 0,
+      "value": 108,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index137"
+    },
+    {
+      "index": 109,
+      "op": 1,
+      "address": 21385,
+      "mask": 0,
+      "value": 16,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index138"
+    },
+    {
+      "index": 110,
+      "op": 1,
+      "address": 21386,
+      "mask": 0,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index139"
+    },
+    {
+      "index": 111,
+      "op": 1,
+      "address": 21387,
+      "mask": 0,
+      "value": 152,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index140"
+    },
+    {
+      "index": 112,
+      "op": 1,
+      "address": 21248,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index141"
+    },
+    {
+      "index": 113,
+      "op": 1,
+      "address": 21249,
+      "mask": 0,
+      "value": 48,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index142"
+    },
+    {
+      "index": 114,
+      "op": 1,
+      "address": 21250,
+      "mask": 0,
+      "value": 16,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index143"
+    },
+    {
+      "index": 115,
+      "op": 1,
+      "address": 21251,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index144"
+    },
+    {
+      "index": 116,
+      "op": 1,
+      "address": 21252,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index145"
+    },
+    {
+      "index": 117,
+      "op": 1,
+      "address": 21253,
+      "mask": 0,
+      "value": 48,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index146"
+    },
+    {
+      "index": 118,
+      "op": 1,
+      "address": 21254,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index147"
+    },
+    {
+      "index": 119,
+      "op": 1,
+      "address": 21255,
+      "mask": 0,
+      "value": 22,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index148"
+    },
+    {
+      "index": 120,
+      "op": 1,
+      "address": 21256,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index149"
+    },
+    {
+      "index": 121,
+      "op": 1,
+      "address": 21257,
+      "mask": 0,
+      "value": 48,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index150"
+    },
+    {
+      "index": 122,
+      "op": 1,
+      "address": 21258,
+      "mask": 0,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index151"
+    },
+    {
+      "index": 123,
+      "op": 1,
+      "address": 21259,
+      "mask": 0,
+      "value": 6,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index152"
+    },
+    {
+      "index": 124,
+      "op": 1,
+      "address": 21632,
+      "mask": 0,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index153"
+    },
+    {
+      "index": 125,
+      "op": 1,
+      "address": 21633,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index154"
+    },
+    {
+      "index": 126,
+      "op": 1,
+      "address": 21634,
+      "mask": 0,
+      "value": 20,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index155"
+    },
+    {
+      "index": 127,
+      "op": 1,
+      "address": 21635,
+      "mask": 0,
+      "value": 40,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index156"
+    },
+    {
+      "index": 128,
+      "op": 1,
+      "address": 21636,
+      "mask": 0,
+      "value": 81,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index157"
+    },
+    {
+      "index": 129,
+      "op": 1,
+      "address": 21637,
+      "mask": 0,
+      "value": 101,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index158"
+    },
+    {
+      "index": 130,
+      "op": 1,
+      "address": 21638,
+      "mask": 0,
+      "value": 113,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index159"
+    },
+    {
+      "index": 131,
+      "op": 1,
+      "address": 21639,
+      "mask": 0,
+      "value": 125,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index160"
+    },
+    {
+      "index": 132,
+      "op": 1,
+      "address": 21640,
+      "mask": 0,
+      "value": 135,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index161"
+    },
+    {
+      "index": 133,
+      "op": 1,
+      "address": 21641,
+      "mask": 0,
+      "value": 145,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index162"
+    },
+    {
+      "index": 134,
+      "op": 1,
+      "address": 21642,
+      "mask": 0,
+      "value": 154,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index163"
+    },
+    {
+      "index": 135,
+      "op": 1,
+      "address": 21643,
+      "mask": 0,
+      "value": 170,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index164"
+    },
+    {
+      "index": 136,
+      "op": 1,
+      "address": 21644,
+      "mask": 0,
+      "value": 184,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index165"
+    },
+    {
+      "index": 137,
+      "op": 1,
+      "address": 21645,
+      "mask": 0,
+      "value": 205,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index166"
+    },
+    {
+      "index": 138,
+      "op": 1,
+      "address": 21646,
+      "mask": 0,
+      "value": 221,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index167"
+    },
+    {
+      "index": 139,
+      "op": 1,
+      "address": 21647,
+      "mask": 0,
+      "value": 234,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index168"
+    },
+    {
+      "index": 140,
+      "op": 1,
+      "address": 21648,
+      "mask": 0,
+      "value": 29,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index169"
+    },
+    {
+      "index": 141,
+      "op": 1,
+      "address": 21888,
+      "mask": 0,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index170"
+    },
+    {
+      "index": 142,
+      "op": 1,
+      "address": 21891,
+      "mask": 0,
+      "value": 64,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index171"
+    },
+    {
+      "index": 143,
+      "op": 1,
+      "address": 21892,
+      "mask": 0,
+      "value": 16,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index172"
+    },
+    {
+      "index": 144,
+      "op": 1,
+      "address": 21897,
+      "mask": 0,
+      "value": 16,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index173"
+    },
+    {
+      "index": 145,
+      "op": 1,
+      "address": 21898,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index174"
+    },
+    {
+      "index": 146,
+      "op": 1,
+      "address": 21899,
+      "mask": 0,
+      "value": 248,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index175"
+    },
+    {
+      "index": 147,
+      "op": 1,
+      "address": 22528,
+      "mask": 0,
+      "value": 35,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index176"
+    },
+    {
+      "index": 148,
+      "op": 1,
+      "address": 22529,
+      "mask": 0,
+      "value": 20,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index177"
+    },
+    {
+      "index": 149,
+      "op": 1,
+      "address": 22530,
+      "mask": 0,
+      "value": 15,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index178"
+    },
+    {
+      "index": 150,
+      "op": 1,
+      "address": 22531,
+      "mask": 0,
+      "value": 15,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index179"
+    },
+    {
+      "index": 151,
+      "op": 1,
+      "address": 22532,
+      "mask": 0,
+      "value": 18,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index180"
+    },
+    {
+      "index": 152,
+      "op": 1,
+      "address": 22533,
+      "mask": 0,
+      "value": 38,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index181"
+    },
+    {
+      "index": 153,
+      "op": 1,
+      "address": 22534,
+      "mask": 0,
+      "value": 12,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index182"
+    },
+    {
+      "index": 154,
+      "op": 1,
+      "address": 22535,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index183"
+    },
+    {
+      "index": 155,
+      "op": 1,
+      "address": 22536,
+      "mask": 0,
+      "value": 5,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index184"
+    },
+    {
+      "index": 156,
+      "op": 1,
+      "address": 22537,
+      "mask": 0,
+      "value": 5,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index185"
+    },
+    {
+      "index": 157,
+      "op": 1,
+      "address": 22538,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index186"
+    },
+    {
+      "index": 158,
+      "op": 1,
+      "address": 22539,
+      "mask": 0,
+      "value": 13,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index187"
+    },
+    {
+      "index": 159,
+      "op": 1,
+      "address": 22540,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index188"
+    },
+    {
+      "index": 160,
+      "op": 1,
+      "address": 22541,
+      "mask": 0,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index189"
+    },
+    {
+      "index": 161,
+      "op": 1,
+      "address": 22542,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index190"
+    },
+    {
+      "index": 162,
+      "op": 1,
+      "address": 22543,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index191"
+    },
+    {
+      "index": 163,
+      "op": 1,
+      "address": 22544,
+      "mask": 0,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index192"
+    },
+    {
+      "index": 164,
+      "op": 1,
+      "address": 22545,
+      "mask": 0,
+      "value": 9,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index193"
+    },
+    {
+      "index": 165,
+      "op": 1,
+      "address": 22546,
+      "mask": 0,
+      "value": 7,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index194"
+    },
+    {
+      "index": 166,
+      "op": 1,
+      "address": 22547,
+      "mask": 0,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index195"
+    },
+    {
+      "index": 167,
+      "op": 1,
+      "address": 22548,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index196"
+    },
+    {
+      "index": 168,
+      "op": 1,
+      "address": 22549,
+      "mask": 0,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index197"
+    },
+    {
+      "index": 169,
+      "op": 1,
+      "address": 22550,
+      "mask": 0,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index198"
+    },
+    {
+      "index": 170,
+      "op": 1,
+      "address": 22551,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index199"
+    },
+    {
+      "index": 171,
+      "op": 1,
+      "address": 22552,
+      "mask": 0,
+      "value": 13,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index200"
+    },
+    {
+      "index": 172,
+      "op": 1,
+      "address": 22553,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index201"
+    },
+    {
+      "index": 173,
+      "op": 1,
+      "address": 22554,
+      "mask": 0,
+      "value": 5,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index202"
+    },
+    {
+      "index": 174,
+      "op": 1,
+      "address": 22555,
+      "mask": 0,
+      "value": 6,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index203"
+    },
+    {
+      "index": 175,
+      "op": 1,
+      "address": 22556,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index204"
+    },
+    {
+      "index": 176,
+      "op": 1,
+      "address": 22557,
+      "mask": 0,
+      "value": 14,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index205"
+    },
+    {
+      "index": 177,
+      "op": 1,
+      "address": 22558,
+      "mask": 0,
+      "value": 41,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index206"
+    },
+    {
+      "index": 178,
+      "op": 1,
+      "address": 22559,
+      "mask": 0,
+      "value": 23,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index207"
+    },
+    {
+      "index": 179,
+      "op": 1,
+      "address": 22560,
+      "mask": 0,
+      "value": 17,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index208"
+    },
+    {
+      "index": 180,
+      "op": 1,
+      "address": 22561,
+      "mask": 0,
+      "value": 17,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index209"
+    },
+    {
+      "index": 181,
+      "op": 1,
+      "address": 22562,
+      "mask": 0,
+      "value": 21,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index210"
+    },
+    {
+      "index": 182,
+      "op": 1,
+      "address": 22563,
+      "mask": 0,
+      "value": 40,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index211"
+    },
+    {
+      "index": 183,
+      "op": 1,
+      "address": 22564,
+      "mask": 0,
+      "value": 70,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index212"
+    },
+    {
+      "index": 184,
+      "op": 1,
+      "address": 22565,
+      "mask": 0,
+      "value": 38,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index213"
+    },
+    {
+      "index": 185,
+      "op": 1,
+      "address": 22566,
+      "mask": 0,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index214"
+    },
+    {
+      "index": 186,
+      "op": 1,
+      "address": 22567,
+      "mask": 0,
+      "value": 38,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index215"
+    },
+    {
+      "index": 187,
+      "op": 1,
+      "address": 22568,
+      "mask": 0,
+      "value": 100,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index216"
+    },
+    {
+      "index": 188,
+      "op": 1,
+      "address": 22569,
+      "mask": 0,
+      "value": 38,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index217"
+    },
+    {
+      "index": 189,
+      "op": 1,
+      "address": 22570,
+      "mask": 0,
+      "value": 36,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index218"
+    },
+    {
+      "index": 190,
+      "op": 1,
+      "address": 22571,
+      "mask": 0,
+      "value": 34,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index219"
+    },
+    {
+      "index": 191,
+      "op": 1,
+      "address": 22572,
+      "mask": 0,
+      "value": 36,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index220"
+    },
+    {
+      "index": 192,
+      "op": 1,
+      "address": 22573,
+      "mask": 0,
+      "value": 36,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index221"
+    },
+    {
+      "index": 193,
+      "op": 1,
+      "address": 22574,
+      "mask": 0,
+      "value": 6,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index222"
+    },
+    {
+      "index": 194,
+      "op": 1,
+      "address": 22575,
+      "mask": 0,
+      "value": 34,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index223"
+    },
+    {
+      "index": 195,
+      "op": 1,
+      "address": 22576,
+      "mask": 0,
+      "value": 64,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index224"
+    },
+    {
+      "index": 196,
+      "op": 1,
+      "address": 22577,
+      "mask": 0,
+      "value": 66,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index225"
+    },
+    {
+      "index": 197,
+      "op": 1,
+      "address": 22578,
+      "mask": 0,
+      "value": 36,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index226"
+    },
+    {
+      "index": 198,
+      "op": 1,
+      "address": 22579,
+      "mask": 0,
+      "value": 38,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index227"
+    },
+    {
+      "index": 199,
+      "op": 1,
+      "address": 22580,
+      "mask": 0,
+      "value": 36,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index228"
+    },
+    {
+      "index": 200,
+      "op": 1,
+      "address": 22581,
+      "mask": 0,
+      "value": 34,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index229"
+    },
+    {
+      "index": 201,
+      "op": 1,
+      "address": 22582,
+      "mask": 0,
+      "value": 34,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index230"
+    },
+    {
+      "index": 202,
+      "op": 1,
+      "address": 22583,
+      "mask": 0,
+      "value": 38,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index231"
+    },
+    {
+      "index": 203,
+      "op": 1,
+      "address": 22584,
+      "mask": 0,
+      "value": 68,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index232"
+    },
+    {
+      "index": 204,
+      "op": 1,
+      "address": 22585,
+      "mask": 0,
+      "value": 36,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index233"
+    },
+    {
+      "index": 205,
+      "op": 1,
+      "address": 22586,
+      "mask": 0,
+      "value": 38,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index234"
+    },
+    {
+      "index": 206,
+      "op": 1,
+      "address": 22587,
+      "mask": 0,
+      "value": 40,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index235"
+    },
+    {
+      "index": 207,
+      "op": 1,
+      "address": 22588,
+      "mask": 0,
+      "value": 66,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index236"
+    },
+    {
+      "index": 208,
+      "op": 1,
+      "address": 22589,
+      "mask": 0,
+      "value": 206,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index237"
+    },
+    {
+      "index": 209,
+      "op": 1,
+      "address": 20517,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index238"
+    },
+    {
+      "index": 210,
+      "op": 1,
+      "address": 14863,
+      "mask": 0,
+      "value": 48,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index239"
+    },
+    {
+      "index": 211,
+      "op": 1,
+      "address": 14864,
+      "mask": 0,
+      "value": 40,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index240"
+    },
+    {
+      "index": 212,
+      "op": 1,
+      "address": 14875,
+      "mask": 0,
+      "value": 48,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index241"
+    },
+    {
+      "index": 213,
+      "op": 1,
+      "address": 14878,
+      "mask": 0,
+      "value": 38,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index242"
+    },
+    {
+      "index": 214,
+      "op": 1,
+      "address": 14865,
+      "mask": 0,
+      "value": 96,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index243"
+    },
+    {
+      "index": 215,
+      "op": 1,
+      "address": 14879,
+      "mask": 0,
+      "value": 20,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index244"
+    },
+    {
+      "index": 216,
+      "op": 1,
+      "address": 12334,
+      "mask": 0,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index246"
+    },
+    {
+      "index": 217,
+      "op": 1,
+      "address": 18204,
+      "mask": 0,
+      "value": 80,
+      "delay_ms": 0,
+      "source": "unchanged RGB common index247"
+    },
+    {
+      "index": 218,
+      "op": 1,
+      "address": 15367,
+      "mask": 255,
+      "value": 7,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 219,
+      "op": 1,
+      "address": 14368,
+      "mask": 255,
+      "value": 65,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 220,
+      "op": 1,
+      "address": 14369,
+      "mask": 255,
+      "value": 7,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 221,
+      "op": 1,
+      "address": 14356,
+      "mask": 255,
+      "value": 49,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 222,
+      "op": 1,
+      "address": 14357,
+      "mask": 255,
+      "value": 49,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 223,
+      "op": 1,
+      "address": 14336,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 224,
+      "op": 1,
+      "address": 14337,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 225,
+      "op": 1,
+      "address": 14338,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 226,
+      "op": 1,
+      "address": 14339,
+      "mask": 255,
+      "value": 250,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 227,
+      "op": 1,
+      "address": 14340,
+      "mask": 255,
+      "value": 10,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 228,
+      "op": 1,
+      "address": 14341,
+      "mask": 255,
+      "value": 63,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 229,
+      "op": 1,
+      "address": 14342,
+      "mask": 255,
+      "value": 6,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 230,
+      "op": 1,
+      "address": 14343,
+      "mask": 255,
+      "value": 169,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 231,
+      "op": 1,
+      "address": 14344,
+      "mask": 255,
+      "value": 5,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 232,
+      "op": 1,
+      "address": 14345,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 233,
+      "op": 1,
+      "address": 14346,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 234,
+      "op": 1,
+      "address": 14347,
+      "mask": 255,
+      "value": 208,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 235,
+      "op": 1,
+      "address": 14348,
+      "mask": 255,
+      "value": 7,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 236,
+      "op": 1,
+      "address": 14349,
+      "mask": 255,
+      "value": 100,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 237,
+      "op": 1,
+      "address": 14350,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 238,
+      "op": 1,
+      "address": 14351,
+      "mask": 255,
+      "value": 228,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 239,
+      "op": 1,
+      "address": 14355,
+      "mask": 255,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 240,
+      "op": 1,
+      "address": 13848,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 241,
+      "op": 1,
+      "address": 13842,
+      "mask": 255,
+      "value": 41,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 242,
+      "op": 1,
+      "address": 14089,
+      "mask": 255,
+      "value": 82,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 243,
+      "op": 1,
+      "address": 14092,
+      "mask": 255,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 244,
+      "op": 1,
+      "address": 14850,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 245,
+      "op": 1,
+      "address": 14851,
+      "mask": 255,
+      "value": 224,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 246,
+      "op": 1,
+      "address": 14868,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 247,
+      "op": 1,
+      "address": 14869,
+      "mask": 255,
+      "value": 224,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 248,
+      "op": 1,
+      "address": 16388,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 249,
+      "op": 1,
+      "address": 12290,
+      "mask": 255,
+      "value": 28,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 250,
+      "op": 1,
+      "address": 12294,
+      "mask": 255,
+      "value": 195,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 251,
+      "op": 1,
+      "address": 18195,
+      "mask": 255,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 252,
+      "op": 1,
+      "address": 17415,
+      "mask": 255,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 253,
+      "op": 1,
+      "address": 17931,
+      "mask": 255,
+      "value": 55,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 254,
+      "op": 1,
+      "address": 17932,
+      "mask": 255,
+      "value": 32,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 255,
+      "op": 1,
+      "address": 18487,
+      "mask": 255,
+      "value": 22,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 256,
+      "op": 1,
+      "address": 14372,
+      "mask": 255,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 257,
+      "op": 1,
+      "address": 20481,
+      "mask": 255,
+      "value": 131,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 258,
+      "op": 1,
+      "address": 13571,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 259,
+      "op": 1,
+      "address": 14352,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 260,
+      "op": 1,
+      "address": 14353,
+      "mask": 255,
+      "value": 16,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 261,
+      "op": 1,
+      "address": 14354,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 262,
+      "op": 1,
+      "address": 12302,
+      "mask": 255,
+      "value": 88,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 263,
+      "op": 1,
+      "address": 17152,
+      "mask": 255,
+      "value": 111,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 264,
+      "op": 1,
+      "address": 20511,
+      "mask": 255,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 265,
+      "op": 1,
+      "address": 12311,
+      "mask": 255,
+      "value": 127,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 266,
+      "op": 1,
+      "address": 12312,
+      "mask": 255,
+      "value": 240,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 267,
+      "op": 1,
+      "address": 18240,
+      "mask": 255,
+      "value": 35,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 268,
+      "op": 1,
+      "address": 14856,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 269,
+      "op": 1,
+      "address": 14857,
+      "mask": 255,
+      "value": 110,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 270,
+      "op": 1,
+      "address": 14858,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 271,
+      "op": 1,
+      "address": 14859,
+      "mask": 255,
+      "value": 91,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 272,
+      "op": 1,
+      "address": 14862,
+      "mask": 255,
+      "value": 6,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 273,
+      "op": 1,
+      "address": 14861,
+      "mask": 255,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "sourced720 geometry/mode; RGB formatter/pads from measured baseline; banding computed at nominal24MHz"
+    },
+    {
+      "index": 274,
+      "op": 3,
+      "address": 12296,
+      "mask": 64,
+      "value": 64,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 275,
+      "op": 3,
+      "address": 12340,
+      "mask": 15,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 276,
+      "op": 3,
+      "address": 12341,
+      "mask": 255,
+      "value": 64,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 277,
+      "op": 3,
+      "address": 12342,
+      "mask": 255,
+      "value": 84,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 278,
+      "op": 3,
+      "address": 12343,
+      "mask": 31,
+      "value": 19,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 279,
+      "op": 3,
+      "address": 12345,
+      "mask": 128,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 280,
+      "op": 3,
+      "address": 12547,
+      "mask": 2,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 281,
+      "op": 3,
+      "address": 12552,
+      "mask": 63,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 282,
+      "op": 3,
+      "address": 15367,
+      "mask": 255,
+      "value": 7,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 283,
+      "op": 3,
+      "address": 14368,
+      "mask": 255,
+      "value": 65,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 284,
+      "op": 3,
+      "address": 14369,
+      "mask": 255,
+      "value": 7,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 285,
+      "op": 3,
+      "address": 14356,
+      "mask": 255,
+      "value": 49,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 286,
+      "op": 3,
+      "address": 14357,
+      "mask": 255,
+      "value": 49,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 287,
+      "op": 3,
+      "address": 14336,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 288,
+      "op": 3,
+      "address": 14337,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 289,
+      "op": 3,
+      "address": 14338,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 290,
+      "op": 3,
+      "address": 14339,
+      "mask": 255,
+      "value": 250,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 291,
+      "op": 3,
+      "address": 14340,
+      "mask": 255,
+      "value": 10,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 292,
+      "op": 3,
+      "address": 14341,
+      "mask": 255,
+      "value": 63,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 293,
+      "op": 3,
+      "address": 14342,
+      "mask": 255,
+      "value": 6,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 294,
+      "op": 3,
+      "address": 14343,
+      "mask": 255,
+      "value": 169,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 295,
+      "op": 3,
+      "address": 14344,
+      "mask": 255,
+      "value": 5,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 296,
+      "op": 3,
+      "address": 14345,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 297,
+      "op": 3,
+      "address": 14346,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 298,
+      "op": 3,
+      "address": 14347,
+      "mask": 255,
+      "value": 208,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 299,
+      "op": 3,
+      "address": 14348,
+      "mask": 255,
+      "value": 7,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 300,
+      "op": 3,
+      "address": 14349,
+      "mask": 255,
+      "value": 100,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 301,
+      "op": 3,
+      "address": 14350,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 302,
+      "op": 3,
+      "address": 14351,
+      "mask": 255,
+      "value": 228,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 303,
+      "op": 3,
+      "address": 14355,
+      "mask": 255,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 304,
+      "op": 3,
+      "address": 13848,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 305,
+      "op": 3,
+      "address": 13842,
+      "mask": 255,
+      "value": 41,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 306,
+      "op": 3,
+      "address": 14089,
+      "mask": 255,
+      "value": 82,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 307,
+      "op": 3,
+      "address": 14092,
+      "mask": 255,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 308,
+      "op": 3,
+      "address": 14850,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 309,
+      "op": 3,
+      "address": 14851,
+      "mask": 255,
+      "value": 224,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 310,
+      "op": 3,
+      "address": 14868,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 311,
+      "op": 3,
+      "address": 14869,
+      "mask": 255,
+      "value": 224,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 312,
+      "op": 3,
+      "address": 16388,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 313,
+      "op": 3,
+      "address": 12290,
+      "mask": 255,
+      "value": 28,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 314,
+      "op": 3,
+      "address": 12294,
+      "mask": 255,
+      "value": 195,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 315,
+      "op": 3,
+      "address": 18195,
+      "mask": 255,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 316,
+      "op": 3,
+      "address": 17415,
+      "mask": 255,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 317,
+      "op": 3,
+      "address": 17931,
+      "mask": 255,
+      "value": 55,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 318,
+      "op": 3,
+      "address": 17932,
+      "mask": 255,
+      "value": 32,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 319,
+      "op": 3,
+      "address": 18487,
+      "mask": 255,
+      "value": 22,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 320,
+      "op": 3,
+      "address": 14372,
+      "mask": 255,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 321,
+      "op": 3,
+      "address": 20481,
+      "mask": 255,
+      "value": 131,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 322,
+      "op": 3,
+      "address": 13571,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 323,
+      "op": 3,
+      "address": 14352,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 324,
+      "op": 3,
+      "address": 14353,
+      "mask": 255,
+      "value": 16,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 325,
+      "op": 3,
+      "address": 14354,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 326,
+      "op": 3,
+      "address": 12302,
+      "mask": 255,
+      "value": 88,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 327,
+      "op": 3,
+      "address": 17152,
+      "mask": 255,
+      "value": 111,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 328,
+      "op": 3,
+      "address": 20511,
+      "mask": 255,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 329,
+      "op": 3,
+      "address": 12311,
+      "mask": 255,
+      "value": 127,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 330,
+      "op": 3,
+      "address": 12312,
+      "mask": 255,
+      "value": 240,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 331,
+      "op": 3,
+      "address": 18240,
+      "mask": 255,
+      "value": 35,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 332,
+      "op": 3,
+      "address": 14856,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 333,
+      "op": 3,
+      "address": 14857,
+      "mask": 255,
+      "value": 110,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 334,
+      "op": 3,
+      "address": 14858,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 335,
+      "op": 3,
+      "address": 14859,
+      "mask": 255,
+      "value": 91,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 336,
+      "op": 3,
+      "address": 14862,
+      "mask": 255,
+      "value": 6,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 337,
+      "op": 3,
+      "address": 14861,
+      "mask": 255,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "complete controlled pre-wake read check"
+    },
+    {
+      "index": 338,
+      "op": 2,
+      "address": 12296,
+      "mask": 64,
+      "value": 0,
+      "delay_ms": 20,
+      "source": "unique final stream wake after preflight; no PLL lock claim"
+    },
+    {
+      "index": 339,
+      "op": 3,
+      "address": 12296,
+      "mask": 64,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 340,
+      "op": 3,
+      "address": 12340,
+      "mask": 15,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 341,
+      "op": 3,
+      "address": 12341,
+      "mask": 255,
+      "value": 64,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 342,
+      "op": 3,
+      "address": 12342,
+      "mask": 255,
+      "value": 84,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 343,
+      "op": 3,
+      "address": 12343,
+      "mask": 31,
+      "value": 19,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 344,
+      "op": 3,
+      "address": 12345,
+      "mask": 128,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 345,
+      "op": 3,
+      "address": 12547,
+      "mask": 2,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 346,
+      "op": 3,
+      "address": 12552,
+      "mask": 63,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 347,
+      "op": 3,
+      "address": 15367,
+      "mask": 255,
+      "value": 7,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 348,
+      "op": 3,
+      "address": 14368,
+      "mask": 255,
+      "value": 65,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 349,
+      "op": 3,
+      "address": 14369,
+      "mask": 255,
+      "value": 7,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 350,
+      "op": 3,
+      "address": 14356,
+      "mask": 255,
+      "value": 49,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 351,
+      "op": 3,
+      "address": 14357,
+      "mask": 255,
+      "value": 49,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 352,
+      "op": 3,
+      "address": 14336,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 353,
+      "op": 3,
+      "address": 14337,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 354,
+      "op": 3,
+      "address": 14338,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 355,
+      "op": 3,
+      "address": 14339,
+      "mask": 255,
+      "value": 250,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 356,
+      "op": 3,
+      "address": 14340,
+      "mask": 255,
+      "value": 10,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 357,
+      "op": 3,
+      "address": 14341,
+      "mask": 255,
+      "value": 63,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 358,
+      "op": 3,
+      "address": 14342,
+      "mask": 255,
+      "value": 6,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 359,
+      "op": 3,
+      "address": 14343,
+      "mask": 255,
+      "value": 169,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 360,
+      "op": 3,
+      "address": 14344,
+      "mask": 255,
+      "value": 5,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 361,
+      "op": 3,
+      "address": 14345,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 362,
+      "op": 3,
+      "address": 14346,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 363,
+      "op": 3,
+      "address": 14347,
+      "mask": 255,
+      "value": 208,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 364,
+      "op": 3,
+      "address": 14348,
+      "mask": 255,
+      "value": 7,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 365,
+      "op": 3,
+      "address": 14349,
+      "mask": 255,
+      "value": 100,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 366,
+      "op": 3,
+      "address": 14350,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 367,
+      "op": 3,
+      "address": 14351,
+      "mask": 255,
+      "value": 228,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 368,
+      "op": 3,
+      "address": 14355,
+      "mask": 255,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 369,
+      "op": 3,
+      "address": 13848,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 370,
+      "op": 3,
+      "address": 13842,
+      "mask": 255,
+      "value": 41,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 371,
+      "op": 3,
+      "address": 14089,
+      "mask": 255,
+      "value": 82,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 372,
+      "op": 3,
+      "address": 14092,
+      "mask": 255,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 373,
+      "op": 3,
+      "address": 14850,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 374,
+      "op": 3,
+      "address": 14851,
+      "mask": 255,
+      "value": 224,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 375,
+      "op": 3,
+      "address": 14868,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 376,
+      "op": 3,
+      "address": 14869,
+      "mask": 255,
+      "value": 224,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 377,
+      "op": 3,
+      "address": 16388,
+      "mask": 255,
+      "value": 2,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 378,
+      "op": 3,
+      "address": 12290,
+      "mask": 255,
+      "value": 28,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 379,
+      "op": 3,
+      "address": 12294,
+      "mask": 255,
+      "value": 195,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 380,
+      "op": 3,
+      "address": 18195,
+      "mask": 255,
+      "value": 3,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 381,
+      "op": 3,
+      "address": 17415,
+      "mask": 255,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 382,
+      "op": 3,
+      "address": 17931,
+      "mask": 255,
+      "value": 55,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 383,
+      "op": 3,
+      "address": 17932,
+      "mask": 255,
+      "value": 32,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 384,
+      "op": 3,
+      "address": 18487,
+      "mask": 255,
+      "value": 22,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 385,
+      "op": 3,
+      "address": 14372,
+      "mask": 255,
+      "value": 4,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 386,
+      "op": 3,
+      "address": 20481,
+      "mask": 255,
+      "value": 131,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 387,
+      "op": 3,
+      "address": 13571,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 388,
+      "op": 3,
+      "address": 14352,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 389,
+      "op": 3,
+      "address": 14353,
+      "mask": 255,
+      "value": 16,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 390,
+      "op": 3,
+      "address": 14354,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 391,
+      "op": 3,
+      "address": 12302,
+      "mask": 255,
+      "value": 88,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 392,
+      "op": 3,
+      "address": 17152,
+      "mask": 255,
+      "value": 111,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 393,
+      "op": 3,
+      "address": 20511,
+      "mask": 255,
+      "value": 1,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 394,
+      "op": 3,
+      "address": 12311,
+      "mask": 255,
+      "value": 127,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 395,
+      "op": 3,
+      "address": 12312,
+      "mask": 255,
+      "value": 240,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 396,
+      "op": 3,
+      "address": 18240,
+      "mask": 255,
+      "value": 35,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 397,
+      "op": 3,
+      "address": 14856,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 398,
+      "op": 3,
+      "address": 14857,
+      "mask": 255,
+      "value": 110,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 399,
+      "op": 3,
+      "address": 14858,
+      "mask": 255,
+      "value": 0,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 400,
+      "op": 3,
+      "address": 14859,
+      "mask": 255,
+      "value": 91,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 401,
+      "op": 3,
+      "address": 14862,
+      "mask": 255,
+      "value": 6,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    },
+    {
+      "index": 402,
+      "op": 3,
+      "address": 14861,
+      "mask": 255,
+      "value": 8,
+      "delay_ms": 0,
+      "source": "complete controlled post-wake read check"
+    }
+  ],
+  "CommonBaseIndices": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    36,
+    37,
+    38,
+    39,
+    66,
+    79,
+    81,
+    83,
+    86,
+    92,
+    97,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    242,
+    243,
+    244,
+    246,
+    247
+  ],
+  "RemovedLegacyIndices": [
+    0,
+    1,
+    2,
+    35,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    80,
+    82,
+    84,
+    85,
+    87,
+    88,
+    89,
+    90,
+    91,
+    93,
+    94,
+    95,
+    96,
+    98,
+    245,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253,
+    254,
+    255,
+    256,
+    257,
+    258,
+    259,
+    260,
+    261,
+    262,
+    263
+  ],
+  "SourceSHA256": {
+    "board/ov5640_cadence_trial_commands.vh": "53428872aa14e6120eed93d876c889ef5155b3c196c014db77c4578b2bd50674",
+    "build/offline-20261024/guarded-720-source-review-20261025/proposed-720-register-order.json": "c31b5d46ea7a4eb11b812016603e9baa4930049f45d83c7a262e64d2136dc30a",
+    "tools/ov5640_clock_sequence_audit.py": "7923989a1e79b22528c5bc743ee376c96cd06d24eae1deee28fa08a46f518794",
+    "output/project/ov5640-720p-bounded-clock-source-plan-20261025.json": "0c55d0454c0dc6133fda350316fef483f293b250a270281924415ba1e93af8e5"
+  },
+  "FinalModeBytes": {
+    "3C07": 7,
+    "3820": 65,
+    "3821": 7,
+    "3814": 49,
+    "3815": 49,
+    "3800": 0,
+    "3801": 0,
+    "3802": 0,
+    "3803": 250,
+    "3804": 10,
+    "3805": 63,
+    "3806": 6,
+    "3807": 169,
+    "3808": 5,
+    "3809": 0,
+    "380A": 2,
+    "380B": 208,
+    "380C": 7,
+    "380D": 100,
+    "380E": 2,
+    "380F": 228,
+    "3813": 4,
+    "3618": 0,
+    "3612": 41,
+    "3709": 82,
+    "370C": 3,
+    "3A02": 2,
+    "3A03": 224,
+    "3A14": 2,
+    "3A15": 224,
+    "4004": 2,
+    "3002": 28,
+    "3006": 195,
+    "4713": 3,
+    "4407": 4,
+    "460B": 55,
+    "460C": 32,
+    "4837": 22,
+    "3824": 4,
+    "5001": 131,
+    "3503": 0,
+    "3810": 0,
+    "3811": 16,
+    "3812": 0,
+    "300E": 88,
+    "4300": 111,
+    "501F": 1,
+    "3017": 127,
+    "3018": 240,
+    "4740": 35,
+    "3A08": 0,
+    "3A09": 110,
+    "3A0A": 0,
+    "3A0B": 91,
+    "3A0E": 6,
+    "3A0D": 8
+  },
+  "BandingNominal24MHz": {
+    "step50": 110,
+    "step60": 91,
+    "max50": 6,
+    "max60": 8,
+    "SCLKModelHz": 21000000,
+    "HTS": 1892,
+    "VTS": 740
+  },
+  "Limits": "Engineering RGB mode adaptation, not an OEM board recipe. Static controlled PLL model only; reset/default interval, transients, low VCO lock and actual XVCLK/PCLK remain unmeasured. No guessed PLL lock bit/delay. Full critical mode/clock read checks; common undocumented ISP bytes use ACK, with data-high accepted only after exact full readback. No mode admission, pixels, PDS, hardware, optical or30fps claim."
+}

@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "rig_id": "REPLACE_WITH_PHYSICAL_RIG_ID",
+  "provenance": "template_only_no_real_capture",
+  "left": {
+    "camera_id": "REPLACE_LEFT_CAMERA_ID",
+    "lens_id": "REPLACE_LEFT_LENS_ID_AFTER_LENS_CHANGE",
+    "profile_id": "REPLACE_LEFT_REAL_INTRINSIC_PROFILE_ID"
+  },
+  "right": {
+    "camera_id": "REPLACE_RIGHT_CAMERA_ID",
+    "lens_id": "REPLACE_RIGHT_LENS_ID_AFTER_LENS_CHANGE",
+    "profile_id": "REPLACE_RIGHT_REAL_INTRINSIC_PROFILE_ID"
+  },
+  "board": {"cols": null, "rows": null, "square_mm": null},
+  "board_note": "Enter measured inner corner counts and square_mm for the actual flat physical target; no dimensions are assumed.",
+  "synchronization": {
+    "method": "unknown",
+    "maximum_pair_skew_ns": null,
+    "evidence_review_status": "unverified",
+    "evidence": {
+      "kind": "REPLACE_WITH_trigger_trace_OR_exposure_timing_trace_OR_external_alignment_measurement",
+      "path": null,
+      "sha256": null
+    },
+    "note": "The skew limit is an internal placeholder, not achieved sync. Camera/USB arrival timestamps and filename order cannot establish simultaneous exposures. Record a shared exposure clock and reviewed physical timing evidence."
+  },
+  "pair_template": {
+    "pair_id": "REPLACE_EXPLICIT_PAIR_ID",
+    "split": "train",
+    "left": {"path": null, "sha256": null, "frame_id": null, "exposure_timestamp_ns": null, "clock_id": null},
+    "right": {"path": null, "sha256": null, "frame_id": null, "exposure_timestamp_ns": null, "clock_id": null}
+  },
+  "pairs": [],
+  "instructions": [
+    "Copy pair_template into pairs for each explicitly matched capture; never infer pairs by sorting filenames.",
+    "Set provenance=real_paired_camera_captures only for actual paired physical-camera images, never synthetic or display rephotography data.",
+    "Provide at least 8 training and 3 separate held_out pairs; capture many more distinct centre/edge/tilted board poses for real acceptance.",
+    "Reserve held_out pairs before fitting; list calibration_image_sha256 in both intrinsic profiles to audit intrinsic/held-out leakage.",
+    "Each intrinsic profile requires model=fisheye, K, D[4], image_size, camera_id, lens_id, profile_id and provenance=real_chessboard_captures.",
+    "Only after a human reviews actual exposure timing evidence may evidence_review_status be user_verified_hardware_evidence; this software hashes the evidence but does not interpret the trace.",
+    "This template contains no real camera parameters, real captures, verified timing, baseline, stereo depth or hardware-release permission."
+  ]
+}

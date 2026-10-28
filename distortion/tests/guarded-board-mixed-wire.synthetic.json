@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "source_kind": "synthetic_rtl_uart_corpus_not_physical_camera",
+  "fixture_sha256": "906aa7996e7103829ea13e8bca339407da699a35214648fe3ed884452f947e7a",
+  "bytes": 5380,
+  "image_size": [
+    32,
+    16
+  ],
+  "status_packets": 17,
+  "raw_frame_ids": [
+    1,
+    2,
+    3
+  ],
+  "frames": [
+    {
+      "wire_offset": 768,
+      "frame_id": 1,
+      "width": 32,
+      "height": 16,
+      "payload_bytes": 1024,
+      "source_crc32": "C81092F0",
+      "payload_sha256": "7767f2dbc986e0bbefc80a8d50c511098e3c4bf7a52f411b7468fd81e486be1c"
+    },
+    {
+      "wire_offset": 2220,
+      "frame_id": 2,
+      "width": 32,
+      "height": 16,
+      "payload_bytes": 1024,
+      "source_crc32": "552EACB2",
+      "payload_sha256": "92618eb96dcac6bdc0ec2ee7377d78ef863656dff276c9091794cdde1a71dec7"
+    },
+    {
+      "wire_offset": 3672,
+      "frame_id": 3,
+      "width": 32,
+      "height": 16,
+      "payload_bytes": 1024,
+      "source_crc32": "291DE835",
+      "payload_sha256": "2a074c8dcaf5a60f86c87d526f909cab6195d17ef07fbbb400ddae4ff768fb59"
+    }
+  ],
+  "original_run_stream": "D:\\English\\FPGA\\distortion\\build\\offline-20261024\\guarded-board-sim-20261025-182211-132\\guarded-board-mixed-stream.bin",
+  "original_simulation": {
+    "path": "D:\\English\\FPGA\\distortion\\build\\offline-20261024\\guarded-board-sim-20261025-182211-132\\guarded-board-simulation.json",
+    "sha256": "ebeca366e40713c5cc17bf03f62699ca12dcf7c79bc8e4ef8746a9b9004d23bf"
+  },
+  "source_sha256": {
+    "rtl\\uart_tx.v": "0A691C35B88D4305D9C74C4ACD8676DEFA09C8C5AAE7D7EE653C561F40B49D2B",
+    "tests\\tb_guarded_board_pipeline.sv": "B21B7671FEB1C058587126C1D3F5B3FB3C6DA753D0035CBA518483176FEA1EF6",
+    "rtl\\ddr_video_writer.v": "00F779691AF850EC4A313DA4E7F1947C64405DEC36E6668FAC09B415D0190C75",
+    "tests\\tb_guarded_status_uart.sv": "E919BFD487E16C4A0D991BDB953BABF0932D9FCDFB4D96FBF430A0C95383384C",
+    "rtl\\video_async_fifo.v": "140E97B7DE1C3718D75F6BD0C657C9DF602D724C5162A26386B053DEAFA07E36",
+    "rtl\\dvp_rgb565_capture.v": "FFFB56B608C0CFCB641DA389DF45E96ACAC1967AE075C55C9F6E9C2F1BA9A9E1",
+    "board\\raw_camera_capture_cam2_guarded.v": "C4941B2DD62B771FDC71B6019B0CB738D78790CB3092B76B86B879279E7EE9CF",
+    "rtl\\video_crc32.vh": "E0510F73BEB1DAC68F3799F99EC729808A6C133A2FA41B1F097386226FD53705",
+    "rtl\\experimental\\uart_rx_control.v": "F13E5D2F2A2EF4D5293DCB62F4FDB8FED7028D53C8E9C28177F5811A7BE3B7B2",
+    "rtl\\logos2_temperature_monitor.v": "005C18DA5B65BB3387D07D17C40829E1411B2FA60FB91AEE1408D581BB646E0A",
+    "rtl\\ddr_uart_frame.v": "F9412025B46870216E4A443B45DAB34F39BA147E86EC5F2494D6F91B03E350C7",
+    "rtl\\raw_capture_lease.v": "6189F2B4C4C90A9B726E43DFF0E72C3CF2B96FC298C89BA1D11A78393B46A9E5",
+    "tools\\run-guarded-board-sim.ps1": "EB9475C09F679B67EB8AD8540338F9D13B1B6EDE4CA10E93023A47CFE5647E5B",
+    "rtl\\guarded_uart_arbiter.v": "913CA7D2870D216DCFDDF964E0A548BC35A46A442E71E8102797EDD2A94E1497",
+    "rtl\\rgb565_burst_pack.v": "F1652BCD1334BCF70B89DC50EA8AB8173EDDC923DE2D0BD43FAD82E7F8E8B3AC",
+    "rtl\\raw_camera_capture_guarded.v": "B1EA4611FA23B45AA90FDD5B805FA5B78417A76C9C3B1A094B5ED182FC911751",
+    "tests\\tb_raw_capture_lease.sv": "4E173B1102271E3F28737FE5DE6F92946C5B5749460ADAF1FE6A928CB0132F93",
+    "rtl\\raw_camera_capture.v": "6F143614A075D5B1B9468351B18938350A9CBE513840E6CB9122A97C7A06AA09",
+    "rtl\\guarded_capture_controller.v": "4918BFFB4AF12C7A18D2EB5EE028C44C7D284F03E7C681AF4BF1FE7D4F52DC91",
+    "rtl\\guarded_temperature_cdc.v": "1053FBC9F9529EEFE692D375C4FF96545D6AB2C09CAAE2CC91C18D1EDAB3A60B",
+    "tests\\tb_guarded_raw_camera_capture.sv": "08A55265B44E324A242D103617C07D61C4325EBBA59824F6AF5B02B2D6AF2278",
+    "rtl\\adc_temperature_reader.v": "26D3245B994B6F2BA53C8E69235EB446F99A832F0442BCA809D403E8AD065BA7",
+    "rtl\\guarded_status_uart.v": "DAB2C063C3A206D7BCD7876C83EA90108F1E21EB2657F4EA3AEFA25BEF349A53",
+    "rtl\\camera_live_bridge.v": "29A62ABED4DCC0E422434CB85847AB66104B1E6388C5E3799535334F962C0E33",
+    "tests\\tb_guarded_temperature_cdc.sv": "5D2F7677094D62B51A542CCA380BDC28EDC8988B97AD05B1281EBA4B3A6854CC",
+    "rtl\\guarded_command_engine.v": "35FBCBCC5B720D76DAA2124B695E39061AC4CFDE0F24155646434B2D869401E7"
+  },
+  "hardware_accessed": false,
+  "limits": "Frozen golden byte corpus for independent CPU parsers. It preserves one completed accelerated RTL simulation snapshot, not new physical provenance or proof that later changed RTL passed the same simulation."
+}

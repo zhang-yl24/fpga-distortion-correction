@@ -27,4 +27,24 @@ jobs:
         run: |
           mkdir -p distortion/build
           cp -r handoff/reference-fixtures/host_control_sim distortion/build/
-          python -m pytest -q distortion/tests/test_reference.py distortion/tests/test_calibrate.py distortion/tests/test_host_protocol.py distortion/tests/test_frame_protocol.py distortion/tests/test_slanted_edge_analysis.py distortion/tests/test_grid_straightness.py distortion/tests/test_chessboard_sharpness.py distortion/tests/test_gamma_triplets.py distortion/tests/test_native_optical_audit.py distortion/tests/test_pds_source_manifest.py
+          python -m pytest -q distortion/tests/test_reference.py distortion/tests/test_calibrate.py distortion/tests/test_host_protocol.py distortion/tests/test_frame_protocol.py distortion/tests/test_slanted_edge_analysis.py distortion/tests/test_grid_straightness.py distortion/tests/test_chessboard_sharpness.py distortion/tests/test_gamma_triplets.py distortion/tests/test_native_optical_audit.py distortion/tests/test_pds_source_manifest.py distortion/tests/test_completed_angle_coverage.py distortion/tests/test_session_capture_scope.py distortion/tests/test_host_cli.py distortion/tests/test_camera_mode_preflight.py distortion/tests/test_wideangle_mapping_audit.py distortion/tests/test_stereo_fisheye_calibrate.py distortion/tests/test_camera_eye_pin_audit.py distortion/tests/test_native_camera_capture.py distortion/tests/test_calibrate_fisheye_profile.py distortion/tests/test_program_native_raw.py distortion/tests/test_program_idle_heartbeat.py distortion/tests/test_bounded_native_bringup.py distortion/tests/test_native_scene_diagnostics.py distortion/tests/test_bounded_diagnostic.py distortion/tests/test_analyze_headless_diagnostic.py distortion/tests/test_build_camera_isp_probe_d5.py
+      # Portable CPU-only coverage: UART/JTAG lifecycles are mocked. Local
+      # CAM1/colorbar factory tests require retained Windows build artifacts.
+      - name: Run guarded CPU codec, mock lifecycle and corpus tests
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python -m pytest -q -p no:cacheprovider \
+            distortion/tests/test_guarded_protocol.py \
+            distortion/tests/test_audit_guarded_wire.py \
+            distortion/tests/test_guarded_simulation_corpus.py \
+            distortion/tests/test_guarded_native_session.py \
+            distortion/tests/test_analyze_guarded_colorbars.py
+      - name: Run transaction diagnostics and clock-action CPU tests
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python -m pytest -q -p no:cacheprovider \
+            distortion/tests/test_cam1_transaction_protocol.py \
+            distortion/tests/test_cam1_transaction_session.py \
+            distortion/tests/test_ov5640_clock_sequence_audit.py

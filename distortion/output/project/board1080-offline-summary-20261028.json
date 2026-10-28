@@ -1,0 +1,172 @@
+{
+  "Schema": "development-result-summary-v1",
+  "SourceRecordSHA256": "9cfd3c16f05b645520684412dc40593b2f85c1d6fb5449495f2086e0b91c2178",
+  "NativeEightFrame": {
+    "Passed": true,
+    "Width": 1920,
+    "Height": 1080,
+    "CoreClockHz": 125000000,
+    "PixelsPerFrame": 2073600,
+    "WorstProcessCycles": 3816061.0,
+    "TotalCoreCyclesIncludingStartupDrainAndGuard": 41651765,
+    "SteadyUniqueScanFps": 30.0,
+    "CommitToReleaseCycles": [
+      3802919.0,
+      3815511.0,
+      3815367.0,
+      3815232.0,
+      3816061.0,
+      3814534.0,
+      3815647.0,
+      3812543.0
+    ],
+    "SyntheticDevelopmentParameters": true
+  },
+  "RCFDiagnostic": {
+    "NativePNRExitCode": 0,
+    "NativeSTAExitCode": 0,
+    "FinalADFBeforeSTA": {
+      "Path": "D:\\English\\FPGA\\distortion\\build\\offline-20261024\\resume-parallel-20261028-a\\rcf-diagnostic\\board1080_top-final-routed.adf",
+      "SHA256": "897ef3a8c98a45c0c47a1fad45711ca40c25dd82e584520e9a9007ba3d4d95c0",
+      "Bytes": 17058959
+    },
+    "FinalADFUnchangedAfterSTA": true,
+    "FailureCounts": {
+      "slow_setup": {
+        "FailingGroups": 0,
+        "FailedChecks": 0
+      },
+      "slow_hold": {
+        "FailingGroups": 0,
+        "FailedChecks": 0
+      },
+      "slow_recovery": {
+        "FailingGroups": 7,
+        "FailedChecks": 245
+      },
+      "slow_removal": {
+        "FailingGroups": 0,
+        "FailedChecks": 0
+      },
+      "slow_mpw": {
+        "FailingGroups": 0,
+        "FailedChecks": 0
+      },
+      "fast_setup": {
+        "FailingGroups": 0,
+        "FailedChecks": 0
+      },
+      "fast_hold": {
+        "FailingGroups": 0,
+        "FailedChecks": 0
+      },
+      "fast_recovery": {
+        "FailingGroups": 7,
+        "FailedChecks": 245
+      },
+      "fast_removal": {
+        "FailingGroups": 0,
+        "FailedChecks": 0
+      },
+      "fast_mpw": {
+        "FailingGroups": 0,
+        "FailedChecks": 0
+      }
+    },
+    "PositivePerNetApplicationProven": false
+  },
+  "CRowpipeUnitPassed": true,
+  "CRowpipeIntegrated": false,
+  "PhysicalTimingReady": false,
+  "HardwareReleaseAllowed": false,
+  "EligibleForPDSOrHardware": false,
+  "FormalGateState": {
+    "PhysicalTimingReady": false,
+    "HardwareReleaseAllowed": false,
+    "EligibleForPDSOrHardware": false,
+    "PreBitGateExecutionProven": false,
+    "NewLensCorrectionVerified": false,
+    "CalibrationAccepted": false
+  },
+  "Boundaries": [
+    "Native8 is normalized RTL pixel stream + behavioral DDR UI, not MS7200/physicalDDR/real camera acquisition.",
+    "C rowpipe unit passed but has no full-frame/native8 or physical resource/STA result; it was intentionally isolated.",
+    "IO AC/BASE V1.4 traces vs referenceV1.2, Gray bus-skew/CDC/RDC and real lens1080K/D/quality/latency/stability not accepted.",
+    "Final PNR entry synchronizer gopSRL2 mapping lacks precise physical stage/exception evidence; no broad clock falsepaths added."
+  ],
+  "Exports": [
+    {
+      "Origin": "distortion\\build\\offline-20261024\\board1080-cdc-reset-20261027-a\\board1080_top.v",
+      "OriginSHA256": "49cc41dec6ebd64c6913bc6cbdeeb3001b9e521c179661126e5ab75a56721d4c",
+      "PublishedPath": "distortion\\board\\board1080_cdc_reset_top.v",
+      "PublishedSHA256": "49cc41dec6ebd64c6913bc6cbdeeb3001b9e521c179661126e5ab75a56721d4c",
+      "ByteExact": true
+    },
+    {
+      "Origin": "distortion\\build\\offline-20261024\\board1080-cdc-reset-20261027-a\\hdmi1080_video_system.v",
+      "OriginSHA256": "872bedf50835825869ed6f31d3a224c77aa3bcbd7e084553e607e79263c90a32",
+      "PublishedPath": "distortion\\rtl\\experimental\\hdmi1080_video_system_cdc_reset.v",
+      "PublishedSHA256": "872bedf50835825869ed6f31d3a224c77aa3bcbd7e084553e607e79263c90a32",
+      "ByteExact": true
+    },
+    {
+      "Origin": "distortion\\build\\offline-20261024\\board1080-cdc-reset-20261027-a\\board1080-diagnostic.fdc",
+      "OriginSHA256": "2ff6dd8510e7b0566f550143561ac4138c19cd255944811b4561979f6e8b0f23",
+      "PublishedPath": "distortion\\board\\board1080-cdc-reset-diagnostic.fdc",
+      "PublishedSHA256": "2ff6dd8510e7b0566f550143561ac4138c19cd255944811b4561979f6e8b0f23",
+      "ByteExact": true
+    },
+    {
+      "Origin": "distortion\\build\\offline-20261024\\resume-parallel-20261028-a\\a-rcf\\board1080-ddr-ioclk-priority.proposed.rcf",
+      "OriginSHA256": "981934688d526e8d686635859d811070752570a34738548154d544e41be48516",
+      "PublishedPath": "distortion\\board\\board1080-ddr-ioclk-priority.rcf",
+      "PublishedSHA256": "981934688d526e8d686635859d811070752570a34738548154d544e41be48516",
+      "ByteExact": true
+    },
+    {
+      "Origin": "distortion\\build\\offline-20261024\\board1080-cdc-reset-20261027-a\\tb_reset_directed.sv",
+      "OriginSHA256": "c1f88ec7843ce620a718524ccd51c5b9b0bbff41e3b6a9db0a937cfce757539a",
+      "PublishedPath": "distortion\\tests\\tb_board1080_reset_directed.sv",
+      "PublishedSHA256": "c1f88ec7843ce620a718524ccd51c5b9b0bbff41e3b6a9db0a937cfce757539a",
+      "ByteExact": true
+    },
+    {
+      "Origin": "distortion\\build\\offline-20261024\\board1080-cdc-reset-20261027-a\\control_stubs.sv",
+      "OriginSHA256": "33f16b161d4d6f265963bc07801905dcf9d9be98fa829001519dc356cab85f7f",
+      "PublishedPath": "distortion\\tests\\board1080_cdc_control_stubs.sv",
+      "PublishedSHA256": "33f16b161d4d6f265963bc07801905dcf9d9be98fa829001519dc356cab85f7f",
+      "ByteExact": true
+    },
+    {
+      "Origin": "distortion\\build\\offline-20261024\\resume-parallel-20261028-a\\c-decode\\ddr_neighbour_cache_scatter4_rowpipe.v",
+      "OriginSHA256": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+      "PublishedPath": "distortion\\rtl\\experimental\\ddr_neighbour_cache_scatter4_rowpipe.v",
+      "PublishedSHA256": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+      "ByteExact": true
+    },
+    {
+      "Origin": "distortion\\build\\offline-20261024\\resume-parallel-20261028-a\\c-decode\\tb_rowpipe_cache.sv",
+      "OriginSHA256": "a56f62b8e4a330556ffda31a1a1df9551b6d6e02364a549bccb7be3f8214fa22",
+      "PublishedPath": "distortion\\tests\\tb_rowpipe_cache.sv",
+      "PublishedSHA256": "a56f62b8e4a330556ffda31a1a1df9551b6d6e02364a549bccb7be3f8214fa22",
+      "ByteExact": true
+    },
+    {
+      "Origin": "distortion\\build\\offline-20261024\\board1080-cdc-reset-20261027-a\\audit_timing_strict.py",
+      "OriginSHA256": "30e70441aa4e664da3c457dd847951a86cc36dd94dc13bfa01d4edeed6477d19",
+      "PublishedPath": "distortion\\tools\\board1080_timing_audit.py",
+      "PublishedSHA256": "70e1526ac1c0032a65e09abb1f11b45bc14d0906c1866bd1f0cea1111daf29b0",
+      "ByteExact": false,
+      "Change": "Only explicit-path CLI replaces archived machine-bound default; all parser/gate functions unchanged."
+    },
+    {
+      "Origin": "distortion\\build\\offline-20261024\\resume-parallel-20261028-a\\c-decode\\run_rowpipe_unit.py",
+      "OriginSHA256": "2102d37fc272f1baca16e0d45c1afe819e3868f5e57fb6d5e74c25eae329e6f0",
+      "PublishedPath": "distortion\\tools\\run_board1080_rowpipe_unit.py",
+      "PublishedSHA256": "bd56596cbb30f8d9ce8c2b14131fc6637a80315126bf97624dd968862fe53dff",
+      "ByteExact": false,
+      "Change": "Repository-relative source/proof paths and existing build-child ownership only; no RTL, assertions or budget change."
+    }
+  ],
+  "OldSealedBAndOriginalBuildUnmodified": true
+}

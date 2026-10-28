@@ -1,0 +1,1412 @@
+{
+  "Schema": "board1080-source-snapshot-v1",
+  "Target": "board1080_top",
+  "Device": "PG2L100H",
+  "Package": "FBG676",
+  "SpeedGrade": "-6",
+  "DevelopmentOnly": true,
+  "CreatedUtc": "2026-10-27T09:52:07.556654+00:00",
+  "source_files": [
+    "rtl/mul32_pipe.v",
+    "rtl/pixel_inverse_rotation.v",
+    "rtl/bounded_brown_inverse_mapper.v",
+    "rtl/bilinear_rgb.v",
+    "rtl/video_async_fifo.v",
+    "rtl/video_crc32.vh",
+    "rtl/ddr_read_arbiter.v",
+    "rtl/ddr_write_arbiter.v",
+    "rtl/ddr_video_reader.v",
+    "rtl/experimental/ddr_adaptive_result_writer.v",
+    "rtl/experimental/adaptive_gamma_stream.v",
+    "rtl/experimental/adaptive_gamma_tagged.v",
+    "rtl/experimental/gamma_curves.vh",
+    "rtl/experimental/ddr_compact_neighbour_cache_scatter4.v",
+    "rtl/experimental/ddr_remap_sample_scatter4.v",
+    "rtl/experimental/rotated_remap_core_gamma_scatter4.v",
+    "rtl/experimental/pipeline_gamma_frame_engine_1080_scatter4.v",
+    "rtl/experimental/lens1080_bank_core.v",
+    "rtl/experimental/hdmi1080_capture_cdc.v",
+    "rtl/experimental/hdmi1080_input_dma.v",
+    "rtl/experimental/hdmi1080_input_write_link.v",
+    "rtl/experimental/ddr_video_output_1080_board.v",
+    "rtl/experimental/hdmi1080_video_system.v",
+    "rtl/experimental/dvp_mode_admission_monitor.v",
+    "rtl/experimental/hdmi1080_input_status.v",
+    "platform/video_base/ipcore/ddr3_test/ddr3_test.idf",
+    "platform/video_base/ipcore/ddr3_test/rtl/ips2l_rst_sync_v1_3.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrlvl_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrcal_v1_7.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wdata_path_adj_v1_10.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_upcal_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_training_ctrl_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_slice_rddata_align_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_reset_ctrl_v1_3.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rdcal_v1_10.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_main_ctrl_v1_10.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_init_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_info_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gatecal_v1_10.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gate_update_ctrl_v1_3.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_eyecal_v1_5.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_drift_ctrl_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqsi_rdel_cal_v1_3.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_rddata_align_v1_10.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_gate_coarse_cal_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dll_update_ctrl_v1_3.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dfi_v1_3.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gpll_phase_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrlvl_v1_10.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_v1_10.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_dqs_gate_cal_v1_10.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_ctrl_v1_3.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_lock_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_control_path_adj_v1_10.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_top_v1_10.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_mux_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_debounce_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_clk_phase_adj_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_gpll_v1_3.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_ppll_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_apb_cross_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_calib_delay_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_cfg_apb_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_bm_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_rowaddr_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_sm_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_top_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_back_ctrl_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_out_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_top_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dfi_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_lp_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_mrs_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_prefetch_fifo_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_rdatapath_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_reg_fifo2_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_ui_axi_v1_2a.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdatapath_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_align_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_dcp_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wrapper_v1_2b.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_com_timing_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_timing_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act2wr_pass_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act_pass_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_pre_pass_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_rd_pass_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_ref_pass_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_wr_pass_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_trc_timing_v1_2.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/ips2l_distributed_fifo_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_ctr_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_v1_0_distributed_fifo_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_sdpram_v1_0_distributed_fifo_v1_0.vp",
+    "platform/video_base/ipcore/ddr3_test/ddr3_test.v",
+    "platform/video_base/ipcore/ddr3_test/ddr3_test_ddrphy_top.v",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ddr3_test_slice_top_v1_10.v",
+    "board/bringup_pll.v",
+    "platform/video_base/ipcore/cfg_pll/cfg_pll.v",
+    "platform/video_base/source/hdmi/iic_dri.v",
+    "platform/video_base/source/hdmi/ms7200_ctl.v",
+    "platform/video_base/source/hdmi/ms7210_ctl.v",
+    "platform/video_base/source/hdmi/ms72xx_ctl.v",
+    "board/board1080-synthetic.vh",
+    "board/board1080_top.v",
+    "board/board1080.fdc"
+  ],
+  "SourceSHA256": {
+    "rtl/mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "rtl/pixel_inverse_rotation.v": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+    "rtl/bounded_brown_inverse_mapper.v": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691",
+    "rtl/bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+    "rtl/ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+    "rtl/ddr_write_arbiter.v": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+    "rtl/ddr_video_reader.v": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+    "rtl/experimental/ddr_adaptive_result_writer.v": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+    "rtl/experimental/adaptive_gamma_stream.v": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7",
+    "rtl/experimental/adaptive_gamma_tagged.v": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790",
+    "rtl/experimental/gamma_curves.vh": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+    "rtl/experimental/ddr_compact_neighbour_cache_scatter4.v": "db3c8f924f22d6a67d80d3e7a9e10ec8dba39d6ae30d12637ab5aa06d6005d2b",
+    "rtl/experimental/ddr_remap_sample_scatter4.v": "cf863ba92db8b3fab1f5eba602e9fc5b2bedbf9880f17783dd0ab9723f04ede4",
+    "rtl/experimental/rotated_remap_core_gamma_scatter4.v": "6b13cf9bdf089fa902c2e4fb564985e21bf153234382ae721bca6541f6fddcbd",
+    "rtl/experimental/pipeline_gamma_frame_engine_1080_scatter4.v": "e01a99c8847db58003bb2a9dca85db67d705c815a8fec8be2b6a430d35eaa141",
+    "rtl/experimental/lens1080_bank_core.v": "ed14a1266b39b048dcdd2687f3d4fdef13c502ce2858b7483c93d5397a22092c",
+    "rtl/experimental/hdmi1080_capture_cdc.v": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+    "rtl/experimental/hdmi1080_input_dma.v": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+    "rtl/experimental/hdmi1080_input_write_link.v": "276441de0a0d5b04cb4a9564e8715a517fbec12d891489ba54ff8d6b348d44e4",
+    "rtl/experimental/ddr_video_output_1080_board.v": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+    "rtl/experimental/hdmi1080_video_system.v": "d2d5918c799be468519d7bb17b87f6dadd33752d3fb29e058599d3fe939678b9",
+    "rtl/experimental/dvp_mode_admission_monitor.v": "2895bad17ecc74c0cceefce4a53de525a2516462e1bc082481d2d34de2ec8b55",
+    "rtl/experimental/hdmi1080_input_status.v": "2b10fe0eeb7e18ae74098c9531866e458629d2b5e64a70d67c1bed3b58b41c00",
+    "platform/video_base/ipcore/ddr3_test/ddr3_test.idf": "b600d6102995be4e76b060dd45786b5e1497bd2e7499bbc04b870de9355f2747",
+    "platform/video_base/ipcore/ddr3_test/rtl/ips2l_rst_sync_v1_3.vp": "64b8d83f15f2ff373e6b1040405c42051d8761bd1857dec719c884c2eb59361a",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrlvl_v1_0.vp": "00c086bd729be3ab8287f6eb786cfb3549c97aa92f8465c608b8fc2477df3edc",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrcal_v1_7.vp": "0a8cb0bb70bd40809260c50bcb85d092c16fea5d9ab2e4fbbe647ccbd1bfb1b0",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wdata_path_adj_v1_10.vp": "85f625ed4a09964442e8616074eea9e4757e43b4217589bb9e2f289c9748b272",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_upcal_v1_0.vp": "afbca3503da609f7951ad7fbef386bd007f403c89f52377211ba521967c94455",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_training_ctrl_v1_0.vp": "777e8ee9d8d819fdcf04b39b5a5d6086c52369a7f19f04dbd0d06f7a7d3d6110",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_slice_rddata_align_v1_0.vp": "befb44f07d851524109a6dc8e17c5b8062694aa274ed8dbc4f7326b8fe1c443e",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_reset_ctrl_v1_3.vp": "17189b59ed5307c4a27ec35485b33af5c98a89e6ee7f9c5d85aaed9c03a77163",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rdcal_v1_10.vp": "6b4c7f3c24a4750ac69b4e7882617105c6e31f02da712aaa87932b8561ccea2b",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_main_ctrl_v1_10.vp": "39d5024d7364b441340b131d265d0648d8b7c1f92cc417424d7c584413c5f4a6",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_init_v1_0.vp": "817f9f32b2260a4c35af446e89ff4c2d4b065381b25cb2020c538d22b4a45088",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_info_v1_0.vp": "0794201be97885e7695a16b6c35848655b08c4bf191405d26417126512ce4aa8",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gatecal_v1_10.vp": "b6859250ca098e81ff05bcab08dfe8ffee77648218e90c040a1dd3838a0671f2",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gate_update_ctrl_v1_3.vp": "ce20eb3b9cbe3b392d8be0aa1d6787247bc7b2d91af36a1f734f35c9eb03d642",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_eyecal_v1_5.vp": "31977dd34339d163ecbd8b9949ac4b65f0eaa6fbcd9a75d787400ae73f7f51d2",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_drift_ctrl_v1_0.vp": "8ea99ac6decf6fe14c0585b4f121d7a1acc17290d7a1c68725d984e704e277bc",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqsi_rdel_cal_v1_3.vp": "ef7e57755ab7558b1b518aa73999384368f349efe7077cf9283e0911e711ac1a",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_rddata_align_v1_10.vp": "c0cab4287a7a7b6b720977c1c5f9259c5f48f8da18e9a3ca1173a073b1ccf025",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_gate_coarse_cal_v1_0.vp": "950a0010929854894c2c92d9f3f8e9dce0fee6985fee70d4160540a058853ede",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dll_update_ctrl_v1_3.vp": "bc4e8f402d2fb98920e050a3c1514d44ec959877217d7865a30b22b7da73cac6",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dfi_v1_3.vp": "9828a1ef43a864d287a7a317910fe330bfc904f44e8f60c8773aafa1d8c1534e",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gpll_phase_v1_0.vp": "ef8ebe3742d23848bd2a1492d4901f886ce49aa98dbc295873b67e4116ba8524",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrlvl_v1_10.vp": "871874f4af0f068571416916898f83eb07052e6e015c5800ffdf65d67620cf7e",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp": "b7a9757c252f74c4b57eb0fb74738c57e4eed3e669ddd7ffeeca1acedd330b2e",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_v1_10.vp": "e13e33d97ecbfea1838c4dd28e7f9f1c57dcb974606179523be46bba75344d50",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_dqs_gate_cal_v1_10.vp": "8764275d4eeb8d1765b3a09aba527d6d3bf3e46f5e1d17eefc685d7e0dbe1520",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_ctrl_v1_3.vp": "56f52683adbe720c7d43da1a9f199f4ab3add3f3b5960e3f687f87f60267c161",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_lock_v1_0.vp": "a6696f8e79e2d132a6e76ad4997d5366d6c9cf8f05c60f77feff1b47b50d0090",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_control_path_adj_v1_10.vp": "8cdd7b9ec01c143882217b038cbf840d77e52ee3037e629e75e10b03fc223a38",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_top_v1_10.vp": "04faf434cef120b5d712911dfc97c8f498901b0679fba720b806f596d688bded",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_mux_v1_0.vp": "676e36319e7ce80b93e3543e255d53708d9fc71606587a6e692eab1ec82ecaed",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_debounce_v1_0.vp": "bff7ed95c8d305dfb88e6002c6de8453a21c72c03a5a0521a76ddd105598dc4d",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_clk_phase_adj_v1_0.vp": "dd1dbae71726d968df475fe7fbb2b7321411fa67786092c0dc2e065edcf39382",
+    "platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_gpll_v1_3.vp": "3fecc367573a4b5bd158e1a8ff106c5c401c5f180143e8e5abe6bb068e5078d2",
+    "platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_ppll_v1_0.vp": "34bb46106b84eab147f130bd7526f1486d35caeb40b0258cd59656e50d19dddd",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_apb_cross_v1_2.vp": "62f7d55354a8afe4d02bc6f6d6dc30fc8e9960d3b21709988b887acc99d09cf5",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_calib_delay_v1_2.vp": "a52e992b9766b6cb22ed23aa01d1cc5ac9b6a429a8e49de7a13ac51dd70e9784",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_cfg_apb_v1_2.vp": "482cb280a614f70209f1d07892fdd773a259d2ca0f23e8f38b85a9faf00513b9",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_bm_v1_2.vp": "bfbd472dd8b427fe6b003dd510f73db89f915ac92d31fe8a779c40f9d4e56bee",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_rowaddr_v1_2.vp": "4ac4721747b13020e1895be6265e55df90968f05beb8056279589039394bb9be",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_sm_v1_2.vp": "d7e710e3ed4d1807fb0bdd4d84c264817247a4da41123c72439c555573821f49",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_top_v1_2.vp": "26ab4e142f555602c023f62b19df52056c6d51da5052401254066cae0655ddaa",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_back_ctrl_v1_2.vp": "fe7b340b41d80ec7428cc38329a41864bcf5c209a6310610d09c7bc8579e541f",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp": "dab35fa172243ecbb5426a8ebccc2c168368ea0a6ea0558c909b815d781b17d6",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_out_v1_2.vp": "9471082e23170b144dc619f7f7e08c94b8a03378f72da388f744d6acb728928b",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_top_v1_2.vp": "21b1f0e3b4660e1078b47000bfe50022346414f5d5e713ac9e522a4f39f76548",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dfi_v1_2.vp": "abf138d692e634fabe5f569b98d897dfece8a8ae66cee1dba830a56d7e255df1",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_lp_v1_2.vp": "7a80ccb1e053e5c9d8f389169359570f256d709ff2e4ad2c51fda7a7a6a4239d",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_mrs_v1_2.vp": "f78133bc021a57cf469773daaf102817fc37069447e8accc80afa1f4b20b0ad6",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_prefetch_fifo_v1_2.vp": "ee3aa91e980fb3dd08231cf1806a28edf759f4ea8248adfd44407d607519b9e4",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_rdatapath_v1_2.vp": "72dd8ece021f4ee74fd576c1628c4f7d3606ef632f0e68b9569a288a092a6b0f",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_reg_fifo2_v1_2.vp": "bc9cff65e4002a51af0c20c2f0a9b9f17dacde5157b58691bbfb1c44348ee08a",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_ui_axi_v1_2a.vp": "145b69395412be2553835f9278cdf1cb1703d3beeb914abf7d985e3c69f817fb",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdatapath_v1_2.vp": "db648e90ff607ca2f9e2b5cca048de417439888d0b906288e0cec7cf038d9dee",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_align_v1_2.vp": "1645e9eb7fac3c9c13cd3e0d7367f132293f9cec16835ce188c6345993d2b730",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_dcp_v1_2.vp": "3f30be0f49f78f09915743995c950fa6ff8de5f14598ebc8802e73b5c6d140ee",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wrapper_v1_2b.vp": "d35010f49be551fb15ab2655cbeffcaaaa74fdf3ccb0754b033fc979d615e805",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_com_timing_v1_2.vp": "e3f19c4be6352ab64f07426973387f2876c540ee992f6eac9d3f2d470b3d49c2",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_timing_v1_2.vp": "c632619f042bebb4f059df7f20eee90eb2b51b81210430cb37d01958ad3cd30f",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_v1_2.vp": "ab87b7718bffc4fb2a2b27765576187f09b5266bbca7fc393c43c6dec96ff379",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act2wr_pass_v1_2.vp": "1b3874b059923481f292ba382ad156f7dcdd9ad39da6c86dddd480290ccce498",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act_pass_v1_2.vp": "9f32b6936e039c15f7b07b74480179d39d1b3787965e1b90bd067a7ede7fdd4c",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_pre_pass_v1_2.vp": "e40a64caec9725c231cd88dde69973eab3aca38c9d2e66a2c5c0bbddf3103ae0",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_rd_pass_v1_2.vp": "78b1de719a43ee0fc80e1a5464f7284439d91f1d4b3f83ef2ae5611920293988",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_ref_pass_v1_2.vp": "c79dde6f9a682c55aff7bb89c4863f76a069b874fb154dff7d3e4d4a7a88f9d1",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_wr_pass_v1_2.vp": "ea3470ca984554d4908ec950314f9242042417c6c4c6b3fd05ac5d6daab98c90",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_trc_timing_v1_2.vp": "7234241e5968f91ec6e396794f0bb80f6c7d1bca2038aa004d5078d3937953da",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/ips2l_distributed_fifo_v1_0.vp": "d6c0b0d8560b0f22128b4883933944fc686fd7597cfea0d6c545cc6af56c0b7a",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_ctr_v1_0.vp": "fe31c8f44bea653ab20bb1830ad4f8ed41566e9cfef354bd5e2d48c7682f353d",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_v1_0_distributed_fifo_v1_0.vp": "867ac91a1485dfe613a81f372d788e784bba8cd4b0497e56986135e92685ba73",
+    "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_sdpram_v1_0_distributed_fifo_v1_0.vp": "3561bbbbd4e4432a538c3d20818d262b4f1e5517c48296f6b1b4cc8afdd19aef",
+    "platform/video_base/ipcore/ddr3_test/ddr3_test.v": "3c5441b4bff33dff73811c3a025ede3b6348cb5779e21778653659b6cbfb84e0",
+    "platform/video_base/ipcore/ddr3_test/ddr3_test_ddrphy_top.v": "a95c28f225d2984401a798f673efff209154ae5beb8a7356d303136b71ea49d5",
+    "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ddr3_test_slice_top_v1_10.v": "69d4135c367efbb73f83c82ecd9871519e19b0d5c48bce2df0eac6b3dff50b87",
+    "board/bringup_pll.v": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+    "platform/video_base/ipcore/cfg_pll/cfg_pll.v": "a524450baa6becd30df04da4bdd00597de18b42db4628226e27546c4d601b0ec",
+    "platform/video_base/source/hdmi/iic_dri.v": "5f60bc8bcac110f0125a278c332065d2594874c465ec961c603662f92c16b13e",
+    "platform/video_base/source/hdmi/ms7200_ctl.v": "501521c4cceecd48de5741d3116eb7062c93a70a606a386682e1d8756a494199",
+    "platform/video_base/source/hdmi/ms7210_ctl.v": "c9b101e58f381ddf3c6d663d0003c18065302659424b8345022161413ccf09ae",
+    "platform/video_base/source/hdmi/ms72xx_ctl.v": "df3876bc1a3bf3a7efe7adeed56b2f9625af4ac9ba56074925671f49751cf69a",
+    "board/board1080-synthetic.vh": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+    "board/board1080_top.v": "4529cc7ab86059870b9e04c75d92425438a625d071430898458db02978ac4770",
+    "board/board1080.fdc": "067897d5b078bea2406e7c3e9759e767ba38862e10a07ed06ae19bc97be6df38"
+  },
+  "SourceClosureFilesExist": true,
+  "SnapshotOnlyNotCompiled": true,
+  "Pins": {
+    "b_in[0]": {
+      "Pad": "L18",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "b_in[1]": {
+      "Pad": "J21",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "b_in[2]": {
+      "Pad": "J18",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "b_in[3]": {
+      "Pad": "H18",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "b_in[4]": {
+      "Pad": "L17",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "b_in[5]": {
+      "Pad": "M16",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "b_in[6]": {
+      "Pad": "M17",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "b_in[7]": {
+      "Pad": "M14",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "b_out[0]": {
+      "Pad": "P19",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "b_out[1]": {
+      "Pad": "P21",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "b_out[2]": {
+      "Pad": "P20",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "b_out[3]": {
+      "Pad": "M22",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "b_out[4]": {
+      "Pad": "M21",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "b_out[5]": {
+      "Pad": "N18",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "b_out[6]": {
+      "Pad": "R22",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "b_out[7]": {
+      "Pad": "T22",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "clk_27m": {
+      "Pad": "D18",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "clk_n": {
+      "Pad": "N2",
+      "Direction": "INPUT",
+      "IOStandard": "HSTL15D_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "clk_p": {
+      "Pad": "N3",
+      "Direction": "INPUT",
+      "IOStandard": "HSTL15D_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "de_in": {
+      "Pad": "H23",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "de_out": {
+      "Pad": "N19",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "g_in[0]": {
+      "Pad": "L14",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "g_in[1]": {
+      "Pad": "J14",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "g_in[2]": {
+      "Pad": "J15",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "g_in[3]": {
+      "Pad": "J16",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "g_in[4]": {
+      "Pad": "K15",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "g_in[5]": {
+      "Pad": "K17",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "g_in[6]": {
+      "Pad": "K16",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "g_in[7]": {
+      "Pad": "L15",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "g_out[0]": {
+      "Pad": "T25",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "g_out[1]": {
+      "Pad": "P25",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "g_out[2]": {
+      "Pad": "R25",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "g_out[3]": {
+      "Pad": "P24",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "g_out[4]": {
+      "Pad": "P23",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "g_out[5]": {
+      "Pad": "N24",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "g_out[6]": {
+      "Pad": "N23",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "g_out[7]": {
+      "Pad": "N22",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "hd_scl": {
+      "Pad": "K22",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "hd_sda": {
+      "Pad": "K23",
+      "Direction": "INOUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "hs_in": {
+      "Pad": "J23",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "hs_out": {
+      "Pad": "R20",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "led[0]": {
+      "Pad": "A20",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "led[1]": {
+      "Pad": "C18",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "led[2]": {
+      "Pad": "C19",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "led[3]": {
+      "Pad": "E18",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "led[4]": {
+      "Pad": "A17",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "led[5]": {
+      "Pad": "A18",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "led[6]": {
+      "Pad": "C17",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "led[7]": {
+      "Pad": "B17",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[0]": {
+      "Pad": "J1",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[10]": {
+      "Pad": "T3",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[11]": {
+      "Pad": "P1",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[12]": {
+      "Pad": "T4",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[13]": {
+      "Pad": "M2",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[14]": {
+      "Pad": "N1",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[1]": {
+      "Pad": "L3",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[2]": {
+      "Pad": "L2",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[3]": {
+      "Pad": "P3",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[4]": {
+      "Pad": "T2",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[5]": {
+      "Pad": "M1",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[6]": {
+      "Pad": "U1",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[7]": {
+      "Pad": "K1",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[8]": {
+      "Pad": "U2",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_a[9]": {
+      "Pad": "K2",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_ba[0]": {
+      "Pad": "P4",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_ba[1]": {
+      "Pad": "R2",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_ba[2]": {
+      "Pad": "T5",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_cas_n": {
+      "Pad": "T7",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_ck": {
+      "Pad": "U6",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15D_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_ck_n": {
+      "Pad": "U5",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15D_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_cke": {
+      "Pad": "R1",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_cs_n": {
+      "Pad": "N4",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dm[0]": {
+      "Pad": "K6",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dm[1]": {
+      "Pad": "F7",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dm[2]": {
+      "Pad": "D5",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dm[3]": {
+      "Pad": "E2",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[0]": {
+      "Pad": "G5",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[10]": {
+      "Pad": "H8",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[11]": {
+      "Pad": "D6",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[12]": {
+      "Pad": "G8",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[13]": {
+      "Pad": "E6",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[14]": {
+      "Pad": "H9",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[15]": {
+      "Pad": "G6",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[16]": {
+      "Pad": "C4",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[17]": {
+      "Pad": "D4",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[18]": {
+      "Pad": "A4",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[19]": {
+      "Pad": "E3",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[1]": {
+      "Pad": "J6",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[20]": {
+      "Pad": "C3",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[21]": {
+      "Pad": "F3",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[22]": {
+      "Pad": "B4",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[23]": {
+      "Pad": "D3",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[24]": {
+      "Pad": "F2",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[25]": {
+      "Pad": "D1",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[26]": {
+      "Pad": "G1",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[27]": {
+      "Pad": "A2",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[28]": {
+      "Pad": "E1",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[29]": {
+      "Pad": "A3",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[2]": {
+      "Pad": "F5",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[30]": {
+      "Pad": "G2",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[31]": {
+      "Pad": "C2",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[3]": {
+      "Pad": "L8",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[4]": {
+      "Pad": "G4",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[5]": {
+      "Pad": "K7",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[6]": {
+      "Pad": "F4",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[7]": {
+      "Pad": "J5",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[8]": {
+      "Pad": "H6",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dq[9]": {
+      "Pad": "F8",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dqs[0]": {
+      "Pad": "J4",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15D_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dqs[1]": {
+      "Pad": "H7",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15D_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dqs[2]": {
+      "Pad": "B5",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15D_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dqs[3]": {
+      "Pad": "C1",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15D_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dqs_n[0]": {
+      "Pad": "H4",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15D_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dqs_n[1]": {
+      "Pad": "G7",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15D_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dqs_n[2]": {
+      "Pad": "A5",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15D_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_dqs_n[3]": {
+      "Pad": "B1",
+      "Direction": "INOUT",
+      "IOStandard": "HSTL15D_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_odt": {
+      "Pad": "H2",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_ras_n": {
+      "Pad": "P6",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_rst_n": {
+      "Pad": "H1",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "mem_we_n": {
+      "Pad": "T8",
+      "Direction": "OUTPUT",
+      "IOStandard": "HSTL15_I",
+      "VCCIOReference": "1.5",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "pix_clk": {
+      "Pad": "T24",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "pixclk_in": {
+      "Pad": "K21",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "r_in[0]": {
+      "Pad": "M15",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "r_in[1]": {
+      "Pad": "H19",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "r_in[2]": {
+      "Pad": "J19",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "r_in[3]": {
+      "Pad": "J20",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "r_in[4]": {
+      "Pad": "K20",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "r_in[5]": {
+      "Pad": "G21",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "r_in[6]": {
+      "Pad": "G20",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "r_in[7]": {
+      "Pad": "H22",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "r_out[0]": {
+      "Pad": "N21",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "r_out[1]": {
+      "Pad": "L23",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "r_out[2]": {
+      "Pad": "L22",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "r_out[3]": {
+      "Pad": "L25",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "r_out[4]": {
+      "Pad": "L24",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "r_out[5]": {
+      "Pad": "K26",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "r_out[6]": {
+      "Pad": "K25",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "r_out[7]": {
+      "Pad": "P16",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "reset_n": {
+      "Pad": "C22",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc:key0_n"
+    },
+    "rstn_out": {
+      "Pad": "G25",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    },
+    "vs_in": {
+      "Pad": "H24",
+      "Direction": "INPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc"
+    },
+    "vs_out": {
+      "Pad": "R21",
+      "Direction": "OUTPUT",
+      "IOStandard": "LVCMOS33",
+      "VCCIOReference": "3.3",
+      "Reference": "board\\corrected_gamma_pipeline_d5.fdc"
+    }
+  },
+  "PinCount": 142,
+  "AllPinsUnique": true,
+  "ClockContract": {
+    "CoreNominalHz": 125000000,
+    "InputNominalHz": 74250000,
+    "OutputNominalHz": 74250000,
+    "OutputTiming": [
+      2200,
+      1125,
+      1920,
+      1080
+    ],
+    "OutputNominalFPS": 30,
+    "ConfigNominalHz": 10000000,
+    "OutputClockReference": "board/bringup_pll.v unchanged (same74.25MHz source as signed B)",
+    "InputSamplingEdge": "reference posedge implementation; AC/config validation absent",
+    "PHYLockVerified": false,
+    "RGB888RegisterReadbackVerified": false,
+    "InputActivityWindowUpperHz": 75000000,
+    "InputSTAEnvelopeHz": 75100000,
+    "InputSTAEnvelopePeriodNs": 13.315579,
+    "InputClockEnvelopeBasis": "Conservative100kHz engineering margin above digital75MHz window; not measured PCLK/AC sign-off."
+  },
+  "GeometryAdmission": {
+    "TokensPerDE": 1,
+    "Active": [
+      1920,
+      1080
+    ],
+    "Total": [
+      2200,
+      1125
+    ],
+    "VSInactiveInferredFromDE": true,
+    "HSInactiveInferredFromDE": true,
+    "MinimumGoodFrames": 2,
+    "PclkActivityWindowRefCycles": 27000,
+    "AllowedPclkEdgesPerWindow": [
+      73500,
+      75000
+    ],
+    "ThresholdBasis": "engineering nominal74.25MHz activity check; not a chip lock or measured board acceptance"
+  },
+  "PrivateParameters": {
+    "Path": "board/board1080-synthetic.vh",
+    "Model": "synthetic nonzero Brown0deg GM0 development fixture",
+    "CalibrationAccepted": false,
+    "NewLensCorrectionVerified": false
+  },
+  "ResetAndFaultContract": {
+    "GlobalManualResetPort": "reset_n at former KEY0 C22, active low; async assertion and locally synchronized release",
+    "ObserverMayResetDuringInit": true,
+    "RuntimeModeFaultResetsSystemFIFO": false,
+    "PipelineResetOnceReleasedMonotonicUntilGlobalReset": true,
+    "RuntimeFault": "sticky external_fault in core domain, held code, stop new capture/scan with drain/quarantine",
+    "ClockLossDrainGuaranteed": false
+  },
+  "PhysicalTimingReady": false,
+  "ProvisionalIODelaysNs": {
+    "InputMax": 6.734,
+    "InputMin": -1.0,
+    "OutputMax": 6.734,
+    "OutputMin": -1.0,
+    "Basis": "explicit half-period engineering placeholders, NOT vendor AC min/max; blocks physical acceptance"
+  },
+  "CDCConstraintContract": {
+    "BlanketFalsePathsOrAsyncGroups": false,
+    "AllUserClockPairsMaxDelayNs": 8.0,
+    "MinDelayNs": 0.0,
+    "EndpointInventoryInFDC": true,
+    "EndpointResolutionVerified": false,
+    "SkewAndHoldSignedOff": false,
+    "DDRIPExceptionsReviewedForNewTop": false
+  },
+  "BlockedPhysicalTimingItems": [
+    "MS7200 configured SDR/PCLK inversion/output edge and guaranteed tCO(min,max) with load/voltage/board-skew are absent from the local15-page datasheet.",
+    "MS7210 configured input capture edge and required setup/hold with board-skew are absent from the local14-page datasheet.",
+    "New142-pad board top has not been compiled/routed. CDC endpoint resolution/skew/hold and DDR-IP internal exception completeness are unverified.",
+    "Official MS72xx init_over is sequence completion only; no PHY-lock or RGB-register readback attestation. Actual native input source/format remains unmeasured."
+  ],
+  "References": [
+    {
+      "Path": "D:\\English\\FPGA\\vendor\\board\\盘古100Pro+开发板（MES2L676-100HP）配套资料\\4_IC_datasheet\\HDMI PHY\\《MS7200 Datasheet-EN》(1).pdf",
+      "SHA256": "3ffeecfdb4e6741d369b7b6d89d118ca8cf2bcfd617fd7ea3f21f1798fbf5207",
+      "Coverage": "manufacturer short datasheet; pin/format and DC characteristics, no required AC setup/hold or tCO table"
+    },
+    {
+      "Path": "D:\\English\\FPGA\\vendor\\board\\盘古100Pro+开发板（MES2L676-100HP）配套资料\\4_IC_datasheet\\HDMI PHY\\《MS7210 Datasheet-CN》-sp(1).pdf",
+      "SHA256": "2e9ea30aaf970a5b53a6f9d71185959a8145df45f1ef0d516b77e13f6c5d25f3",
+      "Coverage": "manufacturer short datasheet; pin/format and DC characteristics, no required AC setup/hold or tCO table"
+    }
+  ],
+  "ReferenceSHA256": {
+    "board\\corrected_gamma_pipeline_d5.fdc": "d03368bccb8704b491e7cc359cbe20b859bcb41c7c9c108475caac2ae07eae91",
+    "platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc": "dfabea1eaeb089bb4f3d9602976a6c5d855db32eebc3c2264550380497a4b66e",
+    "platform\\video_base\\source\\rtl\\HDMI_IN_DDR3_HDMI_OUT_top.v": "ca0d180208c8eca76f24b53aced44fe03d7bc9d8a28f39d622e220694dfb56a6",
+    "board\\corrected_gamma_pipeline_d5-sources.json": "aad1b89b873568089db1a819587e25ed489bfc4d7eb9e3f1002ae27df74ae6b1"
+  },
+  "GateState": {
+    "PreBitGateExecutionProven": false,
+    "HardwareReleaseAllowed": false,
+    "NewLensCorrectionVerified": false,
+    "CalibrationAccepted": false
+  },
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "SynthesisExecuted": false,
+  "PendingRootFreezeSourceRefresh": false,
+  "OfflineInputStatusUnit": {
+    "Files": [
+      "tests/tb_board1080_input_status.sv",
+      "tools/run_board1080_input_status_sim.py"
+    ],
+    "Executed": false,
+    "DDRIPElaborated": false,
+    "BoardTopElaborated": false,
+    "Limits": "Observer-only digital mode tests; no chip/board/DDR primitive or physical timing proof.",
+    "SourceSHA256": {
+      "tests/tb_board1080_input_status.sv": "e566a262b9cf4a3087ef09807cf3402c927c46107522beb22a0dd641bd5ea6c1",
+      "tools/run_board1080_input_status_sim.py": "6767a5401fab982c2d734fbfd5d28ca74182bf2f2f2f7efbdffa381ad384334c"
+    }
+  },
+  "PrivateParameterBinding": {
+    "NativeConfigPath": "D:\\English\\FPGA\\distortion\\build\\offline-20261024\\continuous-input1080-20261027-a\\full-vectors\\config.vh",
+    "NativeConfigSHA256": "6bcc1db5ebf0fd8f99b6f1f3b2d59a62a20297fb75b90e5a8636210ad4bf92fd",
+    "IntegerNames": [
+      "OUT_CX",
+      "OUT_CY",
+      "SRC_CX",
+      "SRC_CY",
+      "SRC_FX",
+      "SRC_FY",
+      "INV_FX",
+      "INV_FY",
+      "K1",
+      "K2",
+      "K3",
+      "P1",
+      "P2"
+    ],
+    "IntegerValues": [
+      245632,
+      138112,
+      245632,
+      138112,
+      245760,
+      248832,
+      1118481,
+      1104673,
+      335544,
+      -62915,
+      8389,
+      4194,
+      -2936
+    ],
+    "All13ExactNumericMatch": true,
+    "RadiusQ22": 8388608,
+    "BoardToSystemAndEightFrameBenchPortMappingExact": true,
+    "EightFrameBenchHeaderOnly": "Small tests use geometry-scaled CPU fixtures; only cfg13 symbolic mapping is compared with the board. Native numeric values are compared against the frozen full-resolution config.",
+    "CalibrationAccepted": false
+  },
+  "RootDatapathFreeze": {
+    "SystemPath": "rtl\\experimental\\hdmi1080_video_system.v",
+    "SystemSHA256": "d2d5918c799be468519d7bb17b87f6dadd33752d3fb29e058599d3fe939678b9",
+    "ScanPath": "rtl/experimental/ddr_video_output_1080_board.v",
+    "ScanSHA256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+    "RootDeclaredFrozen": true,
+    "ChangeBoundary": "Consumer display_done_valid is gated by!failed; no board interface change. No native outcome is inferred from this source snapshot."
+  },
+  "SourceSnapshotUtc": "2026-10-27T10:25:05.528915+00:00",
+  "RGB565UnusedInputBitPolicy": {
+    "r_in[0]": "Declared reference pad; intentionally discarded by RGB888->565 and may be optimized/marked unused in real implementation.",
+    "r_in[1]": "Declared reference pad; intentionally discarded by RGB888->565 and may be optimized/marked unused in real implementation.",
+    "r_in[2]": "Declared reference pad; intentionally discarded by RGB888->565 and may be optimized/marked unused in real implementation.",
+    "g_in[0]": "Declared reference pad; intentionally discarded by RGB888->565 and may be optimized/marked unused in real implementation.",
+    "g_in[1]": "Declared reference pad; intentionally discarded by RGB888->565 and may be optimized/marked unused in real implementation.",
+    "b_in[0]": "Declared reference pad; intentionally discarded by RGB888->565 and may be optimized/marked unused in real implementation.",
+    "b_in[1]": "Declared reference pad; intentionally discarded by RGB888->565 and may be optimized/marked unused in real implementation.",
+    "b_in[2]": "Declared reference pad; intentionally discarded by RGB888->565 and may be optimized/marked unused in real implementation."
+  },
+  "RoutedPinCountVerified": false,
+  "DeclaredReferencePinCount": 142,
+  "EligibleForPDSOrHardware": false
+}

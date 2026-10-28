@@ -1,0 +1,290 @@
+{
+  "Marker": "FPGA-1028-GIT-AUTHORIZED-RESUME-ONE",
+  "ReviewedFiles": 347,
+  "ExcludedFiles": 40,
+  "Excluded": [
+    {
+      "Path": "distortion/board/gamma_capture_k320_dev-profile-binding.json",
+      "GitStatus": "??",
+      "SHA256": "b860e8cfc0ce8e942eabd2e0dcfd71e0de973a4bd0cc549745d836fe2256840a",
+      "Bytes": 4291,
+      "Reason": "Machine-path-dependent historical calibration/capture binding. Own development coefficients remain included; rebuild binding from retained local profile, never reuse old hardware authorization."
+    },
+    {
+      "Path": "distortion/captures/cam1-sccb25-diagnostic-20261025.zip.manifest.json",
+      "GitStatus": "??",
+      "SHA256": "f1add2d093ec1536088cea043ec8dfc7def7e030af28e74b7aeb62d510d92f77",
+      "Bytes": 423,
+      "Reason": "Historical capture archive manifest; original archive/media/build evidence stays local, with restoration through retained original path."
+    },
+    {
+      "Path": "distortion/captures/guarded-development-20261025.zip.manifest.json",
+      "GitStatus": "??",
+      "SHA256": "82536f8c2cb82a3f9f9498441c93fd1449b7c2f106a77efb13a6e3d557aa6508",
+      "Bytes": 421,
+      "Reason": "Historical capture archive manifest; original archive/media/build evidence stays local, with restoration through retained original path."
+    },
+    {
+      "Path": "distortion/captures/lit-room-capture-20261025-v2.zip.manifest.json",
+      "GitStatus": "??",
+      "SHA256": "4794d6f7a581498897ff470fb44987e2250dc3abc03600c6381ca1d24ed28c75",
+      "Bytes": 419,
+      "Reason": "Historical capture archive manifest; original archive/media/build evidence stays local, with restoration through retained original path."
+    },
+    {
+      "Path": "distortion/captures/lit-room-capture-20261025.zip.manifest.json",
+      "GitStatus": "??",
+      "SHA256": "de5b1588798fd423b46cf602177a60af8227c2901554005830590d5a5fc95a00",
+      "Bytes": 416,
+      "Reason": "Historical capture archive manifest; original archive/media/build evidence stays local, with restoration through retained original path."
+    },
+    {
+      "Path": "distortion/captures/repower-reset-isolation-20261025.zip.manifest.json",
+      "GitStatus": "??",
+      "SHA256": "117db0f65a481a42095ed145ef2fd98c07830075ecf4a9955e52268e32a79321",
+      "Bytes": 424,
+      "Reason": "Historical capture archive manifest; original archive/media/build evidence stays local, with restoration through retained original path."
+    },
+    {
+      "Path": "distortion/output/project/cam1-independent-input-pin-review-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "13aa1b9aa3ea04a252fee89a8245d343eaa1189aae43c2c7b3a25df44002707c",
+      "Bytes": 1593,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/cam1-other-reset-experiment-plan-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "c84202a8379d5ae91cb66d41ea7864a62fd949b4872c4d95a3aada96ba7ef22b",
+      "Bytes": 2310,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/cam1-sccb25-experiment-plan-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "bcaf15b774620525ce39e7665baa73f7e5201589bc4a46979c0051c0432b491a",
+      "Bytes": 2524,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/first-native-cam2-archive-audit-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "67c7fe69ae554c3c930286cc9a04e27de5a4b36d4adc2a70234dcba27f9a4792",
+      "Bytes": 2647,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/first-native-cam2-evidence-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "58d170a4af2af9511061acdb30a18819e354f11f748894734384611457fc63fc",
+      "Bytes": 1899,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/gamma-k320-dev-readback-interface-20261026.json",
+      "GitStatus": "??",
+      "SHA256": "c7aac3c693761a6f4c95ceeffc2051e9cc2a181dfbeb2031c205ffa6921092ae",
+      "Bytes": 8065,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/gamma-k320-dev-sensor-mode-comparison-20261026.json",
+      "GitStatus": "??",
+      "SHA256": "0353b7c8113fdf3c5b5ae754a8b5a9c8db932e6507be8e7572a7d19e02f329b4",
+      "Bytes": 10265,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/gp200-cam2-capture-plan-20261026.json",
+      "GitStatus": "??",
+      "SHA256": "d55bce2f8deab5a5c902e0649283c7aec386ad34e9f95d45db4e97e61ce64f83",
+      "Bytes": 9792,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/guarded-cam1-sccb25-campaign-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "0d993658317c9f1b20b49afca1f59a45b2a2f320017df15df7d9b512a1527b9d",
+      "Bytes": 5451,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/guarded-campaign-20261025-final.json",
+      "GitStatus": "??",
+      "SHA256": "d116a2df977a257be6bb41117665ed98b2f3aa572f32761e6627fb581e43c587",
+      "Bytes": 40150,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/guarded-campaign-20261025-v1.json",
+      "GitStatus": "??",
+      "SHA256": "7ac7be91e2bd5f22ac1ecfbde27c6c59400615d43086baf80640dec02cb857a3",
+      "Bytes": 35741,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/guarded-fpc-reseat-campaign-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "a25e215e177360e815875561052625ede05c9734b7b3a4c123d2788c79543894",
+      "Bytes": 9512,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/guarded-lit-room-capture-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "f326e9476176fe29a5692ccdf9353a9249bb487dc3567dc32bd0a97a836af025",
+      "Bytes": 5178,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/guarded-repower-and-isolation-campaign-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "75c3dc4f1b7214898487108f798b2c2670965a000c8029f586fbcd035d4a8ce0",
+      "Bytes": 14233,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/live-bringup-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "f0842ff49a2a8cdecc01c3c18158a0af2b97c88549015df7fc27951c32ea0cc8",
+      "Bytes": 4710,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/live-facts-before-first-sram-20261025T091536Z.json",
+      "GitStatus": "??",
+      "SHA256": "f466ee5f4b0f15189e601289afdea209c4342b9f1bf9604a6ad5b131c7a420a3",
+      "Bytes": 5503,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/offline-readiness-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "05432d83feec0fcb6dadf5e63531f652807c58e3e2d86911d7f73110a0067ac3",
+      "Bytes": 3613,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/offline-validation-20261024-final.json",
+      "GitStatus": "??",
+      "SHA256": "5e069c6806207ecb299905c30bba09778a0ea0d7bee611ea1d1a5442cf07be26",
+      "Bytes": 10293,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/offline-validation-20261024.json",
+      "GitStatus": "??",
+      "SHA256": "bb1a63710e02849454d6eb9caf2bb5366e67907f764c6356335ea7fd6ff2160a",
+      "Bytes": 9796,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/offline-validation-20261025-final.json",
+      "GitStatus": "??",
+      "SHA256": "c696596629d96ff4d1bba1cb7d5b03eda7a211c184aed1fe986dac923f17ac7a",
+      "Bytes": 38261,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/offline-validation-20261025-ready.json",
+      "GitStatus": "??",
+      "SHA256": "22922446eb30afd0abdd9ee657a31195ee5ad9b80e2dd480cf1f70874f75d6a4",
+      "Bytes": 39481,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/offline-validation-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "012dd729b496af621a7538b38f3e94ebba31644d5e32fe515f8ef66ae02838f6",
+      "Bytes": 38287,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/ov5640-720p-bounded-clock-source-plan-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "0c55d0454c0dc6133fda350316fef483f293b250a270281924415ba1e93af8e5",
+      "Bytes": 18444,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/ov5640-720p-local-reference-audit-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "bb4e67ce71acd0dd27a1f0b5640dd7d4bc69372512fe4c1b04ec1f8381f9de8b",
+      "Bytes": 20670,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/ov5640-cam1-guarded-engineering-review-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "995193ee3aaf7a63ea743efb638e9719d866387e31e4fe4b57c4cf6661e8aa7b",
+      "Bytes": 13561,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/ov5640-cam1-guarded-preprogram-20261025.binding.json",
+      "GitStatus": "??",
+      "SHA256": "48683b05d1cefcd69e10a25c9b5e739fb48bbebf6bdc6911d85739f91ebd4d53",
+      "Bytes": 6187,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/ov5640-cam2-provisional-preprogram-20261025.binding.json",
+      "GitStatus": "??",
+      "SHA256": "39bb6acaf648960dc19dbb52e7eee8c0917a63ca52a0328e41a41e9d1c173884",
+      "Bytes": 3418,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/ov5640-cam2-reference-session.binding.json",
+      "GitStatus": "??",
+      "SHA256": "cfb2c41907d1751bf3cf362e8f73cfb530ed9427f0f2ff52a5a9329bee48c833",
+      "Bytes": 1731,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/ov5640-compatibility-review-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "3a86ee99af1cedaac76fbe47588c6c48540fa94a48d46cb5b29ab63d75d6b41a",
+      "Bytes": 6908,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/ov5640-dvp-resolution-priority-20261026.json",
+      "GitStatus": "??",
+      "SHA256": "fc97d22ade38ec6b09da389ff8e8ff956a4f54268a357335837aa65ba4c2dfc0",
+      "Bytes": 6461,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/ov5640-fisheye-arrival-20261025.json",
+      "GitStatus": "??",
+      "SHA256": "fff411ef073dc53c36e5281bd9b6a614bd393bfbe110f295b418a5a33dd4df77",
+      "Bytes": 4699,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/ov5640-replacement-cam2-interface-review-20261026.json",
+      "GitStatus": "??",
+      "SHA256": "90082264d89c6b3b686fe15a1e4d65cf9064c2cef220bf04f995f6f0f291b5e0",
+      "Bytes": 1192,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/ov5640-replacement-cam2-preprogram-20261026.binding.json",
+      "GitStatus": "??",
+      "SHA256": "3c17514c7b915aa541d8416c93e701c0363bc798481a341c9029d88495d943a8",
+      "Bytes": 3391,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    },
+    {
+      "Path": "distortion/output/project/pds-final-resource-audit-20261026T012901459054Z.json",
+      "GitStatus": "??",
+      "SHA256": "59ea10d6e0947952f2552c584b5ad23ca536a13fa16c8e3807f2ec8a6c5e086f",
+      "Bytes": 34309,
+      "Reason": "Historical local capture/session/preprogram/source audit, not required self-authored code. Retain original with this SHA; restore from authorized local evidence and reassess expired one-shot gates."
+    }
+  ],
+  "NoSecretsOrVendorOriginalUploaded": true,
+  "LocalFullAllowlist": "distortion/build/offline-20261024/resume-parallel-20261028-a/git-reviewed-paths.json",
+  "RestoreRule": "Keep these original local files and their SHA. Recover authorized source datasets/tool installations locally; regenerate expired machine/capture bindings, never resurrect a spent hardware plan."
+}
