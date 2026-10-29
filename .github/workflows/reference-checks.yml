@@ -78,3 +78,12 @@ jobs:
             distortion/tests/test_prepare_board1080_timing.py \
             distortion/tests/test_prepare_board1080_bitstream.py \
             distortion/tests/test_prepare_fresh_board1080_bitstream.py
+      - name: Check HDMI30 profile and board pin contracts
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python -m pytest -q -p no:cacheprovider \
+            distortion/tests/test_board1080_edid.py \
+            distortion/tests/test_prepare_board1080_hdmi30.py \
+            distortion/tests/test_run_board1080_hdmi30_sim.py \
+            distortion/tests/test_audit_board1080_pin_contract.py

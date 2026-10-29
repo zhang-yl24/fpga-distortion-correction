@@ -1,0 +1,2574 @@
+{
+  "Schema": "board1080-pin-contract-v1",
+  "DeclarationAndSourceBuildMappingPassed": true,
+  "TopPortCount": 142,
+  "ExplicitPackagePins": 142,
+  "AutoAssignedPCFPins": 0,
+  "RoutedPortCount": 134,
+  "OptimizedRGB565Inputs": [
+    "b_in[0]",
+    "b_in[1]",
+    "b_in[2]",
+    "g_in[0]",
+    "g_in[1]",
+    "r_in[0]",
+    "r_in[1]",
+    "r_in[2]"
+  ],
+  "Directions": {
+    "INPUT": 32,
+    "OUTPUT": 69,
+    "INOUT": 41
+  },
+  "Banks": {
+    "BANKL3": {
+      "DeclaredPorts": 10,
+      "RoutedPorts": 10,
+      "DeclaredVCCIO": "3.3",
+      "Standards": {
+        "LVCMOS33": 10
+      }
+    },
+    "BANKL4": {
+      "DeclaredPorts": 31,
+      "RoutedPorts": 23,
+      "DeclaredVCCIO": "3.3",
+      "Standards": {
+        "LVCMOS33": 31
+      }
+    },
+    "BANKL5": {
+      "DeclaredPorts": 28,
+      "RoutedPorts": 28,
+      "DeclaredVCCIO": "3.3",
+      "Standards": {
+        "LVCMOS33": 28
+      }
+    },
+    "BANKR4": {
+      "DeclaredPorts": 44,
+      "RoutedPorts": 44,
+      "DeclaredVCCIO": "1.5",
+      "Standards": {
+        "HSTL15_I": 36,
+        "HSTL15D_I": 8
+      }
+    },
+    "BANKR5": {
+      "DeclaredPorts": 29,
+      "RoutedPorts": 29,
+      "DeclaredVCCIO": "1.5",
+      "Standards": {
+        "HSTL15D_I": 4,
+        "HSTL15_I": 25
+      }
+    }
+  },
+  "DifferentialPairs": [
+    {
+      "PositivePort": "clk_p",
+      "NegativePort": "clk_n",
+      "PositivePad": "N3",
+      "NegativePad": "N2",
+      "Bank": "BANKR5"
+    },
+    {
+      "PositivePort": "mem_ck",
+      "NegativePort": "mem_ck_n",
+      "PositivePad": "U6",
+      "NegativePad": "U5",
+      "Bank": "BANKR5"
+    },
+    {
+      "PositivePort": "mem_dqs[0]",
+      "NegativePort": "mem_dqs_n[0]",
+      "PositivePad": "J4",
+      "NegativePad": "H4",
+      "Bank": "BANKR4"
+    },
+    {
+      "PositivePort": "mem_dqs[1]",
+      "NegativePort": "mem_dqs_n[1]",
+      "PositivePad": "H7",
+      "NegativePad": "G7",
+      "Bank": "BANKR4"
+    },
+    {
+      "PositivePort": "mem_dqs[2]",
+      "NegativePort": "mem_dqs_n[2]",
+      "PositivePad": "B5",
+      "NegativePad": "A5",
+      "Bank": "BANKR4"
+    },
+    {
+      "PositivePort": "mem_dqs[3]",
+      "NegativePort": "mem_dqs_n[3]",
+      "PositivePad": "C1",
+      "NegativePad": "B1",
+      "Bank": "BANKR4"
+    }
+  ],
+  "OfficialReferenceMappedPorts": 138,
+  "AdditionalLegacyLEDMapPorts": 4,
+  "DDRExactReferenceAttributePorts": 73,
+  "ReferenceElectricalAttributeDifferences": [
+    {
+      "Port": "b_in[0]",
+      "ReferencePort": "b_in[0]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_in[1]",
+      "ReferencePort": "b_in[1]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_in[2]",
+      "ReferencePort": "b_in[2]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_in[3]",
+      "ReferencePort": "b_in[3]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_in[4]",
+      "ReferencePort": "b_in[4]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_in[5]",
+      "ReferencePort": "b_in[5]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_in[6]",
+      "ReferencePort": "b_in[6]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_in[7]",
+      "ReferencePort": "b_in[7]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_out[0]",
+      "ReferencePort": "b_out[0]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_out[0]",
+      "ReferencePort": "b_out[0]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "b_out[1]",
+      "ReferencePort": "b_out[1]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_out[1]",
+      "ReferencePort": "b_out[1]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "b_out[2]",
+      "ReferencePort": "b_out[2]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_out[2]",
+      "ReferencePort": "b_out[2]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "b_out[3]",
+      "ReferencePort": "b_out[3]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_out[3]",
+      "ReferencePort": "b_out[3]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "b_out[4]",
+      "ReferencePort": "b_out[4]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_out[4]",
+      "ReferencePort": "b_out[4]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "b_out[5]",
+      "ReferencePort": "b_out[5]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_out[5]",
+      "ReferencePort": "b_out[5]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "b_out[6]",
+      "ReferencePort": "b_out[6]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_out[6]",
+      "ReferencePort": "b_out[6]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "b_out[7]",
+      "ReferencePort": "b_out[7]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "b_out[7]",
+      "ReferencePort": "b_out[7]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "clk_27m",
+      "ReferencePort": "sys_clk",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "de_in",
+      "ReferencePort": "de_in",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "de_out",
+      "ReferencePort": "de_out",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "de_out",
+      "ReferencePort": "de_out",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "g_in[0]",
+      "ReferencePort": "g_in[0]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_in[1]",
+      "ReferencePort": "g_in[1]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_in[2]",
+      "ReferencePort": "g_in[2]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_in[3]",
+      "ReferencePort": "g_in[3]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_in[4]",
+      "ReferencePort": "g_in[4]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_in[5]",
+      "ReferencePort": "g_in[5]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_in[6]",
+      "ReferencePort": "g_in[6]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_in[7]",
+      "ReferencePort": "g_in[7]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_out[0]",
+      "ReferencePort": "g_out[0]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_out[0]",
+      "ReferencePort": "g_out[0]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "g_out[1]",
+      "ReferencePort": "g_out[1]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_out[1]",
+      "ReferencePort": "g_out[1]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "g_out[2]",
+      "ReferencePort": "g_out[2]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_out[2]",
+      "ReferencePort": "g_out[2]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "g_out[3]",
+      "ReferencePort": "g_out[3]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_out[3]",
+      "ReferencePort": "g_out[3]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "g_out[4]",
+      "ReferencePort": "g_out[4]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_out[4]",
+      "ReferencePort": "g_out[4]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "g_out[5]",
+      "ReferencePort": "g_out[5]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_out[5]",
+      "ReferencePort": "g_out[5]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "g_out[6]",
+      "ReferencePort": "g_out[6]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_out[6]",
+      "ReferencePort": "g_out[6]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "g_out[7]",
+      "ReferencePort": "g_out[7]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "g_out[7]",
+      "ReferencePort": "g_out[7]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "hd_scl",
+      "ReferencePort": "hd_scl",
+      "Attribute": "DRIVE",
+      "Reference": "8",
+      "Current": "4"
+    },
+    {
+      "Port": "hd_scl",
+      "ReferencePort": "hd_scl",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "hd_sda",
+      "ReferencePort": "hd_sda",
+      "Attribute": "DRIVE",
+      "Reference": "8",
+      "Current": "4"
+    },
+    {
+      "Port": "hd_sda",
+      "ReferencePort": "hd_sda",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "hs_in",
+      "ReferencePort": "hs_in",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "hs_out",
+      "ReferencePort": "hs_out",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "hs_out",
+      "ReferencePort": "hs_out",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "led[0]",
+      "ReferencePort": "heart_beat_led",
+      "Attribute": "DRIVE",
+      "Reference": "8",
+      "Current": "4"
+    },
+    {
+      "Port": "led[0]",
+      "ReferencePort": "heart_beat_led",
+      "Attribute": "PULLUP",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "led[0]",
+      "ReferencePort": "heart_beat_led",
+      "Attribute": "SLEW",
+      "Reference": "FAST",
+      "Current": "SLOW"
+    },
+    {
+      "Port": "led[1]",
+      "ReferencePort": "ddr_init_done",
+      "Attribute": "DRIVE",
+      "Reference": "8",
+      "Current": "4"
+    },
+    {
+      "Port": "led[1]",
+      "ReferencePort": "ddr_init_done",
+      "Attribute": "PULLUP",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "led[1]",
+      "ReferencePort": "ddr_init_done",
+      "Attribute": "SLEW",
+      "Reference": "FAST",
+      "Current": "SLOW"
+    },
+    {
+      "Port": "led[2]",
+      "ReferencePort": "init_over_rx",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "led[2]",
+      "ReferencePort": "init_over_rx",
+      "Attribute": "SLEW",
+      "Reference": "FAST",
+      "Current": "SLOW"
+    },
+    {
+      "Port": "led[3]",
+      "ReferencePort": "hdmi_int_led",
+      "Attribute": "DRIVE",
+      "Reference": "8",
+      "Current": "4"
+    },
+    {
+      "Port": "led[3]",
+      "ReferencePort": "hdmi_int_led",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "pix_clk",
+      "ReferencePort": "pix_clk",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "pixclk_in",
+      "ReferencePort": "pixclk_in",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_in[0]",
+      "ReferencePort": "r_in[0]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_in[1]",
+      "ReferencePort": "r_in[1]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_in[2]",
+      "ReferencePort": "r_in[2]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_in[3]",
+      "ReferencePort": "r_in[3]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_in[4]",
+      "ReferencePort": "r_in[4]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_in[5]",
+      "ReferencePort": "r_in[5]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_in[6]",
+      "ReferencePort": "r_in[6]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_in[7]",
+      "ReferencePort": "r_in[7]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_out[0]",
+      "ReferencePort": "r_out[0]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_out[0]",
+      "ReferencePort": "r_out[0]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "r_out[1]",
+      "ReferencePort": "r_out[1]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_out[1]",
+      "ReferencePort": "r_out[1]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "r_out[2]",
+      "ReferencePort": "r_out[2]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_out[2]",
+      "ReferencePort": "r_out[2]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "r_out[3]",
+      "ReferencePort": "r_out[3]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_out[3]",
+      "ReferencePort": "r_out[3]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "r_out[4]",
+      "ReferencePort": "r_out[4]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_out[4]",
+      "ReferencePort": "r_out[4]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "r_out[5]",
+      "ReferencePort": "r_out[5]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_out[5]",
+      "ReferencePort": "r_out[5]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "r_out[6]",
+      "ReferencePort": "r_out[6]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_out[6]",
+      "ReferencePort": "r_out[6]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "r_out[7]",
+      "ReferencePort": "r_out[7]",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "r_out[7]",
+      "ReferencePort": "r_out[7]",
+      "Attribute": "SLEW",
+      "Reference": "SLOW",
+      "Current": "FAST"
+    },
+    {
+      "Port": "reset_n",
+      "ReferencePort": "rst_in",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "reset_n",
+      "ReferencePort": "rst_in",
+      "Attribute": "PULLUP",
+      "Reference": null,
+      "Current": "TRUE"
+    },
+    {
+      "Port": "rstn_out",
+      "ReferencePort": "rstn_out",
+      "Attribute": "DRIVE",
+      "Reference": "8",
+      "Current": "4"
+    },
+    {
+      "Port": "rstn_out",
+      "ReferencePort": "rstn_out",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "rstn_out",
+      "ReferencePort": "rstn_out",
+      "Attribute": "SLEW",
+      "Reference": "FAST",
+      "Current": "SLOW"
+    },
+    {
+      "Port": "vs_in",
+      "ReferencePort": "vs_in",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    },
+    {
+      "Port": "vs_out",
+      "ReferencePort": "vs_out",
+      "Attribute": "NONE",
+      "Reference": "TRUE",
+      "Current": null
+    }
+  ],
+  "ReferenceElectricalSettingsIdentical": false,
+  "DeclaredPinInventory": [
+    {
+      "Port": "b_in[0]",
+      "DIRECTION": "INPUT",
+      "LOC": "L18",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": false,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G1_07N_VAA8N"
+    },
+    {
+      "Port": "b_in[1]",
+      "DIRECTION": "INPUT",
+      "LOC": "J21",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": false,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G1_11N_GMCLK"
+    },
+    {
+      "Port": "b_in[2]",
+      "DIRECTION": "INPUT",
+      "LOC": "J18",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": false,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G1_09P_VAA10P"
+    },
+    {
+      "Port": "b_in[3]",
+      "DIRECTION": "INPUT",
+      "LOC": "H18",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G1_09N_VAA10N"
+    },
+    {
+      "Port": "b_in[4]",
+      "DIRECTION": "INPUT",
+      "LOC": "L17",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G1_07P_VAA8P"
+    },
+    {
+      "Port": "b_in[5]",
+      "DIRECTION": "INPUT",
+      "LOC": "M16",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G0_05P"
+    },
+    {
+      "Port": "b_in[6]",
+      "DIRECTION": "INPUT",
+      "LOC": "M17",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G0_05N_VREF"
+    },
+    {
+      "Port": "b_in[7]",
+      "DIRECTION": "INPUT",
+      "LOC": "M14",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G0_03P"
+    },
+    {
+      "Port": "b_out[0]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "P19",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G2_15P_CS_N"
+    },
+    {
+      "Port": "b_out[1]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "P21",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G2_13N_GSCLK"
+    },
+    {
+      "Port": "b_out[2]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "P20",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G2_13P_GSCLK"
+    },
+    {
+      "Port": "b_out[3]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "M22",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G1_11N_GMCLK"
+    },
+    {
+      "Port": "b_out[4]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "M21",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G1_11P_GMCLK"
+    },
+    {
+      "Port": "b_out[5]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "N18",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G0_05N_VREF_D8"
+    },
+    {
+      "Port": "b_out[6]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "R22",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G3_22N_D18_A2"
+    },
+    {
+      "Port": "b_out[7]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "T22",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G3_22P_D19_A3"
+    },
+    {
+      "Port": "clk_27m",
+      "DIRECTION": "INPUT",
+      "LOC": "D18",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL3",
+      "NativeFunction": "DIFFIO_L3_G1_11P_GMCLK"
+    },
+    {
+      "Port": "clk_n",
+      "DIRECTION": "INPUT",
+      "LOC": "N2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15D_I",
+      "UNUSED": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G1_11N_GMCLK"
+    },
+    {
+      "Port": "clk_p",
+      "DIRECTION": "INPUT",
+      "LOC": "N3",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15D_I",
+      "UNUSED": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G1_11P_GMCLK"
+    },
+    {
+      "Port": "de_in",
+      "DIRECTION": "INPUT",
+      "LOC": "H23",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G2_13N_GSCLK"
+    },
+    {
+      "Port": "de_out",
+      "DIRECTION": "OUTPUT",
+      "LOC": "N19",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G2_15N_D31_A15"
+    },
+    {
+      "Port": "g_in[0]",
+      "DIRECTION": "INPUT",
+      "LOC": "L14",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": false,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G0_03N"
+    },
+    {
+      "Port": "g_in[1]",
+      "DIRECTION": "INPUT",
+      "LOC": "J14",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": false,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G0_01P_VAA2P"
+    },
+    {
+      "Port": "g_in[2]",
+      "DIRECTION": "INPUT",
+      "LOC": "J15",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G0_01N_VAA2N"
+    },
+    {
+      "Port": "g_in[3]",
+      "DIRECTION": "INPUT",
+      "LOC": "J16",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G0_00N_VAA1N"
+    },
+    {
+      "Port": "g_in[4]",
+      "DIRECTION": "INPUT",
+      "LOC": "K15",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G0_00P_VAA1P"
+    },
+    {
+      "Port": "g_in[5]",
+      "DIRECTION": "INPUT",
+      "LOC": "K17",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G0_02N_DQS_VAA3N"
+    },
+    {
+      "Port": "g_in[6]",
+      "DIRECTION": "INPUT",
+      "LOC": "K16",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G0_02P_DQS_VAA3P"
+    },
+    {
+      "Port": "g_in[7]",
+      "DIRECTION": "INPUT",
+      "LOC": "L15",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G0_04N_VAA5N"
+    },
+    {
+      "Port": "g_out[0]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "T25",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G3_20N_DQS_D22_A6"
+    },
+    {
+      "Port": "g_out[1]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "P25",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G3_18N_VREF_D25_A9"
+    },
+    {
+      "Port": "g_out[2]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "R25",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G3_18P_D26_A10"
+    },
+    {
+      "Port": "g_out[3]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "P24",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G2_16N_D29_A13"
+    },
+    {
+      "Port": "g_out[4]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "P23",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G2_16P_D30_A14"
+    },
+    {
+      "Port": "g_out[5]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "N24",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G2_14N_DQS_CSO_DOUT"
+    },
+    {
+      "Port": "g_out[6]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "N23",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G2_14P_DQS_RWSEL"
+    },
+    {
+      "Port": "g_out[7]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "N22",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G2_12N_GMCLK"
+    },
+    {
+      "Port": "hd_scl",
+      "DIRECTION": "OUTPUT",
+      "LOC": "K22",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "4",
+      "SLEW": "SLOW",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G2_17P_A24"
+    },
+    {
+      "Port": "hd_sda",
+      "DIRECTION": "INOUT",
+      "LOC": "K23",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "4",
+      "SLEW": "SLOW",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G2_17N_A23"
+    },
+    {
+      "Port": "hs_in",
+      "DIRECTION": "INPUT",
+      "LOC": "J23",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G2_13P_GSCLK"
+    },
+    {
+      "Port": "hs_out",
+      "DIRECTION": "OUTPUT",
+      "LOC": "R20",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G2_17P_D28_A12"
+    },
+    {
+      "Port": "led[0]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "A20",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "4",
+      "SLEW": "SLOW",
+      "Routed": true,
+      "Bank": "BANKL3",
+      "NativeFunction": "DIFFIO_L3_G2_14N_DQS"
+    },
+    {
+      "Port": "led[1]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "C18",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "4",
+      "SLEW": "SLOW",
+      "Routed": true,
+      "Bank": "BANKL3",
+      "NativeFunction": "DIFFIO_L3_G1_11N_GMCLK"
+    },
+    {
+      "Port": "led[2]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "C19",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "4",
+      "SLEW": "SLOW",
+      "Routed": true,
+      "Bank": "BANKL3",
+      "NativeFunction": "DIFFIO_L3_G2_12N_GMCLK"
+    },
+    {
+      "Port": "led[3]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "E18",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "4",
+      "SLEW": "SLOW",
+      "Routed": true,
+      "Bank": "BANKL3",
+      "NativeFunction": "DIFFIO_L3_G1_10N_GSCLK"
+    },
+    {
+      "Port": "led[4]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "A17",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "4",
+      "SLEW": "SLOW",
+      "Routed": true,
+      "Bank": "BANKL3",
+      "NativeFunction": "DIFFIO_L3_G1_08P_DQS"
+    },
+    {
+      "Port": "led[5]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "A18",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "4",
+      "SLEW": "SLOW",
+      "Routed": true,
+      "Bank": "BANKL3",
+      "NativeFunction": "DIFFIO_L3_G1_08N_DQS"
+    },
+    {
+      "Port": "led[6]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "C17",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "4",
+      "SLEW": "SLOW",
+      "Routed": true,
+      "Bank": "BANKL3",
+      "NativeFunction": "DIFFIO_L3_G1_06P"
+    },
+    {
+      "Port": "led[7]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "B17",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "4",
+      "SLEW": "SLOW",
+      "Routed": true,
+      "Bank": "BANKL3",
+      "NativeFunction": "DIFFIO_L3_G1_06N"
+    },
+    {
+      "Port": "mem_a[0]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "J1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G1_06N"
+    },
+    {
+      "Port": "mem_a[10]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "T3",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G2_15N"
+    },
+    {
+      "Port": "mem_a[11]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "P1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G2_14N_DQS"
+    },
+    {
+      "Port": "mem_a[12]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "T4",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G2_15P"
+    },
+    {
+      "Port": "mem_a[13]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "M2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G1_10P_GSCLK"
+    },
+    {
+      "Port": "mem_a[14]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "N1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G1_08P_DQS"
+    },
+    {
+      "Port": "mem_a[1]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "L3",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G1_07P"
+    },
+    {
+      "Port": "mem_a[2]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "L2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G1_10N_GSCLK"
+    },
+    {
+      "Port": "mem_a[3]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "P3",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G2_12N_GMCLK"
+    },
+    {
+      "Port": "mem_a[4]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "T2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G2_16P"
+    },
+    {
+      "Port": "mem_a[5]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "M1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G1_08N_DQS"
+    },
+    {
+      "Port": "mem_a[6]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "U1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G2_17N"
+    },
+    {
+      "Port": "mem_a[7]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "K1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G1_06P"
+    },
+    {
+      "Port": "mem_a[8]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "U2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G2_17P"
+    },
+    {
+      "Port": "mem_a[9]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "K2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G1_07N"
+    },
+    {
+      "Port": "mem_ba[0]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "P4",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G2_13P_GSCLK"
+    },
+    {
+      "Port": "mem_ba[1]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "R2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G2_16N"
+    },
+    {
+      "Port": "mem_ba[2]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "T5",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G3_19P"
+    },
+    {
+      "Port": "mem_cas_n",
+      "DIRECTION": "OUTPUT",
+      "LOC": "T7",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G3_23N"
+    },
+    {
+      "Port": "mem_ck",
+      "DIRECTION": "OUTPUT",
+      "LOC": "U6",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15D_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G3_20P_DQS"
+    },
+    {
+      "Port": "mem_ck_n",
+      "DIRECTION": "OUTPUT",
+      "LOC": "U5",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15D_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G3_20N_DQS"
+    },
+    {
+      "Port": "mem_cke",
+      "DIRECTION": "OUTPUT",
+      "LOC": "R1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G2_14P_DQS"
+    },
+    {
+      "Port": "mem_cs_n",
+      "DIRECTION": "OUTPUT",
+      "LOC": "N4",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G2_13N_GSCLK"
+    },
+    {
+      "Port": "mem_dm[0]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "K6",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G1_09N_VAA0N"
+    },
+    {
+      "Port": "mem_dm[1]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "F7",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G0_03N"
+    },
+    {
+      "Port": "mem_dm[2]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "D5",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G2_12N_GMCLK"
+    },
+    {
+      "Port": "mem_dm[3]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "E2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G3_21N"
+    },
+    {
+      "Port": "mem_dq[0]",
+      "DIRECTION": "INOUT",
+      "LOC": "G5",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G1_11P_GMCLK"
+    },
+    {
+      "Port": "mem_dq[10]",
+      "DIRECTION": "INOUT",
+      "LOC": "H8",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G0_01P_VAA6P"
+    },
+    {
+      "Port": "mem_dq[11]",
+      "DIRECTION": "INOUT",
+      "LOC": "D6",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G0_00N_VAA4N"
+    },
+    {
+      "Port": "mem_dq[12]",
+      "DIRECTION": "INOUT",
+      "LOC": "G8",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G0_01N_VAA6N"
+    },
+    {
+      "Port": "mem_dq[13]",
+      "DIRECTION": "INOUT",
+      "LOC": "E6",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G0_00P_VAA4P"
+    },
+    {
+      "Port": "mem_dq[14]",
+      "DIRECTION": "INOUT",
+      "LOC": "H9",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G0_05P"
+    },
+    {
+      "Port": "mem_dq[15]",
+      "DIRECTION": "INOUT",
+      "LOC": "G6",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G0_04N_VAA12N"
+    },
+    {
+      "Port": "mem_dq[16]",
+      "DIRECTION": "INOUT",
+      "LOC": "C4",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G2_13N_GSCLK"
+    },
+    {
+      "Port": "mem_dq[17]",
+      "DIRECTION": "INOUT",
+      "LOC": "D4",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G2_13P_GSCLK"
+    },
+    {
+      "Port": "mem_dq[18]",
+      "DIRECTION": "INOUT",
+      "LOC": "A4",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G2_15N"
+    },
+    {
+      "Port": "mem_dq[19]",
+      "DIRECTION": "INOUT",
+      "LOC": "E3",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G2_17N"
+    },
+    {
+      "Port": "mem_dq[1]",
+      "DIRECTION": "INOUT",
+      "LOC": "J6",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G1_06P_VAA13P"
+    },
+    {
+      "Port": "mem_dq[20]",
+      "DIRECTION": "INOUT",
+      "LOC": "C3",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G2_16N"
+    },
+    {
+      "Port": "mem_dq[21]",
+      "DIRECTION": "INOUT",
+      "LOC": "F3",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G2_17P"
+    },
+    {
+      "Port": "mem_dq[22]",
+      "DIRECTION": "INOUT",
+      "LOC": "B4",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G2_15P"
+    },
+    {
+      "Port": "mem_dq[23]",
+      "DIRECTION": "INOUT",
+      "LOC": "D3",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G2_16P"
+    },
+    {
+      "Port": "mem_dq[24]",
+      "DIRECTION": "INOUT",
+      "LOC": "F2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G3_21P"
+    },
+    {
+      "Port": "mem_dq[25]",
+      "DIRECTION": "INOUT",
+      "LOC": "D1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G3_22N"
+    },
+    {
+      "Port": "mem_dq[26]",
+      "DIRECTION": "INOUT",
+      "LOC": "G1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G3_23N"
+    },
+    {
+      "Port": "mem_dq[27]",
+      "DIRECTION": "INOUT",
+      "LOC": "A2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G3_19N"
+    },
+    {
+      "Port": "mem_dq[28]",
+      "DIRECTION": "INOUT",
+      "LOC": "E1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G3_22P"
+    },
+    {
+      "Port": "mem_dq[29]",
+      "DIRECTION": "INOUT",
+      "LOC": "A3",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G3_19P"
+    },
+    {
+      "Port": "mem_dq[2]",
+      "DIRECTION": "INOUT",
+      "LOC": "F5",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G1_11N_GMCLK"
+    },
+    {
+      "Port": "mem_dq[30]",
+      "DIRECTION": "INOUT",
+      "LOC": "G2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G3_23P"
+    },
+    {
+      "Port": "mem_dq[31]",
+      "DIRECTION": "INOUT",
+      "LOC": "C2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G3_18P"
+    },
+    {
+      "Port": "mem_dq[3]",
+      "DIRECTION": "INOUT",
+      "LOC": "L8",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G1_07P_VAA14P"
+    },
+    {
+      "Port": "mem_dq[4]",
+      "DIRECTION": "INOUT",
+      "LOC": "G4",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G1_10P_GSCLK"
+    },
+    {
+      "Port": "mem_dq[5]",
+      "DIRECTION": "INOUT",
+      "LOC": "K7",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G1_09P_VAA0P"
+    },
+    {
+      "Port": "mem_dq[6]",
+      "DIRECTION": "INOUT",
+      "LOC": "F4",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G1_10N_GSCLK"
+    },
+    {
+      "Port": "mem_dq[7]",
+      "DIRECTION": "INOUT",
+      "LOC": "J5",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G1_06N_VAA13N"
+    },
+    {
+      "Port": "mem_dq[8]",
+      "DIRECTION": "INOUT",
+      "LOC": "H6",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G0_04P_VAA12P"
+    },
+    {
+      "Port": "mem_dq[9]",
+      "DIRECTION": "INOUT",
+      "LOC": "F8",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G0_03P"
+    },
+    {
+      "Port": "mem_dqs[0]",
+      "DIRECTION": "INOUT",
+      "LOC": "J4",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15D_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G1_08P_DQS_VAA15P"
+    },
+    {
+      "Port": "mem_dqs[1]",
+      "DIRECTION": "INOUT",
+      "LOC": "H7",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15D_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G0_02P_DQS_VAA11P"
+    },
+    {
+      "Port": "mem_dqs[2]",
+      "DIRECTION": "INOUT",
+      "LOC": "B5",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15D_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G2_14P_DQS"
+    },
+    {
+      "Port": "mem_dqs[3]",
+      "DIRECTION": "INOUT",
+      "LOC": "C1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15D_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G3_20P_DQS"
+    },
+    {
+      "Port": "mem_dqs_n[0]",
+      "DIRECTION": "INOUT",
+      "LOC": "H4",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15D_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G1_08N_DQS_VAA15N"
+    },
+    {
+      "Port": "mem_dqs_n[1]",
+      "DIRECTION": "INOUT",
+      "LOC": "G7",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15D_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G0_02N_DQS_VAA11N"
+    },
+    {
+      "Port": "mem_dqs_n[2]",
+      "DIRECTION": "INOUT",
+      "LOC": "A5",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15D_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G2_14N_DQS"
+    },
+    {
+      "Port": "mem_dqs_n[3]",
+      "DIRECTION": "INOUT",
+      "LOC": "B1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15D_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR4",
+      "NativeFunction": "DIFFIO_R4_G3_20N_DQS"
+    },
+    {
+      "Port": "mem_odt",
+      "DIRECTION": "OUTPUT",
+      "LOC": "H2",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G1_09P"
+    },
+    {
+      "Port": "mem_ras_n",
+      "DIRECTION": "OUTPUT",
+      "LOC": "P6",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G3_18P"
+    },
+    {
+      "Port": "mem_rst_n",
+      "DIRECTION": "OUTPUT",
+      "LOC": "H1",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G1_09N"
+    },
+    {
+      "Port": "mem_we_n",
+      "DIRECTION": "OUTPUT",
+      "LOC": "T8",
+      "VCCIO": "1.5",
+      "STANDARD": "HSTL15_I",
+      "DRIVE": "8",
+      "SLEW": "SLOW",
+      "NONE": "TRUE",
+      "Routed": true,
+      "Bank": "BANKR5",
+      "NativeFunction": "DIFFIO_R5_G3_23P"
+    },
+    {
+      "Port": "pix_clk",
+      "DIRECTION": "OUTPUT",
+      "LOC": "T24",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G3_20P_DQS"
+    },
+    {
+      "Port": "pixclk_in",
+      "DIRECTION": "INPUT",
+      "LOC": "K21",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G1_11P_GMCLK"
+    },
+    {
+      "Port": "r_in[0]",
+      "DIRECTION": "INPUT",
+      "LOC": "M15",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": false,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G0_04P_VAA5P"
+    },
+    {
+      "Port": "r_in[1]",
+      "DIRECTION": "INPUT",
+      "LOC": "H19",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": false,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G1_06N_VAA7N"
+    },
+    {
+      "Port": "r_in[2]",
+      "DIRECTION": "INPUT",
+      "LOC": "J19",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": false,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G1_06P_VAA7P"
+    },
+    {
+      "Port": "r_in[3]",
+      "DIRECTION": "INPUT",
+      "LOC": "J20",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G1_08N_DQS_VAA9N"
+    },
+    {
+      "Port": "r_in[4]",
+      "DIRECTION": "INPUT",
+      "LOC": "K20",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G1_08P_DQS_VAA9P"
+    },
+    {
+      "Port": "r_in[5]",
+      "DIRECTION": "INPUT",
+      "LOC": "G21",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G1_10N_GSCLK"
+    },
+    {
+      "Port": "r_in[6]",
+      "DIRECTION": "INPUT",
+      "LOC": "G20",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G1_10P_GSCLK"
+    },
+    {
+      "Port": "r_in[7]",
+      "DIRECTION": "INPUT",
+      "LOC": "H22",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G2_12N_GMCLK"
+    },
+    {
+      "Port": "r_out[0]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "N21",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G2_12P_GMCLK"
+    },
+    {
+      "Port": "r_out[1]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "L23",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G1_10N_GSCLK"
+    },
+    {
+      "Port": "r_out[2]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "L22",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G1_10P_GSCLK"
+    },
+    {
+      "Port": "r_out[3]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "L25",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G1_08N_DQS_D13"
+    },
+    {
+      "Port": "r_out[4]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "L24",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G1_08P_DQS_N"
+    },
+    {
+      "Port": "r_out[5]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "K26",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G1_06N_D10"
+    },
+    {
+      "Port": "r_out[6]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "K25",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G1_06P_D9"
+    },
+    {
+      "Port": "r_out[7]",
+      "DIRECTION": "OUTPUT",
+      "LOC": "P16",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G0_02N_DQS_ECCLKIN"
+    },
+    {
+      "Port": "reset_n",
+      "DIRECTION": "INPUT",
+      "LOC": "C22",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "PULLUP": "TRUE",
+      "Routed": true,
+      "Bank": "BANKL3",
+      "NativeFunction": "DIFFIO_L3_G3_18P"
+    },
+    {
+      "Port": "rstn_out",
+      "DIRECTION": "OUTPUT",
+      "LOC": "G25",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "4",
+      "SLEW": "SLOW",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G3_22P_BFOE_N"
+    },
+    {
+      "Port": "vs_in",
+      "DIRECTION": "INPUT",
+      "LOC": "H24",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "Routed": true,
+      "Bank": "BANKL4",
+      "NativeFunction": "DIFFIO_L4_G2_15N_A27"
+    },
+    {
+      "Port": "vs_out",
+      "DIRECTION": "OUTPUT",
+      "LOC": "R21",
+      "VCCIO": "3.3",
+      "STANDARD": "LVCMOS33",
+      "DRIVE": "8",
+      "SLEW": "FAST",
+      "Routed": true,
+      "Bank": "BANKL5",
+      "NativeFunction": "DIFFIO_L5_G2_17N_D27_A11"
+    }
+  ],
+  "FinalRepairedADFPinExportVerified": false,
+  "ActualBoardRevisionVerified": false,
+  "MeasuredBankVoltagesVerified": false,
+  "ExternalIOTimingAccepted": false,
+  "HardwareAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "Limitations": [
+    "PCF and routed pads are from the fresh source-build before the targeted repair; final ADF pin export is separate.",
+    "Official HDMI demo and legacy LED declarations are references, not proof of actual board revision or supply rails.",
+    "Drive/slew/pull attribute deltas are reported without approving their electrical effects.",
+    "This checks pad declarations and mapping, not HDMI AC timing, PCB skew, power integrity or hardware operation."
+  ],
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\board1080_rowpipe_top.v": "28cba7652a01f4eaef7f7edbc19ff63b12176aaa355c13e68a6d74bf2905d6da",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\board1080-cdc-reset-diagnostic.fdc": "2ff6dd8510e7b0566f550143561ac4138c19cd255944811b4561979f6e8b0f23",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\board1080-timing\\fresh-1029-b\\device_map\\board1080_top.pcf": "69752bd6dfaacd1c8f13a6bd97e5661d43c74be848fc727b6c85114f524e169c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\board1080-timing\\fresh-1029-b\\place_route\\board1080_top_prr_route_optimize.prt": "1f917eb61f0dffbc235eb932c117a4776e162ecdd0bcae35660cc64628070242",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\platform\\video_base\\HDMI_IN_DDR3_HDMI_OUT_top.fdc": "dfabea1eaeb089bb4f3d9602976a6c5d855db32eebc3c2264550380497a4b66e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\bringup-pins.json": "61d3770b56acf92b7e97fcd70b49e22cba108c3b57563406920db3a986524050",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_capture_cdc.v": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\board1080-fresh-rebuild-20261029.json": "2bb3cef83fa7e2711c31a5c1729a0d0c7cf1a121d61532df66e585c5f2d458ca",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\board1080-timing\\fresh-1029-b\\place_route\\board1080_top_pnr.adf": "0f6101036b3c3981544e032ec93c3ad2b5468c79e55fa4f8f6a8014265fb15be"
+  },
+  "AuditToolSHA256": "0c9a479bbd468d9fd743253b3f5e1cf3246f2273150076c2df3b6bc3eb7b6d72",
+  "SourceBuildReceiptBound": true,
+  "SourceADFSHA256": "0f6101036b3c3981544e032ec93c3ad2b5468c79e55fa4f8f6a8014265fb15be",
+  "SourceNativeRoutedPadSHA256": "1f917eb61f0dffbc235eb932c117a4776e162ecdd0bcae35660cc64628070242"
+}
