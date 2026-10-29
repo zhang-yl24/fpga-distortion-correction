@@ -1,0 +1,114 @@
+{
+  "Schema": "hdmi-diagnostic-simulation-v1",
+  "Kind": "i2c",
+  "Passed": true,
+  "StartedUTC": "2026-10-29T15:59:00.171382+00:00",
+  "SourceSHA256": {
+    "rtl/experimental/ms7200_1080p30_ctl.v": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+    "rtl/experimental/ms7210_checked_ctl.v": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+    "rtl/experimental/ms72xx_observed_ctl.v": "04ab6c3d0fcb3e9caa6175d35821728e94bd64aa1ce3c36d5a1f9af0384054bb",
+    "rtl/experimental/iic_dri_checked.v": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+    "tests/tb_ms72xx_observed_e2e.sv": "92d28e606bb45ee01d4ad2ec0ebc03f6aa536310a0e23a3f005a837bba108692",
+    "tools/run_hdmi_uart_sim.py": "a20cd2fe76b6ab2dbfdcb80a528d16e7381713320589672e044918ce09d7bd77",
+    "tools/hdmi_status.py": "d13fc02238e7558fd8c4b83c7bd964705a009e5079b55274d358bcaf957ce614",
+    "tools/run_ms72xx_checked_sim.py": "8c0d953d2d4204f334dd290157e4f541e202f3f01c249fa5c9dd89dbec1f36d7",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "Commands": [
+    {
+      "Stage": "compile",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7200_1080p30_ctl.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7210_checked_ctl.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms72xx_observed_ctl.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\iic_dri_checked.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_ms72xx_observed_e2e.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_ms72xx_observed_e2e",
+        "-s",
+        "hdmi_diag_tb"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "hdmi_diag_tb",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "Limits": "Actual UART or I2C wire RTL with synthetic device/monitor inputs. No PHY lock, real HDMI input, board output or optical acceptance.",
+  "WireTraceAudit": {
+    "OrderedTraceVerified": true,
+    "Transactions": 2117,
+    "ScenarioCounts": [
+      372,
+      1,
+      317,
+      318,
+      368,
+      369,
+      372
+    ],
+    "TraceSHA256": "34853fe8083828ae24335f6a184ceff749b25c4f493ec32c9419d8d1263a64b6",
+    "StickyObservationConfigCycles": 40
+  },
+  "Summary": {
+    "Passed": true,
+    "Scenarios": 7,
+    "ActualRXControllerExecuted": true,
+    "ActualTXControllerExecuted": true,
+    "TransactionDriverStub": false,
+    "WireLevelI2CExecuted": true,
+    "EarlyRXFailure": true,
+    "LastRXSettingFailure": true,
+    "FirstTXFailureAfterRXDone": true,
+    "LastTXWriteFailure": true,
+    "PostCompletionFailure": true,
+    "CommonResetRecovery": true,
+    "FailureSameCycleGating": true,
+    "NoAutoRetry": true,
+    "BackgroundRXPollResumed": true,
+    "TelemetryComparedToWire": true,
+    "SuccessfulTelemetryUpdates": 2112,
+    "NACKTelemetrySuppressed": 5,
+    "HardwareAccessed": false
+  },
+  "SourceDrift": [],
+  "EndedUTC": "2026-10-29T16:01:29.983228+00:00",
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "1fadf41f1a35e2d261d31f7e5528092a46e795cf574ba14ce6518f303c35b3eb",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "a0b6bbaad33654d39bf1fb6b5d6a6d352287a34280c4a2ab36c6c9156115cc99",
+    "rx_expected.hex": "165ae7e5dc06394898a4367bf5877cdfdeaabfa057bcfe6cc5d45eefa78573bb",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "b3b5cc4339fc7d0d5e12c29ea2623bf8ecd0d6742e3faf6a6a056ed49e6c725a",
+    "simulation.log": "b8308287247c51e0ba3e7b2a876a1bcb7bbe5421a5002cc4db9ecd6249e8ce95",
+    "summary.json": "fe5a4703d41e61422613c197b17525cf648a6bb186c19553bc2ccc02a17648fd",
+    "telemetry-transactions.csv": "258bb1e6840269239ad304e83d6f5ca0612a4f160600cce96605cda8e39c04b1",
+    "tx_expected.hex": "af25e8cc0f6dbab931d96b56d1716033757bd7ff80dd5a769803fc5c30f418c2",
+    "webtalk.log": "b6ca11ed5b954552d08663023e4cf4216bc4f8bd801eeaabae4d30a5b7cebabf",
+    "webtalk_31856.backup.log": "8b19e88cf9d537b7e6da73ad5f84c4888505b30dcd9d683311d5a0c60b264b8e",
+    "wire-transactions.csv": "34853fe8083828ae24335f6a184ceff749b25c4f493ec32c9419d8d1263a64b6",
+    "xelab.log": "16b4a89cb171a5db3ebcb14c084bd5fb7a06cb01662781909cf2561288c0c768",
+    "xvlog.log": "54c6eef7cceaee4ea882c96e760f46d107def79c5707c02837c32ae79f6f739b"
+  }
+}

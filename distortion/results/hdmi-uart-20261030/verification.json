@@ -1,0 +1,23 @@
+{
+  "UTC": "2026-10-29T16:56:36.035748+00:00",
+  "CPUCommand": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "distortion/tests/test_hdmi_status.py",
+    "distortion/tests/test_hdmi_uart_native_audit.py"
+  ],
+  "CPUReturnCode": 1,
+  "BaselineCommand": [
+    ".venv/Scripts/python.exe",
+    "handoff/audit-baselines.py"
+  ],
+  "BaselineReturnCode": 0,
+  "LogSHA256": {
+    "cpu-tests.log": "43d9175bdf1e38fd85626414787b9ed317c6d278ec9e0b165bcad1b01f50e530",
+    "baseline-audit.log": "cd9ea1296e80db8f9b1e4cb884d52384bb0a50c901a2c87731f21a82beab2203"
+  }
+}

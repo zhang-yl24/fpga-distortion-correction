@@ -1,0 +1,612 @@
+{
+  "Schema": "hdmi-diagnostic-native-audit-v1",
+  "Target": "hdmi_uart_delayed_diag",
+  "BuildCompleted": true,
+  "NativeTimingPassed": true,
+  "AllTenTimingTypesChecked": true,
+  "TimingSummaries": [
+    {
+      "Type": "Setup",
+      "Corner": "Slow",
+      "Rows": [
+        {
+          "Clocks": [
+            "board27",
+            "board27"
+          ],
+          "WorstSlackNS": 31.633,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1199
+        },
+        {
+          "Clocks": [
+            "cfg_clk",
+            "board27"
+          ],
+          "WorstSlackNS": 1.365,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 79
+        },
+        {
+          "Clocks": [
+            "pixel_clk",
+            "pixel_clk"
+          ],
+          "WorstSlackNS": 10.69,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 122
+        },
+        {
+          "Clocks": [
+            "cfg_clk",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 95.193,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1446
+        },
+        {
+          "Clocks": [
+            "board27",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 1.226,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1
+        }
+      ],
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 1.226
+    },
+    {
+      "Type": "Hold",
+      "Corner": "Slow",
+      "Rows": [
+        {
+          "Clocks": [
+            "board27",
+            "board27"
+          ],
+          "WorstSlackNS": 0.243,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1199
+        },
+        {
+          "Clocks": [
+            "cfg_clk",
+            "board27"
+          ],
+          "WorstSlackNS": 0.426,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 79
+        },
+        {
+          "Clocks": [
+            "pixel_clk",
+            "pixel_clk"
+          ],
+          "WorstSlackNS": 0.27,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 122
+        },
+        {
+          "Clocks": [
+            "cfg_clk",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 0.159,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1446
+        },
+        {
+          "Clocks": [
+            "board27",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 0.724,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1
+        }
+      ],
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 0.159
+    },
+    {
+      "Type": "Recovery",
+      "Corner": "Slow",
+      "Rows": [
+        {
+          "Clocks": [
+            "board27",
+            "board27"
+          ],
+          "WorstSlackNS": 34.496,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 191
+        },
+        {
+          "Clocks": [
+            "board27",
+            "pixel_clk"
+          ],
+          "WorstSlackNS": 0.685,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1
+        },
+        {
+          "Clocks": [
+            "board27",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 1.124,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 101
+        },
+        {
+          "Clocks": [
+            "cfg_clk",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 97.129,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 102
+        }
+      ],
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 0.685
+    },
+    {
+      "Type": "Removal",
+      "Corner": "Slow",
+      "Rows": [
+        {
+          "Clocks": [
+            "board27",
+            "board27"
+          ],
+          "WorstSlackNS": 0.708,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 191
+        },
+        {
+          "Clocks": [
+            "board27",
+            "pixel_clk"
+          ],
+          "WorstSlackNS": 0.356,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1
+        },
+        {
+          "Clocks": [
+            "board27",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 0.293,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 101
+        },
+        {
+          "Clocks": [
+            "cfg_clk",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 0.225,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 102
+        }
+      ],
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 0.225
+    },
+    {
+      "Type": "Minimum Pulse Width",
+      "Corner": "Slow",
+      "Rows": [
+        {
+          "Clocks": [
+            "board27"
+          ],
+          "WorstSlackNS": 18.318,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 233
+        },
+        {
+          "Clocks": [
+            "pixel_clk"
+          ],
+          "WorstSlackNS": 6.534,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 19
+        },
+        {
+          "Clocks": [
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 49.038,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 288
+        }
+      ],
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 6.534
+    },
+    {
+      "Type": "Setup",
+      "Corner": "Fast",
+      "Rows": [
+        {
+          "Clocks": [
+            "board27",
+            "board27"
+          ],
+          "WorstSlackNS": 33.874,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1199
+        },
+        {
+          "Clocks": [
+            "cfg_clk",
+            "board27"
+          ],
+          "WorstSlackNS": 2.102,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 79
+        },
+        {
+          "Clocks": [
+            "pixel_clk",
+            "pixel_clk"
+          ],
+          "WorstSlackNS": 11.787,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 122
+        },
+        {
+          "Clocks": [
+            "cfg_clk",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 97.08,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1446
+        },
+        {
+          "Clocks": [
+            "board27",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 2.094,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1
+        }
+      ],
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 2.094
+    },
+    {
+      "Type": "Hold",
+      "Corner": "Fast",
+      "Rows": [
+        {
+          "Clocks": [
+            "board27",
+            "board27"
+          ],
+          "WorstSlackNS": 0.16,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1199
+        },
+        {
+          "Clocks": [
+            "cfg_clk",
+            "board27"
+          ],
+          "WorstSlackNS": 0.308,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 79
+        },
+        {
+          "Clocks": [
+            "pixel_clk",
+            "pixel_clk"
+          ],
+          "WorstSlackNS": 0.185,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 122
+        },
+        {
+          "Clocks": [
+            "cfg_clk",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 0.109,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1446
+        },
+        {
+          "Clocks": [
+            "board27",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 0.34,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1
+        }
+      ],
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 0.109
+    },
+    {
+      "Type": "Recovery",
+      "Corner": "Fast",
+      "Rows": [
+        {
+          "Clocks": [
+            "board27",
+            "board27"
+          ],
+          "WorstSlackNS": 35.484,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 191
+        },
+        {
+          "Clocks": [
+            "board27",
+            "pixel_clk"
+          ],
+          "WorstSlackNS": 1.873,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1
+        },
+        {
+          "Clocks": [
+            "board27",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 2.163,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 101
+        },
+        {
+          "Clocks": [
+            "cfg_clk",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 98.258,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 102
+        }
+      ],
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 1.873
+    },
+    {
+      "Type": "Removal",
+      "Corner": "Fast",
+      "Rows": [
+        {
+          "Clocks": [
+            "board27",
+            "board27"
+          ],
+          "WorstSlackNS": 0.496,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 191
+        },
+        {
+          "Clocks": [
+            "board27",
+            "pixel_clk"
+          ],
+          "WorstSlackNS": 0.135,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 1
+        },
+        {
+          "Clocks": [
+            "board27",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 0.109,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 101
+        },
+        {
+          "Clocks": [
+            "cfg_clk",
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 0.15,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 102
+        }
+      ],
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 0.109
+    },
+    {
+      "Type": "Minimum Pulse Width",
+      "Corner": "Fast",
+      "Rows": [
+        {
+          "Clocks": [
+            "board27"
+          ],
+          "WorstSlackNS": 18.318,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 233
+        },
+        {
+          "Clocks": [
+            "pixel_clk"
+          ],
+          "WorstSlackNS": 6.534,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 19
+        },
+        {
+          "Clocks": [
+            "cfg_clk"
+          ],
+          "WorstSlackNS": 49.428,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 288
+        }
+      ],
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 6.534
+    }
+  ],
+  "PinMapPassed": true,
+  "ActualPinCount": 42,
+  "ActualDirections": {
+    "led[6]": "output",
+    "led[4]": "output",
+    "clk_27m": "input",
+    "reset_n": "input",
+    "uart_txd": "output",
+    "led[7]": "output",
+    "led[5]": "output",
+    "led[3]": "output",
+    "led[1]": "output",
+    "led[2]": "output",
+    "led[0]": "output",
+    "hd_scl": "inout",
+    "rstn_out": "output",
+    "hd_sda": "inout",
+    "r_out[6]": "output",
+    "r_out[4]": "output",
+    "r_out[2]": "output",
+    "b_out[4]": "output",
+    "r_out[0]": "output",
+    "b_out[2]": "output",
+    "g_out[6]": "output",
+    "b_out[0]": "output",
+    "g_out[4]": "output",
+    "hs_out": "output",
+    "g_out[2]": "output",
+    "pix_clk": "output",
+    "b_out[7]": "output",
+    "r_out[7]": "output",
+    "b_out[5]": "output",
+    "r_out[5]": "output",
+    "r_out[3]": "output",
+    "r_out[1]": "output",
+    "b_out[3]": "output",
+    "g_out[7]": "output",
+    "b_out[1]": "output",
+    "g_out[5]": "output",
+    "de_out": "output",
+    "g_out[3]": "output",
+    "vs_out": "output",
+    "g_out[1]": "output",
+    "g_out[0]": "output",
+    "b_out[6]": "output"
+  },
+  "ExpectedDirections": {
+    "b_out[0]": "output",
+    "b_out[1]": "output",
+    "b_out[2]": "output",
+    "b_out[3]": "output",
+    "b_out[4]": "output",
+    "b_out[5]": "output",
+    "b_out[6]": "output",
+    "b_out[7]": "output",
+    "clk_27m": "input",
+    "de_out": "output",
+    "g_out[0]": "output",
+    "g_out[1]": "output",
+    "g_out[2]": "output",
+    "g_out[3]": "output",
+    "g_out[4]": "output",
+    "g_out[5]": "output",
+    "g_out[6]": "output",
+    "g_out[7]": "output",
+    "hd_scl": "inout",
+    "hd_sda": "inout",
+    "hs_out": "output",
+    "led[0]": "output",
+    "led[1]": "output",
+    "led[2]": "output",
+    "led[3]": "output",
+    "led[4]": "output",
+    "led[5]": "output",
+    "led[6]": "output",
+    "led[7]": "output",
+    "pix_clk": "output",
+    "r_out[0]": "output",
+    "r_out[1]": "output",
+    "r_out[2]": "output",
+    "r_out[3]": "output",
+    "r_out[4]": "output",
+    "r_out[5]": "output",
+    "r_out[6]": "output",
+    "r_out[7]": "output",
+    "reset_n": "input",
+    "rstn_out": "output",
+    "vs_out": "output",
+    "uart_txd": "output"
+  },
+  "AllPinDirectionsChecked": true,
+  "SourceDrift": [],
+  "AuditPassed": true,
+  "BuildPlan": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\delayed-pds-1030-a\\build-plan.json",
+  "InputsSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\delayed-pds-1030-a\\build-plan.json": "471699ba622f2afecfdd55a650de22b420b7a62b16cb268fdf0f193200aba361",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\delayed-pds-1030-a\\execution.json": "aa2381df05f48201e32119ac96ee999c4157ab2c175c25617ee53d0c56a19e09",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\delayed-pds-1030-a\\report_timing\\hdmi_uart_delayed_diag.rtr": "b2ff7a785ae1729dab18d8f3e5da79c5ca582e7ac94f3b783cf997a5b76d7d83",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\delayed-pds-1030-a\\place_route\\hdmi_uart_delayed_diag_prr_route_optimize.prt": "23c38efda6e0671bf5cbe7c4387345976b059efc6753fa7ed70fedb87d14ea56",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\delayed-pds-1030-a\\hdmi_uart_control_diag.fdc": "8e0a65bbaffc261b7931631fb11096ee6bb459f3d04f078924c4bb3da9371018",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\delayed-pds-1030-a\\build.tcl": "fb5b1ac86ec6c2afc336391d736ec7a29c9bf4aab6362f836613666f1f172e4d",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\delayed-pds-1030-a\\place_route\\hdmi_uart_delayed_diag_pnr.adf": "cad7f4cc5be50765f6eb6a14bc444938999d051aac631be6fc6d3ab50ec3e2fb",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\delayed-pds-1030-a\\report_timing\\hdmi_uart_delayed_diag_rtp.adf": "d28beff0acd047e3bd75980830c0da8d39eee6f08dea5052245b25d329a451e1",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\delayed-pds-1030-a\\native-stdout.log": "cc78a2534cff84d1be8cb00b47026884306007b4ee9bebf4f25b42e6a86c72f2",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\delayed-pds-1030-a\\native-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "HardwareAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "Limits": "Native reported timing and routed pins only. External I/O AC, physical CDC protocol, analog rise time and real video remain separate."
+}

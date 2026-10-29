@@ -20,6 +20,8 @@ jobs:
         run: python -m pip install -r requirements-team.txt
       - name: Audit shipped baselines and IP dependency closure
         run: python handoff/audit-baselines.py
+      - name: Check HDMI UART decoder, receive-only lifecycle and native report audit
+        run: python -m pytest -q -p no:cacheprovider distortion/tests/test_hdmi_status.py distortion/tests/test_hdmi_uart_native_audit.py
       - name: Verify initial handoff snapshot
         if: github.ref == 'refs/tags/handoff-20261010'
         run: python handoff/verify-files.py
