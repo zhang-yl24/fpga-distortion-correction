@@ -1,5 +1,13 @@
 # 当前交接点
 
+## HDMI 选模问题已修正为隔离候选，控制器仿真通过
+
+2026-10-29：引脚核查发现当前参考 MS7200 EDID 首选 4K30，而 rowpipe 链只接受 1080p30。新增 EDID-only 控制器和独立 109 项源码清单，只替换一个控制器；现有已修复 ADF/位流未改，新源码必须取得自己的构建和时序证据。
+
+新控制器实际 Vivado 编译、展开、仿真通过：10 MHz 配置时钟、两次复位、634 项有序事务、每次 264 次 EDID 写入，全部字节正确。初次模型过早采样失败已保留；加强日志顺序与就绪响应校验后再次 native 运行通过。相关 CPU 回归 114 项通过。新 PDS 配方已准备，115 项输入和 109 项编译副本哈希核实；本轮尚未执行该候选的综合/PNR/STA，未生成或下载新位流。
+
+142 个引脚显式映射、73 个 DDR/差分参考时钟属性与官方例程一致；source-build 原生占用 134 个，8 个未占用为 RGB565 丢弃低位。最终修复库重新导出、实际供电/板修订确认、HDMI 外部 AC 参数及物理 IIC ACK/模式读回仍未验收。主链仍为 HDMI1080p30，不是 OV5640 直入。详见 `handoff/BOARD1080_HDMI30_EDID_20261029.md`、`BOARD1080_IO_TIMING_EVIDENCE_20261029.md` 和 `distortion/results/board1080-hdmi30-candidate-20261029.json`。下一步运行新 profile 构建并重审 DDR 修复适用性，同时修 IIC 失败判定。
+
 ## 新源码到修复、时序审计和位流已贯通
 
 2026-10-29：在改名后的 FPGAchina 工作区，fresh源码重建的独立副本已完成精确修复和新进程STA。修复前ADF为 `0f6101036b3c3981544e032ec93c3ad2b5468c79e55fa4f8f6a8014265fb15be`，最终ADF为 `b7ee4ac251b5d97c6887ef1fd7aeacf22d8a6ce93be821ca4255823f03c74f5c`，保存在 `distortion/build/ddr-timing-repair/fresh-repaired-1029-a/input.adf`。原始库和全部绑定输入无漂移，保存副本与STA前后快照相同。结果见 `distortion/results/board1080-fresh-repair-20261029.json` 和 `board1080-fresh-ddr-final-20261029.json`。
