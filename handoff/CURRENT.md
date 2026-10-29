@@ -1,5 +1,23 @@
 # 当前交接点
 
+## 本机 UART 已连通；DVP 入口独立仿真通过，下一轮聚焦 HDMI 分工
+
+2026-10-29：只读 JTAG 识别 PG2L100H / `0x00602899`（DONE=0）；用户新接 UART Type-C 数据线后识别 COM7（Silicon Labs CP210x，10C4:EA60），921600 baud 接收 2 秒成功打开并关闭，收 0 字节、发 0 字节。没有下载或访问传感器寄存器；串口连接不等于 FPGA 已出图。
+
+新增独立 `dvp_rgb565_capture_cdc.v`，把 8bit DVP 双字节像素与行有效分开处理，提供原采集链的 grant/FIFO/done 接口。最终 `native-1029-b` 原生编译/展开/仿真均 0，16 场景通过；128 像素、8 个 FIFO 字逐项匹配，独立 zlib CRC `8fc57a41`，源码无漂移。未接入 DDR/矫正整链或进行 PDS/上板，不宣称相机帧率。回执 `distortion/results/dvp-capture-cdc-20261029.json`；消费端先排空再确认 done、帧边界消隐及外部 CDC 限制见 `handoff/DVP_CAPTURE_CDC_20261029.md`。
+
+用户确认下一轮本方负责 PR #10 的 HDMI EDID/checked I²C/双向 SCL/异常检测，对方负责 compact-cache 最终 STA、hold 和矫正主链；共享 DDR/复位例外不并行修改。已通过 GitHub API 核实 PR #10 已合并，其分支提交为 `ea7231e`，不能整个当作仅 HDMI 补丁再合一次。下一轮顺序及最小交付范围见 `handoff/HDMI_IO_NEXT_ROUND_20261029.md`。当前 DVP 候选独立保存，HDMI 实际模式/锁定/图像仍未测。
+
+## Checked HDMI 新位流已生成
+
+2026-10-29：从上一轮已修复并审计的最终 ADF `857bf183e52cbd96fb9f378f5087f4c55aba66b22f8488822b7e2dc92450c142`，在 `distortion/build/board1080-timing/checked-bit-1029-a` 完成本候选自己的新时序、运行时生成前审计和位流导出。实际阶段严格为 Report Timing → 审计通过 → Generate Bitstream，原生退出 0；601 项输入无漂移，原始 ADF 与导出副本一致。本轮没有重新综合/PNR，源码完整构建依据仍为上一轮 checked 原始库。
+
+新位流路径 `distortion/build/board1080-timing/checked-bit-1029-a/generate_bitstream/board1080_top.sbit`，3,791,112 字节，SHA256 `b4edadba44368d5de1c5b3237d2cc3dccd7c951918cefb0c40af2ac63f86cb33`。实际文件头为 board1080_top / Logos2-PG2L100H--6-FBG676 / 2023.2-SP3 build154097。新报告 124 行时序及 14 行 HDMI 配置检查与原最终报告一致，双角十类无失败，setup/hold 数据例外为零；55/110 外部 IO 延迟缺口原样保留。
+
+新增独立准备器及 21 项 CPU 测试，相关新旧位流/时序审计回归最终 82 通过、1 项历史本地产物可选重放跳过。旧审计 set 遍历造成的 28 条复位清单跨进程顺序差异已在新入口精确规范化，重复身份和字段变化仍拒绝，旧 helper 和冻结证据未改。独立生成后复核通过，完整回执 `distortion/results/board1080-checked-bitstream-20261029.json`；说明见 `handoff/BOARD1080_CHECKED_BITSTREAM_20261029.md`。
+
+这是 HDMI1080p30 离线候选；未下载、烧写 Flash 或访问开发板。下一步核对 HDMI 输入/显示及板上电平/上拉条件、只读识别下载链，再开展 DDR 训练、真实图像和稳定性验收。外部 IO/CDC/复位模拟安全性仍未通过，HardwareReleaseAllowed 保持 false。
+
 ## Checked HDMI 完整构建与本候选 DDR 修复
 
 2026-10-29：在上一轮 checked I2C/控制器/顶层基础上，新增独立双向 SCL FDC 和严格来源清单，实际完成 PDS 编译、综合、器件映射、布局布线、route_optimize 和最终 STA。109 项源码、123 项输入无漂移；最终原始 ADF 为 `c411d60712ba01ea9356553a69516d316aa68dc8fa67505f7b962d610dec4029`。这是 checked 版本自己的完整构建，不沿用旧 EDID-only 或旧位流结论。原报告 fast hold 2 项失败，slow/fast recovery 245/228 项失败，原件完整保留。
