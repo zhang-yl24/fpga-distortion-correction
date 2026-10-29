@@ -14,6 +14,7 @@ import re
 import time
 
 import run_hdmi1080_continuous_sim as fixtures
+from simulation_tools import prepare_compile_sources, resolve_vivado_bin, verify_compile_sources
 
 ROOT = fixtures.ROOT
 BASE = ROOT / "build/offline-20261024/board1080-integration-20261027-a"
@@ -27,7 +28,7 @@ COMPILE = tuple("tests/tb_board1080_system.sv" if name == "tests/tb_hdmi1080_con
     "rtl/experimental/hdmi1080_video_system.v",
 )
 HEADERS = fixtures.previous.base.HEADERS
-HELPERS = (*fixtures.HELPERS, "tools/run_board1080_system_sim.py")
+HELPERS = (*fixtures.HELPERS, "tools/run_board1080_system_sim.py", "tools/simulation_tools.py")
 
 
 def sha(path):
@@ -99,6 +100,23 @@ def run(args):
         for name, expected in small.get("ResultFiles", {}).items():
             if sha(small_path.parent/name) != expected:
                 raise ValueError("small system result file changed")
+        relocated = small.get("RelocatedSources")
+        if not isinstance(relocated, dict):
+            raise ValueError("small system compiled-source bindings are absent")
+        verify_compile_sources(ROOT, COMPILE, HEADERS, small_path.parent, relocated)
+        for name, item in relocated.items():
+            path = Path(item["CompiledPath"]).resolve()
+            if (name not in COMPILE or not path.is_relative_to(small_path.parent/"relocated-sources")
+                    or item["OriginalSHA256"] != sources[name]
+                    or small.get("CompiledSourceSHA256After", {}).get(name) != item["CompiledSHA256"]
+                    or sha(path) != item["CompiledSHA256"]):
+                raise ValueError("small system relocated compilation source changed")
+            for header in item["IncludePathReplacements"]:
+                path = Path(header["CompiledHeaderPath"]).resolve()
+                if (not path.is_relative_to(small_path.parent/"relocated-headers")
+                        or header["HeaderSHA256"] != sources[header["Header"]]
+                        or sha(path) != header["HeaderSHA256"]):
+                    raise ValueError("small system relocated compilation header changed")
     if args.mode == "small":
         ht, vt, x0, y0, hs, vs, cycles = 80, 40, 10, 3, 4, 1, 5000000
     else:
@@ -135,9 +153,10 @@ def run(args):
             with (work/name).open("xb") as stream:
                 stream.write(data)
         report["FixtureSHA256"] = {name: sha(work/name) for name in copied}
-        bin_dir = Path("E:/Vivado/Vivado/2017.4/bin")
+        bin_dir = resolve_vivado_bin(ROOT.parent)
+        compiled, report["RelocatedSources"] = prepare_compile_sources(ROOT, COMPILE, HEADERS, work)
         for executable, argv, stage in (
-                ("xvlog.bat", ["--sv", *[str(ROOT/name) for name in COMPILE]], "compile"),
+                ("xvlog.bat", ["--sv", *map(str, compiled)], "compile"),
                 ("xelab.bat", [TOP, "-s", SNAPSHOT], "elaborate"),
                 ("xsim.bat", [SNAPSHOT, "-runall", "-log", "simulation.log"], "simulate")):
             command = {"Stage": stage, "NativeArgv": [str(bin_dir/executable), *argv], "ReturnCode": None}
@@ -212,6 +231,18 @@ def run(args):
     except (Exception, KeyboardInterrupt) as error:
         report["Error"] = type(error).__name__+": "+str(error)
     finally:
+        relocated = report.get("RelocatedSources", {})
+        report["CompiledSourceSHA256After"] = {name: sha(item["CompiledPath"])
+            if Path(item["CompiledPath"]).is_file() else None for name, item in relocated.items()}
+        if any(report["CompiledSourceSHA256After"][name] != item["CompiledSHA256"]
+               for name, item in relocated.items()):
+            report.update(Passed=False, FunctionalPassed=False, CompiledSourceDrift=True)
+        staged_headers = {header["CompiledHeaderPath"]: header["HeaderSHA256"]
+            for item in relocated.values() for header in item["IncludePathReplacements"]}
+        report["CompiledHeaderSHA256After"] = {path: sha(path) if Path(path).is_file() else None
+            for path in staged_headers}
+        if report["CompiledHeaderSHA256After"] != staged_headers:
+            report.update(Passed=False, FunctionalPassed=False, CompiledHeaderDrift=True)
         report["SourceSHA256After"] = {name: sha(ROOT/name) for name in sources}
         report["InputSHA256After"] = {name: sha(name) for name in inputs}
         report["FixtureSHA256After"] = {name: sha(work/name) if (work/name).is_file() else None for name in copied}

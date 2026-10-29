@@ -1,0 +1,229 @@
+{
+  "Schema": "board1080-offline-bitstream-generation-v1",
+  "RecordedUTC": "2026-10-29T04:54:34.022281+00:00",
+  "ArtifactGenerated": true,
+  "DevelopmentArtifactOnly": true,
+  "HardwareAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "PhysicalTimingReady": false,
+  "ExternalIOAccepted": false,
+  "SourceToPNRFreshBuildExecuted": false,
+  "SourceToPNRReconstructionAccepted": false,
+  "ActualExecutedHeavyStages": [
+    "Report Timing",
+    "Generate Bitstream"
+  ],
+  "FlowContext": "Original 109-file source context and PNR actions declared; PDS skipped predecessor calculations because explicit final ADF was supplied.",
+  "PreBitNativeTimingAuditExecuted": true,
+  "PreBitNativeTimingAuditBeforeGeneration": true,
+  "NativeTimingAndExactExceptionAuditPassed": true,
+  "SourceADFUnchanged": true,
+  "CopiedADFUnchanged": true,
+  "FinalRoutedADFSHA256": "309238d4ad6ee94c64182f41b30dbbdec0a28ae25d0dd7f6f03a98ad96342dce",
+  "Bitstream": {
+    "Path": "distortion/build/board1080-timing/bit-1029-a/generate_bitstream/board1080_top.sbit",
+    "Bytes": 3791112,
+    "SHA256": "9f6bbe5fc02e7b66da1be6d449d6e68fef40f6f227068196f50a6a3a37a7967a"
+  },
+  "ActualGenerationCommand": "gen_bit_stream -force_to_run -input_db_file P:/distortion/build/board1080-timing/bit-1029-a/audited-final.adf -scbv {High Voltage} -unused_io_status UNUSED",
+  "PDSVersion": "2023.2-SP3 build 154097",
+  "Execution": {
+    "StartedUTC": "2026-10-29T04:47:12.130966+00:00",
+    "EndedUTC": "2026-10-29T04:51:43.257115+00:00",
+    "ReturnCode": 0,
+    "TimedOut": false,
+    "ElapsedSeconds": 271.126,
+    "InputDrift": []
+  },
+  "LogSequence": {
+    "Process \"Report Timing\" started.": 9504,
+    "PRE_BIT_NATIVE_AUDIT_PASS 309238d4ad6ee94c64182f41b30dbbdec0a28ae25d0dd7f6f03a98ad96342dce": 26367,
+    "Process \"Generate Bitstream\" started.": 26630,
+    "OFFLINE_AUDITED_BITSTREAM_COMPLETE": 28139
+  },
+  "GeneralTimingRunnerSnapshotFlagNotApplicable": {
+    "RecordedFlag": false,
+    "Reason": "The general runner looks for place_route/board1080_top_pnr.adf and pre-sta-final.adf. This export uses explicit audited-final.adf; its exact pre/post binding is verified by InputDrift and the original source hash."
+  },
+  "UnchangedInputCount": 118,
+  "Artifacts": [
+    {
+      "Path": "distortion/build/board1080-timing/bit-1029-a/plan.json",
+      "Bytes": 81831,
+      "SHA256": "fffaa73c265577373a5b14a1344487aa8f019990f32759df41af66963186dccc"
+    },
+    {
+      "Path": "distortion/build/board1080-timing/bit-1029-a/execution.json",
+      "Bytes": 50988,
+      "SHA256": "3e8a814e60d90c560fea52e1244b29c27e8af3c38f761ec464adb45ff4eba338"
+    },
+    {
+      "Path": "distortion/build/board1080-timing/bit-1029-a/timing.tcl",
+      "Bytes": 4775,
+      "SHA256": "82b12ae89bf680925385ed4c9d1a3350659e92948ff86fada590f94c8547efa2"
+    },
+    {
+      "Path": "distortion/build/board1080-timing/bit-1029-a/pre-bit-audit.py",
+      "Bytes": 769,
+      "SHA256": "f57ca8ab718f19fdc27c786a453b836e8113c7a901c6f763863b6406632cae37"
+    },
+    {
+      "Path": "distortion/build/board1080-timing/bit-1029-a/pre-bit-audit.json",
+      "Bytes": 6718,
+      "SHA256": "0f2c40b039d243adc4129b92e7e578228afe11039bfa2488283a1ac932be553f"
+    },
+    {
+      "Path": "distortion/build/board1080-timing/bit-1029-a/build-stdout.log",
+      "Bytes": 28577,
+      "SHA256": "133b8d06ada7f6a02c61d68000390e63aca26b7cb4ea86f644dc795acd36ecef"
+    },
+    {
+      "Path": "distortion/build/board1080-timing/bit-1029-a/build-stderr.log",
+      "Bytes": 0,
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "Path": "distortion/build/board1080-timing/bit-1029-a/audited-final.adf",
+      "Bytes": 15617180,
+      "SHA256": "309238d4ad6ee94c64182f41b30dbbdec0a28ae25d0dd7f6f03a98ad96342dce"
+    },
+    {
+      "Path": "distortion/build/board1080-timing/bit-1029-a/generate_bitstream/board1080_top.sbit",
+      "Bytes": 3791112,
+      "SHA256": "9f6bbe5fc02e7b66da1be6d449d6e68fef40f6f227068196f50a6a3a37a7967a"
+    },
+    {
+      "Path": "distortion/build/board1080-timing/bit-1029-a/generate_bitstream/board1080_top.bgr",
+      "Bytes": 1723,
+      "SHA256": "9caddad289cf0c88797f45eb7368569979a708a3f0008cbaf3e13b7692a4bc14"
+    },
+    {
+      "Path": "distortion/build/board1080-timing/bit-1029-a/generate_bitstream/bgr.db",
+      "Bytes": 13841,
+      "SHA256": "0d823d0c7470824b0af77844cb3e1d744c70b7d7cd63769ca61bfa8c7b48a9d9"
+    },
+    {
+      "Path": "distortion/build/board1080-timing/bit-1029-a/generate_bitstream/run.log",
+      "Bytes": 1140,
+      "SHA256": "d97265af8609a6793cdec82cf430ad814d70aa5f7234dc3e40bc03e487449e40"
+    }
+  ],
+  "NativeTimingSummaries": {
+    "slow_setup": {
+      "WorstSlackNS": 0.447,
+      "FailingChecks": 0,
+      "TimedChecks": 60064,
+      "RemovedResetChecks": 0
+    },
+    "slow_hold": {
+      "WorstSlackNS": 0.06,
+      "FailingChecks": 0,
+      "TimedChecks": 58600,
+      "RemovedResetChecks": 0
+    },
+    "slow_recovery": {
+      "WorstSlackNS": 2.792,
+      "FailingChecks": 0,
+      "TimedChecks": 5158,
+      "RemovedResetChecks": 245
+    },
+    "slow_removal": {
+      "WorstSlackNS": 0.353,
+      "FailingChecks": 0,
+      "TimedChecks": 3928,
+      "RemovedResetChecks": 245
+    },
+    "slow_mpw": {
+      "WorstSlackNS": 0.035,
+      "FailingChecks": 0,
+      "TimedChecks": 16369,
+      "RemovedResetChecks": 0
+    },
+    "fast_setup": {
+      "WorstSlackNS": 3.248,
+      "FailingChecks": 0,
+      "TimedChecks": 60064,
+      "RemovedResetChecks": 0
+    },
+    "fast_hold": {
+      "WorstSlackNS": 0.02,
+      "FailingChecks": 0,
+      "TimedChecks": 58600,
+      "RemovedResetChecks": 0
+    },
+    "fast_recovery": {
+      "WorstSlackNS": 4.759,
+      "FailingChecks": 0,
+      "TimedChecks": 5158,
+      "RemovedResetChecks": 245
+    },
+    "fast_removal": {
+      "WorstSlackNS": 0.16,
+      "FailingChecks": 0,
+      "TimedChecks": 3928,
+      "RemovedResetChecks": 245
+    },
+    "fast_mpw": {
+      "WorstSlackNS": 0.035,
+      "FailingChecks": 0,
+      "TimedChecks": 16369,
+      "RemovedResetChecks": 0
+    }
+  },
+  "FalsePathCounts": {
+    "slow_setup": {
+      "UniqueClockAndPinChecks": 0,
+      "ReportedPathVariants": 0,
+      "DistinctClockEdgeVariants": 0,
+      "DistinctNativePathVariants": 0
+    },
+    "slow_hold": {
+      "UniqueClockAndPinChecks": 0,
+      "ReportedPathVariants": 0,
+      "DistinctClockEdgeVariants": 0,
+      "DistinctNativePathVariants": 0
+    },
+    "slow_recovery": {
+      "UniqueClockAndPinChecks": 245,
+      "ReportedPathVariants": 490,
+      "DistinctClockEdgeVariants": 252,
+      "DistinctNativePathVariants": 490
+    },
+    "slow_removal": {
+      "UniqueClockAndPinChecks": 245,
+      "ReportedPathVariants": 490,
+      "DistinctClockEdgeVariants": 252,
+      "DistinctNativePathVariants": 490
+    },
+    "fast_setup": {
+      "UniqueClockAndPinChecks": 0,
+      "ReportedPathVariants": 0,
+      "DistinctClockEdgeVariants": 0,
+      "DistinctNativePathVariants": 0
+    },
+    "fast_hold": {
+      "UniqueClockAndPinChecks": 0,
+      "ReportedPathVariants": 0,
+      "DistinctClockEdgeVariants": 0,
+      "DistinctNativePathVariants": 0
+    },
+    "fast_recovery": {
+      "UniqueClockAndPinChecks": 245,
+      "ReportedPathVariants": 490,
+      "DistinctClockEdgeVariants": 252,
+      "DistinctNativePathVariants": 490
+    },
+    "fast_removal": {
+      "UniqueClockAndPinChecks": 245,
+      "ReportedPathVariants": 490,
+      "DistinctClockEdgeVariants": 252,
+      "DistinctNativePathVariants": 490
+    }
+  },
+  "Limitations": [
+    "This artifact was generated from the exact previously repaired and audited ADF, not a new PNR rebuilt from source.",
+    "PDS Place-state checking can reject a dummy-only flow despite accepting -input_db_file. Declaring the complete source/flow context enabled this export; actual executed stages are recorded separately.",
+    "External HDMI AC/skew, full pin/electrical release, physical CDC, camera calibration, DDR hardware training and stability still require validation.",
+    "No downloader, JTAG, UART, board power, or Flash operation was performed."
+  ]
+}

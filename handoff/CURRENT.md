@@ -1,5 +1,51 @@
 # 当前交接点
 
+## 离线位流生成和实际 rowpipe 顶层控制回归完成
+
+在 `85d0cda` 的修复结果基础上，已离线生成最终候选 `.sbit`：`distortion/build/board1080-timing/bit-1029-a/generate_bitstream/board1080_top.sbit`，3,791,112字节，SHA256 `9f6bbe5fc02e7b66da1be6d449d6e68fef40f6f227068196f50a6a3a37a7967a`。原生 pre-bit 十类/例外审计在生成前实际通过，PDS退出0/271.126秒，输入无漂移。完整证据 `distortion/results/board1080-offline-bitstream-20261029.json`；这次从同一冻结的最终修复ADF导出，**不是重新从源码计算PNR**。
+
+实际 `board1080_rowpipe_top.v` 的板级控制体已用独立时钟测试桩执行回归：7项启动条件、A1–A6故障隔离/粘滞、held-AW及common-reset通过；新runner与7项CPU契约测试已添加，结果 `distortion/results/board1080-rowpipe-control-20261029.json`。不替代真实DDR/PLL/IIC/HDMI和数据链仿真。当前没有上板条件，继续推进离线构建整合和接口约束；详见 `handoff/BOARD1080_OFFLINE_NEXT_20261029.md`。
+
+## DDR 定向时序修复完成；离板候选，待扩展硬件验收
+
+分支 `codex/ddr-ip-timing-fix` 已完成一条可复现的定向修复候选。原严格基线 E 的 ADF SHA256 为 `c146885f90da22cae61d106f0768529c98f3d2e55f8604315328e61700d4e3fc`；复现配方在 `distortion/build/ddr-timing-repair/reproduced-c`，原件未改，两个 PDS 进程均退出0，输入无漂移，保存/STA前后副本 SHA256 为 `309238d4ad6ee94c64182f41b30dbbdec0a28ae25d0dd7f6f03a98ad96342dce`。报告使用 `max_path 1000 -nworst 4`，避免把双边沿/捕获变体压成单条路径。
+
+候选合并了两项实际验证过的修改：对 `_N173` 的 `TX_DATA[2]:IOLHR_364_624` 做一段官方 wirepattern 支持的局部绕行；将 4 个 DDR IP 内复位源的 126 个实际时序端点和入口 RDC 绑定到精确 slash pin。最终 slow/fast 的 setup、hold、recovery、removal、minimum pulse width 共10类汇总均零失败，最差值分别为 setup +0.447/+3.248ns、hold +0.060/+0.020ns、recovery +2.792/+4.759ns、removal +0.353/+0.160ns、MPW +0.035/+0.035ns。
+
+最终报告的例外审计已通过：setup/hold false-path为空；recovery/removal逐项包含每角244个IP内部检查和1个入口检查，保留捕获时钟/边沿与 native path 变体；外部 IO 缺口集合与基线一致。结果 `distortion/results/board1080-ddr-final-20261029.json`，工具 `distortion/tools/audit_ddr_final_timing.py`，复现准备工具 `distortion/tools/prepare_ddr_timing_repair.py`。这不是实板放行：外部 IO AC、CDC/RDC协议、DDR训练稳定性、模拟MTBF、真实HDMI画面和长时间运行仍需开发板验收。ControlChain-off 已否决，见 `handoff/BOARD1080_CONTROLCHAIN_20261029.md`。
+
+## 历史基线：原生1080P八帧通过；修复前完整时序有已知失败
+
+本机 `rowpipe-20261028-a` 已完成综合/映射/布局布线/最终STA，主域setup最差+.447ns，slow/fast hold各1失败（−.037/−.222ns），recovery分别245/234；fast少11项是该角同一35端点组中11项非负，不是检查消失。54/110项缺输入/输出延迟及CDC/RDC缺口仍保留，不能上板签核。结果 `distortion/results/board1080-rowpipe-timing-20261028.json`，详见 `handoff/BOARD1080_TIMING_20261028.md`。当前PDS2023与历史2022不同，不能把+.116→+.447当作受控的单变量提升。
+
+完整流程最初快照copy在预解析报Flow0163，runtime后仍形成与最终ADF相同的快照并生成完整报告；原失败未改写，CleanFlow=false。准备器后续已加Tcl存在性guard和36项CPU测试。原准备器/runner副本留本轮build以绑定实际旧哈希。针对唯一hold的增量尝试B/C/D分别遇到输入DB阶段/Place上下文/报告入口重跑前置的问题；一次新的完整流程E退出0/830.572s、CleanFlow=true、输入无漂移，100→200ps两阶段确实执行，但十类汇总与A完全相同，无时序收益。结果见 `distortion/results/board1080-rowpipe-holdfix-20261028.json`、`handoff/BOARD1080_HOLDFIX_20261028.md`。没有位流或硬件操作。
+
+`local-native-20261028-a` 新rowpipe源码自己的1920×1080八帧回归已完成：compile/elaborate/simulate均0，16588800逐像素/CRC/实际RTL扫描通过，8个ID/银行复用/最终排空通过，drop/overflow/no_free/underflow/CRC错全0。稳态30.000fps、扫描间隔抖动1ps，最坏3816061周期（30.528488ms）；与旧版逐帧周期相同，没有直接提速。37项源/33输入/衍生文件及日志/结果hash均核实，耗时4343.018s。回执 `distortion/results/board1080-rowpipe-native-20261028.json`；23项与板级闭包共有的模块/头hash一致，仍是合成参数+行为DDR模型，不是实板fps。相关88项CPU测试与当前远端CI通过。
+
+下一步按 `handoff/DDR_IP_CONSTRAINT_PLAN.md` 把同配置官方约束限定到IP内部具体reset/training路径，并分别修入口RDC和真实PHY数据hold；不能复制全局board27/free_clk异步组切掉自研CDC。无需等待队友旧报告才继续开发。采购与实测60fps预算见 `handoff/CAMERA_PROCUREMENT_20261028.md`、`handoff/BOARD1080_PERFORMANCE_BUDGET.md`；先保住实板1080p30，60fps需要结构性改动及输入/输出配套。
+
+## 直接推进源码：地址流水已接入独立1080P整链
+
+`codex/board1080-rowpipe` 合并前两条本机开发线，将已有 rowpipe 接入 CDC-reset System；新顶层/sampler及109项独立闭包保留原入口。11项CPU测试及本机新的32×16八帧整链通过（4096像素/CRC、反压、切帧、故障隔离、公共复位），实际compile/elaborate/simulate均0。原记录及哈希摘要见 `distortion/results/board1080-rowpipe-small-20261028.json`、`handoff/BOARD1080_ROWPIPE.md`。未新跑此候选native八帧/STA，不借用旧回归；未接板。源码使用不依赖队友旧报告，下一步以本候选生成自己的最终STA和逐端点清单。
+
+用户询问输入选择已核：赛题允许HDMI或摄像头，没有强制OV5640，但需真实相机标定及实时演示。当前主链是HDMI1080p30；实际8bit DVP模组的RGB565不能由芯片宣传1080p30直接推定。依据见 `handoff/VIDEO_INPUT_DECISION.md`。
+
+## 本机离板 DDR 对照完成：2026-10-28
+
+本地分支 `codex/ddr-recovery-diagnosis` 基于 `890d21e`。新增只读 CPU 审计及 24 项测试，确认当前 HMIC_S 1.10 的 IDF/371 参数、74 综合源与仓库官方示例一致。官方旧报告六组跨时钟异步排除计数各34/3/35/84/4/84，合计244；尚无队友最新详细 XML，不能由计数认定与当前失败端点逐一相同。结果 `distortion/results/ddr-reference-audit-20261028.json`。
+
+本机 PDS 2023.2-SP3 在独立 `distortion/build/ddr-reference-sta-20261028-a` 用官方92项 HDL、原 FDC/RCF 完成综合→映射→布局布线→最终 STA，真实退出0/772.004s、输入无漂移。fresh PCF 86条有效指令与原件相同。报告实际 slow/fast 各2项 hold失败（−0.138/−0.341ns），其余8类汇总零失败；六组244项异步排除及34/78项缺 IO 延迟仍在。工具退出0仅表示生成报告成功，不是完整时序通过。原始报告与最终 ADF 均在本机；21项输出/日志哈希及全输入见 `distortion/results/ddr-reference-pds2023-20261028.json`。
+
+此为跨版本官方示例对照，未生成位流或操作开发板，不替代当前1080P候选每角245项 recovery 的详细结果。下一步先取得队友既有最终 XML/文本、实际约束、ADF与日志，逐组/逐端点核对，并向厂商确认例外所需的训练和复位释放保证；未直接应用宽异步组。详细说明及离板生成报告步骤见 `handoff/DDR_RECOVERY_DIAGNOSIS.md`。
+
+## 本机复现推进：2026-10-28
+
+已合入远端 `890d21e`（包含 PR #1 的 CI 修复）。后续改动位于 `codex/portable-rtl-regressions`：两个 1080 仿真入口读取本机工具配置；旧绝对 include 仅在构建副本中精确重定位，原 RTL/头文件及历史封存保持原字节。
+
+本机 Vivado 2017.4 完成两项新源绑定验证：32×16 八帧 DMA→行为DDR→矫正→真实 FIFO/像素扫描通过，4096 像素及 CRC 一致；独立 rowpipe 保留 64 输出/63 间隔周期，另补 68 个变化坐标/分数/TAG 的命中、反压及快慢路径混合请求并通过。编译、展开、仿真均退出 0；前两次 include 路径编译失败留在各自目录，不改写结果。
+
+新增工具配置/编译副本校验 17 项 CPU 测试；验收附件、延迟和证据分类测试加入 CI。复现入口及完整结果摘要见 [本机 RTL 复现](RTL_REPRODUCTION.md)。本次未重跑原生 1080 八帧或 PNR，未合入 rowpipe 到主链，未产生位流或访问硬件；DDR recovery 及外部 IO/CDC、真实输入和标定的既有缺口仍保留。
+
 ## 最新完成：FPGA-1028-LATENCY-CONTRACT-ONE
 
 priority2确有直接回归缺口，新增独立合成`test_assess_1080_latency.py`14项：有效及等阈值、负延迟、两路时间tie/回退、字段/类型/非有限值、超限、已有记录身份/event_id契约及缺证据UNMEASURED/无效记录FAIL。首跑13过1 error，真实定位巨大整数时间差的OverflowError；仅局部改毫秒换算为整数分母并将无法表示的超限延迟转ValueError，未改阈值/规则。允许巨大epoch的小差值以及可表示的有限商，未添加绝对时钟或frame_id要求。

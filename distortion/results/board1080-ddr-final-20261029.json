@@ -1,0 +1,856 @@
+{
+  "Schema": "board1080-ddr-final-native-audit-v1",
+  "RecordedUTC": "2026-10-29T03:56:01.985171+00:00",
+  "AuditPassed": true,
+  "AllReportedNativeTimingChecksMet": true,
+  "AllTenTimingTypesAndCornersChecked": true,
+  "NativeClockDefinitionsUnchanged": true,
+  "ExactExceptionPathEffectsVerified": true,
+  "InternalResetChecksPerCorner": 244,
+  "EntryResetChecksPerCorner": 1,
+  "FalsePathCounts": {
+    "slow_setup": {
+      "UniqueClockAndPinChecks": 0,
+      "ReportedPathVariants": 0,
+      "DistinctClockEdgeVariants": 0,
+      "DistinctNativePathVariants": 0
+    },
+    "slow_hold": {
+      "UniqueClockAndPinChecks": 0,
+      "ReportedPathVariants": 0,
+      "DistinctClockEdgeVariants": 0,
+      "DistinctNativePathVariants": 0
+    },
+    "slow_recovery": {
+      "UniqueClockAndPinChecks": 245,
+      "ReportedPathVariants": 490,
+      "DistinctClockEdgeVariants": 252,
+      "DistinctNativePathVariants": 490
+    },
+    "slow_removal": {
+      "UniqueClockAndPinChecks": 245,
+      "ReportedPathVariants": 490,
+      "DistinctClockEdgeVariants": 252,
+      "DistinctNativePathVariants": 490
+    },
+    "fast_setup": {
+      "UniqueClockAndPinChecks": 0,
+      "ReportedPathVariants": 0,
+      "DistinctClockEdgeVariants": 0,
+      "DistinctNativePathVariants": 0
+    },
+    "fast_hold": {
+      "UniqueClockAndPinChecks": 0,
+      "ReportedPathVariants": 0,
+      "DistinctClockEdgeVariants": 0,
+      "DistinctNativePathVariants": 0
+    },
+    "fast_recovery": {
+      "UniqueClockAndPinChecks": 245,
+      "ReportedPathVariants": 490,
+      "DistinctClockEdgeVariants": 252,
+      "DistinctNativePathVariants": 490
+    },
+    "fast_removal": {
+      "UniqueClockAndPinChecks": 245,
+      "ReportedPathVariants": 490,
+      "DistinctClockEdgeVariants": 252,
+      "DistinctNativePathVariants": 490
+    }
+  },
+  "NoDataSetupOrHoldFalsePaths": true,
+  "NativeRecoveryInventoryPairs": 126,
+  "HoldPairImprovements": [
+    {
+      "Corner": "slow",
+      "Check": "hold",
+      "ClockPair": [
+        "ddrphy_sysclk",
+        "phy_dq_sysclk_1"
+      ],
+      "Before": {
+        "WorstSlackNS": -0.037,
+        "TotalNegativeSlackNS": -0.037,
+        "FailingChecks": 1,
+        "TotalChecks": 420
+      },
+      "After": {
+        "WorstSlackNS": 0.281,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 420
+      }
+    },
+    {
+      "Corner": "fast",
+      "Check": "hold",
+      "ClockPair": [
+        "ddrphy_sysclk",
+        "phy_dq_sysclk_1"
+      ],
+      "Before": {
+        "WorstSlackNS": -0.222,
+        "TotalNegativeSlackNS": -0.222,
+        "FailingChecks": 1,
+        "TotalChecks": 420
+      },
+      "After": {
+        "WorstSlackNS": 0.021,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 420
+      }
+    }
+  ],
+  "CornerSummaries": {
+    "slow_setup": {
+      "WorstSlackNS": 0.447,
+      "FailingChecks": 0,
+      "TimedChecks": 60064,
+      "RemovedResetChecks": 0
+    },
+    "slow_hold": {
+      "WorstSlackNS": 0.06,
+      "FailingChecks": 0,
+      "TimedChecks": 58600,
+      "RemovedResetChecks": 0
+    },
+    "slow_recovery": {
+      "WorstSlackNS": 2.792,
+      "FailingChecks": 0,
+      "TimedChecks": 5158,
+      "RemovedResetChecks": 245
+    },
+    "slow_removal": {
+      "WorstSlackNS": 0.353,
+      "FailingChecks": 0,
+      "TimedChecks": 3928,
+      "RemovedResetChecks": 245
+    },
+    "slow_mpw": {
+      "WorstSlackNS": 0.035,
+      "FailingChecks": 0,
+      "TimedChecks": 16369,
+      "RemovedResetChecks": 0
+    },
+    "fast_setup": {
+      "WorstSlackNS": 3.248,
+      "FailingChecks": 0,
+      "TimedChecks": 60064,
+      "RemovedResetChecks": 0
+    },
+    "fast_hold": {
+      "WorstSlackNS": 0.02,
+      "FailingChecks": 0,
+      "TimedChecks": 58600,
+      "RemovedResetChecks": 0
+    },
+    "fast_recovery": {
+      "WorstSlackNS": 4.759,
+      "FailingChecks": 0,
+      "TimedChecks": 5158,
+      "RemovedResetChecks": 245
+    },
+    "fast_removal": {
+      "WorstSlackNS": 0.16,
+      "FailingChecks": 0,
+      "TimedChecks": 3928,
+      "RemovedResetChecks": 245
+    },
+    "fast_mpw": {
+      "WorstSlackNS": 0.035,
+      "FailingChecks": 0,
+      "TimedChecks": 16369,
+      "RemovedResetChecks": 0
+    }
+  },
+  "AllOtherSummaryRowsUnchanged": true,
+  "ExternalIOWarningEvidence": {
+    "Identical": true,
+    "UniqueInputPorts": 54,
+    "UniqueOutputPorts": 110,
+    "Ports": [
+      {
+        "Code": "4086",
+        "Port": "b_in[3]"
+      },
+      {
+        "Code": "4086",
+        "Port": "b_in[4]"
+      },
+      {
+        "Code": "4086",
+        "Port": "b_in[5]"
+      },
+      {
+        "Code": "4086",
+        "Port": "b_in[6]"
+      },
+      {
+        "Code": "4086",
+        "Port": "b_in[7]"
+      },
+      {
+        "Code": "4086",
+        "Port": "clk_n"
+      },
+      {
+        "Code": "4086",
+        "Port": "de_in"
+      },
+      {
+        "Code": "4086",
+        "Port": "g_in[2]"
+      },
+      {
+        "Code": "4086",
+        "Port": "g_in[3]"
+      },
+      {
+        "Code": "4086",
+        "Port": "g_in[4]"
+      },
+      {
+        "Code": "4086",
+        "Port": "g_in[5]"
+      },
+      {
+        "Code": "4086",
+        "Port": "g_in[6]"
+      },
+      {
+        "Code": "4086",
+        "Port": "g_in[7]"
+      },
+      {
+        "Code": "4086",
+        "Port": "hd_sda"
+      },
+      {
+        "Code": "4086",
+        "Port": "hs_in"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[0]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[10]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[11]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[12]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[13]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[14]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[15]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[16]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[17]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[18]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[19]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[1]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[20]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[21]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[22]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[23]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[24]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[25]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[26]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[27]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[28]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[29]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[2]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[30]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[31]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[3]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[4]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[5]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[6]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[7]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[8]"
+      },
+      {
+        "Code": "4086",
+        "Port": "mem_dq[9]"
+      },
+      {
+        "Code": "4086",
+        "Port": "r_in[3]"
+      },
+      {
+        "Code": "4086",
+        "Port": "r_in[4]"
+      },
+      {
+        "Code": "4086",
+        "Port": "r_in[5]"
+      },
+      {
+        "Code": "4086",
+        "Port": "r_in[6]"
+      },
+      {
+        "Code": "4086",
+        "Port": "r_in[7]"
+      },
+      {
+        "Code": "4086",
+        "Port": "reset_n"
+      },
+      {
+        "Code": "4086",
+        "Port": "vs_in"
+      },
+      {
+        "Code": "4087",
+        "Port": "b_out[0]"
+      },
+      {
+        "Code": "4087",
+        "Port": "b_out[1]"
+      },
+      {
+        "Code": "4087",
+        "Port": "b_out[2]"
+      },
+      {
+        "Code": "4087",
+        "Port": "b_out[3]"
+      },
+      {
+        "Code": "4087",
+        "Port": "b_out[4]"
+      },
+      {
+        "Code": "4087",
+        "Port": "b_out[5]"
+      },
+      {
+        "Code": "4087",
+        "Port": "b_out[6]"
+      },
+      {
+        "Code": "4087",
+        "Port": "b_out[7]"
+      },
+      {
+        "Code": "4087",
+        "Port": "de_out"
+      },
+      {
+        "Code": "4087",
+        "Port": "g_out[0]"
+      },
+      {
+        "Code": "4087",
+        "Port": "g_out[1]"
+      },
+      {
+        "Code": "4087",
+        "Port": "g_out[2]"
+      },
+      {
+        "Code": "4087",
+        "Port": "g_out[3]"
+      },
+      {
+        "Code": "4087",
+        "Port": "g_out[4]"
+      },
+      {
+        "Code": "4087",
+        "Port": "g_out[5]"
+      },
+      {
+        "Code": "4087",
+        "Port": "g_out[6]"
+      },
+      {
+        "Code": "4087",
+        "Port": "g_out[7]"
+      },
+      {
+        "Code": "4087",
+        "Port": "hd_scl"
+      },
+      {
+        "Code": "4087",
+        "Port": "hd_sda"
+      },
+      {
+        "Code": "4087",
+        "Port": "hs_out"
+      },
+      {
+        "Code": "4087",
+        "Port": "led[0]"
+      },
+      {
+        "Code": "4087",
+        "Port": "led[1]"
+      },
+      {
+        "Code": "4087",
+        "Port": "led[2]"
+      },
+      {
+        "Code": "4087",
+        "Port": "led[3]"
+      },
+      {
+        "Code": "4087",
+        "Port": "led[4]"
+      },
+      {
+        "Code": "4087",
+        "Port": "led[5]"
+      },
+      {
+        "Code": "4087",
+        "Port": "led[6]"
+      },
+      {
+        "Code": "4087",
+        "Port": "led[7]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[0]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[10]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[11]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[12]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[13]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[14]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[1]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[2]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[3]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[4]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[5]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[6]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[7]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[8]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_a[9]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_ba[0]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_ba[1]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_ba[2]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_cas_n"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_ck"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_ck_n"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_cke"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_cs_n"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dm[0]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dm[1]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dm[2]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dm[3]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[0]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[10]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[11]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[12]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[13]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[14]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[15]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[16]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[17]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[18]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[19]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[1]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[20]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[21]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[22]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[23]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[24]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[25]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[26]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[27]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[28]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[29]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[2]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[30]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[31]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[3]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[4]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[5]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[6]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[7]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[8]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dq[9]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dqs[0]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dqs[1]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dqs[2]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dqs[3]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dqs_n[0]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dqs_n[1]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dqs_n[2]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_dqs_n[3]"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_odt"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_ras_n"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_rst_n"
+      },
+      {
+        "Code": "4087",
+        "Port": "mem_we_n"
+      },
+      {
+        "Code": "4087",
+        "Port": "pix_clk"
+      },
+      {
+        "Code": "4087",
+        "Port": "r_out[0]"
+      },
+      {
+        "Code": "4087",
+        "Port": "r_out[1]"
+      },
+      {
+        "Code": "4087",
+        "Port": "r_out[2]"
+      },
+      {
+        "Code": "4087",
+        "Port": "r_out[3]"
+      },
+      {
+        "Code": "4087",
+        "Port": "r_out[4]"
+      },
+      {
+        "Code": "4087",
+        "Port": "r_out[5]"
+      },
+      {
+        "Code": "4087",
+        "Port": "r_out[6]"
+      },
+      {
+        "Code": "4087",
+        "Port": "r_out[7]"
+      },
+      {
+        "Code": "4087",
+        "Port": "rstn_out"
+      },
+      {
+        "Code": "4087",
+        "Port": "vs_out"
+      }
+    ]
+  },
+  "InputsSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGA国赛\\fpga-distortion-correction\\distortion\\build\\ddr-fix-20261029\\mpnr-base-g\\board1080_top.rtr": "28125fa1998a4a70570923f7cd413c71108930190ed5aa833b6d8861b0fd2de8",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGA国赛\\fpga-distortion-correction\\distortion\\build\\ddr-fix-20261029\\mpnr-base-g\\board1080_top_exception.rtr": "43ae27ddddd8a53ebdb8224c0ae437f890ed54f5aa2f27524169b2dd489f1463",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGA国赛\\fpga-distortion-correction\\distortion\\build\\ddr-timing-repair\\reproduced-c\\report\\board1080_top.rtr": "5a1d38b262ea1bd4a5b573c605de975db7b4d97bcb0ea10dbc31bc56fa293693",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGA国赛\\fpga-distortion-correction\\distortion\\build\\ddr-timing-repair\\reproduced-c\\report\\board1080_top_exception.rtr": "5e07d4f01a9ff534c5ea83bdce89456344a9410aec84290d3ea9e3d813adc955",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGA国赛\\fpga-distortion-correction\\distortion\\build\\ddr-timing-repair\\reproduced-c\\input.adf": "309238d4ad6ee94c64182f41b30dbbdec0a28ae25d0dd7f6f03a98ad96342dce",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGA国赛\\fpga-distortion-correction\\distortion\\build\\ddr-fix-20261029\\mpnr-base-g\\stdout.log": "f55e2f7f32489ff66f120d079490833abfd97cb7f2d6b1814cf2f1613eb506a0",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGA国赛\\fpga-distortion-correction\\distortion\\build\\ddr-timing-repair\\reproduced-c\\report\\stdout.log": "f63d48bd4ba757111254673f895088253f94bbdc84535df6d604e1c96e2b3824"
+  },
+  "ToolSHA256": "f0275c5e5e8c6b08c1a8d8a88d5ab1b941459876ea5e3c30f4bea61f5f677a3c",
+  "FinalRoutedADF": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGA国赛\\fpga-distortion-correction\\distortion\\build\\ddr-timing-repair\\reproduced-c\\input.adf",
+    "SHA256": "309238d4ad6ee94c64182f41b30dbbdec0a28ae25d0dd7f6f03a98ad96342dce"
+  },
+  "HardwareAccessed": false,
+  "BitstreamRequested": false,
+  "ExternalIOAccepted": false,
+  "CDCProtocolAndSkewAccepted": false,
+  "HardwareReleaseAllowed": false,
+  "PhysicalTimingReady": false,
+  "Limitations": [
+    "The report audit does not validate board IO AC budgets, analog MTBF, CDC bus skew, DDR training hardware, or board stability.",
+    "Internal reset and entry RDC checks are intentionally scoped exceptions; they are not positive-slack recovery paths.",
+    "Exception checks are identified by exact source pin, endpoint pin and both clocks; a false path may use a different capture-edge representative than a timed worst path."
+  ]
+}

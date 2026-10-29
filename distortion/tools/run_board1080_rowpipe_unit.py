@@ -16,6 +16,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 from run_gamma_pipeline_d5_sim import tool
+from simulation_tools import resolve_vivado_bin
 
 TOP = "tb_rowpipe_cache"
 MARKER = "PASS ROWPIPE candidate unit:"
@@ -23,7 +24,7 @@ COMPILE = (ROOT / "rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v", ROO
 BASE_SOURCE = ROOT / "rtl/experimental/ddr_compact_neighbour_cache_scatter4.v"
 BASE_SHA = "db3c8f924f22d6a67d80d3e7a9e10ec8dba39d6ae30d12637ab5aa06d6005d2b"
 REFERENCES = (BASE_SOURCE, ROOT / "tests/tb_scatter4_neighbour_cache.sv",
-              ROOT / "tools/run_gamma_pipeline_d5_sim.py")
+              ROOT / "tools/run_gamma_pipeline_d5_sim.py", ROOT / "tools/simulation_tools.py")
 
 
 def sha(path):
@@ -49,7 +50,7 @@ def run(workdir, maximum_seconds=180, execute=False):
         raise ValueError("candidate/base binding or invariant proof changed")
     watched = (*COMPILE, Path(__file__).resolve(), ROOT / "tests/rowpipe-candidate-source.json", *REFERENCES)
     before = {str(p): sha(p) for p in watched}
-    bin_dir = Path("E:/Vivado/Vivado/2017.4/bin")
+    bin_dir = resolve_vivado_bin(ROOT.parent)
     commands = [
         ("xvlog.bat", ["--sv", *map(str, COMPILE)], "compile"),
         ("xelab.bat", [TOP, "-s", TOP], "elaborate"),
@@ -88,6 +89,8 @@ def run(workdir, maximum_seconds=180, execute=False):
                 raise
         log = (work / "simulation.log").read_text(encoding="utf-8", errors="replace")
         required = (MARKER, "PASS ROWPIPE signed64 native1920", "PASS ROWPIPE warmed first-latency4",
+                    "PASS ROWPIPE varying warm metadata:", "PASS ROWPIPE varying metadata backpressure:",
+                    "PASS ROWPIPE varying metadata hit-miss:",
                     "PASS ROWPIPE generic639", "PASS SCATTER4 FIFO2 full", "PASS SCATTER4 frame_valid at group31",
                     "PASS SCATTER4 reset on last", "PASS SCATTER4 RID/early-RLAST")
         if not all(x in log for x in required) or re.search(r"(?im)^\s*(?:fatal|error):", log):
@@ -100,9 +103,19 @@ def run(workdir, maximum_seconds=180, execute=False):
                 main.get("stream_span_cycles") != 63 or main.get("fault_cases") != 4):
             raise ValueError("rowpipe actual RTL functional/throughput contract differs")
         for key in ("numeric_checks", "pre_hold", "query_hold", "pre_refill", "query_refill", "pending_pre",
-                    "ar_stall", "output_stall", "ram_checks", "reset_last_scatter"):
+                    "ar_stall", "output_stall", "ram_checks", "reset_last_scatter",
+                    "metadata_input_stall", "metadata_output_hold", "metadata_pre_hold", "metadata_query_hold",
+                    "metadata_fast_queries", "metadata_slow_queries"):
             if type(main.get(key)) is not int or main[key] <= 0:
                 raise ValueError("rowpipe mandatory coverage missing: " + key)
+        metadata_expected = {"metadata_inputs": 68, "metadata_warm_outputs": 32,
+                             "metadata_warm_span_cycles": 31, "metadata_stalled_outputs": 24,
+                             "metadata_all_field_changes": 55, "metadata_mixed_outputs": 12}
+        if any(type(main.get(key)) is not int or main[key] != value for key, value in metadata_expected.items()):
+            raise ValueError("varying-query metadata coverage differs")
+        if (type(main.get("metadata_hit_miss_switches")) is not int or main["metadata_hit_miss_switches"] < 2
+                or main["metadata_fast_queries"] + main["metadata_slow_queries"] != 12):
+            raise ValueError("varying-query hit/miss transitions were not covered")
         if main["numeric_checks"] < 64 or generic != {"passed": True, "width": 639, "signed64_arithmetic_cases": 6}:
             raise ValueError("independent signed64 numerical coverage differs")
         report.update(Passed=True, MainSummary=main, GenericSummary=generic,
