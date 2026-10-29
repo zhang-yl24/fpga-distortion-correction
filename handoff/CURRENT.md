@@ -1,5 +1,11 @@
 # 当前交接点
 
+## 离线位流生成和实际 rowpipe 顶层控制回归完成
+
+在 `85d0cda` 的修复结果基础上，已离线生成最终候选 `.sbit`：`distortion/build/board1080-timing/bit-1029-a/generate_bitstream/board1080_top.sbit`，3,791,112字节，SHA256 `9f6bbe5fc02e7b66da1be6d449d6e68fef40f6f227068196f50a6a3a37a7967a`。原生 pre-bit 十类/例外审计在生成前实际通过，PDS退出0/271.126秒，输入无漂移。完整证据 `distortion/results/board1080-offline-bitstream-20261029.json`；这次从同一冻结的最终修复ADF导出，**不是重新从源码计算PNR**。
+
+实际 `board1080_rowpipe_top.v` 的板级控制体已用独立时钟测试桩执行回归：7项启动条件、A1–A6故障隔离/粘滞、held-AW及common-reset通过；新runner与7项CPU契约测试已添加，结果 `distortion/results/board1080-rowpipe-control-20261029.json`。不替代真实DDR/PLL/IIC/HDMI和数据链仿真。当前没有上板条件，继续推进离线构建整合和接口约束；详见 `handoff/BOARD1080_OFFLINE_NEXT_20261029.md`。
+
 ## DDR 定向时序修复完成；离板候选，待扩展硬件验收
 
 分支 `codex/ddr-ip-timing-fix` 已完成一条可复现的定向修复候选。原严格基线 E 的 ADF SHA256 为 `c146885f90da22cae61d106f0768529c98f3d2e55f8604315328e61700d4e3fc`；复现配方在 `distortion/build/ddr-timing-repair/reproduced-c`，原件未改，两个 PDS 进程均退出0，输入无漂移，保存/STA前后副本 SHA256 为 `309238d4ad6ee94c64182f41b30dbbdec0a28ae25d0dd7f6f03a98ad96342dce`。报告使用 `max_path 1000 -nworst 4`，避免把双边沿/捕获变体压成单条路径。
