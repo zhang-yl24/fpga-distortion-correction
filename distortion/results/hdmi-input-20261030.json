@@ -1,0 +1,104 @@
+{
+  "Schema": "hdmi-input-bringup-round-v1",
+  "DateBeijing": "2026-10-30",
+  "Scope": "delayed_control_no_input_observer",
+  "Target": "hdmi_uart_delayed_diag",
+  "UserReportedPowerCycle": true,
+  "HardwareAccessedByEvidencePackaging": false,
+  "EDAExecutedByEvidencePackaging": false,
+  "EvidenceFiles": "distortion/results/hdmi-input-20261030/files.json",
+  "EvidenceFilesSHA256": "a7830068936198baba05cdcbe77d7ea1e54a6af86307cbcb232021229c278d19",
+  "ConnectionRecorded": {
+    "PC_HDMI_ToBoardInput": true,
+    "BoardHDMIOutputConnected": false,
+    "UART": "CP210x COM7, 115200 8N1"
+  },
+  "BeforeRestore": {
+    "UARTStartedUTC": "2026-10-29T18:58:01.535987+00:00",
+    "UARTEndedUTC": "2026-10-29T18:58:11.654330+00:00",
+    "UARTReceivedBytes": 0,
+    "UARTPacketIntegrityPassed": false,
+    "JTAGStartedUTC": "2026-10-29T18:59:47.597129+00:00",
+    "JTAGEndedUTC": "2026-10-29T18:59:58.018921+00:00",
+    "Device": "PG2L100H",
+    "IDCODE": "0x00602899",
+    "DONE": 0,
+    "ProgrammingAttemptedByScan": false
+  },
+  "Restore": {
+    "StartedUTC": "2026-10-29T19:01:48.277927+00:00",
+    "EndedUTC": "2026-10-29T19:02:40.679367+00:00",
+    "BitstreamSHA256": "510e14147c040d9427577405ee96eaf4d3d6be0ef70b74328445d2e3cb42bd7b",
+    "SamePreviouslyValidatedDiagnosticBitstream": true,
+    "Operation": "volatile_sram_only",
+    "DONEConfirmed": true,
+    "FlashWritten": false,
+    "NoNewBuildForThisRestore": true,
+    "NativeStatusWord": "0x081ffca0",
+    "ToolDecodedOverTempBit": 1,
+    "MeasuredTemperatureC": null,
+    "StatusNote": "Tool-reported over_temp=1 is retained, not interpreted as a measured temperature or a hardware-health pass. DONE establishes configuration completion only."
+  },
+  "UARTAfterRestore": {
+    "StartedUTC": "2026-10-29T19:03:34.456820+00:00",
+    "EndedUTC": "2026-10-29T19:03:44.636292+00:00",
+    "Bytes": 1344,
+    "AcceptedPackets": 21,
+    "Sequences": [
+      119,
+      139
+    ],
+    "RejectedPackets": 0,
+    "NoiseBytes": 0,
+    "TrailingBytes": 0,
+    "WireSHA256": "74cfae12a63516f9e23880f94c159985a3fce890ca9825f1b28c201c718ced15",
+    "IndependentCRCAndFieldsPassed": true,
+    "FlagsHex": "0x003f",
+    "CfgError": 0,
+    "RXInitDone": true,
+    "AllInitDone": true,
+    "SuccessfulTransactions": [
+      393493,
+      460698
+    ],
+    "SuccessfulTransactionsIncrease": 67205
+  },
+  "WindowsAfterRestore": {
+    "StartedUTC": "2026-10-29T19:04:50.1492584Z",
+    "EndedUTC": "2026-10-29T19:04:52.4617268Z",
+    "FriendlyName": "FPGA1080P30",
+    "GDIName": "\\\\.\\DISPLAY2",
+    "OutputTechnology": "HDMI",
+    "PathActive": true,
+    "TargetActiveWidth": 1920,
+    "TargetActiveHeight": 1080,
+    "TargetRefreshHz": 30.0,
+    "TargetPixelRateHz": 74250000,
+    "TargetTotalSize": [
+      2200,
+      1125
+    ],
+    "SettingsChangedByCapture": false,
+    "SourceSHA256": "e976913757d24f860e8c12b5cdabeac7f24d37b4be0580a7b8e0f49d4fca09e5",
+    "Extract": "windows/hdmi-target-after-program.json"
+  },
+  "Observer": {
+    "Enabled": false,
+    "DecoderState": "waiting_for_digital_input_qualification",
+    "Interpretation": "The diagnostic hardwires input observation fields to zero. This state is not evidence of input failure and cannot supply input dimensions or measured frame rate."
+  },
+  "Acceptance": {
+    "RecordedRXAndTXConfigurationCompleted": true,
+    "PHYLockMeasured": false,
+    "FPGAInputModeMeasured": false,
+    "ActualInputFrameRateMeasured": false,
+    "HDMIDisplayAccepted": false,
+    "DDRTestedThisEvent": false,
+    "DistortionChainTestedThisEvent": false,
+    "ColdStartRepeatAccepted": false,
+    "LongTermStabilityAccepted": false,
+    "HardwareHealthAccepted": false,
+    "HardwareReleaseAllowed": false
+  },
+  "Limits": "This event only restores the existing delayed configuration diagnostic after reported power loss and observes configuration/Windows status. No HDMI output cable/display verification, no input observer, no DDR or image correction. Any later observer candidate needs separate evidence."
+}

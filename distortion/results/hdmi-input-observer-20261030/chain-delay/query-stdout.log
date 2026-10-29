@@ -1,0 +1,1090 @@
+License checkout: fabric_shell from D:\pango\new_pds_00e04cf107df.lic
+Compiling architecture definition.
+Analyzing project file 'D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/build/hdmi-uart-diagnostic/input-cdc-chain-delay-1030-c/hdmi_uart_input_diag.pds'.
+Executing : set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676
+Executing : set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676 successfully.
+
+
+Executing : add_design D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/build/hdmi-uart-diagnostic/input-cdc-chain-delay-1030-c/dummy.v
+Executing : add_design D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/build/hdmi-uart-diagnostic/input-cdc-chain-delay-1030-c/dummy.v successfully.
+Executing : mpnr -input D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/build/hdmi-uart-diagnostic/input-cdc-chain-delay-1030-c/input.adf
+Compiling verification operator library.
+Compiling common defs.
+Compiling prim grid devices.
+Compiling place grid timing.
+Compiling prim grid device symbols.
+Compiling gate devices.
+Compiling gate operators.
+Building architecture model.
+Loading device packaging model.
+Building architecture floorplan logic view.
+Building architecture schematic structure.
+Building architecture floorplan schematic view.
+NOTE: The technology fpga was specified.
+NOTE: delay_model specified was generic_cmos.
+NOTE: Using the fpga syntax tables...
+Elaborate the liberty model.
+Totals:
+ Calls to malloc = 0
+ Calls to calloc = 9472601
+
+I: Column Clock Check open.
+Read Column Clock Map.
+Executing : mpnr -input D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/build/hdmi-uart-diagnostic/input-cdc-chain-delay-1030-c/input.adf successfully.
+CDC_CHAIN_BEGIN 0
+Executing : get_path_delay -from {input_status/geometry/edge_meta[0]/opit_0/Q} -to {input_status/geometry/edge_sync[0]/opit_0/D} -max_path 1
+Init coarse delay table.
+Read place coarse delay table takes 0.72 sec.
+Build SRB system takes 1.72 sec.
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_396/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[0]/opit_0/Q
+
+CLMA_81_396/M1                          0.597          0.597 r             input_status/geometry/edge_sync[0]/opit_0/D
+Path end...
+Execute get_path_delay takes 2.640625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[0]/opit_0/Q} -to {input_status/geometry/edge_sync[0]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 0
+CDC_CHAIN_BEGIN 1
+Executing : get_path_delay -from {input_status/geometry/edge_meta[1]/opit_0/Q} -to {input_status/geometry/edge_sync[1]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_403/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[1]/opit_0/Q
+
+CLMS_75_403/M3                          0.396          0.396 r             input_status/geometry/edge_sync[1]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[1]/opit_0/Q} -to {input_status/geometry/edge_sync[1]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 1
+CDC_CHAIN_BEGIN 2
+Executing : get_path_delay -from {input_status/geometry/edge_meta[2]/opit_0/Q} -to {input_status/geometry/edge_sync[2]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_403/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[2]/opit_0/Q
+
+CLMS_75_403/M1                          0.519          0.519 r             input_status/geometry/edge_sync[2]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[2]/opit_0/Q} -to {input_status/geometry/edge_sync[2]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 2
+CDC_CHAIN_BEGIN 3
+Executing : get_path_delay -from {input_status/geometry/edge_meta[3]/opit_0/Q} -to {input_status/geometry/edge_sync[3]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_403/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[3]/opit_0/Q
+
+CLMS_63_403/M3                          0.586          0.586 r             input_status/geometry/edge_sync[3]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[3]/opit_0/Q} -to {input_status/geometry/edge_sync[3]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 3
+CDC_CHAIN_BEGIN 4
+Executing : get_path_delay -from {input_status/geometry/edge_meta[4]/opit_0/Q} -to {input_status/geometry/edge_sync[4]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_403/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[4]/opit_0/Q
+
+CLMS_63_403/M1                          0.517          0.517 r             input_status/geometry/edge_sync[4]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[4]/opit_0/Q} -to {input_status/geometry/edge_sync[4]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 4
+CDC_CHAIN_BEGIN 5
+Executing : get_path_delay -from {input_status/geometry/edge_meta[5]/opit_0/Q} -to {input_status/geometry/edge_sync[5]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_409/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[5]/opit_0/Q
+
+CLMS_75_409/M3                          0.396          0.396 r             input_status/geometry/edge_sync[5]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[5]/opit_0/Q} -to {input_status/geometry/edge_sync[5]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 5
+CDC_CHAIN_BEGIN 6
+Executing : get_path_delay -from {input_status/geometry/edge_meta[6]/opit_0/Q} -to {input_status/geometry/edge_sync[6]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_409/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[6]/opit_0/Q
+
+CLMS_75_409/M1                          0.519          0.519 r             input_status/geometry/edge_sync[6]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[6]/opit_0/Q} -to {input_status/geometry/edge_sync[6]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 6
+CDC_CHAIN_BEGIN 7
+Executing : get_path_delay -from {input_status/geometry/edge_meta[7]/opit_0/Q} -to {input_status/geometry/edge_sync[7]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_415/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[7]/opit_0/Q
+
+CLMA_81_415/M3                          0.393          0.393 r             input_status/geometry/edge_sync[7]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[7]/opit_0/Q} -to {input_status/geometry/edge_sync[7]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 7
+CDC_CHAIN_BEGIN 8
+Executing : get_path_delay -from {input_status/geometry/edge_meta[8]/opit_0/Q} -to {input_status/geometry/edge_sync[8]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_415/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[8]/opit_0/Q
+
+CLMA_81_415/M1                          0.584          0.584 r             input_status/geometry/edge_sync[8]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[8]/opit_0/Q} -to {input_status/geometry/edge_sync[8]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 8
+CDC_CHAIN_BEGIN 9
+Executing : get_path_delay -from {input_status/geometry/edge_meta[9]/opit_0/Q} -to {input_status/geometry/edge_sync[9]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_415/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[9]/opit_0/Q
+
+CLMS_63_415/M3                          0.584          0.584 r             input_status/geometry/edge_sync[9]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[9]/opit_0/Q} -to {input_status/geometry/edge_sync[9]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 9
+CDC_CHAIN_BEGIN 10
+Executing : get_path_delay -from {input_status/geometry/edge_meta[10]/opit_0/Q} -to {input_status/geometry/edge_sync[10]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_415/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[10]/opit_0/Q
+
+CLMS_63_415/M1                          0.394          0.394 r             input_status/geometry/edge_sync[10]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[10]/opit_0/Q} -to {input_status/geometry/edge_sync[10]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 10
+CDC_CHAIN_BEGIN 11
+Executing : get_path_delay -from {input_status/geometry/edge_meta[11]/opit_0/Q} -to {input_status/geometry/edge_sync[11]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_414/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[11]/opit_0/Q
+
+CLMA_81_414/M1                          0.597          0.597 r             input_status/geometry/edge_sync[11]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[11]/opit_0/Q} -to {input_status/geometry/edge_sync[11]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 11
+CDC_CHAIN_BEGIN 12
+Executing : get_path_delay -from {input_status/geometry/edge_meta[12]/opit_0/Q} -to {input_status/geometry/edge_sync[12]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_414/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[12]/opit_0/Q
+
+CLMA_81_414/M3                          0.597          0.597 r             input_status/geometry/edge_sync[12]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[12]/opit_0/Q} -to {input_status/geometry/edge_sync[12]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 12
+CDC_CHAIN_BEGIN 13
+Executing : get_path_delay -from {input_status/geometry/edge_meta[13]/opit_0/Q} -to {input_status/geometry/edge_sync[13]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_421/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[13]/opit_0/Q
+
+CLMS_63_421/M1                          0.395          0.395 r             input_status/geometry/edge_sync[13]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[13]/opit_0/Q} -to {input_status/geometry/edge_sync[13]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 13
+CDC_CHAIN_BEGIN 14
+Executing : get_path_delay -from {input_status/geometry/edge_meta[14]/opit_0/Q} -to {input_status/geometry/edge_sync[14]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_421/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[14]/opit_0/Q
+
+CLMS_63_421/M3                          0.585          0.585 r             input_status/geometry/edge_sync[14]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[14]/opit_0/Q} -to {input_status/geometry/edge_sync[14]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 14
+CDC_CHAIN_BEGIN 15
+Executing : get_path_delay -from {input_status/geometry/edge_meta[15]/opit_0/Q} -to {input_status/geometry/edge_sync[15]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_421/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[15]/opit_0/Q
+
+CLMS_75_421/M1                          0.393          0.393 r             input_status/geometry/edge_sync[15]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[15]/opit_0/Q} -to {input_status/geometry/edge_sync[15]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 15
+CDC_CHAIN_BEGIN 16
+Executing : get_path_delay -from {input_status/geometry/edge_meta[16]/opit_0/Q} -to {input_status/geometry/edge_sync[16]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_421/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[16]/opit_0/Q
+
+CLMS_75_421/M3                          0.585          0.585 r             input_status/geometry/edge_sync[16]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[16]/opit_0/Q} -to {input_status/geometry/edge_sync[16]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 16
+CDC_CHAIN_BEGIN 17
+Executing : get_path_delay -from {input_status/geometry/edge_meta[17]/opit_0/Q} -to {input_status/geometry/edge_sync[17]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_421/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[17]/opit_0/Q
+
+CLMA_81_421/M1                          0.584          0.584 r             input_status/geometry/edge_sync[17]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[17]/opit_0/Q} -to {input_status/geometry/edge_sync[17]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 17
+CDC_CHAIN_BEGIN 18
+Executing : get_path_delay -from {input_status/geometry/edge_meta[18]/opit_0/Q} -to {input_status/geometry/edge_sync[18]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_421/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[18]/opit_0/Q
+
+CLMA_81_421/M3                          0.584          0.584 r             input_status/geometry/edge_sync[18]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[18]/opit_0/Q} -to {input_status/geometry/edge_sync[18]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 18
+CDC_CHAIN_BEGIN 19
+Executing : get_path_delay -from {input_status/geometry/edge_meta[19]/opit_0/Q} -to {input_status/geometry/edge_sync[19]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_426/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[19]/opit_0/Q
+
+CLMA_81_426/M3                          0.513          0.513 r             input_status/geometry/edge_sync[19]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[19]/opit_0/Q} -to {input_status/geometry/edge_sync[19]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 19
+CDC_CHAIN_BEGIN 20
+Executing : get_path_delay -from {input_status/geometry/edge_meta[20]/opit_0/Q} -to {input_status/geometry/edge_sync[20]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_426/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[20]/opit_0/Q
+
+CLMA_81_426/M1                          0.597          0.597 r             input_status/geometry/edge_sync[20]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[20]/opit_0/Q} -to {input_status/geometry/edge_sync[20]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 20
+CDC_CHAIN_BEGIN 21
+Executing : get_path_delay -from {input_status/geometry/edge_meta[21]/opit_0/Q} -to {input_status/geometry/edge_sync[21]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_433/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[21]/opit_0/Q
+
+CLMA_81_433/M1                          0.584          0.584 r             input_status/geometry/edge_sync[21]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[21]/opit_0/Q} -to {input_status/geometry/edge_sync[21]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 21
+CDC_CHAIN_BEGIN 22
+Executing : get_path_delay -from {input_status/geometry/edge_meta[22]/opit_0/Q} -to {input_status/geometry/edge_sync[22]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_433/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[22]/opit_0/Q
+
+CLMA_81_433/M3                          0.584          0.584 r             input_status/geometry/edge_sync[22]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[22]/opit_0/Q} -to {input_status/geometry/edge_sync[22]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 22
+CDC_CHAIN_BEGIN 23
+Executing : get_path_delay -from {input_status/geometry/edge_meta[23]/opit_0/Q} -to {input_status/geometry/edge_sync[23]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_433/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[23]/opit_0/Q
+
+CLMS_63_433/M1                          0.395          0.395 r             input_status/geometry/edge_sync[23]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[23]/opit_0/Q} -to {input_status/geometry/edge_sync[23]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 23
+CDC_CHAIN_BEGIN 24
+Executing : get_path_delay -from {input_status/geometry/edge_meta[24]/opit_0/Q} -to {input_status/geometry/edge_sync[24]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_433/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[24]/opit_0/Q
+
+CLMS_63_433/M3                          0.585          0.585 r             input_status/geometry/edge_sync[24]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[24]/opit_0/Q} -to {input_status/geometry/edge_sync[24]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 24
+CDC_CHAIN_BEGIN 25
+Executing : get_path_delay -from {input_status/geometry/edge_meta[25]/opit_0/Q} -to {input_status/geometry/edge_sync[25]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_439/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[25]/opit_0/Q
+
+CLMS_63_439/M3                          0.397          0.397 r             input_status/geometry/edge_sync[25]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[25]/opit_0/Q} -to {input_status/geometry/edge_sync[25]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 25
+CDC_CHAIN_BEGIN 26
+Executing : get_path_delay -from {input_status/geometry/edge_meta[26]/opit_0/Q} -to {input_status/geometry/edge_sync[26]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_439/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[26]/opit_0/Q
+
+CLMS_63_439/M1                          0.584          0.584 r             input_status/geometry/edge_sync[26]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[26]/opit_0/Q} -to {input_status/geometry/edge_sync[26]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 26
+CDC_CHAIN_BEGIN 27
+Executing : get_path_delay -from {input_status/geometry/edge_meta[27]/opit_0/Q} -to {input_status/geometry/edge_sync[27]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_438/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[27]/opit_0/Q
+
+CLMA_81_438/M1                          0.597          0.597 r             input_status/geometry/edge_sync[27]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[27]/opit_0/Q} -to {input_status/geometry/edge_sync[27]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 27
+CDC_CHAIN_BEGIN 28
+Executing : get_path_delay -from {input_status/geometry/edge_meta[28]/opit_0/Q} -to {input_status/geometry/edge_sync[28]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_438/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[28]/opit_0/Q
+
+CLMA_81_438/M3                          0.512          0.512 r             input_status/geometry/edge_sync[28]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[28]/opit_0/Q} -to {input_status/geometry/edge_sync[28]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 28
+CDC_CHAIN_BEGIN 29
+Executing : get_path_delay -from {input_status/geometry/edge_meta[29]/opit_0/Q} -to {input_status/geometry/edge_sync[29]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_445/Q2                          0.000          0.000 r             input_status/geometry/edge_meta[29]/opit_0/Q
+
+CLMS_63_445/M3                          0.520          0.520 r             input_status/geometry/edge_sync[29]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[29]/opit_0/Q} -to {input_status/geometry/edge_sync[29]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 29
+CDC_CHAIN_BEGIN 30
+Executing : get_path_delay -from {input_status/geometry/edge_meta[30]/opit_0/Q} -to {input_status/geometry/edge_sync[30]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_445/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[30]/opit_0/Q
+
+CLMS_63_445/M1                          0.585          0.585 r             input_status/geometry/edge_sync[30]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[30]/opit_0/Q} -to {input_status/geometry/edge_sync[30]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 30
+CDC_CHAIN_BEGIN 31
+Executing : get_path_delay -from {input_status/geometry/edge_meta[31]/opit_0/Q} -to {input_status/geometry/edge_sync[31]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_439/Q0                          0.000          0.000 r             input_status/geometry/edge_meta[31]/opit_0/Q
+
+CLMS_75_439/M1                          0.519          0.519 r             input_status/geometry/edge_sync[31]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/edge_meta[31]/opit_0/Q} -to {input_status/geometry/edge_sync[31]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 31
+CDC_CHAIN_BEGIN 32
+Executing : get_path_delay -from {input_status/geometry/href_meta[0]/opit_0/Q} -to {input_status/geometry/href_sync[0]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_445/Q2                          0.000          0.000 r             input_status/geometry/href_meta[0]/opit_0/Q
+
+CLMA_81_445/M3                          0.397          0.397 r             input_status/geometry/href_sync[0]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[0]/opit_0/Q} -to {input_status/geometry/href_sync[0]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 32
+CDC_CHAIN_BEGIN 33
+Executing : get_path_delay -from {input_status/geometry/href_meta[1]/opit_0/Q} -to {input_status/geometry/href_sync[1]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_445/Q0                          0.000          0.000 r             input_status/geometry/href_meta[1]/opit_0/Q
+
+CLMA_81_445/M1                          0.521          0.521 r             input_status/geometry/href_sync[1]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[1]/opit_0/Q} -to {input_status/geometry/href_sync[1]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 33
+CDC_CHAIN_BEGIN 34
+Executing : get_path_delay -from {input_status/geometry/href_meta[2]/opit_0/Q} -to {input_status/geometry/href_sync[2]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_451/Q0                          0.000          0.000 r             input_status/geometry/href_meta[2]/opit_0/Q
+
+CLMA_81_451/M1                          0.518          0.518 r             input_status/geometry/href_sync[2]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[2]/opit_0/Q} -to {input_status/geometry/href_sync[2]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 34
+CDC_CHAIN_BEGIN 35
+Executing : get_path_delay -from {input_status/geometry/href_meta[3]/opit_0/Q} -to {input_status/geometry/href_sync[3]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_451/Q2                          0.000          0.000 r             input_status/geometry/href_meta[3]/opit_0/Q
+
+CLMA_81_451/M3                          0.585          0.585 r             input_status/geometry/href_sync[3]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[3]/opit_0/Q} -to {input_status/geometry/href_sync[3]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 35
+CDC_CHAIN_BEGIN 36
+Executing : get_path_delay -from {input_status/geometry/href_meta[4]/opit_0/Q} -to {input_status/geometry/href_sync[4]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_469/Q2                          0.000          0.000 r             input_status/geometry/href_meta[4]/opit_0/Q
+
+CLMA_81_469/M3                          0.396          0.396 r             input_status/geometry/href_sync[4]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[4]/opit_0/Q} -to {input_status/geometry/href_sync[4]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 36
+CDC_CHAIN_BEGIN 37
+Executing : get_path_delay -from {input_status/geometry/href_meta[5]/opit_0/Q} -to {input_status/geometry/href_sync[5]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_469/Q0                          0.000          0.000 r             input_status/geometry/href_meta[5]/opit_0/Q
+
+CLMA_81_469/M1                          0.518          0.518 r             input_status/geometry/href_sync[5]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[5]/opit_0/Q} -to {input_status/geometry/href_sync[5]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 37
+CDC_CHAIN_BEGIN 38
+Executing : get_path_delay -from {input_status/geometry/href_meta[6]/opit_0/Q} -to {input_status/geometry/href_sync[6]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_75_468/Q2                          0.000          0.000 r             input_status/geometry/href_meta[6]/opit_0/Q
+
+CLMA_75_468/M3                          0.513          0.513 r             input_status/geometry/href_sync[6]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[6]/opit_0/Q} -to {input_status/geometry/href_sync[6]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 38
+CDC_CHAIN_BEGIN 39
+Executing : get_path_delay -from {input_status/geometry/href_meta[7]/opit_0/Q} -to {input_status/geometry/href_sync[7]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_75_468/Q0                          0.000          0.000 r             input_status/geometry/href_meta[7]/opit_0/Q
+
+CLMA_75_468/M1                          0.597          0.597 r             input_status/geometry/href_sync[7]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[7]/opit_0/Q} -to {input_status/geometry/href_sync[7]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 39
+CDC_CHAIN_BEGIN 40
+Executing : get_path_delay -from {input_status/geometry/href_meta[8]/opit_0/Q} -to {input_status/geometry/href_sync[8]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_75_450/Q0                          0.000          0.000 r             input_status/geometry/href_meta[8]/opit_0/Q
+
+CLMA_75_450/M1                          0.598          0.598 r             input_status/geometry/href_sync[8]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[8]/opit_0/Q} -to {input_status/geometry/href_sync[8]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 40
+CDC_CHAIN_BEGIN 41
+Executing : get_path_delay -from {input_status/geometry/href_meta[9]/opit_0/Q} -to {input_status/geometry/href_sync[9]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_75_450/Q2                          0.000          0.000 r             input_status/geometry/href_meta[9]/opit_0/Q
+
+CLMA_75_450/M3                          0.597          0.597 r             input_status/geometry/href_sync[9]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[9]/opit_0/Q} -to {input_status/geometry/href_sync[9]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 41
+CDC_CHAIN_BEGIN 42
+Executing : get_path_delay -from {input_status/geometry/href_meta[10]/opit_0/Q} -to {input_status/geometry/href_sync[10]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_75_474/Q2                          0.000          0.000 r             input_status/geometry/href_meta[10]/opit_0/Q
+
+CLMA_75_474/M3                          0.597          0.597 r             input_status/geometry/href_sync[10]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[10]/opit_0/Q} -to {input_status/geometry/href_sync[10]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 42
+CDC_CHAIN_BEGIN 43
+Executing : get_path_delay -from {input_status/geometry/href_meta[11]/opit_0/Q} -to {input_status/geometry/href_sync[11]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_75_474/Q0                          0.000          0.000 r             input_status/geometry/href_meta[11]/opit_0/Q
+
+CLMA_75_474/M1                          0.563          0.563 r             input_status/geometry/href_sync[11]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[11]/opit_0/Q} -to {input_status/geometry/href_sync[11]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 43
+CDC_CHAIN_BEGIN 44
+Executing : get_path_delay -from {input_status/geometry/href_meta[12]/opit_0/Q} -to {input_status/geometry/href_sync[12]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_475/Q0                          0.000          0.000 r             input_status/geometry/href_meta[12]/opit_0/Q
+
+CLMA_81_475/M1                          0.584          0.584 r             input_status/geometry/href_sync[12]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[12]/opit_0/Q} -to {input_status/geometry/href_sync[12]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 44
+CDC_CHAIN_BEGIN 45
+Executing : get_path_delay -from {input_status/geometry/href_meta[13]/opit_0/Q} -to {input_status/geometry/href_sync[13]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_475/Q2                          0.000          0.000 r             input_status/geometry/href_meta[13]/opit_0/Q
+
+CLMA_81_475/M3                          0.584          0.584 r             input_status/geometry/href_sync[13]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[13]/opit_0/Q} -to {input_status/geometry/href_sync[13]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 45
+CDC_CHAIN_BEGIN 46
+Executing : get_path_delay -from {input_status/geometry/href_meta[14]/opit_0/Q} -to {input_status/geometry/href_sync[14]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_480/Q0                          0.000          0.000 r             input_status/geometry/href_meta[14]/opit_0/Q
+
+CLMA_81_480/M1                          0.598          0.598 r             input_status/geometry/href_sync[14]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[14]/opit_0/Q} -to {input_status/geometry/href_sync[14]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 46
+CDC_CHAIN_BEGIN 47
+Executing : get_path_delay -from {input_status/geometry/href_meta[15]/opit_0/Q} -to {input_status/geometry/href_sync[15]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_493/Q0                          0.000          0.000 r             input_status/geometry/href_meta[15]/opit_0/Q
+
+CLMA_81_493/M1                          0.584          0.584 r             input_status/geometry/href_sync[15]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/href_meta[15]/opit_0/Q} -to {input_status/geometry/href_sync[15]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 47
+CDC_CHAIN_BEGIN 48
+Executing : get_path_delay -from {input_status/geometry/vs_meta[0]/opit_0/Q} -to {input_status/geometry/vs_sync[0]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_559/Q2                          0.000          0.000 r             input_status/geometry/vs_meta[0]/opit_0/Q
+
+CLMA_81_559/M3                          0.585          0.585 r             input_status/geometry/vs_sync[0]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[0]/opit_0/Q} -to {input_status/geometry/vs_sync[0]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 48
+CDC_CHAIN_BEGIN 49
+Executing : get_path_delay -from {input_status/geometry/vs_meta[1]/opit_0/Q} -to {input_status/geometry/vs_sync[1]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_559/Q0                          0.000          0.000 r             input_status/geometry/vs_meta[1]/opit_0/Q
+
+CLMA_81_559/M1                          0.517          0.517 r             input_status/geometry/vs_sync[1]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[1]/opit_0/Q} -to {input_status/geometry/vs_sync[1]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 49
+CDC_CHAIN_BEGIN 50
+Executing : get_path_delay -from {input_status/geometry/vs_meta[2]/opit_0/Q} -to {input_status/geometry/vs_sync[2]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_559/Q2                          0.000          0.000 r             input_status/geometry/vs_meta[2]/opit_0/Q
+
+CLMS_75_559/M3                          0.585          0.585 r             input_status/geometry/vs_sync[2]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[2]/opit_0/Q} -to {input_status/geometry/vs_sync[2]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 50
+CDC_CHAIN_BEGIN 51
+Executing : get_path_delay -from {input_status/geometry/vs_meta[3]/opit_0/Q} -to {input_status/geometry/vs_sync[3]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_559/Q0                          0.000          0.000 r             input_status/geometry/vs_meta[3]/opit_0/Q
+
+CLMS_75_559/M1                          0.515          0.515 r             input_status/geometry/vs_sync[3]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[3]/opit_0/Q} -to {input_status/geometry/vs_sync[3]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 51
+CDC_CHAIN_BEGIN 52
+Executing : get_path_delay -from {input_status/geometry/vs_meta[4]/opit_0/Q} -to {input_status/geometry/vs_sync[4]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_564/Q2                          0.000          0.000 r             input_status/geometry/vs_meta[4]/opit_0/Q
+
+CLMA_81_564/M3                          0.514          0.514 r             input_status/geometry/vs_sync[4]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[4]/opit_0/Q} -to {input_status/geometry/vs_sync[4]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 52
+CDC_CHAIN_BEGIN 53
+Executing : get_path_delay -from {input_status/geometry/vs_meta[5]/opit_0/Q} -to {input_status/geometry/vs_sync[5]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_564/Q0                          0.000          0.000 r             input_status/geometry/vs_meta[5]/opit_0/Q
+
+CLMA_81_564/M1                          0.598          0.598 r             input_status/geometry/vs_sync[5]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[5]/opit_0/Q} -to {input_status/geometry/vs_sync[5]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 53
+CDC_CHAIN_BEGIN 54
+Executing : get_path_delay -from {input_status/geometry/vs_meta[6]/opit_0/Q} -to {input_status/geometry/vs_sync[6]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_75_564/Q0                          0.000          0.000 r             input_status/geometry/vs_meta[6]/opit_0/Q
+
+CLMA_75_564/M1                          0.597          0.597 r             input_status/geometry/vs_sync[6]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[6]/opit_0/Q} -to {input_status/geometry/vs_sync[6]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 54
+CDC_CHAIN_BEGIN 55
+Executing : get_path_delay -from {input_status/geometry/vs_meta[7]/opit_0/Q} -to {input_status/geometry/vs_sync[7]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_75_564/Q2                          0.000          0.000 r             input_status/geometry/vs_meta[7]/opit_0/Q
+
+CLMA_75_564/M3                          0.514          0.514 r             input_status/geometry/vs_sync[7]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[7]/opit_0/Q} -to {input_status/geometry/vs_sync[7]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 55
+CDC_CHAIN_BEGIN 56
+Executing : get_path_delay -from {input_status/geometry/vs_meta[8]/opit_0/Q} -to {input_status/geometry/vs_sync[8]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_576/Q2                          0.000          0.000 r             input_status/geometry/vs_meta[8]/opit_0/Q
+
+CLMA_81_576/M3                          0.515          0.515 r             input_status/geometry/vs_sync[8]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[8]/opit_0/Q} -to {input_status/geometry/vs_sync[8]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 56
+CDC_CHAIN_BEGIN 57
+Executing : get_path_delay -from {input_status/geometry/vs_meta[9]/opit_0/Q} -to {input_status/geometry/vs_sync[9]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_576/Q0                          0.000          0.000 r             input_status/geometry/vs_meta[9]/opit_0/Q
+
+CLMA_81_576/M1                          0.563          0.563 r             input_status/geometry/vs_sync[9]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[9]/opit_0/Q} -to {input_status/geometry/vs_sync[9]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 57
+CDC_CHAIN_BEGIN 58
+Executing : get_path_delay -from {input_status/geometry/vs_meta[10]/opit_0/Q} -to {input_status/geometry/vs_sync[10]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_583/Q0                          0.000          0.000 r             input_status/geometry/vs_meta[10]/opit_0/Q
+
+CLMS_75_583/M1                          0.392          0.392 r             input_status/geometry/vs_sync[10]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[10]/opit_0/Q} -to {input_status/geometry/vs_sync[10]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 58
+CDC_CHAIN_BEGIN 59
+Executing : get_path_delay -from {input_status/geometry/vs_meta[11]/opit_0/Q} -to {input_status/geometry/vs_sync[11]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_583/Q2                          0.000          0.000 r             input_status/geometry/vs_meta[11]/opit_0/Q
+
+CLMS_75_583/M3                          0.585          0.585 r             input_status/geometry/vs_sync[11]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[11]/opit_0/Q} -to {input_status/geometry/vs_sync[11]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 59
+CDC_CHAIN_BEGIN 60
+Executing : get_path_delay -from {input_status/geometry/vs_meta[12]/opit_0/Q} -to {input_status/geometry/vs_sync[12]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_589/Q0                          0.000          0.000 r             input_status/geometry/vs_meta[12]/opit_0/Q
+
+CLMA_81_589/M1                          0.584          0.584 r             input_status/geometry/vs_sync[12]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[12]/opit_0/Q} -to {input_status/geometry/vs_sync[12]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 60
+CDC_CHAIN_BEGIN 61
+Executing : get_path_delay -from {input_status/geometry/vs_meta[13]/opit_0/Q} -to {input_status/geometry/vs_sync[13]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_589/Q2                          0.000          0.000 r             input_status/geometry/vs_meta[13]/opit_0/Q
+
+CLMA_81_589/M3                          0.584          0.584 r             input_status/geometry/vs_sync[13]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[13]/opit_0/Q} -to {input_status/geometry/vs_sync[13]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 61
+CDC_CHAIN_BEGIN 62
+Executing : get_path_delay -from {input_status/geometry/vs_meta[14]/opit_0/Q} -to {input_status/geometry/vs_sync[14]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_75_600/Q0                          0.000          0.000 r             input_status/geometry/vs_meta[14]/opit_0/Q
+
+CLMA_75_600/M1                          0.598          0.598 r             input_status/geometry/vs_sync[14]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[14]/opit_0/Q} -to {input_status/geometry/vs_sync[14]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 62
+CDC_CHAIN_BEGIN 63
+Executing : get_path_delay -from {input_status/geometry/vs_meta[15]/opit_0/Q} -to {input_status/geometry/vs_sync[15]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_81_601/Q0                          0.000          0.000 r             input_status/geometry/vs_meta[15]/opit_0/Q
+
+CLMA_81_601/M1                          0.397          0.397 r             input_status/geometry/vs_sync[15]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/vs_meta[15]/opit_0/Q} -to {input_status/geometry/vs_sync[15]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 63
+CDC_CHAIN_BEGIN 64
+Executing : get_path_delay -from {input_status/p_reset[0]/opit_0/Q} -to {input_status/p_reset[1]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_51_601/Q0                          0.000          0.000 r             input_status/p_reset[0]/opit_0/Q
+
+CLMS_51_601/M1                          0.394          0.394 r             input_status/p_reset[1]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/p_reset[0]/opit_0/Q} -to {input_status/p_reset[1]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 64
+CDC_CHAIN_BEGIN 65
+Executing : get_path_delay -from {input_status/r_reset[0]/opit_0/Q} -to {input_status/r_reset[1]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_51_612/Q0                          0.000          0.000 r             input_status/r_reset[0]/opit_0/Q
+
+CLMA_51_612/M1                          0.634          0.634 r             input_status/r_reset[1]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/r_reset[0]/opit_0/Q} -to {input_status/r_reset[1]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 65
+CDC_CHAIN_BEGIN 66
+Executing : get_path_delay -from {input_status/polarity_sync[0]/opit_0_inv/Q} -to {input_status/polarity_sync[1]/opit_0_inv/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_45_618/Q0                          0.000          0.000 r             input_status/polarity_sync[0]/opit_0_inv/Q
+
+CLMA_45_618/M1                          0.636          0.636 r             input_status/polarity_sync[1]/opit_0_inv/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/polarity_sync[0]/opit_0_inv/Q} -to {input_status/polarity_sync[1]/opit_0_inv/D} -max_path 1 successfully.
+CDC_CHAIN_END 66
+CDC_CHAIN_BEGIN 67
+Executing : get_path_delay -from {input_status/polarity_sync[1]/opit_0_inv/Q} -to {input_status/polarity_sync[2]/opit_0_inv/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_45_618/Q1                          0.000          0.000 r             input_status/polarity_sync[1]/opit_0_inv/Q
+
+CLMA_45_618/M2                          0.631          0.631 r             input_status/polarity_sync[2]/opit_0_inv/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/polarity_sync[1]/opit_0_inv/Q} -to {input_status/polarity_sync[2]/opit_0_inv/D} -max_path 1 successfully.
+CDC_CHAIN_END 67
+CDC_CHAIN_BEGIN 68
+Executing : get_path_delay -from {input_status/hs_level_sync[0]/opit_0_inv/Q} -to {input_status/hs_level_sync[1]/opit_0_inv/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_51_624/Q2                          0.000          0.000 r             input_status/hs_level_sync[0]/opit_0_inv/Q
+
+CLMA_51_624/M3                          0.515          0.515 r             input_status/hs_level_sync[1]/opit_0_inv/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/hs_level_sync[0]/opit_0_inv/Q} -to {input_status/hs_level_sync[1]/opit_0_inv/D} -max_path 1 successfully.
+CDC_CHAIN_END 68
+CDC_CHAIN_BEGIN 69
+Executing : get_path_delay -from {input_status/vs_level_sync[0]/opit_0_inv/Q} -to {input_status/vs_level_sync[1]/opit_0_inv/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_51_624/Q0                          0.000          0.000 r             input_status/vs_level_sync[0]/opit_0_inv/Q
+
+CLMA_51_624/M1                          0.563          0.563 r             input_status/vs_level_sync[1]/opit_0_inv/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/vs_level_sync[0]/opit_0_inv/Q} -to {input_status/vs_level_sync[1]/opit_0_inv/D} -max_path 1 successfully.
+CDC_CHAIN_END 69
+CDC_CHAIN_BEGIN 70
+Executing : get_path_delay -from {input_status/timing_good_sync[0]/opit_0_inv/Q} -to {input_status/timing_good_sync[1]/opit_0_inv/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_51_618/Q2                          0.000          0.000 r             input_status/timing_good_sync[0]/opit_0_inv/Q
+
+CLMA_51_618/M3                          0.395          0.395 r             input_status/timing_good_sync[1]/opit_0_inv/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/timing_good_sync[0]/opit_0_inv/Q} -to {input_status/timing_good_sync[1]/opit_0_inv/D} -max_path 1 successfully.
+CDC_CHAIN_END 70
+CDC_CHAIN_BEGIN 71
+Executing : get_path_delay -from {input_status/timing_bad_sync[0]/opit_0_inv/Q} -to {input_status/timing_bad_sync[1]/opit_0_inv/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_51_618/Q0                          0.000          0.000 r             input_status/timing_bad_sync[0]/opit_0_inv/Q
+
+CLMA_51_618/M1                          0.586          0.586 r             input_status/timing_bad_sync[1]/opit_0_inv/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/timing_bad_sync[0]/opit_0_inv/Q} -to {input_status/timing_bad_sync[1]/opit_0_inv/D} -max_path 1 successfully.
+CDC_CHAIN_END 71
+CDC_CHAIN_BEGIN 72
+Executing : get_path_delay -from {input_status/geometry/ack_sync[0]/opit_0/Q} -to {input_status/geometry/ack_sync[1]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_607/Q0                          0.000          0.000 r             input_status/geometry/ack_sync[0]/opit_0/Q
+
+CLMS_75_607/M1                          0.620          0.620 r             input_status/geometry/ack_sync[1]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/ack_sync[0]/opit_0/Q} -to {input_status/geometry/ack_sync[1]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 72
+CDC_CHAIN_BEGIN 73
+Executing : get_path_delay -from {input_status/geometry/failed_sync[0]/opit_0/Q} -to {input_status/geometry/failed_sync[1]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_63_607/Q0                          0.000          0.000 r             input_status/geometry/failed_sync[0]/opit_0/Q
+
+CLMS_63_607/M1                          0.393          0.393 r             input_status/geometry/failed_sync[1]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/failed_sync[0]/opit_0/Q} -to {input_status/geometry/failed_sync[1]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 73
+CDC_CHAIN_BEGIN 74
+Executing : get_path_delay -from {input_status/geometry/healthy_sync[0]/opit_0/Q} -to {input_status/geometry/healthy_sync[1]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_57_612/Q0                          0.000          0.000 r             input_status/geometry/healthy_sync[0]/opit_0/Q
+
+CLMA_57_612/M1                          0.563          0.563 r             input_status/geometry/healthy_sync[1]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/healthy_sync[0]/opit_0/Q} -to {input_status/geometry/healthy_sync[1]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 74
+CDC_CHAIN_BEGIN 75
+Executing : get_path_delay -from {input_status/geometry/p_enable[0]/opit_0_inv/Q} -to {input_status/geometry/p_enable[1]/opit_0_inv/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_63_624/Q0                          0.000          0.000 r             input_status/geometry/p_enable[0]/opit_0_inv/Q
+
+CLMA_63_624/M1                          0.586          0.586 r             input_status/geometry/p_enable[1]/opit_0_inv/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/p_enable[0]/opit_0_inv/Q} -to {input_status/geometry/p_enable[1]/opit_0_inv/D} -max_path 1 successfully.
+CDC_CHAIN_END 75
+CDC_CHAIN_BEGIN 76
+Executing : get_path_delay -from {input_status/geometry/p_reset[0]/opit_0/Q} -to {input_status/geometry/p_reset[1]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_57_606/Q0                          0.000          0.000 r             input_status/geometry/p_reset[0]/opit_0/Q
+
+CLMA_57_606/M1                          0.565          0.565 r             input_status/geometry/p_reset[1]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/p_reset[0]/opit_0/Q} -to {input_status/geometry/p_reset[1]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 76
+CDC_CHAIN_BEGIN 77
+Executing : get_path_delay -from {input_status/geometry/r_enable[0]/opit_0_inv/Q} -to {input_status/geometry/r_enable[1]/opit_0_inv/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_51_613/Q0                          0.000          0.000 r             input_status/geometry/r_enable[0]/opit_0_inv/Q
+
+CLMS_51_613/M1                          0.585          0.585 r             input_status/geometry/r_enable[1]/opit_0_inv/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/r_enable[0]/opit_0_inv/Q} -to {input_status/geometry/r_enable[1]/opit_0_inv/D} -max_path 1 successfully.
+CDC_CHAIN_END 77
+CDC_CHAIN_BEGIN 78
+Executing : get_path_delay -from {input_status/geometry/r_reset[0]/opit_0/Q} -to {input_status/geometry/r_reset[1]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_57_613/Q0                          0.000          0.000 r             input_status/geometry/r_reset[0]/opit_0/Q
+
+CLMA_57_613/M1                          0.584          0.584 r             input_status/geometry/r_reset[1]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/r_reset[0]/opit_0/Q} -to {input_status/geometry/r_reset[1]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 78
+CDC_CHAIN_BEGIN 79
+Executing : get_path_delay -from {input_status/geometry/request_sync[0]/opit_0/Q} -to {input_status/geometry/request_sync[1]/opit_0/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMS_75_589/Q0                          0.000          0.000 r             input_status/geometry/request_sync[0]/opit_0/Q
+
+CLMS_75_589/M1                          0.392          0.392 r             input_status/geometry/request_sync[1]/opit_0/D
+Path end...
+Execute get_path_delay takes 0.015625 sec.
+Executing : get_path_delay -from {input_status/geometry/request_sync[0]/opit_0/Q} -to {input_status/geometry/request_sync[1]/opit_0/D} -max_path 1 successfully.
+CDC_CHAIN_END 79
+CDC_CHAIN_BEGIN 80
+Executing : get_path_delay -from {input_status/geometry/source_running_sync[0]/opit_0_inv/Q} -to {input_status/geometry/source_running_sync[1]/opit_0_inv/D} -max_path 1
+Path start...
+
+Location                                Incr           Delay               Path
+
+CLMA_57_619/Q0                          0.000          0.000 r             input_status/geometry/source_running_sync[0]/opit_0_inv/Q
+
+CLMA_57_619/M1                          0.585          0.585 r             input_status/geometry/source_running_sync[1]/opit_0_inv/D
+Path end...
+Execute get_path_delay takes 0.000000 sec.
+Executing : get_path_delay -from {input_status/geometry/source_running_sync[0]/opit_0_inv/Q} -to {input_status/geometry/source_running_sync[1]/opit_0_inv/D} -max_path 1 successfully.
+CDC_CHAIN_END 80
+CDC_CHAIN_QUERY_COMPLETE
