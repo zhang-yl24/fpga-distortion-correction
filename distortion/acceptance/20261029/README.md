@@ -2,6 +2,8 @@
 
 This isolated snapshot preserves self-authored geometry bypass + atomic Brown13/rotation/Gamma frame sampling,actual capture-DMA/behavior-DDR/arbiter/reader/FIFO scan benches,and the exact board top/controller used for today's diagnostic. It does not replace the repository's production entry. Modules share names with other candidates: compile only the selected manifest closure, never glob all RTL.
 
+**Source scope:** base main `ddf3540` contains `lrt24-thu`'s PR10 (merged2026-10-29 22:15:06 Beijing):1080p30 EDID,checked I2C/error detection,bidirectional SCL and DDR diagnostics. Tonight's frozen acceptance closure did not adopt that PR10 RTL,the collaborator's rowpipe,manual routing or reset exceptions; their presence in branch history does not mean they were validated by this snapshot. The PCF fix comes from the local same-PDS-version successful explicit-PCF entry,without RCF. The next explicit resume should prioritize reviewing PR10 HDMI/I2C reuse separately; no integration,test rerun or engineering resume is performed by this provenance note. See HANDOFF.md for the still-pending independent final-DB STA and false hardware gates.
+
 Start with HANDOFF.md,FAILURES.md,EXCLUSIONS.md and evidence-summary.json. All hardware/formal gates are false. Hardware,simulation and PDS work remain paused after this Git delivery. This commit does not run tests or authorize their execution.
 
 The source hashes distinguish original validated bytes from include-only portable copies. The new portable entry points receive static delivery review only; no test/EDA run was performed after relocation. Do not transfer original physical/functional acceptance to changed delivery SHA without a separately authorized validation.
