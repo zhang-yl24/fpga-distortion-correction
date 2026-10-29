@@ -1,5 +1,15 @@
 # 当前交接点
 
+## Checked HDMI 新位流已生成
+
+2026-10-29：从上一轮已修复并审计的最终 ADF `857bf183e52cbd96fb9f378f5087f4c55aba66b22f8488822b7e2dc92450c142`，在 `distortion/build/board1080-timing/checked-bit-1029-a` 完成本候选自己的新时序、运行时生成前审计和位流导出。实际阶段严格为 Report Timing → 审计通过 → Generate Bitstream，原生退出 0；601 项输入无漂移，原始 ADF 与导出副本一致。本轮没有重新综合/PNR，源码完整构建依据仍为上一轮 checked 原始库。
+
+新位流路径 `distortion/build/board1080-timing/checked-bit-1029-a/generate_bitstream/board1080_top.sbit`，3,791,112 字节，SHA256 `b4edadba44368d5de1c5b3237d2cc3dccd7c951918cefb0c40af2ac63f86cb33`。实际文件头为 board1080_top / Logos2-PG2L100H--6-FBG676 / 2023.2-SP3 build154097。新报告 124 行时序及 14 行 HDMI 配置检查与原最终报告一致，双角十类无失败，setup/hold 数据例外为零；55/110 外部 IO 延迟缺口原样保留。
+
+新增独立准备器及 21 项 CPU 测试，相关新旧位流/时序审计回归最终 82 通过、1 项历史本地产物可选重放跳过。旧审计 set 遍历造成的 28 条复位清单跨进程顺序差异已在新入口精确规范化，重复身份和字段变化仍拒绝，旧 helper 和冻结证据未改。独立生成后复核通过，完整回执 `distortion/results/board1080-checked-bitstream-20261029.json`；说明见 `handoff/BOARD1080_CHECKED_BITSTREAM_20261029.md`。
+
+这是 HDMI1080p30 离线候选；未下载、烧写 Flash 或访问开发板。下一步核对 HDMI 输入/显示及板上电平/上拉条件、只读识别下载链，再开展 DDR 训练、真实图像和稳定性验收。外部 IO/CDC/复位模拟安全性仍未通过，HardwareReleaseAllowed 保持 false。
+
 ## Checked HDMI 完整构建与本候选 DDR 修复
 
 2026-10-29：在上一轮 checked I2C/控制器/顶层基础上，新增独立双向 SCL FDC 和严格来源清单，实际完成 PDS 编译、综合、器件映射、布局布线、route_optimize 和最终 STA。109 项源码、123 项输入无漂移；最终原始 ADF 为 `c411d60712ba01ea9356553a69516d316aa68dc8fa67505f7b962d610dec4029`。这是 checked 版本自己的完整构建，不沿用旧 EDID-only 或旧位流结论。原报告 fast hold 2 项失败，slow/fast recovery 245/228 项失败，原件完整保留。
