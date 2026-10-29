@@ -1,0 +1,103 @@
+{
+  "Schema": "dvp-capture-cdc-simulation-v1",
+  "Passed": true,
+  "StartedUTC": "2026-10-29T15:18:13.933931+00:00",
+  "SourceSHA256": {
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/experimental/dvp_rgb565_capture_cdc.v": "14bde70db5bcc2797d2e648af44f64d57df62673161529ef7358878700dc7079",
+    "tests/tb_dvp_rgb565_capture_cdc.sv": "83d1074d49f7e7774b461e179b0a066c9abd6506120433e30fc585c4bef72df9",
+    "tools/run_dvp_capture_cdc_sim.py": "2b6097437b6cdbb75f0e1e832a6bd905b9bc53567445f2a4296ba86e77e35040",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "VivadoBin": "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin",
+  "Commands": [
+    {
+      "Stage": "compile",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\video_async_fifo.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_rgb565_capture_cdc.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_dvp_rgb565_capture_cdc.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_dvp_rgb565_capture_cdc",
+        "-s",
+        "dvp_capture_cdc"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "dvp_capture_cdc",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "Limits": "Synthetic DVP bytes, real adapter/FIFO RTL and software CRC oracle only. No sensor initialization, DDR DMA integration, lens correction, physical timing, camera frame-rate measurement or independent clock-stop recovery is verified.",
+  "IndependentPixelCheck": {
+    "Pixels": 128,
+    "FIFOBeats": 8,
+    "CRC32": "8fc57a41",
+    "FrameID": "10203040",
+    "Bank": 1,
+    "BytesSHA256": "592ab649d3dc66dba025f790c136ec2d03132e6dbe154f96e46b35c4d3e67cab"
+  },
+  "CaseLines": [
+    "DVP_CDC_CASE two_byte_pixels_pack_crc_async_backpressure PASS",
+    "DVP_CDC_CASE low_byte_first_active_low_vsync_href PASS",
+    "DVP_CDC_CASE late_grant_waits_for_next_whole_frame PASS",
+    "DVP_CDC_CASE missing_grant_counts_whole_active_frames PASS",
+    "DVP_CDC_CASE short_line_rejected PASS",
+    "DVP_CDC_CASE long_line_rejected PASS",
+    "DVP_CDC_CASE short_frame_rejected PASS",
+    "DVP_CDC_CASE long_frame_rejected PASS",
+    "DVP_CDC_CASE odd_byte_line_rejected_no_cross_line_pair PASS",
+    "DVP_CDC_CASE good_frame_recovery_after_each_geometry_fault_without_reset PASS",
+    "DVP_CDC_CASE vsync_interrupt_discards_half_pixel_and_recovers PASS",
+    "DVP_CDC_CASE enable_loss_sticky_until_failed_frame_retired PASS",
+    "DVP_CDC_CASE fifo_overflow_failed_frame_drain_and_recovery PASS",
+    "DVP_CDC_CASE completion_mailbox_stable_across_dropped_frame PASS",
+    "DVP_CDC_CASE common_reset_discards_half_pixel_and_reservation PASS",
+    "DVP_CDC_CASE common_reset_discards_queued_payload_and_restarts PASS"
+  ],
+  "SourceSHA256After": {
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/experimental/dvp_rgb565_capture_cdc.v": "14bde70db5bcc2797d2e648af44f64d57df62673161529ef7358878700dc7079",
+    "tests/tb_dvp_rgb565_capture_cdc.sv": "83d1074d49f7e7774b461e179b0a066c9abd6506120433e30fc585c4bef72df9",
+    "tools/run_dvp_capture_cdc_sim.py": "2b6097437b6cdbb75f0e1e832a6bd905b9bc53567445f2a4296ba86e77e35040",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "LogSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "8dd01f1bbc89954547d99e7e6c8f86560e89dfebec31711ee89ba28e5871bf94",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "d962fa04556d026ecbe604d1226de0d9dfd368d7d1796d98a78fb67f4b1f7f1a",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "87c522dbc7c1cf343394355563abad0ba131beadc1b800e55c94e3e2885dd3a9",
+    "simulation.log": "fa8729164367d86454e3bd36fb4967ef722e600200ec9e7955adba30ff643109",
+    "webtalk.log": "ce2fa29ad5e8e3cc629ad35769ea02c22d73c3b2707dfc3bcbf69f57b2713384",
+    "webtalk_33728.backup.log": "344f1bf5837dc92a8d87bdc595287075e865bbd9c4ca63e0e6fe1c58a52e7b43",
+    "xelab.log": "4ef812cd353e472eb1a0346ec4439478e0449ae8822416a2c283fe16df71d8fa",
+    "xvlog.log": "4197e38aada99e4a04daea0213958b3734876eed93340c2b42716e172f009494"
+  },
+  "DataSHA256": {
+    "dvp-good-words.hex": "3b6dffaea453f00e44cd77b16f41170db21a3d6093d7e00dbfaff917e9551c6f"
+  },
+  "EndedUTC": "2026-10-29T15:18:29.728865+00:00"
+}
