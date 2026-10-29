@@ -1,5 +1,17 @@
 # 当前交接点
 
+## Checked HDMI 完整构建与本候选 DDR 修复
+
+2026-10-29：在上一轮 checked I2C/控制器/顶层基础上，新增独立双向 SCL FDC 和严格来源清单，实际完成 PDS 编译、综合、器件映射、布局布线、route_optimize 和最终 STA。109 项源码、123 项输入无漂移；最终原始 ADF 为 `c411d60712ba01ea9356553a69516d316aa68dc8fa67505f7b962d610dec4029`。这是 checked 版本自己的完整构建，不沿用旧 EDID-only 或旧位流结论。原报告 fast hold 2 项失败，slow/fast recovery 245/228 项失败，原件完整保留。
+
+已在新副本对 `_N55`/`_N63` 两条 DDR 数据末段作局部绕行，并由独立新进程重载 STA。仅绕行、未加任何复位例外的 ADF 为 `eb4a20abf54c135677dda7075b93144aefb98dc7c953f785bdf4ef077d91eee2`，双角 hold 零失败；两个目标 fast hold 最差 +0.346/+0.147 ns，已报告 slow setup 最差仍 +2.017/+2.929 ns。152 行汇总 149 行一致、3 行变化；额外 slow 反向 hold 组有 1 ps 裕量下降（+0.336→+0.335 ns），已披露。复位检查及 8 类空 false-path 集不变，严格对照见 `distortion/results/board1080-checked-hold-route-only-20261029.json`。
+
+当前精确复位候选保存为 `857bf183e52cbd96fb9f378f5087f4c55aba66b22f8488822b7e2dc92450c142`，位于 `distortion/build/board1080-timing/checked-reset-1029-a/input.adf`；独立重载 `checked-final-sta-1029-a` 已退出 0。原生报告及独立严格审计确认双角十类全部零失败：slow/fast setup +0.245/+2.951 ns，hold +0.060/+0.020 ns，recovery +2.552/+4.484 ns，removal +0.250/+0.079 ns，MPW 均 +0.035 ns。复位例外限定为每角 244 项 DDR 内部检查和 1 项入口检查；setup/hold 数据例外为空。相对仅绕行版本，只有 recovery/removal 的 7 组精确复位检查被排除，所有保留汇总行、时钟及 IO 警告集合相同。新增严格审计器复核通过，保留的 124 行汇总（含 14 行 HDMI 配置检查）完全一致，结果见 `distortion/results/board1080-checked-ddr-final-20261029-a.json`；例外不表示原复位路径获得正裕量。
+
+当前 ADF 的功能导出已核实 SCL/SDA 双向输入、两级采样、恒零输出及三态控制；入口两级复位同步器原有检查器原样通过，实际同步输出 10 个分支、65 个复位叶节点，没有数据用途。所有新证据绑定对应 ADF、网表、执行脚本/日志和输入哈希。实际外部 IO 仍缺 55/110 项输入/输出延迟，HDMI 芯片 AC 资料虽补齐部分数值，但模式/相位、板级延迟、电平/上拉仍需确认，未凭候选数值修改 FDC。
+
+本轮相关 CPU 回归 265 项通过（243 项加最终审计 22 项），四个交付基线及依赖闭包审计通过；远端 CI 随本次推送验证。未生成或下载 checked 新位流，也未访问开发板。主链仍为 HDMI1080p30，未改 OV5640 直入或实板帧率。详情 `handoff/BOARD1080_CHECKED_BUILD_20261029.md`，外部 AC 证据 `handoff/HDMI_EXTERNAL_AC_FINDINGS_20261029.md`。下一步导出与完整候选绑定的位流，并完成外部接口条件和板上 DDR/HDMI 验证。
+
 ## HDMI 初始化故障处理已接入独立候选
 
 2026-10-29：新增 checked I²C 驱动、RX/TX 包装器和独立板级顶层。ACK/NACK、缺设备、卡总线/超时及发送冲突可以触发粘滞失败，不再把失败当作配置完成；修复 TX 阶段边界多发命令和 TX 完成后 RX 轮询未恢复的问题。板级 A7 在启动前禁止放行、运行后走已有停止/排空路径，不撤销待完成 AW 或直接复位 DDR/数据流水线。A7/LED7 是故障类别，尚无逐 ACK 阶段板上读出接口。
