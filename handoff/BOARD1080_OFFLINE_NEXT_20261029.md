@@ -9,6 +9,10 @@
 - 回归入口：`distortion/tools/run_board1080_rowpipe_control_sim.py`；测试 7 项通过；报告位于 `distortion/build/board1080-rowpipe-control/actual-20261029-a/board1080-rowpipe-control-simulation.json`。
 - 已从最终修复 ADF 离线生成 `board1080_top.sbit`：3,791,112 字节，SHA256 `9f6bbe5fc02e7b66da1be6d449d6e68fef40f6f227068196f50a6a3a37a7967a`。文件位于 `distortion/build/board1080-timing/bit-1029-a/generate_bitstream/`；结果及输入/日志哈希见 `distortion/results/board1080-offline-bitstream-20261029.json`。
 - PDS 在出位流之前实际执行了完整双角十类与精确例外审计；日志顺序为 Report Timing → PRE_BIT_NATIVE_AUDIT_PASS → Generate Bitstream。原始及复制 ADF 哈希保持相同，没有硬件操作。
+- 已在 `fresh-1029-b` 从当前源码重新执行 compile → synthesize → dev_map → pnr → route_optimize → STA，原生退出0、六阶段均实际完成，109项源码与109个编译副本无漂移，STA前后ADF相同。新ADF SHA256 `0f6101036b3c3981544e032ec93c3ad2b5468c79e55fa4f8f6a8014265fb15be`，完整回执见 `distortion/results/board1080-fresh-rebuild-20261029.json`。
+- fresh构建尚未接入精确修复：十类汇总逐行与严格基线E相同，slow/fast各1项hold（−0.037/−0.222ns），recovery为245/234项失败，另外六类零失败。现有已修复ADF与位流未改；新构建成功不代表新库时序通过。
+- bitstream准备器的13项测试已加入CI；本地相关66项通过，提交 `e96f534` 的GitHub Actions已通过。
+- 新ADF只读探针已验证原 `_N173` 路线、驱动/负载物理站点和126个复位源端点对与旧修复profile相同；扩展STA前后ADF不变，汇总不变。`nworst 4` 每角展开251条IP复位边沿变体，不等于244项逻辑检查，不能直接丢弃多出的变体。入口RDC新功能导出和精确原生pin查询尚未重绑，修复准入保持false，见 `distortion/results/board1080-fresh-admission-20261029.json`。
 
 该回归使用明确的 PLL/DDR/System/HDMI stub，只证明实际 board top 的控制 wiring 和状态机，不证明真实 FIFO、DDR IP、PLL、IIC、HDMI PHY、CDC 时序或硬件稳定性。
 
@@ -16,14 +20,14 @@
 
 已验证的最终 ADF 现已能生成 `.sbit`，但需要完整的源码/流程声明上下文。只含 MPNR 的独立工程曾返回 `Flow-0044: Place hasn't been run`；复制旧工程后又重跑前置综合，已停止。成功的独立配方声明当前109项闭包及完整流程，再给 STA 和 `gen_bit_stream` 显式传入**同一个已审计 ADF 副本**，并在两者之间执行原生报告审计。
 
-本次实际重型阶段只有 Report Timing 和 Generate Bitstream；PDS 因指定输入数据库而跳过了前置综合/PNR 计算。不能把声明过 compile/pnr 或工具打印 successfully 当成重新从源码构建通过。原本可复现的修复流程和冻结的输入 ADF 仍是前提。
+`bit-1029-a` 的实际重型阶段只有 Report Timing 和 Generate Bitstream；PDS 因指定输入数据库而跳过了前置综合/PNR 计算。不能把声明过 compile/pnr 或工具打印 successfully 当成重新从源码构建通过。原本可复现的修复流程和冻结的输入 ADF 仍是前提。
 
-下一项较大的离线工作是把已验证修复整合到可重新布局的 fullflow，使它能支持后续 RTL 修改：
+当前源码的独立fullflow已经跑通。下一项离线工作是把精确修复接到这份新库上，并形成完整的源码到位流流程：
 
-1. 使用当前 109 项源码闭包、最终 rowpipe 顶层、原 FDC/RCF 和四组精确复位范围。
-2. 在 PNR 完成后执行 `_N173` 分支绕行。
-3. 用新进程重新生成完整 STA 和例外报告。
-4. 在同一最终 PNR 状态执行 `gen_bit_stream -scbv {High Voltage} -unused_io_status UNUSED`。
-5. 绑定最终 `.sbit`、ADF、时序报告、引脚报告和全部输入 SHA。
+1. 将 `nworst 4` 的251项实际路径变体映射回244项逻辑检查，核对慢/快角边沿身份和失败数，不折叠掉未解释的路径。
+2. 为新ADF补独立原生 pin-query 记录，并重新导出/审计入口两级RDC功能网表；建立完整的新库 admission profile。
+3. 准入后为新ADF建立独立输入绑定，应用精确复位范围与必要的数据支路绕行。现有准备器只接受历史基线SHA，必须保留该拒绝，不能直接替换哈希或因 `_N173` 名字相同就套用旧物理锚点。
+4. 用新进程重新生成完整 STA 和例外报告，并与这份fresh基线比较；只允许已审计目标的变化。
+5. 在同一最终 PNR 状态执行 `gen_bit_stream -scbv {High Voltage} -unused_io_status UNUSED`，绑定最终 `.sbit`、ADF、时序报告、引脚报告和全部输入 SHA。
 
 当前位流门禁只证明原生内部时序/例外与文件输入身份。仍需完成实际板型、全引脚电气、HDMI AC 和 CDC 边界检查，再做实板画面/DDR长稳验证；不声称硬件放行。大型位流和 ADF 留本机，Git 只提交工具、测试和哈希证据。
