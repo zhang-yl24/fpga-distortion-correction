@@ -22,7 +22,7 @@ def main():
     if out.exists() or out.is_relative_to(P):raise ValueError('Use a fresh output outside the frozen package')
     for name,h in m['PackageFilesSHA256'].items():checked(P/name,h)
     inputs={str(P/n):h for n,h in m['PackageFilesSHA256'].items()}
-    copied=[];plan={'Case':a.case,'GateState':m['GateState'],'ToolsExecuted':False,'HardwareAccessed':False,'PortableEntryPreviouslyExecuted':False}
+    copied=[];plan={'Case':a.case,'GateState':m['GateState'],'ToolsExecuted':False,'HardwareAccessed':False,'PortableEntryPreviouslyExecuted':False,'PackageManifestSHA256':sha(P/'manifest.json')}
     pending=[]
     def source(relative):
         p=checked(P/relative,m['Sources'][relative]['DeliveredSHA256']);pending.append((p,p.name));copied.append(p.name);return p.name

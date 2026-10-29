@@ -5,16 +5,25 @@ import argparse,csv,hashlib,json,os,re,time
 from owned_tools import tool
 sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def main():
-    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--work',type=Path,required=True);ap.add_argument('--execute-offline-rtl',action='store_true');a=ap.parse_args()
+    ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--work',type=Path,required=True);ap.add_argument('--execute-offline-rtl',action='store_true');ap.add_argument('--directed-result',type=Path);a=ap.parse_args()
     if not a.execute_offline_rtl:ap.error('explicit offline execution and an exclusive heavy-tool slot are required')
     w=a.work.resolve();c=json.loads((w/'commands.json').read_text(encoding='utf-8'))
     if c['Case'] not in ('control','real-directed','real-native'):raise ValueError('RTL cases only')
     if (w/'replay-result.json').exists() or any(w.glob('*-stdout.log')):raise ValueError('fresh prepared directory only')
     for p,h in c['InputsSHA256'].items():assert sha(p)==h,p
     for n,h in c['WorkFilesSHA256'].items():assert sha(w/n)==h,n
+    gate=None
+    if c['Case']=='real-native':
+        if not a.directed_result:ap.error('native replay requires a new same-package --directed-result; old local acceptance is not inherited')
+        gate=json.loads(a.directed_result.read_text(encoding='utf-8'))
+        assert gate['Case']=='real-directed' and gate['FunctionalPassed'] and gate['InputsStable']
+        assert gate['PackageManifestSHA256']==c['PackageManifestSHA256']
+        assert gate['ConfigSHA256']==c['WorkFilesSHA256']['config.vh']
+        assert [x['ExitCode'] for x in gate['Commands']]==[0,0,0]
+        assert gate['Summary']['points_each_mode']==257 and gate['Summary']['outputs']==514 and gate['Summary']['first_wait_cycles']>0
     start=time.monotonic();budget=c['MaximumTotalSeconds'];deadline=start+budget-30
     env=os.environ.copy();temp=w/'compiler-temp';temp.mkdir();env['TEMP']=env['TMP']=str(temp)
-    r={'Case':c['Case'],'FunctionalPassed':False,'StartedUtc':datetime.now(timezone.utc).isoformat(),'MaximumSeconds':budget,'CleanupReserveSeconds':30,'GateState':c['GateState'],'Commands':[],'HardwareAccessed':False}
+    r={'Case':c['Case'],'FunctionalPassed':False,'StartedUtc':datetime.now(timezone.utc).isoformat(),'MaximumSeconds':budget,'CleanupReserveSeconds':30,'GateState':c['GateState'],'Commands':[],'HardwareAccessed':False,'PackageManifestSHA256':c['PackageManifestSHA256'],'ConfigSHA256':c['WorkFilesSHA256'].get('config.vh'),'DirectedResultSHA256':sha(a.directed_result) if gate else None}
     try:
         for command in c['Commands']:
             item=dict(command,ExitCode=None);r['Commands'].append(item)
