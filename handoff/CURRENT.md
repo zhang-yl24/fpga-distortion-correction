@@ -1,5 +1,15 @@
 # 当前交接点
 
+## 新源码完整重建完成；下一步整合精确修复
+
+2026-10-29：`fresh-1029-b` 从当前109项源码闭包实际完成综合、映射、布局布线、route optimize和最终STA，原生退出0、无E/F错误；109原件/109编译副本无漂移，最终ADF与STA前快照SHA均为 `0f6101036b3c3981544e032ec93c3ad2b5468c79e55fa4f8f6a8014265fb15be`。回执 `distortion/results/board1080-fresh-rebuild-20261029.json`。本次直接PowerShell执行，无runner的execution.json；起始许可证选择失败的fresh-1029-a单独保留，匹配的本机license仅在成功子进程中选择，系统变量未改。
+
+新库尚未应用精确修复，十类时序汇总/时钟行与严格基线E完全一致：slow/fast各1项hold，recovery245/234项失败，其余六类零失败。现有已修复候选ADF/位流未改。下一步先做新库完整路径/复位/RDC/路线准入，再在其副本整合精确修复、重新STA并出位流；旧固定SHA准备器继续拒绝新库，不使用hash override。详见 `handoff/BOARD1080_OFFLINE_NEXT_20261029.md`。
+
+bitstream准备测试已补入CI，66项本地相关测试通过；已推送 `e96f534`，对应GitHub Actions成功。未重跑长native8、未操作开发板。
+
+新库只读探针 `fresh-1029-admission-b` 已退出0、ADF原件/副本不变；原 `_N173` 路线、源/目的站点及126源端点对与旧profile一致，十类汇总/时钟行不变。扩展报告每角251条IP复位边沿变体需映射回244逻辑检查；新入口功能网表和精确pin-query证据仍待绑定，RepairAdmissionPassed=false，未应用修复。回执 `distortion/results/board1080-fresh-admission-20261029.json`；此前dump_net不接受实例名的失败只读探针保留，未保存或改ADF。
+
 ## 离线位流生成和实际 rowpipe 顶层控制回归完成
 
 在 `85d0cda` 的修复结果基础上，已离线生成最终候选 `.sbit`：`distortion/build/board1080-timing/bit-1029-a/generate_bitstream/board1080_top.sbit`，3,791,112字节，SHA256 `9f6bbe5fc02e7b66da1be6d449d6e68fef40f6f227068196f50a6a3a37a7967a`。原生 pre-bit 十类/例外审计在生成前实际通过，PDS退出0/271.126秒，输入无漂移。完整证据 `distortion/results/board1080-offline-bitstream-20261029.json`；这次从同一冻结的最终修复ADF导出，**不是重新从源码计算PNR**。

@@ -1,0 +1,163 @@
+{
+  "Schema": "board1080-fresh-partial-admission-v1",
+  "RecordedUTC": "2026-10-29T06:40:15.387821+00:00",
+  "Scope": "Read-only new-ADF route/sites and expanded native STA; no repair or bitstream",
+  "ObservedReturnCode": 0,
+  "Executor": "Direct PowerShell PDS invocation; successful exit observed in session 21430",
+  "InputADFUnchanged": true,
+  "NewADFSHA256": "0f6101036b3c3981544e032ec93c3ad2b5468c79e55fa4f8f6a8014265fb15be",
+  "OriginalDataBranchRouteVerified": [
+    "CR3 of CLMA_357_619",
+    "S_CR3 of SRB_354_618",
+    "ZDNE[0] of SRB_354_618",
+    "IDNE[0] of SRB_360_624",
+    "S_B2 of SRB_360_624",
+    "TX_DATA[2] of IOLHR_364_624"
+  ],
+  "KnownDriverAndLoadPresentAtExpectedSites": true,
+  "AllSummaryAndClockRowsUnchangedByReadOnlyProbe": true,
+  "SourceEndpointPairCount": 126,
+  "SourceEndpointPairsSHA256": "3b618334e27a72bcd8636dedcc1e9d82f32db47645e3469ba8b577b136f8a92f",
+  "SourceEndpointPairsEqualHistoricalRepairProfile": true,
+  "RawRecoveryPathVariantsByCorner": {
+    "slow": 251,
+    "fast": 251
+  },
+  "RawVariantsByClockGroup": [
+    {
+      "Corner": "fast",
+      "LaunchClock": "ddrphy_sysclk",
+      "CaptureClock": "phy_dq_clk_0",
+      "RawVariantCount": 3,
+      "SummaryCheckCount": 3,
+      "SummaryFailingCheckCount": 3
+    },
+    {
+      "Corner": "fast",
+      "LaunchClock": "ddrphy_sysclk",
+      "CaptureClock": "phy_dq_clk_1",
+      "RawVariantCount": 4,
+      "SummaryCheckCount": 4,
+      "SummaryFailingCheckCount": 4
+    },
+    {
+      "Corner": "fast",
+      "LaunchClock": "rst_clk",
+      "CaptureClock": "phy_dq_clk_0",
+      "RawVariantCount": 37,
+      "SummaryCheckCount": 34,
+      "SummaryFailingCheckCount": 34
+    },
+    {
+      "Corner": "fast",
+      "LaunchClock": "rst_clk",
+      "CaptureClock": "phy_dq_clk_1",
+      "RawVariantCount": 88,
+      "SummaryCheckCount": 84,
+      "SummaryFailingCheckCount": 84
+    },
+    {
+      "Corner": "fast",
+      "LaunchClock": "rst_clk",
+      "CaptureClock": "phy_dq_sysclk_0",
+      "RawVariantCount": 35,
+      "SummaryCheckCount": 35,
+      "SummaryFailingCheckCount": 24
+    },
+    {
+      "Corner": "fast",
+      "LaunchClock": "rst_clk",
+      "CaptureClock": "phy_dq_sysclk_1",
+      "RawVariantCount": 84,
+      "SummaryCheckCount": 84,
+      "SummaryFailingCheckCount": 84
+    },
+    {
+      "Corner": "slow",
+      "LaunchClock": "ddrphy_sysclk",
+      "CaptureClock": "phy_dq_clk_0",
+      "RawVariantCount": 3,
+      "SummaryCheckCount": 3,
+      "SummaryFailingCheckCount": 3
+    },
+    {
+      "Corner": "slow",
+      "LaunchClock": "ddrphy_sysclk",
+      "CaptureClock": "phy_dq_clk_1",
+      "RawVariantCount": 4,
+      "SummaryCheckCount": 4,
+      "SummaryFailingCheckCount": 4
+    },
+    {
+      "Corner": "slow",
+      "LaunchClock": "rst_clk",
+      "CaptureClock": "phy_dq_clk_0",
+      "RawVariantCount": 37,
+      "SummaryCheckCount": 34,
+      "SummaryFailingCheckCount": 34
+    },
+    {
+      "Corner": "slow",
+      "LaunchClock": "rst_clk",
+      "CaptureClock": "phy_dq_clk_1",
+      "RawVariantCount": 88,
+      "SummaryCheckCount": 84,
+      "SummaryFailingCheckCount": 84
+    },
+    {
+      "Corner": "slow",
+      "LaunchClock": "rst_clk",
+      "CaptureClock": "phy_dq_sysclk_0",
+      "RawVariantCount": 35,
+      "SummaryCheckCount": 35,
+      "SummaryFailingCheckCount": 35
+    },
+    {
+      "Corner": "slow",
+      "LaunchClock": "rst_clk",
+      "CaptureClock": "phy_dq_sysclk_1",
+      "RawVariantCount": 84,
+      "SummaryCheckCount": 84,
+      "SummaryFailingCheckCount": 84
+    }
+  ],
+  "FalsePathCounts": {
+    "fast_hold": 0,
+    "fast_recovery": 0,
+    "fast_removal": 0,
+    "fast_setup": 0,
+    "slow_hold": 0,
+    "slow_recovery": 0,
+    "slow_removal": 0,
+    "slow_setup": 0
+  },
+  "FreshEntryFunctionalExportAudited": false,
+  "FreshExactNativePinQueriesAudited": false,
+  "AllLogicalCheckEdgesAndVariantEffectsAdmitted": false,
+  "RepairAdmissionPassed": false,
+  "RepairApplied": false,
+  "BitstreamGenerated": false,
+  "HardwareAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "EarlierProbe": "fresh-1029-admission stopped at dump_net invalid instance; failed attempt retained, no ADF save or mutation",
+  "Remaining": [
+    "Export and independently audit the new entry synchronizer functional connectivity.",
+    "Verify exact native source/target pin-query records for the new database.",
+    "Bind the 251 native edge variants per corner to 244 logical IP recovery checks, plus entry RDC, without silently discarding variants.",
+    "Only then admit a new repair recipe; the historical fixed-SHA preparer must continue to reject this ADF."
+  ],
+  "EvidenceSHA256": {
+    "distortion/build/board1080-timing/fresh-1029-b/place_route/board1080_top_pnr.adf": "0f6101036b3c3981544e032ec93c3ad2b5468c79e55fa4f8f6a8014265fb15be",
+    "distortion/build/ddr-timing-repair/fresh-1029-admission-b/input.adf": "0f6101036b3c3981544e032ec93c3ad2b5468c79e55fa4f8f6a8014265fb15be",
+    "distortion/build/ddr-timing-repair/fresh-1029-admission-b/query.tcl": "c629345cb86325e044a41089ccea7c594043c007c0fa9d39ca8f6c45a4c5c318",
+    "distortion/build/ddr-timing-repair/fresh-1029-admission-b/query.log": "9f3309254b7b5586af65272bb1ed405cf1e63db4053f4fdbc3a0f690d84338e4",
+    "distortion/build/ddr-timing-repair/fresh-1029-admission-b/dummy.v": "56110e797436589749487af0b5880d36f0fb7d1a24e7789ae8151a7cfb8f343a",
+    "distortion/build/ddr-timing-repair/fresh-1029-admission-b/board1080_top.rtr": "fc4aa4c1fb0a7c661c2031e15bf6f14ca72d9bfb4d1ecf9c04cab870401508a1",
+    "distortion/build/ddr-timing-repair/fresh-1029-admission-b/board1080_top_exception.rtr": "06224cbe8a213cb62f5200c5ba31147c0b4be83a93cefdb7f5fc6a59ff58648e",
+    "distortion/build/ddr-timing-repair/fresh-1029-admission-b/record-query.py": "32cd931e23447f6aeb7acd53488a45f62eff622f3a28af7428d2bd0a84b0dae2",
+    "distortion/tools/prepare_ddr_native_recovery_constraints.py": "a50f1cbf6bc2f1173a52fe3d53286ea70b3dedd3e364a10c267f5a2a0cad8c0c",
+    "distortion/tools/prepare_ddr_timing_repair.py": "99001d75bc229c92e5c9892b7e5137446220eb9888016b09f93f040db0f610db",
+    "distortion/tools/audit_ddr_final_timing.py": "f0275c5e5e8c6b08c1a8d8a88d5ab1b941459876ea5e3c30f4bea61f5f677a3c",
+    "distortion/build/ddr-timing-repair/fresh-1029-admission/query.log": "c31973d9d920b2033d386382cebfa44f1cd76b5cd497cbb1e291abe7845cf359"
+  }
+}
