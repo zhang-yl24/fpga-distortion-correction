@@ -91,6 +91,59 @@ def test_second_stage_clock_mismatch_is_rejected():
         tool.audit_text(text)
 
 
+def buffered_fixture():
+    extra = [*(f"wire raw_{name} ;" for name in "abc"),
+             'V_BUF buffer_a (.Z(raw_a), .I(clear));',
+             'V_BUF buffer_b (.Z(raw_b), .I(raw_a));',
+             'V_BUF buffer_c (.Z(raw_c), .I(clear));',
+             *(f"V_FFASYN sink_{name} (.Q(q_{name}), .CE(1'b1), .CK(board27), "
+               f".D(1'b0), .SR(raw_{name}));" for name in "abc")]
+    return fixture().replace("endmodule", "\n".join([*extra, "endmodule"]))
+
+
+def test_identity_buffer_tree_has_only_reset_loads_and_audited_references():
+    result = tool.audit_text(buffered_fixture())
+    assert result["Status"] == "pass"
+    assert result["FirstStageFunctionalFanout"] == 1
+    assert result["RawClearBufferCount"] == 3
+    assert {cell["Name"] for cell in result["RawClearBuffers"]} == {
+        "buffer_a", "buffer_b", "buffer_c"}
+    assert {net: result["CriticalNetReferenceCounts"][net] for net in
+            ("raw_a", "raw_b", "raw_c")} == {"raw_a": 4, "raw_b": 3, "raw_c": 3}
+    assert "RawClearBuffers" not in tool.audit_text(fixture())
+
+
+@pytest.mark.parametrize("extra,reason", [
+    ("V_BUF extra (.Z(raw_b), .I(unrelated));", "unexpected driver or use"),
+    ("V_BUF extra (.Z(clear), .I(unrelated));", "unexpected driver or use"),
+    ("V_FFASYN extra (.Q(raw_b), .SR(unrelated));", "unexpected driver or use"),
+    ("V_FFASYN extra (.Q(q), .D(raw_b));", "unexpected driver or use"),
+    ("V_INV extra (.Z(q), .I(raw_b));", "unexpected driver or use"),
+    ("V_GPLL extra (.RST(raw_b));", "unexpected driver or use"),
+    ("V_BUF extra (.Z(raw_b), .I(raw_c));", "unexpected driver or use|reused or cyclic"),
+    ("assign raw_b = unrelated;", "unparsed references"),
+    ("assign hidden_load = raw_b;", "unparsed references"),
+])
+def test_buffered_clear_extra_drivers_loads_and_aliases_are_rejected(extra, reason):
+    with pytest.raises(ValueError, match=reason):
+        tool.audit_text(buffered_fixture().replace("endmodule", extra + "\nendmodule"))
+
+
+@pytest.mark.parametrize("before,after,reason", [
+    (".Z(raw_b), .I(raw_a)", ".Z(raw_a), .I(raw_a)", "unexpected driver or use|reused or cyclic"),
+    (".Z(raw_b), .I(raw_a)", ".Z(clear), .I(raw_a)", "unexpected driver or use|reused or cyclic"),
+    (".I(raw_a)", ".I(~raw_a)", "non-direct connection"),
+    (".Z(raw_b)", ".Z({raw_b})", "output is invalid"),
+    ("V_BUF buffer_b", "V_BUF #(.MODE(1)) buffer_b", "parameters or ports"),
+    (".Z(raw_b), .I(raw_a)", ".Z(raw_b), .I(raw_a), .EN(1'b1)", "parameters or ports"),
+    (".SR(raw_b)", ".SR(unrelated)", "no reset loads"),
+    (".SR(raw_b)", ".SR(~raw_b)", "non-direct connection"),
+])
+def test_invalid_buffer_tree_connections_are_rejected(before, after, reason):
+    with pytest.raises(ValueError, match=reason):
+        tool.audit_text(buffered_fixture().replace(before, after))
+
+
 def test_real_local_official_export_when_available():
     netlist = Path(__file__).resolve().parents[1] / (
         "build/board1080-timing/ccoff-1029-a/generate_netlist/board1080_top_sim.v")
@@ -99,3 +152,14 @@ def test_real_local_official_export_when_available():
     result = tool.audit_text(netlist.read_text(encoding="utf-8"))
     assert result["FirstStageFunctionalFanout"] == 1
     assert result["OutputLoadCount"] == 14
+
+
+def test_real_local_control_chain_export_when_available():
+    netlist = Path(__file__).resolve().parents[1] / (
+        "build/board1080-timing/fresh-entry-1029-e/generate_netlist/board1080_top_sim.v")
+    if not netlist.is_file():
+        pytest.skip("local PDS output is not distributed")
+    result = tool.audit_text(netlist.read_text(encoding="utf-8"))
+    assert result["FirstStageFunctionalFanout"] == 1
+    assert result["OutputLoadCount"] == 11
+    assert result["RawClearBufferCount"] == 9

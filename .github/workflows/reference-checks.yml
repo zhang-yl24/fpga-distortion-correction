@@ -60,7 +60,10 @@ jobs:
             distortion/tests/test_ddr_native_recovery_constraints.py \
             distortion/tests/test_prepare_ddr_native_reset_scope.py \
             distortion/tests/test_prepare_ddr_timing_repair.py \
-            distortion/tests/test_audit_ddr_final_timing.py
+            distortion/tests/test_audit_ddr_final_timing.py \
+            distortion/tests/test_audit_ddr_recovery_variants.py \
+            distortion/tests/test_audit_fresh_ddr_timing.py \
+            distortion/tests/test_prepare_fresh_ddr_timing_repair.py
       - name: Run 1080 evidence and simulation-tool CPU tests
         env:
           PYTHONDONTWRITEBYTECODE: '1'
@@ -73,4 +76,5 @@ jobs:
             distortion/tests/test_board1080_rowpipe_integration.py \
             distortion/tests/test_run_board1080_rowpipe_control_sim.py \
             distortion/tests/test_prepare_board1080_timing.py \
-            distortion/tests/test_prepare_board1080_bitstream.py
+            distortion/tests/test_prepare_board1080_bitstream.py \
+            distortion/tests/test_prepare_fresh_board1080_bitstream.py

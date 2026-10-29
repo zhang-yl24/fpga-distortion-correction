@@ -127,10 +127,34 @@ def audit_text(text):
     clear = first.ports["SR"]
     require(pll.ports.get("RST") == clear, "startup PLL reset does not use the same raw clear")
     reset_lut = driving(clear, "V_LUT6CARRY", "Z")
-    require(all((c.name == reset_lut.name and p == "Z") or
-                (c.primitive == "V_FFASYN" and p == "SR") or
-                (c.name == pll.name and p == "RST") for c, p in connections(clear)),
-            "raw clear has an unexpected driver or use")
+    # PDS control-chain exports can distribute this same clear through V_BUF
+    # cells. Walk the entire tree, accepting only identity buffers and SR leaves;
+    # an arbitrary buffer input alone is not evidence of a safe reset fanout.
+    clear_nets, clear_buffers = {clear}, []
+    pending = [(clear, reset_lut)]
+    while pending:
+        net, driver = pending.pop()
+        consumers = 0
+        for cell, pin in connections(net):
+            require(cell.ports[pin] == net, "raw clear has a non-direct connection")
+            if cell is driver and pin == "Z":
+                continue
+            if ((cell.primitive == "V_FFASYN" and pin == "SR") or
+                    (net == clear and cell is pll and pin == "RST")):
+                consumers += 1
+                continue
+            require(cell.primitive == "V_BUF" and pin == "I",
+                    "raw clear has an unexpected driver or use")
+            require(not cell.parameters and cell.ports.keys() == {"I", "Z"},
+                    "raw clear buffer has unexpected parameters or ports")
+            output = cell.ports["Z"]
+            require(TOKEN.fullmatch(output) and output not in clear_nets,
+                    "raw clear buffer output is invalid, reused or cyclic")
+            clear_nets.add(output)
+            clear_buffers.append(cell)
+            pending.append((output, cell))
+            consumers += 1
+        require(consumers, "raw clear buffer has no reset loads")
     require(reset_lut.parameters.get("I5_TO_LUT") == '"TRUE"', "unsupported reset LUT mode")
     require(re.fullmatch(r"64'h[0-9A-Fa-f]{16}", reset_lut.parameters.get("INIT", "")),
             "unsupported reset LUT truth table")
@@ -157,11 +181,12 @@ def audit_text(text):
             "synchronized reset has an unexpected driver or load")
     critical = {middle, OUTPUT, clear, LOCK, first.ports["CK"], RST_CLOCK,
                 clock_mux.ports["CLK0"], "nt_reset_n", "power_ready", reset_buffer.ports["I"]}
+    critical.update(clear_nets)
     counts = Counter(t for t in TOKEN.findall(clean) if t in critical)
     # One wire declaration plus all named-port occurrences; aliases are rejected.
     for net in critical:
         require(counts[net] == 1 + len(connections(net)), "unparsed references to " + net)
-    return {"Status": "pass", "Scope": "DDR entry functional connectivity only",
+    result = {"Status": "pass", "Scope": "DDR entry functional connectivity only",
             "Stages": [record(first), record(second)], "FirstStageFunctionalFanout": 1,
             "ClockBuffer": record(clock_buffer), "ClockMux": record(clock_mux),
             "StartupPLL": record(pll), "RawClearLUT": record(reset_lut),
@@ -171,6 +196,11 @@ def audit_text(text):
             "OutputLoads": [{"Name": c.name, "Primitive": c.primitive, "Pin": p} for c, p in loads],
             "OutputLoadCount": len(loads), "HardwareValidated": False,
             "AnalogMTBFProven": False, "TimingExceptionApplied": False}
+    if clear_buffers:
+        # Keep unbuffered historical reports byte-for-byte equivalent.
+        result["RawClearBuffers"] = [record(cell) for cell in clear_buffers]
+        result["RawClearBufferCount"] = len(clear_buffers)
+    return result
 
 
 def main():
