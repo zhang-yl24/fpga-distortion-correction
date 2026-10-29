@@ -1,0 +1,475 @@
+{
+  "Schema": "checked-io-flat-netlist-connectivity-v1",
+  "DiagnosticOnly": true,
+  "NativeConnectivityVerified": true,
+  "ParsedCells": 39917,
+  "Buses": {
+    "hd_scl": {
+      "InputBuffer": "\\hdmi_configuration.iic_scl_tri/opit_0/INBUF",
+      "MetaFF": "\\hdmi_configuration/driver/scl_meta/opit_0_inv_srl/FF1/FF",
+      "SampledFF": "\\hdmi_configuration/driver/scl_meta/opit_0_inv_srl/FFAPP1/FF",
+      "SamplingClockNet": "ntclkbufg_3",
+      "MetaFFParameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"SET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b1"
+      },
+      "SampledFFParameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"SET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b1"
+      },
+      "PadToMetaBuffers": [
+        "\\hdmi_configuration.iic_scl_tri/opit_1/ntDI"
+      ],
+      "MetaToSampledBuffers": [],
+      "OutputBuffer": "\\hdmi_configuration.iic_scl_tri/opit_0/obuft",
+      "OutputDataConstant": 0,
+      "OutputDataTruthTable": [
+        {
+          "Inputs": {},
+          "Output": 0
+        }
+      ],
+      "TristateControlFF": "\\hdmi_configuration/driver/scl_low/opit_0_inv_L6Q_perm/FF1/FF",
+      "TristateControlTruthTable": [
+        {
+          "Inputs": {
+            "\\hdmi_configuration/driver/scl_low": 0,
+            "\\hdmi_configuration/driver/sda_out_en": 0
+          },
+          "Output": 1
+        },
+        {
+          "Inputs": {
+            "\\hdmi_configuration/driver/scl_low": 0,
+            "\\hdmi_configuration/driver/sda_out_en": 1
+          },
+          "Output": 1
+        },
+        {
+          "Inputs": {
+            "\\hdmi_configuration/driver/scl_low": 1,
+            "\\hdmi_configuration/driver/sda_out_en": 0
+          },
+          "Output": 0
+        },
+        {
+          "Inputs": {
+            "\\hdmi_configuration/driver/scl_low": 1,
+            "\\hdmi_configuration/driver/sda_out_en": 1
+          },
+          "Output": 0
+        }
+      ],
+      "NativeQToDisableTruthTable": [
+        1,
+        0
+      ],
+      "NativeControlFFParameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"RESET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b0"
+      },
+      "NativeControlRegisterPolarityRelativeToRTLVerified": false
+    },
+    "hd_sda": {
+      "InputBuffer": "\\hdmi_configuration.iic_sda_tri/opit_0/ibuf",
+      "MetaFF": "\\hdmi_configuration/driver/sda_meta/opit_0_inv_srl/FF3/FF",
+      "SampledFF": "\\hdmi_configuration/driver/sda_meta/opit_0_inv_srl/FFAPP3/FF",
+      "SamplingClockNet": "ntclkbufg_3",
+      "MetaFFParameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"SET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b1"
+      },
+      "SampledFFParameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"SET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b1"
+      },
+      "PadToMetaBuffers": [
+        "\\hdmi_configuration.iic_sda_tri/opit_1/ntDI"
+      ],
+      "MetaToSampledBuffers": [],
+      "OutputBuffer": "\\hdmi_configuration.iic_sda_tri/opit_0/obuft",
+      "OutputDataConstant": 0,
+      "OutputDataTruthTable": [
+        {
+          "Inputs": {},
+          "Output": 0
+        }
+      ],
+      "TristateControlFF": "\\hdmi_configuration/driver/sda_low/opit_0_inv_L6Q_perm/FF3/FF",
+      "TristateControlTruthTable": [
+        {
+          "Inputs": {
+            "\\hdmi_configuration/driver/scl_low": 0,
+            "\\hdmi_configuration/driver/sda_out_en": 0
+          },
+          "Output": 1
+        },
+        {
+          "Inputs": {
+            "\\hdmi_configuration/driver/scl_low": 0,
+            "\\hdmi_configuration/driver/sda_out_en": 1
+          },
+          "Output": 0
+        },
+        {
+          "Inputs": {
+            "\\hdmi_configuration/driver/scl_low": 1,
+            "\\hdmi_configuration/driver/sda_out_en": 0
+          },
+          "Output": 1
+        },
+        {
+          "Inputs": {
+            "\\hdmi_configuration/driver/scl_low": 1,
+            "\\hdmi_configuration/driver/sda_out_en": 1
+          },
+          "Output": 0
+        }
+      ],
+      "NativeQToDisableTruthTable": [
+        1,
+        0
+      ],
+      "NativeControlFFParameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"RESET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b0"
+      },
+      "NativeControlRegisterPolarityRelativeToRTLVerified": false
+    }
+  },
+  "TracedCells": {
+    "\\GND_1452/FYD/LUT6CARRY": {
+      "Type": "V_LUT6CARRY",
+      "Parameters": {
+        "INIT": "64'h0000000000000000",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "Ports": {
+        "COUT": "",
+        "Z": "_GND1452",
+        "Z5": "",
+        "CIN": "1'b0",
+        "I0": "1'b1",
+        "I1": "1'b1",
+        "I2": "1'b1",
+        "I3": "1'b1",
+        "I4": "1'b1",
+        "I5": "1'b1"
+      }
+    },
+    "\\GND_1453/FYD/LUT6CARRY": {
+      "Type": "V_LUT6CARRY",
+      "Parameters": {
+        "INIT": "64'h0000000000000000",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "Ports": {
+        "COUT": "",
+        "Z": "_GND1453",
+        "Z5": "",
+        "CIN": "1'b0",
+        "I0": "1'b1",
+        "I1": "1'b1",
+        "I2": "1'b1",
+        "I3": "1'b1",
+        "I4": "1'b1",
+        "I5": "1'b1"
+      }
+    },
+    "\\HCKBROUTE_14/HCKB": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "_N33",
+        "I": "ntclkbufg_3"
+      }
+    },
+    "\\clkbufg_3/gopclkbufg/CLKBUFG": {
+      "Type": "V_USCM",
+      "Parameters": {
+        "USCM_MODE": "\"BUF_A\"",
+        "SIM_DEVICE": "\"LOGOS2\""
+      },
+      "Ports": {
+        "CLKOUT": "ntclkbufg_3",
+        "CLK0": "cfg_clk",
+        "CLK1": "",
+        "SEL": ""
+      }
+    },
+    "\\hdmi_configuration.iic_scl_tri/opit_0/INBUF": {
+      "Type": "V_IBUF",
+      "Parameters": {
+        "IOSTANDARD": "\"LVCMOS33\"",
+        "TERM_DDR": "\"ON\""
+      },
+      "Ports": {
+        "O": "\\hdmi_configuration.iic_scl_tri/ntI",
+        "I": "hd_scl"
+      }
+    },
+    "\\hdmi_configuration.iic_scl_tri/opit_0/obuft": {
+      "Type": "V_OBUFT",
+      "Parameters": {
+        "IOSTANDARD": "\"LVCMOS33\"",
+        "SLEW_RATE": "\"SLOW\"",
+        "DRIVE_STRENGTH": "\"8\""
+      },
+      "Ports": {
+        "O": "hd_scl",
+        "I": "\\hdmi_configuration.iic_scl_tri/ntO",
+        "T": "\\hdmi_configuration.iic_scl_tri/ntT"
+      }
+    },
+    "\\hdmi_configuration.iic_scl_tri/opit_1/i_DO_DD": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "\\hdmi_configuration.iic_scl_tri/ntO",
+        "I": "_GND1453"
+      }
+    },
+    "\\hdmi_configuration.iic_scl_tri/opit_1/i_TO_DD": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "\\hdmi_configuration.iic_scl_tri/ntT",
+        "I": "\\hdmi_configuration/scl_release"
+      }
+    },
+    "\\hdmi_configuration.iic_scl_tri/opit_1/ntDI": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "_N2002",
+        "I": "\\hdmi_configuration.iic_scl_tri/ntI"
+      }
+    },
+    "\\hdmi_configuration.iic_sda_tri/opit_0/ibuf": {
+      "Type": "V_IBUF",
+      "Parameters": {
+        "IOSTANDARD": "\"LVCMOS33\"",
+        "TERM_DDR": "\"ON\""
+      },
+      "Ports": {
+        "O": "\\hdmi_configuration.iic_sda_tri/ntI",
+        "I": "hd_sda"
+      }
+    },
+    "\\hdmi_configuration.iic_sda_tri/opit_0/obuft": {
+      "Type": "V_OBUFT",
+      "Parameters": {
+        "IOSTANDARD": "\"LVCMOS33\"",
+        "SLEW_RATE": "\"SLOW\"",
+        "DRIVE_STRENGTH": "\"8\""
+      },
+      "Ports": {
+        "O": "hd_sda",
+        "I": "\\hdmi_configuration.iic_sda_tri/ntO",
+        "T": "\\hdmi_configuration.iic_sda_tri/ntT"
+      }
+    },
+    "\\hdmi_configuration.iic_sda_tri/opit_1/i_DO_DD": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "\\hdmi_configuration.iic_sda_tri/ntO",
+        "I": "_GND1452"
+      }
+    },
+    "\\hdmi_configuration.iic_sda_tri/opit_1/i_TO_DD": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "\\hdmi_configuration.iic_sda_tri/ntT",
+        "I": "\\hdmi_configuration/sda_out_en_inv"
+      }
+    },
+    "\\hdmi_configuration.iic_sda_tri/opit_1/ntDI": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "_N2003",
+        "I": "\\hdmi_configuration.iic_sda_tri/ntI"
+      }
+    },
+    "\\hdmi_configuration/driver/scl_low/opit_0_inv_L6Q_perm/FF1/FF": {
+      "Type": "V_FFASYN",
+      "Parameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"RESET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b0"
+      },
+      "Ports": {
+        "Q": "\\hdmi_configuration/driver/scl_low",
+        "CE": "1'b1",
+        "CK": "_N33",
+        "D": "\\CLMA_81_679/ntQD1",
+        "SR": "ntR1083"
+      }
+    },
+    "\\hdmi_configuration/driver/scl_meta/opit_0_inv_srl/FF1/FF": {
+      "Type": "V_FFASYN",
+      "Parameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"SET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b1"
+      },
+      "Ports": {
+        "Q": "\\CLMA_63_672/ntQ1",
+        "CE": "1'b1",
+        "CK": "_N33",
+        "D": "_N2002",
+        "SR": "ntR1954"
+      }
+    },
+    "\\hdmi_configuration/driver/scl_meta/opit_0_inv_srl/FFAPP1/FF": {
+      "Type": "V_FFASYN",
+      "Parameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"SET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b1"
+      },
+      "Ports": {
+        "Q": "\\hdmi_configuration/driver/scl_sampled",
+        "CE": "1'b1",
+        "CK": "_N33",
+        "D": "\\CLMA_63_672/ntQ1",
+        "SR": "ntR1954"
+      }
+    },
+    "\\hdmi_configuration/driver/scl_meta/opit_0_inv_srl/LRSPOLMUX/LRS_INV": {
+      "Type": "V_INV",
+      "Parameters": {},
+      "Ports": {
+        "Z": "ntR1954",
+        "I": "\\hdmi_configuration/cfg_reset_pipe [2]"
+      }
+    },
+    "\\hdmi_configuration/driver/sda_low/opit_0_inv_L6Q_perm/FF3/FF": {
+      "Type": "V_FFASYN",
+      "Parameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"RESET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b0"
+      },
+      "Ports": {
+        "Q": "\\hdmi_configuration/driver/sda_out_en",
+        "CE": "1'b1",
+        "CK": "_N33",
+        "D": "\\CLMA_81_679/ntQD3",
+        "SR": "ntR1083"
+      }
+    },
+    "\\hdmi_configuration/driver/sda_low_inv/gateop_LUT6DL5_perm/FYA/LUT6CARRY": {
+      "Type": "V_LUT6CARRY",
+      "Parameters": {
+        "INIT": "64'h00FF00FF0000FFFF",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "Ports": {
+        "COUT": "",
+        "Z": "\\hdmi_configuration/sda_out_en_inv",
+        "Z5": "\\hdmi_configuration/scl_release",
+        "CIN": "1'b0",
+        "I0": "1'b1",
+        "I1": "1'b1",
+        "I2": "1'b1",
+        "I3": "\\hdmi_configuration/driver/sda_out_en",
+        "I4": "\\hdmi_configuration/driver/scl_low",
+        "I5": "1'b1"
+      }
+    },
+    "\\hdmi_configuration/driver/sda_meta/opit_0_inv_srl/FF3/FF": {
+      "Type": "V_FFASYN",
+      "Parameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"SET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b1"
+      },
+      "Ports": {
+        "Q": "\\CLMA_63_672/ntQ3",
+        "CE": "1'b1",
+        "CK": "_N33",
+        "D": "_N2003",
+        "SR": "ntR1954"
+      }
+    },
+    "\\hdmi_configuration/driver/sda_meta/opit_0_inv_srl/FFAPP3/FF": {
+      "Type": "V_FFASYN",
+      "Parameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"SET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b1"
+      },
+      "Ports": {
+        "Q": "\\hdmi_configuration/driver/sda_sampled",
+        "CE": "1'b1",
+        "CK": "_N33",
+        "D": "\\CLMA_63_672/ntQ3",
+        "SR": "ntR1954"
+      }
+    }
+  },
+  "EvidenceSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\board1080-timing\\checked-export-1029-a\\generate_netlist\\board1080_top_sim.v": "ab792e37357e4103eaa77826e47f21bdd0004b214da8fe8c0283f6548d5ef160",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_IBUFDS.v": "590b7fbfaae0a506671f22894fcf4aa32cabc2bd44592027fd4190442e2f973a",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_ISERDES_E2.v": "c2143c03bd2d45fdaf0433aeac186ed8029c0ea876e725a88607a290fe624243",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_FFSYN.v": "ae4094a9a478a8ae9e5c67a0fcf982ff1e61a6e1e66588d849dd815d713c1f8c",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_APM_E2.v": "b2403492e98454365e6cfaed681cbef2902cbe8a378cb693a0c3cfbbee35e48c",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_OBUFTDS.v": "014f6191a60dbf086f0c2bb90687ff09067d0e21c335652fa42bd8d59e0c7b23",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_OBUFT.v": "cfc024e819351fe3dd04cabd22f2860c5eac6d528f413c78ab56b1b0f2dd8017",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_IODELAY_E2.v": "aaac47969e218e9fdcf5142b954916f6c0e6e5d5729189e6004ba04f3cb48d7a",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_IBUF.v": "18814ef6d6f140b763c88871640498cacfaa420f4e5038b4fc751beedf69d4f4",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_BUF.v": "774fb1a08820223eef6c66217e510d3a5eb328edebffb488a25467fe3e623836",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_DDC_E2.v": "c027722638f7db1d08da558b75b15096b38c2d6051dc3b4fc701ad70c6c861b7",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_LUT6CARRY.v": "aa7ca57e8ce35845b0d61b02358d4a546facc52be65ec1ca5e68fe37a8bdcf98",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_RAM64X1.v": "9db9dff12cad2f7b36faf95fd36cb41cb2c959c4108b033d0dcf69ee729ae8ed",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_DLL_E2.v": "2b211722146a320cebad8b766aab0a9c9ce8dc2904a836e49c9dddd4fc619c58",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_RAM32X2.v": "7cee56e7385cc148c6ea6168736b47ae149d0ecb0c06a4542706c7ac8bf7b7d8",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_MUX2.v": "77540b86085dc742e5a5102578cb3f0a8753989b3b800d6a75f23e6d46515b95",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_INV.v": "b1242601ab1cc80fbc152a149eaf3d73b140e541392d8af727260cadc7b378ef",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_IOCLKDIV_E3.v": "79f352b067925c9bfbeef56c3e8004ad337c90c6a54375bd96b4738708aab959",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_PPLL.v": "8cb6eb356fd9ba0691aa03e83c81cdb35c806cc7a6d3081726d4454f624b7e1c",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_DRM36K_E1.v": "224ad428a209ba704b58c24a505b9290648a95e4ae585494b80296bc9e0f1c96",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_OSERDES_E2.v": "ba0c851b5b92fa7e058de09170f75732077fbc89f5c52920200f0be5f69b7c4b",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_GRS.v": "42302a081bc28e3d89b99997abd11c3411b2d5afd71aa48d2444bc779c384762",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_CLKPD.v": "abcf4732014b8d3729ac9f8cd4db26e4b4d3ff04b3e8ac8eed33f9c814e4d25c",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_GPLL.v": "1cbab1c034d8129f9164edeff911deb36a0201fb67cd8f336512e4ddc21d9ed0",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_USCM.v": "3f35757740a6498560e3531ae7bfe44147b05016d6a80e504fc3f27934f486fc",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_DRM18K_E1.v": "c7c271c7c372ccd9f7e3701db5a79a94e106ac28b7b735c60f3a8f43d78429da",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_FFASYN.v": "e2fcf0de9085fd056c4daa14b2f73bd9235cdb52c90e68a2b58114024e048b24",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_checked_io_netlist.py": "982594ae5790eff447e25514a4c331119558823e28711df9c32d9d083c678669"
+  },
+  "ExportADFProvenanceVerified": false,
+  "PhysicalImplementationAccepted": false,
+  "ExternalPullupsVerified": false,
+  "TimingAccepted": false,
+  "HardwareReleaseAllowed": false,
+  "Limitations": [
+    "Export execution and exact current ADF provenance must be verified separately.",
+    "Native low-register Q polarity relative to RTL is recorded, not inferred from its name.",
+    "Structural connectivity does not prove external voltage, pullups, timing or hardware behavior."
+  ]
+}
