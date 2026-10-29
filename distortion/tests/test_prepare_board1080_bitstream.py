@@ -142,7 +142,12 @@ def test_actual_local_audit_when_available():
     project = Path(__file__).resolve().parents[1]
     final = project / "build/ddr-timing-repair/reproduced-c/input.adf"
     receipt = project / "results/board1080-ddr-final-20261029.json"
-    if not final.is_file():
+    if not final.is_file() or not receipt.is_file():
         pytest.skip("local ADF is not distributed")
+    frozen = json.loads(receipt.read_text(encoding="utf-8-sig"))
+    bound_inputs = [Path(frozen["FinalRoutedADF"]["Path"]),
+                    *(Path(name) for name in frozen["InputsSHA256"])]
+    if any(not path.is_file() for path in bound_inputs):
+        pytest.skip("frozen local audit inputs unavailable after workspace rename; receipt is not rebased")
     args, watched = tool.native_arguments(project, final, receipt)
     assert len(watched) >= 8 and args["candidate_report"].is_file()

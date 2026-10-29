@@ -2,6 +2,14 @@
 
 开发板暂不可用时，工程仍可继续推进，但验收边界要分开记录。
 
+## 2026-10-29 新源码修复更新
+
+以下“当前缺口”中的步骤1–4现已完成。新库的251条边沿变体映射、入口功能网表、精确引脚和原始路线均独立通过，随后在副本应用定向修复并用新PDS进程重跑报告。最终ADF SHA256为 b7ee4ac251b5d97c6887ef1fd7aeacf22d8a6ce93be821ca4255823f03c74f5c，位于 distortion/build/ddr-timing-repair/fresh-repaired-1029-a/input.adf。双角十类时序均零失败，hold最差+0.060/+0.020ns；数据setup/hold例外为空，每角复位例外严格为244项IP加1项入口。
+
+完整新结果为 distortion/results/board1080-fresh-repair-20261029.json 和 board1080-fresh-ddr-final-20261029.json。新工具单独命名、固定新profile，历史工具继续拒绝不同ADF。新网表的9个原始clear缓冲节点已全树检查，仅连接复位负载；两级同步器第一级功能扇出为1。初次旧检查器对缓冲树的拒绝与runner版本banner检查中止都保留原始记录，没有覆盖成“初次成功”。
+
+步骤5也已完成：fresh-bit-1029-a/generate_bitstream/board1080_top.sbit为3,791,112字节，SHA256 b90c0a5c6ef607f5054fe9c635dd1f551ea1d54cbfcf268335dce708ad0a3048。生成前实际执行同一ADF的STA和独立审计，355项输入无漂移。完整结果 distortion/results/board1080-fresh-bitstream-20261029.json，同时绑定实际执行审计器快照及补严固定ADF检查后的两份重审计。新源码到位流链已完成；真实外部IO AC、CDC/RDC协议、DDR训练与稳定画面仍需完成板级验收。下面保留各历史阶段说明。
+
 ## 已完成
 
 - 最终 DDR 修复候选的原生双角十类时序审计通过，结果见 `distortion/results/board1080-ddr-final-20261029.json`。

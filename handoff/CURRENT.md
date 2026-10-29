@@ -1,6 +1,22 @@
 # 当前交接点
 
-## 新源码完整重建完成；下一步整合精确修复
+## 新源码到修复、时序审计和位流已贯通
+
+2026-10-29：在改名后的 FPGAchina 工作区，fresh源码重建的独立副本已完成精确修复和新进程STA。修复前ADF为 `0f6101036b3c3981544e032ec93c3ad2b5468c79e55fa4f8f6a8014265fb15be`，最终ADF为 `b7ee4ac251b5d97c6887ef1fd7aeacf22d8a6ce93be821ca4255823f03c74f5c`，保存在 `distortion/build/ddr-timing-repair/fresh-repaired-1029-a/input.adf`。原始库和全部绑定输入无漂移，保存副本与STA前后快照相同。结果见 `distortion/results/board1080-fresh-repair-20261029.json` 和 `board1080-fresh-ddr-final-20261029.json`。
+
+每角251条IP复位边沿变体已完整映射到244项逻辑检查，12组WNS/TNS/失败数逐项吻合原生报告；精确pin查询通过。新入口功能网表中的9个V_BUF只分发原始clear，完整缓冲树仅有复位负载；两级同步器第一级功能扇出仍为1，输出11个合法负载。新profile绑定109项源码、225项导出输入及独立的路由/引脚/网表证据，历史固定SHA准备器没有放宽。
+
+新候选slow/fast的setup、hold、recovery、removal、MPW共10类均零失败；最差hold为+0.060/+0.020ns。只有已验证的数据支路绕行及每角244项IP复位+1项入口RDC精确例外；setup/hold数据例外为空，其余汇总行和外部IO警告集合不变。复位例外不等于这些路径取得正recovery裕量，仍不代表硬件放行。
+
+新位流已生成：distortion/build/board1080-timing/fresh-bit-1029-a/generate_bitstream/board1080_top.sbit，3,791,112字节，SHA256 b90c0a5c6ef607f5054fe9c635dd1f551ea1d54cbfcf268335dce708ad0a3048。PDS退出0，实际阶段严格为Report Timing→独立审计→Generate Bitstream，355项输入无漂移；这次导出本身没有重新综合/PNR，源重建由fresh-1029-b证明。完整回执 distortion/results/board1080-fresh-bitstream-20261029.json。
+
+独立审查还发现底层审计器原先允许调用者把通过报告配上另一ADF及其自身正确哈希。现已固定本次修复候选SHA；真实未修复库搭配通过报告的反例被拒绝，final和pre-bit同一批原生报告均用新检查重新审计通过。实际运行时审计器字节已另存，原始执行/审计回执未覆盖；当前可重放结果为 board1080-fresh-ddr-final-pinned-20261029.json。首次功能网表审计对缓冲树的拒绝、首次runner因MPNR stdout没有版本banner而中断的记录也保留。
+
+当前离线源码到位流链已贯通。下一步核对实际板卡全引脚、电压和外部IO/CDC边界，再验证DDR训练、真实HDMI画面与长稳；此次没有下载或烧录开发板。当前主链仍是HDMI1080p30；不把此位流当作OV5640直入候选，也不把RTL仿真30fps当成实板测量。
+
+本轮最终相关回归327通过、1项跳过（仅旧回执引用改名前的可选本地产物）；handoff/audit-baselines.py通过。四个新工具及回归已加入CI。
+
+## 历史阶段：新源码完整重建完成；下一步整合精确修复
 
 2026-10-29：`fresh-1029-b` 从当前109项源码闭包实际完成综合、映射、布局布线、route optimize和最终STA，原生退出0、无E/F错误；109原件/109编译副本无漂移，最终ADF与STA前快照SHA均为 `0f6101036b3c3981544e032ec93c3ad2b5468c79e55fa4f8f6a8014265fb15be`。回执 `distortion/results/board1080-fresh-rebuild-20261029.json`。本次直接PowerShell执行，无runner的execution.json；起始许可证选择失败的fresh-1029-a单独保留，匹配的本机license仅在成功子进程中选择，系统变量未改。
 
