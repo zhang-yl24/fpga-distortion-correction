@@ -1,5 +1,15 @@
 # 当前交接点
 
+## HDMI 初始化故障处理已接入独立候选
+
+2026-10-29：新增 checked I²C 驱动、RX/TX 包装器和独立板级顶层。ACK/NACK、缺设备、卡总线/超时及发送冲突可以触发粘滞失败，不再把失败当作配置完成；修复 TX 阶段边界多发命令和 TX 完成后 RX 轮询未恢复的问题。板级 A7 在启动前禁止放行、运行后走已有停止/排空路径，不撤销待完成 AW 或直接复位 DDR/数据流水线。A7/LED7 是故障类别，尚无逐 ACK 阶段板上读出接口。
+
+真实驱动线级仿真 17 场景、8 参数拒绝通过；真实 RX/TX/driver 联合线级 7 场景、2117 有序事务通过；协议测试桩和实际顶层控制测试也通过。顶层测试使用明确的 DDR/PLL/系统状态桩，未宣称整板数据链联合通过。独立相关 CPU 回归 162 通过，四个交付基线及依赖闭包审计通过。回执见 `distortion/results/board1080-checked-iic-20261029.json` 和 `board1080-checked-integration-20261029.json`；说明见 `handoff/BOARD1080_CHECKED_IIC_20261029.md`。
+
+`board1080-checked-sources.json` 选择 109 项源码，在 HDMI30 EDID-only 基础上精确替换 4 项。它仍是 source-only：SCL 已改为 inout，原 FDC 仍为 OUTPUT，需生成派生约束和新 PDS 入口；PDS/STA/硬件放行均 false，现有准备器拒绝直接使用它。当前旧位流不含本轮修改；未下载或操作硬件。
+
+同轮 `hdmi30-1029-a` 已完成 EDID-only 的完整源码综合/映射/PNR/优化/STA，原生退出 0，无 E/F 错误；115 输入/109 编译副本无漂移，最终 ADF 与 STA 前快照 SHA 均为 `dc346eb3ed5f926aa69dae11f586f8407a4b05695c4da2ebda8fcecfec910b02`。新库未应用 DDR 修复：slow/fast hold 各 1 项失败（-0.037/-0.222 ns），recovery 245/234 项失败，其余六类零失败；未加 false-path，外部延迟仍缺 54/110 项。原生 RTR/XML 十类汇总一致；独立重算与已保存结果一致，十类全部 clock-pair 汇总行与 `fresh-1029-b` 相同。该结果不包含 checked 修改，不能借用旧位流的时序通过结论。回执 `distortion/results/board1080-hdmi30-full-build-20261029.json`。下一步是 checked 专用 SCL 双向约束/新构建及新库 DDR 精确准入，而不是把本次流程退出 0 当作可上板。
+
 ## HDMI 选模问题已修正为隔离候选，控制器仿真通过
 
 2026-10-29：引脚核查发现当前参考 MS7200 EDID 首选 4K30，而 rowpipe 链只接受 1080p30。新增 EDID-only 控制器和独立 109 项源码清单，只替换一个控制器；现有已修复 ADF/位流未改，新源码必须取得自己的构建和时序证据。

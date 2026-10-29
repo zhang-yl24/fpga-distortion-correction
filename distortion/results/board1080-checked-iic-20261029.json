@@ -1,0 +1,124 @@
+{
+  "Schema": "board1080-checked-iic-development-v1",
+  "RecordedUTC": "2026-10-29T12:31:11.211968+00:00",
+  "Scope": "Isolated checked driver, actual Vivado line-level digital simulation",
+  "BuildRoot": "distortion/build/iic-checked/native-1029-b",
+  "ReceiptSHA256": "e0092d517c45113d2b54d772ab5969af907d95d0a67eeb8a0227a14c64afacc1",
+  "Receipt": {
+    "Schema": "iic-checked-line-simulation-v1",
+    "Passed": true,
+    "StartedUTC": "2026-10-29T12:26:02.972955+00:00",
+    "MaximumSeconds": 120,
+    "SourceSHA256": {
+      "rtl/experimental/iic_dri_checked.v": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+      "tests/tb_iic_dri_checked.sv": "3185a336b00a4b9354166f8e38213a609bd8675313a368800b82142e615eccca",
+      "tools/run_iic_dri_checked_sim.py": "ab58d605fc73b913b0aa4f8f160eafb3622f959207a4749c027e8431c153b0e2",
+      "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+      "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+    },
+    "Commands": [
+      {
+        "Stage": "compile",
+        "NativeArgv": [
+          "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+          "--sv",
+          "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\iic_dri_checked.v",
+          "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_iic_dri_checked.sv"
+        ],
+        "ReturnCode": 0
+      },
+      {
+        "Stage": "elaborate",
+        "NativeArgv": [
+          "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+          "tb_iic_dri_checked",
+          "-s",
+          "iic_checked"
+        ],
+        "ReturnCode": 0
+      },
+      {
+        "Stage": "simulate",
+        "NativeArgv": [
+          "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+          "iic_checked",
+          "-runall",
+          "-log",
+          "simulation.log"
+        ],
+        "ReturnCode": 0
+      }
+    ],
+    "ActualDriverExecuted": true,
+    "OpenDrainSlaveModel": true,
+    "HardwareAccessed": false,
+    "PDSAccessed": false,
+    "MS72xxSequencersExecuted": false,
+    "HardwareReleaseAllowed": false,
+    "Summary": {
+      "Passed": true,
+      "Cases": 17,
+      "ParameterRejections": 8,
+      "WideTimingArithmeticChecked": true,
+      "ClockHz": 10000000,
+      "ConfiguredMaximumI2CHz": 400000,
+      "MinimumSCLLowNs": 1400,
+      "MinimumSCLHighNs": 1600,
+      "MeasuredLowPhases": 84,
+      "MeasuredHighPhases": 83,
+      "ActualDriverExecuted": true,
+      "OpenDrainSlaveModel": true,
+      "HardwareAccessed": false
+    },
+    "CaseCount": 17,
+    "PassLines": [
+      "PASS write_success code=0 completions=1",
+      "PASS read_success code=0 completions=1",
+      "PASS nack_device_write code=1 completions=0",
+      "PASS nack_register_low code=2 completions=0",
+      "PASS nack_register_high code=3 completions=0",
+      "PASS nack_write_data code=4 completions=0",
+      "PASS nack_device_read code=5 completions=0",
+      "PASS missing_slave code=1 completions=0",
+      "PASS sda_stuck_before_start code=f completions=0",
+      "PASS scl_stuck_before_start code=f completions=0",
+      "PASS sda_stuck_at_stop code=f completions=0",
+      "PASS clock_stretch_read code=0 completions=1",
+      "PASS unsupported_byte_length code=e completions=0",
+      "PASS reset_during_transaction code=0 completions=0",
+      "PASS read_after_reset_recovery code=0 completions=1",
+      "PASS trigger_while_busy code=0 completions=1",
+      "PASS sda_conflict_during_transmit code=f completions=0"
+    ],
+    "InputDrift": [],
+    "EvidenceSHA256": {
+      "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "compile-stdout.log": "1e0399e8212288e13567762404e9d7a1a872e2540ce8eceeebeb7ced9040243c",
+      "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "elaborate-stdout.log": "108fd7c6ba028c946ec0cfc932a086a79c1e4c253c6028fd890bf07d0d592da3",
+      "iic-checked-cases.csv": "1e8e36e76d1a8673700bb754000527376d6184170d5da349f51c32c1ed7dbc77",
+      "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "simulate-stdout.log": "1eb4ee1670507f6f638f660a2a5a9c1c66c5b7eff387050ebc6acbf6ce007568",
+      "simulation.log": "212ed164f6b8488610f7af8b6bc25398bcbafe4df434d6060e7dc22c1f8bc554",
+      "summary.json": "ad9967833c677a445fa54e020b0269e653ae6e0d34e7ab2cf17da40d0fcb9ec8",
+      "webtalk.log": "25708cafe092f924e7b018dd6ba28c78463440280ead57a67c44acb80ddea848",
+      "webtalk_23684.backup.log": "4f8c1fac153714530e7c093c322c2d84977d6aea99c0e466b56ed691c9a3130b",
+      "xelab.log": "b9bbe068f9327157d2be16b651cb63bc8564eacfb20dffd5c1005fe337ff82d7",
+      "xvlog.log": "15fa8da0a2d74ff6833f33488b0a83984d9f93b45777450fb28fbed29339c30c"
+    },
+    "ElapsedSeconds": 17.774,
+    "EndedUTC": "2026-10-29T12:26:20.747037+00:00"
+  },
+  "ExistingBoardProfileModified": false,
+  "CurrentBoardBitstreamContainsThisDriver": false,
+  "BoardTopIntegrationRequired": [
+    "Change SCL to an open-drain inout and feed back the actual pin.",
+    "Use failure-gated HDMI sequencers so busy falling on error cannot advance initialization.",
+    "Propagate sticky configuration faults through the board admission logic.",
+    "Run a new full build and own timing audit after integration."
+  ],
+  "ExternalAnalogTimingVerified": false,
+  "MS7200MS7210PhysicalDeviceVerified": false,
+  "HardwareAccessed": false,
+  "HardwareReleaseAllowed": false
+}
