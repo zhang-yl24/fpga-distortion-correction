@@ -1,0 +1,64 @@
+{
+  "Schema": "hdmi-uart-bringup-round-v1",
+  "DateBeijing": "2026-10-30",
+  "BaseCommit": "ddf3540d31b09e92c8407724736c1b9d18c3578d",
+  "Branch": "codex/hdmi-uart-status",
+  "ResidentTarget": "hdmi_uart_delayed_diag",
+  "SRAMDoneConfirmed": true,
+  "FlashWritten": false,
+  "HDMIVideoAccepted": false,
+  "EndToEndDistortionAccepted": false,
+  "BeforeDelay": {
+    "I2CError": 1,
+    "SuccessfulTransactions": 0,
+    "Packets": 10
+  },
+  "With100MSDelay": {
+    "I2CError": 0,
+    "PacketsFirstWindow": 10,
+    "PacketsFollowupWindow": 40,
+    "FollowupSeconds": 20,
+    "FollowupTransactions": [
+      896301,
+      1027350
+    ],
+    "RXInitDone": false,
+    "TXInitDone": false
+  },
+  "NativeDelayedTimingPassed": true,
+  "RoutedPins": 42,
+  "TimingExceptionsAdded": false,
+  "FullInputObserverCandidateTimingPassed": false,
+  "CPUTestsPassed": 105,
+  "BaselineAuditPassed": true,
+  "SourceSHA256": {
+    "distortion/board/hdmi_uart_control_diag.v": "3f60467153e46439eb4551ad79d648a751187eef2336142cba7b407a7ccecb26",
+    "distortion/board/hdmi_uart_delayed_diag.v": "390b9e7b85f2d39326b783ece651560e7e3f1797aed4ad9dfdd37d4754f0162f",
+    "distortion/board/hdmi_uart_diag.v": "2cae1e47ba085117f5437e0c73951b33a171c390e0ea20ea9eaed891a9937fd4",
+    "distortion/docs/HDMI_UART_BRINGUP_20261030.md": "a5dbfc79efb226c73240e857e5e1574bdd06744c554ed8cdf974179223500939",
+    "distortion/rtl/experimental/hdmi_diag_uart.v": "cd336607932b00c9d47ce7cd37ff76c7c51c610e94fc0180460c27de28ff8a6d",
+    "distortion/rtl/experimental/ms72xx_observed_ctl.v": "04ab6c3d0fcb3e9caa6175d35821728e94bd64aa1ce3c36d5a1f9af0384054bb",
+    "distortion/tests/tb_hdmi_diag_startup.sv": "823110bc2c7003dde77fff55c97cdf8fe1128d5b9921c13bff6e895badc73084",
+    "distortion/tests/tb_hdmi_diag_uart.sv": "9d6eb1473fa7a3b54f4a8975ace035feb8b4af9eff78419c864ffa915824d6b5",
+    "distortion/tests/tb_ms72xx_observed_e2e.sv": "92d28e606bb45ee01d4ad2ec0ebc03f6aa536310a0e23a3f005a837bba108692",
+    "distortion/tests/test_hdmi_status.py": "56e6fe5e2bc932279b6425b7dc20dd360ea2050c1d6d60e6d0573b1d4ec52a5e",
+    "distortion/tests/test_hdmi_uart_native_audit.py": "5d32dfb817a572c3d653e33a2a5c7dd6efe42afd94b903b6e7293d60337f8ed6",
+    "distortion/tools/audit_hdmi_uart_build.py": "c636e847a29487e013c425faa749acb9f0d6cffa771aee9828a3e730688c6102",
+    "distortion/tools/hdmi_status.py": "d13fc02238e7558fd8c4b83c7bd964705a009e5079b55274d358bcaf957ce614",
+    "distortion/tools/prepare_hdmi_uart_control_diagnostic.py": "23a358fefd75451cb93f4ce9c907d4449c945ecc4d6978cbb51b554e5407f804",
+    "distortion/tools/prepare_hdmi_uart_delayed_diagnostic.py": "a68d9d5909b889f4a68dc62d0822615098c0900d3cea8b8d365f60eefc11c2b5",
+    "distortion/tools/prepare_hdmi_uart_diagnostic.py": "a2c73eb8cc4ba7468065dd728b4cd9a7adf7cb1b0597a8b7b083cfbb4b2f564b",
+    "distortion/tools/run_hdmi_diag_startup_sim.py": "272b6be54114d95e845fc5cfe356afe350061596917ae60880367bd4b1df3b36",
+    "distortion/tools/run_hdmi_uart_sim.py": "a20cd2fe76b6ab2dbfdcb80a528d16e7381713320589672e044918ce09d7bd77",
+    "handoff/patches/hdmi-post-reset-wait.md": "7d1aaf2e25fd733639ee4d06d54cac7b867560b754e8563838312dcd090bb149",
+    "handoff/patches/hdmi-post-reset-wait.patch": "ec990aba532e291b68dc0607c9d94da2a0cf0951a5a01a17a8cdabd223a35772"
+  },
+  "Archive": {
+    "Path": "distortion/build/hdmi-uart-diagnostic/hdmi-uart-evidence-20261030.zip",
+    "SHA256": "dacb3256422a14c6243a1d63c0d14c85ed2afa543d20d299fdd8550c1c63a277",
+    "Bytes": 6400091,
+    "Files": 207,
+    "VerifiedAllContents": true
+  },
+  "Limits": "One delayed-start SRAM experiment and short polling windows. No HDMI input/display connected; no cold-start repeat, real video, frame-rate, DDR or distortion acceptance. Main integration patch is unapplied and needs a fresh build/STA."
+}

@@ -1,0 +1,84 @@
+{
+  "Schema": "hdmi-diagnostic-startup-simulation-v1",
+  "Passed": true,
+  "StartedUTC": "2026-10-29T16:44:23.992650+00:00",
+  "CompileSources": [
+    "board/hdmi_uart_delayed_diag.v",
+    "tests/tb_hdmi_diag_startup.sv"
+  ],
+  "SourceSHA256": {
+    "board/hdmi_uart_delayed_diag.v": "390b9e7b85f2d39326b783ece651560e7e3f1797aed4ad9dfdd37d4754f0162f",
+    "tests/tb_hdmi_diag_startup.sv": "823110bc2c7003dde77fff55c97cdf8fe1128d5b9921c13bff6e895badc73084",
+    "tools/run_hdmi_diag_startup_sim.py": "272b6be54114d95e845fc5cfe356afe350061596917ae60880367bd4b1df3b36",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/prepare_gamma_pipeline_d5.py": "d551f76a4a29b524ef58f04dcc02af20fe2e093c2829c220faf179a6d681690d"
+  },
+  "Commands": [
+    {
+      "Stage": "compile",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\hdmi_uart_delayed_diag.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_hdmi_diag_startup.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_hdmi_diag_startup",
+        "-s",
+        "hdmi_diag_startup_tb"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "hdmi_diag_startup_tb",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "Limits": "Actual delayed top with interface-matched test-only PLL, I2C controller, UART and pattern stubs. Tests new reset ordering only; original cold-power count is forced to its terminal value. No real I2C acknowledgement, UART packet, PLL frequency, HDMI timing or board acceptance.",
+  "Cases": [
+    "g25_then_exact_settle_before_first_request",
+    "uart_and_pattern_continue_during_configuration_hold",
+    "failure_does_not_trigger_automatic_retry",
+    "manual_reset_after_release_requires_full_delay_again",
+    "manual_reset_during_hold_restarts_full_delay"
+  ],
+  "Summary": {
+    "Cases": 5,
+    "FirstRequests": 3,
+    "SimulatedSettleCycles": 12
+  },
+  "SourceDrift": [],
+  "EndedUTC": "2026-10-29T16:44:34.480931+00:00",
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "d5717393942644b3877afd842567df8d560da277289e0ad3e9c9a2c5e0056b30",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "d0ffed8220514b24842cb23a3c0e46a4ef41d7855919d107ab790539eee36bea",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "970f99fdf69e6e0dea7ff3b470a599c57ab29644160b043a71ea2f4ceac2f057",
+    "simulation.log": "afcc053aa7b29980b791a85e8f1de053a19e4feae44ceb0db2ef6c700783fcce",
+    "webtalk.jou": "84e1d3a291e9004d58bc377acd15429a6143da8c10e78920e7bb210b56669757",
+    "webtalk.log": "3e857b91c0bff485bb464e520790c160dba48a1a974f75b2c41e187b88d7923a",
+    "webtalk_31660.backup.jou": "ac39d12a63a1c9e36bb0109f375e1b5a8885672599b3df0eff474521a4d3d5cf",
+    "webtalk_31660.backup.log": "47137df22417abfecb61c9d101cb0b6059592f79fc061a0a8e7b9d3da2c3faa0",
+    "xelab.log": "f47defd17df6e9f0071151f1115c308f027ff79fdabe40e221da20514c46a38e",
+    "xsim.jou": "a3d832defc7a556bcbad587d75853a4183782daf6d5b391d0e6e5758e6228089",
+    "xvlog.log": "9aadb33a36e400017ba9aaf0ecda7c8416c4715dafd419a1ec9f38a9cbfbe4b4"
+  }
+}

@@ -1,5 +1,17 @@
 # 当前交接点
 
+## HDMI 串口实板诊断：复位后等待恢复 I²C 应答
+
+2026-10-30：独立分支 `codex/hdmi-uart-status` 基于合并 PR #10 后的 `ddf3540`。新增 PGHDMI01 串口遥测、成功事务观察和独立无 DDR 诊断候选。COM7 为板载 CP210x UART；下载器通过 PDS USB Cable II index 0 使用，COM5/COM6 不是下载所需端口。
+
+已经实际 SRAM 下载并确认 DONE=1。原配置候选在首地址字节 NACK（error 1），成功事务数 0；只让 HDMI 配置在 G25 外设复位释放后等待 100 ms 的新候选，本次上板恢复应答。5 秒和追加 20 秒接收共 50 包、零 CRC 拒绝；后一个窗口成功事务从 896,301 增至 1,027,350，error 全 0。RX 正在轮询 0x209C–0x209F，RX/TX 初始化未完成，尚无 HDMI 信号源/显示器。该结果支持启动等待方案，不是反复冷启动、视频或长稳验收。
+
+延迟候选自身 PDS 双角十类检查零失败、42 脚及方向全部匹配、24 张例外表为空，未增加时序例外。位流 SHA256 `510e14147c040d9427577405ee96eaf4d3d6be0ef70b74328445d2e3cb42bd7b`；当前板上运行此诊断，Flash 未写。带完整输入观察器的另一个候选时序未过，失败证据保留，未下载。内部 STA 通过不代表外部 IO AC 或真实画面通过。
+
+UART 8 场景、I²C 7 场景（2117 笔线级事务）、启动顺序 5 场景原生仿真通过；105 项相关 CPU 测试及四个交付基线审计通过。默认 Windows pytest 临时目录权限失败另存，改用新临时目录后同一测试集全部通过。
+
+交接说明见 `distortion/docs/HDMI_UART_BRINGUP_20261030.md`，提交内原始串口/构建审计/下载回执见 `distortion/results/hdmi-uart-20261030/`。`handoff/patches/hdmi-post-reset-wait.patch` 为给主工程的最小集成补丁，已通过 `git apply --check`，未直接应用；DDR/IP、共享约束及主流水线未改。队友集成后必须更新源码绑定并重新构建/STA。下一步接通 HDMI 输入输出，确认配置完成、模式和图像，再集成主链。
+
 ## Checked HDMI 完整构建与本候选 DDR 修复
 
 2026-10-29：在上一轮 checked I2C/控制器/顶层基础上，新增独立双向 SCL FDC 和严格来源清单，实际完成 PDS 编译、综合、器件映射、布局布线、route_optimize 和最终 STA。109 项源码、123 项输入无漂移；最终原始 ADF 为 `c411d60712ba01ea9356553a69516d316aa68dc8fa67505f7b962d610dec4029`。这是 checked 版本自己的完整构建，不沿用旧 EDID-only 或旧位流结论。原报告 fast hold 2 项失败，slow/fast recovery 245/228 项失败，原件完整保留。

@@ -1,0 +1,34 @@
+--- a/distortion/board/board1080_checked_top.v
++++ b/distortion/board/board1080_checked_top.v
+@@ -29,6 +29,22 @@
+         else if(&power_count)power_ready<=1;
+     wire global_reset_n=reset_n && power_ready;
+     assign rstn_out=global_reset_n;
++    // G25 releases with global_reset_n. Wait 100 ms at 27 MHz before
++    // the first HDMI configuration request; do not delay DDR/pipeline resets.
++    // One delay per common reset, never an automatic retry after I2C failure.
++    localparam integer CFG_SETTLE_CYCLES=2700000;
++    reg [31:0] configuration_wait_count=0;
++    reg configuration_ready=0;
++    always @(posedge clk_27m or negedge global_reset_n) begin
++        if(!global_reset_n) begin
++            configuration_wait_count<=0; configuration_ready<=0;
++        end else if(!configuration_ready) begin
++            if(configuration_wait_count<CFG_SETTLE_CYCLES-1)
++                configuration_wait_count<=configuration_wait_count+1'b1;
++            else configuration_ready<=1;
++        end
++    end
++    wire configuration_reset_n=global_reset_n && configuration_ready;
+     wire cfg_clk,cfg_lock,video_lock;
+     // Unmodified generated IPs: cfg_pll is nominal10MHz (matches the vendor
+     // IIC driver's CLK_FRE); bringup_pll is nominal74.25MHz, not148.5MHz.
+@@ -36,7 +52,7 @@
+     bringup_pll video_pll(.clkin1(clk_27m),.clkout0(pix_clk),.lock(video_lock));
+     wire rx_init_done,tx_init_done,hdmi_init_failed;
+     wire [3:0] hdmi_init_error; // Held by checked driver until common reset.
+-    ms72xx_checked_ctl hdmi_configuration(.clk(cfg_clk),.rst_n(global_reset_n),
++    ms72xx_checked_ctl hdmi_configuration(.clk(cfg_clk),.rst_n(configuration_reset_n),
+         .init_over_rx(rx_init_done),.init_over(tx_init_done),
+         .init_failed(hdmi_init_failed),.error_code(hdmi_init_error),.iic_scl(hd_scl),.iic_sda(hd_sda));
+     // init_over only means checked register transactions completed. It is not an
