@@ -1,0 +1,740 @@
+{
+  "Schema": "board1080-checked-initialization-integration-v1",
+  "RecordedUTC": "2026-10-29T12:40:06.057459+00:00",
+  "SourceSelection": {
+    "Path": "distortion/board/board1080-checked-sources.json",
+    "SHA256": "7438ed4469cd89ed19bfa980df8ed28a19cf632ff1b76dc59ac2d196c4cdbae2",
+    "Sources": 109,
+    "Replacements": {
+      "platform/video_base/source/hdmi/iic_dri.v": "rtl/experimental/iic_dri_checked.v",
+      "platform/video_base/source/hdmi/ms7210_ctl.v": "rtl/experimental/ms7210_checked_ctl.v",
+      "platform/video_base/source/hdmi/ms72xx_ctl.v": "rtl/experimental/ms72xx_checked_ctl.v",
+      "board/board1080_rowpipe_top.v": "board/board1080_checked_top.v"
+    }
+  },
+  "Verification": {
+    "WireInitialization": {
+      "Path": "distortion/build/board1080-checked/wire-20261029-b/checked-controller-simulation.json",
+      "SHA256": "fd4ee9f15b1fc82c9ca7ea78a7f4b5d6c13486e722e6ca5f58b3647db8297372",
+      "Receipt": {
+        "Schema": "ms72xx-checked-controller-simulation-v1",
+        "Passed": true,
+        "StartedUTC": "2026-10-29T12:34:37.693111+00:00",
+        "SourceSHA256": {
+          "rtl/experimental/ms7200_1080p30_ctl.v": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+          "rtl/experimental/ms7210_checked_ctl.v": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+          "rtl/experimental/ms72xx_checked_ctl.v": "265c2ceac92700be62a57a2b0248229fd5d642d5922de5ee8a7dc304afe71146",
+          "rtl/experimental/iic_dri_checked.v": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+          "tests/tb_ms72xx_checked_e2e.sv": "8fec261b252aa9889fd36b95783584acd23114dd5f68a2557a1a660fd1d1d22c",
+          "platform/video_base/source/hdmi/ms7210_ctl.v": "c9b101e58f381ddf3c6d663d0003c18065302659424b8345022161413ccf09ae",
+          "platform/video_base/source/hdmi/ms7200_ctl.v": "501521c4cceecd48de5741d3116eb7062c93a70a606a386682e1d8756a494199",
+          "tools/board1080_edid.py": "57819c8d93eb33a6c3e41ed9fb0cb79dd06ee33a307ebfcf3f2de36cec2bf807",
+          "tools/run_ms72xx_checked_sim.py": "8c0d953d2d4204f334dd290157e4f541e202f3f01c249fa5c9dd89dbec1f36d7",
+          "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+          "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+        },
+        "MaximumSeconds": 240,
+        "Commands": [
+          {
+            "Stage": "compile",
+            "NativeArgv": [
+              "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+              "--sv",
+              "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7200_1080p30_ctl.v",
+              "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7210_checked_ctl.v",
+              "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms72xx_checked_ctl.v",
+              "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\iic_dri_checked.v",
+              "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_ms72xx_checked_e2e.sv"
+            ],
+            "ReturnCode": 0
+          },
+          {
+            "Stage": "elaborate",
+            "NativeArgv": [
+              "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+              "tb_ms72xx_checked_e2e",
+              "-s",
+              "ms72xx_checked_tb"
+            ],
+            "ReturnCode": 0
+          },
+          {
+            "Stage": "simulate",
+            "NativeArgv": [
+              "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+              "ms72xx_checked_tb",
+              "-runall",
+              "-log",
+              "simulation.log"
+            ],
+            "ReturnCode": 0
+          }
+        ],
+        "TXCopyAudit": {
+          "ReferenceSHA256": "c9b101e58f381ddf3c6d663d0003c18065302659424b8345022161413ccf09ae",
+          "ExactTransformationVerified": true,
+          "CommandRowsUnchanged": 49,
+          "OriginalWaitPreserved": true
+        },
+        "RXCopyAudit": {
+          "Schema": "board1080-hdmi30-edid-audit-v1",
+          "AuditPassed": true,
+          "Controller": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7200_1080p30_ctl.v",
+          "ControllerSHA256": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+          "Reference": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\platform\\video_base\\source\\hdmi\\ms7200_ctl.v",
+          "ReferenceSHA256": "501521c4cceecd48de5741d3116eb7062c93a70a606a386682e1d8756a494199",
+          "OnlyEDIDBytesChanged": true,
+          "RegisterCommandCount": 311,
+          "InitialWriteCount": 300,
+          "EDIDWritesIncludingHeaderRepeat": 264,
+          "Profile": {
+            "PreferredMode": {
+              "PixelClockHz": 74250000,
+              "Width": 1920,
+              "Height": 1080,
+              "HTotal": 2200,
+              "VTotal": 1125,
+              "HFrontPorch": 88,
+              "HSync": 44,
+              "VFrontPorch": 4,
+              "VSync": 5,
+              "Interlaced": false,
+              "HSyncPositive": true,
+              "VSyncPositive": true,
+              "FrameHz": 30.0
+            },
+            "CTAVideoCodes": [
+              34
+            ],
+            "NativeVideoCode": 34,
+            "Blocks": 2,
+            "Checksums": [
+              0,
+              0
+            ],
+            "HDMIVendorOUI": "000C03",
+            "PhysicalAddress": "1.0.0.0",
+            "MaximumTMDSMHz": 75,
+            "AudioAdvertised": false,
+            "YCbCrAdvertised": false,
+            "DeepColorAdvertised": false,
+            "EDIDSHA256": "abf91ea4b3bc6c2d4114cffa61441926ceff257baa81591772f68ba42659f3da"
+          },
+          "ReferencePreferredMode": {
+            "PixelClockHz": 297000000,
+            "Width": 3840,
+            "Height": 2160,
+            "HTotal": 4400,
+            "VTotal": 2250,
+            "HFrontPorch": 176,
+            "HSync": 88,
+            "VFrontPorch": 8,
+            "VSync": 10,
+            "Interlaced": false,
+            "HSyncPositive": true,
+            "VSyncPositive": true,
+            "FrameHz": 30.0
+          },
+          "HardwareAccessed": false,
+          "PhysicalI2CVerified": false,
+          "HostModeSelectionVerified": false,
+          "Limitations": [
+            "Reference identity and chromaticity bytes remain; this is a capability profile, not an actual display identity.",
+            "No audio, YCbCr, HDR or deep color is advertised; host/receiver interoperability still needs hardware.",
+            "The inherited I2C driver does not report ACK failures; this change only corrects advertised video modes."
+          ]
+        },
+        "TransactionDriverStub": false,
+        "WireLevelI2CExecuted": true,
+        "PDSAccessed": false,
+        "HardwareAccessed": false,
+        "BoardTopIntegrated": false,
+        "WireTraceAudit": {
+          "OrderedTraceVerified": true,
+          "Transactions": 2117,
+          "ScenarioCounts": [
+            372,
+            1,
+            317,
+            318,
+            368,
+            369,
+            372
+          ],
+          "TraceSHA256": "34853fe8083828ae24335f6a184ceff749b25c4f493ec32c9419d8d1263a64b6",
+          "StickyObservationConfigCycles": 40
+        },
+        "Summary": {
+          "Passed": true,
+          "Scenarios": 7,
+          "ActualRXControllerExecuted": true,
+          "ActualTXControllerExecuted": true,
+          "TransactionDriverStub": false,
+          "WireLevelI2CExecuted": true,
+          "EarlyRXFailure": true,
+          "LastRXSettingFailure": true,
+          "FirstTXFailureAfterRXDone": true,
+          "LastTXWriteFailure": true,
+          "PostCompletionFailure": true,
+          "CommonResetRecovery": true,
+          "FailureSameCycleGating": true,
+          "NoAutoRetry": true,
+          "BackgroundRXPollResumed": true,
+          "HardwareAccessed": false
+        },
+        "PassLines": [
+          "MS72XX_E2E_SCENARIO_PASS scenario=0 requests=372 rx_init=300 rx_settings=7 tx_writes=49 status=12 code=0",
+          "MS72XX_E2E_SCENARIO_PASS scenario=1 requests=1 rx_init=0 rx_settings=0 tx_writes=0 status=0 code=4",
+          "MS72XX_E2E_SCENARIO_PASS scenario=2 requests=317 rx_init=300 rx_settings=7 tx_writes=0 status=8 code=4",
+          "MS72XX_E2E_SCENARIO_PASS scenario=3 requests=318 rx_init=300 rx_settings=7 tx_writes=0 status=8 code=4",
+          "MS72XX_E2E_SCENARIO_PASS scenario=4 requests=368 rx_init=300 rx_settings=7 tx_writes=49 status=8 code=4",
+          "MS72XX_E2E_SCENARIO_PASS scenario=5 requests=369 rx_init=300 rx_settings=7 tx_writes=49 status=9 code=5",
+          "MS72XX_E2E_SCENARIO_PASS scenario=6 requests=372 rx_init=300 rx_settings=7 tx_writes=49 status=12 code=0",
+          "MS72XX_CHECKED_E2E_SIM_PASS"
+        ],
+        "SourceDrift": [],
+        "VectorDrift": [],
+        "ElapsedSeconds": 213.82,
+        "EvidenceSHA256": {
+          "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "compile-stdout.log": "45f45a4144f655f4bafedc719dc249078ba125ca05a28e331e9b961e1b84ecc1",
+          "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elaborate-stdout.log": "0a950fb4737e4f2277a650266cc6fe783bbfa0b91b3f080e3583d8a501bee8e7",
+          "rx_expected.hex": "7566f2bb9daad233a5d2a71901bc4ba1164855ed16f4c6fcbae24d1ba56808ab",
+          "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "simulate-stdout.log": "86e247292a064571b57b1f17ca90bebfc7287375e9faea405c88c4448f82b28e",
+          "simulation.log": "3e698546526b045fa3f5b18977d9875c0f516770ce9436382a36fafc328c57b1",
+          "summary.json": "908d4cdf9886960d41716d54f35bb9821781a35929d384b1d97257b9b67912b2",
+          "tx_expected.hex": "3cdd92578c994a73b6f1b7dc455dded70bb69a53db15ba9498197f1b3c515c41",
+          "webtalk.log": "5aee2f26546313697acdeea8ef90b5b3543bbe9af05d9b2a5353e7b918c81124",
+          "webtalk_16736.backup.log": "aa7b2d9eb70aaea01ebe796e4f8ff5b6e1ab156ffaf262970421a88bbc92bd3e",
+          "wire-transactions.csv": "34853fe8083828ae24335f6a184ceff749b25c4f493ec32c9419d8d1263a64b6",
+          "xelab.log": "e7fee75552974d975d7989370d2e6046e4c1b9b6e2f4bddb22be8e27595cc2d1",
+          "xvlog.log": "c13f223e511efe3105cbf071cd1b5499c9add4d31b90a0818612966506e68330"
+        }
+      }
+    },
+    "StubProtocol": {
+      "Path": "distortion/build/board1080-checked/wrapper-20261029-c/checked-controller-simulation.json",
+      "SHA256": "4ccf73a8b306f3145d5c86262acf74fc2e01fb37ef1dffa0d68999f24aba3b8e",
+      "Receipt": {
+        "Schema": "ms72xx-checked-controller-simulation-v1",
+        "Passed": true,
+        "StartedUTC": "2026-10-29T12:34:36.725118+00:00",
+        "SourceSHA256": {
+          "rtl/experimental/ms7200_1080p30_ctl.v": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+          "rtl/experimental/ms7210_checked_ctl.v": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+          "rtl/experimental/ms72xx_checked_ctl.v": "265c2ceac92700be62a57a2b0248229fd5d642d5922de5ee8a7dc304afe71146",
+          "tests/tb_ms72xx_checked_ctl.sv": "48d0baa4b36ffd7c38217d3704c028941c16bf1492de6bb114e8968e6f0c8637",
+          "platform/video_base/source/hdmi/ms7210_ctl.v": "c9b101e58f381ddf3c6d663d0003c18065302659424b8345022161413ccf09ae",
+          "platform/video_base/source/hdmi/ms7200_ctl.v": "501521c4cceecd48de5741d3116eb7062c93a70a606a386682e1d8756a494199",
+          "tools/board1080_edid.py": "57819c8d93eb33a6c3e41ed9fb0cb79dd06ee33a307ebfcf3f2de36cec2bf807",
+          "tools/run_ms72xx_checked_sim.py": "8c0d953d2d4204f334dd290157e4f541e202f3f01c249fa5c9dd89dbec1f36d7",
+          "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+          "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+        },
+        "MaximumSeconds": 240,
+        "Commands": [
+          {
+            "Stage": "compile",
+            "NativeArgv": [
+              "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+              "--sv",
+              "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7200_1080p30_ctl.v",
+              "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7210_checked_ctl.v",
+              "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms72xx_checked_ctl.v",
+              "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_ms72xx_checked_ctl.sv"
+            ],
+            "ReturnCode": 0
+          },
+          {
+            "Stage": "elaborate",
+            "NativeArgv": [
+              "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+              "tb_ms72xx_checked_ctl",
+              "-s",
+              "ms72xx_checked_tb"
+            ],
+            "ReturnCode": 0
+          },
+          {
+            "Stage": "simulate",
+            "NativeArgv": [
+              "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+              "ms72xx_checked_tb",
+              "-runall",
+              "-log",
+              "simulation.log"
+            ],
+            "ReturnCode": 0
+          }
+        ],
+        "TXCopyAudit": {
+          "ReferenceSHA256": "c9b101e58f381ddf3c6d663d0003c18065302659424b8345022161413ccf09ae",
+          "ExactTransformationVerified": true,
+          "CommandRowsUnchanged": 49,
+          "OriginalWaitPreserved": true
+        },
+        "RXCopyAudit": {
+          "Schema": "board1080-hdmi30-edid-audit-v1",
+          "AuditPassed": true,
+          "Controller": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7200_1080p30_ctl.v",
+          "ControllerSHA256": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+          "Reference": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\platform\\video_base\\source\\hdmi\\ms7200_ctl.v",
+          "ReferenceSHA256": "501521c4cceecd48de5741d3116eb7062c93a70a606a386682e1d8756a494199",
+          "OnlyEDIDBytesChanged": true,
+          "RegisterCommandCount": 311,
+          "InitialWriteCount": 300,
+          "EDIDWritesIncludingHeaderRepeat": 264,
+          "Profile": {
+            "PreferredMode": {
+              "PixelClockHz": 74250000,
+              "Width": 1920,
+              "Height": 1080,
+              "HTotal": 2200,
+              "VTotal": 1125,
+              "HFrontPorch": 88,
+              "HSync": 44,
+              "VFrontPorch": 4,
+              "VSync": 5,
+              "Interlaced": false,
+              "HSyncPositive": true,
+              "VSyncPositive": true,
+              "FrameHz": 30.0
+            },
+            "CTAVideoCodes": [
+              34
+            ],
+            "NativeVideoCode": 34,
+            "Blocks": 2,
+            "Checksums": [
+              0,
+              0
+            ],
+            "HDMIVendorOUI": "000C03",
+            "PhysicalAddress": "1.0.0.0",
+            "MaximumTMDSMHz": 75,
+            "AudioAdvertised": false,
+            "YCbCrAdvertised": false,
+            "DeepColorAdvertised": false,
+            "EDIDSHA256": "abf91ea4b3bc6c2d4114cffa61441926ceff257baa81591772f68ba42659f3da"
+          },
+          "ReferencePreferredMode": {
+            "PixelClockHz": 297000000,
+            "Width": 3840,
+            "Height": 2160,
+            "HTotal": 4400,
+            "VTotal": 2250,
+            "HFrontPorch": 176,
+            "HSync": 88,
+            "VFrontPorch": 8,
+            "VSync": 10,
+            "Interlaced": false,
+            "HSyncPositive": true,
+            "VSyncPositive": true,
+            "FrameHz": 30.0
+          },
+          "HardwareAccessed": false,
+          "PhysicalI2CVerified": false,
+          "HostModeSelectionVerified": false,
+          "Limitations": [
+            "Reference identity and chromaticity bytes remain; this is a capability profile, not an actual display identity.",
+            "No audio, YCbCr, HDR or deep color is advertised; host/receiver interoperability still needs hardware.",
+            "The inherited I2C driver does not report ACK failures; this change only corrects advertised video modes."
+          ]
+        },
+        "TransactionDriverStub": true,
+        "WireLevelI2CExecuted": false,
+        "PDSAccessed": false,
+        "HardwareAccessed": false,
+        "BoardTopIntegrated": false,
+        "Summary": {
+          "Passed": true,
+          "Scenarios": 7,
+          "ActualRXControllerExecuted": true,
+          "ActualTXControllerExecuted": true,
+          "TransactionDriverStub": true,
+          "WireLevelI2CExecuted": false,
+          "EarlyRXFailure": true,
+          "LastRXSettingFailure": true,
+          "FirstTXFailureAfterRXDone": true,
+          "LastTXWriteFailure": true,
+          "PostCompletionFailure": true,
+          "CommonResetRecovery": true,
+          "FailureSameCycleGating": true,
+          "NoAutoRetry": true,
+          "HardwareAccessed": false
+        },
+        "PassLines": [
+          "MS72XX_SCENARIO_PASS scenario=0 rx_init=300 rx_settings=7 tx_writes=49",
+          "MS72XX_SCENARIO_PASS scenario=1 failure_code=4 requests=1",
+          "MS72XX_SCENARIO_PASS scenario=2 failure_code=4 requests=317",
+          "MS72XX_SCENARIO_PASS scenario=3 failure_code=4 requests=318",
+          "MS72XX_SCENARIO_PASS scenario=4 failure_code=4 requests=368",
+          "MS72XX_SCENARIO_PASS scenario=5 failure_code=4 requests=369",
+          "MS72XX_SCENARIO_PASS scenario=6 rx_init=300 rx_settings=7 tx_writes=49",
+          "MS72XX_CHECKED_CTL_SIM_PASS"
+        ],
+        "SourceDrift": [],
+        "VectorDrift": [],
+        "ElapsedSeconds": 166.016,
+        "EvidenceSHA256": {
+          "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "compile-stdout.log": "ccb02a17af9e14339f77cad9eb14dc17def4086cb325f211307df565aaddbcc7",
+          "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elaborate-stdout.log": "d5b6c8e7b67f9d31bdc0892c0325d44c90dcadeadc5e842374e12ba8bc742ca6",
+          "rx_expected.hex": "7566f2bb9daad233a5d2a71901bc4ba1164855ed16f4c6fcbae24d1ba56808ab",
+          "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "simulate-stdout.log": "8824421177fdb9e4b575e4570039936e9e1ce56eb09cfed5538d2998be632c93",
+          "simulation.log": "56377d85e4add6971683ba2dd016caa0cd038cfebead50c64998532f63997150",
+          "summary.json": "2ad1ac20723506da01760b5c1ac4142da1bd233fd32b9f1cd4cdc61d3508b332",
+          "tx_expected.hex": "3cdd92578c994a73b6f1b7dc455dded70bb69a53db15ba9498197f1b3c515c41",
+          "webtalk.log": "79d15f43a89d3e26ab13848562f3f984104e96da57c43e5e18882ee1330d482d",
+          "webtalk_32676.backup.log": "605f6299b66fdd9eeedf9e98f2b5c67548547217c9ec53e7cd72ffac8bf936db",
+          "xelab.log": "66569f440c5471208c8e6fc68cb78c7ad74e144515749df716a55fb8c8b66343",
+          "xvlog.log": "e26e8fb29cc53f412aa9f16cb7328945136c1c07036580f68d48164dfa78fba2"
+        }
+      }
+    },
+    "BoardControl": {
+      "Path": "distortion/build/board1080-checked-control/native-1029-a/checked-board-control-simulation.json",
+      "SHA256": "a040f9b3f6a4ab204a25855dae9e4df40a36b29f2718efc0415dd285b7fce3f1",
+      "Receipt": {
+        "Schema": "checked-board-control-v1",
+        "Passed": true,
+        "StartedUTC": "2026-10-29T12:35:51.807839+00:00",
+        "SourceSHA256": {
+          "tests/board1080_cdc_control_stubs.sv": "33f16b161d4d6f265963bc07801905dcf9d9be98fa829001519dc356cab85f7f",
+          "board/board1080_checked_top.v": "4a355e17d49dc5e46ab4fca6cbceee461ac9cc5d3f192cc00b2aa052a6691476",
+          "tests/tb_board1080_checked_control.sv": "eaa059fded11534244464f7aea0265c808d748079f5fe0880868da5b71a4aa98",
+          "board/board1080_rowpipe_top.v": "28cba7652a01f4eaef7f7edbc19ff63b12176aaa355c13e68a6d74bf2905d6da",
+          "rtl/experimental/ms72xx_checked_ctl.v": "265c2ceac92700be62a57a2b0248229fd5d642d5922de5ee8a7dc304afe71146",
+          "tools/prepare_board1080_checked_top.py": "0ae7b5f51b11e009d762984346a3199cfb0e3d251a769139cb403e9bd2ba49b8",
+          "tools/run_board1080_checked_control_sim.py": "1df5f40f661f4d14c520f184b464498dc33425b5bbf3bcc332ffa7cc20fa987a",
+          "tools/run_board1080_rowpipe_control_sim.py": "bb1960766245ab24890a522b2c8881150b07086056aec9b9cf07a9facd03c7b2",
+          "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+          "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+          "board/board1080-synthetic.vh": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b"
+        },
+        "TopTransformation": {
+          "Baseline": "board/board1080_rowpipe_top.v",
+          "BaselineSHA256": "28cba7652a01f4eaef7f7edbc19ff63b12176aaa355c13e68a6d74bf2905d6da",
+          "Candidate": "board/board1080_checked_top.v",
+          "CandidateSHA256": "4a355e17d49dc5e46ab4fca6cbceee461ac9cc5d3f192cc00b2aa052a6691476",
+          "SourceReplacements": {
+            "board/board1080_rowpipe_top.v": "board/board1080_checked_top.v",
+            "platform/video_base/source/hdmi/ms72xx_ctl.v": "rtl/experimental/ms72xx_checked_ctl.v",
+            "platform/video_base/source/hdmi/ms7210_ctl.v": "rtl/experimental/ms7210_checked_ctl.v",
+            "platform/video_base/source/hdmi/iic_dri.v": "rtl/experimental/iic_dri_checked.v",
+            "platform/video_base/source/hdmi/ms7200_ctl.v": "rtl/experimental/ms7200_1080p30_ctl.v"
+          },
+          "Edits": 10,
+          "SCLInout": true,
+          "StartupFailureBlocksRelease": true,
+          "RuntimeFailureUsesExistingDrainPath": true,
+          "DDRAndPipelineBodyUnchanged": true,
+          "ProductionManifestChanged": false,
+          "PDSExecuted": false,
+          "HardwareReleaseAllowed": false
+        },
+        "OpaqueStubHeaderBindings": {
+          "cfg_pll": {
+            "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\platform\\video_base\\ipcore\\cfg_pll\\cfg_pll.v",
+            "RelativePath": "platform/video_base/ipcore/cfg_pll/cfg_pll.v",
+            "HeaderSHA256": "fe156fa552eb4545bcd5847469a4e635ecafd9ad7233c9107fcfdeda280ef858",
+            "FullReferenceSHA256": "a524450baa6becd30df04da4bdd00597de18b42db4628226e27546c4d601b0ec",
+            "ProductionBodyCompiled": false
+          },
+          "bringup_pll": {
+            "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\bringup_pll.v",
+            "RelativePath": "board/bringup_pll.v",
+            "HeaderSHA256": "5a9a80eeff31f8e199e0e142d2cdd97b362756a3142f22961423846aaf1f5012",
+            "FullReferenceSHA256": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+            "ProductionBodyCompiled": false
+          },
+          "ddr3_test": {
+            "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\platform\\video_base\\ipcore\\ddr3_test\\ddr3_test.v",
+            "RelativePath": "platform/video_base/ipcore/ddr3_test/ddr3_test.v",
+            "HeaderSHA256": "0bc0f913caf04efb66cd7cc4cbdfa8c84ca4483660699e1663ccc47e78e3bf7e",
+            "FullReferenceSHA256": "3c5441b4bff33dff73811c3a025ede3b6348cb5779e21778653659b6cbfb84e0",
+            "ProductionBodyCompiled": false
+          },
+          "ms72xx_ctl": {
+            "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\platform\\video_base\\source\\hdmi\\ms72xx_ctl.v",
+            "RelativePath": "platform/video_base/source/hdmi/ms72xx_ctl.v",
+            "HeaderSHA256": "13e4968ac59ac390a02cebdf51e06c6bb8184243992cf74ae72220a605a9f7eb",
+            "FullReferenceSHA256": "df3876bc1a3bf3a7efe7adeed56b2f9625af4ac9ba56074925671f49751cf69a",
+            "ProductionBodyCompiled": false
+          },
+          "hdmi1080_input_status": {
+            "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_status.v",
+            "RelativePath": "rtl/experimental/hdmi1080_input_status.v",
+            "HeaderSHA256": "366b2e825e9a35c9f85e84cef37d5639ef0a8c06efe9b59c1aa6f9b1f595eeea",
+            "FullReferenceSHA256": "2b10fe0eeb7e18ae74098c9531866e458629d2b5e64a70d67c1bed3b58b41c00",
+            "ProductionBodyCompiled": false
+          },
+          "hdmi1080_video_system": {
+            "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_video_system_cdc_reset.v",
+            "RelativePath": "rtl/experimental/hdmi1080_video_system_cdc_reset.v",
+            "HeaderSHA256": "eff487f0880c79d182fc1e4aaee4a4e447ba22b34a486ef964d69c936295cfe9",
+            "FullReferenceSHA256": "872bedf50835825869ed6f31d3a224c77aa3bcbd7e084553e607e79263c90a32",
+            "ProductionBodyCompiled": false
+          }
+        },
+        "ActualCheckedTopExecuted": true,
+        "TestOnlyIPStubs": true,
+        "PhysicalI2CVerified": false,
+        "ActualSystemDatapathVerified": false,
+        "PDSAccessed": false,
+        "HardwareAccessed": false,
+        "HardwareReleaseAllowed": false,
+        "Commands": [
+          {
+            "Stage": "compile",
+            "NativeArgv": [
+              "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+              "--sv",
+              "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\board1080_cdc_control_stubs.sv",
+              "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\board1080_checked_top.v",
+              "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_board1080_checked_control.sv"
+            ],
+            "ReturnCode": 0
+          },
+          {
+            "Stage": "elaborate",
+            "NativeArgv": [
+              "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+              "tb_board1080_checked_control",
+              "-s",
+              "checked_control"
+            ],
+            "ReturnCode": 0
+          },
+          {
+            "Stage": "simulate",
+            "NativeArgv": [
+              "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+              "checked_control",
+              "-runall",
+              "-log",
+              "simulation.log"
+            ],
+            "ReturnCode": 0
+          }
+        ],
+        "Summary": {
+          "Passed": true,
+          "StartupFailureCases": 2,
+          "LateFailureHeldAWCases": 1,
+          "CommonResets": 3,
+          "ColdPowerReferenceCycles": 1048579,
+          "ActualCheckedTopExecuted": true,
+          "TestOnlyIPStubs": true,
+          "PipelineResetMonotonic": true,
+          "DDRResetPreserved": true,
+          "PhysicalI2CVerified": false,
+          "ActualSystemDatapathVerified": false,
+          "HardwareAccessed": false
+        },
+        "Events": [
+          {
+            "event": "initial_failure_blocked",
+            "case": "1",
+            "global_reset_n": "1",
+            "pipeline_reset_n": "0",
+            "board_failed": "1",
+            "board_fault": "a7",
+            "led7": "1",
+            "physical_stub_awvalid": "0",
+            "capture_admit": "0",
+            "scan_enable": "0",
+            "external_fault": "0",
+            "ddr_reset_n": "1"
+          },
+          {
+            "event": "initial_failure_sticky",
+            "case": "1",
+            "global_reset_n": "1",
+            "pipeline_reset_n": "0",
+            "board_failed": "1",
+            "board_fault": "a7",
+            "led7": "1",
+            "physical_stub_awvalid": "0",
+            "capture_admit": "0",
+            "scan_enable": "0",
+            "external_fault": "0",
+            "ddr_reset_n": "1"
+          },
+          {
+            "event": "common_reset_clears",
+            "case": "1",
+            "global_reset_n": "0",
+            "pipeline_reset_n": "0",
+            "board_failed": "0",
+            "board_fault": "00",
+            "led7": "0",
+            "physical_stub_awvalid": "0",
+            "capture_admit": "0",
+            "scan_enable": "0",
+            "external_fault": "0",
+            "ddr_reset_n": "0"
+          },
+          {
+            "event": "simultaneous_ready_failure",
+            "case": "2",
+            "global_reset_n": "1",
+            "pipeline_reset_n": "0",
+            "board_failed": "1",
+            "board_fault": "a7",
+            "led7": "1",
+            "physical_stub_awvalid": "0",
+            "capture_admit": "0",
+            "scan_enable": "0",
+            "external_fault": "0",
+            "ddr_reset_n": "1"
+          },
+          {
+            "event": "common_reset_clears",
+            "case": "2",
+            "global_reset_n": "0",
+            "pipeline_reset_n": "0",
+            "board_failed": "0",
+            "board_fault": "00",
+            "led7": "0",
+            "physical_stub_awvalid": "0",
+            "capture_admit": "0",
+            "scan_enable": "0",
+            "external_fault": "0",
+            "ddr_reset_n": "0"
+          },
+          {
+            "event": "healthy_admitted",
+            "case": "3",
+            "global_reset_n": "1",
+            "pipeline_reset_n": "1",
+            "board_failed": "0",
+            "board_fault": "00",
+            "led7": "0",
+            "physical_stub_awvalid": "0",
+            "capture_admit": "1",
+            "scan_enable": "1",
+            "external_fault": "0",
+            "ddr_reset_n": "1"
+          },
+          {
+            "event": "late_failure_held_aw",
+            "case": "3",
+            "global_reset_n": "1",
+            "pipeline_reset_n": "1",
+            "board_failed": "1",
+            "board_fault": "a7",
+            "led7": "1",
+            "physical_stub_awvalid": "1",
+            "capture_admit": "0",
+            "scan_enable": "0",
+            "external_fault": "1",
+            "ddr_reset_n": "1"
+          },
+          {
+            "event": "late_failure_sticky",
+            "case": "3",
+            "global_reset_n": "1",
+            "pipeline_reset_n": "1",
+            "board_failed": "1",
+            "board_fault": "a7",
+            "led7": "1",
+            "physical_stub_awvalid": "1",
+            "capture_admit": "0",
+            "scan_enable": "0",
+            "external_fault": "1",
+            "ddr_reset_n": "1"
+          },
+          {
+            "event": "first_failure_preserved",
+            "case": "3",
+            "global_reset_n": "1",
+            "pipeline_reset_n": "1",
+            "board_failed": "1",
+            "board_fault": "a7",
+            "led7": "1",
+            "physical_stub_awvalid": "1",
+            "capture_admit": "0",
+            "scan_enable": "0",
+            "external_fault": "1",
+            "ddr_reset_n": "1"
+          },
+          {
+            "event": "common_reset_clears",
+            "case": "3",
+            "global_reset_n": "0",
+            "pipeline_reset_n": "0",
+            "board_failed": "0",
+            "board_fault": "00",
+            "led7": "0",
+            "physical_stub_awvalid": "0",
+            "capture_admit": "0",
+            "scan_enable": "0",
+            "external_fault": "0",
+            "ddr_reset_n": "0"
+          },
+          {
+            "event": "common_reset_recovery",
+            "case": "4",
+            "global_reset_n": "1",
+            "pipeline_reset_n": "1",
+            "board_failed": "0",
+            "board_fault": "00",
+            "led7": "0",
+            "physical_stub_awvalid": "0",
+            "capture_admit": "1",
+            "scan_enable": "1",
+            "external_fault": "0",
+            "ddr_reset_n": "1"
+          }
+        ],
+        "SourceDrift": [],
+        "ReferencedHeaderDrift": [],
+        "StagedHeaderDrift": false,
+        "EvidenceSHA256": {
+          "checked-control-events.csv": "87e48bb28f79ff223f3737eb70d7402c5e5a229e0f4d6bcfcc4c6ec813f5d30d",
+          "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "compile-stdout.log": "2d59702818de29e82f1a327ed9eef74dd0d8352ec4b6c2721b16d5fc5d173e27",
+          "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "elaborate-stdout.log": "042a2108b3463bcaf9af82313bc99e316e34702b738e34d4987de0c67357dd63",
+          "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "simulate-stdout.log": "c6cab05bf1fe8af8f480398b715defa3a902ad5f9b7a4261faed6d8354ce109e",
+          "simulation.log": "4b76938f9c528ee1324af29a0b1decaf8d792813b14368218d0b315edc2e4bb0",
+          "summary.json": "07de73b36242dc444194a379e8cc6b31d050fd9f8d7f213586009b62ea0a36d8",
+          "webtalk.log": "090394fe27162f77ef9a901773dfeaea47b1f46681b1f818244c77be2297a206",
+          "webtalk_39732.backup.log": "ecf4d9621e4c492014b570109eef10143b2ac24dc150a5ec95230b84af7cd047",
+          "xelab.log": "a041723abe0db9b78aa0cc38d63b274e7dadc020ca51cec41398e6acede04ddf",
+          "xvlog.log": "29b5195f44eb32bb755d3f30f93318b5983397bf79d1c700dd5819e83fec0b47"
+        },
+        "ElapsedSeconds": 44.832
+      }
+    }
+  },
+  "DriverUnitReceipt": {
+    "Path": "distortion/results/board1080-checked-iic-20261029.json",
+    "SHA256": "15c29ddc32bc83db6c6b5a19718ff257cdc8aa48d21c3ee51a17fa45220aed03"
+  },
+  "SourceBoardTopConnected": true,
+  "BoardControlUsesIPStubs": true,
+  "SingleWholeBoardSimulationExecuted": false,
+  "PDSBuiltThisCheckedProfile": false,
+  "CurrentBitstreamContainsThisCheckedProfile": false,
+  "HardwareAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "ExternalIOTimingVerified": false,
+  "RemainingWork": [
+    "Audit SCL inout constraints and synthesize the checked profile.",
+    "Perform source-specific layout, DDR timing repair admission and final STA.",
+    "Verify physical PHY register modes, external AC timing, real video and stability on hardware."
+  ],
+  "Limitations": [
+    "Digital wire slave model is not the actual MS7200 or MS7210 silicon.",
+    "Sticky fault logic holds until reset; the no-autoretry observation window is 40 configuration cycles in the integration bench.",
+    "Board control regression uses actual new top with test-only DDR, PLL, status and video-system stubs.",
+    "Existing HDMI30 PDS build is EDID-only and does not contain the checked I2C changes."
+  ]
+}
