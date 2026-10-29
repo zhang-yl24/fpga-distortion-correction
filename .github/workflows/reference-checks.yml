@@ -51,7 +51,16 @@ jobs:
       - name: Audit DDR reference comparison logic
         env:
           PYTHONDONTWRITEBYTECODE: '1'
-        run: python -m pytest -q -p no:cacheprovider distortion/tests/test_audit_ddr_reference.py
+        run: |
+          python -m pytest -q -p no:cacheprovider \
+            distortion/tests/test_audit_ddr_reference.py \
+            distortion/tests/test_prepare_ddr_ip_reset_constraints.py \
+            distortion/tests/test_prepare_ddr_pin_query_probe.py \
+            distortion/tests/test_ddr_entry_reset_netlist.py \
+            distortion/tests/test_ddr_native_recovery_constraints.py \
+            distortion/tests/test_prepare_ddr_native_reset_scope.py \
+            distortion/tests/test_prepare_ddr_timing_repair.py \
+            distortion/tests/test_audit_ddr_final_timing.py
       - name: Run 1080 evidence and simulation-tool CPU tests
         env:
           PYTHONDONTWRITEBYTECODE: '1'

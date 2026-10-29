@@ -97,11 +97,15 @@ def test_preparation_freezes_bytes_and_builds_roles_without_running_tool(closure
     assert timing.DEFAULT_MANIFEST in plan["InputSHA256"]
     assert "tools/prepare_board1080_timing.py" in plan["InputSHA256"]
     assert manifest["RouteConstraint"] in plan["InputSHA256"]
+    assert "ShareRouterControlSignal" not in plan
+    assert "HDLAndConstraintInputsUnchangedByRouteOption" not in plan
     tcl = (work / "timing.tcl").read_text(encoding="ascii")
     assert tcl.count("\nadd_design ") == 31
     assert "add_design {P:/distortion/build/board1080-timing/fresh-a/compiled/" + timing.IDF + "}" in tcl
     assert tcl.index("dev_map") < tcl.index("add_constraint {P:/distortion/board/priority.rcf}") < tcl.index("pnr -")
     assert tcl.index("pnr -") < tcl.index("file copy ") < tcl.index("report_timing -")
+    assert "-share_router_control_signal" not in tcl
+    assert plan["EDAStageCommands"][3] == "pnr -optimize_multi_corner_timing -fix_hold_violation"
     assert "gen_bit_stream" not in tcl
     assert timing.sha(work / "timing.tcl") == plan["Tcl"]["SHA256"]
     assert json.loads((work / "plan.json").read_text(encoding="utf-8"))["ExplicitDesigns"] == plan["ExplicitDesigns"]
@@ -216,6 +220,71 @@ def test_optional_hold_target_rejects_other_values_before_preparing(closure):
         with pytest.raises(ValueError, match="exactly 200"):
             timing.prepare(project, work, pds_shell=tool, clock_tree_hold_target_ps=value)
     assert not list(work.iterdir())
+
+
+@pytest.mark.parametrize("enabled", [False, True])
+@pytest.mark.parametrize("hold_target", [None, 200])
+def test_explicit_control_chain_option_changes_only_pnr_line(enabled, hold_target):
+    work = "P:/distortion/build/board1080-timing/fresh-a"
+    args = ([], "P:/distortion/board/a.fdc", "P:/distortion/board/a.rcf", work, work + "/pre-sta-final.adf")
+    baseline = timing.make_tcl(*args, clock_tree_hold_target_ps=hold_target)
+    assert baseline == timing.make_tcl(*args, clock_tree_hold_target_ps=hold_target,
+                                       share_router_control_signal=None)
+    explicit = timing.make_tcl(*args, clock_tree_hold_target_ps=hold_target,
+                               share_router_control_signal=enabled)
+    suffix = " -share_router_control_signal " + ("TRUE" if enabled else "FALSE")
+    assert explicit.count(suffix) == 1
+    assert explicit.replace(suffix, "", 1) == baseline
+    assert next(line for line in explicit.splitlines() if line.startswith("pnr ")) == timing.pnr_command(enabled)
+
+
+@pytest.mark.parametrize("enabled", [False, True])
+def test_control_chain_option_is_bound_in_generated_tcl_and_plan_without_input_edits(closure, monkeypatch, enabled):
+    project, manifest, _, work, tool = closure
+    monkeypatch.setattr(timing, "validate_repo_alias", lambda project, alias: timing.alias_format(alias))
+    before = {name: timing.sha(project / name) for name in manifest["source_files"]}
+    rcf_before = timing.sha(project / manifest["RouteConstraint"])
+    plan = timing.prepare(project, work, pds_shell=tool, share_router_control_signal=enabled)
+    tcl = (work / "timing.tcl").read_bytes()
+    command = timing.pnr_command(enabled)
+    assert plan["ShareRouterControlSignal"] is enabled
+    assert plan["EDAStageCommands"][3] == command
+    assert tcl.splitlines().count(command.encode("ascii")) == 1
+    assert plan["HDLAndConstraintInputsUnchangedByRouteOption"] is True
+    assert plan["ClockTreeHoldTargetPS"] is None and plan["ExplicitPostPNRHoldFixCommand"] is None
+    assert b"route_optimize" not in tcl
+    assert plan["Tcl"]["SHA256"] == timing.sha_bytes(tcl)
+    assert plan["InputSHA256"]["tools/prepare_board1080_timing.py"] == timing.sha(timing.SELF)
+    assert plan["PDS"]["ExecutableSHA256"] == timing.sha(tool)
+    assert plan["Device"] == {"Family": "Logos2", "Device": "PG2L100H", "Speedgrade": "-6", "Package": "FBG676"}
+    assert all(timing.sha(project / name) == digest for name, digest in before.items())
+    assert timing.sha(project / manifest["RouteConstraint"]) == rcf_before
+    assert all(plan["InputSHA256"][name] == digest for name, digest in before.items())
+    assert plan["EDAExecuted"] is False and plan["HardwareReleaseAllowed"] is False
+    assert json.loads((work / "plan.json").read_text())["ShareRouterControlSignal"] is enabled
+
+
+def test_invalid_control_chain_option_rejected_before_output(closure):
+    project, _, _, work, tool = closure
+    for value in (0, 1, 0., 1., "false", "TRUE", [], {}):
+        with pytest.raises(ValueError, match="explicit boolean"):
+            timing.prepare(project, work, pds_shell=tool, share_router_control_signal=value)
+    assert not list(work.iterdir())
+
+
+@pytest.mark.parametrize("flag, expected", [(None, None), ("false", False), ("true", True)])
+def test_cli_forwards_only_explicit_control_chain_setting(tmp_path, monkeypatch, flag, expected):
+    seen = []
+    def prepare(project, work, **options):
+        seen.append(options)
+        return {"WorkDirectory": str(work), "ExplicitDesigns": []}
+    monkeypatch.setattr(timing, "prepare", prepare)
+    args = ["--work-dir", str(tmp_path)]
+    if flag is not None:
+        args += ["--share-router-control-signal", flag]
+    assert timing.main(args) == 0
+    assert seen[0]["share_router_control_signal"] is expected
+    assert seen[0]["clock_tree_hold_target_ps"] is None
 
 
 def test_guard_skips_pds_preparse_and_copies_once_when_database_exists():

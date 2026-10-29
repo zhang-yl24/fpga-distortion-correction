@@ -1,6 +1,14 @@
 # 当前交接点
 
-## 新候选原生1080P八帧通过；完整时序仍有已知失败
+## DDR 定向时序修复完成；离板候选，待扩展硬件验收
+
+分支 `codex/ddr-ip-timing-fix` 已完成一条可复现的定向修复候选。原严格基线 E 的 ADF SHA256 为 `c146885f90da22cae61d106f0768529c98f3d2e55f8604315328e61700d4e3fc`；复现配方在 `distortion/build/ddr-timing-repair/reproduced-c`，原件未改，两个 PDS 进程均退出0，输入无漂移，保存/STA前后副本 SHA256 为 `309238d4ad6ee94c64182f41b30dbbdec0a28ae25d0dd7f6f03a98ad96342dce`。报告使用 `max_path 1000 -nworst 4`，避免把双边沿/捕获变体压成单条路径。
+
+候选合并了两项实际验证过的修改：对 `_N173` 的 `TX_DATA[2]:IOLHR_364_624` 做一段官方 wirepattern 支持的局部绕行；将 4 个 DDR IP 内复位源的 126 个实际时序端点和入口 RDC 绑定到精确 slash pin。最终 slow/fast 的 setup、hold、recovery、removal、minimum pulse width 共10类汇总均零失败，最差值分别为 setup +0.447/+3.248ns、hold +0.060/+0.020ns、recovery +2.792/+4.759ns、removal +0.353/+0.160ns、MPW +0.035/+0.035ns。
+
+最终报告的例外审计已通过：setup/hold false-path为空；recovery/removal逐项包含每角244个IP内部检查和1个入口检查，保留捕获时钟/边沿与 native path 变体；外部 IO 缺口集合与基线一致。结果 `distortion/results/board1080-ddr-final-20261029.json`，工具 `distortion/tools/audit_ddr_final_timing.py`，复现准备工具 `distortion/tools/prepare_ddr_timing_repair.py`。这不是实板放行：外部 IO AC、CDC/RDC协议、DDR训练稳定性、模拟MTBF、真实HDMI画面和长时间运行仍需开发板验收。ControlChain-off 已否决，见 `handoff/BOARD1080_CONTROLCHAIN_20261029.md`。
+
+## 历史基线：原生1080P八帧通过；修复前完整时序有已知失败
 
 本机 `rowpipe-20261028-a` 已完成综合/映射/布局布线/最终STA，主域setup最差+.447ns，slow/fast hold各1失败（−.037/−.222ns），recovery分别245/234；fast少11项是该角同一35端点组中11项非负，不是检查消失。54/110项缺输入/输出延迟及CDC/RDC缺口仍保留，不能上板签核。结果 `distortion/results/board1080-rowpipe-timing-20261028.json`，详见 `handoff/BOARD1080_TIMING_20261028.md`。当前PDS2023与历史2022不同，不能把+.116→+.447当作受控的单变量提升。
 

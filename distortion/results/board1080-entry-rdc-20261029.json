@@ -1,0 +1,313 @@
+{
+  "Status": "pass",
+  "Scope": "DDR entry functional connectivity only",
+  "Stages": [
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/u_ddrphy_rst_seq_rstn_sync/sig_async_r1[0]/opit_0_srl/FF3/FF",
+      "Primitive": "V_FFASYN",
+      "Line": 570971,
+      "Parameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"RESET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b0"
+      },
+      "Ports": {
+        "Q": "\\CLMA_357_745/ntQ3",
+        "CE": "1'b1",
+        "CK": "_N50",
+        "D": "\\u_ddr3_test_h/u_ddrphy_top/rst_gpll_lock",
+        "SR": "N116_inv"
+      }
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/u_ddrphy_rst_seq_rstn_sync/sig_async_r1[0]/opit_0_srl/FFAPP3/FF",
+      "Primitive": "V_FFASYN",
+      "Line": 570984,
+      "Parameters": {
+        "GRS_EN": "\"TRUE\"",
+        "SET_RESET": "\"RESET\"",
+        "LRS_EN": "\"TRUE\"",
+        "INIT": "1'b0"
+      },
+      "Ports": {
+        "Q": "\\u_ddr3_test_h/u_ddrphy_top/rst_seq_rstn",
+        "CE": "1'b1",
+        "CK": "_N50",
+        "D": "\\CLMA_357_745/ntQ3",
+        "SR": "N116_inv"
+      }
+    }
+  ],
+  "FirstStageFunctionalFanout": 1,
+  "ClockBuffer": {
+    "Name": "HCKBROUTE_19/HCKB",
+    "Primitive": "V_BUF",
+    "Line": 56010,
+    "Parameters": {},
+    "Ports": {
+      "Z": "_N50",
+      "I": "\\u_ddr3_test_h/u_ddrphy_top/rst_clk"
+    }
+  },
+  "ClockMux": {
+    "Name": "u_ddr3_test_h/u_ddrphy_top/u_rst_clk_bufg/gopclkbufg/CLKBUFG",
+    "Primitive": "V_USCM",
+    "Line": 572161,
+    "Parameters": {
+      "USCM_MODE": "\"BUF_A\"",
+      "SIM_DEVICE": "\"LOGOS2\""
+    },
+    "Ports": {
+      "CLKOUT": "\\u_ddr3_test_h/u_ddrphy_top/rst_clk",
+      "CLK0": "\\u_ddr3_test_h/u_ddrphy_top/rst_gpll_clkout0",
+      "CLK1": "",
+      "SEL": ""
+    }
+  },
+  "StartupPLL": {
+    "Name": "u_ddr3_test_h/u_ddrphy_top/rst_clk_gpll/u_gpll/gpll_inst/GPLL",
+    "Primitive": "V_GPLL",
+    "Line": 570821,
+    "Parameters": {
+      "CLKIN_FREQ": "50",
+      "LOCK_MODE": "1'b0",
+      "STATIC_RATIOI": "1",
+      "STATIC_RATIOM": "1",
+      "STATIC_RATIO0": "8",
+      "STATIC_RATIO1": "16",
+      "STATIC_RATIO2": "4",
+      "STATIC_RATIO3": "8",
+      "STATIC_RATIO4": "16",
+      "STATIC_RATIO5": "32",
+      "STATIC_RATIO6": "64",
+      "STATIC_RATIOF": "8",
+      "STATIC_DUTY0": "8",
+      "STATIC_DUTY1": "16",
+      "STATIC_DUTY2": "4",
+      "STATIC_DUTY3": "8",
+      "STATIC_DUTY4": "16",
+      "STATIC_DUTY5": "32",
+      "STATIC_DUTY6": "64",
+      "STATIC_DUTYF": "8",
+      "STATIC_PHASE": "0",
+      "STATIC_PHASE0": "0",
+      "STATIC_PHASE1": "0",
+      "STATIC_PHASE2": "0",
+      "STATIC_PHASE3": "0",
+      "STATIC_PHASE4": "0",
+      "STATIC_PHASE5": "0",
+      "STATIC_PHASE6": "0",
+      "STATIC_PHASEF": "0",
+      "STATIC_CPHASE0": "0",
+      "STATIC_CPHASE1": "0",
+      "STATIC_CPHASE2": "0",
+      "STATIC_CPHASE3": "0",
+      "STATIC_CPHASE4": "0",
+      "STATIC_CPHASE5": "0",
+      "STATIC_CPHASE6": "0",
+      "STATIC_CPHASEF": "0",
+      "CLK_DPS0_EN": "\"TRUE\"",
+      "CLK_DPS1_EN": "\"FALSE\"",
+      "CLK_DPS2_EN": "\"FALSE\"",
+      "CLK_DPS3_EN": "\"FALSE\"",
+      "CLK_DPS4_EN": "\"FALSE\"",
+      "CLK_DPS5_EN": "\"FALSE\"",
+      "CLK_DPS6_EN": "\"FALSE\"",
+      "CLK_DPSF_EN": "\"FALSE\"",
+      "CLK_CAS5_EN": "\"FALSE\"",
+      "CLKOUT0_SYN_EN": "\"TRUE\"",
+      "CLKOUT1_SYN_EN": "\"FALSE\"",
+      "CLKOUT2_SYN_EN": "\"FALSE\"",
+      "CLKOUT3_SYN_EN": "\"FALSE\"",
+      "CLKOUT4_SYN_EN": "\"FALSE\"",
+      "CLKOUT5_SYN_EN": "\"FALSE\"",
+      "CLKOUT6_SYN_EN": "\"FALSE\"",
+      "CLKOUTF_SYN_EN": "\"FALSE\"",
+      "SSC_MODE": "\"DISABLE\"",
+      "SSC_FREQ": "50",
+      "INTERNAL_FB": "\"CLKOUTF\"",
+      "EXTERNAL_FB": "\"DISABLE\"",
+      "BANDWIDTH": "\"OPTIMIZED\""
+    },
+    "Ports": {
+      "APB_RDATA": "",
+      "APB_ADDR": "{_GND1416, _GND1414, 1'b0, _GND1414, _GND1413}",
+      "APB_WDATA": "{_GND1422, _GND1422, _GND1421, _GND1421, _GND1421, _GND1420, _GND1420, _GND1419, _GND1419, _GND1418, _GND1418, _GND1418, _GND1418, _GND1418, _GND1416, _GND1413}",
+      "APB_READY": "",
+      "CLKOUT0": "\\u_ddr3_test_h/u_ddrphy_top/rst_gpll_clkout0",
+      "CLKOUT0N": "",
+      "CLKOUT1": "",
+      "CLKOUT1N": "",
+      "CLKOUT2": "",
+      "CLKOUT2N": "",
+      "CLKOUT3": "",
+      "CLKOUT3N": "",
+      "CLKOUT4": "",
+      "CLKOUT5": "",
+      "CLKOUT6": "",
+      "CLKOUTF": "",
+      "CLKOUTFN": "",
+      "DPS_DONE": "\\u_ddr3_test_h/u_ddrphy_top/rst_clk_dps_done",
+      "LOCK": "\\u_ddr3_test_h/u_ddrphy_top/rst_gpll_lock",
+      "APB_CLK": "_GND1413",
+      "APB_EN": "1'b0",
+      "APB_RST_N": "1'b0",
+      "APB_SEL": "_GND1416",
+      "APB_WRITE": "1'b0",
+      "CLKFB": "",
+      "CLKIN1": "ddr_ref_clk",
+      "CLKIN2": "1'b0",
+      "CLKIN_SEL": "1'b0",
+      "CLKOUT0_SYN": "1'b0",
+      "CLKOUT1_SYN": "1'b0",
+      "CLKOUT2_SYN": "_GND1411",
+      "CLKOUT3_SYN": "1'b0",
+      "CLKOUT4_SYN": "_GND1411",
+      "CLKOUT5_SYN": "1'b0",
+      "CLKOUT6_SYN": "1'b0",
+      "CLKOUTF_SYN": "1'b0",
+      "DPS_CLK": "_N30",
+      "DPS_DIR": "_GND1412",
+      "DPS_EN": "\\u_ddr3_test_h/u_ddrphy_top/rst_clk_adj_en",
+      "PLL_PWD": "1'b0",
+      "RST": "N116_inv"
+    }
+  },
+  "RawClearLUT": {
+    "Name": "N116_inv/gateop_perm/FYA/LUT6CARRY",
+    "Primitive": "V_LUT6CARRY",
+    "Line": 56090,
+    "Parameters": {
+      "INIT": "64'h0F0F0F0FFFFFFFFF",
+      "I5_TO_CARRY": "\"TRUE\"",
+      "I5_TO_LUT": "\"TRUE\""
+    },
+    "Ports": {
+      "COUT": "",
+      "Z": "N116_inv",
+      "Z5": "",
+      "CIN": "1'b0",
+      "I0": "1'b1",
+      "I1": "1'b1",
+      "I2": "power_ready",
+      "I3": "1'b1",
+      "I4": "1'b1",
+      "I5": "nt_reset_n"
+    }
+  },
+  "RawClearFunction": "~(reset_n & power_ready)",
+  "PowerReadyFF": {
+    "Name": "power_ready/opit_0_inv_L6Q_perm/FF0/FF",
+    "Primitive": "V_FFASYN",
+    "Line": 93100,
+    "Parameters": {
+      "GRS_EN": "\"TRUE\"",
+      "SET_RESET": "\"RESET\"",
+      "LRS_EN": "\"TRUE\"",
+      "INIT": "1'b0"
+    },
+    "Ports": {
+      "Q": "power_ready",
+      "CE": "1'b1",
+      "CK": "_N44",
+      "D": "\\CLMA_165_984/ntQD0",
+      "SR": "\\CLMA_165_984/ntRSCO"
+    }
+  },
+  "CriticalNetReferenceCounts": {
+    "N116_inv": 86,
+    "\\CLMA_357_745/ntQ3": 3,
+    "\\reset_n_ibuf/ntD": 3,
+    "\\u_ddr3_test_h/u_ddrphy_top/rst_clk": 4,
+    "\\u_ddr3_test_h/u_ddrphy_top/rst_gpll_clkout0": 3,
+    "\\u_ddr3_test_h/u_ddrphy_top/rst_gpll_lock": 3,
+    "\\u_ddr3_test_h/u_ddrphy_top/rst_seq_rstn": 16,
+    "_N50": 7,
+    "nt_reset_n": 11,
+    "power_ready": 11
+  },
+  "ParsedPrimitiveCellCount": 38749,
+  "OutputLoads": [
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/cnt[0]/opit_0_inv_L6Q_perm/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/cnt[1]/opit_0_inv_L6Q_perm/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_cpd_start/opit_0_inv_L6Q_perm/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_cpd_start_d/opit_0_inv_srl/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_ioclk_gate[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_iol_rst/opit_0_inv_L6Q_LUT6DL5Q_perm/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[1]/opit_0_inv_L6Q_LUT6DQL5Q_perm/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[7]/opit_0_inv_L6Q_LUT6DQL5Q_perm/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[11]/opit_0_inv_L6Q_LUT6DQL5Q_perm/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/rst_clk_adj_done_d1/opit_0_inv_srl/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/state_reg[4]/opit_0_inv_L6Q_LUT6DQL5Q_perm/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/state_reg[10]/opit_0_inv_L6Q_perm/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/training_error_latch/opit_0_inv_L6Q_perm/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    },
+    {
+      "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/tran_err_rst_cnt[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/LRSPOLMUX/LRS_INV",
+      "Primitive": "V_INV",
+      "Pin": "I"
+    }
+  ],
+  "OutputLoadCount": 14,
+  "HardwareValidated": false,
+  "AnalogMTBFProven": false,
+  "TimingExceptionApplied": false,
+  "Input": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGA国赛\\fpga-distortion-correction\\distortion\\build\\board1080-timing\\ccoff-1029-a\\generate_netlist\\board1080_top_sim.v",
+    "Bytes": 30943106,
+    "SHA256": "1ccb8f9e90362319064b6db51e88882043b3cdac2331e853326f7b1d99d88113"
+  },
+  "AuditToolSHA256": "d83f86ceb4d4236c9d09318d6e5bd4d0a311358b660ec8bf18018f6ef9dd6f33"
+}

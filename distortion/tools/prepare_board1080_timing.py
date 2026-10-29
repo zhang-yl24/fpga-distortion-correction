@@ -225,8 +225,19 @@ def post_pnr_hold_command(clock_tree_hold_target_ps):
             "-fix_hold_violation_threshold_for_clk_tree 200")
 
 
-def make_tcl(designs, constraint, route_constraint, work, final_db, clock_tree_hold_target_ps=None):
+def pnr_command(share_router_control_signal=None):
+    if share_router_control_signal is not None and type(share_router_control_signal) is not bool:
+        raise ValueError("share-router-control-signal must be absent or an explicit boolean")
+    command = "pnr -optimize_multi_corner_timing -fix_hold_violation"
+    if share_router_control_signal is not None:
+        command += " -share_router_control_signal " + ("TRUE" if share_router_control_signal else "FALSE")
+    return command
+
+
+def make_tcl(designs, constraint, route_constraint, work, final_db, clock_tree_hold_target_ps=None,
+             share_router_control_signal=None):
     hold_command = post_pnr_hold_command(clock_tree_hold_target_ps)
+    route_command = pnr_command(share_router_control_signal)
     lines = ["# Generated preparation only; all timing acceptance remains pending.",
              "# No bitstream generation or hardware command is present.",
              "set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676"]
@@ -235,7 +246,7 @@ def make_tcl(designs, constraint, route_constraint, work, final_db, clock_tree_h
               "compile -top_module board1080_top",
               "synthesize -ads -selected_syn_tool_opt 2", "dev_map",
               "add_constraint " + tcl_path(route_constraint),
-              "pnr -optimize_multi_corner_timing -fix_hold_violation"]
+              route_command]
     if hold_command is not None:
         lines.append(hold_command)
     lines += [
@@ -247,8 +258,10 @@ def make_tcl(designs, constraint, route_constraint, work, final_db, clock_tree_h
 
 
 def prepare(project, work_dir, *, manifest_name=DEFAULT_MANIFEST, repo_alias="P:/",
-            pds_shell="D:/pango/PDS_2023.2/bin/pds_shell.exe", clock_tree_hold_target_ps=None):
+            pds_shell="D:/pango/PDS_2023.2/bin/pds_shell.exe", clock_tree_hold_target_ps=None,
+            share_router_control_signal=None):
     hold_command = post_pnr_hold_command(clock_tree_hold_target_ps)
+    route_command = pnr_command(share_router_control_signal)
     project = Path(project).resolve()
     roles = validate_manifest(project, manifest_name)
     work = fresh_work_dir(project, work_dir)
@@ -288,7 +301,7 @@ def prepare(project, work_dir, *, manifest_name=DEFAULT_MANIFEST, repo_alias="P:
     final_db = work_alias + "/pre-sta-final.adf"
     tcl = make_tcl(explicit, alias_path(project, alias, project / roles["Constraint"]),
                    alias_path(project, alias, project / roles["RouteConstraint"]), work_alias, final_db,
-                   clock_tree_hold_target_ps)
+                   clock_tree_hold_target_ps, share_router_control_signal)
     tcl_bytes = tcl.encode("ascii")
     # Validate all inputs again before the first write. A preparation failure
     # cannot leave an apparently ready plan based on a partly changed closure.
@@ -308,7 +321,7 @@ def prepare(project, work_dir, *, manifest_name=DEFAULT_MANIFEST, repo_alias="P:
             "HDLAndConstraintInputsUnchangedByHoldOption": True,
             "EDAStageCommands": ["compile -top_module board1080_top",
                 "synthesize -ads -selected_syn_tool_opt 2", "dev_map",
-                "pnr -optimize_multi_corner_timing -fix_hold_violation"]
+                route_command]
                 + ([hold_command] if hold_command is not None else [])
                 + ["report_timing -force_to_run -delay_type min_max -max_path 20"],
             "WorkDirectory": str(work), "AliasWorkDirectory": work_alias,
@@ -333,6 +346,9 @@ def prepare(project, work_dir, *, manifest_name=DEFAULT_MANIFEST, repo_alias="P:
                 "Copied IDF bodies are dependencies, not additional add_design entries.",
                 "The guarded Tcl snapshot is skipped at initial parse; execution must check its existence and SHA256 against final ADF before claiming unchanged across STA.",
                 "External IO/CDC and training/reset protocol acceptance remain separate requirements."]}
+    if share_router_control_signal is not None:
+        plan["ShareRouterControlSignal"] = share_router_control_signal
+        plan["HDLAndConstraintInputsUnchangedByRouteOption"] = True
     # Exclusive creation protects against accidentally reusing a populated
     # directory. No overwrite, deletion, external process or hardware access.
     if any(work.iterdir()):
@@ -357,11 +373,15 @@ def main(argv=None):
     parser.add_argument("--pds-shell", default="D:/pango/PDS_2023.2/bin/pds_shell.exe")
     parser.add_argument("--clock-tree-hold-target-ps", type=int, choices=(200,), default=None,
                         help="optional explicit post-PNR hold optimization target; no partial resume")
+    parser.add_argument("--share-router-control-signal", choices=("false", "true"), default=None,
+                        help="optional explicit PNR Control Chain setting; omission preserves the existing recipe")
     args = parser.parse_args(argv)
     try:
         plan = prepare(PROJECT, args.work_dir, manifest_name=args.manifest,
                        repo_alias=args.repo_alias, pds_shell=args.pds_shell,
-                       clock_tree_hold_target_ps=args.clock_tree_hold_target_ps)
+                       clock_tree_hold_target_ps=args.clock_tree_hold_target_ps,
+                       share_router_control_signal=None if args.share_router_control_signal is None
+                       else args.share_router_control_signal == "true")
     except (ValueError, OSError, ET.ParseError, json.JSONDecodeError) as exc:
         parser.error(str(exc))
     print(json.dumps({"PreparedOnly": True, "Plan": str(Path(plan["WorkDirectory"]) / "plan.json"),
