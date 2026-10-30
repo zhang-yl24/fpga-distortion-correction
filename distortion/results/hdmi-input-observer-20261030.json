@@ -1,0 +1,73 @@
+{
+  "Schema": "hdmi-input-observer-cdc-progress-v1",
+  "CreatedUTC": "2026-10-29T20:19:18.023793+00:00",
+  "Target": "hdmi_uart_input_diag",
+  "Status": "offline_candidate_verified_with_scoped_CDC_constraints_not_programmed",
+  "DigitalSimulationPassed": true,
+  "SimulationSourceSHA256": {
+    "rtl/experimental/dvp_mode_admission_monitor_cdc.v": "57779e03f9c29d2e168fbabf77ae540675ebfc1ebec3e6e24ba3b7f7b6c6b329",
+    "rtl/experimental/hdmi1080_input_status_cdc.v": "a301a9960792921f0a8142f5d6eab070b80505ddfd3a297bc733a09ee9c8f71c",
+    "tests/tb_board1080_input_status_cdc.sv": "e553e719553a933a11527d99cc10b56c390f94bde5cc4c99c147f5144b4ace51",
+    "tools/run_hdmi_input_cdc_sim.py": "4835fdbd069cf94feeb45dd30b0ba280ac17b1177ad7e960ef512aa63d2e6eab",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/prepare_gamma_pipeline_d5.py": "d551f76a4a29b524ef58f04dcc02af20fe2e093c2829c220faf179a6d681690d"
+  },
+  "SourceInputSHA256": {
+    "rtl/experimental/hdmi_diag_uart.v": "cd336607932b00c9d47ce7cd37ff76c7c51c610e94fc0180460c27de28ff8a6d",
+    "rtl/uart_tx.v": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+    "rtl/experimental/ms72xx_observed_ctl.v": "04ab6c3d0fcb3e9caa6175d35821728e94bd64aa1ce3c36d5a1f9af0384054bb",
+    "rtl/experimental/ms7200_1080p30_ctl.v": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+    "rtl/experimental/ms7210_checked_ctl.v": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+    "rtl/experimental/iic_dri_checked.v": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+    "platform/video_base/ipcore/cfg_pll/cfg_pll.v": "a524450baa6becd30df04da4bdd00597de18b42db4628226e27546c4d601b0ec",
+    "board/bringup_pll.v": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+    "rtl/video_pattern.v": "299e59ec4c3168a282bf9d521189dfc405ff889e65825846084962826c149aa9",
+    "board/board1080-checked-i2c.fdc": "4fd34ebc9d39642e2539610211fe20778971bf9870b53e8f479bcf164c3cf37c",
+    "tools/prepare_hdmi_uart_diagnostic.py": "a2c73eb8cc4ba7468065dd728b4cd9a7adf7cb1b0597a8b7b083cfbb4b2f564b",
+    "board/hdmi_uart_input_diag.v": "556b8a286bf944ab47f95a07312618722709783626966e17e731415c515dd10a",
+    "rtl/experimental/hdmi1080_input_status_cdc.v": "a301a9960792921f0a8142f5d6eab070b80505ddfd3a297bc733a09ee9c8f71c",
+    "rtl/experimental/dvp_mode_admission_monitor_cdc.v": "57779e03f9c29d2e168fbabf77ae540675ebfc1ebec3e6e24ba3b7f7b6c6b329",
+    "tools/prepare_hdmi_input_diagnostic.py": "008158c386eef6a44927b9c050fa8d1f20a986c4498ee77ff44f3d61edcf7cb2"
+  },
+  "NativeBuildCompleted": true,
+  "NativeReportedSTAWithScopedCDCConstraintsPassed": true,
+  "NativePinCount": 46,
+  "MappedSynchronizerFFCount": 161,
+  "DirectSameClockStageLinks": 81,
+  "SameCLMStageLinks": 81,
+  "InputCDCMaxDelayNS": 8.0,
+  "MaxDelayPathsPerCorner": 167,
+  "HoldOnlyExceptionsPerCorner": 167,
+  "PixelResetRecoveryExceptionsPerCorner": 4,
+  "PixelResetRemovalExceptionsPerCorner": 4,
+  "SetupFalsePathExceptions": 0,
+  "WholeClockGroupCuts": 0,
+  "OriginalADFSHA256": "c6147cfac62256064972e92b8cc8e8c6fa5d1d22e1667622970b91c29bd7d1fa",
+  "ScopedADFSHA256": "d7858e4b705469e6619ba3c99df2c78bf47e2e4f515aeb3b328ea67c70c676a8",
+  "HardwareAccessedByThisCandidate": false,
+  "BitstreamGenerated": false,
+  "HardwareReleaseAllowed": false,
+  "Limits": [
+    "Internal native reported timing only; external HDMI IO AC and analog metastability MTBF are not signed off.",
+    "This diagnostic measures timing geometry only; no pixel payload, DDR or corrected display pipeline is included.",
+    "No new candidate has been programmed. Existing hardware evidence belongs to hdmi_uart_delayed_diag and is recorded separately.",
+    "Latest programming status has over_temp=1 without a valid temperature measurement; board testing is paused pending physical thermal verification.",
+    "Generic monitor enable must be observed by both clock domains; current HDMI integration only raises enable once after common reset. Arbitrarily short asynchronous disable pulses are not guaranteed.",
+    "PAP_ASYNC_REG had six backend warnings; all affected flip-flops and same-CLM two-stage connections were independently verified."
+  ],
+  "EvidenceManifest": {
+    "Path": "hdmi-input-observer-20261030/manifest.json",
+    "SHA256": "f21377c3251ef6571b15c24befce1fd7507b62903cde7063deaf44e5f9992fc7",
+    "FileCount": 105,
+    "StoredBytes": 9183892
+  },
+  "Reviews": {
+    "simulation/simulation-result.json": "4ee012020a5653ef28802724dff7cf6a99453aa51688decbd56d1dd683460405",
+    "native-build/native-audit.json": "18359f23a96995e578f951ad7c2ea21cc140d4fe46d9175c55357581a0fa97bc",
+    "native-build/mapping-review.json": "058dc980e488d8a5676cc282cfd6d6d4687740e1aaf82ef0af5ccea356f33cfa",
+    "scoped-cdc/scoped-cdc-review.json": "6e66b1688bc5b9f3a0edf5b8aa6ee3300594768ac4ff905f7d80077b4ceccc73",
+    "functional-export/connectivity-review.json": "b086225ea76beae60dc1bedcb205f1cc13a7e338af9aeda5a11d2e78694bdb15",
+    "chain-delay/chain-delay-review.json": "4fb13141e7fd2e2033249dae8f545becdc29c7ed1d08fa4b92ac97c07b3d0c9f"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "Schema": "hdmi-uart-independent-check-v1",
+  "RecordedUTC": "2026-10-29T19:07:20.530426+00:00",
+  "Passed": true,
+  "PassedScope": "Independent raw UART framing/CRC/field consistency and recorded configuration status; not video acceptance",
+  "Method": "Python standard library only: fixed 64-byte frames, struct little-endian unpack, zlib.crc32 bytes 0..55 versus stored uint32 at byte 56. No project decoder imported.",
+  "HardwareAccessedByThisCheck": false,
+  "EDAAccessed": false,
+  "FilesSHA256": {
+    "distortion/build/hdmi-uart-diagnostic/hdmi-input-1030-a/live-after-program.json": "891e50652a86d673698e2f43aebb88533beeb06e82d719c245dc932d111203b4",
+    "distortion/build/hdmi-uart-diagnostic/hdmi-input-1030-a/live-after-program.raw.bin": "74cfae12a63516f9e23880f94c159985a3fce890ca9825f1b28c201c718ced15",
+    "distortion/build/offline-20261024/hdmi-uart-delayed-program-1030-b/receipt.json": "0d3ac2efcfb64c01cc4b3e9d2a5ec9626fc30efedf67e827593cd1a26bd37029",
+    "distortion/build/offline-20261024/hdmi-uart-delayed-program-1030-b/plan.json": "941d11379ac85bb07fec4695859c8690077fcb4ed43ed913115b8baeaf1f4d86",
+    "distortion/board/hdmi_uart_delayed_diag.v": "390b9e7b85f2d39326b783ece651560e7e3f1797aed4ad9dfdd37d4754f0162f",
+    "distortion/build/hdmi-uart-diagnostic/delayed-bit-1030-a/export-result.json": "7f5414280545c49d4418b0a82905c338ec6fb3edf440fd73d2e25df2305c2cd1"
+  },
+  "Bitstream": {
+    "Path": "distortion/build/hdmi-uart-diagnostic/delayed-bit-1030-a/generate_bitstream/hdmi_uart_delayed_diag.sbit",
+    "SHA256": "510e14147c040d9427577405ee96eaf4d3d6be0ef70b74328445d2e3cb42bd7b",
+    "MatchesProgramPlanReceiptAndExport": true,
+    "ResidentTargetRecorded": "hdmi_uart_delayed_diag",
+    "SRAMDoneConfirmedByReceipt": true,
+    "FlashWritten": false
+  },
+  "UART": {
+    "Port": "COM7",
+    "Baudrate": 115200,
+    "Bytes": 1344,
+    "Packets": 21,
+    "CRCPassed": 21,
+    "SequenceFirstLast": [
+      119,
+      139
+    ],
+    "ContiguousSequences": true,
+    "NoiseBytes": 0,
+    "TrailingBytes": 0,
+    "AllNumericFieldsMatchDecodedReport": true,
+    "CaptureStartedUTC": "2026-10-29T19:03:34.456820+00:00",
+    "CaptureEndedUTC": "2026-10-29T19:03:44.636292+00:00"
+  },
+  "ObservedConfiguration": {
+    "FlagsHex": [
+      "0x003f"
+    ],
+    "CfgErrorValues": [
+      0
+    ],
+    "CfgSnapshotValid": true,
+    "CfgFresh": true,
+    "FPGACfgPLLLocked": true,
+    "FPGAVideoPLLLocked": true,
+    "RXInitDone": true,
+    "AllInitDone": true,
+    "CfgFailed": false,
+    "SuccessfulTransactionsFirstLast": [
+      393493,
+      460698
+    ],
+    "SuccessfulTransactionsIncrease": 67205,
+    "CounterStrictlyIncreasing": true,
+    "LastTransactionsTarget": "RX",
+    "LastTransactionsRead": true,
+    "LastAddressHex": [
+      "0x209c",
+      "0x209d",
+      "0x209e",
+      "0x209f"
+    ]
+  },
+  "ObserverInterpretation": {
+    "PresentInProgramPlan": false,
+    "Released": false,
+    "SourceTopHashMatchesProgramPlanAndExport": true,
+    "DecodedState": "waiting_for_digital_input_qualification",
+    "Meaning": "This diagnostic hardwires observer release, qualification and width/height/pixel/frame counters to zero. The state therefore denotes unavailable digital input qualification; it does not establish an input failure or measured absence of video.",
+    "InputFailureObserved": false
+  },
+  "Limits": {
+    "PHYLockMeasured": false,
+    "InputResolutionMeasured": false,
+    "InputFrameRateMeasured": false,
+    "HDMIOutputConnectedPerReceipt": false,
+    "HDMIDisplayAccepted": false,
+    "EndToEndDistortionAccepted": false,
+    "HardwareReleaseAllowed": false,
+    "Note": "RX/all initialization completion is controller status. FPGA PLL lock and increasing I2C transaction count do not establish PHY lock, actual input mode, frame rate, displayed image, or long-term reliability."
+  },
+  "SourceDrift": []
+}

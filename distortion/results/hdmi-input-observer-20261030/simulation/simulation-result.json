@@ -1,0 +1,138 @@
+{
+  "Schema": "hdmi-input-cdc-simulation-v1",
+  "Passed": true,
+  "StartedUTC": "2026-10-29T19:52:53.425014+00:00",
+  "SourceSHA256": {
+    "rtl/experimental/dvp_mode_admission_monitor_cdc.v": "57779e03f9c29d2e168fbabf77ae540675ebfc1ebec3e6e24ba3b7f7b6c6b329",
+    "rtl/experimental/hdmi1080_input_status_cdc.v": "a301a9960792921f0a8142f5d6eab070b80505ddfd3a297bc733a09ee9c8f71c",
+    "tests/tb_board1080_input_status_cdc.sv": "e553e719553a933a11527d99cc10b56c390f94bde5cc4c99c147f5144b4ace51",
+    "tools/run_hdmi_input_cdc_sim.py": "4835fdbd069cf94feeb45dd30b0ba280ac17b1177ad7e960ef512aa63d2e6eab",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/prepare_gamma_pipeline_d5.py": "d551f76a4a29b524ef58f04dcc02af20fe2e093c2829c220faf179a6d681690d"
+  },
+  "CompileSources": [
+    "rtl/experimental/dvp_mode_admission_monitor_cdc.v",
+    "rtl/experimental/hdmi1080_input_status_cdc.v",
+    "tests/tb_board1080_input_status_cdc.sv"
+  ],
+  "Commands": [
+    {
+      "Stage": "compile",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_mode_admission_monitor_cdc.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_status_cdc.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_board1080_input_status_cdc.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "small-elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_dvp_mode_admission_monitor_cdc_small",
+        "-s",
+        "input_cdc_small"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "small-simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "input_cdc_small",
+        "-runall",
+        "-log",
+        "small-simulation.log"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "native-elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_board1080_input_status_cdc",
+        "-s",
+        "input_cdc_native"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "native-simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "input_cdc_native",
+        "-runall",
+        "-log",
+        "native-simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "Cases": {
+    "small": {
+      "Names": [
+        "atomic_held_snapshot_gray_and_first_new_frame",
+        "enable_restart_discards_pending_old_snapshot",
+        "stopped_clock_enable_requires_observed_source_disable",
+        "common_reset_while_pclk_stopped_has_no_old_epoch",
+        "source_fault_code_sticky_and_enable_recovery"
+      ],
+      "Counts": [
+        5,
+        27,
+        27,
+        1448
+      ]
+    },
+    "native": {
+      "passed": true,
+      "qualification_phases": 2,
+      "polarity_mask": 3,
+      "complete_rasters": 6,
+      "changed_format": 1,
+      "stopped_pclk": 1,
+      "sticky_checks": 2,
+      "common_reset_checks": 3,
+      "reset_requalified": 1,
+      "reference_cycles": 5494868,
+      "DDRIPElaborated": false,
+      "HardwareVerified": false
+    }
+  },
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "Limits": "Actual digital observer RTL with synthetic exact 1080p30 raster and small enable/clock-stop tests. No physical CDC/skew/AC sign-off, real HDMI pixels, DDR or optical acceptance.",
+  "SourceDrift": [],
+  "EndedUTC": "2026-10-29T19:54:06.847004+00:00",
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "8673a26d0bdd3fd44e7dda143ec31a16eb8ed440d903988da2659b2483daeaf9",
+    "input-status-cdc-unit-summary.json": "927f9d23403b44c46d49db62a52277b1141d79714bfead3ab54a4192523acd88",
+    "native-elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-elaborate-stdout.log": "3f957284cc929fa1707f8fd96f6e72be289933110c050c41ddc40e7b07f277dc",
+    "native-simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-simulate-stdout.log": "78b8b8b088e9fa1c883d15d195ac6bf0ad2165affbf5bc3dfc7687ca48f0510e",
+    "native-simulation.log": "0d9a405494f954af3ac535f00381a3ce547cd597fd003863684ee3f3c21f17e0",
+    "small-elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "small-elaborate-stdout.log": "e11380eabfcc6fad44e3d0fc770da60b323813818e3cdd99f71efd89bddd18f6",
+    "small-simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "small-simulate-stdout.log": "0a6e9b095351f687d97386e192eeca65039ddb6f0eecd9b643981bd56f5e7f2e",
+    "small-simulation.log": "11e9aade75713878dd96d6a5236477a6be7549f4b3060d01d78423abc899620d",
+    "webtalk.jou": "4d576d990ce42ea282771fc88e0808b2800b490876d0d32d80697973197033e6",
+    "webtalk.log": "b71446307046e9ba1bef11e12705747135fd0cd16236e55cf06edda78dcb70de",
+    "webtalk_16820.backup.jou": "a9c1f4a5b93ee333391192fc36c513c41ef2406d33efb00e9a3154feeffac509",
+    "webtalk_16820.backup.log": "ea6e11a8d78a3a813f873772184ff4a0bbe39c3ff4a70654f20997365c522cea",
+    "webtalk_29472.backup.jou": "c6e0d7d341fa1dbdde3d799c814819956f04d5f041a94fc51ddf4104285e71d6",
+    "webtalk_29472.backup.log": "34c0bb28d9c819660db6e99833ff723820817adbc68342a344d2c8a4243fa3f3",
+    "webtalk_6484.backup.jou": "a8c256aed63729ea715d9e478626b3abea17a4e984e9ab562cd22db975308acc",
+    "webtalk_6484.backup.log": "2a8dd08fddc7596b9420e74c08deed28d334ae99a1cbd490f43a8535446c04fd",
+    "xelab.log": "3fac363b7c1827ccdda837b71c69740d1af526319f953a81f0b29bae50e7a64c",
+    "xsim.jou": "2a40e706644ffb2fc1fc88658cc5ec441cd055386b6a6b4c3a4c5d1142e0b07d",
+    "xsim_28096.backup.jou": "6c2b479fa0d06a7779a9051e2f0f22374a4a60613265df21e9c60fe28ef8a73c",
+    "xvlog.log": "6743f6d352936f0daedd121f1cb2146b8b6c851cf2f227af887045151cdf5151"
+  }
+}
