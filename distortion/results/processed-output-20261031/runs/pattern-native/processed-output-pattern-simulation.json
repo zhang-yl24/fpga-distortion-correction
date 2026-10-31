@@ -1,0 +1,91 @@
+{
+  "Schema": "processed-output-pattern-digital-simulation-v1",
+  "Passed": true,
+  "StartedUTC": "2026-10-30T17:27:14.268516+00:00",
+  "Native": true,
+  "ClockHz": 27000000,
+  "SourceSHA256": {
+    "rtl/experimental/processed_output_pattern.v": "7a4e9c1f9a9c0b46af412679aa4cde76015906bece2142d0665c6946ef59980d",
+    "tests/tb_processed_output_pattern.sv": "412d114f983cd1ddba45f678a72e1a6465b1f83b7cee023aa23787976adf062a",
+    "tools/run_processed_output_pattern_sim.py": "fc21b4d401283460beadca0099d697ade47546395f4d20497bbb04799f5fef2c",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+  },
+  "Commands": [
+    {
+      "Stage": "compile",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "-d",
+        "NATIVE",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\processed_output_pattern.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_processed_output_pattern.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_processed_output_pattern",
+        "-s",
+        "processed_output_pattern_tb"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "processed_output_pattern_tb",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "Limits": "Controlled synthetic source only; no camera, DDR, processing, PHY or physical HDMI acceptance.",
+  "Oracle": {
+    "Width": 1920,
+    "Height": 1080,
+    "Pixels": 2073600,
+    "RGB565CRC32": "C58CBE14",
+    "EveryActivePixelNonBlack": true,
+    "ExpectedSHA256": "2164461cd72b188aa031c4ddc7783e301c97fc8ec11c358d773e7900f3ba996b"
+  },
+  "Summary": {
+    "Passed": true,
+    "Width": 1920,
+    "Height": 1080,
+    "ClockHz": 27000000,
+    "FullRasters": 1,
+    "PixelsCompared": 2073600,
+    "MidFrameDisableCompleted": true,
+    "AsyncResetChecks": 0
+  },
+  "PassLines": [
+    "PROCESSED_OUTPUT_PATTERN_PASS width=1920 height=1080 rasters=1 pixels=2073600"
+  ],
+  "SourceDrift": [],
+  "FixtureDrift": false,
+  "ElapsedSeconds": 21.986,
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "85fb606125c119912822a82472a35e853a1acd7633351b02f9bf5ee4a2179d30",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "d1eeaa83a222bf08c93736e57f7a0e3fa305fc8faeb9d96983555ea940be09d2",
+    "expected-rgb.mem": "2164461cd72b188aa031c4ddc7783e301c97fc8ec11c358d773e7900f3ba996b",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "9566caf8e99c0a2d748505f0a93d890949404269eaa4c4c095b3c356cbd0025f",
+    "simulation.log": "9abc56497dad56327fd848855a283df52c7806c390ffef2bf892404044fdc6b5",
+    "summary.json": "3c1b61b2469ee5f85368a2d699b045ce97ea8762ff565ae41290eda2ba929330",
+    "webtalk.log": "a7bb8598289b8b2121e1978f2caf50470c867ac8618d6ccb33647ba1e587f361",
+    "webtalk_36952.backup.log": "3a52263d771b36f5e616b81fc1b5417c219342c1ff5bfc4a62c1c55d3d8a4189",
+    "xelab.log": "ffc1363f039540fa35e4258dd9b06781a7f8d4a4e2079c2790ea9c8329ee1b1e",
+    "xvlog.log": "59b777cc41c4d039ade554c2390658924f41090e147251596959fc4a811d3c21"
+  }
+}

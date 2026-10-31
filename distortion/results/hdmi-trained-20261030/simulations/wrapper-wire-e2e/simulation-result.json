@@ -1,0 +1,145 @@
+{
+  "Schema": "ms72xx-ready-wire-simulation-v1",
+  "Passed": true,
+  "StartedUTC": "2026-10-30T05:15:10.034414+00:00",
+  "SourceSHA256": {
+    "rtl/experimental/ms7200_1080p30_ready_ctl.v": "6918a4a46135094addc443c45235077887b1daaca81f4f255163f635c7828959",
+    "rtl/experimental/ms72xx_ready_observed_ctl.v": "18d03513a5c92fad06049d321a31bbd9c8cd1c66051c3c0f75154fbba4c691fe",
+    "rtl/experimental/ms7210_checked_ctl.v": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+    "rtl/experimental/iic_dri_checked.v": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+    "tests/tb_ms72xx_observed_e2e.sv": "92d28e606bb45ee01d4ad2ec0ebc03f6aa536310a0e23a3f005a837bba108692",
+    "rtl/experimental/ms7200_1080p30_ctl.v": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+    "tools/run_hdmi_uart_sim.py": "a20cd2fe76b6ab2dbfdcb80a528d16e7381713320589672e044918ce09d7bd77",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/run_ms72xx_checked_sim.py": "8c0d953d2d4204f334dd290157e4f541e202f3f01c249fa5c9dd89dbec1f36d7",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "GeneratedSHA256": {
+    "run_ready_e2e.py": "2cae3b099f631b74910f84a1f2145cfebb167594ea749c37de1df6d909351a59",
+    "rx_expected.hex": "7566f2bb9daad233a5d2a71901bc4ba1164855ed16f4c6fcbae24d1ba56808ab",
+    "tb_ms72xx_ready_observed_e2e.sv": "0e2dca511f28bb39343c38d1a24868f02096d6f727db33aa669cc17c8b135c2a",
+    "tx_expected.hex": "3cdd92578c994a73b6f1b7dc455dded70bb69a53db15ba9498197f1b3c515c41"
+  },
+  "TBTransformation": "Only ms72xx_observed_ctl dut( is replaced by ms72xx_ready_observed_ctl dut( in a new TB copy.",
+  "All311RXCommandsUnchanged": true,
+  "Original49TXVectorUsed": true,
+  "Commands": [
+    {
+      "Stage": "compile",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7200_1080p30_ready_ctl.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms72xx_ready_observed_ctl.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7210_checked_ctl.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\iic_dri_checked.v",
+        "C:\\Users\\31641\\.codex\\visualizations\\2026\\10\\30\\01a18b10-3666-7ef2-85f5-5a3db14eb3d0\\ready-wrapper-e2e-1030-a\\tb_ms72xx_ready_observed_e2e.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_ms72xx_observed_e2e",
+        "-s",
+        "ready_wire_e2e"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "ready_wire_e2e",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "TransactionDriverStub": false,
+  "WireLevelI2CExecuted": true,
+  "Limits": "Synthetic I2C slave replies using the actual ready RX, checked TX, checked driver and new wrapper. No physical board, PHY lock, real HDMI pixels, CDC/STA or output acceptance.",
+  "WireTraceAudit": {
+    "OrderedTraceVerified": true,
+    "Transactions": 2117,
+    "ScenarioCounts": [
+      372,
+      1,
+      317,
+      318,
+      368,
+      369,
+      372
+    ],
+    "TraceSHA256": "34853fe8083828ae24335f6a184ceff749b25c4f493ec32c9419d8d1263a64b6",
+    "StickyObservationConfigCycles": 40
+  },
+  "Summary": {
+    "Passed": true,
+    "Scenarios": 7,
+    "ActualRXControllerExecuted": true,
+    "ActualTXControllerExecuted": true,
+    "TransactionDriverStub": false,
+    "WireLevelI2CExecuted": true,
+    "EarlyRXFailure": true,
+    "LastRXSettingFailure": true,
+    "FirstTXFailureAfterRXDone": true,
+    "LastTXWriteFailure": true,
+    "PostCompletionFailure": true,
+    "CommonResetRecovery": true,
+    "FailureSameCycleGating": true,
+    "NoAutoRetry": true,
+    "BackgroundRXPollResumed": true,
+    "TelemetryComparedToWire": true,
+    "SuccessfulTelemetryUpdates": 2112,
+    "NACKTelemetrySuppressed": 5,
+    "HardwareAccessed": false
+  },
+  "IndependentWireTelemetryRowsVerified": 2112,
+  "PassLines": [
+    "MS72XX_OBSERVED_TELEMETRY_PASS scenario=0 successful=372 nacks=0 observed=372",
+    "MS72XX_E2E_SCENARIO_PASS scenario=0 requests=372 rx_init=300 rx_settings=7 tx_writes=49 status=12 code=0",
+    "MS72XX_OBSERVED_TELEMETRY_PASS scenario=1 successful=0 nacks=1 observed=0",
+    "MS72XX_E2E_SCENARIO_PASS scenario=1 requests=1 rx_init=0 rx_settings=0 tx_writes=0 status=0 code=4",
+    "MS72XX_OBSERVED_TELEMETRY_PASS scenario=2 successful=316 nacks=1 observed=316",
+    "MS72XX_E2E_SCENARIO_PASS scenario=2 requests=317 rx_init=300 rx_settings=7 tx_writes=0 status=8 code=4",
+    "MS72XX_OBSERVED_TELEMETRY_PASS scenario=3 successful=317 nacks=1 observed=317",
+    "MS72XX_E2E_SCENARIO_PASS scenario=3 requests=318 rx_init=300 rx_settings=7 tx_writes=0 status=8 code=4",
+    "MS72XX_OBSERVED_TELEMETRY_PASS scenario=4 successful=367 nacks=1 observed=367",
+    "MS72XX_E2E_SCENARIO_PASS scenario=4 requests=368 rx_init=300 rx_settings=7 tx_writes=49 status=8 code=4",
+    "MS72XX_OBSERVED_TELEMETRY_PASS scenario=5 successful=368 nacks=1 observed=368",
+    "MS72XX_E2E_SCENARIO_PASS scenario=5 requests=369 rx_init=300 rx_settings=7 tx_writes=49 status=9 code=5",
+    "MS72XX_OBSERVED_TELEMETRY_PASS scenario=6 successful=372 nacks=0 observed=372",
+    "MS72XX_E2E_SCENARIO_PASS scenario=6 requests=372 rx_init=300 rx_settings=7 tx_writes=49 status=12 code=0",
+    "MS72XX_OBSERVED_E2E_SIM_PASS"
+  ],
+  "SourceDrift": [],
+  "GeneratedDrift": [],
+  "EndedUTC": "2026-10-30T05:16:20.713337+00:00",
+  "ElapsedSeconds": 70.679,
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "1cd1f846afc6dd82341f659e2f6561bc44f07e73697cc193a911048420d9a28e",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "afa060c7edcd5aa3c596c3de05b478cc0a29a416294ce84564d5618ce41c2e02",
+    "run_ready_e2e.py": "2cae3b099f631b74910f84a1f2145cfebb167594ea749c37de1df6d909351a59",
+    "rx_expected.hex": "7566f2bb9daad233a5d2a71901bc4ba1164855ed16f4c6fcbae24d1ba56808ab",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "44d03355f7026b3e40e40be4f543ec03a0d2e0d16e988d341936b1615ae4d541",
+    "simulation.log": "0880f486a145a2616accdc65f37aa107070c9cca3e749ea1ec47b72407d734b8",
+    "summary.json": "fe5a4703d41e61422613c197b17525cf648a6bb186c19553bc2ccc02a17648fd",
+    "tb_ms72xx_ready_observed_e2e.sv": "0e2dca511f28bb39343c38d1a24868f02096d6f727db33aa669cc17c8b135c2a",
+    "telemetry-transactions.csv": "258bb1e6840269239ad304e83d6f5ca0612a4f160600cce96605cda8e39c04b1",
+    "tx_expected.hex": "3cdd92578c994a73b6f1b7dc455dded70bb69a53db15ba9498197f1b3c515c41",
+    "webtalk.log": "5e3413c1f177036904e04b7d219a28dad2a63ac8b6f8698b36e58f7ab0f84b9f",
+    "webtalk_9472.backup.log": "86d53c8c9739285ec2534952e83d3f52e3b93b3a1312633b64f62dd339796573",
+    "wire-transactions.csv": "34853fe8083828ae24335f6a184ceff749b25c4f493ec32c9419d8d1263a64b6",
+    "xelab.log": "f466e008140f309e5b82a25493f685d90e5252c7afd6e08feb8ad1590f251275",
+    "xvlog.log": "9a50c6cf5d75a872a9a15b1120e93a3558ead131705d204daceee1ceff23c4fa"
+  }
+}

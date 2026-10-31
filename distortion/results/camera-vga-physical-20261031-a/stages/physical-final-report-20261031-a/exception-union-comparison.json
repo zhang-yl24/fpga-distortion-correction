@@ -1,0 +1,2091 @@
+{
+  "Schema": "camera-vga-exception-union-comparison-v1",
+  "AuditPassed": true,
+  "AuditedUTC": "2026-10-31T07:01:11.764204+00:00",
+  "Sections": {
+    "('slow', 'set_max_delay(setup)')": {
+      "BaselineCount": 1520,
+      "CandidateCount": 1520,
+      "ByteSemanticUnchangedCount": 1520,
+      "RemovedMembers": 0,
+      "AddedMembers": 0
+    },
+    "('slow', 'set_max_delay(recovery)')": {
+      "BaselineCount": 1732,
+      "CandidateCount": 1732,
+      "ByteSemanticUnchangedCount": 1732,
+      "RemovedMembers": 0,
+      "AddedMembers": 0
+    },
+    "('slow', 'set_min_delay(hold)')": {
+      "BaselineCount": 0,
+      "CandidateCount": 0,
+      "ByteSemanticUnchangedCount": 0,
+      "RemovedMembers": 0,
+      "AddedMembers": 0
+    },
+    "('slow', 'set_min_delay(removal)')": {
+      "BaselineCount": 0,
+      "CandidateCount": 0,
+      "ByteSemanticUnchangedCount": 0,
+      "RemovedMembers": 0,
+      "AddedMembers": 0
+    },
+    "('slow', 'set_multicycle_path(setup)')": {
+      "BaselineCount": 1378,
+      "CandidateCount": 1378,
+      "ByteSemanticUnchangedCount": 1375,
+      "RemovedMembers": 3,
+      "AddedMembers": 3
+    },
+    "('slow', 'set_multicycle_path(hold)')": {
+      "BaselineCount": 1553,
+      "CandidateCount": 1553,
+      "ByteSemanticUnchangedCount": 1548,
+      "RemovedMembers": 5,
+      "AddedMembers": 5
+    },
+    "('slow', 'set_multicycle_path(recovery)')": {
+      "BaselineCount": 0,
+      "CandidateCount": 0,
+      "ByteSemanticUnchangedCount": 0,
+      "RemovedMembers": 0,
+      "AddedMembers": 0
+    },
+    "('slow', 'set_multicycle_path(removal)')": {
+      "BaselineCount": 0,
+      "CandidateCount": 0,
+      "ByteSemanticUnchangedCount": 0,
+      "RemovedMembers": 0,
+      "AddedMembers": 0
+    },
+    "('fast', 'set_max_delay(setup)')": {
+      "BaselineCount": 1788,
+      "CandidateCount": 1788,
+      "ByteSemanticUnchangedCount": 1788,
+      "RemovedMembers": 0,
+      "AddedMembers": 0
+    },
+    "('fast', 'set_max_delay(recovery)')": {
+      "BaselineCount": 1732,
+      "CandidateCount": 1732,
+      "ByteSemanticUnchangedCount": 1732,
+      "RemovedMembers": 0,
+      "AddedMembers": 0
+    },
+    "('fast', 'set_min_delay(hold)')": {
+      "BaselineCount": 0,
+      "CandidateCount": 0,
+      "ByteSemanticUnchangedCount": 0,
+      "RemovedMembers": 0,
+      "AddedMembers": 0
+    },
+    "('fast', 'set_min_delay(removal)')": {
+      "BaselineCount": 0,
+      "CandidateCount": 0,
+      "ByteSemanticUnchangedCount": 0,
+      "RemovedMembers": 0,
+      "AddedMembers": 0
+    },
+    "('fast', 'set_multicycle_path(setup)')": {
+      "BaselineCount": 1378,
+      "CandidateCount": 1378,
+      "ByteSemanticUnchangedCount": 1375,
+      "RemovedMembers": 3,
+      "AddedMembers": 3
+    },
+    "('fast', 'set_multicycle_path(hold)')": {
+      "BaselineCount": 1522,
+      "CandidateCount": 1522,
+      "ByteSemanticUnchangedCount": 1519,
+      "RemovedMembers": 3,
+      "AddedMembers": 3
+    },
+    "('fast', 'set_multicycle_path(recovery)')": {
+      "BaselineCount": 0,
+      "CandidateCount": 0,
+      "ByteSemanticUnchangedCount": 0,
+      "RemovedMembers": 0,
+      "AddedMembers": 0
+    },
+    "('fast', 'set_multicycle_path(removal)')": {
+      "BaselineCount": 0,
+      "CandidateCount": 0,
+      "ByteSemanticUnchangedCount": 0,
+      "RemovedMembers": 0,
+      "AddedMembers": 0
+    }
+  },
+  "MembershipCompletedFromBothUnions": true,
+  "ComparedUnionPaths": [
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "RepairedNetChanges": [
+        {
+          "Row": 7,
+          "Net": "_N78",
+          "BeforeNS": 0.423,
+          "AfterNS": 1.54,
+          "DeltaNS": 1.117
+        }
+      ],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 1.117,
+      "SlackDeltaNS": -1.117,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 1675,
+        "SHA256": "2127b8c28f88003126bb722b7a2229ca30d269e7b31d9349a483c7f942c7b82d"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 463,
+        "SHA256": "b5315167d21077b9a6cb39dba10ad6ce59d3fa019e0d4bbe3d230a3de1539505"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_outbuft_dm/opit_1/TX_DATA[2]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 2081,
+        "SHA256": "1f91812f95891eea89e1230d0af8fea1d37334fdc6b14ccfd87285436e5a87d1"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 2249,
+        "SHA256": "1f91812f95891eea89e1230d0af8fea1d37334fdc6b14ccfd87285436e5a87d1"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_outbuft_dm/opit_1/TX_DATA[2]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 2405,
+        "SHA256": "17457c479b9c6d82b08832cbe9ce0ed6cc1e59709ea7e3df8bb5b6cc898b2f02"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 2489,
+        "SHA256": "17457c479b9c6d82b08832cbe9ce0ed6cc1e59709ea7e3df8bb5b6cc898b2f02"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TS_CTRL[3]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 2161,
+        "SHA256": "8b41bc6e2ca5651e69d35caa959ff24348d57afaab330ba868a9a83858bce4d3"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 2329,
+        "SHA256": "8b41bc6e2ca5651e69d35caa959ff24348d57afaab330ba868a9a83858bce4d3"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TS_CTRL[3]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 2805,
+        "SHA256": "277dd27366303d754533a50ab438e793ed09725f0c1614fa91b71eb22b3249cb"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 2805,
+        "SHA256": "277dd27366303d754533a50ab438e793ed09725f0c1614fa91b71eb22b3249cb"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/phy_wrdata_r[10]/opit_0_inv/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "RepairedNetChanges": [
+        {
+          "Row": 7,
+          "Net": "_N78",
+          "BeforeNS": 0.423,
+          "AfterNS": 1.54,
+          "DeltaNS": 1.117
+        }
+      ],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 1.117,
+      "SlackDeltaNS": -1.117,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 2241,
+        "SHA256": "f0c7cbc8621c52d588540eee00920d606c2de89d1c1bf54017ceb383dad8e47b"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 547,
+        "SHA256": "d1a4e39907a505fa2670a11494b30d4bc85414fc97d331f37f7b651973d52426"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/phy_wrdata_r[12]/opit_0_inv/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "RepairedNetChanges": [
+        {
+          "Row": 7,
+          "Net": "_N78",
+          "BeforeNS": 0.423,
+          "AfterNS": 1.54,
+          "DeltaNS": 1.117
+        }
+      ],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 1.117,
+      "SlackDeltaNS": -1.117,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 2641,
+        "SHA256": "9a6d4f7b165a0ce016e01da49c6002d5c248397ad767e2df2a5239c741f47dba"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 1037,
+        "SHA256": "5f2e97812a8a9c53207d6f0387bd93e109a0c8ffd3129d50fd521d3d14aba3ad"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "RepairedNetChanges": [
+        {
+          "Row": 7,
+          "Net": "_N78",
+          "BeforeNS": 0.236,
+          "AfterNS": 0.899,
+          "DeltaNS": 0.663
+        }
+      ],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.663,
+      "SlackDeltaNS": 0.663,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 2965,
+        "SHA256": "61178b3e100efcb856786244d3f40b35e75d9d3ba311b63f48a7673f218978e6"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 4487,
+        "SHA256": "f3a5c93c0f3f2ed4a676f2ef83ff6e5e4dd4e2420c3a94416bdcdddc010cdeed"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "RepairedNetChanges": [
+        {
+          "Row": 7,
+          "Net": "_N78",
+          "BeforeNS": 0.236,
+          "AfterNS": 0.899,
+          "DeltaNS": 0.663
+        }
+      ],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.663,
+      "SlackDeltaNS": 0.663,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 3049,
+        "SHA256": "7c1c6d797bf7a2901e07112069d1bbbaf3d022d5c802608e07a89c1cef2e1bbb"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 4733,
+        "SHA256": "ec989d48ac7c4d388f61f20bb67685480235d1b524dc21237cc20196df516fe3"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/phy_wrdata_r[14]/opit_0_inv/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "RepairedNetChanges": [
+        {
+          "Row": 7,
+          "Net": "_N78",
+          "BeforeNS": 0.236,
+          "AfterNS": 0.899,
+          "DeltaNS": 0.663
+        }
+      ],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.663,
+      "SlackDeltaNS": 0.663,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 3133,
+        "SHA256": "61985ab6006e4e9e825a6c3a4d644a3c6a091f40e9284dae2e423098698ad33d"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 4897,
+        "SHA256": "c21bce92ea7eab5757d19c384c6b214b07d87b7949aa8e8e5156fce05a7ad3b0"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/phy_wrdata_r[12]/opit_0_inv/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "RepairedNetChanges": [
+        {
+          "Row": 7,
+          "Net": "_N78",
+          "BeforeNS": 0.236,
+          "AfterNS": 0.899,
+          "DeltaNS": 0.663
+        }
+      ],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.663,
+      "SlackDeltaNS": 0.663,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 3217,
+        "SHA256": "5c76946118aa549633a54a74cc395d6079736ad10925ddb7ccf4ebe98a126275"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 4981,
+        "SHA256": "6aa16632003d1fb139ae393a06a85f41758c8912868f1316064349ff5764e249"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/phy_wrdata_r[43]/opit_0_inv/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/TX_DATA[2]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [
+        {
+          "Row": 1,
+          "Net": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/phy_wrdata_r [43]",
+          "BeforeNS": 0.157,
+          "AfterNS": 0.158,
+          "DeltaNS": 0.001
+        }
+      ],
+      "ArrivalDeltaNS": 0.001,
+      "SlackDeltaNS": 0.001,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 3621,
+        "SHA256": "40f8d05c9dde5ab506960486bf1c470b07d4242b98229204b998dc36f262d6f1"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 3285,
+        "SHA256": "537b78dbe7ef7d43fd536dfb692e488a108a21a20e5d256e2e3873d3ba01f8f7"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_outbuft_dm/opit_1/TX_DATA[4]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 4021,
+        "SHA256": "19863e8c629de9a19e1b7af833e2ee9703db24ab61929f7e934dd5f2b7e8c34d"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 3685,
+        "SHA256": "19863e8c629de9a19e1b7af833e2ee9703db24ab61929f7e934dd5f2b7e8c34d"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_outbuft_dm/opit_1/TX_DATA[4]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 4905,
+        "SHA256": "a69c77020158ebe874b1fbdbec0c68228068b746c7b614f32926e8601cbfdf66"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 4653,
+        "SHA256": "a69c77020158ebe874b1fbdbec0c68228068b746c7b614f32926e8601cbfdf66"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/TX_DATA[4]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 4101,
+        "SHA256": "2221eac4aef0587f9d75ded65705601b1956a3359f15c6096924a4c10b11e593"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 3765,
+        "SHA256": "2221eac4aef0587f9d75ded65705601b1956a3359f15c6096924a4c10b11e593"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/TX_DATA[4]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 4985,
+        "SHA256": "36e87d8b1d20a2a3035fb2881369540d0a163603ce1171898ef4800d7f9fb4ed"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 4817,
+        "SHA256": "36e87d8b1d20a2a3035fb2881369540d0a163603ce1171898ef4800d7f9fb4ed"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/ddrphy_dqs_rddata_align/slip_en/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/BITSLIP",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 4181,
+        "SHA256": "1c79796bc2c9aac586b406b5454cb7dbe8a73b5d0ddb1bd1b18696c3a535e93c"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 3845,
+        "SHA256": "1c79796bc2c9aac586b406b5454cb7dbe8a73b5d0ddb1bd1b18696c3a535e93c"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/phy_wrdata_r[5]/opit_0_inv/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/TX_DATA[4]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "slow",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 4259,
+        "SHA256": "be2cda7589746e21b225cd2a1af95f0761e06676e9e11e6278066d4b96929c1c"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 3923,
+        "SHA256": "be2cda7589746e21b225cd2a1af95f0761e06676e9e11e6278066d4b96929c1c"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/ddrphy_data_slice_dqs_gate_cal/ddrphy_dqs_gate_coarse_cal/dqs_gate_ctrl_pos[0]/opit_0_inv_L6Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/DQS_GATE_CTRL[0]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 11608,
+        "SHA256": "cdd170e564b328fca6a25d4f290bbac1322e6df8422fd9e40ce6f14ccdc3529b"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 11860,
+        "SHA256": "cdd170e564b328fca6a25d4f290bbac1322e6df8422fd9e40ce6f14ccdc3529b"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/slip_en/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/BITSLIP",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 11690,
+        "SHA256": "b4db373211397a245a0a851aec9e6f91ebe9fb682a8dd484c74b7cd7b38ecff7"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 11942,
+        "SHA256": "b4db373211397a245a0a851aec9e6f91ebe9fb682a8dd484c74b7cd7b38ecff7"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/TX_DATA[3]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 11768,
+        "SHA256": "6da6b28c2be0ac13f63dabe04ef95c5e2f5f8aa8bdfdf51b0ae97fa4855a7400"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 12020,
+        "SHA256": "6da6b28c2be0ac13f63dabe04ef95c5e2f5f8aa8bdfdf51b0ae97fa4855a7400"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "RepairedNetChanges": [
+        {
+          "Row": 7,
+          "Net": "_N78",
+          "BeforeNS": 0.24,
+          "AfterNS": 0.879,
+          "DeltaNS": 0.639
+        }
+      ],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.639,
+      "SlackDeltaNS": -0.639,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 11848,
+        "SHA256": "11a83d16e19b4673683781ffadcefb473863f0467dd7475f08416692bb7e1bf7"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 10240,
+        "SHA256": "9e94a9736606831d669d9704e79812c59db059b3918a3ab43d6d93435058df69"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/phy_wrdata_r[10]/opit_0_inv/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "RepairedNetChanges": [
+        {
+          "Row": 7,
+          "Net": "_N78",
+          "BeforeNS": 0.24,
+          "AfterNS": 0.879,
+          "DeltaNS": 0.639
+        }
+      ],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.639,
+      "SlackDeltaNS": -0.639,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 12010,
+        "SHA256": "ea4b4757567e91cf141df918abc580c8066f5f950f7d9b6cae611cac6869f839"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 10406,
+        "SHA256": "3bb49f87424548265fc0bd24263743999d85c7bab07c81f3a4488e4bd39cf088"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/phy_wrdata_r[12]/opit_0_inv/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "setup",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "RepairedNetChanges": [
+        {
+          "Row": 7,
+          "Net": "_N78",
+          "BeforeNS": 0.24,
+          "AfterNS": 0.879,
+          "DeltaNS": 0.639
+        }
+      ],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.639,
+      "SlackDeltaNS": -0.639,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 12494,
+        "SHA256": "62b35f07cd33579923a17ea535d043c7361ae241a6f928e0f0b56def2fdb044c"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 10730,
+        "SHA256": "b0ffacc68a16c50d56da56a30bb012e50436c8ffc567d47d1b44f4000162809e"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "NativeWorstTransitionRepresentativeChanged": true,
+      "SameTransitionVariantProved": false,
+      "OnlyRepairedNetDelayChanged": false,
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "BaselineDataTrace": [
+        {
+          "Location": "CLMS_291_847/CR0",
+          "Site": "CLMS_291_847",
+          "SiteKind": "CLMS",
+          "X": 291,
+          "Y": 847,
+          "Pin": "CR0",
+          "RoutePin": "CR0:CLMS_291_847",
+          "Type": "pin",
+          "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/L5Q",
+          "DelayType": "tco",
+          "DelayNS": 0.122,
+          "CumulativeNS": 3.417,
+          "Transition": "r"
+        },
+        {
+          "Type": "net",
+          "Name": "u_ddr3_test_h/u_ddrphy_top/phy_wrdata [1]",
+          "Fanout": 4,
+          "DelayNS": 0.392,
+          "CumulativeNS": 3.809,
+          "FromRoutePin": "CR0:CLMS_291_847",
+          "ToRoutePin": "Y2:CLMA_357_840"
+        },
+        {
+          "Location": "CLMA_357_840/Y2",
+          "Site": "CLMA_357_840",
+          "SiteKind": "CLMA",
+          "X": 357,
+          "Y": 840,
+          "Pin": "Y2",
+          "RoutePin": "Y2:CLMA_357_840",
+          "Type": "pin",
+          "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/adj_wrdata_mask_4[21]/LUT6_inst_perm/L6",
+          "DelayType": "td",
+          "DelayNS": 0.047,
+          "CumulativeNS": 3.856,
+          "Transition": "r"
+        },
+        {
+          "Type": "net",
+          "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/adj_wrdq [9]",
+          "Fanout": 1,
+          "DelayNS": 0.055,
+          "CumulativeNS": 3.911,
+          "FromRoutePin": "Y2:CLMA_357_840",
+          "ToRoutePin": "CR3:CLMA_357_841"
+        },
+        {
+          "Location": "CLMA_357_841/CR3",
+          "Site": "CLMA_357_841",
+          "SiteKind": "CLMA",
+          "X": 357,
+          "Y": 841,
+          "Pin": "CR3",
+          "RoutePin": "CR3:CLMA_357_841",
+          "Type": "pin",
+          "LogicalResource": "CLKROUTE_42/CR",
+          "DelayType": "td",
+          "DelayNS": 0.057,
+          "CumulativeNS": 3.968,
+          "Transition": "r"
+        },
+        {
+          "Type": "net",
+          "Name": "_N77",
+          "Fanout": 1,
+          "DelayNS": 0.055,
+          "CumulativeNS": 4.023,
+          "FromRoutePin": "CR3:CLMA_357_841",
+          "ToRoutePin": "CR1:CLMA_357_841"
+        },
+        {
+          "Location": "CLMA_357_841/CR1",
+          "Site": "CLMA_357_841",
+          "SiteKind": "CLMA",
+          "X": 357,
+          "Y": 841,
+          "Pin": "CR1",
+          "RoutePin": "CR1:CLMA_357_841",
+          "Type": "pin",
+          "LogicalResource": "CLKROUTE_43/CR",
+          "DelayType": "td",
+          "DelayNS": 0.118,
+          "CumulativeNS": 4.141,
+          "Transition": "r"
+        },
+        {
+          "Type": "net",
+          "Name": "_N78",
+          "Fanout": 1,
+          "DelayNS": 0.178,
+          "CumulativeNS": 4.319,
+          "FromRoutePin": "CR1:CLMA_357_841",
+          "ToRoutePin": "TX_DATA[1]:IOLHR_364_834"
+        },
+        {
+          "Location": "IOLHR_364_834/TX_DATA[1]",
+          "Site": "IOLHR_364_834",
+          "SiteKind": "IOLHR",
+          "X": 364,
+          "Y": 834,
+          "Pin": "TX_DATA[1]",
+          "RoutePin": "TX_DATA[1]:IOLHR_364_834",
+          "Type": "pin",
+          "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+          "DelayType": null,
+          "DelayNS": null,
+          "CumulativeNS": null,
+          "Transition": "r"
+        }
+      ],
+      "CandidateDataTrace": [
+        {
+          "Location": "CLMS_291_847/CR0",
+          "Site": "CLMS_291_847",
+          "SiteKind": "CLMS",
+          "X": 291,
+          "Y": 847,
+          "Pin": "CR0",
+          "RoutePin": "CR0:CLMS_291_847",
+          "Type": "pin",
+          "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/L5Q",
+          "DelayType": "tco",
+          "DelayNS": 0.122,
+          "CumulativeNS": 3.417,
+          "Transition": "r"
+        },
+        {
+          "Type": "net",
+          "Name": "u_ddr3_test_h/u_ddrphy_top/phy_wrdata [1]",
+          "Fanout": 4,
+          "DelayNS": 0.392,
+          "CumulativeNS": 3.809,
+          "FromRoutePin": "CR0:CLMS_291_847",
+          "ToRoutePin": "Y2:CLMA_357_840"
+        },
+        {
+          "Location": "CLMA_357_840/Y2",
+          "Site": "CLMA_357_840",
+          "SiteKind": "CLMA",
+          "X": 357,
+          "Y": 840,
+          "Pin": "Y2",
+          "RoutePin": "Y2:CLMA_357_840",
+          "Type": "pin",
+          "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/adj_wrdata_mask_4[21]/LUT6_inst_perm/L6",
+          "DelayType": "td",
+          "DelayNS": 0.056,
+          "CumulativeNS": 3.865,
+          "Transition": "f"
+        },
+        {
+          "Type": "net",
+          "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/adj_wrdq [9]",
+          "Fanout": 1,
+          "DelayNS": 0.053,
+          "CumulativeNS": 3.918,
+          "FromRoutePin": "Y2:CLMA_357_840",
+          "ToRoutePin": "CR3:CLMA_357_841"
+        },
+        {
+          "Location": "CLMA_357_841/CR3",
+          "Site": "CLMA_357_841",
+          "SiteKind": "CLMA",
+          "X": 357,
+          "Y": 841,
+          "Pin": "CR3",
+          "RoutePin": "CR3:CLMA_357_841",
+          "Type": "pin",
+          "LogicalResource": "CLKROUTE_42/CR",
+          "DelayType": "td",
+          "DelayNS": 0.058,
+          "CumulativeNS": 3.976,
+          "Transition": "f"
+        },
+        {
+          "Type": "net",
+          "Name": "_N77",
+          "Fanout": 1,
+          "DelayNS": 0.053,
+          "CumulativeNS": 4.029,
+          "FromRoutePin": "CR3:CLMA_357_841",
+          "ToRoutePin": "CR1:CLMA_357_841"
+        },
+        {
+          "Location": "CLMA_357_841/CR1",
+          "Site": "CLMA_357_841",
+          "SiteKind": "CLMA",
+          "X": 357,
+          "Y": 841,
+          "Pin": "CR1",
+          "RoutePin": "CR1:CLMA_357_841",
+          "Type": "pin",
+          "LogicalResource": "CLKROUTE_43/CR",
+          "DelayType": "td",
+          "DelayNS": 0.124,
+          "CumulativeNS": 4.153,
+          "Transition": "f"
+        },
+        {
+          "Type": "net",
+          "Name": "_N78",
+          "Fanout": 1,
+          "DelayNS": 0.632,
+          "CumulativeNS": 4.785,
+          "FromRoutePin": "CR1:CLMA_357_841",
+          "ToRoutePin": "TX_DATA[1]:IOLHR_364_834"
+        },
+        {
+          "Location": "IOLHR_364_834/TX_DATA[1]",
+          "Site": "IOLHR_364_834",
+          "SiteKind": "IOLHR",
+          "X": 364,
+          "Y": 834,
+          "Pin": "TX_DATA[1]",
+          "RoutePin": "TX_DATA[1]:IOLHR_364_834",
+          "Type": "pin",
+          "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+          "DelayType": null,
+          "DelayNS": null,
+          "CumulativeNS": null,
+          "Transition": "f"
+        }
+      ],
+      "BaselineLogicRouteTotals": [
+        0.344,
+        33.594,
+        0.68,
+        66.406
+      ],
+      "CandidateLogicRouteTotals": [
+        0.36,
+        24.161,
+        1.13,
+        75.839
+      ],
+      "ArrivalDeltaNS": 0.466,
+      "SlackDeltaNS": 0.46599999999999997,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 12578,
+        "SHA256": "f068638744f6bb7a90e5e59d0875deb32a43b2dd7b972c053c7896ffee6a17df"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 14100,
+        "SHA256": "aaa8e2b53e9c14f1cbe27f17861acb3417a7c5afc3a8e4a636f5f5b2c9294505"
+      },
+      "Evidence": "Identical functional graph and all FF sites; only three physical nets changed; exact remaining summary counts/constraints preserved and full native setup/hold both corners passed. Native selects a different endpoint data transition for this one source/endpoint."
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "RepairedNetChanges": [
+        {
+          "Row": 7,
+          "Net": "_N78",
+          "BeforeNS": 0.169,
+          "AfterNS": 0.632,
+          "DeltaNS": 0.463
+        }
+      ],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.463,
+      "SlackDeltaNS": 0.463,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 12662,
+        "SHA256": "637a29d2331d3b17de1d8700b8a5b8813354dd4532a9a5f91c5dd461c6b9565e"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 14426,
+        "SHA256": "7912576197d1718a590ffc9afb1dceaf17005de0a1d37c28aa5434474d740368"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/phy_wrdata_r[14]/opit_0_inv/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [
+        "_N78"
+      ],
+      "RepairedNetChanges": [
+        {
+          "Row": 7,
+          "Net": "_N78",
+          "BeforeNS": 0.169,
+          "AfterNS": 0.632,
+          "DeltaNS": 0.463
+        }
+      ],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.463,
+      "SlackDeltaNS": 0.463,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 12746,
+        "SHA256": "2d40e1948ee706d734c95f8ca054c90b1875e722b2e9ea9624608afee737a98c"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 14510,
+        "SHA256": "3e368ecee1e55c58a9bda9c40393a576ea27492b4d3a09555063792b5f4428e1"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[5]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 14030,
+        "SHA256": "f784617d6127f97a5055b6175b83f7b139f0df19ad3d1100b41eddcfc54ca9d8"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 13778,
+        "SHA256": "f784617d6127f97a5055b6175b83f7b139f0df19ad3d1100b41eddcfc54ca9d8"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/ddrphy_dqs_rddata_align/ck_dqs_diff[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[5]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "f"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 14110,
+        "SHA256": "48a64b8d4238f6d87a277e022b59611bc74c7c83547480cfdadb79f25ec52667"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 13858,
+        "SHA256": "48a64b8d4238f6d87a277e022b59611bc74c7c83547480cfdadb79f25ec52667"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[82]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/TX_DATA[3]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 14190,
+        "SHA256": "bf5c9ce31bdbe5e81599ed26e29d3f7784c9eaeb7726a84817b4810f1c7a12ee"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 13938,
+        "SHA256": "bf5c9ce31bdbe5e81599ed26e29d3f7784c9eaeb7726a84817b4810f1c7a12ee"
+      }
+    },
+    {
+      "Identity": {
+        "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/phy_wrdata_en_r[2]/opit_0_inv_L6QQ_perm/CLK",
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TS_CTRL[2]",
+        "LaunchClock": "ddrphy_sysclk",
+        "CaptureClock": "phy_dq_sysclk_1",
+        "LaunchEdge": "rising",
+        "CaptureEdge": "rising",
+        "Corner": "fast",
+        "Kind": "hold",
+        "PathClass": "sequential timing path",
+        "TimingExceptions": [
+          "MultiCycle Path Setup -end 2"
+        ],
+        "SourceTransition": "r"
+      },
+      "ActualRepairedNets": [],
+      "RepairedNetChanges": [],
+      "UnchangedRoutePrintedChanges": [],
+      "ArrivalDeltaNS": 0.0,
+      "SlackDeltaNS": 0.0,
+      "Baseline": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 14272,
+        "SHA256": "12e144fe522a387a14186e23716aa6129db2739915dc412e071ec21fb09eaacd"
+      },
+      "Candidate": {
+        "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+        "ReportLine": 14020,
+        "SHA256": "12e144fe522a387a14186e23716aa6129db2739915dc412e071ec21fb09eaacd"
+      }
+    }
+  ],
+  "ChangedIdentityCount": 26,
+  "ComparedUnionPathCount": 31,
+  "NativeWorstTransitionRepresentativeChanges": 1,
+  "PrintedRoundingPathCount": 1,
+  "RouteChain": {
+    "Verified": true,
+    "OnlyChangedNets": [
+      "_N101",
+      "_N188",
+      "_N78"
+    ],
+    "Baseline": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\route-dump.txt",
+      "SHA256": "d2fd72ed6ab135718a359d6c2ab75d849762c2c3efcfa82cea6355d02d3afde5",
+      "RouteCount": 33562,
+      "PhysicalNodeCount": 578531,
+      "NonRouteSemanticSHA256": "a770f23fff707ae6c9b8c581d3e7ae4a32dbbb8659541428673fbe9ba9301ace",
+      "TargetRoutes": {
+        "_N78": [
+          "CR1:CLMA_357_841",
+          "S_CR1:SRB_354_840",
+          "ZSEA[0]:SRB_354_840",
+          "ISEA[0]:SRB_360_840",
+          "ZSSA[1]:SRB_360_840",
+          "ISSA[1]:SRB_360_834",
+          "S_B3:SRB_360_834",
+          "TX_DATA[1]:IOLHR_364_834"
+        ],
+        "_N101": [
+          "CR3:CLMS_345_769",
+          "S_CR3:SRB_342_768",
+          "ZSNB[2]:SRB_342_768",
+          "ISNB[2]:SRB_342_774",
+          "ZSEA[2]:SRB_342_774",
+          "ISEA[2]:SRB_348_774",
+          "A_M2:SRB_348_774",
+          "M2:CLMA_351_774"
+        ],
+        "_N188": [
+          "CR0:CLMS_351_439",
+          "S_CR0:SRB_348_438",
+          "ZDNW[3]:SRB_348_438",
+          "IDNW[3]:SRB_342_444",
+          "ZQNE[3]:SRB_342_444",
+          "IQNE[3]:SRB_354_468",
+          "ZQN[3]:SRB_354_468",
+          "IQN[3]:SRB_354_504",
+          "ZQN[3]:SRB_354_504",
+          "IQN[3]:SRB_354_540",
+          "ZSNA[2]:SRB_354_540",
+          "ISNA[2]:SRB_354_546",
+          "A_M2:SRB_354_546",
+          "M2:CLMA_357_546"
+        ]
+      },
+      "TargetConnectivity": {
+        "_N78": [
+          {
+            "Instance": "CLKROUTE_43",
+            "Pin": "CR"
+          },
+          {
+            "Instance": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1",
+            "Pin": "TX_DATA[1]"
+          }
+        ],
+        "_N101": [
+          {
+            "Instance": "CLKROUTE_66",
+            "Pin": "CR"
+          },
+          {
+            "Instance": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl",
+            "Pin": "D"
+          }
+        ],
+        "_N188": [
+          {
+            "Instance": "CLKROUTE_153",
+            "Pin": "CR"
+          },
+          {
+            "Instance": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl",
+            "Pin": "D"
+          }
+        ]
+      },
+      "ExcludedBlockSHA256": {
+        "CDB": "db0ee58665f52647f6843d8ddaaf32487de34751698445db86d3d18fc897eb40",
+        "FILETABLE": "709e9ff93c38fe10f82a7319c467170a561e0f1a153ab83f4229fc5384ee312b"
+      },
+      "NormalizedMetadataCounts": {
+        "OutputPath": 1,
+        "Timestamp": 1,
+        "SourceAttribute": 1
+      },
+      "SourceLocationMetadata": {
+        "Counts": {
+          "FILEID": 20023,
+          "LINENUM": 20023
+        },
+        "SHA256": "4fc565788401e26465fb6577ce37c33b209bfb79564ed147dfdedf183f096668"
+      },
+      "AllOtherNetAnnotationsSHA256": "f6b84162e31181f6c6b16bc977d79c706e054520658809acb481d9066e18d9c6",
+      "TargetAnnotationSHA256": {
+        "_N78": "1abfb53b82fbad55f317e51db605788a41be4456d3ce920e0e04469632138168",
+        "_N101": "5cad93b399891cdbed71b88f1b4c8145f71eb45fcd410548bf4f8fd3d4da27a6",
+        "_N188": "e6f510898386ac221884e1977f8e5a9789a0bc91618e28ae25bc2a76e6c17c6d"
+      }
+    },
+    "Candidate": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-20261031-b\\route-dump.txt",
+      "SHA256": "0aee1e63a9eda35637b754bd91306c30b8d8eed3cee1211b58c8c0e867c1693e",
+      "RouteCount": 33562,
+      "PhysicalNodeCount": 578582,
+      "NonRouteSemanticSHA256": "64fc4d592f3a43893fc494dd3c5e65c7e1c2c8a17849c8ac2e7b2dc0931ffaf2",
+      "TargetRoutes": {
+        "_N78": [
+          "CR1:CLMA_357_841",
+          "S_CR1:SRB_354_840",
+          "ZDW[0]:SRB_354_840",
+          "IDW[0]:SRB_342_840",
+          "ZSSB[0]:SRB_342_840",
+          "ISSB[0]:SRB_342_834",
+          "ZDSW[2]:SRB_342_834",
+          "IDSW[2]:SRB_336_828",
+          "ZDS[2]:SRB_336_828",
+          "IDS[2]:SRB_336_816",
+          "ZDSE[2]:SRB_336_816",
+          "IDSE[2]:SRB_342_810",
+          "ZSNB[2]:SRB_342_810",
+          "ISNB[2]:SRB_342_816",
+          "ZDNE[0]:SRB_342_816",
+          "IDNE[0]:SRB_348_822",
+          "ZQNE[0]:SRB_348_822",
+          "IQNE[0]:SRB_360_840",
+          "ZSSA[1]:SRB_360_840",
+          "ISSA[1]:SRB_360_834",
+          "S_B3:SRB_360_834",
+          "TX_DATA[1]:IOLHR_364_834"
+        ],
+        "_N101": [
+          "CR3:CLMS_345_769",
+          "S_CR3:SRB_342_768",
+          "ZSWB[1]:SRB_342_768",
+          "ISWB[1]:SRB_336_768",
+          "LVA18:SRB_336_768",
+          "LH0:SRB_336_768",
+          "LH6:SRB_354_768",
+          "ZQS[1]:SRB_354_768",
+          "IQS[1]:SRB_354_726",
+          "ZQW[1]:SRB_354_726",
+          "IQW[1]:SRB_330_726",
+          "ZSEB[2]:SRB_330_726",
+          "ISEB[2]:SRB_336_726",
+          "ZDNE[0]:SRB_336_726",
+          "IDNE[0]:SRB_342_732",
+          "ZQN[0]:SRB_342_732",
+          "IQN[0]:SRB_342_774",
+          "ZQE[0]:SRB_342_774",
+          "IQW[0]:SRB_360_774",
+          "ZSWB[3]:SRB_360_774",
+          "ISWB[3]:SRB_354_774",
+          "ZSWA[3]:SRB_354_774",
+          "ISWA[3]:SRB_348_774",
+          "ZM[9]:SRB_348_774",
+          "ZGM[0]:SRB_348_774",
+          "A_M2:SRB_348_774",
+          "M2:CLMA_351_774"
+        ],
+        "_N188": [
+          "CR0:CLMS_351_439",
+          "S_CR0:SRB_348_438",
+          "ZQSW[3]:SRB_348_438",
+          "IQSW[3]:SRB_336_420",
+          "LH12:SRB_336_420",
+          "LH0:SRB_264_420",
+          "ZQSE[2]:SRB_264_420",
+          "IQSE[2]:SRB_276_402",
+          "ZQSW[2]:SRB_276_402",
+          "IQSW[2]:SRB_264_384",
+          "ZQSW[2]:SRB_264_384",
+          "IQSW[2]:SRB_252_366",
+          "ZDSE[2]:SRB_252_366",
+          "IDSE[2]:SRB_258_360",
+          "ZDNE[0]:SRB_258_360",
+          "IDNE[0]:SRB_264_366",
+          "ZQN[0]:SRB_264_366",
+          "IQN[0]:SRB_264_402",
+          "LVA18:SRB_264_402",
+          "LVA0:SRB_264_516",
+          "LH0:SRB_264_516",
+          "LH12:SRB_336_516",
+          "ZQNE[0]:SRB_336_516",
+          "IQNE[0]:SRB_348_534",
+          "ZDNW[0]:SRB_348_534",
+          "IDNW[0]:SRB_342_540",
+          "ZSEA[0]:SRB_342_540",
+          "ISEA[0]:SRB_348_540",
+          "ZDNE[2]:SRB_348_540",
+          "IDNE[2]:SRB_354_546",
+          "A_M2:SRB_354_546",
+          "M2:CLMA_357_546"
+        ]
+      },
+      "TargetConnectivity": {
+        "_N78": [
+          {
+            "Instance": "CLKROUTE_43",
+            "Pin": "CR"
+          },
+          {
+            "Instance": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1",
+            "Pin": "TX_DATA[1]"
+          }
+        ],
+        "_N101": [
+          {
+            "Instance": "CLKROUTE_66",
+            "Pin": "CR"
+          },
+          {
+            "Instance": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl",
+            "Pin": "D"
+          }
+        ],
+        "_N188": [
+          {
+            "Instance": "CLKROUTE_153",
+            "Pin": "CR"
+          },
+          {
+            "Instance": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl",
+            "Pin": "D"
+          }
+        ]
+      },
+      "ExcludedBlockSHA256": {
+        "CDB": "b7dd83f093480c1de4245c833c88f0acf246b82a20916601be983baaf1a19579",
+        "FILETABLE": "450c23bb738cee0ea8608d0d133e1972f00f99d2788d0325959cdd6c390acdb4"
+      },
+      "NormalizedMetadataCounts": {
+        "OutputPath": 1,
+        "Timestamp": 1,
+        "SourceAttribute": 1
+      },
+      "SourceLocationMetadata": {
+        "Counts": {
+          "FILEID": 169,
+          "LINENUM": 169
+        },
+        "SHA256": "a43872cb63431a9bb3fadf7084213c46a245f33ed5868ca6016de01bef455170"
+      },
+      "AllOtherNetAnnotationsSHA256": "f6b84162e31181f6c6b16bc977d79c706e054520658809acb481d9066e18d9c6",
+      "TargetAnnotationSHA256": {
+        "_N78": "ef12610d13fdda87f00ad65813ce97e38f575bbc181deefd8e7dc1c55b351628",
+        "_N101": "d2c68680709e9b7c9928ee2e0b58e56eb476dcccdf55c5c3d6053b22e1dda713",
+        "_N188": "3111646363168650b4309b3257b3813171fe1cbf021adf7ed6e0cbf9668b4c2e"
+      }
+    },
+    "BaselineADFSHA256": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b",
+    "CandidateADFSHA256": "daa2a9221238d09398ba325acef561b604dcb5643571301ba8831f76736dfd9f",
+    "Proofs": [
+      "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-hold-20261031-d\\hold-route-comparison.json",
+      "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-20261031-b\\hold-route-comparison.json"
+    ]
+  },
+  "BaselineExceptions": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\camera_vga_output_top_exception.rtr",
+  "CandidateExceptions": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\camera_vga_output_top_exception.rtr",
+  "RepresentativeChangeSupportingEvidence": {
+    "FunctionalGraphIdentical": true,
+    "AllFFPlacementsIdentical": true,
+    "Cells": 36469,
+    "FFCount": 17417,
+    "PartSHA256": {
+      "Cells": "cbef67fe375dd41b31d870b063a3ab1dcffb17aff70eb4b053d954297b65daea",
+      "ModuleDeclarations": "0ca5f04d9242a74bc0297545e01acfde64294cc1626b44477cb411792c4d591f",
+      "FFPlacement": "c155354b7b33f00c36c59249b8ddd4621d56258018a45d949800a96a69ff90e3"
+    },
+    "AllInternalChecksMet": true,
+    "CornerSummaries": {
+      "slow_setup": {
+        "WorstSlackNS": 0.238,
+        "FailingChecks": 0,
+        "TimedChecks": 55450,
+        "RemovedResetChecks": 0
+      },
+      "slow_hold": {
+        "WorstSlackNS": 0.045,
+        "FailingChecks": 0,
+        "TimedChecks": 54143,
+        "RemovedResetChecks": 0
+      },
+      "slow_recovery": {
+        "WorstSlackNS": 2.546,
+        "FailingChecks": 0,
+        "TimedChecks": 4458,
+        "RemovedResetChecks": 245
+      },
+      "slow_removal": {
+        "WorstSlackNS": 0.402,
+        "FailingChecks": 0,
+        "TimedChecks": 3582,
+        "RemovedResetChecks": 245
+      },
+      "slow_mpw": {
+        "WorstSlackNS": 0.035,
+        "FailingChecks": 0,
+        "TimedChecks": 14829,
+        "RemovedResetChecks": 0
+      },
+      "fast_setup": {
+        "WorstSlackNS": 2.939,
+        "FailingChecks": 0,
+        "TimedChecks": 55450,
+        "RemovedResetChecks": 0
+      },
+      "fast_hold": {
+        "WorstSlackNS": 0.016,
+        "FailingChecks": 0,
+        "TimedChecks": 54143,
+        "RemovedResetChecks": 0
+      },
+      "fast_recovery": {
+        "WorstSlackNS": 4.599,
+        "FailingChecks": 0,
+        "TimedChecks": 4458,
+        "RemovedResetChecks": 245
+      },
+      "fast_removal": {
+        "WorstSlackNS": 0.175,
+        "FailingChecks": 0,
+        "TimedChecks": 3582,
+        "RemovedResetChecks": 245
+      },
+      "fast_mpw": {
+        "WorstSlackNS": 0.035,
+        "FailingChecks": 0,
+        "TimedChecks": 14829,
+        "RemovedResetChecks": 0
+      }
+    },
+    "SummaryChanges": [
+      {
+        "Corner": "slow",
+        "Kind": "setup",
+        "Clocks": [
+          "phy_dq_sysclk_1",
+          "ddrphy_sysclk"
+        ],
+        "Before": {
+          "WorstSlackNS": 3.577,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingChecks": 0,
+          "TotalChecks": 260
+        },
+        "After": {
+          "WorstSlackNS": 3.212,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingChecks": 0,
+          "TotalChecks": 260
+        }
+      },
+      {
+        "Corner": "slow",
+        "Kind": "hold",
+        "Clocks": [
+          "phy_dq_sysclk_1",
+          "ddrphy_sysclk"
+        ],
+        "Before": {
+          "WorstSlackNS": -0.169,
+          "TotalNegativeSlackNS": -0.169,
+          "FailingChecks": 1,
+          "TotalChecks": 260
+        },
+        "After": {
+          "WorstSlackNS": 0.323,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingChecks": 0,
+          "TotalChecks": 260
+        }
+      },
+      {
+        "Corner": "slow",
+        "Kind": "hold",
+        "Clocks": [
+          "rst_clk",
+          "ddrphy_sysclk"
+        ],
+        "Before": {
+          "WorstSlackNS": -0.336,
+          "TotalNegativeSlackNS": -0.336,
+          "FailingChecks": 1,
+          "TotalChecks": 3
+        },
+        "After": {
+          "WorstSlackNS": 1.105,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingChecks": 0,
+          "TotalChecks": 3
+        }
+      },
+      {
+        "Corner": "slow",
+        "Kind": "hold",
+        "Clocks": [
+          "ddrphy_sysclk",
+          "phy_dq_sysclk_1"
+        ],
+        "Before": {
+          "WorstSlackNS": 0.19,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingChecks": 0,
+          "TotalChecks": 420
+        },
+        "After": {
+          "WorstSlackNS": 0.296,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingChecks": 0,
+          "TotalChecks": 420
+        }
+      },
+      {
+        "Corner": "fast",
+        "Kind": "setup",
+        "Clocks": [
+          "phy_dq_sysclk_1",
+          "ddrphy_sysclk"
+        ],
+        "Before": {
+          "WorstSlackNS": 5.001,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingChecks": 0,
+          "TotalChecks": 260
+        },
+        "After": {
+          "WorstSlackNS": 4.752,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingChecks": 0,
+          "TotalChecks": 260
+        }
+      },
+      {
+        "Corner": "fast",
+        "Kind": "hold",
+        "Clocks": [
+          "phy_dq_sysclk_1",
+          "ddrphy_sysclk"
+        ],
+        "Before": {
+          "WorstSlackNS": -0.342,
+          "TotalNegativeSlackNS": -0.342,
+          "FailingChecks": 1,
+          "TotalChecks": 260
+        },
+        "After": {
+          "WorstSlackNS": 0.02,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingChecks": 0,
+          "TotalChecks": 260
+        }
+      },
+      {
+        "Corner": "fast",
+        "Kind": "hold",
+        "Clocks": [
+          "rst_clk",
+          "ddrphy_sysclk"
+        ],
+        "Before": {
+          "WorstSlackNS": -0.912,
+          "TotalNegativeSlackNS": -0.912,
+          "FailingChecks": 1,
+          "TotalChecks": 3
+        },
+        "After": {
+          "WorstSlackNS": 0.016,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingChecks": 0,
+          "TotalChecks": 3
+        }
+      },
+      {
+        "Corner": "fast",
+        "Kind": "hold",
+        "Clocks": [
+          "ddrphy_sysclk",
+          "phy_dq_sysclk_1"
+        ],
+        "Before": {
+          "WorstSlackNS": -0.059,
+          "TotalNegativeSlackNS": -0.059,
+          "FailingChecks": 1,
+          "TotalChecks": 420
+        },
+        "After": {
+          "WorstSlackNS": 0.019,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingChecks": 0,
+          "TotalChecks": 420
+        }
+      }
+    ],
+    "InputPaths": {
+      "--baseline-report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\camera_vga_output_top.rtr",
+      "--candidate-report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\camera_vga_output_top.rtr",
+      "--baseline-netlist": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\export-baseline-20261031-a\\generate_netlist\\camera_vga_output_top_sim.v",
+      "--candidate-netlist": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\export-final-20261031-a\\generate_netlist\\camera_vga_output_top_sim.v",
+      "--hold-analysis": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-hold-analysis-20261031-a\\exact-complete\\camera-vga-hold-analysis.json",
+      "--reset-inventory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-reset-analysis-20261031-a\\full-scope\\recovery-inventory.json"
+    }
+  },
+  "BaselineUnionRecords": 133,
+  "CandidateUnionRecords": 133,
+  "ReportProvenance": [
+    {
+      "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\camera_vga_output_top_exception.rtr",
+      "Receipt": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\result.json",
+      "ReceiptSHA256": "24c046f7a195e86db2d08dcf987f8c66b29b5b17d8207d4a5097782d4d1a3323",
+      "ReportSHA256": "f6d6d9faa26c364e2601cb021b3161af9dff34531749c5601af185ea7c3fe9a4",
+      "InputADFSHA256": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b"
+    },
+    {
+      "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+      "Receipt": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\result.json",
+      "ReceiptSHA256": "d67106a6ac7ebb45b841c4fa50c01586d1ea671846db46094d644fc70c60af51",
+      "ReportSHA256": "dd5cabb6d14382084fb486eb34cf55b38292ded1aeb6cda5f034289e7ba34015",
+      "InputADFSHA256": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b"
+    },
+    {
+      "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top_exception.rtr",
+      "Receipt": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\result.json",
+      "ReceiptSHA256": "d67106a6ac7ebb45b841c4fa50c01586d1ea671846db46094d644fc70c60af51",
+      "ReportSHA256": "eed2d3d0ff59e093ead2267a31b26221f2d50a4d4ece4cb7a313f1331a33971c",
+      "InputADFSHA256": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b"
+    },
+    {
+      "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\camera_vga_output_top_exception.rtr",
+      "Receipt": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\result.json",
+      "ReceiptSHA256": "e37fb4aacc96e10e59ecd6f275b8269c1af2a863ddbea0399a79d201975f0962",
+      "ReportSHA256": "af166450d6d5463eb4eddfe2aefdcbfb098f38c9582a2fd7e2bbb6a80f7814fb",
+      "InputADFSHA256": "daa2a9221238d09398ba325acef561b604dcb5643571301ba8831f76736dfd9f"
+    },
+    {
+      "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+      "Receipt": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\result.json",
+      "ReceiptSHA256": "e37fb4aacc96e10e59ecd6f275b8269c1af2a863ddbea0399a79d201975f0962",
+      "ReportSHA256": "60d2bce614f4ee80b8da63d300e883f89a2af0f8fed3baedeacd95e0afe37b31",
+      "InputADFSHA256": "daa2a9221238d09398ba325acef561b604dcb5643571301ba8831f76736dfd9f"
+    },
+    {
+      "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top_exception.rtr",
+      "Receipt": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\result.json",
+      "ReceiptSHA256": "e37fb4aacc96e10e59ecd6f275b8269c1af2a863ddbea0399a79d201975f0962",
+      "ReportSHA256": "e6674785fe9f8ae534226698ef85a031ebd4ab689ef81fddbe284f0bf7011b64",
+      "InputADFSHA256": "daa2a9221238d09398ba325acef561b604dcb5643571301ba8831f76736dfd9f"
+    }
+  ],
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\camera_vga_output_top_exception.rtr": "f6d6d9faa26c364e2601cb021b3161af9dff34531749c5601af185ea7c3fe9a4",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\camera_vga_output_top_exception.rtr": "af166450d6d5463eb4eddfe2aefdcbfb098f38c9582a2fd7e2bbb6a80f7814fb",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\exception-union-query-20261031-a.json": "c3607dc5e8f3befa135cebb145cb724aa89b63f8644709a0c378dad641356e35",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr": "dd5cabb6d14382084fb486eb34cf55b38292ded1aeb6cda5f034289e7ba34015",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top_exception.rtr": "eed2d3d0ff59e093ead2267a31b26221f2d50a4d4ece4cb7a313f1331a33971c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr": "60d2bce614f4ee80b8da63d300e883f89a2af0f8fed3baedeacd95e0afe37b31",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top_exception.rtr": "e6674785fe9f8ae534226698ef85a031ebd4ab689ef81fddbe284f0bf7011b64",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-hold-20261031-d\\hold-route-comparison.json": "24600a5ceed8b4c4763bae63e093e794afe469ccf64e7fdf6da9a0f6f3f1667a",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\route-dump.txt": "d2fd72ed6ab135718a359d6c2ab75d849762c2c3efcfa82cea6355d02d3afde5",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-hold-20261031-d\\route-dump.txt": "212357dfdea36460804db867c9109a27f467233c2fcadfff783d9a910ee4c7bb",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\result.json": "24c046f7a195e86db2d08dcf987f8c66b29b5b17d8207d4a5097782d4d1a3323",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\input.adf": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-hold-20261031-d\\result.json": "7a59906f679667db0538c5c51771aa3ddb7f28c8731bb9d32d1716a3d0607c37",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-hold-20261031-d\\input.adf": "73391f865f6df1b03bb9627f92114a7fafa6ca7f8661c9252df4894c9c0c605c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-20261031-b\\hold-route-comparison.json": "628fa7c6865b5445c34b344001dd8cd79f6419c50d82f5184950fbeaacd1dab5",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-20261031-b\\route-dump.txt": "0aee1e63a9eda35637b754bd91306c30b8d8eed3cee1211b58c8c0e867c1693e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-20261031-b\\result.json": "d41f9ece0e19913d857321a339563568b75dd5e6be6e52040157d25d793283a0",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-20261031-b\\input.adf": "daa2a9221238d09398ba325acef561b604dcb5643571301ba8831f76736dfd9f",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\result.json": "d67106a6ac7ebb45b841c4fa50c01586d1ea671846db46094d644fc70c60af51",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-exception-baseline-20261031-a\\input.adf": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\result.json": "e37fb4aacc96e10e59ecd6f275b8269c1af2a863ddbea0399a79d201975f0962",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\input.adf": "daa2a9221238d09398ba325acef561b604dcb5643571301ba8831f76736dfd9f",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\exception-union-query-body-20261031-a.tcl": "a01ff49508780987911c4e845c2642c7f463f7cefe9d51020e0b64a00eb9ab75",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\camera_vga_output_top.rtr": "aef2fb5f2770c79cfd1f1ecd06cfbd143c3913613b98091aa5654516972cdacf",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\camera_vga_output_top.rtr": "d3c428db5dc01cd5f628ce8099bb5baf760740051f1d73233475812395d0ecc9",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\export-baseline-20261031-a\\generate_netlist\\camera_vga_output_top_sim.v": "45a7a480b1ff3561034e46140e87dc8810d5748cb160438d3917fe3fc1a67adc",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\export-final-20261031-a\\generate_netlist\\camera_vga_output_top_sim.v": "f89de7702f1d559c4f2ca270db4b794d789c74a4c2ca0b033a709101cf3e01be",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-hold-analysis-20261031-a\\exact-complete\\camera-vga-hold-analysis.json": "e4ff66613cb7c65057f0db0b8143c4d6efc19ce1c1ab03a1d6c501a33f621ea5",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-reset-analysis-20261031-a\\full-scope\\recovery-inventory.json": "098a004a1c444c2c6a4d68a33e10cdec4a5c73ec6c1fa48a6a03ae9b21edff4e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\export-baseline-20261031-a\\result.json": "50b3c0afb90c3efd4e7c0b72225b5e90644ab5ac63c20cb62d7ff03cfaebef17",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\export-baseline-20261031-a\\input.adf": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\export-final-20261031-a\\result.json": "8d249223517678c412599b4e3410f1acfeda721e8e819d508a3f3598e38ba135",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\export-final-20261031-a\\input.adf": "daa2a9221238d09398ba325acef561b604dcb5643571301ba8831f76736dfd9f",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\final-audit-arguments-20261031-b.json": "8cac1c12ec75f6d2abb3500ef4ab5a781445085da3b42ce222e259b66f7ccbea"
+  },
+  "ToolSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_camera_vga_exception_union.py": "b6180f11448182e7c42aec612395540702678f172c3d20b6486d03ed20c54938",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_camera_vga_hold.py": "a9c3046d959358cb08d6ab303af654f3fd75b34768b723ee22fc4ba0c1b54ce3",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_ddr_final_timing.py": "f0275c5e5e8c6b08c1a8d8a88d5ab1b941459876ea5e3c30f4bea61f5f677a3c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_camera_vga_physical.py": "7eff2a6784b86362642b4808391e431f75b8d31f6e9c5b1aee2fff9b07b5ea4b"
+  },
+  "FalsePathScopeApproved": false,
+  "TimingAccepted": false,
+  "HardwareAccessed": false,
+  "Limits": "Only non-false exception membership/data-delay equivalence. Exact reset false paths, complete timing summaries, provenance and functional placement remain independent checks."
+}

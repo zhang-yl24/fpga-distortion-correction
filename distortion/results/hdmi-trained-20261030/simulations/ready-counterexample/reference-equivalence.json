@@ -1,0 +1,68 @@
+{
+  "Schema": "board1080-hdmi30-edid-audit-v1",
+  "AuditPassed": true,
+  "Controller": "distortion\\rtl\\experimental\\ms7200_1080p30_ctl.v",
+  "ControllerSHA256": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+  "Reference": "distortion\\platform\\video_base\\source\\hdmi\\ms7200_ctl.v",
+  "ReferenceSHA256": "501521c4cceecd48de5741d3116eb7062c93a70a606a386682e1d8756a494199",
+  "OnlyEDIDBytesChanged": true,
+  "RegisterCommandCount": 311,
+  "InitialWriteCount": 300,
+  "EDIDWritesIncludingHeaderRepeat": 264,
+  "Profile": {
+    "PreferredMode": {
+      "PixelClockHz": 74250000,
+      "Width": 1920,
+      "Height": 1080,
+      "HTotal": 2200,
+      "VTotal": 1125,
+      "HFrontPorch": 88,
+      "HSync": 44,
+      "VFrontPorch": 4,
+      "VSync": 5,
+      "Interlaced": false,
+      "HSyncPositive": true,
+      "VSyncPositive": true,
+      "FrameHz": 30.0
+    },
+    "CTAVideoCodes": [
+      34
+    ],
+    "NativeVideoCode": 34,
+    "Blocks": 2,
+    "Checksums": [
+      0,
+      0
+    ],
+    "HDMIVendorOUI": "000C03",
+    "PhysicalAddress": "1.0.0.0",
+    "MaximumTMDSMHz": 75,
+    "AudioAdvertised": false,
+    "YCbCrAdvertised": false,
+    "DeepColorAdvertised": false,
+    "EDIDSHA256": "abf91ea4b3bc6c2d4114cffa61441926ceff257baa81591772f68ba42659f3da"
+  },
+  "ReferencePreferredMode": {
+    "PixelClockHz": 297000000,
+    "Width": 3840,
+    "Height": 2160,
+    "HTotal": 4400,
+    "VTotal": 2250,
+    "HFrontPorch": 176,
+    "HSync": 88,
+    "VFrontPorch": 8,
+    "VSync": 10,
+    "Interlaced": false,
+    "HSyncPositive": true,
+    "VSyncPositive": true,
+    "FrameHz": 30.0
+  },
+  "HardwareAccessed": false,
+  "PhysicalI2CVerified": false,
+  "HostModeSelectionVerified": false,
+  "Limitations": [
+    "Reference identity and chromaticity bytes remain; this is a capability profile, not an actual display identity.",
+    "No audio, YCbCr, HDR or deep color is advertised; host/receiver interoperability still needs hardware.",
+    "The inherited I2C driver does not report ACK failures; this change only corrects advertised video modes."
+  ]
+}

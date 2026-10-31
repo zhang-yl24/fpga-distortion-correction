@@ -1,0 +1,504 @@
+{
+  "Schema": "camera-vga-native-route-audit-v1",
+  "AuditedUTC": "2026-10-31T06:30:34.395426+00:00",
+  "AuditPassed": true,
+  "HoldAuditSHA256": "20694108e5e27f0641e72d5da4d0fb61f2fc9e12b84f8c804a84523d89491f14",
+  "ToolSHA256": "6221018c2e161f37b1d1e7acea6a8528c940110ac3ee74f49e86deef2bdcc957",
+  "ImportedHoldToolSHA256": "8c8e525f6840c9ec3a74061abbdfcc0a900f45f8ea52c71a8ec45eb8b68af748",
+  "NativeProvenance": {
+    "Verified": true,
+    "Receipt": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\result.json",
+    "ReceiptSHA256": "24c046f7a195e86db2d08dcf987f8c66b29b5b17d8207d4a5097782d4d1a3323",
+    "InputADF": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\input.adf",
+    "InputADFSHA256": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b",
+    "OriginalSourceADFSHA256": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b",
+    "ExecutionPassed": true,
+    "InputDrift": [],
+    "ArtifactSHA256": "d2fd72ed6ab135718a359d6c2ab75d849762c2c3efcfa82cea6355d02d3afde5"
+  },
+  "Baseline": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\route-dump.txt",
+    "SHA256": "d2fd72ed6ab135718a359d6c2ab75d849762c2c3efcfa82cea6355d02d3afde5",
+    "RouteCount": 33562,
+    "PhysicalNodeCount": 578531,
+    "NonRouteSemanticSHA256": "a770f23fff707ae6c9b8c581d3e7ae4a32dbbb8659541428673fbe9ba9301ace",
+    "TargetRoutes": {
+      "_N78": [
+        "CR1:CLMA_357_841",
+        "S_CR1:SRB_354_840",
+        "ZSEA[0]:SRB_354_840",
+        "ISEA[0]:SRB_360_840",
+        "ZSSA[1]:SRB_360_840",
+        "ISSA[1]:SRB_360_834",
+        "S_B3:SRB_360_834",
+        "TX_DATA[1]:IOLHR_364_834"
+      ],
+      "_N101": [
+        "CR3:CLMS_345_769",
+        "S_CR3:SRB_342_768",
+        "ZSNB[2]:SRB_342_768",
+        "ISNB[2]:SRB_342_774",
+        "ZSEA[2]:SRB_342_774",
+        "ISEA[2]:SRB_348_774",
+        "A_M2:SRB_348_774",
+        "M2:CLMA_351_774"
+      ],
+      "_N188": [
+        "CR0:CLMS_351_439",
+        "S_CR0:SRB_348_438",
+        "ZDNW[3]:SRB_348_438",
+        "IDNW[3]:SRB_342_444",
+        "ZQNE[3]:SRB_342_444",
+        "IQNE[3]:SRB_354_468",
+        "ZQN[3]:SRB_354_468",
+        "IQN[3]:SRB_354_504",
+        "ZQN[3]:SRB_354_504",
+        "IQN[3]:SRB_354_540",
+        "ZSNA[2]:SRB_354_540",
+        "ISNA[2]:SRB_354_546",
+        "A_M2:SRB_354_546",
+        "M2:CLMA_357_546"
+      ]
+    },
+    "TargetConnectivity": {
+      "_N78": [
+        {
+          "Instance": "CLKROUTE_43",
+          "Pin": "CR"
+        },
+        {
+          "Instance": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1",
+          "Pin": "TX_DATA[1]"
+        }
+      ],
+      "_N101": [
+        {
+          "Instance": "CLKROUTE_66",
+          "Pin": "CR"
+        },
+        {
+          "Instance": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl",
+          "Pin": "D"
+        }
+      ],
+      "_N188": [
+        {
+          "Instance": "CLKROUTE_153",
+          "Pin": "CR"
+        },
+        {
+          "Instance": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl",
+          "Pin": "D"
+        }
+      ]
+    },
+    "ExcludedBlockSHA256": {
+      "CDB": "db0ee58665f52647f6843d8ddaaf32487de34751698445db86d3d18fc897eb40",
+      "FILETABLE": "709e9ff93c38fe10f82a7319c467170a561e0f1a153ab83f4229fc5384ee312b"
+    },
+    "NormalizedMetadataCounts": {
+      "OutputPath": 1,
+      "Timestamp": 1,
+      "SourceAttribute": 1
+    },
+    "SourceLocationMetadata": {
+      "Counts": {
+        "FILEID": 20023,
+        "LINENUM": 20023
+      },
+      "SHA256": "4fc565788401e26465fb6577ce37c33b209bfb79564ed147dfdedf183f096668"
+    },
+    "AllOtherNetAnnotationsSHA256": "f6b84162e31181f6c6b16bc977d79c706e054520658809acb481d9066e18d9c6",
+    "TargetAnnotationSHA256": {
+      "_N78": "1abfb53b82fbad55f317e51db605788a41be4456d3ce920e0e04469632138168",
+      "_N101": "5cad93b399891cdbed71b88f1b4c8145f71eb45fcd410548bf4f8fd3d4da27a6",
+      "_N188": "e6f510898386ac221884e1977f8e5a9789a0bc91618e28ae25bc2a76e6c17c6d"
+    }
+  },
+  "HardwareAccessed": false,
+  "EDAExecuted": false,
+  "TimingAccepted": false,
+  "WaypointInventory": {
+    "WirePattern": "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\logos2\\pg2l100h\\pattern\\drawing\\wirepattern.txt",
+    "WirePatternSHA256": "949ac434425f4512111feb2c767d63064b5b5d35f5ba9665a4640ad75368ac36",
+    "Candidates": {
+      "_N78": {
+        "PhysicalSource": "CR1:CLMA_357_841",
+        "PhysicalLoad": "TX_DATA[1]:IOLHR_364_834",
+        "OriginalRouteNodes": 8,
+        "Segments": [
+          {
+            "SearchCentre": [
+              342,
+              816
+            ],
+            "Preferred": {
+              "Pins": [
+                "ZDNE[0]:SRB_342_816",
+                "IDNE[0]:SRB_348_822"
+              ],
+              "DistanceFromSearchCentre": 0,
+              "OccupiedBy": [],
+              "BothPinsUnused": true,
+              "CoordinateProof": {
+                "From": "ZDNE[2]:SRB_342_816",
+                "To": "IDNE[2]:SRB_348_822",
+                "Owner": "_N85",
+                "Line": 781238
+              },
+              "OfficialWireRule": {
+                "Line": 2764,
+                "Text": "ZDNE[0] : vertical { h1  9 : 10 : 1 1 { vertical [ IDNE[0] ] } }"
+              }
+            },
+            "Alternatives": [
+              {
+                "Pins": [
+                  "ZDNE[1]:SRB_342_816",
+                  "IDNE[1]:SRB_348_822"
+                ],
+                "DistanceFromSearchCentre": 0,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[2]:SRB_342_816",
+                  "To": "IDNE[2]:SRB_348_822",
+                  "Owner": "_N85",
+                  "Line": 781238
+                },
+                "OfficialWireRule": {
+                  "Line": 2763,
+                  "Text": "ZDNE[1] : vertical { h1 11 : 12 : 1 1 { vertical [ IDNE[1] ] } }"
+                }
+              },
+              {
+                "Pins": [
+                  "ZDNE[3]:SRB_342_816",
+                  "IDNE[3]:SRB_348_822"
+                ],
+                "DistanceFromSearchCentre": 0,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[2]:SRB_342_816",
+                  "To": "IDNE[2]:SRB_348_822",
+                  "Owner": "_N85",
+                  "Line": 781238
+                },
+                "OfficialWireRule": {
+                  "Line": 2761,
+                  "Text": "ZDNE[3] : vertical { h1 15 : 16 : 1 1 { vertical [ IDNE[3] ] } }"
+                }
+              },
+              {
+                "Pins": [
+                  "ZDNE[0]:SRB_336_816",
+                  "IDNE[0]:SRB_342_822"
+                ],
+                "DistanceFromSearchCentre": 6,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[1]:SRB_336_816",
+                  "To": "IDNE[1]:SRB_342_822",
+                  "Owner": "_N83",
+                  "Line": 781186
+                },
+                "OfficialWireRule": {
+                  "Line": 2764,
+                  "Text": "ZDNE[0] : vertical { h1  9 : 10 : 1 1 { vertical [ IDNE[0] ] } }"
+                }
+              }
+            ]
+          }
+        ],
+        "NativeRouteAndSTARequired": true
+      },
+      "_N101": {
+        "PhysicalSource": "CR3:CLMS_345_769",
+        "PhysicalLoad": "M2:CLMA_351_774",
+        "OriginalRouteNodes": 8,
+        "Segments": [
+          {
+            "SearchCentre": [
+              336,
+              726
+            ],
+            "Preferred": {
+              "Pins": [
+                "ZDNE[0]:SRB_336_726",
+                "IDNE[0]:SRB_342_732"
+              ],
+              "DistanceFromSearchCentre": 0,
+              "OccupiedBy": [],
+              "BothPinsUnused": true,
+              "CoordinateProof": {
+                "From": "ZDNE[2]:SRB_336_726",
+                "To": "IDNE[2]:SRB_342_732",
+                "Owner": "( INDEXED \\system/reader/checksum 21 )",
+                "Line": 1244455
+              },
+              "OfficialWireRule": {
+                "Line": 2764,
+                "Text": "ZDNE[0] : vertical { h1  9 : 10 : 1 1 { vertical [ IDNE[0] ] } }"
+              }
+            },
+            "Alternatives": [
+              {
+                "Pins": [
+                  "ZDNE[3]:SRB_336_726",
+                  "IDNE[3]:SRB_342_732"
+                ],
+                "DistanceFromSearchCentre": 0,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[2]:SRB_336_726",
+                  "To": "IDNE[2]:SRB_342_732",
+                  "Owner": "( INDEXED \\system/reader/checksum 21 )",
+                  "Line": 1244455
+                },
+                "OfficialWireRule": {
+                  "Line": 2761,
+                  "Text": "ZDNE[3] : vertical { h1 15 : 16 : 1 1 { vertical [ IDNE[3] ] } }"
+                }
+              },
+              {
+                "Pins": [
+                  "ZDNE[0]:SRB_336_720",
+                  "IDNE[0]:SRB_342_726"
+                ],
+                "DistanceFromSearchCentre": 6,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[1]:SRB_336_720",
+                  "To": "IDNE[1]:SRB_342_726",
+                  "Owner": "_N189",
+                  "Line": 783327
+                },
+                "OfficialWireRule": {
+                  "Line": 2764,
+                  "Text": "ZDNE[0] : vertical { h1  9 : 10 : 1 1 { vertical [ IDNE[0] ] } }"
+                }
+              },
+              {
+                "Pins": [
+                  "ZDNE[0]:SRB_336_732",
+                  "IDNE[0]:SRB_342_738"
+                ],
+                "DistanceFromSearchCentre": 6,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[3]:SRB_336_732",
+                  "To": "IDNE[3]:SRB_342_738",
+                  "Owner": "\\u_ddr3_test_h/u_ddrphy_top/calib_done",
+                  "Line": 1259679
+                },
+                "OfficialWireRule": {
+                  "Line": 2764,
+                  "Text": "ZDNE[0] : vertical { h1  9 : 10 : 1 1 { vertical [ IDNE[0] ] } }"
+                }
+              }
+            ]
+          }
+        ],
+        "NativeRouteAndSTARequired": true
+      },
+      "_N188": {
+        "PhysicalSource": "CR0:CLMS_351_439",
+        "PhysicalLoad": "M2:CLMA_357_546",
+        "OriginalRouteNodes": 14,
+        "Segments": [
+          {
+            "SearchCentre": [
+              300,
+              402
+            ],
+            "Preferred": {
+              "Pins": [
+                "ZDNE[0]:SRB_300_402",
+                "IDNE[0]:SRB_306_408"
+              ],
+              "DistanceFromSearchCentre": 0,
+              "OccupiedBy": [],
+              "BothPinsUnused": true,
+              "CoordinateProof": {
+                "From": "ZDNE[1]:SRB_300_402",
+                "To": "IDNE[1]:SRB_306_408",
+                "Owner": "\\u_ddr3_test_h/u_ips_ddrc_top/mcdq_dcp_top/mcdq_dcp_back_ctrl/cmd_pre_pass_m",
+                "Line": 1419584
+              },
+              "OfficialWireRule": {
+                "Line": 2764,
+                "Text": "ZDNE[0] : vertical { h1  9 : 10 : 1 1 { vertical [ IDNE[0] ] } }"
+              }
+            },
+            "Alternatives": [
+              {
+                "Pins": [
+                  "ZDNE[2]:SRB_300_402",
+                  "IDNE[2]:SRB_306_408"
+                ],
+                "DistanceFromSearchCentre": 0,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[1]:SRB_300_402",
+                  "To": "IDNE[1]:SRB_306_408",
+                  "Owner": "\\u_ddr3_test_h/u_ips_ddrc_top/mcdq_dcp_top/mcdq_dcp_back_ctrl/cmd_pre_pass_m",
+                  "Line": 1419584
+                },
+                "OfficialWireRule": {
+                  "Line": 2762,
+                  "Text": "ZDNE[2] : vertical { h1 13 : 14 : 1 1 { vertical [ IDNE[2] ] } }"
+                }
+              },
+              {
+                "Pins": [
+                  "ZDNE[0]:SRB_300_408",
+                  "IDNE[0]:SRB_306_414"
+                ],
+                "DistanceFromSearchCentre": 6,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[1]:SRB_300_408",
+                  "To": "IDNE[1]:SRB_306_414",
+                  "Owner": "( INDEXED \\u_ddr3_test_h/u_ips_ddrc_top/mcdq_dcp_top/mcdq_dcp_back_ctrl/timing_act_pass/timing_cnt 4 )",
+                  "Line": 1422778
+                },
+                "OfficialWireRule": {
+                  "Line": 2764,
+                  "Text": "ZDNE[0] : vertical { h1  9 : 10 : 1 1 { vertical [ IDNE[0] ] } }"
+                }
+              },
+              {
+                "Pins": [
+                  "ZDNE[2]:SRB_300_408",
+                  "IDNE[2]:SRB_306_414"
+                ],
+                "DistanceFromSearchCentre": 6,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[1]:SRB_300_408",
+                  "To": "IDNE[1]:SRB_306_414",
+                  "Owner": "( INDEXED \\u_ddr3_test_h/u_ips_ddrc_top/mcdq_dcp_top/mcdq_dcp_back_ctrl/timing_act_pass/timing_cnt 4 )",
+                  "Line": 1422778
+                },
+                "OfficialWireRule": {
+                  "Line": 2762,
+                  "Text": "ZDNE[2] : vertical { h1 13 : 14 : 1 1 { vertical [ IDNE[2] ] } }"
+                }
+              }
+            ]
+          },
+          {
+            "SearchCentre": [
+              306,
+              570
+            ],
+            "Preferred": {
+              "Pins": [
+                "ZDNE[2]:SRB_306_570",
+                "IDNE[2]:SRB_312_576"
+              ],
+              "DistanceFromSearchCentre": 0,
+              "OccupiedBy": [],
+              "BothPinsUnused": true,
+              "CoordinateProof": {
+                "From": "ZDNE[3]:SRB_306_570",
+                "To": "IDNE[3]:SRB_312_576",
+                "Owner": "\\system/bank_core/engine/core/sampler/cache/inner/N2807",
+                "Line": 961497
+              },
+              "OfficialWireRule": {
+                "Line": 2762,
+                "Text": "ZDNE[2] : vertical { h1 13 : 14 : 1 1 { vertical [ IDNE[2] ] } }"
+              }
+            },
+            "Alternatives": [
+              {
+                "Pins": [
+                  "ZDNE[0]:SRB_306_564",
+                  "IDNE[0]:SRB_312_570"
+                ],
+                "DistanceFromSearchCentre": 6,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[3]:SRB_306_564",
+                  "To": "IDNE[3]:SRB_312_570",
+                  "Owner": "( INDEXED \\system/bank_core/engine/core/sampler/cache/inner/N488 22 )",
+                  "Line": 956943
+                },
+                "OfficialWireRule": {
+                  "Line": 2764,
+                  "Text": "ZDNE[0] : vertical { h1  9 : 10 : 1 1 { vertical [ IDNE[0] ] } }"
+                }
+              },
+              {
+                "Pins": [
+                  "ZDNE[1]:SRB_306_564",
+                  "IDNE[1]:SRB_312_570"
+                ],
+                "DistanceFromSearchCentre": 6,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[3]:SRB_306_564",
+                  "To": "IDNE[3]:SRB_312_570",
+                  "Owner": "( INDEXED \\system/bank_core/engine/core/sampler/cache/inner/N488 22 )",
+                  "Line": 956943
+                },
+                "OfficialWireRule": {
+                  "Line": 2763,
+                  "Text": "ZDNE[1] : vertical { h1 11 : 12 : 1 1 { vertical [ IDNE[1] ] } }"
+                }
+              },
+              {
+                "Pins": [
+                  "ZDNE[2]:SRB_306_576",
+                  "IDNE[2]:SRB_312_582"
+                ],
+                "DistanceFromSearchCentre": 6,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[1]:SRB_306_576",
+                  "To": "IDNE[1]:SRB_312_582",
+                  "Owner": "( INDEXED \\system/bank_core/engine/core/sampler/cache/inner/N488 210 )",
+                  "Line": 959308
+                },
+                "OfficialWireRule": {
+                  "Line": 2762,
+                  "Text": "ZDNE[2] : vertical { h1 13 : 14 : 1 1 { vertical [ IDNE[2] ] } }"
+                }
+              }
+            ]
+          }
+        ],
+        "NativeRouteAndSTARequired": true
+      }
+    }
+  },
+  "ExcludedFromSemanticComparison": [
+    "ADIF output pathname",
+    "STATUS timestamp",
+    "ATTR_FN source pathname",
+    "FILEID/LINENUM source location metadata (counts/hash retained)",
+    "FILETABLE source path table (hash retained)"
+  ],
+  "Limitations": "Only native router and full two-corner STA prove waypoint feasibility and delay. Constraint block is compared exactly; no timing exception is authorized.",
+  "SourceADFSHA256": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b",
+  "QueryReceipt": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-query-20261031-a\\result.json",
+    "SHA256": "24c046f7a195e86db2d08dcf987f8c66b29b5b17d8207d4a5097782d4d1a3323"
+  },
+  "OriginalAudit": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-hold-analysis-20261031-a\\route-occupancy-verified.json",
+    "SHA256": "0eb9a6630d61b8ba958c23ce669cf5b04f0c0e1ef2cc0f4edd25964ff8202706"
+  }
+}

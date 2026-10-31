@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# xsim v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Oct 31 16:11:46 2026
+# Process ID: 13332
+# Current directory: D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera-vga-upright/sim-20261031-b
+# Command line: xsim.exe -log simulation.log -mode tcl -source {xsim.dir/upright_tb/xsim_script.tcl}
+# Log file: D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera-vga-upright/sim-20261031-b/simulation.log
+# Journal file: D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera-vga-upright/sim-20261031-b\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/upright_tb/xsim_script.tcl
+# xsim {upright_tb} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+UPRIGHT_CASE_PASS unit=1 case=0 writes=264 commands=264 transactions=286 error=00
+UPRIGHT_CASE_PASS unit=0 case=0 writes=264 commands=264 transactions=311 error=00
+UPRIGHT_CASE_PASS unit=1 case=1 writes=41 commands=40 transactions=44 error=70
+UPRIGHT_CASE_PASS unit=0 case=1 writes=41 commands=40 transactions=46 error=70
+UPRIGHT_CASE_PASS unit=1 case=2 writes=42 commands=41 transactions=46 error=70
+UPRIGHT_CASE_PASS unit=0 case=2 writes=42 commands=41 transactions=48 error=70
+UPRIGHT_CASE_PASS unit=0 case=3 writes=263 commands=263 transactions=300 error=51
+UPRIGHT_CASE_PASS unit=0 case=4 writes=264 commands=264 transactions=319 error=00
+UPRIGHT_CASE_PASS unit=0 case=5 writes=264 commands=264 transactions=320 error=50
+UPRIGHT_CASE_PASS unit=0 case=6 writes=42 commands=41 transactions=48 error=61
+UPRIGHT_CASE_PASS unit=0 case=7 writes=0 commands=0 transactions=2 error=20
+OV5640_CADENCE_UPRIGHT_PASS cases=11 quarter=68 digital_only=1
+$finish called at time : 549182352444 ps : File "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/tests/tb_ov5640_cadence_upright.sv" Line 245
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:32 . Memory (MB): peak = 224.148 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 31 16:12:27 2026...

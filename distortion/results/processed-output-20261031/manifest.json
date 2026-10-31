@@ -1,0 +1,2156 @@
+{
+  "Schema": "independent-processed-output-evidence-archive-v1",
+  "ArchivedUTC": "2026-10-30T17:57:15.362022+00:00",
+  "Destination": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\processed-output-20261031",
+  "DigitalSimulationsPassed": true,
+  "Runs": {
+    "pattern-small": {
+      "OriginalWorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b",
+      "Report": "runs/pattern-small/processed-output-pattern-simulation.json",
+      "ReportSHA256": "3906f7c80db4760bb965e2885eb20ab3e770a0c7b28d969637d352867296fb0c",
+      "Summary": {
+        "Passed": true,
+        "Width": 64,
+        "Height": 32,
+        "ClockHz": 27000000,
+        "FullRasters": 3,
+        "PixelsCompared": 6496,
+        "MidFrameDisableCompleted": true,
+        "AsyncResetChecks": 1
+      },
+      "Limits": "Controlled synthetic source only; no camera, DDR, processing, PHY or physical HDMI acceptance.",
+      "Model": null,
+      "Oracle": {
+        "Width": 64,
+        "Height": 32,
+        "Pixels": 2048,
+        "RGB565CRC32": "53B3C1CF",
+        "EveryActivePixelNonBlack": true,
+        "ExpectedSHA256": "a300b51c9603c3ad346fcc5c585c0ca7e5edd1e04b319c660b0b7b0346436ead"
+      }
+    },
+    "pattern-native": {
+      "OriginalWorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a",
+      "Report": "runs/pattern-native/processed-output-pattern-simulation.json",
+      "ReportSHA256": "0e4f4e15e600bbe10cefa255e25f58ffef6de8d929dde173261b0b3ece912a47",
+      "Summary": {
+        "Passed": true,
+        "Width": 1920,
+        "Height": 1080,
+        "ClockHz": 27000000,
+        "FullRasters": 1,
+        "PixelsCompared": 2073600,
+        "MidFrameDisableCompleted": true,
+        "AsyncResetChecks": 0
+      },
+      "Limits": "Controlled synthetic source only; no camera, DDR, processing, PHY or physical HDMI acceptance.",
+      "Model": null,
+      "Oracle": {
+        "Width": 1920,
+        "Height": 1080,
+        "Pixels": 2073600,
+        "RGB565CRC32": "C58CBE14",
+        "EveryActivePixelNonBlack": true,
+        "ExpectedSHA256": "2164461cd72b188aa031c4ddc7783e301c97fc8ec11c358d773e7900f3ba996b"
+      }
+    },
+    "integration": {
+      "OriginalWorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g",
+      "Report": "runs/integration/processed-output-simulation.json",
+      "ReportSHA256": "1aca06dde201fc17a1b37fad95660875d90b28c2566655fae762355e42cd4a86",
+      "Summary": {
+        "passed": true,
+        "cold_reference_cycles": 1048578,
+        "startup_cases": 4,
+        "runtime_fault_cases": 5,
+        "sticky_fault_cases": 5,
+        "held_aw_cases": 5,
+        "fault_bus_drains": 5,
+        "frames_committed": 9,
+        "frames_processed": 9,
+        "frames_published": 9,
+        "unique_frames_scanned": 9,
+        "repeat_scans": 14,
+        "scanned_pixels": 11776,
+        "source_bank_reuses": 7,
+        "result_bank_reuses": 7,
+        "directed_normal_final_drain": true,
+        "runtime_fault_sticky_until_common_reset": true,
+        "active_display_lease_fault_tested": false,
+        "production_system_executed": true,
+        "physical_ip_executed": false
+      },
+      "Limits": "Small32x16 synthetic test only. Stub PLL/DDR PHY/TX status; no physical timing, silicon, native1080 throughput, optical calibration or clock-stop recovery claim. Normal final drain uses test-only private DMA-grant withholding; top has no host stop API. Five runtime faults are injected at the first source AW, before source commit or an active display lease; sticky board faults persist until common reset. Active-display-lease fault isolation is not exercised.",
+      "Model": {
+        "Width": 32,
+        "Height": 16,
+        "IntegerConfig": [
+          3968,
+          1920,
+          3968,
+          1920,
+          4096,
+          3686,
+          67108864,
+          74573496,
+          335544,
+          -62915,
+          8389,
+          4194,
+          -2936
+        ],
+        "SourceCRC32": "6E5172F7",
+        "ResultCRC32": "511CD37A",
+        "Statistics": {
+          "MaskedPixels": 25,
+          "UnmaskedPixels": 487,
+          "ScalarCoordinateCrosschecks": 512
+        },
+        "MaskedPixels": 25,
+        "GammaEnabled": false
+      },
+      "Oracle": null
+    }
+  },
+  "SourceSHA256": {
+    "rtl/experimental/processed_output_pattern.v": "7a4e9c1f9a9c0b46af412679aa4cde76015906bece2142d0665c6946ef59980d",
+    "tests/tb_processed_output_pattern.sv": "412d114f983cd1ddba45f678a72e1a6465b1f83b7cee023aa23787976adf062a",
+    "tools/run_processed_output_pattern_sim.py": "fc21b4d401283460beadca0099d697ade47546395f4d20497bbb04799f5fef2c",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "rtl/mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "rtl/pixel_inverse_rotation.v": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+    "rtl/bounded_brown_inverse_mapper.v": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691",
+    "rtl/bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "rtl/ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+    "rtl/ddr_video_reader.v": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/ddr_write_arbiter.v": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+    "rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+    "rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+    "rtl/experimental/rotated_remap_core_gamma_scatter4.v": "6b13cf9bdf089fa902c2e4fb564985e21bf153234382ae721bca6541f6fddcbd",
+    "rtl/experimental/adaptive_gamma_stream.v": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7",
+    "rtl/experimental/adaptive_gamma_tagged.v": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790",
+    "rtl/experimental/ddr_adaptive_result_writer.v": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+    "rtl/experimental/pipeline_gamma_frame_engine_1080_scatter4.v": "e01a99c8847db58003bb2a9dca85db67d705c815a8fec8be2b6a430d35eaa141",
+    "rtl/experimental/lens1080_bank_core.v": "ed14a1266b39b048dcdd2687f3d4fdef13c502ce2858b7483c93d5397a22092c",
+    "rtl/experimental/hdmi1080_capture_cdc.v": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+    "rtl/experimental/hdmi1080_input_dma.v": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+    "rtl/experimental/hdmi1080_input_write_link.v": "276441de0a0d5b04cb4a9564e8715a517fbec12d891489ba54ff8d6b348d44e4",
+    "rtl/experimental/ddr_video_output_1080_board.v": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+    "rtl/experimental/hdmi1080_video_system_cdc_reset.v": "872bedf50835825869ed6f31d3a224c77aa3bcbd7e084553e607e79263c90a32",
+    "board/processed_output_top.v": "6bf3fa3350a3ae4b5bebd1b8afe0cc770395438cf201d63161ed0f3c2b4e59cb",
+    "tests/processed_output_ip_stubs.sv": "fe718440f0b3b48f34580d955c53cd5ff4443ee35aec12bf2d21c110d92e6fa1",
+    "tests/tb_processed_output.sv": "6db2ad2bcb00b91dc5a4869601a71759f96e5ea5d741ccd7c6d36630d5c8e1ab",
+    "rtl/experimental/gamma_curves.vh": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+    "rtl/video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+    "board/board1080-synthetic.vh": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+    "tools/run_processed_output_sim.py": "25312321982365feedf098b48c8a9598c54fb6be957f8d8d4c5758ed28a73ec4",
+    "tools/generate_1080_core_vectors.py": "5851f3ce56cf7fc87a438b00dd2655afe45997942d38b32c19650dd7025680f9",
+    "tools/generate_continuous1080_vectors.py": "cf7679a3f33331f6267e70059be2c127247b30a5e316e46ca84b7e6a2277971c",
+    "tools/generate-brown-vectors.py": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b",
+    "model/reference.py": "904eb5b4fd2df7822e4693e325c2aab38b504e4a157622e52b367fdbecbb99b4",
+    "board/hdmi_tx_init.v": "184883cd018e7d6ccc8937e9a23bc208fdc5699b9040e3fdd70c6cf3a52f165c"
+  },
+  "VendorReferencesOnly": {
+    "board/bringup_pll.v": {
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\bringup_pll.v",
+      "ProjectRelativePath": "board/bringup_pll.v",
+      "Bytes": 11204,
+      "SHA256": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+      "Copied": false
+    },
+    "platform/video_base/ipcore/ddr3_test/ddr3_test.v": {
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\platform\\video_base\\ipcore\\ddr3_test\\ddr3_test.v",
+      "ProjectRelativePath": "platform/video_base/ipcore/ddr3_test/ddr3_test.v",
+      "Bytes": 22196,
+      "SHA256": "3c5441b4bff33dff73811c3a025ede3b6348cb5779e21778653659b6cbfb84e0",
+      "Copied": false
+    }
+  },
+  "PDSIncluded": true,
+  "LocalDatabaseReferencesOnly": [
+    {
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\compile\\processed_output_top_comp.adf",
+      "ProjectRelativePath": "build/processed-output/pds-20261031-a/compile/processed_output_top_comp.adf",
+      "Bytes": 4242129,
+      "SHA256": "23da6e4f117e90adfeb62051517cbae8d6e47ab9007ee74599bce0f0aacff5f5",
+      "Copied": false
+    },
+    {
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\device_map\\processed_output_top_map.adf",
+      "ProjectRelativePath": "build/processed-output/pds-20261031-a/device_map/processed_output_top_map.adf",
+      "Bytes": 4413347,
+      "SHA256": "25cae3cc754866067a897bc889bcc73d2a628ee44a5a73d3099152b41db26312",
+      "Copied": false
+    },
+    {
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\processed_output_top_plc.adf",
+      "ProjectRelativePath": "build/processed-output/pds-20261031-a/place_route/processed_output_top_plc.adf",
+      "Bytes": 4532508,
+      "SHA256": "45a67ed62456e5a01247b23a5ac3e7d76cf9aebfda09af3fb62b95c1979f07d2",
+      "Copied": false
+    },
+    {
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\processed_output_top_pnr.adf",
+      "ProjectRelativePath": "build/processed-output/pds-20261031-a/place_route/processed_output_top_pnr.adf",
+      "Bytes": 15412879,
+      "SHA256": "97df0e42848650499802b2cf0e4375f420b4c2c98cc55bd9e2dc97fb62a5b980",
+      "Copied": false
+    },
+    {
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\processed_output_top_route.adf",
+      "ProjectRelativePath": "build/processed-output/pds-20261031-a/place_route/processed_output_top_route.adf",
+      "Bytes": 15230287,
+      "SHA256": "eb394d6f46157bcb9c5d083df1b61ffd1c994c70c502c516be4ec48d461f79fd",
+      "Copied": false
+    },
+    {
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\pre-sta-final.adf",
+      "ProjectRelativePath": "build/processed-output/pds-20261031-a/pre-sta-final.adf",
+      "Bytes": 15412879,
+      "SHA256": "97df0e42848650499802b2cf0e4375f420b4c2c98cc55bd9e2dc97fb62a5b980",
+      "Copied": false
+    },
+    {
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\report_timing\\processed_output_top_rtp.adf",
+      "ProjectRelativePath": "build/processed-output/pds-20261031-a/report_timing/processed_output_top_rtp.adf",
+      "Bytes": 157512,
+      "SHA256": "03d144bd4d84f4100277ccdd7657038ba85259819ec539faf81540aebd84fcfb",
+      "Copied": false
+    },
+    {
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\synthesize\\processed_output_top_syn.adf",
+      "ProjectRelativePath": "build/processed-output/pds-20261031-a/synthesize/processed_output_top_syn.adf",
+      "Bytes": 4987995,
+      "SHA256": "be4ba580e37986c9a36384c87559f4ca3547c1d3edda260638aad49cc16c1553",
+      "Copied": false
+    }
+  ],
+  "FailuresPreservedAtOriginalPaths": [
+    {
+      "OriginalWorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-a",
+      "Files": [
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-a\\compile-stderr.log",
+          "ProjectRelativePath": "build/processed-output-pattern/small-20261031-a/compile-stderr.log",
+          "Bytes": 0,
+          "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-a\\compile-stdout.log",
+          "ProjectRelativePath": "build/processed-output-pattern/small-20261031-a/compile-stdout.log",
+          "Bytes": 1178,
+          "SHA256": "adb0665d6d135abc3d6c94f0a050344149a8c75e36f205239c598c9e6b29528e",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-a\\expected-rgb.mem",
+          "ProjectRelativePath": "build/processed-output-pattern/small-20261031-a/expected-rgb.mem",
+          "Bytes": 14336,
+          "SHA256": "a300b51c9603c3ad346fcc5c585c0ca7e5edd1e04b319c660b0b7b0346436ead",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-a\\processed-output-pattern-simulation.json",
+          "ProjectRelativePath": "build/processed-output-pattern/small-20261031-a/processed-output-pattern-simulation.json",
+          "Bytes": 2336,
+          "SHA256": "0ff5354a1d3a6b5e4373092d78b30db9dc67e0335f7484fe588073600a128038",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-a\\xvlog.log",
+          "ProjectRelativePath": "build/processed-output-pattern/small-20261031-a/xvlog.log",
+          "Bytes": 1171,
+          "SHA256": "53e2c8bf4d1a83664b23f87c7d11dbb5a3dbcfbbb00e27b773c4f89959db59a6",
+          "Copied": false
+        }
+      ],
+      "Copied": false,
+      "Deleted": false
+    },
+    {
+      "OriginalWorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-a",
+      "Files": [
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-a\\processed-output-simulation.json",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-a/processed-output-simulation.json",
+          "Bytes": 10575,
+          "SHA256": "1eba41c0488c74cc4699d19bf8e7f2f06a5fc6e3ad444267f73f02e1ad7ff107",
+          "Copied": false
+        }
+      ],
+      "Copied": false,
+      "Deleted": false
+    },
+    {
+      "OriginalWorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b",
+      "Files": [
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\board\\board1080-synthetic.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/board/board1080-synthetic.vh",
+          "Bytes": 751,
+          "SHA256": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\compile-stderr.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/compile-stderr.log",
+          "Bytes": 0,
+          "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\compile-stdout.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/compile-stdout.log",
+          "Bytes": 7672,
+          "SHA256": "a26a6d8bacb4ba63f9a8b5dbcf611f1c657343f2f04ae13b2f78dd6c3bd57590",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\elaborate-stderr.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/elaborate-stderr.log",
+          "Bytes": 0,
+          "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\elaborate-stdout.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/elaborate-stdout.log",
+          "Bytes": 632,
+          "SHA256": "12d5dda7bfb7a7f1336a797d1769828b0db038d9c450be7bc1f1bf4b3019aa08",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\expected-output.png",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/expected-output.png",
+          "Bytes": 520,
+          "SHA256": "56a4e04752bac449805bc8c441fead98d3275c7050035ac428288691cfac8a99",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\expected.mem",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/expected.mem",
+          "Bytes": 3072,
+          "SHA256": "4be59aac27d7db28ca0e8deb0cfae63c3765dd84d7f3d31b12d81fc4ce05ef3c",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\oracle.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/oracle.vh",
+          "Bytes": 68,
+          "SHA256": "39ecf269f7d2527ce115b5a7b20b19f72b96a6fcd17d71fd628cceeeb0d7071e",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\processed-output-simulation.json",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/processed-output-simulation.json",
+          "Bytes": 22298,
+          "SHA256": "e10a1c1908d2f27a2dbd35b70d0932264e9648bc908ca6b6903bd5f22d8c023d",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\relocated-headers\\rtl\\experimental\\gamma_curves.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/relocated-headers/rtl/experimental/gamma_curves.vh",
+          "Bytes": 8640,
+          "SHA256": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\relocated-headers\\rtl\\video_crc32.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/relocated-headers/rtl/video_crc32.vh",
+          "Bytes": 74778,
+          "SHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\result-beats.mem",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/result-beats.mem",
+          "Bytes": 2112,
+          "SHA256": "e793a76f11ce266d70545364cfbc134186cac5cbf677fefb704fcf2b8c635618",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\source-beats.mem",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/source-beats.mem",
+          "Bytes": 2112,
+          "SHA256": "aef5ec762c34febd4f32bd0fc72db7b8de6672a36f464cde7b9524966b7fd46f",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\synthetic-source.png",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/synthetic-source.png",
+          "Bytes": 173,
+          "SHA256": "df4c99d4d016b9dfca01c960acae39fb94a97ed17069278e15ce5eddd9b07a05",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\xelab.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/xelab.log",
+          "Bytes": 625,
+          "SHA256": "5bcb64ae67544812ad97ba42d71b0d81b82e69a571eceff613ce808e076662e1",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-b\\xvlog.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-b/xvlog.log",
+          "Bytes": 7614,
+          "SHA256": "d4b271e787144a253edd121c96d20376a5ec20845435f306a299e1856cffa732",
+          "Copied": false
+        }
+      ],
+      "Copied": false,
+      "Deleted": false
+    },
+    {
+      "OriginalWorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c",
+      "Files": [
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\board\\board1080-synthetic.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/board/board1080-synthetic.vh",
+          "Bytes": 751,
+          "SHA256": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\compile-stderr.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/compile-stderr.log",
+          "Bytes": 0,
+          "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\compile-stdout.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/compile-stdout.log",
+          "Bytes": 7672,
+          "SHA256": "f79f179de3054b5a6ddb8ae0b4ffbb2548972d8010b7307afc8857a4feaef765",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\elaborate-stderr.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/elaborate-stderr.log",
+          "Bytes": 0,
+          "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\elaborate-stdout.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/elaborate-stdout.log",
+          "Bytes": 2988,
+          "SHA256": "aacae61bd7b228104711306e0f58a031371cdb93ae2600b2f094a4b40bbfe9e8",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\events.csv",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/events.csv",
+          "Bytes": 33,
+          "SHA256": "58386390a8626b6f34cd138be425cf3f38667b4928c34ac32ff739572ef01ac5",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\expected-output.png",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/expected-output.png",
+          "Bytes": 520,
+          "SHA256": "56a4e04752bac449805bc8c441fead98d3275c7050035ac428288691cfac8a99",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\expected.mem",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/expected.mem",
+          "Bytes": 3072,
+          "SHA256": "4be59aac27d7db28ca0e8deb0cfae63c3765dd84d7f3d31b12d81fc4ce05ef3c",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\oracle.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/oracle.vh",
+          "Bytes": 68,
+          "SHA256": "39ecf269f7d2527ce115b5a7b20b19f72b96a6fcd17d71fd628cceeeb0d7071e",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\processed-output-simulation.json",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/processed-output-simulation.json",
+          "Bytes": 23075,
+          "SHA256": "da44fd37448d61e8c5d0f1de1b7eb0b1b292fd7e573502e8ff87e7512ddfbdf5",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\relocated-headers\\rtl\\experimental\\gamma_curves.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/relocated-headers/rtl/experimental/gamma_curves.vh",
+          "Bytes": 8640,
+          "SHA256": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\relocated-headers\\rtl\\video_crc32.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/relocated-headers/rtl/video_crc32.vh",
+          "Bytes": 74778,
+          "SHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\result-beats.mem",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/result-beats.mem",
+          "Bytes": 2112,
+          "SHA256": "e793a76f11ce266d70545364cfbc134186cac5cbf677fefb704fcf2b8c635618",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\scanned-pixels.csv",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/scanned-pixels.csv",
+          "Bytes": 23,
+          "SHA256": "67b69ff19d4c34fc10a5462e4ae70a592c758d6d612902c74d2e80378fcc91ea",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\simulate-stderr.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/simulate-stderr.log",
+          "Bytes": 0,
+          "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\simulate-stdout.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/simulate-stdout.log",
+          "Bytes": 790,
+          "SHA256": "592bf6eb9d2fbd9f2dbf506d3ba241a0e5e9195bb7c66d9eed22499020641857",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\simulation.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/simulation.log",
+          "Bytes": 1452,
+          "SHA256": "e13d4e3e75d940d435c72db9ea0a1a3a28478bc0a832e0b87749f1d81bfd394a",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\source-beats.mem",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/source-beats.mem",
+          "Bytes": 2112,
+          "SHA256": "aef5ec762c34febd4f32bd0fc72db7b8de6672a36f464cde7b9524966b7fd46f",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\synthetic-source.png",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/synthetic-source.png",
+          "Bytes": 173,
+          "SHA256": "df4c99d4d016b9dfca01c960acae39fb94a97ed17069278e15ce5eddd9b07a05",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\webtalk.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/webtalk.log",
+          "Bytes": 1279,
+          "SHA256": "e843f2e3cb17f72e27334af4fe2cdd6c463d0ba03355a3431ceca002f335cf1d",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\webtalk_20004.backup.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/webtalk_20004.backup.log",
+          "Bytes": 1279,
+          "SHA256": "2ca0aa1a50b2960322c3c45664d9f84968f3b93c0747153e5fc6c14530c7d13d",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\xelab.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/xelab.log",
+          "Bytes": 2466,
+          "SHA256": "18584aba2897e67fece3e0184fb2abf6e1ef79859369fbe05d4103aae984fc5f",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-c\\xvlog.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-c/xvlog.log",
+          "Bytes": 7614,
+          "SHA256": "203c0e2759289fc54ae91234b885fadfb54407da2dc5215167abb76da3e652ce",
+          "Copied": false
+        }
+      ],
+      "Copied": false,
+      "Deleted": false
+    },
+    {
+      "OriginalWorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d",
+      "Files": [
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\board\\board1080-synthetic.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/board/board1080-synthetic.vh",
+          "Bytes": 751,
+          "SHA256": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\compile-stderr.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/compile-stderr.log",
+          "Bytes": 0,
+          "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\compile-stdout.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/compile-stdout.log",
+          "Bytes": 7362,
+          "SHA256": "bc2128412e28bd9634d23de8da3eee863b57649c9ec254726f711c72f00d064e",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\elaborate-stderr.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/elaborate-stderr.log",
+          "Bytes": 0,
+          "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\elaborate-stdout.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/elaborate-stdout.log",
+          "Bytes": 2988,
+          "SHA256": "533f2be38f7ceef2b0737f3dfdc2a00dfe2eacf0ccc5be4d801bc65c65705c67",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\events.csv",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/events.csv",
+          "Bytes": 1308,
+          "SHA256": "fc608acc138f1896afff92122eb740e2beb073b1a7235b58ed76f7014e1907e0",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\expected-output.png",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/expected-output.png",
+          "Bytes": 520,
+          "SHA256": "56a4e04752bac449805bc8c441fead98d3275c7050035ac428288691cfac8a99",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\expected.mem",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/expected.mem",
+          "Bytes": 3072,
+          "SHA256": "4be59aac27d7db28ca0e8deb0cfae63c3765dd84d7f3d31b12d81fc4ce05ef3c",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\oracle.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/oracle.vh",
+          "Bytes": 68,
+          "SHA256": "39ecf269f7d2527ce115b5a7b20b19f72b96a6fcd17d71fd628cceeeb0d7071e",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\processed-output-simulation.json",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/processed-output-simulation.json",
+          "Bytes": 23075,
+          "SHA256": "5a68565d39ee4ee369a90c80987bbc542073610576c2ac67dd0b79388f1f0f74",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\relocated-headers\\rtl\\experimental\\gamma_curves.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/relocated-headers/rtl/experimental/gamma_curves.vh",
+          "Bytes": 8640,
+          "SHA256": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\relocated-headers\\rtl\\video_crc32.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/relocated-headers/rtl/video_crc32.vh",
+          "Bytes": 74778,
+          "SHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\result-beats.mem",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/result-beats.mem",
+          "Bytes": 2112,
+          "SHA256": "e793a76f11ce266d70545364cfbc134186cac5cbf677fefb704fcf2b8c635618",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\scanned-pixels.csv",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/scanned-pixels.csv",
+          "Bytes": 132771,
+          "SHA256": "5a44a8dbb8c3b8e4f7b64def7bb7118585ce1fda9dbe9e31dd740225e6391980",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\simulate-stderr.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/simulate-stderr.log",
+          "Bytes": 0,
+          "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\simulate-stdout.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/simulate-stdout.log",
+          "Bytes": 893,
+          "SHA256": "e5e5bde319c4d4ac54ec40771a51cd63cddc600456a4e2961a064be22bcaa2ad",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\simulation.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/simulation.log",
+          "Bytes": 1555,
+          "SHA256": "a75b8900e0d4194c03e7f8ba8172105995d6f7ea20a6e00b34f667713afc24eb",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\source-beats.mem",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/source-beats.mem",
+          "Bytes": 2112,
+          "SHA256": "aef5ec762c34febd4f32bd0fc72db7b8de6672a36f464cde7b9524966b7fd46f",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\synthetic-source.png",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/synthetic-source.png",
+          "Bytes": 173,
+          "SHA256": "df4c99d4d016b9dfca01c960acae39fb94a97ed17069278e15ce5eddd9b07a05",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\webtalk.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/webtalk.log",
+          "Bytes": 1279,
+          "SHA256": "05e2f663cd7524f7c88a1b21e159c57c5ed930dcfa670ce9ac240a19179c5fd9",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\webtalk_39680.backup.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/webtalk_39680.backup.log",
+          "Bytes": 1279,
+          "SHA256": "e8c914ce96a24bb2bbf324e107743c700b3bf12e9cbb66df855ae7f006317d53",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\xelab.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/xelab.log",
+          "Bytes": 2466,
+          "SHA256": "9253501fb906c81afc301a507323f2b1c0dd8eac63bfbe35d40f88ebfc470d15",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-d\\xvlog.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-d/xvlog.log",
+          "Bytes": 7305,
+          "SHA256": "d871e5a5b01bf056eadf482266162e95e1b2e0cf81f5b23ad105e9bb9779d698",
+          "Copied": false
+        }
+      ],
+      "Copied": false,
+      "Deleted": false
+    },
+    {
+      "OriginalWorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e",
+      "Files": [
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\board\\board1080-synthetic.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/board/board1080-synthetic.vh",
+          "Bytes": 751,
+          "SHA256": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\compile-stderr.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/compile-stderr.log",
+          "Bytes": 0,
+          "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\compile-stdout.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/compile-stdout.log",
+          "Bytes": 7362,
+          "SHA256": "be2d0c8e70f10ddc779dabf92abc55dc8c610b9439b29c3cc8dbcf5c7028a39f",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\elaborate-stderr.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/elaborate-stderr.log",
+          "Bytes": 0,
+          "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\elaborate-stdout.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/elaborate-stdout.log",
+          "Bytes": 3097,
+          "SHA256": "2fc4cda87abaecb1b7b8b2315e7f0e4b6f13f90bb1ea08db7a13604c71fbc7e2",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\events.csv",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/events.csv",
+          "Bytes": 1308,
+          "SHA256": "fc608acc138f1896afff92122eb740e2beb073b1a7235b58ed76f7014e1907e0",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\expected-output.png",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/expected-output.png",
+          "Bytes": 520,
+          "SHA256": "56a4e04752bac449805bc8c441fead98d3275c7050035ac428288691cfac8a99",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\expected.mem",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/expected.mem",
+          "Bytes": 3072,
+          "SHA256": "4be59aac27d7db28ca0e8deb0cfae63c3765dd84d7f3d31b12d81fc4ce05ef3c",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\oracle.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/oracle.vh",
+          "Bytes": 68,
+          "SHA256": "39ecf269f7d2527ce115b5a7b20b19f72b96a6fcd17d71fd628cceeeb0d7071e",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\processed-output-simulation.json",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/processed-output-simulation.json",
+          "Bytes": 23075,
+          "SHA256": "e534e0c50817e56ce693d0f8296582f7ef0d7051239d87b5dc8715ce0b63dc8a",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\relocated-headers\\rtl\\experimental\\gamma_curves.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/relocated-headers/rtl/experimental/gamma_curves.vh",
+          "Bytes": 8640,
+          "SHA256": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\relocated-headers\\rtl\\video_crc32.vh",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/relocated-headers/rtl/video_crc32.vh",
+          "Bytes": 74778,
+          "SHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\result-beats.mem",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/result-beats.mem",
+          "Bytes": 2112,
+          "SHA256": "e793a76f11ce266d70545364cfbc134186cac5cbf677fefb704fcf2b8c635618",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\scanned-pixels.csv",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/scanned-pixels.csv",
+          "Bytes": 132771,
+          "SHA256": "5a44a8dbb8c3b8e4f7b64def7bb7118585ce1fda9dbe9e31dd740225e6391980",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\simulate-stderr.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/simulate-stderr.log",
+          "Bytes": 0,
+          "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\simulate-stdout.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/simulate-stdout.log",
+          "Bytes": 981,
+          "SHA256": "704e0f2cfa510e9af0c68a5cfd1303f82e3f259d490b5efffc2ebd1e81142b92",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\simulation.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/simulation.log",
+          "Bytes": 1643,
+          "SHA256": "9e94887bccdd4666ca914141f7d0363ec7ab631023065a4eb53165b5d9bc8f82",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\source-beats.mem",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/source-beats.mem",
+          "Bytes": 2112,
+          "SHA256": "aef5ec762c34febd4f32bd0fc72db7b8de6672a36f464cde7b9524966b7fd46f",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\synthetic-source.png",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/synthetic-source.png",
+          "Bytes": 173,
+          "SHA256": "df4c99d4d016b9dfca01c960acae39fb94a97ed17069278e15ce5eddd9b07a05",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\webtalk.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/webtalk.log",
+          "Bytes": 1279,
+          "SHA256": "39b4587d3379815174ff96e8aea5c82344a611eba551e455cb89abff6210a8d5",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\webtalk_19416.backup.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/webtalk_19416.backup.log",
+          "Bytes": 1387,
+          "SHA256": "b47f528503e03e6328f3765b3530c5abcf8118145e7d8b9a67ae0f672c445c26",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\xelab.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/xelab.log",
+          "Bytes": 2466,
+          "SHA256": "737fcfcd72f8976040357aac07e72a7468e152bb98503b28f74be009d4ecc34c",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-e\\xvlog.log",
+          "ProjectRelativePath": "build/processed-output-integration/top-20261031-e/xvlog.log",
+          "Bytes": 7305,
+          "SHA256": "ea9cd0e6e4795eb3f1800f47d73c82e970a14883165ec765a0771cd32441f196",
+          "Copied": false
+        }
+      ],
+      "Copied": false,
+      "Deleted": false
+    },
+    {
+      "OriginalWorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\source-freeze-20261031-a",
+      "Files": [
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\source-freeze-20261031-a\\rejected-freeze.json",
+          "ProjectRelativePath": "build/processed-output/source-freeze-20261031-a/rejected-freeze.json",
+          "Bytes": 484,
+          "SHA256": "9544e99c279b3a6df2ad0101d68f5891887c36ad960bf25f824197ca75f7d9f7",
+          "Copied": false
+        },
+        {
+          "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\source-freeze-20261031-a\\superseded-manifest.json",
+          "ProjectRelativePath": "build/processed-output/source-freeze-20261031-a/superseded-manifest.json",
+          "Bytes": 25358,
+          "SHA256": "33385fcde001197a4ab0d9961969d83bbf75e280775bd03a215949619daf668d",
+          "Copied": false
+        }
+      ],
+      "Copied": false,
+      "Deleted": false
+    }
+  ],
+  "HardwareAccessedByArchiver": false,
+  "EDAExecutedByArchiver": false,
+  "TimingAccepted": false,
+  "HardwareReleaseAllowed": false,
+  "ReadbackRequired": true,
+  "ManifestSelfHashExcluded": true,
+  "Files": {
+    "sources/board/board1080-synthetic.vh": {
+      "Bytes": 751,
+      "SHA256": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+      "Encoding": "identity",
+      "OriginalBytes": 751,
+      "OriginalSHA256": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\board1080-synthetic.vh"
+    },
+    "sources/board/hdmi_tx_init.v": {
+      "Bytes": 2689,
+      "SHA256": "184883cd018e7d6ccc8937e9a23bc208fdc5699b9040e3fdd70c6cf3a52f165c",
+      "Encoding": "identity",
+      "OriginalBytes": 2689,
+      "OriginalSHA256": "184883cd018e7d6ccc8937e9a23bc208fdc5699b9040e3fdd70c6cf3a52f165c",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\hdmi_tx_init.v"
+    },
+    "sources/board/ms7210_commands.vh": {
+      "Bytes": 1824,
+      "SHA256": "d542c30438a2243275c9a48f3b8db742d585a358d3b6da685373c8808dbcee64",
+      "Encoding": "identity",
+      "OriginalBytes": 1824,
+      "OriginalSHA256": "d542c30438a2243275c9a48f3b8db742d585a358d3b6da685373c8808dbcee64",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\ms7210_commands.vh"
+    },
+    "sources/board/processed-output-diagnostic.fdc": {
+      "Bytes": 45225,
+      "SHA256": "00f73377ffb405b239f1e9f0d3db7862639f5b8d8c8f94414a67756077a0e876",
+      "Encoding": "identity",
+      "OriginalBytes": 45225,
+      "OriginalSHA256": "00f73377ffb405b239f1e9f0d3db7862639f5b8d8c8f94414a67756077a0e876",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\processed-output-diagnostic.fdc"
+    },
+    "sources/board/processed-output-sources.json": {
+      "Bytes": 25358,
+      "SHA256": "899c59bdbc1adfdb5fb0e67f54b576f999cb6f5ed88661bd8f630aa2a0ab687a",
+      "Encoding": "identity",
+      "OriginalBytes": 25358,
+      "OriginalSHA256": "899c59bdbc1adfdb5fb0e67f54b576f999cb6f5ed88661bd8f630aa2a0ab687a",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\processed-output-sources.json"
+    },
+    "sources/board/processed_output_top.v": {
+      "Bytes": 10700,
+      "SHA256": "6bf3fa3350a3ae4b5bebd1b8afe0cc770395438cf201d63161ed0f3c2b4e59cb",
+      "Encoding": "identity",
+      "OriginalBytes": 10700,
+      "OriginalSHA256": "6bf3fa3350a3ae4b5bebd1b8afe0cc770395438cf201d63161ed0f3c2b4e59cb",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\processed_output_top.v"
+    },
+    "sources/model/reference.py": {
+      "Bytes": 3099,
+      "SHA256": "904eb5b4fd2df7822e4693e325c2aab38b504e4a157622e52b367fdbecbb99b4",
+      "Encoding": "identity",
+      "OriginalBytes": 3099,
+      "OriginalSHA256": "904eb5b4fd2df7822e4693e325c2aab38b504e4a157622e52b367fdbecbb99b4",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\model\\reference.py"
+    },
+    "sources/rtl/bilinear_rgb.v": {
+      "Bytes": 1884,
+      "SHA256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+      "Encoding": "identity",
+      "OriginalBytes": 1884,
+      "OriginalSHA256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\bilinear_rgb.v"
+    },
+    "sources/rtl/bounded_brown_inverse_mapper.v": {
+      "Bytes": 14671,
+      "SHA256": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691",
+      "Encoding": "identity",
+      "OriginalBytes": 14671,
+      "OriginalSHA256": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\bounded_brown_inverse_mapper.v"
+    },
+    "sources/rtl/ddr_read_arbiter.v": {
+      "Bytes": 3189,
+      "SHA256": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+      "Encoding": "identity",
+      "OriginalBytes": 3189,
+      "OriginalSHA256": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\ddr_read_arbiter.v"
+    },
+    "sources/rtl/ddr_video_reader.v": {
+      "Bytes": 3132,
+      "SHA256": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+      "Encoding": "identity",
+      "OriginalBytes": 3132,
+      "OriginalSHA256": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\ddr_video_reader.v"
+    },
+    "sources/rtl/ddr_write_arbiter.v": {
+      "Bytes": 2906,
+      "SHA256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+      "Encoding": "identity",
+      "OriginalBytes": 2906,
+      "OriginalSHA256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\ddr_write_arbiter.v"
+    },
+    "sources/rtl/experimental/adaptive_gamma_stream.v": {
+      "Bytes": 3146,
+      "SHA256": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7",
+      "Encoding": "identity",
+      "OriginalBytes": 3146,
+      "OriginalSHA256": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\adaptive_gamma_stream.v"
+    },
+    "sources/rtl/experimental/adaptive_gamma_tagged.v": {
+      "Bytes": 1445,
+      "SHA256": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790",
+      "Encoding": "identity",
+      "OriginalBytes": 1445,
+      "OriginalSHA256": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\adaptive_gamma_tagged.v"
+    },
+    "sources/rtl/experimental/ddr_adaptive_result_writer.v": {
+      "Bytes": 6352,
+      "SHA256": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+      "Encoding": "identity",
+      "OriginalBytes": 6352,
+      "OriginalSHA256": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_adaptive_result_writer.v"
+    },
+    "sources/rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v": {
+      "Bytes": 18598,
+      "SHA256": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+      "Encoding": "identity",
+      "OriginalBytes": 18598,
+      "OriginalSHA256": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_neighbour_cache_scatter4_rowpipe.v"
+    },
+    "sources/rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v": {
+      "Bytes": 2181,
+      "SHA256": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+      "Encoding": "identity",
+      "OriginalBytes": 2181,
+      "OriginalSHA256": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_remap_sample_scatter4_rowpipe.v"
+    },
+    "sources/rtl/experimental/ddr_video_output_1080_board.v": {
+      "Bytes": 10236,
+      "SHA256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+      "Encoding": "identity",
+      "OriginalBytes": 10236,
+      "OriginalSHA256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_video_output_1080_board.v"
+    },
+    "sources/rtl/experimental/gamma_curves.vh": {
+      "Bytes": 8640,
+      "SHA256": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+      "Encoding": "identity",
+      "OriginalBytes": 8640,
+      "OriginalSHA256": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\gamma_curves.vh"
+    },
+    "sources/rtl/experimental/hdmi1080_capture_cdc.v": {
+      "Bytes": 9761,
+      "SHA256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+      "Encoding": "identity",
+      "OriginalBytes": 9761,
+      "OriginalSHA256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_capture_cdc.v"
+    },
+    "sources/rtl/experimental/hdmi1080_input_dma.v": {
+      "Bytes": 9834,
+      "SHA256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+      "Encoding": "identity",
+      "OriginalBytes": 9834,
+      "OriginalSHA256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_dma.v"
+    },
+    "sources/rtl/experimental/hdmi1080_input_write_link.v": {
+      "Bytes": 4383,
+      "SHA256": "276441de0a0d5b04cb4a9564e8715a517fbec12d891489ba54ff8d6b348d44e4",
+      "Encoding": "identity",
+      "OriginalBytes": 4383,
+      "OriginalSHA256": "276441de0a0d5b04cb4a9564e8715a517fbec12d891489ba54ff8d6b348d44e4",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_write_link.v"
+    },
+    "sources/rtl/experimental/hdmi1080_video_system_cdc_reset.v": {
+      "Bytes": 18840,
+      "SHA256": "872bedf50835825869ed6f31d3a224c77aa3bcbd7e084553e607e79263c90a32",
+      "Encoding": "identity",
+      "OriginalBytes": 18840,
+      "OriginalSHA256": "872bedf50835825869ed6f31d3a224c77aa3bcbd7e084553e607e79263c90a32",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_video_system_cdc_reset.v"
+    },
+    "sources/rtl/experimental/lens1080_bank_core.v": {
+      "Bytes": 6461,
+      "SHA256": "ed14a1266b39b048dcdd2687f3d4fdef13c502ce2858b7483c93d5397a22092c",
+      "Encoding": "identity",
+      "OriginalBytes": 6461,
+      "OriginalSHA256": "ed14a1266b39b048dcdd2687f3d4fdef13c502ce2858b7483c93d5397a22092c",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\lens1080_bank_core.v"
+    },
+    "sources/rtl/experimental/pipeline_gamma_frame_engine_1080_scatter4.v": {
+      "Bytes": 7389,
+      "SHA256": "e01a99c8847db58003bb2a9dca85db67d705c815a8fec8be2b6a430d35eaa141",
+      "Encoding": "identity",
+      "OriginalBytes": 7389,
+      "OriginalSHA256": "e01a99c8847db58003bb2a9dca85db67d705c815a8fec8be2b6a430d35eaa141",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\pipeline_gamma_frame_engine_1080_scatter4.v"
+    },
+    "sources/rtl/experimental/processed_output_pattern.v": {
+      "Bytes": 2646,
+      "SHA256": "7a4e9c1f9a9c0b46af412679aa4cde76015906bece2142d0665c6946ef59980d",
+      "Encoding": "identity",
+      "OriginalBytes": 2646,
+      "OriginalSHA256": "7a4e9c1f9a9c0b46af412679aa4cde76015906bece2142d0665c6946ef59980d",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\processed_output_pattern.v"
+    },
+    "sources/rtl/experimental/rotated_remap_core_gamma_scatter4.v": {
+      "Bytes": 4663,
+      "SHA256": "6b13cf9bdf089fa902c2e4fb564985e21bf153234382ae721bca6541f6fddcbd",
+      "Encoding": "identity",
+      "OriginalBytes": 4663,
+      "OriginalSHA256": "6b13cf9bdf089fa902c2e4fb564985e21bf153234382ae721bca6541f6fddcbd",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\rotated_remap_core_gamma_scatter4.v"
+    },
+    "sources/rtl/mul32_pipe.v": {
+      "Bytes": 858,
+      "SHA256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+      "Encoding": "identity",
+      "OriginalBytes": 858,
+      "OriginalSHA256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\mul32_pipe.v"
+    },
+    "sources/rtl/pixel_inverse_rotation.v": {
+      "Bytes": 2713,
+      "SHA256": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+      "Encoding": "identity",
+      "OriginalBytes": 2713,
+      "OriginalSHA256": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\pixel_inverse_rotation.v"
+    },
+    "sources/rtl/reg16_i2c.v": {
+      "Bytes": 6305,
+      "SHA256": "7db5335dee7d64eddf3905008a1cd64262889d0a9ebef63c74d4612d70a5a580",
+      "Encoding": "identity",
+      "OriginalBytes": 6305,
+      "OriginalSHA256": "7db5335dee7d64eddf3905008a1cd64262889d0a9ebef63c74d4612d70a5a580",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\reg16_i2c.v"
+    },
+    "sources/rtl/video_async_fifo.v": {
+      "Bytes": 3270,
+      "SHA256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+      "Encoding": "identity",
+      "OriginalBytes": 3270,
+      "OriginalSHA256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\video_async_fifo.v"
+    },
+    "sources/rtl/video_crc32.vh": {
+      "Bytes": 74778,
+      "SHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+      "Encoding": "identity",
+      "OriginalBytes": 74778,
+      "OriginalSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\video_crc32.vh"
+    },
+    "sources/tests/processed_output_ip_stubs.sv": {
+      "Bytes": 11769,
+      "SHA256": "fe718440f0b3b48f34580d955c53cd5ff4443ee35aec12bf2d21c110d92e6fa1",
+      "Encoding": "identity",
+      "OriginalBytes": 11769,
+      "OriginalSHA256": "fe718440f0b3b48f34580d955c53cd5ff4443ee35aec12bf2d21c110d92e6fa1",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\processed_output_ip_stubs.sv"
+    },
+    "sources/tests/tb_processed_output.sv": {
+      "Bytes": 15698,
+      "SHA256": "6db2ad2bcb00b91dc5a4869601a71759f96e5ea5d741ccd7c6d36630d5c8e1ab",
+      "Encoding": "identity",
+      "OriginalBytes": 15698,
+      "OriginalSHA256": "6db2ad2bcb00b91dc5a4869601a71759f96e5ea5d741ccd7c6d36630d5c8e1ab",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_processed_output.sv"
+    },
+    "sources/tests/tb_processed_output_pattern.sv": {
+      "Bytes": 4682,
+      "SHA256": "412d114f983cd1ddba45f678a72e1a6465b1f83b7cee023aa23787976adf062a",
+      "Encoding": "identity",
+      "OriginalBytes": 4682,
+      "OriginalSHA256": "412d114f983cd1ddba45f678a72e1a6465b1f83b7cee023aa23787976adf062a",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_processed_output_pattern.sv"
+    },
+    "sources/tests/test_prepare_processed_output.py": {
+      "Bytes": 9019,
+      "SHA256": "4b76e8d61dbc2cdc4a0a6ab3dff6d21ae5244dde3a987ad487cbab52c0a376d1",
+      "Encoding": "identity",
+      "OriginalBytes": 9019,
+      "OriginalSHA256": "4b76e8d61dbc2cdc4a0a6ab3dff6d21ae5244dde3a987ad487cbab52c0a376d1",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\test_prepare_processed_output.py"
+    },
+    "sources/tools/archive_processed_output_evidence.py": {
+      "Bytes": 16253,
+      "SHA256": "cc0dbaa763657b6a809edadf89b93844dfd3e88c477129bdc471dc1a18f3c6f4",
+      "Encoding": "identity",
+      "OriginalBytes": 16253,
+      "OriginalSHA256": "cc0dbaa763657b6a809edadf89b93844dfd3e88c477129bdc471dc1a18f3c6f4",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\archive_processed_output_evidence.py"
+    },
+    "sources/tools/audit_board1080_pin_contract.py": {
+      "Bytes": 14415,
+      "SHA256": "0c9a479bbd468d9fd743253b3f5e1cf3246f2273150076c2df3b6bc3eb7b6d72",
+      "Encoding": "identity",
+      "OriginalBytes": 14415,
+      "OriginalSHA256": "0c9a479bbd468d9fd743253b3f5e1cf3246f2273150076c2df3b6bc3eb7b6d72",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_board1080_pin_contract.py"
+    },
+    "sources/tools/audit_ddr_final_timing.py": {
+      "Bytes": 18405,
+      "SHA256": "f0275c5e5e8c6b08c1a8d8a88d5ab1b941459876ea5e3c30f4bea61f5f677a3c",
+      "Encoding": "identity",
+      "OriginalBytes": 18405,
+      "OriginalSHA256": "f0275c5e5e8c6b08c1a8d8a88d5ab1b941459876ea5e3c30f4bea61f5f677a3c",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_ddr_final_timing.py"
+    },
+    "sources/tools/audit_processed_output_native.py": {
+      "Bytes": 13303,
+      "SHA256": "0626576b179f6152684f6350ff68b52acd96229114fbb5bbc69cf933dd3ef49b",
+      "Encoding": "identity",
+      "OriginalBytes": 13303,
+      "OriginalSHA256": "0626576b179f6152684f6350ff68b52acd96229114fbb5bbc69cf933dd3ef49b",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_processed_output_native.py"
+    },
+    "sources/tools/generate-brown-vectors.py": {
+      "Bytes": 4513,
+      "SHA256": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b",
+      "Encoding": "identity",
+      "OriginalBytes": 4513,
+      "OriginalSHA256": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\generate-brown-vectors.py"
+    },
+    "sources/tools/generate_1080_core_vectors.py": {
+      "Bytes": 15162,
+      "SHA256": "5851f3ce56cf7fc87a438b00dd2655afe45997942d38b32c19650dd7025680f9",
+      "Encoding": "identity",
+      "OriginalBytes": 15162,
+      "OriginalSHA256": "5851f3ce56cf7fc87a438b00dd2655afe45997942d38b32c19650dd7025680f9",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\generate_1080_core_vectors.py"
+    },
+    "sources/tools/generate_continuous1080_vectors.py": {
+      "Bytes": 16462,
+      "SHA256": "cf7679a3f33331f6267e70059be2c127247b30a5e316e46ca84b7e6a2277971c",
+      "Encoding": "identity",
+      "OriginalBytes": 16462,
+      "OriginalSHA256": "cf7679a3f33331f6267e70059be2c127247b30a5e316e46ca84b7e6a2277971c",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\generate_continuous1080_vectors.py"
+    },
+    "sources/tools/prepare_board1080_timing.py": {
+      "Bytes": 22106,
+      "SHA256": "53ff6502662f0f100f0cd7169af9fe8744ad8f46f4e681c5da1dacb7cc05bae8",
+      "Encoding": "identity",
+      "OriginalBytes": 22106,
+      "OriginalSHA256": "53ff6502662f0f100f0cd7169af9fe8744ad8f46f4e681c5da1dacb7cc05bae8",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\prepare_board1080_timing.py"
+    },
+    "sources/tools/prepare_processed_output.py": {
+      "Bytes": 25542,
+      "SHA256": "c1825b7ecdd224f74d3dd3e369bd9c7a7be92ad0902f7b63066c083694bbec92",
+      "Encoding": "identity",
+      "OriginalBytes": 25542,
+      "OriginalSHA256": "c1825b7ecdd224f74d3dd3e369bd9c7a7be92ad0902f7b63066c083694bbec92",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\prepare_processed_output.py"
+    },
+    "sources/tools/run_gamma_pipeline_d5_sim.py": {
+      "Bytes": 24010,
+      "SHA256": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+      "Encoding": "identity",
+      "OriginalBytes": 24010,
+      "OriginalSHA256": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_gamma_pipeline_d5_sim.py"
+    },
+    "sources/tools/run_processed_output_diagnostic.py": {
+      "Bytes": 18982,
+      "SHA256": "12079c839d504b9337a8f949e64bdee14599fbd17dae2014888930fe0260149b",
+      "Encoding": "identity",
+      "OriginalBytes": 18982,
+      "OriginalSHA256": "12079c839d504b9337a8f949e64bdee14599fbd17dae2014888930fe0260149b",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_processed_output_diagnostic.py"
+    },
+    "sources/tools/run_processed_output_pattern_sim.py": {
+      "Bytes": 6654,
+      "SHA256": "fc21b4d401283460beadca0099d697ade47546395f4d20497bbb04799f5fef2c",
+      "Encoding": "identity",
+      "OriginalBytes": 6654,
+      "OriginalSHA256": "fc21b4d401283460beadca0099d697ade47546395f4d20497bbb04799f5fef2c",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_processed_output_pattern_sim.py"
+    },
+    "sources/tools/run_processed_output_sim.py": {
+      "Bytes": 12594,
+      "SHA256": "25312321982365feedf098b48c8a9598c54fb6be957f8d8d4c5758ed28a73ec4",
+      "Encoding": "identity",
+      "OriginalBytes": 12594,
+      "OriginalSHA256": "25312321982365feedf098b48c8a9598c54fb6be957f8d8d4c5758ed28a73ec4",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_processed_output_sim.py"
+    },
+    "sources/tools/simulation_tools.py": {
+      "Bytes": 5084,
+      "SHA256": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+      "Encoding": "identity",
+      "OriginalBytes": 5084,
+      "OriginalSHA256": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\simulation_tools.py"
+    },
+    "runs/pattern-small/compile-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "Encoding": "gzip",
+      "OriginalBytes": 0,
+      "OriginalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\compile-stderr.log"
+    },
+    "runs/pattern-small/compile-stdout.log.gz": {
+      "Bytes": 232,
+      "SHA256": "3c56d10d69de54b41ad979dff437f6a5d5bfea262d39ffaf1db0f5cb7bdbab97",
+      "Encoding": "gzip",
+      "OriginalBytes": 510,
+      "OriginalSHA256": "85fb606125c119912822a82472a35e853a1acd7633351b02f9bf5ee4a2179d30",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\compile-stdout.log"
+    },
+    "runs/pattern-small/elaborate-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "Encoding": "gzip",
+      "OriginalBytes": 0,
+      "OriginalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\elaborate-stderr.log"
+    },
+    "runs/pattern-small/elaborate-stdout.log.gz": {
+      "Bytes": 579,
+      "SHA256": "8b6c8383642a57d1ab1c2af2ee8b97070463566fabe7684741458260446a37e1",
+      "Encoding": "gzip",
+      "OriginalBytes": 1105,
+      "OriginalSHA256": "326b0536be466cd41905772ca270c2dd45fa758b627f2d20bd0b5450d615eb58",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\elaborate-stdout.log"
+    },
+    "runs/pattern-small/expected-rgb.mem": {
+      "Bytes": 14336,
+      "SHA256": "a300b51c9603c3ad346fcc5c585c0ca7e5edd1e04b319c660b0b7b0346436ead",
+      "Encoding": "identity",
+      "OriginalBytes": 14336,
+      "OriginalSHA256": "a300b51c9603c3ad346fcc5c585c0ca7e5edd1e04b319c660b0b7b0346436ead",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\expected-rgb.mem"
+    },
+    "runs/pattern-small/processed-output-pattern-simulation.json": {
+      "Bytes": 3818,
+      "SHA256": "3906f7c80db4760bb965e2885eb20ab3e770a0c7b28d969637d352867296fb0c",
+      "Encoding": "identity",
+      "OriginalBytes": 3818,
+      "OriginalSHA256": "3906f7c80db4760bb965e2885eb20ab3e770a0c7b28d969637d352867296fb0c",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\processed-output-pattern-simulation.json"
+    },
+    "runs/pattern-small/simulate-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "Encoding": "gzip",
+      "OriginalBytes": 0,
+      "OriginalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\simulate-stderr.log"
+    },
+    "runs/pattern-small/simulate-stdout.log.gz": {
+      "Bytes": 491,
+      "SHA256": "2e56eb17a2a31dd1f7955d06ee74ae0c107d3296e19d1395d3a22d6365019964",
+      "Encoding": "gzip",
+      "OriginalBytes": 711,
+      "OriginalSHA256": "2ce2b3f822f8d5d07fc486a73310784c3fb20032483f60901bf4a00996bfbb5f",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\simulate-stdout.log"
+    },
+    "runs/pattern-small/simulation.log.gz": {
+      "Bytes": 585,
+      "SHA256": "172eb8de493b2d49bc90b9bcba5b428882ff95cb27e1cc4d90634eb3807e1833",
+      "Encoding": "gzip",
+      "OriginalBytes": 1379,
+      "OriginalSHA256": "e040624332d5a478e8286164b92a90ce59ca14978a55b925f2dac894729c2d58",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\simulation.log"
+    },
+    "runs/pattern-small/summary.json": {
+      "Bytes": 150,
+      "SHA256": "4399d785d733d70eaf14a52764a410475375cb68850b28e3df3e5247e497eb1e",
+      "Encoding": "identity",
+      "OriginalBytes": 150,
+      "OriginalSHA256": "4399d785d733d70eaf14a52764a410475375cb68850b28e3df3e5247e497eb1e",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\summary.json"
+    },
+    "runs/pattern-small/webtalk.log.gz": {
+      "Bytes": 422,
+      "SHA256": "1469146fb50deb4c3ffc2b06624bf8855f830d54943ca62f8e1e5104a56f86c1",
+      "Encoding": "gzip",
+      "OriginalBytes": 1290,
+      "OriginalSHA256": "68017ea1944be54e2f7cf2b1b74a6376fbb4935eaaae5d01de71bc0f0128ffba",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\webtalk.log"
+    },
+    "runs/pattern-small/webtalk_28308.backup.log.gz": {
+      "Bytes": 422,
+      "SHA256": "c83c3596b337f15d0f11cdc38f31207031cfb464cedf1fb785a0a0786b343642",
+      "Encoding": "gzip",
+      "OriginalBytes": 1291,
+      "OriginalSHA256": "f1d90055857534ac468694052b6db826e71d445626d9293994c0c61e13ec3109",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\webtalk_28308.backup.log"
+    },
+    "runs/pattern-small/xelab.log.gz": {
+      "Bytes": 325,
+      "SHA256": "ab5ef981c545539856a0cd30c825ab2c07e3add2019ca560516ca6d83a8f2092",
+      "Encoding": "gzip",
+      "OriginalBytes": 604,
+      "OriginalSHA256": "925d0546224e7efd0cd9edc3223d1d276f87999ed2a9ef4a8218242639c65eb8",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\xelab.log"
+    },
+    "runs/pattern-small/xvlog.log.gz": {
+      "Bytes": 229,
+      "SHA256": "f251e0aa317f6a16ccac14d4fed29fe10b62aca5e4d55fe97b0d843659779adc",
+      "Encoding": "gzip",
+      "OriginalBytes": 506,
+      "OriginalSHA256": "59b777cc41c4d039ade554c2390658924f41090e147251596959fc4a811d3c21",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\small-20261031-b\\xvlog.log"
+    },
+    "runs/pattern-native/compile-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "Encoding": "gzip",
+      "OriginalBytes": 0,
+      "OriginalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\compile-stderr.log"
+    },
+    "runs/pattern-native/compile-stdout.log.gz": {
+      "Bytes": 232,
+      "SHA256": "3c56d10d69de54b41ad979dff437f6a5d5bfea262d39ffaf1db0f5cb7bdbab97",
+      "Encoding": "gzip",
+      "OriginalBytes": 510,
+      "OriginalSHA256": "85fb606125c119912822a82472a35e853a1acd7633351b02f9bf5ee4a2179d30",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\compile-stdout.log"
+    },
+    "runs/pattern-native/elaborate-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "Encoding": "gzip",
+      "OriginalBytes": 0,
+      "OriginalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\elaborate-stderr.log"
+    },
+    "runs/pattern-native/elaborate-stdout.log.gz": {
+      "Bytes": 575,
+      "SHA256": "499b251c8e35019e702124dd06ee8be87eb94c1ea455bb739c163ea93fcaf8de",
+      "Encoding": "gzip",
+      "OriginalBytes": 1103,
+      "OriginalSHA256": "d1eeaa83a222bf08c93736e57f7a0e3fa305fc8faeb9d96983555ea940be09d2",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\elaborate-stdout.log"
+    },
+    "runs/pattern-native/expected-rgb.mem.gz": {
+      "Bytes": 115068,
+      "SHA256": "3ca6efb2d865a90fd61c2b07097485fd8f125c9b365516353cc99955bcce5e6d",
+      "Encoding": "gzip",
+      "OriginalBytes": 14515200,
+      "OriginalSHA256": "2164461cd72b188aa031c4ddc7783e301c97fc8ec11c358d773e7900f3ba996b",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\expected-rgb.mem"
+    },
+    "runs/pattern-native/processed-output-pattern-simulation.json": {
+      "Bytes": 3872,
+      "SHA256": "0e4f4e15e600bbe10cefa255e25f58ffef6de8d929dde173261b0b3ece912a47",
+      "Encoding": "identity",
+      "OriginalBytes": 3872,
+      "OriginalSHA256": "0e4f4e15e600bbe10cefa255e25f58ffef6de8d929dde173261b0b3ece912a47",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\processed-output-pattern-simulation.json"
+    },
+    "runs/pattern-native/simulate-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "Encoding": "gzip",
+      "OriginalBytes": 0,
+      "OriginalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\simulate-stderr.log"
+    },
+    "runs/pattern-native/simulate-stdout.log.gz": {
+      "Bytes": 500,
+      "SHA256": "598ad704c14cbe6a6da15d62ee0f6496365b7da303a5b616947f617f728b800a",
+      "Encoding": "gzip",
+      "OriginalBytes": 720,
+      "OriginalSHA256": "9566caf8e99c0a2d748505f0a93d890949404269eaa4c4c095b3c356cbd0025f",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\simulate-stdout.log"
+    },
+    "runs/pattern-native/simulation.log.gz": {
+      "Bytes": 598,
+      "SHA256": "ddc7adbb7629d53e1de0c162d188c78877b0ce02ec2c32155583be2b269df319",
+      "Encoding": "gzip",
+      "OriginalBytes": 1392,
+      "OriginalSHA256": "9abc56497dad56327fd848855a283df52c7806c390ffef2bf892404044fdc6b5",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\simulation.log"
+    },
+    "runs/pattern-native/summary.json": {
+      "Bytes": 157,
+      "SHA256": "3c1b61b2469ee5f85368a2d699b045ce97ea8762ff565ae41290eda2ba929330",
+      "Encoding": "identity",
+      "OriginalBytes": 157,
+      "OriginalSHA256": "3c1b61b2469ee5f85368a2d699b045ce97ea8762ff565ae41290eda2ba929330",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\summary.json"
+    },
+    "runs/pattern-native/webtalk.log.gz": {
+      "Bytes": 424,
+      "SHA256": "f4163a172435cecf24a9f92af791ede64dfa02ffa1c056fbf86c8b3dad574926",
+      "Encoding": "gzip",
+      "OriginalBytes": 1296,
+      "OriginalSHA256": "a7bb8598289b8b2121e1978f2caf50470c867ac8618d6ccb33647ba1e587f361",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\webtalk.log"
+    },
+    "runs/pattern-native/webtalk_36952.backup.log.gz": {
+      "Bytes": 425,
+      "SHA256": "c6f371b16bfd89cba428fc04a8405438ce8eb41b2b8852828a6ba55b7d7d69e6",
+      "Encoding": "gzip",
+      "OriginalBytes": 1296,
+      "OriginalSHA256": "3a52263d771b36f5e616b81fc1b5417c219342c1ff5bfc4a62c1c55d3d8a4189",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\webtalk_36952.backup.log"
+    },
+    "runs/pattern-native/xelab.log.gz": {
+      "Bytes": 318,
+      "SHA256": "2225c58d1c4c08696a47e793fdca480a5c0562ad2749313fedf7311074a62549",
+      "Encoding": "gzip",
+      "OriginalBytes": 601,
+      "OriginalSHA256": "ffc1363f039540fa35e4258dd9b06781a7f8d4a4e2079c2790ea9c8329ee1b1e",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\xelab.log"
+    },
+    "runs/pattern-native/xvlog.log.gz": {
+      "Bytes": 229,
+      "SHA256": "f251e0aa317f6a16ccac14d4fed29fe10b62aca5e4d55fe97b0d843659779adc",
+      "Encoding": "gzip",
+      "OriginalBytes": 506,
+      "OriginalSHA256": "59b777cc41c4d039ade554c2390658924f41090e147251596959fc4a811d3c21",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-pattern\\native-20261031-a\\xvlog.log"
+    },
+    "runs/integration/compile-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "Encoding": "gzip",
+      "OriginalBytes": 0,
+      "OriginalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\compile-stderr.log"
+    },
+    "runs/integration/compile-stdout.log.gz": {
+      "Bytes": 813,
+      "SHA256": "261228aab4b84256f5d822ee965d18c8372b7aea00958d31adcef244bd8195e7",
+      "Encoding": "gzip",
+      "OriginalBytes": 7362,
+      "OriginalSHA256": "b24bd6d33d5269cbd202089b92be17797f1e5a6b3feba9b371070f057c6995bc",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\compile-stdout.log"
+    },
+    "runs/integration/elaborate-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "Encoding": "gzip",
+      "OriginalBytes": 0,
+      "OriginalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\elaborate-stderr.log"
+    },
+    "runs/integration/elaborate-stdout.log.gz": {
+      "Bytes": 1084,
+      "SHA256": "4ef787f23599d17d6e53d8a49e3580687197e8b804da2a83930c22b58b203744",
+      "Encoding": "gzip",
+      "OriginalBytes": 2988,
+      "OriginalSHA256": "9f58a4688c1e18af8119ce39dd25160d9ad2305c85df0c920a1109c287e9b187",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\elaborate-stdout.log"
+    },
+    "runs/integration/events.csv": {
+      "Bytes": 1609,
+      "SHA256": "4805c5d74e9087d9c75ac00b6d52552047547e4ee1ef33fa8274bc87a5ed3c82",
+      "Encoding": "identity",
+      "OriginalBytes": 1609,
+      "OriginalSHA256": "4805c5d74e9087d9c75ac00b6d52552047547e4ee1ef33fa8274bc87a5ed3c82",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\events.csv"
+    },
+    "runs/integration/expected-output.png": {
+      "Bytes": 520,
+      "SHA256": "56a4e04752bac449805bc8c441fead98d3275c7050035ac428288691cfac8a99",
+      "Encoding": "identity",
+      "OriginalBytes": 520,
+      "OriginalSHA256": "56a4e04752bac449805bc8c441fead98d3275c7050035ac428288691cfac8a99",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\expected-output.png"
+    },
+    "runs/integration/expected.mem": {
+      "Bytes": 3072,
+      "SHA256": "4be59aac27d7db28ca0e8deb0cfae63c3765dd84d7f3d31b12d81fc4ce05ef3c",
+      "Encoding": "identity",
+      "OriginalBytes": 3072,
+      "OriginalSHA256": "4be59aac27d7db28ca0e8deb0cfae63c3765dd84d7f3d31b12d81fc4ce05ef3c",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\expected.mem"
+    },
+    "runs/integration/oracle.vh": {
+      "Bytes": 68,
+      "SHA256": "39ecf269f7d2527ce115b5a7b20b19f72b96a6fcd17d71fd628cceeeb0d7071e",
+      "Encoding": "identity",
+      "OriginalBytes": 68,
+      "OriginalSHA256": "39ecf269f7d2527ce115b5a7b20b19f72b96a6fcd17d71fd628cceeeb0d7071e",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\oracle.vh"
+    },
+    "runs/integration/processed-output-simulation.json": {
+      "Bytes": 23982,
+      "SHA256": "1aca06dde201fc17a1b37fad95660875d90b28c2566655fae762355e42cd4a86",
+      "Encoding": "identity",
+      "OriginalBytes": 23982,
+      "OriginalSHA256": "1aca06dde201fc17a1b37fad95660875d90b28c2566655fae762355e42cd4a86",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\processed-output-simulation.json"
+    },
+    "runs/integration/result-beats.mem": {
+      "Bytes": 2112,
+      "SHA256": "e793a76f11ce266d70545364cfbc134186cac5cbf677fefb704fcf2b8c635618",
+      "Encoding": "identity",
+      "OriginalBytes": 2112,
+      "OriginalSHA256": "e793a76f11ce266d70545364cfbc134186cac5cbf677fefb704fcf2b8c635618",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\result-beats.mem"
+    },
+    "runs/integration/scanned-pixels.csv.gz": {
+      "Bytes": 12560,
+      "SHA256": "739540871a685522e2fd3f3f1b35cfe25a0ac7ff03cf33eaa41b017823b3a267",
+      "Encoding": "gzip",
+      "OriginalBytes": 138805,
+      "OriginalSHA256": "bdead5b08673e569b9520a0a01537ef54c5956e9adc17a5bb18e33a62aaebb6c",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\scanned-pixels.csv"
+    },
+    "runs/integration/simulate-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "Encoding": "gzip",
+      "OriginalBytes": 0,
+      "OriginalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\simulate-stderr.log"
+    },
+    "runs/integration/simulate-stdout.log.gz": {
+      "Bytes": 687,
+      "SHA256": "4bd2c85826a7364826675ae92d374089b1c92d2a5593660ab4e2a482023cd632",
+      "Encoding": "gzip",
+      "OriginalBytes": 1045,
+      "OriginalSHA256": "3510a0976872966b15bc15e2fa11dea4204afc35b89ddfe8bab2d1b31a32ac59",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\simulate-stdout.log"
+    },
+    "runs/integration/simulation.log.gz": {
+      "Bytes": 757,
+      "SHA256": "05175088660ed3c1b33ad99c4d017bd7c2e617ac3dc61213f8705cd6b9d6bc51",
+      "Encoding": "gzip",
+      "OriginalBytes": 1707,
+      "OriginalSHA256": "a2fd86cff2422d4fd75de7f7cfa4a51ac5b93451bd5accf5901e788406fcff81",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\simulation.log"
+    },
+    "runs/integration/source-beats.mem": {
+      "Bytes": 2112,
+      "SHA256": "aef5ec762c34febd4f32bd0fc72db7b8de6672a36f464cde7b9524966b7fd46f",
+      "Encoding": "identity",
+      "OriginalBytes": 2112,
+      "OriginalSHA256": "aef5ec762c34febd4f32bd0fc72db7b8de6672a36f464cde7b9524966b7fd46f",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\source-beats.mem"
+    },
+    "runs/integration/summary.json": {
+      "Bytes": 516,
+      "SHA256": "8dd5dac442663547056c5a12e45f156a12646aba7c3cc5b2c52f7e20aad7075f",
+      "Encoding": "identity",
+      "OriginalBytes": 516,
+      "OriginalSHA256": "8dd5dac442663547056c5a12e45f156a12646aba7c3cc5b2c52f7e20aad7075f",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\summary.json"
+    },
+    "runs/integration/supersession.json": {
+      "Bytes": 2002,
+      "SHA256": "1d7000af41ac1f797f06b33da73115b0bdcefa20a1267026271807649a2769d5",
+      "Encoding": "identity",
+      "OriginalBytes": 2002,
+      "OriginalSHA256": "1d7000af41ac1f797f06b33da73115b0bdcefa20a1267026271807649a2769d5",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\supersession.json"
+    },
+    "runs/integration/synthetic-source.png": {
+      "Bytes": 173,
+      "SHA256": "df4c99d4d016b9dfca01c960acae39fb94a97ed17069278e15ce5eddd9b07a05",
+      "Encoding": "identity",
+      "OriginalBytes": 173,
+      "OriginalSHA256": "df4c99d4d016b9dfca01c960acae39fb94a97ed17069278e15ce5eddd9b07a05",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\synthetic-source.png"
+    },
+    "runs/integration/webtalk.log.gz": {
+      "Bytes": 418,
+      "SHA256": "6579bf984407038a1731dd6080e8fa5f428aa454a3dcefd651393af6b7050c22",
+      "Encoding": "gzip",
+      "OriginalBytes": 1278,
+      "OriginalSHA256": "666919e919e9d0ad3c59fa7824133ba53d76c65f9c31ee4639f70be689170d73",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\webtalk.log"
+    },
+    "runs/integration/webtalk_32052.backup.log.gz": {
+      "Bytes": 417,
+      "SHA256": "6506d794c37b75313b4ba84e307f63a51aea57e4ec9c48b5ada0cc9a74339ca4",
+      "Encoding": "gzip",
+      "OriginalBytes": 1279,
+      "OriginalSHA256": "e2e341e88016332d8986c800cbbc1ca0474d829bdbdeedcf8a5e4daef1020429",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\webtalk_32052.backup.log"
+    },
+    "runs/integration/xelab.log.gz": {
+      "Bytes": 907,
+      "SHA256": "f3fa7dd2b0c6d5ac38d9dc3fd305e6e63818e11cf033781ca8b5cd79f45d32c2",
+      "Encoding": "gzip",
+      "OriginalBytes": 2466,
+      "OriginalSHA256": "eec89db2e5c626d366c249c3bc95311cbaf67b6f905d2d3e8b78f28a083b32c7",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\xelab.log"
+    },
+    "runs/integration/xvlog.log.gz": {
+      "Bytes": 807,
+      "SHA256": "cc4529d8e248c688b687183c939a146f23019b3d57bcfd2c8f060aae1d73ae0a",
+      "Encoding": "gzip",
+      "OriginalBytes": 7305,
+      "OriginalSHA256": "c8d944504b05dba4ed7a2c0d1d0cf9bdc5033d69766a5755d14eeb3ee7641edc",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\xvlog.log"
+    },
+    "runs/integration/relocated-sources/rtl/ddr_video_reader.v": {
+      "Bytes": 3123,
+      "SHA256": "3a224c73a1fcb6cf9a44a8c913f00d8440e0c3f1aaf2a33547b416f4ac4c1426",
+      "Encoding": "identity",
+      "OriginalBytes": 3123,
+      "OriginalSHA256": "3a224c73a1fcb6cf9a44a8c913f00d8440e0c3f1aaf2a33547b416f4ac4c1426",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\relocated-sources\\rtl\\ddr_video_reader.v"
+    },
+    "runs/integration/relocated-sources/rtl/experimental/adaptive_gamma_stream.v": {
+      "Bytes": 3137,
+      "SHA256": "999be3978aae6d53cb429f1a490e117709123c2379551ede7a11083daaeee73b",
+      "Encoding": "identity",
+      "OriginalBytes": 3137,
+      "OriginalSHA256": "999be3978aae6d53cb429f1a490e117709123c2379551ede7a11083daaeee73b",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\relocated-sources\\rtl\\experimental\\adaptive_gamma_stream.v"
+    },
+    "runs/integration/relocated-sources/rtl/experimental/ddr_adaptive_result_writer.v": {
+      "Bytes": 6343,
+      "SHA256": "57ad85f2a77728b6a8d214a7adda2d303987fd0fc89eff1903b5ec154a2c90c3",
+      "Encoding": "identity",
+      "OriginalBytes": 6343,
+      "OriginalSHA256": "57ad85f2a77728b6a8d214a7adda2d303987fd0fc89eff1903b5ec154a2c90c3",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\relocated-sources\\rtl\\experimental\\ddr_adaptive_result_writer.v"
+    },
+    "runs/integration/relocated-sources/rtl/experimental/ddr_video_output_1080_board.v": {
+      "Bytes": 10227,
+      "SHA256": "994721394473edf0f98b4f2a7b972ae6da387f25715b3b143536a9bae126a6fc",
+      "Encoding": "identity",
+      "OriginalBytes": 10227,
+      "OriginalSHA256": "994721394473edf0f98b4f2a7b972ae6da387f25715b3b143536a9bae126a6fc",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\relocated-sources\\rtl\\experimental\\ddr_video_output_1080_board.v"
+    },
+    "runs/integration/relocated-sources/tests/tb_processed_output.sv": {
+      "Bytes": 15689,
+      "SHA256": "0e9de56499bf424b57f17c3b48acd6774b583a5b780f1b7f3ca62def11403469",
+      "Encoding": "identity",
+      "OriginalBytes": 15689,
+      "OriginalSHA256": "0e9de56499bf424b57f17c3b48acd6774b583a5b780f1b7f3ca62def11403469",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\relocated-sources\\tests\\tb_processed_output.sv"
+    },
+    "runs/integration/relocated-headers/rtl/experimental/gamma_curves.vh": {
+      "Bytes": 8640,
+      "SHA256": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+      "Encoding": "identity",
+      "OriginalBytes": 8640,
+      "OriginalSHA256": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\relocated-headers\\rtl\\experimental\\gamma_curves.vh"
+    },
+    "runs/integration/relocated-headers/rtl/video_crc32.vh": {
+      "Bytes": 74778,
+      "SHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+      "Encoding": "identity",
+      "OriginalBytes": 74778,
+      "OriginalSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\relocated-headers\\rtl\\video_crc32.vh"
+    },
+    "runs/integration/board/board1080-synthetic.vh": {
+      "Bytes": 751,
+      "SHA256": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+      "Encoding": "identity",
+      "OriginalBytes": 751,
+      "OriginalSHA256": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output-integration\\top-20261031-g\\board\\board1080-synthetic.vh"
+    },
+    "pds/compile/error_info.txt": {
+      "Bytes": 0,
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Encoding": "identity",
+      "OriginalBytes": 0,
+      "OriginalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\compile\\error_info.txt"
+    },
+    "pds/compile/include_relation.txt": {
+      "Bytes": 1291,
+      "SHA256": "7548fa4be7408f4575455d2e98d210be8584bbc4ed05b3068fe55a6023a191c1",
+      "Encoding": "identity",
+      "OriginalBytes": 1291,
+      "OriginalSHA256": "7548fa4be7408f4575455d2e98d210be8584bbc4ed05b3068fe55a6023a191c1",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\compile\\include_relation.txt"
+    },
+    "pds/compile/processed_output_top.cmr": {
+      "Bytes": 5300,
+      "SHA256": "3dbcefee5ac929dc5c73ed53d1b81b190b11308dece1e3b83e05743d21b8bd45",
+      "Encoding": "identity",
+      "OriginalBytes": 5300,
+      "OriginalSHA256": "3dbcefee5ac929dc5c73ed53d1b81b190b11308dece1e3b83e05743d21b8bd45",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\compile\\processed_output_top.cmr"
+    },
+    "pds/compile/run.log.gz": {
+      "Bytes": 15822,
+      "SHA256": "44b9038546ccf6900a6a855bbe37ac445377ccf23a83abef90ae6a49cb6c0b0c",
+      "Encoding": "gzip",
+      "OriginalBytes": 467642,
+      "OriginalSHA256": "9abd24b8ad3e99aa2670764a73198408bda1374fee15e7e213515b0b0b28b2c2",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\compile\\run.log"
+    },
+    "pds/device_map/processed_output_top.dmr.gz": {
+      "Bytes": 14654,
+      "SHA256": "c47296cd94308bd9dbc81fd23497a28f7314f8dba7e0a4d7c0b76557bb96dae5",
+      "Encoding": "gzip",
+      "OriginalBytes": 374351,
+      "OriginalSHA256": "2a5f3fc44eed0c3901f267c94eb5ad8effe1537d6bd0766a6858936ad3eecf13",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\device_map\\processed_output_top.dmr"
+    },
+    "pds/device_map/processed_output_top.pcf": {
+      "Bytes": 9851,
+      "SHA256": "23be006c461f365688ec4b9a991055c29dd597d8220f09f0048b1db34f7c23e7",
+      "Encoding": "identity",
+      "OriginalBytes": 9851,
+      "OriginalSHA256": "23be006c461f365688ec4b9a991055c29dd597d8220f09f0048b1db34f7c23e7",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\device_map\\processed_output_top.pcf"
+    },
+    "pds/device_map/processed_output_top_dmr.prt": {
+      "Bytes": 14349,
+      "SHA256": "a7f16c87c40f534896a60a69ca371238352cd9cc3272e11da01b744891a637fa",
+      "Encoding": "identity",
+      "OriginalBytes": 14349,
+      "OriginalSHA256": "a7f16c87c40f534896a60a69ca371238352cd9cc3272e11da01b744891a637fa",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\device_map\\processed_output_top_dmr.prt"
+    },
+    "pds/device_map/run.log.gz": {
+      "Bytes": 34561,
+      "SHA256": "3492405775a6b1dcf4a12e8f70b350b164249a9b812d06f5da626047760d0312",
+      "Encoding": "gzip",
+      "OriginalBytes": 1372516,
+      "OriginalSHA256": "c9af8e838756d847be37b96fd471821b8338274ef876165234c745f2bb0de6ef",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\device_map\\run.log"
+    },
+    "pds/execution-result.json": {
+      "Bytes": 3142,
+      "SHA256": "730e73c8446bb3aa514bba97d139ad2f65638d67ea40009e555ef51722879fd8",
+      "Encoding": "identity",
+      "OriginalBytes": 3142,
+      "OriginalSHA256": "730e73c8446bb3aa514bba97d139ad2f65638d67ea40009e555ef51722879fd8",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\execution-result.json"
+    },
+    "pds/execution-start.json": {
+      "Bytes": 917,
+      "SHA256": "02a719798aeb07dfe2b2be8295abfe3d78e5d94d4464b665196446c6b02c7060",
+      "Encoding": "identity",
+      "OriginalBytes": 917,
+      "OriginalSHA256": "02a719798aeb07dfe2b2be8295abfe3d78e5d94d4464b665196446c6b02c7060",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\execution-start.json"
+    },
+    "pds/execution-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "Encoding": "gzip",
+      "OriginalBytes": 0,
+      "OriginalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\execution-stderr.log"
+    },
+    "pds/execution-stdout.log.gz": {
+      "Bytes": 114942,
+      "SHA256": "af5102be8f1ac73fc77ccd7ea8b52429de09ddff18f783fbb64f5d2177c78882",
+      "Encoding": "gzip",
+      "OriginalBytes": 3356150,
+      "OriginalSHA256": "f25632206671a6f9e848c2fd95b54b079c37c59ea9e007e7e9cc0ffe1c869ad6",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\execution-stdout.log"
+    },
+    "pds/flow.log.gz": {
+      "Bytes": 114242,
+      "SHA256": "c2cceda55d2902ec4d465a66bdbb422424d7bd5e38443546fcd64172f6f041ae",
+      "Encoding": "gzip",
+      "OriginalBytes": 3347112,
+      "OriginalSHA256": "6490f780e63d881b886890fc2a80927458b35c4d9e758e2e4a1b86df7ba07845",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\flow.log"
+    },
+    "pds/impl.tcl": {
+      "Bytes": 4004,
+      "SHA256": "c70d05e734596ba97df24c5377b3cd9bc19c12f2c3d947e3824e2555cf885393",
+      "Encoding": "identity",
+      "OriginalBytes": 4004,
+      "OriginalSHA256": "c70d05e734596ba97df24c5377b3cd9bc19c12f2c3d947e3824e2555cf885393",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\impl.tcl"
+    },
+    "pds/native-audit-final-v2.json": {
+      "Bytes": 253219,
+      "SHA256": "64564b120f6c9add8e98f9368d914f1e20365e9be8d824772ec4a921f13e0a70",
+      "Encoding": "identity",
+      "OriginalBytes": 253219,
+      "OriginalSHA256": "64564b120f6c9add8e98f9368d914f1e20365e9be8d824772ec4a921f13e0a70",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\native-audit-final-v2.json"
+    },
+    "pds/native-audit-final.json": {
+      "Bytes": 252527,
+      "SHA256": "a71e65442ee9c4935713d374bc90535cc84c681b01fda603129b4b2689ef56d5",
+      "Encoding": "identity",
+      "OriginalBytes": 252527,
+      "OriginalSHA256": "a71e65442ee9c4935713d374bc90535cc84c681b01fda603129b4b2689ef56d5",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\native-audit-final.json"
+    },
+    "pds/native-audit.json": {
+      "Bytes": 252544,
+      "SHA256": "6efb27c926bd42d522c1d336d48119ea0b7f65128271c8c1d73187f28baad973",
+      "Encoding": "identity",
+      "OriginalBytes": 252544,
+      "OriginalSHA256": "6efb27c926bd42d522c1d336d48119ea0b7f65128271c8c1d73187f28baad973",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\native-audit.json"
+    },
+    "pds/place_route/clock_utilization.txt": {
+      "Bytes": 20492,
+      "SHA256": "49fdffaf101fefad39bb6b032474a08c50cc8bf50fe26abeedafeda35377de51",
+      "Encoding": "identity",
+      "OriginalBytes": 20492,
+      "OriginalSHA256": "49fdffaf101fefad39bb6b032474a08c50cc8bf50fe26abeedafeda35377de51",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\clock_utilization.txt"
+    },
+    "pds/place_route/layers.txt": {
+      "Bytes": 0,
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Encoding": "identity",
+      "OriginalBytes": 0,
+      "OriginalSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\layers.txt"
+    },
+    "pds/place_route/processed_output_top.plr.gz": {
+      "Bytes": 7381,
+      "SHA256": "e43a2ffb3e264bd6b607362ed599dc9430e4e6ce736dd96aea24843dc7cac976",
+      "Encoding": "gzip",
+      "OriginalBytes": 167385,
+      "OriginalSHA256": "39e21612196c1f7e76df9c91724334c5c7ae81c6f628b17b42813e7ef339492e",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\processed_output_top.plr"
+    },
+    "pds/place_route/processed_output_top.ror.gz": {
+      "Bytes": 7398,
+      "SHA256": "cbff3a12c2bd2b81670c49c514a24e5c89e2d094d1d9aca11951710b3e16f54e",
+      "Encoding": "gzip",
+      "OriginalBytes": 167225,
+      "OriginalSHA256": "36b2eb971839b975973a82eecc0a2e14d293c4edd1c524be7e0d8c6b3f951fed",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\processed_output_top.ror"
+    },
+    "pds/place_route/processed_output_top.rur.gz": {
+      "Bytes": 7440,
+      "SHA256": "5b7a0ed687d72613251630f90b33219208f2fb59c699e06ea10d875f0657e6cb",
+      "Encoding": "gzip",
+      "OriginalBytes": 167345,
+      "OriginalSHA256": "c5be4e6bb7846941d65c4278a50ce6e3d152d3c64342939b7223e466f7250428",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\processed_output_top.rur"
+    },
+    "pds/place_route/processed_output_top_prr_place.prt": {
+      "Bytes": 15953,
+      "SHA256": "22e9bb71befe10378ccdaac42146fb16c9b0df9ba246bc6b8e28cfef87a7b587",
+      "Encoding": "identity",
+      "OriginalBytes": 15953,
+      "OriginalSHA256": "22e9bb71befe10378ccdaac42146fb16c9b0df9ba246bc6b8e28cfef87a7b587",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\processed_output_top_prr_place.prt"
+    },
+    "pds/place_route/processed_output_top_prr_route.prt": {
+      "Bytes": 15953,
+      "SHA256": "22e9bb71befe10378ccdaac42146fb16c9b0df9ba246bc6b8e28cfef87a7b587",
+      "Encoding": "identity",
+      "OriginalBytes": 15953,
+      "OriginalSHA256": "22e9bb71befe10378ccdaac42146fb16c9b0df9ba246bc6b8e28cfef87a7b587",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\processed_output_top_prr_route.prt"
+    },
+    "pds/place_route/processed_output_top_prr_route_optimize.prt": {
+      "Bytes": 15953,
+      "SHA256": "22e9bb71befe10378ccdaac42146fb16c9b0df9ba246bc6b8e28cfef87a7b587",
+      "Encoding": "identity",
+      "OriginalBytes": 15953,
+      "OriginalSHA256": "22e9bb71befe10378ccdaac42146fb16c9b0df9ba246bc6b8e28cfef87a7b587",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\processed_output_top_prr_route_optimize.prt"
+    },
+    "pds/place_route/run_place.log.gz": {
+      "Bytes": 7351,
+      "SHA256": "360866eb50b027f5d86816a728db3391026d8aaba8bf864007a59f26d00d2681",
+      "Encoding": "gzip",
+      "OriginalBytes": 55975,
+      "OriginalSHA256": "33af35916266573704185a65e34d63533b4c391b3300dc5b1b351a54e7be0bed",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\run_place.log"
+    },
+    "pds/place_route/run_route.log.gz": {
+      "Bytes": 3294,
+      "SHA256": "f2607f40ce33a84ae042d7fb7ae0e4b12ab20d3bc48d300b02a8ac9d174b0bfa",
+      "Encoding": "gzip",
+      "OriginalBytes": 15703,
+      "OriginalSHA256": "f96006e691837b234f7e565e98849eb5fd91e67fa32816f48baef118e300364e",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\run_route.log"
+    },
+    "pds/place_route/run_route_optimize.log.gz": {
+      "Bytes": 1887,
+      "SHA256": "c082f59b2d4ad938cdf648085589dad18f8ed92ec7ec5e9a894b7463d95d48c2",
+      "Encoding": "gzip",
+      "OriginalBytes": 7561,
+      "OriginalSHA256": "fb8532e059dade71f4d06fe43f69900dc1fa306ba1d52ecfa46939af6d9c587f",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\place_route\\run_route_optimize.log"
+    },
+    "pds/plan.json": {
+      "Bytes": 78070,
+      "SHA256": "7c8ef42fc811275f8add3dbc929b1309212ddc6882a79e4593230b6a56513c1b",
+      "Encoding": "identity",
+      "OriginalBytes": 78070,
+      "OriginalSHA256": "7c8ef42fc811275f8add3dbc929b1309212ddc6882a79e4593230b6a56513c1b",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\plan.json"
+    },
+    "pds/report_timing/processed_output_top.rtr.gz": {
+      "Bytes": 242875,
+      "SHA256": "ffe860b9efbc763accd23942c8f3fcb55cfc713e2fe51c245078e63f7f7f4a94",
+      "Encoding": "gzip",
+      "OriginalBytes": 9721196,
+      "OriginalSHA256": "71cd7b7de27e35744309a18bbb7e9852c091e0de3d4c02c2a63a19811c566348",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\report_timing\\processed_output_top.rtr"
+    },
+    "pds/report_timing/processed_output_top_exception.rtr.gz": {
+      "Bytes": 57433,
+      "SHA256": "f7ddc4d297e2bb6205fd4b25100d633764a3004f3eac2d9f51c013ef555cc921",
+      "Encoding": "gzip",
+      "OriginalBytes": 2149512,
+      "OriginalSHA256": "92a21ffe18756eca1d8cdafc0527585091677dcae20e992239eec9e690ee092d",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\report_timing\\processed_output_top_exception.rtr"
+    },
+    "pds/report_timing/run.log.gz": {
+      "Bytes": 1127,
+      "SHA256": "aad9fa7012ef3f1626e111fb837acf681c7a2554a9207cf859174302a28967bd",
+      "Encoding": "gzip",
+      "OriginalBytes": 14556,
+      "OriginalSHA256": "d0d737b7db08980e0185b927ca4eb0f5b7f2cfc35c11361cf24fb2647f0a26be",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\report_timing\\run.log"
+    },
+    "pds/run.log.gz": {
+      "Bytes": 115040,
+      "SHA256": "59f73754050bc5084a9946603ea54c4ebdf0647d47cab788550eaeee7ae6dc0f",
+      "Encoding": "gzip",
+      "OriginalBytes": 3356225,
+      "OriginalSHA256": "d80416b48daeaa319a80bfd4e8f23c54e86d65f7c6e7f0a55b6641cc47651121",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\run.log"
+    },
+    "pds/sources_info.log.gz": {
+      "Bytes": 818,
+      "SHA256": "da14d4e0dd0cf1846cc98e24d74e8bd4b321517dd5726ca92e56280c5f289bf2",
+      "Encoding": "gzip",
+      "OriginalBytes": 4907,
+      "OriginalSHA256": "2765de4d831830c8bff23b89f083759f13b90e6bd46807fa5c93231ed6c9a391",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\sources_info.log"
+    },
+    "pds/synthesize/add_sub_carrychain.log.gz": {
+      "Bytes": 2140,
+      "SHA256": "70e959c33e9c2ad459360ebf27593191482d8c17769f13be8102be9346ea0de0",
+      "Encoding": "gzip",
+      "OriginalBytes": 54262,
+      "OriginalSHA256": "f10cdc56addf328c8d21c083bb868afcb7239256ca339599260bfa18d132caa3",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\synthesize\\add_sub_carrychain.log"
+    },
+    "pds/synthesize/apm_drm_lutram_utilization.log.gz": {
+      "Bytes": 2541,
+      "SHA256": "6f2ae926c8a7b03868747cd136963570a9b6e4caf03eb81b952cfb53c152d956",
+      "Encoding": "gzip",
+      "OriginalBytes": 77108,
+      "OriginalSHA256": "c35f0c3d88d507bfec450d8b286ce6cfcbf7bc101537a6a85eb2420219ffb002",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\synthesize\\apm_drm_lutram_utilization.log"
+    },
+    "pds/synthesize/constraint_check.ccr": {
+      "Bytes": 10644,
+      "SHA256": "4d8736b44b8b9b99512d532dd13f624e743e885165fb4b8831d171126cac23ce",
+      "Encoding": "identity",
+      "OriginalBytes": 10644,
+      "OriginalSHA256": "4d8736b44b8b9b99512d532dd13f624e743e885165fb4b8831d171126cac23ce",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\synthesize\\constraint_check.ccr"
+    },
+    "pds/synthesize/gtp_has_zero_input_pins.log.gz": {
+      "Bytes": 7719,
+      "SHA256": "89f37714f8e904819aefffaea0740356e719c32e139e0e217b947dfb0921eb68",
+      "Encoding": "gzip",
+      "OriginalBytes": 150538,
+      "OriginalSHA256": "6b40cbe80ac51e2bcd583fe24a91372eaf3a390dbd32ae61a84f775336031bb5",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\synthesize\\gtp_has_zero_input_pins.log"
+    },
+    "pds/synthesize/processed_output_top.snr.gz": {
+      "Bytes": 37027,
+      "SHA256": "51c195b4dc336d7e2d73deef4b7c3cb25eb8725cb540fcece412fd001ee48f71",
+      "Encoding": "gzip",
+      "OriginalBytes": 1225973,
+      "OriginalSHA256": "a5125f9c52356bc29fe640b9c2ef53d7c5ddeed33fe2a088cc91899a7c75a834",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\synthesize\\processed_output_top.snr"
+    },
+    "pds/synthesize/processed_output_top_controlsets.txt.gz": {
+      "Bytes": 10466,
+      "SHA256": "5675757317eed11764840bc82b2fcd97ce2c89b6486694fabb75d9e2b61a9793",
+      "Encoding": "gzip",
+      "OriginalBytes": 141337,
+      "OriginalSHA256": "7f440a6de9140c5efa48a988c8a312c7eac59685e656f34b3a44486353bea67a",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\synthesize\\processed_output_top_controlsets.txt"
+    },
+    "pds/synthesize/processed_output_top_exception.snr.gz": {
+      "Bytes": 7200,
+      "SHA256": "97580195dc6c35edb82cc88a798c289d798ed213582b6efc7ee36349976bea4e",
+      "Encoding": "gzip",
+      "OriginalBytes": 226150,
+      "OriginalSHA256": "28022e803e91c60241391910b592c515029b0211ac9a97154a827c9911b719e6",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\synthesize\\processed_output_top_exception.snr"
+    },
+    "pds/synthesize/run.log.gz": {
+      "Bytes": 46703,
+      "SHA256": "cc02ff4f1e038d94a453e5ea68bea90404c251b11c2b9277e115f03c9214a535",
+      "Encoding": "gzip",
+      "OriginalBytes": 1369388,
+      "OriginalSHA256": "4f0406fcf2a92f073cc4970aeaaf6eb25703f89db582e0ef6eced933e6e28a8a",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\synthesize\\run.log"
+    },
+    "pds/timing.tcl": {
+      "Bytes": 3868,
+      "SHA256": "a4004011593dbfe1d1159838c9c4ffcb7c8b77db4ab957e20f9517442b393a40",
+      "Encoding": "identity",
+      "OriginalBytes": 3868,
+      "OriginalSHA256": "a4004011593dbfe1d1159838c9c4ffcb7c8b77db4ab957e20f9517442b393a40",
+      "Origin": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\pds-20261031-a\\timing.tcl"
+    }
+  },
+  "Limits": [
+    "Controlled synthetic source and small integration test; not current camera capture or calibration.",
+    "Native pattern test alone is not native processing/output throughput.",
+    "Runtime faults were injected at the first source AW before source commit; display-lease quarantine was not independently covered.",
+    "Integration normal drain uses private test-only grant withholding; the board top has no host stop API.",
+    "Native PDS exit, if included, is not timing or physical acceptance.",
+    "Vendor/IP body and routed database bytes are not archived by this tool."
+  ]
+}

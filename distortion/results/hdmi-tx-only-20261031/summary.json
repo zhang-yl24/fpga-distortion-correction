@@ -1,0 +1,36 @@
+{
+  "Schema": "hdmi-tx-only-archive-summary-v1",
+  "Passed": true,
+  "OriginalRun": "build/hdmi-tx-only/wire-20261031-c",
+  "OriginalReportSHA256": "0270acfc8de3bdda022995a0a3bfe42b9d4f3db884302d91043725da09c4712e",
+  "SimulationRerun": false,
+  "ProductionFilesChanged": false,
+  "FailedRunsRetained": [
+    "build/hdmi-tx-only/wire-20261031-a",
+    "build/hdmi-tx-only/wire-20261031-b"
+  ],
+  "Covered": [
+    "Actual hdmi_tx_init controller and default-parameter reg16_i2c on resolved open-drain SCL/SDA.",
+    "Original 27 MHz clock and all unmodified internal counters/delay constants.",
+    "Scratch register 0003 write/read 5A followed by exact ordered 49 vendor register writes.",
+    "Only MS7210 device bytes B2/B3 (7-bit address 59); no MS7200/RX controller.",
+    "Original 1 ms inter-command and 300 ms command-18 boundary delays.",
+    "Device-address NACK reports error1 without ready; scratch A5 mismatch reports errorE without ready.",
+    "Full 27,000,000-cycle retry hold plus 270,000-cycle startup wait; next START after 27,270,070 cycles.",
+    "54 complete wire transactions in scenario counts 51, 1, 2; exact ordered trace audited.",
+    "All report-bound source, fixture, evidence and relocated compile-input bytes matched their recorded SHA256 before archive copy."
+  ],
+  "NotCovered": [
+    "Retry completion after the observed retry START.",
+    "Other NACK byte boundaries, clock stretching and timeout within this controller regression.",
+    "Physical MS7210 device, HDMI PHY lock, visible display acceptance or electrical timing.",
+    "Camera capture, processing pipeline, DDR, board integration or hardware/PDS access."
+  ],
+  "OriginalReportPreservedByteForByte": true,
+  "NativeStageReturnCodes": [
+    0,
+    0,
+    0
+  ],
+  "NativeElapsedSeconds": 37.542
+}

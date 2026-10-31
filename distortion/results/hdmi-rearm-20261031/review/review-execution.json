@@ -1,0 +1,31 @@
+{
+  "Schema": "hdmi-rearm-native-review-execution-v1",
+  "StartedUTC": "2026-10-30T16:18:15.378415+00:00",
+  "Target": "hdmi_uart_rearm_diag",
+  "HardwareAccessed": false,
+  "BitstreamRequested": false,
+  "Stages": [
+    {
+      "Script": "native_review.py",
+      "ReturnCode": 0,
+      "LogSHA256": "d313264b885827a6f5ac0e55b7ba6167551de18fd0fbe64010d22b501b70ba0b"
+    },
+    {
+      "Script": "scope_review.py",
+      "ReturnCode": 0,
+      "LogSHA256": "323940d8987d0ac5607f970fa20a8be0cbd8e832028b0ddee5970d05dfe249d8"
+    },
+    {
+      "Script": "apply_scope.py",
+      "ReturnCode": 0,
+      "LogSHA256": "286391b4fc99f0247954d1f96aa5e87cd7eb212f9c56c9ea4431d4ada4124103"
+    },
+    {
+      "Script": "final_export.py",
+      "ReturnCode": 0,
+      "LogSHA256": "5d04a4e31be586e0a356777071f0edcf909374d78b79c5ebddb1d9aad05a76e3"
+    }
+  ],
+  "Passed": true,
+  "EndedUTC": "2026-10-30T16:20:26.891353+00:00"
+}

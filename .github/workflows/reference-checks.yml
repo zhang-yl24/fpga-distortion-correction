@@ -21,7 +21,11 @@ jobs:
       - name: Audit shipped baselines and IP dependency closure
         run: python handoff/audit-baselines.py
       - name: Check HDMI UART decoder, receive-only lifecycle and native report audit
-        run: python -m pytest -q -p no:cacheprovider distortion/tests/test_hdmi_status.py distortion/tests/test_hdmi_uart_native_audit.py
+        run: python -m pytest -q -p no:cacheprovider distortion/tests/test_hdmi_status.py distortion/tests/test_hdmi_uart_native_audit.py distortion/tests/test_assess_hdmi_input.py distortion/tests/test_prepare_hdmi_input_bitstream.py distortion/tests/test_verify_hdmi_input_bitstream.py distortion/tests/test_prepare_hdmi_input_program.py distortion/tests/test_execute_hdmi_input_program.py distortion/tests/test_audit_hdmi_trained_native.py
+      - name: Check camera upright control and audit CPU logic
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -m pytest -q -p no:cacheprovider distortion/tests/test_ov5640_cadence_upright_sim.py distortion/tests/test_camera_vga_upright_io_cdc.py distortion/tests/test_camera_vga_upright_physical.py distortion/tests/test_camera_vga_upright_route_reset.py distortion/tests/test_camera_vga_upright_reset_effect.py distortion/tests/test_camera_vga_upright_program.py distortion/tests/test_camera_vga_upright_program_fast.py distortion/tools/test_camera_vga_upright_reset.py distortion/tools/test_camera_vga_upright_io_cdc_native.py
       - name: Verify initial handoff snapshot
         if: github.ref == 'refs/tags/handoff-20261010'
         run: python handoff/verify-files.py

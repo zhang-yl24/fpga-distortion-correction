@@ -1,5 +1,177 @@
 # 当前交接点
 
+> 仓库内可移植成果：[已验证位流、下载回执及实板反馈](../distortion/results/camera-vga-upright-live-20261031-a/README.md)。下文work绝对路径为本机历史证据，不要求克隆者具备原7.7GB中间目录。
+
+> 最新任务顺序（2026-10-31）：先推送当前成果，然后在现有640×480模式完成实际镜头畸变矫正及验收，之后再讨论清晰度和帧率。见[当前矫正任务](CAMERA_VGA_CALIBRATION_NEXT_20261031.md)。
+
+> 最新交接截面（2026-10-31，用户实板反馈已确认）：新camera_vga_upright_top已下载至易失SRAM。`bit-fast-20261031-b` 的 `Verified=true`，位流SHA256 `e3c889f29c6fb74dda71fc49b5b6bcf2b53e9055720c18ae7238997bbe6ca1ae`、3,791,112字节、header时间17:14:13；最终ADF `0baea59b…392b5`，fresh STA十表及全部例外比较通过。`program-fast-20261031-a` 于17:16:00–17:17:02执行成功：`Passed=true`、`DoneConfirmed=true`、`FlashWritten=false`、`CleanupErrors=[]`。用户现已确认“已正立、左右正确，画面持续更新”“LED5/6 闪烁，LED7 一直灭”，180°倒置修复及基础实时链路实板观察通过。当前有效图像仍为640×480；用户最新指定先在当前640×480模式完成实际镜头畸变矫正，清晰度和帧率讨论后置，不重复下载已确认版本。见[本轮方向修复](CAMERA_VGA_UPRIGHT_20261031.md)、[真实下载回执](../distortion/work/camera-vga-upright/program-fast-20261031-a/receipt.json)、[用户实板观察](../distortion/work/camera-vga-upright/live-observation-20261031-a.json)和[新证据索引c](../distortion/work/camera-vga-upright/evidence-index-20261031-c.json)。实板结论来自用户观察；外部AC/原生pad电气/模拟MTBF与长期稳定性尚未签核。
+
+> 后续使用已审计fast-bit/fast-program路径：真实完整prepare已通过后，由seed绑定完整479项输入、35项工具与原四个产物，后续每次全哈希重核，仍实做fresh STA、例外gate、位流头/ADF/阶段/cleanup。不要回到最少13次、约56分钟的重复full-authority解析。**所有CLI工作目录/计划参数使用规范绝对路径。** 首轮bit-fast-a因相对路径watched key触发严格drift而拒绝；原件保留，b以绝对路径重新完整生成验证通过。禁止改失败回执，禁止使用a未验收位流或无因重跑b。
+
+> 用户人工帧率观察仍属于新下载前的旧工作位流 `acec0a65…b25e0`：LED6的10完整周期约13–14秒，对应320个处理完成帧，估算约23–25fps（约24fps）。这不是新upright候选测量，也不是输入或显示独特新帧率实测；HDMI 30Hz刷新不能写成30fps。新upright方向、持续更新和LED状态已经确认；新帧率尚未重测。下文各旧“正在审计”“板卡断电”“等待首次下载”等为历史阶段，不覆盖本截面。
+
+> 历史基线（旧camera_vga_output_top）：相机画面随景物更新、LED5/6闪烁、LED7长灭，但画面180°倒置；该问题现已由新upright实板反馈确认修复。当前有效图像640×480，用户已提出后续1080p升级问题：存储/主要参数具备基础，输入模式和帧率待验证，不承诺1080p30。下一步先完成当前镜头在640×480下的畸变矫正，目标分辨率及吞吐评估后置；详见[当前实板记录](CAMERA_VGA_LIVE_20261031.md)。下文旧“等待实屏反馈”为历史状态。
+
+> 2026-10-31 当前状态：用户本次确认上电后，camera_vga_output_top 已于北京时间15:38–15:40下载到易失SRAM，位流SHA256 acec0a65…b25e0；芯片PG2L100H/0x00602899、下载成功、DONE=1、Flash未写、清理错误0。开发板最近确认上电，当前等待用户反馈相机画面及LED5/6/7。下载成功不等于实时相机验收；外部AC/标定/长稳仍未验收，HDMI IN支线继续暂停。见[摄像头下载与实屏观察](CAMERA_VGA_LIVE_20261031.md)。下文旧“开发板断电”“等待上电”“尚未下载”为此前阶段记录，不覆盖本条。
+
+**2026-10-31 本轮摄像头候选内部时序已修复并完成审计。** 最终ADF daa2a922…dfd9f，新进程双角十类检查全部0失败，setup/hold slow +0.238/+0.045ns、fast +2.939/+0.016ns；精确复位范围与36,469单元/17,417FF一致性通过。PDS内存写入崩溃已通过查询前初始化STA规避，失败记录保留。当前开发板已断电、没有摄像头位流或下载；下一步检查新候选引脚/CDC/外部接口再准备位流，上板前通知并等新确认。详见 [本轮时序修复记录](CAMERA_VGA_TIMING_FIX_20261031.md)。下方“新候选时序未通过”仅描述原始构建。
+
+## 2026-10-31 最新接续：摄像头候选已接入，开发板已断电
+
+用户已授权尝试同步此前暂缓的本地文档，并最新明确“那我把开发板断电了，上板前跟我说”。当前按已断电处理；上板前先通知，得到新的上电确认后再下载。历史上电反馈不可复用；此次没有硬件操作、Git提交或远端推送。
+
+**主线已进入OV5640 CAM2 → DDR/处理 → HDMI，摄像头开发不再暂停；仅HDMI IN / MS7200支线保持暂停。** 新camera_vga_output_top目标640×480输入、1080p30居中输出，默认零畸变系数先验证传输。摄像头仍连接，旧“未接摄像头”是误点。
+
+离板System仿真通过6帧、1重复、1坏帧丢弃、3,584像素与独立参考一致；板层控制仿真也通过。PDS compile/synth/map/pnr/STA完整执行成功、672.186秒、源码无漂移；**时序未通过**，slow/fast hold最差−0.336/−0.912ns，recovery最差−4.163/−3.156ns。setup/removal两角零失败。摄像头候选没有位流或下载，不能把工具exit0当作上板放行。
+
+下一步先按新候选最终ADF定位DDR hold与复位恢复端点，完成修复及引脚/CDC/接口检查；然后准备位流、通知用户上电，验证实时相机画面，之后做镜头标定。入口：[摄像头接入交接](CAMERA_VGA_INPUT_20261031.md)、[83文件仿真归档](../distortion/results/camera-vga-offline-20261031-a/manifest.json)、[原生时序摘要](../distortion/results/camera-vga-native-20261031-a/summary.json)。PDS使用项目内 distortion/work/camera-vga-output/pds-20261031-a；OS-temp启动Tcl问题已通过路径修复解决，没有改ACL。
+
+以下均为历史过程；旧“输入暂停”“板卡上电”“可立即下载”不覆盖本节。此前processed_output_top成功是片内测试源证据，当前断电后不可称其SRAM配置仍运行。
+
+## 2026-10-31 最新实板结果：处理图已上屏，处理计数持续推进
+
+用户确认开发板上电后，2026-10-31 12:33–12:35（北京时间）执行 `program-20261031-a` 成功。扫描 PG2L100H / `0x00602899`，以1MHz下载 `processed_output_top` 位流 `0537394b548eff5035be031e8056444bad50e20e76cd4b5d49046f477ed01c72` 到易失SRAM，原生下载成功、DONE=1，Flash未写，自有JTAG进程退出、清理错误0。[执行回执](../distortion/build/processed-output/program-20261031-a/receipt.json)保留实际计划与日志绑定。
+
+用户下载后明确反馈“出现红十字和彩色网格”；随后按约10秒观察请求回复“LED6反复亮灭，LED7一直灭”。因此本候选的片内测试图→源DDR→生产矫正→结果DDR→HDMI路径已取得实板显示及处理完成计数持续推进的观察证据。LED高电平点亮；LED6是处理完成计数bit4，LED7是粘滞失败。画面本身静止是设计预期，用户反馈不等于逐像素采集、精确帧率、逐帧显示或长稳测量。
+
+**当前最后确认板上运行新的处理/输出候选，已不再是旧八色彩条。** 摄像头仍连接，但本位流没有物理相机采集；实时相机、当前镜头标定、外部AC及长稳仍未验收。输入排查继续暂停，禁止把本次成功解释成HDMI IN或相机已恢复。本候选没有UART接口，不使用旧COM7诊断命令。
+
+最新[实板记录](PROCESSED_OUTPUT_LIVE_20261031.md)与[下载及用户观察封存](../distortion/results/processed-output-live-20261031-a/manifest.json)为接续入口。下一阶段继续处理/输出的可量化验证（实屏像素/颜色、显示新帧进展及持续运行），不无因重建/重下载本次已成功位流，不自动恢复输入支线。下方“板卡断电/待下载/待观察”是此前阶段记录。
+
+## 2026-10-31 当前交接：处理/输出位流已生成，板卡断电待上板
+
+用户最新明确“开发板已断电，上板时喊我”。旧SRAM彩条配置已丢失，不能描述为板上仍运行旧诊断。独立 `processed_output_top` 位流现已成功生成并校验：SHA256 `0537394b548eff5035be031e8056444bad50e20e76cd4b5d49046f477ed01c72`，来自最终ADF `1d19936e…7550b`，生成前重查双角十类内部时序与精确例外均通过。没有硬件访问、下载或Flash写入。摄像头仍连接，物理输入排查保持暂停。
+
+当前接续入口为[位流、限定CDC/TX证据和上板步骤](PROCESSED_OUTPUT_READY_20261031.md)。位流目录 `distortion/build/processed-output/bit-20261031-b`；已准备SRAM计划 `distortion/build/processed-output/program-20261031-a/plan.json`。下载工具默认只离板验证；须先通知用户上电并收到反馈，才运行 `--execute --board-powered`。本候选没有UART接口，不沿用旧HDMI输入诊断的COM7命令。
+
+新增检查包括34位Gray/19条标量链/复位副本、每角1504条max-delay路径，以及332条TX原生延迟查询。外部采样模式与PCB skew仍未证明，`ExternalTimingAccepted=false`；诊断试显不等于正式AC验收。期望显示红十字、弯曲绿色网格和彩色棋盘的处理图，见[CPU期望图](../distortion/results/processed-output-preview-20261031/processed-reference.png)，不是实时摄像头或实板截图。下方所有“未生成位流”“下一步修复时序”“仍运行彩条”均为历史状态。
+
+**离板准备已完成，可以通知用户上电。** 三条非同址同步链双角setup/hold共12条路径也全部通过，62项CPU检查通过，SRAM计划离板验证通过。新[113文件/18本地引用封存](../distortion/results/processed-output-ready-20261031-b/manifest.json)回读/解压核验通过，manifest SHA256 `0ae7b30b4225becc45798019da062484d676909d4ddc1c85739b104e769b3689`。EDA进程与临时P:映射已退出；等用户确认上电后执行下载，不能把准备完成当作实板已出图。
+
+## 2026-10-31 接续完成：独立处理/输出候选内部时序已修复
+
+**本条覆盖下方该候选“hold/recovery仍失败”和“下一项修复DDR”的旧状态。** 用户要求继续处理与输出；摄像头仍接着，所有物理输入排查继续暂停。本轮已在新候选自身ADF的隔离副本上修复读取数据 `_N107` 单分支hold，并依据同配置原厂来源、实际入口两级同步器/四组内部复位连接及原生精确对象查询，应用5条限定复位约束。生产RTL、DDR IP、原FDC与原始ADF均未改。
+
+最终ADF `1d19936ede917ea1268a17a11fb3b0b34ff84753abefb062ae26d8a2c7c7550b` 位于 `build/processed-output/physical-final-report-20261031-a/input.adf`，与STA前快照一致。双角十类内部检查全部0失败：slow/fast setup +0.286/+2.924ns，hold +0.136/+0.099ns，recovery +1.751/+4.039ns，removal +0.311/+0.158ns，MPW +0.035/+0.035ns。每角仅recovery/removal各减少预期245项，数据setup/hold false-path均0，其他例外及非目标时序行不变。不能把这些结果当作外部IO/物理CDC或实板显示通过。
+
+完整前后功能图38,007单元、18,600个FF的参数/连接/位置一致；35,847条实际路线中只有 `_N107` 从8节点改为24节点，其余路线及功能/放置语义一致。最终[时序/网表审计](../distortion/build/processed-output/physical-comparison-20261031-a.json) SHA `a2748a74291c296689845720aa54d9a513bf8520189466e9c4b76caefa1b871d`，[路线审计](../distortion/build/processed-output/physical-final-report-20261031-a/route-comparison.json) SHA `145ae163525ed15c6173412891a0574c9029a4abe385fbed436e22f0d725d7d8`。完整修复、失败试验与复现规则见[新交接](PROCESSED_OUTPUT_TIMING_FIX_20261031.md)。
+
+[本轮163项证据](../distortion/results/processed-output-physical-20261031/manifest.json)已回读/解压核验，manifest SHA `0957abf4a93067a96d844d34d46fa7744ea214fcb3cba5d8131f7dc8fbf74b28`，含失败试验、原生报告、复位证明和自有工具快照；大型ADF/厂商功能导出仅26项本地哈希引用。27项定向CPU测试通过，原9帧RTL回归无需重跑。
+
+本节记录的是内部修复完成时的状态；后续位流生成与离板核验已在顶部更新。尚无处理图上屏证据。不得回到HDMI IN调试，也不无因重跑已过的9帧数字回归或原始全流程。
+
+## 2026-10-31 最新用户纠偏：处理与输出优先，暂停输入排查
+
+**当前任务是“摄像头画面 → 处理 → HDMI输出”，先推进处理和显示，暂不管输入问题。** 用户明确指出此前HDMI IN方向偏了，并要求改文档防止下一轮继续走错。摄像头仍接在板上；问答中一次“没有接摄像头”是误点，用户已纠正，不应作为硬件状态依据。完整决策及接续规则见[当前方向](ACTIVE_DIRECTION_20261031.md)，优先于以下所有历史“下一步”、HDMI IN接线/拔插请求及旧分工计划。
+
+立即停止MS7200输入状态、VS/PCLK、输入锁定和重新插线实验；不再以HDMI IN通过作为处理/输出集成的前提，也暂不调试摄像头物理输入。现阶段用有来源的历史相机帧/受控回放推进处理结果帧缓存、读取、真实FIFO与HDMI扫描输出的像素、CRC和帧进度核对。既有 `hdmi1080_video_system_cdc_reset.v` 已含这条集成路径，先复用现有处理/输出模块；不并行改队友DDR IP或共享时序约束。
+
+**接续开发已实现独立板级输出候选 `processed_output_top`。** 片内棋盘/网格→生产数字DMA/写仲裁→源DDR→生产bank manager/rowpipe矫正→结果DDR→真实读帧/FIFO/扫描→独立MS7210，物理RX端口、控制器及就绪门禁全部不存在。原生受控源2,073,600像素/时序通过；真实top/System的32×16集成最终g通过9次commit/处理/发布/独特ID扫描、14次重复、11,776个像素逐点及CRC匹配，源/结果bank各复用7次，正常台架定向停止全排空。4启动/5运行故障验证共同复位不撤销、阻塞AW保持及terminalVS收尾；故障在首次源AW注入，未测试活动display lease时故障。root修复新top故障后停止源导致末帧缺VS的问题，生产System未改。[候选完整记录](PROCESSED_OUTPUT_CANDIDATE_20261031.md)及最终 `build/processed-output-integration/top-20261031-g/processed-output-simulation.json` 保留准确覆盖；旧f的quarantine布尔已由g收窄更正，f/a–e原件不改。
+
+新候选默认1920×1080合成压力模型，受控源27MHz约10.91帧/秒，输出74.25MHz/2200×1125刷新30Hz，Gamma旁路；不能称实时相机、当前镜头标定或30新增帧/秒。独立106项源闭包、114脚/71DDR及24项准备器CPU检查通过。唯一自身PDS诊断 `build/processed-output/pds-20261031-a` 已完成，771.657秒/native0，111输入/107副本无漂移，STA快照与最终ADF同SHA `97df0e42848650499802b2cf0e4375f420b4c2c98cc55bd9e2dc97fb62a5b980`。**时序未通过**：slow/fast setup+0.286/+2.924ns均0失败；hold−0.058/−0.262ns各1失败，pair为phy_dq_sysclk_1→ddrphy_sysclk；recovery−4.405/−3.280ns，245/230失败；removal与MPW均0失败。新hold方向与旧_N173相反，不套用旧fix；按新端点准备下一项。没有bit生成/硬件操作，外部IO及物理CDC仍未签核。
+
+最终布线资源LUT13917/FF18600/DRM16.5/APM78/IO114；114个最终实际pad/LOC/方向及声明电气属性匹配。新hold端点为group1 `dq_loop[0].u_iobuf_dq/.../ICLKDIV` → `ddrphy_dqs_rddata_align/rddata_r1[5]/.../D`，完整路径在[最终原生审计](../distortion/results/processed-output-20261031/pds/native-audit-final-v2.json)。[本轮151项证据](../distortion/results/processed-output-20261031/manifest.json)已回读/解压哈希核验，含自有源码快照、三次成功数字回归、原生报告/失败/审计，manifest SHA `3acafbfaf01b2f51452e05e4599c469468d7394ca49360ac0cb495f9fcada94c`。EDA已全部退出；未下载，板上状态仍见下方。
+
+**处理/输出新回放已完成并通过。** 两幅2026-10-09修正D5后的640×480历史真实相机帧，经既有处理引擎→结果写回→读取/真实异步FIFO→实际DE/RGB扫描，614,400个像素逐点匹配独立Python整数参考。结果/读回/扫描CRC为17D21875及EC527030；0欠载、0 CRC错误，同bank复用epoch、两次释放及最终排空通过。测试使用合成Brown压力参数、两帧均GM0、适配800×525扫描/25MHz，生产bank manager及并发调度未接入；不能写成当前相机/镜头标定、实板出图或1080p30通过。[详细结果与复现入口](PROCESSING_OUTPUT_REPLAY_20261031.md)、[19项文件及41项快照证据](../distortion/results/recorded-camera-output-20261031/manifest.json)已持久封存。
+
+输出配置复核和线级回归也已通过：旧摄像头工程直接使用 `board/hdmi_tx_init.v`，27MHz、MS7210独立scratch/49项设置，**不需要HDMI IN**。真实SCL/SDA数字测试覆盖54笔完整事务、NACK/签名错误不放ready、完整重试等待至下一START；未覆盖重试完成或实物锁定。[TX配置证据](../distortion/results/hdmi-tx-only-20261031/manifest.json)保存原生日志/trace/源码绑定。`board1080_checked_top.v` 中RX→TX初始化及 `rx_done_ref/input_qualified` 放行门禁则属于旧HDMI输入入口，后续不能照搬。上轮回放只新增测试台和runner；本轮新增独立top/source/profile，原生产System、DDR IP、共享约束均未改，无硬件访问。
+
+最后确认板上仍为 `hdmi_uart_rearm_diag`，SRAM位流SHA256 `563686b0d43d022283d924c02e273c47b4882156175590ca5abfb318b2e85fc2`，2026-10-31 00:27–00:28（北京时间）下载后DONE=1、Flash未写，JTAG/PDS进程已退出。显示器八条彩条是内部合成测试图，**并非摄像头画面或处理输出通过**；本轮改方向后没有再下载摄像头工程。
+
+已暂停支线封存：[断电重启/源线对照28项证据](../distortion/results/hdmi-interval-restart-20261031/manifest.json)、[重入设置修复264项证据](../distortion/results/hdmi-rearm-20261031/manifest.json)。重入策略20场景A/B及2915笔真实I²C事务通过；修正版自身5118单元网表、46脚/161FF/81连接、限定双角十类及位流绑定核验通过，但实板无好帧。确认拔插后20包VS1135/bad1134停住、1920×25、PCLK约74.249MHz，CRC有效的故障字节为07，非源码定义故障。最终网表复核显示07可由故障状态寄存器的非法全零独热编码产生，具体机理未继续查；[离线复核](../distortion/results/hdmi-rearm-fault7-20261031/review.json)已保存。不能把修复某软件分支等同输入硬件已恢复。
+
+注意：旧30秒 `live-status-b-replug-transition` 窗口结束在用户确认拔插之前，不能将它当作覆盖了该次物理拔插；有效后测是 `live-status-c-after-confirmed-replug`。所有旧记录保留，仅供历史对照。**下一项针对独立处理/输出候选的新DDR hold端点/路线及复位恢复检查做定向收口，再推进实板显示处理结果。输入排查继续暂停，不再提出HDMI源线操作，不无因重跑已过长仿真。**
+
+## 以下为历史记录，不覆盖上述当前方向
+
+## 2026-10-31 断电重启复测：VS曾到43后停住，PCLK偏离源端配置
+
+用户报告再次断电并要求重新开始；此前V3拔插完成反馈不能作为本次启动对照。新一次性计划 `hdmi-interval-program-1030-b` 重新核验117项绑定，2026-10-31 00:00–00:01（北京时间）扫描PG2L100H / `0x00602899`、DONE=0；重新下载同一已审计V3位流 `f254e26238a67fae7d48bbb2a810236e489d57f68672feb3ea6be1d315059bdc` 至SRAM后DONE=1，Flash未写、自有JTAG进程清理无错误。**当前仍运行V3 `hdmi_uart_interval_diag`。**
+
+下载后21包：VS累计0→0、PCLK74248–74249/1ms、faultC5、无好/坏帧。用户随后确认在本次上电期间再次拔插电脑端HDMI IN；20包：VS累计43→43、bad42→42、good0、几何0×1081、fault15（DE与归一化VS有效区间重叠）、PCLK87912–87990/1ms。后续5秒10包仍VS43、bad42不变，PCLK88032–88057。全部51包CRC通过、配置错误0、PCLK/DE/snapshot freshness15。说明重连期间计入过43次VS上升沿，随后没有持续帧边界；不得再说整个epoch始终无VS。PCLK频率按额定27MHz参考估计约88MHz，缺少独立物理测频。
+
+Windows只读查询仍为FPGA1080P30、1920×1080@30、2200×1125、74.25MHz。用户确认电脑HDMI口直接连接，无扩展坞。源端配置与FPGA端观测不一致，不能由Windows配置断言接收锁定。新[重启结果](../distortion/results/hdmi-interval-restart-20261031.json)及[28项封存证据](../distortion/results/hdmi-interval-restart-20261031/manifest.json)含SRAM计划/回执、51包原始字节/失败评估、独立CRC/计数复解析、仅HDMI目标的Windows摘录。完整Windows快照保留本机VIS目录。
+
+只读对照未见静态配置/脚位错配：当前311项MS7200表与厂商例程的差别仅在EDID区，47项非EDID值相同；35个同名共享脚位匹配，VS H24/HS J23/DE H23/PCLK K21。发现确定性的状态覆盖缺口：现控制器只在首轮ready02或00→02时执行七项设置，03→02及01→02不会重设；本次拔插前后分别采到209E=03/02，但未捕获完整转换历史，尚不能断言它是约88MHz物理异常根因。
+
+因此正在新隔离 `hdmi_uart_rearm_diag` 内验证“任何非02状态重新进入02”准入；七项设置值、原观察器和UART V3不变。新增源码 `ms7200_1080p30_rearm_ctl.v` 已冻结，完整新PDS构建在 `distortion/build/hdmi-uart-diagnostic/trained-pds-rearm-1031-a` 运行，A/B仿真与新候选自己的映射/CDC/STA审计并行准备。**新候选尚未下载；不再要求用户重复拔插，先完成确定性分支验证。**
+
+## 17:22 V3 已上板：累计 VS 计数为 0，等待重连对照
+
+2026-10-30 17:15–17:17（北京时间）：新独立 `hdmi_uart_interval_diag` 已完成自身构建、映射/限定 CDC/双角 STA、最终功能图及位流审计，下载至 PG2L100H / `0x00602899` SRAM，DONE=1、Flash 未写、自有 JTAG 进程全部退出。**当前板上运行 V3，旧 V2/trained 的“当前板上”描述均为历史。** V3 仅透出原监视器已经同步到参考域的 VS 累计计数；未改变其复位、使能和帧判定逻辑，未加入 DDR/输入像素采集。
+
+V3 build tag `0x48444903`，byte52 为五个 freshness 位，byte53:54 为小端 16bit 归一化 VS 上升沿累计计数，byte55 保留零。包长仍 64 字节，V1/V2 严格解码保留。已有 V1/V2 回执允许缺少当时尚未提供的派生字段，所有原始字段和值仍严格绑定。相关协议和评估器 150 项 CPU 回归通过；原生 UART wire 仿真验证 fffe→ffff→0 回绕、小端编码、包内快照冻结与 CRC。
+
+新 scoped ADF SHA256 `35803de72be04a3fcde3bdf1d774ce6614d71a602ee1d2bd81c45c89bdcdc496`，位流 SHA256 `f254e26238a67fae7d48bbb2a810236e489d57f68672feb3ea6be1d315059bdc`。18 项来源和 12 个实际编译副本无漂移；161 FF/81 同址级间连接、46 脚核对通过；5110 单元功能图及寄存器位置在限定约束前后保持一致。双角十类零失败，slow setup/hold +1.151/+0.147 ns、fast +1.996/+0.094 ns；每角167条8ns max-delay、hold例外167、recovery/removal各4、setup例外0。外部 AC/完整 CDC/MTBF 未签核。
+
+下载后 COM7 连收10秒20包，CRC拒绝0，RX/ALL done=true、极性已知、配置错误0，PCLK约74.248–74.249MHz。全部包 freshness=0x15（PCLK/DE/snapshot新鲜，VS/good-frame不新鲜）；累计 VS 从0到0，19个包间模65536增量全0。故障为0xC5，width/height/good/bad均0。说明该观察器epoch没有计入归一化VS上升沿，并非仅100ms freshness采样窗口没覆盖边沿。16bit模计数不能排除精确65536倍事件混叠，但那不属于合格1080p30时序。输入评估失败，不能转入像素或DDR验收。
+
+此前V2重连后20包也未通过：1920×1081、bad=28995但该9.5秒窗口不再增加、good=0、fault12、freshness15；见[独立重连摘要](../distortion/results/hdmi-activity-live-20261030/after-replug-summary.json)。它证明两次窗口之间曾出现坏帧边界活动，不能说整个上电过程始终无VS。
+
+新[结果摘要](../distortion/results/hdmi-interval-20261030.json)、[214项封存证据](../distortion/results/hdmi-interval-20261030/manifest.json)、[详细交接](HDMI_INTERVAL_DIAGNOSTIC_20261030.md)已落盘。用户已接UART，并已完成前述V2源线重连。本轮已另请用户在V3运行时再拔插源线，**当前等待此次完成反馈**；收到后直接读COM7 10秒比较VS累计计数，不要重复下载。采集名用 `distortion/results/hdmi-interval-live-20261030/live-status-b-after-replug.json`，使用项目 `.venv/Scripts/python.exe`（系统Anaconda缺serial/cv2）。
+
+## 16:30 实板继续：V2 freshness 采样点未见 VS 更新
+
+2026-10-30 16:29–16:30（北京时间）：上电后旧 SRAM 配置已丢失，COM7 首次 4 秒只读捕获无字节。为区分像素时钟/DE、VS 与快照路径，新增隔离 `hdmi_uart_activity_diag`：复用原训练观察器，仅把已有 PCLK/VS/DE/frame/snapshot freshness 接到 V2 UART；旧 V1 标签保持兼容，V2 使用 build tag `0x48444902`，不改变观察器准入逻辑。
+
+新候选自身 PDS 构建通过，17 个源项和 12 个冻结副本无漂移；原生映射为 161 FF/81 级间连接、46 个顶层脚位，四组 CDC 查询精确匹配 74/92/1/4。限定作用域双角十类零失败，slow setup/hold +1.077/+0.164 ns，fast +1.942/+0.104 ns；最终 ADF `baa50510f3ed907fe103563571b59e4f9cfcde989548fa603a1b50d3c6af4e23` 的 5087 单元功能图及全部寄存器位置保持一致。位流 SHA256 `c1bcd72519050967e13607b574e684831ecb6ba8d5759c9d90e1ca725b104ba7`，仅 SRAM 下载；PG2L100H / `0x00602899` 匹配，下载后 DONE=1，Flash 未写，自有 JTAG 进程已退出。
+
+COM7 5 秒收到 10 包，CRC 拒绝 0，初始化完成，PCLK 74.248–74.249 MHz，1920×0，fault `0x12`。V2 freshness 逐包一致：PCLK 10/10、DE 10/10、snapshot 10/10 新鲜；VS 0/10、frame 0/10。VS freshness 检查每个 500ms 包开始时往回 100ms 是否出现归一化 VS 上升沿；十个采样点全部不新鲜，但采样窗口彼此不连续，不能据此断言整段 5 秒完全没有边沿。frame freshness 表示成功 good-frame 计数更新，不是独立原始 VS 计数。最终网表已逐段核对 `vs_in → 极性归一 → VS 计数/Gray 同步 → freshness → UART byte52`，连通路径存在，未发现漏接；结果强烈支持这些采样点未见稳定帧起始，而非快照通道失效。显示输出来自 FPGA 合成 pattern，不能作为输入视频证据。
+
+证据包 [hdmi-activity-live-20261030](../distortion/results/hdmi-activity-live-20261030/manifest.json) 含原始字节、接收回执、失败评估、下载计划/回执和独立 struct/CRC 复核。V2 UART 线级 RTL 仿真通过；HDMI 状态与输入评估器测试 138 项通过。完整新 build、scope、final-netlist 与 export 证据分别在 `distortion/build/hdmi-uart-diagnostic/trained-pds-activity-1030-c`、`activity-review-1030-c`、`trained-bit-activity-1030-d`。旧 trained 候选和主视频链未改。
+
+**下一步：**保持板卡上电，将电脑端 HDMI IN 源线重新拔下约 3 秒后插回，再只读采集至少 5 秒 COM7。比较 V2 的 VS freshness：若恢复，检查帧/几何是否推进；若仍为 0，下一候选把 VS 边沿计数作为包间差值输出或读器件 mode/clock 状态，避免 100ms freshness 采样窗口漏掉间歇活动。禁止把 Windows 显示模式或 HDMI OUT 合成色条当作 FPGA 收到有效帧。
+
+## 14:10 收机交接：训练版保持 SRAM，重下载后输入仍为 0x12
+
+2026-10-30 13:38–13:39（北京时间）：新隔离 `hdmi_uart_trained_diag` 已按独立 115 项绑定核验并下载 SRAM，PG2L100H/ID 匹配、下载后 DONE=1、未写 Flash。位流 SHA256 `174324853d6e294c6e2aa5a03af72a0195d063b3f7ce8460abfa6dd024919d81`，来源精确 ADF `88a6d04e25fa6de3d280d1458a06ef2ded506f1b6768476ae94dc7ce45fab399`。生成前新 STA/门禁/生成的实际顺序通过；本候选自身 46 脚、161 FF/81 级间连接、最终 ADF 5066 单元功能图及寄存器位置核查完成，限定对象双角十类全部零失败。旧库和主链未改。
+
+首次 10 秒只接收窗口得到 20 包、CRC 拒绝 0、配置错误 0，RX/ALL done 已自动为 true，本次没有先拔插。flags=0x05bf，极性已知且 VS/HS inactive=0，PCLK 约 74.248–74.249 MHz；good/bad/width/height 全为 0，fault=0xC5。C5 表示启动期没有好帧计数更新，不能单独断言没有 VS 或没有 HDMI 信号。
+
+用户已按要求再次拔插电脑端 HDMI IN 源线；其后 20 包 flags=0x05bf、fault=0x12、1920×35、好帧0，约74.249MHz；9.5秒内I²C事务增加63849但行/帧观测无变化。该fault表示短DE行。
+
+随后用独立新计划再次下载同一训练版到SRAM以复位接收器，PG2L100H/ID匹配，下载后DONE=1，Flash未写。再收10秒20包，仍fault0x12，宽1920、高0，好帧/坏帧均未增加，PCLK 74.248–74.249MHz，CRC/config错误为0。窗口见`distortion/results/hdmi-trained-live-20261030/live-status-d-after-reset.*`及评估；第二次下载回执在`distortion/build/offline-20261024/hdmi-trained-program-1030-b/receipt.json`。这表明当前接收器未形成可计数帧边界；Windows只读仍显示1080p30配置，不能证明FPGA实际接收完整帧。
+
+独立八相位/双极性单调enable原生回归通过，最终功能网表中VS/复位/快照握手静态连接也通过，未见确定性epoch死锁；不能解释实板短行/无帧。帧边界不动时应停止重复拔插/下载，下一轮需增加原始VS/HS/DE活动或器件侧mode/clock-lock可观测性，区分源端信号、HDMI接收器输出与帧快照路径。用户现在要关机，停止本轮实板操作；当前仍运行训练诊断SRAM，关机/断电后需重新下载。
+
+完整[修复版实板交接与下一项](HDMI_TRAINED_BRINGUP_20261030.md)、[结果汇总](../distortion/results/hdmi-trained-20261030.json)、[244 项原生与实板证据](../distortion/results/hdmi-trained-native-20261030/manifest.json)及[补充 mailbox 复核](../distortion/results/hdmi-trained-mailbox-20261030/manifest.json)已保存；仿真和源码为独立的 145 文件包，旧失败记录未覆盖。新位流 ZIP 本机核验、未发布。相关八组 CPU 检查 225 项通过，四个交付基线审计仍通过。
+
+## 13:00 实板观察：初始化经拔插完成，输入时序未通过；隔离修复构建中
+
+2026-10-30 12:58–12:59（北京时间）：用户确认重新上电，核验 51 项绑定后只读识别 PG2L100H / `0x00602899`、DONE=0。新 `hdmi_uart_input_diag` 位流 SHA256 `4aa42d6fc582385ea584c68a86d796bc26fcc8568c337abe053a2e6a41ad63dc` 已实际下载 SRAM，DONE=1，Flash 未写。下载执行器只管理自有进程，所有清理无错误；状态字仍为 0x081ffca0，温度含义未核实，测温支线仍暂停。
+
+COM7 先后接收 5 秒/10 秒共 30 包，CRC 全通过、配置错误为 0，RX/ALL done 全为 false、flags=0x000f，观察器尚未释放；电脑只读查询仍为 FPGA1080P30、1920×1080@30、74.25 MHz、总光栅 2200×1125。用户按提示将电脑端 HDMI IN 源线拔下约 3 秒再插回，随后 10 秒 20 包均 RX/ALL done=true，观察器释放，用户确认 HDMI OUT 仍显示八色彩条。
+
+拔插后输入检查**未通过**：flags=0x1dbf、fault=0x15、width=0、height=1080、good=0、pclk_edges=74248–74249/1 ms（额定参考约 74.248–74.249 MHz）；9.5 秒内 bad 增加 285。该窗口持续每帧判坏，不只是旧故障粘滞。bad 的绝对起点含启动异常边界，不能当作已收到的视频帧总数。原始字节、50 包独立 struct/zlib 核查、失败评估器结果、下载回执和用户观察见[本轮结果](../distortion/results/hdmi-input-live-20261030.json)及[31 项证据](../distortion/results/hdmi-input-live-20261030/manifest.json)。
+
+数字反例已分别复现两个源码缺陷：首次完整轮询即 ready=02 时原 RX 门禁不继续，经历 00→02 后才执行设置；仅首 DE 一拍极性冲突就使旧观察器永久锁错，后续正常完整 1080p30 仍产生 fault15/width0/good0。该模型与实板症状相容，尚不证明物理瞬态根因。新隔离 `hdmi_uart_trained_diag` 同时接入首次就绪准入和两条完整稳定 DE 行极性训练；ready 七场景、训练 11 场景、完整光栅 A/B/原两极性回归及真实 I²C 七场景 2117 笔事务均通过。旧绑定源码/位流未改，新候选正在完成自身 PDS 构建与映射/CDC/STA，不能沿用旧 ADF 例外或直接下载。
+
+目前开发板运行的是出现 fault15 的旧输入观察器，**仍非 DDR/畸变主链**；新候选尚未生成或下载。相关七组 CPU 回归 203 项通过。后续先完成新候选精确时序/位流审计，再执行独立上板对照。
+
+## 新对话续接：开发板已断电，输入观察器位流及离线复核完成
+
+2026-10-30：用户在本轮明确已把开发板断电。此前 SRAM 配置不再视为当前运行状态；最后一次实际下载仍为旧 `hdmi_uart_delayed_diag`，没有新观察器下载或 Flash 写入。本轮仅继续离线开发，测温支线按最新指示保持待核实。
+
+接续检查发现 `distortion/build/hdmi-uart-diagnostic/input-bit-1030-a` 已于北京时间 11:00–11:01 从精确 scoped ADF 导出新观察器位流，原交接尚未记入。原生退出 0；`export-result.json` 的 `Passed=false` 是收尾断言把 `Executing compile/synthesize/dev_map/pnr` 工程声明误作实际阶段。原始失败回执保持原字节，新增独立复核器已通过真实产物检查，不覆盖原记录。
+
+新位流 `generate_bitstream/hdmi_uart_input_diag.sbit` 为 3,791,112 字节，SHA256 `4aa42d6fc582385ea584c68a86d796bc26fcc8568c337abe053a2e6a41ad63dc`。实际原生日志阶段只有 Report Timing → 生成前审计通过 → Generate Bitstream；19 项工程输入和 20 项工作输入均未漂移，双角十类、时钟、334 条 8 ns MaxDelay 及精确例外重算一致。该诊断仅观测输入时序，不含输入像素、DDR 或畸变矫正主链；尚未上板。
+
+本轮进一步从精确最终 ADF 直接离线导出功能网表：5004 个单元的参数/连接/驱动关系及导出位置与原网表一致，46 脚和方向全部匹配，161 个同步 FF/81 对同 CLM 直连重新核实。原与副本 ADF 不变，实际仅 Report Timing → Generate Netlist、原生退出 0；该次只导出 5 条详细路径，不替代位流生成前的完整例外审计。首次分析超时中断与限定解析器复核记录一并保留。
+
+新增只读产物复核器和只生成 SRAM 计划的准备器，`hdmi-input-program-1030-b` 的 51 项绑定均通过；计划无执行模式。完整相关 CPU 回归 179 项通过，四个交付基线/依赖闭包审计通过。68 项新证据、原始失败回执、当前工具及测试日志已封存；旧彩条串口离线重放明确返回 `no_qualified_input_window`，不能当作输入通过。
+
+详情见[位流与下一次接板入口](HDMI_INPUT_BITSTREAM_20261030.md)、[结构化结果](../distortion/results/hdmi-input-bitstream-20261030.json)及[新证据目录](../distortion/results/hdmi-input-bitstream-20261030/)。包含位流与原始构建输入的独立 ZIP 已在本机保存并核验，尚未发布。下一步待用户重新供电，重新识别设备、SRAM 下载并用 COM7 只接收窗口判定输入；本轮未执行硬件操作。下方为历史事件，不代表开发板当前仍在运行。
+
+## HDMI 输出已出彩条；继续输入观察与主链集成
+
+2026-10-30 10:42（北京时间）：用户已接通电脑→FPGA IN、FPGA OUT→显示器并确认上电。识别 PG2L100H / 0x00602899 后重新下载同一 `hdmi_uart_delayed_diag`，DONE 从 0 到 1，Flash 未写。用户照片显示预期八色彩条，确认该次 FPGA 自生图案能通过 HDMI OUT 显示。
+
+随后 COM7 只读 5 秒收 10 包、640 字节，CRC 拒绝 0、配置错误 0，RX/ALL done 全为 true，事务从 1,626,707 增至 1,656,949。输入观察器在此旧诊断中未启用；不能把 width/height=0 判为输入失败，也不能把彩条当作电脑输入、DDR 或畸变矫正输出通过。证据见 [结果汇总](../distortion/results/hdmi-output-20261030.json)及[原始回执/显示区域照片](../distortion/results/hdmi-output-20261030/)。
+
+用户明确要求超温告警暂作待核实项，不阻塞正常 HDMI 工作；此前无散热、拟断电的说明及商家“继续用”均保留为用户报告，没有实际测温结论。测温支线已暂停，继续生成与精确 ADF 绑定的输入观察器位流及串口输入判定。共享 DDR/IP、复位例外及主流水线未改。
+
+以下各段是此前独立事件及候选的历史记录。
+
 ## HDMI 输入接入：恢复 SRAM 后配置完成，硬件状态待核实
 
 2026-10-30 03:00–03:05：电脑 HDMI 输出已接开发板 HDMI IN，OUT 尚缺第二根线。用户确认曾断电；只读 JTAG 识别 PG2L100H / 0x00602899、DONE=0 后，03:02 重新下载同一份 `hdmi_uart_delayed_diag` 到 SRAM，DONE=1、未写 Flash、未重新构建。位流 SHA256 仍为 `510e14147c040d9427577405ee96eaf4d3d6be0ef70b74328445d2e3cb42bd7b`。

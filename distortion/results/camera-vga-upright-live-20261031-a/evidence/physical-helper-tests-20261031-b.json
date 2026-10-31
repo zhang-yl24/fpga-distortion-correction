@@ -1,0 +1,40 @@
+{
+  "Schema": "camera-vga-upright-derived-effect-cpu-check-v1",
+  "CreatedUTC": "2026-10-31T08:38:40.894678+00:00",
+  "Command": [
+    "D:\\anaconda3\\python.exe",
+    "-m",
+    "pytest",
+    "distortion\\tests\\test_camera_vga_upright_physical.py",
+    "distortion\\tests\\test_camera_vga_upright_derived_inspect.py",
+    "distortion\\tests\\test_camera_vga_upright_reset_effect.py",
+    "distortion\\tests\\test_camera_vga_upright_route_reset.py",
+    "-q"
+  ],
+  "ExitCode": 0,
+  "TestsPassed": 85,
+  "Stdout": "........................................................................ [ 84%]\n.............                                                            [100%]\n85 passed in 1.16s\n",
+  "Stderr": "",
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_camera_vga_upright_physical.py": "bbc0b2dd4901ffe6e0c7a6cfca8dcb30db99a17916281634627606f0cc4cc2c5",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_camera_vga_upright_derived_inspect.py": "f6db4e3b264705f03b8726fe452a2de0851b2cf3581cb27496e99df6e92775aa",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_camera_vga_upright_reset_effect.py": "d2386d0e6351f5d88ab95ad21e13a72918151ce588f411ad87aef98373b182f3",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_camera_vga_upright_route_reset.py": "86f6d5975b970c168e665a86a1af0d62ae0ce60cc9e78a7280c5ca5f487d359f",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_camera_vga_upright_inspect.py": "66d16eb67d121730b1d591c0a2f15cd6e646013bd1959ae6349424d93d61d5ca",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_camera_vga_upright_reset.py": "a8fa7fda9ef8d323b0ce994cfc65a067a77fade3d5d2b188e9978a7be237e816",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\test_camera_vga_upright_physical.py": "185d76c63d8fc375079c6d1b9074e4aae51bf08bf8f40260e620c4ecbd627ce1",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\test_camera_vga_upright_derived_inspect.py": "5546410de7effcecc98eaebe388f8d99c5551beed4240af034c4125e8982683e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\test_camera_vga_upright_reset_effect.py": "ed0ba559a90b282c445a84ce0460f89a82b492d4935cbbcd5c6da3bbdfd0ba9a",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\test_camera_vga_upright_route_reset.py": "3ff511220806a7a7bc47089710c1898af44731b2c9fafa2530119f66fe91ae1d"
+  },
+  "PhysicalHelperCorrection": "Validated both known HeaderOnlyAdapter descriptions before comparing graph semantic keys; old unused freeze replaced before native preparation.",
+  "ReadonlyPeerReviews": {
+    "DerivedReceiptHelper": "camera_dvp_system: no blocker; source receipt normalized to absolute before dispatch",
+    "EffectAudit": "camera_existing_candidate: exact source/route/reset contract accepted; no speculative representative or rounding waiver"
+  },
+  "NativeStagePreparedByReviewer": false,
+  "EDAExecutedByReviewer": false,
+  "HardwareAccessed": false,
+  "ActualResetEffectAudited": false,
+  "Limits": "CPU tooling validation only. Later fresh native artifacts must complete bind_proof/source receipt and full effect audit; no timing or hardware release inferred."
+}

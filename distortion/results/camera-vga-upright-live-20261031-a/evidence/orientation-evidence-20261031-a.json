@@ -1,0 +1,131 @@
+{
+  "Schema": "camera-vga-upright-orientation-source-review-v1",
+  "CreatedUTC": "2026-10-31T08:06:27.639982+00:00",
+  "SourceReviewPassed": true,
+  "Findings": [],
+  "Scope": "Independent read-only source diff and local primary-reference review; no HDL execution, synthesis, physical implementation or hardware validation.",
+  "DerivativeManifest": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\source-derivative-20261031-a.json",
+    "SHA256": "f928fb4e690aed03e5627e192f615c97691fdae6ac21155d4d8c4a1fbd22ddcf"
+  },
+  "ReferenceEvidence": [
+    {
+      "Kind": "OmniVision OV5640 datasheet",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\vendor\\board\\盘古100Pro+开发板（MES2L676-100HP）配套资料\\4_IC_datasheet\\OV5640\\OV5640_DataSheet.pdf",
+      "SHA256": "c314bd8cbae376e1ea215b20501dcbe9ba86777d359ef7f1f2f9c807b41bf4d1",
+      "Version": "2.01, 2011-01-20",
+      "PrintedPages": [
+        "4-1",
+        "7-12"
+      ],
+      "PDFPagesOneBased": [
+        39,
+        110
+      ],
+      "TextExtraction": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\hardware_check\\ov5640-datasheet.txt",
+      "TextLines": [
+        [
+          2187,
+          2217
+        ],
+        [
+          6569,
+          6579
+        ]
+      ],
+      "Summary": "3820 bits 2/1 select ISP/sensor vertical flip; 3821 bits 2/1 select ISP/sensor horizontal mirror. 3821 bit 0 is horizontal binning; the cited 3820 table does not define bit 0. Both bit-0 values remain unchanged."
+    },
+    {
+      "Kind": "STMicroelectronics official OV5640 driver",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\vendor\\reference\\st-ov5640\\ov5640.c",
+      "SHA256": "f13efaeb4e51343e443d4c19965bb47826cec6b32ada980dff9c84f1f918a121",
+      "ProvenancePath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\vendor\\reference\\st-ov5640\\sources.json",
+      "Repository": "https://github.com/STMicroelectronics/stm32-ov5640",
+      "Commit": "52c727ac10a427fe7a400d3a4783adc814ee075e",
+      "Function": "OV5640_MirrorFlipConfig",
+      "Lines": [
+        1626,
+        1710
+      ],
+      "Summary": "Reads both timing registers, clears only bits 2/1 using 0xF9, then sets the sensor+ISP pair using 0x06 for each selected axis. This corroborates toggling both pairs for relative 180 degrees."
+    }
+  ],
+  "Checks": {
+    "BaselineSourceHashesUnchanged": true,
+    "NewSourceHashesMatchDerivative": true,
+    "OnlyReviewedInitializationDiffs": true,
+    "OnlyModuleBindingAndCommentTopDiffs": true,
+    "FixedOrientationTargets": {
+      "0x3820": "0x00",
+      "0x3821": "0x06"
+    },
+    "RuntimeXORUsed": false,
+    "TableCommandCount": 264,
+    "TableIndexRange": [
+      0,
+      263
+    ],
+    "OnlyChangedCommands": [
+      {
+        "Index": 40,
+        "Address": "0x3820",
+        "OldByte": "0x06",
+        "NewByte": "0x00",
+        "DelayByte": 0,
+        "ChangedBits": "0x06"
+      },
+      {
+        "Index": 41,
+        "Address": "0x3821",
+        "OldByte": "0x00",
+        "NewByte": "0x06",
+        "DelayByte": 0,
+        "ChangedBits": "0x06"
+      }
+    ],
+    "AllOtherTableWordsPreserved": true,
+    "AllDelayBytesPreserved": true,
+    "BinningBit0AndOtherRegisterBitsPreservedForPinnedTable": true,
+    "MandatoryImmediateOrientationReadbackEvenCheckWritesZero": true,
+    "ImmediateReadbackErrorOrMismatchFails": true,
+    "VerificationCount": 9,
+    "VerificationIndexBits": 4,
+    "PreFinalCommandAndPostFinalCommandReadbacks": true,
+    "PreflightReadMismatchError": "0x51",
+    "PostflightReadMismatchErrorAfterBoundedRetry": "0x50",
+    "ImmediateReadMismatchError": "0x70",
+    "FinalTableCommand": "0x30080214",
+    "DynamicPadMaskAndAllOtherWriteDataUnchanged": true,
+    "ResetReadyFailedAndRetryPathsOtherwiseUnchanged": true,
+    "FrameGeometryByteOrderVsyncHrefPolarityUnchanged": true
+  },
+  "Limitations": [
+    "Static source review only; no compilation, simulation, EDA or physical validation performed by this reviewer.",
+    "The portable table include requires a build include root resolving board/ov5640_cadence_trial_commands.vh under distortion; build resolution was not executed.",
+    "The fixed values preserve other register bits for the hash-pinned current table only; a future table change requires renewed review.",
+    "Mandatory sensor readback is source logic here, not a measured readback. Actual upright appearance, optical framing and transient frames remain hardware checks.",
+    "Preflight is before the final table start command, not a claim that the sensor has never streamed earlier: existing command 245 also writes 3008=02. That existing sequencing is unchanged.",
+    "Low-byte-first RGB565 assembly and VS/HREF active polarity describe byte/timing interpretation, not orientation."
+  ],
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ov5640_cadence_trial_init.v": "66e2a8236ca8a5d7bb56e46893cf640d3aa9e8b2c4f4b9119340cabfbb153ec7",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\camera_vga_output_top.v": "8b4703e8a6a2a3eb4957211d083733b5764264f5baeb08e55afcf6ccf8e728e2",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\ov5640_cadence_trial_commands.vh": "53428872aa14e6120eed93d876c889ef5155b3c196c014db77c4578b2bd50674",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ov5640_cadence_upright_init.v": "e1416e11e55c0e7bb1200ca78998225233b56cf04c366d467d4f74574c0229a9",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\camera_vga_upright_top.v": "b9f9bdaf2ca5159efe04c31a3a9bb18b50d0f8e55705d987cc2464785f1d2e50",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\source-derivative-20261031-a.json": "f928fb4e690aed03e5627e192f615c97691fdae6ac21155d4d8c4a1fbd22ddcf",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\vendor\\reference\\st-ov5640\\sources.json": "f9bb1facd9247500982e9e58e961bdf69e0f0a675140cc22d5450bdb9ba3e10b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\vendor\\board\\盘古100Pro+开发板（MES2L676-100HP）配套资料\\4_IC_datasheet\\OV5640\\OV5640_DataSheet.pdf": "c314bd8cbae376e1ea215b20501dcbe9ba86777d359ef7f1f2f9c807b41bf4d1",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\hardware_check\\ov5640-datasheet.txt": "7070560b10ec15649e4ca39cf0cb91875f8f1589907d5d2a1d203fbaf7e1e435",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_rgb565_capture_cdc.v": "14bde70db5bcc2797d2e648af44f64d57df62673161529ef7358878700dc7079",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\vendor\\reference\\st-ov5640\\ov5640.c": "f13efaeb4e51343e443d4c19965bb47826cec6b32ada980dff9c84f1f918a121",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\vendor\\reference\\st-ov5640\\ov5640.h": "dd2b71c5cd673d78ac7bafd71d400f21e112c49e2c3a0e58393459f50ca3f750",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\vendor\\reference\\st-ov5640\\ov5640_reg.h": "20fe313b8d990361603ca5b19d3f98d0efb1a3f471d7d8d72a7678b75539f5ed",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\vendor\\reference\\st-ov5640\\LICENSE.md": "92ee3dd3e2eefc2ea2467855814a2a1c9f13fbaa388b03d001e5e6069a01e9cf"
+  },
+  "HDLSimulationExecuted": false,
+  "EDAExecuted": false,
+  "HardwareAccessed": false,
+  "BoardFixVerified": false,
+  "HardwareReleaseAllowed": false
+}

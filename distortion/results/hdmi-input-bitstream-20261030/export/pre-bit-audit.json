@@ -1,0 +1,54 @@
+{
+  "Schema": "hdmi-input-pre-bit-audit-v1",
+  "AuditPassed": true,
+  "Target": "hdmi_uart_input_diag",
+  "CheckedUTC": "2026-10-30T03:00:59.110635+00:00",
+  "FinalADFSHA256": "d7858e4b705469e6619ba3c99df2c78bf47e2e4f515aeb3b328ea67c70c676a8",
+  "HardwareAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "AllTenTimingTypesPassed": true,
+  "NativeSummariesAndClocksUnchanged": true,
+  "ExactFalsePathsUnchanged": true,
+  "AllMaxDelayChecksUnchanged": true,
+  "MaxDelayCountPerCorner": {
+    "slow": 167,
+    "fast": 167
+  },
+  "FalsePathCountPerCorner": {
+    "slow": {
+      "setup": 0,
+      "hold": 167,
+      "recovery": 4,
+      "removal": 4
+    },
+    "fast": {
+      "setup": 0,
+      "hold": 167,
+      "recovery": 4,
+      "removal": 4
+    }
+  },
+  "WorstSlackNS": {
+    "slow": {
+      "setup": 1.079,
+      "hold": 0.157,
+      "recovery": 0.659,
+      "removal": 0.184,
+      "mpw": 6.457
+    },
+    "fast": {
+      "setup": 1.869,
+      "hold": 0.104,
+      "recovery": 1.889,
+      "removal": 0.026,
+      "mpw": 6.457
+    }
+  },
+  "EvidenceSHA256": {
+    "bitstream-plan.json": "24d58a85f9b5886c1b8f1f93b76a07593f56a2c9cf5b925815464c4e40bc63b1",
+    "audited-final.adf": "d7858e4b705469e6619ba3c99df2c78bf47e2e4f515aeb3b328ea67c70c676a8",
+    "export.tcl": "da5ce22accf45ffa789f933f7cfd51e874d4bcbcb9c3eb53cf5b4ab8e8aab4cc",
+    "report_timing/hdmi_uart_input_diag.rtr": "e75f8fb20387234aaaf95554a2a4bdc32b12a8fbe8e9c3d9274397ca4b2e161c",
+    "report_timing/hdmi_uart_input_diag_exception.rtr": "77c57840398abc725a861ea1923446520adb7a53e28c59f4c835cebb1c8587c8"
+  }
+}

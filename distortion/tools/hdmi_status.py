@@ -21,6 +21,8 @@ MAGIC = b"PGHDMI01"
 TRAILER = b"HM01"
 PACKET_SIZE = 64
 BUILD_TAG = 0x48444901
+BUILD_TAG_V2 = 0x48444902
+BUILD_TAG_V3 = 0x48444903
 BAUD = 115200
 FLAG_NAMES = (
     "cfg_snapshot_valid", "cfg_fresh", "cfg_pll_locked", "video_pll_locked",
@@ -40,11 +42,18 @@ def decode_packet(packet):
     if zlib.crc32(packet[:56]) != struct.unpack_from("<I", packet, 56)[0]:
         raise ValueError("crc32")
     build_tag = struct.unpack_from("<I", packet, 48)[0]
-    if build_tag != BUILD_TAG:
+    if build_tag not in (BUILD_TAG, BUILD_TAG_V2, BUILD_TAG_V3):
         raise ValueError("build_tag")
     flags = struct.unpack_from("<H", packet, 16)[0]
-    if flags & ~0x1FFF or packet[18] & 0xF0 or packet[47] & ~3 or packet[52:56] != bytes(4):
+    if flags & ~0x1FFF or packet[18] & 0xF0 or packet[47] & ~3:
         raise ValueError("reserved")
+    if build_tag == BUILD_TAG and packet[52:56] != bytes(4):
+        raise ValueError("reserved")
+    if build_tag == BUILD_TAG_V2 and (packet[52] & 0xE0 or packet[53:56] != bytes(3)):
+        raise ValueError("reserved")
+    if build_tag == BUILD_TAG_V3 and (packet[52] & 0xE0 or packet[55] != 0):
+        raise ValueError("reserved")
+    freshness_mask = packet[52] if build_tag in (BUILD_TAG_V2, BUILD_TAG_V3) else None
     values = {
         "sequence": struct.unpack_from("<I", packet, 8)[0],
         "reference_ticks": struct.unpack_from("<I", packet, 12)[0],
@@ -60,6 +69,15 @@ def decode_packet(packet):
         "last_value": packet[46], "last_meta": packet[47],
         "build_tag": build_tag, "crc32": f"{zlib.crc32(packet[:56]):08x}",
         "wire_hex": bytes(packet).hex(),
+        "monitor_freshness_mask": freshness_mask,
+        "vs_edge_count_ref": struct.unpack_from("<H", packet, 53)[0] if build_tag == BUILD_TAG_V3 else None,
+        "monitor_freshness": None if freshness_mask is None else {
+            "pclk": bool(freshness_mask & 0x01),
+            "vsync": bool(freshness_mask & 0x02),
+            "de": bool(freshness_mask & 0x04),
+            "frame": bool(freshness_mask & 0x08),
+            "snapshot": bool(freshness_mask & 0x10),
+        },
     }
     decoded = {name: bool(flags & (1 << bit)) for bit, name in enumerate(FLAG_NAMES)}
     values["flags_decoded"] = decoded

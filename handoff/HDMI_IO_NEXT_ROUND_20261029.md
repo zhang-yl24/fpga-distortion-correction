@@ -1,5 +1,7 @@
 # 下一轮：HDMI 输入输出控制交付
 
+**已暂停，非当前任务清单。** 2026-10-31用户最新要求为“摄像头画面→处理→HDMI输出”，现阶段先推进处理/输出、暂不管输入。以下HDMI IN优先分工及接线/复测步骤保留为历史，不能自动接续执行；最新规则见[当前方向](ACTIVE_DIRECTION_20261031.md)。原DDR/IP/共享约束分工仍保留，不因暂停输入而覆盖队友工作。
+
 2026-10-29 用户明确采纳队友分工：本方负责 PR #10 的 HDMI 输入输出控制；对方负责 compact-cache 候选最终 STA、hold 定位修复及矫正主链性能和稳定性。DDR IP、复位例外和共享时序约束由主工程统一集成，不并行修改。
 
 本轮只读 GitHub API 核实 PR #10 已合并，提交为 `ea7231e221042983b385618bbeefaa5bcd2e64c1`，标题为 `fix: build checked HDMI candidate and close scoped DDR timing`。该 PR 原本包含 DDR 工作，不能将整个 PR 当作“仅 HDMI”补丁再次合入。其后的本机 `18f6f03` 增加了 checked 位流导出，不表示对方 compact-cache 候选的实现结果。

@@ -1,0 +1,107 @@
+set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676
+add_design {D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera-vga-output/release-interface-query-20261031-a/dummy.v}
+if {[info script] ne {}} {
+    mpnr -input {D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera-vga-output/release-interface-query-20261031-a/input.adf}
+file copy {D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera-vga-output/release-interface-query-20261031-a/input.adf} {D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera-vga-output/release-interface-query-20261031-a/pre-sta.adf}
+mpnr_report_timing -force_to_run -delay_type min_max -max_path 20 -nworst 4 -report_exception TRUE
+puts {CAMERA_VGA_FINAL_IO_SITE_AUDIT_BEGIN}
+show -dev_instance {IOBD_0_1080;IOBD_0_1116;IOBD_0_1140;IOBD_0_12;IOBD_0_144;IOBD_0_186;IOBD_0_294;IOBD_0_330;IOBD_0_354;IOBD_0_378;IOBD_0_390;IOBD_0_402;IOBD_0_414;IOBD_0_426;IOBD_0_438;IOBD_0_450;IOBD_0_468;IOBD_0_48;IOBD_0_480;IOBD_0_504;IOBD_0_528;IOBD_0_636;IOBD_0_696;IOBD_0_84;IOBD_0_990;IOBD_372_318;IOBD_372_354;IOBD_372_366;IOBD_372_378;IOBD_372_390;IOBD_372_402;IOBD_372_414;IOBD_372_426;IOBD_372_438;IOBD_372_468;IOBD_372_480;IOBD_372_492;IOBD_372_504;IOBD_372_516;IOBD_372_528;IOBD_372_624;IOBD_372_636;IOBD_372_648;IOBD_372_660;IOBD_372_672;IOBD_372_684;IOBD_372_696;IOBD_372_708;IOBD_372_720;IOBD_372_732;IOBD_372_744;IOBD_372_774;IOBD_372_786;IOBD_372_798;IOBD_372_810;IOBD_372_822;IOBD_372_834;IOBD_372_846;IOBD_372_858;IOBD_372_870;IOBD_372_882;IOBD_372_894;IOBD_372_906;IOBS_0_102;IOBS_0_1032;IOBS_0_1056;IOBS_0_1074;IOBS_0_1086;IOBS_0_1110;IOBS_0_1134;IOBS_0_138;IOBS_0_180;IOBS_0_204;IOBS_0_216;IOBS_0_288;IOBS_0_324;IOBS_0_348;IOBS_0_372;IOBS_0_384;IOBS_0_396;IOBS_0_408;IOBS_0_42;IOBS_0_420;IOBS_0_432;IOBS_0_444;IOBS_0_462;IOBS_0_474;IOBS_0_498;IOBS_0_522;IOBS_0_534;IOBS_0_570;IOBS_0_690;IOBS_0_78;IOBS_372_312;IOBS_372_348;IOBS_372_384;IOBS_372_396;IOBS_372_408;IOBS_372_420;IOBS_372_432;IOBS_372_444;IOBS_372_462;IOBS_372_474;IOBS_372_486;IOBS_372_498;IOBS_372_510;IOBS_372_522;IOBS_372_618;IOBS_372_630;IOBS_372_642;IOBS_372_654;IOBS_372_666;IOBS_372_690;IOBS_372_702;IOBS_372_714;IOBS_372_726;IOBS_372_738;IOBS_372_750;IOBS_372_768;IOBS_372_780;IOBS_372_792;IOBS_372_804;IOBS_372_828;IOBS_372_852;IOBS_372_864;IOBS_372_876;IOBS_372_888;IOBS_372_900}
+show_device -help
+report_region -help
+puts {CAMERA_VGA_FINAL_IO_SITE_AUDIT_END}
+
+# Query fragment only; parent runner must bind final ADF and initialize native STA.
+# 1: ddr_ready_ref[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {ddr_ready_ref[0]/opit_0_L6Q_perm/CLK} -to {system_failed_ref[1]/opit_0_L6Q_LUT6DQL5Q_perm/I4}
+# 2: captured_bit_ref[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {processed_bit_ref[1]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -to {heartbeat_count[0]/opit_0_L6Q_LUT6DQL5Q_perm/I4}
+# 3: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync[1]_1/opit_0_inv/D}
+# 4: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]/opit_0_inv/D}
+# 5: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_1/opit_0_inv/D}
+# 6: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_10/opit_0_inv/D}
+# 7: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_11/opit_0_inv/D}
+# 8: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_12/opit_0_inv/D}
+# 9: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_13/opit_0_inv/D}
+# 10: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_14/opit_0_inv/D}
+# 11: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_15/opit_0_inv/D}
+# 12: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_16/opit_0_inv/D}
+# 13: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_17/opit_0_inv/D}
+# 14: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_18/opit_0_inv/D}
+# 15: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_19/opit_0_inv/D}
+# 16: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_2/opit_0_inv/D}
+# 17: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_20/opit_0_inv/D}
+# 18: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_21/opit_0_inv/D}
+# 19: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_22/opit_0_inv/D}
+# 20: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_23/opit_0_inv/D}
+# 21: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_25/opit_0_inv/D}
+# 22: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_26/opit_0_inv/D}
+# 23: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_3/opit_0_inv/D}
+# 24: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_4/opit_0_inv/D}
+# 25: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_5/opit_0_inv/D}
+# 26: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_6/opit_0_inv/D}
+# 27: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_7/opit_0_inv/D}
+# 28: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_8/opit_0_inv/D}
+# 29: system/bank_core/engine/core/reset_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK} -to {system/bank_core/engine/core/reset_sync_1_copy[1]_9/opit_0_inv/D}
+# 30: system/input_link/input_dma/capture/enable_cam[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/input_link/input_dma/capture/enable_cam[0]/opit_0_L6Q_LUT6DL5Q_perm/CLK} -to {system/input_link/input_dma/capture/grant_sync[0]/opit_0_L6Q_LUT6DQL5Q_perm/I1}
+# 31: system/input_link/input_dma/capture/grant_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/input_link/input_dma/capture/grant_sync[0]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -to {system/input_link/input_dma/capture/grant_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/I4}
+# 32: system/input_link/input_dma/capture/ack_sync[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/input_link/input_dma/capture/grant_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -to {system/input_link/input_dma/capture/vs_d/opit_0_L6Q_LUT6DQL5Q_perm/I0}
+# 33: processed_bit_ref[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system_failed_ref[0]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -to {processed_bit_ref[1]/opit_0_L6Q_LUT6DQL5Q_perm/I2}
+# 34: system_failed_ref[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system_failed_ref[0]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -to {system_failed_ref[1]/opit_0_L6Q_LUT6DQL5Q_perm/I2}
+# 35: video_lock_ref[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {video_lock_ref[0]/opit_0_L6Q_perm/CLK} -to {video_lock_ref[1]/opit_0_L6Q_perm/I3}
+# 36: system/display_fifo/wr_gray_r1[0]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/display_fifo/wr_binary[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK} -to {system/display_fifo/wr_gray_r1[0]/opit_0_inv_srl/D}
+# 37: system/display_fifo/wr_gray_r1[1]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/display_fifo/wr_gray[2]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK} -to {system/display_fifo/wr_gray_r1[1]/opit_0_inv_srl/D}
+# 38: system/display_fifo/wr_gray_r1[2]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/display_fifo/wr_gray[2]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK} -to {system/display_fifo/wr_gray_r1[2]/opit_0_inv_srl/D}
+# 39: system/display_fifo/wr_gray_r1[3]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/display_fifo/wr_gray[4]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK} -to {system/display_fifo/wr_gray_r1[3]/opit_0_inv_srl/D}
+# 40: system/display_fifo/wr_gray_r1[4]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/display_fifo/wr_gray[4]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK} -to {system/display_fifo/wr_gray_r1[4]/opit_0_inv_srl/D}
+# 41: system/display_fifo/wr_gray_r1[5]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/display_fifo/wr_gray[6]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK} -to {system/display_fifo/wr_gray_r1[5]/opit_0_inv_srl/D}
+# 42: system/display_fifo/wr_gray_r1[6]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/display_fifo/wr_gray[6]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK} -to {system/display_fifo/wr_gray_r1[6]/opit_0_inv_srl/D}
+# 43: system/display_fifo/wr_gray_r1[7]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/display_fifo/wr_gray[8]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK} -to {system/display_fifo/wr_gray_r1[7]/opit_0_inv_srl/D}
+# 44: system/display_fifo/wr_gray_r1[8]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/display_fifo/wr_gray[8]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK} -to {system/display_fifo/wr_gray_r1[8]/opit_0_inv_srl/D}
+# 45: system/display_fifo/wr_gray_r1[9]
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {system/display_fifo/wr_binary[9]/opit_0_inv_AQ/CLK} -to {system/display_fifo/wr_gray_r1[9]/opit_0_inv_srl/D}
+
+    puts {CAMERA_PHYSICAL_QUERY_COMPLETE}
+    flush stdout
+}

@@ -1,0 +1,24 @@
+{
+  "Schema": "camera-vga-upright-source-derivative-v1",
+  "CreatedUTC": "2026-10-31T08:03:29.565165+00:00",
+  "WorkingBitstreamSHA256": "acec0a6528760cabe8291d4452c635e26d7e0f7b3fdfef997a386d1c365b25e0",
+  "BaselineSources": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ov5640_cadence_trial_init.v": "66e2a8236ca8a5d7bb56e46893cf640d3aa9e8b2c4f4b9119340cabfbb153ec7",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\camera_vga_output_top.v": "8b4703e8a6a2a3eb4957211d083733b5764264f5baeb08e55afcf6ccf8e728e2",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\ov5640_cadence_trial_commands.vh": "53428872aa14e6120eed93d876c889ef5155b3c196c014db77c4578b2bd50674"
+  },
+  "NewSources": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ov5640_cadence_upright_init.v": "e1416e11e55c0e7bb1200ca78998225233b56cf04c366d467d4f74574c0229a9",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\camera_vga_upright_top.v": "b9f9bdaf2ca5159efe04c31a3a9bb18b50d0f8e55705d987cc2464785f1d2e50"
+  },
+  "Changes": [
+    "New module names and portable table include",
+    "Fixed sensor orientation3820=00,3821=06",
+    "Mandatory immediate orientation readback, even CHECK_WRITES=0",
+    "Read both orientation registers before and after final table start command",
+    "No frame size, DDR, HDMI, processing geometry or shared FDC changes"
+  ],
+  "Evidence": "Local OV5640 v2.01 printed pages4-1/7-12; locked ST driver MirrorFlipConfig preserves other bits using0xF9",
+  "HardwareAccessed": false,
+  "BoardFixVerified": false
+}

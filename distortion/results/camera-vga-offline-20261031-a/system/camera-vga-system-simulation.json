@@ -1,0 +1,287 @@
+{
+  "Schema": "camera-vga-dvp-system-simulation-v1",
+  "Passed": true,
+  "StartedUTC": "2026-10-31T05:41:39.456472+00:00",
+  "SourceSHA256": {
+    "rtl/mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "rtl/pixel_inverse_rotation.v": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+    "rtl/bounded_brown_inverse_mapper.v": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691",
+    "rtl/bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "rtl/ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+    "rtl/ddr_video_reader.v": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/ddr_write_arbiter.v": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+    "rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+    "rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+    "rtl/experimental/rotated_remap_core_gamma_scatter4.v": "6b13cf9bdf089fa902c2e4fb564985e21bf153234382ae721bca6541f6fddcbd",
+    "rtl/experimental/adaptive_gamma_stream.v": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7",
+    "rtl/experimental/adaptive_gamma_tagged.v": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790",
+    "rtl/experimental/ddr_adaptive_result_writer.v": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+    "rtl/experimental/pipeline_gamma_frame_engine_1080_scatter4.v": "e01a99c8847db58003bb2a9dca85db67d705c815a8fec8be2b6a430d35eaa141",
+    "rtl/experimental/lens1080_bank_core.v": "ed14a1266b39b048dcdd2687f3d4fdef13c502ce2858b7483c93d5397a22092c",
+    "rtl/experimental/ddr_video_output_1080_board.v": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+    "tests/processed_output_ip_stubs.sv": "fe718440f0b3b48f34580d955c53cd5ff4443ee35aec12bf2d21c110d92e6fa1",
+    "rtl/experimental/dvp_rgb565_capture_cdc.v": "14bde70db5bcc2797d2e648af44f64d57df62673161529ef7358878700dc7079",
+    "rtl/experimental/camera_vga_input_dma.v": "eb905f9ad625f87cf8103f27f09cba4c58a65f96e3460db5f0082351901a90f4",
+    "rtl/experimental/camera_vga_input_write_link.v": "7206770237423c876f569fbdd288baca2bb9dd783687f6aedb07e77860a4980f",
+    "rtl/experimental/camera_vga_video_system.v": "5b45cabe9cf50f32aea2d6496cd56bec7c9e3cc755a3efa35afe8ba14b8f1d61",
+    "tests/tb_camera_vga_system.sv": "7510892207438e36487d33abac4da7c924d8a8b2987b0dbb01b2d951b08e8cfd",
+    "rtl/experimental/gamma_curves.vh": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+    "rtl/video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+    "board/board1080-synthetic.vh": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+    "tools/run_processed_output_sim.py": "25312321982365feedf098b48c8a9598c54fb6be957f8d8d4c5758ed28a73ec4",
+    "tools/generate_1080_core_vectors.py": "5851f3ce56cf7fc87a438b00dd2655afe45997942d38b32c19650dd7025680f9",
+    "tools/generate_continuous1080_vectors.py": "cf7679a3f33331f6267e70059be2c127247b30a5e316e46ca84b7e6a2277971c",
+    "tools/generate-brown-vectors.py": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b",
+    "model/reference.py": "904eb5b4fd2df7822e4693e325c2aab38b504e4a157622e52b367fdbecbb99b4",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/run_camera_vga_system_sim.py": "b9c9c38ef82ab6cca433857c4731f1af37add8aea729b18ac2de5d542a8879a1"
+  },
+  "Commands": [
+    {
+      "Stage": "compile",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\mul32_pipe.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\pixel_inverse_rotation.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\bounded_brown_inverse_mapper.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\bilinear_rgb.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\ddr_read_arbiter.v",
+        "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-integration\\system-20261031-j\\relocated-sources\\rtl\\ddr_video_reader.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\video_async_fifo.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\ddr_write_arbiter.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_neighbour_cache_scatter4_rowpipe.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_remap_sample_scatter4_rowpipe.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\rotated_remap_core_gamma_scatter4.v",
+        "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-integration\\system-20261031-j\\relocated-sources\\rtl\\experimental\\adaptive_gamma_stream.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\adaptive_gamma_tagged.v",
+        "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-integration\\system-20261031-j\\relocated-sources\\rtl\\experimental\\ddr_adaptive_result_writer.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\pipeline_gamma_frame_engine_1080_scatter4.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\lens1080_bank_core.v",
+        "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-integration\\system-20261031-j\\relocated-sources\\rtl\\experimental\\ddr_video_output_1080_board.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\processed_output_ip_stubs.sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_rgb565_capture_cdc.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\camera_vga_input_dma.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\camera_vga_input_write_link.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\camera_vga_video_system.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_camera_vga_system.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_camera_vga_system",
+        "-s",
+        "camera_vga_system",
+        "--timescale",
+        "1ps/1ps"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "camera_vga_system",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "HardwareAccessed": false,
+  "PhysicalIPExecuted": false,
+  "PhysicalCameraValidated": false,
+  "SourceGeometry": [
+    32,
+    16
+  ],
+  "OutputActiveArea": [
+    64,
+    32
+  ],
+  "CameraPolarity": {
+    "VSYNC_ACTIVE_HIGH": 0,
+    "HREF_ACTIVE_HIGH": 0,
+    "HIGH_BYTE_FIRST": 0
+  },
+  "RealDVPCaptureExecuted": true,
+  "RealOutputFIFOExecuted": true,
+  "ProductionBankAndMapperExecuted": true,
+  "RTLResultUsedForGolden": false,
+  "Limits": "Small DVP byte-level simulation with nonlinear synthetic geometry and modeled DDR UI. Checks one malformed first row, valid recovery, source/result bank reuse, full output DE and centered picture/black borders. No SCCB, sensor electrical timing, real camera data, native VGA throughput, independent reset/clock-stop or board top startup claim.",
+  "Model": {
+    "Width": 32,
+    "Height": 16,
+    "IntegerConfig": [
+      3968,
+      1920,
+      3968,
+      1920,
+      4096,
+      3686,
+      67108864,
+      74573496,
+      335544,
+      -62915,
+      8389,
+      4194,
+      -2936
+    ],
+    "SourceCRC32": "6E5172F7",
+    "ResultCRC32": "511CD37A",
+    "Statistics": {
+      "MaskedPixels": 25,
+      "UnmaskedPixels": 487,
+      "ScalarCoordinateCrosschecks": 512
+    },
+    "MaskedPixels": 25,
+    "GammaEnabled": false
+  },
+  "FixtureSHA256": {
+    "expected-output.png": "56a4e04752bac449805bc8c441fead98d3275c7050035ac428288691cfac8a99",
+    "expected.mem": "4be59aac27d7db28ca0e8deb0cfae63c3765dd84d7f3d31b12d81fc4ce05ef3c",
+    "oracle.vh": "39ecf269f7d2527ce115b5a7b20b19f72b96a6fcd17d71fd628cceeeb0d7071e",
+    "result-beats.mem": "e793a76f11ce266d70545364cfbc134186cac5cbf677fefb704fcf2b8c635618",
+    "source-beats.mem": "aef5ec762c34febd4f32bd0fc72db7b8de6672a36f464cde7b9524966b7fd46f",
+    "synthetic-source.png": "df4c99d4d016b9dfca01c960acae39fb94a97ed17069278e15ce5eddd9b07a05"
+  },
+  "CompileBindings": {
+    "rtl/ddr_video_reader.v": {
+      "OriginalSHA256": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+      "CompiledPath": "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-integration\\system-20261031-j\\relocated-sources\\rtl\\ddr_video_reader.v",
+      "CompiledSHA256": "3a224c73a1fcb6cf9a44a8c913f00d8440e0c3f1aaf2a33547b416f4ac4c1426",
+      "IncludePathReplacements": [
+        {
+          "Original": "    `include \"D:/English/FPGA/distortion/rtl/video_crc32.vh\"",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "CompiledHeaderPath": "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-integration\\system-20261031-j\\relocated-headers\\rtl\\video_crc32.vh"
+        }
+      ]
+    },
+    "rtl/experimental/adaptive_gamma_stream.v": {
+      "OriginalSHA256": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7",
+      "CompiledPath": "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-integration\\system-20261031-j\\relocated-sources\\rtl\\experimental\\adaptive_gamma_stream.v",
+      "CompiledSHA256": "999be3978aae6d53cb429f1a490e117709123c2379551ede7a11083daaeee73b",
+      "IncludePathReplacements": [
+        {
+          "Original": "    `include \"D:/English/FPGA/distortion/rtl/experimental/gamma_curves.vh\"",
+          "Header": "rtl/experimental/gamma_curves.vh",
+          "HeaderSHA256": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+          "CompiledHeaderPath": "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-integration\\system-20261031-j\\relocated-headers\\rtl\\experimental\\gamma_curves.vh"
+        }
+      ]
+    },
+    "rtl/experimental/ddr_adaptive_result_writer.v": {
+      "OriginalSHA256": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+      "CompiledPath": "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-integration\\system-20261031-j\\relocated-sources\\rtl\\experimental\\ddr_adaptive_result_writer.v",
+      "CompiledSHA256": "57ad85f2a77728b6a8d214a7adda2d303987fd0fc89eff1903b5ec154a2c90c3",
+      "IncludePathReplacements": [
+        {
+          "Original": "    `include \"D:/English/FPGA/distortion/rtl/video_crc32.vh\"",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "CompiledHeaderPath": "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-integration\\system-20261031-j\\relocated-headers\\rtl\\video_crc32.vh"
+        }
+      ]
+    },
+    "rtl/experimental/ddr_video_output_1080_board.v": {
+      "OriginalSHA256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+      "CompiledPath": "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-integration\\system-20261031-j\\relocated-sources\\rtl\\experimental\\ddr_video_output_1080_board.v",
+      "CompiledSHA256": "994721394473edf0f98b4f2a7b972ae6da387f25715b3b143536a9bae126a6fc",
+      "IncludePathReplacements": [
+        {
+          "Original": "    `include \"D:/English/FPGA/distortion/rtl/video_crc32.vh\"",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "CompiledHeaderPath": "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-integration\\system-20261031-j\\relocated-headers\\rtl\\video_crc32.vh"
+        }
+      ]
+    }
+  },
+  "Summary": {
+    "passed": true,
+    "malformed_frames_dropped": 1,
+    "frames_committed": 6,
+    "frames_processed": 6,
+    "unique_frames_scanned": 6,
+    "repeat_scans": 1,
+    "source_bank_reuses": 5,
+    "result_bank_reuses": 4,
+    "scanned_pixels": 3584,
+    "full_output_de_verified": true,
+    "centered_picture_verified": true,
+    "black_border_pixels": 13824,
+    "directed_final_drain": true
+  },
+  "ActualScanPixelsCompared": 3584,
+  "SourceSHA256After": {
+    "rtl/mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "rtl/pixel_inverse_rotation.v": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+    "rtl/bounded_brown_inverse_mapper.v": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691",
+    "rtl/bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "rtl/ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+    "rtl/ddr_video_reader.v": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/ddr_write_arbiter.v": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+    "rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+    "rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+    "rtl/experimental/rotated_remap_core_gamma_scatter4.v": "6b13cf9bdf089fa902c2e4fb564985e21bf153234382ae721bca6541f6fddcbd",
+    "rtl/experimental/adaptive_gamma_stream.v": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7",
+    "rtl/experimental/adaptive_gamma_tagged.v": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790",
+    "rtl/experimental/ddr_adaptive_result_writer.v": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+    "rtl/experimental/pipeline_gamma_frame_engine_1080_scatter4.v": "e01a99c8847db58003bb2a9dca85db67d705c815a8fec8be2b6a430d35eaa141",
+    "rtl/experimental/lens1080_bank_core.v": "ed14a1266b39b048dcdd2687f3d4fdef13c502ce2858b7483c93d5397a22092c",
+    "rtl/experimental/ddr_video_output_1080_board.v": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+    "tests/processed_output_ip_stubs.sv": "fe718440f0b3b48f34580d955c53cd5ff4443ee35aec12bf2d21c110d92e6fa1",
+    "rtl/experimental/dvp_rgb565_capture_cdc.v": "14bde70db5bcc2797d2e648af44f64d57df62673161529ef7358878700dc7079",
+    "rtl/experimental/camera_vga_input_dma.v": "eb905f9ad625f87cf8103f27f09cba4c58a65f96e3460db5f0082351901a90f4",
+    "rtl/experimental/camera_vga_input_write_link.v": "7206770237423c876f569fbdd288baca2bb9dd783687f6aedb07e77860a4980f",
+    "rtl/experimental/camera_vga_video_system.v": "5b45cabe9cf50f32aea2d6496cd56bec7c9e3cc755a3efa35afe8ba14b8f1d61",
+    "tests/tb_camera_vga_system.sv": "7510892207438e36487d33abac4da7c924d8a8b2987b0dbb01b2d951b08e8cfd",
+    "rtl/experimental/gamma_curves.vh": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+    "rtl/video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+    "board/board1080-synthetic.vh": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+    "tools/run_processed_output_sim.py": "25312321982365feedf098b48c8a9598c54fb6be957f8d8d4c5758ed28a73ec4",
+    "tools/generate_1080_core_vectors.py": "5851f3ce56cf7fc87a438b00dd2655afe45997942d38b32c19650dd7025680f9",
+    "tools/generate_continuous1080_vectors.py": "cf7679a3f33331f6267e70059be2c127247b30a5e316e46ca84b7e6a2277971c",
+    "tools/generate-brown-vectors.py": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b",
+    "model/reference.py": "904eb5b4fd2df7822e4693e325c2aab38b504e4a157622e52b367fdbecbb99b4",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/run_camera_vga_system_sim.py": "b9c9c38ef82ab6cca433857c4731f1af37add8aea729b18ac2de5d542a8879a1"
+  },
+  "FixtureSHA256After": {
+    "expected-output.png": "56a4e04752bac449805bc8c441fead98d3275c7050035ac428288691cfac8a99",
+    "expected.mem": "4be59aac27d7db28ca0e8deb0cfae63c3765dd84d7f3d31b12d81fc4ce05ef3c",
+    "oracle.vh": "39ecf269f7d2527ce115b5a7b20b19f72b96a6fcd17d71fd628cceeeb0d7071e",
+    "result-beats.mem": "e793a76f11ce266d70545364cfbc134186cac5cbf677fefb704fcf2b8c635618",
+    "source-beats.mem": "aef5ec762c34febd4f32bd0fc72db7b8de6672a36f464cde7b9524966b7fd46f",
+    "synthetic-source.png": "df4c99d4d016b9dfca01c960acae39fb94a97ed17069278e15ce5eddd9b07a05"
+  },
+  "ElapsedSeconds": 28.624,
+  "LogSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "e3effa102b560b384477e1536418d424b182433be3efba1067528a5dd081e4d0",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "427b75991341279718b2ddfa4570d0acb9e15048bc1555f9343c84a103dca4e5",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "c12bec58b036ab445c5a8e4293adf07149edfd1c56bd2e4ecad47f5dbf5c5235",
+    "simulation.log": "e5b46f101797875d9cb07d954e18c6d0c28963b8d990e98614a4e2ff0d4db26a",
+    "webtalk.log": "87b1ff07d29b92bb372419bf2ea95475f80966b40f4f20e7bb45ab462314c8eb",
+    "webtalk_15676.backup.log": "737a4180fbf567a49a2bab8aeed03df00524df03563cdcad4eb9617256804334",
+    "xelab.log": "073e7c4b2785668d96c21ddfbf9be87ff298d17ccdb4ef0581b7ac322713d738",
+    "xvlog.log": "966ee9bfd39609d2a32dbc51d9f3b043762bdba0349460cd271c17095efc94c5"
+  },
+  "ResultSHA256": {
+    "events.csv": "423e3bbae4858f612cf59ff73bdcc982162eb2d58ec66ffe64fe1747665fe311",
+    "scanned-pixels.csv": "2d20822689688fa895f125c61d26aad6f3972fb5c3a931a3df15c0a750fb661b",
+    "summary.json": "f3c515684e84910dbeeadda22a5dd3ae527a6d3e11c737f9f0d89f07346cb03b"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "Schema": "camera-vga-candidate-readonly-review-v1",
+  "ReviewedUTC": "2026-10-31T05:43:08.215044+00:00",
+  "Verdict": "No specific board-level connection defect found in the reviewed reset, size, polarity and pin paths.",
+  "VerdictChinese": "在本次审查的复位、时钟连接、尺寸、极性及引脚路径中未发现具体连接错误。",
+  "Findings": [],
+  "Checks": {
+    "ResetClock": "DDR controller receives global_reset_n independently of pipeline_release and provides the System core_clk. Continuous sensor/DDR/PLL/TX qualification releases the pipeline once; runtime faults latch and stop admissions without withdrawing pipeline_reset_n. Camera, core and pixel children share the pipeline reset and use their existing local release synchronizers.",
+    "Geometry": {
+      "Source": [
+        640,
+        480
+      ],
+      "Pixels": 307200,
+      "DDR256BitBeats": 19200,
+      "SourceBytes": 614400,
+      "BankStride4ByteUnits": 1048576,
+      "BankStrideBytes": 4194304,
+      "OutputActiveArea": [
+        1920,
+        1080
+      ],
+      "Raster": [
+        2200,
+        1125
+      ],
+      "RasterDEOrigin": [
+        192,
+        41
+      ],
+      "RasterPictureOrigin": [
+        832,
+        341
+      ],
+      "ActiveAreaPictureOrigin": [
+        640,
+        300
+      ],
+      "Scale": 1,
+      "BlackBorderPixels": {
+        "Left": 640,
+        "Right": 640,
+        "Top": 300,
+        "Bottom": 300
+      }
+    },
+    "Polarity": "VSYNC_ACTIVE_HIGH=0, HREF_ACTIVE_HIGH=0 and HIGH_BYTE_FIRST=0 propagate through all three wrappers to dvp_rgb565_capture_cdc. This matches raw_camera_capture_cam2_ref VS/HREF inversions and camera_live_bridge LOW-byte-first assembly.",
+    "SensorSetup": "DYNAMIC_PAD_MASK=1 with 0x7ff0; table final 3808..380b values are 02/80/01/e0, 4300=6f, 501f=01, 4740=23. Init readback checks the same values. Reset/SCL/SDA retain open-drain interfaces.",
+    "Pins": "All 14 camera pad/electrical attributes match the historical CAM2 reference; explicit directions match the new top. D5=AA23, PCLK=U21, VSYNC=V23, HREF=W23.",
+    "WrapperDerivation": "DMA and write-link differences from the existing HDMI versions are limited to module/port names, VGA defaults and byte-wide DVP capture hookup. System additionally passes independent OUTPUT_WIDTH/OUTPUT_HEIGHT to AW/AH, preserving the full 1080 active window."
+  },
+  "ExistingControlEvidence": {
+    "Path": "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-control\\top-20261031-b\\camera-vga-control-simulation.json",
+    "SHA256": "a3ef8a82da04b3e87e77ed8d6179154375e025464c706f85b2a8973cb157f999",
+    "Passed": true,
+    "SourceDriftAtReview": [],
+    "Summary": {
+      "Passed": true,
+      "StartupCases": 8,
+      "RuntimeCases": 7,
+      "ResetChecks": 17,
+      "ReleaseEvents": 9,
+      "LEDChecks": 4,
+      "ChatterChecks": 1,
+      "WarmupCycles": 216000,
+      "ReferenceClockHz": 27000000,
+      "PowerDelayAccelerated": true
+    },
+    "NewSimulationLaunchedByReview": false
+  },
+  "Limits": [
+    "Camera hardware and this candidate bitstream have not been validated. This review is not synthesis, routing, timing, CDC physical, DDR PHY or HDMI acceptance.",
+    "Existing control proof uses status stubs, an 8 ms warmup and accelerated power counter; it does not prove real SCCB initialization, native VGA DVP integration or sustained frame throughput.",
+    "Camera ready is initialization completion, not a live PCLK/VS watchdog. Missing or stopped camera/core clocks have no independent recovery here; shared manual reset remains the recovery boundary.",
+    "48 MHz PCLK and 0..5 ns camera input timing in the diagnostic constraints remain provisional; actual board sampling margin and generated CDC/reset paths require physical review.",
+    "Default zero-distortion geometry is transport validation, not calibrated lens correction. Real-System bench work remains owned by camera_dvp_system and is not judged by this control review."
+  ],
+  "HardwareAccessed": false,
+  "EDALaunched": false,
+  "CodeOrDocumentationModified": false,
+  "SourceSHA256": {
+    "board/camera_vga_output_top.v": "8b4703e8a6a2a3eb4957211d083733b5764264f5baeb08e55afcf6ccf8e728e2",
+    "rtl/experimental/camera_vga_video_system.v": "5b45cabe9cf50f32aea2d6496cd56bec7c9e3cc755a3efa35afe8ba14b8f1d61",
+    "rtl/experimental/camera_vga_input_write_link.v": "7206770237423c876f569fbdd288baca2bb9dd783687f6aedb07e77860a4980f",
+    "rtl/experimental/camera_vga_input_dma.v": "eb905f9ad625f87cf8103f27f09cba4c58a65f96e3460db5f0082351901a90f4",
+    "rtl/experimental/dvp_rgb565_capture_cdc.v": "14bde70db5bcc2797d2e648af44f64d57df62673161529ef7358878700dc7079",
+    "rtl/experimental/ddr_video_output_1080_board.v": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+    "rtl/experimental/capture_warmup.v": "410c664757a6a8c2887e78538d1caf289891904fd5b1d002f7018efb9736579a",
+    "rtl/experimental/ov5640_cadence_trial_init.v": "66e2a8236ca8a5d7bb56e46893cf640d3aa9e8b2c4f4b9119340cabfbb153ec7",
+    "board/ov5640_cadence_trial_commands.vh": "53428872aa14e6120eed93d876c889ef5155b3c196c014db77c4578b2bd50674",
+    "board/camera-vga-output-diagnostic.fdc": "e4d71b397c5111cf433fb5b644ffac6af7e811458ab9b9db6db680d1399cef6c",
+    "board/raw_camera_capture_cam2_ref.fdc": "ac7f3b30b3def97187947046b638ae8df1c0fa33670ff865ad4107acb562be7a",
+    "board/raw_camera_capture_cam2_ref.v": "87ce9172b83af5fdf1a5f0a6b4771fb8b67d962dfca9cbfc9befbdfb4551c054",
+    "rtl/camera_live_bridge.v": "29a62abed4dcc0e422434cb85847ab66104b1e6388c5e3799535334f962c0e33"
+  }
+}

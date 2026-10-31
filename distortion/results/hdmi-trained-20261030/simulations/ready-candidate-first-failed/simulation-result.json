@@ -1,0 +1,77 @@
+{
+  "Schema": "ms7200-ready-level-candidate-simulation-v1",
+  "Passed": false,
+  "StartedUTC": "2026-10-30T05:12:14.300130+00:00",
+  "InputSHA256": {
+    "rtl/experimental/ms7200_1080p30_ctl.v": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+    "rtl/experimental/ms7200_1080p30_ready_ctl.v": "6918a4a46135094addc443c45235077887b1daaca81f4f255163f635c7828959",
+    "tests/tb_ms7200_ready_level.sv": "6cab7907734e361b68e4acd961aa7c7fe50ffabf5881b09c2f69d68baca88ad9",
+    "tools/run_ms7200_ready_level_sim.py": "331a2d2d6c9c1b6fe47447b7b888e112530fc736a414b76ee98f15b27e99ea82",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+  },
+  "SourceAudit": {
+    "ReferenceSHA256": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+    "CandidateSHA256": "6918a4a46135094addc443c45235077887b1daaca81f4f255163f635c7828959",
+    "OriginalControllerUnchanged": true,
+    "All311RegisterCommandsUnchanged": true,
+    "SourceChangesConfinedToModuleNameAndReadyHistoryBlock": true
+  },
+  "HardwareAccessed": false,
+  "PDSExecuted": false,
+  "TransactionDriverStub": true,
+  "WireLevelI2CExecuted": false,
+  "Commands": [
+    {
+      "Stage": "compile",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7200_1080p30_ready_ctl.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_ms7200_ready_level.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_ms7200_ready_level",
+        "-s",
+        "ms7200_ready_level_tb"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "ms7200_ready_level_tb",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "Limits": "Isolated receiver register sequencer and transaction response model only; no actual I2C lines, PHY lock, input pixels, physical timing, integrated board build or hardware acceptance.",
+  "Error": "ValueError: native candidate assertions did not all complete",
+  "InputDrift": [],
+  "VectorDrift": false,
+  "ElapsedSeconds": 13.902,
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "253337d04ee55c2fee6471db36cb67fe3e47fde6df344a692fbe6758eb4b0c71",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "809a0abee243af98b4144c903cfc7118bbb27e6aab14918bf6d2d28f94fffd4a",
+    "rx_expected.hex": "165ae7e5dc06394898a4367bf5877cdfdeaabfa057bcfe6cc5d45eefa78573bb",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "623da7433a2469dde0da1ae2e30f1d6a138453cbff09e49e082c0759d0ad55a4",
+    "simulation.log": "3ece4be45beb6d96255d2d4087b062977bf3f47f52625023ae225d8089a1203a",
+    "transactions.csv": "3b3252fa1feae5f85f8c8a41ab2d81ac0419cec73374cc49432bd9fcbd287005",
+    "webtalk.log": "770bf23332c6a6266ec17aa5dfac7c6280627ff99ccb1651ddffa6036f18527f",
+    "webtalk_10120.backup.log": "6d9b6c8626e82fe057aa2896b4318e59cc5ddbbe8dab7b4b7e0c95a82facb37d",
+    "xelab.log": "8387d4b5d3a47e21198fa3ca31e9cec1fb2d1e614906c44bd3d98622dd8e7983",
+    "xvlog.log": "336063c79c5a218fea87ea367c944f4178750419c6784514165573b41767fa5c"
+  }
+}

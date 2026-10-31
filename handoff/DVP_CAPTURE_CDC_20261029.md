@@ -42,4 +42,4 @@ New-Item -ItemType Directory distortion/build/dvp-capture-cdc/NEW-RUN
 
 旧 `camera_isp_probe_d5-20261029-b` 虽有位流，其报告 slow/fast 各有 16 项 camera_pclk hold 失败，最差 -2.580/-1.723 ns，未用它下载。完整 guarded 原图候选还需本机可移植构建和恢复位流绑定；旧队友采样记录不能当成本板实测。
 
-按用户最新分工，本候选独立保留。下一轮优先 HDMI 输入输出控制交付，详见 `HDMI_IO_NEXT_ROUND_20261029.md`。
+以上是2026-10-29历史分工，旧“下一轮优先HDMI输入输出”已被取代。DVP模块现已接入640×480摄像头候选，仿真通过，原生构建有DDR hold/recovery失败；实际上板待时序/物理检查完成。用户最新通知板卡断电，上板前先通知。见[摄像头接入交接](CAMERA_VGA_INPUT_20261031.md)，仅HDMI IN支线暂停。

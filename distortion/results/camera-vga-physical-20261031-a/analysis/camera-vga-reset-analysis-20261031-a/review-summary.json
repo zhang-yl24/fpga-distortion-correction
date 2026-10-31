@@ -1,0 +1,109 @@
+{
+  "Schema": "camera-vga-reset-review-handoff-v1",
+  "CreatedUTC": "2026-10-31T06:35:51.434592+00:00",
+  "Status": "exact_scope_ready_for_isolated_diagnostic_sta_only",
+  "SourceADFSHA256": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b",
+  "Proof": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\reset-proof-20261031-a\\proof.json",
+    "SHA256": "b2c050e8da905eb018121168821956cc4da61a32f447c189aa8b105fc6ae8633"
+  },
+  "ScopePlan": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\reset-proof-20261031-a\\plan.json",
+    "SHA256": "c8955b005015da5917a1a186a68c8c34dc5a407f96f3db82fcb3b9ac75dd00db"
+  },
+  "FDC": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\reset-proof-20261031-a\\proposed-scope.fdc",
+    "SHA256": "868b6b2d8fb34443460592fe548d394ec065d9f41264eecfe4bfc09d837b7ed0"
+  },
+  "DerivedFromCurrentReport": true,
+  "UniqueSourceEndpointPairs": 127,
+  "SourceGroups": [
+    {
+      "Source": "power_ready/opit_0_inv_L6Q_perm/CLK",
+      "Family": "entry_rdc",
+      "TargetCount": 1
+    },
+    {
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/ddrphy_cpd_rstn/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Family": "cpd_reset",
+      "TargetCount": 1
+    },
+    {
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_dqs_rst/opit_0_inv/CLK",
+      "Family": "dqs_reset",
+      "TargetCount": 104
+    },
+    {
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_iol_rst/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+      "Family": "iol_reset",
+      "TargetCount": 14
+    },
+    {
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_training_ctrl/ddrphy_dqs_training_rstn/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+      "Family": "training_reset",
+      "TargetCount": 7
+    }
+  ],
+  "SlowCorner": {
+    "LogicalRecoveryPaths": 245,
+    "NativeVariants": 252,
+    "FailingRecoveryPaths": 245
+  },
+  "FastCorner": {
+    "LogicalRecoveryPaths": 245,
+    "NativeVariants": 252,
+    "FailingRecoveryPaths": 231
+  },
+  "SourceVariantCountsPurpose": "Fresh report reconstruction and summary arithmetic; not copied oracle counts.",
+  "NativePinRecords": 10,
+  "CurrentFunctionalNetlistSHA256": "45a7a480b1ff3561034e46140e87dc8810d5748cb160438d3917fe3fc1a67adc",
+  "ParsedPrimitives": 36469,
+  "EntryStages": 2,
+  "FirstStageFunctionalFanout": 1,
+  "InternalFunctionalTargetsVerified": 126,
+  "DistinctEquivalentClearRoots": 2,
+  "ClearBufferCount": 41,
+  "VendorIDFAndExpandedSourceBodies": 75,
+  "NativeQueryWorkflow": {
+    "Required": {
+      "TimingInitializedBeforeGetPins": true,
+      "InitializationCommand": "mpnr_report_timing -force_to_run -delay_type min_max -max_path 20 -nworst 4 -report_exception TRUE",
+      "Receipt": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-reset-query-20261031-b\\result.json",
+      "Requirement": "Initialize timing with mpnr_report_timing before get_pins on a freshly loaded ADF."
+    },
+    "ObservedFailure": {
+      "Directory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-reset-query-20261031-a",
+      "ExitCode": 3221225477,
+      "ExitHex": "0xC0000005",
+      "Location": "First get_pins before any timing initialization",
+      "UsedAsProof": false
+    },
+    "SuccessfulRetry": {
+      "Directory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-reset-query-20261031-b",
+      "ExecutionPassed": true,
+      "ElapsedSeconds": 119.939,
+      "InputDrift": [],
+      "Diagnostics": []
+    },
+    "Inference": "Timing initialization before get_pins avoids the observed crash in this retry; this does not establish the underlying native PDS bug cause.",
+    "BoardPowerRequired": false
+  },
+  "Tests": {
+    "ScopeTestsPassed": 9,
+    "GraphAndNativeEvidenceTestsPassed": 10,
+    "DetailedProofTestResult": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-reset-analysis-20261031-a\\proof-test-result.json"
+  },
+  "BoundInputs": 376,
+  "ToolsFrozenAfterProof": true,
+  "ConstraintsApplied": false,
+  "TimingAccepted": false,
+  "CDCPhysicalAccepted": false,
+  "HardwareAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "NextRequired": [
+    "Apply only exact five source-to-literal-reset-target commands on isolated copy of original bound ADF.",
+    "Re-run full native multi-corner STA and audit exact exception effects while data paths remain timed.",
+    "Physical hold repair is independent and no data or clock-group exception is authorized.",
+    "A different ADF requires fresh native/functional proof; do not carry this proof across an ADF hash change."
+  ]
+}

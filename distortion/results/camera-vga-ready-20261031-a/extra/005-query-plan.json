@@ -1,0 +1,755 @@
+{
+  "Schema": "camera-vga-cdc-query-plan-v1",
+  "InputADFSHA256": "daa2a9221238d09398ba325acef561b604dcb5643571301ba8831f76736dfd9f",
+  "SourceADF": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\input.adf",
+  "Queries": [
+    {
+      "Label": "ddr_ready_ref[0]",
+      "Source": "ddr_ready_ref[0]/opit_0_L6Q_perm/CLK",
+      "Endpoint": "system_failed_ref[1]/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+      "Clock": "board27",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "captured_bit_ref[0]",
+      "Source": "processed_bit_ref[1]/opit_0_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "heartbeat_count[0]/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+      "Clock": "board27",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync[1]_1/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_1/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_10/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_11/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_12/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_13/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_14/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_15/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_16/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_17/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_18/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_19/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_2/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_20/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_21/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_22/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_23/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_25/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_26/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_3/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_4/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_5/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_6/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_7/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_8/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/bank_core/engine/core/reset_sync[0]",
+      "Source": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]_9/opit_0_inv/D",
+      "Clock": "ddrphy_sysclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/input_link/input_dma/capture/enable_cam[0]",
+      "Source": "system/input_link/input_dma/capture/enable_cam[0]/opit_0_L6Q_LUT6DL5Q_perm/CLK",
+      "Endpoint": "system/input_link/input_dma/capture/grant_sync[0]/opit_0_L6Q_LUT6DQL5Q_perm/I1",
+      "Clock": "camera_pclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/input_link/input_dma/capture/grant_sync[0]",
+      "Source": "system/input_link/input_dma/capture/grant_sync[0]/opit_0_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "system/input_link/input_dma/capture/grant_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+      "Clock": "camera_pclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system/input_link/input_dma/capture/ack_sync[0]",
+      "Source": "system/input_link/input_dma/capture/grant_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "system/input_link/input_dma/capture/vs_d/opit_0_L6Q_LUT6DQL5Q_perm/I0",
+      "Clock": "camera_pclk",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "processed_bit_ref[0]",
+      "Source": "system_failed_ref[0]/opit_0_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "processed_bit_ref[1]/opit_0_L6Q_LUT6DQL5Q_perm/I2",
+      "Clock": "board27",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "system_failed_ref[0]",
+      "Source": "system_failed_ref[0]/opit_0_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "system_failed_ref[1]/opit_0_L6Q_LUT6DQL5Q_perm/I2",
+      "Clock": "board27",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    },
+    {
+      "Label": "video_lock_ref[0]",
+      "Source": "video_lock_ref[0]/opit_0_L6Q_perm/CLK",
+      "Endpoint": "video_lock_ref[1]/opit_0_L6Q_perm/I3",
+      "Clock": "board27",
+      "ExpectedKind": [
+        "setup",
+        "hold"
+      ],
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "Purpose": "ordinary first-to-second-stage interstage timing; not analog MTBF",
+      "EndpointResolutionRequired": true
+    }
+  ],
+  "GrayCoverageQueries": [
+    {
+      "Label": "system/display_fifo/wr_gray_r1[0]",
+      "Source": "system/display_fifo/wr_binary[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "system/display_fifo/wr_gray_r1[0]/opit_0_inv_srl/D",
+      "SourceClock": "ddrphy_sysclk",
+      "DestinationClock": "pixel_clk",
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "ExpectedException": "MaxDelay Path 8ns -datapath_only",
+      "Purpose": "fill missing actual Gray path coverage; inspect normal and exception reports"
+    },
+    {
+      "Label": "system/display_fifo/wr_gray_r1[1]",
+      "Source": "system/display_fifo/wr_gray[2]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "system/display_fifo/wr_gray_r1[1]/opit_0_inv_srl/D",
+      "SourceClock": "ddrphy_sysclk",
+      "DestinationClock": "pixel_clk",
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "ExpectedException": "MaxDelay Path 8ns -datapath_only",
+      "Purpose": "fill missing actual Gray path coverage; inspect normal and exception reports"
+    },
+    {
+      "Label": "system/display_fifo/wr_gray_r1[2]",
+      "Source": "system/display_fifo/wr_gray[2]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "system/display_fifo/wr_gray_r1[2]/opit_0_inv_srl/D",
+      "SourceClock": "ddrphy_sysclk",
+      "DestinationClock": "pixel_clk",
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "ExpectedException": "MaxDelay Path 8ns -datapath_only",
+      "Purpose": "fill missing actual Gray path coverage; inspect normal and exception reports"
+    },
+    {
+      "Label": "system/display_fifo/wr_gray_r1[3]",
+      "Source": "system/display_fifo/wr_gray[4]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "system/display_fifo/wr_gray_r1[3]/opit_0_inv_srl/D",
+      "SourceClock": "ddrphy_sysclk",
+      "DestinationClock": "pixel_clk",
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "ExpectedException": "MaxDelay Path 8ns -datapath_only",
+      "Purpose": "fill missing actual Gray path coverage; inspect normal and exception reports"
+    },
+    {
+      "Label": "system/display_fifo/wr_gray_r1[4]",
+      "Source": "system/display_fifo/wr_gray[4]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "system/display_fifo/wr_gray_r1[4]/opit_0_inv_srl/D",
+      "SourceClock": "ddrphy_sysclk",
+      "DestinationClock": "pixel_clk",
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "ExpectedException": "MaxDelay Path 8ns -datapath_only",
+      "Purpose": "fill missing actual Gray path coverage; inspect normal and exception reports"
+    },
+    {
+      "Label": "system/display_fifo/wr_gray_r1[5]",
+      "Source": "system/display_fifo/wr_gray[6]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "system/display_fifo/wr_gray_r1[5]/opit_0_inv_srl/D",
+      "SourceClock": "ddrphy_sysclk",
+      "DestinationClock": "pixel_clk",
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "ExpectedException": "MaxDelay Path 8ns -datapath_only",
+      "Purpose": "fill missing actual Gray path coverage; inspect normal and exception reports"
+    },
+    {
+      "Label": "system/display_fifo/wr_gray_r1[6]",
+      "Source": "system/display_fifo/wr_gray[6]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "system/display_fifo/wr_gray_r1[6]/opit_0_inv_srl/D",
+      "SourceClock": "ddrphy_sysclk",
+      "DestinationClock": "pixel_clk",
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "ExpectedException": "MaxDelay Path 8ns -datapath_only",
+      "Purpose": "fill missing actual Gray path coverage; inspect normal and exception reports"
+    },
+    {
+      "Label": "system/display_fifo/wr_gray_r1[7]",
+      "Source": "system/display_fifo/wr_gray[8]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "system/display_fifo/wr_gray_r1[7]/opit_0_inv_srl/D",
+      "SourceClock": "ddrphy_sysclk",
+      "DestinationClock": "pixel_clk",
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "ExpectedException": "MaxDelay Path 8ns -datapath_only",
+      "Purpose": "fill missing actual Gray path coverage; inspect normal and exception reports"
+    },
+    {
+      "Label": "system/display_fifo/wr_gray_r1[8]",
+      "Source": "system/display_fifo/wr_gray[8]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "system/display_fifo/wr_gray_r1[8]/opit_0_inv_srl/D",
+      "SourceClock": "ddrphy_sysclk",
+      "DestinationClock": "pixel_clk",
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "ExpectedException": "MaxDelay Path 8ns -datapath_only",
+      "Purpose": "fill missing actual Gray path coverage; inspect normal and exception reports"
+    },
+    {
+      "Label": "system/display_fifo/wr_gray_r1[9]",
+      "Source": "system/display_fifo/wr_binary[9]/opit_0_inv_AQ/CLK",
+      "Endpoint": "system/display_fifo/wr_gray_r1[9]/opit_0_inv_srl/D",
+      "SourceClock": "ddrphy_sysclk",
+      "DestinationClock": "pixel_clk",
+      "ExpectedCorners": [
+        "slow",
+        "fast"
+      ],
+      "ExpectedException": "MaxDelay Path 8ns -datapath_only",
+      "Purpose": "fill missing actual Gray path coverage; inspect normal and exception reports"
+    }
+  ],
+  "MissingGrayCases": [
+    {
+      "Group": "system/display_fifo/wr_gray_r1",
+      "Corner": "fast",
+      "Endpoint": "system/display_fifo/wr_gray_r1[0]/opit_0_inv_srl/D"
+    },
+    {
+      "Group": "system/display_fifo/wr_gray_r1",
+      "Corner": "fast",
+      "Endpoint": "system/display_fifo/wr_gray_r1[1]/opit_0_inv_srl/D"
+    },
+    {
+      "Group": "system/display_fifo/wr_gray_r1",
+      "Corner": "fast",
+      "Endpoint": "system/display_fifo/wr_gray_r1[2]/opit_0_inv_srl/D"
+    },
+    {
+      "Group": "system/display_fifo/wr_gray_r1",
+      "Corner": "fast",
+      "Endpoint": "system/display_fifo/wr_gray_r1[3]/opit_0_inv_srl/D"
+    },
+    {
+      "Group": "system/display_fifo/wr_gray_r1",
+      "Corner": "fast",
+      "Endpoint": "system/display_fifo/wr_gray_r1[4]/opit_0_inv_srl/D"
+    },
+    {
+      "Group": "system/display_fifo/wr_gray_r1",
+      "Corner": "fast",
+      "Endpoint": "system/display_fifo/wr_gray_r1[5]/opit_0_inv_srl/D"
+    },
+    {
+      "Group": "system/display_fifo/wr_gray_r1",
+      "Corner": "fast",
+      "Endpoint": "system/display_fifo/wr_gray_r1[6]/opit_0_inv_srl/D"
+    },
+    {
+      "Group": "system/display_fifo/wr_gray_r1",
+      "Corner": "fast",
+      "Endpoint": "system/display_fifo/wr_gray_r1[7]/opit_0_inv_srl/D"
+    },
+    {
+      "Group": "system/display_fifo/wr_gray_r1",
+      "Corner": "fast",
+      "Endpoint": "system/display_fifo/wr_gray_r1[8]/opit_0_inv_srl/D"
+    },
+    {
+      "Group": "system/display_fifo/wr_gray_r1",
+      "Corner": "fast",
+      "Endpoint": "system/display_fifo/wr_gray_r1[9]/opit_0_inv_srl/D"
+    }
+  ],
+  "RequiresExactPairReports": true,
+  "ExpectedCasesPerQuery": 4,
+  "EDAExecuted": false,
+  "HardwareAccessed": false
+}

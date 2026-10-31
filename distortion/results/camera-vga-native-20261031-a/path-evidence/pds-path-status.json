@@ -1,0 +1,72 @@
+{
+  "Schema": "camera-vga-pds-path-status-v1",
+  "CheckedUTC": "2026-10-31T05:58:52.526421+00:00",
+  "OriginalFailures": [
+    {
+      "WorkDirectory": "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-output\\pds-a",
+      "TclExists": true,
+      "TclBytes": 4376,
+      "TclSHA256": "3ba9d8584ab45ad01db3f382277e21700895430b681e6d0f4934c2d4781ade9f",
+      "NativeExitCode": 1,
+      "SourcesStable": true,
+      "FailureBeforeCompile": true,
+      "EvidenceModified": false
+    },
+    {
+      "WorkDirectory": "C:\\Users\\31641\\AppData\\Local\\Temp\\codex-camera-vga-output\\pds-b",
+      "TclExists": true,
+      "TclBytes": 4376,
+      "TclSHA256": "a95fb33e7fcdd7bcca360375728d445db9771c5e5ce9e0a872f4d687d7096332",
+      "NativeExitCode": 1,
+      "SourcesStable": true,
+      "FailureBeforeCompile": true,
+      "EvidenceModified": false
+    }
+  ],
+  "TempAbsoluteForwardRelativeAndBackslashAllFailed": true,
+  "WorkspaceMinimalTclProbeExitCode": 0,
+  "WorkspaceProbeCouldReadOriginalTempTcl": true,
+  "Conclusion": "PDS script startup fails from OS-temp although files exist; same Tcl succeeds from exact workspace scratch root and can read original temp file. Not a source drift or proven general ACL failure. Workspace scratch path compatibility fix applied; no ACL changed.",
+  "NewAllowedScratchRelativeRoot": "distortion/work/camera-vga-output",
+  "ChangedFiles": [
+    "distortion/tools/prepare_camera_vga_output.py",
+    "distortion/tools/run_camera_vga_output_diagnostic.py",
+    "distortion/tests/test_prepare_camera_vga_output.py"
+  ],
+  "Tests": "14 passed",
+  "NewPlan": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\pds-20261031-a\\plan.json",
+  "NewPlanSHA256": "6e98cb540916da33ce0fd13760a6a5b8f60e9f27b6c0ceaaeecc6ae1529e1050",
+  "MaximumSeconds": 1800,
+  "DiagnosticStatus": "completed",
+  "HardwareAccessed": false,
+  "BitstreamRequested": false,
+  "TimingAccepted": false,
+  "NativeExitCode": 0,
+  "ElapsedSeconds": 672.186,
+  "SourcesStable": true,
+  "Stages": {
+    "Compile": {
+      "Command": "compile -top_module camera_vga_output_top",
+      "SuccessMarkerFound": true
+    },
+    "Synthesize": {
+      "Command": "synthesize -ads -selected_syn_tool_opt 2",
+      "SuccessMarkerFound": true
+    },
+    "DeviceMap": {
+      "Command": "dev_map",
+      "SuccessMarkerFound": true
+    },
+    "PlaceRoute": {
+      "Command": "pnr -optimize_multi_corner_timing -fix_hold_violation",
+      "SuccessMarkerFound": true
+    },
+    "ReportTiming": {
+      "Command": "report_timing -force_to_run -delay_type min_max -max_path 20",
+      "SuccessMarkerFound": true
+    }
+  },
+  "TimingStatus": "failed_constraints",
+  "NativeArchive": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-native-20261031-a",
+  "FinalADFUnchangedAcrossSTA": true
+}

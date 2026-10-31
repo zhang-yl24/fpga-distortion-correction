@@ -1,0 +1,1 @@
+This first archive attempt stopped before manifest creation because a deep native report path exceeded the Windows file path limit. These partial copies are not the release archive. No source evidence was changed. The corrected complete archive is in ../processed-output-ready-20261031-b/manifest.json.
