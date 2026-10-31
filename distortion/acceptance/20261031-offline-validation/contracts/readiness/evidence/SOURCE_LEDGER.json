@@ -1,0 +1,160 @@
+{
+  "scope": "Static binding of dependency-cone overapproximation to exact current frozen sources",
+  "writer_inventory": [
+    {
+      "source": "board/hdmi_uart_input_diag.v",
+      "sha256": "556b8a286bf944ab47f95a07312618722709783626966e17e731415c515dd10a",
+      "register": "power_ready",
+      "NBA_writer_lines": [
+        22,
+        23,
+        25
+      ],
+      "writer_roles": [
+        "0",
+        "0",
+        "1"
+      ],
+      "notes": "Mechanical writer inventory plus manual guard/source-link review, not a Verilog formal elaboration."
+    },
+    {
+      "source": "board/hdmi_uart_input_diag.v",
+      "sha256": "556b8a286bf944ab47f95a07312618722709783626966e17e731415c515dd10a",
+      "register": "configuration_ready",
+      "NBA_writer_lines": [
+        36,
+        40
+      ],
+      "writer_roles": [
+        "0",
+        "1"
+      ],
+      "notes": "Mechanical writer inventory plus manual guard/source-link review, not a Verilog formal elaboration."
+    },
+    {
+      "source": "board/hdmi_uart_input_diag.v",
+      "sha256": "556b8a286bf944ab47f95a07312618722709783626966e17e731415c515dd10a",
+      "register": "ref_reset",
+      "NBA_writer_lines": [
+        18,
+        18
+      ],
+      "writer_roles": [
+        "0",
+        "{ref_reset[0],1'b1}"
+      ],
+      "notes": "Mechanical writer inventory plus manual guard/source-link review, not a Verilog formal elaboration."
+    },
+    {
+      "source": "board/hdmi_uart_input_diag.v",
+      "sha256": "556b8a286bf944ab47f95a07312618722709783626966e17e731415c515dd10a",
+      "register": "rx_done_ref",
+      "NBA_writer_lines": [
+        64,
+        66,
+        69
+      ],
+      "writer_roles": [
+        "0",
+        "0",
+        "{rx_done_ref[0],rx_done}"
+      ],
+      "notes": "Mechanical writer inventory plus manual guard/source-link review, not a Verilog formal elaboration."
+    },
+    {
+      "source": "rtl/experimental/ms72xx_observed_ctl.v",
+      "sha256": "04ab6c3d0fcb3e9caa6175d35821728e94bd64aa1ce3c36d5a1f9af0384054bb",
+      "register": "cfg_reset_pipe",
+      "NBA_writer_lines": [
+        29,
+        30
+      ],
+      "writer_roles": [
+        "3'b000",
+        "{cfg_reset_pipe[1:0],1'b1}"
+      ],
+      "notes": "Mechanical writer inventory plus manual guard/source-link review, not a Verilog formal elaboration."
+    },
+    {
+      "source": "rtl/experimental/ms72xx_observed_ctl.v",
+      "sha256": "04ab6c3d0fcb3e9caa6175d35821728e94bd64aa1ce3c36d5a1f9af0384054bb",
+      "register": "failed_latched",
+      "NBA_writer_lines": [
+        39,
+        42
+      ],
+      "writer_roles": [
+        "1'b0",
+        "1'b1"
+      ],
+      "notes": "Mechanical writer inventory plus manual guard/source-link review, not a Verilog formal elaboration."
+    },
+    {
+      "source": "rtl/experimental/ms72xx_observed_ctl.v",
+      "sha256": "04ab6c3d0fcb3e9caa6175d35821728e94bd64aa1ce3c36d5a1f9af0384054bb",
+      "register": "seq_reset_pipe",
+      "NBA_writer_lines": [
+        56,
+        57
+      ],
+      "writer_roles": [
+        "3'b000",
+        "{seq_reset_pipe[1:0],cfg_rst_n}"
+      ],
+      "notes": "Mechanical writer inventory plus manual guard/source-link review, not a Verilog formal elaboration."
+    },
+    {
+      "source": "rtl/experimental/iic_dri_checked.v",
+      "sha256": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+      "register": "transaction_failed",
+      "NBA_writer_lines": [
+        96,
+        106,
+        123,
+        140,
+        188,
+        197
+      ],
+      "writer_roles": [
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "notes": "Mechanical writer inventory plus manual guard/source-link review, not a Verilog formal elaboration."
+    },
+    {
+      "source": "rtl/experimental/ms7200_1080p30_ctl.v",
+      "sha256": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+      "register": "init_over",
+      "NBA_writer_lines": [
+        808,
+        810,
+        812
+      ],
+      "writer_roles": [
+        "reset_zero",
+        "set_one",
+        "hold_self"
+      ],
+      "notes": "Mechanical writer inventory plus manual guard/source-link review, not a Verilog formal elaboration."
+    }
+  ],
+  "source_link_checks": [
+    "observer_expression",
+    "peripheral_expression",
+    "configuration_expression",
+    "completion_gate",
+    "failed_gate",
+    "seq_reset",
+    "driver_reset_link",
+    "RX_reset_link",
+    "driver_reset_stage"
+  ],
+  "RX_vendor_derived_body_included": false,
+  "RX_sticky_contract_locally_checked": true,
+  "strict_RTL_equivalence_proved": false,
+  "RS_exceptions_changed": false
+}

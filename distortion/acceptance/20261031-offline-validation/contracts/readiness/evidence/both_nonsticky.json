@@ -1,0 +1,394 @@
+{
+  "mode": "both_nonsticky",
+  "status": "READY_ONE_ZERO_ONE_COUNTEREXAMPLE",
+  "states": 74,
+  "transitions": 817,
+  "seconds": 0.0045519999985117465,
+  "coverage": {
+    "ready_high_states": 28,
+    "after_high_then_low_states": 18,
+    "guard_blocked_states": 9,
+    "guard_blocked_while_ready_states": 0
+  },
+  "counterexample": [
+    {
+      "action": "INITIAL_COMMON_RESET_WITH_RX_REGISTER_MAY_RETAIN",
+      "state": {
+        "rst": 0,
+        "rr": 0,
+        "power": 0,
+        "config": 0,
+        "cfgpipe": 0,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 0,
+        "rxdone": 0,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "COMMON_RELEASE",
+      "state": {
+        "rst": 1,
+        "rr": 0,
+        "power": 0,
+        "config": 0,
+        "cfgpipe": 0,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 0,
+        "rxdone": 0,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "REF:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 1,
+        "power": 0,
+        "config": 0,
+        "cfgpipe": 0,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 0,
+        "rxdone": 0,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "REF:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 0,
+        "config": 0,
+        "cfgpipe": 0,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 0,
+        "rxdone": 0,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "REF:power_done=1,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 0,
+        "cfgpipe": 0,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 0,
+        "rxdone": 0,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "REF:power_done=0,cfg_delay_done=1,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 0,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 0,
+        "rxdone": 0,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "CFG:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 1,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 0,
+        "rxdone": 0,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "CFG:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 3,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 0,
+        "rxdone": 0,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "CFG:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 0,
+        "rxdone": 0,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "CFG:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 1,
+        "rxdone": 0,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "CFG:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 3,
+        "rxdone": 0,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "CFG:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 7,
+        "rxdone": 0,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "CFG:power_done=0,cfg_delay_done=0,rx_finish=1,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 7,
+        "rxdone": 1,
+        "rxsync": 0,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "BOTH_OLD_STATE:power_done=0,cfg_delay_done=0,rx_finish=0,fault=1,rxmeta=1",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 1,
+        "latched": 0,
+        "seqpipe": 0,
+        "rxdone": 1,
+        "rxsync": 1,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "CFG:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 0,
+        "rxdone": 0,
+        "rxsync": 1,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "CFG:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 1,
+        "rxdone": 0,
+        "rxsync": 1,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "CFG:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 3,
+        "rxdone": 0,
+        "rxsync": 1,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "CFG:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 7,
+        "rxdone": 0,
+        "rxsync": 1,
+        "seen": 0,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "BOTH_OLD_STATE:power_done=0,cfg_delay_done=0,rx_finish=1,fault=0,rxmeta=0",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 7,
+        "rxdone": 1,
+        "rxsync": 2,
+        "seen": 1,
+        "guard_commit": 0,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "REF:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=1",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 7,
+        "rxdone": 1,
+        "rxsync": 1,
+        "seen": 2,
+        "guard_commit": 1,
+        "guard_block": 0
+      }
+    },
+    {
+      "action": "REF:power_done=0,cfg_delay_done=0,rx_finish=0,fault=0,rxmeta=1",
+      "state": {
+        "rst": 1,
+        "rr": 3,
+        "power": 1,
+        "config": 1,
+        "cfgpipe": 7,
+        "driverfail": 0,
+        "latched": 0,
+        "seqpipe": 7,
+        "rxdone": 1,
+        "rxsync": 3,
+        "seen": 3,
+        "guard_commit": 1,
+        "guard_block": 1
+      }
+    }
+  ],
+  "proof_boundary": "Finite digital source-cone abstraction, requires source writer/guard ledger; includes arbitrary first-stage hold/capture latency; not full RTL equivalence or analog CDC."
+}
