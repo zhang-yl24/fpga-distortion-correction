@@ -1,0 +1,29 @@
+{
+  "Schema": "camera-vga-reset-proof-tests-v1",
+  "CreatedUTC": "2026-10-31T06:33:40.445949+00:00",
+  "Command": "python -m unittest discover -s distortion/tools -p test_camera_vga_reset_proof.py -v",
+  "TestsRun": 10,
+  "Failures": 0,
+  "Errors": 0,
+  "ElapsedSeconds": 14.411,
+  "Passed": true,
+  "TestSource": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\test_camera_vga_reset_proof.py",
+  "TestSourceSHA256": "c2fcf12ef8e6ee092ccefc056ef420bef70d1ff7013b2623782f8d9067b7ffd3",
+  "NegativeCases": [
+    "duplicate native record",
+    "same count wrong native name",
+    "missing native record",
+    "failed native receipt",
+    "second-stage bypass",
+    "first-stage extra functional fanout",
+    "one exact reset target rewired",
+    "clear-function corruption"
+  ],
+  "PositiveCases": [
+    "synthetic parser fixture only",
+    "renaming optimized training reset net without changing connectivity"
+  ],
+  "SyntheticLogsUsedAsNativeProof": false,
+  "EDAExecuted": false,
+  "HardwareAccessed": false
+}

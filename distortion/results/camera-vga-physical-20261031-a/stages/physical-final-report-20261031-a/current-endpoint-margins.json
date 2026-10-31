@@ -1,0 +1,1871 @@
+{
+  "Schema": "camera-vga-current-endpoint-margins-v1",
+  "AuditedUTC": "2026-10-31T07:01:46.397683+00:00",
+  "Scope": "Three exact source/endpoint clock identities, setup and hold in slow and fast corners, from ordinary native timing reports. This is not full-chip timing or hardware release approval.",
+  "Summary": {
+    "ExactTargetCount": 3,
+    "ExactCaseCount": 12,
+    "CoverageComplete": true,
+    "AllCasesMet": true,
+    "sameSourceSetupHold": true,
+    "SameDataTransitionVariantClaimed": false,
+    "PathVariantMeaning": "Setup and hold use the same source, endpoint and launch/capture clock identities. Each is its independently reported worst data-path representative; equal data-edge or transition variants are not asserted.",
+    "MinimumSetupNS": 3.074,
+    "MinimumHoldNS": 0.016
+  },
+  "FinalADFSHA256": "daa2a9221238d09398ba325acef561b604dcb5643571301ba8831f76736dfd9f",
+  "IdentityReference": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-hold-analysis-20261031-a\\exact-complete\\camera-vga-hold-analysis.json",
+  "IdentityReferenceSHA256": "e4ff66613cb7c65057f0db0b8143c4d6efc19ce1c1ab03a1d6c501a33f621ea5",
+  "Parser": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_camera_vga_hold.py",
+  "ParserSHA256": "a9c3046d959358cb08d6ab303af654f3fd75b34768b723ee22fc4ba0c1b54ce3",
+  "SourceReports": [
+    {
+      "Role": "union",
+      "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+      "ReportSHA256": "60d2bce614f4ee80b8da63d300e883f89a2af0f8fed3baedeacd95e0afe37b31",
+      "SelectedExactCases": 10,
+      "Receipt": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\result.json",
+      "ReceiptSHA256": "e37fb4aacc96e10e59ecd6f275b8269c1af2a863ddbea0399a79d201975f0962",
+      "InputADF": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\input.adf",
+      "InputADFSHA256": "daa2a9221238d09398ba325acef561b604dcb5643571301ba8831f76736dfd9f",
+      "NativeExecutionPassed": true,
+      "NativeExitCode": 0,
+      "InputADFUnchanged": true,
+      "InputDrift": [],
+      "Diagnostics": []
+    },
+    {
+      "Role": "write_exact",
+      "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-target-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+      "ReportSHA256": "c5170b325fc87c3fb72df17b1238a44806122d38e4b9ddbaa4948fae02054504",
+      "SelectedExactCases": 4,
+      "Receipt": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-target-20261031-a\\result.json",
+      "ReceiptSHA256": "23a5a2d9fe650e387ff66d3089493015ebc4107ba6c03bd95b666a9e76318d89",
+      "InputADF": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-target-20261031-a\\input.adf",
+      "InputADFSHA256": "daa2a9221238d09398ba325acef561b604dcb5643571301ba8831f76736dfd9f",
+      "NativeExecutionPassed": true,
+      "NativeExitCode": 0,
+      "InputADFUnchanged": true,
+      "InputDrift": [],
+      "Diagnostics": []
+    }
+  ],
+  "UnionCoverageNote": "Union report contains ten exact cases; write exact-target normal report supplies all four _N78 cases, including the two setup cases absent from the union report.",
+  "OverlappingUnionExactCases": [
+    {
+      "Net": "_N78",
+      "Corner": "slow",
+      "Kind": "hold",
+      "SlackNS": 0.853,
+      "PathSHA256Identical": true
+    },
+    {
+      "Net": "_N78",
+      "Corner": "fast",
+      "Kind": "hold",
+      "SlackNS": 0.407,
+      "PathSHA256Identical": true
+    }
+  ],
+  "ReloadRouteAudit": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\reload-route-comparison.json",
+    "SHA256": "ac98c6009fdf84966f02ebea9e252e5796736f699b0e03cf750e42dcf57acc3c",
+    "AuditPassed": true,
+    "AllRoutesIdentical": true,
+    "CDBChanged": false,
+    "CDBENTRYAddedCount": 0,
+    "CDBENTRYRemovedCount": 0
+  },
+  "Paths": [
+    {
+      "Net": "_N78",
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+      "LaunchClock": "ddrphy_sysclk",
+      "CaptureClock": "phy_dq_sysclk_1",
+      "LaunchEdge": "rising",
+      "CaptureEdge": "rising",
+      "TerminalDataNet": {
+        "Net": "_N78",
+        "FromRoutePin": "CR1:CLMA_357_841",
+        "ToRoutePin": "TX_DATA[1]:IOLHR_364_834",
+        "Fanout": 1
+      },
+      "sameSourceSetupHold": true,
+      "SameClockIdentitySetupHold": true,
+      "SameDataTransitionVariantClaimed": false,
+      "MarginsNS": {
+        "slow": {
+          "setupNS": 3.074,
+          "holdNS": 0.853
+        },
+        "fast": {
+          "setupNS": 4.748,
+          "holdNS": 0.407
+        }
+      },
+      "Cases": [
+        {
+          "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+          "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+          "LaunchClock": "ddrphy_sysclk",
+          "CaptureClock": "phy_dq_sysclk_1",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "slow",
+          "Kind": "setup",
+          "PathClass": "sequential timing path",
+          "SlackNS": 3.074,
+          "SlackState": "MET",
+          "ClockSkewNS": -2.674,
+          "CaptureClockDelayNS": 2.617,
+          "LaunchClockDelayNS": 5.515,
+          "TimingExceptions": [
+            "MultiCycle Path Setup -end 2"
+          ],
+          "ExceptionConstraintLines": [
+            700
+          ],
+          "DataTrace": [
+            {
+              "Location": "CLMS_291_847/CR0",
+              "Site": "CLMS_291_847",
+              "SiteKind": "CLMS",
+              "X": 291,
+              "Y": 847,
+              "Pin": "CR0",
+              "RoutePin": "CR0:CLMS_291_847",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/L5Q",
+              "DelayType": "tco",
+              "DelayNS": 0.249,
+              "CumulativeNS": 5.764,
+              "Transition": "r",
+              "ReportLine": 183
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/phy_wrdata [1]",
+              "Fanout": 4,
+              "DelayNS": 0.839,
+              "CumulativeNS": 6.603,
+              "ReportLine": 184,
+              "FromRoutePin": "CR0:CLMS_291_847",
+              "ToRoutePin": "Y2:CLMA_357_840"
+            },
+            {
+              "Location": "CLMA_357_840/Y2",
+              "Site": "CLMA_357_840",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 840,
+              "Pin": "Y2",
+              "RoutePin": "Y2:CLMA_357_840",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/adj_wrdata_mask_4[21]/LUT6_inst_perm/L6",
+              "DelayType": "td",
+              "DelayNS": 0.096,
+              "CumulativeNS": 6.699,
+              "Transition": "r",
+              "ReportLine": 185
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/adj_wrdq [9]",
+              "Fanout": 1,
+              "DelayNS": 0.135,
+              "CumulativeNS": 6.834,
+              "ReportLine": 186,
+              "FromRoutePin": "Y2:CLMA_357_840",
+              "ToRoutePin": "CR3:CLMA_357_841"
+            },
+            {
+              "Location": "CLMA_357_841/CR3",
+              "Site": "CLMA_357_841",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 841,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMA_357_841",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_42/CR",
+              "DelayType": "td",
+              "DelayNS": 0.125,
+              "CumulativeNS": 6.959,
+              "Transition": "r",
+              "ReportLine": 187
+            },
+            {
+              "Type": "net",
+              "Name": "_N77",
+              "Fanout": 1,
+              "DelayNS": 0.135,
+              "CumulativeNS": 7.094,
+              "ReportLine": 188,
+              "FromRoutePin": "CR3:CLMA_357_841",
+              "ToRoutePin": "CR1:CLMA_357_841"
+            },
+            {
+              "Location": "CLMA_357_841/CR1",
+              "Site": "CLMA_357_841",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 841,
+              "Pin": "CR1",
+              "RoutePin": "CR1:CLMA_357_841",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_43/CR",
+              "DelayType": "td",
+              "DelayNS": 0.227,
+              "CumulativeNS": 7.321,
+              "Transition": "r",
+              "ReportLine": 189
+            },
+            {
+              "Type": "net",
+              "Name": "_N78",
+              "Fanout": 1,
+              "DelayNS": 1.54,
+              "CumulativeNS": 8.861,
+              "ReportLine": 190,
+              "FromRoutePin": "CR1:CLMA_357_841",
+              "ToRoutePin": "TX_DATA[1]:IOLHR_364_834"
+            },
+            {
+              "Location": "IOLHR_364_834/TX_DATA[1]",
+              "Site": "IOLHR_364_834",
+              "SiteKind": "IOLHR",
+              "X": 364,
+              "Y": 834,
+              "Pin": "TX_DATA[1]",
+              "RoutePin": "TX_DATA[1]:IOLHR_364_834",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+              "DelayType": null,
+              "DelayNS": null,
+              "CumulativeNS": null,
+              "Transition": "r",
+              "ReportLine": 191
+            }
+          ],
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-target-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+          "ReportLine": 145,
+          "PathSHA256": "7c98ac08301d1eec5214fcf3874c9ef9cb2498bb4707e9d86a31c235399b915e",
+          "NativeReportKind": "normal",
+          "DataPinTransitions": [
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/L5Q",
+              "RoutePin": "CR0:CLMS_291_847",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/adj_wrdata_mask_4[21]/LUT6_inst_perm/L6",
+              "RoutePin": "Y2:CLMA_357_840",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "CLKROUTE_42/CR",
+              "RoutePin": "CR3:CLMA_357_841",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "CLKROUTE_43/CR",
+              "RoutePin": "CR1:CLMA_357_841",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+              "RoutePin": "TX_DATA[1]:IOLHR_364_834",
+              "Transition": "r"
+            }
+          ]
+        },
+        {
+          "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+          "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+          "LaunchClock": "ddrphy_sysclk",
+          "CaptureClock": "phy_dq_sysclk_1",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "slow",
+          "Kind": "hold",
+          "PathClass": "sequential timing path",
+          "SlackNS": 0.853,
+          "SlackState": "MET",
+          "ClockSkewNS": -1.279,
+          "CaptureClockDelayNS": 3.066,
+          "LaunchClockDelayNS": 4.121,
+          "TimingExceptions": [
+            "MultiCycle Path Setup -end 2"
+          ],
+          "ExceptionConstraintLines": [
+            700
+          ],
+          "DataTrace": [
+            {
+              "Location": "CLMS_291_847/CR0",
+              "Site": "CLMS_291_847",
+              "SiteKind": "CLMS",
+              "X": 291,
+              "Y": 847,
+              "Pin": "CR0",
+              "RoutePin": "CR0:CLMS_291_847",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/L5Q",
+              "DelayType": "tco",
+              "DelayNS": 0.173,
+              "CumulativeNS": 4.294,
+              "Transition": "f",
+              "ReportLine": 267
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/phy_wrdata [1]",
+              "Fanout": 4,
+              "DelayNS": 0.548,
+              "CumulativeNS": 4.842,
+              "ReportLine": 268,
+              "FromRoutePin": "CR0:CLMS_291_847",
+              "ToRoutePin": "Y2:CLMA_357_840"
+            },
+            {
+              "Location": "CLMA_357_840/Y2",
+              "Site": "CLMA_357_840",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 840,
+              "Pin": "Y2",
+              "RoutePin": "Y2:CLMA_357_840",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/adj_wrdata_mask_4[21]/LUT6_inst_perm/L6",
+              "DelayType": "td",
+              "DelayNS": 0.071,
+              "CumulativeNS": 4.913,
+              "Transition": "f",
+              "ReportLine": 269
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/adj_wrdq [9]",
+              "Fanout": 1,
+              "DelayNS": 0.072,
+              "CumulativeNS": 4.985,
+              "ReportLine": 270,
+              "FromRoutePin": "Y2:CLMA_357_840",
+              "ToRoutePin": "CR3:CLMA_357_841"
+            },
+            {
+              "Location": "CLMA_357_841/CR3",
+              "Site": "CLMA_357_841",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 841,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMA_357_841",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_42/CR",
+              "DelayType": "td",
+              "DelayNS": 0.087,
+              "CumulativeNS": 5.072,
+              "Transition": "f",
+              "ReportLine": 271
+            },
+            {
+              "Type": "net",
+              "Name": "_N77",
+              "Fanout": 1,
+              "DelayNS": 0.072,
+              "CumulativeNS": 5.144,
+              "ReportLine": 272,
+              "FromRoutePin": "CR3:CLMA_357_841",
+              "ToRoutePin": "CR1:CLMA_357_841"
+            },
+            {
+              "Location": "CLMA_357_841/CR1",
+              "Site": "CLMA_357_841",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 841,
+              "Pin": "CR1",
+              "RoutePin": "CR1:CLMA_357_841",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_43/CR",
+              "DelayType": "td",
+              "DelayNS": 0.182,
+              "CumulativeNS": 5.326,
+              "Transition": "f",
+              "ReportLine": 273
+            },
+            {
+              "Type": "net",
+              "Name": "_N78",
+              "Fanout": 1,
+              "DelayNS": 0.899,
+              "CumulativeNS": 6.225,
+              "ReportLine": 274,
+              "FromRoutePin": "CR1:CLMA_357_841",
+              "ToRoutePin": "TX_DATA[1]:IOLHR_364_834"
+            },
+            {
+              "Location": "IOLHR_364_834/TX_DATA[1]",
+              "Site": "IOLHR_364_834",
+              "SiteKind": "IOLHR",
+              "X": 364,
+              "Y": 834,
+              "Pin": "TX_DATA[1]",
+              "RoutePin": "TX_DATA[1]:IOLHR_364_834",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+              "DelayType": null,
+              "DelayNS": null,
+              "CumulativeNS": null,
+              "Transition": "f",
+              "ReportLine": 275
+            }
+          ],
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-target-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+          "ReportLine": 229,
+          "PathSHA256": "65e983fe45ab65970cc049db0ed5eb26f145c5ca1d7bef1e5afc9aed03bb6054",
+          "NativeReportKind": "normal",
+          "DataPinTransitions": [
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/L5Q",
+              "RoutePin": "CR0:CLMS_291_847",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/adj_wrdata_mask_4[21]/LUT6_inst_perm/L6",
+              "RoutePin": "Y2:CLMA_357_840",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "CLKROUTE_42/CR",
+              "RoutePin": "CR3:CLMA_357_841",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "CLKROUTE_43/CR",
+              "RoutePin": "CR1:CLMA_357_841",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+              "RoutePin": "TX_DATA[1]:IOLHR_364_834",
+              "Transition": "f"
+            }
+          ]
+        },
+        {
+          "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+          "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+          "LaunchClock": "ddrphy_sysclk",
+          "CaptureClock": "phy_dq_sysclk_1",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "fast",
+          "Kind": "setup",
+          "PathClass": "sequential timing path",
+          "SlackNS": 4.748,
+          "SlackState": "MET",
+          "ClockSkewNS": -2.539,
+          "CaptureClockDelayNS": 1.687,
+          "LaunchClockDelayNS": 4.372,
+          "TimingExceptions": [
+            "MultiCycle Path Setup -end 2"
+          ],
+          "ExceptionConstraintLines": [
+            700
+          ],
+          "DataTrace": [
+            {
+              "Location": "CLMS_291_847/CR0",
+              "Site": "CLMS_291_847",
+              "SiteKind": "CLMS",
+              "X": 291,
+              "Y": 847,
+              "Pin": "CR0",
+              "RoutePin": "CR0:CLMS_291_847",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/L5Q",
+              "DelayType": "tco",
+              "DelayNS": 0.141,
+              "CumulativeNS": 4.513,
+              "Transition": "f",
+              "ReportLine": 1266
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/phy_wrdata [1]",
+              "Fanout": 4,
+              "DelayNS": 0.512,
+              "CumulativeNS": 5.025,
+              "ReportLine": 1267,
+              "FromRoutePin": "CR0:CLMS_291_847",
+              "ToRoutePin": "Y2:CLMA_357_840"
+            },
+            {
+              "Location": "CLMA_357_840/Y2",
+              "Site": "CLMA_357_840",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 840,
+              "Pin": "Y2",
+              "RoutePin": "Y2:CLMA_357_840",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/adj_wrdata_mask_4[21]/LUT6_inst_perm/L6",
+              "DelayType": "td",
+              "DelayNS": 0.066,
+              "CumulativeNS": 5.091,
+              "Transition": "f",
+              "ReportLine": 1268
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/adj_wrdq [9]",
+              "Fanout": 1,
+              "DelayNS": 0.083,
+              "CumulativeNS": 5.174,
+              "ReportLine": 1269,
+              "FromRoutePin": "Y2:CLMA_357_840",
+              "ToRoutePin": "CR3:CLMA_357_841"
+            },
+            {
+              "Location": "CLMA_357_841/CR3",
+              "Site": "CLMA_357_841",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 841,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMA_357_841",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_42/CR",
+              "DelayType": "td",
+              "DelayNS": 0.068,
+              "CumulativeNS": 5.242,
+              "Transition": "f",
+              "ReportLine": 1270
+            },
+            {
+              "Type": "net",
+              "Name": "_N77",
+              "Fanout": 1,
+              "DelayNS": 0.083,
+              "CumulativeNS": 5.325,
+              "ReportLine": 1271,
+              "FromRoutePin": "CR3:CLMA_357_841",
+              "ToRoutePin": "CR1:CLMA_357_841"
+            },
+            {
+              "Location": "CLMA_357_841/CR1",
+              "Site": "CLMA_357_841",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 841,
+              "Pin": "CR1",
+              "RoutePin": "CR1:CLMA_357_841",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_43/CR",
+              "DelayType": "td",
+              "DelayNS": 0.142,
+              "CumulativeNS": 5.467,
+              "Transition": "f",
+              "ReportLine": 1272
+            },
+            {
+              "Type": "net",
+              "Name": "_N78",
+              "Fanout": 1,
+              "DelayNS": 0.879,
+              "CumulativeNS": 6.346,
+              "ReportLine": 1273,
+              "FromRoutePin": "CR1:CLMA_357_841",
+              "ToRoutePin": "TX_DATA[1]:IOLHR_364_834"
+            },
+            {
+              "Location": "IOLHR_364_834/TX_DATA[1]",
+              "Site": "IOLHR_364_834",
+              "SiteKind": "IOLHR",
+              "X": 364,
+              "Y": 834,
+              "Pin": "TX_DATA[1]",
+              "RoutePin": "TX_DATA[1]:IOLHR_364_834",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+              "DelayType": null,
+              "DelayNS": null,
+              "CumulativeNS": null,
+              "Transition": "f",
+              "ReportLine": 1274
+            }
+          ],
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-target-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+          "ReportLine": 1228,
+          "PathSHA256": "2fc5eec80ed911e621c745e6b16287e33207892901aadfdedd565111aa33ae72",
+          "NativeReportKind": "normal",
+          "DataPinTransitions": [
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/L5Q",
+              "RoutePin": "CR0:CLMS_291_847",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/adj_wrdata_mask_4[21]/LUT6_inst_perm/L6",
+              "RoutePin": "Y2:CLMA_357_840",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "CLKROUTE_42/CR",
+              "RoutePin": "CR3:CLMA_357_841",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "CLKROUTE_43/CR",
+              "RoutePin": "CR1:CLMA_357_841",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+              "RoutePin": "TX_DATA[1]:IOLHR_364_834",
+              "Transition": "f"
+            }
+          ]
+        },
+        {
+          "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+          "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+          "LaunchClock": "ddrphy_sysclk",
+          "CaptureClock": "phy_dq_sysclk_1",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "fast",
+          "Kind": "hold",
+          "PathClass": "sequential timing path",
+          "SlackNS": 0.407,
+          "SlackState": "MET",
+          "ClockSkewNS": -1.443,
+          "CaptureClockDelayNS": 1.998,
+          "LaunchClockDelayNS": 3.295,
+          "TimingExceptions": [
+            "MultiCycle Path Setup -end 2"
+          ],
+          "ExceptionConstraintLines": [
+            700
+          ],
+          "DataTrace": [
+            {
+              "Location": "CLMS_291_847/CR0",
+              "Site": "CLMS_291_847",
+              "SiteKind": "CLMS",
+              "X": 291,
+              "Y": 847,
+              "Pin": "CR0",
+              "RoutePin": "CR0:CLMS_291_847",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/L5Q",
+              "DelayType": "tco",
+              "DelayNS": 0.122,
+              "CumulativeNS": 3.417,
+              "Transition": "r",
+              "ReportLine": 1350
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/phy_wrdata [1]",
+              "Fanout": 4,
+              "DelayNS": 0.392,
+              "CumulativeNS": 3.809,
+              "ReportLine": 1351,
+              "FromRoutePin": "CR0:CLMS_291_847",
+              "ToRoutePin": "Y2:CLMA_357_840"
+            },
+            {
+              "Location": "CLMA_357_840/Y2",
+              "Site": "CLMA_357_840",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 840,
+              "Pin": "Y2",
+              "RoutePin": "Y2:CLMA_357_840",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/adj_wrdata_mask_4[21]/LUT6_inst_perm/L6",
+              "DelayType": "td",
+              "DelayNS": 0.056,
+              "CumulativeNS": 3.865,
+              "Transition": "f",
+              "ReportLine": 1352
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/adj_wrdq [9]",
+              "Fanout": 1,
+              "DelayNS": 0.053,
+              "CumulativeNS": 3.918,
+              "ReportLine": 1353,
+              "FromRoutePin": "Y2:CLMA_357_840",
+              "ToRoutePin": "CR3:CLMA_357_841"
+            },
+            {
+              "Location": "CLMA_357_841/CR3",
+              "Site": "CLMA_357_841",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 841,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMA_357_841",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_42/CR",
+              "DelayType": "td",
+              "DelayNS": 0.058,
+              "CumulativeNS": 3.976,
+              "Transition": "f",
+              "ReportLine": 1354
+            },
+            {
+              "Type": "net",
+              "Name": "_N77",
+              "Fanout": 1,
+              "DelayNS": 0.053,
+              "CumulativeNS": 4.029,
+              "ReportLine": 1355,
+              "FromRoutePin": "CR3:CLMA_357_841",
+              "ToRoutePin": "CR1:CLMA_357_841"
+            },
+            {
+              "Location": "CLMA_357_841/CR1",
+              "Site": "CLMA_357_841",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 841,
+              "Pin": "CR1",
+              "RoutePin": "CR1:CLMA_357_841",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_43/CR",
+              "DelayType": "td",
+              "DelayNS": 0.124,
+              "CumulativeNS": 4.153,
+              "Transition": "f",
+              "ReportLine": 1356
+            },
+            {
+              "Type": "net",
+              "Name": "_N78",
+              "Fanout": 1,
+              "DelayNS": 0.632,
+              "CumulativeNS": 4.785,
+              "ReportLine": 1357,
+              "FromRoutePin": "CR1:CLMA_357_841",
+              "ToRoutePin": "TX_DATA[1]:IOLHR_364_834"
+            },
+            {
+              "Location": "IOLHR_364_834/TX_DATA[1]",
+              "Site": "IOLHR_364_834",
+              "SiteKind": "IOLHR",
+              "X": 364,
+              "Y": 834,
+              "Pin": "TX_DATA[1]",
+              "RoutePin": "TX_DATA[1]:IOLHR_364_834",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+              "DelayType": null,
+              "DelayNS": null,
+              "CumulativeNS": null,
+              "Transition": "f",
+              "ReportLine": 1358
+            }
+          ],
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-target-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+          "ReportLine": 1312,
+          "PathSHA256": "14784ab66629ceeb2dc14f49ab381950bbe68b8e85ccbdc69193a634c043c57e",
+          "NativeReportKind": "normal",
+          "DataPinTransitions": [
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/L5Q",
+              "RoutePin": "CR0:CLMS_291_847",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_wdata_path_adj/adj_wrdata_mask_4[21]/LUT6_inst_perm/L6",
+              "RoutePin": "Y2:CLMA_357_840",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "CLKROUTE_42/CR",
+              "RoutePin": "CR3:CLMA_357_841",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "CLKROUTE_43/CR",
+              "RoutePin": "CR1:CLMA_357_841",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]",
+              "RoutePin": "TX_DATA[1]:IOLHR_364_834",
+              "Transition": "f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Net": "_N101",
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ICLKDIV",
+      "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+      "LaunchClock": "phy_dq_sysclk_1",
+      "CaptureClock": "ddrphy_sysclk",
+      "LaunchEdge": "rising",
+      "CaptureEdge": "rising",
+      "TerminalDataNet": {
+        "Net": "_N101",
+        "FromRoutePin": "CR3:CLMS_345_769",
+        "ToRoutePin": "M2:CLMA_351_774",
+        "Fanout": 1
+      },
+      "sameSourceSetupHold": true,
+      "SameClockIdentitySetupHold": true,
+      "SameDataTransitionVariantClaimed": false,
+      "MarginsNS": {
+        "slow": {
+          "setupNS": 3.212,
+          "holdNS": 1.29
+        },
+        "fast": {
+          "setupNS": 4.752,
+          "holdNS": 0.599
+        }
+      },
+      "Cases": [
+        {
+          "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ICLKDIV",
+          "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+          "LaunchClock": "phy_dq_sysclk_1",
+          "CaptureClock": "ddrphy_sysclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "slow",
+          "Kind": "setup",
+          "PathClass": "sequential timing path",
+          "SlackNS": 3.212,
+          "SlackState": "MET",
+          "ClockSkewNS": 1.282,
+          "CaptureClockDelayNS": 4.121,
+          "LaunchClockDelayNS": 3.063,
+          "TimingExceptions": [],
+          "ExceptionConstraintLines": [],
+          "DataTrace": [
+            {
+              "Location": "IOLHR_364_768/RX_DATA[5]",
+              "Site": "IOLHR_364_768",
+              "SiteKind": "IOLHR",
+              "X": 364,
+              "Y": 768,
+              "Pin": "RX_DATA[5]",
+              "RoutePin": "RX_DATA[5]:IOLHR_364_768",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/RX_DATA[5]",
+              "DelayType": "tco",
+              "DelayNS": 0.428,
+              "CumulativeNS": 5.491,
+              "Transition": "r",
+              "ReportLine": 184
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_rdata [21]",
+              "Fanout": 1,
+              "DelayNS": 0.5,
+              "CumulativeNS": 5.991,
+              "ReportLine": 185,
+              "FromRoutePin": "RX_DATA[5]:IOLHR_364_768",
+              "ToRoutePin": "CR3:CLMS_345_769"
+            },
+            {
+              "Location": "CLMS_345_769/CR3",
+              "Site": "CLMS_345_769",
+              "SiteKind": "CLMS",
+              "X": 345,
+              "Y": 769,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMS_345_769",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_66/CR",
+              "DelayType": "td",
+              "DelayNS": 0.125,
+              "CumulativeNS": 6.116,
+              "Transition": "r",
+              "ReportLine": 186
+            },
+            {
+              "Type": "net",
+              "Name": "_N101",
+              "Fanout": 1,
+              "DelayNS": 2.431,
+              "CumulativeNS": 8.547,
+              "ReportLine": 187,
+              "FromRoutePin": "CR3:CLMS_345_769",
+              "ToRoutePin": "M2:CLMA_351_774"
+            },
+            {
+              "Location": "CLMA_351_774/M2",
+              "Site": "CLMA_351_774",
+              "SiteKind": "CLMA",
+              "X": 351,
+              "Y": 774,
+              "Pin": "M2",
+              "RoutePin": "M2:CLMA_351_774",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+              "DelayType": null,
+              "DelayNS": null,
+              "CumulativeNS": null,
+              "Transition": "r",
+              "ReportLine": 188
+            }
+          ],
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+          "ReportLine": 153,
+          "PathSHA256": "59553fee435659c612487db4dfcd2eadc941c30588a8ba156dbe9a17229d551a",
+          "NativeReportKind": "normal",
+          "DataPinTransitions": [
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/RX_DATA[5]",
+              "RoutePin": "RX_DATA[5]:IOLHR_364_768",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "CLKROUTE_66/CR",
+              "RoutePin": "CR3:CLMS_345_769",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+              "RoutePin": "M2:CLMA_351_774",
+              "Transition": "r"
+            }
+          ]
+        },
+        {
+          "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ICLKDIV",
+          "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+          "LaunchClock": "phy_dq_sysclk_1",
+          "CaptureClock": "ddrphy_sysclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "slow",
+          "Kind": "hold",
+          "PathClass": "sequential timing path",
+          "SlackNS": 1.29,
+          "SlackState": "MET",
+          "ClockSkewNS": 2.676,
+          "CaptureClockDelayNS": 5.515,
+          "LaunchClockDelayNS": 2.615,
+          "TimingExceptions": [],
+          "ExceptionConstraintLines": [],
+          "DataTrace": [
+            {
+              "Location": "IOLHR_364_768/RX_DATA[5]",
+              "Site": "IOLHR_364_768",
+              "SiteKind": "IOLHR",
+              "X": 364,
+              "Y": 768,
+              "Pin": "RX_DATA[5]",
+              "RoutePin": "RX_DATA[5]:IOLHR_364_768",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/RX_DATA[5]",
+              "DelayType": "tco",
+              "DelayNS": 0.259,
+              "CumulativeNS": 4.874,
+              "Transition": "f",
+              "ReportLine": 262
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_rdata [21]",
+              "Fanout": 1,
+              "DelayNS": 0.323,
+              "CumulativeNS": 5.197,
+              "ReportLine": 263,
+              "FromRoutePin": "RX_DATA[5]:IOLHR_364_768",
+              "ToRoutePin": "CR3:CLMS_345_769"
+            },
+            {
+              "Location": "CLMS_345_769/CR3",
+              "Site": "CLMS_345_769",
+              "SiteKind": "CLMS",
+              "X": 345,
+              "Y": 769,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMS_345_769",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_66/CR",
+              "DelayType": "td",
+              "DelayNS": 0.087,
+              "CumulativeNS": 5.284,
+              "Transition": "f",
+              "ReportLine": 264
+            },
+            {
+              "Type": "net",
+              "Name": "_N101",
+              "Fanout": 1,
+              "DelayNS": 1.698,
+              "CumulativeNS": 6.982,
+              "ReportLine": 265,
+              "FromRoutePin": "CR3:CLMS_345_769",
+              "ToRoutePin": "M2:CLMA_351_774"
+            },
+            {
+              "Location": "CLMA_351_774/M2",
+              "Site": "CLMA_351_774",
+              "SiteKind": "CLMA",
+              "X": 351,
+              "Y": 774,
+              "Pin": "M2",
+              "RoutePin": "M2:CLMA_351_774",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+              "DelayType": null,
+              "DelayNS": null,
+              "CumulativeNS": null,
+              "Transition": "f",
+              "ReportLine": 266
+            }
+          ],
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+          "ReportLine": 231,
+          "PathSHA256": "65f289f7af970b708833c4c8f569edc83e2a31589033651a67e3c68f395d3c89",
+          "NativeReportKind": "normal",
+          "DataPinTransitions": [
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/RX_DATA[5]",
+              "RoutePin": "RX_DATA[5]:IOLHR_364_768",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "CLKROUTE_66/CR",
+              "RoutePin": "CR3:CLMS_345_769",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+              "RoutePin": "M2:CLMA_351_774",
+              "Transition": "f"
+            }
+          ]
+        },
+        {
+          "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ICLKDIV",
+          "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+          "LaunchClock": "phy_dq_sysclk_1",
+          "CaptureClock": "ddrphy_sysclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "fast",
+          "Kind": "setup",
+          "PathClass": "sequential timing path",
+          "SlackNS": 4.752,
+          "SlackState": "MET",
+          "ClockSkewNS": 1.444,
+          "CaptureClockDelayNS": 3.295,
+          "LaunchClockDelayNS": 1.997,
+          "TimingExceptions": [],
+          "ExceptionConstraintLines": [],
+          "DataTrace": [
+            {
+              "Location": "IOLHR_364_768/RX_DATA[5]",
+              "Site": "IOLHR_364_768",
+              "SiteKind": "IOLHR",
+              "X": 364,
+              "Y": 768,
+              "Pin": "RX_DATA[5]",
+              "RoutePin": "RX_DATA[5]:IOLHR_364_768",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/RX_DATA[5]",
+              "DelayType": "tco",
+              "DelayNS": 0.26,
+              "CumulativeNS": 4.257,
+              "Transition": "f",
+              "ReportLine": 9797
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_rdata [21]",
+              "Fanout": 1,
+              "DelayNS": 0.32,
+              "CumulativeNS": 4.577,
+              "ReportLine": 9798,
+              "FromRoutePin": "RX_DATA[5]:IOLHR_364_768",
+              "ToRoutePin": "CR3:CLMS_345_769"
+            },
+            {
+              "Location": "CLMS_345_769/CR3",
+              "Site": "CLMS_345_769",
+              "SiteKind": "CLMS",
+              "X": 345,
+              "Y": 769,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMS_345_769",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_66/CR",
+              "DelayType": "td",
+              "DelayNS": 0.068,
+              "CumulativeNS": 4.645,
+              "Transition": "f",
+              "ReportLine": 9799
+            },
+            {
+              "Type": "net",
+              "Name": "_N101",
+              "Fanout": 1,
+              "DelayNS": 1.52,
+              "CumulativeNS": 6.165,
+              "ReportLine": 9800,
+              "FromRoutePin": "CR3:CLMS_345_769",
+              "ToRoutePin": "M2:CLMA_351_774"
+            },
+            {
+              "Location": "CLMA_351_774/M2",
+              "Site": "CLMA_351_774",
+              "SiteKind": "CLMA",
+              "X": 351,
+              "Y": 774,
+              "Pin": "M2",
+              "RoutePin": "M2:CLMA_351_774",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+              "DelayType": null,
+              "DelayNS": null,
+              "CumulativeNS": null,
+              "Transition": "f",
+              "ReportLine": 9801
+            }
+          ],
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+          "ReportLine": 9766,
+          "PathSHA256": "1f65c1d8b623c5f99d060bc45ad6916acee9330900b0bbe11c34cff9e3c1b06b",
+          "NativeReportKind": "normal",
+          "DataPinTransitions": [
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/RX_DATA[5]",
+              "RoutePin": "RX_DATA[5]:IOLHR_364_768",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "CLKROUTE_66/CR",
+              "RoutePin": "CR3:CLMS_345_769",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+              "RoutePin": "M2:CLMA_351_774",
+              "Transition": "f"
+            }
+          ]
+        },
+        {
+          "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ICLKDIV",
+          "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+          "LaunchClock": "phy_dq_sysclk_1",
+          "CaptureClock": "ddrphy_sysclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "fast",
+          "Kind": "hold",
+          "PathClass": "sequential timing path",
+          "SlackNS": 0.599,
+          "SlackState": "MET",
+          "ClockSkewNS": 2.54,
+          "CaptureClockDelayNS": 4.372,
+          "LaunchClockDelayNS": 1.686,
+          "TimingExceptions": [],
+          "ExceptionConstraintLines": [],
+          "DataTrace": [
+            {
+              "Location": "IOLHR_364_768/RX_DATA[5]",
+              "Site": "IOLHR_364_768",
+              "SiteKind": "IOLHR",
+              "X": 364,
+              "Y": 768,
+              "Pin": "RX_DATA[5]",
+              "RoutePin": "RX_DATA[5]:IOLHR_364_768",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/RX_DATA[5]",
+              "DelayType": "tco",
+              "DelayNS": 0.155,
+              "CumulativeNS": 3.841,
+              "Transition": "r",
+              "ReportLine": 9875
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_rdata [21]",
+              "Fanout": 1,
+              "DelayNS": 0.234,
+              "CumulativeNS": 4.075,
+              "ReportLine": 9876,
+              "FromRoutePin": "RX_DATA[5]:IOLHR_364_768",
+              "ToRoutePin": "CR3:CLMS_345_769"
+            },
+            {
+              "Location": "CLMS_345_769/CR3",
+              "Site": "CLMS_345_769",
+              "SiteKind": "CLMS",
+              "X": 345,
+              "Y": 769,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMS_345_769",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_66/CR",
+              "DelayType": "td",
+              "DelayNS": 0.057,
+              "CumulativeNS": 4.132,
+              "Transition": "r",
+              "ReportLine": 9877
+            },
+            {
+              "Type": "net",
+              "Name": "_N101",
+              "Fanout": 1,
+              "DelayNS": 1.118,
+              "CumulativeNS": 5.25,
+              "ReportLine": 9878,
+              "FromRoutePin": "CR3:CLMS_345_769",
+              "ToRoutePin": "M2:CLMA_351_774"
+            },
+            {
+              "Location": "CLMA_351_774/M2",
+              "Site": "CLMA_351_774",
+              "SiteKind": "CLMA",
+              "X": 351,
+              "Y": 774,
+              "Pin": "M2",
+              "RoutePin": "M2:CLMA_351_774",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+              "DelayType": null,
+              "DelayNS": null,
+              "CumulativeNS": null,
+              "Transition": "r",
+              "ReportLine": 9879
+            }
+          ],
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+          "ReportLine": 9844,
+          "PathSHA256": "8263e17a7f4b597c10371f072e748101dfddea40f0e5bd513a8ef9057d8a986d",
+          "NativeReportKind": "normal",
+          "DataPinTransitions": [
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/RX_DATA[5]",
+              "RoutePin": "RX_DATA[5]:IOLHR_364_768",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "CLKROUTE_66/CR",
+              "RoutePin": "CR3:CLMS_345_769",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[21]/opit_0_inv_srl/D",
+              "RoutePin": "M2:CLMA_351_774",
+              "Transition": "r"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Net": "_N188",
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Endpoint": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+      "LaunchClock": "rst_clk",
+      "CaptureClock": "ddrphy_sysclk",
+      "LaunchEdge": "rising",
+      "CaptureEdge": "rising",
+      "TerminalDataNet": {
+        "Net": "_N188",
+        "FromRoutePin": "CR0:CLMS_351_439",
+        "ToRoutePin": "M2:CLMA_357_546",
+        "Fanout": 1
+      },
+      "sameSourceSetupHold": true,
+      "SameClockIdentitySetupHold": true,
+      "SameDataTransitionVariantClaimed": false,
+      "MarginsNS": {
+        "slow": {
+          "setupNS": 3.747,
+          "holdNS": 1.105
+        },
+        "fast": {
+          "setupNS": 5.761,
+          "holdNS": 0.016
+        }
+      },
+      "Cases": [
+        {
+          "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+          "Endpoint": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "ddrphy_sysclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "slow",
+          "Kind": "setup",
+          "PathClass": "sequential timing path",
+          "SlackNS": 3.747,
+          "SlackState": "MET",
+          "ClockSkewNS": 0.044,
+          "CaptureClockDelayNS": 4.161,
+          "LaunchClockDelayNS": 4.29,
+          "TimingExceptions": [],
+          "ExceptionConstraintLines": [],
+          "DataTrace": [
+            {
+              "Location": "CLMA_351_438/Q0",
+              "Site": "CLMA_351_438",
+              "SiteKind": "CLMA",
+              "X": 351,
+              "Y": 438,
+              "Pin": "Q0",
+              "RoutePin": "Q0:CLMA_351_438",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/L6Q",
+              "DelayType": "tco",
+              "DelayNS": 0.203,
+              "CumulativeNS": 4.493,
+              "Transition": "r",
+              "ReportLine": 337
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/dll_update_n",
+              "Fanout": 1,
+              "DelayNS": 0.135,
+              "CumulativeNS": 4.628,
+              "ReportLine": 338,
+              "FromRoutePin": "Q0:CLMA_351_438",
+              "ToRoutePin": "CR3:CLMS_351_439"
+            },
+            {
+              "Location": "CLMS_351_439/CR3",
+              "Site": "CLMS_351_439",
+              "SiteKind": "CLMS",
+              "X": 351,
+              "Y": 439,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMS_351_439",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_152/CR",
+              "DelayType": "td",
+              "DelayNS": 0.125,
+              "CumulativeNS": 4.753,
+              "Transition": "r",
+              "ReportLine": 339
+            },
+            {
+              "Type": "net",
+              "Name": "_N187",
+              "Fanout": 1,
+              "DelayNS": 0.396,
+              "CumulativeNS": 5.149,
+              "ReportLine": 340,
+              "FromRoutePin": "CR3:CLMS_351_439",
+              "ToRoutePin": "CR0:CLMS_351_439"
+            },
+            {
+              "Location": "CLMS_351_439/CR0",
+              "Site": "CLMS_351_439",
+              "SiteKind": "CLMS",
+              "X": 351,
+              "Y": 439,
+              "Pin": "CR0",
+              "RoutePin": "CR0:CLMS_351_439",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_153/CR",
+              "DelayType": "td",
+              "DelayNS": 0.22,
+              "CumulativeNS": 5.369,
+              "Transition": "r",
+              "ReportLine": 341
+            },
+            {
+              "Type": "net",
+              "Name": "_N188",
+              "Fanout": 1,
+              "DelayNS": 3.032,
+              "CumulativeNS": 8.401,
+              "ReportLine": 342,
+              "FromRoutePin": "CR0:CLMS_351_439",
+              "ToRoutePin": "M2:CLMA_357_546"
+            },
+            {
+              "Location": "CLMA_357_546/M2",
+              "Site": "CLMA_357_546",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 546,
+              "Pin": "M2",
+              "RoutePin": "M2:CLMA_357_546",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+              "DelayType": null,
+              "DelayNS": null,
+              "CumulativeNS": null,
+              "Transition": "r",
+              "ReportLine": 343
+            }
+          ],
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+          "ReportLine": 309,
+          "PathSHA256": "e54f8b0ce5bdb391a601c4a9a7f5724816639d045effaa44475a56efd0d3f905",
+          "NativeReportKind": "normal",
+          "DataPinTransitions": [
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/L6Q",
+              "RoutePin": "Q0:CLMA_351_438",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "CLKROUTE_152/CR",
+              "RoutePin": "CR3:CLMS_351_439",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "CLKROUTE_153/CR",
+              "RoutePin": "CR0:CLMS_351_439",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+              "RoutePin": "M2:CLMA_357_546",
+              "Transition": "r"
+            }
+          ]
+        },
+        {
+          "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+          "Endpoint": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "ddrphy_sysclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "slow",
+          "Kind": "hold",
+          "PathClass": "sequential timing path",
+          "SlackNS": 1.105,
+          "SlackState": "MET",
+          "ClockSkewNS": 1.733,
+          "CaptureClockDelayNS": 5.555,
+          "LaunchClockDelayNS": 3.649,
+          "TimingExceptions": [],
+          "ExceptionConstraintLines": [],
+          "DataTrace": [
+            {
+              "Location": "CLMA_351_438/Q0",
+              "Site": "CLMA_351_438",
+              "SiteKind": "CLMA",
+              "X": 351,
+              "Y": 438,
+              "Pin": "Q0",
+              "RoutePin": "Q0:CLMA_351_438",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/L6Q",
+              "DelayType": "tco",
+              "DelayNS": 0.158,
+              "CumulativeNS": 3.807,
+              "Transition": "f",
+              "ReportLine": 414
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/dll_update_n",
+              "Fanout": 1,
+              "DelayNS": 0.072,
+              "CumulativeNS": 3.879,
+              "ReportLine": 415,
+              "FromRoutePin": "Q0:CLMA_351_438",
+              "ToRoutePin": "CR3:CLMS_351_439"
+            },
+            {
+              "Location": "CLMS_351_439/CR3",
+              "Site": "CLMS_351_439",
+              "SiteKind": "CLMS",
+              "X": 351,
+              "Y": 439,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMS_351_439",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_152/CR",
+              "DelayType": "td",
+              "DelayNS": 0.087,
+              "CumulativeNS": 3.966,
+              "Transition": "f",
+              "ReportLine": 416
+            },
+            {
+              "Type": "net",
+              "Name": "_N187",
+              "Fanout": 1,
+              "DelayNS": 0.254,
+              "CumulativeNS": 4.22,
+              "ReportLine": 417,
+              "FromRoutePin": "CR3:CLMS_351_439",
+              "ToRoutePin": "CR0:CLMS_351_439"
+            },
+            {
+              "Location": "CLMS_351_439/CR0",
+              "Site": "CLMS_351_439",
+              "SiteKind": "CLMS",
+              "X": 351,
+              "Y": 439,
+              "Pin": "CR0",
+              "RoutePin": "CR0:CLMS_351_439",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_153/CR",
+              "DelayType": "td",
+              "DelayNS": 0.177,
+              "CumulativeNS": 4.397,
+              "Transition": "f",
+              "ReportLine": 418
+            },
+            {
+              "Type": "net",
+              "Name": "_N188",
+              "Fanout": 1,
+              "DelayNS": 2.091,
+              "CumulativeNS": 6.488,
+              "ReportLine": 419,
+              "FromRoutePin": "CR0:CLMS_351_439",
+              "ToRoutePin": "M2:CLMA_357_546"
+            },
+            {
+              "Location": "CLMA_357_546/M2",
+              "Site": "CLMA_357_546",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 546,
+              "Pin": "M2",
+              "RoutePin": "M2:CLMA_357_546",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+              "DelayType": null,
+              "DelayNS": null,
+              "CumulativeNS": null,
+              "Transition": "f",
+              "ReportLine": 420
+            }
+          ],
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+          "ReportLine": 386,
+          "PathSHA256": "5f79407e7c0770f69e43c01db4bfa6ff4c2cc432bdd4bab07c297b25ccd96d6e",
+          "NativeReportKind": "normal",
+          "DataPinTransitions": [
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/L6Q",
+              "RoutePin": "Q0:CLMA_351_438",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "CLKROUTE_152/CR",
+              "RoutePin": "CR3:CLMS_351_439",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "CLKROUTE_153/CR",
+              "RoutePin": "CR0:CLMS_351_439",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+              "RoutePin": "M2:CLMA_357_546",
+              "Transition": "f"
+            }
+          ]
+        },
+        {
+          "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+          "Endpoint": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "ddrphy_sysclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "fast",
+          "Kind": "setup",
+          "PathClass": "sequential timing path",
+          "SlackNS": 5.761,
+          "SlackState": "MET",
+          "ClockSkewNS": 0.497,
+          "CaptureClockDelayNS": 3.337,
+          "LaunchClockDelayNS": 2.951,
+          "TimingExceptions": [],
+          "ExceptionConstraintLines": [],
+          "DataTrace": [
+            {
+              "Location": "CLMA_351_438/Q0",
+              "Site": "CLMA_351_438",
+              "SiteKind": "CLMA",
+              "X": 351,
+              "Y": 438,
+              "Pin": "Q0",
+              "RoutePin": "Q0:CLMA_351_438",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/L6Q",
+              "DelayType": "tco",
+              "DelayNS": 0.125,
+              "CumulativeNS": 3.076,
+              "Transition": "f",
+              "ReportLine": 9950
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/dll_update_n",
+              "Fanout": 1,
+              "DelayNS": 0.083,
+              "CumulativeNS": 3.159,
+              "ReportLine": 9951,
+              "FromRoutePin": "Q0:CLMA_351_438",
+              "ToRoutePin": "CR3:CLMS_351_439"
+            },
+            {
+              "Location": "CLMS_351_439/CR3",
+              "Site": "CLMS_351_439",
+              "SiteKind": "CLMS",
+              "X": 351,
+              "Y": 439,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMS_351_439",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_152/CR",
+              "DelayType": "td",
+              "DelayNS": 0.068,
+              "CumulativeNS": 3.227,
+              "Transition": "f",
+              "ReportLine": 9952
+            },
+            {
+              "Type": "net",
+              "Name": "_N187",
+              "Fanout": 1,
+              "DelayNS": 0.237,
+              "CumulativeNS": 3.464,
+              "ReportLine": 9953,
+              "FromRoutePin": "CR3:CLMS_351_439",
+              "ToRoutePin": "CR0:CLMS_351_439"
+            },
+            {
+              "Location": "CLMS_351_439/CR0",
+              "Site": "CLMS_351_439",
+              "SiteKind": "CLMS",
+              "X": 351,
+              "Y": 439,
+              "Pin": "CR0",
+              "RoutePin": "CR0:CLMS_351_439",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_153/CR",
+              "DelayType": "td",
+              "DelayNS": 0.139,
+              "CumulativeNS": 3.603,
+              "Transition": "f",
+              "ReportLine": 9954
+            },
+            {
+              "Type": "net",
+              "Name": "_N188",
+              "Fanout": 1,
+              "DelayNS": 1.96,
+              "CumulativeNS": 5.563,
+              "ReportLine": 9955,
+              "FromRoutePin": "CR0:CLMS_351_439",
+              "ToRoutePin": "M2:CLMA_357_546"
+            },
+            {
+              "Location": "CLMA_357_546/M2",
+              "Site": "CLMA_357_546",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 546,
+              "Pin": "M2",
+              "RoutePin": "M2:CLMA_357_546",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+              "DelayType": null,
+              "DelayNS": null,
+              "CumulativeNS": null,
+              "Transition": "f",
+              "ReportLine": 9956
+            }
+          ],
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+          "ReportLine": 9922,
+          "PathSHA256": "7456c978704ca1b159f20b8391cdc4da85bfecff1aae5660fc8426e4d99195ba",
+          "NativeReportKind": "normal",
+          "DataPinTransitions": [
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/L6Q",
+              "RoutePin": "Q0:CLMA_351_438",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "CLKROUTE_152/CR",
+              "RoutePin": "CR3:CLMS_351_439",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "CLKROUTE_153/CR",
+              "RoutePin": "CR0:CLMS_351_439",
+              "Transition": "f"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+              "RoutePin": "M2:CLMA_357_546",
+              "Transition": "f"
+            }
+          ]
+        },
+        {
+          "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+          "Endpoint": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "ddrphy_sysclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "fast",
+          "Kind": "hold",
+          "PathClass": "sequential timing path",
+          "SlackNS": 0.016,
+          "SlackState": "MET",
+          "ClockSkewNS": 1.829,
+          "CaptureClockDelayNS": 4.414,
+          "LaunchClockDelayNS": 2.474,
+          "TimingExceptions": [],
+          "ExceptionConstraintLines": [],
+          "DataTrace": [
+            {
+              "Location": "CLMA_351_438/Q0",
+              "Site": "CLMA_351_438",
+              "SiteKind": "CLMA",
+              "X": 351,
+              "Y": 438,
+              "Pin": "Q0",
+              "RoutePin": "Q0:CLMA_351_438",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/L6Q",
+              "DelayType": "tco",
+              "DelayNS": 0.103,
+              "CumulativeNS": 2.577,
+              "Transition": "r",
+              "ReportLine": 10027
+            },
+            {
+              "Type": "net",
+              "Name": "u_ddr3_test_h/u_ddrphy_top/dll_update_n",
+              "Fanout": 1,
+              "DelayNS": 0.055,
+              "CumulativeNS": 2.632,
+              "ReportLine": 10028,
+              "FromRoutePin": "Q0:CLMA_351_438",
+              "ToRoutePin": "CR3:CLMS_351_439"
+            },
+            {
+              "Location": "CLMS_351_439/CR3",
+              "Site": "CLMS_351_439",
+              "SiteKind": "CLMS",
+              "X": 351,
+              "Y": 439,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMS_351_439",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_152/CR",
+              "DelayType": "td",
+              "DelayNS": 0.057,
+              "CumulativeNS": 2.689,
+              "Transition": "r",
+              "ReportLine": 10029
+            },
+            {
+              "Type": "net",
+              "Name": "_N187",
+              "Fanout": 1,
+              "DelayNS": 0.177,
+              "CumulativeNS": 2.866,
+              "ReportLine": 10030,
+              "FromRoutePin": "CR3:CLMS_351_439",
+              "ToRoutePin": "CR0:CLMS_351_439"
+            },
+            {
+              "Location": "CLMS_351_439/CR0",
+              "Site": "CLMS_351_439",
+              "SiteKind": "CLMS",
+              "X": 351,
+              "Y": 439,
+              "Pin": "CR0",
+              "RoutePin": "CR0:CLMS_351_439",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_153/CR",
+              "DelayType": "td",
+              "DelayNS": 0.114,
+              "CumulativeNS": 2.98,
+              "Transition": "r",
+              "ReportLine": 10031
+            },
+            {
+              "Type": "net",
+              "Name": "_N188",
+              "Fanout": 1,
+              "DelayNS": 1.364,
+              "CumulativeNS": 4.344,
+              "ReportLine": 10032,
+              "FromRoutePin": "CR0:CLMS_351_439",
+              "ToRoutePin": "M2:CLMA_357_546"
+            },
+            {
+              "Location": "CLMA_357_546/M2",
+              "Site": "CLMA_357_546",
+              "SiteKind": "CLMA",
+              "X": 357,
+              "Y": 546,
+              "Pin": "M2",
+              "RoutePin": "M2:CLMA_357_546",
+              "Type": "pin",
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+              "DelayType": null,
+              "DelayNS": null,
+              "CumulativeNS": null,
+              "Transition": "r",
+              "ReportLine": 10033
+            }
+          ],
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\physical-final-report-20261031-a\\report_path_timing\\report_path_timing_1\\report_timing\\camera_vga_output_top.rtr",
+          "ReportLine": 9999,
+          "PathSHA256": "f0fa686a2feaf19d7169c952b4dae1b5bb7f2da184dfc39dde494b304963e343",
+          "NativeReportKind": "normal",
+          "DataPinTransitions": [
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/L6Q",
+              "RoutePin": "Q0:CLMA_351_438",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "CLKROUTE_152/CR",
+              "RoutePin": "CR3:CLMS_351_439",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "CLKROUTE_153/CR",
+              "RoutePin": "CR0:CLMS_351_439",
+              "Transition": "r"
+            },
+            {
+              "LogicalResource": "u_ddr3_test_h/u_ddrphy_top/u_dll_update_n_sync/sig_async_r1[0]/opit_0_inv_srl/D",
+              "RoutePin": "M2:CLMA_357_546",
+              "Transition": "r"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "HardwareAccessed": false,
+  "EDAExecutedByThisAudit": false,
+  "FullTimingAcceptedByThisAudit": false,
+  "HardwareReleaseAllowed": false
+}

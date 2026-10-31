@@ -1,0 +1,85 @@
+{
+  "Schema": "hdmi-interval-progress-v1",
+  "Target": "hdmi_uart_interval_diag",
+  "CreatedUTC": "2026-10-30T09:22:44.193250+00:00",
+  "SourceBuildPassed": true,
+  "NativeSTAAndMappingPassed": true,
+  "ScopedADFSHA256": "35803de72be04a3fcde3bdf1d774ce6614d71a602ee1d2bd81c45c89bdcdc496",
+  "Bitstream": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-bit-1030-a\\generate_bitstream\\hdmi_uart_interval_diag.sbit",
+    "SHA256": "f254e26238a67fae7d48bbb2a810236e489d57f68672feb3ea6be1d315059bdc",
+    "Bytes": 3791112,
+    "Header": {
+      "Design": "hdmi_uart_interval_diag",
+      "Device": "Logos2-PG2L100H--6-FBG676",
+      "Date": "10/30/26",
+      "Time": "17:12:08",
+      "Generator": "Fabric Compiler",
+      "Version": "2023.2-SP3<154097>"
+    }
+  },
+  "SRAMProgrammed": true,
+  "DoneConfirmed": true,
+  "FlashWritten": false,
+  "CPUProtocolChecksPassed": 150,
+  "UARTV3WireSimulationPassed": true,
+  "WorstSlackNS": {
+    "slow": {
+      "setup": 1.151,
+      "hold": 0.147,
+      "recovery": 0.916,
+      "removal": 0.184,
+      "mpw": 6.457
+    },
+    "fast": {
+      "setup": 1.996,
+      "hold": 0.094,
+      "recovery": 1.938,
+      "removal": 0.023,
+      "mpw": 6.457
+    }
+  },
+  "VerifiedSynchronizerFFs": 161,
+  "StageLinks": 81,
+  "Pins": 46,
+  "CellCount": 5110,
+  "CapturedPackets": 20,
+  "CRCRejected": 0,
+  "VSFirst": 0,
+  "VSLast": 0,
+  "VSModuloIncrements": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "FreshnessMasks": [
+    "0x15"
+  ],
+  "Faults": [
+    "0xc5"
+  ],
+  "QualifiedInputWindow": false,
+  "EvidenceManifestSHA256": "3b163ccad81f1634e1f082ea819395f7ad8089202d6eddf19830de3da9d0c95e",
+  "EvidenceFiles": 214,
+  "NextAction": "Keep board powered; user requested to replug HDMI IN, then capture V3 cumulative VS count while preserving UART connection.",
+  "InputPixelPayloadVerified": false,
+  "DDRAndDistortionVerified": false,
+  "HardwareReleaseAllowed": false,
+  "Limits": "Digital timing only. Count is observed after polarity training in the existing monitor enable epoch, not a separate raw-pin sampler. No external AC/complete CDC/PHY lock/pixels/stability acceptance."
+}

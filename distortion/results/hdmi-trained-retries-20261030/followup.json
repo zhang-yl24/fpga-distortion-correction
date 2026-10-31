@@ -1,0 +1,76 @@
+{
+  "Schema": "hdmi-trained-followup-progress-v1",
+  "RecordedUTC": "2026-10-30T07:12:03.695817+00:00",
+  "CurrentTarget": "hdmi_uart_trained_diag",
+  "CurrentSRAMBitstreamSHA256": "174324853d6e294c6e2aa5a03af72a0195d063b3f7ce8460abfa6dd024919d81",
+  "SameBitstreamDownloadedAgain": true,
+  "ResetRetryDone": true,
+  "RetryFlashWritten": false,
+  "RetryReceiptPassed": true,
+  "Captures": {
+    "live-status-b-after-replug": {
+      "AssessmentPassed": false,
+      "Records": 20,
+      "ReferenceSpanSeconds": 9.5,
+      "Flags": "0x5bf",
+      "Fault": "0x12",
+      "Geometry": [
+        1920,
+        35
+      ],
+      "PCLKEdgesRange": [
+        74248,
+        74249
+      ],
+      "GoodFramesAdvanced": 0,
+      "BadFramesAdvanced": 0,
+      "TransactionsAdvanced": 63849,
+      "BadCountChangedWithinWindow": false
+    },
+    "live-status-c-after-replug": {
+      "AssessmentPassed": false,
+      "Records": 20,
+      "ReferenceSpanSeconds": 9.5,
+      "Flags": "0x5bf",
+      "Fault": "0x12",
+      "Geometry": [
+        1920,
+        35
+      ],
+      "PCLKEdgesRange": [
+        74248,
+        74249
+      ],
+      "GoodFramesAdvanced": 0,
+      "BadFramesAdvanced": 0,
+      "TransactionsAdvanced": 63849,
+      "BadCountChangedWithinWindow": false
+    },
+    "live-status-d-after-reset": {
+      "AssessmentPassed": false,
+      "Records": 20,
+      "ReferenceSpanSeconds": 9.5,
+      "Flags": "0x5bf",
+      "Fault": "0x12",
+      "Geometry": [
+        1920,
+        0
+      ],
+      "PCLKEdgesRange": [
+        74248,
+        74249
+      ],
+      "GoodFramesAdvanced": 0,
+      "BadFramesAdvanced": 0,
+      "TransactionsAdvanced": 63848,
+      "BadCountChangedWithinWindow": false
+    }
+  },
+  "InputQualified": false,
+  "SourceStillConfiguredByWindowsAs1080p30": true,
+  "Limits": [
+    "All three input assessments failed; no good-frame progress was observed.",
+    "Source mode readback is not FPGA-side video acceptance.",
+    "Counters are sticky/frozen after fault 0x12; unchanged bad-frame totals do not mean recovery."
+  ]
+}

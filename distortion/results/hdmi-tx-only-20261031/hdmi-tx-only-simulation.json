@@ -1,0 +1,133 @@
+{
+  "Schema": "hdmi-tx-only-real-i2c-simulation-v1",
+  "Passed": true,
+  "StartedUTC": "2026-10-30T17:07:36.990575+00:00",
+  "SourceSHA256": {
+    "board/hdmi_tx_init.v": "184883cd018e7d6ccc8937e9a23bc208fdc5699b9040e3fdd70c6cf3a52f165c",
+    "rtl/reg16_i2c.v": "7db5335dee7d64eddf3905008a1cd64262889d0a9ebef63c74d4612d70a5a580",
+    "tests/tb_hdmi_tx_init.sv": "8f9c9c05435d2f870949ea7b94b09235c2fb6d66bf6b689f5ccbdd02db736bfe",
+    "board/ms7210_commands.vh": "d542c30438a2243275c9a48f3b8db742d585a358d3b6da685373c8808dbcee64",
+    "platform/video_base/source/hdmi/ms7210_ctl.v": "c9b101e58f381ddf3c6d663d0003c18065302659424b8345022161413ccf09ae",
+    "rtl/experimental/ms7210_checked_ctl.v": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+    "tools/run_hdmi_tx_only_sim.py": "6bd68d19069dd86ea99adfe5a5e07772fbd4a679a9ace6c70bb3845a73a221a6",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+  },
+  "MaximumSeconds": 240,
+  "CompileBindings": {
+    "board/hdmi_tx_init.v": {
+      "OriginalSHA256": "184883cd018e7d6ccc8937e9a23bc208fdc5699b9040e3fdd70c6cf3a52f165c",
+      "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-tx-only\\wire-20261031-c\\relocated-sources\\board\\hdmi_tx_init.v",
+      "CompiledSHA256": "499c260dc6ec9c880ccd69619fa98290a1eb572b5d0242be0c246f5ea55f5d76",
+      "IncludePathReplacements": [
+        {
+          "Original": "    `include \"D:/English/FPGA/distortion/board/ms7210_commands.vh\"",
+          "Header": "board/ms7210_commands.vh",
+          "HeaderSHA256": "d542c30438a2243275c9a48f3b8db742d585a358d3b6da685373c8808dbcee64",
+          "CompiledHeaderPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-tx-only\\wire-20261031-c\\relocated-headers\\board\\ms7210_commands.vh"
+        }
+      ]
+    }
+  },
+  "Commands": [
+    {
+      "Stage": "compile",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-tx-only\\wire-20261031-c\\relocated-sources\\board\\hdmi_tx_init.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\reg16_i2c.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_hdmi_tx_init.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_hdmi_tx_init",
+        "-s",
+        "hdmi_tx_only_tb",
+        "--timescale",
+        "1ns/1ps"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "hdmi_tx_only_tb",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "IndependentVectorSource": "platform/video_base/source/hdmi/ms7210_ctl.v",
+  "VendorSourceSHA256": "c9b101e58f381ddf3c6d663d0003c18065302659424b8345022161413ccf09ae",
+  "VectorSHA256": "af25e8cc0f6dbab931d96b56d1716033757bd7ff80dd5a769803fc5c30f418c2",
+  "VendorAndCheckedAndROM49RowsMatch": true,
+  "ClockHz": 27000000,
+  "DelayConstantsModified": false,
+  "TransactionStub": false,
+  "RXControllerExecuted": false,
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "Limits": "Digital wire simulation only; does not prove MS7210 silicon/PHY lock or visible HDMI output. Retry START delay is covered; retry completion is not.",
+  "Summary": {
+    "Passed": true,
+    "Scenarios": 3,
+    "VendorTableWrites": 49,
+    "ActualControllerExecuted": true,
+    "ActualDriverExecuted": true,
+    "WireLevelI2CExecuted": true,
+    "ClockHz": 27000000,
+    "InternalCountersModified": false,
+    "RXControllerExecuted": false,
+    "NACKWithoutReady": true,
+    "SignatureMismatchWithoutReady": true,
+    "FullRetryMinimumDelayVerified": true,
+    "RetryCompletionCovered": false,
+    "HardwareAccessed": false
+  },
+  "WireTraceAudit": {
+    "Transactions": 54,
+    "ScenarioCounts": [
+      51,
+      1,
+      2
+    ],
+    "Exact49VendorWrites": true,
+    "OnlyDeviceWriteByteB2": true,
+    "InterCommandDelaysVerified": true,
+    "TraceSHA256": "e502dabbe0a63fa4df05bcdaee93c0e38cb8f3e05f735402f0407efeaf9e85f7"
+  },
+  "PassLines": [
+    "HDMI_TX_ONLY_SCENARIO_PASS scenario=0 writes=49 transactions=51",
+    "HDMI_TX_ONLY_SCENARIO_PASS scenario=1 nack_error=1 retry_start_delay_cycles=27270070",
+    "HDMI_TX_ONLY_SCENARIO_PASS scenario=2 signature_error=14 transactions=2",
+    "HDMI_TX_ONLY_SIM_PASS"
+  ],
+  "SourceDrift": [],
+  "VectorDrift": false,
+  "ExactIncludeOnlyRelocationVerified": true,
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "2779d6f8f52d5b0b62c15d8f94a609885759a664c64253bc3d8a2066972b835a",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "791a10f643525404e3bbb1801d34885d355432b2f2e9043bddb21a8e7757f76d",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "a94454fc8deb130b7bd5e5d4e930f1b88f86f7ce59bd2ebf52904112f2e44c3c",
+    "simulation.log": "9b553c212bbbf7cd6dcd07bef16b5eaef742cf7591063ba43a60ba3d8c336233",
+    "summary.json": "546c78f7ebbbdc6c4906f1a704307d8f09a45d7a2cb818f990ab70c8315dec1d",
+    "tx_expected.hex": "af25e8cc0f6dbab931d96b56d1716033757bd7ff80dd5a769803fc5c30f418c2",
+    "webtalk.log": "05857b028b93d9ac6de79f37bdb987f5aac76ae26aecee96ade1f79e71e8bb37",
+    "webtalk_34544.backup.log": "ce3df2c97bfc0b3037e0236b4cc639a4d4dda87776260493eed2d3900895d77a",
+    "wire-transactions.csv": "e502dabbe0a63fa4df05bcdaee93c0e38cb8f3e05f735402f0407efeaf9e85f7",
+    "xelab.log": "6233dad2d514941a7e01122fe79efdd36f49cf7ec754b52f44a16080c28fa7a0",
+    "xvlog.log": "1c872be42a0e0f4c6970977a3a749a0bcb9040613365ea20d1a5aaaf90d0b21c"
+  },
+  "ElapsedSeconds": 37.542
+}

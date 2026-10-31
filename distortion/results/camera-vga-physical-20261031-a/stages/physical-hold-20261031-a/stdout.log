@@ -1,0 +1,103 @@
+License checkout: fabric_shell from D:\pango\new_pds_00e04cf107df.lic
+Compiling architecture definition.
+Analyzing project file 'D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera-vga-output/physical-hold-20261031-a/camera_vga_output_top.pds'.
+Executing : set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676
+Executing : set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676 successfully.
+
+
+Executing : add_design D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera-vga-output/physical-hold-20261031-a/dummy.v
+Executing : add_design D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera-vga-output/physical-hold-20261031-a/dummy.v successfully.
+Executing : mpnr -input D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera-vga-output/physical-hold-20261031-a/input.adf
+Compiling verification operator library.
+Compiling common defs.
+Compiling prim grid devices.
+Compiling place grid timing.
+Compiling prim grid device symbols.
+Compiling gate devices.
+Compiling gate operators.
+Building architecture model.
+Loading device packaging model.
+Building architecture floorplan logic view.
+Building architecture schematic structure.
+Building architecture floorplan schematic view.
+NOTE: The technology fpga was specified.
+NOTE: delay_model specified was generic_cmos.
+NOTE: Using the fpga syntax tables...
+Elaborate the liberty model.
+Totals:
+ Calls to malloc = 0
+ Calls to calloc = 9472601
+
+I: Column Clock Check open.
+Read Column Clock Map.
+Executing : mpnr -input D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera-vga-output/physical-hold-20261031-a/input.adf successfully.
+Executing : show -design_net _N101
+
+route for net _N101 :
+  CR3 of CLMS_345_769
+    S_CR3 of SRB_342_768
+      ZSNB[2] of SRB_342_768
+        ISNB[2] of SRB_342_774
+          ZSEA[2] of SRB_342_774
+            ISEA[2] of SRB_348_774
+              A_M2 of SRB_348_774
+                M2 of CLMA_351_774
+Executing : show -design_net _N101 successfully.
+Executing : unroute -branch {_N101:M2:CLMA_351_774;}
+Executing : unroute -branch {_N101:M2:CLMA_351_774;} successfully.
+Executing : manual_route -net {_N101} -branch {M2:CLMA_351_774} -pins {ZDNE[0]:SRB_336_726>IDNE[0]:SRB_342_732;}
+Executing : manual_route -net {_N101} -branch {M2:CLMA_351_774} -pins {ZDNE[0]:SRB_336_726>IDNE[0]:SRB_342_732;} successfully.
+Executing : show -design_net _N101
+
+route for net _N101 :
+  CR3 of CLMS_345_769
+    S_CR3 of SRB_342_768
+      ZSWB[1] of SRB_342_768
+        ISWB[1] of SRB_336_768
+          LVA18 of SRB_336_768
+            LH0 of SRB_336_768
+              LH6 of SRB_354_768
+                ZQS[1] of SRB_354_768
+                  IQS[1] of SRB_354_726
+                    ZQW[1] of SRB_354_726
+                      IQW[1] of SRB_330_726
+                        ZSEB[2] of SRB_330_726
+                          ISEB[2] of SRB_336_726
+                            ZDNE[0] of SRB_336_726
+                              IDNE[0] of SRB_342_732
+                                ZQN[0] of SRB_342_732
+                                  IQN[0] of SRB_342_774
+                                    ZQE[0] of SRB_342_774
+                                      IQW[0] of SRB_360_774
+                                        ZSWB[3] of SRB_360_774
+                                          ISWB[3] of SRB_354_774
+                                            ZSWA[3] of SRB_354_774
+                                              ISWA[3] of SRB_348_774
+                                                ZM[9] of SRB_348_774
+                                                  ZGM[0] of SRB_348_774
+                                                    A_M2 of SRB_348_774
+                                                      M2 of CLMA_351_774
+Executing : show -design_net _N101 successfully.
+Executing : show -design_net _N188
+
+route for net _N188 :
+  CR0 of CLMS_351_439
+    S_CR0 of SRB_348_438
+      ZDNW[3] of SRB_348_438
+        IDNW[3] of SRB_342_444
+          ZQNE[3] of SRB_342_444
+            IQNE[3] of SRB_354_468
+              ZQN[3] of SRB_354_468
+                IQN[3] of SRB_354_504
+                  ZQN[3] of SRB_354_504
+                    IQN[3] of SRB_354_540
+                      ZSNA[2] of SRB_354_540
+                        ISNA[2] of SRB_354_546
+                          A_M2 of SRB_354_546
+                            M2 of CLMA_357_546
+Executing : show -design_net _N188 successfully.
+Executing : unroute -branch {_N188:M2:CLMA_357_546;}
+Executing : unroute -branch {_N188:M2:CLMA_357_546;} successfully.
+Executing : manual_route -net {_N188} -branch {M2:CLMA_357_546} -pins {ZDNE[0]:SRB_300_402>IDNE[0]:SRB_306_408;ZDNE[2]:SRB_306_570>IDNE[2]:SRB_312_576;}
+E: DesignEditor-0029: The number of option "-net", "-branch", "-pins" must be equal.
+W: Failed to execute the script : 

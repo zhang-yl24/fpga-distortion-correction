@@ -1,0 +1,341 @@
+{
+  "Schema": "trained-input-scoped-cdc-review-v1",
+  "AuditPassed": true,
+  "Target": "hdmi_uart_interval_diag",
+  "SourceADFSHA256": "1e4f8c7087e5be2e3355c41c52d077a8f3d3fbed9b04fe1f3dd6095c29abc004",
+  "ScopedADFSHA256": "35803de72be04a3fcde3bdf1d774ce6614d71a602ee1d2bd81c45c89bdcdc496",
+  "AllTenTimingTypesPassed": true,
+  "NativeClocksUnchanged": true,
+  "AllNonTargetSummariesUnchanged": true,
+  "ChangedTargetSummaryRows": [
+    {
+      "Corner": "slow",
+      "Kind": "setup",
+      "Clocks": [
+        "board27",
+        "input_pixel"
+      ],
+      "Before": {
+        "WorstSlackNS": -1.465,
+        "TotalNegativeSlackNS": -1.465,
+        "FailingChecks": 1,
+        "TotalChecks": 1
+      },
+      "After": {
+        "WorstSlackNS": 7.396,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 1
+      }
+    },
+    {
+      "Corner": "slow",
+      "Kind": "setup",
+      "Clocks": [
+        "input_pixel",
+        "board27"
+      ],
+      "Before": {
+        "WorstSlackNS": -1.199,
+        "TotalNegativeSlackNS": -131.671,
+        "FailingChecks": 166,
+        "TotalChecks": 166
+      },
+      "After": {
+        "WorstSlackNS": 6.982,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 166
+      }
+    },
+    {
+      "Corner": "slow",
+      "Kind": "hold",
+      "Clocks": [
+        "board27",
+        "input_pixel"
+      ],
+      "Before": {
+        "WorstSlackNS": 0.147,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 1
+      },
+      "After": null
+    },
+    {
+      "Corner": "slow",
+      "Kind": "hold",
+      "Clocks": [
+        "input_pixel",
+        "board27"
+      ],
+      "Before": {
+        "WorstSlackNS": -0.726,
+        "TotalNegativeSlackNS": -92.54,
+        "FailingChecks": 166,
+        "TotalChecks": 166
+      },
+      "After": null
+    },
+    {
+      "Corner": "slow",
+      "Kind": "recovery",
+      "Clocks": [
+        "board27",
+        "input_pixel"
+      ],
+      "Before": {
+        "WorstSlackNS": -2.579,
+        "TotalNegativeSlackNS": -10.316,
+        "FailingChecks": 4,
+        "TotalChecks": 4
+      },
+      "After": null
+    },
+    {
+      "Corner": "slow",
+      "Kind": "removal",
+      "Clocks": [
+        "board27",
+        "input_pixel"
+      ],
+      "Before": {
+        "WorstSlackNS": 0.711,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 4
+      },
+      "After": null
+    },
+    {
+      "Corner": "fast",
+      "Kind": "setup",
+      "Clocks": [
+        "board27",
+        "input_pixel"
+      ],
+      "Before": {
+        "WorstSlackNS": -0.982,
+        "TotalNegativeSlackNS": -0.982,
+        "FailingChecks": 1,
+        "TotalChecks": 1
+      },
+      "After": {
+        "WorstSlackNS": 7.631,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 1
+      }
+    },
+    {
+      "Corner": "fast",
+      "Kind": "setup",
+      "Clocks": [
+        "input_pixel",
+        "board27"
+      ],
+      "Before": {
+        "WorstSlackNS": -0.737,
+        "TotalNegativeSlackNS": -79.481,
+        "FailingChecks": 166,
+        "TotalChecks": 166
+      },
+      "After": {
+        "WorstSlackNS": 7.389,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 166
+      }
+    },
+    {
+      "Corner": "fast",
+      "Kind": "hold",
+      "Clocks": [
+        "board27",
+        "input_pixel"
+      ],
+      "Before": {
+        "WorstSlackNS": 0.077,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 1
+      },
+      "After": null
+    },
+    {
+      "Corner": "fast",
+      "Kind": "hold",
+      "Clocks": [
+        "input_pixel",
+        "board27"
+      ],
+      "Before": {
+        "WorstSlackNS": -0.533,
+        "TotalNegativeSlackNS": -69.465,
+        "FailingChecks": 166,
+        "TotalChecks": 166
+      },
+      "After": null
+    },
+    {
+      "Corner": "fast",
+      "Kind": "recovery",
+      "Clocks": [
+        "board27",
+        "input_pixel"
+      ],
+      "Before": {
+        "WorstSlackNS": -1.637,
+        "TotalNegativeSlackNS": -6.548,
+        "FailingChecks": 4,
+        "TotalChecks": 4
+      },
+      "After": null
+    },
+    {
+      "Corner": "fast",
+      "Kind": "removal",
+      "Clocks": [
+        "board27",
+        "input_pixel"
+      ],
+      "Before": {
+        "WorstSlackNS": 0.493,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 4
+      },
+      "After": null
+    }
+  ],
+  "ExactNativeQueryGroups": [
+    74,
+    92,
+    1,
+    4
+  ],
+  "Pins46Verified": true,
+  "MappedFFs161Verified": true,
+  "StageLinks81Verified": true,
+  "MaxDelayCountPerCorner": {
+    "slow": 167,
+    "fast": 167
+  },
+  "FalsePathCountPerCorner": {
+    "slow": {
+      "setup": 0,
+      "hold": 167,
+      "recovery": 4,
+      "removal": 4
+    },
+    "fast": {
+      "setup": 0,
+      "hold": 167,
+      "recovery": 4,
+      "removal": 4
+    }
+  },
+  "WorstSlackNS": {
+    "slow": {
+      "setup": 1.151,
+      "hold": 0.147,
+      "recovery": 0.916,
+      "removal": 0.184,
+      "mpw": 6.457
+    },
+    "fast": {
+      "setup": 1.996,
+      "hold": 0.094,
+      "recovery": 1.938,
+      "removal": 0.023,
+      "mpw": 6.457
+    }
+  },
+  "MaxDelayNotOverriddenByFalsePath": true,
+  "NoSecondStageDataPinsExcepted": true,
+  "ExternalIOWarningsUnchanged": true,
+  "SourceInputDrift": [],
+  "EvidenceSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\build-plan.json": "2393495b0f8019bbc3b7d11904edad858d80c4edadfb06d35cb3fe9e23fdae7b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\execution.json": "439c5971243cfda1532be7a3153ec6d2970abbde1ff0f13f605dda27705a5b75",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\build.tcl": "42054b3b873877eadf1179ea688b9d78cb11116c441a3e91856af5e7ea3cbe38",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\hdmi_uart_diag.fdc": "48c35e89d30fde15602c00459bf5361496b132de5f219ac9ce540e883c8d0107",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\place_route\\hdmi_uart_interval_diag_pnr.adf": "1e4f8c7087e5be2e3355c41c52d077a8f3d3fbed9b04fe1f3dd6095c29abc004",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\place_route\\hdmi_uart_interval_diag_route.netlist": "7c3bdf21227e250a6ad53c7e3c9c80a9b3d5e1cef5a2a7609c0bf7150223693e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\native_review.py": "900a4b9fd091ce3e7290c4b4043c81735b2880c399787ecaf2c51f894407f10b",
+    "D:\\pango\\PDS_2023.2\\bin\\pds_shell.exe": "055cbf91f78fcd69ec06af411ceada3249717cb8cb0cf1b57019117343690a92",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\uart_tx.v": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7210_checked_ctl.v": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\iic_dri_checked.v": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\platform\\video_base\\ipcore\\cfg_pll\\cfg_pll.v": "a524450baa6becd30df04da4bdd00597de18b42db4628226e27546c4d601b0ec",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\bringup_pll.v": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\video_pattern.v": "299e59ec4c3168a282bf9d521189dfc405ff889e65825846084962826c149aa9",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\board1080-checked-i2c.fdc": "4fd34ebc9d39642e2539610211fe20778971bf9870b53e8f479bcf164c3cf37c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\prepare_hdmi_uart_diagnostic.py": "a2c73eb8cc4ba7468065dd728b4cd9a7adf7cb1b0597a8b7b083cfbb4b2f564b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\prepare_hdmi_input_diagnostic.py": "008158c386eef6a44927b9c050fa8d1f20a986c4498ee77ff44f3d61edcf7cb2",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms72xx_ready_observed_ctl.v": "18d03513a5c92fad06049d321a31bbd9c8cd1c66051c3c0f75154fbba4c691fe",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7200_1080p30_ready_ctl.v": "6918a4a46135094addc443c45235077887b1daaca81f4f255163f635c7828959",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\prepare_hdmi_trained_diagnostic.py": "b6d4e32889724e65aee18a5a2193b740c845b9f163a6a9f50fd1b28833faa25b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\prepare_hdmi_activity_diagnostic.py": "e382be3b2ecce15c03091b08a1cec29c84274699be664b458f2933907a4f0202",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\hdmi_uart_interval_diag.v": "bfebababbddf1105e21ffba2ada8c935e208895763b40692b00f699423da1b8c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_status_interval_trained.v": "771b520a5350d463ff2114e752a0c385dcbecbe522e78a5b1e53caa0ace8618d",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi_diag_uart_v3.v": "5b22c0f464a28e7d76ac705f6fa7a7a56302fcab604b7045a18ab9cf7bef7d83",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_mode_admission_monitor_activity_cdc.v": "ee0184a66fd273cca49daae02452951668b0b0a7166f89b0a36852a7bccbbaae",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\prepare_hdmi_interval_diagnostic.py": "994ee3901ab370afb1fbd26e9bd527fa7f5ea37dea426fd686acb7f5de39fe2b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\frozen-inputs\\rtl\\uart_tx.v": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\frozen-inputs\\rtl\\experimental\\ms72xx_ready_observed_ctl.v": "18d03513a5c92fad06049d321a31bbd9c8cd1c66051c3c0f75154fbba4c691fe",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\frozen-inputs\\rtl\\experimental\\ms7200_1080p30_ready_ctl.v": "6918a4a46135094addc443c45235077887b1daaca81f4f255163f635c7828959",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\frozen-inputs\\rtl\\experimental\\ms7210_checked_ctl.v": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\frozen-inputs\\rtl\\experimental\\iic_dri_checked.v": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\frozen-inputs\\platform\\video_base\\ipcore\\cfg_pll\\cfg_pll.v": "a524450baa6becd30df04da4bdd00597de18b42db4628226e27546c4d601b0ec",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\frozen-inputs\\board\\bringup_pll.v": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\frozen-inputs\\rtl\\video_pattern.v": "299e59ec4c3168a282bf9d521189dfc405ff889e65825846084962826c149aa9",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\frozen-inputs\\board\\hdmi_uart_interval_diag.v": "bfebababbddf1105e21ffba2ada8c935e208895763b40692b00f699423da1b8c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\frozen-inputs\\rtl\\experimental\\hdmi1080_input_status_interval_trained.v": "771b520a5350d463ff2114e752a0c385dcbecbe522e78a5b1e53caa0ace8618d",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\frozen-inputs\\rtl\\experimental\\hdmi_diag_uart_v3.v": "5b22c0f464a28e7d76ac705f6fa7a7a56302fcab604b7045a18ab9cf7bef7d83",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\frozen-inputs\\rtl\\experimental\\dvp_mode_admission_monitor_activity_cdc.v": "ee0184a66fd273cca49daae02452951668b0b0a7166f89b0a36852a7bccbbaae",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\mapping-review.json": "9b9c5c1927ab518d11273bb1f36dbb866dc0057ed2c0d3eed6bbfb172a5220c7",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\connectivity-review.json": "a9e7d3fab6452b80d357913249fa7e3de92c903e537c9382d03b1adeb6d3f8aa",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\functional-export\\generate_netlist\\hdmi_uart_interval_diag_sim.v": "32f065d2a765e65858cbf73849199df48aee3b6528915b12588dec2b81bd2588",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\functional-export\\native-execution.json": "e2ec649f9b95c00e20bd3f19f3225e8454318543aa0b7ea2e2817f1e2e2622e6",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\functional-export\\export-plan.json": "131c435b7202894b24f52d12770aa2280c5c6cdeb50a57f887672ffae613c362",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\place_route\\hdmi_uart_interval_diag_prr_route_optimize.prt": "50d34be25dc483a499a2e6098f29b95f2f68a42add9528b0a120ffcea5d6803e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\report_timing\\hdmi_uart_interval_diag.rtr": "2e9702fcfbfda357a413eac48685b3360418c01c331b3a09f3a52777c52ad183",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-pds-interval-1030-a\\report_timing\\hdmi_uart_interval_diag_exception.rtr": "0ececc90be04320e7a7cc2c9d87a2bef6b051b20dae9a4e0972c2d4cc43986c7",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\scope-plan.json": "7612d19335aee3f5540aec3635e214a1d4e70da316346fd1057ea0d5844f618c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\scope-match-audit.json": "8683af1af97d15ebed1a016a1d9009f4d6a1ef9708421185cd2a1052652ac315",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\scope.fdc": "4e567422335c825a5468b9f615afb91a24ef8508950a76fa337e8cbbe2eaf341",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\query.tcl": "85e25ae142f6f037c492671ab5c86231a24298d6b82e91835c857694f23a8b04",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\query-stdout.log": "f44b7adab6d6237bf816e29163e3cb16f187a224e936b11eb84b73e8f7519227",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\query-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\query-execution.json": "92a4b203505028cf443d0bc81873944619c547fb5dae71e1ec56071876292e12",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\apply.tcl": "4d18f3efc44949fe9fdbd252e41502d3b3350f938cd6f870cea4907bc445a2cb",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\apply-stdout.log": "a90023b9621de95a6933dac7cc2e7d88b212b7d251551baf51613ae95964d49d",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\apply-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\apply-execution.json": "934b8453a4d45eb489a958814a376282162603d38fe88381f6fe9f9d27eb1d45",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\report.tcl": "1fc29260781e348f3c8dbb6ea45300790d23a71f67c473957215d55d790108c6",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\report-stdout.log": "3de7ba334ba049251811cb06ac22b0b666610d92ac5d942627d7df5fb9543627",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\report-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\report-execution.json": "1a3df1ae1656c27f4f2e1bfc3fef469712fe5d0b788844da60b565914e8cadb9",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\input.adf": "35803de72be04a3fcde3bdf1d774ce6614d71a602ee1d2bd81c45c89bdcdc496",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\hdmi_uart_interval_diag.rtr": "7173354b808bdd12eab27393e30fa47c7fc3bf6bf497f60fc051612363cf557b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\interval-review-1030-a\\scoped-cdc\\hdmi_uart_interval_diag_exception.rtr": "b8c5cc814eff23de184c25491ce33cc97aac2941da6238ee7144cd0de315354d",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_GRS.v": "42302a081bc28e3d89b99997abd11c3411b2d5afd71aa48d2444bc779c384762",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_GPLL.v": "1cbab1c034d8129f9164edeff911deb36a0201fb67cd8f336512e4ddc21d9ed0",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_FFSYN.v": "ae4094a9a478a8ae9e5c67a0fcf982ff1e61a6e1e66588d849dd815d713c1f8c",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_OBUFT.v": "cfc024e819351fe3dd04cabd22f2860c5eac6d528f413c78ab56b1b0f2dd8017",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_LUT6CARRY.v": "aa7ca57e8ce35845b0d61b02358d4a546facc52be65ec1ca5e68fe37a8bdcf98",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_IBUF.v": "18814ef6d6f140b763c88871640498cacfaa420f4e5038b4fc751beedf69d4f4",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_FFASYN.v": "e2fcf0de9085fd056c4daa14b2f73bd9235cdb52c90e68a2b58114024e048b24",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_INV.v": "b1242601ab1cc80fbc152a149eaf3d73b140e541392d8af727260cadc7b378ef",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_DRM18K_E1.v": "c7c271c7c372ccd9f7e3701db5a79a94e106ac28b7b735c60f3a8f43d78429da",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_USCM.v": "3f35757740a6498560e3531ae7bfe44147b05016d6a80e504fc3f27934f486fc",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_BUF.v": "774fb1a08820223eef6c66217e510d3a5eb328edebffb488a25467fe3e623836",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_MUX2.v": "77540b86085dc742e5a5102578cb3f0a8753989b3b800d6a75f23e6d46515b95"
+  },
+  "HardwareAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "FullCDCSignoff": false,
+  "Limits": "Only exact bounded asynchronous entry paths and four reset-synchronizer RS pins are scoped. Exclusions do not improve physical delays or establish external AC, MTBF, complete CDC or video acceptance."
+}

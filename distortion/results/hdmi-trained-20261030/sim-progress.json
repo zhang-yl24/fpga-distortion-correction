@@ -1,0 +1,496 @@
+{
+  "Schema": "hdmi-trained-simulation-progress-v1",
+  "CreatedUTC": "2026-10-30T05:23:08.498597+00:00",
+  "Target": "hdmi_uart_trained_diag",
+  "SimulationEvidenceSealed": true,
+  "HardwareAccessedByThisPackage": false,
+  "PDSExecutedByThisPackage": false,
+  "BitstreamGeneratedByThisPackage": false,
+  "HardwareReleaseAllowed": false,
+  "ReadyCounterexample": {
+    "Reproduced": true,
+    "Summary": {
+      "CounterexampleReproduced": true,
+      "StableReadyValue": 2,
+      "StableReadyReadsBeforeRecovery": 64,
+      "StableReadyRequestsBeforeRecovery": 559,
+      "StableReadyInitOver": false,
+      "StableReadySettingWrites": 0,
+      "InitialWritesCompleted": 300,
+      "SameEpochZeroThenTwoRecovered": true,
+      "NormalZeroThenTwoCompleted": true,
+      "SettingsWritesWhenCompleted": 7,
+      "TransactionDriverStub": true,
+      "WireLevelI2CExecuted": false,
+      "HardwareAccessed": false
+    },
+    "Scope": "Unchanged original receiver, transaction response model; no wire-level I2C."
+  },
+  "ReadyCandidate": {
+    "Passed": true,
+    "Scenarios": 7,
+    "Summary": {
+      "Passed": true,
+      "Scenarios": 7,
+      "ColdAlreadyReadyCompleted": true,
+      "SteadyReadyDoesNotReconfigure": true,
+      "LaterZeroToTwoRelockCompleted": true,
+      "ResetClearsReadyHistory": true,
+      "NormalZeroToTwoCompleted": true,
+      "ConstantNotReadyBlocked": true,
+      "IncompletePollRejected": true,
+      "InitialWritesPerEpoch": 300,
+      "SettingsPerAdmission": 7,
+      "TransactionDriverStub": true,
+      "WireLevelI2CExecuted": false,
+      "HardwareAccessed": false
+    },
+    "Original311RegisterCommandsUnchanged": true,
+    "FirstFailedAttemptPreserved": true,
+    "FirstFailureExplanation": "The first test checked ready_reads after 60 extra cycles of legitimate post-completion polling. The final test records ready_reads at actual completion; candidate RTL and runner bytes are identical in both attempts.",
+    "FirstFailedTBRecovery": "Exact inverse patch reconstructed bytes matching original InputSHA256 6cab7907734e361b68e4acd961aa7c7fe50ffabf5881b09c2f69d68baca88ad9."
+  },
+  "FirstDECounterexample": {
+    "Reproduced": true,
+    "Summary": {
+      "passed": true,
+      "exact_raster": [
+        2200,
+        1125
+      ],
+      "active_geometry": [
+        1920,
+        1080
+      ],
+      "transient_samples": 1,
+      "completed_rasters": 4,
+      "clean": {
+        "qualified": true,
+        "fault": 0,
+        "good_frames": 3,
+        "bad_frames": 0,
+        "width": 1920,
+        "height": 1080,
+        "inactive_vs": 0,
+        "inactive_hs": 0
+      },
+      "transient": {
+        "qualified": false,
+        "fault": 21,
+        "good_frames": 0,
+        "bad_frames": 4,
+        "width": 0,
+        "height": 1080,
+        "inactive_vs": 1,
+        "inactive_hs": 1,
+        "private_timing_fault": 33
+      },
+      "continuing_bad_frames_per_raster": 1,
+      "hardware_verified": false
+    },
+    "Stimulus": "Only the transient instance receives opposite HS/VS for one first-DE PCLK sample; all later samples follow exact 2200x1125/1920x1080 at nominal 74.25 MHz.",
+    "RawFieldMapping": {
+      "clean": "Original frozen observer, no injected transient.",
+      "transient": "Original frozen observer, one first-DE opposite-HS/VS sample."
+    }
+  },
+  "TrainedPolarity": {
+    "Passed": true,
+    "DirectedCases": [
+      "two_positive_lines",
+      "two_negative_lines",
+      "first_de_single_sample_conflict_retrains",
+      "short_line_restarts_consecutive_evidence",
+      "long_line_restarts_consecutive_evidence",
+      "changing_hs_restarts_training",
+      "changing_vs_restarts_training",
+      "different_stable_candidate_restarts_pair",
+      "clock_stop_does_not_invent_second_line",
+      "post_lock_hs_vs_conflict_stays_failed_and_locked",
+      "common_reset_allows_new_polarity"
+    ],
+    "CompleteRasterAB": {
+      "Passed": true,
+      "Top": "tb_hdmi_input_training_raster",
+      "Summary": {
+        "passed": true,
+        "exact_raster": [
+          2200,
+          1125
+        ],
+        "active_geometry": [
+          1920,
+          1080
+        ],
+        "transient_samples": 1,
+        "completed_rasters": 4,
+        "clean": {
+          "qualified": true,
+          "fault": 0,
+          "good_frames": 3,
+          "bad_frames": 0,
+          "width": 1920,
+          "height": 1080,
+          "inactive_vs": 0,
+          "inactive_hs": 0
+        },
+        "transient": {
+          "qualified": false,
+          "fault": 21,
+          "good_frames": 0,
+          "bad_frames": 4,
+          "width": 0,
+          "height": 1080,
+          "inactive_vs": 1,
+          "inactive_hs": 1,
+          "private_timing_fault": 33
+        },
+        "continuing_bad_frames_per_raster": 1,
+        "hardware_verified": false
+      },
+      "Samples": [
+        "COUNTEREXAMPLE_SAMPLE index=1 rasters=3 clean_qualified=1 clean_fault=00 clean_good=2 clean_bad=0 clean_width=1920 clean_height=1080 clean_vs_inactive=0 clean_hs_inactive=0 clean_pclk_edges=74250 bad_qualified=0 bad_fault=15 bad_good=0 bad_bad=3 bad_width=0 bad_height=1080 bad_vs_inactive=1 bad_hs_inactive=1 bad_pclk_edges=74250 bad_timing_fault=21",
+        "COUNTEREXAMPLE_SAMPLE index=2 rasters=4 clean_qualified=1 clean_fault=00 clean_good=3 clean_bad=0 clean_width=1920 clean_height=1080 clean_vs_inactive=0 clean_hs_inactive=0 clean_pclk_edges=74250 bad_qualified=0 bad_fault=15 bad_good=0 bad_bad=4 bad_width=0 bad_height=1080 bad_vs_inactive=1 bad_hs_inactive=1 bad_pclk_edges=74250 bad_timing_fault=21"
+      ]
+    },
+    "OriginalNativeTBWithOnlyDUTNameChanged": {
+      "Passed": true,
+      "Top": "tb_board1080_input_status_cdc",
+      "Summary": {
+        "passed": true,
+        "qualification_phases": 2,
+        "polarity_mask": 3,
+        "complete_rasters": 6,
+        "changed_format": 1,
+        "stopped_pclk": 1,
+        "sticky_checks": 2,
+        "common_reset_checks": 3,
+        "reset_requalified": 1,
+        "reference_cycles": 5470867,
+        "DDRIPElaborated": false,
+        "HardwareVerified": false
+      }
+    },
+    "RawRasterFieldMapping": {
+      "clean": "New hdmi1080_input_status_trained receives the same one-sample first-DE opposite-HS/VS transient as the old instance.",
+      "transient": "Original frozen hdmi1080_input_status_cdc receives the same one-sample transient. Both inputs are identical."
+    },
+    "TrainingBoundary": "Two consecutive valid observed DE segments of exactly WIDTH samples and stable HS/VS train polarity. Blank periods and stopped PCLK may preserve the first candidate. The logic does not separately prove a physical source-line start after reset release inside DE; ordinary short partial segments are rejected. This is digital training, not PHY qualification."
+  },
+  "WrapperWireE2E": {
+    "Passed": true,
+    "Summary": {
+      "Passed": true,
+      "Scenarios": 7,
+      "ActualRXControllerExecuted": true,
+      "ActualTXControllerExecuted": true,
+      "TransactionDriverStub": false,
+      "WireLevelI2CExecuted": true,
+      "EarlyRXFailure": true,
+      "LastRXSettingFailure": true,
+      "FirstTXFailureAfterRXDone": true,
+      "LastTXWriteFailure": true,
+      "PostCompletionFailure": true,
+      "CommonResetRecovery": true,
+      "FailureSameCycleGating": true,
+      "NoAutoRetry": true,
+      "BackgroundRXPollResumed": true,
+      "TelemetryComparedToWire": true,
+      "SuccessfulTelemetryUpdates": 2112,
+      "NACKTelemetrySuppressed": 5,
+      "HardwareAccessed": false
+    },
+    "WireTransactions": 2117,
+    "SuccessfulTelemetryRowsIndependentlyVerified": 2112,
+    "TransactionDriverStub": false,
+    "WireLevelI2CExecuted": true
+  },
+  "SuiteSourceBindings": {
+    "ready-counterexample": {
+      "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7200_1080p30_ctl.v": {
+        "SHA256": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/ms7200_1080p30_ctl.v"
+        ]
+      },
+      "C:\\Users\\31641\\.codex\\visualizations\\2026\\10\\30\\01a18b10-3666-7ef2-85f5-5a3db14eb3d0\\ready-level-counterexample-1030-a\\tb_ms7200_ready_level.sv": {
+        "SHA256": "e1138514e505a688560094b0941e57d339d25b6801e06989378edf5ece73a1c7",
+        "PackagedMatches": [
+          "simulations/ready-counterexample/tb_ms7200_ready_level.sv"
+        ]
+      },
+      "C:\\Users\\31641\\.codex\\visualizations\\2026\\10\\30\\01a18b10-3666-7ef2-85f5-5a3db14eb3d0\\ready-level-counterexample-1030-a\\run.py": {
+        "SHA256": "7d306ad6ba27205c510da1987cde5dc5a6f9495ab6db06ce48528309544071ca",
+        "PackagedMatches": [
+          "simulations/ready-counterexample/run.py"
+        ]
+      },
+      "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\simulation_tools.py": {
+        "SHA256": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+        "PackagedMatches": [
+          "source-inputs/tools/simulation_tools.py"
+        ]
+      },
+      "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_gamma_pipeline_d5_sim.py": {
+        "SHA256": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+        "PackagedMatches": [
+          "source-inputs/tools/run_gamma_pipeline_d5_sim.py"
+        ]
+      }
+    },
+    "ready-candidate-first-failed": {
+      "rtl/experimental/ms7200_1080p30_ctl.v": {
+        "SHA256": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/ms7200_1080p30_ctl.v"
+        ]
+      },
+      "rtl/experimental/ms7200_1080p30_ready_ctl.v": {
+        "SHA256": "6918a4a46135094addc443c45235077887b1daaca81f4f255163f635c7828959",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/ms7200_1080p30_ready_ctl.v"
+        ]
+      },
+      "tests/tb_ms7200_ready_level.sv": {
+        "SHA256": "6cab7907734e361b68e4acd961aa7c7fe50ffabf5881b09c2f69d68baca88ad9",
+        "PackagedMatches": [
+          "simulations/ready-candidate-first-failed/tb_ms7200_ready_level.sv"
+        ]
+      },
+      "tools/run_ms7200_ready_level_sim.py": {
+        "SHA256": "331a2d2d6c9c1b6fe47447b7b888e112530fc736a414b76ee98f15b27e99ea82",
+        "PackagedMatches": [
+          "source-inputs/tools/run_ms7200_ready_level_sim.py"
+        ]
+      },
+      "tools/simulation_tools.py": {
+        "SHA256": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+        "PackagedMatches": [
+          "source-inputs/tools/simulation_tools.py"
+        ]
+      },
+      "tools/run_gamma_pipeline_d5_sim.py": {
+        "SHA256": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+        "PackagedMatches": [
+          "source-inputs/tools/run_gamma_pipeline_d5_sim.py"
+        ]
+      }
+    },
+    "ready-candidate-final": {
+      "rtl/experimental/ms7200_1080p30_ctl.v": {
+        "SHA256": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/ms7200_1080p30_ctl.v"
+        ]
+      },
+      "rtl/experimental/ms7200_1080p30_ready_ctl.v": {
+        "SHA256": "6918a4a46135094addc443c45235077887b1daaca81f4f255163f635c7828959",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/ms7200_1080p30_ready_ctl.v"
+        ]
+      },
+      "tests/tb_ms7200_ready_level.sv": {
+        "SHA256": "79380dee099f6345491adcc5762a3bd0cb5fb4832301ff45e9041e6428473112",
+        "PackagedMatches": [
+          "source-inputs/tests/tb_ms7200_ready_level.sv"
+        ]
+      },
+      "tools/run_ms7200_ready_level_sim.py": {
+        "SHA256": "331a2d2d6c9c1b6fe47447b7b888e112530fc736a414b76ee98f15b27e99ea82",
+        "PackagedMatches": [
+          "source-inputs/tools/run_ms7200_ready_level_sim.py"
+        ]
+      },
+      "tools/simulation_tools.py": {
+        "SHA256": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+        "PackagedMatches": [
+          "source-inputs/tools/simulation_tools.py"
+        ]
+      },
+      "tools/run_gamma_pipeline_d5_sim.py": {
+        "SHA256": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+        "PackagedMatches": [
+          "source-inputs/tools/run_gamma_pipeline_d5_sim.py"
+        ]
+      }
+    },
+    "polarity-counterexample": {
+      "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_status_cdc.v": {
+        "SHA256": "a301a9960792921f0a8142f5d6eab070b80505ddfd3a297bc733a09ee9c8f71c",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/hdmi1080_input_status_cdc.v"
+        ]
+      },
+      "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_mode_admission_monitor_cdc.v": {
+        "SHA256": "57779e03f9c29d2e168fbabf77ae540675ebfc1ebec3e6e24ba3b7f7b6c6b329",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/dvp_mode_admission_monitor_cdc.v"
+        ]
+      },
+      "C:\\Users\\31641\\.codex\\visualizations\\2026\\10\\30\\01a18b10-3666-7ef2-85f5-5a3db14eb3d0\\tb_hdmi_first_de_transient.sv": {
+        "SHA256": "e5a7b2ce049390625664b2cf12dac36b10d2b36044df0d394ca163f2a3b00ebf",
+        "PackagedMatches": [
+          "simulations/polarity-counterexample/tb_hdmi_first_de_transient.sv"
+        ]
+      }
+    },
+    "polarity-trained": {
+      "rtl/experimental/hdmi1080_input_status_trained.v": {
+        "SHA256": "c0b6fff1fc1bffb9629c4e833272f584913af1313b98b236538b9b90e331fa5f",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/hdmi1080_input_status_trained.v"
+        ]
+      },
+      "rtl/experimental/hdmi1080_input_status_cdc.v": {
+        "SHA256": "a301a9960792921f0a8142f5d6eab070b80505ddfd3a297bc733a09ee9c8f71c",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/hdmi1080_input_status_cdc.v"
+        ]
+      },
+      "rtl/experimental/dvp_mode_admission_monitor_cdc.v": {
+        "SHA256": "57779e03f9c29d2e168fbabf77ae540675ebfc1ebec3e6e24ba3b7f7b6c6b329",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/dvp_mode_admission_monitor_cdc.v"
+        ]
+      },
+      "tests/tb_hdmi_input_polarity_training.sv": {
+        "SHA256": "7d8adffbdf3779ae9f9f46a10bb6a98bf58dfcd34c9d6b708e447473bbe0aefb",
+        "PackagedMatches": [
+          "source-inputs/tests/tb_hdmi_input_polarity_training.sv"
+        ]
+      },
+      "tests/tb_hdmi_input_training_raster.sv": {
+        "SHA256": "d8d02f5b303c6834ff5f947aa628e17df9cf1eeb35ef538262c53881019b8357",
+        "PackagedMatches": [
+          "source-inputs/tests/tb_hdmi_input_training_raster.sv"
+        ]
+      },
+      "tests/tb_board1080_input_status_cdc.sv": {
+        "SHA256": "e553e719553a933a11527d99cc10b56c390f94bde5cc4c99c147f5144b4ace51",
+        "PackagedMatches": [
+          "source-inputs/tests/tb_board1080_input_status_cdc.sv"
+        ]
+      },
+      "tools/run_hdmi_input_training_sim.py": {
+        "SHA256": "1d3e8018bb6dffa15ac3ae578351697d7a205e91ce256da2d08d8b492715175e",
+        "PackagedMatches": [
+          "source-inputs/tools/run_hdmi_input_training_sim.py"
+        ]
+      },
+      "tools/run_gamma_pipeline_d5_sim.py": {
+        "SHA256": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+        "PackagedMatches": [
+          "source-inputs/tools/run_gamma_pipeline_d5_sim.py"
+        ]
+      },
+      "tools/simulation_tools.py": {
+        "SHA256": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+        "PackagedMatches": [
+          "source-inputs/tools/simulation_tools.py"
+        ]
+      }
+    },
+    "wrapper-wire-e2e": {
+      "rtl/experimental/ms7200_1080p30_ready_ctl.v": {
+        "SHA256": "6918a4a46135094addc443c45235077887b1daaca81f4f255163f635c7828959",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/ms7200_1080p30_ready_ctl.v"
+        ]
+      },
+      "rtl/experimental/ms72xx_ready_observed_ctl.v": {
+        "SHA256": "18d03513a5c92fad06049d321a31bbd9c8cd1c66051c3c0f75154fbba4c691fe",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/ms72xx_ready_observed_ctl.v"
+        ]
+      },
+      "rtl/experimental/ms7210_checked_ctl.v": {
+        "SHA256": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/ms7210_checked_ctl.v"
+        ]
+      },
+      "rtl/experimental/iic_dri_checked.v": {
+        "SHA256": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/iic_dri_checked.v"
+        ]
+      },
+      "tests/tb_ms72xx_observed_e2e.sv": {
+        "SHA256": "92d28e606bb45ee01d4ad2ec0ebc03f6aa536310a0e23a3f005a837bba108692",
+        "PackagedMatches": [
+          "source-inputs/tests/tb_ms72xx_observed_e2e.sv"
+        ]
+      },
+      "rtl/experimental/ms7200_1080p30_ctl.v": {
+        "SHA256": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+        "PackagedMatches": [
+          "source-inputs/rtl/experimental/ms7200_1080p30_ctl.v"
+        ]
+      },
+      "tools/run_hdmi_uart_sim.py": {
+        "SHA256": "a20cd2fe76b6ab2dbfdcb80a528d16e7381713320589672e044918ce09d7bd77",
+        "PackagedMatches": [
+          "source-inputs/tools/run_hdmi_uart_sim.py"
+        ]
+      },
+      "tools/run_gamma_pipeline_d5_sim.py": {
+        "SHA256": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+        "PackagedMatches": [
+          "source-inputs/tools/run_gamma_pipeline_d5_sim.py"
+        ]
+      },
+      "tools/run_ms72xx_checked_sim.py": {
+        "SHA256": "8c0d953d2d4204f334dd290157e4f541e202f3f01c249fa5c9dd89dbec1f36d7",
+        "PackagedMatches": [
+          "source-inputs/tools/run_ms72xx_checked_sim.py"
+        ]
+      },
+      "tools/simulation_tools.py": {
+        "SHA256": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+        "PackagedMatches": [
+          "source-inputs/tools/simulation_tools.py"
+        ]
+      }
+    }
+  },
+  "SourceSnapshotSHA256": {
+    "board/board1080-checked-i2c.fdc": "4fd34ebc9d39642e2539610211fe20778971bf9870b53e8f479bcf164c3cf37c",
+    "board/bringup_pll.v": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+    "board/hdmi_uart_input_diag.v": "556b8a286bf944ab47f95a07312618722709783626966e17e731415c515dd10a",
+    "board/hdmi_uart_trained_diag.v": "bbc9ab6468070c29af1ec3a6d42ae78ce38c4f2e469425decb0dcebb511bfe42",
+    "platform/video_base/ipcore/cfg_pll/cfg_pll.v": "a524450baa6becd30df04da4bdd00597de18b42db4628226e27546c4d601b0ec",
+    "rtl/experimental/dvp_mode_admission_monitor_cdc.v": "57779e03f9c29d2e168fbabf77ae540675ebfc1ebec3e6e24ba3b7f7b6c6b329",
+    "rtl/experimental/hdmi1080_input_status_cdc.v": "a301a9960792921f0a8142f5d6eab070b80505ddfd3a297bc733a09ee9c8f71c",
+    "rtl/experimental/hdmi1080_input_status_trained.v": "c0b6fff1fc1bffb9629c4e833272f584913af1313b98b236538b9b90e331fa5f",
+    "rtl/experimental/hdmi_diag_uart.v": "cd336607932b00c9d47ce7cd37ff76c7c51c610e94fc0180460c27de28ff8a6d",
+    "rtl/experimental/iic_dri_checked.v": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+    "rtl/experimental/ms7200_1080p30_ctl.v": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+    "rtl/experimental/ms7200_1080p30_ready_ctl.v": "6918a4a46135094addc443c45235077887b1daaca81f4f255163f635c7828959",
+    "rtl/experimental/ms7210_checked_ctl.v": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+    "rtl/experimental/ms72xx_observed_ctl.v": "04ab6c3d0fcb3e9caa6175d35821728e94bd64aa1ce3c36d5a1f9af0384054bb",
+    "rtl/experimental/ms72xx_ready_observed_ctl.v": "18d03513a5c92fad06049d321a31bbd9c8cd1c66051c3c0f75154fbba4c691fe",
+    "rtl/uart_tx.v": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+    "rtl/video_pattern.v": "299e59ec4c3168a282bf9d521189dfc405ff889e65825846084962826c149aa9",
+    "tests/tb_board1080_input_status_cdc.sv": "e553e719553a933a11527d99cc10b56c390f94bde5cc4c99c147f5144b4ace51",
+    "tests/tb_hdmi_input_polarity_training.sv": "7d8adffbdf3779ae9f9f46a10bb6a98bf58dfcd34c9d6b708e447473bbe0aefb",
+    "tests/tb_hdmi_input_training_raster.sv": "d8d02f5b303c6834ff5f947aa628e17df9cf1eeb35ef538262c53881019b8357",
+    "tests/tb_ms7200_ready_level.sv": "79380dee099f6345491adcc5762a3bd0cb5fb4832301ff45e9041e6428473112",
+    "tests/tb_ms72xx_observed_e2e.sv": "92d28e606bb45ee01d4ad2ec0ebc03f6aa536310a0e23a3f005a837bba108692",
+    "tools/prepare_gamma_pipeline_d5.py": "d551f76a4a29b524ef58f04dcc02af20fe2e093c2829c220faf179a6d681690d",
+    "tools/prepare_hdmi_input_diagnostic.py": "008158c386eef6a44927b9c050fa8d1f20a986c4498ee77ff44f3d61edcf7cb2",
+    "tools/prepare_hdmi_trained_diagnostic.py": "b6d4e32889724e65aee18a5a2193b740c845b9f163a6a9f50fd1b28833faa25b",
+    "tools/prepare_hdmi_uart_diagnostic.py": "a2c73eb8cc4ba7468065dd728b4cd9a7adf7cb1b0597a8b7b083cfbb4b2f564b",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/run_hdmi_input_training_sim.py": "1d3e8018bb6dffa15ac3ae578351697d7a205e91ce256da2d08d8b492715175e",
+    "tools/run_hdmi_uart_sim.py": "a20cd2fe76b6ab2dbfdcb80a528d16e7381713320589672e044918ce09d7bd77",
+    "tools/run_ms7200_ready_level_sim.py": "331a2d2d6c9c1b6fe47447b7b888e112530fc736a414b76ee98f15b27e99ea82",
+    "tools/run_ms72xx_checked_sim.py": "8c0d953d2d4204f334dd290157e4f541e202f3f01c249fa5c9dd89dbec1f36d7",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "Limits": [
+    "Counterexamples establish possible digital failure mechanisms. They do not prove those exact transients or register semantics occurred in physical hardware.",
+    "This evidence package contains native simulation and source snapshots only; candidate PDS/CDC/STA evidence, if obtained, is a separately bound package.",
+    "No candidate bitstream or download is performed by this package. External AC, physical CDC/MTBF, actual input pixel payload, DDR and corrected display remain separate.",
+    "Absolute paths in original logs and runners are preserved as provenance; they are not rewritten into portable replay claims."
+  ]
+}

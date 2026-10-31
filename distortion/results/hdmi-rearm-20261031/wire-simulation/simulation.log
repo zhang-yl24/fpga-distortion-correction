@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# xsim v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sat Oct 31 00:24:18 2026
+# Process ID: 41744
+# Current directory: D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/build/hdmi-uart-diagnostic/ready-reentry-wire-1031-b
+# Command line: xsim.exe -log simulation.log -mode tcl -source {xsim.dir/rearm_wire_tb/xsim_script.tcl}
+# Log file: D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/build/hdmi-uart-diagnostic/ready-reentry-wire-1031-b/simulation.log
+# Journal file: D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/build/hdmi-uart-diagnostic/ready-reentry-wire-1031-b\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/rearm_wire_tb/xsim_script.tcl
+# xsim {rearm_wire_tb} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+MS72XX_OBSERVED_TELEMETRY_PASS scenario=0 successful=372 nacks=0 observed=372
+MS72XX_E2E_SCENARIO_PASS scenario=0 requests=372 rx_init=300 rx_settings=7 tx_writes=49 status=12 code=0
+MS72XX_OBSERVED_TELEMETRY_PASS scenario=1 successful=0 nacks=1 observed=0
+MS72XX_E2E_SCENARIO_PASS scenario=1 requests=1 rx_init=0 rx_settings=0 tx_writes=0 status=0 code=4
+MS72XX_OBSERVED_TELEMETRY_PASS scenario=2 successful=316 nacks=1 observed=316
+MS72XX_E2E_SCENARIO_PASS scenario=2 requests=317 rx_init=300 rx_settings=7 tx_writes=0 status=8 code=4
+MS72XX_OBSERVED_TELEMETRY_PASS scenario=3 successful=317 nacks=1 observed=317
+MS72XX_E2E_SCENARIO_PASS scenario=3 requests=318 rx_init=300 rx_settings=7 tx_writes=0 status=8 code=4
+MS72XX_OBSERVED_TELEMETRY_PASS scenario=4 successful=367 nacks=1 observed=367
+MS72XX_E2E_SCENARIO_PASS scenario=4 requests=368 rx_init=300 rx_settings=7 tx_writes=49 status=8 code=4
+MS72XX_OBSERVED_TELEMETRY_PASS scenario=5 successful=368 nacks=1 observed=368
+MS72XX_E2E_SCENARIO_PASS scenario=5 requests=369 rx_init=300 rx_settings=7 tx_writes=49 status=9 code=5
+MS72XX_OBSERVED_TELEMETRY_PASS scenario=6 successful=372 nacks=0 observed=372
+MS72XX_E2E_SCENARIO_PASS scenario=6 requests=372 rx_init=300 rx_settings=7 tx_writes=49 status=12 code=0
+MS72XX_REENTRY_WIRE_STAGE first02_and_33_stable_polls PASS
+MS72XX_REENTRY_WIRE_STAGE complete03_to02_once_then33_stable_polls PASS
+MS72XX_REENTRY_WIRE_STAGE complete01_to02_once_then33_stable_polls PASS
+MS72XX_OBSERVED_TELEMETRY_PASS scenario=7 successful=798 nacks=0 observed=798
+MS72XX_E2E_SCENARIO_PASS scenario=7 requests=798 rx_init=300 rx_settings=21 tx_writes=49 status=424 code=0
+MS72XX_REARM_OBSERVED_E2E_SIM_PASS
+$finish called at time : 1947052600 ns : File "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/tests/tb_ms72xx_rearm_observed_e2e.sv" Line 326
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:01:07 . Memory (MB): peak = 224.219 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Oct 31 00:25:31 2026...

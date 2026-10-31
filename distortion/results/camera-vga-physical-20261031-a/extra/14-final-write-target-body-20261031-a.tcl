@@ -1,0 +1,2 @@
+mpnr_report_timing -force_to_run -delay_type min_max -max_path 20 -nworst 4 -report_exception TRUE
+report_path_timing -delay_type min_max -max_path 100 -nworst 8 -report_exception TRUE -from {u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_d[3]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK} -to {u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/TX_DATA[1]}

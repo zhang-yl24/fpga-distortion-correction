@@ -1,0 +1,219 @@
+{
+  "Schema": "hdmi-input-training-simulation-v1",
+  "Passed": true,
+  "StartedUTC": "2026-10-30T05:12:27.074704+00:00",
+  "SourceSHA256": {
+    "rtl/experimental/hdmi1080_input_status_trained.v": "c0b6fff1fc1bffb9629c4e833272f584913af1313b98b236538b9b90e331fa5f",
+    "rtl/experimental/hdmi1080_input_status_cdc.v": "a301a9960792921f0a8142f5d6eab070b80505ddfd3a297bc733a09ee9c8f71c",
+    "rtl/experimental/dvp_mode_admission_monitor_cdc.v": "57779e03f9c29d2e168fbabf77ae540675ebfc1ebec3e6e24ba3b7f7b6c6b329",
+    "tests/tb_hdmi_input_polarity_training.sv": "7d8adffbdf3779ae9f9f46a10bb6a98bf58dfcd34c9d6b708e447473bbe0aefb",
+    "tests/tb_hdmi_input_training_raster.sv": "d8d02f5b303c6834ff5f947aa628e17df9cf1eeb35ef538262c53881019b8357",
+    "tests/tb_board1080_input_status_cdc.sv": "e553e719553a933a11527d99cc10b56c390f94bde5cc4c99c147f5144b4ace51",
+    "tools/run_hdmi_input_training_sim.py": "1d3e8018bb6dffa15ac3ae578351697d7a205e91ce256da2d08d8b492715175e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "GeneratedNativeTB": {
+    "Source": "tests/tb_board1080_input_status_cdc.sv",
+    "Path": "C:\\Users\\31641\\.codex\\visualizations\\2026\\10\\30\\01a18b10-3666-7ef2-85f5-5a3db14eb3d0\\hdmi-trained-native-1030-a\\tb_board1080_input_status_trained.sv",
+    "SHA256": "48a1bff1222ae0ffa72523d3575610495ae23c75dd71b679be5a937ab6829622",
+    "Transformation": "Only the DUT module name changes to the isolated trained candidate."
+  },
+  "Commands": [
+    {
+      "Stage": "compile",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_status_trained.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_status_cdc.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_mode_admission_monitor_cdc.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_hdmi_input_polarity_training.sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_hdmi_input_training_raster.sv",
+        "C:\\Users\\31641\\.codex\\visualizations\\2026\\10\\30\\01a18b10-3666-7ef2-85f5-5a3db14eb3d0\\hdmi-trained-native-1030-a\\tb_board1080_input_status_trained.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "directed-elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_hdmi_input_polarity_training",
+        "-s",
+        "hdmi_training_directed"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "directed-simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "hdmi_training_directed",
+        "-runall",
+        "-log",
+        "directed-simulation.log"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "raster-elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_hdmi_input_training_raster",
+        "-s",
+        "hdmi_training_raster"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "raster-simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "hdmi_training_raster",
+        "-runall",
+        "-log",
+        "raster-simulation.log"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "native-elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_board1080_input_status_cdc",
+        "-s",
+        "hdmi_training_native"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "native-simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "hdmi_training_native",
+        "-runall",
+        "-log",
+        "native-simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "Suites": {
+    "directed": {
+      "Passed": true,
+      "Top": "tb_hdmi_input_polarity_training",
+      "Cases": [
+        "two_positive_lines",
+        "two_negative_lines",
+        "first_de_single_sample_conflict_retrains",
+        "short_line_restarts_consecutive_evidence",
+        "long_line_restarts_consecutive_evidence",
+        "changing_hs_restarts_training",
+        "changing_vs_restarts_training",
+        "different_stable_candidate_restarts_pair",
+        "clock_stop_does_not_invent_second_line",
+        "post_lock_hs_vs_conflict_stays_failed_and_locked",
+        "common_reset_allows_new_polarity"
+      ]
+    },
+    "raster": {
+      "Passed": true,
+      "Top": "tb_hdmi_input_training_raster",
+      "Summary": {
+        "passed": true,
+        "exact_raster": [
+          2200,
+          1125
+        ],
+        "active_geometry": [
+          1920,
+          1080
+        ],
+        "transient_samples": 1,
+        "completed_rasters": 4,
+        "clean": {
+          "qualified": true,
+          "fault": 0,
+          "good_frames": 3,
+          "bad_frames": 0,
+          "width": 1920,
+          "height": 1080,
+          "inactive_vs": 0,
+          "inactive_hs": 0
+        },
+        "transient": {
+          "qualified": false,
+          "fault": 21,
+          "good_frames": 0,
+          "bad_frames": 4,
+          "width": 0,
+          "height": 1080,
+          "inactive_vs": 1,
+          "inactive_hs": 1,
+          "private_timing_fault": 33
+        },
+        "continuing_bad_frames_per_raster": 1,
+        "hardware_verified": false
+      },
+      "Samples": [
+        "COUNTEREXAMPLE_SAMPLE index=1 rasters=3 clean_qualified=1 clean_fault=00 clean_good=2 clean_bad=0 clean_width=1920 clean_height=1080 clean_vs_inactive=0 clean_hs_inactive=0 clean_pclk_edges=74250 bad_qualified=0 bad_fault=15 bad_good=0 bad_bad=3 bad_width=0 bad_height=1080 bad_vs_inactive=1 bad_hs_inactive=1 bad_pclk_edges=74250 bad_timing_fault=21",
+        "COUNTEREXAMPLE_SAMPLE index=2 rasters=4 clean_qualified=1 clean_fault=00 clean_good=3 clean_bad=0 clean_width=1920 clean_height=1080 clean_vs_inactive=0 clean_hs_inactive=0 clean_pclk_edges=74250 bad_qualified=0 bad_fault=15 bad_good=0 bad_bad=4 bad_width=0 bad_height=1080 bad_vs_inactive=1 bad_hs_inactive=1 bad_pclk_edges=74250 bad_timing_fault=21"
+      ]
+    },
+    "native": {
+      "Passed": true,
+      "Top": "tb_board1080_input_status_cdc",
+      "Summary": {
+        "passed": true,
+        "qualification_phases": 2,
+        "polarity_mask": 3,
+        "complete_rasters": 6,
+        "changed_format": 1,
+        "stopped_pclk": 1,
+        "sticky_checks": 2,
+        "common_reset_checks": 3,
+        "reset_requalified": 1,
+        "reference_cycles": 5470867,
+        "DDRIPElaborated": false,
+        "HardwareVerified": false
+      }
+    }
+  },
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "BitstreamGenerated": false,
+  "HardwareReleaseAllowed": false,
+  "Limits": "Digital startup training, timing geometry and fault tests only. The injected one-sample transient is hypothetical; it does not establish the physical cause. No candidate mapped CDC/STA, external AC, real input pixels, DDR or corrected display acceptance.",
+  "EndedUTC": "2026-10-30T05:15:30.893580+00:00",
+  "SourceDrift": [],
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "906e293060b17dfb04e9ac3ddd25ea77036561196377f0aa683e8222d75a971c",
+    "counterexample-summary.json": "997b6a9ba0f2226fda82fe19c12bd2b30a788207cee019845312b4b739a219fe",
+    "directed-elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "directed-elaborate-stdout.log": "b60124b3231a8e91771cd32449ebd474d28597740adab5e90965f8df49fcec9f",
+    "directed-simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "directed-simulate-stdout.log": "4e4a838891711f76b5089fe8deae1fba549c3b12810efbc73085fba154ab3c37",
+    "directed-simulation.log": "27168cb16a82664f678a71fdc4725ae0dc686b09e92e25eb91a11ace20045584",
+    "input-status-cdc-unit-summary.json": "3e87c98074b1f498d7293eb20c972e95b5bc8e10ddbc37ad853b558b9f13f589",
+    "native-elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-elaborate-stdout.log": "ac8ff5520f7e29a91f7b38274f5deb937f9f89e704096926419f211127ffd8b8",
+    "native-simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-simulate-stdout.log": "db4952a3dd59458c14c161ad4208ad3c3af6e0ac1f635e7d955cbc85cfa203f9",
+    "native-simulation.log": "63b7de0dfc2dea09f24640e3039fa95ee2dab789ebbb6eb44047f6267058dd4e",
+    "raster-elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raster-elaborate-stdout.log": "36d21e13d1b5c2c4a7150f92cbfc075364dd80251c9e11ba9e262f29031d2f13",
+    "raster-simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raster-simulate-stdout.log": "3c281b3bcf5a1bdcc4510290c1f6db52dba7e9096f0ea9120469245a50058b1a",
+    "raster-simulation.log": "25e8f4568ceeac2e3c0029f85c6c8275343f6be916092122f791ad9d0acc76fc",
+    "tb_board1080_input_status_trained.sv": "48a1bff1222ae0ffa72523d3575610495ae23c75dd71b679be5a937ab6829622",
+    "webtalk.log": "68d4379efa41afcc189c488388911bbfd35b6518bb6dff614861c7889b5c54e9",
+    "webtalk_17784.backup.log": "f50bdce749a8a9b99ebb0203987c325ac9cde6c81239bce8d587436294e4aaae",
+    "webtalk_18884.backup.log": "3038791e354af829c76822fe2ced8dbf8e8e9692de82421691246f849da64e53",
+    "webtalk_24284.backup.log": "cd13d1e6e9963acd043110fa057cb50d482690de10ef5b899a4cb11cebb78e3c",
+    "webtalk_35612.backup.log": "94298123df6f2acaa5035f678a8a4bf596b44835c423fe991c396684bf38dfcc",
+    "webtalk_3932.backup.log": "a541bc856f4e0af12e110d52b8b499148deefdae40e0e35dc43195a274d5351b",
+    "xelab.log": "a9471f438cf0bae29636e6b4f84f8a89f481c09b56f852907a3a08e74051fa30",
+    "xvlog.log": "c704c3cac47903a64404c70e1108a8429a92027fed40e1da085d915712f011d8"
+  }
+}

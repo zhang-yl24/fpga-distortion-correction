@@ -1,0 +1,103 @@
+{
+  "Schema": "hdmi-first-de-transient-counterexample-v1",
+  "Passed": true,
+  "StartedUTC": "2026-10-30T05:07:50.247472+00:00",
+  "SourceSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_status_cdc.v": "a301a9960792921f0a8142f5d6eab070b80505ddfd3a297bc733a09ee9c8f71c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_mode_admission_monitor_cdc.v": "57779e03f9c29d2e168fbabf77ae540675ebfc1ebec3e6e24ba3b7f7b6c6b329",
+    "C:\\Users\\31641\\.codex\\visualizations\\2026\\10\\30\\01a18b10-3666-7ef2-85f5-5a3db14eb3d0\\tb_hdmi_first_de_transient.sv": "e5a7b2ce049390625664b2cf12dac36b10d2b36044df0d394ca163f2a3b00ebf"
+  },
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "FrozenRTLModified": false,
+  "Limits": "Directed digital counterexample only. One injected first-DE sync sample is hypothetical and does not prove that the physical source produced this transient.",
+  "Commands": [
+    {
+      "Executable": "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+      "Arguments": [
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_status_cdc.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_mode_admission_monitor_cdc.v",
+        "C:\\Users\\31641\\.codex\\visualizations\\2026\\10\\30\\01a18b10-3666-7ef2-85f5-5a3db14eb3d0\\tb_hdmi_first_de_transient.sv"
+      ]
+    },
+    {
+      "Executable": "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+      "Arguments": [
+        "tb_hdmi_first_de_transient",
+        "-s",
+        "first_de_transient"
+      ]
+    },
+    {
+      "Executable": "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+      "Arguments": [
+        "first_de_transient",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ]
+    }
+  ],
+  "Summary": {
+    "passed": true,
+    "exact_raster": [
+      2200,
+      1125
+    ],
+    "active_geometry": [
+      1920,
+      1080
+    ],
+    "transient_samples": 1,
+    "completed_rasters": 4,
+    "clean": {
+      "qualified": true,
+      "fault": 0,
+      "good_frames": 3,
+      "bad_frames": 0,
+      "width": 1920,
+      "height": 1080,
+      "inactive_vs": 0,
+      "inactive_hs": 0
+    },
+    "transient": {
+      "qualified": false,
+      "fault": 21,
+      "good_frames": 0,
+      "bad_frames": 4,
+      "width": 0,
+      "height": 1080,
+      "inactive_vs": 1,
+      "inactive_hs": 1,
+      "private_timing_fault": 33
+    },
+    "continuing_bad_frames_per_raster": 1,
+    "hardware_verified": false
+  },
+  "Samples": [
+    "COUNTEREXAMPLE_SAMPLE index=1 rasters=3 clean_qualified=1 clean_fault=00 clean_good=2 clean_bad=0 clean_width=1920 clean_height=1080 clean_vs_inactive=0 clean_hs_inactive=0 clean_pclk_edges=74250 bad_qualified=0 bad_fault=15 bad_good=0 bad_bad=3 bad_width=0 bad_height=1080 bad_vs_inactive=1 bad_hs_inactive=1 bad_pclk_edges=74250 bad_timing_fault=21",
+    "COUNTEREXAMPLE_SAMPLE index=2 rasters=4 clean_qualified=1 clean_fault=00 clean_good=3 clean_bad=0 clean_width=1920 clean_height=1080 clean_vs_inactive=0 clean_hs_inactive=0 clean_pclk_edges=74250 bad_qualified=0 bad_fault=15 bad_good=0 bad_bad=4 bad_width=0 bad_height=1080 bad_vs_inactive=1 bad_hs_inactive=1 bad_pclk_edges=74250 bad_timing_fault=21"
+  ],
+  "EndedUTC": "2026-10-30T05:09:03.341892+00:00",
+  "SourceDrift": [],
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "0ec386b14e5ab93c4e7feab07ad71850601dc0bb8df437aa096c51af0c869f1c",
+    "counterexample-summary.json": "997b6a9ba0f2226fda82fe19c12bd2b30a788207cee019845312b4b739a219fe",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "ef7f8e71fa94e1a39be19da4f1d84c91eca45d584706dc3a98a4a1bb0962ec95",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "8e09a27f2c7ceb2665a9c8faf86a2da92965af668be4c369f41f683190d49b0f",
+    "simulation.log": "86f9e01d01ecee8f073bb5025721a627a6e4b1e6f3ea76988f265d354c4616fe",
+    "webtalk.jou": "14822360f25ccf6b65207f9e73baa9bd73ebd9828b7b771230737d87fc8ab09c",
+    "webtalk.log": "78c59727444a11fff31a0bd17401db4537b7800799c9b015aaa6e42377ed8618",
+    "webtalk_21072.backup.jou": "cf7c7e63f9f7d7c23f9866779471b574319e6aaf50419affa1bfa61a4de28b0b",
+    "webtalk_21072.backup.log": "6c30bcf7523d8cf7fbcd0486abbdf47f40262e58ce063c7ca11f1e7160384d32",
+    "xelab.log": "06f8e63804575593ea0e1ebf71ccdb933cdae7fdc51ad6777d634b60b1b589e8",
+    "xelab.pb": "0aef1e8deeff48a4d4b48b0db9e20202bd746888663f52a0702d6212d12bcf82",
+    "xsim.jou": "bb8ac44a1bf306b9fcb6860609599383292108081c6698ef803c8a7cc73b257f",
+    "xvlog.log": "779b08f297392c6610d5744ba3a9fe1981833e9f66f6b206a2149b7368f77d35",
+    "xvlog.pb": "568872e70b86e5a669c8bc32598b7adc95d0d9500333b7dbd4ca557b17b4d497"
+  }
+}

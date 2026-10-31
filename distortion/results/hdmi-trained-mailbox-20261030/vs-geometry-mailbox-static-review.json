@@ -1,0 +1,867 @@
+{
+  "Schema": "trained-final-netlist-vs-geometry-mailbox-static-review-v1",
+  "Passed": true,
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\trained-review-1030-a\\final-functional-export\\generate_netlist\\hdmi_uart_trained_diag_sim.v": "25e3151640a5bd4f30b6984f5cdb86aed2e89687179d302f0412bcec34a0a5a0",
+    "C:\\Users\\31641\\.codex\\visualizations\\2026\\10\\30\\01a18b10-3666-7ef2-85f5-5a3db14eb3d0\\trained-live-static-1030-a\\check_vs_geometry_mailbox.py": "c2d82f1dced8f9ffbc74067affc5235df5c32112903174f9854d75144a4344b7",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\hdmi_uart_trained_diag.v": "bbc9ab6468070c29af1ec3a6d42ae78ce38c4f2e469425decb0dcebb511bfe42",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_status_trained.v": "c0b6fff1fc1bffb9629c4e833272f584913af1313b98b236538b9b90e331fa5f",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_mode_admission_monitor_cdc.v": "57779e03f9c29d2e168fbabf77ae540675ebfc1ebec3e6e24ba3b7f7b6c6b329",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\hdmi-trained-live-20261030\\live-status-a.json": "9010c3bb923df3b63bfcd8528279707c771f2ce1fbfd01e81938d16bc6ca1199"
+  },
+  "LibrarySHA256": {
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_LUT6CARRY.v": "aa7ca57e8ce35845b0d61b02358d4a546facc52be65ec1ca5e68fe37a8bdcf98",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_MUX2.v": "77540b86085dc742e5a5102578cb3f0a8753989b3b800d6a75f23e6d46515b95",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_BUF.v": "774fb1a08820223eef6c66217e510d3a5eb328edebffb488a25467fe3e623836",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_FFASYN.v": "e2fcf0de9085fd056c4daa14b2f73bd9235cdb52c90e68a2b58114024e048b24",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_INV.v": "b1242601ab1cc80fbc152a149eaf3d73b140e541392d8af727260cadc7b378ef",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_DRM18K_E1.v": "c7c271c7c372ccd9f7e3701db5a79a94e106ac28b7b735c60f3a8f43d78429da",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_FFSYN.v": "ae4094a9a478a8ae9e5c67a0fcf982ff1e61a6e1e66588d849dd815d713c1f8c",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_GRS.v": "42302a081bc28e3d89b99997abd11c3411b2d5afd71aa48d2444bc779c384762",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_IBUF.v": "18814ef6d6f140b763c88871640498cacfaa420f4e5038b4fc751beedf69d4f4",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_GPLL.v": "1cbab1c034d8129f9164edeff911deb36a0201fb67cd8f336512e4ddc21d9ed0",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_USCM.v": "3f35757740a6498560e3531ae7bfe44147b05016d6a80e504fc3f27934f486fc",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\bsim\\V_OBUFT.v": "cfc024e819351fe3dd04cabd22f2860c5eac6d528f413c78ab56b1b0f2dd8017"
+  },
+  "Checks": [
+    {
+      "Name": "geometry normalized VS D",
+      "TargetNet": "\\CLMA_63_630/ntQD0",
+      "EnumeratedRows": 16,
+      "ExpectedExpression": "outer p_reset[1] AND polarity_known AND (vs_in XOR vs_inactive)",
+      "Passed": true
+    },
+    {
+      "Name": "geometry frame start CE",
+      "TargetNet": "\\CLMS_63_607/ntCE",
+      "EnumeratedRows": 32,
+      "ExpectedExpression": "normalized VS AND NOT geometry.vs_previous",
+      "Passed": true
+    },
+    {
+      "Name": "geometry source reset",
+      "TargetNet": "\\CLMS_75_637/ntRS",
+      "EnumeratedRows": 4,
+      "ExpectedExpression": "NOT (geometry.p_reset[1] AND geometry.p_enable[1])",
+      "Passed": true
+    },
+    {
+      "Name": "geometry enable D",
+      "TargetNet": "\\input_status/N0",
+      "EnumeratedRows": 4,
+      "ExpectedExpression": "outer p_reset[1] AND polarity_known",
+      "Passed": true
+    },
+    {
+      "Name": "geometry enable reset",
+      "TargetNet": "\\CLMA_57_648/ntRSCO",
+      "EnumeratedRows": 2,
+      "ExpectedExpression": "NOT geometry.p_reset[1]",
+      "Passed": true
+    },
+    {
+      "Name": "geometry source FF clocks",
+      "ExpectedExpression": "Buffered pixclk_in",
+      "Passed": true,
+      "FFCount": 5
+    },
+    {
+      "Name": "snapshot_request to request0",
+      "Passed": true,
+      "Connection": "direct Q to D"
+    },
+    {
+      "Name": "request0 to request1",
+      "Passed": true,
+      "Connection": "direct Q to D"
+    },
+    {
+      "Name": "snapshot_ack to ack0",
+      "Passed": true,
+      "Connection": "direct Q to D"
+    },
+    {
+      "Name": "ack0 to ack1",
+      "Passed": true,
+      "Connection": "direct Q to D"
+    },
+    {
+      "Name": "request1 to snapshot_ack",
+      "Passed": true,
+      "Connection": "direct Q to D"
+    },
+    {
+      "Name": "ack1 to ack_seen",
+      "Passed": true,
+      "Connection": "direct Q to D"
+    },
+    {
+      "Name": "held73 to ref73",
+      "Passed": true,
+      "Connection": "direct Q to D"
+    },
+    {
+      "Name": "ref73 to good0",
+      "Passed": true,
+      "Connection": "direct Q to D"
+    },
+    {
+      "Name": "source snapshot update CE",
+      "TargetNet": "\\CLMS_75_535/ntCE",
+      "EnumeratedRows": 4,
+      "ExpectedExpression": "request_sync[1] XOR snapshot_ack",
+      "Passed": true
+    },
+    {
+      "Name": "reference mailbox reset",
+      "TargetNet": "\\CLMS_75_619/ntRS",
+      "EnumeratedRows": 8,
+      "ExpectedExpression": "NOT (r_reset[1] AND r_enable[1] AND enable_epoch_ready)",
+      "Passed": true
+    },
+    {
+      "Name": "reference ack reset",
+      "TargetNet": "ntR391",
+      "EnumeratedRows": 8,
+      "ExpectedExpression": "NOT r_run",
+      "Passed": true
+    },
+    {
+      "Name": "reference settle next",
+      "TargetNet": "\\CLMA_63_624/ntQD2",
+      "EnumeratedRows": 64,
+      "ExpectedExpression": "r_run AND NOT settle AND (ack_sync[1] XOR ack_seen)",
+      "Passed": true
+    },
+    {
+      "Name": "reference snapshot apply next",
+      "TargetNet": "\\CLMA_63_624/ntQC1",
+      "EnumeratedRows": 16,
+      "ExpectedExpression": "r_run AND settle",
+      "Passed": true
+    },
+    {
+      "Name": "source request reset",
+      "TargetNet": "\\CLMS_75_637/ntRS",
+      "EnumeratedRows": 4,
+      "ExpectedExpression": "NOT p_run",
+      "Passed": true
+    }
+  ],
+  "SelectedFFs": {
+    "outer_reset": {
+      "Instance": "\\input_status/p_reset[1]/opit_0/FF1/FF",
+      "Cell": {
+        "Type": "V_FFASYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/p_reset [1]",
+          "CE": "1'b1",
+          "CK": "_N9",
+          "D": "\\input_status/p_reset [0]",
+          "SR": "\\CLMS_51_637/ntRS"
+        }
+      }
+    },
+    "geometry_reset": {
+      "Instance": "\\input_status/geometry/p_reset[1]/opit_0/FF1/FF",
+      "Cell": {
+        "Type": "V_FFASYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/p_reset [1]",
+          "CE": "1'b1",
+          "CK": "_N9",
+          "D": "\\input_status/geometry/p_reset [0]",
+          "SR": "\\CLMS_51_637/ntRS"
+        }
+      }
+    },
+    "polarity_known": {
+      "Instance": "\\input_status/polarity_known/opit_0_inv/FFAPP1/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/polarity_known",
+          "CE": "\\input_status/N420",
+          "CK": "_N9",
+          "D": "1'b1",
+          "SR": "\\CLMA_51_648/ntRSCO"
+        }
+      }
+    },
+    "vs_inactive": {
+      "Instance": "\\input_status/vs_inactive/opit_0_inv/FFAPP1/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/vs_inactive",
+          "CE": "\\input_status/N420",
+          "CK": "_N9",
+          "D": "\\input_status/training_vs",
+          "SR": "ntR261"
+        }
+      }
+    },
+    "geometry_enable0": {
+      "Instance": "\\input_status/geometry/p_enable[0]/opit_0_inv/FF0/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/p_enable [0]",
+          "CE": "1'b1",
+          "CK": "_N9",
+          "D": "\\input_status/N0",
+          "SR": "\\CLMA_57_648/ntRSCO"
+        }
+      }
+    },
+    "geometry_enable1": {
+      "Instance": "\\input_status/geometry/p_enable[1]/opit_0_inv/FF1/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/p_enable [1]",
+          "CE": "1'b1",
+          "CK": "_N9",
+          "D": "\\input_status/geometry/p_enable [0]",
+          "SR": "\\CLMA_57_648/ntRSCO"
+        }
+      }
+    },
+    "geometry_vs_previous": {
+      "Instance": "\\input_status/geometry/vs_previous/opit_0_L6Q_LUT6DQL5_perm/FF0/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/vs_previous",
+          "CE": "1'b1",
+          "CK": "_N9",
+          "D": "\\CLMA_63_630/ntQD0",
+          "SR": "\\CLMS_75_637/ntRS"
+        }
+      }
+    },
+    "geometry_frame_started": {
+      "Instance": "\\input_status/geometry/frame_started/opit_0/FFAPP3/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/frame_started",
+          "CE": "\\CLMS_63_607/ntCE",
+          "CK": "_N8",
+          "D": "_VCC210",
+          "SR": "\\CLMS_75_637/ntRS"
+        }
+      }
+    },
+    "request0": {
+      "Instance": "\\input_status/geometry/request_sync[0]/opit_0/FF0/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/request_sync [0]",
+          "CE": "1'b1",
+          "CK": "_N9",
+          "D": "\\input_status/geometry/snapshot_request",
+          "SR": "\\CLMS_75_637/ntRS"
+        }
+      }
+    },
+    "request1": {
+      "Instance": "\\input_status/geometry/request_sync[1]/opit_0/FF1/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/request_sync [1]",
+          "CE": "1'b1",
+          "CK": "_N9",
+          "D": "\\input_status/geometry/request_sync [0]",
+          "SR": "\\CLMS_75_637/ntRS"
+        }
+      }
+    },
+    "snapshot_request": {
+      "Instance": "\\input_status/geometry/snapshot_request/opit_0_L6Q_perm/FF2/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/snapshot_request",
+          "CE": "1'b1",
+          "CK": "_N5",
+          "D": "\\CLMS_75_631/ntQD2",
+          "SR": "ntR391"
+        }
+      }
+    },
+    "snapshot_ack": {
+      "Instance": "\\input_status/geometry/snapshot_ack/opit_0/FFAPP3/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/snapshot_ack",
+          "CE": "\\CLMS_75_535/ntCE",
+          "CK": "_N9",
+          "D": "\\input_status/geometry/request_sync [1]",
+          "SR": "\\CLMS_75_637/ntRS"
+        }
+      }
+    },
+    "ack0": {
+      "Instance": "\\input_status/geometry/ack_sync[0]/opit_0/FF0/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/ack_sync [0]",
+          "CE": "1'b1",
+          "CK": "_N5",
+          "D": "\\input_status/geometry/snapshot_ack",
+          "SR": "ntR391"
+        }
+      }
+    },
+    "ack1": {
+      "Instance": "\\input_status/geometry/ack_sync[1]/opit_0/FF1/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/ack_sync [1]",
+          "CE": "1'b1",
+          "CK": "_N5",
+          "D": "\\input_status/geometry/ack_sync [0]",
+          "SR": "ntR391"
+        }
+      }
+    },
+    "ack_seen": {
+      "Instance": "\\input_status/geometry/ack_seen/opit_0/FFAPP1/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/ack_seen",
+          "CE": "\\CLMS_75_517/ntCE",
+          "CK": "_N5",
+          "D": "\\input_status/geometry/ack_sync [1]",
+          "SR": "\\CLMS_75_619/ntRS"
+        }
+      }
+    },
+    "settle": {
+      "Instance": "\\input_status/geometry/settle/opit_0_L6Q_perm/FF2/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\CLMS_75_517/ntCE",
+          "CE": "1'b1",
+          "CK": "_N5",
+          "D": "\\CLMA_63_624/ntQD2",
+          "SR": "1'b0"
+        }
+      }
+    },
+    "snapshot_apply": {
+      "Instance": "\\input_status/geometry/snapshot_apply/opit_0_L6Q_LUT6DL5Q_perm/FFAPP1/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\CLMS_63_601/ntCE",
+          "CE": "1'b1",
+          "CK": "_N5",
+          "D": "\\CLMA_63_624/ntQC1",
+          "SR": "1'b0"
+        }
+      }
+    },
+    "held73": {
+      "Instance": "\\input_status/geometry/held_snapshot[73]/opit_0/FFAPP2/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/held_snapshot [73]",
+          "CE": "\\CLMS_75_535/ntCE",
+          "CK": "_N8",
+          "D": "\\input_status/geometry/source_good_frames [0]",
+          "SR": "\\CLMS_75_637/ntRS"
+        }
+      }
+    },
+    "ref73": {
+      "Instance": "\\input_status/geometry/ref_snapshot[73]/opit_0/FFAPP2/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/ref_snapshot [73]",
+          "CE": "\\CLMS_75_517/ntCE",
+          "CK": "_N4",
+          "D": "\\input_status/geometry/held_snapshot [73]",
+          "SR": "\\CLMS_75_619/ntRS"
+        }
+      }
+    },
+    "good0": {
+      "Instance": "\\input_status/geometry/good_frames[0]/opit_0/FFAPP3/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "good_frames[0]",
+          "CE": "\\CLMS_63_601/ntCE",
+          "CK": "_N4",
+          "D": "\\input_status/geometry/ref_snapshot [73]",
+          "SR": "\\CLMS_75_619/ntRS"
+        }
+      }
+    },
+    "r_reset": {
+      "Instance": "\\input_status/geometry/r_reset[1]/opit_0/FF1/FF",
+      "Cell": {
+        "Type": "V_FFASYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/r_reset [1]",
+          "CE": "1'b1",
+          "CK": "_N5",
+          "D": "\\input_status/geometry/r_reset [0]",
+          "SR": "\\CLMS_51_637/ntRS"
+        }
+      }
+    },
+    "r_enable": {
+      "Instance": "\\input_status/geometry/r_enable[1]/opit_0_inv/FF1/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/r_enable [1]",
+          "CE": "1'b1",
+          "CK": "_N5",
+          "D": "\\input_status/geometry/r_enable [0]",
+          "SR": "\\CLMS_63_637/ntRSCO"
+        }
+      }
+    },
+    "epoch_ready": {
+      "Instance": "\\input_status/geometry/disabled_seen/opit_0_L6Q_LUT6DQL5Q_perm/FFAPP0/FF",
+      "Cell": {
+        "Type": "V_FFSYN",
+        "Parameters": {
+          "GRS_EN": "\"TRUE\"",
+          "SET_RESET": "\"RESET\"",
+          "LRS_EN": "\"TRUE\"",
+          "INIT": "1'b0"
+        },
+        "Ports": {
+          "Q": "\\input_status/geometry/enable_epoch_ready",
+          "CE": "1'b1",
+          "CK": "_N5",
+          "D": "\\CLMA_63_624/ntQC0",
+          "SR": "1'b0"
+        }
+      }
+    }
+  },
+  "ObservedCombinationalCells": {
+    "\\HCKBROUTE_4/HCKB": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "_N8",
+        "I": "ntclkbufg_2"
+      }
+    },
+    "\\HCKBROUTE_5/HCKB": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "_N9",
+        "I": "ntclkbufg_2"
+      }
+    },
+    "\\VCC_210/FYC/LUT6CARRY": {
+      "Type": "V_LUT6CARRY",
+      "Parameters": {
+        "INIT": "64'hFFFFFFFFFFFFFFFF",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "Ports": {
+        "COUT": "",
+        "Z": "_VCC210",
+        "Z5": "",
+        "CIN": "1'b0",
+        "I0": "1'b1",
+        "I1": "1'b1",
+        "I2": "1'b1",
+        "I3": "1'b1",
+        "I4": "1'b1",
+        "I5": "1'b1"
+      }
+    },
+    "\\clkbufg_2/gopclkbufg/CLKBUFG": {
+      "Type": "V_USCM",
+      "Parameters": {
+        "USCM_MODE": "\"BUF_A\"",
+        "SIM_DEVICE": "\"LOGOS2\""
+      },
+      "Ports": {
+        "CLKOUT": "ntclkbufg_2",
+        "CLK0": "nt_pixclk_in",
+        "CLK1": "",
+        "SEL": ""
+      }
+    },
+    "\\input_status/N0/gateop_LUT6DL5_perm/FYC/LUT6CARRY": {
+      "Type": "V_LUT6CARRY",
+      "Parameters": {
+        "INIT": "64'hCC00CC00CCCCCCC4",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "Ports": {
+        "COUT": "",
+        "Z": "\\input_status/N0",
+        "Z5": "\\input_status/_N6680",
+        "CIN": "1'b0",
+        "I0": "\\input_status/training_line_active",
+        "I1": "\\input_status/p_reset [1]",
+        "I2": "nt_de_in",
+        "I3": "\\input_status/polarity_known",
+        "I4": "\\input_status/N81",
+        "I5": "1'b1"
+      }
+    },
+    "\\input_status/N0_fastcpy/gateop_LUT6DL5_perm/FYA/LUT6CARRY": {
+      "Type": "V_LUT6CARRY",
+      "Parameters": {
+        "INIT": "64'hF0F0000010200000",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "Ports": {
+        "COUT": "",
+        "Z": "\\input_status/N0_fastcpy",
+        "Z5": "\\CLMS_63_607/ntCE",
+        "CIN": "1'b0",
+        "I0": "nt_vs_in",
+        "I1": "\\input_status/geometry/vs_previous",
+        "I2": "\\input_status/p_reset [1]",
+        "I3": "\\input_status/vs_inactive",
+        "I4": "\\input_status/polarity_known",
+        "I5": "1'b1"
+      }
+    },
+    "\\input_status/geometry/N304_eq0/gateop_perm/FYB/LUT6CARRY": {
+      "Type": "V_LUT6CARRY",
+      "Parameters": {
+        "INIT": "64'h0000FFFFFFFF0000",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "Ports": {
+        "COUT": "",
+        "Z": "\\CLMS_75_535/ntCE",
+        "Z5": "",
+        "CIN": "1'b0",
+        "I0": "1'b1",
+        "I1": "1'b1",
+        "I2": "1'b1",
+        "I3": "1'b1",
+        "I4": "\\input_status/geometry/request_sync [1]",
+        "I5": "\\input_status/geometry/snapshot_ack"
+      }
+    },
+    "\\input_status/geometry/N35_inv/gateop_perm/FYB/LUT6CARRY": {
+      "Type": "V_LUT6CARRY",
+      "Parameters": {
+        "INIT": "64'h00FFFFFF00FFFFFF",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "Ports": {
+        "COUT": "",
+        "Z": "\\CLMS_75_637/ntRS",
+        "Z5": "",
+        "CIN": "1'b0",
+        "I0": "1'b1",
+        "I1": "1'b1",
+        "I2": "1'b1",
+        "I3": "\\input_status/geometry/p_reset [1]",
+        "I4": "\\input_status/geometry/p_enable [1]",
+        "I5": "1'b1"
+      }
+    },
+    "\\input_status/geometry/N724_inv/gateop_perm/FYB/LUT6CARRY": {
+      "Type": "V_LUT6CARRY",
+      "Parameters": {
+        "INIT": "64'h0F0FFFFFFFFFFFFF",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "Ports": {
+        "COUT": "",
+        "Z": "\\CLMS_75_619/ntRS",
+        "Z5": "",
+        "CIN": "1'b0",
+        "I0": "1'b1",
+        "I1": "1'b1",
+        "I2": "\\input_status/geometry/r_enable [1]",
+        "I3": "1'b1",
+        "I4": "\\input_status/geometry/enable_epoch_ready",
+        "I5": "\\input_status/geometry/r_reset [1]"
+      }
+    },
+    "\\input_status/geometry/p_enable[0]/opit_0_inv/LRSPOLMUX/LRS_INV": {
+      "Type": "V_INV",
+      "Parameters": {},
+      "Ports": {
+        "Z": "\\CLMA_57_648/ntRSCO",
+        "I": "\\input_status/geometry/p_reset [1]"
+      }
+    },
+    "\\input_status/geometry/previous_vs[15]/opit_0/ntRS": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "ntR390",
+        "I": "\\CLMS_75_619/ntRS"
+      }
+    },
+    "\\input_status/geometry/settle/opit_0_L6Q_perm/FYC/LUT6CARRY": {
+      "Type": "V_LUT6CARRY",
+      "Parameters": {
+        "INIT": "64'h0000000040800000",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "Ports": {
+        "COUT": "",
+        "Z": "\\CLMA_63_624/ntQD2",
+        "Z5": "",
+        "CIN": "1'b0",
+        "I0": "\\input_status/geometry/ack_seen",
+        "I1": "\\input_status/geometry/r_enable [1]",
+        "I2": "\\input_status/geometry/enable_epoch_ready",
+        "I3": "\\input_status/geometry/ack_sync [1]",
+        "I4": "\\input_status/geometry/r_reset [1]",
+        "I5": "\\CLMS_75_517/ntCE"
+      }
+    },
+    "\\input_status/geometry/snapshot_apply/opit_0_L6Q_LUT6DL5Q_perm/FYB/LUT6CARRY": {
+      "Type": "V_LUT6CARRY",
+      "Parameters": {
+        "INIT": "64'hC000C000C0000000",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "Ports": {
+        "COUT": "",
+        "Z": "\\input_status/geometry/r_run",
+        "Z5": "\\CLMA_63_624/ntQC1",
+        "CIN": "1'b0",
+        "I0": "1'b1",
+        "I1": "\\input_status/geometry/enable_epoch_ready",
+        "I2": "\\input_status/geometry/r_enable [1]",
+        "I3": "\\input_status/geometry/r_reset [1]",
+        "I4": "\\CLMS_75_517/ntCE",
+        "I5": "1'b1"
+      }
+    },
+    "\\input_status/geometry/vs_meta[13]/opit_0/ntRSCO": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "ntR391",
+        "I": "ntR390"
+      }
+    },
+    "\\input_status/geometry/vs_previous/opit_0_L6Q_LUT6DQL5_perm/FYA/LUT6CARRY": {
+      "Type": "V_LUT6CARRY",
+      "Parameters": {
+        "INIT": "64'h0CC00000A22AAAAA",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "Ports": {
+        "COUT": "",
+        "Z": "\\CLMA_63_630/ntQD0",
+        "Z5": "\\input_status/geometry/N177",
+        "CIN": "1'b0",
+        "I0": "nt_de_in",
+        "I1": "\\input_status/p_reset [1]",
+        "I2": "nt_vs_in",
+        "I3": "\\input_status/vs_inactive",
+        "I4": "\\input_status/polarity_known",
+        "I5": "1'b1"
+      }
+    },
+    "\\pixclk_in_ibuf/opit_0/INBUF": {
+      "Type": "V_IBUF",
+      "Parameters": {
+        "IOSTANDARD": "\"LVCMOS33\"",
+        "TERM_DDR": "\"ON\""
+      },
+      "Ports": {
+        "O": "\\pixclk_in_ibuf/ntD",
+        "I": "pixclk_in"
+      }
+    },
+    "\\pixclk_in_ibuf/opit_1/ntDI": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "nt_pixclk_in",
+        "I": "\\pixclk_in_ibuf/ntD"
+      }
+    },
+    "\\vs_in_ibuf/opit_0/ibuf": {
+      "Type": "V_IBUF",
+      "Parameters": {
+        "IOSTANDARD": "\"LVCMOS33\"",
+        "TERM_DDR": "\"ON\""
+      },
+      "Ports": {
+        "O": "\\vs_in_ibuf/ntD",
+        "I": "vs_in"
+      }
+    },
+    "\\vs_in_ibuf/opit_1/ntDI": {
+      "Type": "V_BUF",
+      "Parameters": {},
+      "Ports": {
+        "Z": "nt_vs_in",
+        "I": "\\vs_in_ibuf/ntD"
+      }
+    }
+  },
+  "HardwareAccessed": false,
+  "EDAExecuted": false,
+  "InputVideoPassed": false,
+  "Limits": "Static final-netlist Boolean connectivity only. C5 means reference-domain good-frame progress was not observed before startup timeout; packet fields cannot distinguish missing source VS/frame boundaries from missing fresh frame snapshots. No observed input waveform is reconstructed by this audit."
+}

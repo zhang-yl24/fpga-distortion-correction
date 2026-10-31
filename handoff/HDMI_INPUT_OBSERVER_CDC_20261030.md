@@ -1,5 +1,7 @@
 # HDMI 输入观察器 CDC 离线交接（2026-10-30）
 
+后续续接说明：本页记录截至 scoped CDC 审计完成时的独立事件。之后已从同一精确 ADF 离线导出位流并通过独立产物及直接网表/引脚复核，见[位流续接记录](HDMI_INPUT_BITSTREAM_20261030.md)；用户又明确开发板已断电，本轮未下载。最新状态以 [CURRENT.md](CURRENT.md) 顶部为准。温度状态仍未核实；用户已明确暂停测温支线，不以此阻塞正常 HDMI 离线开发。
+
 独立候选 hdmi_uart_input_diag 已完成当前精确源码的数字仿真、原生构建、同步器连通性核查及限定对象的时序审计。限定约束后的双角十类报告均零失败；本轮没有生成新位流或下载开发板。结果不替代外部 HDMI AC、完整 CDC/MTBF、温度、真实输入像素、显示画面或整机畸变矫正验收。
 
 [结果汇总](../distortion/results/hdmi-input-observer-20261030.json)及[提交内证据目录](../distortion/results/hdmi-input-observer-20261030/)记录本轮来源与哈希。03:02 恢复 SRAM、RX/ALL 初始化完成的实板事件使用的是旧 hdmi_uart_delayed_diag，见[独立实板交接](HDMI_INPUT_BRINGUP_20261030.md)，不能作为此观察器上板证据。旧下载日志 over_temp=1 仍待核实，当前建议断电；本轮离线工作没有测温或证明该状态解除。

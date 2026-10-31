@@ -1,0 +1,284 @@
+{
+  "Schema": "processed-output-reset-query-audit-v1",
+  "NativeQueriesVerified": true,
+  "ExactGroups": 5,
+  "SourceObjects": 5,
+  "TargetObjects": 127,
+  "NativeMatchRecords": 10,
+  "NativeNameProof": [
+    {
+      "Source": "power_ready/opit_0_inv_L6Q_perm/CLK",
+      "Role": "from",
+      "EntryRDC": true,
+      "NativeEvidence": {
+        "Pattern": "^(power_ready/opit_0_inv_L6Q_perm/CLK)$",
+        "Command": "get_pins -hierarchical -regexp ^(power_ready/opit_0_inv_L6Q_perm/CLK)$",
+        "Count": 1,
+        "NativeNames": [
+          "t:power_ready/opit_0_inv_L6Q_perm/CLK"
+        ]
+      }
+    },
+    {
+      "Source": "power_ready/opit_0_inv_L6Q_perm/CLK",
+      "Role": "to",
+      "EntryRDC": true,
+      "NativeEvidence": {
+        "Pattern": "^(u_ddr3_test_h/u_ddrphy_top/u_ddrphy_rst_seq_rstn_sync/sig_async_r1\\[0\\]/opit_0_srl/RS)$",
+        "Command": "get_pins -hierarchical -regexp {^(u_ddr3_test_h/u_ddrphy_top/u_ddrphy_rst_seq_rstn_sync/sig_async_r1\\[0\\]/opit_0_srl/RS)$}",
+        "Count": 1,
+        "NativeNames": [
+          "t:u_ddr3_test_h/u_ddrphy_top/u_ddrphy_rst_seq_rstn_sync/sig_async_r1[0]/opit_0_srl/RS"
+        ]
+      }
+    },
+    {
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/ddrphy_cpd_rstn/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Role": "from",
+      "EntryRDC": false,
+      "NativeEvidence": {
+        "Pattern": "^(u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/ddrphy_cpd_rstn/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK)$",
+        "Command": "get_pins -hierarchical -regexp ^(u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/ddrphy_cpd_rstn/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK)$",
+        "Count": 1,
+        "NativeNames": [
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/ddrphy_cpd_rstn/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK"
+        ]
+      }
+    },
+    {
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/ddrphy_cpd_rstn/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+      "Role": "to",
+      "EntryRDC": false,
+      "NativeEvidence": {
+        "Pattern": "^(u_ddr3_test_h/u_ddrphy_top/u_ddrphy_cpd/cpd_inst/RST)$",
+        "Command": "get_pins -hierarchical -regexp ^(u_ddr3_test_h/u_ddrphy_top/u_ddrphy_cpd/cpd_inst/RST)$",
+        "Count": 1,
+        "NativeNames": [
+          "t:u_ddr3_test_h/u_ddrphy_top/u_ddrphy_cpd/cpd_inst/RST"
+        ]
+      }
+    },
+    {
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_dqs_rst/opit_0_inv/CLK",
+      "Role": "from",
+      "EntryRDC": false,
+      "NativeEvidence": {
+        "Pattern": "^(u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_dqs_rst/opit_0_inv/CLK)$",
+        "Command": "get_pins -hierarchical -regexp ^(u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_dqs_rst/opit_0_inv/CLK)$",
+        "Count": 1,
+        "NativeNames": [
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_dqs_rst/opit_0_inv/CLK"
+        ]
+      }
+    },
+    {
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_dqs_rst/opit_0_inv/CLK",
+      "Role": "to",
+      "EntryRDC": false,
+      "NativeEvidence": {
+        "Pattern": "^(u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[0\\]\\.u_ddc_ca/ddc_inst/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[1\\]\\.u_ddc_ca/ddc_inst/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[2\\]\\.u_ddc_ca/ddc_inst/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/genblk1\\.u_iobufco_dqs/opit_2/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/u_outbuft_dm/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/genblk1\\.u_iobufco_dqs/opit_2/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/u_outbuft_dm/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/genblk1\\.u_iobufco_dqs/opit_2/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/u_outbuft_dm/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/genblk1\\.u_iobufco_dqs/opit_2/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/u_outbuft_dm/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[0\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[10\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[11\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[12\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[13\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[14\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[1\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[2\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[3\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[4\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[5\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[6\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[7\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[8\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[9\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba\\[0\\]\\.u_outbuft_ba/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba\\[1\\]\\.u_outbuft_ba/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba\\[2\\]\\.u_outbuft_ba/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_casn/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_cke/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_csn/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_odt/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_rasn/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_wen/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuftco_ck/opit_3/OSR_IOLHR)$",
+        "Command": "get_pins -hierarchical -regexp {^(u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[0\\]\\.u_ddc_ca/ddc_inst/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[1\\]\\.u_ddc_ca/ddc_inst/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[2\\]\\.u_ddc_ca/ddc_inst/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/genblk1\\.u_iobufco_dqs/opit_2/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/u_outbuft_dm/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/genblk1\\.u_iobufco_dqs/opit_2/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/u_outbuft_dm/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/genblk1\\.u_iobufco_dqs/opit_2/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/u_outbuft_dm/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[0\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[1\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[2\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[3\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[4\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[5\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[6\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/ISR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/dq_loop\\[7\\]\\.u_iobuf_dq/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/genblk1\\.u_iobufco_dqs/opit_2/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/u_outbuft_dm/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[0\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[10\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[11\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[12\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[13\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[14\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[1\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[2\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[3\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[4\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[5\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[6\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[7\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[8\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0\\[9\\]\\.u_outbuft_addr0/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba\\[0\\]\\.u_outbuft_ba/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba\\[1\\]\\.u_outbuft_ba/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba\\[2\\]\\.u_outbuft_ba/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_casn/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_cke/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_csn/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_odt/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_rasn/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_wen/opit_1/OSR_IOLHR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuftco_ck/opit_3/OSR_IOLHR)$}",
+        "Count": 104,
+        "NativeNames": [
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[0].u_ddc_ca/ddc_inst/RST",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[1].u_ddc_ca/ddc_inst/RST",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[2].u_ddc_ca/ddc_inst/RST",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/genblk1.u_iobufco_dqs/opit_2/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_outbuft_dm/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/genblk1.u_iobufco_dqs/opit_2/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_outbuft_dm/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/genblk1.u_iobufco_dqs/opit_2/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_outbuft_dm/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/ISR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/genblk1.u_iobufco_dqs/opit_2/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_outbuft_dm/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[0].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[1].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[2].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[3].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[4].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[5].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[6].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[7].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[8].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[9].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[10].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[11].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[12].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[13].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[14].u_outbuft_addr0/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba[0].u_outbuft_ba/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba[1].u_outbuft_ba/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba[2].u_outbuft_ba/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_casn/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_cke/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_csn/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_odt/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_rasn/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_wen/opit_1/OSR_IOLHR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuftco_ck/opit_3/OSR_IOLHR"
+        ]
+      }
+    },
+    {
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_iol_rst/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+      "Role": "from",
+      "EntryRDC": false,
+      "NativeEvidence": {
+        "Pattern": "^(u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_iol_rst/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK)$",
+        "Command": "get_pins -hierarchical -regexp ^(u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_iol_rst/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK)$",
+        "Count": 1,
+        "NativeNames": [
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_iol_rst/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK"
+        ]
+      }
+    },
+    {
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_iol_rst/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+      "Role": "to",
+      "EntryRDC": false,
+      "NativeEvidence": {
+        "Pattern": "^(u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[0\\]\\.u_tserdes_ca0/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[0\\]\\.u_tserdes_ca1/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[1\\]\\.u_tserdes_ca0/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[1\\]\\.u_tserdes_ca1/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[2\\]\\.u_tserdes_ca0/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[2\\]\\.u_tserdes_ca1/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TSR)$",
+        "Command": "get_pins -hierarchical -regexp {^(u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[0\\]\\.u_tserdes_ca0/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[0\\]\\.u_tserdes_ca1/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[1\\]\\.u_tserdes_ca0/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[1\\]\\.u_tserdes_ca1/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[2\\]\\.u_tserdes_ca0/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[2\\]\\.u_tserdes_ca1/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TSR|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TSR)$}",
+        "Count": 14,
+        "NativeNames": [
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[0].u_tserdes_ca0/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[0].u_tserdes_ca1/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[1].u_tserdes_ca0/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[1].u_tserdes_ca1/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[2].u_tserdes_ca0/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[2].u_tserdes_ca1/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TSR",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/TSR"
+        ]
+      }
+    },
+    {
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_training_ctrl/ddrphy_dqs_training_rstn/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+      "Role": "from",
+      "EntryRDC": false,
+      "NativeEvidence": {
+        "Pattern": "^(u_ddr3_test_h/u_ddrphy_top/ddrphy_training_ctrl/ddrphy_dqs_training_rstn/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK)$",
+        "Command": "get_pins -hierarchical -regexp ^(u_ddr3_test_h/u_ddrphy_top/ddrphy_training_ctrl/ddrphy_dqs_training_rstn/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK)$",
+        "Count": 1,
+        "NativeNames": [
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_training_ctrl/ddrphy_dqs_training_rstn/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK"
+        ]
+      }
+    },
+    {
+      "Source": "u_ddr3_test_h/u_ddrphy_top/ddrphy_training_ctrl/ddrphy_dqs_training_rstn/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+      "Role": "to",
+      "EntryRDC": false,
+      "NativeEvidence": {
+        "Pattern": "^(u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[0\\]\\.u_ddc_ca/ddc_inst/RST_TRAINING_N|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[1\\]\\.u_ddc_ca/ddc_inst/RST_TRAINING_N|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[2\\]\\.u_ddc_ca/ddc_inst/RST_TRAINING_N|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST_TRAINING_N|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST_TRAINING_N|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST_TRAINING_N|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST_TRAINING_N)$",
+        "Command": "get_pins -hierarchical -regexp {^(u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[0\\]\\.u_ddc_ca/ddc_inst/RST_TRAINING_N|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[1\\]\\.u_ddc_ca/ddc_inst/RST_TRAINING_N|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group\\[2\\]\\.u_ddc_ca/ddc_inst/RST_TRAINING_N|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[0\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST_TRAINING_N|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[1\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST_TRAINING_N|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[2\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST_TRAINING_N|u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group\\[3\\]\\.ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST_TRAINING_N)$}",
+        "Count": 7,
+        "NativeNames": [
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[0].u_ddc_ca/ddc_inst/RST_TRAINING_N",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[1].u_ddc_ca/ddc_inst/RST_TRAINING_N",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[2].u_ddc_ca/ddc_inst/RST_TRAINING_N",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST_TRAINING_N",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST_TRAINING_N",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST_TRAINING_N",
+          "t:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/RST_TRAINING_N"
+        ]
+      }
+    }
+  ],
+  "Plan": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\processed-output-reset-20261031-b\\plan.json",
+    "SHA256": "d1bd0f1ed1224d3644eb6fd43788d2e3768b6604996d5f0ed75062d7eb390c57"
+  },
+  "Receipt": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\physical-reset-query-20261031-a\\result.json",
+    "SHA256": "e4a56cacf68f2a38743ae42f424b00a340cf2c5bd9eb4d24378137f6d1b91879"
+  },
+  "QueryLog": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\processed-output\\physical-reset-query-20261031-a\\stdout.log",
+    "SHA256": "1fc92d2c111c56fc053c16fbff57aa31d8dcfdf7e28491fd0d4c6d02990d27de"
+  },
+  "LoadedADFSHA256": "97df0e42848650499802b2cf0e4375f420b4c2c98cc55bd9e2dc97fb62a5b980",
+  "AllBoundInputArtifactsRechecked": 241,
+  "InputDrift": [],
+  "NativeParserSHA256": "99e04fd2e9a4a93511ba2b47a236c0fbebd3e27c319f0537c3600993cb7d8af4",
+  "AuditToolSHA256": "666a7b8f0ead25b28efcd6bc48774b316fce4537f694ebaf06175fa5cf7acc98",
+  "EntryConnectivityVerified": false,
+  "TimingExceptionApproved": false,
+  "ConstraintsApplied": false,
+  "HardwareAccessed": false,
+  "HardwareReleaseAllowed": false
+}

@@ -1,0 +1,38 @@
+{
+  "Schema": "camera-vga-physical-archive-config-v1",
+  "Destination": "results/camera-vga-physical-20261031-a",
+  "Stages": [
+    "work/camera-vga-output/physical-query-20261031-a",
+    "work/camera-vga-output/export-baseline-20261031-a",
+    "work/camera-vga-output/physical-reset-query-20261031-a",
+    "work/camera-vga-output/physical-reset-query-20261031-b",
+    "work/camera-vga-output/REPLACE_WITH_FINAL_COMPLETED_STAGE_LIST"
+  ],
+  "FinalAudit": "results/camera-vga-hold-analysis-20261031-a/REPLACE_WITH_FINAL_AUDIT.json",
+  "EvidenceDirectories": [
+    "results/camera-vga-hold-analysis-20261031-a",
+    "results/camera-vga-reset-analysis-20261031-a",
+    "work/camera-vga-output/reset-proof-20261031-a"
+  ],
+  "SourceFiles": [
+    "tools/run_camera_vga_physical.py",
+    "tools/run_camera_vga_export.py",
+    "tools/run_camera_vga_derived.py",
+    "tools/run_camera_vga_repair.py",
+    "tools/run_camera_vga_chain_repair.py",
+    "tools/audit_camera_vga_hold.py",
+    "tools/audit_camera_vga_routes.py",
+    "tools/audit_camera_vga_physical.py",
+    "tools/audit_camera_vga_reset_netlist.py",
+    "tools/audit_camera_vga_reset_proof.py",
+    "tools/prepare_camera_vga_reset_scope.py",
+    "tools/test_camera_vga_reset_scope.py",
+    "tools/test_camera_vga_reset_proof.py",
+    "tests/test_camera_vga_hold.py",
+    "tests/test_camera_vga_physical.py",
+    "tests/test_camera_vga_repair.py",
+    "tests/test_camera_vga_chain_repair.py",
+    "tests/test_archive_camera_vga_physical.py"
+  ],
+  "ExtraFiles": []
+}

@@ -44,6 +44,68 @@ def test_valid_packet_preserves_fields_and_does_not_claim_phy_measurement():
     assert frame["wire_hex"] == p.hex()
 
 
+def test_v1_freshness_fields_are_unavailable_not_reported_as_inactive():
+    frame = status.decode_packet(packet())
+    assert frame["monitor_freshness_mask"] is None
+    assert frame["monitor_freshness"] is None
+
+
+def test_v2_decodes_monitor_freshness_from_versioned_extension():
+    p = bytearray(packet(tag=status.BUILD_TAG_V2))
+    p[52] = 0b10101
+    frame = status.decode_packet(repair_crc(p))
+    assert frame["build_tag"] == status.BUILD_TAG_V2
+    assert frame["monitor_freshness_mask"] == 0b10101
+    assert frame["monitor_freshness"] == {
+        "pclk": True, "vsync": False, "de": True, "frame": False, "snapshot": True,
+    }
+
+
+@pytest.mark.parametrize("offset,value", [(52, 0x20), (53, 1), (54, 1), (55, 1)])
+def test_v2_rejects_unknown_extension_bits(offset, value):
+    p = bytearray(packet(tag=status.BUILD_TAG_V2))
+    p[offset] = value
+    with pytest.raises(ValueError, match="reserved"):
+        status.decode_packet(repair_crc(p))
+
+
+@pytest.mark.parametrize("count", [0, 0x1234, 0xfffe, 0xffff])
+def test_v3_decodes_reference_domain_vs_count_without_claiming_phy_lock(count):
+    p = bytearray(packet(tag=status.BUILD_TAG_V3))
+    p[52] = 0x15
+    struct.pack_into("<H", p, 53, count)
+    frame = status.decode_packet(repair_crc(p))
+    assert frame["vs_edge_count_ref"] == count
+    assert frame["monitor_freshness_mask"] == 0x15
+    assert not frame["monitor_freshness"]["vsync"]
+    assert frame["phy_lock"] is None and not frame["hardware_release_allowed"]
+
+
+def test_v3_stream_retains_counter_wrap_for_modulo_interval_analysis():
+    wire = bytearray()
+    for sequence, count in enumerate((0xfffe, 0xffff, 0), start=1):
+        p = bytearray(packet(sequence=sequence, tag=status.BUILD_TAG_V3))
+        struct.pack_into("<H", p, 53, count)
+        wire.extend(repair_crc(p))
+    frames = status.FrameParser().feed(wire)
+    counts = [frame["vs_edge_count_ref"] for frame in frames]
+    assert counts == [0xfffe, 0xffff, 0]
+    assert [(b - a) & 0xffff for a, b in zip(counts, counts[1:])] == [1, 1]
+
+
+@pytest.mark.parametrize("offset,value", [(52, 0x20), (55, 1)])
+def test_v3_rejects_only_unassigned_extension_bits(offset, value):
+    p = bytearray(packet(tag=status.BUILD_TAG_V3))
+    p[offset] = value
+    with pytest.raises(ValueError, match="reserved"):
+        status.decode_packet(repair_crc(p))
+
+
+@pytest.mark.parametrize("tag", [status.BUILD_TAG, status.BUILD_TAG_V2])
+def test_older_versions_have_no_vs_counter_measurement(tag):
+    assert status.decode_packet(packet(tag=tag))["vs_edge_count_ref"] is None
+
+
 @pytest.mark.parametrize("cut", range(1, 64))
 def test_every_single_split_and_multi_packet_chunk(cut):
     p, q = packet(sequence=1), packet(sequence=2)
@@ -86,7 +148,7 @@ def test_corruption_rejected_then_resynchronizes(offset, reason):
 
 
 @pytest.mark.parametrize("offset,value,reason", [(17, 0x80, "reserved"), (18, 0x10, "reserved"),
-    (47, 4, "reserved"), (52, 1, "reserved"), (48, 2, "build_tag")])
+    (47, 4, "reserved"), (52, 1, "reserved"), (48, 4, "build_tag")])
 def test_reserved_and_version_rejected_even_with_valid_crc(offset, value, reason):
     p = bytearray(packet())
     p[offset] = value

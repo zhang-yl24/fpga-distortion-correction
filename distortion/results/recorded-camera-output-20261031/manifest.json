@@ -1,0 +1,472 @@
+{
+  "Passed": true,
+  "PackagedUtc": "2026-10-30T17:09:25.159651+00:00",
+  "Report": "recorded-camera-output-simulation.json",
+  "OriginalWorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\recorded-camera-output\\replay-20261031-a",
+  "OriginalReportSHA256": "aee0648add10b4e3596405ab111115f4118e3cca9713fc687390e62256fc61c0",
+  "Summary": {
+    "passed": true,
+    "frames_processed": 2,
+    "frames_unique_scanned": 2,
+    "pixels_compared": 614400,
+    "source_bank_reuses": 1,
+    "result_bank_reuses": 1,
+    "bank_releases": 2,
+    "result_beats": 38400,
+    "display_read_beats": 38400,
+    "underflows": 0,
+    "crc_mismatches": 0,
+    "aw_stall_cycles": 2408,
+    "w_stall_cycles": 7439,
+    "ar_stall_cycles": 3075,
+    "fifo_peak": 512,
+    "final_drain": true
+  },
+  "ArchivalFrames": [
+    {
+      "FrameID": 1,
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\captures\\gamma-triplets\\grid-left-adjusted-20261009\\group-00000001\\raw.npy",
+      "SHA256": "df3b9f5fe855c53d0078425f7affbc222ccbdda79ddba76c5812e0f3e5553efe",
+      "Metadata": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\captures\\gamma-triplets\\grid-left-adjusted-20261009\\summary.json",
+      "MetadataSHA256": "92c83a83d516828ed4755bbe4363c66d614eec01c01eec8024d31ad8434d4a1f",
+      "CaptureTarget": "gamma_capture_settled_d5",
+      "RecordedUtc": "2026-10-09T14:50:43.495872+00:00",
+      "Scene": "user-confirmed-left-adjusted-flat-9x6-20mm-grid",
+      "SourceCRC32": "0002EC4C",
+      "ExpectedCRC32": "17D21875",
+      "GammaMode": 0,
+      "GammaDecision": 0,
+      "ValidSamples": 273715,
+      "DarkSamples": 57279,
+      "BrightSamples": 19423,
+      "Statistics": {
+        "MaskedPixels": 33485,
+        "UnmaskedPixels": 273715,
+        "PartialBorderPixels": 1824,
+        "ArithmeticInvalidPixels": 0,
+        "RadiusGuardPixels": 0,
+        "FullyOutsidePixels": 33485,
+        "UnmaskedBlackPixels": 250,
+        "ScalarCoordinateCrosschecks": 221
+      }
+    },
+    {
+      "FrameID": 2,
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\captures\\gamma-triplets\\grid-right-20261009\\group-00000001\\raw.npy",
+      "SHA256": "3c9c5a2bf7ebd8bc81be8c0c8adb22c60489f5063958a49ddbad2e4f6d75d2b4",
+      "Metadata": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\captures\\gamma-triplets\\grid-right-20261009\\summary.json",
+      "MetadataSHA256": "396a9a1c9f832f639b31b5b80800468e7ef35a2b28fd1f13c16debd15def2c3a",
+      "CaptureTarget": "gamma_capture_settled_d5",
+      "RecordedUtc": "2026-10-09T14:53:32.747943+00:00",
+      "Scene": "user-confirmed-right-flat-9x6-20mm-grid",
+      "SourceCRC32": "BD25B6A0",
+      "ExpectedCRC32": "EC527030",
+      "GammaMode": 0,
+      "GammaDecision": 0,
+      "ValidSamples": 273715,
+      "DarkSamples": 51907,
+      "BrightSamples": 9899,
+      "Statistics": {
+        "MaskedPixels": 33485,
+        "UnmaskedPixels": 273715,
+        "PartialBorderPixels": 1824,
+        "ArithmeticInvalidPixels": 0,
+        "RadiusGuardPixels": 0,
+        "FullyOutsidePixels": 33485,
+        "UnmaskedBlackPixels": 54,
+        "ScalarCoordinateCrosschecks": 221
+      }
+    }
+  ],
+  "SourceSHA256": {
+    "rtl/mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "rtl/pixel_inverse_rotation.v": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+    "rtl/bounded_brown_inverse_mapper.v": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691",
+    "rtl/bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "rtl/ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+    "rtl/ddr_video_reader.v": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+    "rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+    "rtl/experimental/rotated_remap_core_gamma_scatter4.v": "6b13cf9bdf089fa902c2e4fb564985e21bf153234382ae721bca6541f6fddcbd",
+    "rtl/experimental/adaptive_gamma_stream.v": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7",
+    "rtl/experimental/adaptive_gamma_tagged.v": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790",
+    "rtl/experimental/ddr_adaptive_result_writer.v": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+    "rtl/experimental/pipeline_gamma_frame_engine_1080_scatter4.v": "e01a99c8847db58003bb2a9dca85db67d705c815a8fec8be2b6a430d35eaa141",
+    "rtl/experimental/ddr_video_output_1080_board.v": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+    "tests/tb_recorded_camera_output.sv": "802ca28c332288431a13f8599b35a24fae91405d32e8fae47c581b4b226590c1",
+    "rtl/experimental/gamma_curves.vh": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+    "rtl/video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+    "tools/run_recorded_camera_output_sim.py": "c90bac6ef7e1d9b839cf484da05ca318b147d08a305feb396bfed6cc675f8f1a",
+    "tools/generate_1080_core_vectors.py": "5851f3ce56cf7fc87a438b00dd2655afe45997942d38b32c19650dd7025680f9",
+    "tools/generate_continuous1080_vectors.py": "cf7679a3f33331f6267e70059be2c127247b30a5e316e46ca84b7e6a2277971c",
+    "tools/generate-brown-vectors.py": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b",
+    "model/reference.py": "904eb5b4fd2df7822e4693e325c2aab38b504e4a157622e52b367fdbecbb99b4",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+  },
+  "SourceSHA256After": {
+    "rtl/mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "rtl/pixel_inverse_rotation.v": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+    "rtl/bounded_brown_inverse_mapper.v": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691",
+    "rtl/bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "rtl/ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+    "rtl/ddr_video_reader.v": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+    "rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+    "rtl/experimental/rotated_remap_core_gamma_scatter4.v": "6b13cf9bdf089fa902c2e4fb564985e21bf153234382ae721bca6541f6fddcbd",
+    "rtl/experimental/adaptive_gamma_stream.v": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7",
+    "rtl/experimental/adaptive_gamma_tagged.v": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790",
+    "rtl/experimental/ddr_adaptive_result_writer.v": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+    "rtl/experimental/pipeline_gamma_frame_engine_1080_scatter4.v": "e01a99c8847db58003bb2a9dca85db67d705c815a8fec8be2b6a430d35eaa141",
+    "rtl/experimental/ddr_video_output_1080_board.v": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+    "tests/tb_recorded_camera_output.sv": "802ca28c332288431a13f8599b35a24fae91405d32e8fae47c581b4b226590c1",
+    "rtl/experimental/gamma_curves.vh": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+    "rtl/video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+    "tools/run_recorded_camera_output_sim.py": "c90bac6ef7e1d9b839cf484da05ca318b147d08a305feb396bfed6cc675f8f1a",
+    "tools/generate_1080_core_vectors.py": "5851f3ce56cf7fc87a438b00dd2655afe45997942d38b32c19650dd7025680f9",
+    "tools/generate_continuous1080_vectors.py": "cf7679a3f33331f6267e70059be2c127247b30a5e316e46ca84b7e6a2277971c",
+    "tools/generate-brown-vectors.py": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b",
+    "model/reference.py": "904eb5b4fd2df7822e4693e325c2aab38b504e4a157622e52b367fdbecbb99b4",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+  },
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\captures\\gamma-triplets\\grid-left-adjusted-20261009\\group-00000001\\raw.npy": "df3b9f5fe855c53d0078425f7affbc222ccbdda79ddba76c5812e0f3e5553efe",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\captures\\gamma-triplets\\grid-left-adjusted-20261009\\summary.json": "92c83a83d516828ed4755bbe4363c66d614eec01c01eec8024d31ad8434d4a1f",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\captures\\gamma-triplets\\grid-right-20261009\\group-00000001\\raw.npy": "3c9c5a2bf7ebd8bc81be8c0c8adb22c60489f5063958a49ddbad2e4f6d75d2b4",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\captures\\gamma-triplets\\grid-right-20261009\\summary.json": "396a9a1c9f832f639b31b5b80800468e7ef35a2b28fd1f13c16debd15def2c3a"
+  },
+  "InputSHA256After": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\captures\\gamma-triplets\\grid-left-adjusted-20261009\\group-00000001\\raw.npy": "df3b9f5fe855c53d0078425f7affbc222ccbdda79ddba76c5812e0f3e5553efe",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\captures\\gamma-triplets\\grid-left-adjusted-20261009\\summary.json": "92c83a83d516828ed4755bbe4363c66d614eec01c01eec8024d31ad8434d4a1f",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\captures\\gamma-triplets\\grid-right-20261009\\group-00000001\\raw.npy": "3c9c5a2bf7ebd8bc81be8c0c8adb22c60489f5063958a49ddbad2e4f6d75d2b4",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\captures\\gamma-triplets\\grid-right-20261009\\summary.json": "396a9a1c9f832f639b31b5b80800468e7ef35a2b28fd1f13c16debd15def2c3a"
+  },
+  "FixtureSHA256": {
+    "config.vh": "32592fe7ecd46786c1a608241d514cec31d0855a7ab331ae4aafa28b001233de",
+    "expected-crcs.mem": "2fe5ac3e31cb87fd1e90f880d99f442c0f8bdf94755fb43649e8bb50b6016eac",
+    "expected0.mem": "ff9509202e5cc9840cdf4bdac162ed0260b87e4d853cff290e783dd0640ce794",
+    "expected1.mem": "08e26c06f655f28b66cd7bdde0cc14e4e1437c8cf0a8164ffa21ebabe6552bdd",
+    "frame1-expected.png": "2244b79a8ecb18364bdc9d7a896cd4e8ac21a985f2ae7c6362da04633c3667fc",
+    "frame1-source.png": "46c035dc540173009df88b928053a789e22192684379987c2eaeab3ea676fd24",
+    "frame2-expected.png": "9e68bed4f06c18f19a0a51ce1a9bc78054b3088d94955817d18322807ff19695",
+    "frame2-source.png": "715abc23e2e2547daf69d4b59c31de3de326fabd3baf3353923176e255b56e1e",
+    "source-crcs.mem": "f022a9ab28c2eecb2e50fbb453eab0dbdabb3f3627c2925047e3d37c25b10f5c",
+    "source0.mem": "114191d588ce59ed7f46488be02155752cc826e69bef862b3c427a4c22728bab",
+    "source1.mem": "65a2760839cc70fa0dc5d7e90efc19a56ad292117da54c439d5a2c064d7dfb16"
+  },
+  "FixtureSHA256After": {
+    "config.vh": "32592fe7ecd46786c1a608241d514cec31d0855a7ab331ae4aafa28b001233de",
+    "expected-crcs.mem": "2fe5ac3e31cb87fd1e90f880d99f442c0f8bdf94755fb43649e8bb50b6016eac",
+    "expected0.mem": "ff9509202e5cc9840cdf4bdac162ed0260b87e4d853cff290e783dd0640ce794",
+    "expected1.mem": "08e26c06f655f28b66cd7bdde0cc14e4e1437c8cf0a8164ffa21ebabe6552bdd",
+    "frame1-expected.png": "2244b79a8ecb18364bdc9d7a896cd4e8ac21a985f2ae7c6362da04633c3667fc",
+    "frame1-source.png": "46c035dc540173009df88b928053a789e22192684379987c2eaeab3ea676fd24",
+    "frame2-expected.png": "9e68bed4f06c18f19a0a51ce1a9bc78054b3088d94955817d18322807ff19695",
+    "frame2-source.png": "715abc23e2e2547daf69d4b59c31de3de326fabd3baf3353923176e255b56e1e",
+    "source-crcs.mem": "f022a9ab28c2eecb2e50fbb453eab0dbdabb3f3627c2925047e3d37c25b10f5c",
+    "source0.mem": "114191d588ce59ed7f46488be02155752cc826e69bef862b3c427a4c22728bab",
+    "source1.mem": "65a2760839cc70fa0dc5d7e90efc19a56ad292117da54c439d5a2c064d7dfb16"
+  },
+  "CompressedFiles": {
+    "scan-pixels.mem": {
+      "UncompressedBytes": 3686400,
+      "UncompressedSHA256": "8825ded34f75070b93d4506fd9f850f4dd2719f70ed52a112a5001331b372fba",
+      "File": "scan-pixels.mem.gz"
+    },
+    "simulation.log": {
+      "UncompressedBytes": 2299,
+      "UncompressedSHA256": "c84ec7b500f044a81993d4de2884535fc7fae51980f00c2324cfb3d3657f2863",
+      "File": "simulation.log.gz"
+    },
+    "compile-stdout.log": {
+      "UncompressedBytes": 4733,
+      "UncompressedSHA256": "657f0f5090442c89a101e15f10665f14c9e8887c8a0f1a5cbf96e67dd54d444a",
+      "File": "compile-stdout.log.gz"
+    },
+    "compile-stderr.log": {
+      "UncompressedBytes": 0,
+      "UncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "File": "compile-stderr.log.gz"
+    },
+    "elaborate-stdout.log": {
+      "UncompressedBytes": 1850,
+      "UncompressedSHA256": "c63c58f418b74d72e56d44fb486f15e24b537ab471ec83285ac06016ddd8101b",
+      "File": "elaborate-stdout.log.gz"
+    },
+    "elaborate-stderr.log": {
+      "UncompressedBytes": 0,
+      "UncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "File": "elaborate-stderr.log.gz"
+    },
+    "simulate-stdout.log": {
+      "UncompressedBytes": 1649,
+      "UncompressedSHA256": "cfdb4d20bfcef36d40b93a4e77ff6c16a3cb8386253c9d5e7c03f4e7bfc60d02",
+      "File": "simulate-stdout.log.gz"
+    },
+    "simulate-stderr.log": {
+      "UncompressedBytes": 0,
+      "UncompressedSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "File": "simulate-stderr.log.gz"
+    }
+  },
+  "Archive": "source-fixtures.zip",
+  "ArchiveEntries": {
+    "distortion/rtl/mul32_pipe.v": {
+      "Bytes": 858,
+      "SHA256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2"
+    },
+    "distortion/rtl/pixel_inverse_rotation.v": {
+      "Bytes": 2713,
+      "SHA256": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd"
+    },
+    "distortion/rtl/bounded_brown_inverse_mapper.v": {
+      "Bytes": 14671,
+      "SHA256": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691"
+    },
+    "distortion/rtl/bilinear_rgb.v": {
+      "Bytes": 1884,
+      "SHA256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a"
+    },
+    "distortion/rtl/ddr_read_arbiter.v": {
+      "Bytes": 3189,
+      "SHA256": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be"
+    },
+    "distortion/rtl/ddr_video_reader.v": {
+      "Bytes": 3132,
+      "SHA256": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393"
+    },
+    "distortion/rtl/video_async_fifo.v": {
+      "Bytes": 3270,
+      "SHA256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36"
+    },
+    "distortion/rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v": {
+      "Bytes": 18598,
+      "SHA256": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb"
+    },
+    "distortion/rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v": {
+      "Bytes": 2181,
+      "SHA256": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb"
+    },
+    "distortion/rtl/experimental/rotated_remap_core_gamma_scatter4.v": {
+      "Bytes": 4663,
+      "SHA256": "6b13cf9bdf089fa902c2e4fb564985e21bf153234382ae721bca6541f6fddcbd"
+    },
+    "distortion/rtl/experimental/adaptive_gamma_stream.v": {
+      "Bytes": 3146,
+      "SHA256": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7"
+    },
+    "distortion/rtl/experimental/adaptive_gamma_tagged.v": {
+      "Bytes": 1445,
+      "SHA256": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790"
+    },
+    "distortion/rtl/experimental/ddr_adaptive_result_writer.v": {
+      "Bytes": 6352,
+      "SHA256": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6"
+    },
+    "distortion/rtl/experimental/pipeline_gamma_frame_engine_1080_scatter4.v": {
+      "Bytes": 7389,
+      "SHA256": "e01a99c8847db58003bb2a9dca85db67d705c815a8fec8be2b6a430d35eaa141"
+    },
+    "distortion/rtl/experimental/ddr_video_output_1080_board.v": {
+      "Bytes": 10236,
+      "SHA256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e"
+    },
+    "distortion/tests/tb_recorded_camera_output.sv": {
+      "Bytes": 18167,
+      "SHA256": "802ca28c332288431a13f8599b35a24fae91405d32e8fae47c581b4b226590c1"
+    },
+    "distortion/rtl/experimental/gamma_curves.vh": {
+      "Bytes": 8640,
+      "SHA256": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea"
+    },
+    "distortion/rtl/video_crc32.vh": {
+      "Bytes": 74778,
+      "SHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705"
+    },
+    "distortion/tools/run_recorded_camera_output_sim.py": {
+      "Bytes": 13806,
+      "SHA256": "c90bac6ef7e1d9b839cf484da05ca318b147d08a305feb396bfed6cc675f8f1a"
+    },
+    "distortion/tools/generate_1080_core_vectors.py": {
+      "Bytes": 15162,
+      "SHA256": "5851f3ce56cf7fc87a438b00dd2655afe45997942d38b32c19650dd7025680f9"
+    },
+    "distortion/tools/generate_continuous1080_vectors.py": {
+      "Bytes": 16462,
+      "SHA256": "cf7679a3f33331f6267e70059be2c127247b30a5e316e46ca84b7e6a2277971c"
+    },
+    "distortion/tools/generate-brown-vectors.py": {
+      "Bytes": 4513,
+      "SHA256": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b"
+    },
+    "distortion/model/reference.py": {
+      "Bytes": 3099,
+      "SHA256": "904eb5b4fd2df7822e4693e325c2aab38b504e4a157622e52b367fdbecbb99b4"
+    },
+    "distortion/tools/simulation_tools.py": {
+      "Bytes": 5084,
+      "SHA256": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+    },
+    "distortion/tools/run_gamma_pipeline_d5_sim.py": {
+      "Bytes": 24010,
+      "SHA256": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+    },
+    "distortion/captures/gamma-triplets/grid-left-adjusted-20261009/group-00000001/raw.npy": {
+      "Bytes": 614528,
+      "SHA256": "df3b9f5fe855c53d0078425f7affbc222ccbdda79ddba76c5812e0f3e5553efe"
+    },
+    "distortion/captures/gamma-triplets/grid-left-adjusted-20261009/summary.json": {
+      "Bytes": 4676,
+      "SHA256": "92c83a83d516828ed4755bbe4363c66d614eec01c01eec8024d31ad8434d4a1f"
+    },
+    "distortion/captures/gamma-triplets/grid-right-20261009/group-00000001/raw.npy": {
+      "Bytes": 614528,
+      "SHA256": "3c9c5a2bf7ebd8bc81be8c0c8adb22c60489f5063958a49ddbad2e4f6d75d2b4"
+    },
+    "distortion/captures/gamma-triplets/grid-right-20261009/summary.json": {
+      "Bytes": 4672,
+      "SHA256": "396a9a1c9f832f639b31b5b80800468e7ef35a2b28fd1f13c16debd15def2c3a"
+    },
+    "distortion/tools/prepare_gamma_pipeline_d5.py": {
+      "Bytes": 23162,
+      "SHA256": "d551f76a4a29b524ef58f04dcc02af20fe2e093c2829c220faf179a6d681690d"
+    },
+    "fixtures/config.vh": {
+      "Bytes": 723,
+      "SHA256": "32592fe7ecd46786c1a608241d514cec31d0855a7ab331ae4aafa28b001233de"
+    },
+    "fixtures/expected-crcs.mem": {
+      "Bytes": 20,
+      "SHA256": "2fe5ac3e31cb87fd1e90f880d99f442c0f8bdf94755fb43649e8bb50b6016eac"
+    },
+    "fixtures/expected0.mem": {
+      "Bytes": 1536000,
+      "SHA256": "ff9509202e5cc9840cdf4bdac162ed0260b87e4d853cff290e783dd0640ce794"
+    },
+    "fixtures/expected1.mem": {
+      "Bytes": 1536000,
+      "SHA256": "08e26c06f655f28b66cd7bdde0cc14e4e1437c8cf0a8164ffa21ebabe6552bdd"
+    },
+    "fixtures/frame1-expected.png": {
+      "Bytes": 228334,
+      "SHA256": "2244b79a8ecb18364bdc9d7a896cd4e8ac21a985f2ae7c6362da04633c3667fc"
+    },
+    "fixtures/frame1-source.png": {
+      "Bytes": 270296,
+      "SHA256": "46c035dc540173009df88b928053a789e22192684379987c2eaeab3ea676fd24"
+    },
+    "fixtures/frame2-expected.png": {
+      "Bytes": 228144,
+      "SHA256": "9e68bed4f06c18f19a0a51ce1a9bc78054b3088d94955817d18322807ff19695"
+    },
+    "fixtures/frame2-source.png": {
+      "Bytes": 266991,
+      "SHA256": "715abc23e2e2547daf69d4b59c31de3de326fabd3baf3353923176e255b56e1e"
+    },
+    "fixtures/source-crcs.mem": {
+      "Bytes": 20,
+      "SHA256": "f022a9ab28c2eecb2e50fbb453eab0dbdabb3f3627c2925047e3d37c25b10f5c"
+    },
+    "fixtures/source0.mem": {
+      "Bytes": 1248000,
+      "SHA256": "114191d588ce59ed7f46488be02155752cc826e69bef862b3c427a4c22728bab"
+    },
+    "fixtures/source1.mem": {
+      "Bytes": 1248000,
+      "SHA256": "65a2760839cc70fa0dc5d7e90efc19a56ad292117da54c439d5a2c064d7dfb16"
+    }
+  },
+  "Runtime": {
+    "Python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+    "NumPy": "2.2.5",
+    "Pillow": "13.0.0",
+    "OpenCV": "4.11.0"
+  },
+  "ReproductionCommand": ".venv/Scripts/python.exe distortion/tools/run_recorded_camera_output_sim.py --workdir distortion/build/recorded-camera-output/NEW-EMPTY-NAME --maximum-seconds 900",
+  "HardwareAccessed": false,
+  "CurrentCameraVerified": false,
+  "CalibrationAccepted": false,
+  "PhysicalHDMIModeVerified": false,
+  "Limits": "Archival clean-D5 optical camera images only. No current CAM2/lens/input, physical DDR/HDMI mode, fps, timing or board acceptance. Bench owns serialized source/result leases; production bank manager and concurrency are not exercised.",
+  "Files": {
+    "compile-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "compile-stdout.log.gz": {
+      "Bytes": 625,
+      "SHA256": "ad2175b2bfcb910ba405258d0d993c2308111a403dbd8bc68fb50381e954383a"
+    },
+    "elaborate-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "elaborate-stdout.log.gz": {
+      "Bytes": 793,
+      "SHA256": "eaba8ab9ad1d26ba2392ae2ab135de7e785c39693d570693ff306ab25f726753"
+    },
+    "frame1-actual-scan.png": {
+      "Bytes": 228334,
+      "SHA256": "2244b79a8ecb18364bdc9d7a896cd4e8ac21a985f2ae7c6362da04633c3667fc"
+    },
+    "frame1-expected.png": {
+      "Bytes": 228334,
+      "SHA256": "2244b79a8ecb18364bdc9d7a896cd4e8ac21a985f2ae7c6362da04633c3667fc"
+    },
+    "frame1-source.png": {
+      "Bytes": 270296,
+      "SHA256": "46c035dc540173009df88b928053a789e22192684379987c2eaeab3ea676fd24"
+    },
+    "frame2-actual-scan.png": {
+      "Bytes": 228144,
+      "SHA256": "9e68bed4f06c18f19a0a51ce1a9bc78054b3088d94955817d18322807ff19695"
+    },
+    "frame2-expected.png": {
+      "Bytes": 228144,
+      "SHA256": "9e68bed4f06c18f19a0a51ce1a9bc78054b3088d94955817d18322807ff19695"
+    },
+    "frame2-source.png": {
+      "Bytes": 266991,
+      "SHA256": "715abc23e2e2547daf69d4b59c31de3de326fabd3baf3353923176e255b56e1e"
+    },
+    "frames.csv": {
+      "Bytes": 355,
+      "SHA256": "91ef6ed139028021e216b0386294fbb4c14a143afd51f7b3bf06269a0c635743"
+    },
+    "recorded-camera-output-simulation.json": {
+      "Bytes": 24191,
+      "SHA256": "aee0648add10b4e3596405ab111115f4118e3cca9713fc687390e62256fc61c0"
+    },
+    "replay-preview.png": {
+      "Bytes": 494165,
+      "SHA256": "63ba9e2a93d5bca7f7c25a7c8bee05375803a188cb9c2bf303ea8d5cf1b5cd54"
+    },
+    "scan-pixels.mem.gz": {
+      "Bytes": 541186,
+      "SHA256": "7055a945ffc74a16075b5f1b2a73e50a5c0d2f7ca79bf28389caf27dcaf0ea8c"
+    },
+    "simulate-stderr.log.gz": {
+      "Bytes": 20,
+      "SHA256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    "simulate-stdout.log.gz": {
+      "Bytes": 795,
+      "SHA256": "a843827cc52e98cee4850d3202904ea6419e3b47c4b31fc519b6a9bb0abfd0ed"
+    },
+    "simulation.log.gz": {
+      "Bytes": 890,
+      "SHA256": "ed32aa0f580d65746153262e552d349e4cf1dd579b8d466d0f6e83d4da180ad1"
+    },
+    "source-fixtures.zip": {
+      "Bytes": 2763223,
+      "SHA256": "0f57a5755dde2876b31f0c761d58d3b92e88afa1cbaa5d6f525aba3eb52dbcef"
+    },
+    "summary.json": {
+      "Bytes": 338,
+      "SHA256": "faa44a9c6741c8ed0ad7113eeaf601cfc08b5582fac9e160c30b6b38ed92a198"
+    }
+  }
+}

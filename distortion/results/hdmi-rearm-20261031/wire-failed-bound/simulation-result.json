@@ -1,0 +1,87 @@
+{
+  "Schema": "ms72xx-rearm-wire-simulation-v1",
+  "Passed": false,
+  "StartedUTC": "2026-10-30T16:21:47.882398+00:00",
+  "SourceSHA256": {
+    "rtl/experimental/ms7200_1080p30_rearm_ctl.v": "ea87e1e8c3588af0675c97f87408ddb115d8b0fb08fb84a93c3e820c5a3dee2e",
+    "rtl/experimental/ms72xx_rearm_observed_ctl.v": "7a4404a012d9e855bf3710f5aaa2f9926c004e378314aa1234fb6ee954f6d75d",
+    "rtl/experimental/ms7210_checked_ctl.v": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+    "rtl/experimental/iic_dri_checked.v": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+    "tests/tb_ms72xx_rearm_observed_e2e.sv": "ef4674014fb3ed0cf9c1f69baed8cafc88fd481f5ab36c86f6afe2fe80906073",
+    "tools/run_ms72xx_rearm_wire_sim.py": "6268efcfd72e6a0f82c23f916475fa24a745be604ebc8dd548452fa423b36d14",
+    "tools/run_ms7200_ready_reentry_sim.py": "a86738ecfd5134d27c8ff0836e0d0fb811d1a65f4cd50ac99e41b975510210b9",
+    "tools/run_ms7200_ready_level_sim.py": "331a2d2d6c9c1b6fe47447b7b888e112530fc736a414b76ee98f15b27e99ea82",
+    "tools/run_ms72xx_checked_sim.py": "8c0d953d2d4204f334dd290157e4f541e202f3f01c249fa5c9dd89dbec1f36d7",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "rtl/experimental/ms72xx_ready_observed_ctl.v": "18d03513a5c92fad06049d321a31bbd9c8cd1c66051c3c0f75154fbba4c691fe",
+    "rtl/experimental/ms7200_1080p30_ready_ctl.v": "6918a4a46135094addc443c45235077887b1daaca81f4f255163f635c7828959",
+    "rtl/experimental/ms7200_1080p30_ctl.v": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e"
+  },
+  "All311RXCommandsUnchanged": true,
+  "All49TXCommandsUnchanged": true,
+  "WrapperOnlyModuleSubstitutions": true,
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "TransactionDriverStub": false,
+  "WireLevelI2CExecuted": true,
+  "Commands": [
+    {
+      "Stage": "compile",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7200_1080p30_rearm_ctl.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms72xx_rearm_observed_ctl.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7210_checked_ctl.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\iic_dri_checked.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_ms72xx_rearm_observed_e2e.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_ms72xx_rearm_observed_e2e",
+        "-s",
+        "rearm_wire_tb"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "rearm_wire_tb",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "Limits": "Clocked SCL/SDA wire oracle with synthetic slave replies. Covers complete03/01-to02 re-entry, steady02, existing checked-driver NACK/reset/ownership cases and per-STOP telemetry. Does not model physical receiver register effects, PLL locking or real HDMI pixels.",
+  "Error": "ValueError: native wire assertions did not complete",
+  "SourceDrift": [],
+  "VectorDrift": [],
+  "ElapsedSeconds": 78.882,
+  "EndedUTC": "2026-10-30T16:23:06.764933+00:00",
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "b464fd097a228790eb12244d68165963695e8cdbeac067b66da4585ee285a73f",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "783488fbb9fdc672b8a084310841c703a572443eefb47c7ea62dbbe6ba1f5576",
+    "rx_expected.hex": "165ae7e5dc06394898a4367bf5877cdfdeaabfa057bcfe6cc5d45eefa78573bb",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "cbb7371b1bb6bd3938f40894278d1f6abab17d1f5f64cfb7ebcc32b9a02589b4",
+    "simulation.log": "adce5c5b91acd5346c5facdde513bd285eadd9ce03a3902fdd18e00e4267be21",
+    "telemetry-transactions.csv": "94eeb6c32a6c461add421ca0177489361983b6e02216f3675f688dbef5b46408",
+    "tx_expected.hex": "af25e8cc0f6dbab931d96b56d1716033757bd7ff80dd5a769803fc5c30f418c2",
+    "webtalk.log": "f670172b0ba77f84e8791771ec0506bcff92541ee2737aaaebe59ca7722401b1",
+    "webtalk_34624.backup.log": "e087c0b4a8e1ac8e9c373f04f219be1c7e776771442d2147d2906e2ffb401e27",
+    "wire-transactions.csv": "f2cc4561b1e48dad6798d83988ec44fe538e7249e4cc78bdb458877de188f592",
+    "xelab.log": "ef635c0ed01d6514e8f10df66934d1c1ffb243d6117fd3d6db3f6ac8e5b3b01d",
+    "xvlog.log": "c9f5f0d866d4f932c25957e36bda91c30103d34021c60481d18368ff8c839c2b"
+  }
+}

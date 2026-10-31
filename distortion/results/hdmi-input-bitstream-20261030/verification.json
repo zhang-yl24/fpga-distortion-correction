@@ -1,0 +1,142 @@
+{
+  "Schema": "hdmi-input-bitstream-verification-v1",
+  "Passed": true,
+  "Target": "hdmi_uart_input_diag",
+  "CheckedUTC": "2026-10-30T04:49:17.657502+00:00",
+  "WorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\input-bit-1030-a",
+  "FinalADFSHA256": "d7858e4b705469e6619ba3c99df2c78bf47e2e4f515aeb3b328ea67c70c676a8",
+  "SourceBindings": 19,
+  "PreparedBindings": 20,
+  "NativeAudit": {
+    "AllTenTimingTypesPassed": true,
+    "NativeSummariesAndClocksUnchanged": true,
+    "ExactFalsePathsUnchanged": true,
+    "AllMaxDelayChecksUnchanged": true,
+    "MaxDelayCountPerCorner": {
+      "slow": 167,
+      "fast": 167
+    },
+    "FalsePathCountPerCorner": {
+      "slow": {
+        "setup": 0,
+        "hold": 167,
+        "recovery": 4,
+        "removal": 4
+      },
+      "fast": {
+        "setup": 0,
+        "hold": 167,
+        "recovery": 4,
+        "removal": 4
+      }
+    },
+    "WorstSlackNS": {
+      "slow": {
+        "setup": 1.079,
+        "hold": 0.157,
+        "recovery": 0.659,
+        "removal": 0.184,
+        "mpw": 6.457
+      },
+      "fast": {
+        "setup": 1.869,
+        "hold": 0.104,
+        "recovery": 1.889,
+        "removal": 0.026,
+        "mpw": 6.457
+      }
+    }
+  },
+  "ExecutionReceipt": {
+    "ActualStages": [
+      "report_timing",
+      "runtime_native_audit",
+      "gen_bit_stream"
+    ],
+    "ProcessEvents": [
+      {
+        "Stage": "Report Timing",
+        "Event": "started"
+      },
+      {
+        "Stage": "Report Timing",
+        "Event": "done"
+      },
+      {
+        "Stage": "runtime_native_audit",
+        "Event": "pass"
+      },
+      {
+        "Stage": "gen_bit_stream",
+        "Event": "command"
+      },
+      {
+        "Stage": "Generate Bitstream",
+        "Event": "started"
+      },
+      {
+        "Stage": "Generate Bitstream",
+        "Event": "done"
+      },
+      {
+        "Stage": "bitstream",
+        "Event": "complete"
+      }
+    ],
+    "GenerationInputADF": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\input-bit-1030-a\\audited-final.adf",
+    "PassedAsRecorded": false,
+    "ErrorAsRecorded": "AssertionError: ['compile', 'synthesize', 'dev_map', 'pnr', 'report_timing', 'gen_bit_stream']",
+    "StageClassifierFailureReconciled": true,
+    "Reconciliation": "The original wrapper counted PDS pre-parser Executing declarations as stages. Its failed receipt is preserved; actual Process started/done events are independently verified here."
+  },
+  "GenerationReportPresent": true,
+  "Bitstream": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\build\\hdmi-uart-diagnostic\\input-bit-1030-a\\generate_bitstream\\hdmi_uart_input_diag.sbit",
+    "Bytes": 3791112,
+    "SHA256": "4aa42d6fc582385ea584c68a86d796bc26fcc8568c337abe053a2e6a41ad63dc",
+    "Header": {
+      "Design": "hdmi_uart_input_diag",
+      "Device": "Logos2-PG2L100H--6-FBG676",
+      "Date": "10/30/26",
+      "Time": "11:01:12",
+      "Generator": "Fabric Compiler",
+      "Version": "2023.2-SP3<154097>"
+    }
+  },
+  "EvidenceSHA256": {
+    "audited-final.adf": "d7858e4b705469e6619ba3c99df2c78bf47e2e4f515aeb3b328ea67c70c676a8",
+    "context.fdc": "48c35e89d30fde15602c00459bf5361496b132de5f219ac9ce540e883c8d0107",
+    "baseline.rtr": "691bc96d55e8aaa722d720a8d14c5def02a5e1ddbe79f9f4c70ecc0679092c24",
+    "baseline-exceptions.rtr": "77c57840398abc725a861ea1923446520adb7a53e28c59f4c835cebb1c8587c8",
+    "source-build-plan.json": "354050c8c02e06aa2630dc39170f094d822588f63f41e0799251ccaa413a0c38",
+    "source-scoped-review.json": "6e66b1688bc5b9f3a0edf5b8aa6ee3300594768ac4ff905f7d80077b4ceccc73",
+    "source-connectivity-review.json": "b086225ea76beae60dc1bedcb205f1cc13a7e338af9aeda5a11d2e78694bdb15",
+    "sources/board/hdmi_uart_input_diag.v": "556b8a286bf944ab47f95a07312618722709783626966e17e731415c515dd10a",
+    "sources/rtl/experimental/hdmi_diag_uart.v": "cd336607932b00c9d47ce7cd37ff76c7c51c610e94fc0180460c27de28ff8a6d",
+    "sources/rtl/uart_tx.v": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+    "sources/rtl/experimental/ms72xx_observed_ctl.v": "04ab6c3d0fcb3e9caa6175d35821728e94bd64aa1ce3c36d5a1f9af0384054bb",
+    "sources/rtl/experimental/ms7200_1080p30_ctl.v": "e5055d02e8f7af1c4c3efc151f0a71f2ed50216e55c6f95e3ac4c3f74368b21e",
+    "sources/rtl/experimental/ms7210_checked_ctl.v": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+    "sources/rtl/experimental/iic_dri_checked.v": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+    "sources/rtl/experimental/hdmi1080_input_status_cdc.v": "a301a9960792921f0a8142f5d6eab070b80505ddfd3a297bc733a09ee9c8f71c",
+    "sources/rtl/experimental/dvp_mode_admission_monitor_cdc.v": "57779e03f9c29d2e168fbabf77ae540675ebfc1ebec3e6e24ba3b7f7b6c6b329",
+    "sources/platform/video_base/ipcore/cfg_pll/cfg_pll.v": "a524450baa6becd30df04da4bdd00597de18b42db4628226e27546c4d601b0ec",
+    "sources/board/bringup_pll.v": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+    "sources/rtl/video_pattern.v": "299e59ec4c3168a282bf9d521189dfc405ff889e65825846084962826c149aa9",
+    "export.tcl": "da5ce22accf45ffa789f933f7cfd51e874d4bcbcb9c3eb53cf5b4ab8e8aab4cc",
+    "bitstream-plan.json": "24d58a85f9b5886c1b8f1f93b76a07593f56a2c9cf5b925815464c4e40bc63b1",
+    "pre-bit-audit.json": "7ce514546f7ebb693792c62e3a8b06f70cac37b88d42e3911aa9fe93a509dc1c",
+    "export-result.json": "64d912c51a74232fb828d0300a9ba5a86c06afbd3448ee0241ea7828265e3bd7",
+    "native-stdout.log": "b4fa6830c95998d96eca4dc6575f77c5ff95e33d709ad89f0049194bc8807eaa",
+    "native-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "report_timing/hdmi_uart_input_diag.rtr": "e75f8fb20387234aaaf95554a2a4bdc32b12a8fbe8e9c3d9274397ca4b2e161c",
+    "report_timing/hdmi_uart_input_diag_exception.rtr": "77c57840398abc725a861ea1923446520adb7a53e28c59f4c835cebb1c8587c8",
+    "generate_bitstream/hdmi_uart_input_diag.sbit": "4aa42d6fc582385ea584c68a86d796bc26fcc8568c337abe053a2e6a41ad63dc",
+    "generate_bitstream/hdmi_uart_input_diag.bgr": "88dc07edcf34683a1b82ba934325a1f03c0065c17f1b2f339664bbd5bdcf5b04"
+  },
+  "VerifierSHA256": "eecd3866907b4731cd5dfe4269d2c122dfa82c6b653cc0968b0a98206e11bce1",
+  "HardwareAccessed": false,
+  "EDAExecutedByVerifier": false,
+  "HardwareReleaseAllowed": false,
+  "Limits": "Exact offline observer export only; no new build, programmer access, physical CDC/AC acceptance, real input pixels, DDR or distortion verification."
+}

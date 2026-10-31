@@ -1,0 +1,428 @@
+{
+  "Schema": "camera-vga-native-diagnostic-summary-v1",
+  "CreatedUTC": "2026-10-31T05:59:23.879593+00:00",
+  "WorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\pds-20261031-a",
+  "NativeExitCode": 0,
+  "ExecutionCompletedWithoutError": true,
+  "ElapsedSeconds": 672.186,
+  "MaximumSeconds": 1800,
+  "TimedOut": false,
+  "SourcesStable": true,
+  "Stages": {
+    "Compile": {
+      "Command": "compile -top_module camera_vga_output_top",
+      "SuccessMarkerFound": true
+    },
+    "Synthesize": {
+      "Command": "synthesize -ads -selected_syn_tool_opt 2",
+      "SuccessMarkerFound": true
+    },
+    "DeviceMap": {
+      "Command": "dev_map",
+      "SuccessMarkerFound": true
+    },
+    "PlaceRoute": {
+      "Command": "pnr -optimize_multi_corner_timing -fix_hold_violation",
+      "SuccessMarkerFound": true
+    },
+    "ReportTiming": {
+      "Command": "report_timing -force_to_run -delay_type min_max -max_path 20",
+      "SuccessMarkerFound": true
+    }
+  },
+  "TimingAccepted": false,
+  "TimingStatus": "failed_constraints",
+  "DesignSummary": "Some Constraints Violated.",
+  "TimingSections": [
+    {
+      "Check": "Setup",
+      "Corner": "Slow",
+      "GroupCount": 18,
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 0.238,
+      "Failures": [],
+      "CameraClockRows": [
+        {
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "ddrphy_sysclk",
+          "WorstSlackNS": 5.132,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 111
+        },
+        {
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "camera_pclk",
+          "WorstSlackNS": 6.493,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 2529
+        },
+        {
+          "LaunchClock": "ddrphy_sysclk",
+          "CaptureClock": "camera_pclk",
+          "WorstSlackNS": 4.328,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 44
+        }
+      ]
+    },
+    {
+      "Check": "Hold",
+      "Corner": "Slow",
+      "GroupCount": 12,
+      "FailingEndpoints": 2,
+      "WorstSlackNS": -0.336,
+      "Failures": [
+        {
+          "LaunchClock": "phy_dq_sysclk_1",
+          "CaptureClock": "ddrphy_sysclk",
+          "WorstSlackNS": -0.169,
+          "TotalNegativeSlackNS": -0.169,
+          "FailingEndpoints": 1,
+          "TotalEndpoints": 260
+        },
+        {
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "ddrphy_sysclk",
+          "WorstSlackNS": -0.336,
+          "TotalNegativeSlackNS": -0.336,
+          "FailingEndpoints": 1,
+          "TotalEndpoints": 3
+        }
+      ],
+      "CameraClockRows": [
+        {
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "camera_pclk",
+          "WorstSlackNS": 0.045,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 2529
+        }
+      ]
+    },
+    {
+      "Check": "Recovery",
+      "Corner": "Slow",
+      "GroupCount": 14,
+      "FailingEndpoints": 245,
+      "WorstSlackNS": -4.163,
+      "Failures": [
+        {
+          "LaunchClock": "board27",
+          "CaptureClock": "rst_clk",
+          "WorstSlackNS": -2.407,
+          "TotalNegativeSlackNS": -2.407,
+          "FailingEndpoints": 1,
+          "TotalEndpoints": 1
+        },
+        {
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "phy_dq_clk_0",
+          "WorstSlackNS": -2.56,
+          "TotalNegativeSlackNS": -73.157,
+          "FailingEndpoints": 34,
+          "TotalEndpoints": 34
+        },
+        {
+          "LaunchClock": "ddrphy_sysclk",
+          "CaptureClock": "phy_dq_clk_0",
+          "WorstSlackNS": -3.499,
+          "TotalNegativeSlackNS": -9.67,
+          "FailingEndpoints": 3,
+          "TotalEndpoints": 3
+        },
+        {
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "phy_dq_sysclk_0",
+          "WorstSlackNS": -1.341,
+          "TotalNegativeSlackNS": -31.743,
+          "FailingEndpoints": 35,
+          "TotalEndpoints": 35
+        },
+        {
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "phy_dq_clk_1",
+          "WorstSlackNS": -3.75,
+          "TotalNegativeSlackNS": -258.299,
+          "FailingEndpoints": 84,
+          "TotalEndpoints": 84
+        },
+        {
+          "LaunchClock": "ddrphy_sysclk",
+          "CaptureClock": "phy_dq_clk_1",
+          "WorstSlackNS": -4.163,
+          "TotalNegativeSlackNS": -15.128,
+          "FailingEndpoints": 4,
+          "TotalEndpoints": 4
+        },
+        {
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "phy_dq_sysclk_1",
+          "WorstSlackNS": -2.498,
+          "TotalNegativeSlackNS": -163.719,
+          "FailingEndpoints": 84,
+          "TotalEndpoints": 84
+        }
+      ],
+      "CameraClockRows": [
+        {
+          "LaunchClock": "board27",
+          "CaptureClock": "camera_pclk",
+          "WorstSlackNS": 2.729,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 408
+        }
+      ]
+    },
+    {
+      "Check": "Removal",
+      "Corner": "Slow",
+      "GroupCount": 11,
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 0.402,
+      "Failures": [],
+      "CameraClockRows": []
+    },
+    {
+      "Check": "Setup",
+      "Corner": "Fast",
+      "GroupCount": 18,
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 2.939,
+      "Failures": [],
+      "CameraClockRows": [
+        {
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "ddrphy_sysclk",
+          "WorstSlackNS": 6.347,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 111
+        },
+        {
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "camera_pclk",
+          "WorstSlackNS": 10.229,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 2529
+        },
+        {
+          "LaunchClock": "ddrphy_sysclk",
+          "CaptureClock": "camera_pclk",
+          "WorstSlackNS": 5.666,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 44
+        }
+      ]
+    },
+    {
+      "Check": "Hold",
+      "Corner": "Fast",
+      "GroupCount": 12,
+      "FailingEndpoints": 3,
+      "WorstSlackNS": -0.912,
+      "Failures": [
+        {
+          "LaunchClock": "phy_dq_sysclk_1",
+          "CaptureClock": "ddrphy_sysclk",
+          "WorstSlackNS": -0.342,
+          "TotalNegativeSlackNS": -0.342,
+          "FailingEndpoints": 1,
+          "TotalEndpoints": 260
+        },
+        {
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "ddrphy_sysclk",
+          "WorstSlackNS": -0.912,
+          "TotalNegativeSlackNS": -0.912,
+          "FailingEndpoints": 1,
+          "TotalEndpoints": 3
+        },
+        {
+          "LaunchClock": "ddrphy_sysclk",
+          "CaptureClock": "phy_dq_sysclk_1",
+          "WorstSlackNS": -0.059,
+          "TotalNegativeSlackNS": -0.059,
+          "FailingEndpoints": 1,
+          "TotalEndpoints": 420
+        }
+      ],
+      "CameraClockRows": [
+        {
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "camera_pclk",
+          "WorstSlackNS": 0.022,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 2529
+        }
+      ]
+    },
+    {
+      "Check": "Recovery",
+      "Corner": "Fast",
+      "GroupCount": 14,
+      "FailingEndpoints": 231,
+      "WorstSlackNS": -3.156,
+      "Failures": [
+        {
+          "LaunchClock": "board27",
+          "CaptureClock": "rst_clk",
+          "WorstSlackNS": -1.415,
+          "TotalNegativeSlackNS": -1.415,
+          "FailingEndpoints": 1,
+          "TotalEndpoints": 1
+        },
+        {
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "phy_dq_clk_0",
+          "WorstSlackNS": -1.668,
+          "TotalNegativeSlackNS": -40.851,
+          "FailingEndpoints": 34,
+          "TotalEndpoints": 34
+        },
+        {
+          "LaunchClock": "ddrphy_sysclk",
+          "CaptureClock": "phy_dq_clk_0",
+          "WorstSlackNS": -2.666,
+          "TotalNegativeSlackNS": -7.513,
+          "FailingEndpoints": 3,
+          "TotalEndpoints": 3
+        },
+        {
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "phy_dq_sysclk_0",
+          "WorstSlackNS": -0.29,
+          "TotalNegativeSlackNS": -2.931,
+          "FailingEndpoints": 21,
+          "TotalEndpoints": 35
+        },
+        {
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "phy_dq_clk_1",
+          "WorstSlackNS": -2.477,
+          "TotalNegativeSlackNS": -153.165,
+          "FailingEndpoints": 84,
+          "TotalEndpoints": 84
+        },
+        {
+          "LaunchClock": "ddrphy_sysclk",
+          "CaptureClock": "phy_dq_clk_1",
+          "WorstSlackNS": -3.156,
+          "TotalNegativeSlackNS": -11.52,
+          "FailingEndpoints": 4,
+          "TotalEndpoints": 4
+        },
+        {
+          "LaunchClock": "rst_clk",
+          "CaptureClock": "phy_dq_sysclk_1",
+          "WorstSlackNS": -1.099,
+          "TotalNegativeSlackNS": -62.009,
+          "FailingEndpoints": 84,
+          "TotalEndpoints": 84
+        }
+      ],
+      "CameraClockRows": [
+        {
+          "LaunchClock": "board27",
+          "CaptureClock": "camera_pclk",
+          "WorstSlackNS": 4.681,
+          "TotalNegativeSlackNS": 0.0,
+          "FailingEndpoints": 0,
+          "TotalEndpoints": 408
+        }
+      ]
+    },
+    {
+      "Check": "Removal",
+      "Corner": "Fast",
+      "GroupCount": 11,
+      "FailingEndpoints": 0,
+      "WorstSlackNS": 0.175,
+      "Failures": [],
+      "CameraClockRows": []
+    }
+  ],
+  "ADFOriginalLocations": [
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\pds-20261031-a\\compile\\camera_vga_output_top_comp.adf",
+      "Bytes": 4273283,
+      "SHA256": "b13e261415a30c301b0a5ec7679803612ed508e09611c0c88c82fdc4e16ee256",
+      "Copied": false
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\pds-20261031-a\\device_map\\camera_vga_output_top_map.adf",
+      "Bytes": 4192463,
+      "SHA256": "627eafe23101ee9ea54e066c6a5751cc65a27be36bfb41913e290274d6a387a2",
+      "Copied": false
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\pds-20261031-a\\place_route\\camera_vga_output_top_plc.adf",
+      "Bytes": 4358235,
+      "SHA256": "94eab5be38f3de2a3f7773ba19d5b6ebf3efdbc4fa49b02aeb4ec075d701742f",
+      "Copied": false
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\pds-20261031-a\\place_route\\camera_vga_output_top_pnr.adf",
+      "Bytes": 14751338,
+      "SHA256": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b",
+      "Copied": false
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\pds-20261031-a\\place_route\\camera_vga_output_top_route.adf",
+      "Bytes": 14591336,
+      "SHA256": "87dd3955cc061adb1d9d7ebb1dfb865adacd33d0e17384b0883290dc4fa02ec6",
+      "Copied": false
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\pds-20261031-a\\pre-sta-final.adf",
+      "Bytes": 14751338,
+      "SHA256": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b",
+      "Copied": false
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\pds-20261031-a\\report_timing\\camera_vga_output_top_rtp.adf",
+      "Bytes": 179171,
+      "SHA256": "3d8f0bee70d4f0c7a9fa341798f3567ee0fa1906fe16480fbf93ce37b4e5cf2f",
+      "Copied": false
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\pds-20261031-a\\synthesize\\camera_vga_output_top_syn.adf",
+      "Bytes": 4847009,
+      "SHA256": "4d71893f6114eb102911255d6f4ab560a65255cbaf3d9c2f36c4bcf58665d3c7",
+      "Copied": false
+    }
+  ],
+  "DatabaseSnapshotAudit": {
+    "Snapshot": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\pds-20261031-a\\pre-sta-final.adf",
+    "FinalRoutedDatabase": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\pds-20261031-a\\place_route\\camera_vga_output_top_pnr.adf",
+    "SnapshotExists": true,
+    "FinalRoutedDatabaseExists": true,
+    "UnchangedAcrossSTA": true,
+    "TimingAccepted": false,
+    "SnapshotSHA256": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b",
+    "FinalRoutedDatabaseSHA256": "32c8aa75c766425765b7cd20bbe26dbee9f9072a069d43a297de07b3e730be3b"
+  },
+  "HardwareAccessed": false,
+  "BitstreamRequested": false,
+  "HardwareReleaseAllowed": false,
+  "ExternalIOAccepted": false,
+  "CameraInputTimingProvisional": true,
+  "MissingOptionalFiles": [
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-output\\path-probe-20261031-a\\run.log"
+  ],
+  "MissingOptionalFileReason": "Successful minimal workspace probe did not create run.log; its command, exit code, stdout and stderr are preserved in probe-result.json.",
+  "Limits": [
+    "Native exit zero proves command execution only; dual-corner constraints are violated.",
+    "Pin/CDC/reset/final-netlist and measured external camera/output timing audits remain pending.",
+    "No bitstream or hardware actions occurred.",
+    "Old pds-a/pds-b failures and earlier offline archive remain unchanged.",
+    "Large ADF, DB, netlist and compiled IP closure are referenced in place rather than copied."
+  ]
+}

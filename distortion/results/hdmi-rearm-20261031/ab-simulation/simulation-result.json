@@ -1,0 +1,135 @@
+{
+  "Schema": "ms7200-ready-reentry-ab-simulation-v1",
+  "Passed": true,
+  "StartedUTC": "2026-10-30T16:15:52.499377+00:00",
+  "SourceSHA256": {
+    "rtl/experimental/ms7200_1080p30_ready_ctl.v": "6918a4a46135094addc443c45235077887b1daaca81f4f255163f635c7828959",
+    "rtl/experimental/ms7200_1080p30_rearm_ctl.v": "ea87e1e8c3588af0675c97f87408ddb115d8b0fb08fb84a93c3e820c5a3dee2e",
+    "tests/tb_ms7200_ready_reentry.sv": "f23b96da7d12986d338e9bce32b3ca9fc915ea9198be2371a40229cb0e5d9b28",
+    "tools/run_ms7200_ready_reentry_sim.py": "a86738ecfd5134d27c8ff0836e0d0fb811d1a65f4cd50ac99e41b975510210b9",
+    "tools/run_ms7200_ready_level_sim.py": "331a2d2d6c9c1b6fe47447b7b888e112530fc736a414b76ee98f15b27e99ea82",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+  },
+  "All311CommandsUnchanged": true,
+  "ReadySourceSHA256": "6918a4a46135094addc443c45235077887b1daaca81f4f255163f635c7828959",
+  "RearmSourceSHA256": "ea87e1e8c3588af0675c97f87408ddb115d8b0fb08fb84a93c3e820c5a3dee2e",
+  "OnlyAdmissionConditionChanged": true,
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "TransactionDriverStub": true,
+  "WireLevelI2CExecuted": false,
+  "Commands": [
+    {
+      "Stage": "compile",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7200_1080p30_ready_ctl.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ms7200_1080p30_rearm_ctl.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_ms7200_ready_reentry.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_ms7200_ready_reentry",
+        "-s",
+        "ready_reentry_ab_tb"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "ready_reentry_ab_tb",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "Limits": "Synthetic successful-transaction responses, not a wire slave or real HDMI receiver. Incomplete byte completion is covered; NACK handling belongs to the unchanged checked driver/wrapper and is not simulated here. This proves re-entry admission behavior, not the physical PCLK or VS failure cause.",
+  "OldTraceAudit": {
+    "Requests": 3712,
+    "SettingWritesByCase": {
+      "0": 7,
+      "1": 0,
+      "2": 7,
+      "3": 7,
+      "4": 14,
+      "5": 0,
+      "6": 0,
+      "7": 7,
+      "8": 7,
+      "9": 0
+    },
+    "SevenFixedSettingWritesUnchanged": true,
+    "TraceSHA256": "b34b1b0e89d97b78b8fdb042aa5726656b8e7fb440ff54e820fb59db1c62689c"
+  },
+  "RearmTraceAudit": {
+    "Requests": 3676,
+    "SettingWritesByCase": {
+      "0": 7,
+      "1": 0,
+      "2": 14,
+      "3": 14,
+      "4": 14,
+      "5": 7,
+      "6": 7,
+      "7": 7,
+      "8": 7,
+      "9": 0
+    },
+    "SevenFixedSettingWritesUnchanged": true,
+    "TraceSHA256": "c4bea726dcd535b134f23060bc6f4bb7ba70179ffb032a26eb61345dd2b8a2ed"
+  },
+  "PassLines": [
+    "MS7200_REENTRY_CASE rearm=0 scenario=0 label=first_ready02 settings=7 PASS",
+    "MS7200_REENTRY_CASE rearm=1 scenario=0 label=first_ready02 settings=7 PASS",
+    "MS7200_REENTRY_CASE rearm=0 scenario=1 label=stable02_no_repeat settings=7 PASS",
+    "MS7200_REENTRY_CASE rearm=1 scenario=1 label=stable02_no_repeat settings=7 PASS",
+    "MS7200_REENTRY_CASE rearm=1 scenario=2 label=complete03_to02_after_init settings=14 PASS",
+    "MS7200_REENTRY_CASE rearm=0 scenario=2 label=complete03_to02_after_init settings=7 PASS",
+    "MS7200_REENTRY_CASE rearm=1 scenario=3 label=complete01_to02_after_init settings=14 PASS",
+    "MS7200_REENTRY_CASE rearm=0 scenario=3 label=complete01_to02_after_init settings=7 PASS",
+    "MS7200_REENTRY_CASE rearm=1 scenario=4 label=complete00_to02_after_init settings=14 PASS",
+    "MS7200_REENTRY_CASE rearm=0 scenario=4 label=complete00_to02_after_init settings=14 PASS",
+    "MS7200_REENTRY_CASE rearm=1 scenario=5 label=cold03_to02 settings=7 PASS",
+    "MS7200_REENTRY_CASE rearm=0 scenario=5 label=cold03_to02 settings=0 PASS",
+    "MS7200_REENTRY_CASE rearm=1 scenario=6 label=cold01_to02 settings=7 PASS",
+    "MS7200_REENTRY_CASE rearm=0 scenario=6 label=cold01_to02 settings=0 PASS",
+    "MS7200_REENTRY_CASE rearm=1 scenario=7 label=common_reset_rearms_first02 settings=7 PASS",
+    "MS7200_REENTRY_CASE rearm=0 scenario=7 label=common_reset_rearms_first02 settings=7 PASS",
+    "MS7200_REENTRY_CASE rearm=1 scenario=8 label=incomplete_terminal_poll_rejected settings=7 PASS",
+    "MS7200_REENTRY_CASE rearm=0 scenario=8 label=incomplete_terminal_poll_rejected settings=7 PASS",
+    "MS7200_REENTRY_CASE rearm=1 scenario=9 label=nonready03_01_00_blocked settings=0 PASS",
+    "MS7200_REENTRY_CASE rearm=0 scenario=9 label=nonready03_01_00_blocked settings=0 PASS"
+  ],
+  "SourceDrift": [],
+  "VectorDrift": false,
+  "ElapsedSeconds": 14.991,
+  "EndedUTC": "2026-10-30T16:16:07.490484+00:00",
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "9abb8b0d1dcfa88fc63d0a57b63139cea9335ce0b16209bd5f5e3312297eb5ec",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "82430f4cf6bfe229a9fc4359c93739486c3cdae325fb0bcabda6190015e573fc",
+    "old-summary.json": "c55c99d9f8a49d1371b4f0e5ecc0a0b31065a88e54ad81d9c1977c3660323efb",
+    "old-transactions.csv": "b34b1b0e89d97b78b8fdb042aa5726656b8e7fb440ff54e820fb59db1c62689c",
+    "rearm-summary.json": "9e00323ca4b0db16100afc436246d0a995a9162c09e07be8bafc8b9848709aea",
+    "rearm-transactions.csv": "c4bea726dcd535b134f23060bc6f4bb7ba70179ffb032a26eb61345dd2b8a2ed",
+    "rx_expected.hex": "165ae7e5dc06394898a4367bf5877cdfdeaabfa057bcfe6cc5d45eefa78573bb",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "72fcfda954e9ff875b2c1e6a1b016796608f60ad49e13b4d13acbbd47e424bd5",
+    "simulation.log": "135f63c747f2ba02bbc395894cea1c9663de804685d2e122c5c844b0c24ef71d",
+    "webtalk.log": "7c892d89651cb7c43f3482f48e8b84d4922f118931fb6dea92af4c35472d89ac",
+    "webtalk_19452.backup.log": "da13fbd10a3d31c861d47ed94c83aeca6c70130c2ffbb36e5ea911465bb6c19f",
+    "xelab.log": "c690a236882521137dff8b3602bac1744fe08b1c27d5c429195176ef59d4eb9b",
+    "xvlog.log": "a740ca88aa09b1a0863f5d22ee4798dcdcd4f8d36ad679fde997da3658bc277a"
+  }
+}

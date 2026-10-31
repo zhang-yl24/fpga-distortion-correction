@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# xsim v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Fri Oct 30 13:07:56 2026
+# Process ID: 30068
+# Current directory: C:/Users/31641/.codex/visualizations/2026/10/30/01a18b10-3666-7ef2-85f5-5a3db14eb3d0/hdmi-first-de-transient-native
+# Command line: xsim.exe -log simulation.log -mode tcl -source {xsim.dir/first_de_transient/xsim_script.tcl}
+# Log file: C:/Users/31641/.codex/visualizations/2026/10/30/01a18b10-3666-7ef2-85f5-5a3db14eb3d0/hdmi-first-de-transient-native/simulation.log
+# Journal file: C:/Users/31641/.codex/visualizations/2026/10/30/01a18b10-3666-7ef2-85f5-5a3db14eb3d0/hdmi-first-de-transient-native\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/first_de_transient/xsim_script.tcl
+# xsim {first_de_transient} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+COUNTEREXAMPLE_SAMPLE index=1 rasters=3 clean_qualified=1 clean_fault=00 clean_good=2 clean_bad=0 clean_width=1920 clean_height=1080 clean_vs_inactive=0 clean_hs_inactive=0 clean_pclk_edges=74250 bad_qualified=0 bad_fault=15 bad_good=0 bad_bad=3 bad_width=0 bad_height=1080 bad_vs_inactive=1 bad_hs_inactive=1 bad_pclk_edges=74250 bad_timing_fault=21
+COUNTEREXAMPLE_SAMPLE index=2 rasters=4 clean_qualified=1 clean_fault=00 clean_good=3 clean_bad=0 clean_width=1920 clean_height=1080 clean_vs_inactive=0 clean_hs_inactive=0 clean_pclk_edges=74250 bad_qualified=0 bad_fault=15 bad_good=0 bad_bad=4 bad_width=0 bad_height=1080 bad_vs_inactive=1 bad_hs_inactive=1 bad_pclk_edges=74250 bad_timing_fault=21
+PASS first DE one-sample opposite sync permanently learns wrong polarity until reset; subsequent exact1080p30 produces fault15 width0 height1080 good0 and one bad frame per raster
+$finish called at time : 135334629629 ps : File "C:/Users/31641/.codex/visualizations/2026/10/30/01a18b10-3666-7ef2-85f5-5a3db14eb3d0/tb_hdmi_first_de_transient.sv" Line 98
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:01:01 . Memory (MB): peak = 224.086 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting xsim at Fri Oct 30 13:09:03 2026...

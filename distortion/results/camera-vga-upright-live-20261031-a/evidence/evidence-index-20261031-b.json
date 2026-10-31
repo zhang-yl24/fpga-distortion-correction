@@ -1,0 +1,385 @@
+{
+  "Schema": "camera-vga-upright-completed-evidence-index-v1",
+  "CreatedUTC": "2026-10-31T09:19:18.048862+00:00",
+  "Checkpoint": "Upright bit generation verified and volatile SRAM programming completed 2026-10-31 17:17 Asia/Shanghai; new live orientation and FPS observations pending.",
+  "Target": "camera_vga_upright_top",
+  "SourceADFSHA256": "207b840c5e024f600f555e1607ac39944e330439e9716f93fef2a80284c0967b",
+  "FinalADFSHA256": "0baea59b6633ef93278c74c00602cb2cad688d96c796458cf54243a7ab6392b5",
+  "CompletedEvidence": [
+    {
+      "Role": "Independent orientation source review",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\orientation-evidence-20261031-a.json",
+      "SHA256": "40a8e4a4c5b55e49c1301380f44fe29c309d0822c69f56303589d2d16aa8cc66",
+      "Bytes": 8105,
+      "Schema": "camera-vga-upright-orientation-source-review-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "SourceReviewPassed": true
+      }
+    },
+    {
+      "Role": "Real reg16_i2c line-level regression",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\sim-20261031-b\\upright-simulation.json",
+      "SHA256": "23370b50fcfbf7295e644d0e61df335ea921353d3923fa947940d744996aa900",
+      "Bytes": 9343,
+      "Schema": "ov5640-cadence-upright-line-simulation-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "Passed": true
+      }
+    },
+    {
+      "Role": "Original upright build completion; original hold/recovery failures are historical baseline",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\pds-20261031-a\\execution-result.json",
+      "SHA256": "b98d4792a45da731707bcd1a2787b77a6280db79716f954722eb69240ef9b94f",
+      "Bytes": 4614,
+      "Schema": "camera-vga-upright-diagnostic-execution-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "ExecutionCompletedWithoutError": true,
+        "NativeExitCode": 0
+      }
+    },
+    {
+      "Role": "Exact current reset scope and native graph proof",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\reset-proof-20261031-a\\proof.json",
+      "SHA256": "dc211a789cca0d34eedf3f63e0d1a1f59375661b37e450861b40f88809cf83e5",
+      "Bytes": 342977,
+      "Schema": "camera-vga-upright-reset-proof-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "ScopeAuditPassed": true,
+        "Complete": true
+      }
+    },
+    {
+      "Role": "Bound single-net route plus exact reset save",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\physical-route-reset-20261031-a\\result.json",
+      "SHA256": "c76caf8a758c4a14e91c186467f7e83534519b96413c4779c4f407149f695e31",
+      "Bytes": 218566,
+      "Schema": "camera-vga-upright-route-reset-application-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "ExecutionPassed": true,
+        "ExitCode": 0
+      }
+    },
+    {
+      "Role": "Fresh-process final native STA and functional export",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\final-export-20261031-a\\result.json",
+      "SHA256": "2121070c8b32f318874da6375cecdc542d991cfcd4bc1b0621ed1170d20389ca",
+      "Bytes": 109360,
+      "Schema": "camera-vga-upright-derived-inspection-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "ExecutionPassed": true,
+        "ExitCode": 0
+      }
+    },
+    {
+      "Role": "Diagnostic full-route quick scope comparison",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\quick-physical-scope-20261031-a.json",
+      "SHA256": "68a1b7bd7097047528cfec9182d1edce8cd4c927191e0d6c53380f65514689d4",
+      "Bytes": 6039,
+      "Schema": "camera-vga-upright-quick-physical-scope-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "DiagnosticQuickScopePassed": true
+      }
+    },
+    {
+      "Role": "Formal exact reset effect, timing, functional and route comparison",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\reset-effect-20261031-a.json",
+      "SHA256": "873871748f4fffa73aededdb3140bbb64287fff2d2f706e66b4f3b6ea6006e12",
+      "Bytes": 155338,
+      "Schema": "camera-vga-upright-reset-effect-audit-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "AuditPassed": true,
+        "ResetEffectVerified": true,
+        "AllInternalChecksMet": true
+      }
+    },
+    {
+      "Role": "Final actual IO/CDC graph structure",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\io-cdc-final-20261031-a\\io-cdc-structure.json",
+      "SHA256": "32fcc2b580ee746583c6fc8094a5ab2e6588d9b6c5135564474e1a0cd3360d59",
+      "Bytes": 460831,
+      "Schema": "camera-vga-upright-io-cdc-structure-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "StructuralAuditPassed": true
+      }
+    },
+    {
+      "Role": "Final native IO/CDC query completion",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\final-cdc-query-20261031-a\\result.json",
+      "SHA256": "9541859a3339ae2f7493008ad7e9325b64946bd92c4a305a4896ede0bf24bfd7",
+      "Bytes": 110643,
+      "Schema": "camera-vga-upright-derived-inspection-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "ExecutionPassed": true,
+        "ExitCode": 0
+      }
+    },
+    {
+      "Role": "Final exact interstage/Gray/site native proof",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\io-cdc-native-final-20261031-a\\io-cdc-native-proof.json",
+      "SHA256": "e6128eb6b6de5c8e5180cb76ec32e3105afe153c2e0c637ca23ffe577b34afba",
+      "Bytes": 854965,
+      "Schema": "camera-vga-upright-io-cdc-native-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "StructuralAuditPassed": true,
+        "NativeAuditPassed": true
+      }
+    },
+    {
+      "Role": "Frozen physical/derived/effect/route CPU tests",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\physical-helper-tests-20261031-b.json",
+      "SHA256": "7d00c117cd0415bb17ab33688bcf64688b9950bc83ae2a81d51ce2d69f7bbc0d",
+      "Bytes": 3586,
+      "Schema": "camera-vga-upright-derived-effect-cpu-check-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "ExitCode": 0,
+        "TestsPassed": 85
+      }
+    },
+    {
+      "Role": "User manual processing-rate estimate on OLD acec bitstream",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\frame-rate-observation-20261031-a.json",
+      "SHA256": "9fc410a0c19d99c485c0e29ebacd34ab30d9947500737facc0072518727106c8",
+      "Bytes": 1203,
+      "Schema": "camera-vga-processing-frame-rate-observation-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "RunningTarget": "camera_vga_output_top",
+        "RunningBitstreamSHA256": "acec0a6528760cabe8291d4452c635e26d7e0f7b3fdfef997a386d1c365b25e0",
+        "NewUprightCandidateMeasured": false
+      }
+    },
+    {
+      "Role": "Completed full authority prepare receipt",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\full-prepare-completion-20261031-a.json",
+      "SHA256": "03e02977fd0ae67813bf87c390f0faf873af65144885cc20799515b95fca9b07",
+      "Bytes": 130266,
+      "Schema": "camera-vga-upright-full-prepare-completion-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "FullPrepareCompleted": true,
+        "ExitCode": 0,
+        "Prepared": true
+      }
+    },
+    {
+      "Role": "Frozen full authority seed",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\authority-seed-20261031-a.json",
+      "SHA256": "c77c1014ae4d586e575bc6576109d08cf8e2681ad1e5e228e9234f98bba6d973",
+      "Bytes": 129999,
+      "Schema": "camera-vga-upright-authority-seed-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "FullPrepareCompleted": true
+      }
+    },
+    {
+      "Role": "Fast bit helper CPU checks",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\fast-bit-helper-tests-20261031-a.json",
+      "SHA256": "22ec3bce1b6b9a48cf9c87b49a36f98502268e3d161e5fd45562e83fc20d71ad",
+      "Bytes": 1663,
+      "Schema": "camera-vga-upright-fast-bit-cpu-tests-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "Passed": true,
+        "TestCount": 30
+      }
+    },
+    {
+      "Role": "Fresh native STA and bit generation",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\bit-fast-20261031-b\\execution-result.json",
+      "SHA256": "40b0573eb34e5d4c87cf6234af4f98a65119a9de1ec0c6cf347d75b5862baa99",
+      "Bytes": 2857,
+      "Schema": "camera-vga-upright-fast-bitstream-execution-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "ExitCode": 0,
+        "InputDrift": [],
+        "Diagnostics": []
+      }
+    },
+    {
+      "Role": "Verified upright programming bitstream",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\bit-fast-20261031-b\\verification.json",
+      "SHA256": "f8ad8c474c2084595fa8214b21af58c2f9b7b175e0a29e6155a86933d0804a00",
+      "Bytes": 124132,
+      "Schema": "camera-vga-upright-fast-bitstream-verification-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "Verified": true
+      }
+    },
+    {
+      "Role": "Volatile SRAM programming receipt",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\program-fast-20261031-a\\receipt.json",
+      "SHA256": "4c2fc289dc66f45455a97cc8915d15fef2cedd0cc3e428e876ff77bbb73f8484",
+      "Bytes": 3148,
+      "Schema": "camera-vga-upright-fast-sram-execution-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "Passed": true,
+        "DoneConfirmed": true,
+        "FlashWritten": false,
+        "CleanupErrors": []
+      }
+    },
+    {
+      "Role": "Independent owned process cleanup observation",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\program-cleanup-observation-20261031-a.json",
+      "SHA256": "e948aa339c92ce4d829c059b178db1b3b13c14beb40016c3c54d4a13441b8ef8",
+      "Bytes": 640,
+      "Schema": "camera-vga-upright-program-cleanup-observation-v1",
+      "Status": "completed",
+      "VerifiedFields": {
+        "FoundRemaining": [],
+        "NoAdditionalProcessesTerminated": true
+      }
+    }
+  ],
+  "LargeLocalReferences": [
+    {
+      "Role": "Original routed ADF",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\pds-20261031-a\\place_route\\camera_vga_upright_top_pnr.adf",
+      "SHA256": "207b840c5e024f600f555e1607ac39944e330439e9716f93fef2a80284c0967b",
+      "Bytes": 14741154,
+      "Storage": "Local absolute-path reference only; not copied"
+    },
+    {
+      "Role": "Final route/reset diagnostic ADF",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\physical-route-reset-20261031-a\\input.adf",
+      "SHA256": "0baea59b6633ef93278c74c00602cb2cad688d96c796458cf54243a7ab6392b5",
+      "Bytes": 14687986,
+      "Storage": "Local absolute-path reference only; not copied"
+    },
+    {
+      "Role": "Final native functional netlist",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\final-export-20261031-a\\generate_netlist\\camera_vga_upright_top_sim.v",
+      "SHA256": "b0d187111e6ec8800e458c5fd025cab1dce17d5a15b2fb9a9066552fbc1c448a",
+      "Bytes": 26536319,
+      "Storage": "Local absolute-path reference only; not copied"
+    },
+    {
+      "Role": "Verified upright SRAM bitstream",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\bit-fast-20261031-b\\generate_bitstream\\camera_vga_upright_top.sbit",
+      "SHA256": "e3c889f29c6fb74dda71fc49b5b6bcf2b53e9055720c18ae7238997bbe6ca1ae",
+      "Bytes": 3791112,
+      "Storage": "Local absolute-path reference only; not copied"
+    }
+  ],
+  "Summary": {
+    "FormalResetEffectPassed": true,
+    "AllInternalChecksMet": true,
+    "FunctionalCells": 36499,
+    "FFPlacements": 17417,
+    "ChangedNets": [
+      "_N127"
+    ],
+    "NativeIOCDC": {
+      "GrayBits": 34,
+      "GrayCornerCases": 68,
+      "ScalarChains": 22,
+      "ExactInterstagePairs": 35,
+      "ExactInterstageCornerKindCases": 140,
+      "NativeInterstageVariants": 140,
+      "MinimumInterstageSetupNS": 6.086,
+      "MinimumInterstageHoldNS": 0.171,
+      "MaximumGrayArrivalNS": 0.958,
+      "NativePinCount": 128
+    },
+    "NativeSiteMappingPassed": true,
+    "OldBitstreamProcessedFPSApproxRange": [
+      22.857142857142858,
+      24.615384615384617
+    ],
+    "OldBitstreamProcessedFPSDescription": "About 23-25 fps, about 24 fps; 10 full LED6 periods in 13-14 seconds; applies only to acec0a65...b25e0.",
+    "UprightBitstream": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\bit-fast-20261031-b\\generate_bitstream\\camera_vga_upright_top.sbit",
+      "SHA256": "e3c889f29c6fb74dda71fc49b5b6bcf2b53e9055720c18ae7238997bbe6ca1ae",
+      "Bytes": 3791112,
+      "Header": {
+        "Design": "camera_vga_upright_top",
+        "Device": "Logos2-PG2L100H--6-FBG676",
+        "Date": "10/31/26",
+        "Time": "17:14:13",
+        "Generator": "Fabric Compiler",
+        "Version": "2023.2-SP3<154097>"
+      }
+    },
+    "SRAMDownloadPassed": true,
+    "DoneConfirmed": true,
+    "FlashWritten": false,
+    "CleanupErrors": [],
+    "OwnedPIDsAbsent": [
+      34560,
+      23052,
+      32300,
+      33976
+    ],
+    "FastHandoff": {
+      "FullAuthorityInputs": 479,
+      "HelperExecutableInputs": 35,
+      "EveryBoundaryRehashesAllInputs": true,
+      "FreshNativeSTAAndBitChecksRequired": true,
+      "AbsoluteCLIPathsRequired": true
+    }
+  },
+  "PendingAtCheckpoint": [
+    "User observes new upright orientation, left/right, live updates and LED5/6/7.",
+    "Measure new upright processed frame rate separately; old 23-25 fps estimate belongs to the old acec0a65 bit.",
+    "External AC, native pad electrical settings, analog MTBF, calibration and long-run acceptance remain separate."
+  ],
+  "HardwareReleaseAllowedByThisIndex": false,
+  "ExternalACTimingAccepted": false,
+  "NativeElectricalSettingsVerified": false,
+  "AnalogMTBFProven": false,
+  "NewCandidateBoardOrientationVerified": false,
+  "NewCandidateFPSMeasured": false,
+  "BitstreamGenerationCompletionRecorded": true,
+  "DownloadCompletionRecorded": true,
+  "HandoffSnapshots": [
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\handoff\\CURRENT.md",
+      "SHA256": "e2bd96ae67221d3e962d1c90d462943cfcaa5b6101c1e391a050b46de10dcc8a",
+      "Note": "Checkpoint hash; later live observations may update document."
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\handoff\\CAMERA_VGA_UPRIGHT_20261031.md",
+      "SHA256": "301b105bc9618154f9c31dd42b820adbef4a2a22e27a0b9bb7e61893162e755b",
+      "Note": "Checkpoint hash; later live observations may update document."
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\handoff\\CAMERA_VGA_LIVE_20261031.md",
+      "SHA256": "9cf2fbebc81657d7be3aa22fe5d0c1683eb8451a20350647385cf118265b78b7",
+      "Note": "Checkpoint hash; later live observations may update document."
+    }
+  ],
+  "NoLargeArtifactsCopied": true,
+  "PreviousIndex": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\evidence-index-20261031-a.json",
+    "SHA256": "186d45bdcfae8d956d3cc508b10a48aae154d56300320b4b918f77c6504e1f2f",
+    "Immutable": true
+  },
+  "RetainedFailureEvidence": [
+    {
+      "Role": "Relative-path validation failure and fresh absolute-path retry",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\bit-path-retry-20261031-a.json",
+      "SHA256": "94a53a91c59744ecf2b8719d8aa93f1db9697d57da471e590559a763c905c7ee"
+    },
+    {
+      "Role": "First native generation with rejected final verification",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\bit-fast-20261031-a\\execution-result.json",
+      "SHA256": "4722171d1d6191766385e73b8167edbd71bd175a317bd60ac03c2ae86e8d815d"
+    }
+  ]
+}

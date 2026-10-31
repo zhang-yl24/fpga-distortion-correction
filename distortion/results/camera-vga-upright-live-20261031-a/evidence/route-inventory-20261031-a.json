@@ -1,0 +1,165 @@
+{
+  "Schema": "camera-vga-upright-route-inventory-v1",
+  "HoldAudit": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\pds-20261031-a\\hold-audit.json\\camera-vga-hold-analysis.json",
+    "SHA256": "3ccac81e2152f6b6982dab677300cd6c577ce0c0e37dc4c7b81f9ffcd77837a5"
+  },
+  "Baseline": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\baseline-query-20261031-a\\route-dump.txt",
+    "SHA256": "728a967a5cc869d846138126825f8a2d29ea4ccf949d32656b0a8fb1a7e74f1f",
+    "RouteCount": 33722,
+    "PhysicalNodeCount": 576372,
+    "NonRouteSemanticSHA256": "47a5c2fcc4cc5830f52cc2556ddc45c822fc0c11dd78331f9ea8cc8418664c32",
+    "TargetRoutes": {
+      "_N127": [
+        "CR2:CLMS_351_799",
+        "S_CR2:SRB_348_798",
+        "ZDW[1]:SRB_348_798",
+        "IDW[1]:SRB_336_798",
+        "ZQS[1]:SRB_336_798",
+        "IQS[1]:SRB_336_756",
+        "ZDSE[1]:SRB_336_756",
+        "IDSE[1]:SRB_342_750",
+        "ZSWA[1]:SRB_342_750",
+        "ISWA[1]:SRB_336_750",
+        "A_M3:SRB_336_750",
+        "M3:CLMA_339_750"
+      ]
+    },
+    "TargetConnectivity": {
+      "_N127": [
+        {
+          "Instance": "CLKROUTE_89",
+          "Pin": "CR"
+        },
+        {
+          "Instance": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[43]/opit_0_inv_srl",
+          "Pin": "D"
+        }
+      ]
+    },
+    "ExcludedBlockSHA256": {
+      "CDB": "6d8c61a5028896e6fda3b3c9f8aad6a66c0efbd067dce91260c9fb6404772719",
+      "FILETABLE": "709e9ff93c38fe10f82a7319c467170a561e0f1a153ab83f4229fc5384ee312b"
+    },
+    "NormalizedMetadataCounts": {
+      "OutputPath": 1,
+      "Timestamp": 1,
+      "SourceAttribute": 1
+    },
+    "SourceLocationMetadata": {
+      "Counts": {
+        "FILEID": 20044,
+        "LINENUM": 20044
+      },
+      "SHA256": "057e1e36297879e1b27f078b43be339e46d4c864bc7fb5f1b4c1a244a025d28f"
+    },
+    "AllOtherNetAnnotationsSHA256": "3e70e26251aa1580a954b7d79841e050720a82e42a7db927146daeeb0cc60e48",
+    "TargetAnnotationSHA256": {
+      "_N127": "6da4e61741def3f22f9a3b6c5a4fa82a5303dd2131e1a7c81dc9cb66535fcbf3"
+    }
+  },
+  "WaypointInventory": {
+    "WirePattern": "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\logos2\\pg2l100h\\pattern\\drawing\\wirepattern.txt",
+    "WirePatternSHA256": "949ac434425f4512111feb2c767d63064b5b5d35f5ba9665a4640ad75368ac36",
+    "Candidates": {
+      "_N127": {
+        "PhysicalSource": "CR2:CLMS_351_799",
+        "PhysicalLoad": "M3:CLMA_339_750",
+        "OriginalRouteNodes": 12,
+        "Segments": [
+          {
+            "SearchCentre": [
+              336,
+              774
+            ],
+            "Preferred": {
+              "Pins": [
+                "ZDNE[0]:SRB_336_774",
+                "IDNE[0]:SRB_342_780"
+              ],
+              "DistanceFromSearchCentre": 0,
+              "OccupiedBy": [],
+              "BothPinsUnused": true,
+              "CoordinateProof": {
+                "From": "ZDNE[3]:SRB_336_774",
+                "To": "IDNE[3]:SRB_342_780",
+                "Owner": "( INDEXED \\u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/N625 0 )",
+                "Line": 1319459
+              },
+              "OfficialWireRule": {
+                "Line": 2764,
+                "Text": "ZDNE[0] : vertical { h1  9 : 10 : 1 1 { vertical [ IDNE[0] ] } }"
+              }
+            },
+            "Alternatives": [
+              {
+                "Pins": [
+                  "ZDNE[0]:SRB_336_780",
+                  "IDNE[0]:SRB_342_786"
+                ],
+                "DistanceFromSearchCentre": 6,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[2]:SRB_336_780",
+                  "To": "IDNE[2]:SRB_342_786",
+                  "Owner": "( INDEXED \\u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/debug_data 66 )",
+                  "Line": 1298307
+                },
+                "OfficialWireRule": {
+                  "Line": 2764,
+                  "Text": "ZDNE[0] : vertical { h1  9 : 10 : 1 1 { vertical [ IDNE[0] ] } }"
+                }
+              },
+              {
+                "Pins": [
+                  "ZDNE[0]:SRB_342_774",
+                  "IDNE[0]:SRB_348_780"
+                ],
+                "DistanceFromSearchCentre": 6,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[1]:SRB_342_774",
+                  "To": "IDNE[1]:SRB_348_780",
+                  "Owner": "( INDEXED \\u_ddr3_test_h/u_ddrphy_top/phy_wrdata_mask 0 )",
+                  "Line": 1406713
+                },
+                "OfficialWireRule": {
+                  "Line": 2764,
+                  "Text": "ZDNE[0] : vertical { h1  9 : 10 : 1 1 { vertical [ IDNE[0] ] } }"
+                }
+              },
+              {
+                "Pins": [
+                  "ZDNE[1]:SRB_336_768",
+                  "IDNE[1]:SRB_342_774"
+                ],
+                "DistanceFromSearchCentre": 6,
+                "OccupiedBy": [],
+                "BothPinsUnused": true,
+                "CoordinateProof": {
+                  "From": "ZDNE[3]:SRB_336_768",
+                  "To": "IDNE[3]:SRB_342_774",
+                  "Owner": "\\u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/ddrphy_dqs_rddata_align/_N68924",
+                  "Line": 1320045
+                },
+                "OfficialWireRule": {
+                  "Line": 2763,
+                  "Text": "ZDNE[1] : vertical { h1 11 : 12 : 1 1 { vertical [ IDNE[1] ] } }"
+                }
+              }
+            ]
+          }
+        ],
+        "NativeRouteAndSTARequired": true
+      }
+    }
+  },
+  "QueryReceipt": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-upright\\baseline-query-20261031-a\\result.json",
+    "SHA256": "53545b5ec0af1d2f59ecd50f754a54d86841d42bbb7c83508e4975f89f58632b"
+  },
+  "TimingAccepted": false
+}

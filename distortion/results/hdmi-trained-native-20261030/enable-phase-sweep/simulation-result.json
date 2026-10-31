@@ -1,0 +1,81 @@
+{
+  "Schema": "trained-enable-reset-phase-sweep-v1",
+  "Passed": true,
+  "StartedUTC": "2026-10-30T05:44:22.721680+00:00",
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_status_trained.v": "c0b6fff1fc1bffb9629c4e833272f584913af1313b98b236538b9b90e331fa5f",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_mode_admission_monitor_cdc.v": "57779e03f9c29d2e168fbabf77ae540675ebfc1ebec3e6e24ba3b7f7b6c6b329",
+    "C:\\Users\\31641\\.codex\\visualizations\\2026\\10\\30\\01a18b10-3666-7ef2-85f5-5a3db14eb3d0\\trained-enable-phase-sweep-1030-a\\tb_trained_enable_phase.sv": "2b343100d8d7806fd5eb32658cc5b499742f4580d513d544d9fe2c2bd8b6408c",
+    "C:\\Users\\31641\\.codex\\visualizations\\2026\\10\\30\\01a18b10-3666-7ef2-85f5-5a3db14eb3d0\\trained-enable-phase-sweep-1030-a\\run_sweep.py": "0f5e21815d15ee22c50fba13b5041f2ecccd26c6c534efe447cb27298e2bb58a",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+  },
+  "Commands": [
+    {
+      "Stage": "compile",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi1080_input_status_trained.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_mode_admission_monitor_cdc.v",
+        "C:\\Users\\31641\\.codex\\visualizations\\2026\\10\\30\\01a18b10-3666-7ef2-85f5-5a3db14eb3d0\\trained-enable-phase-sweep-1030-a\\tb_trained_enable_phase.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_trained_enable_phase",
+        "-s",
+        "trained_phase_tb"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "trained_phase_tb",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "Limits": "Eight digital live-raster reset phases at small geometry. This can reject a deterministic monotonic-enable epoch bug, not prove board waveform, analog reset/CDC or physical VS presence.",
+  "Cases": [
+    "TRAINED_ENABLE_PHASE_PASS epoch=0 reset_release_x=0 polarity=0 ref_cycles=27022 good=557 bad=0 width=8 height=3 snapshots=1",
+    "TRAINED_ENABLE_PHASE_PASS epoch=1 reset_release_x=2 polarity=1 ref_cycles=27051 good=557 bad=0 width=8 height=3 snapshots=2",
+    "TRAINED_ENABLE_PHASE_PASS epoch=2 reset_release_x=4 polarity=0 ref_cycles=27056 good=557 bad=0 width=8 height=3 snapshots=3",
+    "TRAINED_ENABLE_PHASE_PASS epoch=3 reset_release_x=6 polarity=1 ref_cycles=27055 good=556 bad=0 width=8 height=3 snapshots=4",
+    "TRAINED_ENABLE_PHASE_PASS epoch=4 reset_release_x=8 polarity=0 ref_cycles=27024 good=557 bad=0 width=8 height=3 snapshots=5",
+    "TRAINED_ENABLE_PHASE_PASS epoch=5 reset_release_x=10 polarity=1 ref_cycles=27054 good=557 bad=0 width=8 height=3 snapshots=6",
+    "TRAINED_ENABLE_PHASE_PASS epoch=6 reset_release_x=12 polarity=0 ref_cycles=27052 good=556 bad=0 width=8 height=3 snapshots=7",
+    "TRAINED_ENABLE_PHASE_PASS epoch=7 reset_release_x=14 polarity=1 ref_cycles=27022 good=557 bad=0 width=8 height=3 snapshots=8"
+  ],
+  "Summary": [
+    "TRAINED_ENABLE_PHASE_SUMMARY cases=8 source_starts=8 reference_starts=8 snapshots=8"
+  ],
+  "InputDrift": [],
+  "EndedUTC": "2026-10-30T05:44:36.827818+00:00",
+  "ElapsedSeconds": 14.106,
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "f3e37348c66fd078e521fc66455bc23a852922f4d4bc9a74e7f59a8edc60b58e",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "098b2cef4f41da38cf61f4a94309adb993ec7ecd44d1ba89c95e1992af5a3c30",
+    "run_sweep.py": "0f5e21815d15ee22c50fba13b5041f2ecccd26c6c534efe447cb27298e2bb58a",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "0a6acb9397968855207b099ced508d6a763ca744f29a27a1a763077838436aa5",
+    "simulation.log": "e3f3eec6ff6ad7f499cd23bf4eca76147d7cb96f88225560aa60b72090f43e94",
+    "tb_trained_enable_phase.sv": "2b343100d8d7806fd5eb32658cc5b499742f4580d513d544d9fe2c2bd8b6408c",
+    "webtalk.log": "d70860b5fe4db8d76f41a8707276b3ad9e142688a8a0acf64b16d73282c13f3d",
+    "webtalk_38288.backup.log": "7ef0b73f5051ba98a96f053e59e6305a9352face54ec5e7d0c10a192a1ac36ba",
+    "xelab.log": "41c9749eb32aafd6b45a3abf4643f2808eb49ca2d8a30b061294ff75d4b688b0",
+    "xvlog.log": "beccddedf7afbce387ecbcf9962af7e4b502c9a020ec79c0d8a9b9e91366c80c"
+  }
+}

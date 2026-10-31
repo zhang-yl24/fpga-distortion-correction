@@ -1,0 +1,144 @@
+{
+  "Schema": "camera-vga-board-control-digital-simulation-v1",
+  "Passed": true,
+  "StartedUTC": "2026-10-31T05:11:20.014649+00:00",
+  "MaximumSeconds": 180,
+  "SourceSHA256": {
+    "rtl/experimental/capture_warmup.v": "410c664757a6a8c2887e78538d1caf289891904fd5b1d002f7018efb9736579a",
+    "board/camera_vga_output_top.v": "8b4703e8a6a2a3eb4957211d083733b5764264f5baeb08e55afcf6ccf8e728e2",
+    "tests/processed_output_ip_stubs.sv": "fe718440f0b3b48f34580d955c53cd5ff4443ee35aec12bf2d21c110d92e6fa1",
+    "tests/camera_vga_control_stubs.sv": "f1b74fc8f8c05b96580740870a45fb446ee73f84f4b03092e6fd2ca07a17ee31",
+    "tests/tb_camera_vga_control.sv": "6bfff177eb503b10c4ee64ab6ca56b34ab6cd0a16e61ddfd9f51c12b5a28c49e",
+    "board/board1080-synthetic.vh": "d113d05bbba13754f7213c7a677bec904fc120ce3ecd90d99a03beb1caa98b4b",
+    "tools/run_camera_vga_control_sim.py": "659347a13de70767add51494f4e2a315f265a0e6ea43582918ab64858475022a",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "board/bringup_pll.v": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+    "board/hdmi_tx_init.v": "184883cd018e7d6ccc8937e9a23bc208fdc5699b9040e3fdd70c6cf3a52f165c",
+    "platform/video_base/ipcore/ddr3_test/ddr3_test.v": "3c5441b4bff33dff73811c3a025ede3b6348cb5779e21778653659b6cbfb84e0",
+    "rtl/experimental/ov5640_cadence_trial_init.v": "66e2a8236ca8a5d7bb56e46893cf640d3aa9e8b2c4f4b9119340cabfbb153ec7",
+    "rtl/experimental/camera_vga_video_system.v": "5b45cabe9cf50f32aea2d6496cd56bec7c9e3cc755a3efa35afe8ba14b8f1d61"
+  },
+  "ExplicitStubBindings": {
+    "bringup_pll": {
+      "Module": "bringup_pll",
+      "Path": "board/bringup_pll.v",
+      "HeaderSHA256": "5a9a80eeff31f8e199e0e142d2cdd97b362756a3142f22961423846aaf1f5012",
+      "Stub": "tests/processed_output_ip_stubs.sv",
+      "FullReferenceSHA256": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+      "ProductionBodyCompiled": false
+    },
+    "hdmi_tx_init": {
+      "Module": "hdmi_tx_init",
+      "Path": "board/hdmi_tx_init.v",
+      "HeaderSHA256": "a4852dc2c861c1ee0bd98cd15e330a26f7d931edc322d9ae6482e9444eb001ba",
+      "Stub": "tests/processed_output_ip_stubs.sv",
+      "FullReferenceSHA256": "184883cd018e7d6ccc8937e9a23bc208fdc5699b9040e3fdd70c6cf3a52f165c",
+      "ProductionBodyCompiled": false
+    },
+    "ddr3_test": {
+      "Module": "ddr3_test",
+      "Path": "platform/video_base/ipcore/ddr3_test/ddr3_test.v",
+      "HeaderSHA256": "0bc0f913caf04efb66cd7cc4cbdfa8c84ca4483660699e1663ccc47e78e3bf7e",
+      "Stub": "tests/processed_output_ip_stubs.sv",
+      "FullReferenceSHA256": "3c5441b4bff33dff73811c3a025ede3b6348cb5779e21778653659b6cbfb84e0",
+      "ProductionBodyCompiled": false
+    },
+    "ov5640_cadence_trial_init": {
+      "Module": "ov5640_cadence_trial_init",
+      "Path": "rtl/experimental/ov5640_cadence_trial_init.v",
+      "HeaderSHA256": "96d6d6dfea49af1af319a0722e41871fdd2945fe46f037717d98eca3a6d1cbcd",
+      "Stub": "tests/camera_vga_control_stubs.sv",
+      "FullReferenceSHA256": "66e2a8236ca8a5d7bb56e46893cf640d3aa9e8b2c4f4b9119340cabfbb153ec7",
+      "ProductionBodyCompiled": false
+    },
+    "camera_vga_video_system": {
+      "Module": "camera_vga_video_system",
+      "Path": "rtl/experimental/camera_vga_video_system.v",
+      "HeaderSHA256": "fd400d318d0cf440438d194673616b1bc7fa94b88f71cf51bd21769b4d612f4e",
+      "Stub": "tests/camera_vga_control_stubs.sv",
+      "FullReferenceSHA256": "5b45cabe9cf50f32aea2d6496cd56bec7c9e3cc755a3efa35afe8ba14b8f1d61",
+      "ProductionBodyCompiled": false
+    }
+  },
+  "Commands": [
+    {
+      "Stage": "compile",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\capture_warmup.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\camera_vga_output_top.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\processed_output_ip_stubs.sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\camera_vga_control_stubs.sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_camera_vga_control.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_camera_vga_control",
+        "-s",
+        "camera_vga_control_tb",
+        "--timescale",
+        "1ps/1ps"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "camera_vga_control_tb",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "ActualBoardTopExecuted": true,
+  "ActualWarmupExecuted": true,
+  "ProductionSystemExecuted": false,
+  "CameraInitBodyExecuted": false,
+  "PhysicalIPExecuted": false,
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "PhysicalInputExercised": false,
+  "PowerDelayAccelerated": true,
+  "Limits": "Board startup, fault retention and LED control only. Warmup shortened to 8 ms; fixed power-on counter accelerated. Sensor/System/PLL/TX/DDR are status stubs. No SCCB, camera pixels, memory transactions, native throughput, stopped-clock recovery or physical HDMI acceptance.",
+  "Summary": {
+    "Passed": true,
+    "StartupCases": 8,
+    "RuntimeCases": 7,
+    "ResetChecks": 17,
+    "ReleaseEvents": 9,
+    "LEDChecks": 4,
+    "ChatterChecks": 1,
+    "WarmupCycles": 216000,
+    "ReferenceClockHz": 27000000,
+    "PowerDelayAccelerated": true
+  },
+  "PassLines": [
+    "CAMERA_VGA_CONTROL_PASS startup=8 runtime=7 release=9 resets=17"
+  ],
+  "SourceDrift": [],
+  "HeaderDrift": [],
+  "ElapsedSeconds": 40.061,
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "1c6c67581f11bcb56c71be9bd9f25f1d026c5c339f3be881c266722367e55545",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "6a787b1ad3bfbeab9a6ebae6d55ba7f2cf3ccafff513ddd7661689111f1f24bc",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "89db0f0b610ad7bb53f956ef0519450d3c658b0075b1f85ed7b5f42a11328f7b",
+    "simulation.log": "312913b2cbf711e1c29aa9ef1c9dc76c716998467343367ddd2bcaa62045f1a2",
+    "summary.json": "1dc5124fec0394a58a138ffc5b6ce3e9dc4086613b43a644caea859a64e2f854",
+    "webtalk.log": "6234d32f83820379f86c2f441a185ab032922b341fdec1ffda520747baf454cd",
+    "webtalk_4796.backup.log": "4f5c62e842159e9beeefb4c828ec4046240e37e75de84300d7c140e3c194a7bc",
+    "xelab.log": "f12591fff564b8a32aa8ae0e3f8a42d49bfe8c3bccc26fbf22741cffa704642c",
+    "xvlog.log": "3a95db317d41daeb3e2ab45f2af97f35e5e27efc4ebf613e2cad7a14dce24e32"
+  }
+}

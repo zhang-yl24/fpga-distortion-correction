@@ -1,0 +1,128 @@
+{
+  "Schema": "hdmi-diagnostic-simulation-v1",
+  "Kind": "uart-v3",
+  "Passed": true,
+  "StartedUTC": "2026-10-30T08:55:23.344744+00:00",
+  "SourceSHA256": {
+    "rtl/uart_tx.v": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+    "rtl/experimental/hdmi_diag_uart_v3.v": "5b22c0f464a28e7d76ac705f6fa7a7a56302fcab604b7045a18ab9cf7bef7d83",
+    "tests/tb_hdmi_diag_uart_v3.sv": "97074dc3016904f6379c6fc36ab3d8152e9419a7e17ed6db9331e6b5e010fcda",
+    "tools/run_hdmi_uart_sim.py": "d7b6bfb6913b62e565a0e3122133b53d9356a60b32e68110fef09e2b1e34d2ff",
+    "tools/hdmi_status.py": "69cdf308c0308f4c3d7b4f910f3237d38d8037b29912872d55c81d3cbd24e675",
+    "tools/run_ms72xx_checked_sim.py": "8c0d953d2d4204f334dd290157e4f541e202f3f01c249fa5c9dd89dbec1f36d7",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "Commands": [
+    {
+      "Stage": "compile",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\uart_tx.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi_diag_uart_v3.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_hdmi_diag_uart_v3.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_hdmi_diag_uart_v3",
+        "-s",
+        "hdmi_diag_tb"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "hdmi_diag_tb",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "Limits": "Actual UART or I2C wire RTL with synthetic device/monitor inputs. No PHY lock, real HDMI input, board output or optical acceptance.",
+  "UARTPackets": {
+    "Count": 4,
+    "Rejected": 0,
+    "NoiseBytes": 0,
+    "ResidualBytes": 0,
+    "WireSHA256": "0ed39914362579e49704f2207ddd154e7869cab3f54f38e593a09d9583c6ff40",
+    "Records": [
+      {
+        "sequence": 1,
+        "reference_ticks": 0,
+        "flags": 0,
+        "input_fault": 0,
+        "width": 0,
+        "height": 0,
+        "pclk_edges": 0,
+        "observer_freshness": 21,
+        "vs_edge_count_ref": 65534
+      },
+      {
+        "sequence": 2,
+        "reference_ticks": 6529,
+        "flags": 3,
+        "input_fault": 0,
+        "width": 0,
+        "height": 0,
+        "pclk_edges": 0,
+        "observer_freshness": 10,
+        "vs_edge_count_ref": 65535
+      },
+      {
+        "sequence": 3,
+        "reference_ticks": 13058,
+        "flags": 3,
+        "input_fault": 0,
+        "width": 0,
+        "height": 0,
+        "pclk_edges": 0,
+        "observer_freshness": 31,
+        "vs_edge_count_ref": 0
+      },
+      {
+        "sequence": 4,
+        "reference_ticks": 19587,
+        "flags": 3,
+        "input_fault": 0,
+        "width": 0,
+        "height": 0,
+        "pclk_edges": 0,
+        "observer_freshness": 0,
+        "vs_edge_count_ref": 4660
+      }
+    ]
+  },
+  "CaseLines": [
+    "HDMI_UART_CASE v3_packet_freezes_mid_record_updates PASS",
+    "HDMI_UART_CASE v3_vs_counter_16bit_wrap_preserved PASS",
+    "HDMI_UART_CASE v3_vs_counter_little_endian_payload PASS"
+  ],
+  "SourceDrift": [],
+  "EndedUTC": "2026-10-30T08:55:42.008762+00:00",
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "f21f1cc4814ab8ccb99068702a7b72aa3ba51599bf8b89e99954f825768e4f30",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "559fefeacd13a3c0180a339520997029e25429d0ebfacb9e80a64d879714b46b",
+    "hdmi-status-wire.bin": "0ed39914362579e49704f2207ddd154e7869cab3f54f38e593a09d9583c6ff40",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "c2ccf2e4df93b1c90c889d152260fe4a5fa876872a46731e712c96a2334363ae",
+    "simulation.log": "494ada24fa11400d6847fe110f7bb8a8db134ca590ebd680baa293de2c52a774",
+    "webtalk.log": "164cb6451640ea380578c35bfe42dd4a3ce127329775ca48fc476c3fad32fa75",
+    "webtalk_38044.backup.log": "af902eb17c1a9339c3f37caad1c58483a719a760d35e4b2edc4f7e55e56b5425",
+    "xelab.log": "69df743e1cb1d65a64982b6bb73e3c131d4f9d47fffe842c3e7d47002bd1f599",
+    "xvlog.log": "d4cca87197f0f4a192646f954ba42f79c2a2fc2e9681d42db5dd1d2da68c4d43"
+  }
+}
