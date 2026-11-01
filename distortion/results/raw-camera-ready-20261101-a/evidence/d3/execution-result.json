@@ -1,0 +1,126 @@
+{
+  "Schema": "raw-camera-delay-diagnostic-execution-v1",
+  "Target": "raw_camera_capture_cam2_delay",
+  "StartedUTC": "2026-10-31T15:32:50.721494+00:00",
+  "Plan": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\d3\\plan.json",
+  "PlanSHA256": "1ac68243d99c229f34a78e41cb58bdb92ed9a7a52ea80f15c6b1a5fcb543d4d5",
+  "ExecutorSHA256": "6a60dc0575fe7ba6cad35774871f743929b870054818b26f0506389b3f39754b",
+  "Command": [
+    "D:\\pango\\PDS_2023.2\\bin\\pds_shell.exe",
+    "-file",
+    "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/raw-camera-upright/d3/timing.tcl",
+    "-work_dir",
+    "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/raw-camera-upright/d3",
+    "-project_name",
+    "raw_camera_capture_cam2_delay"
+  ],
+  "MaximumSeconds": 1800,
+  "HardwareAccessed": false,
+  "BitstreamRequested": false,
+  "TimingAccepted": false,
+  "HardwareReleaseAllowed": false,
+  "EDAExecuted": true,
+  "TimedOut": false,
+  "StoppedForUnexpectedStage": false,
+  "NativeExitCode": 0,
+  "ExecutionCompletedWithoutError": true,
+  "OwnedPID": 36336,
+  "Cleanup": {
+    "Required": false,
+    "OwnedPID": 36336,
+    "ParentExited": true,
+    "Complete": true
+  },
+  "InputDrift": [],
+  "SourcesStable": true,
+  "DatabaseSnapshotAudit": {
+    "Snapshot": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\d3\\pre-sta-final.adf",
+    "FinalRoutedDatabase": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\d3\\place_route\\raw_camera_capture_cam2_delay_pnr.adf",
+    "SnapshotExists": true,
+    "FinalRoutedDatabaseExists": true,
+    "UnchangedAcrossSTA": true,
+    "TimingAccepted": false,
+    "SnapshotSHA256": "ed79659474133550c43982e6f9fe567007c972b39b398cdbaa6c5d4d7224495f",
+    "FinalRoutedDatabaseSHA256": "ed79659474133550c43982e6f9fe567007c972b39b398cdbaa6c5d4d7224495f"
+  },
+  "ActualEvents": [
+    [
+      "Compile",
+      "started"
+    ],
+    [
+      "Compile",
+      "done"
+    ],
+    [
+      "Synthesize",
+      "started"
+    ],
+    [
+      "Synthesize",
+      "done"
+    ],
+    [
+      "Device Map",
+      "started"
+    ],
+    [
+      "Device Map",
+      "done"
+    ],
+    [
+      "Place",
+      "started"
+    ],
+    [
+      "Place",
+      "done"
+    ],
+    [
+      "Route",
+      "started"
+    ],
+    [
+      "Route",
+      "done"
+    ],
+    [
+      "Route Optimize",
+      "started"
+    ],
+    [
+      "Route Optimize",
+      "done"
+    ],
+    [
+      "Report Timing",
+      "started"
+    ],
+    [
+      "Report Timing",
+      "done"
+    ]
+  ],
+  "ActualStagesComplete": true,
+  "Diagnostics": [],
+  "FinishedUTC": "2026-10-31T15:40:40.073415+00:00",
+  "ElapsedSeconds": 469.352,
+  "LogSHA256": {
+    "compile/run.log": "8280bb3b5aa7686cf5062a75701c932162df7724e22e4ba9f077a763e6aa0156",
+    "device_map/run.log": "bbc4e7cbccf947e71b4faf9ad3c688513dca6a53b994f6021999d6c858635fab",
+    "execution-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "execution-stdout.log": "f0364cee3ca2d9ffc6c379ba66915cf112b9f0ee6219a2f6ad64010adc5f8395",
+    "flow.log": "9321d8952b0543e804b45015ab04717d1b95650a036f58dd0345b6ad110c2bcd",
+    "place_route/run_place.log": "b7ba0eee4d4591e08bdde7e9832e20e3375107fafede8c04818539b5e74631c7",
+    "place_route/run_route.log": "17baf963b67d9268b36a9c65c7b6257d14594803f01534f3ba110f9a5806c3cb",
+    "place_route/run_route_optimize.log": "003cc3757b56f591efa47ca3b6116be88406c3a6bebc447f316dde2d2d6ea72d",
+    "report_timing/run.log": "5ea747ea595286ee38ac2fe9f92514c09a8f2e9773c98b7d208a0f6cafd889c8",
+    "run.log": "6457796a57c0207a0e0f2e1753c091218fe0f164f573500123e8b67844365171",
+    "sources_info.log": "d4a83814669d51607c48992f8952e11cf49f7aecdd47d89c84365004cfb398ed",
+    "synthesize/add_sub_carrychain.log": "bd64877cc2fcaa3739476b60163110c7b28437e15aa2d3defedf09a486ca9bd0",
+    "synthesize/apm_drm_lutram_utilization.log": "dc0414487e0d616b0db21c458b5a238b3fb445d54d7e195a00d3bda3623a5e10",
+    "synthesize/gtp_has_zero_input_pins.log": "e41a58afe4df13168dfa38f5018dd0487666b2cc801bb152a215ba869d41f396",
+    "synthesize/run.log": "ebf070f966e076870b37a65c334bff57dbb185eb90e16299f4ea11740f45f5ec"
+  },
+  "Limits": "Diagnostic execution only. Exact raw upright final netlist, source-specific routes and endpoint constraints require their own timing/CDC review. No old routed repair is inherited; no bitstream or hardware release."
+}

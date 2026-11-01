@@ -1,10 +1,17 @@
 # FPGA 实时图像畸变矫正
 
-> 仓库内可移植成果：[已验证位流、下载回执及实板反馈](distortion/results/camera-vga-upright-live-20261031-a/README.md)。下文work绝对路径为本机历史证据，不要求克隆者具备原7.7GB中间目录。
+当前已完成 **OV5640 CAM2 → 640×480 实际镜头畸变矫正 → HDMI 显示**。用户实板确认画面持续更新、直线明显变直，LED5/6闪烁、LED7常灭；LED6十完整周期13–14秒，处理完成帧率人工估算 **22.9–24.6 fps（约24 fps）**。HDMI 1080p30仅为扫描格式，不代表有效相机分辨率或每秒显示30张新图。
 
-> 最新任务顺序（2026-10-31）：先推送当前成果，然后在现有640×480模式完成实际镜头畸变矫正及验收，之后再讨论清晰度和帧率。见[当前矫正任务](handoff/CAMERA_VGA_CALIBRATION_NEXT_20261031.md)。
+当前镜头使用12张训练、6张独立验证完成标定；两帧真实原图的614400个RTL输出像素匹配独立整数参考，原生双角十类时序和限定IO/CDC检查通过。右下物理遮挡区未光学验收，人工帧率观察不替代精确性能或长期稳定测量。
 
-> 2026-10-31 当前状态：新camera_vga_upright_top已下载，用户确认画面正立、左右正确并持续更新，LED5/6闪烁、LED7一直灭。当前有效图像640×480，HDMI刷新30Hz；新候选帧率未重测，旧位流约24fps不能直接沿用。用户最新指定先在当前640×480模式完成实际镜头畸变矫正，清晰度和帧率讨论后置，HDMI IN/MS7200支线继续暂停。见[实板结果与当前基线](handoff/CAMERA_VGA_LIVE_20261031.md)。下方断电、时序未过和尚无位流描述均为历史记录，不覆盖本条。
+- [当前矫正位流、来源快照与离线验收](distortion/results/calibrated-camera-ready-20261101-a/README.md)
+- [SRAM实际下载与DONE回执](distortion/results/calibrated-camera-download-20261101-a/README.md)
+- [用户实屏矫正反馈](distortion/results/calibrated-camera-live-20261101-a/README.md)和[当前帧率测量](distortion/results/calibrated-camera-frame-rate-20261101-a/README.md)
+- [标定与完整开发交接](handoff/CAMERA_VGA_CALIBRATED_BUILD_20261101.md)
+
+**下一阶段按用户指定：先把有效相机与矫正图像提升到1280×720，再在720p基础上提升帧率。** 当前720p升级尚未上板验证，HDMI IN/MS7200支线继续暂停；见[720p任务顺序](handoff/CAMERA_720P_NEXT_20261101.md)。源码与封存位流可用于回退，断电后需重新下载易失SRAM。
+
+下文保留历史阶段，不覆盖以上当前结果。私人现场相机像素和大型构建中间文件留在本机；封存包提供来源和哈希引用。
 
 盘古676 / PG2L100H-6IFBG676项目。三人轮流推进的私有协作仓库。
 

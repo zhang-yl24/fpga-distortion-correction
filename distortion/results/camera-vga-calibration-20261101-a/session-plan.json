@@ -1,0 +1,225 @@
+{
+  "schema": "current-vga-calibration-session-plan-v1",
+  "created_utc": "2026-10-31T13:48:05.819121+00:00",
+  "state": "prepared_no_images_no_fit",
+  "identity": {
+    "camera_id": "ov5640-cam2-current-20261031",
+    "lens_id": "current-installed-lens-20261031",
+    "profile_id": "vga-upright-current-lens-20261031",
+    "capture_mode_id": "vga640x480-rgb565-upright-3820-00-3821-06",
+    "eye": "CAM2"
+  },
+  "image_size": [
+    640,
+    480
+  ],
+  "pixel_format": "RGB565_LE",
+  "geometry_applied": false,
+  "sensor_orientation": {
+    "register_3820": "00",
+    "register_3821": "06"
+  },
+  "board": {
+    "squares": [
+      7,
+      10
+    ],
+    "cols": 6,
+    "rows": 9,
+    "square_mm": 25.0,
+    "source": "User reports 7x10 black/white squares and 25mm square length; internal corner count is6x9"
+  },
+  "physical_lens_history": "User has not replaced the currently connected lens since taking over; team prior lens history unknown. No equivalence to any old profile is assumed.",
+  "model_choice": "Pending current-image review; existing four-coefficient fisheye fitter and Brown-surrogate audit are available, no model parameters or FOV invented.",
+  "required_coverage_cells": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ]
+  ],
+  "planned_views": [
+    {
+      "view_id": "train-01",
+      "pose_id": "physical-train-01",
+      "split": "train",
+      "instruction_zh": "居中、棋盘正对镜头，棋盘约占画面一半；整块棋盘可见。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "train-02",
+      "pose_id": "physical-train-02",
+      "split": "train",
+      "instruction_zh": "居中，比第1张更靠近，整块棋盘仍完整可见，覆盖更大画面。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "train-03",
+      "pose_id": "physical-train-03",
+      "split": "train",
+      "instruction_zh": "棋盘向画面左侧移动，完整棋盘保留在画面内。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "train-04",
+      "pose_id": "physical-train-04",
+      "split": "train",
+      "instruction_zh": "棋盘向画面右侧移动，完整棋盘保留在画面内。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "train-05",
+      "pose_id": "physical-train-05",
+      "split": "train",
+      "instruction_zh": "棋盘向上移动，尽量覆盖上方区域且不裁掉棋盘。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "train-06",
+      "pose_id": "physical-train-06",
+      "split": "train",
+      "instruction_zh": "棋盘向下移动，尽量覆盖下方区域且不裁掉棋盘。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "train-07",
+      "pose_id": "physical-train-07",
+      "split": "train",
+      "instruction_zh": "棋盘移到左上区域，适当转斜一个新角度，保持完整。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "train-08",
+      "pose_id": "physical-train-08",
+      "split": "train",
+      "instruction_zh": "棋盘移到右上区域，距离或倾角与第7张不同，保持完整。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "train-09",
+      "pose_id": "physical-train-09",
+      "split": "train",
+      "instruction_zh": "棋盘移到左下区域，保持完整。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "train-10",
+      "pose_id": "physical-train-10",
+      "split": "train",
+      "instruction_zh": "棋盘移到右下区域，保持完整。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "train-11",
+      "pose_id": "physical-train-11",
+      "split": "train",
+      "instruction_zh": "回到中央，棋盘左边稍靠近镜头、右边稍远，约15–25度。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "train-12",
+      "pose_id": "physical-train-12",
+      "split": "train",
+      "instruction_zh": "中央新距离，棋盘上边稍靠近镜头、下边稍远，并轻微平面旋转。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "held-01",
+      "pose_id": "physical-held-01",
+      "split": "held_out",
+      "instruction_zh": "验证图：中央较大棋盘，使用不同距离和约10度平面旋转，不重复任何训练姿态。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "held-02",
+      "pose_id": "physical-held-02",
+      "split": "held_out",
+      "instruction_zh": "验证图：偏左且轻微俯仰，独立新姿态，完整棋盘可见。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "held-03",
+      "pose_id": "physical-held-03",
+      "split": "held_out",
+      "instruction_zh": "验证图：偏右且轻微俯仰，独立新姿态，完整棋盘可见。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "held-04",
+      "pose_id": "physical-held-04",
+      "split": "held_out",
+      "instruction_zh": "验证图：偏上，用新距离与反向倾斜，完整棋盘可见。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "held-05",
+      "pose_id": "physical-held-05",
+      "split": "held_out",
+      "instruction_zh": "验证图：偏下，用新距离与侧向倾斜，完整棋盘可见。",
+      "status": "planned_not_captured"
+    },
+    {
+      "view_id": "held-06",
+      "pose_id": "physical-held-06",
+      "split": "held_out",
+      "instruction_zh": "验证图：居中覆盖尽量大区域，重新摆放并改变倾角，保持完整。",
+      "status": "planned_not_captured"
+    }
+  ],
+  "minimum_tool_requirements": {
+    "distinct_train_poses": 12,
+    "held_out_poses": 3,
+    "training_corners_per_required_cell": 15,
+    "held_out_corners_per_required_cell": 3
+  },
+  "planned_counts": {
+    "train": 12,
+    "held_out": 6
+  },
+  "capture_requirements": {
+    "one_frame_per_attempt": true,
+    "keep_board_flat": true,
+    "keep_focus_and_sensor_mode_fixed": true,
+    "hold_new_pose_seconds_before_receive": 10,
+    "keep_pose_until_receive_and_check_complete": true,
+    "move_before_each_next_pose": true,
+    "baud": 921600,
+    "receiver_seconds_bound": 90
+  },
+  "hardware_accessed": false,
+  "raw_candidate_build_ready": false,
+  "raw_candidate_downloaded": false,
+  "calibration_fitted": false,
+  "hardware_release_allowed": false
+}

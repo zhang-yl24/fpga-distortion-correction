@@ -1,0 +1,247 @@
+{
+  "schema": 1,
+  "hardware_accessed": false,
+  "optical_acceptance_complete": false,
+  "passed": true,
+  "profile_identity_bound": true,
+  "synthetic_input": false,
+  "camera_id": "ov5640-cam2-current-20261031",
+  "profile_id": "vga-upright-current-lens-20261031",
+  "provenance": "real_chessboard_captures",
+  "candidate_ready_for_profile_review": true,
+  "source_profile_flags": {
+    "passed": true,
+    "candidate_ready_for_profile_review": true,
+    "independent_spatial_coverage_passed": true,
+    "development_only": null
+  },
+  "source_profile_development_only": false,
+  "source_profile_calibration_passed": true,
+  "source_profile_candidate_ready_for_profile_review": true,
+  "source_profile_independent_spatial_coverage_passed": true,
+  "hardware_release_allowed": false,
+  "hardware_release_reason": "Requires independent real calibration/optical acceptance, a newly justified radius guard, RTL regression and routed board-build binding.",
+  "profile_sha256": "4bb1c608b20a8c275806a5b7012237872e8829b98553753feefe1177efec2cb6",
+  "source_image_size": [
+    640,
+    480
+  ],
+  "output_size": [
+    640,
+    480
+  ],
+  "output_K": [
+    [
+      320.0,
+      0.0,
+      319.5
+    ],
+    [
+      0.0,
+      320.0,
+      239.5
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "fisheye_coefficients_used": [
+    0.17602078811481522,
+    -0.010104992886768837,
+    -0.013110536659819092,
+    0.002201229141838536
+  ],
+  "fitted_brown_radial_coefficients": [
+    -0.15973805491310927,
+    0.026896709889443444,
+    -0.0017019236064069556
+  ],
+  "integer_config": [
+    81792,
+    61312,
+    82234,
+    64062,
+    40848,
+    40921,
+    3355443,
+    3355443,
+    -669990,
+    112813,
+    -7138,
+    0,
+    0
+  ],
+  "sample_stride": 1,
+  "full_requested_frames_checked": true,
+  "profile_scope_known": true,
+  "profile_maximum_ray_angle_deg": 88.0,
+  "maximum_requested_ray_angle_deg": 51.291229355948346,
+  "maximum_points_per_frame": 2500000,
+  "points_per_frame_checked": 307200,
+  "existing_board_radius_guard_applied": false,
+  "required_radius_guard_q22_for_checked_rays": 6530683,
+  "source_sha256": {
+    "tools\\wideangle_mapping_audit.py": "bc4b808a2c2b883220b5d317e443880b89784a82b346ae281068465332571d20",
+    "model\\rotation.py": "7835dc586d7e1c288d33facdcc6888715ffd84c3a9793fe73889240fd8bc0989",
+    "tools\\generate-brown-vectors.py": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b"
+  },
+  "coordinates_checked": 307200,
+  "requested_full_frame_coordinates": 307200,
+  "criteria": {
+    "maximum_coordinate_error_px": 0.25,
+    "minimum_in_bounds_fraction": 0.5,
+    "arithmetic_invalid_max": 0,
+    "folded_samples_max": 0,
+    "requires_stride_one": true
+  },
+  "frames": [
+    {
+      "angle_deg": 0.0,
+      "coordinates_checked": 307200,
+      "finite_opencv_reference": true,
+      "fixed_point_invalid_coordinates": 0,
+      "reference_folded_samples": 0,
+      "fixed_point_folded_samples": 0,
+      "reference_jacobian_min": 0.10682652820183533,
+      "fixed_point_jacobian_min": 0.108062744140625,
+      "maximum_coordinate_error_px": 0.0615207259688537,
+      "rms_coordinate_error_px": 0.0065526056912865146,
+      "p95_coordinate_error_px": 0.010100121359504775,
+      "bilinear_all_neighbours_in_bounds_fraction": 1.0,
+      "opencv_all_neighbours_in_bounds_fraction": 1.0,
+      "maximum_normalized_radius_squared_q22": 6530681,
+      "scalar_oracle_spotchecks": 33,
+      "numerical_gates_passed": true
+    }
+  ],
+  "limits": "Model approximation only. Finite-difference folds and rectangular source bounds do not prove lens edge coverage or optical accuracy. Sampled runs cannot pass a full-frame candidate. This fits only the requested image sizes, output camera and angles; parameters and old radius guards must not be reused outside that scope. No board include, old calibration, bitstream or evidence is modified.",
+  "source_profile_file_sha256": "94181c07a4456f511853f51022eba1b55965b115e1569f3fcbad460a2d92999e",
+  "source_model_scope": {
+    "projection": "forward_rectilinear",
+    "maximum_ray_angle_deg": 88.0,
+    "inverse_method": "bounded_monotone_bisection_v1",
+    "physical_visibility": {
+      "source_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\visibility-scope-20261101-a.json",
+      "source_sha256": "0653598c32632ee364e1ead8b6839e4316f24e6c86238148e3a1ced6d814e13e",
+      "record": {
+        "Schema": "current-vga-physical-visibility-scope-v1",
+        "CreatedUTC": "2026-10-31T17:49:45.995030+00:00",
+        "ImageSize": [
+          640,
+          480
+        ],
+        "SessionPlan": {
+          "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\session-plan.json",
+          "SHA256": "c7230612e0cd723341781c05827b3ad26b29d392a337a9d911dba9c80e6d9d56"
+        },
+        "Identity": {
+          "camera_id": "ov5640-cam2-current-20261031",
+          "lens_id": "current-installed-lens-20261031",
+          "profile_id": "vga-upright-current-lens-20261031",
+          "capture_mode_id": "vga640x480-rgb565-upright-3820-00-3821-06",
+          "eye": "CAM2"
+        },
+        "UserReport": "\u4e3b\u8981\u662f\u56e0\u4e3a\u6444\u50cf\u5934\u901a\u8fc7\u8f6c\u63a5\u677f\u56fa\u5b9a\u5728FPGA\u4e0a\uff0c\u753b\u9762\u53f3\u4e0b\u89d2\u56fa\u5b9a\u4e3aFPGA\uff0c\u68cb\u76d8\u518d\u9760\u8fd1\u4e5f\u4f1a\u88ab\u6321\u4f4f",
+        "Reason": "Fixed FPGA/adapter assembly physically occludes lower-right view; full chessboard cannot occupy this region. No camera mount, focus, wiring, sensor mode or pixel geometry change.",
+        "OriginalRequiredCoverageCells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "RequiredCoverageCells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "ExcludedCoverageCells": [
+          [
+            2,
+            2
+          ]
+        ],
+        "ExcludedCellDefinition": "source-image x >= 2*width/3 and y >= 2*height/3; conservative coverage exclusion, not measured occlusion outline",
+        "EvidenceMetadata": {
+          "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\first-frame-d3-a\\vga-raw-first-20261101-a-CAM2-frame0000000050.json",
+          "SHA256": "d8431ac1d5c23eb1035435f776989388ff89e19b9cca217504d72d30e5e1effe"
+        },
+        "EvidenceImage": {
+          "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\first-frame-d3-a\\vga-raw-first-20261101-a-CAM2-frame0000000050.png",
+          "SHA256": "3fec080aaaa4f612ae7ce30da767441b13cd45404336b2cf5261a25a8c4dadb5"
+        },
+        "MinimumTrainingCornersPerRequiredCell": 15,
+        "MinimumHeldCornersPerRequiredCell": 3,
+        "OtherQualityThresholdsChanged": false,
+        "RenderingMaskApplied": false,
+        "PixelGeometryChanged": false,
+        "FullFrameCoverageClaimAllowed": false,
+        "ExcludedRegionOpticalValidationClaimAllowed": false,
+        "DecisionAnnouncedToUser": true,
+        "Limits": "Calibrate and validate observable field only. This does not remove the FPGA from images or recover the hidden scene, measure lens FOV, or prove optical accuracy in the excluded region."
+      }
+    }
+  }
+}

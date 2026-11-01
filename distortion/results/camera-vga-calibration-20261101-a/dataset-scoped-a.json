@@ -1,0 +1,456 @@
+{
+  "schema": 1,
+  "camera_id": "ov5640-cam2-current-20261031",
+  "lens_id": "current-installed-lens-20261031",
+  "profile_id": "vga-upright-current-lens-20261031",
+  "capture_mode_id": "vga640x480-rgb565-upright-3820-00-3821-06",
+  "provenance": "real_sensor_captures",
+  "image_size": [
+    640,
+    480
+  ],
+  "board": {
+    "cols": 6,
+    "rows": 9,
+    "square_mm": 25.0
+  },
+  "model_scope": {
+    "projection": "forward_rectilinear",
+    "maximum_ray_angle_deg": 88.0,
+    "inverse_method": "bounded_monotone_bisection_v1",
+    "physical_visibility": {
+      "source_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\visibility-scope-20261101-a.json",
+      "source_sha256": "0653598c32632ee364e1ead8b6839e4316f24e6c86238148e3a1ced6d814e13e",
+      "record": {
+        "Schema": "current-vga-physical-visibility-scope-v1",
+        "CreatedUTC": "2026-10-31T17:49:45.995030+00:00",
+        "ImageSize": [
+          640,
+          480
+        ],
+        "SessionPlan": {
+          "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\session-plan.json",
+          "SHA256": "c7230612e0cd723341781c05827b3ad26b29d392a337a9d911dba9c80e6d9d56"
+        },
+        "Identity": {
+          "camera_id": "ov5640-cam2-current-20261031",
+          "lens_id": "current-installed-lens-20261031",
+          "profile_id": "vga-upright-current-lens-20261031",
+          "capture_mode_id": "vga640x480-rgb565-upright-3820-00-3821-06",
+          "eye": "CAM2"
+        },
+        "UserReport": "主要是因为摄像头通过转接板固定在FPGA上，画面右下角固定为FPGA，棋盘再靠近也会被挡住",
+        "Reason": "Fixed FPGA/adapter assembly physically occludes lower-right view; full chessboard cannot occupy this region. No camera mount, focus, wiring, sensor mode or pixel geometry change.",
+        "OriginalRequiredCoverageCells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "RequiredCoverageCells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "ExcludedCoverageCells": [
+          [
+            2,
+            2
+          ]
+        ],
+        "ExcludedCellDefinition": "source-image x >= 2*width/3 and y >= 2*height/3; conservative coverage exclusion, not measured occlusion outline",
+        "EvidenceMetadata": {
+          "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\first-frame-d3-a\\vga-raw-first-20261101-a-CAM2-frame0000000050.json",
+          "SHA256": "d8431ac1d5c23eb1035435f776989388ff89e19b9cca217504d72d30e5e1effe"
+        },
+        "EvidenceImage": {
+          "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\first-frame-d3-a\\vga-raw-first-20261101-a-CAM2-frame0000000050.png",
+          "SHA256": "3fec080aaaa4f612ae7ce30da767441b13cd45404336b2cf5261a25a8c4dadb5"
+        },
+        "MinimumTrainingCornersPerRequiredCell": 15,
+        "MinimumHeldCornersPerRequiredCell": 3,
+        "OtherQualityThresholdsChanged": false,
+        "RenderingMaskApplied": false,
+        "PixelGeometryChanged": false,
+        "FullFrameCoverageClaimAllowed": false,
+        "ExcludedRegionOpticalValidationClaimAllowed": false,
+        "DecisionAnnouncedToUser": true,
+        "Limits": "Calibrate and validate observable field only. This does not remove the FPGA from images or recover the hidden scene, measure lens FOV, or prove optical accuracy in the excluded region."
+      }
+    }
+  },
+  "required_coverage_cells": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "views": [
+    {
+      "view_id": "held-01",
+      "pose_id": "physical-held-01",
+      "session_id": "vga-cal-20261031-held-01-a01",
+      "split": "held_out",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-01-a01\\vga-cal-20261031-held-01-a01-CAM2-frame0000000764.png",
+      "sha256": "6efac5435c93f7fcf4e2f770e24ec16b19bd0f908e4cadc2484f4906c312ee3a",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-01-a01\\vga-cal-20261031-held-01-a01-CAM2-frame0000000764.json",
+      "metadata_sha256": "9ddac52f2d4bd6a51de6398ce8079459e293aea5ab8025fee54f266ac074e897"
+    },
+    {
+      "view_id": "held-02",
+      "pose_id": "physical-held-02",
+      "session_id": "vga-cal-20261031-held-02-a03",
+      "split": "held_out",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-02-a03\\vga-cal-20261031-held-02-a03-CAM2-frame0000000826.png",
+      "sha256": "cdf2d0c1c27c2d5c7b1b3e61ff228b51a2499469d4c4cc6f6d22557bd60a89be",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-02-a03\\vga-cal-20261031-held-02-a03-CAM2-frame0000000826.json",
+      "metadata_sha256": "5ba90c2baded1eac91caad5b7fed7fdcf0612f0ef21fc8f80c09baafa1adbd21"
+    },
+    {
+      "view_id": "held-03",
+      "pose_id": "physical-held-03",
+      "session_id": "vga-cal-20261031-held-03-a01",
+      "split": "held_out",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-03-a01\\vga-cal-20261031-held-03-a01-CAM2-frame0000000850.png",
+      "sha256": "95f5339dfea555265e83e91bc8f8d1d9c5f1f00241e362a6233ad0d5314ff0b8",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-03-a01\\vga-cal-20261031-held-03-a01-CAM2-frame0000000850.json",
+      "metadata_sha256": "615dd8482304604eb07ad3e51874f1882779c5ca8b943dbe4c8f5e3298f62aa6"
+    },
+    {
+      "view_id": "held-04",
+      "pose_id": "physical-held-04",
+      "session_id": "vga-cal-20261031-held-04-a04",
+      "split": "held_out",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-04-a04\\vga-cal-20261031-held-04-a04-CAM2-frame0000000967.png",
+      "sha256": "1ea1a95e1e65b19adeac1beef7c8541a3bb230617987adde630208f6b89250a4",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-04-a04\\vga-cal-20261031-held-04-a04-CAM2-frame0000000967.json",
+      "metadata_sha256": "b7e35e4627431f17f0e4b4f7b7d24f23e070a395314c496c6d2782cfc3f97e95"
+    },
+    {
+      "view_id": "held-05",
+      "pose_id": "physical-held-05",
+      "session_id": "vga-cal-20261031-held-05-a01",
+      "split": "held_out",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.png",
+      "sha256": "5326936e1fed1935ac3c420f3d19d78746a1c03d341820ae3222838d7df4c420",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.json",
+      "metadata_sha256": "5689ce6c586bd500d32e92d8b141c8d9157ea74ced9a734249443e2174f45145"
+    },
+    {
+      "view_id": "held-06",
+      "pose_id": "physical-held-06",
+      "session_id": "vga-cal-20261031-held-06-a01",
+      "split": "held_out",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.png",
+      "sha256": "c0eec622d9c7909627a0e854eec7c4a20518e359d2e161b10f71bb1cb54e49b8",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.json",
+      "metadata_sha256": "1f83c2a5af09cc02f345053bfbc9facd6b083c478c2a75e002bceb72cb2693b4"
+    },
+    {
+      "view_id": "train-01",
+      "pose_id": "physical-train-01",
+      "session_id": "vga-cal-20261031-train-01-a01",
+      "split": "train",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-01-a01\\vga-cal-20261031-train-01-a01-CAM2-frame0000000282.png",
+      "sha256": "aef7375a38631c13c5b8fcc97a7d2bbc705df85873bc35245c3fbcb290afb06b",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-01-a01\\vga-cal-20261031-train-01-a01-CAM2-frame0000000282.json",
+      "metadata_sha256": "59d32f9884430b8910e3c95b9a2c39a09b7aa192c325aeba903074930f5a0898"
+    },
+    {
+      "view_id": "train-02",
+      "pose_id": "physical-train-02",
+      "session_id": "vga-cal-20261031-train-02-a01",
+      "split": "train",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-02-a01\\vga-cal-20261031-train-02-a01-CAM2-frame0000000313.png",
+      "sha256": "0c7f2a22b443b7ecbde53f7ab63251b68f46e0329c7629d238a4cb336fca321d",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-02-a01\\vga-cal-20261031-train-02-a01-CAM2-frame0000000313.json",
+      "metadata_sha256": "9fd7df30a7bb89ddb762181973a497f421343945d694ecda973785899487e7da"
+    },
+    {
+      "view_id": "train-03",
+      "pose_id": "physical-train-03",
+      "session_id": "vga-cal-20261031-train-03-a01",
+      "split": "train",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-03-a01\\vga-cal-20261031-train-03-a01-CAM2-frame0000000343.png",
+      "sha256": "04677fdfa3dbda1778b44d86436bdb4a68c74c96770810bd8d9025169ea0f71d",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-03-a01\\vga-cal-20261031-train-03-a01-CAM2-frame0000000343.json",
+      "metadata_sha256": "91430102b83261295f805223c2fc905fd4d53a721b77fe1ea3752aa510d4fc7b"
+    },
+    {
+      "view_id": "train-04",
+      "pose_id": "physical-train-04",
+      "session_id": "vga-cal-20261031-train-04-a01",
+      "split": "train",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-04-a01\\vga-cal-20261031-train-04-a01-CAM2-frame0000000362.png",
+      "sha256": "f21679ec8f8618cbb0c155295dc7de014f7347072e6bcc950bc014ddc3ed65d9",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-04-a01\\vga-cal-20261031-train-04-a01-CAM2-frame0000000362.json",
+      "metadata_sha256": "fd11f09001d874cae6c4cafeb8105f9cd9ba2159dc2797008c006993869b0a14"
+    },
+    {
+      "view_id": "train-05",
+      "pose_id": "physical-train-05",
+      "session_id": "vga-cal-20261031-train-05-a02",
+      "split": "train",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-05-a02\\vga-cal-20261031-train-05-a02-CAM2-frame0000000407.png",
+      "sha256": "101750768f17dd917ce8923ba8e39528939328cc216450d20259a149a7bb4d2f",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-05-a02\\vga-cal-20261031-train-05-a02-CAM2-frame0000000407.json",
+      "metadata_sha256": "7721f0908579869b7d3e31165dffaca59cb052b3f8716c55e8a90852f40d9d44"
+    },
+    {
+      "view_id": "train-06",
+      "pose_id": "physical-train-06",
+      "session_id": "vga-cal-20261031-train-06-a01",
+      "split": "train",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-06-a01\\vga-cal-20261031-train-06-a01-CAM2-frame0000000437.png",
+      "sha256": "88d4c235be9f9cf1a97c107953046828a2728f463c0d87952795e1a31804f65d",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-06-a01\\vga-cal-20261031-train-06-a01-CAM2-frame0000000437.json",
+      "metadata_sha256": "55d232d5b613b07e2da7abc03f94a02b878c791489211058b084b11736064393"
+    },
+    {
+      "view_id": "train-07",
+      "pose_id": "physical-train-07",
+      "session_id": "vga-cal-20261031-train-07-a01",
+      "split": "train",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-07-a01\\vga-cal-20261031-train-07-a01-CAM2-frame0000000458.png",
+      "sha256": "d56b6576799e0a0bef4600bcaa3dfbd373c229850e504d3f4623f34d1546e44a",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-07-a01\\vga-cal-20261031-train-07-a01-CAM2-frame0000000458.json",
+      "metadata_sha256": "c5587b7eb8ce58eda00dd12832178704f2350561e4a4203b9f3d84128978b8ad"
+    },
+    {
+      "view_id": "train-08",
+      "pose_id": "physical-train-08",
+      "session_id": "vga-cal-20261031-train-08-a01",
+      "split": "train",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-08-a01\\vga-cal-20261031-train-08-a01-CAM2-frame0000000483.png",
+      "sha256": "4fd4cdc3e10e5a8f5cc7c7e34729844e9ff2eea81e757937e978230d64003a51",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-08-a01\\vga-cal-20261031-train-08-a01-CAM2-frame0000000483.json",
+      "metadata_sha256": "e68d17ca222caf9d0c0a46ef146908a55ee2760b7192a0274627d3d9de4b5597"
+    },
+    {
+      "view_id": "train-09",
+      "pose_id": "physical-train-09",
+      "session_id": "vga-cal-20261031-train-09-a02",
+      "split": "train",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-09-a02\\vga-cal-20261031-train-09-a02-CAM2-frame0000000533.png",
+      "sha256": "7153009dcc0022be241dce4c8571450d9091a0e71677860ee590dc0ce69f0eb1",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-09-a02\\vga-cal-20261031-train-09-a02-CAM2-frame0000000533.json",
+      "metadata_sha256": "79f237caf0e4443893a5db592517599d78d944fbd9a6e59f3897ea556258e9da"
+    },
+    {
+      "view_id": "train-10",
+      "pose_id": "physical-train-10",
+      "session_id": "vga-cal-20261031-train-10-a01",
+      "split": "train",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-10-a01\\vga-cal-20261031-train-10-a01-CAM2-frame0000000556.png",
+      "sha256": "0a2cbf455b704559c2358d4165041a563535add98ae34c699717caf5e3f01dd8",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-10-a01\\vga-cal-20261031-train-10-a01-CAM2-frame0000000556.json",
+      "metadata_sha256": "e05f05aa3654e454110cb9bfa60923b08dd0291990177cba7fb8006dd7b905a3"
+    },
+    {
+      "view_id": "train-11",
+      "pose_id": "physical-train-11",
+      "session_id": "vga-cal-20261031-train-11-a01",
+      "split": "train",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-11-a01\\vga-cal-20261031-train-11-a01-CAM2-frame0000000653.png",
+      "sha256": "dca71e0c8e9bb587be08e0cf2ec4e4f4c6440c818765ff0a71757e5891be8446",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-11-a01\\vga-cal-20261031-train-11-a01-CAM2-frame0000000653.json",
+      "metadata_sha256": "f03babb526a066045f68ae21aa0ce0d406d48ce9481aeccc79bbb673a83dc58d"
+    },
+    {
+      "view_id": "train-12",
+      "pose_id": "physical-train-12",
+      "session_id": "vga-cal-20261031-train-12-a02",
+      "split": "train",
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-12-a02\\vga-cal-20261031-train-12-a02-CAM2-frame0000000703.png",
+      "sha256": "f3f9da3404a4ee0ec0ab319fdb3f095ea058fbd081a6ae75aec58ec5860b3db9",
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-12-a02\\vga-cal-20261031-train-12-a02-CAM2-frame0000000703.json",
+      "metadata_sha256": "69744ffb05e985770c9e83ea453e71824ea42363edb1bdd5cb466e47b1397033"
+    }
+  ],
+  "recorded_utc": "2026-10-31T18:30:47.552022+00:00",
+  "session_plan_sha256": "c7230612e0cd723341781c05827b3ad26b29d392a337a9d911dba9c80e6d9d56",
+  "selected_corner_checks": [
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-01-a01\\quality.json",
+      "sha256": "7d29e6ddbb213dc7ba60b95d831a5703319f0c5a50c58e516fcc0910632b3d24",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-02-a03\\quality.json",
+      "sha256": "c7a8dfa282ae38221e672e86beebe9a55e53bc0460aaf7191d7cce202ce692d1",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-03-a01\\quality.json",
+      "sha256": "dda421f6e27edbeae0d111d53dda72bcaddfd8b696ea4376d42260d2ebd72e45",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-04-a04\\quality.json",
+      "sha256": "3b4ffaa5b894328abf73669932c8a40ea2977352fb2c548c9e2e8beefe057474",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\quality.json",
+      "sha256": "ef708a27eb76126f744d299b38534c27f49f63c2c039280db6b9946efd4fe725",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\quality.json",
+      "sha256": "9a3e17832e54884d9eb021f4a199aa058bd1f13e3c40b59e5a59c07af1cc981d",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-01-a01\\quality.json",
+      "sha256": "be5d9f9a9ea2d33ecfd220d591544c8f93317cfa40dd96f40820e530d876d4bb",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-02-a01\\quality.json",
+      "sha256": "e423a6a80291097e63502728672430d22157eacee882d5169d8e420b3b979358",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-03-a01\\quality.json",
+      "sha256": "40a8c4f4b6e1a559e34075af70efdbcf310a1b8889032c2ca5ec2d5fc97ec907",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-04-a01\\quality.json",
+      "sha256": "6141cfca17fae7952565d6238fb17b6f6911fda1cf9fed6319be1239b73d486a",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-05-a02\\quality.json",
+      "sha256": "1f1172a8cbae4125c5a3269f3fd282fac8d68ce2b8af984a2c4c2e3b43a4b2ae",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-06-a01\\quality.json",
+      "sha256": "39d2955e7014cd7cbd3d3cadbb03175466bab58d32857c9603066e170c041a3b",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-07-a01\\quality.json",
+      "sha256": "54a42f4e62bb104a3ed2b216705448029dc70a53db5210531064edc2d3d47a3b",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-08-a01\\quality.json",
+      "sha256": "5bec84495a4da240684ce4e98e5e3f0cdd5b74f2d489c77db26394ca47e11bd1",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-09-a02\\quality.json",
+      "sha256": "d6d87ae5774d03d1cebeaadcbb238693004ef736dacfaf6bb4317ce9c50ab6df",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-10-a01\\quality.json",
+      "sha256": "39ab845ad9abaea78eb117e6c5ab5bb896b629c2267d17b2bb456e6e7f3e0089",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-11-a01\\quality.json",
+      "sha256": "499ce1195433475d2481c98ee10c26dec3274820cab7a6c5c834beb744de61e3",
+      "warnings": []
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\train-12-a02\\quality.json",
+      "sha256": "01ad6fc529bef9eb9d017ec5917abdef7d09eb55ff6fae32ba882953600c8b48",
+      "warnings": []
+    }
+  ],
+  "hardware_accessed_by_assembler": false,
+  "calibration_fitted": false,
+  "model_note": "Fisheye candidate must be assessed for this current lens; no historic model or measured FOV is inferred."
+}

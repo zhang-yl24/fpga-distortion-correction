@@ -1,0 +1,86 @@
+{
+  "Schema": "current-vga-forward-inverse-development-plan-v1",
+  "CreatedUTC": "2026-10-31T18:12:23.454215+00:00",
+  "TrainingDiagnostic": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\profiles\\training-fit-diagnostic-a.json",
+    "SHA256": "243e0b2c6dbaa5378d92a4f657c2352cdccf3e162808b1fbec77f890c02dc737"
+  },
+  "InputsUsed": "Selected training points only; no held-out model residuals or inferred angles evaluated",
+  "PerTrainingView": [
+    {
+      "ViewID": "train-01",
+      "MaxDistortedRadius": 1.1514965379855284,
+      "MaxModelInferredRayAngleDeg": 57.152643712484874
+    },
+    {
+      "ViewID": "train-02",
+      "MaxDistortedRadius": 1.2480785986860479,
+      "MaxModelInferredRayAngleDeg": 61.05170734221723
+    },
+    {
+      "ViewID": "train-03",
+      "MaxDistortedRadius": 1.4557680069047354,
+      "MaxModelInferredRayAngleDeg": 69.23790641894786
+    },
+    {
+      "ViewID": "train-04",
+      "MaxDistortedRadius": 1.4918651109638643,
+      "MaxModelInferredRayAngleDeg": 70.64614461461558
+    },
+    {
+      "ViewID": "train-05",
+      "MaxDistortedRadius": 1.4221216557897798,
+      "MaxModelInferredRayAngleDeg": 67.92324378314144
+    },
+    {
+      "ViewID": "train-06",
+      "MaxDistortedRadius": 0.9024513978131188,
+      "MaxModelInferredRayAngleDeg": 46.63368896352847
+    },
+    {
+      "ViewID": "train-07",
+      "MaxDistortedRadius": 1.765052533607949,
+      "MaxModelInferredRayAngleDeg": 81.37410219967678
+    },
+    {
+      "ViewID": "train-08",
+      "MaxDistortedRadius": 1.8555753447095718,
+      "MaxModelInferredRayAngleDeg": 85.0273810373034
+    },
+    {
+      "ViewID": "train-09",
+      "MaxDistortedRadius": 1.436234196420317,
+      "MaxModelInferredRayAngleDeg": 68.47497284586997
+    },
+    {
+      "ViewID": "train-10",
+      "MaxDistortedRadius": 1.21251054706469,
+      "MaxModelInferredRayAngleDeg": 59.62484672717508
+    },
+    {
+      "ViewID": "train-11",
+      "MaxDistortedRadius": 0.7018361981975119,
+      "MaxModelInferredRayAngleDeg": 37.49181131401362
+    },
+    {
+      "ViewID": "train-12",
+      "MaxDistortedRadius": 0.7132599786044883,
+      "MaxModelInferredRayAngleDeg": 38.03139990416831
+    }
+  ],
+  "Problem": "Existing OpenCV undistortPoints clips distorted radius to pi/2 before inversion. Two training views exceed that image-coordinate radius, while the fitted monotone polynomial implies forward rays below 86 degrees. The existing calibrator therefore rejects the candidate before independent validation.",
+  "OfficialSource": "https://raw.githubusercontent.com/opencv/opencv/4.11.0/modules/calib3d/src/fisheye.cpp",
+  "ProposedMaximumRayAngleDeg": 88,
+  "AngleChoiceReason": "Training-inferred maximum 85.027381 deg plus about 3 degrees margin, declared before held-out model evaluation. This is a numerical forward-model domain, not measured lens FOV.",
+  "PlannedInverse": "Explicit opt-in bounded bisection of the same four-coefficient forward fisheye polynomial; prove positive derivative over [0,88deg], reject out-of-domain points, round-trip against projectPoints. Do not clip coordinates.",
+  "KDFitChanged": false,
+  "QualityThresholdsChanged": false,
+  "HeldOutUsedForTuning": false,
+  "CalibrationAccepted": false,
+  "RequiredBeforeUse": [
+    "Synthetic positive/negative/round-trip tests",
+    "Actual source audit and explicit opt-in",
+    "Freeze implementation before independent held-out validation"
+  ],
+  "HardwareAccessed": false
+}

@@ -1,0 +1,15 @@
+{
+  "Schema": "raw-camera-delay-connection-review-v1",
+  "Target": "raw_camera_capture_cam2_delay",
+  "Eye": "CAM2",
+  "Declarations": {
+    "new_module_pinout_verified": true,
+    "power_and_io_verified": true,
+    "selected_eye_verified": true
+  },
+  "Evidence": {
+    "new_module_pinout_verified": "Current io4/io-cdc.json proves 128 final native pad mappings including all 14 CAM2 pins against board/raw_camera_capture_cam2_ref-pins.json; the same installed camera/connector remains in use, with no new module or rewiring reported.",
+    "power_and_io_verified": "User has just confirmed board power after being asked to retain OV5640/UART/HDMI OUT connections. Existing board/camera supply arrangement and declared LVCMOS33 CAM2/UART interface match the previously working assembly and current source/pin audit. This records operational connection compatibility, not measured rails, native drive/slew verification or external AC signoff.",
+    "selected_eye_verified": "CAM2 is bound in the current top, all 14 audited sensor pins, camera ID CAM2 and eye tag 10. The same connected camera previously produced the accepted upright moving image; user reported no lens replacement and now confirms the requested connected setup remains powered."
+  }
+}
