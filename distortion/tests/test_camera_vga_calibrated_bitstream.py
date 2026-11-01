@@ -165,5 +165,3 @@ def test_cache_is_process_local_rehashed_and_cannot_be_mutated_by_returned_conte
     assert bit.authority(request)['Build']=={'nested':['stable']}
     evidence.write_bytes(b'mutated')
     with pytest.raises(ValueError,match='cached.*drift'):bit.authority(request)
-
-
