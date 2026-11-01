@@ -9,7 +9,7 @@
 - [用户实屏矫正反馈](distortion/results/calibrated-camera-live-20261101-a/README.md)和[当前帧率测量](distortion/results/calibrated-camera-frame-rate-20261101-a/README.md)
 - [标定与完整开发交接](handoff/CAMERA_VGA_CALIBRATED_BUILD_20261101.md)
 
-**下一阶段按用户指定：先把有效相机与矫正图像提升到1280×720，再在720p基础上提升帧率。** 当前720p升级尚未上板验证，HDMI IN/MS7200支线继续暂停；见[720p任务顺序](handoff/CAMERA_720P_NEXT_20261101.md)。源码与封存位流可用于回退，断电后需重新下载易失SRAM。
+**下一阶段按用户指定：先把有效相机与矫正图像提升到1280×720，再在720p基础上提升帧率。** 独立分支`codex/camera720-output`已实现720p单位映射运输候选，完整数字链路两帧共1843200个HDMI像素核对通过；尚未完成720p镜头矫正参数、最终物理检查或上板验证。见[720p实现交接](handoff/CAMERA_720P_IMPLEMENTATION_20261101.md)及[离线阶段证据](distortion/results/camera720-offline-20261101-a/README.md)。HDMI IN/MS7200支线继续暂停。已验收的VGA源码与位流保留用于回退，断电后需重新下载易失SRAM。
 
 下文保留历史阶段，不覆盖以上当前结果。私人现场相机像素和大型构建中间文件留在本机；封存包提供来源和哈希引用。
 

@@ -1,0 +1,126 @@
+{
+  "Schema": "camera720-output-diagnostic-execution-v1",
+  "Target": "camera720_transport_top",
+  "StartedUTC": "2026-11-01T04:33:51.387552+00:00",
+  "Plan": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\plan.json",
+  "PlanSHA256": "3c1780236ff00448472e7bce2f1ce2b34e638d844fdc6c65f992aefa60dcf51d",
+  "ExecutorSHA256": "f508edf357c3560d0ebf31bbe6e96f1f6cf07ef35bbc4a604594b64438e04d83",
+  "Command": [
+    "D:\\pango\\PDS_2023.2\\bin\\pds_shell.exe",
+    "-file",
+    "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-output/build-b/timing.tcl",
+    "-work_dir",
+    "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-output/build-b",
+    "-project_name",
+    "camera720_transport_top"
+  ],
+  "MaximumSeconds": 1800,
+  "HardwareAccessed": false,
+  "BitstreamRequested": false,
+  "TimingAccepted": false,
+  "HardwareReleaseAllowed": false,
+  "EDAExecuted": true,
+  "TimedOut": false,
+  "StoppedForUnexpectedStage": false,
+  "NativeExitCode": 0,
+  "ExecutionCompletedWithoutError": true,
+  "OwnedPID": 41412,
+  "Cleanup": {
+    "Required": false,
+    "OwnedPID": 41412,
+    "ParentExited": true,
+    "Complete": true
+  },
+  "InputDrift": [],
+  "SourcesStable": true,
+  "DatabaseSnapshotAudit": {
+    "Snapshot": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\pre-sta-final.adf",
+    "FinalRoutedDatabase": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\place_route\\camera720_transport_top_pnr.adf",
+    "SnapshotExists": true,
+    "FinalRoutedDatabaseExists": true,
+    "UnchangedAcrossSTA": true,
+    "TimingAccepted": false,
+    "SnapshotSHA256": "420127079b4123b3942edd45c1f5b725221a4e3b3a1b8a91a448d9526e6d0cbe",
+    "FinalRoutedDatabaseSHA256": "420127079b4123b3942edd45c1f5b725221a4e3b3a1b8a91a448d9526e6d0cbe"
+  },
+  "ActualEvents": [
+    [
+      "Compile",
+      "started"
+    ],
+    [
+      "Compile",
+      "done"
+    ],
+    [
+      "Synthesize",
+      "started"
+    ],
+    [
+      "Synthesize",
+      "done"
+    ],
+    [
+      "Device Map",
+      "started"
+    ],
+    [
+      "Device Map",
+      "done"
+    ],
+    [
+      "Place",
+      "started"
+    ],
+    [
+      "Place",
+      "done"
+    ],
+    [
+      "Route",
+      "started"
+    ],
+    [
+      "Route",
+      "done"
+    ],
+    [
+      "Route Optimize",
+      "started"
+    ],
+    [
+      "Route Optimize",
+      "done"
+    ],
+    [
+      "Report Timing",
+      "started"
+    ],
+    [
+      "Report Timing",
+      "done"
+    ]
+  ],
+  "ActualStagesComplete": true,
+  "Diagnostics": [],
+  "FinishedUTC": "2026-11-01T04:46:27.704102+00:00",
+  "ElapsedSeconds": 756.317,
+  "LogSHA256": {
+    "compile/run.log": "1a0b5a623a1b8be5a805d1ac222a34d6fc416f6b6a820de48dcfd9b8e9f4660f",
+    "device_map/run.log": "e8f8cca45e032d85d8b5999d661edec893e207f3601fdcf81ac4f1f307bd84a6",
+    "execution-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "execution-stdout.log": "07a73cecd0475c55be50e13f568c45b18838b3a21a243b2af870827b22530e8f",
+    "flow.log": "f7732d835824889d5957509e674cf84240a907a1a93d9cd3357ff75917e52b14",
+    "place_route/run_place.log": "ae75caf07679e87e83faab3136f7e81d7f86bfb95e67126f7e04be43ae2b459e",
+    "place_route/run_route.log": "4a97203a11348836146275e59067b028c1a0d7f142bb9b642dca1b5bbffd4b2e",
+    "place_route/run_route_optimize.log": "65af71cea62f21db29e11e39e25646446f550d72de1dd59af2897ae6d148a9f9",
+    "report_timing/run.log": "bbd259d7620375e3e01016f5fb0b25b16f51da06744a19dd1a47b8b9af7adcdf",
+    "run.log": "7a8611fbcc09680bcf4befeeafd81f06aacacc2eeeb11ee7123331d492af768e",
+    "sources_info.log": "402fa77db372e123434abef74d94f8ea7e0b64d0d8163be5c9d4fe65d3a94c07",
+    "synthesize/add_sub_carrychain.log": "75fac42d27929e3bbf327f8b09833002171e3688a2543b802404030990c68d1f",
+    "synthesize/apm_drm_lutram_utilization.log": "13ee872ae4519a18bdaaa9f14113589ad837b9e46f2d63f393fa33c16a94d81a",
+    "synthesize/gtp_has_zero_input_pins.log": "6750a8adb190de957c71342ce335ae41cd757d6fdb612254f75ec145fdab9766",
+    "synthesize/run.log": "7e429f77afb85e95df1ebb489fc22bd96bcaf05f67bee9a553e805314723617c"
+  },
+  "Limits": "Diagnostic execution only. Exact 720p transport final netlist, source-specific routes and endpoint constraints require their own timing/CDC review. No old routed repair is inherited; no bitstream or hardware release."
+}

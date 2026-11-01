@@ -1,0 +1,96 @@
+{
+  "Passed": true,
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "SyntheticOnly": true,
+  "HardwareReleaseAllowed": false,
+  "HistoricalGeneratorReproduced": false,
+  "PortVerification": {
+    "Passed": true,
+    "Target": "ov5640_current720_sensor_retained_source_port",
+    "HistoricalGeneratorReproduced": false,
+    "RetainedSourceSHA256": {
+      "rtl/experimental/ov5640_rgb565_720_init.v": "403214d854a068e0b087fb0c2b00242cf36b2b2a326c9cde6803f6aa22ccabb5",
+      "board/ov5640_rgb565_720_commands.vh": "05ce241ce37286b6820eeeaad28eeff0821f12d1319bdc6747c4fd04a72ff22c",
+      "board/ov5640_rgb565_720_sequence.json": "88cd19153f7f5fda5c80b86a4112f6e689ca52f094642cd1e2ce967261ee2c5d",
+      "rtl/experimental/dvp_mode_admission_monitor.v": "2895bad17ecc74c0cceefce4a53de525a2516462e1bc082481d2d34de2ec8b55"
+    },
+    "PortSourceSHA256": {
+      "rtl/experimental/ov5640_current720_init.v": "f8530a40248f462e2914c27c3ca961f66b316aa1aa669539e88c26b3f1e02456",
+      "rtl/experimental/ov5640_current720_frontend.v": "6e412ed815c8df4ac04b89a71c595416fa76f4207926179b005c162f4ebfc39a"
+    },
+    "InitializerEdits": [
+      "module name",
+      "repository-relative include path"
+    ],
+    "IncludeDirectoriesRelativeToDistortion": [
+      "."
+    ],
+    "RegisterActionCount": 403,
+    "ImageSize": [
+      1280,
+      720
+    ],
+    "VSYNCHREFInputConvention": "already logical active-high; caller binds physical inversions",
+    "PixelByteConvention": "RGB565 low-byte-first; frontend observes timing only, caller packs pixels",
+    "StartupGraceRefCycles": 27000000,
+    "StartupGraceMeaning": "1 second at 27 MHz to first complete good frame; two complete good frames required for admission",
+    "RequiredCompleteGoodFrames": 2,
+    "NominalPCLKModelHzAt24MHzXVCLK": 42000000,
+    "UpperPCLKModelHzAt27MHzXVCLK": 47250000,
+    "NominalFPSModelAt24MHzXVCLK": 14.99914290611965,
+    "MeasuredFPS": null,
+    "HardwareAccessed": false,
+    "PDSAccessed": false,
+    "HardwareReleaseAllowed": false,
+    "Limits": "Retained-source integrity and portable binding only. Frontend digital behavior needs its separate RTL tests. No regenerated historical proposal, measured clock/fps, sensor/optical calibration, physical CDC/timing or board acceptance. raw_authorize must not reset accepted downstream transactions."
+  },
+  "SourceSHA256": {
+    "rtl/reg16_i2c.v": "7db5335dee7d64eddf3905008a1cd64262889d0a9ebef63c74d4612d70a5a580",
+    "rtl/experimental/ov5640_rgb565_720_init.v": "403214d854a068e0b087fb0c2b00242cf36b2b2a326c9cde6803f6aa22ccabb5",
+    "board/ov5640_rgb565_720_commands.vh": "05ce241ce37286b6820eeeaad28eeff0821f12d1319bdc6747c4fd04a72ff22c",
+    "board/ov5640_rgb565_720_sequence.json": "88cd19153f7f5fda5c80b86a4112f6e689ca52f094642cd1e2ce967261ee2c5d",
+    "rtl/experimental/dvp_mode_admission_monitor.v": "2895bad17ecc74c0cceefce4a53de525a2516462e1bc082481d2d34de2ec8b55",
+    "rtl/experimental/ov5640_current720_init.v": "f8530a40248f462e2914c27c3ca961f66b316aa1aa669539e88c26b3f1e02456",
+    "rtl/experimental/ov5640_current720_frontend.v": "6e412ed815c8df4ac04b89a71c595416fa76f4207926179b005c162f4ebfc39a",
+    "tests/tb_ov5640_current720_init.sv": "7307213fd76ca9b6341dee8fb42f4459cad0b751d6896f456fe132650201b817",
+    "tests/tb_ov5640_current720_frontend.sv": "6dd853b4b785e1587b4d65de1ba26bfc0dd1272ee4263462b5c5204cd1da88fe",
+    "tools/prepare_camera720_sensor.py": "d440d59facac754e3eb2f351270304c2e51c39f94aa90ac8de7c5ca5ac333d2c",
+    "tools/run_camera720_sensor_sim.py": "6772ef84728ded7506df5ee1d4b637b2e73ead5f0b1078139223e29fd415e19d"
+  },
+  "SourceSHA256After": {
+    "rtl/reg16_i2c.v": "7db5335dee7d64eddf3905008a1cd64262889d0a9ebef63c74d4612d70a5a580",
+    "rtl/experimental/ov5640_rgb565_720_init.v": "403214d854a068e0b087fb0c2b00242cf36b2b2a326c9cde6803f6aa22ccabb5",
+    "board/ov5640_rgb565_720_commands.vh": "05ce241ce37286b6820eeeaad28eeff0821f12d1319bdc6747c4fd04a72ff22c",
+    "board/ov5640_rgb565_720_sequence.json": "88cd19153f7f5fda5c80b86a4112f6e689ca52f094642cd1e2ce967261ee2c5d",
+    "rtl/experimental/dvp_mode_admission_monitor.v": "2895bad17ecc74c0cceefce4a53de525a2516462e1bc082481d2d34de2ec8b55",
+    "rtl/experimental/ov5640_current720_init.v": "f8530a40248f462e2914c27c3ca961f66b316aa1aa669539e88c26b3f1e02456",
+    "rtl/experimental/ov5640_current720_frontend.v": "6e412ed815c8df4ac04b89a71c595416fa76f4207926179b005c162f4ebfc39a",
+    "tests/tb_ov5640_current720_init.sv": "7307213fd76ca9b6341dee8fb42f4459cad0b751d6896f456fe132650201b817",
+    "tests/tb_ov5640_current720_frontend.sv": "6dd853b4b785e1587b4d65de1ba26bfc0dd1272ee4263462b5c5204cd1da88fe",
+    "tools/prepare_camera720_sensor.py": "d440d59facac754e3eb2f351270304c2e51c39f94aa90ac8de7c5ca5ac333d2c",
+    "tools/run_camera720_sensor_sim.py": "6772ef84728ded7506df5ee1d4b637b2e73ead5f0b1078139223e29fd415e19d"
+  },
+  "OutputDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-sensor-sim-20261101T041857527800Z-0b72f2",
+  "MeasuredFPS": null,
+  "TestCases": [
+    "complete720_readback_unique_wake_rmw_and_verified_data_high",
+    "pad_read_address_nack_no_wake",
+    "initial_clock_default_mismatch_no_pll_writes",
+    "preflight_geometry_mismatch_no_wake",
+    "postwake_read_nack_never_configured",
+    "masked_rmw_match_cannot_excuse_fullbyte_noack",
+    "pclk42_two_good_frames_and_sticky_clock_stop",
+    "pclk47_25_two_good_frames_and_sticky_clock_stop",
+    "malformed_first_line_blocks_admission"
+  ],
+  "Limits": "Real reg16_i2c with synthetic open-drain sensor register model and two full-size synthetic 2560-byte by 720-line frames per PCLK scenario. No pixel-content/DDR/UART transport, board pins, measured clocks/fps, analog PLL lock, optical calibration or physical CDC/timing acceptance. Model reset/delay timings are accelerated; production initializer delays and bus defaults remain unchanged.",
+  "EvidenceSHA256": {
+    "init.log": "8e648591eb3f76dc02d73fe8b57852ae2113e677ad0fc95891fab2c848939414",
+    "pclk42.log": "2a2cf6c568ad138e8ba47e3da2c4d2b808986b504b515ba902838dcf352c02b4",
+    "pclk47_25.log": "95d5033c250cd77eb10ea0ead103566ac68cb8a35e9980cd4c308509c0bdcf74",
+    "bad_line.log": "e1ef233967b4bdc96f0168bd8b90729d095594f9dbc069e186097520cf1b6354",
+    "rgb565720-transactions.csv": "d6edee83e3ef290ebb9448e4a6aec90cf7e80f880ae968bd2084e0a8e19a7e96"
+  },
+  "EndedUtc": "2026-11-01T04:21:24.369016+00:00"
+}

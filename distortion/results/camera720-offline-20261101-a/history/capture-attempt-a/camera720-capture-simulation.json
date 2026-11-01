@@ -1,0 +1,92 @@
+{
+  "Schema": "camera720-ingress-simulation-v1",
+  "Passed": false,
+  "StartedUTC": "2026-11-01T04:19:40.527801+00:00",
+  "SourceSHA256": {
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/ddr_write_arbiter.v": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+    "rtl/experimental/dvp_rgb565_capture_cdc.v": "14bde70db5bcc2797d2e648af44f64d57df62673161529ef7358878700dc7079",
+    "rtl/experimental/camera_vga_input_dma.v": "eb905f9ad625f87cf8103f27f09cba4c58a65f96e3460db5f0082351901a90f4",
+    "rtl/experimental/camera_vga_input_write_link.v": "7206770237423c876f569fbdd288baca2bb9dd783687f6aedb07e77860a4980f",
+    "tests/tb_camera720_capture.sv": "d7f0a94de927bdcda9f6f7488d5d9faa0421c753bf6b1656ebb4892e8a52b274",
+    "tools/run_camera720_capture_sim.py": "2e6b018aac93c83119e98a34d59aff10b9d86455399631e466489cde728ef220",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "Commands": [
+    {
+      "Stage": "compile",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\video_async_fifo.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\ddr_write_arbiter.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_rgb565_capture_cdc.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\camera_vga_input_dma.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\camera_vga_input_write_link.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_camera720_capture.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_camera720_capture",
+        "-s",
+        "camera720_capture",
+        "--timescale",
+        "1ps/1ps"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "camera720_capture",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "RTLResultUsedForGolden": false,
+  "PhysicalIPExecuted": false,
+  "PhysicalCameraValidated": false,
+  "Limits": "Synthetic full-size 1280x720 DVP at 48 MHz with HTS 1892 pixels (3784 byte clocks), VTS 740, 125 MHz core, and modeled DDR arbitration/stalls. Four complete frames and two shortened fault frames; deliberate inter-frame reservation pauses. Real capture/FIFO/DMA/write arbiter only; background result data is modeled. No sensor SCCB, electrical/CDC timing, bank-manager/remapper/scan concurrency, 720p optical calibration, board throughput or measured frame-rate claim.",
+  "VivadoBin": "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin",
+  "Error": "ValueError: complete native 720p capture pass marker missing",
+  "SourceSHA256After": {
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/ddr_write_arbiter.v": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+    "rtl/experimental/dvp_rgb565_capture_cdc.v": "14bde70db5bcc2797d2e648af44f64d57df62673161529ef7358878700dc7079",
+    "rtl/experimental/camera_vga_input_dma.v": "eb905f9ad625f87cf8103f27f09cba4c58a65f96e3460db5f0082351901a90f4",
+    "rtl/experimental/camera_vga_input_write_link.v": "7206770237423c876f569fbdd288baca2bb9dd783687f6aedb07e77860a4980f",
+    "tests/tb_camera720_capture.sv": "d7f0a94de927bdcda9f6f7488d5d9faa0421c753bf6b1656ebb4892e8a52b274",
+    "tools/run_camera720_capture_sim.py": "2e6b018aac93c83119e98a34d59aff10b9d86455399631e466489cde728ef220",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "ElapsedSeconds": 33.466,
+  "LogSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "bfef6a662af4ce55f59847192cdf2358bf160e75703f3f2e92eb40f145d3448b",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "f65a7cb88d4bf8c33d69bfff0657cb562addf8b241d0a5a4c7f26780e18aecfc",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "900625159bc5a87cffd44155494bfcaef3e2aa04e122b9f55964e491f3d1e957",
+    "simulation.log": "d4897e616eeb988adb18431af98d5ad74c0fad3da4a31930cc4eeb017eb392d5",
+    "webtalk.log": "958cb275e743f5d0380b0bd1acc4f7821cb3668389c0a656ecf003d852216e9a",
+    "webtalk_33684.backup.log": "4d0fff4af62bc1543839b100b9f435d4750b743b179305ad83b04371d8ab2859",
+    "xelab.log": "b912ad474f2cf473119beb6c5d4840ff1dcc87fe8e47e37fe7c2f4672d753b40",
+    "xvlog.log": "36041f5bcb311ced9cb6c3bc16994a17e02d75dcca100075ceec92b7f14f5b42"
+  },
+  "ResultSHA256": {
+    "commits.csv": "8bd5d498f76e1beda9644a12d34f8eff0e492ce4e1d7fee4d4f2013a3b8c2bc9",
+    "ddr-source-words.csv": "6e106a112f156961db690365328c4b9957e52c4f4ee7e1f17ebd06d574d52ce9",
+    "drops.csv": "b2ea908ebb0839a5c4870e6e9ff4a5d76ce2ae6d1604e756dad2611140376b0c"
+  }
+}
