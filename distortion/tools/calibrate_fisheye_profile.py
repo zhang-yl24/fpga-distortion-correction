@@ -21,6 +21,7 @@ sys.path.insert(0, str(ROOT))
 from tools.calibrate import fit, validate
 from tools.stereo_fisheye_calibrate import board_points, _canonical_sha, _identity, _file
 from tools.wideangle_mapping_audit import _size
+from tools import fisheye_forward_inverse as forward_inverse
 
 cv2.setNumThreads(1)
 cv2.ocl.setUseOpenCL(False)
@@ -46,6 +47,8 @@ def validate_manifest(manifest):
     theta = scope.get('maximum_ray_angle_deg')
     if scope.get('projection') != 'forward_rectilinear' or isinstance(theta, bool) or not isinstance(theta, (int, float)) or not math.isfinite(theta) or not 0 < theta < 90:
         raise ValueError('supported model_scope requires forward_rectilinear and 0 < maximum_ray_angle_deg < 90; full 200-degree/rear-hemisphere calibration is unsupported')
+    if scope.get('inverse_method', 'opencv') not in ('opencv', forward_inverse.METHOD):
+        raise ValueError('unknown explicit fisheye inverse_method')
     rows = manifest.get('views')
     if not isinstance(rows, list) or not rows:
         raise ValueError('explicit train/model_selection/held_out views are required')
@@ -163,7 +166,7 @@ def load_dataset(manifest, *, base_dir):
             'identity_note': 'Camera/eye connection is operator declared unless wire identity is explicitly present; hashed metadata is not independent physical identity verification.'}, observations
 
 
-def _domain(k, d, size, maximum_angle):
+def _domain(k, d, size, maximum_angle, inverse_method='opencv'):
     theta = math.radians(maximum_angle)
     # The derivative of theta_d(theta) is a quartic in theta^2. Its
     # minimum is evaluated at interval endpoints and real stationary roots.
@@ -183,14 +186,21 @@ def _domain(k, d, size, maximum_angle):
     det = dxdx*dydy-dxdy*dydx
     finite = bool(np.isfinite(mx).all() and np.isfinite(my).all() and np.isfinite(det).all())
     folds = int(np.count_nonzero(requested & (det <= 0)))
-    compatible = bool(finite and minimum > 0 and 0 < maximum_distorted_radius < math.pi/2 and folds == 0)
+    inverse_audit = None
+    if inverse_method == forward_inverse.METHOD:
+        inverse_audit = forward_inverse.domain(d, maximum_angle)
+    elif inverse_method != 'opencv':
+        raise ValueError('unknown inverse method')
+    inverse_supported = bool(inverse_audit is not None or 0 < maximum_distorted_radius < math.pi/2)
+    compatible = bool(finite and minimum > 0 and inverse_supported and folds == 0)
     return {'maximum_ray_angle_deg': maximum_angle, 'claimed_total_rectilinear_field_deg': None,
         'radial_derivative_minimum': minimum, 'distorted_radius_at_maximum_ray_angle': maximum_distorted_radius,
         'opencv_inverse_clip_radius': math.pi/2, 'finite_same_K_map': finite,
         'same_K_map_pixels_in_requested_angle': int(requested.sum()), 'same_K_map_folded_pixels_in_requested_angle': folds,
         'supported_forward_domain_passed': compatible,
+        'inverse_method': inverse_method, 'bounded_inverse_audit': inverse_audit,
         'merchant_200_degree_claim_verified': False, 'full_200_degree_domain_supported': False,
-        'limits': 'Forward-hemisphere model only. OpenCV 4.11 undistortPoints clips distorted radius to pi/2; no rear-hemisphere or measured 200-degree coverage is established. Same-K map folds are finite-difference diagnostics; monotonic radial derivative is audited analytically over the declared angular interval.'}
+        'limits': 'Forward-hemisphere model only. OpenCV 4.11 undistortPoints clips distorted radius to pi/2; explicit bounded inversion instead rejects points outside its audited monotone interval. No rear-hemisphere or measured 200-degree coverage is established. Same-K map folds are finite-difference diagnostics; monotonic radial derivative is audited analytically over the declared angular interval.'}
 
 
 def calibrate_observations(manifest, observations, *, capture_audit=None):
@@ -228,16 +238,21 @@ def calibrate_observations(manifest, observations, *, capture_audit=None):
     d = d.reshape(-1)
     if not np.isfinite(k).all() or not np.isfinite(d).all() or not math.isfinite(rms):
         raise ValueError('fisheye fit produced nonfinite parameters')
-    domain = _domain(k, d, size, manifest['model_scope']['maximum_ray_angle_deg'])
+    inverse_method = manifest['model_scope'].get('inverse_method', 'opencv')
+    domain = _domain(k, d, size, manifest['model_scope']['maximum_ray_angle_deg'], inverse_method)
     errors, coverage, radial, observed_distorted_max = [], {}, {}, 0.
     observed_forward_max = 0.
     for view, xy in rows:
         distorted_radius = np.hypot((xy[..., 0]-k[0, 2])/k[0, 0], (xy[..., 1]-k[1, 2])/k[1, 1])
         observed_distorted_max = max(observed_distorted_max, float(distorted_radius.max()))
-        if distorted_radius.max() >= math.pi/2:
+        if inverse_method == 'opencv' and distorted_radius.max() >= math.pi/2:
             raise ValueError('observed corners exceed the supported OpenCV inverse distorted-radius domain; do not claim full 200-degree calibration')
-        error = validate([obj], [xy], k, d, 'fisheye')[0]
-        undistorted = cv2.fisheye.undistortPoints(xy, k, d)
+        if inverse_method == forward_inverse.METHOD:
+            error, undistorted = forward_inverse.validate_pose(obj, xy, k, d,
+                manifest['model_scope']['maximum_ray_angle_deg'])
+        else:
+            error = validate([obj], [xy], k, d, 'fisheye')[0]
+            undistorted = cv2.fisheye.undistortPoints(xy, k, d)
         angle = np.degrees(np.arctan(np.linalg.norm(undistorted, axis=-1)))
         observed_forward_max = max(observed_forward_max, float(angle.max()))
         errors.append({'view_id': view['view_id'], 'pose_id': view['pose_id'], 'session_id': view['session_id'],
@@ -286,7 +301,7 @@ def calibrate_observations(manifest, observations, *, capture_audit=None):
         'fixed_model': 'fisheye four distortion coefficients; no refit using held_out or model_selection views',
         'source_sha256': {str(path.relative_to(ROOT)): _digest(path) for path in
                           (Path(__file__), ROOT/'tools/calibrate.py', ROOT/'tools/stereo_fisheye_calibrate.py',
-                           ROOT/'tools/wideangle_mapping_audit.py')},
+                           ROOT/'tools/wideangle_mapping_audit.py', ROOT/'tools/fisheye_forward_inverse.py')},
         'limits': 'Training images alone estimate K/D. All training and model-selection image hashes are exported for downstream stereo leakage rejection; held-out views are used only for declared validation. Synthetic/API-only or replay inputs never become real-lens ready. A small reprojection residual and 3x3 coverage do not prove measured 200-degree support, independent optical straightness, stereo sync, depth accuracy or routed hardware readiness.'})
     return result
 

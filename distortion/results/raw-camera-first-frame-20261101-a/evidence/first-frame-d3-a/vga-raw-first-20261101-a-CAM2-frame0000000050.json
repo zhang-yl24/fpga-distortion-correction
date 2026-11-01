@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "received_at_utc": "2026-10-31T16:42:58.653990+00:00",
+  "session_id": "vga-raw-first-20261101-a",
+  "source_kind": "physical_native_camera",
+  "frame_id": 50,
+  "frame_id_kind": "firmware_capture_transaction_id",
+  "frame_id_is_sensor_exposure_counter": false,
+  "received_time_is_exposure_time": false,
+  "identity_binding": {
+    "camera_id": "ov5640-cam2-current-20261031",
+    "lens_id": "current-installed-lens-20261031",
+    "profile_id": "vga-upright-current-lens-20261031",
+    "capture_mode_id": "vga640x480-rgb565-upright-3820-00-3821-06",
+    "eye": "CAM2"
+  },
+  "identity_binding_kind": "operator_declared_single_eye_connection",
+  "identity_verified_on_wire": false,
+  "eye_synchronization_verified": false,
+  "width": 640,
+  "height": 480,
+  "pixel_format": "RGB565_LE",
+  "geometry_applied": false,
+  "geometry_applied_by_receiver": false,
+  "upstream_payload_role": "native_raw",
+  "upstream_raw_contract_hash_bound": true,
+  "photometric_processing_applied_by_receiver": false,
+  "png_conversion": "lossless RGB565 bit replication to RGB888; sensor ISP behavior is separate",
+  "payload_bytes": 614400,
+  "source_crc32": "BF79B08F",
+  "received_crc32": "BF79B08F",
+  "raw_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\first-frame-d3-a\\vga-raw-first-20261101-a-CAM2-frame0000000050.rgb565",
+  "raw_sha256": "3d64ef74a7067711f85284a3fc85f01c790ec3a6400a4ff6078d29d44a696981",
+  "image_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\first-frame-d3-a\\vga-raw-first-20261101-a-CAM2-frame0000000050.png",
+  "image_sha256": "3fec080aaaa4f612ae7ce30da767441b13cd45404336b2cf5261a25a8c4dadb5",
+  "build_binding": {
+    "validated_build": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\binding-live-d3-a\\validated-build.json",
+    "validated_build_sha256": "cf6056d3743c040f80d8fc2c92c69068e6eeacfe812442b82789ca40ed597036",
+    "bitstream_sha256": "292b755c8bdf5f16e8697b87fc1c9ae1dbb342226404c9f647eb27030b501fa3",
+    "pinout_sha256": "886c51cf850b42d77e8cf3eb2c1ae74829b72d8e3ed9e2ee9d78c4f950e639e2",
+    "timing_report_sha256": "0ce3eecf4ff67029c201731fb0e0a51563ed50596d617859b845b950f3e0c12f",
+    "raw_capture_contract": {
+      "protocol": "PGFRAME1",
+      "payload_role": "native_raw",
+      "geometry_applied": false,
+      "image_size": [
+        640,
+        480
+      ]
+    },
+    "bound_source_count": 98,
+    "selected_eye": "CAM2",
+    "programmed_bitstream_review_required": true,
+    "actual_programming_and_connection_independently_observed": false,
+    "limits": "File hashes and explicit operator review declarations only; this tool does not identify which firmware is currently on the FPGA or inspect connector voltages."
+  },
+  "replay_source": null,
+  "binding_sha256": "c3441152e27c60a8458d97a7405ad581bad90c7aeaaa09426b124f1ec45b178a",
+  "hardware_accessed": true,
+  "hardware_release_allowed": false,
+  "limits": "PGFRAME1 authenticates pixel integrity with CRC, not sensor identity, raw-versus-corrected role or simultaneous exposures. The selected eye/profile and actual firmware connection are operator declarations. Upstream raw geometry is known only from a hash-bound raw-only build contract, never inferred from CRC. Offline replay defaults to unknown upstream role and never establishes new physical camera data."
+}

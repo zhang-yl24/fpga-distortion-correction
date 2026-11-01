@@ -1,0 +1,181 @@
+{
+  "Schema": "current-vga-calibration-numerical-review-v1",
+  "CreatedUTC": "2026-10-31T18:34:09.314338+00:00",
+  "TrainingViews": 12,
+  "HeldViews": 6,
+  "TrainingRMSPX": 0.21710122304708163,
+  "HeldMeanRMSPX": 0.21966463741967257,
+  "HeldMaxRMSPX": 0.35801242751094287,
+  "KDFitExactlyMatchesTrainingOnlyDiagnostic": true,
+  "FrozenSourceHashesRechecked": true,
+  "ScopePassed": true,
+  "FullFrameOpticalAcceptance": false,
+  "PhysicalVisibilityScope": {
+    "source_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\visibility-scope-20261101-a.json",
+    "source_sha256": "0653598c32632ee364e1ead8b6839e4316f24e6c86238148e3a1ced6d814e13e",
+    "record": {
+      "Schema": "current-vga-physical-visibility-scope-v1",
+      "CreatedUTC": "2026-10-31T17:49:45.995030+00:00",
+      "ImageSize": [
+        640,
+        480
+      ],
+      "SessionPlan": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\session-plan.json",
+        "SHA256": "c7230612e0cd723341781c05827b3ad26b29d392a337a9d911dba9c80e6d9d56"
+      },
+      "Identity": {
+        "camera_id": "ov5640-cam2-current-20261031",
+        "lens_id": "current-installed-lens-20261031",
+        "profile_id": "vga-upright-current-lens-20261031",
+        "capture_mode_id": "vga640x480-rgb565-upright-3820-00-3821-06",
+        "eye": "CAM2"
+      },
+      "UserReport": "主要是因为摄像头通过转接板固定在FPGA上，画面右下角固定为FPGA，棋盘再靠近也会被挡住",
+      "Reason": "Fixed FPGA/adapter assembly physically occludes lower-right view; full chessboard cannot occupy this region. No camera mount, focus, wiring, sensor mode or pixel geometry change.",
+      "OriginalRequiredCoverageCells": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "RequiredCoverageCells": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "ExcludedCoverageCells": [
+        [
+          2,
+          2
+        ]
+      ],
+      "ExcludedCellDefinition": "source-image x >= 2*width/3 and y >= 2*height/3; conservative coverage exclusion, not measured occlusion outline",
+      "EvidenceMetadata": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\first-frame-d3-a\\vga-raw-first-20261101-a-CAM2-frame0000000050.json",
+        "SHA256": "d8431ac1d5c23eb1035435f776989388ff89e19b9cca217504d72d30e5e1effe"
+      },
+      "EvidenceImage": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\first-frame-d3-a\\vga-raw-first-20261101-a-CAM2-frame0000000050.png",
+        "SHA256": "3fec080aaaa4f612ae7ce30da767441b13cd45404336b2cf5261a25a8c4dadb5"
+      },
+      "MinimumTrainingCornersPerRequiredCell": 15,
+      "MinimumHeldCornersPerRequiredCell": 3,
+      "OtherQualityThresholdsChanged": false,
+      "RenderingMaskApplied": false,
+      "PixelGeometryChanged": false,
+      "FullFrameCoverageClaimAllowed": false,
+      "ExcludedRegionOpticalValidationClaimAllowed": false,
+      "DecisionAnnouncedToUser": true,
+      "Limits": "Calibrate and validate observable field only. This does not remove the FPGA from images or recover the hidden scene, measure lens FOV, or prove optical accuracy in the excluded region."
+    }
+  },
+  "SelectedOutputK": [
+    [
+      240.0,
+      0.0,
+      319.5
+    ],
+    [
+      0.0,
+      240.0,
+      239.5
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "OutputRayMaximumDeg": 58.991951563682456,
+  "OutputAngularValuesAreModelGeometryNotMeasuredFOV": true,
+  "SelectedBrownIntegerConfig": [
+    81792,
+    61312,
+    82234,
+    64062,
+    40848,
+    40921,
+    4473924,
+    4473924,
+    -674237,
+    121875,
+    -11577,
+    0,
+    0
+  ],
+  "RequiredRadiusGuardQ22": 11610104,
+  "MappingMaximumErrorPX": 0.056592048587127616,
+  "MappingInvalidCoordinates": 0,
+  "MappingFoldedSamples": 0,
+  "MappingAngleDeg": 0,
+  "OtherAnglesValidated": false,
+  "SameKMappingPassed": false,
+  "SameKFailure": "1440 invalid coordinates;64 fixed-point folded samples; maximum valid error4.448586px. Retained failure report; no gate relaxed.",
+  "SelectionReason": "f240 is widest of the three explicitly checked zoom alternatives240/280/320; all pass0.25px gate. No claim of widest possible view. Output view selection did not refit K/D or use held-out errors to tune lens parameters.",
+  "Preview": "Software OpenCV remap of selected held05; visual check only, not independent optical line accuracy or hardware proof.",
+  "HardwareAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "Next": "Create isolated calibrated VGA processing candidate using output f240 mapping, guard11610104, angle0 only. Run real RTL integer/pixel regression, source/IO/CDC/routed timing gates, then tell user before board download. Current board stays raw capture candidate; no further chessboard holding required."
+}

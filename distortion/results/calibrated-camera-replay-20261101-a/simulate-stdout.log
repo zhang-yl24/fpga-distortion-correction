@@ -1,0 +1,26 @@
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/calibrated_camera_output/xsim_script.tcl
+# xsim {calibrated_camera_output} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+REPLAY_PROGRESS frame=1 tick=1000000 written=19200 scan=0 fifo=0
+REPLAY_PROGRESS frame=1 tick=2000000 written=19200 scan=0 fifo=0
+REPLAY_PROGRESS frame=1 tick=3000000 written=19200 scan=0 fifo=508
+REPLAY_PROGRESS frame=1 tick=4000000 written=19200 scan=0 fifo=508
+REPLAY_FRAME_PASS id=1 source=b071adde result=b333aeaa process_cycles=384178 release_cycle=4159972
+REPLAY_PROGRESS frame=2 tick=5000000 written=19200 scan=1 fifo=0
+REPLAY_PROGRESS frame=2 tick=6000000 written=19200 scan=1 fifo=0
+REPLAY_PROGRESS frame=2 tick=7000000 written=19200 scan=1 fifo=508
+REPLAY_PROGRESS frame=2 tick=8000000 written=19200 scan=1 fifo=508
+REPLAY_FRAME_PASS id=2 source=a6f4c96e result=0601182a process_cycles=384120 release_cycle=8359972
+PASS calibrated camera output: full640x480 current native frames, exact calibrated Brown coordinates/bilinear pixels, gamma bypass, result DDR, real reader/FIFO, actual DE/RGB scan, reused-bank epochs and final drain
+$finish called at time : 66879776 ns : File "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/tests/tb_calibrated_camera_output.sv" Line 224
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:08:23 . Memory (MB): peak = 223.730 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 02:50:39 2026...

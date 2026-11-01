@@ -1,0 +1,14 @@
+localparam integer VEC_WIDTH=640,VEC_HEIGHT=480,VEC_RADIUS_GUARD_Q22=11610104;
+localparam signed [23:0] VEC_OUT_CX=24'sh013f80;
+localparam signed [23:0] VEC_OUT_CY=24'sh00ef80;
+localparam signed [23:0] VEC_SRC_CX=24'sh01413a;
+localparam signed [23:0] VEC_SRC_CY=24'sh00fa3e;
+localparam signed [23:0] VEC_SRC_FX=24'sh009f90;
+localparam signed [23:0] VEC_SRC_FY=24'sh009fd9;
+localparam signed [31:0] VEC_INV_FX=32'sh00444444;
+localparam signed [31:0] VEC_INV_FY=32'sh00444444;
+localparam signed [31:0] VEC_K1=32'shfff5b643;
+localparam signed [31:0] VEC_K2=32'sh0001dc13;
+localparam signed [31:0] VEC_K3=32'shffffd2c7;
+localparam signed [31:0] VEC_P1=32'sh00000000;
+localparam signed [31:0] VEC_P2=32'sh00000000;

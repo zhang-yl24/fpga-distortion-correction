@@ -1,0 +1,594 @@
+{
+  "Passed": true,
+  "StartedUtc": "2026-10-31T18:41:49.838664+00:00",
+  "MaximumSeconds": 900,
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "PhysicalInputExercised": false,
+  "CurrentCameraVerified": false,
+  "CalibrationNumericalProfileBound": true,
+  "CalibrationAccepted": false,
+  "HardwareReleaseAllowed": false,
+  "SourcePreloadedInModeledDDR": true,
+  "RealOutputAsyncFIFO": true,
+  "RTLResultUsedForGolden": false,
+  "Width": 640,
+  "Height": 480,
+  "FrameCount": 2,
+  "CoreClockHz": 125000000,
+  "PixelClockHz": 25000000,
+  "AdaptedRaster": {
+    "HT": 800,
+    "VT": 525,
+    "HS": 96,
+    "VS": 2,
+    "X0": 144,
+    "Y0": 35
+  },
+  "SourceSHA256": {
+    "rtl/mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "rtl/pixel_inverse_rotation.v": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+    "rtl/bounded_brown_inverse_mapper.v": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691",
+    "rtl/bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "rtl/ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+    "rtl/ddr_video_reader.v": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+    "rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+    "rtl/experimental/rotated_remap_core_gamma_scatter4.v": "6b13cf9bdf089fa902c2e4fb564985e21bf153234382ae721bca6541f6fddcbd",
+    "rtl/experimental/adaptive_gamma_stream.v": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7",
+    "rtl/experimental/adaptive_gamma_tagged.v": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790",
+    "rtl/experimental/ddr_adaptive_result_writer.v": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+    "rtl/experimental/pipeline_gamma_frame_engine_1080_scatter4.v": "e01a99c8847db58003bb2a9dca85db67d705c815a8fec8be2b6a430d35eaa141",
+    "rtl/experimental/ddr_video_output_1080_board.v": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+    "tests/tb_calibrated_camera_output.sv": "a08347de021d8b89631543ef114739d553e583876fd7455c1257eaccc8fa8cfc",
+    "rtl/experimental/gamma_curves.vh": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+    "rtl/video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+    "tools/run_calibrated_camera_output_sim.py": "7a99c24904d62460bd0c2244ff0cf59841c4232f4e792dbacba854936227e685",
+    "tools/generate_1080_core_vectors.py": "5851f3ce56cf7fc87a438b00dd2655afe45997942d38b32c19650dd7025680f9",
+    "tools/calibrate_fisheye_profile.py": "e61ed983ee6d19200b3c4abf5e82132b97f5c2887fafea414f53309a540a9103",
+    "tools/generate-brown-vectors.py": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b",
+    "model/reference.py": "904eb5b4fd2df7822e4693e325c2aab38b504e4a157622e52b367fdbecbb99b4",
+    "tools/fisheye_forward_inverse.py": "be717e893b2b6c6b66c2b0778e3b12a8e949af696313db785c8dbeeb39e94c6b",
+    "tools/stereo_fisheye_calibrate.py": "660c4ddc16cfed106ac50c0fb055b1f2c966cf74f7e0fd27463f37b94f1a56b6",
+    "tools/calibrate.py": "bb2c0fe4bc076677dffb66c3fa5d5699802bc408decb9894e3b4bbd2592a7a1b",
+    "tools/wideangle_mapping_audit.py": "bc4b808a2c2b883220b5d317e443880b89784a82b346ae281068465332571d20",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+  },
+  "Commands": [
+    {
+      "Stage": "compile",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\mul32_pipe.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\pixel_inverse_rotation.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\bounded_brown_inverse_mapper.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\bilinear_rgb.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\ddr_read_arbiter.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a\\relocated-sources\\rtl\\ddr_video_reader.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\video_async_fifo.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_neighbour_cache_scatter4_rowpipe.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_remap_sample_scatter4_rowpipe.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\rotated_remap_core_gamma_scatter4.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a\\relocated-sources\\rtl\\experimental\\adaptive_gamma_stream.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\adaptive_gamma_tagged.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a\\relocated-sources\\rtl\\experimental\\ddr_adaptive_result_writer.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\pipeline_gamma_frame_engine_1080_scatter4.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a\\relocated-sources\\rtl\\experimental\\ddr_video_output_1080_board.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_calibrated_camera_output.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_calibrated_camera_output",
+        "-s",
+        "calibrated_camera_output"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "calibrated_camera_output",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "OutputDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a",
+  "Model": "Current source-bound f240 calibrated Brown approximation, exact zero-angle rotation, gamma bypass",
+  "Limits": "Current captured CAM2 raw images and calibrated f240 model; source starts in modeled DDR. No live ingress, physical DDR/HDMI mode, fps, timing or board acceptance. Bench owns serialized source/result leases; production bank manager and concurrency are not exercised. Right-bottom physical obstruction remains outside optical acceptance.",
+  "CurrentCameraFrames": [
+    {
+      "FrameID": 1,
+      "ViewID": "held-05",
+      "CaptureTransactionID": 933,
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.rgb565",
+      "SHA256": "2d3775e618a07dd80b6da1ca00d3353bb74fabef3185e0beff0b22aae6d1ba17",
+      "Metadata": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.json",
+      "MetadataSHA256": "5689ce6c586bd500d32e92d8b141c8d9157ea74ced9a734249443e2174f45145",
+      "Image": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.png",
+      "ImageSHA256": "5326936e1fed1935ac3c420f3d19d78746a1c03d341820ae3222838d7df4c420",
+      "QualityPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\quality.json",
+      "QualitySHA256": "ef708a27eb76126f744d299b38534c27f49f63c2c039280db6b9946efd4fe725",
+      "SourceCRC32": "B071ADDE",
+      "ExpectedCRC32": "B333AEAA",
+      "GammaMode": 0,
+      "GammaEnabled": false,
+      "Statistics": {
+        "MaskedPixels": 0,
+        "ArithmeticInvalidPixels": 0,
+        "MaximumRadiusSquaredQ22": 11610102,
+        "ScalarCoordinateCrosschecks": 221
+      },
+      "CaptureBinding": {
+        "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.json",
+        "metadata_sha256": "5689ce6c586bd500d32e92d8b141c8d9157ea74ced9a734249443e2174f45145",
+        "raw_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.rgb565",
+        "raw_sha256": "2d3775e618a07dd80b6da1ca00d3353bb74fabef3185e0beff0b22aae6d1ba17",
+        "raw_crc32": "B071ADDE",
+        "source_kind": "physical_native_camera",
+        "physical_capture_record": true,
+        "upstream_raw_contract_hash_bound": true,
+        "identity_binding_kind": "operator_declared_single_eye_connection",
+        "identity_verified_on_wire": false
+      }
+    },
+    {
+      "FrameID": 2,
+      "ViewID": "held-06",
+      "CaptureTransactionID": 950,
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.rgb565",
+      "SHA256": "849cd1a5bea4f88bd77ed4902e0207719c14891a1c202aa88e0b72ab87dec82e",
+      "Metadata": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.json",
+      "MetadataSHA256": "1f83c2a5af09cc02f345053bfbc9facd6b083c478c2a75e002bceb72cb2693b4",
+      "Image": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.png",
+      "ImageSHA256": "c0eec622d9c7909627a0e854eec7c4a20518e359d2e161b10f71bb1cb54e49b8",
+      "QualityPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\quality.json",
+      "QualitySHA256": "9a3e17832e54884d9eb021f4a199aa058bd1f13e3c40b59e5a59c07af1cc981d",
+      "SourceCRC32": "A6F4C96E",
+      "ExpectedCRC32": "0601182A",
+      "GammaMode": 0,
+      "GammaEnabled": false,
+      "Statistics": {
+        "MaskedPixels": 0,
+        "ArithmeticInvalidPixels": 0,
+        "MaximumRadiusSquaredQ22": 11610102,
+        "ScalarCoordinateCrosschecks": 221
+      },
+      "CaptureBinding": {
+        "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.json",
+        "metadata_sha256": "1f83c2a5af09cc02f345053bfbc9facd6b083c478c2a75e002bceb72cb2693b4",
+        "raw_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.rgb565",
+        "raw_sha256": "849cd1a5bea4f88bd77ed4902e0207719c14891a1c202aa88e0b72ab87dec82e",
+        "raw_crc32": "A6F4C96E",
+        "source_kind": "physical_native_camera",
+        "physical_capture_record": true,
+        "upstream_raw_contract_hash_bound": true,
+        "identity_binding_kind": "operator_declared_single_eye_connection",
+        "identity_verified_on_wire": false
+      }
+    }
+  ],
+  "ModelBinding": {
+    "IntegerConfig": [
+      81792,
+      61312,
+      82234,
+      64062,
+      40848,
+      40921,
+      4473924,
+      4473924,
+      -674237,
+      121875,
+      -11577,
+      0,
+      0
+    ],
+    "RadiusGuardQ22": 11610104,
+    "OutputK": [
+      [
+        240.0,
+        0.0,
+        319.5
+      ],
+      [
+        0.0,
+        240.0,
+        239.5
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "AngleDegrees": 0,
+    "GammaEnabled": false,
+    "PhysicalVisibility": {
+      "source_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\visibility-scope-20261101-a.json",
+      "source_sha256": "0653598c32632ee364e1ead8b6839e4316f24e6c86238148e3a1ced6d814e13e",
+      "record": {
+        "Schema": "current-vga-physical-visibility-scope-v1",
+        "CreatedUTC": "2026-10-31T17:49:45.995030+00:00",
+        "ImageSize": [
+          640,
+          480
+        ],
+        "SessionPlan": {
+          "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\session-plan.json",
+          "SHA256": "c7230612e0cd723341781c05827b3ad26b29d392a337a9d911dba9c80e6d9d56"
+        },
+        "Identity": {
+          "camera_id": "ov5640-cam2-current-20261031",
+          "lens_id": "current-installed-lens-20261031",
+          "profile_id": "vga-upright-current-lens-20261031",
+          "capture_mode_id": "vga640x480-rgb565-upright-3820-00-3821-06",
+          "eye": "CAM2"
+        },
+        "UserReport": "主要是因为摄像头通过转接板固定在FPGA上，画面右下角固定为FPGA，棋盘再靠近也会被挡住",
+        "Reason": "Fixed FPGA/adapter assembly physically occludes lower-right view; full chessboard cannot occupy this region. No camera mount, focus, wiring, sensor mode or pixel geometry change.",
+        "OriginalRequiredCoverageCells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "RequiredCoverageCells": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "ExcludedCoverageCells": [
+          [
+            2,
+            2
+          ]
+        ],
+        "ExcludedCellDefinition": "source-image x >= 2*width/3 and y >= 2*height/3; conservative coverage exclusion, not measured occlusion outline",
+        "EvidenceMetadata": {
+          "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\first-frame-d3-a\\vga-raw-first-20261101-a-CAM2-frame0000000050.json",
+          "SHA256": "d8431ac1d5c23eb1035435f776989388ff89e19b9cca217504d72d30e5e1effe"
+        },
+        "EvidenceImage": {
+          "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\first-frame-d3-a\\vga-raw-first-20261101-a-CAM2-frame0000000050.png",
+          "SHA256": "3fec080aaaa4f612ae7ce30da767441b13cd45404336b2cf5261a25a8c4dadb5"
+        },
+        "MinimumTrainingCornersPerRequiredCell": 15,
+        "MinimumHeldCornersPerRequiredCell": 3,
+        "OtherQualityThresholdsChanged": false,
+        "RenderingMaskApplied": false,
+        "PixelGeometryChanged": false,
+        "FullFrameCoverageClaimAllowed": false,
+        "ExcludedRegionOpticalValidationClaimAllowed": false,
+        "DecisionAnnouncedToUser": true,
+        "Limits": "Calibrate and validate observable field only. This does not remove the FPGA from images or recover the hidden scene, measure lens FOV, or prove optical accuracy in the excluded region."
+      }
+    },
+    "ProfilePath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\profiles\\fisheye-profile-a.json",
+    "ProfileSHA256": "94181c07a4456f511853f51022eba1b55965b115e1569f3fcbad460a2d92999e",
+    "MappingPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\reports\\brown-mapping-f240-a.json",
+    "MappingSHA256": "38c0301fb8e1096dd49523555443a1b591ec0a62eb3c238be35f0a544c4a912e"
+  },
+  "IntegerConfig": [
+    81792,
+    61312,
+    82234,
+    64062,
+    40848,
+    40921,
+    4473924,
+    4473924,
+    -674237,
+    121875,
+    -11577,
+    0,
+    0
+  ],
+  "RadiusGuardQ22": 11610104,
+  "FixtureSHA256": {
+    "config.vh": "4d84c1799df4c78f66faeec156fc53b5eabefc5857dc5d4f8b02c96b23c6555b",
+    "coordinates.mem": "04ada7e5f64287a2c095fbfd001491853e3c805f9f6f53a2fd5fafdd21384010",
+    "expected-crcs.mem": "bd6baa4bb2b5dd3f60a6e0ab36898726888e9e17bd8e975758d0416dc0f1d7a5",
+    "expected0.mem": "0ff7daa7617f0d28771364a734258bab909cccb55f0a49646869d5d9eec7c578",
+    "expected1.mem": "c3dfeea90421d07f1e234cd9e1d5e0143a974e453fc9ec752fefc50045bacc41",
+    "frame1-expected.png": "50303e819c4c37ad95e4ee5d46194f0f8a10aa5ae84d8af60c2ced42f1896588",
+    "frame1-source.png": "fc278dfd12fc216f299302a93ddf640e32e5f1c14beb942ab3acb94331aae82e",
+    "frame2-expected.png": "6347af3e5c994002d53588ec70540c1ba5a85a6e637da553e755fbde63554814",
+    "frame2-source.png": "acc9e628f539b6361d4d923a0e6f8a5cc7fbeecfac9d688216ff42f822d0d18a",
+    "source-crcs.mem": "0146407072ca2cea6b11e81aab67cf1d9bd284040adbbb4274cb33a5bb268913",
+    "source0.mem": "ade227281ae975f72110279f6b5ed0c7531ab424735c6fe2257cd1855a455ba1",
+    "source1.mem": "a31d58327d86e63850a5fa6141540e6017e79e66a14c30208ee04049a3c92333"
+  },
+  "RelocatedSources": {
+    "rtl/ddr_video_reader.v": {
+      "OriginalSHA256": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+      "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a\\relocated-sources\\rtl\\ddr_video_reader.v",
+      "CompiledSHA256": "3a224c73a1fcb6cf9a44a8c913f00d8440e0c3f1aaf2a33547b416f4ac4c1426",
+      "IncludePathReplacements": [
+        {
+          "Original": "    `include \"D:/English/FPGA/distortion/rtl/video_crc32.vh\"",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "CompiledHeaderPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a\\relocated-headers\\rtl\\video_crc32.vh"
+        }
+      ]
+    },
+    "rtl/experimental/adaptive_gamma_stream.v": {
+      "OriginalSHA256": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7",
+      "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a\\relocated-sources\\rtl\\experimental\\adaptive_gamma_stream.v",
+      "CompiledSHA256": "999be3978aae6d53cb429f1a490e117709123c2379551ede7a11083daaeee73b",
+      "IncludePathReplacements": [
+        {
+          "Original": "    `include \"D:/English/FPGA/distortion/rtl/experimental/gamma_curves.vh\"",
+          "Header": "rtl/experimental/gamma_curves.vh",
+          "HeaderSHA256": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+          "CompiledHeaderPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a\\relocated-headers\\rtl\\experimental\\gamma_curves.vh"
+        }
+      ]
+    },
+    "rtl/experimental/ddr_adaptive_result_writer.v": {
+      "OriginalSHA256": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+      "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a\\relocated-sources\\rtl\\experimental\\ddr_adaptive_result_writer.v",
+      "CompiledSHA256": "57ad85f2a77728b6a8d214a7adda2d303987fd0fc89eff1903b5ec154a2c90c3",
+      "IncludePathReplacements": [
+        {
+          "Original": "    `include \"D:/English/FPGA/distortion/rtl/video_crc32.vh\"",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "CompiledHeaderPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a\\relocated-headers\\rtl\\video_crc32.vh"
+        }
+      ]
+    },
+    "rtl/experimental/ddr_video_output_1080_board.v": {
+      "OriginalSHA256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+      "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a\\relocated-sources\\rtl\\experimental\\ddr_video_output_1080_board.v",
+      "CompiledSHA256": "994721394473edf0f98b4f2a7b972ae6da387f25715b3b143536a9bae126a6fc",
+      "IncludePathReplacements": [
+        {
+          "Original": "    `include \"D:/English/FPGA/distortion/rtl/video_crc32.vh\"",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "CompiledHeaderPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\calibrated-camera-vga\\replay-a\\relocated-headers\\rtl\\video_crc32.vh"
+        }
+      ]
+    }
+  },
+  "Summary": {
+    "passed": true,
+    "frames_processed": 2,
+    "frames_unique_scanned": 2,
+    "coordinates_compared": 614400,
+    "pixels_compared": 614400,
+    "source_bank_reuses": 1,
+    "result_bank_reuses": 1,
+    "bank_releases": 2,
+    "result_beats": 38400,
+    "display_read_beats": 38400,
+    "underflows": 0,
+    "crc_mismatches": 0,
+    "aw_stall_cycles": 4696,
+    "w_stall_cycles": 7339,
+    "ar_stall_cycles": 1685,
+    "fifo_peak": 512,
+    "final_drain": true
+  },
+  "Frames": [
+    {
+      "frame_id": "1",
+      "source_epoch": "1",
+      "result_epoch": "1",
+      "source_bank": "0",
+      "result_bank": "0",
+      "pixels": "307200",
+      "result_beats": "19200",
+      "start_cycle": "25",
+      "process_done_cycle": "384203",
+      "release_cycle": "4159972",
+      "source_crc32": "b071adde",
+      "result_crc32": "b333aeaa",
+      "reader_crc32": "b333aeaa",
+      "scan_crc32": "b333aeaa",
+      "request_epoch": "1"
+    },
+    {
+      "frame_id": "2",
+      "source_epoch": "2",
+      "result_epoch": "2",
+      "source_bank": "0",
+      "result_bank": "0",
+      "pixels": "307200",
+      "result_beats": "19200",
+      "start_cycle": "4159973",
+      "process_done_cycle": "4544093",
+      "release_cycle": "8359972",
+      "source_crc32": "a6f4c96e",
+      "result_crc32": "0601182a",
+      "reader_crc32": "0601182a",
+      "scan_crc32": "0601182a",
+      "request_epoch": "2"
+    }
+  ],
+  "ActualDERGBScanned": true,
+  "PassLines": [
+    "REPLAY_FRAME_PASS id=1 source=b071adde result=b333aeaa process_cycles=384178 release_cycle=4159972",
+    "REPLAY_FRAME_PASS id=2 source=a6f4c96e result=0601182a process_cycles=384120 release_cycle=8359972",
+    "PASS calibrated camera output: full640x480 current native frames, exact calibrated Brown coordinates/bilinear pixels, gamma bypass, result DDR, real reader/FIFO, actual DE/RGB scan, reused-bank epochs and final drain"
+  ],
+  "SourceSHA256After": {
+    "rtl/mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "rtl/pixel_inverse_rotation.v": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+    "rtl/bounded_brown_inverse_mapper.v": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691",
+    "rtl/bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "rtl/ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+    "rtl/ddr_video_reader.v": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+    "rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+    "rtl/experimental/rotated_remap_core_gamma_scatter4.v": "6b13cf9bdf089fa902c2e4fb564985e21bf153234382ae721bca6541f6fddcbd",
+    "rtl/experimental/adaptive_gamma_stream.v": "8fc733802ca8cdf55f9e0039eaef2a16c0f0efe10af41f4ac3619715a9d11af7",
+    "rtl/experimental/adaptive_gamma_tagged.v": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790",
+    "rtl/experimental/ddr_adaptive_result_writer.v": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+    "rtl/experimental/pipeline_gamma_frame_engine_1080_scatter4.v": "e01a99c8847db58003bb2a9dca85db67d705c815a8fec8be2b6a430d35eaa141",
+    "rtl/experimental/ddr_video_output_1080_board.v": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+    "tests/tb_calibrated_camera_output.sv": "a08347de021d8b89631543ef114739d553e583876fd7455c1257eaccc8fa8cfc",
+    "rtl/experimental/gamma_curves.vh": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+    "rtl/video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+    "tools/run_calibrated_camera_output_sim.py": "7a99c24904d62460bd0c2244ff0cf59841c4232f4e792dbacba854936227e685",
+    "tools/generate_1080_core_vectors.py": "5851f3ce56cf7fc87a438b00dd2655afe45997942d38b32c19650dd7025680f9",
+    "tools/calibrate_fisheye_profile.py": "e61ed983ee6d19200b3c4abf5e82132b97f5c2887fafea414f53309a540a9103",
+    "tools/generate-brown-vectors.py": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b",
+    "model/reference.py": "904eb5b4fd2df7822e4693e325c2aab38b504e4a157622e52b367fdbecbb99b4",
+    "tools/fisheye_forward_inverse.py": "be717e893b2b6c6b66c2b0778e3b12a8e949af696313db785c8dbeeb39e94c6b",
+    "tools/stereo_fisheye_calibrate.py": "660c4ddc16cfed106ac50c0fb055b1f2c966cf74f7e0fd27463f37b94f1a56b6",
+    "tools/calibrate.py": "bb2c0fe4bc076677dffb66c3fa5d5699802bc408decb9894e3b4bbd2592a7a1b",
+    "tools/wideangle_mapping_audit.py": "bc4b808a2c2b883220b5d317e443880b89784a82b346ae281068465332571d20",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "tools/run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6"
+  },
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-calibration-20261101-a\\manifest.json": "cec6b65f0e7629ff8d9a012a288e28b576329cc330379207801bbc964e872a58",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\profiles\\fisheye-profile-a.json": "94181c07a4456f511853f51022eba1b55965b115e1569f3fcbad460a2d92999e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-calibration-20261101-a\\profiles\\fisheye-profile-a.json": "94181c07a4456f511853f51022eba1b55965b115e1569f3fcbad460a2d92999e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\profiles\\validation-freeze-a.json": "dae01b17e7662f486bec0b396dedeb0d2b20f8b99162aef1be5af680fb3f4a8c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-calibration-20261101-a\\profiles\\validation-freeze-a.json": "dae01b17e7662f486bec0b396dedeb0d2b20f8b99162aef1be5af680fb3f4a8c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\reports\\brown-mapping-f240-a.json": "38c0301fb8e1096dd49523555443a1b591ec0a62eb3c238be35f0a544c4a912e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-calibration-20261101-a\\reports\\brown-mapping-f240-a.json": "38c0301fb8e1096dd49523555443a1b591ec0a62eb3c238be35f0a544c4a912e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\wideangle_mapping_audit.py": "bc4b808a2c2b883220b5d317e443880b89784a82b346ae281068465332571d20",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\model\\rotation.py": "7835dc586d7e1c288d33facdcc6888715ffd84c3a9793fe73889240fd8bc0989",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\generate-brown-vectors.py": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.rgb565": "2d3775e618a07dd80b6da1ca00d3353bb74fabef3185e0beff0b22aae6d1ba17",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.json": "5689ce6c586bd500d32e92d8b141c8d9157ea74ced9a734249443e2174f45145",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.png": "5326936e1fed1935ac3c420f3d19d78746a1c03d341820ae3222838d7df4c420",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\quality.json": "ef708a27eb76126f744d299b38534c27f49f63c2c039280db6b9946efd4fe725",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.rgb565": "849cd1a5bea4f88bd77ed4902e0207719c14891a1c202aa88e0b72ab87dec82e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.json": "1f83c2a5af09cc02f345053bfbc9facd6b083c478c2a75e002bceb72cb2693b4",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.png": "c0eec622d9c7909627a0e854eec7c4a20518e359d2e161b10f71bb1cb54e49b8",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\quality.json": "9a3e17832e54884d9eb021f4a199aa058bd1f13e3c40b59e5a59c07af1cc981d"
+  },
+  "InputSHA256After": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-calibration-20261101-a\\manifest.json": "cec6b65f0e7629ff8d9a012a288e28b576329cc330379207801bbc964e872a58",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\profiles\\fisheye-profile-a.json": "94181c07a4456f511853f51022eba1b55965b115e1569f3fcbad460a2d92999e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-calibration-20261101-a\\profiles\\fisheye-profile-a.json": "94181c07a4456f511853f51022eba1b55965b115e1569f3fcbad460a2d92999e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\profiles\\validation-freeze-a.json": "dae01b17e7662f486bec0b396dedeb0d2b20f8b99162aef1be5af680fb3f4a8c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-calibration-20261101-a\\profiles\\validation-freeze-a.json": "dae01b17e7662f486bec0b396dedeb0d2b20f8b99162aef1be5af680fb3f4a8c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\reports\\brown-mapping-f240-a.json": "38c0301fb8e1096dd49523555443a1b591ec0a62eb3c238be35f0a544c4a912e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-calibration-20261101-a\\reports\\brown-mapping-f240-a.json": "38c0301fb8e1096dd49523555443a1b591ec0a62eb3c238be35f0a544c4a912e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\wideangle_mapping_audit.py": "bc4b808a2c2b883220b5d317e443880b89784a82b346ae281068465332571d20",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\model\\rotation.py": "7835dc586d7e1c288d33facdcc6888715ffd84c3a9793fe73889240fd8bc0989",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\generate-brown-vectors.py": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.rgb565": "2d3775e618a07dd80b6da1ca00d3353bb74fabef3185e0beff0b22aae6d1ba17",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.json": "5689ce6c586bd500d32e92d8b141c8d9157ea74ced9a734249443e2174f45145",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\vga-cal-20261031-held-05-a01-CAM2-frame0000000933.png": "5326936e1fed1935ac3c420f3d19d78746a1c03d341820ae3222838d7df4c420",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-05-a01\\quality.json": "ef708a27eb76126f744d299b38534c27f49f63c2c039280db6b9946efd4fe725",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.rgb565": "849cd1a5bea4f88bd77ed4902e0207719c14891a1c202aa88e0b72ab87dec82e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.json": "1f83c2a5af09cc02f345053bfbc9facd6b083c478c2a75e002bceb72cb2693b4",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\vga-cal-20261031-held-06-a01-CAM2-frame0000000950.png": "c0eec622d9c7909627a0e854eec7c4a20518e359d2e161b10f71bb1cb54e49b8",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera-vga-calibration-20261031\\captures\\held-06-a01\\quality.json": "9a3e17832e54884d9eb021f4a199aa058bd1f13e3c40b59e5a59c07af1cc981d"
+  },
+  "FixtureSHA256After": {
+    "config.vh": "4d84c1799df4c78f66faeec156fc53b5eabefc5857dc5d4f8b02c96b23c6555b",
+    "coordinates.mem": "04ada7e5f64287a2c095fbfd001491853e3c805f9f6f53a2fd5fafdd21384010",
+    "expected-crcs.mem": "bd6baa4bb2b5dd3f60a6e0ab36898726888e9e17bd8e975758d0416dc0f1d7a5",
+    "expected0.mem": "0ff7daa7617f0d28771364a734258bab909cccb55f0a49646869d5d9eec7c578",
+    "expected1.mem": "c3dfeea90421d07f1e234cd9e1d5e0143a974e453fc9ec752fefc50045bacc41",
+    "frame1-expected.png": "50303e819c4c37ad95e4ee5d46194f0f8a10aa5ae84d8af60c2ced42f1896588",
+    "frame1-source.png": "fc278dfd12fc216f299302a93ddf640e32e5f1c14beb942ab3acb94331aae82e",
+    "frame2-expected.png": "6347af3e5c994002d53588ec70540c1ba5a85a6e637da553e755fbde63554814",
+    "frame2-source.png": "acc9e628f539b6361d4d923a0e6f8a5cc7fbeecfac9d688216ff42f822d0d18a",
+    "source-crcs.mem": "0146407072ca2cea6b11e81aab67cf1d9bd284040adbbb4274cb33a5bb268913",
+    "source0.mem": "ade227281ae975f72110279f6b5ed0c7531ab424735c6fe2257cd1855a455ba1",
+    "source1.mem": "a31d58327d86e63850a5fa6141540e6017e79e66a14c30208ee04049a3c92333"
+  },
+  "FinishedUtc": "2026-10-31T18:50:40.364836+00:00",
+  "LogSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "3ceab715f204b9202ffc1d3e232481f5d6fcfb8a9b228e7d24dc8ee41658675b",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "588c605b1d6779e8c7f37e929865ecc6857eb6538fb892d341b32cea366cebc5",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "8779d3aea863a0634e245b35cc934418b36c08eb7cf57fc6c3abe5da148e6372",
+    "simulation.log": "6239014a9c265956c7e83fc9a90fcda7ee54a507d38a578fdcc0676c9be78e1a",
+    "webtalk.log": "f37fa5d3104d11427d312416009e7b45dd0fa1ec42794db656ec3ba5c838f1c2",
+    "webtalk_2840.backup.log": "a52d53c7dc65b02d206e5210aa4f43784d9f8431f102572d6678fb34d4b00175",
+    "xelab.log": "534ac795f32b5ce5e9ec67530f1a4831dc5351666eb9420e93251ed5d547a886",
+    "xvlog.log": "c52e349fa1941f1069b1f47d5c64e1cb4a671964dc767070e7e040d65e03a8c3"
+  },
+  "ResultSHA256": {
+    "frame1-actual-scan.png": "50303e819c4c37ad95e4ee5d46194f0f8a10aa5ae84d8af60c2ced42f1896588",
+    "frame2-actual-scan.png": "6347af3e5c994002d53588ec70540c1ba5a85a6e637da553e755fbde63554814",
+    "frames.csv": "ef274a2a998ae9f99ed4d9e42945bce046c08b34c0016f4f5f5bfe9056599b96",
+    "scan-pixels.mem": "98fe1e2eb0faf44918c4b812183e20b73f654172155318e48eca36d6279a71fb",
+    "summary.json": "2a51a5ccdc35502460c2e1b32319a4c6e6e41f48158ba2fa6573d1f27afe216d"
+  }
+}

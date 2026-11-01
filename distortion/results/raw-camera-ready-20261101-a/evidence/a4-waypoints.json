@@ -1,0 +1,57 @@
+{
+  "Schema": "raw-camera-waypoint-selection-v1",
+  "RouteDump": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\q4\\route-dump.txt",
+    "SHA256": "8db55156897721442168230b42837a96a4e9de0fcf3710be7b50892e491335cf"
+  },
+  "HoldAudit": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\raw-camera-upright\\h3\\hold-analysis.json",
+    "SHA256": "b0b537fde28d6eb913bfa8c9f36db454dac16bb55f40eb73b5b602067e05d60a"
+  },
+  "WirePattern": {
+    "Path": "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\logos2\\pg2l100h\\pattern\\drawing\\wirepattern.txt",
+    "SHA256": "949ac434425f4512111feb2c767d63064b5b5d35f5ba9665a4640ad75368ac36"
+  },
+  "Selections": [
+    {
+      "Target": {
+        "Net": "_N199",
+        "FromRoutePin": "CR1:CLMA_351_702",
+        "ToRoutePin": "M2:CLMS_351_709",
+        "Fanout": 1,
+        "BranchOnly": true,
+        "TimingWaiverAllowed": false,
+        "PreserveOtherBranches": true,
+        "ExternalInputBudgetChanged": false,
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[63]/opit_0_inv_srl/D"
+      },
+      "SearchCentre": [
+        336,
+        738
+      ],
+      "Selected": {
+        "Pins": [
+          "ZDNE[0]:SRB_330_738",
+          "IDNE[0]:SRB_336_744"
+        ],
+        "DistanceFromSearchCentre": 6,
+        "CoordinateProof": {
+          "From": "ZDNE[2]:SRB_330_738",
+          "To": "IDNE[2]:SRB_336_744",
+          "Owner": "\\u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/_N32922",
+          "Line": 604068
+        },
+        "OfficialWireRule": {
+          "Line": 2764,
+          "Text": "ZDNE[0] : vertical { h1  9 : 10 : 1 1 { vertical [ IDNE[0] ] } }"
+        }
+      },
+      "BothPinsUnused": true,
+      "ActualDelayUnproven": true
+    }
+  ],
+  "RouteCount": 16828,
+  "PhysicalNodeCount": 284598,
+  "EDAExecuted": false,
+  "TimingAccepted": false
+}

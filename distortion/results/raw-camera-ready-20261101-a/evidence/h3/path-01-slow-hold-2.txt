@@ -1,0 +1,74 @@
+Startpoint  : u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/ICLKDIV
+Endpoint    : u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[63]/opit_0_inv_srl/D
+Path Group  : ddrphy_sysclk
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    2.707  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.546
+  Launch Clock Delay      :  2.615
+  Clock Pessimism Removal :  -0.224
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock phy_dq_sysclk_1 (rising edge)
+                                                         2.000       2.000 r                        
+ N3                                                      0.000       2.000 r       clk_p (port)     
+                                   net (fanout=1)        0.110       2.110         clk_p            
+ IOBD_372_468/DIN                  td                    0.829       2.939 r       u_gtp/opit_0/O   
+                                   net (fanout=1)        0.000       2.939         u_gtp/ntD        
+ IOLHR_364_468/DI_TO_CLK           td                    0.091       3.030 r       u_gtp/opit_2/DI_TO_CLK
+                                   net (fanout=3)        0.247       3.277         clk_125Mhz       
+ MRCKB_361_456/CLKOUT_U_P          td                    0.126       3.403 r       u_ddr3_test_h/u_ddrphy_top/u_clkbufm/clkbufm_inst/CLKOUT_P
+                                   net (fanout=2)        0.367       3.770         u_ddr3_test_h/u_ddrphy_top/pll_refclk
+ RCKB_363_762/CLKOUT               td                    0.149       3.919 r       u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[1].u_clkbufr/goprclk/CLKOUT
+                                   net (fanout=1)        0.383       4.302         u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/ppll_clkin [1]
+ PPLL_367_613/CLKOUTPHY            td                    0.026       4.328 r       u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[1].ddrphy_ppll/u_ppll/ppll_inst/CLKOUTPHY
+                                   net (fanout=85)       0.000       4.328         u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/phy_clk_p [1]
+ DDRPHY_IOCLK_DIV_368_616/CLKOUT   td                    0.101       4.429 r       u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[1].u_ddrphy_ioclkdiv/ddrphy_ioclk_div_inst/CLKOUT
+                                   net (fanout=84)       0.186       4.615         u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/phy_sysclk_p [1]
+ IOLHR_364_708/ICLKDIV                                                     r       u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/ICLKDIV
+
+ IOLHR_364_708/RX_DATA[7]          tco                   0.259       4.874 f       u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/RX_DATA[7]
+                                   net (fanout=1)        0.319       5.193         u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/ddrphy_rdata [63]
+ CLMA_351_702/CR1                  td                    0.182       5.375 f       CLKROUTE_172/CR  
+                                   net (fanout=1)        0.529       5.904         _N199            
+ CLMS_351_709/M2                                                           f       u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[63]/opit_0_inv_srl/D
+
+ Data arrival time                                                   5.904         Logic Levels: 1  
+                                                                                   Logic: 0.441ns(34.213%), Route: 0.848ns(65.787%)
+----------------------------------------------------------------------------------------------------
+
+ Clock ddrphy_sysclk (rising edge)                       0.000       0.000 r                        
+ N3                                                      0.000       0.000 r       clk_p (port)     
+                                   net (fanout=1)        0.110       0.110         clk_p            
+ IOBD_372_468/DIN                  td                    0.970       1.080 r       u_gtp/opit_0/O   
+                                   net (fanout=1)        0.000       1.080         u_gtp/ntD        
+ IOLHR_364_468/DI_TO_CLK           td                    0.105       1.185 r       u_gtp/opit_2/DI_TO_CLK
+                                   net (fanout=3)        0.294       1.479         clk_125Mhz       
+ MRCKB_361_456/CLKOUT_U_P          td                    0.148       1.627 r       u_ddr3_test_h/u_ddrphy_top/u_clkbufm/clkbufm_inst/CLKOUT_P
+                                   net (fanout=2)        0.432       2.059         u_ddr3_test_h/u_ddrphy_top/pll_refclk
+ RCKB_363_456/CLKOUT               td                    0.177       2.236 r       u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[0].u_clkbufr/goprclk/CLKOUT
+                                   net (fanout=1)        0.450       2.686         u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/ppll_clkin [0]
+ PPLL_367_307/CLKOUTPHY            td                    0.037       2.723 r       u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[0].ddrphy_ppll/u_ppll/ppll_inst/CLKOUTPHY
+                                   net (fanout=36)       0.000       2.723         u_ddr3_test_h/u_ddrphy_top/phy_ioclk_fb
+ DDRPHY_IOCLK_DIV_368_310/CLKOUT   td                    0.123       2.846 r       u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[0].u_ddrphy_ioclkdiv/ddrphy_ioclk_div_inst/CLKOUT
+                                   net (fanout=35)       0.000       2.846         u_ddr3_test_h/u_ddrphy_top/phy_sysclk_fb
+ GPLL_367_463/CLKOUT0                                    0.431       3.277 r       u_ddr3_test_h/u_ddrphy_top/ddrphy_gpll/u_gpll/gpll_inst/CLKOUT0
+                                   net (fanout=1)        0.753       4.030         u_ddr3_test_h/u_ddrphy_top/gpll_clkout0
+ USCM_215_579/CLKOUT               td                    0.168       4.198 r       u_ddr3_test_h/u_ddrphy_top/u_sysclk_bufg/gopclkbufg/CLKOUT
+                                   net (fanout=3)        0.602       4.800         core_clk         
+ HCKB_213_529/CLKOUT               td                    0.287       5.087 r       HCKBROUTE_0/CLKOUT
+                                   net (fanout=2781)     0.459       5.546         _N28             
+ CLMS_351_709/CLK                                                          r       u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[63]/opit_0_inv_srl/CLK
+ clock pessimism                                        -0.224       5.322                          
+ clock uncertainty                                       0.450       5.772                          
+
+ Hold time                                              -0.049       5.723                          
+
+ Data required time                                                  5.723                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  5.723                          
+ Data arrival time                                                   5.904                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.181                          

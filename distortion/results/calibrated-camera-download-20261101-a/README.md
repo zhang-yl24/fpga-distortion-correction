@@ -1,0 +1,1 @@
+当前镜头矫正位流已下载到易失SRAM，DONE确认，Flash未写。实际时间和来源见receipt.json及state.json。实屏畸变矫正效果、持续更新和LED状态等待用户观察，下载成功本身不构成光学或长期稳定验收。断电后SRAM配置失效。离线验证与位流封存在同级calibrated-camera-ready-20261101-a。
