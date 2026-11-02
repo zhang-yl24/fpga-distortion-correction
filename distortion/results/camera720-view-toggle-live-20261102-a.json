@@ -1,0 +1,190 @@
+{
+  "Schema": "camera720-view-toggle-live-summary-v1",
+  "Target": "camera720_view_toggle_top",
+  "BuildID": "47e52e93b7238f29",
+  "ProfileID": "f79c44d9bdeb5b11",
+  "Bitstream": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle\\bit-c\\generate_bitstream\\camera720_view_toggle_top.sbit",
+    "SHA256": "0ca6d19bf074c73cba0346a22e54ba3afb99a595728e6420a1cbb767b963dfe5",
+    "Bytes": 3791112,
+    "Header": {
+      "Design": "camera720_view_toggle_top",
+      "Device": "Logos2-PG2L100H--6-FBG676",
+      "Date": "11/02/26",
+      "Time": "15:06:07",
+      "Generator": "Fabric Compiler",
+      "Version": "2023.2-SP3<154097>"
+    }
+  },
+  "CandidateADFSHA256": "f31e112a1764d8175cce5cac013c2611b4032ebcd615219c3dfc763cf338ff2d",
+  "Programming": {
+    "Passed": true,
+    "DoneConfirmed": true,
+    "FlashWritten": false,
+    "StartedUTC": "2026-11-02T07:12:37.983966+00:00",
+    "EndedUTC": "2026-11-02T07:14:27.330406+00:00",
+    "CleanupErrors": []
+  },
+  "CPUChecks": {
+    "Passed": 100,
+    "Failed": 0
+  },
+  "SystemSimulation": {
+    "Passed": true,
+    "ActualPixelsCompared": 3686400,
+    "Frames": 3,
+    "Summary": {
+      "passed": true,
+      "frames": 3,
+      "midframe_mode_changes": 2,
+      "pending_mode_changes": 4,
+      "width": 1280,
+      "height": 720,
+      "source_beats": 172800,
+      "result_beats": 172800,
+      "read_beats": 488896,
+      "unique_scans": 3,
+      "repeat_scans": 1,
+      "scanned_pixels": 3686400,
+      "source_bank_reuses": 1,
+      "result_bank_reuses": 1,
+      "aw_stalls": 11559,
+      "w_stalls": 55342,
+      "ar_stalls": 23095,
+      "read_contention_cycles": 216,
+      "write_contention_cycles": 23,
+      "capture_process_overlap": 3191893,
+      "process_scan_overlap": 3163431,
+      "capture_scan_overlap": 8011967,
+      "capture_fifo_peak": 1,
+      "display_fifo_peak": 512,
+      "complete_rasters": 6,
+      "black_border_pixels": 8064000,
+      "scan_crc_checks": 4,
+      "underflows": 0,
+      "crc_mismatches": 0,
+      "final_drain": true
+    }
+  },
+  "InternalTiming": {
+    "slow_setup": {
+      "WorstSlackNS": 0.249,
+      "FailingChecks": 0,
+      "TotalChecks": 58936,
+      "RemovedResetChecks": 0
+    },
+    "slow_hold": {
+      "WorstSlackNS": 0.059,
+      "FailingChecks": 0,
+      "TotalChecks": 57499,
+      "RemovedResetChecks": 0
+    },
+    "slow_recovery": {
+      "WorstSlackNS": 1.164,
+      "FailingChecks": 0,
+      "TotalChecks": 4746,
+      "RemovedResetChecks": 245
+    },
+    "slow_removal": {
+      "WorstSlackNS": 0.353,
+      "FailingChecks": 0,
+      "TotalChecks": 3763,
+      "RemovedResetChecks": 245
+    },
+    "slow_mpw": {
+      "WorstSlackNS": 0.035,
+      "FailingChecks": 0,
+      "TotalChecks": 15432,
+      "RemovedResetChecks": 0
+    },
+    "fast_setup": {
+      "WorstSlackNS": 3.1,
+      "FailingChecks": 0,
+      "TotalChecks": 58936,
+      "RemovedResetChecks": 0
+    },
+    "fast_hold": {
+      "WorstSlackNS": 0.02,
+      "FailingChecks": 0,
+      "TotalChecks": 57499,
+      "RemovedResetChecks": 0
+    },
+    "fast_recovery": {
+      "WorstSlackNS": 3.522,
+      "FailingChecks": 0,
+      "TotalChecks": 4746,
+      "RemovedResetChecks": 245
+    },
+    "fast_removal": {
+      "WorstSlackNS": 0.04,
+      "FailingChecks": 0,
+      "TotalChecks": 3763,
+      "RemovedResetChecks": 245
+    },
+    "fast_mpw": {
+      "WorstSlackNS": 0.035,
+      "FailingChecks": 0,
+      "TotalChecks": 15432,
+      "RemovedResetChecks": 0
+    }
+  },
+  "DigitalCDC": {
+    "Passed": true,
+    "ExpectedCases": 2486,
+    "ObservedCases": 2486,
+    "Pins": 130
+  },
+  "UART": {
+    "ReceptionAndIdentityPassed": true,
+    "CompletePackets": 30,
+    "ValidCounterWindows": 29,
+    "SelectedWindows": {
+      "Count": 29,
+      "CoreTicks": 3625000000,
+      "NominalSeconds": 29.0,
+      "FrameDeltas": {
+        "SourceAccepted": 435,
+        "Processed": 435,
+        "UniquePresented": 435
+      },
+      "SourceAcceptedFPS": 15.0,
+      "ProcessedFPS": 15.0,
+      "UniquePresentedFPS": 15.0,
+      "IsWholeHostSessionAverage": false,
+      "AssumesContinuousResetEpochWithinEachWindow": true
+    },
+    "IdentityMismatches": 0,
+    "RejectedPackets": 0,
+    "UARTTransmitBytes": 0
+  },
+  "VisualAcceptance": "User confirmed KEY1 raw/corrected switching; stripe cause, LED state and full-field optical acceptance remain unconfirmed",
+  "ImageQualityParametersChanged": false,
+  "FrameRateOptimizationPerformed": false,
+  "EvidenceManifest": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera720-view-toggle-live-20261102-a\\manifest.json",
+    "SHA256": "38044846cf2170102e8257b06a6a091bb61f00d19d57184cf1b7bdd1aef33e4e",
+    "Bytes": 101788
+  },
+  "OmittedLargeLocalArtifacts": {
+    "scan-pixels.mem": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle-sim\\full-b\\scan-pixels.mem",
+      "SHA256": "ec069b337e71799233aea24241b4485451b9eafccf16c5933ad5d1b7ace8f1c4",
+      "Bytes": 29491200
+    },
+    "expected.mem": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle-sim\\full-b\\expected.mem",
+      "SHA256": "3da86f5031982cdcc5385411cc00cfaa48836897ff235cd94a68ad07a0ae8fbd",
+      "Bytes": 13824000
+    }
+  },
+  "Limits": [
+    "SRAM/UART digital evidence and user-confirmed raw/corrected switching. Stripe cause, LED state and full-field optical acceptance remain unconfirmed.",
+    "No Flash write, bitwise SRAM configuration readback or external AC/analog MTBF claim.",
+    "UART accepted/processed/unique-presented counters use nominal 125MHz, not HDMI refresh or all sensor frames."
+  ],
+  "UserAcceptance": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera720-view-toggle-live-20261102-a\\user-acceptance.json",
+    "SHA256": "c54e01efb562bcc7996c9f49ebb07ba50e3415e682f3a2d979ce3ac8e7a9b560",
+    "Bytes": 614
+  }
+}

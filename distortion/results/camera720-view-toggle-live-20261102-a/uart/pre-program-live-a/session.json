@@ -1,0 +1,99 @@
+{
+  "Schema": "camera720-core-stats-receive-v1",
+  "StartedUTC": "2026-11-02T06:08:18.385855+00:00",
+  "SourceKind": "serial_receive",
+  "SerialConfiguration": {
+    "Port": "COM7",
+    "Baud": 115200,
+    "DataBits": 8,
+    "Parity": "N",
+    "StopBits": 1,
+    "DTR": false,
+    "RTS": false,
+    "FlowControl": false
+  },
+  "ExpectedBuildID": "e396af749d6e350d",
+  "ExpectedProfileID": "f79c44d9bdeb5b11",
+  "MaximumSeconds": 6.0,
+  "MaximumBytes": 1048576,
+  "NominalCoreHz": 125000000,
+  "ReceptionCompletedWithoutError": true,
+  "ReceptionAndIdentityPassed": true,
+  "StreamOpened": true,
+  "HardwareAccessAttempted": true,
+  "HardwareAccessed": true,
+  "UARTTransmitBytes": 0,
+  "JTAGAccessed": false,
+  "FPGAProgrammed": false,
+  "FPGAImageCryptographicallyVerified": false,
+  "IdentityLabelsAuthenticateHardware": false,
+  "ResetEpochContinuityProven": false,
+  "AssumesContinuousResetEpoch": true,
+  "IndependentCoreFrequencyMeasured": false,
+  "SensorInputFPSMeasured": false,
+  "HDMIRefreshFPSMeasured": false,
+  "UnderflowsAvailable": false,
+  "Underflows": null,
+  "FaultFreeProven": false,
+  "FaultStatusAvailableForAllWindows": false,
+  "KnownFaultObserved": null,
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\camera720_stats_receive.py": "0d2f473e900cc8661711fda1693563093952c6234d91ed2f2167f531b76fee7c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\camera720_stats.py": "f47dd50df0f0a9fc389556e84f56ea1b9041ee98e8637ab253255983a22708cb"
+  },
+  "Limits": "Expected 64-bit IDs are checked, but require an external full source/bit/program binding. Core FPS uses nominal clock frequency and assumes an uninterrupted reset epoch; unobserved resets cannot always be identified. Host read completion times include USB/OS buffering and are not snapshot or exposure timestamps. Reception success does not mean fault-free hardware, optical acceptance, or zero underflows.",
+  "EndReason": "duration_limit",
+  "ElapsedSecondsAfterOpen": 6.0099976999918,
+  "FinishedUTC": "2026-11-02T06:08:24.474579+00:00",
+  "SourceDrift": [],
+  "BytesReceived": 384,
+  "BytesExaminedByDecoder": 384,
+  "NoDataReceived": false,
+  "ReadCalls": 31,
+  "CompletePackets": 6,
+  "MatchingPackets": 6,
+  "IdentityMismatches": 0,
+  "RejectedPackets": 0,
+  "DiscardedBytes": 0,
+  "TrailingPartialBytes": 0,
+  "CounterWindows": 5,
+  "ValidCounterWindows": 5,
+  "ExcludedCounterWindows": 0,
+  "SelectedWindows": {
+    "Count": 5,
+    "CoreTicks": 625000000,
+    "NominalSeconds": 5.0,
+    "FrameDeltas": {
+      "SourceAccepted": 75,
+      "Processed": 75,
+      "UniquePresented": 75
+    },
+    "SourceAcceptedFPS": 15.0,
+    "ProcessedFPS": 15.0,
+    "UniquePresentedFPS": 15.0,
+    "IsWholeHostSessionAverage": false,
+    "AssumesContinuousResetEpochWithinEachWindow": true
+  },
+  "Artifacts": {
+    "packets.jsonl": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle\\pre-program-live-a\\packets.jsonl",
+      "SHA256": "668d981bc3d4636fc8c7f54c45fad2a79c0d78ebf5cc0a2b705b42bcc342a662",
+      "Bytes": 3706
+    },
+    "reads.jsonl": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle\\pre-program-live-a\\reads.jsonl",
+      "SHA256": "2ef88124f1ecfba4d1a21190ee521755d89f23dcafb9af0e46ad953b2ae7c102",
+      "Bytes": 4564
+    },
+    "received-wire.bin": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle\\pre-program-live-a\\received-wire.bin",
+      "SHA256": "8ba347b7a3dcdbacc07bfa0e7ba0f13d50e32de1609dcec405abdea087a7aeda",
+      "Bytes": 384
+    },
+    "windows.jsonl": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle\\pre-program-live-a\\windows.jsonl",
+      "SHA256": "fc553ce9a6a9ae2d5c33d9f251fb623d42a173528098ca92761daf0da132292c",
+      "Bytes": 5410
+    }
+  }
+}

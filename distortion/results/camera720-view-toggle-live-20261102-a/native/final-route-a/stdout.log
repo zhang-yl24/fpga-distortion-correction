@@ -1,0 +1,215 @@
+License checkout: fabric_shell from D:\pango\new_pds_00e04cf107df.lic
+Compiling architecture definition.
+Analyzing project file 'D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/final-route-a/camera720_view_toggle_top.pds'.
+Executing : set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676
+Executing : set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676 successfully.
+
+
+Executing : add_design D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/final-route-a/dummy.v
+Executing : add_design D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/final-route-a/dummy.v successfully.
+Executing : mpnr -input D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/final-route-a/input.adf
+Compiling verification operator library.
+Compiling common defs.
+Compiling prim grid devices.
+Compiling place grid timing.
+Compiling prim grid device symbols.
+Compiling gate devices.
+Compiling gate operators.
+Building architecture model.
+Loading device packaging model.
+Building architecture floorplan logic view.
+Building architecture schematic structure.
+Building architecture floorplan schematic view.
+NOTE: The technology fpga was specified.
+NOTE: delay_model specified was generic_cmos.
+NOTE: Using the fpga syntax tables...
+Elaborate the liberty model.
+Totals:
+ Calls to malloc = 0
+ Calls to calloc = 9472601
+
+I: Column Clock Check open.
+Read Column Clock Map.
+Executing : mpnr -input D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/final-route-a/input.adf successfully.
+Executing : mpnr_report_timing -force_to_run -delay_type min_max -max_path 1000 -nworst 4 -report_exception TRUE
+NOTE: The technology fpga was specified.
+NOTE: delay_model specified was generic_cmos.
+NOTE: Using the fpga syntax tables...
+Elaborate the liberty model.
+Totals:
+ Calls to malloc = 0
+ Calls to calloc = 18945202
+
+Constructing timing graph ...
+Timing graph has been constructed successfully
+W: Timing-4087: Port 'cam_rst_n' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'cam_scl' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'cam_scl' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'cam_sda' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'cam_sda' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'hd_scl' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'hd_scl' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'hd_sda' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'hd_sda' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[0]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[0]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[1]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[1]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[2]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[2]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[3]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[3]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[4]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[4]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[5]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[5]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[6]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[6]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[7]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[7]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[8]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[8]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[9]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[9]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[10]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[10]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[11]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[11]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[12]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[12]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[13]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[13]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[14]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[14]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[15]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[15]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[16]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[16]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[17]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[17]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[18]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[18]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[19]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[19]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[20]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[20]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[21]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[21]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[22]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[22]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[23]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[23]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[24]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[24]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[25]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[25]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[26]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[26]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[27]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[27]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[28]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[28]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[29]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[29]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[30]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[30]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[31]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[31]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs_n[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs_n[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs_n[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs_n[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[4]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[5]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[6]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[7]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'de_out' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[4]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[5]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[6]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[7]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'hs_out' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[4]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[5]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[6]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[7]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[4]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[5]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[6]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[7]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[8]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[9]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[10]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[11]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[12]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[13]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[14]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_ba[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_ba[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_ba[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_cas_n' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_ck' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_ck_n' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_cke' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_cs_n' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dm[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dm[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dm[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dm[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_odt' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_ras_n' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_rst_n' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_we_n' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'pix_clk' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[4]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[5]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[6]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[7]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'rstn_out' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'uart_txd' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'vs_out' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'clk_n' is not constrained, it is treated as combinational input.
+W: Timing-4086: Port 'key1_n' is not constrained, it is treated as combinational input.
+W: Timing-4086: Port 'reset_n' is not constrained, it is treated as combinational input.
+Executing : mpnr_report_timing -force_to_run -delay_type min_max -max_path 1000 -nworst 4 -report_exception TRUE successfully.
+Executing : .switch_db -route -input D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/final-route-a/input.adf -output D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/final-route-a/route-dump.txt
+Compiling architecture definition.
+Compiling verification operator library.
+Compiling common defs.
+Loading technology operator library.
+Compiling technology operator library.
+Compiling technology operator (valence) library.
+Compiling prim grid devices.
+Compiling place grid timing.
+Compiling prim grid device symbols.
+Compiling gate devices.
+Compiling gate operators.
+Compiling tech operator impls.
+Building architecture model.
+Loading device packaging model.
+Executing : .switch_db -route -input D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/final-route-a/input.adf -output D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/final-route-a/route-dump.txt successfully.
+CAMERA720_VIEW_TOGGLE_FINAL_INSPECTION_COMPLETE
