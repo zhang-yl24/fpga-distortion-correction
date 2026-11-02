@@ -80,7 +80,7 @@ class CalibratedResetTests(unittest.TestCase):
 
     def test_exact_binding_rejects_hash_drift_and_extra_fields(self):
         with tempfile.TemporaryDirectory() as tmp:
-            path=Path(tmp)/'x';path.write_text('source')
+            path=Path(tmp).resolve()/'x';path.write_text('source')
             watched={};reference=audit.ref(path)
             self.assertEqual(audit.binding(reference,watched),path)
             with self.assertRaises(ValueError):audit.binding({**reference,'Passed':True},{})

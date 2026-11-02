@@ -68,8 +68,8 @@ Path Class : sequential timing path
 
     def test_prepare_only_writes_current_queries_no_native_execution(self):
         with tempfile.TemporaryDirectory() as tmp:
-            output=Path(tmp)/'queries'
-            with (patch.object(tool,'WORK',Path(tmp)),patch.object(tool,'derive',return_value=(self.initial(),{},'show -dev_instance {UART_SITE}\n')),
+            output=Path(tmp).resolve()/'queries'
+            with (patch.object(tool,'WORK',Path(tmp).resolve()),patch.object(tool,'derive',return_value=(self.initial(),{},'show -dev_instance {UART_SITE}\n')),
                   patch.object(tool.inspect,'execute') as execute):
                 result=tool.prepare('export','report',output,8)
             self.assertEqual(len(result['Groups']),1)
@@ -81,7 +81,7 @@ Path Class : sequential timing path
 
     def test_optional_stage_preparation_uses_actual_identity_and_never_executes(self):
         with tempfile.TemporaryDirectory() as tmp:
-            work=Path(tmp);output=work/'queries';calls=[]
+            work=Path(tmp).resolve();output=work/'queries';calls=[]
             def stage(*args):
                 calls.append(args);path=args[3]/'stage-plan.json';path.parent.mkdir();path.write_text('{}');return path
             initial=self.initial();initial['BuildDiagnosticsReview']={'Path':'review.json','SHA256':'b'*64}
@@ -98,7 +98,7 @@ Path Class : sequential timing path
 
     def test_invalid_prefix_bounds_or_reused_output_fail_before_derivation(self):
         with tempfile.TemporaryDirectory() as tmp:
-            work=Path(tmp)
+            work=Path(tmp).resolve()
             for count,prefix,output in ((9,None,work/'new'),(8,'../escape',work/'new'),(8,None,work)):
                 with self.subTest(count=count,prefix=prefix),patch.object(tool,'WORK',work),patch.object(tool,'derive') as derive,self.assertRaises(ValueError):
                     tool.prepare('export','report',output,count,prefix)

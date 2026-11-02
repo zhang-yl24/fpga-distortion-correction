@@ -191,8 +191,8 @@ class ReceiptBindingTests(unittest.TestCase):
             self.bind_mock('some-passing-json',{},None)
 
     def test_sha_change_is_rejected_and_input_not_silently_rebound(self):
-        with tempfile.TemporaryDirectory() as root,patch.object(batch.prep,'PROJECT',Path(root)):
-            p = Path(root)/'evidence.txt'; p.write_text('a')
+        with tempfile.TemporaryDirectory() as root,patch.object(batch.prep,'PROJECT',Path(root).resolve()):
+            p = Path(root).resolve()/'evidence.txt'; p.write_text('a')
             watched = {}; batch.add(watched,p,hashlib.sha256(b'a').hexdigest())
             p.write_text('b')
             with self.assertRaisesRegex(ValueError,'digest differs'):

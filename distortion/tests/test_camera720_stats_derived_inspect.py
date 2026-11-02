@@ -33,7 +33,7 @@ class StatsDerivedTests(unittest.TestCase):
 
     def test_recipe_uses_stats_prep_actual_hash_api(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root=Path(tmp);build=root/'build';build.mkdir();(build/'timing.tcl').write_text('script')
+            root=Path(tmp).resolve();build=root/'build';build.mkdir();(build/'timing.tcl').write_text('script')
             plan=build/'plan.json';plan.write_text(json.dumps({'PDS':{'Executable':'pds.exe'}}))
             source=root/'source.adf';source.write_bytes(b'adf');receipt=root/'result.json';receipt.write_text('{}')
             result={'ResultADF':{'Path':str(source)},'BuildPlan':str(plan),'ResultADFSHA256':'a'*64,
@@ -49,7 +49,7 @@ class StatsDerivedTests(unittest.TestCase):
 
     def test_apply_recipe_uses_actual_stats_prep_api(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root=Path(tmp);plan=root/'plan.json';plan.write_text(json.dumps({'PDS':{'Executable':'pds.exe'}}))
+            root=Path(tmp).resolve();plan=root/'plan.json';plan.write_text(json.dumps({'PDS':{'Executable':'pds.exe'}}))
             request=root/'request.json';request.write_text('{}')
             facts={'BuildPlan':str(plan),'ExactResetCommands':['exact reset command']}
             with patch.object(apply.prep,'work_path',return_value=root/'stage'),patch.object(apply,'bind_request',return_value=(facts,{})):
@@ -60,7 +60,7 @@ class StatsDerivedTests(unittest.TestCase):
 
     def test_final_recipe_uses_actual_stats_prep_api(self):
         with tempfile.TemporaryDirectory() as tmp:
-            root=Path(tmp);build=root/'build';build.mkdir();(build/'timing.tcl').write_text('script')
+            root=Path(tmp).resolve();build=root/'build';build.mkdir();(build/'timing.tcl').write_text('script')
             plan=build/'plan.json';plan.write_text(json.dumps({'PDS':{'Executable':'pds.exe'}}))
             native=root/'reset';native.mkdir();(native/'result.json').write_text('{}')
             result={'ResultADF':{'Path':str(root/'final.adf')},'BuildPlan':str(plan),'ResultADFSHA256':'a'*64,

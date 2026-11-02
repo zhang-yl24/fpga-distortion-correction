@@ -159,7 +159,7 @@ class DualReferenceTest(unittest.TestCase):
 class PreparationTest(unittest.TestCase):
     def test_default_preparation_cannot_launch_simulator_or_claim_pass(self):
         with tempfile.TemporaryDirectory(prefix='camera720-prepare-') as scratch:
-            base = Path(scratch)
+            base = Path(scratch).resolve()
             fixtures = sim.fixtures
             def small(work, header):
                 return fixtures(work, sim.render_header(*sim.synthetic_config(32, 16)), width=32, height=16)

@@ -39,6 +39,7 @@ class CalibratedProofTests(unittest.TestCase):
         with self.assertRaises(ValueError):proof.groups(qs,[query('unknown')])
 
     def query_files(self,tmp,command_transform=lambda s:s):
+        tmp=Path(tmp).resolve()  # Windows TEMP may use a short-name alias.
         qs=[query()];group=proof.groups(qs,qs)[0]
         body=Path(tmp)/'body.tcl';body.write_text(group['PinCommand']+'\n'+group['Command']+'\n')
         log=Path(tmp)/'stdout.log'
