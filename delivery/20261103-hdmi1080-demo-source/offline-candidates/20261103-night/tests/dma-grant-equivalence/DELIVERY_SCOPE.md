@@ -1,0 +1,1 @@
+本目录仅重组小体积自有测试输入和原生结果摘要。ORIGINAL_RUN_MANIFEST.json保留完整历史清单；大型trace/输出留在本机，未上传。MANIFEST.json是明确标记的输入子集，供run_pair.py --check-only核验和原始CPU oracle自测；不修改DUT、bench、vectors或oracle，不把本次CPU检查写成重新执行HDL。新HDL运行需合法模拟器和新输出目录。

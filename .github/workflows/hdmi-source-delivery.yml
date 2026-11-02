@@ -30,3 +30,7 @@ jobs:
           python-version: '3.12'
       - name: Verify byte-preserved source package and dependency boundary
         run: python -B delivery/20261103-hdmi1080-demo-source/tools/verify_package.py
+      - name: Verify source-only offline diagnostic candidate closures
+        run: python -B delivery/20261103-hdmi1080-demo-source/tools/verify_offline_candidates.py
+      - name: Check exact DMA paired-test inputs and original CPU oracle
+        run: python -B delivery/20261103-hdmi1080-demo-source/offline-candidates/20261103-night/tests/dma-grant-equivalence/run_pair.py --check-only

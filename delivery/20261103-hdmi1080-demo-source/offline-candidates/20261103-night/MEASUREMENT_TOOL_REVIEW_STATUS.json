@@ -1,0 +1,23 @@
+{
+  "schema": "measurement-tool-publication-status-v1",
+  "reviewed_version": 1,
+  "expected_author_archive_sha256": "789ca1305038901b1825a57e4fba7bb2dc2f1615f5a8143539af84a0557145ee",
+  "review_result_reported_by_main_agent": "PASS",
+  "author_regression_tests_reported": 34,
+  "independent_legal_and_negative_cases_reported": 25,
+  "scope": "Fixed-profile offline PGSTAT02 parsing, canonical-byte and counter-consistency checks",
+  "recorded_checks": [
+    "raw0 and N-1 rejected, N accepted; 901 backlog rejected",
+    "legal processing1-to0 with negative delta difference/drop accepted",
+    "uint32 carry accepted; ambiguous wrap retained as null",
+    "legacy LIVE contradictions, missing fields, missing original bytes and JSON newline changes rejected",
+    "legal in-memory LIVE control accepted",
+    "six exact RTL source hashes reportedly matched; (A-C) modulo2^32 equals processing, drop excluded, same pre-NBA atomic sample"
+  ],
+  "not_proven": ["physical firmware identity", "actual125MHz", "latency distribution", "externalE2E"],
+  "library_byte_materialization_complete": false,
+  "publication_status": "SOURCE_BYTES_PENDING_TRANSFER; executable v1 tool not included",
+  "transfer_failure": "Official Library helper stopped on Windows because os.setxattr is unavailable",
+  "v0_allowed_for_formal_acceptance": false,
+  "local_tool_tests_reexecuted_by_delivery_task": false
+}
