@@ -4,17 +4,23 @@
 
 ## 1. 准备三个独立候选
 
-进入本目录，以你本机封存工程的完整 native 目录作为依赖来源：
+本地完整包解压后，根目录包含 `native-dependencies/` 和 `delivery/`。先从解压根核验已附的 80 项原生依赖；这一步无需 Git、历史源码目录或 EDA：
 
 ```powershell
-python -B tools/prepare_candidate.py --dependency-native C:/path/to/frozen/native --output-root C:/fpga-build --run-name corrected-base-01 --variant baseline --mode corrected
-python -B tools/prepare_candidate.py --dependency-native C:/path/to/frozen/native --output-root C:/fpga-build --run-name corrected-cache-01 --variant cache --mode corrected
-python -B tools/prepare_candidate.py --dependency-native C:/path/to/frozen/native --output-root C:/fpga-build --run-name corrected-both-01 --variant both --mode corrected
+python -B delivery/20261103-hdmi1080-throughput/tools/recover_native_dependencies.py --verify-only --out native-dependencies
 ```
 
-`C:/path/to/frozen/native` 是待替换的路径。建议使用短输出目录，避免 Windows/PDS 长路径限制；脚本会在写入前拒绝超过 240 字符的源文件目标路径。每个 `C:/fpga-build/<run-name>/preparation.json` 记录 variant、mode、param_id、完整 130 项输入/编译副本哈希和 include 重定位。`native/` 是独立编译副本，`map.tcl` 保留封存工程的设计顺序和器件。
+预期输出 `passed: true`、`required: 80`、`matched: 80`。随后进入 `delivery/20261103-hdmi1080-throughput`，准备三个独立候选：
 
-脚本仅准备源文件，不执行 EDA、串口或下载。完整原生依赖不在本次 GitHub 源码包内。哈希不匹配时先核对基线版本，避免用不同 DDR IP 或时钟文件拼接。
+```powershell
+python -B tools/prepare_candidate.py --dependency-native ../../native-dependencies --output-root C:/fpga-build --run-name corrected-base-01 --variant baseline --mode corrected
+python -B tools/prepare_candidate.py --dependency-native ../../native-dependencies --output-root C:/fpga-build --run-name corrected-cache-01 --variant cache --mode corrected
+python -B tools/prepare_candidate.py --dependency-native ../../native-dependencies --output-root C:/fpga-build --run-name corrected-both-01 --variant both --mode corrected
+```
+
+`../../native-dependencies` 对应完整包的依赖目录；也可改为已核验的其他本地目录。建议使用短输出目录，避免 Windows/PDS 长路径限制；脚本会在写入前拒绝超过 240 字符的源文件目标路径。每个 `C:/fpga-build/<run-name>/preparation.json` 记录 variant、mode、param_id、完整 130 项输入/编译副本哈希和 include 重定位。`native/` 是独立编译副本，`map.tcl` 保留封存工程的设计顺序和器件。
+
+脚本仅准备源文件，不执行 EDA、串口或下载。本地完整包包含已核验的依赖；仅有 GitHub 源码 checkout 时，可按 [依赖恢复说明](DEPENDENCY_RECOVERY.md) 从本地对应源码重建。哈希不匹配时先核对基线版本，避免用不同 DDR IP 或时钟文件拼接。
 
 通过原工程构建流程执行 Map、原 UART 引脚补充、PNR 和双角 STA。重点比较新增 writer 32-word 读 mux、缓存同步读后半字选择的路径；复位/外部 IO 约束仍需按实际板工程签核。记录最终源码、约束、ADF、bit 的哈希和资源。候选达到上板条件后，再由板端操作者下载。
 

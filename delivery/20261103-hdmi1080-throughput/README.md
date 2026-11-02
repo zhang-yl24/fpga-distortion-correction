@@ -44,7 +44,9 @@ PDS 2025.2 独立综合结果如下。cache 参数为 WIDTH1920/HEIGHT1080/INDEX
 
 见 [BOARD_HANDOFF.md](BOARD_HANDOFF.md)。脚本支持 `baseline/writer/cache/both` 四种独立候选和 `corrected/raw/demo` 三种固定配置；默认是 `both + corrected`。每份配置按源码生成独立 `param_id`，保留已有 UART 扫描协议。
 
-GitHub 基线交付包含 50 项项目源码，另外 80 项厂商/派生依赖只列哈希。`tools/prepare_candidate.py` 要求演示版完整 `native` 依赖目录，逐项匹配后生成新目录及 Map Tcl；未知依赖、哈希漂移、目录复用均报错。整机 PNR、CDC、外部 IO、双角时序和位流生成由持有完整工程的同学继续执行。
+80 项原生依赖已从本地仓库恢复，逐项通过冻结清单的长度和 SHA256 校验。本地完整包将它们放在解压根的 `native-dependencies/`；包内校验可直接读取该目录，无需 Git 或历史工作区。GitHub 基线目录保留 50 项项目源码及外部依赖清单，恢复脚本、来源记录和使用方式见 [DEPENDENCY_RECOVERY.md](DEPENDENCY_RECOVERY.md)。
+
+`tools/prepare_candidate.py` 接受本地完整包的 `native-dependencies/`，逐项匹配后生成新目录及 Map Tcl；未知依赖、哈希漂移、目录复用均报错。整机 PNR、CDC、外部 IO、双角时序和位流状态以对应候选的构建回执为准。
 
 本候选保留基线约 30Hz 输入/输出配置和封存标定参数。新镜头 K/D 集成后，需用相同参数重跑 A/B；标定会改变缓存访问分布。1080p60 的处理预算为 16.67ms/帧，本次组合模型为 22.52ms，仍有差距。继续推进 60 帧时需评估更宽的像素处理架构、访问调度，以及经整机时序验证的频率；接口时钟、输入准入与显示配置也需一起更新。
 
@@ -72,4 +74,4 @@ python -B tools/run_engine_benchmark.py --variant both --pressure --work _build/
 python -B tools/run_engine_summary.py _build/engine-baseline-01/report.json _build/engine-writer-01/report.json _build/engine-cache-01/report.json _build/engine-both-01/report.json --output _build/engine-summary-01.json
 ```
 
-已执行：writer 25 个场景，cache 4 项基线/候选测试（含完整 1080p），固定模式控制测试，四组完整 1080p engine 逐像素回归，11 项 CPU 工具测试，两个模块的基线/候选 PDS 综合。详见 `evidence/`；CI 的 CPU 检查与本地 RTL/综合证据分别记录。
+已执行：writer 25 个场景，cache 4 项基线/候选测试（含完整 1080p），固定模式控制测试，四组完整 1080p engine 逐像素回归，12 项 CPU 工具测试，两个模块的基线/候选 PDS 综合，以及 80 项依赖恢复和无 Git 解压布局校验。详见 `evidence/`；CI 的 CPU 检查与本地 RTL/综合证据分别记录。
