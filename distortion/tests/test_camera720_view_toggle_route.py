@@ -16,6 +16,9 @@ import camera720_view_toggle_receipts as receipts
 def request_case(tmp_path, monkeypatch):
     """Small synthetic receipts; native binding and parser tested elsewhere."""
     monkeypatch.setattr(physical.build, 'ROOT', tmp_path)
+    serializer = tmp_path / 'serializer.py'
+    serializer.write_text('# Synthetic serializer dependency; not executed by request binding.\n', encoding='ascii')
+    monkeypatch.setattr(physical.preservation, 'SERIALIZER', serializer)
     build = tmp_path / 'build' / 'plan.json'
     build.parent.mkdir()
     build.write_text('{}', encoding='ascii')
@@ -83,7 +86,34 @@ def test_request_rederives_current_analysis_and_all_three_launch_reports(request
     assert source.name == physical.TARGET + '_pnr.adf'
     assert route == request_case[4]
     assert str(Path(physical.__file__).resolve()) in watched
+    serializer = physical.preservation.SERIALIZER
+    assert watched[str(serializer)] == physical.sha(serializer)
     assert value == request_case[1]
+
+
+def test_request_rejects_missing_serializer_dependency(request_case):
+    physical.preservation.SERIALIZER.unlink()
+    with pytest.raises(FileNotFoundError):
+        physical.bind_request(request_case[0])
+
+
+def test_request_rejects_serializer_changed_after_binding(request_case, monkeypatch):
+    serializer = physical.preservation.SERIALIZER
+    original_sha = physical.sha
+    changed = False
+
+    def hash_then_change(path):
+        nonlocal changed
+        digest = original_sha(path)
+        if Path(path) == serializer and not changed:
+            serializer.write_text('# Changed after dependency binding.\n', encoding='ascii')
+            changed = True
+        return digest
+
+    monkeypatch.setattr(physical, 'sha', hash_then_change)
+    with pytest.raises(ValueError, match='hold route input drift'):
+        physical.bind_request(request_case[0])
+    assert changed
 
 
 @pytest.mark.parametrize('extra', ['Commands', 'ResetProof', 'SourceADF'])
