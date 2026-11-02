@@ -90,7 +90,7 @@ class BoardFlowTest(unittest.TestCase):
             text+=f" {name} {period:.4f} {{0.0000 {period/2:.4f}}} {kind} 10 0 {{source}}\n"
         text+="Clock Groups:\n"
         for corner in ("Slow","Fast"):
-            for kind in ("Setup","Hold","Recovery","Removal","Minimum Pulse Width"):
+            for kind in ("Setup","Hold","Recovery","Removal","Minimum Pulse Width","Skew"):
                 identity=(corner,kind)
                 if identity==omit: continue
                 text+=kind+" Summary("+corner+" Corner):\n"
@@ -99,21 +99,21 @@ class BoardFlowTest(unittest.TestCase):
         output=self.directory/"synthetic-timing.rtr";output.write_text(text)
         return output
 
-    def test_all_ten_timing_kinds_accept(self):
+    def test_all_twelve_timing_kinds_accept(self):
         report=flow.parse_timing(self.timing_fixture())
         self.assertTrue(report["all_native_checks_met"])
-        self.assertEqual(len(report["summaries"]),10)
+        self.assertEqual(len(report["summaries"]),12)
 
     def test_each_negative_kind_preserved(self):
         for corner in ("Slow","Fast"):
-            for kind in ("Setup","Hold","Recovery","Removal","Minimum Pulse Width"):
+            for kind in ("Setup","Hold","Recovery","Removal","Minimum Pulse Width","Skew"):
                 with self.subTest(corner=corner,kind=kind):
                     report=flow.parse_timing(self.timing_fixture(negative=(corner,kind)))
                     self.assertFalse(report["all_native_checks_met"])
                     self.assertEqual(sum(r["failing_checks"] for r in report["summaries"].values()),1)
 
     def test_incomplete_corner_reject(self):
-        with self.assertRaisesRegex(ValueError,"All ten nonempty"):
+        with self.assertRaisesRegex(ValueError,"All twelve nonempty"):
             flow.parse_timing(self.timing_fixture(omit=("Fast","Recovery")))
 
     def test_wrong_device_reject(self):
@@ -166,6 +166,61 @@ class BoardFlowTest(unittest.TestCase):
             path=self.electrical_fixture();path.write_text(path.read_text().replace(before,after,1))
             with self.assertRaisesRegex(ValueError,"Routed electrical mismatch"):
                 flow.routed_electrical_audit(self.pcf,path,self.expected)
+
+    def test_native_twelve_summary_format(self):
+        result=flow.parse_timing(PACKAGE/"evidence/board-tools/timing-summary-reference.rtr")
+        self.assertEqual(len(result["summaries"]),12)
+        self.assertEqual(len(result["all_rows"]["slow_skew"]),4)
+        self.assertEqual(len(result["all_rows"]["slow_removal"]),13)
+        self.assertEqual(result["summaries"]["slow_setup"]["failing_checks"],155)
+        self.assertFalse(result["all_native_checks_met"])
+
+    def test_native_final_route_electrical(self):
+        result=flow.routed_electrical_audit(self.pcf,PACKAGE/"evidence/board-tools/route-reference.rur",self.expected)
+        self.assertEqual(len(result["ports"]),144)
+
+    def test_atomic_receipt_write_retains_previous_on_full_disk(self):
+        path=self.directory/"receipt.json";path.write_text('{"previous":true}')
+        with patch.object(Path,"write_text",side_effect=OSError(28,"No space left on device")):
+            with self.assertRaises(OSError): flow.save(path,{"next":True})
+        self.assertEqual(path.read_text(),'{"previous":true}')
+
+    def test_native_timing_database_binding(self):
+        database=self.directory/"routed.adf";database.write_bytes(b"database")
+        report=self.directory/"input-binding.rtr"
+        report.write_text("| Tcl Command : report_timing -input_db_file {"+database.as_posix()+"} -delay_type min_max\n")
+        self.assertTrue(flow.timing_input_audit(report,database)["passed"])
+        with self.assertRaisesRegex(ValueError,"native input DB differs"):
+            flow.timing_input_audit(report,self.directory/"other.adf")
+
+    def test_native_action_timing_header(self):
+        database=self.directory/"routed.adf";database.write_bytes(b"database")
+        report=self.directory/"action-binding.rtr"
+        header="| Tcl Command : set_option -options { input_db_file {"+database.as_posix()+"} nworst {4} max_path {50} report_io_datasheet {true}} [get_actions report_timing -of_objects [get_tasks pnr_1]]\n"
+        report.write_text(header)
+        self.assertTrue(flow.timing_input_audit(report,database)["passed"])
+        with self.assertRaisesRegex(ValueError,"native input DB differs"):
+            flow.timing_input_audit(report,self.directory/"other.adf")
+        report.write_text(header.replace("get_actions report_timing","get_actions route"))
+        with self.assertRaisesRegex(ValueError,"Unrecognized STA native action"):
+            flow.timing_input_audit(report,database)
+
+    def test_bit_gate_reparses_report_despite_old_success_flag(self):
+        db=self.directory/"route.adf";db.write_bytes(b"route")
+        mapdb=self.directory/"map.adf";mapdb.write_bytes(b"map")
+        report=self.timing_fixture(negative=("Slow","Setup"))
+        report.write_text("| Tcl Command : report_timing -input_db_file {"+db.as_posix()+"}\n"+report.read_text())
+        mapped={"artifacts":{"map_db":flow.ref(mapdb),"pcf":flow.ref(self.pcf),"pin_report":flow.ref(self.prt)}}
+        routed={"input_db":flow.ref(mapdb),"stage_directory":str(self.directory),"explicit_constraints":[],
+            "artifacts":{"route_db":flow.ref(db),"pcf":flow.ref(self.pcf),"pin_report":flow.ref(self.routed_fixture()),
+                         "electrical_report":flow.ref(PACKAGE/"evidence/board-tools/route-reference.rur")}}
+        timed={"input_db":flow.ref(db),"stage_directory":str(self.directory),"explicit_constraints":[],
+            "timing":{"all_native_checks_met":True},"artifacts":{"timing":flow.ref(report)}}
+        records={"map":mapped,"route":routed,"sta":timed}
+        for stage,record in records.items(): flow.save(self.directory/(stage+"-result.json"),record)
+        with patch.object(flow,"receipt",side_effect=lambda work,stage:records[stage]),patch.object(flow,"verify_device"),patch.object(flow,"verify_constraint_import"):
+            result=flow.fresh_bit_audit(self.directory,{"expected_pins":self.expected})
+        self.assertFalse(result["timing"]["all_native_checks_met"])
 
 
 if __name__=="__main__":

@@ -2,7 +2,19 @@
 
 目标：在固定纯校正模式下，比较同一输入、同一 K/D、同一时钟和约束的实际输出帧率。优化源码与冻结演示版分目录保存。
 
-## 1. 准备三个独立候选
+## 1. 已生成的三个诊断候选与重建方式
+
+baseline、cache、both 已在 `D:/fpga-build/<variant>-final` 完成 Map、布局布线、双角 STA 和诊断 `.sbit` 生成。144 个实际引脚、全部声明电气属性和 11 个时钟均通过审计；尚未下载或板测。当前 slow setup 为 baseline 62 个端点 / -0.659ns、cache 155 / -0.762ns、both 16 / -0.619ns；三版 DDR recovery/removal 仍有违规，外部 IO 时序待签核。完整证据见 [summary.json](evidence/board/summary.json)。
+
+优先比较 **baseline → both**，cache 用作单项优化对照。完整包根目录提供：
+
+| 配置 | param_id | 位流路径 |
+|---|---|---|
+| baseline | `b0481b1d` | `bitstreams/baseline/baseline_corrected_b0481b1d_DIAGNOSTIC_NOT_TIMING_SIGNOFF.sbit` |
+| both | `f36cb459` | `bitstreams/both/both_corrected_f36cb459_DIAGNOSTIC_NOT_TIMING_SIGNOFF.sbit` |
+| cache | `1a247c5b` | `bitstreams/cache/cache_corrected_1a247c5b_DIAGNOSTIC_NOT_TIMING_SIGNOFF.sbit` |
+
+各位流目录附 `STATUS.json`，构建回执位于包根 `board-builds/<variant>/`。位流已通过生成与身份核验；回执中的 `physical_timing_accepted`、`hardware_release_allowed` 仍为 `false`。板端操作者应按诊断状态核对当前硬件和失败项目，并记录实际测试结果。
 
 本地完整包解压后，根目录包含 `native-dependencies/` 和 `delivery/`。先从解压根核验已附的 80 项原生依赖；这一步无需 Git、历史源码目录或 EDA：
 
@@ -10,19 +22,24 @@
 python -B delivery/20261103-hdmi1080-throughput/tools/recover_native_dependencies.py --verify-only --out native-dependencies
 ```
 
-预期输出 `passed: true`、`required: 80`、`matched: 80`。随后进入 `delivery/20261103-hdmi1080-throughput`，准备三个独立候选：
+预期输出 `passed: true`、`required: 80`、`matched: 80`。如需重建，进入 `delivery/20261103-hdmi1080-throughput`，在空间充足的短路径创建新工程；以下显式选择 both：
 
 ```powershell
-python -B tools/prepare_candidate.py --dependency-native ../../native-dependencies --output-root C:/fpga-build --run-name corrected-base-01 --variant baseline --mode corrected
-python -B tools/prepare_candidate.py --dependency-native ../../native-dependencies --output-root C:/fpga-build --run-name corrected-cache-01 --variant cache --mode corrected
-python -B tools/prepare_candidate.py --dependency-native ../../native-dependencies --output-root C:/fpga-build --run-name corrected-both-01 --variant both --mode corrected
+$flow = 'tools/build_board_candidate.py'
+$pds = 'E:/PDS_2025.2-ads-win64/pango/PDS_2025.2-ads/bin/pds_shell.exe'
+python -B $flow prepare --dependency-native ../../native-dependencies --output-root D:/fpga-build2 --run-name corrected-both-01 --variant both --mode corrected
+$work = 'D:/fpga-build2/corrected-both-01'
+python -B $flow run --work $work --stage map --pds-shell $pds
+python -B $flow run --work $work --stage route --pds-shell $pds
+python -B $flow run --work $work --stage sta --pds-shell $pds
+python -B $flow run --work $work --stage bitstream --pds-shell $pds --diagnostic-bit
 ```
 
-`../../native-dependencies` 对应完整包的依赖目录；也可改为已核验的其他本地目录。建议使用短输出目录，避免 Windows/PDS 长路径限制；脚本会在写入前拒绝超过 240 字符的源文件目标路径。每个 `C:/fpga-build/<run-name>/preparation.json` 记录 variant、mode、param_id、完整 130 项输入/编译副本哈希和 include 重定位。`native/` 是独立编译副本，`map.tcl` 保留封存工程的设计顺序和器件。
+`../../native-dependencies` 对应完整包的依赖目录；也可改为已核验的其他本地目录。PDS 路径替换为本机实际安装位置。构建入口默认 variant 为 `cache`，例子明确覆盖为 `both`；准备 baseline 或 cache 时同时改用对应 `--variant` 和新的 run 名。建议解压到 `D:/fpga` 等短路径；脚本拒绝超过 240 字符的源文件目标路径，EDA 启动前检查可用空间。
 
-脚本仅准备源文件，不执行 EDA、串口或下载。本地完整包包含已核验的依赖；仅有 GitHub 源码 checkout 时，可按 [依赖恢复说明](DEPENDENCY_RECOVERY.md) 从本地对应源码重建。哈希不匹配时先核对基线版本，避免用不同 DDR IP 或时钟文件拼接。
+每个新工程的 `preparation.json` 记录 variant、mode、param_id、完整 130 项输入/编译副本哈希和 include 重定位。`native/` 是独立编译副本；生成后保留其目录位置。prepare 仅准备源码，后续 run 命令执行对应 EDA 阶段，整个脚本不调用串口或下载。本地完整包包含已核验的依赖；仅有 GitHub checkout 时，可按 [依赖恢复说明](DEPENDENCY_RECOVERY.md) 从本地对应源码重建。哈希不匹配时先核对基线版本。
 
-通过原工程构建流程执行 Map、原 UART 引脚补充、PNR 和双角 STA。重点比较新增 writer 32-word 读 mux、缓存同步读后半字选择的路径；复位/外部 IO 约束仍需按实际板工程签核。记录最终源码、约束、ADF、bit 的哈希和资源。候选达到上板条件后，再由板端操作者下载。
+构建工具为每阶段显式导入原 FDC、UART 引脚补充和 Map PCF，复核最终引脚、电气属性、时钟及同一 ADF 身份。`--diagnostic-bit` 保留全部时序失败记录和诊断标记；正式签核仍需收敛 setup、DDR 复位与外部 IO 时序。完整命令说明见 [BOARD_BUILD_NOTES.md](docs/BOARD_BUILD_NOTES.md)。
 
 这三个配置保留封存输入准入与输出约 30Hz 时序。先用电脑的同一 1080p29.97 输入复测；摄像头 60Hz 直通版的位流、时序或性能不能代入本路径。
 
@@ -62,4 +79,4 @@ python -B tools/analyze_scan.py C:/capture/uart.bin --seconds 60.066112 --param-
 
 每个候选提供：preparation.json、最终综合/时序摘要、bit SHA256、输入模式、真实标定参数哈希、session ID、采集起止时间、原始 UART、scan-analysis.json，以及同一测试场景短视频。对比表至少列出唯一输出 FPS、重复比例、内部周期（如有）、运行时长、错误计数、LUT/FF/DRM/APM 和最差 setup/hold。
 
-固定纯校正 baseline 与 cache 是优先的一组；若 cache 时序及实测改善成立，再测 both。需要回退演示时，使用原封存 bit 及其原恢复步骤。
+固定纯校正 baseline 与 both 是优先的一组，cache 用于定位单项优化收益。三版完整工程 Map 资源分别为 FF/LUT：baseline 21,898/17,066、cache 21,964/17,162.5、both 26,418/18,292.5；DRM 均为 19.5，APM 均为 69。需要回退演示时，使用原封存 bit 及其原恢复步骤。

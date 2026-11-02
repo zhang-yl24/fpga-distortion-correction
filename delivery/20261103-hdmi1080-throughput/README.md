@@ -4,7 +4,7 @@
 
 交付前已同步该分支的新提交 `2263444`，新增内容为 1080p60 直通路线审查和文档；处理链源码及依赖清单保持相同。
 
-本候选完成两项 RTL 优化、固定模式测量入口、离线逐像素性能验证、独立模块综合和交接脚本。当前交付未生成整机位流、未执行上板下载；实际纯校正 FPS、最终整机资源与时序待同学实测。基线演示包的 50 项源码校验保持通过。
+本候选完成两项 RTL 优化、固定模式测量入口和完整 1080p 离线逐像素性能验证。`D:/fpga-build` 下的 baseline、cache、both 三版已完成整机 Map、布局布线、双角 STA，并生成标记为 `DIAGNOSTIC_NOT_TIMING_SIGNOFF` 的 `.sbit`。三版均未下载或板测，仍有 setup 与 DDR 复位时序违规，外部 IO 时序尚未签核；实际纯校正 FPS 待测。构建、资源、时序和位流身份见 [整机证据汇总](evidence/board/summary.json)。基线演示包的 50 项源码校验保持通过。
 
 ## 已测得的处理性能
 
@@ -36,13 +36,25 @@ PDS 2025.2 独立综合结果如下。cache 参数为 WIDTH1920/HEIGHT1080/INDEX
 | cache 基线 → 候选 | 1294 → 1370 | 1021 → 1086 | 10.5 → 10.5 | 3 → 3 |
 | writer 基线 → 候选 | 1475 → 2852 | 4704 → 9153 | 0 → 0 | 0 → 0 |
 
-宽字 cache 保持块 RAM 推断；writer 的缓冲综合为 FF，增加 1377 LUT、4449 FF。组合方案以更多资源换取吞吐，整机资源增量需重新综合确定。独立模块无正式 FDC/布局布线，不提供时序签核；cache 的孤立 map 因内部总线被视为 647 个封装 IO 而停止，记录保留在 evidence 中。
+宽字 cache 保持块 RAM 推断；writer 的缓冲综合为 FF，增加 1377 LUT、4449 FF。独立模块结果用于解释结构取舍；完整工程资源和时序见下表。独立模块无正式 FDC/布局布线，不提供时序签核；cache 的孤立 map 因内部总线被视为 647 个封装 IO 而停止，记录保留在 evidence 中。
 
-建议上板顺序：**固定纯校正 baseline → cache → both**。cache 的改动和资源增量较小，适合先验证；both 提供本次最大的离线吞吐改善。原演示版存在 setup 违规，新候选需要自身的完整时序检查。
+## 三版完整工程结果
+
+三版的 144 个实际引脚、全部声明电气属性和 11 个时钟均通过审计，位流来自各自 STA 绑定的最终 routed ADF。资源采用原生 Map 报告计数，LUT 包含半 LUT 单位。
+
+| 配置 | FF | LUT | DRM | APM | Slow setup 违规端点 | WNS |
+|---|---:|---:|---:|---:|---:|---:|
+| baseline | 21,898 | 17,066 | 19.5 | 69 | 62 | -0.659ns |
+| cache | 21,964 | 17,162.5 | 19.5 | 69 | 155 | -0.762ns |
+| both | 26,418 | 18,292.5 | 19.5 | 69 | 16 | -0.619ns |
+
+三版 fast setup、双角 hold、skew、minimum pulse width 通过；DDR recovery/removal 仍有违规。每版回执的 `physical_timing_accepted` 和 `hardware_release_allowed` 均为 `false`。完整十二类 STA、源码/约束/ADF/位流哈希见 [summary.json](evidence/board/summary.json)。诊断位流生成成功与稳定运行、正式时序签核分别记录。
+
+建议诊断对比顺序：**固定纯校正 baseline → both**，cache 保留为单项优化对照。本次实现中 both 取得最大的离线吞吐改善，setup 违规端点也较少；代价是增加 LUT/FF。三版都需继续收敛时序并取得同条件实板数据。
 
 ## 构建与上板交接
 
-见 [BOARD_HANDOFF.md](BOARD_HANDOFF.md)。脚本支持 `baseline/writer/cache/both` 四种独立候选和 `corrected/raw/demo` 三种固定配置；默认是 `both + corrected`。每份配置按源码生成独立 `param_id`，保留已有 UART 扫描协议。
+见 [BOARD_HANDOFF.md](BOARD_HANDOFF.md)。脚本支持 `baseline/writer/cache/both` 四种独立候选和 `corrected/raw/demo` 三种固定配置。整机构建入口 `build_board_candidate.py prepare` 默认 `cache + corrected`；源码准备工具 `prepare_candidate.py` 默认 `both + corrected`。重建时显式指定 `--variant both --mode corrected`，避免依赖默认值。每份配置按源码生成独立 `param_id`，保留已有 UART 扫描协议。
 
 80 项原生依赖已从本地仓库恢复，逐项通过冻结清单的长度和 SHA256 校验。本地完整包将它们放在解压根的 `native-dependencies/`；包内校验可直接读取该目录，无需 Git 或历史工作区。GitHub 基线目录保留 50 项项目源码及外部依赖清单，恢复脚本、来源记录和使用方式见 [DEPENDENCY_RECOVERY.md](DEPENDENCY_RECOVERY.md)。
 
@@ -56,7 +68,7 @@ PDS 2025.2 独立综合结果如下。cache 参数为 WIDTH1920/HEIGHT1080/INDEX
 
 ```powershell
 python -B delivery/20261103-hdmi1080-demo-source/tools/verify_package.py
-python -B -m unittest discover -s delivery/20261103-hdmi1080-throughput/tests -p test_tools.py -v
+python -B -m unittest discover -s delivery/20261103-hdmi1080-throughput/tests -p 'test_*.py' -v
 python -B delivery/20261103-hdmi1080-throughput/tools/verify_delivery.py
 ```
 
@@ -74,4 +86,4 @@ python -B tools/run_engine_benchmark.py --variant both --pressure --work _build/
 python -B tools/run_engine_summary.py _build/engine-baseline-01/report.json _build/engine-writer-01/report.json _build/engine-cache-01/report.json _build/engine-both-01/report.json --output _build/engine-summary-01.json
 ```
 
-已执行：writer 25 个场景，cache 4 项基线/候选测试（含完整 1080p），固定模式控制测试，四组完整 1080p engine 逐像素回归，12 项 CPU 工具测试，两个模块的基线/候选 PDS 综合，以及 80 项依赖恢复和无 Git 解压布局校验。详见 `evidence/`；CI 的 CPU 检查与本地 RTL/综合证据分别记录。
+已执行：writer 25 个场景，cache 4 项基线/候选测试（含完整 1080p），固定模式控制测试，四组完整 1080p engine 逐像素回归，38 项 CPU 测试（24 项 board flow、12 项工具、2 项打包），两个模块的基线/候选 PDS 综合，80 项依赖恢复和无 Git 解压布局校验，以及三版完整工程 Map/PNR/双角 STA/诊断位流生成。详见 `evidence/`；CPU、RTL 仿真、EDA 和实板证据分别记录。

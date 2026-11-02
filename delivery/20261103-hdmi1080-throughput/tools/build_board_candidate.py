@@ -24,7 +24,7 @@ import prepare_candidate as prep
 ROOT = Path(__file__).resolve().parents[1]
 REPO = ROOT.parents[1]
 TOP = "board1080_top"
-KINDS = ("setup", "hold", "recovery", "removal", "mpw")
+KINDS = ("setup", "hold", "recovery", "removal", "mpw", "skew")
 ARCH = {"family":"Logos2", "device":"PG2L100H", "speedgrade":"-6", "package":"FBG676"}
 EXPECTED_CLOCKS = {"board27":37.037037,"input_pixel":13.315579,"pixel_clk":37.037037*4/11,
     "cfg_clk":99.9999999,"ref_clk":8.0,"rst_clk":8.0,"ddrphy_sysclk":8.0,
@@ -62,7 +62,10 @@ def read_json(path):
 
 
 def save(path, value):
-    Path(path).write_text(json.dumps(value, indent=2, ensure_ascii=False)+"\n", encoding="utf-8")
+    path=Path(path)
+    temporary=path.with_name(path.name+".tmp")
+    temporary.write_text(json.dumps(value, indent=2, ensure_ascii=False)+"\n", encoding="utf-8")
+    temporary.replace(path)
 
 
 def ref(path):
@@ -273,7 +276,7 @@ def parse_timing(path):
         require(re.search(r"(?m)^\| "+re.escape(key)+r"\s*:\s*"+re.escape(value)+r"\s*$",text),"STA device/header mismatch: "+key)
     require("Timing analysis mode : multi corner" in text,"Multi-corner STA required")
     num=r"[-+]?\d+(?:\.\d+)?"
-    header=re.compile(r"^(Setup|Hold|Recovery|Removal|Minimum Pulse Width) Summary\((Slow|Fast) Corner\):\s*$")
+    header=re.compile(r"^(Setup|Hold|Recovery|Removal|Minimum Pulse Width|Skew) Summary\((Slow|Fast) Corner\):\s*$")
     rows=re.compile(r"^\s*(\S+)\s+(\S+)\s+("+num+r")\s+("+num+r")\s+(\d+)\s+(\d+)\s*$")
     pulse=re.compile(r"^\s*(\S+)\s+("+num+r")\s+("+num+r")\s+(\d+)\s+(\d+)\s*$")
     tables={};current=None;clock_lines=[];in_clocks=False
@@ -294,16 +297,18 @@ def parse_timing(path):
         if match:
             values=match.groups();count=1 if current.endswith("mpw") else 2
             wns,tns,failing,total=values[count:]
+            require(all(clock in EXPECTED_CLOCKS for clock in values[:count]),"Unknown clock in timing summary")
             require(math.isfinite(float(wns)) and math.isfinite(float(tns)),"Non-finite timing data")
             require(0<=int(failing)<=int(total),"Invalid timing endpoint counts")
             tables[current].append({"clocks":list(values[:count]),"worst_slack_ns":float(wns),
                                     "total_negative_slack_ns":float(tns),"failing_checks":int(failing),"total_checks":int(total)})
     expected={c+"_"+k for c in ("slow","fast") for k in KINDS}
-    require(set(tables)==expected and all(tables.values()) and clock_lines,"All ten nonempty timing summaries and clocks are required")
+    require(set(tables)==expected and all(tables.values()) and clock_lines,"All twelve nonempty timing summaries (including Skew) and clocks are required")
     require(all(sum(row["total_checks"] for row in rows)>0 for rows in tables.values()),"Every timing summary requires positive endpoint coverage")
     summaries={key:{"worst_slack_ns":min(r["worst_slack_ns"] for r in value),
+                    "total_negative_slack_ns":sum(r["total_negative_slack_ns"] for r in value),
                     "failing_checks":sum(r["failing_checks"] for r in value)} for key,value in tables.items()}
-    passed=all(r["worst_slack_ns"]>=0 and r["failing_checks"]==0 for r in summaries.values())
+    passed=all(r["worst_slack_ns"]>=0 and r["total_negative_slack_ns"]>=0 and r["failing_checks"]==0 for r in summaries.values())
     return {"complete_two_corner_report":True,"all_native_checks_met":passed,"summaries":summaries,"verified_clocks":parse_clocks(text),
             "all_rows":tables,"clock_summary_lines":clock_lines,"timing_report":ref(path)}
 
@@ -345,7 +350,7 @@ def stage_tcl(work, stage, directory, input_db=None, seed=1):
                       " -delay_type min_max -max_path 1 -nworst 1]"]
         elif stage=="sta":
             lines += ["checked [list report_timing -force_to_run -input_db_file "+tcl(input_db)+
-                      " -delay_type min_max -max_path 1000 -nworst 4 -report_exception TRUE -report_io_datasheet]"]
+                      " -delay_type min_max -max_path 50 -nworst 4 -report_exception TRUE -report_io_datasheet]"]
         elif stage=="bitstream":
             lines += ["checked [list gen_bit_stream -force_to_run -input_db_file "+tcl(input_db)+
                       " -scbv {High Voltage} -unused_io_status UNUSED]"]
@@ -357,9 +362,49 @@ def receipt(work, stage):
     result=read_json(work/(stage+"-result.json"))
     require(result.get("stage_completed") is True,"Previous stage is incomplete: "+stage)
     for item in result.get("artifacts",{}).values(): check_ref(item)
+    for key in ("script","log","device_project","input_db"):
+        if result.get(key): check_ref(result[key])
+    for item in result.get("explicit_constraints",[]): check_ref(item)
     check_ref(result["board_flow"])
     require(result["board_flow"]==ref(work/"board-flow.json"),"Stage belongs to another preparation")
     return result
+
+
+def timing_input_audit(report, input_db):
+    """Bind the tool's own report header, not only the controller receipt."""
+    text=Path(report).read_text(encoding="utf-8-sig",errors="replace")
+    command=re.search(r"(?m)^\| Tcl Command\s*:\s*([^\r\n]+)",text)
+    require(command is not None,"STA native command header absent")
+    if command[1].startswith("report_timing "):
+        pattern=r'-input_db_file\s+(?:\{([^{}]*)\}|"([^"]*)"|(\S+))'
+    else:
+        require(re.fullmatch(r'set_option\s+-options\s+\{.*\}\s+\[get_actions report_timing -of_objects \[get_tasks pnr_1\]\]',command[1]) is not None,
+                "Unrecognized STA native action header")
+        pattern=r'(?:^|[\s{])input_db_file\s+(?:\{([^{}]*)\}|"([^"]*)"|([^\s}]+))'
+    options=re.findall(pattern,command[1])
+    require(len(options)==1,"STA native header requires exactly one input DB")
+    value=next(x for x in options[0] if x)
+    require(Path(value).resolve()==Path(input_db).resolve(),"STA native input DB differs from routed DB")
+    return {"passed":True,"native_command":command[1],"input_db":ref(input_db)}
+
+
+def fresh_bit_audit(work, plan):
+    mapped=receipt(work,"map");routed=receipt(work,"route");timed=receipt(work,"sta")
+    require(routed["input_db"]==mapped["artifacts"]["map_db"],"Route belongs to another map DB")
+    require(timed["input_db"]==routed["artifacts"]["route_db"],"STA does not bind current routed DB")
+    require(routed["artifacts"]["pcf"]==mapped["artifacts"]["pcf"],"Route PCF differs from map")
+    pcf=Path(mapped["artifacts"]["pcf"]["path"])
+    native_pin_audit(pcf,Path(mapped["artifacts"]["pin_report"]["path"]),plan["expected_pins"],mapped_only=True)
+    native_pin_audit(pcf,Path(routed["artifacts"]["pin_report"]["path"]),plan["expected_pins"])
+    routed_electrical_audit(pcf,Path(routed["artifacts"]["electrical_report"]["path"]),plan["expected_pins"])
+    for record in (routed,timed):
+        verify_device(Path(record["stage_directory"]))
+        verify_constraint_import(Path(record["stage_directory"]),record["explicit_constraints"])
+    report=Path(timed["artifacts"]["timing"]["path"])
+    timing_input_audit(report,Path(routed["artifacts"]["route_db"]["path"]))
+    timing=parse_timing(report)
+    return {"timing":timing,"input_db":routed["artifacts"]["route_db"],
+            "receipts":{stage:ref(work/(stage+"-result.json")) for stage in ("map","route","sta")}}
 
 
 def run(args):
@@ -371,20 +416,16 @@ def run(args):
     require(args.pds_shell.is_file(),"PDS executable missing")
     require(1<=args.seed<=99999 and 1<=args.timeout_seconds<=43200,"Invalid seed/time limit")
     require(not args.diagnostic_bit or stage=="bitstream","--diagnostic-bit applies only to bitstream stage")
+    require(shutil.disk_usage(work).free>=1024**3,"At least 1 GiB free workspace disk space required before starting PDS")
     prior=None;input_db=None;timing=None
     if stage=="route":
         prior=receipt(work,"map");input_db=Path(prior["artifacts"]["map_db"]["path"])
     elif stage=="sta":
         prior=receipt(work,"route");input_db=Path(prior["artifacts"]["route_db"]["path"])
     elif stage=="bitstream":
-        prior=receipt(work,"sta");routed=receipt(work,"route");mapped=receipt(work,"map")
-        input_db=Path(routed["artifacts"]["route_db"]["path"])
-        require(prior["input_db"]==ref(input_db),"STA does not bind current routed DB")
-        require(prior["timing"]["complete_two_corner_report"] and routed["pins"]["passed"] and mapped["pins"]["passed"],"Complete fresh STA and native pin checks required")
-        require(routed["electrical"]["passed"] and routed["constraint_import"]["passed"] and prior["constraint_import"]["passed"],
-                "Verified final IO electrical attributes and explicit stage constraints required")
-        require(set(prior["timing"]["verified_clocks"])==set(EXPECTED_CLOCKS),"STA expected-clock contract absent")
-        timing=prior["timing"]
+        bit_audit=fresh_bit_audit(work,plan)
+        input_db=Path(bit_audit["input_db"]["path"])
+        timing=bit_audit["timing"]
         if not args.diagnostic_bit:
             require(timing["all_native_checks_met"],"Native timing has violations; no normal bitstream export")
             require(plan["external_io_timing_accepted"] and plan["cdc_protocol_and_reset_signoff"],
@@ -443,8 +484,11 @@ def run(args):
             report=unique(directory,TOP+".rtr","report_timing")
             exceptions=unique(directory,TOP+"_exception.rtr","report_timing")
             result["timing"]=parse_timing(report)
+            result["native_input_binding"]=timing_input_audit(report,input_db)
             result["artifacts"]={"timing":ref(report),"exceptions":ref(exceptions)}
         else:
+            require(fresh_bit_audit(work,plan)==bit_audit,"Bitstream prerequisites changed during native execution")
+            result["fresh_bit_audit"]=bit_audit
             bit=unique(directory,TOP+".sbit","generate_bitstream")
             result["label"]="DIAGNOSTIC_NOT_TIMING_SIGNOFF" if args.diagnostic_bit else "TIMING_AND_REVIEW_GATES_MET"
             target=work/"export"/(plan["variant"]+"_"+plan["mode"]+"_"+plan["param_id_hex"]+"_"+result["label"]+".sbit")
@@ -477,8 +521,9 @@ def migrate_runner(args):
     for path in work.glob("*-result.json"):
         result=read_json(path)
         require(result["board_flow"]==old_plan,"Stage receipt has unrelated board-flow identity")
-        for key in ("script","log","device_project"):
-            if key in result: check_ref(result[key])
+        for key in ("script","log","device_project","input_db"):
+            if result.get(key): check_ref(result[key])
+        for item in result.get("explicit_constraints",[]): check_ref(item)
         for item in result.get("artifacts",{}).values(): check_ref(item)
         results.append((path,result))
     directory=work/"provenance"/("runner-migration-"+datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ"))
@@ -538,6 +583,7 @@ def audit_existing(args):
     else:
         report=unique(directory,TOP+".rtr","report_timing");exceptions=unique(directory,TOP+"_exception.rtr","report_timing")
         result["timing"]=parse_timing(report)
+        result["native_input_binding"]=timing_input_audit(report,Path(result["input_db"]["path"]))
         result["artifacts"]={"timing":ref(report),"exceptions":ref(exceptions)}
     result.setdefault("recovered_errors",[]).append(result.pop("error",None))
     result.update(stage_completed=True,cpu_reaudit_utc=datetime.now(timezone.utc).isoformat(),audit_runner=ref(__file__),eda_reexecuted=False)

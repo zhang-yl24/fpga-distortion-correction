@@ -360,24 +360,42 @@ if __name__=='__main__':
 
 def start_here(status):
     build_lines = []
+    by_variant = {}
+    extract_parent = status['path_validation']['recommended_extract_parent'].rstrip('/')
+    extract_root = extract_parent + '/' + ARCHIVE_ROOT
     for label, item in status['board_builds'].items():
+        by_variant[item.get('variant')] = item
         stages = ', '.join(name + '=' + ('完成' if row.get('stage_completed') else '待完成/失败')
                            for name, row in item['stages'].items())
         build_lines.append(f'- `{label}`：{item.get("variant")} / {item.get("mode")}，param_id '
                            f'`{item.get("param_id_hex")}`；{stages}。原始证据见 `board-builds/{label}/`。')
     if not build_lines:
         build_lines = ['- 本包未附板级构建快照；使用以下命令在接收方电脑重新构建。']
+    complete_bits = all(by_variant.get(v, {}).get('portable_bitstream', {}) and
+                        by_variant[v]['portable_bitstream'].get('label') == 'DIAGNOSTIC_NOT_TIMING_SIGNOFF'
+                        for v in ('baseline', 'both', 'cache'))
+    bit_status = ('本包已附 baseline、both、cache 三份固定纯校正诊断位流，均已完成原生导出；优化后实板验收待完成。'
+                  if complete_bits else '已完成导出的诊断位流见 bitstreams/ 各版本的 STATUS.json；优化后实板验收待完成。')
+    timing_lines = []
+    for variant in ('baseline', 'both', 'cache'):
+        setup = by_variant.get(variant, {}).get('stages', {}).get('sta', {}).get('timing', {}).get('summaries', {}).get('slow_setup')
+        if setup:
+            timing_lines.append(f'| {variant} | {setup["failing_checks"]} | {setup["worst_slack_ns"]:.3f} |')
+    timing_table = ('\n\n| 版本 | Slow Setup 违规端点 | 最差裕量（ns） |\n'
+                    '| --- | ---: | ---: |\n' + '\n'.join(timing_lines)) if timing_lines else ''
     return '''# HDMI 1080p 校正工程：解压后入口
 
 本包包含冻结演示源码 50 项、候选源码/测试/文档，以及按原清单匹配的 80 项原生依赖。
-工程目标为盘古 100Pro+ 的 PG2L100H、FBG676、-6，沿用约 30Hz 的 DDR 校正路径。
+工程目标为盘古 100Pro+ 的 PG2L100H、FBG676、-6，使用 1080p29.97/30 的 DDR 校正路径。
 当前参数仍为 Penn 开发配置、零旋转和 Gamma OFF；真实镜头标定及优化后实板指标按实际验收补录。
+''' + bit_status + '''
+当前结果支持诊断测试和性能对照，1080p60 稳定纯校正仍待实现与实测。
 一键重建入口用于复现当前封存参数下的 baseline/cache/both 性能候选。真实镜头 K/D 的受控
 参数导入、身份绑定及匹配回归另行完成；本入口尚未提供直接更换标定文件的选项。
 
 ## 1. 解压与核验
 
-建议解压到短路径 `C:/fpga/`，得到 `C:/fpga/fpga1080/`。保留目录结构。
+建议解压到短路径 `''' + extract_parent + '''/`，得到 `''' + extract_root + '''/`。保留目录结构。
 本地编译工具使用接收方已安装、授权有效的 PDS 2025.2；包内未包含工具程序或授权文件。
 在 `fpga1080` 目录执行（Python 3.10+）：
 
@@ -396,15 +414,17 @@ python -B delivery/20261103-hdmi1080-throughput/tools/recover_native_dependencie
 从包根目录执行一条命令，替换 PDS 的安装路径：
 
 ```powershell
-python -B rebuild.py --pds-shell E:/PDS_2025.2-ads-win64/pango/PDS_2025.2-ads/bin/pds_shell.exe --output-root C:/fpga-build --variant cache
+python -B rebuild.py --pds-shell E:/PDS_2025.2-ads-win64/pango/PDS_2025.2-ads/bin/pds_shell.exe --output-root D:/fpga-build2 --variant both
 ```
 
 入口顺序执行 prepare、Map、PNR、双角 STA、诊断位流导出；任一步失败立即停止并保留日志。
-每次自动生成新 run 名，也可用 `--run-name cache-01` 指定。`--seed` 和 `--timeout-seconds`
+每次自动生成新 run 名，也可用 `--run-name both-01` 指定。`--seed` 和 `--timeout-seconds`
 可选。完整分阶段命令与失败检查见候选目录的 `docs/BOARD_BUILD_NOTES.md`。
 
 使用新的 run 名重试或改变配置。`baseline/writer/cache/both` 与 `corrected/raw/demo`
-分别选择优化方案与显示模式；性能测量采用 `corrected`。优先测试 cache，随后比较 both。
+分别选择优化方案与显示模式；性能测量采用 `corrected`。本次推荐先用 baseline 确认同一
+输入源和测量方法，再用 both 测量联合优化；cache 用作缓存单项优化对照。命令示例显式
+选择 `--variant both`；入口省略该参数时仍默认 cache。
 一键入口产物带 `DIAGNOSTIC_NOT_TIMING_SIGNOFF` 标签，并保留时序失败信息。
 同学可在 PDS 中打开接收方本次生成的原生工程；脚本保留阶段日志与源码/数据库绑定。
 
@@ -415,7 +435,11 @@ python -B rebuild.py --pds-shell E:/PDS_2025.2-ads-win64/pango/PDS_2025.2-ads/bi
 
 ## 3. 当前随包板级构建状态
 
-''' + '\n'.join(build_lines) + '''
+''' + '\n'.join(build_lines) + timing_table + '''
+
+表中数值直接读取随包构建的独立 STA 回执。三份最终构建均保留 DDR recovery/removal
+违规，诊断标签随位流保留；当前时序结果尚未达到正式签核要求。推荐 baseline → both
+的板测顺序，并记录 cache 单项对照，分别采集固定纯校正的唯一输出 FPS 与同源画质。
 
 详见 `PACKAGE_STATUS.json`，它逐项保留原阶段状态与时序摘要。附带的构建快照保留原始
 绝对路径和历史输入身份，迁移后用于追溯；重新构建请执行上面的 prepare，生成接收方
@@ -432,7 +456,7 @@ RTL 回归入口见候选 README 的“重现验证”；独立 scalar golden �
 `distortion/tools/generate-brown-vectors.py`，包内已包含。
 
 ```powershell
-python -B -m unittest discover -s delivery/20261103-hdmi1080-throughput/tests -p test_tools.py -v
+python -B -m unittest discover -s delivery/20261103-hdmi1080-throughput/tests -p test_*.py -v
 ```
 
 上板操作、原始 UART 采集与唯一输出 FPS 分析见
