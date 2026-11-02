@@ -1,0 +1,132 @@
+{
+  "Schema": "camera720-portable-cpu-regression-v1",
+  "HostPlatform": "Windows-11-10.0.26200-SP0",
+  "PythonVersion": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:09:58) [MSC v.1929 64 bit (AMD64)]",
+  "NativeExecuted": false,
+  "HardwareAccessed": false,
+  "LinuxRunPerformed": false,
+  "RecordedFixtureScope": "Parser and rejection tests only; production auditors unchanged.",
+  "WorkingTreeResult": {
+    "Passed": 1759,
+    "SubtestsPassed": 482,
+    "Seconds": 270.36
+  },
+  "UpdatedTargetedResult": {
+    "Passed": 23,
+    "SubtestsPassed": 8
+  },
+  "SourceOnlySnapshotResult": {
+    "Passed": 1752,
+    "Skipped": 12,
+    "SubtestsPassed": 490,
+    "Seconds": 202.23,
+    "CopiedIgnoredWorkOrBuild": false,
+    "RequiredTrackedCalibrationEvidenceIncluded": true
+  },
+  "InputSHA256": {
+    ".github/workflows/reference-checks.yml": "0a853d0382eaf06d5da00d559e28fd2f90a83a07b407b0234030461f3af8e384",
+    "distortion/tests/test_camera720_output_prepare.py": "b2a076f6232e388809b58de82376494f95c356fa8e2dcbbb9213cc95f16dc891",
+    "distortion/tests/test_camera720_calibrated_preparation.py": "ac373a608d83dd2aaca5594f1dc47c39291beea7651d5c662929c63fe928dfaa",
+    "distortion/tests/test_prepare_stats_delay_final_c.py": "35bc7b3ffd93c8c27dce89843a4f064f21494c6efe557fe9a48b97c775e54a67",
+    "distortion/tests/test_camera720_raw_vendor_diagnostics.py": "68c2ee8a04bd9be64d80e9489ad181b7a31a105b7fed8ed5ff5f9e287a442cc6",
+    "distortion/tests/fixtures/camera720-raw-vendor-contract.json": "2e1300d54191e304907a3a6f3f5ec54c3cafdbe8abf608e6d47e099bd6bf1731",
+    "distortion/tools/prepare_camera720_stats_delay_final.py": "167eed6cfef3d23874edd77afbaed059842e711e27657376392f9467488536f5"
+  },
+  "TestReports": [
+    {
+      "Report": "prepush-camera720-initial.xml",
+      "Attributes": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "2241",
+        "time": "270.158",
+        "timestamp": "2026-11-02T11:31:37.279721+08:00",
+        "hostname": "GravityMateBook"
+      },
+      "SkippedTests": []
+    },
+    {
+      "Report": "prepush-camera720-sourceonly-fixed.xml",
+      "Attributes": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "12",
+        "tests": "2254",
+        "time": "202.205",
+        "timestamp": "2026-11-02T11:41:43.006126+08:00",
+        "hostname": "GravityMateBook"
+      },
+      "SkippedTests": [
+        {
+          "Class": "distortion.tests.test_camera720_calibrated_stats_preparation",
+          "Test": "test_actual_frozen_source_packaging_isolated_and_detects_generated_drift",
+          "Reason": "local frozen calibrated source fixture unavailable"
+        },
+        {
+          "Class": "distortion.tests.test_camera720_raw_cdc",
+          "Test": "test_actual_bank_address_mapping_and_admission_level",
+          "Reason": "optional native graph evidence absent"
+        },
+        {
+          "Class": "distortion.tests.test_camera720_raw_cdc",
+          "Test": "test_preview_read_write_bank_swap_is_rejected",
+          "Reason": "optional native graph evidence absent"
+        },
+        {
+          "Class": "distortion.tests.test_camera720_raw_cdc",
+          "Test": "test_metadata_enable_semantic_equivalence_uses_exact_native_truth",
+          "Reason": "optional native graph evidence absent"
+        },
+        {
+          "Class": "distortion.tests.test_camera720_raw_cdc",
+          "Test": "test_actual_final_tx_native_reports_cover_all_ports_and_corners",
+          "Reason": "optional completed final IO evidence absent"
+        },
+        {
+          "Class": "distortion.tests.test_camera720_stats_build",
+          "Test": "test_actual_build_preparation_validation_and_native_injection_rejection",
+          "Reason": "local isolated source fixture unavailable"
+        },
+        {
+          "Class": "distortion.tests.test_camera720_stats_delay_build",
+          "Test": "test_actual_build_preparation_validation_and_native_injection_rejection",
+          "Reason": "local isolated source fixture unavailable"
+        },
+        {
+          "Class": "distortion.tests.test_camera720_stats_delay_shared_build",
+          "Test": "test_actual_build_preparation_validation_and_native_injection_rejection",
+          "Reason": "local isolated source fixture unavailable"
+        },
+        {
+          "Class": "distortion.tests.test_camera720_stats_delay_shared_source",
+          "Test": "test_actual_frozen_source_packaging_isolated_and_detects_generated_drift",
+          "Reason": "local frozen calibrated source fixture unavailable"
+        },
+        {
+          "Class": "distortion.tests.test_camera720_stats_delay_source",
+          "Test": "test_actual_frozen_source_packaging_isolated_and_detects_generated_drift",
+          "Reason": "local frozen calibrated source fixture unavailable"
+        },
+        {
+          "Class": "distortion.tests.test_camera720_stats_delay_tap_build",
+          "Test": "test_actual_build_preparation_validation_and_native_injection_rejection",
+          "Reason": "local isolated source fixture unavailable"
+        },
+        {
+          "Class": "distortion.tests.test_camera720_stats_delay_tap_source",
+          "Test": "test_actual_frozen_source_packaging_isolated_and_detects_generated_drift",
+          "Reason": "local frozen calibrated source fixture unavailable"
+        }
+      ]
+    }
+  ],
+  "Artifacts": {
+    "prepush-camera720-initial.log": "8fdbc57c56872583bfb64c7036e0bf50d24ca5b4a0895c5806ea5c3ca69729e1",
+    "prepush-camera720-initial.xml": "54750b9b6f226fb81ec27f3f381b4e456e7f3c2a557d29ea345f4c2828203180",
+    "prepush-camera720-sourceonly-fixed.log": "823157e9b66e8baf1bd13400eaf7d4b089816357b28894d5c6ace573baf75dd0",
+    "prepush-camera720-sourceonly-fixed.xml": "8329ba2dc1d65322b6f949006c5b2517a2cc457fd6a880653483800515e79ccb"
+  }
+}
