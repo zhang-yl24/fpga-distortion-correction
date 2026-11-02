@@ -1,0 +1,19 @@
+{
+  "ParentBitSHA256": "e395e2ac43433a0a065618c4b901a51262e423d2336bf28dbd9394ff48a0efb3",
+  "ParentADF": "18434719dd4d35c4a971c2e6205937838eccf7875dcda3f9780a8733842e7207",
+  "NativeCount": 130,
+  "OnlyChanged": "source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v",
+  "BaselineSHA256": "385821384f15e0c2610ed41846037dbb867bdd86b41342e984221a6e66aeaa64",
+  "CandidateSHA256": "6ef0d4bc0f5dcffe279201fa9a63360e26df65193804636259dfa5a31bde896a",
+  "DefaultHoldCycles": 375000000,
+  "CoreClockPeriodNs": 8,
+  "NominalMinimumSeconds": 3,
+  "AddedStateBits": 29,
+  "InterfaceChanges": false,
+  "DataPathCyclesAdded": 0,
+  "ModeBoundary": "Same registered source_commit; bank captures old correction_enable at actual accept and keeps it for the whole transaction. Due mode applies to a later accepted frame.",
+  "Failure": "Sticky failed freezes mode and elapsed; original datapath drain/reset unchanged.",
+  "ManualModeInterface": "No existing mode command: load_arm_parser validates only schema1/op1/24byte ARM; correction_enable only driven by frame_ab_control.",
+  "Scope": "Demonstration stability only; no cache/completion/constraint/clock/DDR/UART edits.",
+  "TestsBoundary": "Short control test with scaled dwell and a bank-mode capture probe; not full DDR/pixel simulation or physical acceptance."
+}
