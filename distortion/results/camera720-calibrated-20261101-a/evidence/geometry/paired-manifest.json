@@ -1,0 +1,79 @@
+{
+  "schema": "camera720-paired-mode-geometry-v1",
+  "target_identity": {
+    "camera_id": "ov5640-cam2-current-20261031",
+    "lens_id": "current-installed-lens-20261031",
+    "profile_id": "current720-current-lens-uncalibrated",
+    "capture_mode_id": "current720-rgb565-upright-3820-41-3821-07"
+  },
+  "camera_focus_and_mount_unchanged_declared": true,
+  "board": {
+    "cols": 6,
+    "rows": 9,
+    "square_mm": 25
+  },
+  "method": "fit_axis_aligned",
+  "thresholds": {
+    "rms_px": 0.5,
+    "maximum_px": 1.5
+  },
+  "pairs": [
+    {
+      "pair_id": "fit-01",
+      "pose_id": "physical-pose-01",
+      "split": "fit",
+      "same_stationary_pose_declared": true,
+      "corner_order": "auto",
+      "source": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose01-vga\\mode-pair01-vga-20261101-a-CAM2-frame0000000006.png",
+        "sha256": "8c0576bfc4bf1ca4b3d6b3394581fae1360d9d55a29f8530b0c4553e6cffcf01",
+        "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose01-vga\\mode-pair01-vga-20261101-a-CAM2-frame0000000006.json",
+        "metadata_sha256": "6b86bf6b8b74bc7e2730e9c1603017b57e4a10eba4f5dbbd8f9193704da85022"
+      },
+      "target": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-raw\\frame-pair01-a\\mode-pair01-720-20261101-a-CAM2-frame0000000050.png",
+        "sha256": "1aaffa653f9d04c44eee2c4da6b4386865b71562e52938748fe0c5abd9703a86",
+        "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-raw\\frame-pair01-a\\mode-pair01-720-20261101-a-CAM2-frame0000000050.json",
+        "metadata_sha256": "f5da2e409890f5e7d7e37eeaf6492ee3b51b833392ff1794c7d4b3d608a9ccd9"
+      }
+    },
+    {
+      "pair_id": "held-out-03",
+      "pose_id": "physical-pose-03",
+      "split": "held_out",
+      "same_stationary_pose_declared": true,
+      "corner_order": "auto",
+      "source": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-vga\\mode-pair03-vga-20261101-a-CAM2-frame0000000006.png",
+        "sha256": "c297478bbebced339b8e06618c7afeca99655524cff4842b2ec1b511e0ad1e7f",
+        "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-vga\\mode-pair03-vga-20261101-a-CAM2-frame0000000006.json",
+        "metadata_sha256": "278b44ba38d599a643f0e8672f1b967e678421ec943d44fbcee9d7e5d1e425d8"
+      },
+      "target": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-720\\mode-pair03-720-20261101-a-CAM2-frame0000000033.png",
+        "sha256": "b0e64a093e5753f0412fdcd9935b8e08d6d45c6a73f2cdbffc7c671e3b088cd8",
+        "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-720\\mode-pair03-720-20261101-a-CAM2-frame0000000033.json",
+        "metadata_sha256": "0566001c86ec65bcf3b9a0ed984e4cbab3e05eae4c8ce03cb2ae4f3ec0e66df7"
+      }
+    }
+  ],
+  "predeclared_session_plan": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\session-plan.json",
+    "sha256": "42b7b4bb5aaa333fe940431e91be1909dd133d3cd919cda4d76e2157fa6d0351"
+  },
+  "pose03_user_confirmation": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-user-confirmation.json",
+    "sha256": "1f34d102c56275f8a3541e84a241f757a1cb6f0b777d574a1bc9d2b34a97b3b9"
+  },
+  "physical_pose_identity_verified": false,
+  "camera_world_pose_changed_between_pairs": true,
+  "unchanged_declaration_scope": "Same camera/lens optical assembly and focus per session instructions; stationary within each eligible pair only. Camera world pose changed before pair03, as declared by operator.",
+  "excluded_pair02": {
+    "failed_report": {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\two-pair-validation-a\\paired-transfer-report.json",
+      "sha256": "68ac81de3a37883dca902906d707ef56a72c94e4c6f45c506bc425b3b478daf6"
+    },
+    "reason": "Operator confirmed camera movement between mode captures; stationary-pose declaration revoked. Failure preserved, not accepted or used to fit."
+  },
+  "no_lens_adjustment_independently_verified": false
+}

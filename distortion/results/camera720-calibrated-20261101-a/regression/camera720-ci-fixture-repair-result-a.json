@@ -1,0 +1,40 @@
+{
+  "Schema": "camera720-ci-fixture-repair-validation-v1",
+  "Scope": "Only two unbound test fixtures; no production helper or native artifact edits",
+  "Files": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\test_camera720_output_prepare.py": {
+      "BeforeSHA256": "28ca1e0f198bd26773e685cadc3680686b0d10f597ddee8fe03644f5022f0fdc",
+      "AfterSHA256": "b2a076f6232e388809b58de82376494f95c356fa8e2dcbbb9213cc95f16dc891"
+    },
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\test_camera720_calibrated_preparation.py": {
+      "BeforeSHA256": "ef9b28e2aa1b5273b6fd8557655e845b56b04de060093fe551d0ab7bd10e889b",
+      "AfterSHA256": "ac373a608d83dd2aaca5594f1dc47c39291beea7651d5c662929c63fe928dfaa"
+    }
+  },
+  "BindingReview": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-ci-fixture-binding-review-a.json",
+    "SHA256": "bf3cb285456ec9b66410a89ebe1c03564dd2af6a7352bfb2b7b383d5b3fda210"
+  },
+  "WindowsPytest": {
+    "Command": ".venv/Scripts/python.exe -B -X utf8 -m pytest -q -p no:cacheprovider distortion/tests/test_camera720_output_prepare.py distortion/tests/test_camera720_calibrated_preparation.py --junitxml=distortion/work/camera720-ci-fixture-windows-a.xml",
+    "ExitCode": 0,
+    "Passed": 30,
+    "SubtestsPassed": 25,
+    "ElapsedSeconds": 89.07,
+    "JUnit": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-ci-fixture-windows-a.xml",
+      "SHA256": "d8c8a2ff81665124f690924c20aa6d9b342404b1bcaecebef8345a798fbf70de"
+    }
+  },
+  "DiffWhitespaceCheckPassed": true,
+  "LinuxGitHubActionsExecuted": false,
+  "POSIXPathSemantics": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-ci-posix-path-semantics-a.json",
+    "SHA256": "e4dc10cc5121adbf1e536f2d965e18b55b6b556771753390d4e56e6a3ea19f96"
+  },
+  "WSLUnavailableReason": "Wsl/EnumerateDistros/Service/E_ACCESSDENIED",
+  "ProductionToolsModified": false,
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "GitPushExecuted": false
+}

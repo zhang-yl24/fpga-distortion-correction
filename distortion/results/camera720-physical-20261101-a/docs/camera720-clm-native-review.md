@@ -1,0 +1,15 @@
+# Independent physical CLM collector and release-adapter review
+
+No PDS or hardware operation was performed by this reviewer. Frozen producers were not edited.
+
+Reviewed collector `tools/camera720_cdc_clm_native.py`, final SHA256 `e64b024c8b1c9eeaa7b7b21ef16291e61e5fa534b8a5408551a969b5193a4921`, and physical adapter `tools/camera720_bitstream.py`, SHA256 `04f6851810fe72c88aaec042d83c1ac7adc69d93a19888191dd7f416525bfa6e`. Independent focused run: **47 tests passed** (14 collector + 33 physical adapter).
+
+The collector preserves one selected Q per source CLK in each group, bounds four clocks / 64 source-endpoint combinations / three commands per context, and verifies complete from/through/to selector equality against the actual native report. Each path must show the exact selected tco output. It rejects C/E/F and error diagnostics recursively, binds exact executed stage bytes and artifacts, and rederives physical mapping from actual graph/route/placement before the final audit. Partial physical coverage remains incomplete even when native execution succeeds.
+
+The only concrete issue found was unchecked copied supplemental metadata: the first draft recomputed the same-BLE supplement but copied the plan's supplement and relationship offset to its output without equality checks. The author fixed this with `validate_supplement()` immediately after real mapping rebinding in `audit_value()` and two focused tamper tests. The reviewed final hash includes this fix.
+
+The physical adapter always reruns the complete pure collector, including its formerly reviewed/reuse branch; it does not substitute saved pass flags. It binds the fixed vendor-STA basis, manual extracts and exact canonical manual file digests, then checks logical relationship membership and physical mapping identity. It requires complete actual cases and ordinary setup/hold coverage while keeping individual-FF enumeration and independent internal aggregation claims false. No concrete blocker remains in the reviewed adapter bytes.
+
+Historical draft plan A (`cdc-clm-through-a/plan.json`, SHA256 `81db3920539db725ab4fb2fe72136f9135f0c304a9464a2cd80f9be6695f0fbb`) was independently checked: 1,139 queries / 2,486 applicable cases, 754 initially covered / 1,732 missing; 16 commands / six contexts. All 679 input hashes matched then, and every missing identity appeared exactly once in bounded groups with one output per clock. The invalid-selector native00 receipt is absent from initial evidence. Plan A binds the previous collector draft and is historical, not the final executable plan after the metadata fix.
+
+Final plan B (`cdc-clm-through-b/plan.json`) SHA256 is `3e5b7fe56b2ced36b29aa5b1a1e8b6e80c494f9a23da3ebd76e94868cab5ee38`. Independent A/B comparison found only Producer and InputSHA256 changed. All 679 B input hashes match current bytes. Queries, initial evidence, complete initial coverage, supplement/offset and grouping are unchanged; the missing identity coverage and one-Q-per-CLK bounds were rechecked. No further concrete blocker was found. This review is not native timing completion or bitstream/hardware authorization.

@@ -1,0 +1,157 @@
+{
+  "Schema": "camera720-stats-shared-control-monitor-simulation-v1",
+  "Target": "camera720_calibrated_stats_delay_top",
+  "Passed": true,
+  "GeneratedTop": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\source-c\\source\\board\\camera720_calibrated_stats_delay_top.v",
+    "SHA256": "5fce0027931b82d421b26022223a28fddbd60d4c99c25fa50fdefe3406c704bd"
+  },
+  "InputSHA256": {
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\simulation\\GTP_INBUF.v": "90a5ef2b2de82c59ad0958312efe48a77df7c29b0d129e2f0de491e77844e4a5",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\simulation\\GTP_ZEROHOLDDELAY.v": "0a8f9487d1240020442e65ab2e924768cf9ec898bd4dd546e9229ea5096a12b6",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\raw_camera_control_input_delay.v": "78c3b56145f6531b4fd8605b0ec2dc6a7d79466b9f3c5d48594448b1bb4f4fc9",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\reg16_i2c.v": "7db5335dee7d64eddf3905008a1cd64262889d0a9ebef63c74d4612d70a5a580",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ov5640_current720_init.v": "f8530a40248f462e2914c27c3ca961f66b316aa1aa669539e88c26b3f1e02456",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ov5640_current720_frontend.v": "6e412ed815c8df4ac04b89a71c595416fa76f4207926179b005c162f4ebfc39a",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_mode_admission_monitor.v": "2895bad17ecc74c0cceefce4a53de525a2516462e1bc082481d2d34de2ec8b55",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_camera720_stats_shared_monitor.sv": "eabfb81a839a2bb85c3d601e5b0933f4f9343fb60c56c639ad6811bf473a9a50",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\ov5640_rgb565_720_commands.vh": "05ce241ce37286b6820eeeaad28eeff0821f12d1319bdc6747c4fd04a72ff22c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\ov5640_rgb565_720_sequence.json": "88cd19153f7f5fda5c80b86a4112f6e689ca52f094642cd1e2ce967261ee2c5d",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_camera720_stats_shared_monitor_sim.py": "9d726ab986aa20e3b19e35bef4da889296467e1a518ff0354d4ddfa03600472e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_camera720_stats_shared_delay_sim.py": "c7a9c5e02e1be2e96077937addb77e28e4084cf2bba26b4fa0ad325d2a76ea7c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\source-c\\source\\board\\camera720_calibrated_stats_delay_top.v": "5fce0027931b82d421b26022223a28fddbd60d4c99c25fa50fdefe3406c704bd"
+  },
+  "TopWiring": {
+    "CaptureDataLanes": 8,
+    "CaptureControlLanes": 2,
+    "CaptureClockUnchanged": true,
+    "MonitorAfterControlDelay": true,
+    "RawMonitorPathPreserved": false,
+    "MonitorSamplePhaseShiftPS": 1500,
+    "MonitorHasPixelDataInput": false,
+    "Observation": "Static actual generated-top connection check; functional simulation below instantiates both real delay wrappers."
+  },
+  "MaximumSeconds": 600,
+  "MonitorSamplePhaseShiftPS": 1500,
+  "MonitorAfterControlDelay": true,
+  "RawMonitorPathPreserved": false,
+  "Geometry": [
+    2560,
+    720
+  ],
+  "PCLKModelHz": [
+    42000000,
+    47250000
+  ],
+  "SimulationExecuted": true,
+  "Cases": [
+    {
+      "Name": "pclk42_good",
+      "Passed": true,
+      "Summary": {
+        "Passed": true,
+        "BadLineCase": 0,
+        "PCLKHalfPeriodPS": 11905,
+        "GoodFrames": 2,
+        "BadFrames": 0,
+        "LastLines": 720,
+        "LastBytes": 2560,
+        "Fault": 192,
+        "Configured": 1,
+        "RawAuthorize": 0
+      },
+      "SummaryFile": "pclk42_good-summary.json",
+      "Log": "pclk42_good.log"
+    },
+    {
+      "Name": "pclk47_25_good",
+      "Passed": true,
+      "Summary": {
+        "Passed": true,
+        "BadLineCase": 0,
+        "PCLKHalfPeriodPS": 10582,
+        "GoodFrames": 2,
+        "BadFrames": 0,
+        "LastLines": 720,
+        "LastBytes": 2560,
+        "Fault": 192,
+        "Configured": 1,
+        "RawAuthorize": 0
+      },
+      "SummaryFile": "pclk47_25_good-summary.json",
+      "Log": "pclk47_25_good.log"
+    },
+    {
+      "Name": "pclk42_bad_line",
+      "Passed": true,
+      "Summary": {
+        "Passed": true,
+        "BadLineCase": 1,
+        "PCLKHalfPeriodPS": 11905,
+        "GoodFrames": 0,
+        "BadFrames": 0,
+        "LastLines": 0,
+        "LastBytes": 2560,
+        "Fault": 18,
+        "Configured": 1,
+        "RawAuthorize": 0
+      },
+      "SummaryFile": "pclk42_bad_line-summary.json",
+      "Log": "pclk42_bad_line.log"
+    },
+    {
+      "Name": "pclk47_25_bad_line",
+      "Passed": true,
+      "Summary": {
+        "Passed": true,
+        "BadLineCase": 1,
+        "PCLKHalfPeriodPS": 10582,
+        "GoodFrames": 0,
+        "BadFrames": 0,
+        "LastLines": 0,
+        "LastBytes": 2560,
+        "Fault": 18,
+        "Configured": 1,
+        "RawAuthorize": 0
+      },
+      "SummaryFile": "pclk47_25_bad_line-summary.json",
+      "Log": "pclk47_25_bad_line.log"
+    }
+  ],
+  "PDSAccessed": false,
+  "HardwareAccessed": false,
+  "ExternalACTimingAccepted": false,
+  "HardwareReleaseAllowed": false,
+  "Limits": "Actual vendor nominal delay models and unchanged real I2C/frontend/monitor with a synthetic sensor register slave. Two full 2560-byte x720-line frames plus bad-line and stopped-clock cases at retained 42/47.25MHz register-model scenarios. This is not measured PCLK/FPS, pixel/DDR transport, physical AC or routed PVT proof. Initializer wait/reset timings and monitor timeout intervals are accelerated explicitly in the testbench.",
+  "StartedUTC": "2026-11-01T17:10:21.842867+00:00",
+  "InputDrift": [],
+  "ElapsedSeconds": 160.16,
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "2ffea674dc2a2ddb1f4666ce95326cbde51fff559924b281ec98ff80f0cade3b",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "bf1587cb20dd8e5a283648bc3b2158a7a7db389b98e4d78ccf272887fb7cd636",
+    "pclk42_bad_line-summary.json": "89f8b67d4d74ed4c523f874c1e9ad4804cf7e7827856e01b4fd46c55171b5007",
+    "pclk42_bad_line.log": "f4756ded897b9e1234d5e2b273ad15556348bd7d0b8261f6e36581d87655c553",
+    "pclk42_good-summary.json": "a8448884378a994b5f63eed78f70f5dac6f34108510f804ac9d1308c851ec97f",
+    "pclk42_good.log": "29a93484177ebf2ff7e8df99031ae4bbfe6fb57e0fb45395434dc3c37d1aa5cc",
+    "pclk47_25_bad_line-summary.json": "fe306120d67a8cfb00107507e8862c33ca76fd6d1491ceda3cbf64e88c307f6c",
+    "pclk47_25_bad_line.log": "515e9229cf9d7b9db7972e7793bd72731ae51fbccb154f80a88f3ddd5363998c",
+    "pclk47_25_good-summary.json": "55fe550211fb6e373a27dabe1c9d61279bfc47d554e5d91a2c6520005dfce085",
+    "pclk47_25_good.log": "206d4240050b2d988ca7966d3aab9f1c788ffa06deb02d0010d5ed40d12f8e07",
+    "simulate-pclk42_bad_line-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-pclk42_bad_line-stdout.log": "8b2e9c7c05ad96214252f15ce10d64def8832011a22b55e78b25550977e98083",
+    "simulate-pclk42_good-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-pclk42_good-stdout.log": "91419f31cceac7236fd5a155d5c5cc181f457bf6e6df018d99d971fbb2dc08ad",
+    "simulate-pclk47_25_bad_line-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-pclk47_25_bad_line-stdout.log": "b717ef606ef55c87f79e3ef7df76b0d20892eecacedc19e8edf4559e4bd19809",
+    "simulate-pclk47_25_good-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-pclk47_25_good-stdout.log": "fcf22eeb509f497c967b4714eada3f3c7d18867532a7eaec4711cc3891cb0b78",
+    "webtalk.log": "f208479a89135d8d1d0463db735e505e407d7ca919717470b883c6a72180e12b",
+    "webtalk_12876.backup.log": "f8018f1af885551e9b05afdee05bbe17a16e317eeeac5ad3e7f644236094ea74",
+    "xelab.log": "862413d1ca2b805370cf55e0f046d465af421de52b1bf64a39f211d339737e86",
+    "xvlog.log": "d388f1156ac37504d295805a7a732bd36f289cab62623462e45e250cffeee908"
+  }
+}

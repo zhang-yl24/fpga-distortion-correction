@@ -1,0 +1,107 @@
+{
+  "schema": "camera720-measured-transfer-development-profile-v1",
+  "model": "fisheye",
+  "image_size": [
+    1280,
+    720
+  ],
+  "camera_id": "ov5640-cam2-current-20261031",
+  "lens_id": "current-installed-lens-20261031",
+  "profile_id": "current720-current-lens-uncalibrated",
+  "capture_mode_id": "current720-rgb565-upright-3820-41-3821-07",
+  "K": [
+    [
+      319.4619654229467,
+      0.0,
+      643.7313155863241
+    ],
+    [
+      0.0,
+      320.22175835577696,
+      379.2847554789859
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "D": [
+    0.17602078811481522,
+    -0.010104992886768837,
+    -0.013110536659819092,
+    0.002201229141838536
+  ],
+  "model_scope": {
+    "projection": "forward_rectilinear",
+    "maximum_ray_angle_deg": 88.0,
+    "inverse_method": "bounded_monotone_bisection_v1"
+  },
+  "provenance": "real_chessboard_captures",
+  "development_only": true,
+  "passed": false,
+  "candidate_ready_for_profile_review": false,
+  "independent_spatial_coverage_passed": false,
+  "optical_calibration_accepted": false,
+  "hardware_release_allowed": false,
+  "intrinsics_refitted": false,
+  "TargetValidation": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\two-pair-validation-b\\target-validation-report.json",
+    "SHA256": "a5a22cdea4a36ff9df35d487cbbd1f41b4fac14cdb7214464ab1c70d64a4a32d"
+  },
+  "TargetCandidateFreeze": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\two-pair-validation-b\\target-candidate-freeze.json",
+    "sha256": "fdc4d1ed782b7908f1b2debf1bd61e02825de4f41b8c0241a1174d1b2cd33267"
+  },
+  "Pose03UserConfirmation": {
+    "Reference": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-user-confirmation.json",
+      "SHA256": "1f34d102c56275f8a3541e84a241f757a1cb6f0b777d574a1bc9d2b34a97b3b9"
+    },
+    "Content": {
+      "schema": "camera720-fixed-pose-user-confirmation-v1",
+      "pose_id": "physical-pose-03",
+      "user_reply": "第三组已固定",
+      "prior_movement_report": "相机确实发生了一点位移，可以采第三组，和第二组比较",
+      "prior_pair02_same_stationary_pose_declaration_revoked": true,
+      "requested_condition": "Keep camera, board and checkerboard fixed during both current720 and VGA captures; no lens adjustment.",
+      "same_stationary_pose_declared": true,
+      "physical_pose_independently_verified": false,
+      "notes": "Retain original failed pair02 reports. Pair03 replaces the invalid stationary pair, not the fitted transform or predeclared thresholds."
+    }
+  },
+  "ExcludedPair02": {
+    "Reason": "Operator confirmed camera movement between mode captures; fixed-pose premise revoked. Original failure preserved and excluded from fit/held-out acceptance.",
+    "Report": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\two-pair-validation-a\\paired-transfer-report.json",
+      "SHA256": "68ac81de3a37883dca902906d707ef56a72c94e4c6f45c506bc425b3b478daf6"
+    }
+  },
+  "ObservedValidation": {
+    "view_count": 1,
+    "transfer_held_out_count": 1,
+    "new_target_held_out_count": 0,
+    "coverage_3x3": [
+      [
+        6,
+        8,
+        0
+      ],
+      [
+        17,
+        23,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "rms_px": 0.29925465068570195,
+    "maximum_px": 0.6176820003358409,
+    "coverage_policy": null,
+    "coverage_passed": null
+  },
+  "Limits": "Fixed K/D derived from measured fit01 mode transform and frozen VGA lens calibration; checked against independent stationary pair03 only. No global optical coverage, internally verified physical pose or new intrinsic fit claimed. f480 diagnostic output requires its own full mapping, RTL, routed timing and board observation."
+}

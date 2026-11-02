@@ -1,0 +1,30 @@
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/camera720_corrected_system/xsim_script.tcl
+# xsim {camera720_corrected_system} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+SYSTEM720_PROGRESS tick=2000000 captured=0 processed=0 presented=0
+SYSTEM720_PROGRESS tick=4000000 captured=0 processed=0 presented=0
+SYSTEM720_PROGRESS tick=6000000 captured=0 processed=0 presented=0
+SYSTEM720_COMMIT id=1 crc=df5734a7 tick=7292160
+SYSTEM720_PROGRESS tick=8000000 captured=1 processed=0 presented=0
+SYSTEM720_PROGRESS tick=10000000 captured=1 processed=1 presented=0
+SYSTEM720_PROGRESS tick=12000000 captured=1 processed=1 presented=0
+SYSTEM720_PROGRESS tick=14000000 captured=1 processed=1 presented=0
+SYSTEM720_COMMIT id=2 crc=73964307 tick=14584264
+SYSTEM720_SCAN id=1 pixels=921600
+SYSTEM720_PROGRESS tick=16000000 captured=2 processed=1 presented=1
+SYSTEM720_PROGRESS tick=18000000 captured=2 processed=2 presented=1
+SYSTEM720_PROGRESS tick=20000000 captured=2 processed=2 presented=1
+SYSTEM720_SCAN id=2 pixels=921600
+PASS camera720 corrected system: frames=2 scan_pixels=1843200
+$finish called at time : 166608640 ns : File "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/tests/tb_camera720_corrected_system.sv" Line 265
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:24:59 . Memory (MB): peak = 224.387 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 21:10:54 2026...

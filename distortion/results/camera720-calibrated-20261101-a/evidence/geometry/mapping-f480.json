@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "hardware_accessed": false,
+  "optical_acceptance_complete": false,
+  "passed": true,
+  "profile_identity_bound": true,
+  "synthetic_input": false,
+  "camera_id": "ov5640-cam2-current-20261031",
+  "profile_id": "current720-current-lens-uncalibrated",
+  "provenance": "real_chessboard_captures",
+  "candidate_ready_for_profile_review": false,
+  "source_profile_flags": {
+    "passed": false,
+    "candidate_ready_for_profile_review": false,
+    "independent_spatial_coverage_passed": false,
+    "development_only": true
+  },
+  "source_profile_development_only": true,
+  "source_profile_calibration_passed": false,
+  "source_profile_candidate_ready_for_profile_review": false,
+  "source_profile_independent_spatial_coverage_passed": false,
+  "hardware_release_allowed": false,
+  "hardware_release_reason": "Requires independent real calibration/optical acceptance, a newly justified radius guard, RTL regression and routed board-build binding.",
+  "profile_sha256": "72e7f73936b66dd4dc098b71ce236b86e039bcbadce36c74e99b11d3573d7026",
+  "source_image_size": [
+    1280,
+    720
+  ],
+  "output_size": [
+    1280,
+    720
+  ],
+  "output_K": [
+    [
+      480.0,
+      0.0,
+      639.5
+    ],
+    [
+      0.0,
+      480.0,
+      359.5
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "fisheye_coefficients_used": [
+    0.17602078811481522,
+    -0.010104992886768837,
+    -0.013110536659819092,
+    0.002201229141838536
+  ],
+  "fitted_brown_radial_coefficients": [
+    -0.16063659846775363,
+    0.028898997145954005,
+    -0.0027067841254946497
+  ],
+  "integer_config": [
+    163712,
+    92032,
+    164795,
+    97097,
+    81782,
+    81977,
+    2236962,
+    2236962,
+    -673759,
+    121211,
+    -11353,
+    0,
+    0
+  ],
+  "sample_stride": 1,
+  "full_requested_frames_checked": true,
+  "profile_scope_known": true,
+  "profile_maximum_ray_angle_deg": 88.0,
+  "maximum_requested_ray_angle_deg": 56.803743539607616,
+  "maximum_points_per_frame": 2500000,
+  "points_per_frame_checked": 921600,
+  "existing_board_radius_guard_applied": false,
+  "required_radius_guard_q22_for_checked_rays": 9797642,
+  "source_sha256": {
+    "tools\\wideangle_mapping_audit.py": "bc4b808a2c2b883220b5d317e443880b89784a82b346ae281068465332571d20",
+    "model\\rotation.py": "7835dc586d7e1c288d33facdcc6888715ffd84c3a9793fe73889240fd8bc0989",
+    "tools\\generate-brown-vectors.py": "f5a15feedccd54ea3aa4bad1babff21456ce7bf8806974f21ff603301444f81b"
+  },
+  "coordinates_checked": 921600,
+  "requested_full_frame_coordinates": 921600,
+  "criteria": {
+    "maximum_coordinate_error_px": 0.25,
+    "minimum_in_bounds_fraction": 0.99,
+    "arithmetic_invalid_max": 0,
+    "folded_samples_max": 0,
+    "requires_stride_one": true
+  },
+  "frames": [
+    {
+      "angle_deg": 0.0,
+      "coordinates_checked": 921600,
+      "finite_opencv_reference": true,
+      "fixed_point_invalid_coordinates": 0,
+      "reference_folded_samples": 0,
+      "fixed_point_folded_samples": 0,
+      "reference_jacobian_min": 0.1396860109108156,
+      "fixed_point_jacobian_min": 0.139068603515625,
+      "maximum_coordinate_error_px": 0.06516648446890119,
+      "rms_coordinate_error_px": 0.020780775137125344,
+      "p95_coordinate_error_px": 0.03607385722817246,
+      "bilinear_all_neighbours_in_bounds_fraction": 1.0,
+      "opencv_all_neighbours_in_bounds_fraction": 1.0,
+      "maximum_normalized_radius_squared_q22": 9797640,
+      "scalar_oracle_spotchecks": 33,
+      "numerical_gates_passed": true
+    }
+  ],
+  "limits": "Model approximation only. Finite-difference folds and rectangular source bounds do not prove lens edge coverage or optical accuracy. Sampled runs cannot pass a full-frame candidate. This fits only the requested image sizes, output camera and angles; parameters and old radius guards must not be reused outside that scope. No board include, old calibration, bitstream or evidence is modified.",
+  "source_profile_file_sha256": "f79c44d9bdeb5b114441e53d172d2b22667ba415717dc3a49a4b0a73e15200e8"
+}

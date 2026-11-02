@@ -29,10 +29,10 @@ jobs:
       - name: Verify initial handoff snapshot
         if: github.ref == 'refs/tags/handoff-20261010'
         run: python handoff/verify-files.py
-      - name: Check 720p transport preparation and verification logic
+      - name: Check 720p camera, correction and statistics verification logic
         env:
           PYTHONDONTWRITEBYTECODE: '1'
-        run: python -m pytest -q -p no:cacheprovider distortion/tests/test_camera720_*.py
+        run: python -m pytest -q -p no:cacheprovider distortion/tests/test_camera720_*.py distortion/tests/test_prepare_stats_delay_final_c.py
       - name: Run CPU reference and protocol tests
         run: |
           mkdir -p distortion/build

@@ -10,6 +10,7 @@ from pathlib import Path
 import shutil
 import sys
 import tempfile
+from types import SimpleNamespace
 import unittest
 from unittest import mock
 
@@ -31,17 +32,20 @@ class Camera720PreparationTest(unittest.TestCase):
         cls.scratch = Path(cls.temporary.name).resolve()
         if not cls.scratch.is_relative_to(cls.live_work.resolve()):
             raise AssertionError('test workspace escaped allowed root')
+        # The inventory recipe needs a real file identity, not an installed EDA.
+        # Create the inert private tool before the first recipe call on every OS.
+        cls.pds = cls.scratch/'fake-tool/pds_shell.exe'
+        cls.pds.parent.mkdir(parents=True)
+        cls.pds.write_bytes(b'INERT CPU TEST FILE; NEVER EXECUTE\n')
         # Reconstruct a fresh recipe rather than trusting build-a or editing it.
-        cls.recipe_plan, _, _ = prep.recipe(cls.live_work/'_audit_inventory_only')
+        cls.recipe_plan, _, _ = prep.recipe(
+            cls.live_work/'_audit_inventory_only', str(cls.pds))
         cls.baseline_roles = prep.previous.validate_sources()
         cls.project = cls.scratch
         for name in cls.recipe_plan['InputSHA256']:
             destination = cls.project/name
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(cls.live_project/name, destination)
-        cls.pds = cls.project/'fake-tool/pds_shell.exe'
-        cls.pds.parent.mkdir(parents=True)
-        cls.pds.write_bytes(b'INERT CPU TEST FILE; NEVER EXECUTE\n')
         cls.originals = {name: (cls.project/name).read_bytes()
                          for name in cls.recipe_plan['InputSHA256']}
         cls.counter = 0
@@ -75,6 +79,10 @@ class Camera720PreparationTest(unittest.TestCase):
         self.plan = prep.prepare(self.work, str(self.pds), 60)
         self.path = self.work/'plan.json'
         self.popen = self.stack.enter_context(mock.patch.object(runner.subprocess, 'Popen'))
+        # Only this module sees a Windows executor while Popen is mocked.
+        # Do not mutate os.name globally: pathlib must retain host semantics.
+        self.stack.enter_context(mock.patch.object(
+            runner, 'os', SimpleNamespace(name='nt')))
 
     def save_plan(self, plan):
         self.path.write_text(json.dumps(plan, indent=2)+'\n', encoding='utf-8', newline='\n')
@@ -208,6 +216,12 @@ class Camera720PreparationTest(unittest.TestCase):
         self.assertFalse(result['HardwareAccessed'])
         self.assertFalse(result['BitstreamRequested'])
         self.popen.assert_called_once()
+
+    def test_real_nonwindows_execution_guard_is_retained(self):
+        with mock.patch.object(runner, 'os', SimpleNamespace(name='posix')):
+            with self.assertRaisesRegex(ValueError, 'requires Windows'):
+                runner.execute(self.path)
+        self.popen.assert_not_called()
 
     def test_timeout_stops_only_owned_process(self):
         fake = mock.Mock(pid=123456)
