@@ -142,7 +142,9 @@ jobs:
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
       - name: Preserve source and evidence byte identities
-        run: git config --global core.autocrlf false
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.longpaths true
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
