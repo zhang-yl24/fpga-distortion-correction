@@ -15,6 +15,15 @@ def read(path):
     return json.loads(path.read_text(encoding='utf-8'))
 
 
+def reference_text_matches(blob, digest):
+    # This existing Python oracle is outside the byte-preserved delivery tree.
+    # Git may check it out with CRLF or LF. Only that newline transformation is
+    # permitted; all frozen/candidate RTL and archived files remain byte exact.
+    lf = blob.replace(b'\r\n', b'\n')
+    return any(hashlib.sha256(value).hexdigest() == digest
+               for value in (blob, lf, lf.replace(b'\n', b'\r\n')))
+
+
 def verify_sources(bindings, base):
     for name, digest in bindings.items():
         name = name.replace('\\', '/')
@@ -38,7 +47,7 @@ def verify():
             raise ValueError('Engine report failed')
         verify_sources(report['source_sha256'], REPO)
         scalar = REPO / 'distortion/tools/generate-brown-vectors.py'
-        if sha(scalar) != report['fixtures']['scalar_source_sha256']:
+        if not reference_text_matches(scalar.read_bytes(), report['fixtures']['scalar_source_sha256']):
             raise ValueError('Independent scalar reference changed')
     writer = read(ROOT / 'evidence/writer/writer-ab.json')
     if not writer['passed'] or len(writer['cases']) != 25 or not all(r['passed'] for r in writer['cases']):

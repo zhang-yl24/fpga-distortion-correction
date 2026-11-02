@@ -21,6 +21,7 @@ def load(name):
 
 scan = load('analyze_scan')
 prep = load('prepare_candidate')
+delivery = load('verify_delivery')
 
 
 def packet(frame=1, seq=0, epoch=1, mode=1, crc=100, param=0x1234, session=8, dropped=0):
@@ -69,6 +70,14 @@ class ScanTests(unittest.TestCase):
         for duration in (0, -1, float('inf'), float('nan')):
             with self.assertRaises(ValueError):
                 scan.analyze(b'', duration, 0x1234, 8)
+
+    def test_reference_newlines_preserve_content_identity(self):
+        lf = b'line1\nline2\n'
+        crlf = lf.replace(b'\n', b'\r\n')
+        digest = prep.sha(crlf)
+        self.assertTrue(delivery.reference_text_matches(lf, digest))
+        self.assertTrue(delivery.reference_text_matches(crlf, digest))
+        self.assertFalse(delivery.reference_text_matches(b'changed\nline2\n', digest))
 
 
 class SourceTests(unittest.TestCase):
@@ -124,7 +133,7 @@ class SourceTests(unittest.TestCase):
                 work = output_root / 'test'
                 writer = (work / 'native' / prep.WRITER).read_text()
                 self.assertNotIn('`include "video_crc32.vh"', writer)
-                self.assertIn((work / 'native/source/rtl/video_crc32.vh').as_posix(), writer)
+                self.assertIn((work / 'native/source/rtl/video_crc32.vh').resolve().as_posix(), writer)
                 self.assertIn(result['param_id_hex'], (work / 'native' / prep.TOP).read_text())
                 with self.assertRaises(FileExistsError):
                     prep.prepare(deps, 'test', 'both', output_root=output_root)

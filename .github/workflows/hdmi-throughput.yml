@@ -16,6 +16,7 @@ permissions:
 jobs:
   source-and-wire-protocol:
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
