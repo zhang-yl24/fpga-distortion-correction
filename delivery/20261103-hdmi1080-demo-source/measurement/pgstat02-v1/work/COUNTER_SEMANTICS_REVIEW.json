@@ -1,0 +1,162 @@
+{
+  "status": "ARCHIVED_RTL_SEMANTICS_VERIFIED_AND_HOST_VALIDATION_GAPS_REPRODUCED",
+  "scope": "Read-only exact-archive audit and synthetic CPU packet analysis. No UART, COM, reset, hardware, EDA, native long test or codec execution. Only this review JSON was written.",
+  "archive": "C:/Users/22955/Documents/Codex/2026-10-26/task-2/dma5-fixedpure-pgstat02-20261103-a",
+  "archive_files_sha256": {
+    "MEASUREMENT_RUN.md": "ce2acfb1e3d97b8313738c1acf6f5618a20efd2a65e00632efad7072253421f3",
+    "MEASUREMENT_BUILD_MANIFEST.json": "f16770d641cc6c7359bf8f7ac2de8c42300f0451c74e7e1e6edd065fe7bdaf4e",
+    "NATIVE_SOURCE_MANIFEST.json": "d20ac5b779311f452f518435455c62fbc73583e0e56e8629bf6e25666fd95ef3",
+    "host/stats_protocol.py": "d8ce9fb4a381c5644d7f150a774e85fa573fc99fcbb74fa47fca2800a070ac92",
+    "host/pure_window.py": "0f47b3cd92e78592384b3a3266e60d0262c4ffb2e20d10bb8232ad16f047d968",
+    "host/canonical-requests/PLAN.json": "aab6032d54addff3c43220b937ef1a51dfabb5bbcc22fb7af73350530f88145a"
+  },
+  "firmware_binding": {
+    "firmware_sha256": "57044fe803d9880f016b53c91234def946bb13da6cc1d357cd15689a5212a374",
+    "archived_bit_bytes": 3791112,
+    "archived_bit_hash_matches_manifest": true,
+    "actual_board_loaded_identity": "NOT_OBSERVED_BY_THIS_REVIEW",
+    "fixed_mode": 1,
+    "gamma_enable": 0,
+    "param_id": 3855404720,
+    "param_id_hex": "e5ccceb0",
+    "width": 1920,
+    "height": 1080,
+    "nominal_core_hz": 125000000,
+    "profile": "Native fixed pure correction, lightweight PGSTAT02, original writer/cache; no PGFRAME, cache16, D256, codec or60Hz changes mixed in.",
+    "acceptance_boundary": "The archive declares OFFLINE_BUILT_NOT_BOARD_TESTED and has no measured hardware FPS or external E2E. A valid SHA string is not proof that the corresponding bit is currently running. A host run must preserve separate loaded-bit/reset/input evidence."
+  },
+  "native_sources": {
+    "STATS": {"path": "native/source/rtl/stats/core_stats_snapshot.sv", "sha256": "11a10ed560279d3c97b117c744d0322e7898925e5d33d5ec14821e35f0a60738"},
+    "STATS_UART": {"path": "native/source/rtl/stats/stats_uart_mux.sv", "sha256": "73e0bda7d4ed093e214c97fe256b7218963e512cc8839d8cd27dd028e9d1a7de"},
+    "BANK": {"path": "native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v", "sha256": "9cdb5b79540871630a5fd3f00d3344244bcb220c338b504ba9d7f58cf7db5900"},
+    "SYSTEM": {"path": "native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v", "sha256": "d709817db1f771628d2d91570d998675aef87c6044ecb6abd008d86387047288"},
+    "DMA": {"path": "native/source/rtl/experimental/hdmi1080_input_dma.v", "sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29"},
+    "CAPTURE": {"path": "native/source/rtl/experimental/hdmi1080_capture_cdc.v", "sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c"},
+    "BOARD": {"path": "native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v", "sha256": "3416f368730bfd4f83d1f7df3b40d50a1d9e1e2b25a5f1e9ee132918f4e6d538"},
+    "DDR": {"path": "native/source/platform/video_base/ipcore/ddr3_test/ddr3_test.v", "sha256": "3c5441b4bff33dff73811c3a025ede3b6348cb5779e21778653659b6cbfb84e0"},
+    "DDR_IDF": {"path": "native/source/platform/video_base/ipcore/ddr3_test/ddr3_test.idf", "sha256": "b600d6102995be4e76b060dd45786b5e1497bd2e7499bbc04b870de9355f2747"},
+    "FDC": {"path": "native/source/build/offline-20261024/boardtop-penn-prep-20261029-a/board1080-diagnostic.fdc", "sha256": "2ff6dd8510e7b0566f550143561ac4138c19cd255944811b4561979f6e8b0f23"}
+  },
+  "nominal_clock_evidence": [
+    {"source": "BOARD", "lines": [48, 50, 51, 55, 56, 210, 212], "meaning": "Differential clk_p/n enters ddr_ref_clk and the DDR IP; exported core_clk drives the system. STATS_CORE_HZ is explicitly125000000."},
+    {"source": "DDR", "lines": [295], "meaning": "assign core_clk=ddrphy_sysclk."},
+    {"source": "DDR_IDF", "lines": [1459, 1460], "meaning": "CLKIN_FREQ=125.000 in the exact IP configuration."},
+    {"source": "FDC", "lines": [812, 814], "meaning": "ref_clk on clk_p is constrained to8.0ns; ddrphy_sysclk generated clock uses multiply16/divide16, giving nominal125MHz."},
+    {"source": "STATS", "lines": [5, 48], "meaning": "The packet Hz word is the CORE_HZ parameter, not a frequency meter or PLL-lock measurement."}
+  ],
+  "wire_schema": {
+    "endianness": "Little-endian scalar fields; STATS_UART37 serializes low body byte first.80-byte body plus4-byte CRC32.",
+    "fields": [
+      {"name": "magic", "byte": 0, "bytes": 8, "source": "STATS43", "meaning": "PGSTAT02 in LIGHT1."},
+      {"name": "version/domain/packet_size", "byte": 8, "bytes": 4, "source": "STATS44-45", "meaning": "Version2, domain1=core_clk,84bytes."},
+      {"name": "ticket", "byte": 12, "bytes": 4, "source": "STATS46;STATS_UART24-27", "meaning": "Request ticket copied through the held request CDC; not a frame ID, session ID or boot ID."},
+      {"name": "nonce", "byte": 16, "bytes": 4, "source": "STATS46;STATS_UART24-27", "meaning": "Request nonce copied exactly; unrelated to the SGA telemetry session nonce unless the external plan explicitly maps them."},
+      {"name": "valid_mask", "byte": 20, "bytes": 4, "source": "STATS47", "meaning": "Bits1/2 are constant1 in light profile; bit0 is sticky last-completion validity. This is not proof of clock measurement or timing signoff."},
+      {"name": "nominal_core_hz", "byte": 24, "bytes": 4, "source": "STATS48", "meaning": "Parameter125000000; bind to exact build manifest before converting units."},
+      {"name": "sequence", "byte": 28, "bytes": 4, "source": "STATS17,49,79,85", "meaning": "Snapshot-request sequence, reset0, emitted before its increment. First accepted request emits0; modulo32 wrap is valid."},
+      {"name": "core_tick", "byte": 32, "bytes": 8, "source": "STATS17,50,79,81-82", "meaning": "Coherent split64 core-clock counter since the local common reset release; increments every running core edge, including video idle/wait."},
+      {"name": "last_process_cycles", "byte": 40, "bytes": 4, "source": "STATS51;SYSTEM265;BANK105,108,117", "meaning": "Latest successful bank processing duration legacy word; raw=(source-accept-to-success edge distance-1) modulo2^32."},
+      {"name": "completed_frame_id", "byte": 44, "bytes": 4, "source": "STATS52;BANK119", "meaning": "engine_id of that same successful completion; source grant IDs may skip rejected granted captures."},
+      {"name": "completed_param_id", "byte": 48, "bytes": 4, "source": "STATS53;BANK106,119;BOARD214", "meaning": "Static lookup identity snapshotted at actual source acceptance; e5ccceb0, not a fresh session nonce or proof of a new camera calibration."},
+      {"name": "completed_mode", "byte": 52, "bytes": 4, "source": "STATS54;BANK120", "meaning": "Low bit correction, next bit gamma. Fixed source build supplies1/0, so completed mode1."},
+      {"name": "captured_frames", "byte": 56, "bytes": 4, "source": "STATS55;SYSTEM117;DMA111-112", "meaning": "Actually accepted_frames: increments at source_valid&&source_ready, when a full verified source descriptor is consumed by the bank. It is not all camera/HDMI frame arrivals or every capture completion."},
+      {"name": "processed_frames", "byte": 60, "bytes": 4, "source": "STATS55;SYSTEM101;BANK117", "meaning": "Successful complete engine/writer result accepted by bank, after identity/mode/base checks. No partial result completion is counted."},
+      {"name": "presented_frames", "byte": 64, "bytes": 4, "source": "STATS56;SYSTEM245-253", "meaning": "Successful display closure with lease_id greater than last_presented_id. Counts one new frame identity, not the numeric ID span or every scan."},
+      {"name": "scan_repeat_frames", "byte": 68, "bytes": 4, "source": "STATS58;SYSTEM245-253", "meaning": "Successful display closure with lease_id equal to last_presented_id, after reader/pixel/CRC/FIFO-drain checks."},
+      {"name": "dropped_frames", "byte": 72, "bytes": 4, "source": "STATS59;SYSTEM269;DMA166-183", "meaning": "Rejected completion of an already granted/active capture. Does not include input windows that never begin capture for lack of a grant."},
+      {"name": "state_flags", "byte": 76, "bytes": 4, "source": "STATS60;SYSTEM271-272", "meaning": "Instantaneous pre-edge flags, documented below; not busy-time occupancy counters."},
+      {"name": "packet_crc32", "byte": 80, "bytes": 4, "source": "STATS_UART28,34,37,48-49", "meaning": "CRC over the80-byte body. Integrity does not establish loaded firmware, request ownership or reset continuity."}
+    ]
+  },
+  "state_flags": {
+    "bit0": "src_valid&&!src_ready: completed source descriptor currently waiting for bank acceptance",
+    "bit1": "bank processing",
+    "bit2": "bank pending completed result",
+    "bit3": "system lease_active for display",
+    "bit4": "shared DDR read arbiter busy, SYSTEM146; not all reader/FIFO work",
+    "bit5": "shared DDR write arbiter busy, input_write_link72; not all capture collection/CRC work",
+    "bit6": "logical system failed/quarantined",
+    "bit7": "snapshot_busy, tied0 in SYSTEM272 because PGFRAME snapshot is absent",
+    "scope": "No seven detail occupancy counters elaborate in LIGHT1. PGSTAT02 does not contain per-stage timestamps or enough fields to reconstruct wait-time histograms."
+  },
+  "snapshot_atomicity_and_completion_alignment": {
+    "evidence": ["STATS3-4 and84-86 capture all fields before this edge's NBA updates.", "BANK117 updates completed_frames and last_cycles in one successful-completion branch;119-120 update stats_last_valid/id/param/mode in that same branch and edge.", "SYSTEM101-102 and265-267 directly connect those core-domain fields to the statistics module. No source_release notification or held completion CDC delays the last tuple relative to processed_frames."],
+    "same_edge_request": "A request coincident with successful completion observes the old count and old completion tuple together. A later request observes both updated together.",
+    "safe_host_consistency_rules": [
+      "In one healthy reset epoch, zero processed delta requires unchanged last-valid and completion tuple.",
+      "Positive processed delta requires a new completed source ID; in this native profile source IDs must increase and their span must be at least processed delta.",
+      "The same(frame_id,param_id,mode) cannot legitimately carry conflicting legacy cycle values; reject instead of overwriting a dictionary entry.",
+      "Once last_process_valid becomes true it stays true until reset; an invalid interior snapshot after a valid one contradicts a steady uninterrupted epoch."
+    ],
+    "frame_ID_wrap_boundary": "Source IDs are uint32 but the native presentation path uses unsigned lease_id>last_presented_id and faultsB5 on regression. Explicitly reject a descending completed_frame_id in this measurement profile as reset/order/source-ID-wrap unsupported; do not claim that descent alone proves a reset. Do not silently treat FID as a generic modulo throughput counter."
+  },
+  "duration_and_wrap_proof": {
+    "legacy_derivation": "Let A be actual source acceptance and B the bank's successful engine_done edge. At A, cycles becomes0. At B, pre-edge cycles=(B-A-1) mod2^32; last_cycles latches that old value while completed_frames/last tuple update. Therefore raw+1 equals the edge distance only with a valid bound excluding ambiguous legacy counter wrap.",
+    "tick_difference": "For two coherent snapshots in one epoch, duration of the measurement window is tick2-tick1; there is no+1. Tick fields are pre-edge samples from the same core clock.",
+    "uint32_cycle_period_seconds_at125MHz": 34.359738368,
+    "uint64_tick_period_years_at125MHz_365p25days": 4676.336368725011,
+    "core64_wrap": "The tick_lo overflow and tick_hi increment occur together on core_clk. A request at that boundary snapshots the coherent old64-bit value; the next request sees the new high half.32-bit low-half wrap is supported. True64-bit wrap can conservatively be rejected by direct positive subtraction.",
+    "short_window": "Keep0<delta_tick<2^32 for an unambiguous bounded event-counter window. Every exported event counter increases at most once/core edge, so its modulo32 delta is then unambiguous under the stated no-reset contract. This does not require boot_age<2^32.",
+    "no_wrap_case_A": "If a snapshot's core_tick<2^32 and raw+1<=core_tick, the completed frame's since-reset lifetime bounds its duration below2^32. Mark the sample no-wrap-proven using the common bank/stats reset origin.",
+    "no_wrap_case_B": "For adjacent coherent snapshots in one epoch with0<dt<2^32 and delta_processed>=2, the first completion may have started before the interval. Because one engine is strictly serial, the second and final completed frame must start after that first completion and finish before the later snapshot. Thus the later snapshot's last-frame duration lies within this interval; raw+1<=dt confirms the bound. Count/tuple alignment above removes any one-edge mismatch concern.",
+    "not_proven": "At boot_age>=2^32 with delta_processed0 or1, a recent completion could belong to a frame started before the window. Stable raw values or a short observation window alone do not exclude a wrapped legacy duration. Preserve raw and raw+1 as a candidate, label no_wrap_unproven and omit an absolute seconds claim. A previously proven identical tuple may retain its proof within the same attested epoch.",
+    "first_endpoint": "A later window's delta_processed>=2 does not prove the first endpoint's old last-frame duration. Do not retroactively mark that boundary sample proven.",
+    "native_lower_bound": "This exact single-coordinate-per-edge native engine cannot complete1920*1080 pixels in fewer than2073600 source-accept-to-success edges. A positive but implausibly short raw+1 is a profile contradiction; this lower bound is native-source-specific, not a generic PGSTAT parser rule."
+  },
+  "presentation_and_loss_semantics": {
+    "successful_display_closure": "SYSTEM245 requires lease_active, reader_finished, pixel_finished, reader_idle, FIFO used0 and no failure;246-247 recheck ID/bank/epoch/CRC/count. Only then are counters updated and display_done sent.",
+    "new_and_repeat": "SYSTEM250 always increments scan_good for a healthy closure;251 increments presented for a greater sourceID,252 increments repeat for the sameID. This is digital completion of validated output consumption, not measured monitor photons.",
+    "repeat_fraction": "For a healthy uninterrupted interval, successful_nonblank_scan_repeat_fraction=delta_repeat/(delta_presented+delta_repeat). The denominator equals successful nonblank closures and must be nonzero; otherwise return null. The rate(delta_presented+delta_repeat)/seconds_nominal describes successful nonblank scan completion, not every refresh boundary.",
+    "blank_boundary": "Blank grants are separately counted in SYSTEM220. PGSTAT02 omits scan_blank_frames and scan_good_frames, so its repeat fraction excludes blank, failed, partial and not-yet-completed scan windows.",
+    "drop_boundary": "DMA181 increments dropped only on a rejected already-granted completion;183 counts overflow as a subset. CAPTURE137-141 increments no_grant at the first DE of a seen input window when begin_capture is false. DMA70 exposes it as no_free_frames, but LIGHT serialization omits both no_free and overflow. Do not call delta_dropped all input loss or use captured+dropped as a count of all arriving camera frames.",
+    "capture_boundary": "captured_frames is source-pop acceptance, not exposure count, raw HDMI frame count or all CRC-verified descriptors waiting in the DMA queue."
+  },
+  "epoch_request_and_session_identity": {
+    "hardware_boot_epoch": "No persistent boot identifier is exported. core_tick, sequence, counters, IDs and session state all reset; none alone proves no intervening reset.",
+    "SGT_identity": "PGSTAT02 echoes only the requested ticket/nonce. These are not SGA session fields and must be matched against the actual sent SGT plan.",
+    "canonical_plan": {"SGA_ticket": 1, "SGA_nonce": 539365635, "first_SGT_ticket": 2, "first_SGT_nonce": 539365636, "last_SGT_ticket": 3, "last_SGT_nonce": 539365637},
+    "B4_gate": "session_arm_gate_v3:62-65 ARMED ACK echoes the SGA ticket/nonce and samples the current scan_epoch. capture_session is that arm nonce. A matching ARMED ACK and complete mode1/parameter-matching PGSIG must be checked separately by the B4 decoder or referenced run attestation.",
+    "scan_epoch_is_not_boot_epoch": "The ACK/PGSIG epoch labels a scan refresh lease and changes with scans; PGSTAT02 has no such field. Do not require constant scan epoch across the measurement window or invent an implicit stats-session binding.",
+    "replay_limit": "The canonical request bytes use fixed ticket/nonces. Exact matching detects unrelated responses but cannot independently distinguish replay from another run using the same plan. Preserve a run-specific raw-capture hash and actual loaded/reset/session evidence.",
+    "RX_boundary": "The archive explicitly retains the broadcast SGA/SGT parser magic limitation. Use the prechecked exact canonical request files and their parser-boundary evidence. Offline host validation or idle spacing does not repair that RTL limitation. No new RX router is included or authorized by this audit."
+  },
+  "archived_host_gaps": [
+    {"priority": "P0", "file": "host/pure_window.py", "lines": [8, 10, 23, 31], "issue": "Manifest mode/gamma and SHA syntax are checked, but every packet's nominal_core_hz is not bound to manifest125MHz. Two packets advertising100MHz are accepted against the125MHz manifest and produce a wrong seconds/fps scale.", "minimum_fix": "Validate manifest identity/types/dimensions/expected parameter and require each selected packet clock to equal the bound manifest clock. Keep conversion labelled nominal."},
+    {"priority": "P0", "file": "host/pure_window.py", "lines": [12, 13], "issue": "Any CRC-valid PGSTAT02 snapshots enter the window. MixedParser decodes without expected ticket/nonce, and analyze never validates the sent request list, matching ARMED ACK, PGSIG session or loaded/reset attestation.", "minimum_fix": "Accept a SHA-bound approved request plan/run attestation, select exactly the expected ordered responses by ticket/nonce and validate B4 packets with their dedicated decoder. Reject unplanned response identity. Keep external uninterrupted-reset evidence mandatory."},
+    {"priority": "P0", "file": "host/stats_protocol.py", "lines": [103, 106, 108, 111], "issue": "window checks only the selected two endpoints; sequence merely needs a nonzero modulo difference. Reverse sequence endpoints and invalid interior ordering/duplicate snapshots can pass pure_window.", "minimum_fix": "Validate all adjacent selected snapshots for0<dt<2^32, matching clock/profile/validity and expected sequence progression. For the exclusive canonical pair/ordered capture require modulo32 sequence delta1; classify gaps/replays rather than silently discarding them."},
+    {"priority": "P0", "file": "host/pure_window.py", "lines": [15, 25, 26], "issue": "Only first/last completion validity is required. Interior validity can clear after a valid completion despite its sticky RTL semantics. Same frame/parameter with a changed cycle value is silently overwritten by the dictionary.", "minimum_fix": "Reject validity regression and contradictory repeated tuples. Use the verified same-edge processed/tuple relation for every adjacent pair; a map is for de-duplication only after equality has been checked."},
+    {"priority": "P0", "file": "host/stats_protocol.py", "lines": [29, 34, 36], "issue": "Every valid raw value is immediately converted to raw+1 seconds, although no overflow bit exists. The docstring condition excluding legacy overflow is not enforced.", "minimum_fix": "Keep raw immutable and add separate candidate/proven duration fields. Apply since-reset or two-completion bounded-window proof above before reporting absolute duration. Do not suppress the valid64-bit tick/count throughput merely because one boundary sample lacks a duration proof."},
+    {"priority": "P1", "file": "host/pure_window.py", "lines": [24, 27, 29, 30], "issue": "Boundary last-frame samples are exposed as a median with no sample-coverage denominator, per-sample proof status or contradictory-snapshot detection.", "minimum_fix": "Keep explicitly labelled boundary samples. Count only newly observed unique completed IDs after the first endpoint as in-window observed completions; divide by delta_processed for coverage when positive. Never describe the sparse sample median as an all-frame latency distribution."},
+    {"priority": "P1", "file": "host/stats_protocol.py", "lines": [115, 117, 118], "issue": "Modulo deltas are computed without profile consistency bounds, so an impossible backwards event count can appear as a huge positive rate.", "minimum_fix": "For this bounded window require each event delta<=dt and source/processed/presentation consistency. Native captured-processed modulo32 equals the processing flag in healthy state. Use carefully source-proven backlog bounds rather than assuming every window's new presentations must be<=new processing completions; a presentation can complete a result that existed at the first endpoint."},
+    {"priority": "P1", "file": "host/pure_window.py", "lines": [10, 28, 37], "issue": "A64-hex-character string is accepted as an actual built/running identity. The function cannot itself establish hardware origin, loaded bit, input asset or reset continuity.", "minimum_fix": "Require or reference run provenance: exact build-manifest hash, selected firmware hash, actual load/readback/known user-mode evidence, raw capture hash and reset/session evidence. Distinguish validated metadata from observations not supplied."}
+  ],
+  "synthetic_CPU_reproduction": {
+    "execution": "Imported only the exact archived host modules with Python-B and called pure_window.analyze on in-memory valid-CRC packets. No files or hardware were used for the examples.",
+    "packet_construction": "struct.pack('<8sBBHIIIIIQ',PGSTAT02,2,1,84,ticket,nonce,7,hz,seq,tick)+struct.pack('<10I',raw_cycles,FID,e5ccceb0,1,captured,processed,presented,repeat,dropped,flags), followed by CRC32 of those80bytes.",
+    "normal_reference": "First tick1e9/seq10/FID100/processed100/raw3000000; last tick2e9/seq11/FID101/processed101/raw3000000; manifest remains125MHz and epoch flag is explicitlytrue.",
+    "cases_accepted_by_archived_host": [
+      "Both packets advertise100MHz against the125MHz manifest; reported nominal window10s instead of8s.",
+      "Unrelated request ticket/nonce pairs99/123 and100/124.",
+      "Exact duplicate of the first snapshot inserted before the valid last snapshot.",
+      "Interior tick500M/seq9/FID99 regression between1B/seq10 and2B/seq11 endpoints.",
+      "Interior valid_mask6 clears last validity and zeros tuple after a valid first snapshot.",
+      "Same FID100/parameter/processed100 with raw changed3000000->4000000; dict keeps only4000001.",
+      "Native valid last_cycles0 is accepted as a one-cycle complete1920x1080 frame.",
+      "Endpoint sequence10->9 with positive increasing ticks."
+    ],
+    "meaning": "These demonstrate offline validation gaps, not observed UART corruption, real hardware measurements or proof of a fault in counter RTL."
+  },
+  "reporting_boundaries": [
+    "Processed rate=delta_processed/(delta_core_tick/125000000) is average successful frame throughput over this core-domain window, including all source/pending/display/DDR waits. It is not isolated compute capacity.",
+    "UART receive wall time and packet spacing are transport/provenance metadata, not the measurement denominator or internal latency.",
+    "last-cycle snapshots expose only the most recent completion at request time. They are not every completed frame and do not support a full-frame percentile/distribution claim.",
+    "Do not add+1 to the tick-window delta. Apply+1 only to a no-wrap-proven legacy single-frame duration.",
+    "New presented frames, successful repeated scans, blank windows and calculation completions are distinct; PGSTAT02 omits blank and many loss/occupancy counters.",
+    "No stage timestamps, camera exposure/ISP/receiver timing, monitor scanout or photons are measured. External E2E remains UNMEASURED.",
+    "The static Penn parameter identity is provenance only. It does not attest that calibration belongs to a newly attached camera."
+  ],
+  "new_host_implementation": "Parent is implementing a new isolated host validator. This audit records archived behavior and semantic requirements; it does not certify unreviewed later code.",
+  "archive_mutations": "NONE",
+  "physical_measurement": "NOT_PERFORMED",
+  "external_E2E": "UNMEASURED"
+}

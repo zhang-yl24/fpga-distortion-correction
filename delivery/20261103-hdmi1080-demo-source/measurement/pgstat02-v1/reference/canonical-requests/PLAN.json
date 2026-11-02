@@ -1,0 +1,51 @@
+{
+  "Status": "OFFLINE_CANONICAL_CLIENT_PLAN_ONLY",
+  "ExecutedUART": false,
+  "ExistingV2RTLUnchanged": true,
+  "NotGeneralProtocolFix": true,
+  "KnownLimitation": "Embedded opposite magic can confuse broadcast RX parsers; untested new routing patch excluded",
+  "CanonicalContinuousByteFSMCheck": "For these exact bytes, both original header/index state machines return idle at each boundary with exactly one SGA and two SGT completions; no idle delay used to mask ambiguity",
+  "Commands": [
+    {
+      "File": "1-SGA1.bin",
+      "Magic": "SGA1",
+      "Ticket": 1,
+      "Nonce": 539365635,
+      "Hex": "5347413101011800010000000311262000000000a861301f",
+      "SHA256": "67e6b0bea0d81d9eb33229c292d5e54b3f2ad062e0e5d8f877169de610e17a02",
+      "BothParserIndexesAfterPacket": 0
+    },
+    {
+      "File": "2-SGT1.bin",
+      "Magic": "SGT1",
+      "Ticket": 2,
+      "Nonce": 539365636,
+      "Hex": "5347543101011800020000000411262000000000be8732a8",
+      "SHA256": "a3d5e9b6ad1f0fbcb1ac022b97056b8cae7d2627df176c9dbe58f3ad440effcb",
+      "BothParserIndexesAfterPacket": 0
+    },
+    {
+      "File": "3-SGT1.bin",
+      "Magic": "SGT1",
+      "Ticket": 3,
+      "Nonce": 539365637,
+      "Hex": "53475431010118000300000005112620000000004fcb3dff",
+      "SHA256": "ba88adac0f3285a4959cbb1edf95a4e688a850ede36fce7a59527a305fc0ba9c",
+      "BothParserIndexesAfterPacket": 0
+    }
+  ],
+  "ProposedSequence": [
+    "Use new loaded measurement bit and established temperature/user-mode checks",
+    "Send first SGA and require matching ARMED ACK plus mode1 complete PGSIG",
+    "Send first SGT and require matching ticket/nonce, last_valid and completed_mode1",
+    "Observe approximately20seconds in same uninterrupted reset epoch; save complete raw UART",
+    "Send final SGT; calculate delta processed/delta core_ticks and legacy last_cycles+1/125MHz; decode separately from scan refresh/repeat",
+    "Preserve selected bit/source/parameters/input identity, raw bytes and temperatures; restore validated rest state"
+  ],
+  "WindowBound": "20s nominal below32-bit core tick34.36s; profile exports64-bit combined tick, existing pure_window still uses conservative epoch/window validation",
+  "NotMeasured": [
+    "hardware fps",
+    "new-camera calibration/quality",
+    "external E2E"
+  ]
+}

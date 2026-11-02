@@ -6,7 +6,7 @@
 
 仓库新`codex/hdmi1080-throughput`分支`bdaf8c1`记录writer/cache隔离模型组合周期减少12.54%，代价为FF/LUT增加；未包含采集/显示仲裁或实板FPS，详见[增量审查](delivery/20261103-hdmi1080-demo-source/NEW_THROUGHPUT_BRANCH_REVIEW.md)。main仍为0408eca0；本交付不直接合并该分支。
 
-测量工具v1已获独立固定profile离线复核，仍不是现场身份/实际时钟/延迟分布/E2E证明；当前工具包落地受阻，暂未作为可执行正式工具发布，不以v0替代。完整说明见今夜交付的“仍在进行及待测”。
+[测量工具v1源码与34项离线测试](delivery/20261103-hdmi1080-demo-source/measurement/pgstat02-v1/README.md) 已按作者普通原始ZIP的SHA256核验并加入交付，6份RTL语义绑定通过；主线程另报25项合法/反例独立复核通过。仅适用指定纯校正PGSTAT02固定profile，仍不证明现场身份、实际时钟、完整延迟分布或E2E。Library helper元数据失败记录保留，未伪造写回；旧v0不用于验收。
 
 ## 团队主线：1080p HDMI 已演示，下一目标 1080p60（2026-11-03）
 

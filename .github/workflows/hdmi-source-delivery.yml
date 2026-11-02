@@ -34,3 +34,5 @@ jobs:
         run: python -B delivery/20261103-hdmi1080-demo-source/tools/verify_offline_candidates.py
       - name: Check exact DMA paired-test inputs and original CPU oracle
         run: python -B delivery/20261103-hdmi1080-demo-source/offline-candidates/20261103-night/tests/dma-grant-equivalence/run_pair.py --check-only
+      - name: Verify exact PGSTAT02 v1 sources and run 34 memory tests
+        run: python -B delivery/20261103-hdmi1080-demo-source/measurement/pgstat02-v1/run_delivery_checks.py --scratch-parent "${{ runner.temp }}"
