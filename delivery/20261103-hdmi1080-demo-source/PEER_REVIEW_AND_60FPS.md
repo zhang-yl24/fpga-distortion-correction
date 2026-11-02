@@ -1,5 +1,7 @@
 # 同学最新代码审查与 1080p60 预算
 
+**追加更新：PR #21 / `214cc2ec` 已发布并合入main `0408eca0`，是新HDMI摄像头1080p60源同步直通，已有用户动作实屏确认。** 详见[新1080p60审查](LATEST_HDMI_CAMERA_1080P60_REVIEW.md)。下面的“最新/实际接口”为此前固定在c81898c0的历史初审，不能再用于否认新版本；720p分工仍独立保留。
+
 本审查固定到 `main` 提交 `c81898c0fa16e1c2f67887468400663ffb09907f`；GitHub 仓库为 private，最新主线 push CI [41415634815](https://github.com/zhang-yl24/fpga-distortion-correction/actions/runs/41415634815) 成功。PR [#19](https://github.com/zhang-yl24/fpga-distortion-correction/pull/19)、[#20](https://github.com/zhang-yl24/fpga-distortion-correction/pull/20) 已合入，后者含 `ee45af47` 的可移植测试夹具修复；旧 PR #17 不是最新版本。审查不改变同学分支和冻结源码。
 
 ## 同学实际接口与成果
