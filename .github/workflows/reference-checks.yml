@@ -29,6 +29,36 @@ jobs:
       - name: Verify initial handoff snapshot
         if: github.ref == 'refs/tags/handoff-20261010'
         run: python handoff/verify-files.py
+      - name: Check portable 720p camera, correction and statistics logic
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess, sys
+          # These native command/fixture tests require Windows path semantics.
+          # The windows-720 job runs the COMPLETE 720p suite, including these.
+          windows_native = {
+              'test_camera720_inspect.py',
+              'test_camera720_raw_inspect.py',
+              'test_camera720_output_prepare.py',
+              'test_camera720_calibrated_inspect.py',
+              'test_camera720_raw_prepare.py',
+              'test_camera720_raw_physical.py',
+              'test_camera720_raw_reset_closure.py',
+              'test_camera720_reset_inspect.py',
+              'test_camera720_calibrated_preparation.py',
+              'test_camera720_stage_fast.py',
+          }
+          files = sorted(Path('distortion/tests').glob('test_camera720_*.py'))
+          assert windows_native <= {p.name for p in files}
+          selected = [str(p) for p in files if p.name not in windows_native]
+          selected.append('distortion/tests/test_prepare_stats_delay_final_c.py')
+          sys.exit(subprocess.call([sys.executable, '-m', 'pytest', '-q',
+                                   '-p', 'no:cacheprovider', *selected]))
+          PY
+      - name: Verify 720p statistics evidence and replay saved UART
+        run: python -B distortion/results/camera720-stats-live-20261102-a/verify_bundle.py
       - name: Run CPU reference and protocol tests
         run: |
           mkdir -p distortion/build
@@ -104,3 +134,25 @@ jobs:
             distortion/tests/test_audit_checked_io_netlist.py \
             distortion/tests/test_audit_checked_ddr_timing.py \
             distortion/tests/test_prepare_checked_board1080_bitstream.py
+  windows-720:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: distortion
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: Preserve source and evidence byte identities
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.longpaths true
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install reference dependencies
+        run: python -m pip install -r requirements-team.txt
+      - name: Check full 720p suite with native Windows path semantics
+        shell: bash
+        run: python -m pytest -q -p no:cacheprovider distortion/tests/test_camera720_*.py distortion/tests/test_prepare_stats_delay_final_c.py
+      - name: Verify byte-preserved evidence and replay saved UART
+        run: python -B distortion/results/camera720-stats-live-20261102-a/verify_bundle.py

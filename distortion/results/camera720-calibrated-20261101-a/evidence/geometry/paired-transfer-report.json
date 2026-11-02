@@ -1,0 +1,283 @@
+{
+  "schema": "camera720-axis-mode-transfer-diagnostic-v1",
+  "source_identity": {
+    "camera_id": "ov5640-cam2-current-20261031",
+    "lens_id": "current-installed-lens-20261031",
+    "profile_id": "vga-upright-current-lens-20261031",
+    "capture_mode_id": "vga640x480-rgb565-upright-3820-00-3821-06"
+  },
+  "target_identity": {
+    "camera_id": "ov5640-cam2-current-20261031",
+    "lens_id": "current-installed-lens-20261031",
+    "profile_id": "current720-current-lens-uncalibrated",
+    "capture_mode_id": "current720-rgb565-upright-3820-41-3821-07"
+  },
+  "source_image_size": [
+    640,
+    480
+  ],
+  "target_image_size": [
+    1280,
+    720
+  ],
+  "A_source_to_target": [
+    [
+      2.0021190701166316,
+      0.0,
+      0.598939240670461
+    ],
+    [
+      0.0,
+      2.003305096187522,
+      -122.02743707675319
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "candidate_parameters": {
+    "model": "fisheye",
+    "K": [
+      [
+        319.4619654229467,
+        0.0,
+        643.7313155863241
+      ],
+      [
+        0.0,
+        320.22175835577696,
+        379.2847554789859
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "D": [
+      0.17602078811481522,
+      -0.010104992886768837,
+      -0.013110536659819092,
+      0.002201229141838536
+    ],
+    "projection": "forward_rectilinear",
+    "maximum_ray_angle_deg": 88.0,
+    "inverse_method": "bounded_monotone_bisection_v1"
+  },
+  "intrinsics_quantization": {
+    "format": "signed24_fraction8",
+    "rounding": "nearest_ties_to_even",
+    "encoded_fx_fy_cx_cy": [
+      81782,
+      81977,
+      164795,
+      97097
+    ],
+    "decoded_fx_fy_cx_cy": [
+      319.4609375,
+      320.22265625,
+      643.73046875,
+      379.28515625
+    ],
+    "representable": true,
+    "source_grid_pixels_checked": 921600,
+    "maximum_source_pixel_error_px": 0.003192007292142116,
+    "rms_source_pixel_error_px": 0.0016020983691404683,
+    "fpga_mapping_verified": false,
+    "brown_surrogate_verified": false,
+    "limits": "Only error caused by representing source K in signed24 Q8; no output K, distortion coefficients, inverse, address or FPGA arithmetic audit."
+  },
+  "source_visibility_scope_inherited": false,
+  "source_heldout_acceptance_inherited": false,
+  "optical_calibration_accepted": false,
+  "hardware_release_allowed": false,
+  "hardware_accessed": false,
+  "drop_in_calibration_profile": false,
+  "image_pixel_orientation_verified": false,
+  "orientation_limits": "Unlabeled checkerboard index symmetries can conceal an actual pixel reflection. Positive fitted A and small residuals do not verify image direction; an independent asymmetric target/text and sensor-mode orientation review are required.",
+  "limits": "A*K and unchanged D are conditional on a fixed image-coordinate crop/scale model. Paired residuals are a diagnostic; independent target-mode pose validation, visible-region coverage and complete fixed-point mapping verification remain required.",
+  "method": "fit_axis_aligned",
+  "thresholds": {
+    "rms_px": 0.5,
+    "maximum_px": 1.5
+  },
+  "pairs": [
+    {
+      "pair_id": "fit-01",
+      "pose_id": "physical-pose-01",
+      "split": "fit",
+      "corner_order": {
+        "selected": "identity",
+        "selection": "auto",
+        "rms_by_valid_symmetry_px": {
+          "identity": 0.33103675086284035
+        },
+        "held_out_matrix_refitted_for_order": false
+      },
+      "rms_px": 0.33103675086284035,
+      "maximum_px": 0.9797714519124884,
+      "mean_delta_xy_px": [
+        1.2631870857957336e-14,
+        -3.3684988954552896e-14
+      ],
+      "points": 54,
+      "within_declared_thresholds": true
+    },
+    {
+      "pair_id": "held-out-03",
+      "pose_id": "physical-pose-03",
+      "split": "held_out",
+      "corner_order": {
+        "selected": "identity",
+        "selection": "auto",
+        "rms_by_valid_symmetry_px": {
+          "identity": 0.31203113792219467,
+          "reverse_cols": 137.14885060888625,
+          "reverse_rows": 215.1934050087019,
+          "reverse_both": 254.76539840071442
+        },
+        "held_out_matrix_refitted_for_order": false
+      },
+      "rms_px": 0.31203113792219467,
+      "maximum_px": 0.7409819124189748,
+      "mean_delta_xy_px": [
+        -0.09552254206048011,
+        0.11694436484540179
+      ],
+      "points": 54,
+      "within_declared_thresholds": true
+    }
+  ],
+  "target_corner_coverage_3x3": {
+    "fit": [
+      [
+        3,
+        24,
+        0
+      ],
+      [
+        3,
+        24,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "held_out": [
+      [
+        6,
+        8,
+        0
+      ],
+      [
+        17,
+        23,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "numeric_pair_checks_passed": true,
+  "independent_target_lens_validation_completed": false,
+  "repeated_fit_heldout_corner_geometry_detected": false,
+  "repeated_geometry_tolerance_px": 1e-06,
+  "geometry_independence_limits": "Only coincident fit/held-out corner sets in either mode are rejected, under permitted index symmetries. Distinct coordinates, bytes or pose IDs do not independently establish distinct physical poses.",
+  "physical_pose_identity_verified": false,
+  "operator_declarations_verified_independently": false,
+  "pair_manifest": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\two-pair-validation-b\\paired-manifest.json",
+    "sha256": "ed0b2623a101e029a0066bbebc3aea744b92a19f163eebcaec36b95d08b26d2e"
+  },
+  "capture_evidence": [
+    {
+      "pair_id": "fit-01",
+      "side": "source",
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose01-vga\\mode-pair01-vga-20261101-a-CAM2-frame0000000006.png",
+        "sha256": "8c0576bfc4bf1ca4b3d6b3394581fae1360d9d55a29f8530b0c4553e6cffcf01"
+      },
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose01-vga\\mode-pair01-vga-20261101-a-CAM2-frame0000000006.json",
+      "metadata_sha256": "6b86bf6b8b74bc7e2730e9c1603017b57e4a10eba4f5dbbd8f9193704da85022",
+      "raw_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose01-vga\\mode-pair01-vga-20261101-a-CAM2-frame0000000006.rgb565",
+      "raw_sha256": "acc7c2dbb78f626c9946d61f7a758a1dd9ca1aee20a271ebadbc62ca6b441d80",
+      "raw_crc32": "14B018B0",
+      "source_kind": "physical_native_camera",
+      "physical_capture_record": true,
+      "upstream_raw_contract_hash_bound": true,
+      "identity_binding_kind": "operator_declared_single_eye_connection",
+      "identity_verified_on_wire": false
+    },
+    {
+      "pair_id": "fit-01",
+      "side": "target",
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-raw\\frame-pair01-a\\mode-pair01-720-20261101-a-CAM2-frame0000000050.png",
+        "sha256": "1aaffa653f9d04c44eee2c4da6b4386865b71562e52938748fe0c5abd9703a86"
+      },
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-raw\\frame-pair01-a\\mode-pair01-720-20261101-a-CAM2-frame0000000050.json",
+      "metadata_sha256": "f5da2e409890f5e7d7e37eeaf6492ee3b51b833392ff1794c7d4b3d608a9ccd9",
+      "raw_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-raw\\frame-pair01-a\\mode-pair01-720-20261101-a-CAM2-frame0000000050.rgb565",
+      "raw_sha256": "ae92d93c0d48ebf2c1ae282557d76868df340d34cba09ec0d07296835141c759",
+      "raw_crc32": "6BB6E3B8",
+      "source_kind": "physical_native_camera",
+      "physical_capture_record": true,
+      "upstream_raw_contract_hash_bound": true,
+      "identity_binding_kind": "operator_declared_single_eye_connection",
+      "identity_verified_on_wire": false
+    },
+    {
+      "pair_id": "held-out-03",
+      "side": "source",
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-vga\\mode-pair03-vga-20261101-a-CAM2-frame0000000006.png",
+        "sha256": "c297478bbebced339b8e06618c7afeca99655524cff4842b2ec1b511e0ad1e7f"
+      },
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-vga\\mode-pair03-vga-20261101-a-CAM2-frame0000000006.json",
+      "metadata_sha256": "278b44ba38d599a643f0e8672f1b967e678421ec943d44fbcee9d7e5d1e425d8",
+      "raw_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-vga\\mode-pair03-vga-20261101-a-CAM2-frame0000000006.rgb565",
+      "raw_sha256": "3e655002d9823bafe427b7e0b2503797f06ea503f2a192d118d083d90185baf1",
+      "raw_crc32": "D9F4A449",
+      "source_kind": "physical_native_camera",
+      "physical_capture_record": true,
+      "upstream_raw_contract_hash_bound": true,
+      "identity_binding_kind": "operator_declared_single_eye_connection",
+      "identity_verified_on_wire": false
+    },
+    {
+      "pair_id": "held-out-03",
+      "side": "target",
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-720\\mode-pair03-720-20261101-a-CAM2-frame0000000033.png",
+        "sha256": "b0e64a093e5753f0412fdcd9935b8e08d6d45c6a73f2cdbffc7c671e3b088cd8"
+      },
+      "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-720\\mode-pair03-720-20261101-a-CAM2-frame0000000033.json",
+      "metadata_sha256": "0566001c86ec65bcf3b9a0ed984e4cbab3e05eae4c8ce03cb2ae4f3ec0e66df7",
+      "raw_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-720\\mode-pair03-720-20261101-a-CAM2-frame0000000033.rgb565",
+      "raw_sha256": "42ab261f3861e605a36456d270873039b5b3ffb0ed2e4b535c55fc3d6d3d0cac",
+      "raw_crc32": "7F555EB9",
+      "source_kind": "physical_native_camera",
+      "physical_capture_record": true,
+      "upstream_raw_contract_hash_bound": true,
+      "identity_binding_kind": "operator_declared_single_eye_connection",
+      "identity_verified_on_wire": false
+    }
+  ],
+  "all_captures_recorded_physical": true,
+  "source_profile": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-calibration-20261101-a\\profiles\\fisheye-profile-a.json",
+    "sha256": "94181c07a4456f511853f51022eba1b55965b115e1569f3fcbad460a2d92999e"
+  },
+  "tool": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\camera720_geometry_transfer.py",
+    "sha256": "0337832465a58f47fedae55209a482667b193b9e220e0ba9e0a1beadd34ca5ef"
+  }
+}

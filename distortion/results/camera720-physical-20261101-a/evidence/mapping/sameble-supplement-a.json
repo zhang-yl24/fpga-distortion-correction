@@ -1,0 +1,2319 @@
+{
+  "Schema": "camera720-sameble-supplement-v1",
+  "Producer": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\camera720_cdc_sameble.py",
+    "SHA256": "d3fc500069a68c3cf5cb3859d851000d63ec22a9ea84184b77052282ec562896"
+  },
+  "Mapper": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\camera720_native_endpoints.py",
+    "SHA256": "1a40e86a663b22446336ea86eecf2dd5a1e4c5d4116f46630add193b851b1235"
+  },
+  "CandidateADF": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\reset-save-ready-a\\input.adf",
+    "SHA256": "777bed47bf6489457f42cda54a3cadc4e74f7a4ae2c8caacc51eb49f14e48904"
+  },
+  "BuildPlanSHA256": "3c1780236ff00448472e7bce2f1ce2b34e638d844fdc6c65f992aefa60dcf51d",
+  "LogicalRelationships": [
+    {
+      "SourceFF": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FFAPP1/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FF1/FF",
+      "DestinationPin": "D",
+      "SourceClock": "camera_pclk",
+      "DestinationClock": "camera_pclk",
+      "Labels": [
+        "system/input_link/input_dma/capture/ack_sync[0]"
+      ],
+      "Purposes": [
+        "ordinary routed interstage within same BLE"
+      ],
+      "OriginalEndpoints": [],
+      "SupplementalSameBLE": true,
+      "OriginalSameBLEInventoryRow": {
+        "SourceFF": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FFAPP1/FF",
+        "DestinationFF": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FF1/FF",
+        "DestinationPin": "D",
+        "Label": "system/input_link/input_dma/capture/ack_sync[0]",
+        "Placement": {
+          "Site": "CLMA_171_678",
+          "Attributes": "(* PAP_BLE_DEF=\"B\" *)"
+        },
+        "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added."
+      },
+      "LocalReleaseFF": "system/input_link/input_dma/capture/cam_reset[0]/opit_0_srl/FFAPP3/FF",
+      "InterstageLogic": {
+        "Cell": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FYB/LUT6CARRY",
+        "Output": "Z",
+        "Truth": "first_stage AND local_release",
+        "ReleaseNet": "\\system/input_link/input_dma/capture/cam_reset [1]",
+        "ExhaustiveAssignments": 4,
+        "FirstStageInputPins": [
+          "I2"
+        ],
+        "NativeLUTSelectorsChecked": true
+      },
+      "SourceLogicalQ": "system/input_link/input_dma/capture/ack_sync[0]",
+      "SourceNativeClockPin": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/CLK",
+      "SourceNativeOutputPin": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/ack_sync[1]",
+      "NativeBoundaries": [
+        {
+          "Endpoint": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/I2",
+          "BoundaryNet": "system/input_link/input_dma/capture/ack_sync[0]",
+          "NativeBoundaryNet": "system/input_link/input_dma/capture/ack_sync[0]",
+          "NetAliasProof": null,
+          "FunctionalBoundaryNet": "\\system/input_link/input_dma/capture/ack_sync [0]",
+          "BoundaryToLogicalFF": [
+            [
+              {
+                "Cell": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FYB/LUT6CARRY",
+                "Primitive": "V_LUT6CARRY",
+                "Output": "Z",
+                "Input": "I2",
+                "Parameters": {
+                  "INIT": "64'hF0F00000FF000000",
+                  "I5_TO_CARRY": "\"TRUE\"",
+                  "I5_TO_LUT": "\"TRUE\""
+                }
+              }
+            ]
+          ]
+        }
+      ],
+      "SourcePlacement": {
+        "Site": "CLMA_171_678",
+        "Attributes": "(* PAP_BLE_DEF=\"B\" *)"
+      },
+      "DestinationPlacement": {
+        "Site": "CLMA_171_678",
+        "Attributes": "(* PAP_BLE_DEF=\"B\" *)"
+      }
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FFAPP0/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FF0/FF",
+      "DestinationPin": "D",
+      "SourceClock": "ddrphy_sysclk",
+      "DestinationClock": "ddrphy_sysclk",
+      "Labels": [
+        "system/input_link/input_dma/capture/done_sync[0]"
+      ],
+      "Purposes": [
+        "ordinary routed interstage within same BLE"
+      ],
+      "OriginalEndpoints": [],
+      "SupplementalSameBLE": true,
+      "OriginalSameBLEInventoryRow": {
+        "SourceFF": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FFAPP0/FF",
+        "DestinationFF": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FF0/FF",
+        "DestinationPin": "D",
+        "Label": "system/input_link/input_dma/capture/done_sync[0]",
+        "Placement": {
+          "Site": "CLMA_177_726",
+          "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+        },
+        "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added."
+      },
+      "LocalReleaseFF": "system/input_link/input_dma/sys_reset[0]/opit_0_srl/FFAPP3/FF",
+      "InterstageLogic": {
+        "Cell": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FYA/LUT6CARRY",
+        "Output": "Z",
+        "Truth": "first_stage AND local_release",
+        "ReleaseNet": "\\system/input_link/input_dma/sys_reset [1]",
+        "ExhaustiveAssignments": 4,
+        "FirstStageInputPins": [
+          "I4"
+        ],
+        "NativeLUTSelectorsChecked": true
+      },
+      "SourceLogicalQ": "system/input_link/input_dma/capture/done_sync[0]",
+      "SourceNativeClockPin": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/CLK",
+      "SourceNativeOutputPin": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/done_sync[1]",
+      "NativeBoundaries": [
+        {
+          "Endpoint": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+          "BoundaryNet": "system/input_link/input_dma/capture/done_sync[0]",
+          "NativeBoundaryNet": "system/input_link/input_dma/capture/done_sync[0]",
+          "NetAliasProof": null,
+          "FunctionalBoundaryNet": "\\system/input_link/input_dma/capture/done_sync [0]",
+          "BoundaryToLogicalFF": [
+            [
+              {
+                "Cell": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FYA/LUT6CARRY",
+                "Primitive": "V_LUT6CARRY",
+                "Output": "Z",
+                "Input": "I4",
+                "Parameters": {
+                  "INIT": "64'hFF000000AA00AA00",
+                  "I5_TO_CARRY": "\"TRUE\"",
+                  "I5_TO_LUT": "\"TRUE\""
+                }
+              }
+            ]
+          ]
+        }
+      ],
+      "SourcePlacement": {
+        "Site": "CLMA_177_726",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      },
+      "DestinationPlacement": {
+        "Site": "CLMA_177_726",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      }
+    },
+    {
+      "SourceFF": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FFAPP0/FF",
+      "DestinationFF": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FF0/FF",
+      "DestinationPin": "D",
+      "SourceClock": "board27",
+      "DestinationClock": "board27",
+      "Labels": [
+        "camera_configuration/monitor/ack_sync"
+      ],
+      "Purposes": [
+        "ordinary routed interstage within same BLE"
+      ],
+      "OriginalEndpoints": [],
+      "SupplementalSameBLE": true,
+      "OriginalSameBLEInventoryRow": {
+        "SourceFF": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FFAPP0/FF",
+        "DestinationFF": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FF0/FF",
+        "DestinationPin": "D",
+        "Label": "camera_configuration/monitor/ack_sync",
+        "Placement": {
+          "Site": "CLMA_81_865",
+          "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+        },
+        "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added."
+      },
+      "LocalReleaseFF": "camera_configuration/monitor/r_reset[0]/opit_0_srl/FFAPP3/FF",
+      "InterstageLogic": {
+        "Cell": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FYA/LUT6CARRY",
+        "Output": "Z",
+        "Truth": "first_stage AND local_release",
+        "ReleaseNet": "\\camera_configuration/monitor/r_reset [1]",
+        "ExhaustiveAssignments": 4,
+        "FirstStageInputPins": [
+          "I2"
+        ],
+        "NativeLUTSelectorsChecked": true
+      },
+      "SourceLogicalQ": "camera_configuration/monitor/ack_sync[0]",
+      "SourceNativeClockPin": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/CLK",
+      "SourceNativeOutputPin": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q",
+      "DestinationLogicalQ": "camera_configuration/monitor/ack_sync[1]",
+      "NativeBoundaries": [
+        {
+          "Endpoint": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/I2",
+          "BoundaryNet": "camera_configuration/monitor/ack_sync[0]",
+          "NativeBoundaryNet": "camera_configuration/monitor/ack_sync[0]",
+          "NetAliasProof": null,
+          "FunctionalBoundaryNet": "\\camera_configuration/monitor/ack_sync [0]",
+          "BoundaryToLogicalFF": [
+            [
+              {
+                "Cell": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FYA/LUT6CARRY",
+                "Primitive": "V_LUT6CARRY",
+                "Output": "Z",
+                "Input": "I2",
+                "Parameters": {
+                  "INIT": "64'hF000F000FF000000",
+                  "I5_TO_CARRY": "\"TRUE\"",
+                  "I5_TO_LUT": "\"TRUE\""
+                }
+              }
+            ]
+          ]
+        }
+      ],
+      "SourcePlacement": {
+        "Site": "CLMA_81_865",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      },
+      "DestinationPlacement": {
+        "Site": "CLMA_81_865",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      }
+    }
+  ],
+  "Queries": [
+    {
+      "Source": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/CLK",
+      "LaunchOutput": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q",
+      "Endpoint": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/I2",
+      "Requirements": {
+        "Clock": "camera_pclk",
+        "CheckKinds": [
+          "setup",
+          "hold"
+        ],
+        "Corners": [
+          "slow",
+          "fast"
+        ]
+      },
+      "LogicalRelationships": [
+        0
+      ],
+      "SupplementalSameBLE": true
+    },
+    {
+      "Source": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/CLK",
+      "LaunchOutput": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q",
+      "Endpoint": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+      "Requirements": {
+        "Clock": "ddrphy_sysclk",
+        "CheckKinds": [
+          "setup",
+          "hold"
+        ],
+        "Corners": [
+          "slow",
+          "fast"
+        ]
+      },
+      "LogicalRelationships": [
+        1
+      ],
+      "SupplementalSameBLE": true
+    },
+    {
+      "Source": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/CLK",
+      "LaunchOutput": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q",
+      "Endpoint": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/I2",
+      "Requirements": {
+        "Clock": "board27",
+        "CheckKinds": [
+          "setup",
+          "hold"
+        ],
+        "Corners": [
+          "slow",
+          "fast"
+        ]
+      },
+      "LogicalRelationships": [
+        2
+      ],
+      "SupplementalSameBLE": true
+    }
+  ],
+  "DirectInternalRows": [
+    {
+      "SourceFF": "system/display_fifo/rd_gray_w1[0]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/display_fifo/rd_gray_w1[0]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/rd_gray_w1[0]",
+      "Placement": {
+        "Site": "CLMS_267_673",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_267_673/ntQ3",
+      "DestinationLogicalQ": "system/display_fifo/rd_gray_w2[0]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/rd_gray_w1[0]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/rd_gray_w1[1]/opit_0_inv_srl/FF0/FF",
+      "DestinationFF": "system/display_fifo/rd_gray_w1[1]/opit_0_inv_srl/FFAPP0/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/rd_gray_w1[1]",
+      "Placement": {
+        "Site": "CLMS_267_673",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_267_673/ntQ0",
+      "DestinationLogicalQ": "system/display_fifo/rd_gray_w2[1]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/rd_gray_w1[1]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/rd_gray_w1[2]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/display_fifo/rd_gray_w1[2]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/rd_gray_w1[2]",
+      "Placement": {
+        "Site": "CLMS_267_673",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_267_673/ntQ2",
+      "DestinationLogicalQ": "system/display_fifo/rd_gray_w2[2]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/rd_gray_w1[2]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/rd_gray_w1[3]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/display_fifo/rd_gray_w1[3]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/rd_gray_w1[3]",
+      "Placement": {
+        "Site": "CLMA_261_672",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_261_672/ntQ2",
+      "DestinationLogicalQ": "system/display_fifo/rd_gray_w2[3]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/rd_gray_w1[3]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/rd_gray_w1[4]/opit_0_inv_srl/FF1/FF",
+      "DestinationFF": "system/display_fifo/rd_gray_w1[4]/opit_0_inv_srl/FFAPP1/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/rd_gray_w1[4]",
+      "Placement": {
+        "Site": "CLMA_261_672",
+        "Attributes": "(* PAP_BLE_DEF=\"B\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_261_672/ntQ1",
+      "DestinationLogicalQ": "system/display_fifo/rd_gray_w2[4]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/rd_gray_w1[4]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/rd_gray_w1[5]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/display_fifo/rd_gray_w1[5]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/rd_gray_w1[5]",
+      "Placement": {
+        "Site": "CLMA_249_679",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_249_679/ntQ3",
+      "DestinationLogicalQ": "system/display_fifo/rd_gray_w2[5]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/rd_gray_w1[5]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/rd_gray_w1[6]/opit_0_inv_srl/FF0/FF",
+      "DestinationFF": "system/display_fifo/rd_gray_w1[6]/opit_0_inv_srl/FFAPP0/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/rd_gray_w1[6]",
+      "Placement": {
+        "Site": "CLMA_261_672",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_261_672/ntQ0",
+      "DestinationLogicalQ": "system/display_fifo/rd_gray_w2[6]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/rd_gray_w1[6]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/rd_gray_w1[7]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/display_fifo/rd_gray_w1[7]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/rd_gray_w1[7]",
+      "Placement": {
+        "Site": "CLMA_261_672",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_261_672/ntQ3",
+      "DestinationLogicalQ": "system/display_fifo/rd_gray_w2[7]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/rd_gray_w1[7]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/rd_gray_w1[8]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/display_fifo/rd_gray_w1[8]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/rd_gray_w1[8]",
+      "Placement": {
+        "Site": "CLMA_249_679",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_249_679/ntQ2",
+      "DestinationLogicalQ": "system/display_fifo/rd_gray_w2[8]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/rd_gray_w1[8]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/rd_gray_w1[9]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/display_fifo/rd_gray_w1[9]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/rd_gray_w1[9]",
+      "Placement": {
+        "Site": "CLMS_267_685",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_267_685/ntQ3",
+      "DestinationLogicalQ": "system/display_fifo/rd_gray_w2[9]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/rd_gray_w1[9]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/wr_gray_r1[0]/opit_0_inv_srl/FF0/FF",
+      "DestinationFF": "system/display_fifo/wr_gray_r1[0]/opit_0_inv_srl/FFAPP0/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/wr_gray_r1[0]",
+      "Placement": {
+        "Site": "CLMA_267_678",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_267_678/ntQ0",
+      "DestinationLogicalQ": "system/display_fifo/wr_gray_r2[0]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/wr_gray_r1[0]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/wr_gray_r1[1]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/display_fifo/wr_gray_r1[1]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/wr_gray_r1[1]",
+      "Placement": {
+        "Site": "CLMA_261_673",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_261_673/ntQ3",
+      "DestinationLogicalQ": "system/display_fifo/wr_gray_r2[1]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/wr_gray_r1[1]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/wr_gray_r1[2]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/display_fifo/wr_gray_r1[2]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/wr_gray_r1[2]",
+      "Placement": {
+        "Site": "CLMA_261_673",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_261_673/ntQ2",
+      "DestinationLogicalQ": "system/display_fifo/wr_gray_r2[2]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/wr_gray_r1[2]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/wr_gray_r1[3]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/display_fifo/wr_gray_r1[3]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/wr_gray_r1[3]",
+      "Placement": {
+        "Site": "CLMS_267_679",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_267_679/ntQ3",
+      "DestinationLogicalQ": "system/display_fifo/wr_gray_r2[3]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/wr_gray_r1[3]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/wr_gray_r1[4]/opit_0_inv_srl/FF1/FF",
+      "DestinationFF": "system/display_fifo/wr_gray_r1[4]/opit_0_inv_srl/FFAPP1/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/wr_gray_r1[4]",
+      "Placement": {
+        "Site": "CLMS_267_679",
+        "Attributes": "(* PAP_BLE_DEF=\"B\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_267_679/ntQ1",
+      "DestinationLogicalQ": "system/display_fifo/wr_gray_r2[4]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/wr_gray_r1[4]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/wr_gray_r1[5]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/display_fifo/wr_gray_r1[5]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/wr_gray_r1[5]",
+      "Placement": {
+        "Site": "CLMS_267_679",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_267_679/ntQ2",
+      "DestinationLogicalQ": "system/display_fifo/wr_gray_r2[5]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/wr_gray_r1[5]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/wr_gray_r1[6]/opit_0_inv_srl/FF0/FF",
+      "DestinationFF": "system/display_fifo/wr_gray_r1[6]/opit_0_inv_srl/FFAPP0/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/wr_gray_r1[6]",
+      "Placement": {
+        "Site": "CLMS_267_679",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_267_679/ntQ0",
+      "DestinationLogicalQ": "system/display_fifo/wr_gray_r2[6]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/wr_gray_r1[6]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/wr_gray_r1[7]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/display_fifo/wr_gray_r1[7]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/wr_gray_r1[7]",
+      "Placement": {
+        "Site": "CLMA_267_678",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_267_678/ntQ3",
+      "DestinationLogicalQ": "system/display_fifo/wr_gray_r2[7]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/wr_gray_r1[7]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/wr_gray_r1[8]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/display_fifo/wr_gray_r1[8]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/wr_gray_r1[8]",
+      "Placement": {
+        "Site": "CLMA_267_678",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_267_678/ntQ2",
+      "DestinationLogicalQ": "system/display_fifo/wr_gray_r2[8]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/wr_gray_r1[8]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/wr_gray_r1[9]/opit_0_inv_srl/FF1/FF",
+      "DestinationFF": "system/display_fifo/wr_gray_r1[9]/opit_0_inv_srl/FFAPP1/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/wr_gray_r1[9]",
+      "Placement": {
+        "Site": "CLMA_267_678",
+        "Attributes": "(* PAP_BLE_DEF=\"B\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_267_678/ntQ1",
+      "DestinationLogicalQ": "system/display_fifo/wr_gray_r2[9]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/wr_gray_r1[9]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]",
+      "Placement": {
+        "Site": "CLMA_165_769",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_165_769/ntQ2",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/rd_gray_w2[0]",
+      "Clock": "camera_pclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[1]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[1]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/rd_gray_w1[1]",
+      "Placement": {
+        "Site": "CLMS_159_757",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_159_757/ntQ3",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/rd_gray_w2[1]",
+      "Clock": "camera_pclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/rd_gray_w1[1]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]/opit_0_inv_srl/FF0/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]/opit_0_inv_srl/FFAPP0/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]",
+      "Placement": {
+        "Site": "CLMA_165_769",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_165_769/ntQ0",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/rd_gray_w2[2]",
+      "Clock": "camera_pclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[3]/opit_0_inv_srl/FF0/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[3]/opit_0_inv_srl/FFAPP0/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/rd_gray_w1[3]",
+      "Placement": {
+        "Site": "CLMS_159_757",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_159_757/ntQ0",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/rd_gray_w2[3]",
+      "Clock": "camera_pclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/rd_gray_w1[3]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]/opit_0_inv_srl/FF1/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]/opit_0_inv_srl/FFAPP1/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]",
+      "Placement": {
+        "Site": "CLMA_165_769",
+        "Attributes": "(* PAP_BLE_DEF=\"B\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_165_769/ntQ1",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/rd_gray_w2[4]",
+      "Clock": "camera_pclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[5]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[5]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/rd_gray_w1[5]",
+      "Placement": {
+        "Site": "CLMS_159_757",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_159_757/ntQ2",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/rd_gray_w2[5]",
+      "Clock": "camera_pclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/rd_gray_w1[5]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[6]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/rd_gray_w1[6]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/rd_gray_w1[6]",
+      "Placement": {
+        "Site": "CLMA_165_769",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_165_769/ntQ3",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/rd_gray_w2[6]",
+      "Clock": "camera_pclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/rd_gray_w1[6]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]",
+      "Placement": {
+        "Site": "CLMS_171_757",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_171_757/ntQ2",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/wr_gray_r2[0]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]/opit_0_inv_srl/FF0/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]/opit_0_inv_srl/FFAPP0/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]",
+      "Placement": {
+        "Site": "CLMS_171_757",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_171_757/ntQ0",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/wr_gray_r2[1]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]/opit_0_inv_srl/FF1/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]/opit_0_inv_srl/FFAPP1/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]",
+      "Placement": {
+        "Site": "CLMS_171_757",
+        "Attributes": "(* PAP_BLE_DEF=\"B\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_171_757/ntQ1",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/wr_gray_r2[2]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[3]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[3]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/wr_gray_r1[3]",
+      "Placement": {
+        "Site": "CLMS_171_757",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_171_757/ntQ3",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/wr_gray_r2[3]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/wr_gray_r1[3]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]",
+      "Placement": {
+        "Site": "CLMA_177_756",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_177_756/ntQ2",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/wr_gray_r2[4]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[5]/opit_0_inv_srl/FF0/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[5]/opit_0_inv_srl/FFAPP0/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/wr_gray_r1[5]",
+      "Placement": {
+        "Site": "CLMA_177_756",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_177_756/ntQ0",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/wr_gray_r2[5]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/wr_gray_r1[5]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[6]/opit_0_inv_srl/FF1/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/wr_gray_r1[6]/opit_0_inv_srl/FFAPP1/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/wr_gray_r1[6]",
+      "Placement": {
+        "Site": "CLMA_177_756",
+        "Attributes": "(* PAP_BLE_DEF=\"B\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_177_756/ntQ1",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/wr_gray_r2[6]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/wr_gray_r1[6]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "board_failed_core[0]/opit_0_srl/FF3/FF",
+      "DestinationFF": "board_failed_core[0]/opit_0_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "board_failed_core[1]",
+      "Placement": {
+        "Site": "CLMA_177_654",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_177_654/ntQ3",
+      "DestinationLogicalQ": "board_failed_core[1]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "board_failed_core[0]/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "camera_configuration/initializer/bus/scl_meta/opit_0_srl/FF3/FF",
+      "DestinationFF": "camera_configuration/initializer/bus/scl_meta/opit_0_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "camera_configuration/initializer/bus/scl_sampled",
+      "Placement": {
+        "Site": "CLMA_81_522",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_81_522/ntQ3",
+      "DestinationLogicalQ": "camera_configuration/initializer/bus/scl_sampled",
+      "Clock": "board27",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "camera_configuration/initializer/bus/scl_meta/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "camera_configuration/initializer/bus/sda_meta/opit_0_srl/FF3/FF",
+      "DestinationFF": "camera_configuration/initializer/bus/sda_meta/opit_0_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "camera_configuration/initializer/bus/sda_sampled",
+      "Placement": {
+        "Site": "CLMA_159_522",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_159_522/ntQ3",
+      "DestinationLogicalQ": "camera_configuration/initializer/bus/sda_sampled",
+      "Clock": "board27",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "camera_configuration/initializer/bus/sda_meta/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "hdmi_configuration/bus/scl_meta/opit_0_srl/FF2/FF",
+      "DestinationFF": "hdmi_configuration/bus/scl_meta/opit_0_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "hdmi_configuration/bus/scl_sampled",
+      "Placement": {
+        "Site": "CLMA_57_661",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_57_661/ntQ2",
+      "DestinationLogicalQ": "hdmi_configuration/bus/scl_sampled",
+      "Clock": "board27",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "hdmi_configuration/bus/scl_meta/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "hdmi_configuration/bus/sda_meta/opit_0_srl/FF3/FF",
+      "DestinationFF": "hdmi_configuration/bus/sda_meta/opit_0_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "hdmi_configuration/bus/sda_sampled",
+      "Placement": {
+        "Site": "CLMA_57_661",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_57_661/ntQ3",
+      "DestinationLogicalQ": "hdmi_configuration/bus/sda_sampled",
+      "Clock": "board27",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "hdmi_configuration/bus/sda_meta/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/done_sync[0]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/done_sync[0]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/done_sync[1]",
+      "Placement": {
+        "Site": "CLMA_249_558",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_249_558/ntQ3",
+      "DestinationLogicalQ": "system/done_sync[1]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/done_sync[0]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/grant_ack_sync[0]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/grant_ack_sync[0]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/grant_ack_sync[1]",
+      "Placement": {
+        "Site": "CLMS_267_517",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_267_517/ntQ2",
+      "DestinationLogicalQ": "system/grant_ack_sync[1]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/grant_ack_sync[0]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/request_sync[0]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/request_sync[0]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/request_sync[1]",
+      "Placement": {
+        "Site": "CLMS_267_517",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_267_517/ntQ3",
+      "DestinationLogicalQ": "system/request_sync[1]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/request_sync[0]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/scan_abort_sync[0]/opit_0_srl/FF2/FF",
+      "DestinationFF": "system/scan_abort_sync[0]/opit_0_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/scan_abort_sync[1]",
+      "Placement": {
+        "Site": "CLMA_195_643",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_195_643/ntQ2",
+      "DestinationLogicalQ": "system/scan_abort_sync[1]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/scan_abort_sync[0]/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/scan_failed_sync[0]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/scan_failed_sync[0]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/scan_failed_sync[1]",
+      "Placement": {
+        "Site": "CLMA_249_661",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_249_661/ntQ3",
+      "DestinationLogicalQ": "system/scan_failed_sync[1]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/scan_failed_sync[0]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/scan_enable_sync[1]/opit_0_L6QQ_perm/FF0/FF",
+      "DestinationFF": "system/scan_enable_sync[1]/opit_0_L6QQ_perm/FFAPP0/FF",
+      "DestinationPin": "D",
+      "Label": "system/scan_enable_sync[1]",
+      "Placement": {
+        "Site": "CLMA_195_643",
+        "Attributes": "(* PAP_BLE_DEF=\"A\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_195_643/ntQ0",
+      "DestinationLogicalQ": "system/scan_enable_sync[1]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/scan_enable_sync[1]/opit_0_L6QQ_perm",
+      "NativeOperator": "gopLUT6QQ",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/output_video/done_ack_sync[0]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "system/output_video/done_ack_sync[0]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/output_video/done_ack_sync[1]",
+      "Placement": {
+        "Site": "CLMS_243_559",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_243_559/ntQ3",
+      "DestinationLogicalQ": "system/output_video/done_ack_sync[1]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/output_video/done_ack_sync[0]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/output_video/grant_sync[0]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/output_video/grant_sync[0]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/output_video/grant_sync[1]",
+      "Placement": {
+        "Site": "CLMS_267_523",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_267_523/ntQ2",
+      "DestinationLogicalQ": "system/output_video/grant_sync[1]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/output_video/grant_sync[0]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "camera_configuration/monitor/p_reset[0]/opit_0_srl/FF3/FF",
+      "DestinationFF": "camera_configuration/monitor/p_reset[0]/opit_0_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "camera_configuration/monitor/p_reset[0]/opit_0_srl/FF3/FF",
+      "Placement": {
+        "Site": "CLMA_159_804",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_159_804/ntQ3",
+      "DestinationLogicalQ": "camera_configuration/monitor/p_reset[1]",
+      "Clock": "camera_pclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "camera_configuration/monitor/p_reset[0]/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "camera_configuration/monitor/r_reset[0]/opit_0_srl/FF3/FF",
+      "DestinationFF": "camera_configuration/monitor/r_reset[0]/opit_0_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "camera_configuration/monitor/r_reset[0]/opit_0_srl/FF3/FF",
+      "Placement": {
+        "Site": "CLMS_105_925",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_105_925/ntQ3",
+      "DestinationLogicalQ": "camera_configuration/monitor/r_reset[1]",
+      "Clock": "board27",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "camera_configuration/monitor/r_reset[0]/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "core_reset[0]/opit_0_srl/FF3/FF",
+      "DestinationFF": "core_reset[0]/opit_0_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "core_reset[0]/opit_0_srl/FF3/FF",
+      "Placement": {
+        "Site": "CLMS_183_709",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMS_183_709/ntQ3",
+      "DestinationLogicalQ": "core_reset[1]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "core_reset[0]/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "key_reset_sync[0]/opit_0_inv_srl/FF3/FF",
+      "DestinationFF": "key_reset_sync[0]/opit_0_inv_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "key_reset_sync[0]/opit_0_inv_srl/FF3/FF",
+      "Placement": {
+        "Site": "CLMA_105_954",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_105_954/ntQ3",
+      "DestinationLogicalQ": "key_reset_sync[1]",
+      "Clock": "board27",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "key_reset_sync[0]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "ref_reset[0]/opit_0_srl/FF3/FF",
+      "DestinationFF": "ref_reset[0]/opit_0_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "ref_reset[0]/opit_0_srl/FF3/FF",
+      "Placement": {
+        "Site": "CLMA_165_643",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_165_643/ntQ3",
+      "DestinationLogicalQ": "ref_reset[1]",
+      "Clock": "board27",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "ref_reset[0]/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/display_fifo/rd_reset_sync[0]/opit_0_srl/FF3/FF",
+      "DestinationFF": "system/display_fifo/rd_reset_sync[0]/opit_0_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/display_fifo/rd_reset_sync[0]/opit_0_srl/FF3/FF",
+      "Placement": {
+        "Site": "CLMA_195_643",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_195_643/ntQ3",
+      "DestinationLogicalQ": "system/display_fifo/rd_reset_sync[1]",
+      "Clock": "pixel_clk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/display_fifo/rd_reset_sync[0]/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/cam_reset[0]/opit_0_srl/FF3/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/cam_reset[0]/opit_0_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/cam_reset[0]/opit_0_srl/FF3/FF",
+      "Placement": {
+        "Site": "CLMA_165_672",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_165_672/ntQ3",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/cam_reset[1]",
+      "Clock": "camera_pclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/cam_reset[0]/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/capture/pixels/wr_reset_sync[0]/opit_0_srl/FF3/FF",
+      "DestinationFF": "system/input_link/input_dma/capture/pixels/wr_reset_sync[0]/opit_0_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/capture/pixels/wr_reset_sync[0]/opit_0_srl/FF3/FF",
+      "Placement": {
+        "Site": "CLMA_165_691",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_165_691/ntQ3",
+      "DestinationLogicalQ": "system/input_link/input_dma/capture/pixels/wr_reset_sync[1]",
+      "Clock": "camera_pclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/capture/pixels/wr_reset_sync[0]/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/input_link/input_dma/sys_reset[0]/opit_0_srl/FF3/FF",
+      "DestinationFF": "system/input_link/input_dma/sys_reset[0]/opit_0_srl/FFAPP3/FF",
+      "DestinationPin": "D",
+      "Label": "system/input_link/input_dma/sys_reset[0]/opit_0_srl/FF3/FF",
+      "Placement": {
+        "Site": "CLMA_165_720",
+        "Attributes": "(* PAP_BLE_DEF=\"D\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "CLMA_165_720/ntQ3",
+      "DestinationLogicalQ": "system/input_link/input_dma/sys_reset[1]",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/input_link/input_dma/sys_reset[0]/opit_0_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": true,
+      "ReplicatedResetSecondStages": [],
+      "TimingAccepted": false
+    },
+    {
+      "SourceFF": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/FF2/FF",
+      "DestinationFF": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/FFAPP2/FF",
+      "DestinationPin": "D",
+      "Label": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/FF2/FF",
+      "Placement": {
+        "Site": "CLMA_189_648",
+        "Attributes": "(* PAP_BLE_DEF=\"C\" *)"
+      },
+      "Reason": "Existing inventory treats same-BLE interstage as internal; no native timing acceptance added.",
+      "SourceLogicalQ": "system/bank_core/engine/core/reset_sync[0]",
+      "DestinationLogicalQ": "system/bank_core/engine/core/reset_sync_25",
+      "Clock": "ddrphy_sysclk",
+      "DirectQToD": true,
+      "NativeReceivingInputs": [],
+      "NativeInstance": "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl",
+      "NativeOperator": "gopSRL2",
+      "SourceOnlyFeedsSecondStage": false,
+      "ReplicatedResetSecondStages": [
+        "system/bank_core/engine/core/reset_sync[0]/opit_0_inv_srl/FFAPP2/FF",
+        "system/bank_core/engine/core/reset_sync[1]_1/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_1/opit_0_inv/FFAPP1/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_10/opit_0_inv/FFAPP0/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_11/opit_0_inv/FFAPP1/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_12/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_13/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_14/opit_0_inv/FFAPP1/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_15/opit_0_inv/FFAPP0/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_16/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_17/opit_0_inv/FFAPP2/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_18/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_19/opit_0_inv/FF1/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_2/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_20/opit_0_inv/FF0/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_21/opit_0_inv/FF3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_22/opit_0_inv/FF2/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_23/opit_0_inv/FFAPP1/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_25/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_26/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_3/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_4/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_5/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_6/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_7/opit_0_inv/FFAPP1/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_8/opit_0_inv/FFAPP3/FF",
+        "system/bank_core/engine/core/reset_sync_1_copy[1]_9/opit_0_inv/FFAPP2/FF"
+      ],
+      "TimingAccepted": false
+    }
+  ],
+  "NativeLUTBindings": {
+    "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FYB/LUT6CARRY": {
+      "NativeInstance": "system/input_link/input_dma/capture/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm",
+      "NativeCell": "gopLUT6QL5Q_Cell_480",
+      "NativeOperator": "gopLUT6QL5Q",
+      "NativeParameters": [
+        [
+          "PARAMETER",
+          "INIT",
+          [
+            "DATATYPE",
+            "BITVEC"
+          ],
+          [
+            "BITVEC",
+            [
+              "B",
+              "64",
+              "\"1111000011110000000000000000000011111111000000000000000000000000\""
+            ]
+          ]
+        ],
+        [
+          "PARAMETER",
+          "MODE",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"LUT6\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FF_RS",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"RESET\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FFAPP_RS",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"RESET\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FF_INIT",
+          [
+            "DATATYPE",
+            "BIT"
+          ],
+          [
+            "BIT",
+            [
+              "B",
+              "1",
+              "\"0\""
+            ]
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FFAPP_INIT",
+          [
+            "DATATYPE",
+            "BIT"
+          ],
+          [
+            "BIT",
+            [
+              "B",
+              "1",
+              "\"0\""
+            ]
+          ]
+        ],
+        [
+          "PARAMETER",
+          "QMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"YX\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FFAPPMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"YX\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "CRPOSTMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"QPX\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "RS_MODE",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"ASYNC\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LRS_POL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LRS_EN",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"TRUE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LCE_POL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LCE_EN",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "CLK_POL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "RSMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"LOCAL\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "CEMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"LOCAL\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "GRS_EN",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"TRUE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LATCH_EN",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ]
+      ],
+      "FunctionalParameters": {
+        "INIT": "64'hF0F00000FF000000",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "INITMatches": true,
+      "BooleanMuxSemantics": {
+        "RelativePDSPath": "arch/vendor/pango/verilog/bsim/V_LUT6CARRY.v",
+        "SHA256": "aa7ca57e8ce35845b0d61b02358d4a546facc52be65ec1ca5e68fe37a8bdcf98",
+        "Scope": "Two-state Boolean truth, explicit I5_TO_LUT/CARRY selectors; no timing/unknown simulation."
+      }
+    },
+    "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FYA/LUT6CARRY": {
+      "NativeInstance": "system/input_link/input_dma/capture/done_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm",
+      "NativeCell": "gopLUT6QL5Q_Cell_599",
+      "NativeOperator": "gopLUT6QL5Q",
+      "NativeParameters": [
+        [
+          "PARAMETER",
+          "INIT",
+          [
+            "DATATYPE",
+            "BITVEC"
+          ],
+          [
+            "BITVEC",
+            [
+              "B",
+              "64",
+              "\"1111111100000000000000000000000010101010000000001010101000000000\""
+            ]
+          ]
+        ],
+        [
+          "PARAMETER",
+          "MODE",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"LUT6\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FF_RS",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"RESET\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FFAPP_RS",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"RESET\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FF_INIT",
+          [
+            "DATATYPE",
+            "BIT"
+          ],
+          [
+            "BIT",
+            [
+              "B",
+              "1",
+              "\"0\""
+            ]
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FFAPP_INIT",
+          [
+            "DATATYPE",
+            "BIT"
+          ],
+          [
+            "BIT",
+            [
+              "B",
+              "1",
+              "\"0\""
+            ]
+          ]
+        ],
+        [
+          "PARAMETER",
+          "QMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"YX\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FFAPPMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"YX\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "CRPOSTMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"QPX\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "RS_MODE",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"ASYNC\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LRS_POL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LRS_EN",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"TRUE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LCE_POL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LCE_EN",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "CLK_POL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "RSMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"CHAIN\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "CEMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"LOCAL\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "GRS_EN",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"TRUE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LATCH_EN",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ]
+      ],
+      "FunctionalParameters": {
+        "INIT": "64'hFF000000AA00AA00",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "INITMatches": true,
+      "BooleanMuxSemantics": {
+        "RelativePDSPath": "arch/vendor/pango/verilog/bsim/V_LUT6CARRY.v",
+        "SHA256": "aa7ca57e8ce35845b0d61b02358d4a546facc52be65ec1ca5e68fe37a8bdcf98",
+        "Scope": "Two-state Boolean truth, explicit I5_TO_LUT/CARRY selectors; no timing/unknown simulation."
+      }
+    },
+    "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm/FYA/LUT6CARRY": {
+      "NativeInstance": "camera_configuration/monitor/ack_sync[1]/opit_0_L6Q_LUT6DQL5Q_perm",
+      "NativeCell": "gopLUT6QL5Q_Cell_479",
+      "NativeOperator": "gopLUT6QL5Q",
+      "NativeParameters": [
+        [
+          "PARAMETER",
+          "INIT",
+          [
+            "DATATYPE",
+            "BITVEC"
+          ],
+          [
+            "BITVEC",
+            [
+              "B",
+              "64",
+              "\"1111000000000000111100000000000011111111000000000000000000000000\""
+            ]
+          ]
+        ],
+        [
+          "PARAMETER",
+          "MODE",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"LUT6\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FF_RS",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"RESET\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FFAPP_RS",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"RESET\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FF_INIT",
+          [
+            "DATATYPE",
+            "BIT"
+          ],
+          [
+            "BIT",
+            [
+              "B",
+              "1",
+              "\"0\""
+            ]
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FFAPP_INIT",
+          [
+            "DATATYPE",
+            "BIT"
+          ],
+          [
+            "BIT",
+            [
+              "B",
+              "1",
+              "\"0\""
+            ]
+          ]
+        ],
+        [
+          "PARAMETER",
+          "QMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"YX\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "FFAPPMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"YX\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "CRPOSTMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"QPX\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "RS_MODE",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"ASYNC\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LRS_POL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LRS_EN",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"TRUE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LCE_POL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LCE_EN",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "CLK_POL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "RSMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"CHAIN\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "CEMUX_SEL",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"LOCAL\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "GRS_EN",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"TRUE\""
+          ]
+        ],
+        [
+          "PARAMETER",
+          "LATCH_EN",
+          [
+            "DATATYPE",
+            "STRING"
+          ],
+          [
+            "STRING",
+            "\"FALSE\""
+          ]
+        ]
+      ],
+      "FunctionalParameters": {
+        "INIT": "64'hF000F000FF000000",
+        "I5_TO_CARRY": "\"TRUE\"",
+        "I5_TO_LUT": "\"TRUE\""
+      },
+      "INITMatches": true,
+      "BooleanMuxSemantics": {
+        "RelativePDSPath": "arch/vendor/pango/verilog/bsim/V_LUT6CARRY.v",
+        "SHA256": "aa7ca57e8ce35845b0d61b02358d4a546facc52be65ec1ca5e68fe37a8bdcf98",
+        "Scope": "Two-state Boolean truth, explicit I5_TO_LUT/CARRY selectors; no timing/unknown simulation."
+      }
+    }
+  },
+  "ClassifiedRelationships": 60,
+  "DirectInternalRelationships": 57,
+  "SupplementalInterstageRelationships": 3,
+  "SupplementalApplicableCases": 12,
+  "CallerMustBindActualGraphAndRoute": true,
+  "StructuralClassificationPassed": true,
+  "NativeTimingAccepted": false,
+  "HardwareReleaseAllowed": false,
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\native-endpoints-d.json": "eaec79611cbee64e04253f0e3c3f2c62e5fbd5f97947d9f3d67c1283111ce319",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\reset-export-a\\generate_netlist\\camera720_transport_top_sim.v": "3e660eac8433e689ea258cdd3fc9f048b15509ac8372bb3a80d3a47c87f096c7",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\reset-save-ready-a\\route-dump.txt": "ab7adb41ac4d0f0ab4b2cce5b9d5ddfe6ba50175dcf58d75b088f4c6e704da88"
+  }
+}

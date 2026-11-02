@@ -1,0 +1,80 @@
+{
+  "Schema": "camera720-review-excluded-stages-v1",
+  "Stages": [
+    {
+      "SourceRepositoryPath": "distortion/work/camera720-output/cdc-qualified-native-00/result.json",
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\cdc-qualified-native-00\\result.json",
+      "Reason": "Critical STA-3006 rejects internal CIN endpoints; excluded from accepted coverage.",
+      "RawBytesCopied": false,
+      "CountedAsCompletePass": false,
+      "SHA256": "0752dbd64fcd01530933d8cde690c6017065ace4ecf65d2bca2be5bf901fd4df",
+      "ObservedFlags": {
+        "ExecutionPassed": true,
+        "TimedOut": false,
+        "ExitCode": 0
+      }
+    },
+    {
+      "SourceRepositoryPath": "distortion/work/camera720-output/io-native-a/result.json",
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\io-native-a\\result.json",
+      "Reason": "Failed initial IO native attempt; successful io-native-b supplies the selected evidence.",
+      "RawBytesCopied": false,
+      "CountedAsCompletePass": false,
+      "SHA256": "b2abee0accaa9bc178e15ddcd9606dc9660392c8dea6e62719ea82c93a045118",
+      "ObservedFlags": {
+        "ExecutionPassed": false,
+        "TimedOut": true,
+        "ExitCode": null
+      }
+    },
+    {
+      "SourceRepositoryPath": "distortion/work/camera720-output/cdc-clm-native-01/stage-plan.json",
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\cdc-clm-native-01\\stage-plan.json",
+      "Reason": "Prepared grouped context01; no execution receipt exists. Paused after partial00 and superseded by single-source recovery.",
+      "RawBytesCopied": false,
+      "CountedAsCompletePass": false,
+      "SHA256": "2f9630f23a74de71d8ec20200418d96de903ab8e2c5864bc7cddf3a5bfcc3dec",
+      "ObservedFlags": {
+        "PreparedOnly": true,
+        "ExecutionReceiptExists": false
+      }
+    },
+    {
+      "SourceRepositoryPath": "distortion/work/camera720-output/cdc-clm-through-a/plan.json",
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\cdc-clm-through-a\\plan.json",
+      "Reason": "Superseded pre-supplement-binding plan; final parent is through-b.",
+      "RawBytesCopied": false,
+      "CountedAsCompletePass": false,
+      "SHA256": "81db3920539db725ab4fb2fe72136f9135f0c304a9464a2cd80f9be6695f0fbb",
+      "ObservedFlags": {}
+    },
+    {
+      "SourceRepositoryPath": "distortion/work/camera720-output/native-endpoints-a.json",
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\native-endpoints-a.json",
+      "Reason": "Superseded endpoint inventory; selected inventory is d.",
+      "RawBytesCopied": false,
+      "CountedAsCompletePass": false,
+      "SHA256": "8799cb4f05597f82f2454a5b8e52b7bf971685eedad3274b0e97bb78a91dc983",
+      "ObservedFlags": {}
+    },
+    {
+      "SourceRepositoryPath": "distortion/work/camera720-output/native-endpoints-b.json",
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\native-endpoints-b.json",
+      "Reason": "Superseded endpoint inventory; selected inventory is d.",
+      "RawBytesCopied": false,
+      "CountedAsCompletePass": false,
+      "SHA256": "b365e7268d9c666a6568137cb92ea955eddcb52194fb03a046580cc850e894c7",
+      "ObservedFlags": {}
+    },
+    {
+      "SourceRepositoryPath": "distortion/work/camera720-output/native-endpoints-c.json",
+      "LocalPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\native-endpoints-c.json",
+      "Reason": "Superseded endpoint inventory; selected inventory is d.",
+      "RawBytesCopied": false,
+      "CountedAsCompletePass": false,
+      "SHA256": "9d377c4974bda1151032b3aac1e8705915960cb2ad03f4a99cbeca39107d7303",
+      "ObservedFlags": {}
+    }
+  ],
+  "ImportantDistinction": "The valid cdc-clm-native-00 partial receipt IS copied and required by the single recovery chain. It is not the invalid cdc-qualified-native-00 and is not itself complete CDC acceptance."
+}

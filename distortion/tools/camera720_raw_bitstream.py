@@ -1,0 +1,441 @@
+"""Current720 full-raw diagnostic bit generation; never programs hardware.
+
+The first authority audit recomputes reset, CDC/IO and compile disposition.
+Later boundaries bind its explicit hash and rehash the complete closure.
+"""
+import argparse
+from collections import Counter
+import importlib
+import json
+import os
+from pathlib import Path
+import re
+import shutil
+import subprocess
+import time
+
+import camera720_raw_inspect as inspect
+import audit_camera_vga_physical as timing
+
+prep = inspect.prep
+require, sha = inspect.require, inspect.sha
+SELF = Path(__file__).resolve()
+PYTHON = prep.PROJECT.parent/'.venv/Scripts/python.exe'
+REQUEST_SCHEMA = 'camera720-current-raw-bitstream-request-v1'
+AUTHORITY_SCHEMA = 'camera720-current-raw-bitstream-authority-v1'
+PLAN_SCHEMA = 'camera720-current-raw-bitstream-plan-v1'
+EXEC_SCHEMA = 'camera720-current-raw-bitstream-execution-v1'
+COMPLETE = 'CAMERA720_CURRENT_RAW_BITSTREAM_COMPLETE'
+STAGES = ['Report Timing', 'Generate Bitstream']
+REPORT = 'report_timing/'+prep.TARGET+'.rtr'
+EXCEPTIONS = 'report_timing/'+prep.TARGET+'_exception.rtr'
+BIT = 'generate_bitstream/'+prep.TARGET+'.sbit'
+REQUEST_FIELDS = {'Schema','Target','BuildPlan','CandidateADF','FinalInspectionReceipt',
+                  'ResetApplicationReceipt','ResetEffectAudit','FinalCDCProof','BuildDiagnosticsDisposition'}
+CONTRACT = {'protocol':'PGFRAME1','payload_role':'native_raw','geometry_applied':False,'image_size':[1280,720]}
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding='utf-8-sig'))
+
+
+def digest(value):
+    return isinstance(value,str) and re.fullmatch('[0-9a-f]{64}',value) is not None
+
+
+def add(watched,path,expected=None):
+    path=Path(path).absolute()
+    require(path==path.resolve() and path.is_file() and
+            (path.is_relative_to(prep.PROJECT.parent) or path in watched), 'unbound external input')
+    actual=sha(path)
+    require(expected is None or digest(expected) and actual==expected, 'artifact SHA differs: '+str(path))
+    require(path not in watched or watched[path]==actual,'conflicting artifact SHA')
+    watched[path]=actual
+    return path
+
+
+def merge(watched,other):
+    for name,h in other.items():
+        p=Path(name).absolute()
+        require(p==p.resolve() and p.is_file() and digest(h) and sha(p)==h,'verified closure drift')
+        require(p not in watched or watched[p]==h,'conflicting verified input')
+        watched[p]=h
+
+
+def binding(path):
+    path=Path(path).absolute()
+    return {'Path':str(path),'SHA256':sha(path)}
+
+
+def ref(value,watched):
+    require(isinstance(value,dict) and set(value)=={'Path','SHA256'} and digest(value['SHA256']),
+            'exact Path/SHA256 reference required')
+    return add(watched,value['Path'],value['SHA256'])
+
+
+def module(name):
+    path=prep.PROJECT/'tools'/(name+'.py')
+    require(path.is_file(),'current raw verifier unavailable: '+name)
+    value=importlib.import_module(name)
+    require(Path(value.__file__).resolve()==path.resolve(),'verifier location differs')
+    return value
+
+
+def same_saved(actual,claimed):
+    clean=lambda d:json.loads(json.dumps({k:v for k,v in d.items() if k not in ('CreatedUTC','InputSHA256')}))
+    require(clean(actual)==clean(claimed),'recomputed evidence differs from saved audit')
+
+
+def passed_tables(report):
+    tables,clocks=timing.summaries(report)
+    require(set(tables)=={(c,k) for c in ('slow','fast') for k in ('setup','hold','recovery','removal','mpw')}
+            and all(tables.values()) and clocks,'all ten native tables and clocks required')
+    require(all(r['FailingChecks']==0 and r['WorstSlackNS']>=0 and r['TotalNegativeSlackNS']==0
+                for rows in tables.values() for r in rows.values()),'all ten timing tables must pass')
+    return tables,clocks
+
+
+def false_paths(path):
+    with Path(path).open(encoding='gb18030') as stream:
+        return timing.native.parse_false_paths(stream)
+
+
+def reset_flags(value,candidate):
+    require(value.get('Target')==prep.TARGET and value.get('CandidateADFSHA256')==candidate,
+            'reset effect must bind exact current raw candidate')
+    for key in ('AuditPassed','ExactResetExceptionUnionVerified','NoDataFalsePaths','FunctionalGraphIdentical',
+                'AllFFPlacementsIdentical','ClockDefinitionsAndLoadsUnchanged','AllInternalChecksMet',
+                'DataTimingChecksPreserved','VendorSameConfigurationVerified'):
+        require(value.get(key) is True,'incomplete reset effect: '+key)
+    route=value.get('RouteComparison',{})
+    require(route.get('RoutingUnchanged') is True and route.get('ChangedNets')==[],
+            'reset application changed routing')
+
+
+def cdc_flags(value,candidate,export_ref):
+    require(value.get('Schema')=='camera720-current-raw-cdc-audit-v1' and value.get('Target')==prep.TARGET
+            and value.get('FinalCandidateADFSHA256')==candidate and value.get('ExportReceipt')==export_ref,
+            'CDC proof belongs to another current raw export')
+    require(value.get('ScopedDigitalChecksPassed') is True and value.get('Missing')==[]
+            and value.get('Violations')==[],'current raw CDC evidence incomplete')
+    require(type(value.get('ExpectedCases')) is int and value['ExpectedCases']>0
+            and value.get('ObservedCases')==value['ExpectedCases'],'CDC complete expected/observed inventory required')
+    pins=value.get('Pins',{})
+    require(pins.get('TopPortCount')==128 and pins.get('CAM2Pins')==14
+            and pins.get('DDRMemoryPins')==71,'exact final current raw pin inventory required')
+    for key in ('DeclarationAndSourceBuildMappingPassed','FinalFunctionalPortConnectionsPassed',
+                'FinalFunctionalPadSiteMappingPassed','FinalNativeSiteMappingPassed',
+                'FinalNativeElectricalAttributesVerified'):
+        require(pins.get(key) is True,'final IO evidence missing: '+key)
+    electrical=value.get('NativeElectricalParameters',{})
+    require(electrical.get('Passed') is True and electrical.get('Ports')==128,
+            'native final electrical parameter coverage required')
+    dvp=value.get('DVP',{})
+    require(dvp.get('ReportedBudgetCoverageComplete') is True
+            and dvp.get('ExpectedPortCornerKindCases')==40 and dvp.get('CoveredCases')==40
+            and dvp.get('MissingCases')==[],'all conditional DVP port/corner/kind cases required')
+    tx=value.get('TX',{})
+    ports={*(f'{color}_out[{i}]' for color in 'rgb' for i in range(8)),
+           'hs_out','vs_out','de_out','pix_clk'}
+    expected={(port,corner,'max') for port in ports for corner in ('slow','fast')}
+    actual={(row.get('Port'),row.get('Corner'),row.get('DelayType'))
+            for row in tx.get('NativeMaximumPaths',[])}
+    require(tx.get('Vendor49CommandsIdentical') is True and expected<=actual,
+            'final native HDMI output path coverage required')
+
+
+def diagnostics_flags(value,build_ref):
+    require(value.get('Target')==prep.TARGET and value.get('BuildPlan')==build_ref,
+            'diagnostic disposition belongs to another build')
+    require(value.get('DiagnosticCaptureDispositionApproved') is True
+            and value.get('InternalCounterProof') is False,'bounded diagnostic disposition missing')
+
+
+def audit_authority(request_path):
+    watched={};request_path=add(watched,inspect.canonical(request_path,prep.WORK));request=read(request_path)
+    require(set(request)==REQUEST_FIELDS and request['Schema']==REQUEST_SCHEMA and request['Target']==prep.TARGET,
+            'exact current raw bit request required')
+    paths={k:ref(request[k],watched) for k in REQUEST_FIELDS-{'Schema','Target'}}
+    build=read(paths['BuildPlan']);candidate=paths['CandidateADF'];candidate_sha=sha(candidate)
+    require(build.get('Target')==prep.TARGET and build.get('RawCaptureContract')==CONTRACT,'full720 native raw build required')
+    effect=module('camera720_raw_reset_fast_effect');final=module('camera720_raw_reset_fast_inspect')
+    actual,effect_inputs=effect.audit_value(paths['ResetApplicationReceipt'],paths['FinalInspectionReceipt'])
+    same_saved(actual,read(paths['ResetEffectAudit']));merge(watched,effect_inputs);reset_flags(actual,candidate_sha)
+    export,export_inputs=final.bind_receipt(paths['FinalInspectionReceipt']);merge(watched,export_inputs)
+    require(export.get('Mode')=='export' and export['SourceADFSHA256']==candidate_sha
+            and Path(export['SourceADF'])==candidate and export['BuildPlanSHA256']==sha(paths['BuildPlan'])
+            and export['SourceReceipt']==request['ResetApplicationReceipt'],'final native export binding differs')
+    report=paths['FinalInspectionReceipt'].parent/REPORT
+    exceptions=paths['FinalInspectionReceipt'].parent/EXCEPTIONS
+    for p in (report,exceptions):
+        require(export['Artifacts'].get(p.relative_to(paths['FinalInspectionReceipt'].parent).as_posix())==sha(p),
+                'final timing artifact unbound');add(watched,p)
+    passed_tables(report)
+    require(all(not rows for (corner,kind),rows in false_paths(exceptions).items() if kind in ('setup','hold')),
+            'data false paths cannot authorize capture bit')
+    cdc=module('camera720_raw_cdc');actual_cdc,cdc_inputs=cdc.verify(paths['FinalCDCProof'])
+    merge(watched,cdc_inputs);same_saved(actual_cdc,read(paths['FinalCDCProof']))
+    cdc_flags(actual_cdc,candidate_sha,request['FinalInspectionReceipt'])
+    diag=module('camera720_raw_diagnostics');actual_diag,diag_inputs=diag.audit_value()
+    merge(watched,diag_inputs);same_saved(actual_diag,read(paths['BuildDiagnosticsDisposition']))
+    diagnostics_flags(actual_diag,request['BuildPlan'])
+    for mod in (effect,final,cdc,diag,timing,timing.native,timing.hold,inspect):add(watched,mod.__file__)
+    for p in (SELF,PYTHON):add(watched,p)
+    require(not inspect.drift(watched),'authority evidence drift')
+    return {'Request':request,'RequestPath':request_path,'Build':build,'PlanPath':paths['BuildPlan'],
+            'Candidate':candidate,'CandidateSHA256':candidate_sha,'FinalReport':report,
+            'FinalExceptions':exceptions,'Watched':watched}
+
+
+def prepare_authority(request_path,output):
+    output=Path(output).absolute();require(output.parent==prep.WORK and not output.exists(),'fresh authority in raw work root required')
+    c=audit_authority(request_path)
+    result={'Schema':AUTHORITY_SCHEMA,'Target':prep.TARGET,'CreatedUTC':inspect.utc(),
+        'ValidationMethod':{'Function':'camera720_raw_bitstream.audit_authority','Path':str(SELF),'SHA256':sha(SELF)},
+        'Request':binding(c['RequestPath']),'BuildPlan':binding(c['PlanPath']),'CandidateADF':binding(c['Candidate']),
+        'FinalReport':binding(c['FinalReport']),'FinalExceptions':binding(c['FinalExceptions']),
+        'FullVerificationCompleted':True,'EDAExecuted':False,'HardwareAccessed':False,'HardwareReleaseAllowed':False,
+        'ExternalACTimingAccepted':False,'OpticalCorrectionAccepted':False,'DiagnosticOnly':True,
+        'InputSHA256':{str(p):h for p,h in c['Watched'].items()}}
+    result['ToolSHA256']={p:h for p,h in result['InputSHA256'].items() if Path(p).suffix.lower() in ('.py','.exe')}
+    inspect.diagnostic.write(output,result);return result
+
+
+def bind_authority(path,expected_sha):
+    require(digest(expected_sha),'explicit completed authority SHA required')
+    watched={};path=ref({'Path':str(Path(path).absolute()),'SHA256':expected_sha},watched);seed=read(path)
+    require(seed.get('Schema')==AUTHORITY_SCHEMA and seed.get('Target')==prep.TARGET
+            and seed.get('FullVerificationCompleted') is True and seed.get('DiagnosticOnly') is True,
+            'completed exact raw authority required')
+    require(seed.get('ValidationMethod')=={'Function':'camera720_raw_bitstream.audit_authority','Path':str(SELF),'SHA256':sha(SELF)},
+            'authority validator changed')
+    for key in ('EDAExecuted','HardwareAccessed','HardwareReleaseAllowed','ExternalACTimingAccepted','OpticalCorrectionAccepted'):
+        require(seed.get(key) is False,'authority overclaims '+key)
+    require(isinstance(seed.get('InputSHA256'),dict) and seed['InputSHA256'],'authority closure missing')
+    merge(watched,seed['InputSHA256'])
+    require(seed.get('ToolSHA256')=={p:h for p,h in seed['InputSHA256'].items() if Path(p).suffix.lower() in ('.py','.exe')},
+            'authority tool closure differs')
+    request_path=ref(seed['Request'],watched);request=read(request_path)
+    require(set(request)==REQUEST_FIELDS and request['Schema']==REQUEST_SCHEMA and request['Target']==prep.TARGET,
+            'sealed request differs')
+    for k in REQUEST_FIELDS-{'Schema','Target'}:
+        p=ref(request[k],watched);require(seed['InputSHA256'].get(str(p))==sha(p),'authority omitted '+k)
+    require(seed['BuildPlan']==request['BuildPlan'] and seed['CandidateADF']==request['CandidateADF'],'authority/request identities differ')
+    buildpath=ref(seed['BuildPlan'],watched);candidate=ref(seed['CandidateADF'],watched)
+    report=ref(seed['FinalReport'],watched);exceptions=ref(seed['FinalExceptions'],watched)
+    exportpath=Path(request['FinalInspectionReceipt']['Path']);export=read(exportpath)
+    require(export['SourceADFSHA256']==sha(candidate) and export['SourceADF']==str(candidate)
+            and export['BuildPlanSHA256']==sha(buildpath) and export['SourceReceipt']==request['ResetApplicationReceipt'],
+            'sealed final export identity differs')
+    for p,name in ((report,REPORT),(exceptions,EXCEPTIONS)):
+        require(p==exportpath.parent/name and export['Artifacts'].get(name)==sha(p),'sealed report is not exact native artifact')
+    for p in (request_path,buildpath,candidate,report,exceptions,SELF,PYTHON):
+        require(seed['InputSHA256'].get(str(p))==sha(p),'required authority input missing')
+    require(not inspect.drift(watched),'sealed authority drift')
+    return {'Request':request,'RequestPath':request_path,'Build':read(buildpath),'PlanPath':buildpath,
+            'Candidate':candidate,'CandidateSHA256':sha(candidate),'FinalReport':report,
+            'FinalExceptions':exceptions,'Watched':watched,'Authority':binding(path)}
+
+
+def render(context,work):
+    base=context['PlanPath'].parent
+    rendered=inspect.render('export',(base/'timing.tcl').read_text(encoding='ascii'),base,work)
+    boundary='report_timing -force_to_run -input_db_file '
+    require(rendered.count(boundary)==1,'one fresh native report context required')
+    prefix=rendered[:rendered.index(boundary)];w=work.as_posix();marker='CAMERA720_CURRENT_RAW_GATE_PASS '+context['CandidateSHA256']
+    return (prefix+boundary+'{'+w+'/audited-final.adf} -delay_type min_max -max_path 1000 -nworst 4 -report_exception TRUE\n'
+        'if {[info script] ne {}} {\n    set checked [exec {'+PYTHON.as_posix()+'} -B {'+SELF.as_posix()+'} --gate {'+w+'}]\n'
+        '    puts $checked\n    if {[string first {'+marker+'} $checked] < 0} {error {Missing 720p pre-bit gate}}\n'
+        '    gen_bit_stream -force_to_run -input_db_file {'+w+'/audited-final.adf} -scbv {High Voltage} -unused_io_status UNUSED\n'
+        '    puts {'+COMPLETE+'}\n    flush stdout\n}\n')
+
+
+def recipe(authority_path,authority_sha,work,maximum=900):
+    work=prep.work_path(work);require(work.name.startswith('bit-'),'720p bit-* stage required')
+    require(type(maximum) is int and 60<=maximum<=900,'bit deadline must be60..900 seconds')
+    c=bind_authority(authority_path,authority_sha);tcl=render(c,work)
+    plan={'Schema':PLAN_SCHEMA,'Target':prep.TARGET,'Request':{'Path':str(c['RequestPath']),'SHA256':sha(c['RequestPath'])},
+        'Authority':c['Authority'],
+        'WorkDirectory':str(work),'CandidateADFSHA256':c['CandidateSHA256'],'MaximumSeconds':maximum,
+        'InputSHA256':{str(p):h for p,h in c['Watched'].items()},'ExpectedActualStages':STAGES,
+        'TclSHA256':prep.baseline.paths.sha_bytes(tcl.encode('ascii')),
+        'Command':[c['Build']['PDS']['Executable'],'-file',(work/'bitstream.tcl').as_posix(),'-work_dir',work.as_posix(),'-project_name',prep.TARGET],
+        'HardwareAccessed':False,'HardwareReleaseAllowed':False,'ExternalACTimingAccepted':False,'DiagnosticOnly':True,
+        'BitstreamRequested':True,'EDAExecutedByPreparer':False}
+    return plan,tcl,c
+
+
+def prepare(authority_path,authority_sha,work,maximum=900):
+    plan,tcl,c=recipe(authority_path,authority_sha,work,maximum);work=Path(plan['WorkDirectory'])
+    require(not work.exists(),'fresh bit stage required');work.mkdir()
+    shutil.copyfile(c['Candidate'],work/'audited-final.adf');shutil.copyfile(SELF,work/'tool-snapshot.py')
+    (work/'bitstream.tcl').write_text(tcl,encoding='ascii',newline='\n')
+    plan['PreparedUTC']=inspect.utc();inspect.diagnostic.write(work/'bitstream-plan.json',plan)
+    return plan
+
+
+def validate(work):
+    work=prep.work_path(work);plan=read(work/'bitstream-plan.json')
+    require(plan.get('Schema')==PLAN_SCHEMA and plan.get('Target')==prep.TARGET,'720p bit plan identity differs')
+    expected,tcl,c=recipe(plan['Authority']['Path'],plan['Authority']['SHA256'],work,plan['MaximumSeconds'])
+    require(set(plan)==set(expected)|{'PreparedUTC'} and {k:v for k,v in plan.items() if k!='PreparedUTC'}==expected,'720p bit plan recipe drift')
+    require((work/'bitstream.tcl').read_bytes()==tcl.encode('ascii') and sha(work/'audited-final.adf')==c['CandidateSHA256']
+            and sha(work/'tool-snapshot.py')==sha(SELF),'720p bit prepared artifact drift')
+    return plan,c
+
+
+def compare_native(c,report,exceptions):
+    require(passed_tables(report)==passed_tables(c['FinalReport']),'fresh timing summary/clock identities differ')
+    normalize=lambda d:{k:Counter(json.dumps(r,sort_keys=True) for r in v) for k,v in d.items()}
+    require(normalize(false_paths(exceptions))==normalize(false_paths(c['FinalExceptions'])),'fresh false-path identities differ')
+    require(timing.exceptions(exceptions,set())==timing.exceptions(c['FinalExceptions'],set()),'fresh non-false exception paths differ')
+    return {'AllTenTimingTablesPassed':True,'ClockAndSummaryIdentityPreserved':True,'AllExceptionPathsPreserved':True}
+
+
+def gate(work):
+    plan,c=validate(work);work=Path(work)
+    require(inspect.scan_diagnostics(work)==[], 'critical/error diagnostics before bit generation')
+    before={n:sha(work/n) for n in ('bitstream-plan.json','audited-final.adf','bitstream.tcl',REPORT,EXCEPTIONS)}
+    checks=compare_native(c,work/REPORT,work/EXCEPTIONS);validate(work)
+    require(before=={n:sha(work/n) for n in before},'fresh STA artifacts changed during gate')
+    require(inspect.scan_diagnostics(work)==[], 'critical/error diagnostics appeared during gate')
+    result={'Schema':'camera720-current-raw-pre-bit-gate-v1','GatePassed':True,'Target':prep.TARGET,
+        'CandidateADFSHA256':c['CandidateSHA256'],'CheckedUTC':inspect.utc(),**checks,
+        'EvidenceSHA256':before}
+    inspect.diagnostic.write(work/'pre-bit-audit.json',result);return result
+
+
+def events(text,digest):
+    result=[];marker='CAMERA720_CURRENT_RAW_GATE_PASS '+digest
+    for line in text.splitlines():
+        line=line.strip();m=re.fullmatch(r'Process "([^"]+)" (started|done)\.',line)
+        if m:result.append(m.groups())
+        elif line.startswith('CAMERA720_CURRENT_RAW_GATE_PASS'):
+            require(line==marker,'wrong 720p gate marker');result.append(('Runtime gate','passed'))
+        elif line==COMPLETE:result.append(('Bitstream','complete'))
+    expected=[('Report Timing','started'),('Report Timing','done'),('Runtime gate','passed'),
+              ('Generate Bitstream','started'),('Generate Bitstream','done'),('Bitstream','complete')]
+    require(result==expected,'fresh STA, CPU gate, bit generation order differs');return result
+
+
+def bit_header(data):
+    prefix=bytes.fromhex('00090ff00ff00ff00ff000')+b'PANGO MICROSYSTEMS, INC.\0\1'
+    require(data.startswith(prefix),'invalid native bit prefix');offset=len(prefix);values={}
+    for tag,name in zip(b'abcdef',('Design','Device','Date','Time','Generator','Version')):
+        require(offset+3<=len(data) and data[offset]==tag,'missing bit header field')
+        size=int.from_bytes(data[offset+1:offset+3],'big');raw=data[offset+3:offset+3+size]
+        require(size>0 and len(raw)==size and raw[-1:]==b'\0' and b'\0' not in raw[:-1],'invalid bit header text')
+        values[name]=raw[:-1].decode('ascii');offset+=3+size
+    require(data[offset:offset+3]==b'ghi' and len(data)>1000000,'truncated native programming payload')
+    for k,v in {'Design':prep.TARGET,'Device':'Logos2-PG2L100H--6-FBG676','Generator':'Fabric Compiler','Version':'2023.2-SP3<154097>'}.items():
+        require(values[k]==v,'720p bit identity differs: '+k)
+    return values
+
+
+def verify(work):
+    plan,c=validate(work);work=Path(work);receipt=read(work/'execution-result.json')
+    require(receipt.get('Schema')==EXEC_SCHEMA and receipt.get('Target')==prep.TARGET
+            and receipt.get('PlanSHA256')==sha(work/'bitstream-plan.json') and receipt.get('ExecutorSHA256')==sha(SELF)
+            and receipt.get('Authority')==plan['Authority'] and receipt.get('EDAExecuted') is True
+            and receipt.get('HardwareAccessed') is False and receipt.get('ExitCode')==0 and receipt.get('InputDrift')==[]
+            and receipt.get('Diagnostics')==[] and not receipt.get('Error') and receipt.get('TimedOut') is False
+            and receipt.get('StoppedForUnexpectedStage') is False and receipt.get('Command')==plan['Command']
+            and receipt.get('CandidateADFSHA256')==c['CandidateSHA256'] and receipt.get('Cleanup',{}).get('Complete') is True,'unclean 720p bit execution')
+    needed={'stdout.log','stderr.log',REPORT,EXCEPTIONS,BIT,'bitstream.tcl','generate_bitstream/'+prep.TARGET+'.bgr'}
+    require(isinstance(receipt.get('Artifacts'),dict) and needed<=set(receipt['Artifacts']),'complete bit artifact inventory required')
+    actual_artifacts={p.relative_to(work).as_posix() for p in work.rglob('*') if p.is_file()
+                      and p.suffix in ('.log','.rtr','.sbit','.bgr','.tcl')}
+    require(set(receipt['Artifacts'])==actual_artifacts,'native bit artifact inventory differs')
+    require(inspect.scan_diagnostics(work)==[], 'actual bit logs contain critical/error diagnostics')
+    receipt_sha=sha(work/'execution-result.json')
+    for n,h in receipt['Artifacts'].items():require(sha(inspect.canonical(work/n,work))==h,'native bit artifact drift')
+    text=(work/'stdout.log').read_text(encoding='gb18030');actual=events(text,c['CandidateSHA256'])
+    proof_sha=sha(work/'pre-bit-audit.json')
+    checks=compare_native(c,work/REPORT,work/EXCEPTIONS);proof=read(work/'pre-bit-audit.json')
+    require(proof.get('Schema')=='camera720-current-raw-pre-bit-gate-v1' and proof.get('Target')==prep.TARGET
+            and proof.get('GatePassed') is True and proof.get('CandidateADFSHA256')==c['CandidateSHA256']
+            and all(proof.get(k)==v for k,v in checks.items()),'pre-bit runtime gate differs')
+    require(proof['EvidenceSHA256']=={n:sha(work/n) for n in ('bitstream-plan.json','audited-final.adf','bitstream.tcl',REPORT,EXCEPTIONS)},'pre-bit evidence drift')
+    commands=[s for s in re.findall(r'(?m)^Executing : (gen_bit_stream .+)$',text) if not s.endswith(' successfully.')]
+    require(len(commands)==1 and '-input_db_file '+(work/'audited-final.adf').as_posix() in commands[0],'bit generation input differs')
+    bgr=work/'generate_bitstream'/(prep.TARGET+'.bgr')
+    require('Generating Programming File done.' in bgr.read_text(encoding='gb18030'),'programming report not complete')
+    data=(work/BIT).read_bytes();header=bit_header(data);validate(work)
+    require(sha(work/'execution-result.json')==receipt_sha and sha(work/'pre-bit-audit.json')==proof_sha,
+            'execution receipt/runtime gate drift during verification')
+    for n,h in receipt['Artifacts'].items():require(sha(inspect.canonical(work/n,work))==h,'native bit artifact drift during verification')
+    require(inspect.scan_diagnostics(work)==[], 'critical/error diagnostic appeared during verification')
+    return {'Schema':'camera720-current-raw-bitstream-verification-v1','Verified':True,'Target':prep.TARGET,'CheckedUTC':inspect.utc(),
+        'CandidateADFSHA256':c['CandidateSHA256'],'NativeTiming':checks,'ActualEvents':actual,
+        'Bitstream':{'Path':str(work/BIT),'SHA256':sha(work/BIT),'Bytes':len(data),'Header':header},
+        'EvidenceSHA256':{n:sha(work/n) for n in ('bitstream-plan.json','pre-bit-audit.json','execution-result.json','stdout.log','stderr.log',REPORT,EXCEPTIONS,BIT)},
+        'VerifierSHA256':sha(SELF),'HardwareAccessed':False,'HardwareReleaseAllowed':False,'ExternalACTimingAccepted':False,'DiagnosticOnly':True}
+
+
+def execute(work):
+    plan,c=validate(work);work=Path(work);require(os.name=='nt','native 720p bit execution requires Windows')
+    require({p.name for p in work.iterdir()}=={'audited-final.adf','tool-snapshot.py','bitstream.tcl','bitstream-plan.json'},'fresh prepared bit directory required')
+    watched=c['Watched'];watched.update({p:sha(p) for p in work.iterdir()})
+    result={'Schema':EXEC_SCHEMA,'StartedUTC':inspect.utc(),'Target':prep.TARGET,'Command':plan['Command'],
+        'PlanSHA256':sha(work/'bitstream-plan.json'),'ExecutorSHA256':sha(SELF),'Authority':plan['Authority'],
+        'CandidateADFSHA256':c['CandidateSHA256'],'MaximumSeconds':plan['MaximumSeconds'],'HardwareAccessed':False,
+        'TimedOut':False,'StoppedForUnexpectedStage':False,'ExitCode':None,'EDAExecuted':False}
+    inspect.diagnostic.write(work/'execution-start.json',result);process=None;started=time.monotonic()
+    expected=[(s,e) for s in STAGES for e in ('started','done')]
+    try:
+        with (work/'stdout.log').open('xb') as out,(work/'stderr.log').open('xb') as err:
+            process=subprocess.Popen(plan['Command'],cwd=work,stdout=out,stderr=err,shell=False,
+                                     creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+            result.update(EDAExecuted=True,OwnedPID=process.pid)
+            while process.poll() is None:
+                remaining=plan['MaximumSeconds']-(time.monotonic()-started)
+                if remaining<=0:result['TimedOut']=True;break
+                try:process.wait(timeout=min(3,remaining))
+                except subprocess.TimeoutExpired:pass
+                current=inspect.diagnostic.stage_events((work/'stdout.log').read_text(encoding='gb18030',errors='replace'))
+                if current!=expected[:len(current)]:result['StoppedForUnexpectedStage']=True;break
+    except BaseException as error:result['Error']=type(error).__name__+': '+str(error)
+    finally:
+        if process is not None:
+            if process.poll() is None:result['Cleanup']=inspect.diagnostic.cleanup.stop_owned_tree(process,work,'bounded 720p bit')
+            else:result['Cleanup']={'Complete':True,'OwnedPID':process.pid,'ParentExited':True,'DescendantLivenessIndependentlyVerified':False}
+            result['ExitCode']=process.poll()
+        else:result['Cleanup']={'Complete':True,'Required':False}
+    diagnostics=[]
+    for p in work.rglob('*.log'):
+        diagnostics += [p.relative_to(work).as_posix()+': '+line.strip() for line in re.findall(
+            r'(?m)^\s*(?:C:|E:|F:|CRITICAL:|ERROR:|FATAL:|Traceback).*$',p.read_text(encoding='gb18030',errors='replace'))]
+    result.update(FinishedUTC=inspect.utc(),ElapsedSeconds=round(time.monotonic()-started,3),InputDrift=inspect.drift(watched),
+        Diagnostics=diagnostics,Artifacts={p.relative_to(work).as_posix():sha(p) for p in work.rglob('*') if p.is_file()
+        and p.suffix in ('.log','.rtr','.sbit','.bgr','.tcl')})
+    inspect.diagnostic.write(work/'execution-result.json',result)
+    verification=verify(work);inspect.diagnostic.write(work/'verification.json',verification);return verification
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__);mode=parser.add_mutually_exclusive_group(required=True)
+    for name in ('prepare','validate','execute','gate','verify','audit-request'):mode.add_argument('--'+name,type=Path)
+    parser.add_argument('--authority-output',type=Path);parser.add_argument('--authority',type=Path)
+    parser.add_argument('--authority-sha256');parser.add_argument('--maximum-seconds',type=int,default=900)
+    a=parser.parse_args()
+    if a.audit_request:
+        require(a.authority_output is not None,'fresh authority output required')
+        result=prepare_authority(a.audit_request,a.authority_output)
+        print(json.dumps({'FullVerificationCompleted':True,'Authority':binding(a.authority_output),
+                          'BoundInputs':len(result['InputSHA256']),'EDAExecuted':False}))
+    elif a.prepare:
+        require(a.authority and a.authority_sha256,'explicit completed authority SHA required')
+        result=prepare(a.authority,a.authority_sha256,a.prepare,a.maximum_seconds)
+        print(json.dumps({'Prepared':True,'Command':result['Command'],'EDAExecuted':False}))
+    elif a.gate:
+        result=gate(a.gate);print('CAMERA720_CURRENT_RAW_GATE_PASS '+result['CandidateADFSHA256'])
+    elif a.validate:
+        validate(a.validate);print(json.dumps({'Validated':True,'Target':prep.TARGET,'EDAExecuted':False}))
+    else:
+        result=execute(a.execute) if a.execute else verify(a.verify)
+        print(json.dumps({'Verified':result['Verified'],'Bitstream':result['Bitstream']}))
+
+
+if __name__=='__main__':main()
+
+

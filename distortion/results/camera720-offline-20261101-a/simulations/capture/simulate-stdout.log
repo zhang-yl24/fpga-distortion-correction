@@ -1,0 +1,22 @@
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/camera720_capture/xsim_script.tcl
+# xsim {camera720_capture} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+CAMERA720_COMMIT id=1 bank=0 beats=57600 crc=cfcf9f5a fifo_peak=14
+CAMERA720_COMMIT id=2 bank=1 beats=57600 crc=af52cfea fifo_peak=14
+CAMERA720_DROP id=3 fault=45 beats=64 fifo_peak=1
+CAMERA720_DROP id=4 fault=0c beats=80 fifo_peak=64
+CAMERA720_COMMIT id=5 bank=0 beats=57600 crc=11a61a38 fifo_peak=14
+CAMERA720_COMMIT id=6 bank=1 beats=57600 crc=e5865861 fifo_peak=14
+PASS camera720 capture: full_frames=4 bad_frames=2 pixels=3686400
+$finish called at time : 237291736 ns : File "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/tests/tb_camera720_capture.sv" Line 237
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:01:31 . Memory (MB): peak = 224.184 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting xsim at Sun Nov  1 12:22:13 2026...

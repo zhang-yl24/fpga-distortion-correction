@@ -1,0 +1,143 @@
+{
+  "Schema": "camera720-stats-shared-control-data-delay-simulation-v1",
+  "Target": "camera720_calibrated_stats_delay_top",
+  "Passed": true,
+  "InputSHA256": {
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\simulation\\GTP_INBUF.v": "90a5ef2b2de82c59ad0958312efe48a77df7c29b0d129e2f0de491e77844e4a5",
+    "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\simulation\\GTP_ZEROHOLDDELAY.v": "0a8f9487d1240020442e65ab2e924768cf9ec898bd4dd546e9229ea5096a12b6",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\raw_camera_input_delay.v": "29fe84d4e77daa7ad7d0c6623bfe3650f6dc3d8144ba6bfd4b74931a97d4fb26",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\raw_camera_control_input_delay.v": "78c3b56145f6531b4fd8605b0ec2dc6a7d79466b9f3c5d48594448b1bb4f4fc9",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_camera720_stats_shared_delay.sv": "f044ecca09ac82bcbd02424aebd1c43d03631aa86be95db6f79e238da2b0697c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_camera720_stats_shared_delay_sim.py": "c7a9c5e02e1be2e96077937addb77e28e4084cf2bba26b4fa0ad325d2a76ea7c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_gamma_pipeline_d5_sim.py": "3ecb4f17ff88e441941dbc7bf55694377ffe382c9d64932065173e89c098c0a6",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\source-c\\source\\board\\camera720_calibrated_stats_delay_top.v": "5fce0027931b82d421b26022223a28fddbd60d4c99c25fa50fdefe3406c704bd"
+  },
+  "GeneratedTop": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\source-c\\source\\board\\camera720_calibrated_stats_delay_top.v",
+    "SHA256": "5fce0027931b82d421b26022223a28fddbd60d4c99c25fa50fdefe3406c704bd"
+  },
+  "TopWiring": {
+    "CaptureDataLanes": 8,
+    "CaptureControlLanes": 2,
+    "CaptureClockUnchanged": true,
+    "MonitorAfterControlDelay": true,
+    "RawMonitorPathPreserved": false,
+    "MonitorSamplePhaseShiftPS": 1500,
+    "MonitorHasPixelDataInput": false,
+    "Observation": "Static actual generated-top connection check; functional simulation below instantiates both real delay wrappers."
+  },
+  "MaximumSeconds": 120,
+  "NominalDelayPS": 1500,
+  "Lanes": 10,
+  "Commands": [
+    {
+      "Stage": "compile",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\simulation\\GTP_INBUF.v",
+        "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\verilog\\simulation\\GTP_ZEROHOLDDELAY.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\raw_camera_input_delay.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\raw_camera_control_input_delay.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_camera720_stats_shared_delay.sv"
+      ]
+    },
+    {
+      "Stage": "elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_camera720_stats_shared_delay",
+        "-s",
+        "camera720_stats_shared_delay_tb",
+        "--timescale",
+        "1ps/1ps"
+      ]
+    },
+    {
+      "Stage": "simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "camera720_stats_shared_delay_tb",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ]
+    }
+  ],
+  "SimulationExecuted": true,
+  "PDSAccessed": false,
+  "HardwareAccessed": false,
+  "ExternalACTimingAccepted": false,
+  "Limits": "Actual vendor functional delay models only, nominal 1500ps. Tuple/edge/boundary checks do not prove routed PVT delay, external sensor AC, metastability or board operation.",
+  "StartedUTC": "2026-11-01T17:10:10.704669+00:00",
+  "Summary": {
+    "Passed": true,
+    "Lanes": 10,
+    "NominalDelayPS": 1500,
+    "AllTupleValues": 1024,
+    "Checks": 3072,
+    "SampleBoundaryChecks": 32,
+    "BothPolaritiesEveryLane": true
+  },
+  "Observed": {
+    "ObservedTuples": 1024,
+    "TupleChecks": 3072,
+    "SamplingChecks": 32,
+    "SamplingOffsetsPS": [
+      1,
+      100,
+      1000,
+      1499,
+      1501,
+      2000,
+      8000,
+      15000
+    ],
+    "LaneRisingTransitions": [
+      512,
+      256,
+      128,
+      64,
+      32,
+      16,
+      8,
+      4,
+      2,
+      1
+    ],
+    "LaneFallingTransitions": [
+      512,
+      255,
+      128,
+      63,
+      31,
+      16,
+      7,
+      4,
+      1,
+      1
+    ],
+    "RelativeControlDataDelayUnchangedInModel": true,
+    "ExtraPixelClockCycleObserved": false,
+    "MonitorMatchesDelayedCaptureInModel": true
+  },
+  "InputDrift": [],
+  "ElapsedSeconds": 12.184,
+  "EvidenceSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "6fe91690f4198cf9a55146a37a825d69eddd99804bad7cebc253324f29c7face",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "01550fac419019131afbcae793074db6136d0c4ee2f3517b43aee95f14f0d910",
+    "sampling.csv": "b7a002c63ab63d0211c52b06bcc4f1e69d62642fd2d1718ba4f9eaa2f9f69d29",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "728a3fecae0f04cb4ccf747e30a0088023a2482869eede97e4d4fe5a28510b9b",
+    "simulation.log": "28593444fed43f32c3208a693c4d0b7ce82543a0622860a9919db2b645f8526d",
+    "summary.json": "bb768a9ebde0266b0cf732eaec4681b53c7cba3a1dda938e5bf1e358727467af",
+    "transitions.csv": "7889149a3d6a6057824d289aa1d0a8243987e247536c968686b2390340cb537e",
+    "webtalk.log": "41d74a9b2c41d5cd611d0f650ae645c2187d670a911766289b9e9ff6b3ba74c2",
+    "webtalk_11056.backup.log": "10481258ce70862fc1ece935f6239d5fe1410a95fc436f7f8ddcf9a47c2ef385",
+    "xelab.log": "e6000513e93f365a91a04bb60ab47f22ec94c67e71d3679c74781e3e22ff00ee",
+    "xvlog.log": "323ee076bb277be826c63e3f96bb7f829243acbf9b1639f5b329127ef908bc12"
+  }
+}

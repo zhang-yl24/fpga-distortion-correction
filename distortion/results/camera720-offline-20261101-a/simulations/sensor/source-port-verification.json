@@ -1,0 +1,40 @@
+{
+  "Passed": true,
+  "Target": "ov5640_current720_sensor_retained_source_port",
+  "HistoricalGeneratorReproduced": false,
+  "RetainedSourceSHA256": {
+    "rtl/experimental/ov5640_rgb565_720_init.v": "403214d854a068e0b087fb0c2b00242cf36b2b2a326c9cde6803f6aa22ccabb5",
+    "board/ov5640_rgb565_720_commands.vh": "05ce241ce37286b6820eeeaad28eeff0821f12d1319bdc6747c4fd04a72ff22c",
+    "board/ov5640_rgb565_720_sequence.json": "88cd19153f7f5fda5c80b86a4112f6e689ca52f094642cd1e2ce967261ee2c5d",
+    "rtl/experimental/dvp_mode_admission_monitor.v": "2895bad17ecc74c0cceefce4a53de525a2516462e1bc082481d2d34de2ec8b55"
+  },
+  "PortSourceSHA256": {
+    "rtl/experimental/ov5640_current720_init.v": "f8530a40248f462e2914c27c3ca961f66b316aa1aa669539e88c26b3f1e02456",
+    "rtl/experimental/ov5640_current720_frontend.v": "6e412ed815c8df4ac04b89a71c595416fa76f4207926179b005c162f4ebfc39a"
+  },
+  "InitializerEdits": [
+    "module name",
+    "repository-relative include path"
+  ],
+  "IncludeDirectoriesRelativeToDistortion": [
+    "."
+  ],
+  "RegisterActionCount": 403,
+  "ImageSize": [
+    1280,
+    720
+  ],
+  "VSYNCHREFInputConvention": "already logical active-high; caller binds physical inversions",
+  "PixelByteConvention": "RGB565 low-byte-first; frontend observes timing only, caller packs pixels",
+  "StartupGraceRefCycles": 27000000,
+  "StartupGraceMeaning": "1 second at 27 MHz to first complete good frame; two complete good frames required for admission",
+  "RequiredCompleteGoodFrames": 2,
+  "NominalPCLKModelHzAt24MHzXVCLK": 42000000,
+  "UpperPCLKModelHzAt27MHzXVCLK": 47250000,
+  "NominalFPSModelAt24MHzXVCLK": 14.99914290611965,
+  "MeasuredFPS": null,
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "Limits": "Retained-source integrity and portable binding only. Frontend digital behavior needs its separate RTL tests. No regenerated historical proposal, measured clock/fps, sensor/optical calibration, physical CDC/timing or board acceptance. raw_authorize must not reset accepted downstream transactions."
+}

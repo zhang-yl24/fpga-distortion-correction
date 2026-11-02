@@ -1,0 +1,180 @@
+{
+  "Schema": "camera720-calibrated-stats-delay-shared-build-execution-v1",
+  "Target": "camera720_calibrated_stats_delay_top",
+  "StartedUTC": "2026-11-01T17:08:44.809676+00:00",
+  "Plan": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\build-c\\plan.json",
+  "PlanSHA256": "2a263c20d7c3b5ebc0c2796bcac8bf2a3bf8380793283f0dcd1c8d2c0d405d08",
+  "ExecutorSHA256": "6d37bd0fa49ca52b42ded288dce4596f13562caf39db6394be911d6e3fb81fdc",
+  "Command": [
+    "D:\\pango\\PDS_2023.2\\bin\\pds_shell.exe",
+    "-file",
+    "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/timing.tcl",
+    "-work_dir",
+    "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c",
+    "-project_name",
+    "camera720_calibrated_stats_delay_top"
+  ],
+  "MaximumSeconds": 1800,
+  "HardwareAccessed": false,
+  "BitstreamRequested": false,
+  "TimingAccepted": false,
+  "HardwareReleaseAllowed": false,
+  "EDAExecuted": true,
+  "TimedOut": false,
+  "StoppedForUnexpectedStage": false,
+  "NativeExitCode": 0,
+  "ExecutionCompletedWithoutError": false,
+  "OwnedPID": 26064,
+  "Cleanup": {
+    "Required": false,
+    "OwnedPID": 26064,
+    "ParentExited": true,
+    "Complete": true,
+    "DescendantLivenessIndependentlyVerified": false
+  },
+  "InputDrift": [],
+  "SourcesStable": true,
+  "DatabaseSnapshotAudit": {
+    "Snapshot": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\build-c\\pre-sta-final.adf",
+    "FinalRoutedDatabase": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\build-c\\place_route\\camera720_calibrated_stats_delay_top_pnr.adf",
+    "SnapshotExists": true,
+    "FinalRoutedDatabaseExists": true,
+    "UnchangedAcrossSTA": true,
+    "TimingAccepted": false,
+    "SnapshotSHA256": "ac00dabf39ad37064560713ba695f16ac1dea3cfa1968d627c515ca83b081356",
+    "FinalRoutedDatabaseSHA256": "ac00dabf39ad37064560713ba695f16ac1dea3cfa1968d627c515ca83b081356"
+  },
+  "ActualEvents": [
+    [
+      "Compile",
+      "started"
+    ],
+    [
+      "Compile",
+      "done"
+    ],
+    [
+      "Synthesize",
+      "started"
+    ],
+    [
+      "Synthesize",
+      "done"
+    ],
+    [
+      "Device Map",
+      "started"
+    ],
+    [
+      "Device Map",
+      "done"
+    ],
+    [
+      "Place",
+      "started"
+    ],
+    [
+      "Place",
+      "done"
+    ],
+    [
+      "Route",
+      "started"
+    ],
+    [
+      "Route",
+      "done"
+    ],
+    [
+      "Route Optimize",
+      "started"
+    ],
+    [
+      "Route Optimize",
+      "done"
+    ],
+    [
+      "Report Timing",
+      "started"
+    ],
+    [
+      "Report Timing",
+      "done"
+    ]
+  ],
+  "ActualStagesComplete": true,
+  "Diagnostics": [
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/reg16_i2c.v(line number: 38)] Reduce accumulator watchdog size from 32 to 21. If this is not intended behavior, please drive watchdog with valid values.",
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 51)] Reduce accumulator byte_count size from 16 to 12. If this is not intended behavior, please drive byte_count with valid values.",
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 51)] Reduce accumulator line_count size from 16 to 10. If this is not intended behavior, please drive line_count with valid values.",
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator pclk_age size from 32 to 19. If this is not intended behavior, please drive pclk_age with valid values.",
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator vsync_age size from 32 to 22. If this is not intended behavior, please drive vsync_age with valid values.",
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator href_age size from 32 to 22. If this is not intended behavior, please drive href_age with valid values.",
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator frame_age size from 32 to 22. If this is not intended behavior, please drive frame_age with valid values.",
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator snapshot_age size from 32 to 19. If this is not intended behavior, please drive snapshot_age with valid values.",
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator snapshot_timer size from 32 to 15. If this is not intended behavior, please drive snapshot_timer with valid values.",
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator startup_timer size from 32 to 25. If this is not intended behavior, please drive startup_timer with valid values.",
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/reg16_i2c.v(line number: 38)] Reduce accumulator watchdog size from 32 to 21. If this is not intended behavior, please drive watchdog with valid values.",
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp(line number: 541)] Reduce accumulator cnt size from 7 to 6. If this is not intended behavior, please drive cnt with valid values.",
+    "compile/run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp(line number: 614)] Reduce accumulator delay_cnt size from 4 to 2. If this is not intended behavior, please drive delay_cnt with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/reg16_i2c.v(line number: 38)] Reduce accumulator watchdog size from 32 to 21. If this is not intended behavior, please drive watchdog with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 51)] Reduce accumulator byte_count size from 16 to 12. If this is not intended behavior, please drive byte_count with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 51)] Reduce accumulator line_count size from 16 to 10. If this is not intended behavior, please drive line_count with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator pclk_age size from 32 to 19. If this is not intended behavior, please drive pclk_age with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator vsync_age size from 32 to 22. If this is not intended behavior, please drive vsync_age with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator href_age size from 32 to 22. If this is not intended behavior, please drive href_age with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator frame_age size from 32 to 22. If this is not intended behavior, please drive frame_age with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator snapshot_age size from 32 to 19. If this is not intended behavior, please drive snapshot_age with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator snapshot_timer size from 32 to 15. If this is not intended behavior, please drive snapshot_timer with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator startup_timer size from 32 to 25. If this is not intended behavior, please drive startup_timer with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/reg16_i2c.v(line number: 38)] Reduce accumulator watchdog size from 32 to 21. If this is not intended behavior, please drive watchdog with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp(line number: 541)] Reduce accumulator cnt size from 7 to 6. If this is not intended behavior, please drive cnt with valid values.",
+    "execution-stdout.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp(line number: 614)] Reduce accumulator delay_cnt size from 4 to 2. If this is not intended behavior, please drive delay_cnt with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/reg16_i2c.v(line number: 38)] Reduce accumulator watchdog size from 32 to 21. If this is not intended behavior, please drive watchdog with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 51)] Reduce accumulator byte_count size from 16 to 12. If this is not intended behavior, please drive byte_count with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 51)] Reduce accumulator line_count size from 16 to 10. If this is not intended behavior, please drive line_count with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator pclk_age size from 32 to 19. If this is not intended behavior, please drive pclk_age with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator vsync_age size from 32 to 22. If this is not intended behavior, please drive vsync_age with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator href_age size from 32 to 22. If this is not intended behavior, please drive href_age with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator frame_age size from 32 to 22. If this is not intended behavior, please drive frame_age with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator snapshot_age size from 32 to 19. If this is not intended behavior, please drive snapshot_age with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator snapshot_timer size from 32 to 15. If this is not intended behavior, please drive snapshot_timer with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator startup_timer size from 32 to 25. If this is not intended behavior, please drive startup_timer with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/reg16_i2c.v(line number: 38)] Reduce accumulator watchdog size from 32 to 21. If this is not intended behavior, please drive watchdog with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp(line number: 541)] Reduce accumulator cnt size from 7 to 6. If this is not intended behavior, please drive cnt with valid values.",
+    "flow.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp(line number: 614)] Reduce accumulator delay_cnt size from 4 to 2. If this is not intended behavior, please drive delay_cnt with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/reg16_i2c.v(line number: 38)] Reduce accumulator watchdog size from 32 to 21. If this is not intended behavior, please drive watchdog with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 51)] Reduce accumulator byte_count size from 16 to 12. If this is not intended behavior, please drive byte_count with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 51)] Reduce accumulator line_count size from 16 to 10. If this is not intended behavior, please drive line_count with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator pclk_age size from 32 to 19. If this is not intended behavior, please drive pclk_age with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator vsync_age size from 32 to 22. If this is not intended behavior, please drive vsync_age with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator href_age size from 32 to 22. If this is not intended behavior, please drive href_age with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator frame_age size from 32 to 22. If this is not intended behavior, please drive frame_age with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator snapshot_age size from 32 to 19. If this is not intended behavior, please drive snapshot_age with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator snapshot_timer size from 32 to 15. If this is not intended behavior, please drive snapshot_timer with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/experimental/dvp_mode_admission_monitor.v(line number: 156)] Reduce accumulator startup_timer size from 32 to 25. If this is not intended behavior, please drive startup_timer with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/rtl/reg16_i2c.v(line number: 38)] Reduce accumulator watchdog size from 32 to 21. If this is not intended behavior, please drive watchdog with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp(line number: 541)] Reduce accumulator cnt size from 7 to 6. If this is not intended behavior, please drive cnt with valid values.",
+    "run.log: C: Sdm-3003: [D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-stats-delay/build-c/compiled/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp(line number: 614)] Reduce accumulator delay_cnt size from 4 to 2. If this is not intended behavior, please drive delay_cnt with valid values."
+  ],
+  "FinishedUTC": "2026-11-01T17:21:05.695445+00:00",
+  "ElapsedSeconds": 740.886,
+  "LogSHA256": {
+    "compile/run.log": "2142ee919741280f1ca3b98d5250aced62bf1663221d09241f4c23507ca965b8",
+    "device_map/run.log": "011bd71d31408d5f458f4a13f30b3effa32184eadfdf466da64da3a9ae629fb2",
+    "execution-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "execution-stdout.log": "dff1e3ff2641d814babf51db218a8b87962a9f02bedce374d62d67259d56de7b",
+    "flow.log": "f2dced47f85b0cbb869aa613374d6332f9f004757659c2f8cf277faed1c67285",
+    "place_route/run_place.log": "b0401b890921403ce1ded05b44e8b61e159588b81ea1026e81b566a0bf5f20c0",
+    "place_route/run_route.log": "c934d8a601bb5a987d0f0d426a35ee32638246dd07e758ea95ad416705727b1f",
+    "place_route/run_route_optimize.log": "75a507b13c458676112186084c862f1bda5a9b27c207be3bada7c5663c642ce4",
+    "report_timing/run.log": "0096674a66c048fb5cf34ea33fbb972b1f55d1a8075c93fc6417f2a260f6044f",
+    "run.log": "f222b9693b0aa7a75084501fe9a5ab729f21f92997c823925783e8e77fec7861",
+    "sources_info.log": "d033887b016d978616871b8efcacc374d1c61b2fde317c440eb077d0e35e6c25",
+    "synthesize/add_sub_carrychain.log": "66f1f12e96b734a7fba011e90d5fa507c32925ddc8b993de4a6ec12ff3dee92f",
+    "synthesize/apm_drm_lutram_utilization.log": "336c0c49dc63005a7aa9b09706c68c658abd4a61e4abe0a1f7048bb57a97400e",
+    "synthesize/gtp_has_zero_input_pins.log": "303a2ffc24d43db528f7e342408f3b6cc65778030cfa3b2bd2425141bb62e79d",
+    "synthesize/run.log": "11a2d36f3a229f38a4db42fd5e1e41599a24371cd2c2a1f6673d5ba617284ad6"
+  },
+  "Limits": "Diagnostic execution only. New statistics top,129pins, counter fanout and all existing datapaths require fresh IO/timing/CDC review. Original native diagnostics are retained; no old routed repair, bitstream or hardware release."
+}

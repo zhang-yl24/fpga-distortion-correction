@@ -1,0 +1,163 @@
+{
+  "Schema": "camera720-ingress-simulation-v1",
+  "Passed": true,
+  "StartedUTC": "2026-11-01T04:20:30.856857+00:00",
+  "SourceSHA256": {
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/ddr_write_arbiter.v": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+    "rtl/experimental/dvp_rgb565_capture_cdc.v": "14bde70db5bcc2797d2e648af44f64d57df62673161529ef7358878700dc7079",
+    "rtl/experimental/camera_vga_input_dma.v": "eb905f9ad625f87cf8103f27f09cba4c58a65f96e3460db5f0082351901a90f4",
+    "rtl/experimental/camera_vga_input_write_link.v": "7206770237423c876f569fbdd288baca2bb9dd783687f6aedb07e77860a4980f",
+    "tests/tb_camera720_capture.sv": "e9b105dbd437f9d08d64b965617a9ee9c6244b422dc75496f30f926cc8e8a269",
+    "tools/run_camera720_capture_sim.py": "2e6b018aac93c83119e98a34d59aff10b9d86455399631e466489cde728ef220",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "Commands": [
+    {
+      "Stage": "compile",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\video_async_fifo.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\ddr_write_arbiter.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\dvp_rgb565_capture_cdc.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\camera_vga_input_dma.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\camera_vga_input_write_link.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_camera720_capture.sv"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_camera720_capture",
+        "-s",
+        "camera720_capture",
+        "--timescale",
+        "1ps/1ps"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "NativeArgv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "camera720_capture",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "HardwareReleaseAllowed": false,
+  "RTLResultUsedForGolden": false,
+  "PhysicalIPExecuted": false,
+  "PhysicalCameraValidated": false,
+  "Limits": "Synthetic full-size 1280x720 DVP at 48 MHz with HTS 1892 pixels (3784 byte clocks), VTS 740, 125 MHz core, and modeled DDR arbitration/stalls. Four complete frames and two shortened fault frames; deliberate inter-frame reservation pauses. Real capture/FIFO/DMA/write arbiter only; background result data is modeled. No sensor SCCB, electrical/CDC timing, bank-manager/remapper/scan concurrency, 720p optical calibration, board throughput or measured frame-rate claim.",
+  "VivadoBin": "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin",
+  "Summary": {
+    "passed": true,
+    "width": 1280,
+    "height": 720,
+    "pclk_hz": 48000000,
+    "core_hz": 125000000,
+    "hts_pixels": 1892,
+    "vts_lines": 740,
+    "bank_stride_ui": 1048576,
+    "ui_bytes": 4,
+    "frame_beats": 57600,
+    "frame_bytes": 1843200,
+    "frame_ui": 460800,
+    "good_frames": 4,
+    "bad_frames": 2,
+    "overflow_frames": 1,
+    "bank_reuses": 4,
+    "final_bursts": 4,
+    "result_bursts": 14201,
+    "capture_bursts": 14409,
+    "contention_cycles": 229563,
+    "aw_stall_cycles": 871337,
+    "w_stall_cycles": 236854,
+    "zero_latency_first_beats": 10372,
+    "overflow_stall_cycles": 77474,
+    "fifo_peaks": [
+      14,
+      14,
+      1,
+      64,
+      14,
+      14
+    ],
+    "complete_drain": true
+  },
+  "IndependentFrames": [
+    {
+      "FrameID": 1,
+      "Bank": 0,
+      "Beats": 57600,
+      "Pixels": 921600,
+      "CRC32": "cfcf9f5a",
+      "BytesSHA256": "ba83832c250fcf22add077c491f3f4cb1ee9cc1bf362e1f3d17c06582f14618e"
+    },
+    {
+      "FrameID": 2,
+      "Bank": 1,
+      "Beats": 57600,
+      "Pixels": 921600,
+      "CRC32": "af52cfea",
+      "BytesSHA256": "15228bad71df7bed18d258e78d700422e28d6e2ff69fc329844250e619825a19"
+    },
+    {
+      "FrameID": 5,
+      "Bank": 0,
+      "Beats": 57600,
+      "Pixels": 921600,
+      "CRC32": "11a61a38",
+      "BytesSHA256": "ba91351ef884ec91bb40641b6a55ad23e2084e0e677af8face23bd723ddd5d50"
+    },
+    {
+      "FrameID": 6,
+      "Bank": 1,
+      "Beats": 57600,
+      "Pixels": 921600,
+      "CRC32": "e5865861",
+      "BytesSHA256": "eb8cb479aa3980e62c3a522eecead9630f2f3f4a9e237f6dcdf123988b32ae1d"
+    }
+  ],
+  "IndependentComparedDDRBeats": 230544,
+  "IndependentComparedGoodPixels": 3686400,
+  "SourceSHA256After": {
+    "rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "rtl/ddr_write_arbiter.v": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+    "rtl/experimental/dvp_rgb565_capture_cdc.v": "14bde70db5bcc2797d2e648af44f64d57df62673161529ef7358878700dc7079",
+    "rtl/experimental/camera_vga_input_dma.v": "eb905f9ad625f87cf8103f27f09cba4c58a65f96e3460db5f0082351901a90f4",
+    "rtl/experimental/camera_vga_input_write_link.v": "7206770237423c876f569fbdd288baca2bb9dd783687f6aedb07e77860a4980f",
+    "tests/tb_camera720_capture.sv": "e9b105dbd437f9d08d64b965617a9ee9c6244b422dc75496f30f926cc8e8a269",
+    "tools/run_camera720_capture_sim.py": "2e6b018aac93c83119e98a34d59aff10b9d86455399631e466489cde728ef220",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "ElapsedSeconds": 106.666,
+  "LogSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "365adfe66d98aa9351a4aa4e2b31714162db2386298b7f51951777a95a37c20e",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "f30772321017e5695d23f6e5bcd46e453793c843f38792a71f34d4f127d84d21",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "226ceda11101efd45067719afb563037c3b1eb6680cf35cedd51f8dad65f2942",
+    "simulation.log": "881d048c4f92217185311db5c106b6cdbd89f8a75398be5df870e8f851c403ea",
+    "webtalk.log": "b6a6895820b80f70f194090e3d80910167215963015d53219a6aea013361943b",
+    "webtalk_26324.backup.log": "94f507875475ca4a8397199832378f8d2ec5de577367e92e773da0cb3677324c",
+    "xelab.log": "b912ad474f2cf473119beb6c5d4840ff1dcc87fe8e47e37fe7c2f4672d753b40",
+    "xvlog.log": "09b57e79c2bdd137314d5f6121076baa196a25450480a98b0acfc5b5bbf3cb3c"
+  },
+  "ResultSHA256": {
+    "commits.csv": "63a6ec474983b3b52887646097c21f590d0b99e5c24e7aa6bc0c14d7cee041b2",
+    "ddr-source-words.csv": "fe44b7e05d0fd868664560eb416d1e7a0f80f5863345c5335ee31b3f9d75b799",
+    "drops.csv": "67eb0ede0569330bc6c0cc8521909a6c3f1e599af0baf45f5785a3ba196dbed3",
+    "summary.json": "a7de4c204e18f11e7804c2d98f37111142b05f30b3631269dcb2c427ef058c3e"
+  }
+}

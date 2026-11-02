@@ -1,0 +1,644 @@
+{
+  "schema": "camera720-fixed-target-candidate-freeze-v1",
+  "created_utc": "2026-11-01T12:39:31.367027+00:00",
+  "transfer_report": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\two-pair-validation-b\\paired-transfer-report.json",
+    "sha256": "d53d18ceab79d49c5fcfaf3c8bac5663e6f1735bcdcd612dfc88bb0b74121c65"
+  },
+  "target_identity": {
+    "camera_id": "ov5640-cam2-current-20261031",
+    "lens_id": "current-installed-lens-20261031",
+    "profile_id": "current720-current-lens-uncalibrated",
+    "capture_mode_id": "current720-rgb565-upright-3820-41-3821-07"
+  },
+  "image_size": [
+    1280,
+    720
+  ],
+  "board": {
+    "cols": 6,
+    "rows": 9,
+    "square_mm": 25
+  },
+  "A_source_to_target": [
+    [
+      2.0021190701166316,
+      0.0,
+      0.598939240670461
+    ],
+    [
+      0.0,
+      2.003305096187522,
+      -122.02743707675319
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "candidate_parameters": {
+    "model": "fisheye",
+    "K": [
+      [
+        319.4619654229467,
+        0.0,
+        643.7313155863241
+      ],
+      [
+        0.0,
+        320.22175835577696,
+        379.2847554789859
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "D": [
+      0.17602078811481522,
+      -0.010104992886768837,
+      -0.013110536659819092,
+      0.002201229141838536
+    ],
+    "projection": "forward_rectilinear",
+    "maximum_ray_angle_deg": 88.0,
+    "inverse_method": "bounded_monotone_bisection_v1"
+  },
+  "fixed_diagnostic_thresholds": {
+    "rms_px": 0.5,
+    "maximum_px": 1.5
+  },
+  "fit_exclusions": [
+    {
+      "pair_id": "fit-01",
+      "pose_id": "physical-pose-01",
+      "source": {
+        "pair_id": "fit-01",
+        "side": "source",
+        "image": {
+          "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose01-vga\\mode-pair01-vga-20261101-a-CAM2-frame0000000006.png",
+          "sha256": "8c0576bfc4bf1ca4b3d6b3394581fae1360d9d55a29f8530b0c4553e6cffcf01"
+        },
+        "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose01-vga\\mode-pair01-vga-20261101-a-CAM2-frame0000000006.json",
+        "metadata_sha256": "6b86bf6b8b74bc7e2730e9c1603017b57e4a10eba4f5dbbd8f9193704da85022",
+        "raw_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose01-vga\\mode-pair01-vga-20261101-a-CAM2-frame0000000006.rgb565",
+        "raw_sha256": "acc7c2dbb78f626c9946d61f7a758a1dd9ca1aee20a271ebadbc62ca6b441d80",
+        "raw_crc32": "14B018B0",
+        "source_kind": "physical_native_camera",
+        "physical_capture_record": true,
+        "upstream_raw_contract_hash_bound": true,
+        "identity_binding_kind": "operator_declared_single_eye_connection",
+        "identity_verified_on_wire": false
+      },
+      "target": {
+        "pair_id": "fit-01",
+        "side": "target",
+        "image": {
+          "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-raw\\frame-pair01-a\\mode-pair01-720-20261101-a-CAM2-frame0000000050.png",
+          "sha256": "1aaffa653f9d04c44eee2c4da6b4386865b71562e52938748fe0c5abd9703a86"
+        },
+        "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-raw\\frame-pair01-a\\mode-pair01-720-20261101-a-CAM2-frame0000000050.json",
+        "metadata_sha256": "f5da2e409890f5e7d7e37eeaf6492ee3b51b833392ff1794c7d4b3d608a9ccd9",
+        "raw_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-raw\\frame-pair01-a\\mode-pair01-720-20261101-a-CAM2-frame0000000050.rgb565",
+        "raw_sha256": "ae92d93c0d48ebf2c1ae282557d76868df340d34cba09ec0d07296835141c759",
+        "raw_crc32": "6BB6E3B8",
+        "source_kind": "physical_native_camera",
+        "physical_capture_record": true,
+        "upstream_raw_contract_hash_bound": true,
+        "identity_binding_kind": "operator_declared_single_eye_connection",
+        "identity_verified_on_wire": false
+      },
+      "target_corners": [
+        [
+          792.3265380859375,
+          134.8159942626953
+        ],
+        [
+          798.4786376953125,
+          176.3228759765625
+        ],
+        [
+          804.1715087890625,
+          222.67276000976562
+        ],
+        [
+          808.9699096679688,
+          273.0729064941406
+        ],
+        [
+          812.1419677734375,
+          326.2694091796875
+        ],
+        [
+          813.876220703125,
+          381.4192810058594
+        ],
+        [
+          745.6249389648438,
+          130.63893127441406
+        ],
+        [
+          750.200439453125,
+          172.69168090820312
+        ],
+        [
+          754.3403930664062,
+          219.5887908935547
+        ],
+        [
+          757.7476806640625,
+          271.0876159667969
+        ],
+        [
+          760.1528930664062,
+          325.4757385253906
+        ],
+        [
+          761.5020751953125,
+          381.81500244140625
+        ],
+        [
+          696.3273315429688,
+          128.13150024414062
+        ],
+        [
+          699.0670166015625,
+          170.71165466308594
+        ],
+        [
+          701.52685546875,
+          218.11712646484375
+        ],
+        [
+          703.4933471679688,
+          269.9274597167969
+        ],
+        [
+          705.021484375,
+          325.1754150390625
+        ],
+        [
+          705.9871826171875,
+          382.2864990234375
+        ],
+        [
+          645.53466796875,
+          127.88064575195312
+        ],
+        [
+          646.1078491210938,
+          170.34088134765625
+        ],
+        [
+          646.7898559570312,
+          217.94789123535156
+        ],
+        [
+          647.3182983398438,
+          269.9402770996094
+        ],
+        [
+          647.9182739257812,
+          325.31414794921875
+        ],
+        [
+          648.4031982421875,
+          382.66595458984375
+        ],
+        [
+          595.141845703125,
+          129.69239807128906
+        ],
+        [
+          593.6206665039062,
+          172.01576232910156
+        ],
+        [
+          592.4398193359375,
+          219.37367248535156
+        ],
+        [
+          591.5444946289062,
+          271.0516052246094
+        ],
+        [
+          591.1238403320312,
+          325.8717041015625
+        ],
+        [
+          591.22900390625,
+          382.91229248046875
+        ],
+        [
+          546.3231201171875,
+          133.58058166503906
+        ],
+        [
+          542.75244140625,
+          175.51100158691406
+        ],
+        [
+          539.9149780273438,
+          222.13357543945312
+        ],
+        [
+          537.8613891601562,
+          273.0779724121094
+        ],
+        [
+          536.5324096679688,
+          326.9939880371094
+        ],
+        [
+          536.2637329101562,
+          383.0631103515625
+        ],
+        [
+          499.4739074707031,
+          139.4137725830078
+        ],
+        [
+          494.3116149902344,
+          180.6738739013672
+        ],
+        [
+          490.2059631347656,
+          226.21861267089844
+        ],
+        [
+          486.8710632324219,
+          275.9838562011719
+        ],
+        [
+          484.7250061035156,
+          328.76055908203125
+        ],
+        [
+          484.13262939453125,
+          383.2340087890625
+        ],
+        [
+          456.0520935058594,
+          146.50845336914062
+        ],
+        [
+          449.8609313964844,
+          186.6985626220703
+        ],
+        [
+          444.52825927734375,
+          231.27105712890625
+        ],
+        [
+          440.23333740234375,
+          279.6543273925781
+        ],
+        [
+          437.448974609375,
+          330.60296630859375
+        ],
+        [
+          436.5618591308594,
+          383.27545166015625
+        ],
+        [
+          417.0948486328125,
+          154.4892578125
+        ],
+        [
+          409.67852783203125,
+          193.86224365234375
+        ],
+        [
+          403.5218811035156,
+          237.08116149902344
+        ],
+        [
+          398.6766662597656,
+          283.77276611328125
+        ],
+        [
+          395.57794189453125,
+          332.7960510253906
+        ],
+        [
+          394.5425720214844,
+          383.31683349609375
+        ]
+      ]
+    }
+  ],
+  "known_transfer_held_out": [
+    {
+      "pair_id": "held-out-03",
+      "pose_id": "physical-pose-03",
+      "source": {
+        "pair_id": "held-out-03",
+        "side": "source",
+        "image": {
+          "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-vga\\mode-pair03-vga-20261101-a-CAM2-frame0000000006.png",
+          "sha256": "c297478bbebced339b8e06618c7afeca99655524cff4842b2ec1b511e0ad1e7f"
+        },
+        "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-vga\\mode-pair03-vga-20261101-a-CAM2-frame0000000006.json",
+        "metadata_sha256": "278b44ba38d599a643f0e8672f1b967e678421ec943d44fbcee9d7e5d1e425d8",
+        "raw_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-vga\\mode-pair03-vga-20261101-a-CAM2-frame0000000006.rgb565",
+        "raw_sha256": "3e655002d9823bafe427b7e0b2503797f06ea503f2a192d118d083d90185baf1",
+        "raw_crc32": "D9F4A449",
+        "source_kind": "physical_native_camera",
+        "physical_capture_record": true,
+        "upstream_raw_contract_hash_bound": true,
+        "identity_binding_kind": "operator_declared_single_eye_connection",
+        "identity_verified_on_wire": false
+      },
+      "target": {
+        "pair_id": "held-out-03",
+        "side": "target",
+        "image": {
+          "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-720\\mode-pair03-720-20261101-a-CAM2-frame0000000033.png",
+          "sha256": "b0e64a093e5753f0412fdcd9935b8e08d6d45c6a73f2cdbffc7c671e3b088cd8"
+        },
+        "metadata_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-720\\mode-pair03-720-20261101-a-CAM2-frame0000000033.json",
+        "metadata_sha256": "0566001c86ec65bcf3b9a0ed984e4cbab3e05eae4c8ce03cb2ae4f3ec0e66df7",
+        "raw_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-720\\mode-pair03-720-20261101-a-CAM2-frame0000000033.rgb565",
+        "raw_sha256": "42ab261f3861e605a36456d270873039b5b3ffb0ed2e4b535c55fc3d6d3d0cac",
+        "raw_crc32": "7F555EB9",
+        "source_kind": "physical_native_camera",
+        "physical_capture_record": true,
+        "upstream_raw_contract_hash_bound": true,
+        "identity_binding_kind": "operator_declared_single_eye_connection",
+        "identity_verified_on_wire": false
+      },
+      "target_corners": [
+        [
+          614.2076416015625,
+          209.9763641357422
+        ],
+        [
+          617.7089233398438,
+          242.74411010742188
+        ],
+        [
+          621.401123046875,
+          276.88153076171875
+        ],
+        [
+          625.474609375,
+          312.21331787109375
+        ],
+        [
+          629.5138549804688,
+          348.48931884765625
+        ],
+        [
+          633.6414184570312,
+          385.0141296386719
+        ],
+        [
+          580.3108520507812,
+          206.70535278320312
+        ],
+        [
+          583.2964477539062,
+          240.53695678710938
+        ],
+        [
+          586.4952392578125,
+          276.0514831542969
+        ],
+        [
+          590.231201171875,
+          313.0909118652344
+        ],
+        [
+          594.1759033203125,
+          350.84033203125
+        ],
+        [
+          598.458984375,
+          389.13909912109375
+        ],
+        [
+          543.90771484375,
+          204.2050018310547
+        ],
+        [
+          545.994873046875,
+          238.96951293945312
+        ],
+        [
+          548.7657470703125,
+          275.712890625
+        ],
+        [
+          552.1106567382812,
+          314.135986328125
+        ],
+        [
+          555.9647827148438,
+          353.572265625
+        ],
+        [
+          560.3157958984375,
+          393.605712890625
+        ],
+        [
+          504.6379089355469,
+          202.20590209960938
+        ],
+        [
+          505.91326904296875,
+          237.8125762939453
+        ],
+        [
+          507.9756164550781,
+          275.8130798339844
+        ],
+        [
+          510.89910888671875,
+          315.7401123046875
+        ],
+        [
+          514.5654296875,
+          356.7394104003906
+        ],
+        [
+          518.8742065429688,
+          398.2896423339844
+        ],
+        [
+          463.80059814453125,
+          200.71742248535156
+        ],
+        [
+          464.13916015625,
+          237.48341369628906
+        ],
+        [
+          465.3766784667969,
+          276.59832763671875
+        ],
+        [
+          467.6117858886719,
+          317.7864685058594
+        ],
+        [
+          471.0201416015625,
+          360.17388916015625
+        ],
+        [
+          475.4168701171875,
+          403.1238098144531
+        ],
+        [
+          422.3900451660156,
+          200.49624633789062
+        ],
+        [
+          421.4142761230469,
+          238.07736206054688
+        ],
+        [
+          421.767822265625,
+          278.1418762207031
+        ],
+        [
+          423.2864074707031,
+          320.35888671875
+        ],
+        [
+          426.3301086425781,
+          363.8521423339844
+        ],
+        [
+          430.7281799316406,
+          408.11248779296875
+        ],
+        [
+          380.5220642089844,
+          201.65159606933594
+        ],
+        [
+          378.2881164550781,
+          239.9405975341797
+        ],
+        [
+          377.5020446777344,
+          280.658935546875
+        ],
+        [
+          378.2733459472656,
+          323.700439453125
+        ],
+        [
+          380.92803955078125,
+          368.09478759765625
+        ],
+        [
+          385.2112731933594,
+          413.13421630859375
+        ],
+        [
+          339.5770263671875,
+          204.194580078125
+        ],
+        [
+          336.1902160644531,
+          242.84544372558594
+        ],
+        [
+          334.436279296875,
+          284.1007995605469
+        ],
+        [
+          334.51641845703125,
+          327.4282531738281
+        ],
+        [
+          336.5758972167969,
+          372.3383483886719
+        ],
+        [
+          340.70318603515625,
+          417.920166015625
+        ],
+        [
+          300.5871276855469,
+          208.0993194580078
+        ],
+        [
+          296.148681640625,
+          246.89056396484375
+        ],
+        [
+          293.6035461425781,
+          288.1697692871094
+        ],
+        [
+          293.048095703125,
+          331.76641845703125
+        ],
+        [
+          294.6741027832031,
+          376.77239990234375
+        ],
+        [
+          298.8109130859375,
+          422.408447265625
+        ]
+      ]
+    }
+  ],
+  "source_profile_training_image_sha256": [
+    "aef7375a38631c13c5b8fcc97a7d2bbc705df85873bc35245c3fbcb290afb06b",
+    "0c7f2a22b443b7ecbde53f7ab63251b68f46e0329c7629d238a4cb336fca321d",
+    "04677fdfa3dbda1778b44d86436bdb4a68c74c96770810bd8d9025169ea0f71d",
+    "f21679ec8f8618cbb0c155295dc7de014f7347072e6bcc950bc014ddc3ed65d9",
+    "101750768f17dd917ce8923ba8e39528939328cc216450d20259a149a7bb4d2f",
+    "88d4c235be9f9cf1a97c107953046828a2728f463c0d87952795e1a31804f65d",
+    "d56b6576799e0a0bef4600bcaa3dfbd373c229850e504d3f4623f34d1546e44a",
+    "4fd4cdc3e10e5a8f5cc7c7e34729844e9ff2eea81e757937e978230d64003a51",
+    "7153009dcc0022be241dce4c8571450d9091a0e71677860ee590dc0ce69f0eb1",
+    "0a2cbf455b704559c2358d4165041a563535add98ae34c699717caf5e3f01dd8",
+    "dca71e0c8e9bb587be08e0cf2ec4e4f4c6440c818765ff0a71757e5891be8446",
+    "f3f9da3404a4ee0ec0ab319fdb3f095ea058fbd081a6ae75aec58ec5860b3db9"
+  ],
+  "producer": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\camera720_target_validation.py",
+    "sha256": "d96143d40b14ff401dae427cf394da2cf476b1a9441c8b7ad7bc6fc5a2a9ca97"
+  },
+  "input_sha256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\two-pair-validation-b\\paired-transfer-report.json": "d53d18ceab79d49c5fcfaf3c8bac5663e6f1735bcdcd612dfc88bb0b74121c65",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\camera-vga-calibration-20261101-a\\profiles\\fisheye-profile-a.json": "94181c07a4456f511853f51022eba1b55965b115e1569f3fcbad460a2d92999e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\two-pair-validation-b\\paired-manifest.json": "ed0b2623a101e029a0066bbebc3aea744b92a19f163eebcaec36b95d08b26d2e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose01-vga\\mode-pair01-vga-20261101-a-CAM2-frame0000000006.png": "8c0576bfc4bf1ca4b3d6b3394581fae1360d9d55a29f8530b0c4553e6cffcf01",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose01-vga\\mode-pair01-vga-20261101-a-CAM2-frame0000000006.json": "6b86bf6b8b74bc7e2730e9c1603017b57e4a10eba4f5dbbd8f9193704da85022",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose01-vga\\mode-pair01-vga-20261101-a-CAM2-frame0000000006.rgb565": "acc7c2dbb78f626c9946d61f7a758a1dd9ca1aee20a271ebadbc62ca6b441d80",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-raw\\frame-pair01-a\\mode-pair01-720-20261101-a-CAM2-frame0000000050.png": "1aaffa653f9d04c44eee2c4da6b4386865b71562e52938748fe0c5abd9703a86",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-raw\\frame-pair01-a\\mode-pair01-720-20261101-a-CAM2-frame0000000050.json": "f5da2e409890f5e7d7e37eeaf6492ee3b51b833392ff1794c7d4b3d608a9ccd9",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-raw\\frame-pair01-a\\mode-pair01-720-20261101-a-CAM2-frame0000000050.rgb565": "ae92d93c0d48ebf2c1ae282557d76868df340d34cba09ec0d07296835141c759",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-vga\\mode-pair03-vga-20261101-a-CAM2-frame0000000006.png": "c297478bbebced339b8e06618c7afeca99655524cff4842b2ec1b511e0ad1e7f",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-vga\\mode-pair03-vga-20261101-a-CAM2-frame0000000006.json": "278b44ba38d599a643f0e8672f1b967e678421ec943d44fbcee9d7e5d1e425d8",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-vga\\mode-pair03-vga-20261101-a-CAM2-frame0000000006.rgb565": "3e655002d9823bafe427b7e0b2503797f06ea503f2a192d118d083d90185baf1",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-720\\mode-pair03-720-20261101-a-CAM2-frame0000000033.png": "b0e64a093e5753f0412fdcd9935b8e08d6d45c6a73f2cdbffc7c671e3b088cd8",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-720\\mode-pair03-720-20261101-a-CAM2-frame0000000033.json": "0566001c86ec65bcf3b9a0ed984e4cbab3e05eae4c8ce03cb2ae4f3ec0e66df7",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-mode-pairs-20261101-a\\pose03-720\\mode-pair03-720-20261101-a-CAM2-frame0000000033.rgb565": "42ab261f3861e605a36456d270873039b5b3ffb0ed2e4b535c55fc3d6d3d0cac",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\camera720_target_validation.py": "d96143d40b14ff401dae427cf394da2cf476b1a9441c8b7ad7bc6fc5a2a9ca97",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\camera720_geometry_transfer.py": "0337832465a58f47fedae55209a482667b193b9e220e0ba9e0a1beadd34ca5ef",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\calibrate_fisheye_profile.py": "e61ed983ee6d19200b3c4abf5e82132b97f5c2887fafea414f53309a540a9103",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\fisheye_forward_inverse.py": "be717e893b2b6c6b66c2b0778e3b12a8e949af696313db785c8dbeeb39e94c6b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\stereo_fisheye_calibrate.py": "660c4ddc16cfed106ac50c0fb055b1f2c966cf74f7e0fd27463f37b94f1a56b6"
+  },
+  "intrinsics_refitted": false,
+  "numeric_runtime": {
+    "opencv": "4.11.0",
+    "numpy": "2.2.5"
+  },
+  "image_pixel_orientation_verified": false,
+  "physical_pose_identity_verified": false,
+  "optical_calibration_accepted": false,
+  "hardware_release_allowed": false,
+  "hardware_accessed": false,
+  "limits": "Frozen measured coordinate-transfer candidate, not an accepted optical profile. Source camera/lens and physical pose remain operator declarations. Known transfer-heldout images are explicitly identified when reused for target checks."
+}

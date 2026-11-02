@@ -1,0 +1,170 @@
+{
+  "Schema": "camera720-fps-bottleneck-analysis-v1",
+  "CreatedUTC": "2026-11-01T20:27:48.898965+00:00",
+  "Target": "camera720_calibrated_stats_delay_top",
+  "HardwareState": "Statistics bitstream camera720_calibrated_stats_delay_top is currently in volatile SRAM; no new programming or native EDA was performed for this report.",
+  "NoProductionRTLChanged": true,
+  "Evidence": {
+    "UART30Seconds": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\uart-c2\\session.json",
+      "SHA256": "0dd2adbb047bcfe84561362baea00fab19489744994ae6fcbe1410aac55f86f2"
+    },
+    "UART120Seconds": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\uart-c2-stability\\session.json",
+      "SHA256": "2d060c6545c03cc8523d530afdf6591d7876d5b957e1822111b07f72ab963643"
+    },
+    "StaticTransportEnvelope": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\fps-transport-envelope-a.json",
+      "SHA256": "c1fccb1f4516399331ab38e4f98ca88d599cba1652d0fd7a8ec975f4f8429934"
+    },
+    "ExistingModelTraceAnalysis": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\actual-lens-model-stage-analysis-a.json",
+      "SHA256": "0ef5241fdfb1e1d6356357b71a8dc0adae597eb4a96c6f50472f445a56d7669b"
+    },
+    "720SequenceModel": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\ov5640_rgb565_720_sequence.json",
+      "SHA256": "88cd19153f7f5fda5c80b86a4112f6e689ca52f094642cd1e2ce967261ee2c5d"
+    },
+    "SourceFiles": [
+      {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\build-c\\source\\rtl\\experimental\\ov5640_current720_frontend.v",
+        "SHA256": "6e412ed815c8df4ac04b89a71c595416fa76f4207926179b005c162f4ebfc39a"
+      },
+      {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\build-c\\source\\rtl\\experimental\\dvp_mode_admission_monitor.v",
+        "SHA256": "2895bad17ecc74c0cceefce4a53de525a2516462e1bc082481d2d34de2ec8b55"
+      },
+      {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\build-c\\source\\rtl\\experimental\\camera_vga_input_dma.v",
+        "SHA256": "eb905f9ad625f87cf8103f27f09cba4c58a65f96e3460db5f0082351901a90f4"
+      },
+      {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\build-c\\source\\rtl\\experimental\\lens1080_bank_core.v",
+        "SHA256": "ed14a1266b39b048dcdd2687f3d4fdef13c502ce2858b7483c93d5397a22092c"
+      },
+      {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\build-c\\source\\rtl\\experimental\\ddr_neighbour_cache_scatter4_rowpipe.v",
+        "SHA256": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb"
+      },
+      {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\build-c\\source\\rtl\\experimental\\ddr_adaptive_result_writer.v",
+        "SHA256": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6"
+      },
+      {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-stats-delay\\build-c\\source\\rtl\\experimental\\ddr_video_output_1080_board.v",
+        "SHA256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e"
+      }
+    ]
+  },
+  "ObservedHardware": {
+    "UARTIdentity": {
+      "BuildID": "e396af749d6e350d",
+      "ProfileID": "f79c44d9bdeb5b11",
+      "ReceptionAndIdentityPassed": true
+    },
+    "ThirtySecond": {
+      "CompletePackets": 30,
+      "ValidCounterWindows": 29,
+      "IdentityMismatches": 0,
+      "RejectedPackets": 0,
+      "Rates": {
+        "Count": 29,
+        "CoreTicks": 3625000000,
+        "NominalSeconds": 29.0,
+        "FrameDeltas": {
+          "SourceAccepted": 435,
+          "Processed": 435,
+          "UniquePresented": 435
+        },
+        "SourceAcceptedFPS": 15.0,
+        "ProcessedFPS": 15.0,
+        "UniquePresentedFPS": 15.0
+      }
+    },
+    "OneHundredTwentySecond": {
+      "CompletePackets": 120,
+      "ValidCounterWindows": 119,
+      "IdentityMismatches": 0,
+      "RejectedPackets": 0,
+      "Rates": {
+        "Count": 119,
+        "CoreTicks": 14875000000,
+        "NominalSeconds": 119.0,
+        "FrameDeltas": {
+          "SourceAccepted": 1785,
+          "Processed": 1785,
+          "UniquePresented": 1785
+        },
+        "SourceAcceptedFPS": 15.0,
+        "ProcessedFPS": 15.0,
+        "UniquePresentedFPS": 15.0
+      }
+    },
+    "Unavailable": {
+      "IndependentCoreFrequencyMeasured": false,
+      "SensorInputFPSMeasured": false,
+      "HDMIRefreshFPSMeasured": false,
+      "UnderflowsAvailable": false,
+      "FaultFreeProven": false,
+      "ResetEpochContinuityProven": false
+    }
+  },
+  "TransportAndModeFacts": {
+    "Image": "1280x720 RGB565 over 8-bit DVP",
+    "ActiveBytesPerFrame": 1843200,
+    "ModelPCLKHz": 42000000,
+    "ModeledSensorFPS": 14.99914290611965,
+    "ZeroBlankingCeilingAtModelPCLKFPS": 22.786458333333332,
+    "ZeroBlankingCeilingAt48MHzBudgetFPS": 26.041666666666668,
+    "MinimumActiveByteClockFor30FPSHz": 55296000,
+    "ActualInputClockMeasured": false,
+    "ActualFPSMeasured": false,
+    "Limits": "Arithmetic envelope only. Excludes line/frame blanking, exposure extension, admission/bank stalls and hardware timing. Core processing and accepted-frame statistics cannot alone measure all sensor frames."
+  },
+  "Interpretation": {
+    "StrongestCurrentFinding": "Across 119 valid 1-second windows, source accepted, processed, and unique presented counters all advanced by 15 per nominal second with no rejected packets or identity mismatches. No observed counter gap proves a downstream drop at this cadence.",
+    "MostLikelyFirstHypothesis": "The 15 FPS cadence is set by sensor/mode timing or an admission cadence. The nominal 42 MHz/14.999 FPS sequence model is numerically consistent with the measured 15 FPS, but the actual PCLK and sensor-good cadence were not measured, so this remains a hypothesis.",
+    "NotProven": "The current evidence cannot distinguish sensor pacing from display-bank waiting or a processing scheduler that happens to sustain exactly 15 FPS, because the bitstream does not export PCLK edges, sensor good/bad, DMA-complete, pending wait, display-grant wait, cache miss/fill or process-cycle counters.",
+    "ProcessingModelLimits": {
+      "CommitSpacingMilliseconds": 58.336832,
+      "ExistingCommitToReleaseMilliseconds": [
+        1759060,
+        1761569
+      ],
+      "DerivedScatterMillisecondsTwoFrames": 6.428672,
+      "HypotheticalScatterSavingsMillisecondsPerFrame": 1.607168,
+      "MeasuredHardwareFPS": null,
+      "Limits": "Same-fill-count structural estimate only; no optimized run, preserved miss count, RAM inference, actual FPS benefit, or per-frame distribution is proven."
+    }
+  },
+  "DecisionTree": [
+    {
+      "Condition": "PCLK edge/good-frame cadence is approximately 15 FPS and DMA-complete/source-accepted match it; downstream counters remain equal.",
+      "Conclusion": "Input sensor/mode cadence is the limiting stage.",
+      "Action": "Use a separately audited 720p30 sensor configuration candidate; do not change correction math first."
+    },
+    {
+      "Condition": "Good frames exceed source-accepted frames, or accepted frames exceed processed/unique output, or pending/display-grant wait dominates.",
+      "Conclusion": "Admission, bank ownership, display scheduling, or output cadence is limiting.",
+      "Action": "Instrument and optimize lease/pending/display scheduling while preserving the two-bank/CRC contract."
+    },
+    {
+      "Condition": "Accepted and processed counts diverge, process cycles approach the inter-frame interval, or cache miss/scatter counters dominate.",
+      "Conclusion": "Processing/cache path is limiting.",
+      "Action": "First evaluate the isolated 32-to-16 scatter-cycle packing experiment at unchanged logical capacity, then repeat correctness, physical timing, and FPS checks."
+    }
+  ],
+  "MinimumNextCandidate": {
+    "Name": "720p input-cadence diagnostic plus isolated 720p30 sensor-mode branch",
+    "Phase1": "Keep correction RTL and current bank/DDR contracts unchanged. Add read-only counters to the existing UART packet for PCLK edges per reference window, sensor good/bad frames, last line bytes/lines, DMA-complete, source-accepted, processed, unique-presented, pending/display-grant wait, no-grant, overflow/underflow and process-cycle min/max.",
+    "Phase2IfSensorLimited": "Prepare an isolated OV5640 1280x720 RGB565 30-FPS register candidate (the source model references an 84 MHz PCLK branch) with explicit readback, measured PCLK, exact 2560 active bytes x 720 lines, frame freshness, new input constraints and full native timing/CDC/IO audit. Do not overwrite the 15-FPS bitstream.",
+    "Phase2IfComputeLimited": "Prepare an isolated cache/scatter candidate only after counters show cache/compute pressure; preserve logical block size, bank protocol, CRC and output contract.",
+    "Acceptance": "At least 120 seconds per candidate, matching build/profile IDs, no packet loss or identity mismatch, independent PCLK/reference measurement or explicit limitation, zero underflow/overflow/CRC faults, and source/processed/unique rates reported separately."
+  },
+  "Limits": [
+    "UART uses nominal 125 MHz ticks and assumes continuous reset epoch within each window.",
+    "No independent PCLK, sensor exposure cadence, HDMI refresh, underflow or fault-status measurement is present.",
+    "The 42 MHz/14.999 FPS sequence is a model, not a board measurement.",
+    "The two-frame RTL trace and scatter estimate are simulation/model evidence, not a hardware throughput measurement."
+  ]
+}

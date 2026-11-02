@@ -1,0 +1,902 @@
+{
+  "Schema": "camera720-hold-analysis-v1",
+  "Target": "camera720_transport_top",
+  "GeneratedUTC": "2026-11-01T04:48:57.500828+00:00",
+  "ExtractionComplete": true,
+  "InputReports": [
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\report_timing\\camera720_transport_top.rtr",
+      "SHA256": "d650d467773441bf8a7b1c5a70244f5f6b9991a71312ca0de1703ceb4b215730",
+      "SelectedPaths": 4
+    }
+  ],
+  "ToolSHA256": "a17963764cd42081282a88d0af1bdaca770f88c2c2bc13de7d910f2497302246",
+  "CommonParserSHA256": "a9c3046d959358cb08d6ab303af654f3fd75b34768b723ee22fc4ba0c1b54ce3",
+  "HoldFailingPathCount": 2,
+  "Paths": [
+    {
+      "PathNumber": 1,
+      "Source": "cam_vsync (port)",
+      "Endpoint": "system/input_link/input_dma/capture/capturing/opit_0_L6Q_LUT6DL5Q_perm/I4",
+      "LaunchClock": "camera_pclk",
+      "CaptureClock": "camera_pclk",
+      "Cases": [
+        {
+          "Source": "cam_vsync (port)",
+          "Endpoint": "system/input_link/input_dma/capture/capturing/opit_0_L6Q_LUT6DL5Q_perm/I4",
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "camera_pclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "slow",
+          "Kind": "setup",
+          "SlackNS": 13.935,
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\report_timing\\camera720_transport_top.rtr",
+          "ReportLine": 962940,
+          "DataTrace": [
+            {
+              "Type": "net",
+              "Name": "cam_vsync",
+              "Fanout": 1,
+              "DelayNS": 0.088,
+              "CumulativeNS": 5.088,
+              "ReportLine": 962957
+            },
+            {
+              "Location": "IOBD_0_186/DIN",
+              "Site": "IOBD_0_186",
+              "SiteKind": "IOBD",
+              "X": 0,
+              "Y": 186,
+              "Pin": "DIN",
+              "RoutePin": "DIN:IOBD_0_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_0/O",
+              "ReportLine": 962958
+            },
+            {
+              "Type": "net",
+              "Name": "cam_vsync_ibuf/ntD",
+              "Fanout": 1,
+              "DelayNS": 0.0,
+              "CumulativeNS": 5.943,
+              "ReportLine": 962959
+            },
+            {
+              "Location": "IOLHR_16_186/DI_TO_CLK",
+              "Site": "IOLHR_16_186",
+              "SiteKind": "IOLHR",
+              "X": 16,
+              "Y": 186,
+              "Pin": "DI_TO_CLK",
+              "RoutePin": "DI_TO_CLK:IOLHR_16_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_1/DI_TO_CLK",
+              "ReportLine": 962960
+            },
+            {
+              "Type": "net",
+              "Name": "nt_cam_vsync",
+              "Fanout": 19,
+              "DelayNS": 3.254,
+              "CumulativeNS": 9.302,
+              "ReportLine": 962961
+            },
+            {
+              "Location": "CLMA_165_685/CR3",
+              "Site": "CLMA_165_685",
+              "SiteKind": "CLMA",
+              "X": 165,
+              "Y": 685,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMA_165_685",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_14/CR",
+              "ReportLine": 962962
+            },
+            {
+              "Type": "net",
+              "Name": "_N50",
+              "Fanout": 3,
+              "DelayNS": 0.561,
+              "CumulativeNS": 9.988,
+              "ReportLine": 962963,
+              "FromRoutePin": "CR3:CLMA_165_685",
+              "ToRoutePin": "A4:CLMA_171_678"
+            },
+            {
+              "Location": "CLMA_171_678/A4",
+              "Site": "CLMA_171_678",
+              "SiteKind": "CLMA",
+              "X": 171,
+              "Y": 678,
+              "Pin": "A4",
+              "RoutePin": "A4:CLMA_171_678",
+              "Type": "pin",
+              "LogicalResource": "system/input_link/input_dma/capture/capturing/opit_0_L6Q_LUT6DL5Q_perm/I4",
+              "ReportLine": 962964
+            }
+          ],
+          "PathSHA256": "24de745a8833b43ab569acf39152d2ae9bf7818fab12dc2cc98dc7f15aee91e6",
+          "Excerpt": "path-01-slow-setup-1.txt"
+        },
+        {
+          "Source": "cam_vsync (port)",
+          "Endpoint": "system/input_link/input_dma/capture/capturing/opit_0_L6Q_LUT6DL5Q_perm/I4",
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "camera_pclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "slow",
+          "Kind": "hold",
+          "SlackNS": -0.012,
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\report_timing\\camera720_transport_top.rtr",
+          "ReportLine": 968155,
+          "DataTrace": [
+            {
+              "Type": "net",
+              "Name": "cam_vsync",
+              "Fanout": 1,
+              "DelayNS": 0.088,
+              "CumulativeNS": 0.088,
+              "ReportLine": 968172
+            },
+            {
+              "Location": "IOBD_0_186/DIN",
+              "Site": "IOBD_0_186",
+              "SiteKind": "IOBD",
+              "X": 0,
+              "Y": 186,
+              "Pin": "DIN",
+              "RoutePin": "DIN:IOBD_0_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_0/O",
+              "ReportLine": 968173
+            },
+            {
+              "Type": "net",
+              "Name": "cam_vsync_ibuf/ntD",
+              "Fanout": 1,
+              "DelayNS": 0.0,
+              "CumulativeNS": 0.734,
+              "ReportLine": 968174
+            },
+            {
+              "Location": "IOLHR_16_186/DI_TO_CLK",
+              "Site": "IOLHR_16_186",
+              "SiteKind": "IOLHR",
+              "X": 16,
+              "Y": 186,
+              "Pin": "DI_TO_CLK",
+              "RoutePin": "DI_TO_CLK:IOLHR_16_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_1/DI_TO_CLK",
+              "ReportLine": 968175
+            },
+            {
+              "Type": "net",
+              "Name": "nt_cam_vsync",
+              "Fanout": 19,
+              "DelayNS": 2.499,
+              "CumulativeNS": 3.324,
+              "ReportLine": 968176
+            },
+            {
+              "Location": "CLMA_165_685/CR3",
+              "Site": "CLMA_165_685",
+              "SiteKind": "CLMA",
+              "X": 165,
+              "Y": 685,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMA_165_685",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_14/CR",
+              "ReportLine": 968177
+            },
+            {
+              "Type": "net",
+              "Name": "_N50",
+              "Fanout": 3,
+              "DelayNS": 0.355,
+              "CumulativeNS": 3.766,
+              "ReportLine": 968178,
+              "FromRoutePin": "CR3:CLMA_165_685",
+              "ToRoutePin": "A4:CLMA_171_678"
+            },
+            {
+              "Location": "CLMA_171_678/A4",
+              "Site": "CLMA_171_678",
+              "SiteKind": "CLMA",
+              "X": 171,
+              "Y": 678,
+              "Pin": "A4",
+              "RoutePin": "A4:CLMA_171_678",
+              "Type": "pin",
+              "LogicalResource": "system/input_link/input_dma/capture/capturing/opit_0_L6Q_LUT6DL5Q_perm/I4",
+              "ReportLine": 968179
+            }
+          ],
+          "PathSHA256": "e1b10ec164b17f07bdcf9de797afcee8acbf064fb95914c3ddb63273126519a8",
+          "Excerpt": "path-01-slow-hold-2.txt"
+        },
+        {
+          "Source": "cam_vsync (port)",
+          "Endpoint": "system/input_link/input_dma/capture/capturing/opit_0_L6Q_LUT6DL5Q_perm/I4",
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "camera_pclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "fast",
+          "Kind": "setup",
+          "SlackNS": 14.723,
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\report_timing\\camera720_transport_top.rtr",
+          "ReportLine": 2410615,
+          "DataTrace": [
+            {
+              "Type": "net",
+              "Name": "cam_vsync",
+              "Fanout": 1,
+              "DelayNS": 0.088,
+              "CumulativeNS": 5.088,
+              "ReportLine": 2410632
+            },
+            {
+              "Location": "IOBD_0_186/DIN",
+              "Site": "IOBD_0_186",
+              "SiteKind": "IOBD",
+              "X": 0,
+              "Y": 186,
+              "Pin": "DIN",
+              "RoutePin": "DIN:IOBD_0_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_0/O",
+              "ReportLine": 2410633
+            },
+            {
+              "Type": "net",
+              "Name": "cam_vsync_ibuf/ntD",
+              "Fanout": 1,
+              "DelayNS": 0.0,
+              "CumulativeNS": 5.603,
+              "ReportLine": 2410634
+            },
+            {
+              "Location": "IOLHR_16_186/DI_TO_CLK",
+              "Site": "IOLHR_16_186",
+              "SiteKind": "IOLHR",
+              "X": 16,
+              "Y": 186,
+              "Pin": "DI_TO_CLK",
+              "RoutePin": "DI_TO_CLK:IOLHR_16_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_1/DI_TO_CLK",
+              "ReportLine": 2410635
+            },
+            {
+              "Type": "net",
+              "Name": "nt_cam_vsync",
+              "Fanout": 19,
+              "DelayNS": 2.118,
+              "CumulativeNS": 7.808,
+              "ReportLine": 2410636
+            },
+            {
+              "Location": "CLMA_165_685/CR3",
+              "Site": "CLMA_165_685",
+              "SiteKind": "CLMA",
+              "X": 165,
+              "Y": 685,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMA_165_685",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_14/CR",
+              "ReportLine": 2410637
+            },
+            {
+              "Type": "net",
+              "Name": "_N50",
+              "Fanout": 3,
+              "DelayNS": 0.326,
+              "CumulativeNS": 8.202,
+              "ReportLine": 2410638,
+              "FromRoutePin": "CR3:CLMA_165_685",
+              "ToRoutePin": "A4:CLMA_171_678"
+            },
+            {
+              "Location": "CLMA_171_678/A4",
+              "Site": "CLMA_171_678",
+              "SiteKind": "CLMA",
+              "X": 171,
+              "Y": 678,
+              "Pin": "A4",
+              "RoutePin": "A4:CLMA_171_678",
+              "Type": "pin",
+              "LogicalResource": "system/input_link/input_dma/capture/capturing/opit_0_L6Q_LUT6DL5Q_perm/I4",
+              "ReportLine": 2410639
+            }
+          ],
+          "PathSHA256": "8887f1ef2bba9b0d4f7aad52813735d79951e0e8c6aef569f653b7e233ccd815",
+          "Excerpt": "path-01-fast-setup-3.txt"
+        },
+        {
+          "Source": "cam_vsync (port)",
+          "Endpoint": "system/input_link/input_dma/capture/capturing/opit_0_L6Q_LUT6DL5Q_perm/I4",
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "camera_pclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "fast",
+          "Kind": "hold",
+          "SlackNS": -0.128,
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\report_timing\\camera720_transport_top.rtr",
+          "ReportLine": 2414509,
+          "DataTrace": [
+            {
+              "Type": "net",
+              "Name": "cam_vsync",
+              "Fanout": 1,
+              "DelayNS": 0.088,
+              "CumulativeNS": 0.088,
+              "ReportLine": 2414526
+            },
+            {
+              "Location": "IOBD_0_186/DIN",
+              "Site": "IOBD_0_186",
+              "SiteKind": "IOBD",
+              "X": 0,
+              "Y": 186,
+              "Pin": "DIN",
+              "RoutePin": "DIN:IOBD_0_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_0/O",
+              "ReportLine": 2414527
+            },
+            {
+              "Type": "net",
+              "Name": "cam_vsync_ibuf/ntD",
+              "Fanout": 1,
+              "DelayNS": 0.0,
+              "CumulativeNS": 0.533,
+              "ReportLine": 2414528
+            },
+            {
+              "Location": "IOLHR_16_186/DI_TO_CLK",
+              "Site": "IOLHR_16_186",
+              "SiteKind": "IOLHR",
+              "X": 16,
+              "Y": 186,
+              "Pin": "DI_TO_CLK",
+              "RoutePin": "DI_TO_CLK:IOLHR_16_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_1/DI_TO_CLK",
+              "ReportLine": 2414529
+            },
+            {
+              "Type": "net",
+              "Name": "nt_cam_vsync",
+              "Fanout": 19,
+              "DelayNS": 1.541,
+              "CumulativeNS": 2.147,
+              "ReportLine": 2414530
+            },
+            {
+              "Location": "CLMA_165_685/CR3",
+              "Site": "CLMA_165_685",
+              "SiteKind": "CLMA",
+              "X": 165,
+              "Y": 685,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMA_165_685",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_14/CR",
+              "ReportLine": 2414531
+            },
+            {
+              "Type": "net",
+              "Name": "_N50",
+              "Fanout": 3,
+              "DelayNS": 0.252,
+              "CumulativeNS": 2.456,
+              "ReportLine": 2414532,
+              "FromRoutePin": "CR3:CLMA_165_685",
+              "ToRoutePin": "A4:CLMA_171_678"
+            },
+            {
+              "Location": "CLMA_171_678/A4",
+              "Site": "CLMA_171_678",
+              "SiteKind": "CLMA",
+              "X": 171,
+              "Y": 678,
+              "Pin": "A4",
+              "RoutePin": "A4:CLMA_171_678",
+              "Type": "pin",
+              "LogicalResource": "system/input_link/input_dma/capture/capturing/opit_0_L6Q_LUT6DL5Q_perm/I4",
+              "ReportLine": 2414533
+            }
+          ],
+          "PathSHA256": "421f7eafe78076e2168a553c9841c1ed756a7d3ca9b0e2be2bda21d61f303e97",
+          "Excerpt": "path-01-fast-hold-4.txt"
+        }
+      ],
+      "Margins": {
+        "slow": {
+          "HoldSlackNS": -0.012,
+          "ExactSetupFound": true,
+          "ExactSetupSlackNS": 13.935
+        },
+        "fast": {
+          "HoldSlackNS": -0.128,
+          "ExactSetupFound": true,
+          "ExactSetupSlackNS": 14.723
+        }
+      },
+      "PhysicalRepairCandidate": {
+        "Net": "_N50",
+        "FromRoutePin": "CR3:CLMA_165_685",
+        "ToRoutePin": "A4:CLMA_171_678",
+        "Fanout": 3,
+        "BranchOnly": true,
+        "TimingWaiverAllowed": false,
+        "PreserveOtherBranches": true,
+        "ExternalInputBudgetChanged": false
+      }
+    },
+    {
+      "PathNumber": 2,
+      "Source": "cam_vsync (port)",
+      "Endpoint": "system/input_link/input_dma/capture/vs_d/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+      "LaunchClock": "camera_pclk",
+      "CaptureClock": "camera_pclk",
+      "Cases": [
+        {
+          "Source": "cam_vsync (port)",
+          "Endpoint": "system/input_link/input_dma/capture/vs_d/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "camera_pclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "slow",
+          "Kind": "setup",
+          "SlackNS": 14.038,
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\report_timing\\camera720_transport_top.rtr",
+          "ReportLine": 962997,
+          "DataTrace": [
+            {
+              "Type": "net",
+              "Name": "cam_vsync",
+              "Fanout": 1,
+              "DelayNS": 0.088,
+              "CumulativeNS": 5.088,
+              "ReportLine": 963014
+            },
+            {
+              "Location": "IOBD_0_186/DIN",
+              "Site": "IOBD_0_186",
+              "SiteKind": "IOBD",
+              "X": 0,
+              "Y": 186,
+              "Pin": "DIN",
+              "RoutePin": "DIN:IOBD_0_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_0/O",
+              "ReportLine": 963015
+            },
+            {
+              "Type": "net",
+              "Name": "cam_vsync_ibuf/ntD",
+              "Fanout": 1,
+              "DelayNS": 0.0,
+              "CumulativeNS": 5.943,
+              "ReportLine": 963016
+            },
+            {
+              "Location": "IOLHR_16_186/DI_TO_CLK",
+              "Site": "IOLHR_16_186",
+              "SiteKind": "IOLHR",
+              "X": 16,
+              "Y": 186,
+              "Pin": "DI_TO_CLK",
+              "RoutePin": "DI_TO_CLK:IOLHR_16_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_1/DI_TO_CLK",
+              "ReportLine": 963017
+            },
+            {
+              "Type": "net",
+              "Name": "nt_cam_vsync",
+              "Fanout": 19,
+              "DelayNS": 3.254,
+              "CumulativeNS": 9.302,
+              "ReportLine": 963018
+            },
+            {
+              "Location": "CLMA_165_685/CR3",
+              "Site": "CLMA_165_685",
+              "SiteKind": "CLMA",
+              "X": 165,
+              "Y": 685,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMA_165_685",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_14/CR",
+              "ReportLine": 963019
+            },
+            {
+              "Type": "net",
+              "Name": "_N50",
+              "Fanout": 3,
+              "DelayNS": 0.441,
+              "CumulativeNS": 9.868,
+              "ReportLine": 963020,
+              "FromRoutePin": "CR3:CLMA_165_685",
+              "ToRoutePin": "C4:CLMS_171_673"
+            },
+            {
+              "Location": "CLMS_171_673/C4",
+              "Site": "CLMS_171_673",
+              "SiteKind": "CLMS",
+              "X": 171,
+              "Y": 673,
+              "Pin": "C4",
+              "RoutePin": "C4:CLMS_171_673",
+              "Type": "pin",
+              "LogicalResource": "system/input_link/input_dma/capture/vs_d/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+              "ReportLine": 963021
+            }
+          ],
+          "PathSHA256": "660b21281e656056311991c45d7bfab3202a27b81e4dd2e40ea9484526b76e82",
+          "Excerpt": "path-02-slow-setup-1.txt"
+        },
+        {
+          "Source": "cam_vsync (port)",
+          "Endpoint": "system/input_link/input_dma/capture/vs_d/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "camera_pclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "slow",
+          "Kind": "hold",
+          "SlackNS": -0.122,
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\report_timing\\camera720_transport_top.rtr",
+          "ReportLine": 968098,
+          "DataTrace": [
+            {
+              "Type": "net",
+              "Name": "cam_vsync",
+              "Fanout": 1,
+              "DelayNS": 0.088,
+              "CumulativeNS": 0.088,
+              "ReportLine": 968115
+            },
+            {
+              "Location": "IOBD_0_186/DIN",
+              "Site": "IOBD_0_186",
+              "SiteKind": "IOBD",
+              "X": 0,
+              "Y": 186,
+              "Pin": "DIN",
+              "RoutePin": "DIN:IOBD_0_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_0/O",
+              "ReportLine": 968116
+            },
+            {
+              "Type": "net",
+              "Name": "cam_vsync_ibuf/ntD",
+              "Fanout": 1,
+              "DelayNS": 0.0,
+              "CumulativeNS": 0.734,
+              "ReportLine": 968117
+            },
+            {
+              "Location": "IOLHR_16_186/DI_TO_CLK",
+              "Site": "IOLHR_16_186",
+              "SiteKind": "IOLHR",
+              "X": 16,
+              "Y": 186,
+              "Pin": "DI_TO_CLK",
+              "RoutePin": "DI_TO_CLK:IOLHR_16_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_1/DI_TO_CLK",
+              "ReportLine": 968118
+            },
+            {
+              "Type": "net",
+              "Name": "nt_cam_vsync",
+              "Fanout": 19,
+              "DelayNS": 2.499,
+              "CumulativeNS": 3.324,
+              "ReportLine": 968119
+            },
+            {
+              "Location": "CLMA_165_685/CR3",
+              "Site": "CLMA_165_685",
+              "SiteKind": "CLMA",
+              "X": 165,
+              "Y": 685,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMA_165_685",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_14/CR",
+              "ReportLine": 968120
+            },
+            {
+              "Type": "net",
+              "Name": "_N50",
+              "Fanout": 3,
+              "DelayNS": 0.243,
+              "CumulativeNS": 3.654,
+              "ReportLine": 968121,
+              "FromRoutePin": "CR3:CLMA_165_685",
+              "ToRoutePin": "C4:CLMS_171_673"
+            },
+            {
+              "Location": "CLMS_171_673/C4",
+              "Site": "CLMS_171_673",
+              "SiteKind": "CLMS",
+              "X": 171,
+              "Y": 673,
+              "Pin": "C4",
+              "RoutePin": "C4:CLMS_171_673",
+              "Type": "pin",
+              "LogicalResource": "system/input_link/input_dma/capture/vs_d/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+              "ReportLine": 968122
+            }
+          ],
+          "PathSHA256": "1e5a6debf40667483b2959e90cca30d6995a9662f1bad19500681d439acd39c2",
+          "Excerpt": "path-02-slow-hold-2.txt"
+        },
+        {
+          "Source": "cam_vsync (port)",
+          "Endpoint": "system/input_link/input_dma/capture/vs_d/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "camera_pclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "fast",
+          "Kind": "setup",
+          "SlackNS": 14.791,
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\report_timing\\camera720_transport_top.rtr",
+          "ReportLine": 2410672,
+          "DataTrace": [
+            {
+              "Type": "net",
+              "Name": "cam_vsync",
+              "Fanout": 1,
+              "DelayNS": 0.088,
+              "CumulativeNS": 5.088,
+              "ReportLine": 2410689
+            },
+            {
+              "Location": "IOBD_0_186/DIN",
+              "Site": "IOBD_0_186",
+              "SiteKind": "IOBD",
+              "X": 0,
+              "Y": 186,
+              "Pin": "DIN",
+              "RoutePin": "DIN:IOBD_0_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_0/O",
+              "ReportLine": 2410690
+            },
+            {
+              "Type": "net",
+              "Name": "cam_vsync_ibuf/ntD",
+              "Fanout": 1,
+              "DelayNS": 0.0,
+              "CumulativeNS": 5.603,
+              "ReportLine": 2410691
+            },
+            {
+              "Location": "IOLHR_16_186/DI_TO_CLK",
+              "Site": "IOLHR_16_186",
+              "SiteKind": "IOLHR",
+              "X": 16,
+              "Y": 186,
+              "Pin": "DI_TO_CLK",
+              "RoutePin": "DI_TO_CLK:IOLHR_16_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_1/DI_TO_CLK",
+              "ReportLine": 2410692
+            },
+            {
+              "Type": "net",
+              "Name": "nt_cam_vsync",
+              "Fanout": 19,
+              "DelayNS": 2.118,
+              "CumulativeNS": 7.808,
+              "ReportLine": 2410693
+            },
+            {
+              "Location": "CLMA_165_685/CR3",
+              "Site": "CLMA_165_685",
+              "SiteKind": "CLMA",
+              "X": 165,
+              "Y": 685,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMA_165_685",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_14/CR",
+              "ReportLine": 2410694
+            },
+            {
+              "Type": "net",
+              "Name": "_N50",
+              "Fanout": 3,
+              "DelayNS": 0.249,
+              "CumulativeNS": 8.125,
+              "ReportLine": 2410695,
+              "FromRoutePin": "CR3:CLMA_165_685",
+              "ToRoutePin": "C4:CLMS_171_673"
+            },
+            {
+              "Location": "CLMS_171_673/C4",
+              "Site": "CLMS_171_673",
+              "SiteKind": "CLMS",
+              "X": 171,
+              "Y": 673,
+              "Pin": "C4",
+              "RoutePin": "C4:CLMS_171_673",
+              "Type": "pin",
+              "LogicalResource": "system/input_link/input_dma/capture/vs_d/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+              "ReportLine": 2410696
+            }
+          ],
+          "PathSHA256": "21437cf56f63db985b362afc33f176f3a65b2b94998aeb33af4651976bf3d3d5",
+          "Excerpt": "path-02-fast-setup-3.txt"
+        },
+        {
+          "Source": "cam_vsync (port)",
+          "Endpoint": "system/input_link/input_dma/capture/vs_d/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+          "LaunchClock": "camera_pclk",
+          "CaptureClock": "camera_pclk",
+          "LaunchEdge": "rising",
+          "CaptureEdge": "rising",
+          "Corner": "fast",
+          "Kind": "hold",
+          "SlackNS": -0.199,
+          "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\report_timing\\camera720_transport_top.rtr",
+          "ReportLine": 2414452,
+          "DataTrace": [
+            {
+              "Type": "net",
+              "Name": "cam_vsync",
+              "Fanout": 1,
+              "DelayNS": 0.088,
+              "CumulativeNS": 0.088,
+              "ReportLine": 2414469
+            },
+            {
+              "Location": "IOBD_0_186/DIN",
+              "Site": "IOBD_0_186",
+              "SiteKind": "IOBD",
+              "X": 0,
+              "Y": 186,
+              "Pin": "DIN",
+              "RoutePin": "DIN:IOBD_0_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_0/O",
+              "ReportLine": 2414470
+            },
+            {
+              "Type": "net",
+              "Name": "cam_vsync_ibuf/ntD",
+              "Fanout": 1,
+              "DelayNS": 0.0,
+              "CumulativeNS": 0.533,
+              "ReportLine": 2414471
+            },
+            {
+              "Location": "IOLHR_16_186/DI_TO_CLK",
+              "Site": "IOLHR_16_186",
+              "SiteKind": "IOLHR",
+              "X": 16,
+              "Y": 186,
+              "Pin": "DI_TO_CLK",
+              "RoutePin": "DI_TO_CLK:IOLHR_16_186",
+              "Type": "pin",
+              "LogicalResource": "cam_vsync_ibuf/opit_1/DI_TO_CLK",
+              "ReportLine": 2414472
+            },
+            {
+              "Type": "net",
+              "Name": "nt_cam_vsync",
+              "Fanout": 19,
+              "DelayNS": 1.541,
+              "CumulativeNS": 2.147,
+              "ReportLine": 2414473
+            },
+            {
+              "Location": "CLMA_165_685/CR3",
+              "Site": "CLMA_165_685",
+              "SiteKind": "CLMA",
+              "X": 165,
+              "Y": 685,
+              "Pin": "CR3",
+              "RoutePin": "CR3:CLMA_165_685",
+              "Type": "pin",
+              "LogicalResource": "CLKROUTE_14/CR",
+              "ReportLine": 2414474
+            },
+            {
+              "Type": "net",
+              "Name": "_N50",
+              "Fanout": 3,
+              "DelayNS": 0.179,
+              "CumulativeNS": 2.383,
+              "ReportLine": 2414475,
+              "FromRoutePin": "CR3:CLMA_165_685",
+              "ToRoutePin": "C4:CLMS_171_673"
+            },
+            {
+              "Location": "CLMS_171_673/C4",
+              "Site": "CLMS_171_673",
+              "SiteKind": "CLMS",
+              "X": 171,
+              "Y": 673,
+              "Pin": "C4",
+              "RoutePin": "C4:CLMS_171_673",
+              "Type": "pin",
+              "LogicalResource": "system/input_link/input_dma/capture/vs_d/opit_0_L6Q_LUT6DQL5Q_perm/I4",
+              "ReportLine": 2414476
+            }
+          ],
+          "PathSHA256": "0c98b43ee46795b6c1fb69aada523d2f55555d3f10aa3e9760c4165b15c0f2b6",
+          "Excerpt": "path-02-fast-hold-4.txt"
+        }
+      ],
+      "Margins": {
+        "slow": {
+          "HoldSlackNS": -0.122,
+          "ExactSetupFound": true,
+          "ExactSetupSlackNS": 14.038
+        },
+        "fast": {
+          "HoldSlackNS": -0.199,
+          "ExactSetupFound": true,
+          "ExactSetupSlackNS": 14.791
+        }
+      },
+      "PhysicalRepairCandidate": {
+        "Net": "_N50",
+        "FromRoutePin": "CR3:CLMA_165_685",
+        "ToRoutePin": "C4:CLMS_171_673",
+        "Fanout": 3,
+        "BranchOnly": true,
+        "TimingWaiverAllowed": false,
+        "PreserveOtherBranches": true,
+        "ExternalInputBudgetChanged": false
+      }
+    }
+  ],
+  "MissingExactSetup": [],
+  "HoldFailureSummary": [
+    {
+      "Corner": "slow",
+      "Kind": "hold",
+      "LaunchClock": "camera_pclk",
+      "CaptureClock": "camera_pclk",
+      "WorstSlackNS": -0.122,
+      "TotalNegativeSlackNS": -0.134,
+      "FailingChecks": 2,
+      "TotalChecks": 3156,
+      "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\report_timing\\camera720_transport_top.rtr",
+      "ReportLine": 97
+    },
+    {
+      "Corner": "fast",
+      "Kind": "hold",
+      "LaunchClock": "camera_pclk",
+      "CaptureClock": "camera_pclk",
+      "WorstSlackNS": -0.199,
+      "TotalNegativeSlackNS": -0.327,
+      "FailingChecks": 2,
+      "TotalChecks": 3156,
+      "Report": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-output\\build-b\\report_timing\\camera720_transport_top.rtr",
+      "ReportLine": 198
+    }
+  ],
+  "HardwareAccessed": false,
+  "TimingClosed": false,
+  "Limits": "Exact endpoints only. Shared-net branch connectivity/occupancy and post-change full STA remain required. External AC budgets remain provisional."
+}

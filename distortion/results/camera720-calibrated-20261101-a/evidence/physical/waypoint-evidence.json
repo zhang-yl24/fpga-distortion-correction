@@ -1,0 +1,127 @@
+{
+  "Schema": "camera720-calibrated-waypoint-selection-v1",
+  "Selections": [
+    {
+      "Target": {
+        "Type": "terminal data-net route detour",
+        "Net": "_N177",
+        "FromRoutePin": "CR0:CLMA_357_679",
+        "ToRoutePin": "M2:CLMA_333_679",
+        "Fanout": 1,
+        "HoldDeficitLowerBoundNS": 0.308,
+        "MinimumChangeScope": "Only this terminal data branch; preserve logical cells, FF placement and clocks.",
+        "Validated": false,
+        "Needs": "Actual native route/connectivity and occupancy checks; exact endpoint setup in both corners; post-change full STA.",
+        "TimingWaiverAllowed": false,
+        "Endpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[62]/opit_0_inv_srl/D"
+      },
+      "SearchCentre": [
+        348,
+        636
+      ],
+      "Selected": {
+        "Pins": [
+          "ZDNE[2]:SRB_348_630",
+          "IDNE[2]:SRB_354_636"
+        ],
+        "CoordinateProof": {
+          "From": "ZDNE[3]:SRB_348_630",
+          "To": "IDNE[3]:SRB_354_636",
+          "Owner": "( INDEXED \\u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/ddrphy_dqsi_rdel_cal/u_ddr3_test_h/debug_data 151 )",
+          "Line": 1413765
+        },
+        "OfficialWireRule": {
+          "Line": 2762,
+          "Text": "ZDNE[2] : vertical { h1 13 : 14 : 1 1 { vertical [ IDNE[2] ] } }"
+        }
+      }
+    }
+  ],
+  "WirePattern": {
+    "Path": "D:\\pango\\PDS_2023.2\\arch\\vendor\\pango\\logos2\\pg2l100h\\pattern\\drawing\\wirepattern.txt",
+    "SHA256": "949ac434425f4512111feb2c767d63064b5b5d35f5ba9665a4640ad75368ac36"
+  },
+  "Target": "camera720_calibrated_top",
+  "SourceADF": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-calibrated\\build-a\\place_route\\camera720_calibrated_top_pnr.adf",
+    "SHA256": "71bea98abdbc80cdf2a9af86f60e76e9b49dd4c52d1c62b08f10cf5ce8b9d66a"
+  },
+  "DiscoveryReceipt": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-calibrated\\hold-discovery-a\\result.json",
+    "SHA256": "de9a9acab8c7cdc94b280cb40d02602a6018e0f06c82eed21ed5b96550eb18ec"
+  },
+  "ExportReceipt": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-calibrated\\export-a\\result.json",
+    "SHA256": "1be859d45f3c15fe9bfe1e6e9c2214783300e28681a18503b1aa18ef037f79f1"
+  },
+  "HoldAudit": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-calibrated\\hold-route-analysis-a\\hold-analysis.json",
+    "SHA256": "56b00305d0d2d111f8ca28b1fca1b8c0353bd865b890fa363c06572a67233a0d"
+  },
+  "RouteDump": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-calibrated\\hold-discovery-a\\route-dump.txt",
+    "SHA256": "223bd9faee750c3b7f0a1e12a986a025248fca7f4e91f9f8413f8dbd5e8d1655"
+  },
+  "RouteInventory": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-calibrated\\hold-route-analysis-a\\route-inspection.json",
+    "SHA256": "9b729cee0eec7272bd20648af018598d6c5b449999a4f5712de8e1d14add9a02"
+  },
+  "BranchInventory": {
+    "_N177": {
+      "Leaves": {
+        "M2:CLMA_333_679": [
+          "CR0:CLMA_357_679",
+          "S_CR0:SRB_354_678",
+          "ZDW[3]:SRB_354_678",
+          "IDW[3]:SRB_342_678",
+          "ZDSW[1]:SRB_342_678",
+          "IDSW[1]:SRB_336_672",
+          "ZDNW[1]:SRB_336_672",
+          "IDNW[1]:SRB_330_678",
+          "S_M2:SRB_330_678",
+          "M2:CLMA_333_679"
+        ]
+      },
+      "LogicalConnections": [
+        {
+          "Instance": "CLKROUTE_140",
+          "Pin": "CR"
+        },
+        {
+          "Instance": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/ddrphy_dqs_rddata_align/rddata_r1[62]/opit_0_inv_srl",
+          "Pin": "D"
+        }
+      ]
+    }
+  },
+  "NonRouteSemanticSHA256": "f094ce74fd8bf157fcf6503708485fd391be63c1a05122c43b3e91e64420af48",
+  "ExcludedBlockSHA256": {
+    "CDB": "8189f000f9eaf09e0728350e81fff7c1fca98f785dd923a5fcfcb2efb374937d",
+    "FILETABLE": "709e9ff93c38fe10f82a7319c467170a561e0f1a153ab83f4229fc5384ee312b"
+  },
+  "Routes": [
+    {
+      "Net": "_N177",
+      "Branch": "M2:CLMA_333_679",
+      "Pins": "ZDNE[2]:SRB_348_630>IDNE[2]:SRB_354_636;"
+    }
+  ],
+  "ExactRouteCommands": [
+    "show -design_net {_N177}",
+    "unroute -branch {_N177:M2:CLMA_333_679;}",
+    "manual_route -net {_N177} -branch {M2:CLMA_333_679} -pins {ZDNE[2]:SRB_348_630>IDNE[2]:SRB_354_636;}",
+    "show -design_net {_N177}"
+  ],
+  "ToolSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_raw_camera_routes.py": "cf2ff6139499c411b317a5c771208baa36bea836f5c38107ca148c99aa7565b6",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\audit_camera_vga_routes.py": "d2047f48e7f611fbb21b71577f5037033d7d55046f42328fc7560e728181a1d1",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_raw_camera_delay_route_reset.py": "90d2efe60f71e03edf01550fa6d1df18e6a50d0d7acba3d6db676a3ef41eaa47"
+  },
+  "Producer": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-calibrated\\assemble_waypoint_evidence_a.py",
+    "SHA256": "c1b422d406aff3944de24f0a4b82bd30ded3ef754632f876f7882d02d261d015"
+  },
+  "TimingAccepted": false,
+  "HardwareAccessed": false,
+  "HardwareReleaseAllowed": false
+}

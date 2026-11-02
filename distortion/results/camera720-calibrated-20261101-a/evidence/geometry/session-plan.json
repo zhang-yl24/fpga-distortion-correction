@@ -1,0 +1,16 @@
+{
+  "schema": "camera720-mode-pair-session-plan-v1",
+  "date_local": "2026-11-01",
+  "source_profile": "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/results/camera-vga-calibration-20261101-a/profiles/fisheye-profile-a.json",
+  "board": {"cols": 6, "rows": 9, "square_mm": 25},
+  "method": "fit_axis_aligned",
+  "thresholds": {"rms_px": 0.5, "maximum_px": 1.5},
+  "threshold_basis": "Predeclared coordinate-consistency diagnostic budget before inspecting paired observations. Not optical acceptance. Do not widen retrospectively.",
+  "sequence": ["pose01:720-fit", "switch-to-VGA", "pose01:VGA-fit", "request-new-fixed-pose", "pose02:VGA-held-out", "switch-to720", "pose02:720-held-out"],
+  "pose01_user_confirmation": "已固定摆好",
+  "pose02_user_confirmation": null,
+  "physical_pose_independently_verified": false,
+  "optical_calibration_accepted": false,
+  "hardware_release_allowed": false,
+  "notes": "Native raw images only. Keep the camera, lens and board fixed within a pair. Fit and held-out use distinct physical poses. An independent target-lens check follows geometry diagnostics."
+}

@@ -1,0 +1,116 @@
+{
+  "Schema": "camera720-portable-review-status-v1",
+  "Status": "first-live-720p-transport-verified",
+  "FullReplayClosurePackaged": false,
+  "FinalCDCCoverage": "complete-actual-physical-coverage",
+  "720pBitstream": "generated-and-verified",
+  "SRAMDownload": "passed-volatile-sram-done",
+  "BoardObservation": "user-confirmed-normal-upright-live-image-and-leds",
+  "OpticalCorrectionAccepted": false,
+  "Measured720FPS": null,
+  "RemoteCI": "deferred-unverified",
+  "HardwareAccessedByPackager": false,
+  "PDSAccessedByPackager": false,
+  "CreatedUTC": "2026-11-01T08:06:41.206106+00:00",
+  "Target": "camera720_transport_top",
+  "CandidateADFSHA256": "777bed47bf6489457f42cda54a3cadc4e74f7a4ae2c8caacc51eb49f14e48904",
+  "ResetEffectAuditPassed": true,
+  "FinalIOAuditPassed": true,
+  "OrdinaryCases": {
+    "Expected": 416,
+    "Covered": 416,
+    "OverallCDCAccepted": false
+  },
+  "WindowsRegression": {
+    "TestFiles": 31,
+    "Passed": 530,
+    "SubtestsPassed": 50,
+    "Failures": 0,
+    "Errors": 0,
+    "Skipped": 0,
+    "SourceDrift": []
+  },
+  "BaselinesPassed": 4,
+  "ToolsAndTestsCopied": false,
+  "SevenNativeBatchesComplete": true,
+  "SourceTestIndex": "source-test-index.json",
+  "UpdatedUTC": "2026-11-01T09:00:42.615973+00:00",
+  "FinalCDCProof": {
+    "PackagedPath": "evidence/cdc/final-coverage.json",
+    "SHA256": "d7536f29cf41761da02f721a1417b8d149b536c6ca7ee1a7a6a2448e976bff40",
+    "ExpectedCases": 2486,
+    "CoveredCases": 2486,
+    "OrdinaryCases": 416,
+    "MissingCases": 0,
+    "Violations": 0
+  },
+  "BitGenerationAuthority": {
+    "FullVerificationCompleted": true,
+    "PackagedPath": "evidence/bit/authority.json",
+    "SHA256": "5c0a3f53742c50df28b67e920d6e59678216e6b4409e197a97771baec1af77f9",
+    "InputCount": 1068,
+    "ToolCount": 83,
+    "HardwareReleaseAllowed": false,
+    "OpticalCorrectionAccepted": false
+  },
+  "BitGenerationRequest": {
+    "PackagedPath": "evidence/bit/request.json",
+    "SHA256": "7446b33c4015cd160bb13e406501ea9917079c6fd291913364f3c50daab3305c"
+  },
+  "VerifiedBitstream": {
+    "PackagedPath": "evidence/bit/native/generate_bitstream/camera720_transport_top.sbit",
+    "SHA256": "9affb9b37a269454c437cfe5127fab1dd0c1b35397de6e6f63d486b00bcfe72a",
+    "Bytes": 3791112,
+    "Header": {
+      "Design": "camera720_transport_top",
+      "Device": "Logos2-PG2L100H--6-FBG676",
+      "Date": "11/01/26",
+      "Time": "16:48:58",
+      "Generator": "Fabric Compiler",
+      "Version": "2023.2-SP3<154097>"
+    },
+    "VerificationSHA256": "6276dae061048d74950516617793732744052d4530a226f00e4d5328641d2430",
+    "AllTenTimingTablesPassed": true,
+    "AllExceptionPathsPreserved": true
+  },
+  "BoardPowerAuthorization": {
+    "Confirmed": true,
+    "DownloadAuthorizedAfterChecks": true,
+    "AskAgainRequired": false,
+    "NotifyBeforeDownload": true,
+    "SHA256": "cf021ae002322b00e9dafc235cc94046fdb25c165fea042fdb0ebbecb3fdbd4d"
+  },
+  "SRAMPlan": {
+    "Prepared": true,
+    "SHA256": "f77ae8c04241081e9cce488f33a6ddf4110681236f1b02bc69807aa5a9ed3ac9",
+    "PackagedPath": "evidence/program/plan.json",
+    "BoundInputs": 1094,
+    "Operation": "volatile_sram_only",
+    "ValidatedByPackager": false,
+    "IndependentPreflightPassed": true,
+    "PreflightSHA256": "6fc0e10123ae0e80756c3a45809aed446bc6163ea969911573ee82521a0aea7b"
+  },
+  "ActualDownload": {
+    "ReceiptSHA256": "57e83bb37a74744cc0ba8ac6176c0bcade53831fba5eb20afe741ea820cb09f5",
+    "Passed": true,
+    "DoneConfirmed": true,
+    "FlashWritten": false,
+    "CleanupErrors": [],
+    "StartedUTC": "2026-11-01T08:55:48.043022+00:00",
+    "EndedUTC": "2026-11-01T08:57:20.663533+00:00"
+  },
+  "LiveObservation": {
+    "SHA256": "41e85b19f6588b6135195a35c409598f0f98e281b49b5b258c9e6e71bd40bbad",
+    "StateSHA256": "cfd07af87e04522e44192befbe6c069ff54b9f18a93f6c5e8850a5b61d842139",
+    "NormalImage": true,
+    "OrientationCorrect": true,
+    "LiveUpdates": true,
+    "CaptureAndProcessingActivity": true,
+    "NoFaultLED": true,
+    "BorderSeparatelyConfirmed": false,
+    "PhysicalPixelByPixelMeasured": false,
+    "SensorClockMeasured": false,
+    "LongTermStabilityAccepted": false
+  },
+  "NextStep": "Acquire one current720 raw image, check mode geometry and whether old lens calibration transfers; use limited independent validation if justified, otherwise additional calibration. Then measure and improve FPS."
+}

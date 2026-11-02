@@ -1,6 +1,6 @@
 # FPGA 实时图像畸变矫正
 
-## 当前项目主线：电脑 HDMI 输入，1080p30（2026-11-01 更正）
+## 团队 HDMI 输入路线：1080p30目标（2026-11-01）
 
 **目标：电脑 HDMI 输入 → FPGA 畸变矫正 → HDMI 输出；有效图像 1920×1080、逐行（progressive）、30 fps，显示刷新 30 Hz。** 这是当前开发与验收目标，**不是已经实测达到的性能**。摄像头、新镜头采集或重新标定不是本主线推进的前置条件。
 
@@ -8,18 +8,18 @@
 
 仓库同时保留同学的摄像头 VGA/720p 分工与历史成果，**不将该支线的分辨率、帧率或“暂停 HDMI IN”安排写成全仓主线**。发布版本、未发布本地候选和两条路线的证据边界见上述计划。
 
-## 同学摄像头分工：VGA 成果与独立 720p 候选
+## 摄像头分工：720p实际镜头矫正与15 FPS统计（2026-11-02）
 
-已入库的摄像头分工已完成 **OV5640 CAM2 → 640×480 实际镜头畸变矫正 → HDMI 显示**。用户实板确认画面持续更新、直线明显变直，LED5/6闪烁、LED7常灭；LED6十完整周期13–14秒，处理完成帧率人工估算 **22.9–24.6 fps（约24 fps）**。HDMI 1080p30仅为扫描格式，不代表有效相机分辨率或每秒显示30张新图。
+当前摄像头路线已完成 **OV5640 CAM2 → 1280×720实际镜头矫正 → HDMI OUT** 的实现、完整数字/物理检查和统计版SRAM下载。30秒与120秒UART采集的接受、处理完成、唯一输出平均均为 **15.0 FPS**，无遥测CRC拒包、标签不匹配或观察到的序号缺口。输出扫描仍为1080p30；有效相机/处理图像是720p，15fps是标称核心计时下的新帧计数，不是30Hz刷新，也不等于传感器全部输入帧。
 
-该支线镜头使用12张训练、6张独立验证完成标定；两帧真实原图的614400个RTL输出像素匹配独立整数参考，原生双角十类时序和限定IO/CDC检查通过。右下物理遮挡区未光学验收，人工帧率观察不替代精确性能或长期稳定测量。
+最终内部时序和2486/2486项CDC/IO检查通过，位流SHA `825bbf3920ee8c2d769b0f39a4b11f1c9eddad27247e19d8faeae2bccfaaa952`。真实参数迁移的独立验证覆盖左侧/中央；完整921600坐标数值核验及两帧1843200扫描像素RTL比较通过。本版仍待新实屏、全视场光学与更长稳定性验收，UART缺少欠流/故障遥测。
 
-- [摄像头矫正位流、来源快照与离线验收](distortion/results/calibrated-camera-ready-20261101-a/README.md)
-- [SRAM实际下载与DONE回执](distortion/results/calibrated-camera-download-20261101-a/README.md)
-- [用户实屏矫正反馈](distortion/results/calibrated-camera-live-20261101-a/README.md)和[摄像头帧率观察](distortion/results/calibrated-camera-frame-rate-20261101-a/README.md)
-- [标定与完整开发交接](handoff/CAMERA_VGA_CALIBRATED_BUILD_20261101.md)
+- [当前统计位流、下载回执、原始UART及离线复核入口](distortion/results/camera720-stats-live-20261102-a/README.md)
+- [当前资源：LUT22.44%、FF14.03%、APM27.50%、DRM10.65%](handoff/CAMERA_720P_RESOURCES_20261102.md)
+- [摄像头当前交接](handoff/CURRENT.md)、[统计版构建](handoff/CAMERA_720P_STATS_BUILD_20261102.md)、[帧率分析与后续](handoff/CAMERA_720P_PERFORMANCE_PLAN_20261101.md)
+- [无UART的720p矫正回退包](distortion/results/camera720-calibrated-20261101-a/README.md)、[已验收VGA实屏记录](distortion/results/calibrated-camera-live-20261101-a/README.md)
 
-该分工的后续是有效相机/处理图像 1280×720，再评估帧率；不是本用户的 1080p30 HDMI 输入目标。已核对独立分支 `codex/camera720-output`（`05c5b19c903eaa6ad659df11de1902cd9d372360`，[PR #17](https://github.com/zhang-yl24/fpga-distortion-correction/pull/17)）：分支离线报告记录两帧共 1,843,200 个模型 HDMI 像素匹配，但属于单位映射运输验证，不代表整体 CI 或物理通过；720p 镜头参数、最终时序/CDC、位流及实板验收仍未完成。见[该提交的 720p 实现交接](https://github.com/zhang-yl24/fpga-distortion-correction/blob/05c5b19c903eaa6ad659df11de1902cd9d372360/handoff/CAMERA_720P_IMPLEMENTATION_20261101.md)；原[720p任务顺序](handoff/CAMERA_720P_NEXT_20261101.md)仅适用于摄像头分工。VGA 源码与封存位流保留用于回退，不能据历史下载记录推断当前板卡供电或 SRAM 内容。
+摄像头任务下一步测PCLK/传感器有效帧与帧调度，再尝试提帧；不会因合并队友文档转向HDMI输入。此前VGA LED十周期13–14秒对应约23–25fps，不能误写13–14fps，也不是同分辨率提帧对照。相机原始照片和大型本地构建目录不进入仓库。历史回退位流保留，SRAM掉电后需重新下载。
 
 下文保留历史阶段，不覆盖顶部项目主线及各支线的证据范围。私人现场相机像素和大型构建中间文件留在本机；封存包提供来源和哈希引用。
 
