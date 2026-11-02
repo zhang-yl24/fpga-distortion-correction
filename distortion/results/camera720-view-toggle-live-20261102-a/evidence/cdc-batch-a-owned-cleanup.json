@@ -1,0 +1,40 @@
+{
+  "Schema": "camera720-view-toggle-owned-timeout-cleanup-v1",
+  "SourceReceipt": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle\\cdc-final-query-00-a\\result.json",
+    "SHA256": "39716e3e3d1b32f5c1610b96482fafe4ffd1acaebee03b2b05bd7c7b6117b6d1"
+  },
+  "OwnedPID": 30768,
+  "OwnershipEvidence": "Original failed receipt OwnedPID=30768; matching pds_shell start2026-11-02 14:22:34 and active original query context.",
+  "DefaultRetry": {
+    "Command": [
+      "taskkill.exe",
+      "/PID",
+      "30768",
+      "/T",
+      "/F"
+    ],
+    "ExitCode": 1,
+    "Output": "ERROR: Access denied"
+  },
+  "EscalatedRetry": {
+    "Command": [
+      "taskkill.exe",
+      "/PID",
+      "30768",
+      "/T",
+      "/F"
+    ],
+    "ExitCode": 0,
+    "TerminatedPIDs": [
+      11604,
+      36172,
+      24560,
+      30768
+    ]
+  },
+  "FailedOriginalReceiptModified": false,
+  "PartialTimingReportsAccepted": false,
+  "HardwareAccessed": false,
+  "UTC": "2026-11-02T06:37:48.239030+00:00"
+}

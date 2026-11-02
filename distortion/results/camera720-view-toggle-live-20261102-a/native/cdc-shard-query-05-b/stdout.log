@@ -1,0 +1,995 @@
+License checkout: fabric_shell from D:\pango\new_pds_00e04cf107df.lic
+Compiling architecture definition.
+Analyzing project file 'D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/camera720_view_toggle_top.pds'.
+Executing : set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676
+Executing : set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676 successfully.
+
+
+Executing : add_design D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/dummy.v
+Executing : add_design D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/dummy.v successfully.
+Executing : mpnr -input D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/input.adf
+Compiling verification operator library.
+Compiling common defs.
+Compiling prim grid devices.
+Compiling place grid timing.
+Compiling prim grid device symbols.
+Compiling gate devices.
+Compiling gate operators.
+Building architecture model.
+Loading device packaging model.
+Building architecture floorplan logic view.
+Building architecture schematic structure.
+Building architecture floorplan schematic view.
+NOTE: The technology fpga was specified.
+NOTE: delay_model specified was generic_cmos.
+NOTE: Using the fpga syntax tables...
+Elaborate the liberty model.
+Totals:
+ Calls to malloc = 0
+ Calls to calloc = 9472601
+
+I: Column Clock Check open.
+Read Column Clock Map.
+Executing : mpnr -input D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/input.adf successfully.
+Executing : mpnr_report_timing -force_to_run -delay_type min_max -max_path 1000 -nworst 4 -report_exception TRUE
+NOTE: The technology fpga was specified.
+NOTE: delay_model specified was generic_cmos.
+NOTE: Using the fpga syntax tables...
+Elaborate the liberty model.
+Totals:
+ Calls to malloc = 0
+ Calls to calloc = 18945202
+
+Constructing timing graph ...
+Timing graph has been constructed successfully
+W: Timing-4087: Port 'cam_rst_n' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'cam_scl' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'cam_scl' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'cam_sda' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'cam_sda' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'hd_scl' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'hd_scl' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'hd_sda' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'hd_sda' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[0]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[0]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[1]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[1]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[2]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[2]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[3]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[3]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[4]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[4]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[5]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[5]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[6]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[6]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[7]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[7]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[8]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[8]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[9]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[9]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[10]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[10]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[11]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[11]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[12]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[12]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[13]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[13]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[14]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[14]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[15]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[15]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[16]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[16]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[17]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[17]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[18]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[18]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[19]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[19]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[20]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[20]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[21]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[21]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[22]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[22]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[23]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[23]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[24]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[24]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[25]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[25]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[26]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[26]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[27]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[27]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[28]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[28]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[29]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[29]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[30]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[30]' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'mem_dq[31]' is not constrained, it is treated as combinational input.
+W: Timing-4087: Port 'mem_dq[31]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs_n[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs_n[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs_n[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dqs_n[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[4]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[5]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[6]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'b_out[7]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'de_out' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[4]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[5]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[6]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'g_out[7]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'hs_out' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[4]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[5]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[6]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'led[7]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[4]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[5]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[6]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[7]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[8]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[9]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[10]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[11]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[12]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[13]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_a[14]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_ba[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_ba[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_ba[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_cas_n' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_ck' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_ck_n' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_cke' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_cs_n' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dm[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dm[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dm[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_dm[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_odt' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_ras_n' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_rst_n' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'mem_we_n' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'pix_clk' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[0]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[1]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[2]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[3]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[4]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[5]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[6]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'r_out[7]' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'rstn_out' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'uart_txd' is not constrained, it is treated as combinational output.
+W: Timing-4087: Port 'vs_out' is not constrained, it is treated as combinational output.
+W: Timing-4086: Port 'clk_n' is not constrained, it is treated as combinational input.
+W: Timing-4086: Port 'key1_n' is not constrained, it is treated as combinational input.
+W: Timing-4086: Port 'reset_n' is not constrained, it is treated as combinational input.
+Executing : mpnr_report_timing -force_to_run -delay_type min_max -max_path 1000 -nworst 4 -report_exception TRUE successfully.
+Executing : get_pins -hierarchical -regexp {^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[89\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[89\]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$}
+I: Timing-5001: The pattern '^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[89\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[89\]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$' in command 'get_pins -hierarchical -regexp {^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[89\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[89\]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$}' match 30 objects below: t:camera_configuration/monitor/frame_age[0]/opit_0_AL6QL5_perm/I3 t:camera_configuration/monitor/frame_age[1]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[2]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[3]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[5]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[6]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[7]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[9]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[10]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[11]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[13]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[14]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[15]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[17]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[18]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[19]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[21]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/held_snapshot[89]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q t:camera_configuration/monitor/held_snapshot[89]/opit_0_L6Q_LUT6DQL5Q_perm/CLK t:camera_configuration/monitor/previous_edges[13]/opit_0_L6Q_LUT6DQL5Q_perm/I3
+Executing : get_pins -hierarchical -regexp {^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[89\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[89\]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$} successfully.
+
+
+Executing : report_path_timing -delay_type min_max -max_path 1000 -nworst 8 -report_exception TRUE -from {camera_configuration/monitor/held_snapshot[89]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -through {camera_configuration/monitor/held_snapshot[89]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q} -to {camera_configuration/monitor/frame_age[0]/opit_0_AL6QL5_perm/I3 camera_configuration/monitor/frame_age[10]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[11]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[13]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[14]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[15]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[17]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[18]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[19]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[1]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[21]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[2]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[3]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[5]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[6]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[7]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[9]/opit_0_AQ_perm/I4 camera_configuration/monitor/previous_edges[13]/opit_0_L6Q_LUT6DQL5Q_perm/I3}
+report_path_timing_1: Process "Report Timing" started.
+report_path_timing_1: Current time: Mon Nov  2 14:37:08 2026
+report_path_timing_1: Compiling architecture definition.
+report_path_timing_1: Analyzing project file 'D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/report_path_timing/report_path_timing_1/project.pds'.
+report_path_timing_1: Compiling verification operator library.
+report_path_timing_1: Compiling common defs.
+report_path_timing_1: Compiling prim grid devices.
+report_path_timing_1: Compiling place grid timing.
+report_path_timing_1: Compiling gate devices.
+report_path_timing_1: Compiling gate operators.
+report_path_timing_1: Building architecture model.
+report_path_timing_1: Loading device packaging model.
+report_path_timing_1: Reading design from pnr DB.
+report_path_timing_1: Start Report Post-PnR timing.
+report_path_timing_1: NOTE: The technology fpga was specified.
+report_path_timing_1: NOTE: delay_model specified was generic_cmos.
+report_path_timing_1: NOTE: Using the fpga syntax tables...
+report_path_timing_1: Elaborate the liberty model.
+report_path_timing_1: Totals:
+report_path_timing_1:  Calls to malloc = 0
+report_path_timing_1:  Calls to calloc = 9472601
+report_path_timing_1: 
+report_path_timing_1: Constructing timing graph ...
+report_path_timing_1: Timing graph has been constructed successfully
+W: report_path_timing_1: Timing-4087: Port 'cam_rst_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'cam_scl' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'cam_scl' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'cam_sda' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'cam_sda' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'hd_scl' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'hd_scl' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'hd_sda' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'hd_sda' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[0]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[1]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[2]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[3]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[4]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[5]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[6]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[7]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[8]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[8]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[9]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[9]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[10]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[10]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[11]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[11]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[12]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[12]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[13]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[13]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[14]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[14]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[15]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[15]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[16]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[16]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[17]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[17]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[18]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[18]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[19]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[19]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[20]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[20]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[21]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[21]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[22]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[22]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[23]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[23]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[24]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[24]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[25]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[25]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[26]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[26]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[27]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[27]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[28]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[28]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[29]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[29]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[30]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[30]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'mem_dq[31]' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4087: Port 'mem_dq[31]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_dqs[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_dqs[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_dqs[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_dqs[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_dqs_n[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_dqs_n[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_dqs_n[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_dqs_n[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'b_out[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'b_out[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'b_out[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'b_out[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'b_out[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'b_out[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'b_out[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'b_out[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'de_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'g_out[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'g_out[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'g_out[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'g_out[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'g_out[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'g_out[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'g_out[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'g_out[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'hs_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'led[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'led[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'led[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'led[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'led[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'led[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'led[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'led[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[8]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[9]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[10]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[11]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[12]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[13]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_a[14]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_ba[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_ba[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_ba[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_cas_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_ck' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_ck_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_cke' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_cs_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_dm[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_dm[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_dm[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_dm[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_odt' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_ras_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_rst_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'mem_we_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'pix_clk' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'r_out[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'r_out[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'r_out[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'r_out[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'r_out[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'r_out[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'r_out[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'r_out[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'rstn_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'uart_txd' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4087: Port 'vs_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_1: Timing-4086: Port 'clk_n' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4086: Port 'key1_n' is not constrained, it is treated as combinational input.
+W: report_path_timing_1: Timing-4086: Port 'reset_n' is not constrained, it is treated as combinational input.
+report_path_timing_1: Action report_timing: Export DB successfully.
+report_path_timing_1: Report timing is finished successfully.
+report_path_timing_1: Action report_timing: Real time elapsed is 0h:0m:28s
+report_path_timing_1: Action report_timing: CPU time elapsed is 0h:0m:25s
+report_path_timing_1: Action report_timing: Process CPU time elapsed is 0h:0m:28s
+report_path_timing_1: Action report_timing: Peak memory pool usage is 1,833 MB
+report_path_timing_1: 
+report_path_timing_1: Current time: Mon Nov  2 14:37:35 2026
+W: report_path_timing_1: Failed to open file D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/place_route/run_route_optimize.log
+W: report_path_timing_1: Failed to open file D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/place_route/run_route.log
+W: report_path_timing_1: Failed to open file D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/place_route/run_place.log
+report_path_timing_1: Action from dev_map to report_timing: Total Real Time elapsed is 0h:0m:0s
+report_path_timing_1: Action from dev_map to report_timing: Total CPU time elapsed is 0h:0m:0s
+report_path_timing_1: Action from dev_map to report_timing: Total Process CPU Time elapsed is 0h:0m:0s
+report_path_timing_1: Process "Report Timing" done.
+Executing : report_path_timing -delay_type min_max -max_path 1000 -nworst 8 -report_exception TRUE -from {camera_configuration/monitor/held_snapshot[89]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -through {camera_configuration/monitor/held_snapshot[89]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q} -to {camera_configuration/monitor/frame_age[0]/opit_0_AL6QL5_perm/I3 camera_configuration/monitor/frame_age[10]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[11]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[13]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[14]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[15]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[17]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[18]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[19]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[1]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[21]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[2]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[3]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[5]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[6]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[7]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[9]/opit_0_AQ_perm/I4 camera_configuration/monitor/previous_edges[13]/opit_0_L6Q_LUT6DQL5Q_perm/I3} successfully.
+Executing : get_pins -hierarchical -regexp {^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$}
+I: Timing-5001: The pattern '^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$' in command 'get_pins -hierarchical -regexp {^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$}' match 30 objects below: t:camera_configuration/monitor/frame_age[0]/opit_0_AL6QL5_perm/I3 t:camera_configuration/monitor/frame_age[1]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[2]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[3]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[5]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[6]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[7]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[9]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[10]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[11]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[13]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[14]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[15]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[17]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[18]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[19]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[21]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/held_snapshot[91]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q t:camera_configuration/monitor/held_snapshot[91]/opit_0_L6Q_LUT6DQL5Q_perm/CLK t:camera_configuration/monitor/previous_edges[13]/opit_0_L6Q_LUT6DQL5Q_perm/I3
+Executing : get_pins -hierarchical -regexp {^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$} successfully.
+
+
+Executing : report_path_timing -delay_type min_max -max_path 1000 -nworst 8 -report_exception TRUE -from {camera_configuration/monitor/held_snapshot[91]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -through {camera_configuration/monitor/held_snapshot[91]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q} -to {camera_configuration/monitor/frame_age[0]/opit_0_AL6QL5_perm/I3 camera_configuration/monitor/frame_age[10]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[11]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[13]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[14]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[15]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[17]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[18]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[19]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[1]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[21]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[2]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[3]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[5]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[6]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[7]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[9]/opit_0_AQ_perm/I4 camera_configuration/monitor/previous_edges[13]/opit_0_L6Q_LUT6DQL5Q_perm/I3}
+report_path_timing_2: Process "Report Timing" started.
+report_path_timing_2: Current time: Mon Nov  2 14:37:37 2026
+report_path_timing_2: Compiling architecture definition.
+report_path_timing_2: Analyzing project file 'D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/report_path_timing/report_path_timing_2/project.pds'.
+report_path_timing_2: Compiling verification operator library.
+report_path_timing_2: Compiling common defs.
+report_path_timing_2: Compiling prim grid devices.
+report_path_timing_2: Compiling place grid timing.
+report_path_timing_2: Compiling gate devices.
+report_path_timing_2: Compiling gate operators.
+report_path_timing_2: Building architecture model.
+report_path_timing_2: Loading device packaging model.
+report_path_timing_2: Reading design from pnr DB.
+report_path_timing_2: Start Report Post-PnR timing.
+report_path_timing_2: NOTE: The technology fpga was specified.
+report_path_timing_2: NOTE: delay_model specified was generic_cmos.
+report_path_timing_2: NOTE: Using the fpga syntax tables...
+report_path_timing_2: Elaborate the liberty model.
+report_path_timing_2: Totals:
+report_path_timing_2:  Calls to malloc = 0
+report_path_timing_2:  Calls to calloc = 9472601
+report_path_timing_2: 
+report_path_timing_2: Constructing timing graph ...
+report_path_timing_2: Timing graph has been constructed successfully
+W: report_path_timing_2: Timing-4087: Port 'cam_rst_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'cam_scl' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'cam_scl' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'cam_sda' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'cam_sda' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'hd_scl' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'hd_scl' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'hd_sda' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'hd_sda' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[0]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[1]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[2]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[3]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[4]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[5]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[6]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[7]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[8]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[8]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[9]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[9]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[10]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[10]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[11]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[11]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[12]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[12]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[13]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[13]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[14]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[14]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[15]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[15]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[16]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[16]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[17]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[17]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[18]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[18]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[19]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[19]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[20]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[20]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[21]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[21]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[22]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[22]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[23]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[23]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[24]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[24]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[25]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[25]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[26]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[26]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[27]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[27]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[28]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[28]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[29]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[29]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[30]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[30]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'mem_dq[31]' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4087: Port 'mem_dq[31]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_dqs[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_dqs[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_dqs[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_dqs[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_dqs_n[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_dqs_n[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_dqs_n[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_dqs_n[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'b_out[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'b_out[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'b_out[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'b_out[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'b_out[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'b_out[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'b_out[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'b_out[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'de_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'g_out[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'g_out[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'g_out[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'g_out[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'g_out[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'g_out[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'g_out[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'g_out[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'hs_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'led[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'led[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'led[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'led[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'led[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'led[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'led[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'led[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[8]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[9]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[10]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[11]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[12]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[13]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_a[14]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_ba[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_ba[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_ba[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_cas_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_ck' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_ck_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_cke' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_cs_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_dm[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_dm[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_dm[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_dm[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_odt' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_ras_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_rst_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'mem_we_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'pix_clk' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'r_out[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'r_out[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'r_out[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'r_out[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'r_out[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'r_out[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'r_out[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'r_out[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'rstn_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'uart_txd' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4087: Port 'vs_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_2: Timing-4086: Port 'clk_n' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4086: Port 'key1_n' is not constrained, it is treated as combinational input.
+W: report_path_timing_2: Timing-4086: Port 'reset_n' is not constrained, it is treated as combinational input.
+report_path_timing_2: Action report_timing: Export DB successfully.
+report_path_timing_2: Report timing is finished successfully.
+report_path_timing_2: Action report_timing: Real time elapsed is 0h:0m:27s
+report_path_timing_2: Action report_timing: CPU time elapsed is 0h:0m:23s
+report_path_timing_2: Action report_timing: Process CPU time elapsed is 0h:0m:26s
+report_path_timing_2: Action report_timing: Peak memory pool usage is 1,833 MB
+report_path_timing_2: 
+report_path_timing_2: Current time: Mon Nov  2 14:38:03 2026
+W: report_path_timing_2: Failed to open file D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/place_route/run_route_optimize.log
+W: report_path_timing_2: Failed to open file D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/place_route/run_route.log
+W: report_path_timing_2: Failed to open file D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/place_route/run_place.log
+report_path_timing_2: Action from dev_map to report_timing: Total Real Time elapsed is 0h:0m:0s
+report_path_timing_2: Action from dev_map to report_timing: Total CPU time elapsed is 0h:0m:0s
+report_path_timing_2: Action from dev_map to report_timing: Total Process CPU Time elapsed is 0h:0m:0s
+report_path_timing_2: Process "Report Timing" done.
+Executing : report_path_timing -delay_type min_max -max_path 1000 -nworst 8 -report_exception TRUE -from {camera_configuration/monitor/held_snapshot[91]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -through {camera_configuration/monitor/held_snapshot[91]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q} -to {camera_configuration/monitor/frame_age[0]/opit_0_AL6QL5_perm/I3 camera_configuration/monitor/frame_age[10]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[11]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[13]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[14]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[15]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[17]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[18]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[19]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[1]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[21]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[2]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[3]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[5]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[6]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[7]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[9]/opit_0_AQ_perm/I4 camera_configuration/monitor/previous_edges[13]/opit_0_L6Q_LUT6DQL5Q_perm/I3} successfully.
+Executing : get_pins -hierarchical -regexp {^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$}
+I: Timing-5001: The pattern '^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$' in command 'get_pins -hierarchical -regexp {^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$}' match 30 objects below: t:camera_configuration/monitor/frame_age[0]/opit_0_AL6QL5_perm/I3 t:camera_configuration/monitor/frame_age[1]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[2]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[3]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[5]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[6]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[7]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[9]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[10]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[11]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[13]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[14]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[15]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[17]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[18]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[19]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[21]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/held_snapshot[91]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q t:camera_configuration/monitor/held_snapshot[91]/opit_0_L6Q_LUT6DQL5Q_perm/CLK t:camera_configuration/monitor/previous_edges[13]/opit_0_L6Q_LUT6DQL5Q_perm/I3
+Executing : get_pins -hierarchical -regexp {^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[91\]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$} successfully.
+
+
+Executing : report_path_timing -delay_type min_max -max_path 1000 -nworst 8 -report_exception TRUE -from {camera_configuration/monitor/held_snapshot[91]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -through {camera_configuration/monitor/held_snapshot[91]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q} -to {camera_configuration/monitor/frame_age[0]/opit_0_AL6QL5_perm/I3 camera_configuration/monitor/frame_age[10]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[11]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[13]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[14]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[15]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[17]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[18]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[19]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[1]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[21]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[2]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[3]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[5]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[6]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[7]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[9]/opit_0_AQ_perm/I4 camera_configuration/monitor/previous_edges[13]/opit_0_L6Q_LUT6DQL5Q_perm/I3}
+report_path_timing_3: Process "Report Timing" started.
+report_path_timing_3: Current time: Mon Nov  2 14:38:04 2026
+report_path_timing_3: Compiling architecture definition.
+report_path_timing_3: Analyzing project file 'D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/report_path_timing/report_path_timing_3/project.pds'.
+report_path_timing_3: Compiling verification operator library.
+report_path_timing_3: Compiling common defs.
+report_path_timing_3: Compiling prim grid devices.
+report_path_timing_3: Compiling place grid timing.
+report_path_timing_3: Compiling gate devices.
+report_path_timing_3: Compiling gate operators.
+report_path_timing_3: Building architecture model.
+report_path_timing_3: Loading device packaging model.
+report_path_timing_3: Reading design from pnr DB.
+report_path_timing_3: Start Report Post-PnR timing.
+report_path_timing_3: NOTE: The technology fpga was specified.
+report_path_timing_3: NOTE: delay_model specified was generic_cmos.
+report_path_timing_3: NOTE: Using the fpga syntax tables...
+report_path_timing_3: Elaborate the liberty model.
+report_path_timing_3: Totals:
+report_path_timing_3:  Calls to malloc = 0
+report_path_timing_3:  Calls to calloc = 9472601
+report_path_timing_3: 
+report_path_timing_3: Constructing timing graph ...
+report_path_timing_3: Timing graph has been constructed successfully
+W: report_path_timing_3: Timing-4087: Port 'cam_rst_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'cam_scl' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'cam_scl' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'cam_sda' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'cam_sda' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'hd_scl' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'hd_scl' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'hd_sda' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'hd_sda' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[0]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[1]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[2]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[3]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[4]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[5]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[6]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[7]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[8]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[8]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[9]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[9]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[10]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[10]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[11]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[11]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[12]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[12]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[13]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[13]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[14]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[14]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[15]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[15]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[16]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[16]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[17]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[17]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[18]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[18]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[19]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[19]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[20]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[20]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[21]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[21]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[22]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[22]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[23]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[23]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[24]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[24]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[25]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[25]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[26]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[26]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[27]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[27]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[28]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[28]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[29]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[29]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[30]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[30]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'mem_dq[31]' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4087: Port 'mem_dq[31]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_dqs[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_dqs[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_dqs[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_dqs[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_dqs_n[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_dqs_n[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_dqs_n[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_dqs_n[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'b_out[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'b_out[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'b_out[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'b_out[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'b_out[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'b_out[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'b_out[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'b_out[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'de_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'g_out[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'g_out[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'g_out[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'g_out[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'g_out[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'g_out[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'g_out[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'g_out[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'hs_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'led[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'led[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'led[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'led[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'led[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'led[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'led[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'led[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[8]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[9]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[10]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[11]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[12]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[13]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_a[14]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_ba[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_ba[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_ba[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_cas_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_ck' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_ck_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_cke' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_cs_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_dm[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_dm[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_dm[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_dm[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_odt' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_ras_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_rst_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'mem_we_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'pix_clk' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'r_out[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'r_out[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'r_out[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'r_out[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'r_out[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'r_out[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'r_out[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'r_out[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'rstn_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'uart_txd' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4087: Port 'vs_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_3: Timing-4086: Port 'clk_n' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4086: Port 'key1_n' is not constrained, it is treated as combinational input.
+W: report_path_timing_3: Timing-4086: Port 'reset_n' is not constrained, it is treated as combinational input.
+report_path_timing_3: Action report_timing: Export DB successfully.
+report_path_timing_3: Report timing is finished successfully.
+report_path_timing_3: Action report_timing: Real time elapsed is 0h:0m:26s
+report_path_timing_3: Action report_timing: CPU time elapsed is 0h:0m:23s
+report_path_timing_3: Action report_timing: Process CPU time elapsed is 0h:0m:26s
+report_path_timing_3: Action report_timing: Peak memory pool usage is 1,834 MB
+report_path_timing_3: 
+report_path_timing_3: Current time: Mon Nov  2 14:38:29 2026
+W: report_path_timing_3: Failed to open file D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/place_route/run_route_optimize.log
+W: report_path_timing_3: Failed to open file D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/place_route/run_route.log
+W: report_path_timing_3: Failed to open file D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/place_route/run_place.log
+report_path_timing_3: Action from dev_map to report_timing: Total Real Time elapsed is 0h:0m:0s
+report_path_timing_3: Action from dev_map to report_timing: Total CPU time elapsed is 0h:0m:0s
+report_path_timing_3: Action from dev_map to report_timing: Total Process CPU Time elapsed is 0h:0m:0s
+report_path_timing_3: Process "Report Timing" done.
+Executing : report_path_timing -delay_type min_max -max_path 1000 -nworst 8 -report_exception TRUE -from {camera_configuration/monitor/held_snapshot[91]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -through {camera_configuration/monitor/held_snapshot[91]/opit_0_L6Q_LUT6DQL5Q_perm/L6Q} -to {camera_configuration/monitor/frame_age[0]/opit_0_AL6QL5_perm/I3 camera_configuration/monitor/frame_age[10]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[11]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[13]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[14]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[15]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[17]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[18]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[19]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[1]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[21]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[2]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[3]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[5]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[6]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[7]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[9]/opit_0_AQ_perm/I4 camera_configuration/monitor/previous_edges[13]/opit_0_L6Q_LUT6DQL5Q_perm/I3} successfully.
+Executing : get_pins -hierarchical -regexp {^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[93\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[93\]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$}
+I: Timing-5001: The pattern '^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[93\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[93\]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$' in command 'get_pins -hierarchical -regexp {^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[93\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[93\]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$}' match 30 objects below: t:camera_configuration/monitor/frame_age[0]/opit_0_AL6QL5_perm/I3 t:camera_configuration/monitor/frame_age[1]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[2]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[3]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[5]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[6]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[7]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[9]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[10]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[11]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[13]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[14]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[15]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[17]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/frame_age[18]/opit_0_AQ_perm/I0 t:camera_configuration/monitor/frame_age[19]/opit_0_AQ_perm/I2 t:camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/CIN t:camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/I3 t:camera_configuration/monitor/frame_age[21]/opit_0_AQ_perm/I4 t:camera_configuration/monitor/held_snapshot[93]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q t:camera_configuration/monitor/held_snapshot[93]/opit_0_L6Q_LUT6DQL5Q_perm/CLK t:camera_configuration/monitor/previous_edges[13]/opit_0_L6Q_LUT6DQL5Q_perm/I3
+Executing : get_pins -hierarchical -regexp {^(camera_configuration/monitor/frame_age\[0\]/opit_0_AL6QL5_perm/I3|camera_configuration/monitor/frame_age\[10\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[11\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[12\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[13\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[14\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[15\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[16\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[17\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[18\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[19\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[1\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[20\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[21\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[2\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[3\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[4\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[5\]/opit_0_AQ_perm/I4|camera_configuration/monitor/frame_age\[6\]/opit_0_AQ_perm/I0|camera_configuration/monitor/frame_age\[7\]/opit_0_AQ_perm/I2|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/CIN|camera_configuration/monitor/frame_age\[8\]/opit_0_AQ_perm/I3|camera_configuration/monitor/frame_age\[9\]/opit_0_AQ_perm/I4|camera_configuration/monitor/held_snapshot\[93\]/opit_0_L6Q_LUT6DQL5Q_perm/CLK|camera_configuration/monitor/held_snapshot\[93\]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q|camera_configuration/monitor/previous_edges\[13\]/opit_0_L6Q_LUT6DQL5Q_perm/I3)$} successfully.
+
+
+Executing : report_path_timing -delay_type min_max -max_path 1000 -nworst 8 -report_exception TRUE -from {camera_configuration/monitor/held_snapshot[93]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -through {camera_configuration/monitor/held_snapshot[93]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q} -to {camera_configuration/monitor/frame_age[0]/opit_0_AL6QL5_perm/I3 camera_configuration/monitor/frame_age[10]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[11]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[13]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[14]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[15]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[17]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[18]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[19]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[1]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[21]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[2]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[3]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[5]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[6]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[7]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[9]/opit_0_AQ_perm/I4 camera_configuration/monitor/previous_edges[13]/opit_0_L6Q_LUT6DQL5Q_perm/I3}
+report_path_timing_4: Process "Report Timing" started.
+report_path_timing_4: Current time: Mon Nov  2 14:38:31 2026
+report_path_timing_4: Compiling architecture definition.
+report_path_timing_4: Analyzing project file 'D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/report_path_timing/report_path_timing_4/project.pds'.
+report_path_timing_4: Compiling verification operator library.
+report_path_timing_4: Compiling common defs.
+report_path_timing_4: Compiling prim grid devices.
+report_path_timing_4: Compiling place grid timing.
+report_path_timing_4: Compiling gate devices.
+report_path_timing_4: Compiling gate operators.
+report_path_timing_4: Building architecture model.
+report_path_timing_4: Loading device packaging model.
+report_path_timing_4: Reading design from pnr DB.
+report_path_timing_4: Start Report Post-PnR timing.
+report_path_timing_4: NOTE: The technology fpga was specified.
+report_path_timing_4: NOTE: delay_model specified was generic_cmos.
+report_path_timing_4: NOTE: Using the fpga syntax tables...
+report_path_timing_4: Elaborate the liberty model.
+report_path_timing_4: Totals:
+report_path_timing_4:  Calls to malloc = 0
+report_path_timing_4:  Calls to calloc = 9472601
+report_path_timing_4: 
+report_path_timing_4: Constructing timing graph ...
+report_path_timing_4: Timing graph has been constructed successfully
+W: report_path_timing_4: Timing-4087: Port 'cam_rst_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'cam_scl' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'cam_scl' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'cam_sda' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'cam_sda' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'hd_scl' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'hd_scl' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'hd_sda' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'hd_sda' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[0]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[1]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[2]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[3]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[4]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[5]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[6]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[7]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[8]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[8]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[9]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[9]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[10]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[10]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[11]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[11]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[12]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[12]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[13]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[13]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[14]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[14]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[15]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[15]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[16]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[16]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[17]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[17]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[18]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[18]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[19]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[19]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[20]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[20]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[21]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[21]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[22]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[22]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[23]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[23]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[24]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[24]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[25]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[25]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[26]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[26]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[27]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[27]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[28]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[28]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[29]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[29]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[30]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[30]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'mem_dq[31]' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4087: Port 'mem_dq[31]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_dqs[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_dqs[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_dqs[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_dqs[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_dqs_n[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_dqs_n[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_dqs_n[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_dqs_n[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'b_out[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'b_out[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'b_out[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'b_out[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'b_out[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'b_out[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'b_out[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'b_out[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'de_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'g_out[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'g_out[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'g_out[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'g_out[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'g_out[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'g_out[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'g_out[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'g_out[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'hs_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'led[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'led[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'led[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'led[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'led[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'led[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'led[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'led[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[8]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[9]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[10]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[11]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[12]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[13]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_a[14]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_ba[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_ba[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_ba[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_cas_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_ck' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_ck_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_cke' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_cs_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_dm[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_dm[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_dm[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_dm[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_odt' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_ras_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_rst_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'mem_we_n' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'pix_clk' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'r_out[0]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'r_out[1]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'r_out[2]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'r_out[3]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'r_out[4]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'r_out[5]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'r_out[6]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'r_out[7]' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'rstn_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'uart_txd' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4087: Port 'vs_out' is not constrained, it is treated as combinational output.
+W: report_path_timing_4: Timing-4086: Port 'clk_n' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4086: Port 'key1_n' is not constrained, it is treated as combinational input.
+W: report_path_timing_4: Timing-4086: Port 'reset_n' is not constrained, it is treated as combinational input.
+report_path_timing_4: Action report_timing: Export DB successfully.
+report_path_timing_4: Report timing is finished successfully.
+report_path_timing_4: Action report_timing: Real time elapsed is 0h:0m:27s
+report_path_timing_4: Action report_timing: CPU time elapsed is 0h:0m:24s
+report_path_timing_4: Action report_timing: Process CPU time elapsed is 0h:0m:28s
+report_path_timing_4: Action report_timing: Peak memory pool usage is 1,834 MB
+report_path_timing_4: 
+report_path_timing_4: Current time: Mon Nov  2 14:38:57 2026
+W: report_path_timing_4: Failed to open file D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/place_route/run_route_optimize.log
+W: report_path_timing_4: Failed to open file D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/place_route/run_route.log
+W: report_path_timing_4: Failed to open file D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/cdc-shard-query-05-b/place_route/run_place.log
+report_path_timing_4: Action from dev_map to report_timing: Total Real Time elapsed is 0h:0m:0s
+report_path_timing_4: Action from dev_map to report_timing: Total CPU time elapsed is 0h:0m:0s
+report_path_timing_4: Action from dev_map to report_timing: Total Process CPU Time elapsed is 0h:0m:0s
+report_path_timing_4: Process "Report Timing" done.
+Executing : report_path_timing -delay_type min_max -max_path 1000 -nworst 8 -report_exception TRUE -from {camera_configuration/monitor/held_snapshot[93]/opit_0_L6Q_LUT6DQL5Q_perm/CLK} -through {camera_configuration/monitor/held_snapshot[93]/opit_0_L6Q_LUT6DQL5Q_perm/L5Q} -to {camera_configuration/monitor/frame_age[0]/opit_0_AL6QL5_perm/I3 camera_configuration/monitor/frame_age[10]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[11]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[12]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[13]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[14]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[15]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[16]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[17]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[18]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[19]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[1]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[20]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[21]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[2]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[3]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[4]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[5]/opit_0_AQ_perm/I4 camera_configuration/monitor/frame_age[6]/opit_0_AQ_perm/I0 camera_configuration/monitor/frame_age[7]/opit_0_AQ_perm/I2 camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/CIN camera_configuration/monitor/frame_age[8]/opit_0_AQ_perm/I3 camera_configuration/monitor/frame_age[9]/opit_0_AQ_perm/I4 camera_configuration/monitor/previous_edges[13]/opit_0_L6Q_LUT6DQL5Q_perm/I3} successfully.
+CAMERA720_VIEW_TOGGLE_FINAL_INSPECTION_COMPLETE

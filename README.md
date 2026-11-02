@@ -8,18 +8,18 @@
 
 仓库同时保留同学的摄像头 VGA/720p 分工与历史成果，**不将该支线的分辨率、帧率或“暂停 HDMI IN”安排写成全仓主线**。发布版本、未发布本地候选和两条路线的证据边界见上述计划。
 
-## 摄像头分工：720p实际镜头矫正与15 FPS统计（2026-11-02）
+## 摄像头分工：720p原图／矫正一键切换（2026-11-02）
 
-当前摄像头路线已完成 **OV5640 CAM2 → 1280×720实际镜头矫正 → HDMI OUT** 的实现、完整数字/物理检查和统计版SRAM下载。30秒与120秒UART采集的接受、处理完成、唯一输出平均均为 **15.0 FPS**，无遥测CRC拒包、标签不匹配或观察到的序号缺口。输出扫描仍为1080p30；有效相机/处理图像是720p，15fps是标称核心计时下的新帧计数，不是30Hz刷新，也不等于传感器全部输入帧。
+当前摄像头板已运行 **OV5640 CAM2 → 1280×720实际镜头矫正／原图切换 → HDMI OUT**。KEY1每按一次切换，默认矫正；LED0亮为矫正请求、灭为原图请求，画面在完整帧边界后生效。KEY0仍复位。新版本SRAM下载DONE确认、Flash未写，下载后30秒UART取得30包/29有效窗口，接受/处理/唯一输出均 **15.0 FPS**，身份不符/拒包为0；不是HDMI30Hz刷新或传感器全部帧。
 
-最终内部时序和2486/2486项CDC/IO检查通过，位流SHA `825bbf3920ee8c2d769b0f39a4b11f1c9eddad27247e19d8faeae2bccfaaa952`。真实参数迁移的独立验证覆盖左侧/中央；完整921600坐标数值核验及两帧1843200扫描像素RTL比较通过。本版仍待新实屏、全视场光学与更长稳定性验收，UART缺少欠流/故障遥测。
+新版本100项CPU测试、三帧3686400实际显示像素仿真、双角十类内部时序、130引脚电气与2486/2486 CDC case均通过。位流SHA `0ca6d19bf074c73cba0346a22e54ba3afb99a595728e6420a1cbb767b963dfe5`。用户已确认原图／矫正实屏切换正常并授权推送；画面横纹原因仍待对照。没有调整曝光/增益/防频闪、当前镜头参数或插值，没有执行提帧。完整光学迁移验证仍只覆盖左/中区域，UART缺少故障/欠流遥测，数字检查不替代全视场实屏验收。
 
-- [当前统计位流、下载回执、原始UART及离线复核入口](distortion/results/camera720-stats-live-20261102-a/README.md)
-- [当前资源：LUT22.44%、FF14.03%、APM27.50%、DRM10.65%](handoff/CAMERA_720P_RESOURCES_20261102.md)
-- [摄像头当前交接](handoff/CURRENT.md)、[统计版构建](handoff/CAMERA_720P_STATS_BUILD_20261102.md)、[帧率分析与后续](handoff/CAMERA_720P_PERFORMANCE_PLAN_20261101.md)
-- [无UART的720p矫正回退包](distortion/results/camera720-calibrated-20261101-a/README.md)、[已验收VGA实屏记录](distortion/results/calibrated-camera-live-20261101-a/README.md)
+- [当前切换版位流、下载/UART原件与可离线验哈希证据](distortion/results/camera720-view-toggle-live-20261102-a/README.md)
+- [切换实现与验证接续](handoff/CAMERA_720P_VIEW_TOGGLE_20261102.md)、[当前交接](handoff/CURRENT.md)
+- [旧统计版回退与两轮15fps证据](distortion/results/camera720-stats-live-20261102-a/README.md)、[提帧后续计划](handoff/CAMERA_720P_PERFORMANCE_PLAN_20261101.md)
+- [无UART720p回退包](distortion/results/camera720-calibrated-20261101-a/README.md)、[VGA实屏历史](distortion/results/calibrated-camera-live-20261101-a/README.md)
 
-摄像头任务下一步测PCLK/传感器有效帧与帧调度，再尝试提帧；不会因合并队友文档转向HDMI输入。此前VGA LED十周期13–14秒对应约23–25fps，不能误写13–14fps，也不是同分辨率提帧对照。相机原始照片和大型本地构建目录不进入仓库。历史回退位流保留，SRAM掉电后需重新下载。
+摄像头任务先做KEY1同场景原图／矫正与振动细横纹对照，再回到PCLK/传感器帧节拍和调度瓶颈。此安排不改变队友独立HDMI输入路线。原始相机照片和大型work构建不进入仓库，SRAM掉电后需重新下载。
 
 下文保留历史阶段，不覆盖顶部项目主线及各支线的证据范围。私人现场相机像素和大型构建中间文件留在本机；封存包提供来源和哈希引用。
 

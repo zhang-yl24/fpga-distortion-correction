@@ -1,0 +1,99 @@
+{
+  "Schema": "camera720-core-stats-receive-v1",
+  "StartedUTC": "2026-11-02T07:15:03.054105+00:00",
+  "SourceKind": "serial_receive",
+  "SerialConfiguration": {
+    "Port": "COM7",
+    "Baud": 115200,
+    "DataBits": 8,
+    "Parity": "N",
+    "StopBits": 1,
+    "DTR": false,
+    "RTS": false,
+    "FlowControl": false
+  },
+  "ExpectedBuildID": "47e52e93b7238f29",
+  "ExpectedProfileID": "f79c44d9bdeb5b11",
+  "MaximumSeconds": 30.0,
+  "MaximumBytes": 1048576,
+  "NominalCoreHz": 125000000,
+  "ReceptionCompletedWithoutError": true,
+  "ReceptionAndIdentityPassed": true,
+  "StreamOpened": true,
+  "HardwareAccessAttempted": true,
+  "HardwareAccessed": true,
+  "UARTTransmitBytes": 0,
+  "JTAGAccessed": false,
+  "FPGAProgrammed": false,
+  "FPGAImageCryptographicallyVerified": false,
+  "IdentityLabelsAuthenticateHardware": false,
+  "ResetEpochContinuityProven": false,
+  "AssumesContinuousResetEpoch": true,
+  "IndependentCoreFrequencyMeasured": false,
+  "SensorInputFPSMeasured": false,
+  "HDMIRefreshFPSMeasured": false,
+  "UnderflowsAvailable": false,
+  "Underflows": null,
+  "FaultFreeProven": false,
+  "FaultStatusAvailableForAllWindows": false,
+  "KnownFaultObserved": null,
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\camera720_stats_receive.py": "0d2f473e900cc8661711fda1693563093952c6234d91ed2f2167f531b76fee7c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\camera720_stats.py": "f47dd50df0f0a9fc389556e84f56ea1b9041ee98e8637ab253255983a22708cb"
+  },
+  "Limits": "Expected 64-bit IDs are checked, but require an external full source/bit/program binding. Core FPS uses nominal clock frequency and assumes an uninterrupted reset epoch; unobserved resets cannot always be identified. Host read completion times include USB/OS buffering and are not snapshot or exposure timestamps. Reception success does not mean fault-free hardware, optical acceptance, or zero underflows.",
+  "EndReason": "duration_limit",
+  "ElapsedSecondsAfterOpen": 30.005498200072907,
+  "FinishedUTC": "2026-11-02T07:15:33.146292+00:00",
+  "SourceDrift": [],
+  "BytesReceived": 1920,
+  "BytesExaminedByDecoder": 1920,
+  "NoDataReceived": false,
+  "ReadCalls": 151,
+  "CompletePackets": 30,
+  "MatchingPackets": 30,
+  "IdentityMismatches": 0,
+  "RejectedPackets": 0,
+  "DiscardedBytes": 0,
+  "TrailingPartialBytes": 0,
+  "CounterWindows": 29,
+  "ValidCounterWindows": 29,
+  "ExcludedCounterWindows": 0,
+  "SelectedWindows": {
+    "Count": 29,
+    "CoreTicks": 3625000000,
+    "NominalSeconds": 29.0,
+    "FrameDeltas": {
+      "SourceAccepted": 435,
+      "Processed": 435,
+      "UniquePresented": 435
+    },
+    "SourceAcceptedFPS": 15.0,
+    "ProcessedFPS": 15.0,
+    "UniquePresentedFPS": 15.0,
+    "IsWholeHostSessionAverage": false,
+    "AssumesContinuousResetEpochWithinEachWindow": true
+  },
+  "Artifacts": {
+    "packets.jsonl": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle\\live-a\\packets.jsonl",
+      "SHA256": "a59632e87db4ab703ec34f347bacd6718e6372242c5c179bf405cdcdd4aa86fb",
+      "Bytes": 18206
+    },
+    "reads.jsonl": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle\\live-a\\reads.jsonl",
+      "SHA256": "2aa1f2db84fcbaa5f5830b432739ee7b07055e37e6bb6146efb654dc4606f72b",
+      "Bytes": 22549
+    },
+    "received-wire.bin": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle\\live-a\\received-wire.bin",
+      "SHA256": "73e560da8150d5865a6c1e3e5de1208ab2b16c093cbe49fcb163ef735232ff49",
+      "Bytes": 1920
+    },
+    "windows.jsonl": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle\\live-a\\windows.jsonl",
+      "SHA256": "1a7e7825cc6c84627061663cf8dc8538ba6bb3deda5bb3c508683bae6831d004",
+      "Bytes": 31426
+    }
+  }
+}
