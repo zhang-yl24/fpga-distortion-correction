@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "pds_accessed": true,
+  "scope": "isolated unconstrained synthesis only; no device_map/place/route or timing signoff",
+  "derived_copy_changes": [
+    "top defaults WIDTH=1920 HEIGHT=1080",
+    "remove external frame_tiled port and tie its internal net to 0",
+    "bind CRC header include to local copied file"
+  ],
+  "variants": {
+    "baseline": {
+      "source": "delivery\\20261103-hdmi1080-demo-source\\native\\source\\rtl\\experimental\\ddr_adaptive_result_writer.v",
+      "source_sha256": "b237c9c7fce7bd06345191c9e7e3d44144472e1a5ff2830b5352e46ca0d13f84",
+      "derived_source_sha256": "af8d14327eefeaa78e72b5e4c07722113947ca505fea666a24e158a6c9f47d6f",
+      "metrics": {
+        "LUT": 1475.0,
+        "FF": 4704.0,
+        "DRM": 0.0,
+        "APM": 0.0,
+        "IO": 568.0
+      },
+      "command": [
+        "E:\\PDS_2025.2-ads-win64\\pango\\PDS_2025.2-ads\\bin\\pds_shell.exe",
+        "-file",
+        "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-throughput\\_build\\writer-synth\\baseline\\synth.tcl",
+        "-work_dir",
+        "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-throughput\\_build\\writer-synth\\baseline",
+        "-project_name",
+        "writer_probe"
+      ],
+      "synthesis_log": "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-throughput\\_build\\writer-synth\\baseline\\prj_tasks\\syn_1\\synthesize\\run.log",
+      "synthesis_log_sha256": "2d1aad5dbca8f38a3025ac6e1b25a277e7bf8c8f211f57ebd6f1a099d0b27f4c"
+    },
+    "candidate": {
+      "source": "delivery\\20261103-hdmi1080-throughput\\rtl\\ddr_adaptive_result_writer.v",
+      "source_sha256": "a8967320928657c8ba998031c6659da26877ddc882ef8888cbe5398c56a34507",
+      "derived_source_sha256": "dddc8820dfea64a93123db95f0a3a9586aaefa9aec1819ca826dcb8e9744497f",
+      "metrics": {
+        "LUT": 2852.0,
+        "FF": 9153.0,
+        "DRM": 0.0,
+        "APM": 0.0,
+        "IO": 568.0
+      },
+      "command": [
+        "E:\\PDS_2025.2-ads-win64\\pango\\PDS_2025.2-ads\\bin\\pds_shell.exe",
+        "-file",
+        "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-throughput\\_build\\writer-synth\\candidate\\synth.tcl",
+        "-work_dir",
+        "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-throughput\\_build\\writer-synth\\candidate",
+        "-project_name",
+        "writer_probe"
+      ],
+      "synthesis_log": "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-throughput\\_build\\writer-synth\\candidate\\prj_tasks\\syn_1\\synthesize\\run.log",
+      "synthesis_log_sha256": "c39cec905c7e67c9ce2b4a59918f051d2b988e3837b80677181350de6a6103c0"
+    }
+  },
+  "delta": {
+    "LUT": 1377.0,
+    "FF": 4449.0,
+    "DRM": 0.0,
+    "APM": 0.0,
+    "IO": 0.0
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "pds_accessed": false,
+  "source_sha256": {
+    "20261103-hdmi1080-demo-source\\native\\source\\rtl\\experimental\\ddr_compact_neighbour_cache_scatter4.v": "3c3e86487ad4dc8e53d9354bbc770ae8685b123b9a6896a7dea63dea12454545",
+    "20261103-hdmi1080-throughput\\rtl\\ddr_compact_neighbour_cache_scatter4.v": "712d285371ba812e5cd66966657b042817b6a1ca4d010fe00e60c47f953bf1b1",
+    "20261103-hdmi1080-throughput\\tests\\tb_cache_directed.sv": "fa8d0e51760125bb4d1970b5c06aa9068c762c7192c11fdc6931cf8a997fe3ee",
+    "20261103-hdmi1080-throughput\\tests\\tb_cache_stream.sv": "f879ec1ff0ac3f41e5d0d19246fa74bba6eae5360340e96b1d9f32b29bb25384"
+  },
+  "cases": [
+    {
+      "candidate": false,
+      "bench": "tb_cache_directed",
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\rtl\\experimental\\ddr_compact_neighbour_cache_scatter4.v",
+            "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-throughput\\tests\\tb_cache_directed.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.6119302000006428,
+          "log_sha256": "03707aaac8621b3aa3e639869f38f5ed2b7c073dea4b9cd8156c23a3c07bf483"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_cache_directed",
+            "-s",
+            "cache_test"
+          ],
+          "returncode": 0,
+          "seconds": 2.599098700004106,
+          "log_sha256": "ca34e8feb1b9d2a73b33a125cc0ae4299d719631ede3e8cc1eae9f7cf28130a0"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "cache_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 5.916637700000138,
+          "log_sha256": "ab983fb28ad68f0698801e67f0ee959a5a925d48186273e867da6b1a5b6fa9de"
+        }
+      ],
+      "passed": true,
+      "pass_lines": [
+        "PASS SCATTER4 INDEX7 full128-pixel parity/first-last, direct-map tag replacement, same/new bank epochs and TAG25 oracle",
+        "PASS SCATTER4 FIFO2 full input/output stalls, stable fractions/TAG25 and pending-frame drain",
+        "PASS SCATTER4 frame_valid at final group: no new input, exact old-result drain, same-bank invalidate and independent new-epoch refill",
+        "PASS SCATTER4 reset on last final packed write edge, invalid metadata and mandatory refill",
+        "PASS SCATTER4 RID/early-RLAST/missing-final-RLAST/unsolicited-R sticky wrapper quarantine",
+        "SCATTER4 coverage arstall=45 rgap=60 outstall=103 install=185 fifo_full=380 frame_queue=1 scatter=1023 ramverify=1022 last=31 publish=31 resetlast=1 queuedfault=3",
+        "PASS SCATTER4 independent directed regression: INDEX7 WIDTH256 HEIGHT128, real FIFO2 wrapper,parameterized groups/128pixels, dual-write parity memories and non-vacuous pressure"
+      ]
+    },
+    {
+      "candidate": false,
+      "bench": "tb_cache_stream",
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\rtl\\experimental\\ddr_compact_neighbour_cache_scatter4.v",
+            "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-throughput\\tests\\tb_cache_stream.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.5415917999998783,
+          "log_sha256": "a20ffa16929d89c37da0490da5c9aceb4416ce9654571d0d030a5dddd2ddd9a5"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_cache_stream",
+            "-s",
+            "cache_test"
+          ],
+          "returncode": 0,
+          "seconds": 2.4101436999990256,
+          "log_sha256": "1272b03aad0aa04d7cefee31f4f31586e87f6162b73d74fb8b005706d76643b0"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "cache_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 46.19514209999761,
+          "log_sha256": "6c0cbc95af132fd22d06debcc665c6144cd2713cfc6318fe943567f27454e7bc"
+        }
+      ],
+      "passed": true,
+      "pass_lines": [
+        "CACHE_METRICS cycles=3851999 queries=2073600 bursts=16200 scatter=518400 hits=8272201 misses=16200",
+        "PASS CACHE STREAM all 2073600 independent four-neighbour outputs, zero-latency first beat coverage=5936"
+      ],
+      "metrics": {
+        "cycles": 3851999,
+        "queries": 2073600,
+        "bursts": 16200,
+        "scatter": 518400,
+        "hits": 8272201,
+        "misses": 16200
+      }
+    },
+    {
+      "candidate": true,
+      "bench": "tb_cache_directed",
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "-d",
+            "PACKED32",
+            "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-throughput\\rtl\\ddr_compact_neighbour_cache_scatter4.v",
+            "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-throughput\\tests\\tb_cache_directed.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.5406815999958781,
+          "log_sha256": "91ad13d44b579c19746a30f9e2ed3a4a626b62a4916a5b3853bcbc8b94e27f6f"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_cache_directed",
+            "-s",
+            "cache_test"
+          ],
+          "returncode": 0,
+          "seconds": 3.580685799999628,
+          "log_sha256": "0043466a3d42899efd6b1bb27f980ad4052c529f9f027de8432865e63db44c68"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "cache_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 6.428145899997617,
+          "log_sha256": "926798ecf106849db1fd9a51f3c55298b31962145b62157ea284b5af05da7398"
+        }
+      ],
+      "passed": true,
+      "pass_lines": [
+        "PASS SCATTER4 INDEX7 full128-pixel parity/first-last, direct-map tag replacement, same/new bank epochs and TAG25 oracle",
+        "PASS SCATTER4 FIFO2 full input/output stalls, stable fractions/TAG25 and pending-frame drain",
+        "PASS SCATTER4 frame_valid at final group: no new input, exact old-result drain, same-bank invalidate and independent new-epoch refill",
+        "PASS SCATTER4 reset on last final packed write edge, invalid metadata and mandatory refill",
+        "PASS SCATTER4 RID/early-RLAST/missing-final-RLAST/unsolicited-R sticky wrapper quarantine",
+        "SCATTER4 coverage arstall=28 rgap=58 outstall=101 install=138 fifo_full=275 frame_queue=1 scatter=511 ramverify=510 last=31 publish=31 resetlast=1 queuedfault=3",
+        "PASS SCATTER4 independent directed regression: INDEX7 WIDTH256 HEIGHT128, real FIFO2 wrapper,parameterized groups/128pixels, dual-write parity memories and non-vacuous pressure"
+      ]
+    },
+    {
+      "candidate": true,
+      "bench": "tb_cache_stream",
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "-d",
+            "PACKED32",
+            "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-throughput\\rtl\\ddr_compact_neighbour_cache_scatter4.v",
+            "C:\\Users\\Lenovo\\Documents\\Codex\\2026-11-02\\2026-fpga\\work\\repo\\delivery\\20261103-hdmi1080-throughput\\tests\\tb_cache_stream.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.5754624999972293,
+          "log_sha256": "a681a4eb5e235c9a36078614b3b492e71da163c9b195412fc7626115628babb9"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_cache_stream",
+            "-s",
+            "cache_test"
+          ],
+          "returncode": 0,
+          "seconds": 2.6059262000053423,
+          "log_sha256": "0d78ca905c9dbafa8a08611ce9f70b0d0a895a5abc9d20aefc21a1367f815cfa"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "cache_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 47.94706629999564,
+          "log_sha256": "1a86de32bd9be1a4cacf920e83e2256d058dcd24170e8fc1a798ec9c908cf11c"
+        }
+      ],
+      "passed": true,
+      "pass_lines": [
+        "CACHE_METRICS cycles=3586079 queries=2073600 bursts=16200 scatter=259200 hits=8272201 misses=16200",
+        "PASS CACHE STREAM all 2073600 independent four-neighbour outputs, zero-latency first beat coverage=5394"
+      ],
+      "metrics": {
+        "cycles": 3586079,
+        "queries": 2073600,
+        "bursts": 16200,
+        "scatter": 259200,
+        "hits": 8272201,
+        "misses": 16200
+      }
+    }
+  ]
+}
