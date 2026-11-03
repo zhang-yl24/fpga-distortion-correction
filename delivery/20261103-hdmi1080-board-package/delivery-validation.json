@@ -1,0 +1,134 @@
+{
+  "passed": true,
+  "archive_sha256": "3164e3fca394b5a9734438329589ec476ff59b1731cfb7c90fc9084051faec81",
+  "extracted_root": "D:\\fpga\\fpga1080",
+  "hardware_accessed": false,
+  "eda_rerun": false,
+  "results": [
+    {
+      "command": [
+        "verify_package.py"
+      ],
+      "result": {
+        "verified_files": 497,
+        "source_bytes_verified": true,
+        "hardware_verified": false,
+        "note": "Read PACKAGE_STATUS.json for archived stage status."
+      }
+    },
+    {
+      "command": [
+        "delivery/20261103-hdmi1080-demo-source/tools/verify_package.py"
+      ],
+      "result": {
+        "included_sources_verified": 50,
+        "external_dependencies_required": 80,
+        "full_build_available_without_dependencies": false,
+        "eda_executed": false,
+        "hardware_accessed": false
+      }
+    },
+    {
+      "command": [
+        "delivery/20261103-hdmi1080-throughput/tools/verify_delivery.py"
+      ],
+      "result": {
+        "verified_files": 213,
+        "recorded_rtl_sources_match": true,
+        "engine_variants": 4,
+        "writer_cases": 25,
+        "cache_cases": 4,
+        "hardware_verified": false,
+        "full_board_timing_verified": false
+      }
+    },
+    {
+      "command": [
+        "delivery/20261103-hdmi1080-throughput/tools/recover_native_dependencies.py",
+        "--verify-only",
+        "--out",
+        "native-dependencies"
+      ],
+      "result": {
+        "passed": true,
+        "required": 80,
+        "matched": 80,
+        "manifest_sha256": "00695349cab1332ef029c5a741a87e5a174016ee90c9c9c4b60961e2c4dd01b8"
+      }
+    },
+    {
+      "command": [
+        "delivery/20261103-hdmi1080-throughput/tools/build_board_candidate.py",
+        "prepare",
+        "--dependency-native",
+        "native-dependencies",
+        "--output-root",
+        "D:/fpga-portability-check",
+        "--run-name",
+        "baseline",
+        "--variant",
+        "baseline",
+        "--mode",
+        "corrected"
+      ],
+      "result": {
+        "prepared": true,
+        "work": "D:\\fpga-portability-check\\baseline",
+        "pins": 144,
+        "param_id_hex": "b0481b1d",
+        "hardware_accessed": false
+      }
+    },
+    {
+      "command": [
+        "delivery/20261103-hdmi1080-throughput/tools/build_board_candidate.py",
+        "prepare",
+        "--dependency-native",
+        "native-dependencies",
+        "--output-root",
+        "D:/fpga-portability-check",
+        "--run-name",
+        "cache",
+        "--variant",
+        "cache",
+        "--mode",
+        "corrected"
+      ],
+      "result": {
+        "prepared": true,
+        "work": "D:\\fpga-portability-check\\cache",
+        "pins": 144,
+        "param_id_hex": "1a247c5b",
+        "hardware_accessed": false
+      }
+    },
+    {
+      "command": [
+        "delivery/20261103-hdmi1080-throughput/tools/build_board_candidate.py",
+        "prepare",
+        "--dependency-native",
+        "native-dependencies",
+        "--output-root",
+        "D:/fpga-portability-check",
+        "--run-name",
+        "both",
+        "--variant",
+        "both",
+        "--mode",
+        "corrected"
+      ],
+      "result": {
+        "prepared": true,
+        "work": "D:\\fpga-portability-check\\both",
+        "pins": 144,
+        "param_id_hex": "f36cb459",
+        "hardware_accessed": false
+      }
+    },
+    {
+      "command": "unittest test_*.py",
+      "log": "----------------------------------------------------------------------\nRan 38 tests in 0.864s\n\nOK\n",
+      "returncode": 0
+    }
+  ]
+}
