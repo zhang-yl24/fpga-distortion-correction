@@ -1,0 +1,33 @@
+name: Fisheye fill8 portable delivery
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - name: Preserve Windows paths and evidence bytes
+        if: runner.os == 'Windows'
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.longpaths true
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify selected source and byte-preserved archive
+        run: |
+          python -B delivery/20261103-hdmi-camera-fisheye-fill8/verify_source.py
+          python -B distortion/results/hdmi-camera-fisheye-fill8r3s3-20261103-a/verify_archive_portable.py
+          python -B distortion/tools/verify_fisheye_fill8_archive.py
+      - name: Prepare and verify fresh build inputs without EDA
+        run: |
+          python -B delivery/20261103-hdmi-camera-fisheye-fill8/prepare_build.py --output .bld-fill8-ci
+          python -B delivery/20261103-hdmi-camera-fisheye-fill8/verify_source.py --prepared .bld-fill8-ci

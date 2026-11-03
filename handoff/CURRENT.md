@@ -1,5 +1,7 @@
 # 当前新 HDMI 摄像头：已上板鱼眼矫正 C 版（2026-11-03）
 
+**2026-11-03 17:40 当前已上板 S3 提速版，实测/用户验收完成；正在按用户要求发布与规划。** 最终 ADF8510ff44a6c5cba81b675ad3bdf249ba93e1be4f2c372f5ff76b855ba761e2a2，bit ae6be718eaa60fdcd1ba252c08133e7e24d22d247d2a649d21f0d1f7be4a4d16（3791112字节）。实际SRAM program-v2-a Passed/DONE/expectedIDtrue、Flashfalse、Cleanup[]。30包29秒矫正：145个新帧=5.0FPS，30Hz刷新含25Hz重复，新增空白0/fault0/CRC拒包0；host5.000101→基线4.275951，提升16.94%。最后处理21082909cycles=168.663272ms。用户原话“画面正常，比之前流畅，但还是有卡顿”，已反馈不能写成流畅目标完成。当前新S3原图/KEY1往返未实测，不借C往返结果。完整物理与十表/启动/位流freshSTA+无缓存gate已Passed，root唯一发布worker17812实际exit0，P已释放、COM7已关闭。源码/位流/回执见[结果包](../distortion/results/hdmi-camera-fisheye-fill8r3s3-20261103-a/README.md)，资源LUT20.73%/FF13.41%/DRM12.58%/APM22.5%见[资源报告](HDMI_CAMERA_FISHEYE_S3_RESOURCES_20261103.md)。下一步优先诊断帧交接等待、8×8缓存局部性+双8行写回，再评估双lane，见[新计划](HDMI_CAMERA_FISHEYE_PERFORMANCE_NEXT_AFTER_S3_20261103.md)。用户明确授权推送仓库；隔离发布分支codex/hdmi-camera-fisheye-fill8基于已发布C，不改其他workspace/旧证据。以下是历史截面，不覆盖本段当前状态。
+
 当前发布为 `codex/hdmi-camera1080-fisheye`。`hdmi_camera_fisheye_top` C 已于北京时间 10:58:55 写入易失 SRAM；DONE/器件 ID 正确、Flash 未写。用户确认矫正效果、KEY1 原图/矫正往返，仍有卡顿；矫正约 4.3 FPS、原图 30 FPS、输出扫描 30Hz。
 
 [完整交付与重建入口](../delivery/20261103-hdmi-camera-fisheye-c/README.md)包含精确位流、110份源/IP闭包、标定图与内参/鱼眼系数、下载与三次UART原件。位流 SHA256 `8c43a77d9ddce72dc7015ef7f63aabe37ab6758dd698e2e811b669c5aa5ba047`。当前发布只代表这个 C 基线；独立提速工作另行推进。
