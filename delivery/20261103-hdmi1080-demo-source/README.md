@@ -1,6 +1,8 @@
 # HDMI 1080p 演示源码交付与 60fps 后续目标
 
-**今夜增量：** [离板候选与资源/时序表](offline-candidates/20261103-night/README.md) 已加入DMA5、纯校正PGSTAT02、Gamma、旋转+Gamma的完整身份与自有源码delta。DMA5当前离板setup为5条/−0.210ns；三个功能候选分别为38/−0.314ns、56/−0.379ns、194/−0.894ns，均未上板或全时序签核。D256与原生1080验证仍在推进，60新校正帧/秒、实板纯校正FPS和E2E未证明。[新增吞吐分支审查](NEW_THROUGHPUT_BRANCH_REVIEW.md) 单独记录最新12.54%隔离模型周期收益及其资源代价。
+**2026-11-03当前补注：** [main8adda884工程包与D256/key/HEAD身份复核](MAIN8ADDA_BOARD_PACKAGE_REVIEW.md) 已完成。新main没有新增RTL或板测；原D256连续3帧达到60fps周期预算的RTL结果由主集成工程师报告，物理路由尚未收敛；不能推广为key/HEAD或持续实板60。下方已板显slowAB及早前离板候选的各自身份保持不变，当前目标仍为摄像头1080p60完整校正链，GitHub交付不代表竞赛已提交。
+
+**今夜增量：** [离板候选与资源/时序表](offline-candidates/20261103-night/README.md) 已加入DMA5、纯校正PGSTAT02、Gamma、旋转+Gamma的完整身份与自有源码delta。DMA5当前离板setup为5条/−0.210ns；三个功能候选分别为38/−0.314ns、56/−0.379ns、194/−0.894ns，均未上板或全时序签核。该早前快照之后，原D256已有连续3帧60预算RTL通过的主集成回报；物理尚未收敛，实板60新校正帧/秒、纯校正FPS和E2E仍未证明。[新增吞吐分支审查](NEW_THROUGHPUT_BRANCH_REVIEW.md) 单独记录最新12.54%隔离模型周期收益及其资源代价。
 
 **固定profile测量工具：** [PGSTAT02 v1源码、34项内存测试与使用边界](measurement/pgstat02-v1/README.md) 已加入交付。作者原始ZIP身份、38个精确文件和6份RTL哈希均已核对；离线重跑34项通过。该工具不代表现场采集、时序签核、实际125MHz或端到端延迟已完成。
 
