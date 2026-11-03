@@ -2,6 +2,10 @@
 
 ## 当前状态补注（2026-11-03）
 
+**12:04新实板：** [同学stable30源码的我方自编译有界板显](delivery/20261103-hdmi1080-demo-source/progress/20261103-stable30-board/README.md)，bit53f37b7e…，60.003531主机秒1798完整scan/1797不同FrameID/1次repeat，约29.9482个新显示ID/s。这是显示侧统计，处理FPS、输入SOF/DMA丢帧和硬件E2E未测。固定0°/Gamma OFF；本候选厂商异步组实际生效，内部12类0违例仍不等于全局物理签核。
+
+
+
 **新的有限三帧/真实路由交付：** [INDEX6连续3帧与60Hz配置最终STA](delivery/20261103-hdmi1080-demo-source/progress/20261103-cont60-route/README.md) 已绑定源码和事件边界。三帧规范化60Hz共享DDR RTL通过；实际route成功但slow setup10213/−2.105ns，无bit、无板验。RCF两网已应用，厂商三异步组未生效，不能把登记当应用。33.941813ms是数字SOF到首扫描观测，旧57044板测23.3613fps及其31ms内部样本仍单独保留。
 
 

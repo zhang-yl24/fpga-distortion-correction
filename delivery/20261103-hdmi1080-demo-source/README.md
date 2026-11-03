@@ -1,5 +1,7 @@
 # HDMI 1080p 演示源码交付与 60fps 后续目标
 
+**新增实板身份：** [stable30我方自编译bit53f37b7e…](progress/20261103-stable30-board/README.md) 取得约29.9482个新显示FrameID/主机秒；不是处理FPS、零输入丢帧或E2E证据。它与57044旧计数板测、INDEX6数字60/失败路由分别记录。
+
 **新结果：** [INDEX6精确连续三帧与60Hz配置实际路由](progress/20261103-cont60-route/README.md)：三帧数字链路通过；route/STA退出0但slow setup10213条/−2.105ns，未签核/未产bit/未板测。数字33.941813ms不等于旧板测或硬件E2E；三条厂商异步组登记后实际未生效。
 
 **上午实质进展：** [独立源码与验证交付](progress/20261103-morning/README.md) 新增RX framing、INDEX6完整单帧engine及冻结57044实板计数。真实固定校正计数nominal换算23.36fps；INDEX6模型16.59ms、RX新Map资源分开记录，不拼接成60实板成绩。E2E和完整延迟分布仍未测。
