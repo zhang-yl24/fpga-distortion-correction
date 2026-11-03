@@ -4,14 +4,14 @@
 
 ## 整合范围
 
-28 个远端分支、4 个标签、4 次 release / 21 个发布附件。8 个未合入分支由 5 个叶末端涵盖，均通过真实 Git merge 保留历史；`python project.py audit` 检查全部 28 个原提交可从集成 HEAD 到达。发布资产保留 URL、字节数与 SHA256；本轮未重新下载验证全部大型历史资产，可使用 `python project.py check-asset --tag TAG --file FILE` 校验已下载文件。
+28 个远端分支、4 个标签、4 次 release / 21 个发布附件。8 个未合入分支由 5 个叶末端涵盖，均通过真实 Git merge 保留历史；`python project.py audit` 检查全部 28 个原提交可从集成 HEAD 到达。发布资产保留 URL、字节数与 SHA256；本轮对本地保留的 stable30 与 fisheye60 发布 ZIP 重新校验通过；未重新下载验证全部大型历史资产，可使用 `python project.py check-asset --tag TAG --file FILE` 校验已下载文件。
 
 默认 tile8 保留原生产 RTL、约束、IP、位流和冻结证据。历史候选独立放在 delivery / distortion/acceptance，按各自清单构建。原 README 保存于 docs/history；主入口集中列出当前选择及回退版本。
 
 ## 已完成离线验证
 
 - tile8：110 项生产输入、74 项 DDR IP 展开、位流 SHA256、449 项归档文件通过；原串口记录重放得到 15.0 新校正显示 FPS、30 Hz 扫描、30 样本。
-- tile8 新目录重建准备：111 项源码/约束输入通过，未执行 EDA。
+- tile8、fill8、C 分别在全新目录完成 111 项源码/约束输入准备与核验，未执行 EDA。
 - fill8、C：各 110 项生产输入、74 项 IP 及位流身份通过。
 - stable30：候选封存校验及 12 项单元测试通过。
 - throughput：源码/证据校验、38 项单元测试、80 项依赖恢复通过。
@@ -20,7 +20,7 @@
 - 原 handoff baseline 审计通过。
 - 新主入口：5 项目录保护、路径检查、漏合分支及资产摘要检查通过。
 
-首轮命令和回执见 [checks/results.json](integration/checks/results.json)。公共 CPU 回归与远端 CI 尚待本轮完成后更新。
+首轮命令和回执见 [checks/results.json](integration/checks/results.json)。公共 CPU 回归：199 个测试文件，3,719 passed、26 skipped、625 subtests passed，耗时 1,033.42 秒；26 项依测试环境条件跳过。完整输出见 [reference-tests.log](integration/checks/reference-tests.log)。GitHub 在源码集成提交 `17192b4` 上的 7 组工作流 / push 与 PR 两轮共 14 次运行全部成功，见 [github-ci.json](integration/checks/github-ci.json)。本记录追加提交仅修改验收文档与日志。
 
 ## 修正与已知缺口
 
