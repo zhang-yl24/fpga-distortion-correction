@@ -13,6 +13,11 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
     steps:
+      - name: Preserve Windows paths and evidence bytes
+        if: runner.os == 'Windows'
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.longpaths true
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
