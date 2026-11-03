@@ -1,5 +1,8 @@
 # FPGA 实时图像畸变矫正
 
+**离板功能增量：** [运行时旋转＋自适应Gamma源码候选](delivery/20261103-hdmi1080-demo-source/runtime-camera/20261104-a/README.md)，实际摄像头ROM/Q512/macro16短测6帧24576像素通过，零角Gamma关闭4096像素配对一致，系统默认OFF/ON展开通过。尚未完整1080运行时性能、最终时序、UART/HDMI或实板验收，不替换O/P，也不宣布60fps。
+
+
 **O/P新增约123秒复测：** [同一位流的有界稳定性记录](delivery/20261103-hdmi1080-demo-source/progress/20261104-OP123-stability/README.md)，名义125MHz窗口122.986564s，新处理/呈现各3690=30.00328fps，数字scan59.9984Hz、约半数重复，记录fault空；峰55.7362℃，golden/显示/COM已恢复。不推断60个新校正帧、600秒长稳或光学E2E，R/macro16不混入。
 
 

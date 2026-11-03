@@ -44,3 +44,5 @@ jobs:
         run: python -B delivery/20261103-hdmi1080-demo-source/progress/20261103-stable30-board/verify_evidence.py
       - name: Verify stable30 OP source and explicit dependency boundary
         run: python -B delivery/20261103-hdmi1080-demo-source/stable30-OP/verify_export.py
+      - name: Verify runtime camera candidate source references and offline encoder
+        run: python -B delivery/20261103-hdmi1080-demo-source/runtime-camera/20261104-a/verify_delivery.py
