@@ -1,5 +1,7 @@
 # HDMI 1080p 演示源码交付与 60fps 后续目标
 
+**最新分支复核：** [stable30@e89a2d42](LATEST_STABLE30_REVIEW.md) 确有新RTL与约束，12类原生内部时序通过、setup最小+0.009ns；30Hz候选未板测，外部IO/CDC/复位未签核。其22.65ms处理模型不是D256或持续60fps成果。只读副本与本轮交付暂存位于D盘。下文保留此前main8adda和各冻结候选的日期/身份边界。
+
 **2026-11-03当前补注：** [main8adda884工程包与D256/key/HEAD身份复核](MAIN8ADDA_BOARD_PACKAGE_REVIEW.md) 已完成。新main没有新增RTL或板测；原D256连续3帧达到60fps周期预算的RTL结果由主集成工程师报告，物理路由尚未收敛；不能推广为key/HEAD或持续实板60。下方已板显slowAB及早前离板候选的各自身份保持不变，当前目标仍为摄像头1080p60完整校正链，GitHub交付不代表竞赛已提交。
 
 **今夜增量：** [离板候选与资源/时序表](offline-candidates/20261103-night/README.md) 已加入DMA5、纯校正PGSTAT02、Gamma、旋转+Gamma的完整身份与自有源码delta。DMA5当前离板setup为5条/−0.210ns；三个功能候选分别为38/−0.314ns、56/−0.379ns、194/−0.894ns，均未上板或全时序签核。该早前快照之后，原D256已有连续3帧60预算RTL通过的主集成回报；物理尚未收敛，实板60新校正帧/秒、纯校正FPS和E2E仍未证明。[新增吞吐分支审查](NEW_THROUGHPUT_BRANCH_REVIEW.md) 单独记录最新12.54%隔离模型周期收益及其资源代价。

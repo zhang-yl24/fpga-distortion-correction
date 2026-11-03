@@ -2,6 +2,10 @@
 
 ## 当前状态补注（2026-11-03）
 
+**09:55请求后最新复核：** main仍为8adda884，但新分支stable30已到[e89a2d42](https://github.com/zhang-yl24/fpga-distortion-correction/commit/e89a2d42c21e6a216df00e4f0fdeb7c94439ba89)（北京时间08:57:53）。它新增三源槽、读写寄存及精确DDR IP约束；回执12类内部时序零违例、最小setup+0.009ns，仍未板测且外部IO/CDC/复位未签核。完整处理模型22.650624ms，不能称60校正fps。见[最新源码/约束与可复用范围](delivery/20261103-hdmi1080-demo-source/LATEST_STABLE30_REVIEW.md)。本轮隔离副本与测试均放D盘指定项目目录。
+
+
+
 **当前目标为新购1080p60摄像头经DDR与畸变校正后，输入/输出60Hz、每秒60个新校正帧。GitHub成果包已上传，不代表竞赛已经提交，也未宣布基础/提高任务全项验收完成。**
 
 | 路线/身份 | 已完成 | 仍待完成 |
