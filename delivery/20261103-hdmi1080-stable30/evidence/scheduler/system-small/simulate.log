@@ -1,0 +1,20 @@
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/systemsmall/xsim_script.tcl
+# xsim {systemsmall} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+SYSTEM_NORMAL_PRESSURE ar=72 aw=1010 w=101 cacheout=0 coreout=0 tone=0 write_contention=2 read_contention=4
+SYSTEM_FORCED_SMALL_PRESSURE result_aw_hold=989 display_ar_hold=58 write_dual=1 read_dual=1 limit=20000
+PASS system eight IDs: actual DMA/correction/realFIFO/DE-RGB scans, all epochs and final drain
+PASS system small fault: old good/new bad bank isolation; common reset then independent third-texture actual scan
+PASS board1080 system: 32x16 eight unthrottled inputs, independent3texture CPU goldens, real async FIFO DE/RGB/CRC, fault/reset scope=1; no PHY/STA/hardware claim
+$finish called at time : 757616 ns : File "D:/fpga-stable/scheduler/system-small/tb_board1080_system.sv" Line 491
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:34 . Memory (MB): peak = 223.594 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov  3 08:45:31 2026...

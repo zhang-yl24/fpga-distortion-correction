@@ -1,0 +1,3066 @@
+{
+  "schema": "stable30-ddr-constraint-audit-v1",
+  "build": "D:\\fpga-stable\\build\\stable-a",
+  "candidate_param_id": "8c73465e",
+  "status": "FAIL",
+  "errors": [
+    "diagnostic_really_removes_inherited_ip_clock_groups"
+  ],
+  "pending": [],
+  "files": [
+    {
+      "path": "D:\\fpga-stable\\build\\stable-a\\native\\source\\build\\offline-20261024\\boardtop-penn-prep-20261029-a\\board1080-diagnostic.fdc",
+      "sha256": "2ff6dd8510e7b0566f550143561ac4138c19cd255944811b4561979f6e8b0f23"
+    },
+    {
+      "path": "D:\\fpga-stable\\build\\stable-a\\native\\stable-constraints\\ddr-ip-clock-relations.fdc",
+      "sha256": "e50c487f732019f59882386e558649c1777f03e540a0d5db971194ebcae6a47c"
+    },
+    {
+      "path": "D:\\fpga-stable\\build\\stable-a\\native\\stable-constraints\\vendor-ddr.rcf",
+      "sha256": "4195e9a465a277e3e242f191d55b78bde4e713e2145121825008d83e7b2aab1d"
+    },
+    {
+      "path": "D:\\fpga-stable\\build\\stable-a\\uart-pins.fdc",
+      "sha256": "70b4b2f39c0da2703216abdbf320d9dbe7a0dd95bfbda5253cfc0a518ef090e5"
+    }
+  ],
+  "checks": [
+    {
+      "name": "file_exists:board1080-diagnostic.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "file_exists:ddr-ip-clock-relations.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "file_exists:vendor-ddr.rcf",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "file_exists:uart-pins.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "exactly_three_vendor_clock_groups",
+      "pass": true,
+      "detail": [
+        "set_clock_groups -name rst_clk -asynchronous -group [get_clocks {rst_clk}]",
+        "set_clock_groups -name phy_dq_clk_0 -asynchronous -group [get_clocks {phy_dq_clk_0}]",
+        "set_clock_groups -name phy_dq_clk_1 -asynchronous -group [get_clocks {phy_dq_clk_1}]"
+      ]
+    },
+    {
+      "name": "no_new_false_path",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all_20_directed_user_pairs_keep_max8_min0",
+      "pass": true,
+      "detail": [
+        {
+          "from": "board27",
+          "to": "cfg_clk",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "board27",
+          "to": "input_pixel",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "board27",
+          "to": "pixel_clk",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "board27",
+          "to": "ddrphy_sysclk",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "cfg_clk",
+          "to": "board27",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "cfg_clk",
+          "to": "input_pixel",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "cfg_clk",
+          "to": "pixel_clk",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "cfg_clk",
+          "to": "ddrphy_sysclk",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "input_pixel",
+          "to": "board27",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "input_pixel",
+          "to": "cfg_clk",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "input_pixel",
+          "to": "pixel_clk",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "input_pixel",
+          "to": "ddrphy_sysclk",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "pixel_clk",
+          "to": "board27",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "pixel_clk",
+          "to": "cfg_clk",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "pixel_clk",
+          "to": "input_pixel",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "pixel_clk",
+          "to": "ddrphy_sysclk",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "ddrphy_sysclk",
+          "to": "board27",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "ddrphy_sysclk",
+          "to": "cfg_clk",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "ddrphy_sysclk",
+          "to": "input_pixel",
+          "max8": true,
+          "min0": true
+        },
+        {
+          "from": "ddrphy_sysclk",
+          "to": "pixel_clk",
+          "max8": true,
+          "min0": true
+        }
+      ]
+    },
+    {
+      "name": "core_divided_phy_multicycle_and_uncertainty_retained",
+      "pass": true,
+      "detail": [
+        "set_multicycle_path 2 -from [get_clocks ddrphy_sysclk] -to [get_clocks phy_dq_sysclk_0]",
+        "set_clock_uncertainty {0.4} -from [get_clocks {ddrphy_sysclk}] -to [get_clocks {phy_dq_sysclk_0}] -setup -hold",
+        "set_clock_uncertainty {0.4} -from [get_clocks {phy_dq_sysclk_0}] -to [get_clocks {ddrphy_sysclk}] -setup -hold",
+        "set_multicycle_path 2 -from [get_clocks ddrphy_sysclk] -to [get_clocks phy_dq_sysclk_1]",
+        "set_clock_uncertainty {0.4} -from [get_clocks {ddrphy_sysclk}] -to [get_clocks {phy_dq_sysclk_1}] -setup -hold",
+        "set_clock_uncertainty {0.4} -from [get_clocks {phy_dq_sysclk_1}] -to [get_clocks {ddrphy_sysclk}] -setup -hold"
+      ]
+    },
+    {
+      "name": "two_vendor_priority_route_clauses",
+      "pass": true,
+      "detail": [
+        "def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_ioclk_gate [0]}",
+        "def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_ioclk_gate [1]}"
+      ]
+    },
+    {
+      "name": "prepared_manifest_hash:ddr-ip-clock-relations.fdc",
+      "pass": true,
+      "detail": {
+        "path": "stable-constraints/ddr-ip-clock-relations.fdc",
+        "input_sha256": "e50c487f732019f59882386e558649c1777f03e540a0d5db971194ebcae6a47c",
+        "compile_sha256": "e50c487f732019f59882386e558649c1777f03e540a0d5db971194ebcae6a47c"
+      }
+    },
+    {
+      "name": "prepared_manifest_hash:vendor-ddr.rcf",
+      "pass": true,
+      "detail": {
+        "path": "stable-constraints/vendor-ddr.rcf",
+        "input_sha256": "4195e9a465a277e3e242f191d55b78bde4e713e2145121825008d83e7b2aab1d",
+        "compile_sha256": "4195e9a465a277e3e242f191d55b78bde4e713e2145121825008d83e7b2aab1d"
+      }
+    },
+    {
+      "name": "native_map_constraint_registered:board1080-diagnostic.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_map_constraint_registered:ddr-ip-clock-relations.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_map_constraint_registered:uart-pins.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_map_constraint_registered:vendor-ddr.rcf",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_route_constraint_registered:board1080-diagnostic.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_route_constraint_registered:ddr-ip-clock-relations.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_route_constraint_registered:uart-pins.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_route_constraint_registered:vendor-ddr.rcf",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_sta_constraint_registered:board1080-diagnostic.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_sta_constraint_registered:ddr-ip-clock-relations.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_sta_constraint_registered:uart-pins.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_sta_constraint_registered:vendor-ddr.rcf",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_bitstream_constraint_registered:board1080-diagnostic.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_bitstream_constraint_registered:ddr-ip-clock-relations.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_bitstream_constraint_registered:uart-pins.fdc",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "native_bitstream_constraint_registered:vendor-ddr.rcf",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "route_executed_both_vendor_priority_net_commands",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final_clock_tree_complete",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "all_required_ip_clocks_exist",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ip_clocks_have_no_user_endpoints",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "preserved_relations_remain_timed",
+      "pass": true,
+      "detail": [
+        {
+          "Launch Clock": "board27",
+          "Capture Clock": "board27",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Timed",
+          "WNS(ns)": "28.520",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "5921",
+          "WHS(ns)": "0.159",
+          "THS(ns)": "0.000",
+          "Failing End Point(THS)": "0",
+          "Total End Point(THS)": "5921"
+        },
+        {
+          "Launch Clock": "input_pixel",
+          "Capture Clock": "board27",
+          "Common Primary Clock": "NO",
+          "Inter-Clock Constrains": "Max Delay Datapath Only",
+          "WNS(ns)": "1.626",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "437",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "0"
+        },
+        {
+          "Launch Clock": "pixel_clk",
+          "Capture Clock": "board27",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Max Delay Datapath Only",
+          "WNS(ns)": "6.156",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "658",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "0"
+        },
+        {
+          "Launch Clock": "cfg_clk",
+          "Capture Clock": "board27",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Max Delay Datapath Only",
+          "WNS(ns)": "6.060",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "3",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "0"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "board27",
+          "Common Primary Clock": "NO",
+          "Inter-Clock Constrains": "Max Delay Datapath Only",
+          "WNS(ns)": "5.025",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "3",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "0"
+        },
+        {
+          "Launch Clock": "board27",
+          "Capture Clock": "input_pixel",
+          "Common Primary Clock": "NO",
+          "Inter-Clock Constrains": "Max Delay Datapath Only",
+          "WNS(ns)": "3.544",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "569",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "0"
+        },
+        {
+          "Launch Clock": "input_pixel",
+          "Capture Clock": "input_pixel",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Timed",
+          "WNS(ns)": "5.991",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "3765",
+          "WHS(ns)": "0.161",
+          "THS(ns)": "0.000",
+          "Failing End Point(THS)": "0",
+          "Total End Point(THS)": "3765"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "input_pixel",
+          "Common Primary Clock": "NO",
+          "Inter-Clock Constrains": "Max Delay Datapath Only",
+          "WNS(ns)": "5.258",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "47",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "0"
+        },
+        {
+          "Launch Clock": "board27",
+          "Capture Clock": "pixel_clk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Max Delay Datapath Only",
+          "WNS(ns)": "3.172",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "1205",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "0"
+        },
+        {
+          "Launch Clock": "pixel_clk",
+          "Capture Clock": "pixel_clk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Timed",
+          "WNS(ns)": "1.253",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "7961",
+          "WHS(ns)": "0.125",
+          "THS(ns)": "0.000",
+          "Failing End Point(THS)": "0",
+          "Total End Point(THS)": "7961"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "pixel_clk",
+          "Common Primary Clock": "NO",
+          "Inter-Clock Constrains": "Max Delay Datapath Only",
+          "WNS(ns)": "0.706",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "766",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "0"
+        },
+        {
+          "Launch Clock": "board27",
+          "Capture Clock": "cfg_clk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Max Delay Datapath Only",
+          "WNS(ns)": "5.296",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "10",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "0"
+        },
+        {
+          "Launch Clock": "cfg_clk",
+          "Capture Clock": "cfg_clk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Timed",
+          "WNS(ns)": "95.369",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "907",
+          "WHS(ns)": "0.148",
+          "THS(ns)": "0.000",
+          "Failing End Point(THS)": "0",
+          "Total End Point(THS)": "907"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "rst_clk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Timed",
+          "WNS(ns)": "4.452",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "531",
+          "WHS(ns)": "0.134",
+          "THS(ns)": "0.000",
+          "Failing End Point(THS)": "0",
+          "Total End Point(THS)": "531"
+        },
+        {
+          "Launch Clock": "board27",
+          "Capture Clock": "ddrphy_sysclk",
+          "Common Primary Clock": "NO",
+          "Inter-Clock Constrains": "Max Delay Datapath Only",
+          "WNS(ns)": "3.437",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "748",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "0"
+        },
+        {
+          "Launch Clock": "input_pixel",
+          "Capture Clock": "ddrphy_sysclk",
+          "Common Primary Clock": "NO",
+          "Inter-Clock Constrains": "Max Delay Datapath Only",
+          "WNS(ns)": "5.050",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "115",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "0"
+        },
+        {
+          "Launch Clock": "pixel_clk",
+          "Capture Clock": "ddrphy_sysclk",
+          "Common Primary Clock": "NO",
+          "Inter-Clock Constrains": "Max Delay Datapath Only",
+          "WNS(ns)": "1.467",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "213",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "0"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "ddrphy_sysclk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Timed",
+          "WNS(ns)": "0.606",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "62073",
+          "WHS(ns)": "0.060",
+          "THS(ns)": "0.000",
+          "Failing End Point(THS)": "0",
+          "Total End Point(THS)": "62073"
+        },
+        {
+          "Launch Clock": "phy_dq_sysclk_0",
+          "Capture Clock": "ddrphy_sysclk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Timed",
+          "WNS(ns)": "3.646",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "1",
+          "WHS(ns)": "0.756",
+          "THS(ns)": "0.000",
+          "Failing End Point(THS)": "0",
+          "Total End Point(THS)": "1"
+        },
+        {
+          "Launch Clock": "phy_dq_sysclk_1",
+          "Capture Clock": "ddrphy_sysclk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Timed",
+          "WNS(ns)": "2.347",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "260",
+          "WHS(ns)": "0.534",
+          "THS(ns)": "0.000",
+          "Failing End Point(THS)": "0",
+          "Total End Point(THS)": "260"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_sysclk_0",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Timed",
+          "WNS(ns)": "0.017",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "196",
+          "WHS(ns)": "0.411",
+          "THS(ns)": "0.000",
+          "Failing End Point(THS)": "0",
+          "Total End Point(THS)": "196"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_sysclk_1",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Timed",
+          "WNS(ns)": "0.009",
+          "TNS(ns)": "0.000",
+          "Failing End Point(TNS)": "0",
+          "Total End Point(TNS)": "420",
+          "WHS(ns)": "0.420",
+          "THS(ns)": "0.000",
+          "Failing End Point(THS)": "0",
+          "Total End Point(THS)": "420"
+        }
+      ]
+    },
+    {
+      "name": "ip_grouped_crossings_use_vendor_relation",
+      "pass": true,
+      "detail": [
+        {
+          "Launch Clock": "board27",
+          "Capture Clock": "rst_clk",
+          "Common Primary Clock": "NO",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "1",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "1"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "rst_clk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "5",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "5"
+        },
+        {
+          "Launch Clock": "phy_dq_sysclk_0",
+          "Capture Clock": "rst_clk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "1",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "1"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "ddrphy_sysclk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "6",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "6"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "phy_dq_clk_0",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "34",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "34"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_clk_0",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "3",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "3"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "phy_dq_sysclk_0",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "35",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "35"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "phy_dq_clk_1",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "84",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "84"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_clk_1",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "4",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "4"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "phy_dq_sysclk_1",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "84",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "84"
+        }
+      ]
+    },
+    {
+      "name": "diagnostic_really_removes_inherited_ip_clock_groups",
+      "pass": false,
+      "detail": [
+        {
+          "Launch Clock": "board27",
+          "Capture Clock": "rst_clk",
+          "Common Primary Clock": "NO",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "1",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "1"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "rst_clk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "5",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "5"
+        },
+        {
+          "Launch Clock": "phy_dq_sysclk_0",
+          "Capture Clock": "rst_clk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "1",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "1"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "ddrphy_sysclk",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "6",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "6"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "phy_dq_clk_0",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "34",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "34"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_clk_0",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "3",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "3"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "phy_dq_sysclk_0",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "35",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "35"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "phy_dq_clk_1",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "84",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "84"
+        },
+        {
+          "Launch Clock": "ddrphy_sysclk",
+          "Capture Clock": "phy_dq_clk_1",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "4",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "4"
+        },
+        {
+          "Launch Clock": "rst_clk",
+          "Capture Clock": "phy_dq_sysclk_1",
+          "Common Primary Clock": "YES",
+          "Inter-Clock Constrains": "Asynchronous Groups",
+          "WNS(ns)": "",
+          "TNS(ns)": "",
+          "Failing End Point(TNS)": "",
+          "Total End Point(TNS)": "84",
+          "WHS(ns)": "",
+          "THS(ns)": "",
+          "Failing End Point(THS)": "",
+          "Total End Point(THS)": "84"
+        }
+      ]
+    },
+    {
+      "name": "diagnostic_uses_identical_final_routed_adf",
+      "pass": true,
+      "detail": {
+        "purpose": "same routed ADF diagnostic without three additive vendor clock groups",
+        "started_utc": "2026-11-03T00:44:09.938698+00:00",
+        "command": [
+          "E:\\PDS_2025.2-ads-win64\\pango\\PDS_2025.2-ads\\bin\\pds_shell.exe",
+          "-file",
+          "D:\\fpga-stable\\build\\stable-a-diagnostic\\diagnostic.tcl",
+          "-work_dir",
+          "D:\\fpga-stable\\build\\stable-a-diagnostic",
+          "-project_name",
+          "board1080_top"
+        ],
+        "inputs": [
+          {
+            "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\prj_tasks\\pnr_1\\place_route\\board1080_top_pnr.adf",
+            "sha256": "0c6615b2dd9b83ee032e47c0bf990865d31ef9ba6baea68547099370e8981249"
+          },
+          {
+            "file": "D:\\fpga-stable\\build\\stable-a\\native\\source\\build\\offline-20261024\\boardtop-penn-prep-20261029-a\\board1080-diagnostic.fdc",
+            "sha256": "2ff6dd8510e7b0566f550143561ac4138c19cd255944811b4561979f6e8b0f23"
+          },
+          {
+            "file": "D:\\fpga-stable\\build\\stable-a\\uart-pins.fdc",
+            "sha256": "70b4b2f39c0da2703216abdbf320d9dbe7a0dd95bfbda5253cfc0a518ef090e5"
+          },
+          {
+            "file": "D:\\fpga-stable\\build\\stable-a\\stages\\map\\prj_tasks\\pnr_1\\device_map\\board1080_top.pcf",
+            "sha256": "cffe26ea0afd769273a92a4c3ed83ff0eeebc8400e85b10d69e7c4b30b52cd85"
+          },
+          {
+            "file": "D:\\fpga-stable\\build\\stable-a-diagnostic\\diagnostic.tcl",
+            "sha256": "7a3e528aa1939a0d4ec3a102be4dfe9179f29cec33597f30babbebb1e83497a8"
+          }
+        ],
+        "output_dir": "D:\\fpga-stable\\build\\stable-a-diagnostic",
+        "success_marker": "INDEPENDENT_DIAGNOSTIC_STA_COMPLETE",
+        "exit_code": 0,
+        "finished_utc": "2026-11-03T00:45:10.312187+00:00",
+        "input_adf_sha256_after": "0c6615b2dd9b83ee032e47c0bf990865d31ef9ba6baea68547099370e8981249",
+        "input_adf_unchanged": true,
+        "success_marker_present": true
+      }
+    },
+    {
+      "name": "same_routed_adf_preserved_rows_identical",
+      "pass": true,
+      "detail": [
+        {
+          "from": "board27",
+          "to": "board27",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "board27",
+            "Capture Clock": "board27",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "28.520",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "5921",
+            "WHS(ns)": "0.159",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "5921"
+          },
+          "vendor": {
+            "Launch Clock": "board27",
+            "Capture Clock": "board27",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "28.520",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "5921",
+            "WHS(ns)": "0.159",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "5921"
+          }
+        },
+        {
+          "from": "input_pixel",
+          "to": "board27",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "input_pixel",
+            "Capture Clock": "board27",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "1.626",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "437",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          },
+          "vendor": {
+            "Launch Clock": "input_pixel",
+            "Capture Clock": "board27",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "1.626",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "437",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          }
+        },
+        {
+          "from": "pixel_clk",
+          "to": "board27",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "pixel_clk",
+            "Capture Clock": "board27",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "6.156",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "658",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          },
+          "vendor": {
+            "Launch Clock": "pixel_clk",
+            "Capture Clock": "board27",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "6.156",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "658",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          }
+        },
+        {
+          "from": "cfg_clk",
+          "to": "board27",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "cfg_clk",
+            "Capture Clock": "board27",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "6.060",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "3",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          },
+          "vendor": {
+            "Launch Clock": "cfg_clk",
+            "Capture Clock": "board27",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "6.060",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "3",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          }
+        },
+        {
+          "from": "ddrphy_sysclk",
+          "to": "board27",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "ddrphy_sysclk",
+            "Capture Clock": "board27",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "5.025",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "3",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          },
+          "vendor": {
+            "Launch Clock": "ddrphy_sysclk",
+            "Capture Clock": "board27",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "5.025",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "3",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          }
+        },
+        {
+          "from": "board27",
+          "to": "input_pixel",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "board27",
+            "Capture Clock": "input_pixel",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "3.544",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "569",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          },
+          "vendor": {
+            "Launch Clock": "board27",
+            "Capture Clock": "input_pixel",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "3.544",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "569",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          }
+        },
+        {
+          "from": "input_pixel",
+          "to": "input_pixel",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "input_pixel",
+            "Capture Clock": "input_pixel",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "5.991",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "3765",
+            "WHS(ns)": "0.161",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "3765"
+          },
+          "vendor": {
+            "Launch Clock": "input_pixel",
+            "Capture Clock": "input_pixel",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "5.991",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "3765",
+            "WHS(ns)": "0.161",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "3765"
+          }
+        },
+        {
+          "from": "ddrphy_sysclk",
+          "to": "input_pixel",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "ddrphy_sysclk",
+            "Capture Clock": "input_pixel",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "5.258",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "47",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          },
+          "vendor": {
+            "Launch Clock": "ddrphy_sysclk",
+            "Capture Clock": "input_pixel",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "5.258",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "47",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          }
+        },
+        {
+          "from": "board27",
+          "to": "pixel_clk",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "board27",
+            "Capture Clock": "pixel_clk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "3.172",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "1205",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          },
+          "vendor": {
+            "Launch Clock": "board27",
+            "Capture Clock": "pixel_clk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "3.172",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "1205",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          }
+        },
+        {
+          "from": "pixel_clk",
+          "to": "pixel_clk",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "pixel_clk",
+            "Capture Clock": "pixel_clk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "1.253",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "7961",
+            "WHS(ns)": "0.125",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "7961"
+          },
+          "vendor": {
+            "Launch Clock": "pixel_clk",
+            "Capture Clock": "pixel_clk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "1.253",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "7961",
+            "WHS(ns)": "0.125",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "7961"
+          }
+        },
+        {
+          "from": "ddrphy_sysclk",
+          "to": "pixel_clk",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "ddrphy_sysclk",
+            "Capture Clock": "pixel_clk",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "0.706",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "766",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          },
+          "vendor": {
+            "Launch Clock": "ddrphy_sysclk",
+            "Capture Clock": "pixel_clk",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "0.706",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "766",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          }
+        },
+        {
+          "from": "board27",
+          "to": "cfg_clk",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "board27",
+            "Capture Clock": "cfg_clk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "5.296",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "10",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          },
+          "vendor": {
+            "Launch Clock": "board27",
+            "Capture Clock": "cfg_clk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "5.296",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "10",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          }
+        },
+        {
+          "from": "cfg_clk",
+          "to": "cfg_clk",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "cfg_clk",
+            "Capture Clock": "cfg_clk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "95.369",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "907",
+            "WHS(ns)": "0.148",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "907"
+          },
+          "vendor": {
+            "Launch Clock": "cfg_clk",
+            "Capture Clock": "cfg_clk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "95.369",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "907",
+            "WHS(ns)": "0.148",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "907"
+          }
+        },
+        {
+          "from": "rst_clk",
+          "to": "rst_clk",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "rst_clk",
+            "Capture Clock": "rst_clk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "4.452",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "531",
+            "WHS(ns)": "0.134",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "531"
+          },
+          "vendor": {
+            "Launch Clock": "rst_clk",
+            "Capture Clock": "rst_clk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "4.452",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "531",
+            "WHS(ns)": "0.134",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "531"
+          }
+        },
+        {
+          "from": "board27",
+          "to": "ddrphy_sysclk",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "board27",
+            "Capture Clock": "ddrphy_sysclk",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "3.437",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "748",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          },
+          "vendor": {
+            "Launch Clock": "board27",
+            "Capture Clock": "ddrphy_sysclk",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "3.437",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "748",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          }
+        },
+        {
+          "from": "input_pixel",
+          "to": "ddrphy_sysclk",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "input_pixel",
+            "Capture Clock": "ddrphy_sysclk",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "5.050",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "115",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          },
+          "vendor": {
+            "Launch Clock": "input_pixel",
+            "Capture Clock": "ddrphy_sysclk",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "5.050",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "115",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          }
+        },
+        {
+          "from": "pixel_clk",
+          "to": "ddrphy_sysclk",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "pixel_clk",
+            "Capture Clock": "ddrphy_sysclk",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "1.467",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "213",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          },
+          "vendor": {
+            "Launch Clock": "pixel_clk",
+            "Capture Clock": "ddrphy_sysclk",
+            "Common Primary Clock": "NO",
+            "Inter-Clock Constrains": "Max Delay Datapath Only",
+            "WNS(ns)": "1.467",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "213",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "Failing End Point(THS)": "",
+            "Total End Point(THS)": "0"
+          }
+        },
+        {
+          "from": "ddrphy_sysclk",
+          "to": "ddrphy_sysclk",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "ddrphy_sysclk",
+            "Capture Clock": "ddrphy_sysclk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "0.606",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "62073",
+            "WHS(ns)": "0.060",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "62073"
+          },
+          "vendor": {
+            "Launch Clock": "ddrphy_sysclk",
+            "Capture Clock": "ddrphy_sysclk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "0.606",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "62073",
+            "WHS(ns)": "0.060",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "62073"
+          }
+        },
+        {
+          "from": "phy_dq_sysclk_0",
+          "to": "ddrphy_sysclk",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "phy_dq_sysclk_0",
+            "Capture Clock": "ddrphy_sysclk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "3.646",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "1",
+            "WHS(ns)": "0.756",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "1"
+          },
+          "vendor": {
+            "Launch Clock": "phy_dq_sysclk_0",
+            "Capture Clock": "ddrphy_sysclk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "3.646",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "1",
+            "WHS(ns)": "0.756",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "1"
+          }
+        },
+        {
+          "from": "phy_dq_sysclk_1",
+          "to": "ddrphy_sysclk",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "phy_dq_sysclk_1",
+            "Capture Clock": "ddrphy_sysclk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "2.347",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "260",
+            "WHS(ns)": "0.534",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "260"
+          },
+          "vendor": {
+            "Launch Clock": "phy_dq_sysclk_1",
+            "Capture Clock": "ddrphy_sysclk",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "2.347",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "260",
+            "WHS(ns)": "0.534",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "260"
+          }
+        },
+        {
+          "from": "ddrphy_sysclk",
+          "to": "phy_dq_sysclk_0",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "ddrphy_sysclk",
+            "Capture Clock": "phy_dq_sysclk_0",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "0.017",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "196",
+            "WHS(ns)": "0.411",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "196"
+          },
+          "vendor": {
+            "Launch Clock": "ddrphy_sysclk",
+            "Capture Clock": "phy_dq_sysclk_0",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "0.017",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "196",
+            "WHS(ns)": "0.411",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "196"
+          }
+        },
+        {
+          "from": "ddrphy_sysclk",
+          "to": "phy_dq_sysclk_1",
+          "identical": true,
+          "diagnostic": {
+            "Launch Clock": "ddrphy_sysclk",
+            "Capture Clock": "phy_dq_sysclk_1",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "0.009",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "420",
+            "WHS(ns)": "0.420",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "420"
+          },
+          "vendor": {
+            "Launch Clock": "ddrphy_sysclk",
+            "Capture Clock": "phy_dq_sysclk_1",
+            "Common Primary Clock": "YES",
+            "Inter-Clock Constrains": "Timed",
+            "WNS(ns)": "0.009",
+            "TNS(ns)": "0.000",
+            "Failing End Point(TNS)": "0",
+            "Total End Point(TNS)": "420",
+            "WHS(ns)": "0.420",
+            "THS(ns)": "0.000",
+            "Failing End Point(THS)": "0",
+            "Total End Point(THS)": "420"
+          }
+        }
+      ]
+    }
+  ],
+  "native_projects": [
+    {
+      "stage": "map",
+      "project": "D:\\fpga-stable\\build\\stable-a\\stages\\map\\board1080_top.pds",
+      "constraint_items": [
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\native\\source\\build\\offline-20261024\\boardtop-penn-prep-20261029-a\\board1080-diagnostic.fdc",
+          "format": "fdc"
+        },
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\native\\stable-constraints\\ddr-ip-clock-relations.fdc",
+          "format": "fdc"
+        },
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\uart-pins.fdc",
+          "format": "fdc"
+        },
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\native\\stable-constraints\\vendor-ddr.rcf",
+          "format": "rcf"
+        }
+      ]
+    },
+    {
+      "stage": "route",
+      "project": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\board1080_top.pds",
+      "constraint_items": [
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\native\\source\\build\\offline-20261024\\boardtop-penn-prep-20261029-a\\board1080-diagnostic.fdc",
+          "format": "fdc"
+        },
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\uart-pins.fdc",
+          "format": "fdc"
+        },
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\native\\stable-constraints\\ddr-ip-clock-relations.fdc",
+          "format": "fdc"
+        },
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\native\\stable-constraints\\vendor-ddr.rcf",
+          "format": "rcf"
+        }
+      ]
+    },
+    {
+      "stage": "sta",
+      "project": "D:\\fpga-stable\\build\\stable-a\\stages\\sta\\board1080_top.pds",
+      "constraint_items": [
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\native\\source\\build\\offline-20261024\\boardtop-penn-prep-20261029-a\\board1080-diagnostic.fdc",
+          "format": "fdc"
+        },
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\uart-pins.fdc",
+          "format": "fdc"
+        },
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\native\\stable-constraints\\ddr-ip-clock-relations.fdc",
+          "format": "fdc"
+        },
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\native\\stable-constraints\\vendor-ddr.rcf",
+          "format": "rcf"
+        }
+      ]
+    },
+    {
+      "stage": "bitstream",
+      "project": "D:\\fpga-stable\\build\\stable-a\\stages\\bitstream\\board1080_top.pds",
+      "constraint_items": [
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\native\\source\\build\\offline-20261024\\boardtop-penn-prep-20261029-a\\board1080-diagnostic.fdc",
+          "format": "fdc"
+        },
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\uart-pins.fdc",
+          "format": "fdc"
+        },
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\native\\stable-constraints\\ddr-ip-clock-relations.fdc",
+          "format": "fdc"
+        },
+        {
+          "file": "D:\\fpga-stable\\build\\stable-a\\native\\stable-constraints\\vendor-ddr.rcf",
+          "format": "rcf"
+        }
+      ]
+    }
+  ],
+  "route_log_evidence": [
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\prj_tasks\\pnr_1\\place_route\\run_route.log",
+      "line": 27,
+      "text": "Executing : def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_ioclk_gate [0]}"
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\prj_tasks\\pnr_1\\place_route\\run_route.log",
+      "line": 28,
+      "text": "Executing : def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_ioclk_gate [0]} successfully."
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\prj_tasks\\pnr_1\\place_route\\run_route.log",
+      "line": 29,
+      "text": "Executing : def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_ioclk_gate [1]}"
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\prj_tasks\\pnr_1\\place_route\\run_route.log",
+      "line": 30,
+      "text": "Executing : def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_ioclk_gate [1]} successfully."
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\run.log",
+      "line": 31,
+      "text": "Executing : add_constraint D:/fpga-stable/build/stable-a/native/stable-constraints/vendor-ddr.rcf"
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\run.log",
+      "line": 32,
+      "text": "Executing : add_constraint D:/fpga-stable/build/stable-a/native/stable-constraints/vendor-ddr.rcf successfully."
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\run.log",
+      "line": 362,
+      "text": "Place location constraint node:u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_ioclk_gate[0]/opit_0_inv at CLMA_357_354"
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\run.log",
+      "line": 363,
+      "text": "Place location constraint node:u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_ioclk_gate[1]/opit_0_inv at CLMA_357_660"
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\run.log",
+      "line": 833,
+      "text": "Executing : def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_ioclk_gate [0]}"
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\run.log",
+      "line": 834,
+      "text": "Executing : def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_ioclk_gate [0]} successfully."
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\run.log",
+      "line": 835,
+      "text": "Executing : def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_ioclk_gate [1]}"
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\run.log",
+      "line": 836,
+      "text": "Executing : def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_ioclk_gate [1]} successfully."
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\prj_tasks\\pnr_1\\place_route\\run_place.log",
+      "line": 314,
+      "text": "Place location constraint node:u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_ioclk_gate[0]/opit_0_inv at CLMA_357_354"
+    },
+    {
+      "file": "D:\\fpga-stable\\build\\stable-a\\stages\\route\\prj_tasks\\pnr_1\\place_route\\run_place.log",
+      "line": 315,
+      "text": "Place location constraint node:u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_ioclk_gate[1]/opit_0_inv at CLMA_357_660"
+    }
+  ],
+  "priority_net_resolution_status": "both commands reported successful in route execution",
+  "clock_endpoints": [
+    {
+      "clock": "board27",
+      "tool_load_count": 1387,
+      "parsed_load_count": 1387,
+      "count_matches": true,
+      "outside_ip_count": 1387
+    },
+    {
+      "clock": "cfg_clk",
+      "tool_load_count": 181,
+      "parsed_load_count": 181,
+      "count_matches": true,
+      "outside_ip_count": 181
+    },
+    {
+      "clock": "pixel_clk",
+      "tool_load_count": 1971,
+      "parsed_load_count": 1971,
+      "count_matches": true,
+      "outside_ip_count": 1971
+    },
+    {
+      "clock": "input_pixel",
+      "tool_load_count": 813,
+      "parsed_load_count": 813,
+      "count_matches": true,
+      "outside_ip_count": 813
+    },
+    {
+      "clock": "ref_clk",
+      "tool_load_count": 0,
+      "parsed_load_count": 0,
+      "count_matches": true,
+      "outside_ip_count": 0
+    },
+    {
+      "clock": "ddrphy_sysclk",
+      "tool_load_count": 19727,
+      "parsed_load_count": 19727,
+      "count_matches": true,
+      "outside_ip_count": 15883
+    },
+    {
+      "clock": "rst_clk",
+      "tool_load_count": 126,
+      "parsed_load_count": 126,
+      "count_matches": true,
+      "outside_ip_count": 0,
+      "all_endpoint_pins": [
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_lock_d[0]/opit_0_inv_srl/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_offset_cnt[0]/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_offset_cnt[1]/opit_0_inv_AL6QL5_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_offset_cnt[2]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_offset_cnt[3]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_offset_cnt[4]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_offset_cnt[5]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_offset_cnt[6]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_offset_cnt[7]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_offset_cnt[8]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_offset_cnt[9]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_state_reg[0]/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_state_reg[1]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_state_reg[3]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_state_reg[4]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_state_reg[5]/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_state_reg[6]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_state_reg[8]/opit_0_inv_L6QQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_state_reg[9]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_up_d[0]/opit_0_inv_srl/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/cpd_up_d[2]/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/ddrphy_cpd_done/opit_0_inv_srl/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/ddrphy_cpd_rstn/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/ddrphy_cpd_start_d0/opit_0_inv_srl/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/delay_cnt[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/delay_cnt[1]/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/delay_cnt[3]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/dps_done_d[0]/opit_0_inv_srl/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/gpll_dps_dir/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/sure_delay[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/sure_delay[2]/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/sure_delay[3]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/sure_delay[4]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/sure_delay[5]/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/sure_delay[6]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/sure_delay[7]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/time_out[0]/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/time_out[1]/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/time_out[2]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/time_out[3]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/time_out[4]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_cpd_ctrl/time_out[5]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/cnt[1]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[0]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[1]/opit_0_inv_AL6QL5_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[2]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[3]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[4]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[5]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[6]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[7]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[8]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[9]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[10]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[11]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[12]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[13]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[14]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[15]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[16]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[17]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_freeze_cnt[18]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_code_done_d1/opit_0_inv_srl/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_code_done_d3/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_n/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/dll_update_req_rst_ctrl_d[0]/opit_0_inv_srl/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_dll_update_ctrl/state_reg[1]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_gpll/u_gpll/gpll_inst/DPS_CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/cnt[0]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/cnt[1]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/cnt[2]/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/cnt[3]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/cnt[4]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/cnt[5]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/cnt[6]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/cnt[7]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_calib_done_d[0]/opit_0_inv_srl/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_cpd_done_d[1]/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_cpd_start/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_cpd_start_d/opit_0_inv_srl/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_cpd_start_d1/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_dll_rst_n_rg/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_dqs_rst/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_ioclk_gate[0]/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_ioclk_gate[1]/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_ioclk_gate_d/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_iol_rst/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[0]/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[2]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[4]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[6]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[8]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[10]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[12]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[14]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[16]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[17]/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/rise_cnt[18]/opit_0_inv_AQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/signal_b_ff/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/signal_b_neg/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_pll_lock_debounce/signal_deb_pre/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/ddrphy_rst_n_rg/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/dll_lock_d[1]/opit_0_inv_L6QQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/dll_update_ack_rst_ctrl_d[0]/opit_0_inv_srl/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/dll_update_req_rst_ctrl/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/logic_rstn/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/phy_pll_rst/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/pll_lock_d[1]/opit_0_inv_L6QQ_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/rst_clk_adj_done_d1/opit_0_inv_srl/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/rst_clk_adj_done_d3/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/state_reg[0]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/state_reg[1]/opit_0_inv_L6QL5_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/state_reg[2]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/state_reg[4]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/state_reg[5]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/state_reg[6]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/state_reg[7]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/state_reg[8]/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/state_reg[9]/opit_0_inv/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/state_reg[10]/opit_0_inv_L6Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/training_error_d[0]/opit_0_inv_srl/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/training_error_latch/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/tran_err_rst_cnt[0]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/tran_err_rst_cnt[1]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_reset_ctrl/tran_err_rst_cnt[5]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CLK",
+        "u_ddr3_test_h/u_ddrphy_top/u_ddrphy_rst_seq_rstn_sync/sig_async_r1[0]/opit_0_inv_srl/CLK"
+      ],
+      "unexpected_user_pins": []
+    },
+    {
+      "clock": "phy_dq_clk_0",
+      "tool_load_count": 35,
+      "parsed_load_count": 35,
+      "count_matches": true,
+      "outside_ip_count": 0,
+      "all_endpoint_pins": [
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[0].u_ddc_ca/ddc_inst/CLKA",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[0].u_tserdes_ca0/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[0].u_tserdes_ca1/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[1].u_ddc_ca/ddc_inst/CLKA",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[1].u_tserdes_ca0/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[1].u_tserdes_ca1/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[2].u_ddc_ca/ddc_inst/CLKA",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[2].u_tserdes_ca0/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[2].u_tserdes_ca1/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[0].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[1].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[2].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[3].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[4].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[5].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[6].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[7].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[8].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[9].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[10].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[11].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[12].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[13].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[14].u_outbuft_addr0/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba[0].u_outbuft_ba/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba[1].u_outbuft_ba/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba[2].u_outbuft_ba/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_casn/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_cke/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_csn/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_odt/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_rasn/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_wen/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuftco_ck/opit_3/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/u_ddrphy_cpd/cpd_inst/CLK_SAMPLE"
+      ],
+      "unexpected_user_pins": []
+    },
+    {
+      "clock": "phy_dq_sysclk_0",
+      "tool_load_count": 35,
+      "parsed_load_count": 35,
+      "count_matches": true,
+      "outside_ip_count": 0,
+      "all_endpoint_pins": [
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[0].u_ddc_ca/ddc_inst/CLKB",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[0].u_tserdes_ca0/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[0].u_tserdes_ca1/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[1].u_ddc_ca/ddc_inst/CLKB",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[1].u_tserdes_ca0/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[1].u_tserdes_ca1/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[2].u_ddc_ca/ddc_inst/CLKB",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[2].u_tserdes_ca0/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_ca_group[2].u_tserdes_ca1/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[0].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[1].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[2].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[3].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[4].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[5].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[6].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[7].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[8].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[9].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[10].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[11].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[12].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[13].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[14].u_outbuft_addr0/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba[0].u_outbuft_ba/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba[1].u_outbuft_ba/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/k_mem_ba[2].u_outbuft_ba/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_casn/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_cke/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_csn/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_odt/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_rasn/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuft_wen/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/u_outbuftco_ck/opit_3/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/u_ddrphy_cpd/cpd_inst/CLK_PHY"
+      ],
+      "unexpected_user_pins": []
+    },
+    {
+      "clock": "phy_dq_clk_1",
+      "tool_load_count": 84,
+      "parsed_load_count": 84,
+      "count_matches": true,
+      "outside_ip_count": 0,
+      "all_endpoint_pins": [
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/genblk1.u_iobufco_dqs/opit_2/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/CLKA",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_outbuft_dm/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/genblk1.u_iobufco_dqs/opit_2/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/CLKA",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_outbuft_dm/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/genblk1.u_iobufco_dqs/opit_2/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/CLKA",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_outbuft_dm/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/DESCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/genblk1.u_iobufco_dqs/opit_2/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/CLKA",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_outbuft_dm/opit_1/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/SERCLK",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/SERCLK"
+      ],
+      "unexpected_user_pins": []
+    },
+    {
+      "clock": "phy_dq_sysclk_1",
+      "tool_load_count": 84,
+      "parsed_load_count": 84,
+      "count_matches": true,
+      "outside_ip_count": 0,
+      "all_endpoint_pins": [
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/genblk1.u_iobufco_dqs/opit_2/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/CLKB",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_outbuft_dm/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/genblk1.u_iobufco_dqs/opit_2/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/CLKB",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_outbuft_dm/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/genblk1.u_iobufco_dqs/opit_2/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/CLKB",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_outbuft_dm/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[0].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[1].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[2].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[3].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[4].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[5].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[6].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/ICLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/dq_loop[7].u_iobuf_dq/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/genblk1.u_iobufco_dqs/opit_2/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_ddc_dq/ddc_inst_PHY/CLKB",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_outbuft_dm/opit_1/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/OCLKDIV",
+        "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_tserdes1_dq/oserdes_inst/OCLKDIV"
+      ],
+      "unexpected_user_pins": []
+    }
+  ],
+  "same_adf_comparison": [
+    {
+      "from": "board27",
+      "to": "board27",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "board27",
+        "Capture Clock": "board27",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "28.520",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "5921",
+        "WHS(ns)": "0.159",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "5921"
+      },
+      "vendor": {
+        "Launch Clock": "board27",
+        "Capture Clock": "board27",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "28.520",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "5921",
+        "WHS(ns)": "0.159",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "5921"
+      }
+    },
+    {
+      "from": "input_pixel",
+      "to": "board27",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "board27",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "1.626",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "437",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      },
+      "vendor": {
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "board27",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "1.626",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "437",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      }
+    },
+    {
+      "from": "pixel_clk",
+      "to": "board27",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "pixel_clk",
+        "Capture Clock": "board27",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "6.156",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "658",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      },
+      "vendor": {
+        "Launch Clock": "pixel_clk",
+        "Capture Clock": "board27",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "6.156",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "658",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      }
+    },
+    {
+      "from": "cfg_clk",
+      "to": "board27",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "cfg_clk",
+        "Capture Clock": "board27",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "6.060",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "3",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      },
+      "vendor": {
+        "Launch Clock": "cfg_clk",
+        "Capture Clock": "board27",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "6.060",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "3",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      }
+    },
+    {
+      "from": "ddrphy_sysclk",
+      "to": "board27",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "board27",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "5.025",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "3",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      },
+      "vendor": {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "board27",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "5.025",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "3",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      }
+    },
+    {
+      "from": "board27",
+      "to": "input_pixel",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "board27",
+        "Capture Clock": "input_pixel",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "3.544",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "569",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      },
+      "vendor": {
+        "Launch Clock": "board27",
+        "Capture Clock": "input_pixel",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "3.544",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "569",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      }
+    },
+    {
+      "from": "input_pixel",
+      "to": "input_pixel",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "input_pixel",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "5.991",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "3765",
+        "WHS(ns)": "0.161",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "3765"
+      },
+      "vendor": {
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "input_pixel",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "5.991",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "3765",
+        "WHS(ns)": "0.161",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "3765"
+      }
+    },
+    {
+      "from": "ddrphy_sysclk",
+      "to": "input_pixel",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "input_pixel",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "5.258",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "47",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      },
+      "vendor": {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "input_pixel",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "5.258",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "47",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      }
+    },
+    {
+      "from": "board27",
+      "to": "pixel_clk",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "board27",
+        "Capture Clock": "pixel_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "3.172",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "1205",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      },
+      "vendor": {
+        "Launch Clock": "board27",
+        "Capture Clock": "pixel_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "3.172",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "1205",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      }
+    },
+    {
+      "from": "pixel_clk",
+      "to": "pixel_clk",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "pixel_clk",
+        "Capture Clock": "pixel_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "1.253",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "7961",
+        "WHS(ns)": "0.125",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "7961"
+      },
+      "vendor": {
+        "Launch Clock": "pixel_clk",
+        "Capture Clock": "pixel_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "1.253",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "7961",
+        "WHS(ns)": "0.125",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "7961"
+      }
+    },
+    {
+      "from": "ddrphy_sysclk",
+      "to": "pixel_clk",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "pixel_clk",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "0.706",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "766",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      },
+      "vendor": {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "pixel_clk",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "0.706",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "766",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      }
+    },
+    {
+      "from": "board27",
+      "to": "cfg_clk",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "board27",
+        "Capture Clock": "cfg_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "5.296",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "10",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      },
+      "vendor": {
+        "Launch Clock": "board27",
+        "Capture Clock": "cfg_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "5.296",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "10",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      }
+    },
+    {
+      "from": "cfg_clk",
+      "to": "cfg_clk",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "cfg_clk",
+        "Capture Clock": "cfg_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "95.369",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "907",
+        "WHS(ns)": "0.148",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "907"
+      },
+      "vendor": {
+        "Launch Clock": "cfg_clk",
+        "Capture Clock": "cfg_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "95.369",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "907",
+        "WHS(ns)": "0.148",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "907"
+      }
+    },
+    {
+      "from": "rst_clk",
+      "to": "rst_clk",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "rst_clk",
+        "Capture Clock": "rst_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "4.452",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "531",
+        "WHS(ns)": "0.134",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "531"
+      },
+      "vendor": {
+        "Launch Clock": "rst_clk",
+        "Capture Clock": "rst_clk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "4.452",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "531",
+        "WHS(ns)": "0.134",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "531"
+      }
+    },
+    {
+      "from": "board27",
+      "to": "ddrphy_sysclk",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "board27",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "3.437",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "748",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      },
+      "vendor": {
+        "Launch Clock": "board27",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "3.437",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "748",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      }
+    },
+    {
+      "from": "input_pixel",
+      "to": "ddrphy_sysclk",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "5.050",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "115",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      },
+      "vendor": {
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "5.050",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "115",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      }
+    },
+    {
+      "from": "pixel_clk",
+      "to": "ddrphy_sysclk",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "pixel_clk",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "1.467",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "213",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      },
+      "vendor": {
+        "Launch Clock": "pixel_clk",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "NO",
+        "Inter-Clock Constrains": "Max Delay Datapath Only",
+        "WNS(ns)": "1.467",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "213",
+        "WHS(ns)": "",
+        "THS(ns)": "",
+        "Failing End Point(THS)": "",
+        "Total End Point(THS)": "0"
+      }
+    },
+    {
+      "from": "ddrphy_sysclk",
+      "to": "ddrphy_sysclk",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "0.606",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "62073",
+        "WHS(ns)": "0.060",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "62073"
+      },
+      "vendor": {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "0.606",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "62073",
+        "WHS(ns)": "0.060",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "62073"
+      }
+    },
+    {
+      "from": "phy_dq_sysclk_0",
+      "to": "ddrphy_sysclk",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "phy_dq_sysclk_0",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "3.646",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "1",
+        "WHS(ns)": "0.756",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "1"
+      },
+      "vendor": {
+        "Launch Clock": "phy_dq_sysclk_0",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "3.646",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "1",
+        "WHS(ns)": "0.756",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "1"
+      }
+    },
+    {
+      "from": "phy_dq_sysclk_1",
+      "to": "ddrphy_sysclk",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "phy_dq_sysclk_1",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "2.347",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "260",
+        "WHS(ns)": "0.534",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "260"
+      },
+      "vendor": {
+        "Launch Clock": "phy_dq_sysclk_1",
+        "Capture Clock": "ddrphy_sysclk",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "2.347",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "260",
+        "WHS(ns)": "0.534",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "260"
+      }
+    },
+    {
+      "from": "ddrphy_sysclk",
+      "to": "phy_dq_sysclk_0",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "phy_dq_sysclk_0",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "0.017",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "196",
+        "WHS(ns)": "0.411",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "196"
+      },
+      "vendor": {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "phy_dq_sysclk_0",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "0.017",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "196",
+        "WHS(ns)": "0.411",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "196"
+      }
+    },
+    {
+      "from": "ddrphy_sysclk",
+      "to": "phy_dq_sysclk_1",
+      "identical": true,
+      "diagnostic": {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "phy_dq_sysclk_1",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "0.009",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "420",
+        "WHS(ns)": "0.420",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "420"
+      },
+      "vendor": {
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "phy_dq_sysclk_1",
+        "Common Primary Clock": "YES",
+        "Inter-Clock Constrains": "Timed",
+        "WNS(ns)": "0.009",
+        "TNS(ns)": "0.000",
+        "Failing End Point(TNS)": "0",
+        "Total End Point(TNS)": "420",
+        "WHS(ns)": "0.420",
+        "THS(ns)": "0.000",
+        "Failing End Point(THS)": "0",
+        "Total End Point(THS)": "420"
+      }
+    }
+  ],
+  "limitations": [
+    "This audit confirms constraint scope and emitted evidence, not hardware reset reliability.",
+    "Protected ips2l_rst_sync_v1_3 internal synchronizer depth has not been independently verified.",
+    "Board external IO AC timing closure is separate."
+  ]
+}
