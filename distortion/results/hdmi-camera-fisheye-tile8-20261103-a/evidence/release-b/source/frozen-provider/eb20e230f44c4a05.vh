@@ -1,0 +1,3 @@
+localparam integer SIM_HT=80,SIM_VT=40,SIM_X0=10,SIM_Y0=3,SIM_HS=4,SIM_VS=1;
+localparam integer SIM_FRAMES=2,SIM_MAX_CYCLES=2000000,SIM_FAULT_PHASE=0;
+localparam integer SIM_OUTPUT_PHASE_PS=1733;

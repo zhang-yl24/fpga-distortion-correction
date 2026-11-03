@@ -1,0 +1,25 @@
+{
+  "Schema": "hdmi-camera-fisheye-tile8-engine-exact-source-diff-v1",
+  "Passed": true,
+  "CheckedUTC": "2026-11-03T10:19:38.735758+00:00",
+  "BaselineEngineSHA256": "bd5a2e4b6b58f476066ce13b566df0c0be0751de54e911a8dcad993e5c9b9179",
+  "CandidateEngineSHA256": "9b412ca5dc5563c8cbcc8bd67262377af9846da0154da9601281fed1127d4bbe",
+  "BaselineNativeSimulation": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3-20261103-a\\system-native-a\\simulation.json",
+    "SHA256": "b9c39033f32fd51e7707414b3b95a5875c8a6a3d3cee6c953fda149349364458"
+  },
+  "ExactWholeFileTransformationReplayed": true,
+  "CodeChanges": [
+    "public module name hdmi_camera_fisheye_engine_tile8",
+    "use_tiles=cfg_corrected sampled by existing frame-handshake latches",
+    "writer module selection ddr_adaptive_result_writer_dualstripe"
+  ],
+  "OtherChanges": "two comments only",
+  "FrameLayoutGuardUnchanged": true,
+  "ElasticPixelMaskAndTagLogicUnchanged": true,
+  "CoordinateCountersAndTileSequencerUnchanged": true,
+  "CompletionAndFaultLogicUnchanged": true,
+  "ResetAndSourceDestinationProtocolUnchanged": true,
+  "BaselineSourceModified": false,
+  "HardwareAccessed": false
+}

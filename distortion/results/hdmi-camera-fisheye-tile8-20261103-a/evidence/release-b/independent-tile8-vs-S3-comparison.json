@@ -1,0 +1,309 @@
+{
+  "Schema": "hdmi-camera-fisheye-tile8-vs-s3-saved-fps-comparison-v1",
+  "Passed": true,
+  "CheckedUTC": "2026-11-03T13:36:12.187284+00:00",
+  "Verifier": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_resume_20261103\\verify_tile8_vs_s3_fps.py",
+    "SHA256": "08f1246eb524259a2fed065e12ddc264dc37834fac4bd88547c3fa629c7c9626"
+  },
+  "PreservedReparser": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\verify_live_fps_v2_a.py",
+    "SHA256": "d1ddd2730dd038b6dcb4116444a0973036e2a09bfa3b8f8ed46d622fc6dbf758"
+  },
+  "VerifiedLibraries": [
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\hdmi_camera_fisheye_fps.py",
+      "SHA256": "3c44b93436c8420f4fe8194f7d19060caaeae8b6a6ab295402c351fb760734fd"
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\measure_hdmi_fisheye_fps.py",
+      "SHA256": "deb9da1b02f55deb750baa09c4b4a01675beec5d76c325855d83cd994c389cc5"
+    }
+  ],
+  "Baseline": {
+    "Candidate": "S3",
+    "WorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a",
+    "Evidence": {
+      "BitVerification": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\verification.json",
+        "SHA256": "34a4014a754cae1a58f1f51b49c155446fc5958ba17c8b540c563f565f246b81"
+      },
+      "ProgramReceipt": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\program-v2-a\\receipt.json",
+        "SHA256": "d7a10e641ab1a5c21122b72e5e4e86879561e033f00caa5b12a5483ae6d65cea"
+      },
+      "FPSReceipt": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\fps-corrected-v2-a\\receipt.json",
+        "SHA256": "ad9a9094ce85e606436b18d1a6ad0dc3077b05e65baa1a370507d3017b2b3805"
+      },
+      "Wire": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\fps-corrected-v2-a\\wire.bin",
+        "SHA256": "a80cb249d4134e6249f908b46e4573bdf99a80e07023fa159e2fedd17e422668"
+      }
+    },
+    "Bitstream": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\generate_bitstream\\hdmi_camera_fisheye_top.sbit",
+      "SHA256": "ae6be718eaa60fdcd1ba252c08133e7e24d22d247d2a649d21f0d1f7be4a4d16",
+      "Bytes": 3791112,
+      "Header": {
+        "Design": "hdmi_camera_fisheye_top",
+        "Device": "Logos2-PG2L100H--6-FBG676",
+        "Date": "11/03/26",
+        "Time": "17:14:55",
+        "Generator": "Fabric Compiler",
+        "Version": "2023.2-SP3<154097>"
+      }
+    },
+    "FinalADFSHA256": "8510ff44a6c5cba81b675ad3bdf249ba93e1be4f2c372f5ff76b855ba761e2a2",
+    "TelemetryIdentity": {
+      "ProfileID": "ed59f83e3cfbc77b",
+      "BuildID": "11030001"
+    },
+    "SampleCount": 30,
+    "FirstSequence": 29,
+    "LastSequence": 58,
+    "FirstCounters": {
+      "source_frames": 1800,
+      "captured_frames": 151,
+      "processed_frames": 150,
+      "unique_presented_frames": 149,
+      "scan_refreshes": 901,
+      "scan_good_frames": 894,
+      "scan_repeat_frames": 745,
+      "scan_blank_frames": 5
+    },
+    "LastCounters": {
+      "source_frames": 3540,
+      "captured_frames": 296,
+      "processed_frames": 295,
+      "unique_presented_frames": 294,
+      "scan_refreshes": 1771,
+      "scan_good_frames": 1764,
+      "scan_repeat_frames": 1470,
+      "scan_blank_frames": 5
+    },
+    "FrameCounterDeltas": {
+      "source_frames": 1740,
+      "captured_frames": 145,
+      "processed_frames": 145,
+      "unique_presented_frames": 145,
+      "scan_refreshes": 870,
+      "scan_good_frames": 870,
+      "scan_repeat_frames": 725,
+      "scan_blank_frames": 0
+    },
+    "NominalClockSummary": {
+      "sample_count": 30,
+      "hardware_window_seconds": 29.0,
+      "core_clock_hz": 125000000,
+      "clock_basis": "DDR IP PLL core clock; verify against this bitstream timing/PLL configuration",
+      "corrected_requested": true,
+      "counter_delta": {
+        "source_frames": 1740,
+        "captured_frames": 145,
+        "processed_frames": 145,
+        "unique_presented_frames": 145,
+        "scan_refreshes": 870,
+        "cache_hits": 1040940037,
+        "cache_misses": 39883757,
+        "queries": 300673348,
+        "scan_good_frames": 870,
+        "scan_repeat_frames": 725,
+        "scan_blank_frames": 0
+      },
+      "source_frames_per_second": 60.0,
+      "captured_frames_per_second": 5.0,
+      "processed_frames_per_second": 5.0,
+      "unique_presented_frames_per_second": 5.0,
+      "scan_refreshes_per_second": 30.0,
+      "scan_good_frames_per_second": 30.0,
+      "scan_repeat_frames_per_second": 25.0,
+      "scan_blank_frames_per_second": 0.0,
+      "last_process_cycles": 21082909,
+      "last_process_seconds": 0.168663272,
+      "cache_miss_fraction": 0.036901257375538496,
+      "cache_burst_fills_per_output_pixel": 0.13264812882583793,
+      "limits": "Source and scan counters measure digital timing. Unique-presented counts complete new DDR result IDs; optical exposure FPS is not inferred."
+    },
+    "IndependentHostSummary": {
+      "host_window_seconds": 28.99941199994646,
+      "observed_core_mhz_from_uart_arrival": 125.00253453437928,
+      "constrained_core_mhz": 125.0,
+      "clock_cross_check_within_3percent": true,
+      "host_timed_rates": {
+        "source_frames_per_second": 60.00121657650205,
+        "captured_frames_per_second": 5.0001013813751705,
+        "processed_frames_per_second": 5.0001013813751705,
+        "unique_presented_frames_per_second": 5.0001013813751705,
+        "scan_refreshes_per_second": 30.000608288251026,
+        "scan_good_frames_per_second": 30.000608288251026,
+        "scan_repeat_frames_per_second": 25.000506906875852,
+        "scan_blank_frames_per_second": 0.0
+      },
+      "last_process_ms_using_observed_clock": 168.65985220644944,
+      "limits": "Independent host monotonic arrival interval; USB/UART buffering and scheduling introduce timing uncertainty. This is not a frequency-counter calibration."
+    },
+    "LastProcessCycles": 21082909,
+    "NominalLastProcessMS": 168.663272,
+    "HostClockLastProcessMS": 168.65985220644944,
+    "PerSampleCacheTotals": {
+      "cache_hits": 1040940037,
+      "cache_misses": 39883757,
+      "queries": 300673348
+    },
+    "PerSampleCacheMissFraction": 0.036901257375538496,
+    "WireReparsed": true,
+    "CorrectedModeThroughout": true,
+    "HardwareAccessedByVerifier": false
+  },
+  "Candidate": {
+    "Candidate": "tile8",
+    "WorkDirectory": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8-20261103-a",
+    "Evidence": {
+      "BitVerification": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8-20261103-a\\bit-v2-a\\verification.json",
+        "SHA256": "00d7631630024cf23c3b4b98febe549326aee2b9bcfedad8b3c49447d82f0079"
+      },
+      "ProgramReceipt": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8-20261103-a\\program-v2-a\\receipt.json",
+        "SHA256": "764037e9f82a47191343c9965c277a840adcaf3a996a740840a0c6c96a48d239"
+      },
+      "FPSReceipt": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8-20261103-a\\fps-corrected-v2-a\\receipt.json",
+        "SHA256": "39d397289bb5c05931ca9e44dee0ecbc6ce58238ed137f38b0d50dffe200dfb6"
+      },
+      "Wire": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8-20261103-a\\fps-corrected-v2-a\\wire.bin",
+        "SHA256": "1bb47c32c98e36d360944c06b4b149216740306787533d2f905c8ddf31ab315b"
+      }
+    },
+    "Bitstream": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8-20261103-a\\bit-v2-a\\generate_bitstream\\hdmi_camera_fisheye_top.sbit",
+      "SHA256": "1236d82f113e1ddb1c5e24502ed1aa03e4758db0a7d6ff17bf9216f0fbd0e4f3",
+      "Bytes": 3791112,
+      "Header": {
+        "Design": "hdmi_camera_fisheye_top",
+        "Device": "Logos2-PG2L100H--6-FBG676",
+        "Date": "11/03/26",
+        "Time": "21:22:41",
+        "Generator": "Fabric Compiler",
+        "Version": "2023.2-SP3<154097>"
+      }
+    },
+    "FinalADFSHA256": "d883052e4912056a91d634e4d6887f49c45ce60dea52266db94df0659b8a3913",
+    "TelemetryIdentity": {
+      "ProfileID": "ed59f83e3cfbc77b",
+      "BuildID": "11030001"
+    },
+    "SampleCount": 30,
+    "FirstSequence": 29,
+    "LastSequence": 58,
+    "FirstCounters": {
+      "source_frames": 1800,
+      "captured_frames": 450,
+      "processed_frames": 449,
+      "unique_presented_frames": 449,
+      "scan_refreshes": 901,
+      "scan_good_frames": 897,
+      "scan_repeat_frames": 448,
+      "scan_blank_frames": 3
+    },
+    "LastCounters": {
+      "source_frames": 3540,
+      "captured_frames": 885,
+      "processed_frames": 884,
+      "unique_presented_frames": 884,
+      "scan_refreshes": 1771,
+      "scan_good_frames": 1767,
+      "scan_repeat_frames": 883,
+      "scan_blank_frames": 3
+    },
+    "FrameCounterDeltas": {
+      "source_frames": 1740,
+      "captured_frames": 435,
+      "processed_frames": 435,
+      "unique_presented_frames": 435,
+      "scan_refreshes": 870,
+      "scan_good_frames": 870,
+      "scan_repeat_frames": 435,
+      "scan_blank_frames": 0
+    },
+    "NominalClockSummary": {
+      "sample_count": 30,
+      "hardware_window_seconds": 29.0,
+      "core_clock_hz": 125000000,
+      "clock_basis": "DDR IP PLL core clock; verify against this bitstream timing/PLL configuration",
+      "corrected_requested": true,
+      "counter_delta": {
+        "source_frames": 1740,
+        "captured_frames": 435,
+        "processed_frames": 435,
+        "unique_presented_frames": 435,
+        "scan_refreshes": 870,
+        "cache_hits": 3220948249,
+        "cache_misses": 21517244,
+        "queries": 902015094,
+        "scan_good_frames": 870,
+        "scan_repeat_frames": 435,
+        "scan_blank_frames": 0
+      },
+      "source_frames_per_second": 60.0,
+      "captured_frames_per_second": 15.0,
+      "processed_frames_per_second": 15.0,
+      "unique_presented_frames_per_second": 15.0,
+      "scan_refreshes_per_second": 30.0,
+      "scan_good_frames_per_second": 30.0,
+      "scan_repeat_frames_per_second": 15.0,
+      "scan_blank_frames_per_second": 0.0,
+      "last_process_cycles": 5538890,
+      "last_process_seconds": 0.04431112,
+      "cache_miss_fraction": 0.006636074939410311,
+      "cache_burst_fills_per_output_pixel": 0.023854638512290794,
+      "limits": "Source and scan counters measure digital timing. Unique-presented counts complete new DDR result IDs; optical exposure FPS is not inferred."
+    },
+    "IndependentHostSummary": {
+      "host_window_seconds": 28.99949410010595,
+      "observed_core_mhz_from_uart_arrival": 125.0021806410325,
+      "constrained_core_mhz": 125.0,
+      "clock_cross_check_within_3percent": true,
+      "host_timed_rates": {
+        "source_frames_per_second": 60.0010467076956,
+        "captured_frames_per_second": 15.0002616769239,
+        "processed_frames_per_second": 15.0002616769239,
+        "unique_presented_frames_per_second": 15.0002616769239,
+        "scan_refreshes_per_second": 30.0005233538478,
+        "scan_good_frames_per_second": 30.0005233538478,
+        "scan_repeat_frames_per_second": 15.0002616769239,
+        "scan_blank_frames_per_second": 0.0
+      },
+      "last_process_ms_using_observed_clock": 44.310347000313335,
+      "limits": "Independent host monotonic arrival interval; USB/UART buffering and scheduling introduce timing uncertainty. This is not a frequency-counter calibration."
+    },
+    "LastProcessCycles": 5538890,
+    "NominalLastProcessMS": 44.31112,
+    "HostClockLastProcessMS": 44.310347000313335,
+    "PerSampleCacheTotals": {
+      "cache_hits": 3220948249,
+      "cache_misses": 21517244,
+      "queries": 902015094
+    },
+    "PerSampleCacheMissFraction": 0.006636074939410311,
+    "WireReparsed": true,
+    "CorrectedModeThroughout": true,
+    "HardwareAccessedByVerifier": false
+  },
+  "HostUniqueFrameRateRatio": 2.9999915067318894,
+  "HostUniqueFrameRateImprovementPercent": 199.99915067318895,
+  "NominalUniqueFrameRateRatio": 3.0,
+  "NominalUniqueFrameRateImprovementPercent": 200.0,
+  "HardwareAccessedByVerifier": false,
+  "InputFilesModified": false,
+  "Limits": [
+    "Saved digital UART telemetry; unique frames are complete new DDR result IDs.",
+    "Input timing, processing FPS, unique-presented FPS and HDMI scan refresh remain separate metrics.",
+    "Shared telemetry build/profile IDs do not uniquely identify the binary; generation, SRAM and measurement SHA links bind each candidate.",
+    "Host arrival timing includes USB/UART buffering and scheduling uncertainty and is not frequency-counter calibration.",
+    "No camera-to-screen optical latency, optical exposure FPS, visual quality, long-run stability, or raw/KEY1 mode-switch acceptance is inferred.",
+    "Per-sample modulo-32 cache totals are reported separately; preserved nominal summaries are not rewritten."
+  ]
+}
