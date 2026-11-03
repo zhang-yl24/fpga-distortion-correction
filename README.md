@@ -1,5 +1,8 @@
 # FPGA 实时图像畸变矫正
 
+**O/P新增约123秒复测：** [同一位流的有界稳定性记录](delivery/20261103-hdmi1080-demo-source/progress/20261104-OP123-stability/README.md)，名义125MHz窗口122.986564s，新处理/呈现各3690=30.00328fps，数字scan59.9984Hz、约半数重复，记录fault空；峰55.7362℃，golden/显示/COM已恢复。不推断60个新校正帧、600秒长稳或光学E2E，R/macro16不混入。
+
+
 **稳定30fps源码交付：** [O/P保留回退及实测边界](delivery/20261103-hdmi1080-demo-source/stable30-OP/README.md)：bit99f8a734…，约63秒新处理/呈现30.011fps、数字scan60.006Hz，约半数重复；双角内部12类0违例、slow setup+0.068ns。目标仍为60个新校正帧/s，外部IO/复位/热/E2E及全项验收未完成。发布项目源码，83项厂商/生成依赖仅列SHA；R页交织30fps实验未晋升替代本回退。
 
 
