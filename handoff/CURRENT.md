@@ -1,3 +1,13 @@
+# 当前新 HDMI 摄像头：已上板鱼眼矫正 C 版（2026-11-03）
+
+当前发布为 `codex/hdmi-camera1080-fisheye`。`hdmi_camera_fisheye_top` C 已于北京时间 10:58:55 写入易失 SRAM；DONE/器件 ID 正确、Flash 未写。用户确认矫正效果、KEY1 原图/矫正往返，仍有卡顿；矫正约 4.3 FPS、原图 30 FPS、输出扫描 30Hz。
+
+[完整交付与重建入口](../delivery/20261103-hdmi-camera-fisheye-c/README.md)包含精确位流、110份源/IP闭包、标定图与内参/鱼眼系数、下载与三次UART原件。位流 SHA256 `8c43a77d9ddce72dc7015ef7f63aabe37ab6758dd698e2e811b669c5aa5ba047`。当前发布只代表这个 C 基线；独立提速工作另行推进。
+
+以下保留发布基线中的直通版本与团队历史接续，状态按对应时间理解。
+
+---
+
 # 新HDMI摄像头显示封存（2026-11-02）
 
 1920×1080@60Hz数字视频信号直通已实屏验收，输出源同步，不等同独立实测光学唯一FPS。SRAM下载/DONE通过、Flash未写。

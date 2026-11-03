@@ -1,5 +1,7 @@
 # FPGA 实时图像畸变矫正
 
+> **本分支当前板上版本（2026-11-03）：新 HDMI 摄像头鱼眼矫正 C 版。** SRAM/DONE/器件 ID 已确认，用户确认矫正效果和 KEY1 原图/矫正往返切换正常。矫正实测约 **4.3 FPS**，原图 **30 FPS**，HDMI 扫描 **30Hz**。点击[完整交付](delivery/20261103-hdmi-camera-fisheye-c/README.md)查看已下载位流、源码闭包、标定图与精确参数，以及下载/UART 原始证据。分支 `codex/hdmi-camera1080-fisheye`；下方保留队友独立工程包和各路线历史记录。
+
 ## 完整校正帧率优化工程包（2026-11-03）
 
 [进入完整工程目录](delivery/20261103-hdmi1080-board-package/) · [下载 ZIP（约 30 MB）](delivery/20261103-hdmi1080-board-package/hdmi1080-board-delivery.zip?raw=true)

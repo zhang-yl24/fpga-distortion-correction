@@ -1,0 +1,160 @@
+{
+  "schema": "hdmi-new-lens-fisheye-calibration-v1",
+  "camera_id": "new-hdmi-camera-20261102",
+  "lens_id": "new-hdmi-lens-20261102",
+  "source_connector": "HDMI_IN",
+  "native_size": [
+    1920,
+    1080
+  ],
+  "model": "opencv_fisheye",
+  "K_native": [
+    [
+      808.2272613458829,
+      0.0,
+      943.7446431879945
+    ],
+    [
+      0.0,
+      810.0804859591761,
+      556.5635877240222
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "D_normalized": [
+    -0.023025039402366058,
+    0.0010939325830845673,
+    -0.004404026888512618,
+    0.0010249559182549826
+  ],
+  "distortion_order": [
+    "k1",
+    "k2",
+    "k3",
+    "k4"
+  ],
+  "source_fit": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\new-lens-calibration-c.json",
+    "sha256": "3c90e297603ab612ee5450594db093fd3f0ad01550d05314bd29484f2909ebc8"
+  },
+  "snapshot_geometry": {
+    "native_size": [
+      1920,
+      1080
+    ],
+    "snapshot_size": [
+      960,
+      540
+    ],
+    "native_step": [
+      2,
+      2
+    ],
+    "native_origin_half_pixels": [
+      1,
+      1
+    ],
+    "per_pixel_gray": "floor((R+2*G+B)/4)",
+    "downsample": "floor(sum(gray_2x2)/4)",
+    "distortion_correction_applied": false
+  },
+  "received_frames": 49,
+  "source_crc_rejected_packets": 0,
+  "distinct_valid_views": 35,
+  "training_views": 28,
+  "held_out_views": 7,
+  "training_rms_native_px": 0.38192687125377933,
+  "held_out_mean_native_px": 0.39151887531326884,
+  "held_out_max_native_px": 0.8708752775252777,
+  "inner_corners": [
+    9,
+    6
+  ],
+  "square_mm": 25.0,
+  "fair_initial_vs_supplemental": {
+    "views": [
+      {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-bottom-e-20261102T184537152681Z-frame00000085.png",
+        "sha256": "afd787f7fcd1a06cdef5a55a157dabb601d07f6de82935ce103701999099b93a"
+      },
+      {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-top-d-20261102T184437619410Z-frame0000007c.png",
+        "sha256": "deeec5816e431579bc751e6b02710ebd452253dfc86a002b0a6075e0ee212b75"
+      },
+      {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184152214712Z-frame00000063.png",
+        "sha256": "64306d413c2ad7e4d761357536f271fa539b47f3ccbb08288c536e29f569d9c5"
+      }
+    ],
+    "count": 3,
+    "description": "These views were used to train neither the initial B fit nor the supplemental C fit.",
+    "initial_b": {
+      "rms_native_px": [
+        0.34270267787622277,
+        0.25788519323584996,
+        0.853431817300845
+      ],
+      "mean_native_px": 0.4846732294709726
+    },
+    "supplemental_c": {
+      "rms_native_px": [
+        0.34540740363332334,
+        0.25311864833652936,
+        0.8708752775252777
+      ],
+      "mean_native_px": 0.4898004431650435
+    }
+  },
+  "projection_sanity": {
+    "positive_focal_lengths": true,
+    "principal_point_inside_image": true,
+    "fisheye_theta_distortion_monotone_to_sensor_corners": true,
+    "minimum_derivative_to_90deg": 0.7416778262633102,
+    "maximum_sensor_corner_theta_deg": 85.41138767391199,
+    "all_map_coordinates_finite": true
+  },
+  "full_fov_optical_acceptance": false,
+  "fpga_rectification_deployed": false,
+  "preview": {
+    "source": {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\first-b-20261102T183156714635Z-frame00000009.png",
+      "sha256": "a4e1c8df25b83387afe89a6116f1b43c14fda32f306c28ba591a0c75c171ed25"
+    },
+    "corrected": {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\new-lens-fisheye-preview-c.png",
+      "sha256": "2f31d8a13f8018fc5616c699310a2b8d1139b8a82c1a64dc47470da41d2e27d9"
+    },
+    "comparison": {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\new-lens-calibration-comparison-c.png",
+      "sha256": "6e86cef45e6b5c7c9311d37e862fbac5ef5b4904c81ba444e11641c527da04fb"
+    },
+    "processor": "PC OpenCV",
+    "balance": 0.5,
+    "new_K_snapshot": [
+      [
+        249.26187221266795,
+        0.0,
+        447.4878149665509
+      ],
+      [
+        0.0,
+        249.83341719615547,
+        280.30807398779103
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "valid_source_coordinate_fraction": 0.8973109567901234
+  },
+  "remaining_checks": [
+    "Inspect corrected edges and straight lines on additional scenes before final full FOV optical acceptance.",
+    "Generate and independently validate the FPGA mapping before claiming corrected HDMI output."
+  ]
+}
