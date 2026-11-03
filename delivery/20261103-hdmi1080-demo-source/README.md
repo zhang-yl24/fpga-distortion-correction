@@ -1,5 +1,7 @@
 # HDMI 1080p 演示源码交付与 60fps 后续目标
 
+**新结果：** [INDEX6精确连续三帧与60Hz配置实际路由](progress/20261103-cont60-route/README.md)：三帧数字链路通过；route/STA退出0但slow setup10213条/−2.105ns，未签核/未产bit/未板测。数字33.941813ms不等于旧板测或硬件E2E；三条厂商异步组登记后实际未生效。
+
 **上午实质进展：** [独立源码与验证交付](progress/20261103-morning/README.md) 新增RX framing、INDEX6完整单帧engine及冻结57044实板计数。真实固定校正计数nominal换算23.36fps；INDEX6模型16.59ms、RX新Map资源分开记录，不拼接成60实板成绩。E2E和完整延迟分布仍未测。
 
 **最新分支复核：** [stable30@e89a2d42](LATEST_STABLE30_REVIEW.md) 确有新RTL与约束，12类原生内部时序通过、setup最小+0.009ns；30Hz候选未板测，外部IO/CDC/复位未签核。其22.65ms处理模型不是D256或持续60fps成果。只读副本与本轮交付暂存位于D盘。下文保留此前main8adda和各冻结候选的日期/身份边界。

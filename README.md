@@ -2,6 +2,10 @@
 
 ## 当前状态补注（2026-11-03）
 
+**新的有限三帧/真实路由交付：** [INDEX6连续3帧与60Hz配置最终STA](delivery/20261103-hdmi1080-demo-source/progress/20261103-cont60-route/README.md) 已绑定源码和事件边界。三帧规范化60Hz共享DDR RTL通过；实际route成功但slow setup10213/−2.105ns，无bit、无板验。RCF两网已应用，厂商三异步组未生效，不能把登记当应用。33.941813ms是数字SOF到首扫描观测，旧57044板测23.3613fps及其31ms内部样本仍单独保留。
+
+
+
 **10:31后合并交付：** [RX短测/Map、INDEX6单帧引擎与实板固定纯校正计数](delivery/20261103-hdmi1080-demo-source/progress/20261103-morning/README.md) 已分身份列出。冻结57044位流板测468次新完成/20.033 nominal秒=23.36fps；仅两个内部样本31.16/31.26ms，E2E未测。RX新候选仅Map/结构检查；INDEX6单帧16.591656ms不是连续/实板60。新构建与证据都按各项目D盘目录保存。
 
 
