@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "hardware_tested": false,
+  "source_identity": "494e1e1843783e996a0b917379d4872d44ad3c9230d94f5cf0aee13493779b5b",
+  "parameters": {
+    "TW": 8,
+    "READ_LATENCY": 12,
+    "PRESSURE": 1,
+    "CORRECTED": 1
+  },
+  "cache_configuration": {
+    "name": "rowpad",
+    "top_index_bits": 10,
+    "bottom_index_bits": 9,
+    "top_row_padded_index": 1,
+    "bottom_row_padded_index": 0,
+    "native_top_rows": 640,
+    "ddr_ca_fanout16": true
+  },
+  "sources": {
+    "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+    "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\ddr_write_arbiter.v": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+    "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\ddr_adaptive_result_writer.v": "c7030671fc4436bb4b4ae1dcaa96e8dda7c92d686aeba286cfda102696fc41ae",
+    "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\ddr_neighbour_cache_scatter4_rowpipe.v": "3fbeeed340a9fa9c880c95ce5f9bad2666d6a9b77ae4bef8849859a439b84e11",
+    "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\ddr_remap_sample_scatter4_rowpipe.v": "fbb7c45e0502e43284697d74c6a81bb7b5840c963108e25daa6057899ce4999f",
+    "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_mapper.v": "bac7532effab34aee8f9ea92da99f1fde8cdff9fb34ef4e884fa24edf35d4610",
+    "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_rom.v": "50e87c101278565554318acc2215f1b97a391de7b0c0abfe6ae1e0984c4ee7bc",
+    "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_core.v": "20240cd7de50d32dec82953531bba05354a4adfe38c0c26fbc3c4e4099baacc3",
+    "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_lane.v": "78f2d0546b6c4574e124feb2f15baf91b92482c21ff7d1f503bce49f30aeab3a",
+    "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_engine.v": "db857559dfdca9a6f38db228924c3561300e7c065cb358b135d452528198d1a8",
+    "D:\\f60-run\\final-f-lat12\\sim\\engine_full.sv": "304aa69f533c9295d7f079494d9b1a2cd5af0fb04a8ee3e3d05e7c93855d957b"
+  },
+  "map_sha256": "425d502e1916c88b1e2e29482689d19f3d366486dc7eedf05d245204f6228a9d",
+  "commands": [
+    {
+      "command": [
+        "xvlog.bat",
+        "--sv",
+        "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\mul32_pipe.v",
+        "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\bilinear_rgb.v",
+        "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\ddr_read_arbiter.v",
+        "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\ddr_write_arbiter.v",
+        "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\ddr_adaptive_result_writer.v",
+        "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\ddr_neighbour_cache_scatter4_rowpipe.v",
+        "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\ddr_remap_sample_scatter4_rowpipe.v",
+        "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_mapper.v",
+        "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_rom.v",
+        "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_core.v",
+        "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_lane.v",
+        "D:\\f60-run\\final-f-lat12\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_engine.v",
+        "D:\\f60-run\\final-f-lat12\\sim\\engine_full.sv"
+      ],
+      "returncode": 0,
+      "seconds": 0.6719999999986612,
+      "log_sha256": "cce4ebfaf11a7af034e17e72253ed2b5bae0449e5506ad4271d1d568372ff369"
+    },
+    {
+      "command": [
+        "xelab.bat",
+        "tb_fisheye60",
+        "-s",
+        "engine_full"
+      ],
+      "returncode": 0,
+      "seconds": 14.71900000000096,
+      "log_sha256": "2f323ffc20eabc9b3e1af469eddd5de2651e229173e3b573b8be36f1b868ce39"
+    },
+    {
+      "command": [
+        "xsim.bat",
+        "engine_full",
+        "-runall"
+      ],
+      "returncode": 0,
+      "seconds": 234.57799999999952,
+      "log_sha256": "bd5780b2382ec83e4d558353c24f99f05464728e9461ae9109f49f019e3cb775"
+    }
+  ],
+  "mismatched_pixels": 0,
+  "cycles": 1684443,
+  "crc": 82963765,
+  "pixels": 2073600,
+  "reads": 23295,
+  "writes": 8100,
+  "hits": 7430657,
+  "misses": 23295,
+  "tile_width": 8,
+  "read_latency": 12,
+  "pressure": 1,
+  "top_rows": 640,
+  "lane0_cycles": 1684441,
+  "lane1_cycles": 1537905,
+  "crc_matches": true,
+  "output_sha256": "a3eb559176cde531ffa8aba931bce286a51a714b8e7ed9fe1dd64dbbbf1edf70",
+  "ms_at_125mhz": 13.475544,
+  "engine_fps_at_125mhz": 74.208506907031,
+  "within_60fps_engine_budget": true
+}

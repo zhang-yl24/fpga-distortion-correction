@@ -1,0 +1,1271 @@
+{
+  "schema": "fisheye60-writer-regression-v1",
+  "passed": true,
+  "case_count": 50,
+  "fault_collision_count": 10,
+  "fault_collision_metrics": [
+    "METRIC collision kind=0 boundary=0 bursts=0 beats=0",
+    "METRIC collision kind=0 boundary=1 bursts=1 beats=16",
+    "METRIC collision kind=0 boundary=2 bursts=1 beats=16",
+    "METRIC collision kind=0 boundary=3 bursts=1 beats=16",
+    "METRIC collision kind=0 boundary=4 bursts=1 beats=16",
+    "METRIC collision kind=1 boundary=0 bursts=0 beats=0",
+    "METRIC collision kind=1 boundary=1 bursts=1 beats=16",
+    "METRIC collision kind=1 boundary=2 bursts=1 beats=16",
+    "METRIC collision kind=1 boundary=3 bursts=1 beats=16",
+    "METRIC collision kind=1 boundary=4 bursts=1 beats=16"
+  ],
+  "source_sha256": {
+    "delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_adaptive_result_writer.v": "c82d52ad9adc0c53901bac3e07b6fbcfa99a1e28afb1c2985808dd61ca78ec11",
+    "delivery/20261103-hdmi-camera-fisheye-60/tests/cache_writer_pingpong.sv": "ce5e2d277e5e1b2b47bddc0d9d3aee1855b1a495be66e6ed162d1a23d399dd6f",
+    "delivery/20261103-hdmi-camera-fisheye-60/tests/tb_stripe_writer.sv": "3c7c3a3923a89973ae2c5cd53af5a23cd94b1a03f43d8ce720864f623b1d76cb",
+    "delivery/20261103-hdmi-camera-fisheye-60/tests/tb_writer_fault_collision.sv": "41fa07467ec6677432d19f2b9caa97e48bb905c9cad2d4a0d3608fcfdc9d3033",
+    "distortion/rtl/video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705"
+  },
+  "commands": [
+    {
+      "label": "compile",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "ddr_adaptive_result_writer.v",
+        "cache_writer_pingpong.sv",
+        "tb_stripe_writer.sv",
+        "tb_stripe_writer32.sv",
+        "tb_writer_fault_collision.sv"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "elaborate-raster",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_writer_pingpong",
+        "-mt",
+        "2",
+        "-s",
+        "raster"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "elaborate-stripe8",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_stripe_writer",
+        "-mt",
+        "2",
+        "-s",
+        "stripe8"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "elaborate-stripe32",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_stripe_writer32",
+        "-mt",
+        "2",
+        "-s",
+        "stripe32"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "elaborate-collision",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_writer_fault_collision",
+        "-mt",
+        "2",
+        "-s",
+        "collision"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-0-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE0",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-1-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE1",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-2-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE2",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-3-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE3",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-4-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE4",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-5-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE5",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-6-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE6",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-7-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE7",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-8-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE8",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-9-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE9",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-10-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE10",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-11-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE11",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-12-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE12",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-13-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE13",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-14-tile-0",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE14",
+        "-testplusarg",
+        "TILE0",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-0-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE0",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-1-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE1",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-2-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE2",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-3-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE3",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "raster-case-11-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "raster",
+        "-testplusarg",
+        "CASE11",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-0-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE0",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-1-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE1",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-2-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE2",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-3-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE3",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-4-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE4",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-5-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE5",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-6-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE6",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-7-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE7",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-8-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE8",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-9-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE9",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-11-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE11",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-12-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE12",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-13-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE13",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-14-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE14",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe8-case-15-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe8",
+        "-testplusarg",
+        "CASE15",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-0-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE0",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-1-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE1",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-2-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE2",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-3-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE3",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-4-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE4",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-5-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE5",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-6-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE6",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-7-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE7",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-8-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE8",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-9-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE9",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-11-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE11",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-12-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE12",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-13-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE13",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-14-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE14",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "stripe32-case-15-tile-1",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "stripe32",
+        "-testplusarg",
+        "CASE15",
+        "-testplusarg",
+        "TILE1",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "label": "fault-collisions",
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "collision",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "snapshot": "raster",
+      "case": 0,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=0 cycles=1586 input_stalls=0 pixels=1536 beats=96 crc=655c3c01",
+        "METRIC case=0 tile=0 cycles=1586 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 1,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": [
+        "METRIC case=1 tile=0 cycles=1601 input_stalls=0 pixels=1536 beats=96 crc=655c3c01",
+        "METRIC case=1 tile=0 cycles=1604 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 2,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": [
+        "METRIC case=2 tile=0 cycles=1984 input_stalls=398 pixels=1536 beats=96 crc=655c3c01",
+        "METRIC case=2 tile=0 cycles=1586 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 3,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": [
+        "METRIC case=3 tile=0 cycles=1984 input_stalls=398 pixels=1536 beats=96 crc=655c3c01",
+        "METRIC case=3 tile=0 cycles=1586 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 4,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "raster",
+      "case": 5,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "raster",
+      "case": 6,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "raster",
+      "case": 7,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "raster",
+      "case": 8,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "raster",
+      "case": 9,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=0 cycles=1586 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 10,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": [
+        "METRIC case=10 tile=0 cycles=1586 input_stalls=0 pixels=1536 beats=96 crc=655c3c01",
+        "METRIC case=10 tile=0 cycles=1586 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 11,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": [
+        "METRIC case=11 tile=0 cycles=1586 input_stalls=0 pixels=1536 beats=96 crc=655c3c01",
+        "METRIC case=11 tile=1 cycles=2356 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 12,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=0 cycles=1586 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 13,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=0 cycles=1586 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 14,
+      "tile_mode": 0,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "raster",
+      "case": 0,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=1 cycles=2356 input_stalls=0 pixels=1536 beats=96 crc=655c3c01",
+        "METRIC case=0 tile=1 cycles=2356 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 1,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=1 tile=1 cycles=2373 input_stalls=0 pixels=1536 beats=96 crc=655c3c01",
+        "METRIC case=1 tile=1 cycles=2374 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 2,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=2 tile=1 cycles=2356 input_stalls=0 pixels=1536 beats=96 crc=655c3c01",
+        "METRIC case=2 tile=1 cycles=2356 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 3,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=3 tile=1 cycles=2356 input_stalls=0 pixels=1536 beats=96 crc=655c3c01",
+        "METRIC case=3 tile=1 cycles=2356 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "raster",
+      "case": 11,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=11 tile=1 cycles=2356 input_stalls=0 pixels=1536 beats=96 crc=655c3c01",
+        "METRIC case=11 tile=0 cycles=1586 input_stalls=0 pixels=1536 beats=96 crc=655c3c01"
+      ]
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 0,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=0 immediate_bank_reuses=2",
+        "METRIC case=0 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=0 immediate_bank_reuses=4"
+      ]
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 1,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=1 tile=1 cycles=3909 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC case=1 tile=1 cycles=3906 input_stalls=0 pixels=3072 beats=192 crc=6a95746d"
+      ]
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 2,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=2 tile=1 cycles=7620 input_stalls=3728 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=3728 immediate_bank_reuses=2",
+        "METRIC case=2 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=3728 immediate_bank_reuses=4"
+      ]
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 3,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=3 tile=1 cycles=4520 input_stalls=628 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=628 immediate_bank_reuses=2",
+        "METRIC case=3 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=628 immediate_bank_reuses=4"
+      ]
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 4,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 5,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 6,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 7,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 8,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 9,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=0 immediate_bank_reuses=2"
+      ]
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 11,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=11 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC case=11 tile=0 cycles=3122 input_stalls=0 pixels=3072 beats=192 crc=6a95746d"
+      ]
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 12,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=0 immediate_bank_reuses=2"
+      ]
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 13,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=0 immediate_bank_reuses=2"
+      ]
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 14,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "stripe8",
+      "case": 15,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC RAMPIPE reset_with_both_stages_full=1",
+        "METRIC case=0 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=0 immediate_bank_reuses=2"
+      ]
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 0,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=0 immediate_bank_reuses=2",
+        "METRIC case=0 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=0 immediate_bank_reuses=4"
+      ]
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 1,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=1 tile=1 cycles=3909 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC case=1 tile=1 cycles=3906 input_stalls=0 pixels=3072 beats=192 crc=6a95746d"
+      ]
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 2,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=2 tile=1 cycles=7620 input_stalls=3728 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=3728 immediate_bank_reuses=2",
+        "METRIC case=2 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=3728 immediate_bank_reuses=4"
+      ]
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 3,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=3 tile=1 cycles=4520 input_stalls=628 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=628 immediate_bank_reuses=2",
+        "METRIC case=3 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=628 immediate_bank_reuses=4"
+      ]
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 4,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 5,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 6,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 7,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 8,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 9,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=0 immediate_bank_reuses=2"
+      ]
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 11,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=11 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC case=11 tile=0 cycles=3122 input_stalls=0 pixels=3072 beats=192 crc=6a95746d"
+      ]
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 12,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=0 immediate_bank_reuses=2"
+      ]
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 13,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC case=0 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=0 immediate_bank_reuses=2"
+      ]
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 14,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": []
+    },
+    {
+      "snapshot": "stripe32",
+      "case": 15,
+      "tile_mode": 1,
+      "passed": true,
+      "metrics": [
+        "METRIC RAMPIPE reset_with_both_stages_full=1",
+        "METRIC case=0 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d",
+        "METRIC RAMPIPE stalls=0 immediate_bank_reuses=2"
+      ]
+    }
+  ],
+  "checks": [
+    "pixel values and independent raster CRC",
+    "AW/W address and payload stability",
+    "backpressure with both stripes occupied",
+    "tag and transport faults retain committed writes",
+    "reset during partial stripe, pending AW and pending W",
+    "multiple frames and mode changes"
+  ],
+  "scope": "Digital writer unit verification. No native timing or hardware validation."
+}

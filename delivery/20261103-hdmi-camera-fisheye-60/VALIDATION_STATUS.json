@@ -1,0 +1,170 @@
+{
+  "schema": "fisheye60-validation-v1",
+  "updated_utc": "2026-11-03T09:25:17.932088+00:00",
+  "delivery_kind": "SOURCE_INTEGRATION_CANDIDATE",
+  "revision": "i",
+  "source_identity": "d931793d62bc852c25be57f16528ac7d18dc70fc5760138dcf05e6f443ee8bd5",
+  "source_file_count": 116,
+  "build_id": "11037003",
+  "profile_id": "ed59f83e3cfbc77b",
+  "baseline_commit": "b3b2969",
+  "baseline_bitstream_sha256": "8c43a77d9ddce72dc7015ef7f63aabe37ab6758dd698e2e811b669c5aa5ba047",
+  "hardware_tested": false,
+  "target": {
+    "width": 1920,
+    "height": 1080,
+    "new_corrected_fps": 60,
+    "quality": "C fisheye calibration, bilinear, RGB565, gamma off, zero rotation"
+  },
+  "full_frame_simulation": [
+    {
+      "status": "PASS",
+      "evidence": "evidence/final-i-lat12",
+      "latency_cycles": 12,
+      "shared_service_pressure": true,
+      "cycles": 1692988,
+      "pixels": 2073600,
+      "mismatched_pixels": 0,
+      "crc": 82963765,
+      "reads": 23295,
+      "writes": 8100,
+      "ms_at_125mhz": 13.543904,
+      "engine_fps_at_125mhz": 73.83395511368066,
+      "output_sha256": "a3eb559176cde531ffa8aba931bce286a51a714b8e7ed9fe1dd64dbbbf1edf70",
+      "within_60fps_engine_budget": true
+    },
+    {
+      "status": "PASS",
+      "evidence": "evidence/final-i-lat40",
+      "latency_cycles": 40,
+      "shared_service_pressure": true,
+      "cycles": 2076702,
+      "pixels": 2073600,
+      "mismatched_pixels": 0,
+      "crc": 82963765,
+      "reads": 23295,
+      "writes": 8100,
+      "ms_at_125mhz": 16.613616,
+      "engine_fps_at_125mhz": 60.19159224578201,
+      "output_sha256": "a3eb559176cde531ffa8aba931bce286a51a714b8e7ed9fe1dd64dbbbf1edf70",
+      "within_60fps_engine_budget": true
+    }
+  ],
+  "system_simulation": {
+    "status": "PASS",
+    "evidence": "evidence/system-final-i-rowpad640-fanout16",
+    "width": 64,
+    "height": 64,
+    "real_engine": true,
+    "epochs": 2,
+    "totals": {
+      "unique_displayed": 32,
+      "raw_displayed": 12,
+      "corrected_displayed": 20,
+      "display_pixels": 151552,
+      "repeat_displayed": 5,
+      "underflows": 0,
+      "mismatches": 0
+    }
+  },
+  "physical_timing": {
+    "status": "FAIL",
+    "same_or_related_clock_failures": [
+      {
+        "check": "slow_setup",
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "ddrphy_sysclk",
+        "WNS(ns)": "-2.886",
+        "TNS(ns)": "-1763.087",
+        "Failing Endpoints": "3601",
+        "Total Endpoints": "111583",
+        "domain_status": "same_clock"
+      },
+      {
+        "check": "slow_setup",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "input_pixel",
+        "WNS(ns)": "-2.414",
+        "TNS(ns)": "-578.829",
+        "Failing Endpoints": "433",
+        "Total Endpoints": "8283",
+        "domain_status": "same_clock"
+      },
+      {
+        "check": "slow_setup",
+        "Launch Clock": "cfg_clk",
+        "Capture Clock": "board27",
+        "WNS(ns)": "-0.331",
+        "TNS(ns)": "-0.331",
+        "Failing Endpoints": "1",
+        "Total Endpoints": "3",
+        "domain_status": "related_clock_domains_timed"
+      },
+      {
+        "check": "slow_setup",
+        "Launch Clock": "ddrphy_sysclk",
+        "Capture Clock": "phy_dq_sysclk_0",
+        "WNS(ns)": "-0.012",
+        "TNS(ns)": "-0.022",
+        "Failing Endpoints": "3",
+        "Total Endpoints": "196",
+        "domain_status": "core_to_divided_phy_timed"
+      },
+      {
+        "check": "slow_recovery",
+        "Launch Clock": "board27",
+        "Capture Clock": "cfg_clk",
+        "WNS(ns)": "-0.403",
+        "TNS(ns)": "-2.134",
+        "Failing Endpoints": "7",
+        "Total Endpoints": "7",
+        "domain_status": "related_clock_domains_timed"
+      }
+    ],
+    "external_io": {
+      "status": "PENDING_EXTERNAL_IO_ACCEPTANCE",
+      "no_input_delay": "64",
+      "no_output_delay": "110",
+      "explanation": "Internal clock checks do not prove board-level HDMI AC or DDR physical margins; absent IO delays remain reported."
+    },
+    "held_bundle_cdc_and_reset_acceptance": "PENDING",
+    "report": "evidence/physical-i/timing.json"
+  },
+  "synchronizers_and_gray": {
+    "nonfifo": "PASS",
+    "fifo": "PASS",
+    "gray_bounds": "PASS",
+    "scope": "Structural mapping and exact Gray bounds; other CDC/MTBF/reset acceptance remains open."
+  },
+  "ddr_constraint_audit": "PASS",
+  "ca_local_equivalence": "PASS_SYNTHESIS_LOCAL_EQUIVALENCE",
+  "candidate_bitstream": {
+    "status": "NOT_GENERATED",
+    "board_ready": false
+  },
+  "remaining_acceptance": [
+    "Physical timing closure",
+    "Held-bundle CDC, reset release and MTBF review",
+    "External HDMI IO timing",
+    "Board programming and new-frame rate measurement",
+    "60-second and 600-second board runs"
+  ],
+  "evidence_sha256": {
+    "evidence/final-i-lat12/engine-report.json": "97329dd1fd81abd55e4c7c060272b0205c46899c091365a68edb998377e3f76d",
+    "evidence/final-i-lat12/physical-source-binding.json": "1dd0f52199e959258f120505dbeb736205a797f6e223c94c468e5ea0dd4e5c1c",
+    "evidence/final-i-lat40/engine-report.json": "04fd82ef0f3ad22f2eb1374197f400be5a223ed9e1165c245d9e57fed9f7a1e1",
+    "evidence/final-i-lat40/physical-source-binding.json": "22ec5707985dd9616e4e6663afc95a2b6343aa6049a171666ec7b1866793962e",
+    "evidence/system-final-i-rowpad640-fanout16/system-report.json": "84f475e5a7c4bea16286c9df89a0c9d97c3f517e6c8584c27c7a80764e6cec81",
+    "evidence/system-final-i-rowpad640-fanout16/physical-i-source-binding.json": "b6a321053213316a04fb43311929d6aa2b67906d68761308a8ee15ed8a208b9b",
+    "evidence/physical-i/timing.json": "8ec09625ebd67e25573a7793702be9e315e9c3594664dc8a75b2b1566564072d",
+    "evidence/cdc-user-audit/physical-i-gray-constraints.json": "cb97792408d171c6f74c3d69de4d0915bda3a2d1cbdcd113411692284a047629",
+    "evidence/cdc-user-audit/physical-i-nonfifo-mapping.json": "2cb1fc3c58a07504e704d9115a2f1c8d2bdd4d59c7217e488d0161b4d3b2f6f0",
+    "evidence/cdc-fifo-i/fifo-i-mapped-audit.json": "0b78a9534873233c061d5fba6087c9e19a605524f7fe060d5aa02d4ba2af0924",
+    "evidence/physical-i/ddr-constraints.json": "ee73e37e8a9f0ea6d6808ba5ebb0f60f1c794ca08b962fb95c573c01dc6f42be",
+    "evidence/physical-i/ddr-ca-fanout.json": "aac4ba4c4ece3db80c2fabe1596a844b0896838a48bc17bee33af2b39e5663cb"
+  },
+  "limitations": [
+    "Model processing rate is distinct from scan refresh and measured new displayed frame rate.",
+    "Original board-tested C bitstream is retained separately and belongs to the 4.28 FPS baseline."
+  ]
+}

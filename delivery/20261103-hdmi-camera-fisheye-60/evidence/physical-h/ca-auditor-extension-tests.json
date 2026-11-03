@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "synthetic_auditor_fixtures": true,
+  "not_native_implementation_evidence": true,
+  "tool_sha256": "2d12d812ee287f782d1c40a074cbde0a0c0478764ce0a5cf6ddfcc66e375341e",
+  "cases": [
+    {
+      "case": "reviewed_gray_allowed",
+      "passed": true,
+      "exit_code": 0,
+      "status": "PASS_SYNTHESIS_LOCAL_EQUIVALENCE",
+      "failed_checks": []
+    },
+    {
+      "case": "unknown_fdc_rejected",
+      "passed": true,
+      "exit_code": 1,
+      "status": "FAIL",
+      "failed_checks": [
+        "added_constraints_are_exact_ca_and_optional_audited_gray"
+      ]
+    },
+    {
+      "case": "changed_gray_rejected_even_with_updated_manifest",
+      "passed": true,
+      "exit_code": 1,
+      "status": "FAIL",
+      "failed_checks": [
+        "additional_gray_fdc_is_exact_reviewed_file"
+      ]
+    }
+  ]
+}

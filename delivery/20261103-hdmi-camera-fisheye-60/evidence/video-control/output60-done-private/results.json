@@ -1,0 +1,251 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "physical_timing_verified": false,
+  "cases": [
+    {
+      "name": "raster",
+      "passed": true,
+      "source_sha256": {
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ddr_video_output_1080_board.v": "62a2b9d90e895f36d26a15e81208c27907084b8d25a31df5403c028d16c271a0",
+        "D:\\f60\\distortion\\rtl\\video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+        "D:\\f60\\distortion\\rtl\\video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_output60_raster.sv": "9483d27d270831b321dfd3694dee96f271cec3102f9609bf16bccaaddfaa6ec9"
+      },
+      "staged_source_sha256": "fb89120f58a2847898555c6d972430f462299352d0c241db8b8daab67b0b06f8",
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "D:\\f60-work\\video\\output60-done-private-final\\raster\\ddr_video_output_1080_board.v",
+            "D:\\f60\\distortion\\rtl\\video_async_fifo.v",
+            "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_output60_raster.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.5090794000007008,
+          "log_sha256": "5c8113d0b281d771725bb1a42f93c7d6e0bdbaa392fea47e59c63fcb3fac5529"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_output60_raster",
+            "-s",
+            "scan_test"
+          ],
+          "returncode": 0,
+          "seconds": 2.9126211000002513,
+          "log_sha256": "6a6fa9a6dd936a1235d3e4880f31ce65f7e4afc528e9aacd407861636f0b5ac5"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "scan_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 43.401964900000166,
+          "log_sha256": "26d8b314b11fb6e14584ac70d7c2acbcb3a1bc1fcdff341d5d03559706314ae2"
+        }
+      ],
+      "pass_lines": [
+        "PASS OUTPUT60 RASTER frames=2 pixels_per_frame=2073600 beats_per_frame=129600 frame_cycles=2475000 refresh_hz=60 crc0=1872e3d1 crc1=9432f39a"
+      ]
+    },
+    {
+      "name": "faults",
+      "passed": true,
+      "source_sha256": {
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ddr_video_output_1080_board.v": "62a2b9d90e895f36d26a15e81208c27907084b8d25a31df5403c028d16c271a0",
+        "D:\\f60\\distortion\\rtl\\video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+        "D:\\f60\\distortion\\rtl\\video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_output60_faults.sv": "992dabf1e40384aba532dd557c1b03bedb9c0a41323fd800b74f5024fe30d166"
+      },
+      "staged_source_sha256": "fb89120f58a2847898555c6d972430f462299352d0c241db8b8daab67b0b06f8",
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "D:\\f60-work\\video\\output60-done-private-final\\faults\\ddr_video_output_1080_board.v",
+            "D:\\f60\\distortion\\rtl\\video_async_fifo.v",
+            "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_output60_faults.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.8572203000003356,
+          "log_sha256": "0c5af7322312d3a96687b98bd6272099bee64b367b88abd86dec208885ab04d4"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_board1080_scan",
+            "-s",
+            "scan_test"
+          ],
+          "returncode": 0,
+          "seconds": 2.621110400001271,
+          "log_sha256": "2f42398c2f936e755407229999ef94c7afe1d3e94de281414a516004283cda17"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "scan_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 9.281552899999951,
+          "log_sha256": "d6ac62fa15d8dc4194a0bf00b9f0bbf741775cf5bda502e1cf934bf7a4002538"
+        }
+      ],
+      "pass_lines": [
+        "PASS scan new/repeated ID, held lease/result metadata, ACK admission and blank grant",
+        "PASS scan good then bad CRC revokes health/good after final pixel and holds bad bank",
+        "PASS scan good then underflow, continued FIFO tail drain and bank quarantine",
+        "PASS scan midframe abort with inflight drain, coordinated reset and fresh frame recovery",
+        "PASS scan old epoch rejected before output, FIFO drained without release",
+        "PASS scan late closed-window grant rejected without new request/good",
+        "PASS scan older frame ID rejected while legal refresh/new IDs remain supported",
+        "PASS scan post-success unsolicited FIFO return revokes health while held good bus is preserved",
+        "PASS scan overlong FIFO stream fails final-count/empty check and drains",
+        "PASS scan same-edge final-pixel abort suppresses last pixel and good completion",
+        "PASS scan raw unsolicited return on final-verification cycle vetoes good lease",
+        "PASS scan disable on final-verification cycle vetoes good lease",
+        "PASS scan abort with simultaneous word pop and owned FIFO return keeps payload private",
+        "PASS scan unsolicited final-pixel pop and return updates private word only, no last/good leak",
+        "PASS scan abort on final-verification cycle preserves complete raster and vetoes good lease",
+        "PASS scan boundary abort allows private epoch preparation and vetoes request publication",
+        "PASS scan disabled boundary keeps request epoch/toggle stable",
+        "PASS scan boundary unowned return keeps prepared epoch unpublished",
+        "PASS scan open request keeps epoch and toggle held across injected boundary then times out safely",
+        "PASS scan raw fault on synchronized ACK edge holds published snapshot then revokes good without republishing",
+        "PASS board1080 scan: independent RGB565/CRC, held epochs/IDs, faults-black-drain, common reset; no PHY or hardware claim"
+      ]
+    },
+    {
+      "name": "faults_tight",
+      "passed": true,
+      "source_sha256": {
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ddr_video_output_1080_board.v": "62a2b9d90e895f36d26a15e81208c27907084b8d25a31df5403c028d16c271a0",
+        "D:\\f60\\distortion\\rtl\\video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+        "D:\\f60\\distortion\\rtl\\video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_output60_faults.sv": "992dabf1e40384aba532dd557c1b03bedb9c0a41323fd800b74f5024fe30d166"
+      },
+      "staged_source_sha256": "fb89120f58a2847898555c6d972430f462299352d0c241db8b8daab67b0b06f8",
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "--define",
+            "TIGHT_RASTER",
+            "D:\\f60-work\\video\\output60-done-private-final\\faults_tight\\ddr_video_output_1080_board.v",
+            "D:\\f60\\distortion\\rtl\\video_async_fifo.v",
+            "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_output60_faults.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.5318508000000293,
+          "log_sha256": "73a00b180eb3e958f26c1801fc92e76a2fb0e91ade3e5e15122d1261ec0d0421"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_board1080_scan",
+            "-s",
+            "scan_test"
+          ],
+          "returncode": 0,
+          "seconds": 2.674199099999896,
+          "log_sha256": "ee9c1a797eacb136f7a9628cdfd4feeae660402784b634a5619e412f9b4fffc2"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "scan_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 8.922621499999877,
+          "log_sha256": "49775f394908effb9cfc144c3664e4e3ce42569eafc2d6457fd62260fd5d6e24"
+        }
+      ],
+      "pass_lines": [
+        "PASS scan new/repeated ID, held lease/result metadata, ACK admission and blank grant",
+        "PASS scan good then bad CRC revokes health/good after final pixel and holds bad bank",
+        "PASS scan good then underflow, continued FIFO tail drain and bank quarantine",
+        "PASS scan midframe abort with inflight drain, coordinated reset and fresh frame recovery",
+        "PASS scan old epoch rejected before output, FIFO drained without release",
+        "PASS scan late closed-window grant rejected without new request/good",
+        "PASS scan older frame ID rejected while legal refresh/new IDs remain supported",
+        "PASS scan post-success unsolicited FIFO return revokes health while held good bus is preserved",
+        "PASS scan overlong FIFO stream fails final-count/empty check and drains",
+        "PASS scan same-edge final-pixel abort suppresses last pixel and good completion",
+        "PASS scan raw unsolicited return on final-verification cycle vetoes good lease",
+        "PASS scan disable on final-verification cycle vetoes good lease",
+        "PASS scan abort with simultaneous word pop and owned FIFO return keeps payload private",
+        "PASS scan unsolicited final-pixel pop and return updates private word only, no last/good leak",
+        "PASS scan abort on final-verification cycle preserves complete raster and vetoes good lease",
+        "PASS scan boundary abort allows private epoch preparation and vetoes request publication",
+        "PASS scan disabled boundary keeps request epoch/toggle stable",
+        "PASS scan boundary unowned return keeps prepared epoch unpublished",
+        "PASS scan open request keeps epoch and toggle held across injected boundary then times out safely",
+        "PASS scan raw fault on synchronized ACK edge holds published snapshot then revokes good without republishing",
+        "PASS board1080 scan: independent RGB565/CRC, held epochs/IDs, faults-black-drain, common reset; no PHY or hardware claim"
+      ]
+    },
+    {
+      "name": "positions",
+      "passed": true,
+      "source_sha256": {
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ddr_video_output_1080_board.v": "62a2b9d90e895f36d26a15e81208c27907084b8d25a31df5403c028d16c271a0",
+        "D:\\f60\\distortion\\rtl\\video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+        "D:\\f60\\distortion\\rtl\\video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_output60_positions.sv": "2333dcd462289fe7025c4a4245346ff5659bc40d8fc420a3dadbdeed89550099"
+      },
+      "staged_source_sha256": "fb89120f58a2847898555c6d972430f462299352d0c241db8b8daab67b0b06f8",
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "D:\\f60-work\\video\\output60-done-private-final\\positions\\ddr_video_output_1080_board.v",
+            "D:\\f60\\distortion\\rtl\\video_async_fifo.v",
+            "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_output60_positions.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.5842243999995844,
+          "log_sha256": "d1aaec7cc387fe5becf32d0197e2076a596f4d7791c2c5e2245953cce5fd8b76"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_output60_positions",
+            "-s",
+            "scan_test"
+          ],
+          "returncode": 0,
+          "seconds": 3.8151169000011578,
+          "log_sha256": "f5e2f5fa3c387c026eb64f8af6da0df7b2fd29d01d2e6b6a4d4661b77e4a3dce"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "scan_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 7.782071699999506,
+          "log_sha256": "0184c3ea2e8c581687185f8fcd85a574a4bfe90cc58901ee516ec5ed65039648"
+        }
+      ],
+      "pass_lines": [
+        "PASS POSITION CASE id=0 geometry=16x3 picture=16x1 origin=0,1 checks=96 firsts=2 lasts=2 failed_checks=76",
+        "PASS POSITION CASE id=1 geometry=17x3 picture=16x2 origin=1,0 checks=102 firsts=2 lasts=2 failed_checks=81",
+        "PASS POSITION CASE id=3 geometry=40x6 picture=32x4 origin=8,2 checks=480 firsts=2 lasts=2 failed_checks=436",
+        "PASS POSITION CASE id=2 geometry=37x9 picture=16x3 origin=9,3 checks=666 firsts=2 lasts=2 failed_checks=625",
+        "PASS POSITION CASE id=4 geometry=4096x2 picture=16x1 origin=4080,0 checks=16384 firsts=2 lasts=2 failed_checks=12284",
+        "PASS POSITION CASE id=5 geometry=32x4096 picture=16x1 origin=0,4095 checks=262144 firsts=2 lasts=2 failed_checks=262108",
+        "PASS OUTPUT60 POSITIONS cases=6 reset=mid-raster zero-x zero-y centered tight max-ht4096 max-vt4096"
+      ]
+    }
+  ]
+}

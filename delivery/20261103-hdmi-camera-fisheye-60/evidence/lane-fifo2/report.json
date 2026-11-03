@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "source_sha256": {
+    "rtl/hdmi_camera_fisheye_lane.v": "dc664bfc2c9a4511eb3ba794cee0d3e758b1d972929bd21a2b35517be8c5aa48",
+    "tests/lane_output_fifo.sv": "b06aa0e941234ba4f623608dec38ba365795aba5d09bf451239df36f72f22331"
+  },
+  "scope": "Actual lane RTL with core/writer doubles; real datapath verified separately.",
+  "commands": [
+    {
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "hdmi_camera_fisheye_lane.v",
+        "lane_output_fifo.sv"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_lane_output_fifo",
+        "-s",
+        "lane_fifo"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "lane_fifo",
+        "-runall"
+      ],
+      "returncode": 0
+    }
+  ],
+  "summary": [
+    "PASS LANE FIFO2 frames=4 checked=2053 full_cycles=1364 full_pop=297 simultaneous=1752 masked=126 reset_occupied=1"
+  ]
+}

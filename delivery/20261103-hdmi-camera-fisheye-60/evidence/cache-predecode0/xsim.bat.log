@@ -1,0 +1,29 @@
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/cache_direct64/xsim_script.tcl
+# xsim {cache_direct64} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+PASS DIRECT64 generic639 independent signed64 six arithmetic cases
+PASS DIRECT64 signed64 native1920 negative/extreme/partial-boundary arithmetic plus actual4pixel oracle
+PASS DIRECT64 INDEX7 full128-pixel parity/first-last, direct-map tag replacement, same/new bank epochs and TAG25 oracle
+PASS DIRECT64 FIFO2 full input/output stalls, stable fractions/TAG25 and pending-frame drain
+PASS DIRECT64 frame_valid at beat7: no new input, exact old-result drain, same-bank invalidate and independent new-epoch refill
+PASS DIRECT64 reset on last sixteen-pixel write edge, invalid metadata and mandatory refill
+PASS DIRECT64 warmed first-latency4 and64 consecutive actual outputs at1 per clock
+PASS DIRECT64 varying warm metadata:32 distinct XY/fraction/TAG queries,32 outputs/31 cycles, independent four-neighbour scoreboard
+PASS DIRECT64 varying metadata backpressure:24 distinct queries,55 adjacent all-field changes, FIFO/pre/query/output holds and independent scoreboard
+PASS DIRECT64 varying metadata hit-miss:12 queued queries, actual fast/slow switches, independent pixels/fractions/TAG order
+PASS DIRECT64 RID/early-RLAST/missing-final-RLAST/unsolicited-R sticky wrapper quarantine
+DIRECT64 coverage arstall=44 rgap=98 outstall=84 install=240 fifo_full=373 frame_queue=1 scatter=404 ramverify=404 last=48 publish=48 resetlast=1 queuedfault=3
+DIRECT64 strengthened coverage slow_empty=27 lower_read=138 last_frame_request=1 last_frame_pending=26 last_frame_out_stall=9 last_frame_refill=1
+PASS DIRECT64 independent directed regression: INDEX7 WIDTH1920 HEIGHT1080 sparse queries, real FIFO2 wrapper,8 DDR beats/128pixels, dual-write parity memories and non-vacuous pressure
+PASS DIRECT64 candidate unit: realRTL signed32 row pre-stage, independent64bit reference,1pixel throughput, backpressure/frame/reset/fault; no STA/hardware
+$finish called at time : 12832 ns : File "D:/f60/delivery/20261103-hdmi-camera-fisheye-60/tests/cache_direct64.sv" Line 675
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov  3 13:26:35 2026...

@@ -1,0 +1,151 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "physical_implementation_accessed": false,
+  "cases": [
+    {
+      "name": "legacy",
+      "passed": true,
+      "source_sha256": {
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ddr_read_return_register.v": "bb106a1b03d30f041b0b38eba2a687bef7fb54afa457d06f833d57787fae3427",
+        "D:\\f60\\distortion\\rtl\\ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_legacy_registered.sv": "a6c23a8589d0667f6bcb1d6f13caa76175aaa02dacf434532f9fc245cafab02e"
+      },
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ddr_read_return_register.v",
+            "D:\\f60\\distortion\\rtl\\ddr_read_arbiter.v",
+            "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_legacy_registered.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.5987777000000278,
+          "log_sha256": "fd606fe36ae38e4c1655d2912588470b55c3f1f99bd9fc682eff5e775267759d"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_ddr_read_arbiter",
+            "-s",
+            "read_test"
+          ],
+          "returncode": 0,
+          "seconds": 2.2836183999997957,
+          "log_sha256": "11b232519498a1b99b96c8df2320810ac8add71ff549b9d8c91abe834a22fda2"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "read_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 5.7497343,
+          "log_sha256": "6b3074342430affb9248f6099bdcc709081737a99f63cb01e1655271df9f29fa"
+        }
+      ],
+      "pass_lines": [
+        "PASS DDR read arbitration: two simultaneous clients, 1/2/8/16-beat bursts, exclusive response routing, display urgency, fair whole-burst grants, address/response stalls, RLAST/RID faults, timeout, unsolicited data and reset recovery."
+      ]
+    },
+    {
+      "name": "integration",
+      "passed": true,
+      "source_sha256": {
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ddr_read_return_register.v": "bb106a1b03d30f041b0b38eba2a687bef7fb54afa457d06f833d57787fae3427",
+        "D:\\f60\\distortion\\rtl\\ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_readstage_integration.sv": "2b03249b69e77da403e52b22b213b3ba3f7644e26028db57bacc9d35401002ac"
+      },
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ddr_read_return_register.v",
+            "D:\\f60\\distortion\\rtl\\ddr_read_arbiter.v",
+            "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_readstage_integration.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.5340274999998655,
+          "log_sha256": "8e93029cb48b350c37805c31a2b089aa6c071ffdca2adbfdb6a9f72d0e1c49b0"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_ddr_readstage_integration",
+            "-s",
+            "read_test"
+          ],
+          "returncode": 0,
+          "seconds": 2.2926596000002064,
+          "log_sha256": "9b37c99fba8b9fa45cbbb2a7f59fe353c25607a7a5894023d478e5ee0df62307"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "read_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 9.452643799999805,
+          "log_sha256": "c61cef4bc6141661be9af9f11a15d3baa91c4f904697bcaa4637757119d4cfcd"
+        }
+      ],
+      "pass_lines": [
+        "PASS READSTAGE zero_latency=24 checked=162 consecutive=138",
+        "PASS READSTAGE zero_latency_gapped=24 checked=162",
+        "PASS READSTAGE unsolicited-before-next-AR sticky fault=40 no client valid",
+        "PASS READSTAGE INTEGRATION: two simultaneous clients, 1/2/8/16-beat bursts, exclusive response routing, display urgency, fair whole-burst grants, address/response stalls, RLAST/RID faults, timeout, unsolicited data and reset recovery."
+      ]
+    },
+    {
+      "name": "guard",
+      "passed": true,
+      "source_sha256": {
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ddr_read_return_register.v": "bb106a1b03d30f041b0b38eba2a687bef7fb54afa457d06f833d57787fae3427",
+        "D:\\f60\\distortion\\rtl\\ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_readstage_guard.sv": "e478410f6ebec8c47ce36f267681041d1cf74b93e418fce68eca36c4ee6db3a3"
+      },
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ddr_read_return_register.v",
+            "D:\\f60\\distortion\\rtl\\ddr_read_arbiter.v",
+            "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_readstage_guard.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.5435298000002149,
+          "log_sha256": "8e54721b692e78c999a9f5a78a0470c402f17663b20292be4e6017a3c48883fa"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_readstage_guard",
+            "-s",
+            "read_test"
+          ],
+          "returncode": 0,
+          "seconds": 2.048414800000046,
+          "log_sha256": "3e1aae1c8b328d10635d83fd19606965683b3c04c202dd94dbcb23277ccbd80d"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "read_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 8.623043499999767,
+          "log_sha256": "d81c6bd73c082cc4bd0f2fe38bfa575ad54310c23717b2228764aa7454b0ca4a"
+        }
+      ],
+      "pass_lines": [
+        "PASS READSTAGE GUARD checks=11 raw-owned/zero-latency/continuous/metadata/reset/unsolicited/overlap/sticky"
+      ]
+    }
+  ]
+}

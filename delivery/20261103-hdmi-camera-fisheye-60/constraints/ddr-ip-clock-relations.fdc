@@ -1,0 +1,7 @@
+# Matches the Logos2 HMIC_S 1.10 DDR instance in this package's source closure.
+# Verified IDF (371 parameters) and six generated IP files against the vendor
+# reference. Import after the main FDC; check leaf endpoint ownership in final
+# STA. User core, pixel and core/divided-PHY clocks remain timed.
+set_clock_groups -name rst_clk -asynchronous -group [get_clocks {rst_clk}]
+set_clock_groups -name phy_dq_clk_0 -asynchronous -group [get_clocks {phy_dq_clk_0}]
+set_clock_groups -name phy_dq_clk_1 -asynchronous -group [get_clocks {phy_dq_clk_1}]
