@@ -1,0 +1,139 @@
+{
+  "passed": true,
+  "variant": "both",
+  "width": 1920,
+  "height": 1080,
+  "hardware_accessed": false,
+  "synthesis_executed": false,
+  "input_preloaded": true,
+  "capture_display_arbitration_modeled": false,
+  "commands": [
+    {
+      "stage": "compile",
+      "argv": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\fpga-stable\\engine-readstage-b\\compiled\\mul32_pipe.v",
+        "D:\\fpga-stable\\engine-readstage-b\\compiled\\pixel_inverse_rotation.v",
+        "D:\\fpga-stable\\engine-readstage-b\\compiled\\bounded_brown_inverse_mapper.v",
+        "D:\\fpga-stable\\engine-readstage-b\\compiled\\bilinear_rgb.v",
+        "D:\\fpga-stable\\engine-readstage-b\\compiled\\adaptive_gamma_stream.v",
+        "D:\\fpga-stable\\engine-readstage-b\\compiled\\adaptive_gamma_tagged.v",
+        "D:\\fpga-stable\\engine-readstage-b\\compiled\\ddr_adaptive_result_writer.v",
+        "D:\\fpga-stable\\engine-readstage-b\\compiled\\ddr_compact_neighbour_cache_scatter4.v",
+        "D:\\fpga-stable\\engine-readstage-b\\compiled\\ddr_remap_sample_scatter4.v",
+        "D:\\fpga-stable\\engine-readstage-b\\compiled\\rotated_remap_core_gamma_geometry_bypass_scatter4.v",
+        "D:\\fpga-stable\\engine-readstage-b\\compiled\\pipeline_gamma_frame_engine_1080_geometry_bypass.v",
+        "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-stable30\\rtl\\ddr_read_return_register.v",
+        "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-stable30\\tests\\tb_engine_throughput.sv"
+      ],
+      "returncode": 0,
+      "seconds": 1.062000000005355
+    },
+    {
+      "stage": "elaborate",
+      "argv": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_engine_throughput",
+        "-s",
+        "engine"
+      ],
+      "returncode": 0,
+      "seconds": 5.4689999999973224
+    },
+    {
+      "stage": "simulate",
+      "argv": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "engine",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "returncode": 0,
+      "seconds": 298.9060000000027
+    }
+  ],
+  "source_sha256": {
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\rtl\\mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\rtl\\pixel_inverse_rotation.v": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\rtl\\bounded_brown_inverse_mapper.v": "d13bad6e4deda11face236f2c8c2c6e91b37075a7de87a33a42bd90f64dd7691",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\rtl\\bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\rtl\\experimental\\adaptive_gamma_stream.v": "3ecaa7ba97edb4af67ad50ac3fef33c13c26f1e191b5cbde6ed4d5da63f85965",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\rtl\\experimental\\adaptive_gamma_tagged.v": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-stable30\\rtl\\ddr_adaptive_result_writer.v": "497c094b16a8b8e097d56b2d2f78c8800fae36ec2b41e31b51a5e6c7857ed4d6",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-stable30\\rtl\\ddr_compact_neighbour_cache_scatter4.v": "9f80b781a9f154f797966f346321ae8da732dbf29eb0f12054e85c66160744ed",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\rtl\\experimental\\ddr_remap_sample_scatter4.v": "8ebf9567b170a96641755c70f2419a333afe435bc6b71fa879f6f62f40530ebd",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\build\\offline-20261024\\geometry-bypass-parallel-20261029-coordination\\rotated_remap_core_gamma_geometry_bypass_scatter4.v": "970282541984f29d9c4a4fb51e9406652fc57c40c11990ba550cd0855e8896a6",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\build\\offline-20261024\\geometry-bypass-parallel-20261029-coordination\\pipeline_gamma_frame_engine_1080_geometry_bypass.v": "97c4b64059673325435882dcb02c3e5becad00c8e0fea049d394316856862b6e",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\rtl\\video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-demo-source\\native\\source\\rtl\\experimental\\gamma_curves.vh": "b5b64e36f30448f39c1a188cd04d35fd98185ee23d5b77510eff43f0deec78ea",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-stable30\\rtl\\ddr_read_return_register.v": "79af0292532a6906f330fe4e8b64b21be0f8caf9f20863e77b95c95f6db8bf7d",
+    "D:\\fpga-stable\\repo\\delivery\\20261103-hdmi1080-stable30\\tests\\tb_engine_throughput.sv": "a830f53c286cf46f786e94fab5b573666033219142ff1f4d78b4ed600e7e68c7"
+  },
+  "fixtures": {
+    "config": [
+      251104,
+      134128,
+      251104,
+      134128,
+      501718,
+      501603,
+      547873,
+      547999,
+      891415,
+      -1930345,
+      0,
+      0,
+      0
+    ],
+    "expected_crc32": "4be2b2a6",
+    "masked_pixels": 84358,
+    "scalar_crosschecks": 221,
+    "scalar_source_sha256": "30f044bc4a30e83b37bc13a3a679c9df56fc18bb508c9ddf11d84180427ece4a",
+    "parameter_header_sha256": "633cc52b3b5aff84c743fe7567487f871fc1e0d630f9bb121d9252db2fece607"
+  },
+  "metrics": {
+    "passed": true,
+    "width": 1920,
+    "height": 1080,
+    "pixels": 2073600,
+    "cycles": 2831328,
+    "hits": 7929262,
+    "fills": 16200,
+    "coordinate_stall": 757629,
+    "writer_input_stall": 0,
+    "scatter_cycles": 259200,
+    "ar_stall": 7984,
+    "aw_stall": 5262,
+    "w_stall": 25221,
+    "crc32": "4be2b2a6",
+    "pressure": 1,
+    "hardware_verified": false,
+    "processing_ms_at_125MHz": 22.650624,
+    "processing_capacity_fps_at_125MHz": 44.14889408786266
+  },
+  "output_sha256": "0af8395dd02ae0e56230dc831521f45303f529144c6a61b2b34123c1cef2b812",
+  "elapsed_seconds": 310.2649999999994,
+  "source_drift": [],
+  "file_sha256": {
+    "compile.log": "87976c167063d005dd33e5d8938a841498d5a4dbd7f7eb6abb829cdeb54920e9",
+    "elaborate.log": "7d9e15d7ed1fb0237f71fcef9325b165729163bfb7d9d9055757df804f737c12",
+    "engine-summary.json": "5ddc7e0ec46473f4536a2cf5b514fe0c82de252f7693b51fcc620e6c26e10988",
+    "engine_config.vh": "1c15570e19e7fc104e397c23352804fbe23af140e95ca21b3e9332fc7b424032",
+    "expected.mem": "3a1dd627053694cc5723113557bca27f9880cceea70067b93a7978c4c000aa3d",
+    "masks.mem": "907f49c53fcba7d55cae1502ed9675dd4fe87ad4c7e3d65a634de85d1c1fa869",
+    "output.mem": "0af8395dd02ae0e56230dc831521f45303f529144c6a61b2b34123c1cef2b812",
+    "simulate.log": "9bb4d4ed23a2326eed13744483642b83e9fdb461c1129d4d55b0c2228ffb6fb4",
+    "simulation.log": "a66c702181a6fdafc959446ebe31eec28f7d7eb7817ea54947ea922037e2aab0",
+    "webtalk.jou": "0e4ebb42d4525d07a782497dea010f9bf43e96e83b360c4ca83dca2e3119a743",
+    "webtalk.log": "1de65df738c059b1df0de657a48c8177710f4baac3ae0872bfe966dd0d5e021d",
+    "webtalk_40708.backup.jou": "f013167d89e961950c442e47c29f96b31398ecb966ac758e6be0e246b0b75089",
+    "webtalk_40708.backup.log": "3fe15ba1d8ff47909251fc652666a63e7e95920ca4ce7e977a8461bd00f63c32",
+    "xelab.log": "77ab6d271dcd0f4146f8416937fb8d5eee3b3824e132fdbe64bac2675214b18a",
+    "xelab.pb": "3760612f78a8b3e6964fb72679e6af47322ff26662440f6e0479fe100983c2b8",
+    "xsim.jou": "1a37c8d06c9282d20b31d6518149efb6b5e02ae39abc90692993ac52c2602cae",
+    "xvlog.log": "c88c24b69b163955578fe1ca3aa5c7e1acfbd0d71699de0793c4e5c5bc849aba",
+    "xvlog.pb": "10cf4c5b6f849d6d9f85c9604f3ba3fbcd96f13a976eab4bd9a9174c9aa6db90"
+  }
+}

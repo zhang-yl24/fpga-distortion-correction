@@ -1,0 +1,72 @@
+--- current.v
++++ experiment.v
+@@ -30,6 +30,21 @@
+     reg read_pointer,write_pointer;
+     reg signed [23:0] queue_x[0:1],queue_y[0:1];
+     reg [TAG_W-1:0] queue_tag[0:1];
++    // Decode each accepted coordinate before the FIFO register boundary.
++    // The head mux now selects registered pixel numbers and bounds, so it no
++    // longer drives signed XY arithmetic followed by the cache tag/valid mux.
++    reg [127:0] queue_numbers[0:1];
++    reg [3:0] queue_bounds[0:1];
++    wire [127:0] enqueue_numbers;
++    wire [3:0] enqueue_bounds;
++    wire signed [16:0] enqueue_x=$signed(in_x[23:8]);
++    wire signed [16:0] enqueue_y=$signed(in_y[23:8]);
++    genvar q;
++    generate for(q=0;q<4;q=q+1)begin: enqueue_decode
++        wire signed [16:0] ix=enqueue_x+(q%2),iy=enqueue_y+(q/2);
++        assign enqueue_numbers[q*32 +: 32]=iy*WIDTH+ix;
++        assign enqueue_bounds[q]=ix>=0 && ix<WIDTH && iy>=0 && iy<HEIGHT;
++    end endgenerate
+     wire inner_frame_ready,inner_in_ready;
+     wire queue_empty=queue_count==0;
+     assign frame_ready=queue_empty && inner_frame_ready && !failed;
+@@ -46,6 +61,7 @@
+         .frame_ready(inner_frame_ready),.frame_base(frame_base),
+         .in_valid(!queue_empty && !failed),.in_ready(inner_in_ready),
+         .in_x(queue_x[read_pointer]),.in_y(queue_y[read_pointer]),.in_tag(queue_tag[read_pointer]),
++        .in_numbers(queue_numbers[read_pointer]),.in_bounds_decoded(queue_bounds[read_pointer]),
+         .out_valid(out_valid),.out_ready(out_ready),.p00(p00),.p10(p10),.p01(p01),.p11(p11),
+         .fx(fx),.fy(fy),.out_tag(out_tag),.araddr(araddr),.arlen(arlen),.arvalid(arvalid),.arready(arready),
+         .rdata(rdata),.rvalid(rvalid),.rlast(rlast),.rid(rid),.failed(failed),.fault(fault),
+@@ -64,6 +80,7 @@
+                 endcase
+                 if(push)begin
+                     queue_x[write_pointer]<=in_x;queue_y[write_pointer]<=in_y;queue_tag[write_pointer]<=in_tag;
++                    queue_numbers[write_pointer]<=enqueue_numbers;queue_bounds[write_pointer]<=enqueue_bounds;
+                     write_pointer<=!write_pointer;
+                 end
+                 if(pop)read_pointer<=!read_pointer;
+@@ -72,9 +89,8 @@
+     end
+ endmodule
+ 
+-// Private core includes an elastic decoded-query boundary. Coordinate mux and
+-// signed pixel-number arithmetic end at these registers; tag lookup/compare
+-// and RAM address selection start from the registered numbers, not raw XY.
++// Private core receives the FIFO head with predecoded pixel numbers and bounds.
++// Query/tag refresh, slow-miss sequencing and all handshake cycles are preserved.
+ module ddr_compact_neighbour_cache_core_scatter4_tag_prefetch_local #(
+     parameter WIDTH=640,HEIGHT=480,TAG_W=24,INDEX_BITS=3,TIMEOUT_BITS=26
+ )(
+@@ -82,6 +98,7 @@
+     input frame_valid,output wire frame_ready,input [27:0] frame_base,
+     input in_valid,output wire in_ready,input signed [23:0] in_x,in_y,
+     input [TAG_W-1:0] in_tag,
++    input [127:0] in_numbers,input [3:0] in_bounds_decoded,
+     output wire out_valid,input out_ready,output wire [23:0] p00,p10,p01,p11,
+     output wire [7:0] fx,fy,output wire [TAG_W-1:0] out_tag,
+     output wire [27:0] araddr,output wire [3:0] arlen,output wire arvalid,input arready,
+@@ -178,9 +195,8 @@
+     endfunction
+     genvar n;
+     generate for(n=0;n<4;n=n+1)begin: neighbour_input
+-        wire signed [16:0] ix=x0+(n%2),iy=y0+(n/2);
+-        assign decoded_bounds[n]=ix>=0 && ix<WIDTH && iy>=0 && iy<HEIGHT;
+-        assign decoded_number[n]=iy*WIDTH+ix;
++        assign decoded_bounds[n]=in_bounds_decoded[n];
++        assign decoded_number[n]=in_numbers[n*32 +: 32];
+         assign pixel_address[n]=pixel_number[n][2 +: ADDRESS_BITS];
+         // Refresh selects the held head; otherwise address the incoming head.
+         // Do not use decode_query as the address selector: its ready feedback

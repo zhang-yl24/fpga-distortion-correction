@@ -1,0 +1,43 @@
+name: HDMI throughput source and measurement checks
+on:
+  push:
+    paths:
+      - 'delivery/20261103-hdmi1080-throughput/**'
+      - 'delivery/20261103-hdmi1080-demo-source/**'
+      - '.github/workflows/hdmi-throughput.yml'
+  pull_request:
+    paths:
+      - 'delivery/20261103-hdmi1080-throughput/**'
+      - 'delivery/20261103-hdmi1080-demo-source/**'
+      - '.github/workflows/hdmi-throughput.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-and-wire-protocol:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
+    steps:
+      - name: Preserve frozen source bytes and long paths
+        if: runner.os == 'Windows'
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.longpaths true
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify frozen demonstration sources
+        run: python -B delivery/20261103-hdmi1080-demo-source/tools/verify_package.py
+      - name: Check isolated preparation and scan rate validation
+        run: python -B -m unittest discover -s delivery/20261103-hdmi1080-throughput/tests -p 'test_*.py' -v
+      - name: Recover exact native dependency closure
+        run: python -B delivery/20261103-hdmi1080-throughput/tools/recover_native_dependencies.py --repo . --out .ci-native-dependencies
+      - name: Verify bundled dependency layout without Git
+        run: python -B delivery/20261103-hdmi1080-throughput/tools/recover_native_dependencies.py --verify-only --out .ci-native-dependencies
+      - name: Bind archived RTL results to delivered sources
+        run: python -B delivery/20261103-hdmi1080-throughput/tools/verify_delivery.py

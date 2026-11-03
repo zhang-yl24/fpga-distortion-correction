@@ -1,0 +1,32 @@
+name: HDMI source delivery checks
+on:
+  push:
+    paths:
+      - 'delivery/20261103-hdmi1080-demo-source/**'
+      - '.github/workflows/hdmi-source-delivery.yml'
+  pull_request:
+    paths:
+      - 'delivery/20261103-hdmi1080-demo-source/**'
+      - '.github/workflows/hdmi-source-delivery.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-package:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 5
+    steps:
+      - name: Preserve byte identities and support existing vendor long paths
+        if: runner.os == 'Windows'
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.longpaths true
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify byte-preserved source package and dependency boundary
+        run: python -B delivery/20261103-hdmi1080-demo-source/tools/verify_package.py
