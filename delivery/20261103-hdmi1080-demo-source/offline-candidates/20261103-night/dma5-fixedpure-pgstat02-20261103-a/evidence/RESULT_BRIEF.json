@@ -1,0 +1,147 @@
+{
+  "Disposition": "DIAGNOSTIC_MEASUREMENT_BUILD_NOT_TIMING_OR_HARDWARE_ACCEPTANCE",
+  "Bit": {
+    "Path": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\dma5-fixedpure-pgstat02-20261103-a\\frozen\\fixedpure-pgstat02-diagnostic.sbit",
+    "SHA256": "57044fe803d9880f016b53c91234def946bb13da6cc1d357cd15689a5212a374",
+    "Bytes": 3791112
+  },
+  "FinalADF": {
+    "Original": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\dma5-fixedpure-pgstat02-20261103-a\\runs\\pnr\\prj_tasks\\pnr_1\\place_route\\board1080_top_pnr.adf",
+    "Frozen": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\dma5-fixedpure-pgstat02-20261103-a\\inputs\\final_for_sta.adf",
+    "SHA256": "2ae7f0e6eb5d16938d4d9ad16dfa592c2bed0dd073c3e622f188432d59c33dff",
+    "Bytes": 5135974
+  },
+  "Timing": {
+    "slow": {
+      "setup": {
+        "FailingEndpoints": 38,
+        "WNS_ns": -0.314,
+        "TNS_ns": -4.782,
+        "TotalEndpointChecks": 72924
+      },
+      "hold": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.02,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 70184
+      },
+      "recovery": {
+        "FailingEndpoints": 245,
+        "WNS_ns": -3.763,
+        "TNS_ns": -486.875,
+        "TotalEndpointChecks": 8457
+      },
+      "removal": {
+        "FailingEndpoints": 1,
+        "WNS_ns": -0.443,
+        "TNS_ns": -0.443,
+        "TotalEndpointChecks": 5713
+      },
+      "mpw": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.035,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 18738
+      }
+    },
+    "fast": {
+      "setup": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 2.66,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 72924
+      },
+      "hold": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.014,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 70184
+      },
+      "recovery": {
+        "FailingEndpoints": 232,
+        "WNS_ns": -2.91,
+        "TNS_ns": -245.502,
+        "TotalEndpointChecks": 8457
+      },
+      "removal": {
+        "FailingEndpoints": 1,
+        "WNS_ns": -0.38,
+        "TNS_ns": -0.38,
+        "TotalEndpointChecks": 5713
+      },
+      "mpw": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.035,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 18738
+      }
+    }
+  },
+  "SetupGroups": {
+    "DDR": {
+      "Count": 2,
+      "WNS_ns": -0.314
+    },
+    "cache": {
+      "Count": 28,
+      "WNS_ns": -0.311
+    },
+    "writer": {
+      "Count": 2,
+      "WNS_ns": -0.265
+    },
+    "other": {
+      "Count": 4,
+      "WNS_ns": -0.262
+    },
+    "reader": {
+      "Count": 1,
+      "WNS_ns": -0.044
+    },
+    "DMA": {
+      "Count": 1,
+      "WNS_ns": -0.019
+    }
+  },
+  "Resources": {
+    "FF": 23893.0,
+    "LUT": 18472.0,
+    "DRM": 19.5,
+    "APM": 69.0,
+    "IO": 144.0
+  },
+  "IO": {
+    "no_clock": 0,
+    "virtual_clock": 1,
+    "unexpandable_clocks": 0,
+    "no_input_delay": 55,
+    "no_output_delay": 111,
+    "partial_input_delay": 0,
+    "partial_output_delay": 0,
+    "io_min_max_delay_consistency": 0,
+    "input_delay_assigned_to_clock": 0,
+    "loops": 0,
+    "latch_loops": 0,
+    "latchs": 0
+  },
+  "Actual144PadsElectricalEqualReference": true,
+  "OriginalCacheWriterReaderRAMFingerprintUnchanged": true,
+  "NewStatsCDC": "8 extra marked synchronizer FF; shared core release lacks PAP in VM; physical held-bus settle not fully signed",
+  "Profile": {
+    "FIXED_MODE": 1,
+    "STATS_LIGHT": 1,
+    "SNAPSHOT_ENABLE": 0,
+    "Gamma": 0,
+    "Rotation": "original fixed identity"
+  },
+  "KnownRXLimitation": "Original v2 broadcast parsers retained; bounded canonical request stream with zero opposite-parser residue prepared. New routing patch denied/HDL_NOT_RUN, not included. No arbitrary mixed-command compliance claim.",
+  "AllFourPhasesExitedAndSlotReleased": true,
+  "All134SourcesAndDMA5Parent130Preserved": true,
+  "BoardOperations": 0,
+  "HardwareMetrics": {
+    "pure_corrected_fps": null,
+    "internal_process_cycles": null,
+    "external_E2E": null
+  },
+  "BestTimingParentStillDMA5": true
+}

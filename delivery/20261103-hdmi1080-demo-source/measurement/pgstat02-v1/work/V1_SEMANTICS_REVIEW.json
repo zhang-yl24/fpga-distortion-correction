@@ -1,0 +1,147 @@
+{
+  "status": "SOURCE_PROVEN_HOST_VALIDATION_RULES_WITH_RESET_AND_WRAP_BOUNDARIES",
+  "scope": "Read-only exact dma5 archive review for the v1 native lower-bound and accepted/processed backlog fixes. Only this JSON was written. v0 tree, ZIP, archived RTL and tests were not changed; no hardware, EDA or cloud execution.",
+  "archive": "C:/Users/22955/Documents/Codex/2026-10-26/task-2/dma5-fixedpure-pgstat02-20261103-a",
+  "source_identity": {
+    "NATIVE_SOURCE_MANIFEST.json": "d20ac5b779311f452f518435455c62fbc73583e0e56e8629bf6e25666fd95ef3",
+    "MEASUREMENT_BUILD_MANIFEST.json": "f16770d641cc6c7359bf8f7ac2de8c42300f0451c74e7e1e6edd065fe7bdaf4e",
+    "LINK": {"path": "native/source/rtl/experimental/hdmi1080_input_write_link.v", "sha256": "276441de0a0d5b04cb4a9564e8715a517fbec12d891489ba54ff8d6b348d44e4"},
+    "DMA": {"path": "native/source/rtl/experimental/hdmi1080_input_dma.v", "sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29"},
+    "BANK": {"path": "native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v", "sha256": "9cdb5b79540871630a5fd3f00d3344244bcb220c338b504ba9d7f58cf7db5900"},
+    "ENGINE": {"path": "native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v", "sha256": "97c4b64059673325435882dcb02c3e5becad00c8e0fea049d394316856862b6e"},
+    "SYSTEM": {"path": "native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v", "sha256": "d709817db1f771628d2d91570d998675aef87c6044ecb6abd008d86387047288"},
+    "STATS": {"path": "native/source/rtl/stats/core_stats_snapshot.sv", "sha256": "11a10ed560279d3c97b117c744d0322e7898925e5d33d5ec14821e35f0a60738"},
+    "CAPTURE": {"path": "native/source/rtl/experimental/hdmi1080_capture_cdc.v", "sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c"},
+    "BOARD": {"path": "native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v", "sha256": "3416f368730bfd4f83d1f7df3b40d50a1d9e1e2b25a5f1e9ee132918f4e6d538"}
+  },
+  "preconditions": [
+    "Exact native fixed-mode/gamma-off build identity and1920x1080 dimensions are bound to the run.",
+    "Known binary decoded PGSTAT02 fields, matching125MHz manifest and an externally attested uninterrupted common-reset epoch.",
+    "Steady healthy snapshots: no logical failed flag, no static snapshot flag, no reset-release transient. All adjacent snapshot tick intervals are positive and shorter than2^32 core edges.",
+    "Request identity, sequence, tuple consistency and source-ID ordering checks remain required. These invariants do not themselves prove reset continuity or loaded firmware."
+  ],
+  "backlog_definitions": {
+    "A": "PGSTAT02 captured_frames, actually input_dma.accepted_frames",
+    "C": "PGSTAT02 processed_frames, bank.completed_frames",
+    "P": "(state_flags>>1)&1, the bank processing bit",
+    "M": 4294967296,
+    "point_rule": "(A-C) mod M == P",
+    "interval_rule": "dA-dC == P2-P1, with dA=(A2-A1) mod M and dC=(C2-C1) mod M; the subtraction/equality here is ordinary signed integer arithmetic, not another modulo operation."
+  },
+  "backlog_source_proof": [
+    {
+      "source": "LINK",
+      "lines": [38, 42, 43, 54, 59],
+      "fact": "core_source_valid=dma_valid&&complete_metadata&&!failed; dma_ready=core_source_ready&&complete_metadata&&!failed. Thus DMA source_pop=dma_valid&&dma_ready is exactly the bank's core_source_valid&&core_source_ready, with the same pre-edge predicate. accepted_frames is directly exported."
+    },
+    {
+      "source": "SYSTEM",
+      "lines": [83, 101, 110, 117, 267, 271],
+      "fact": "The same src_valid/src_ready connects input_link and bank. captured is accepted_frames, processed is completed_frames, and processing is passed directly to the same core-domain stats snapshot."
+    },
+    {
+      "source": "DMA",
+      "lines": [48, 111, 112],
+      "fact": "Exactly that source_pop increments A once. Completion enqueue, grant reservation and capture/drop events do not increment A."
+    },
+    {
+      "source": "BANK",
+      "lines": [76, 104, 105, 109, 110, 113, 114, 117],
+      "fact": "Bank acceptance requires !processing and sets P1. A successful completion requires old P1 and sets P0 while incrementing C. Acceptance and successful completion therefore cannot occur together."
+    },
+    {
+      "source": "BANK and DMA",
+      "lines": [94, 99, 96, 104],
+      "fact": "Reset establishes A=C=0,P0. Every legal acceptance changes(A-C,P) from(0,0) to(1,1); every successful completion changes(1,1) to(0,0); all other healthy transitions leave the relation intact. This induction holds through modulo32 counter wrap. BANK lines94/99 and DMA lines96/104 are the respective reset assignments."
+    },
+    {
+      "source": "STATS",
+      "lines": [3, 4, 55, 60, 84, 85, 86],
+      "fact": "A,C and P are sampled atomically before the edge's NBA. A request coincident with acceptance/completion sees the old coherent triple, not a mixture of old count and new processing flag."
+    }
+  ],
+  "interval_reasoning": {
+    "why_signed_exact_equality": "The abstract unbounded event counts satisfy A_true-C_true=P. Over a bounded window each individual count advances fewer thanM times, so the modulo deltas recover their actual increments. Subtracting gives dA-dC=P2-P1 exactly, including-1 when an old in-flight frame completes with no new acceptance.",
+    "event_delta_guard": "Retain0<=dA<=dt and0<=dC<=dt from the at-most-one increment per core edge. This is an interval event bound, not an unsigned absolute counter ratio or a claim that capture and processing counts must be equal.",
+    "point_check_not_sufficient_alone": "Modulo endpoint backlog checks can miss a fabricated large interval delta that aliases-1 or1. Also apply the exact signed interval rule and the event-count bounds.",
+    "allowed_examples": [
+      "P1->0 with dA0,dC1: an old in-flight frame completes. Do not require dC<=dA for every window.",
+      "P0->1 with dA1,dC0: a new frame starts but is still processing at the end.",
+      "P unchanged with dA=dC: any number of complete serial transactions can occur.",
+      "A wraps fromFFFFFFFF to0 while C remainsFFFFFFFF: P0->1 and modulo backlog1 are valid. Do not compare unsigned A>=C directly."
+    ],
+    "queue_boundary": "Complete source descriptors still queued or being captured are not included in A. A waiting descriptor can make source_wait flag1 while P0 and A=C; there is no extra descriptor-queue term in this identity."
+  },
+  "drop_and_no_grant_are_separate": {
+    "granted_reject": {"source": "DMA", "lines": [166, 168, 169, 180, 181, 183], "meaning": "A bad already-granted completion increments dropped and possibly overflow, without a source_pop acceptance. It does not add an unprocessed accepted frame to A-C."},
+    "no_grant": {"source": "CAPTURE", "lines": [137, 139, 140, 141], "meaning": "The first DE in an input window may fail to begin capture and increments no_grant. This never creates A and is not exported by lightweight PGSTAT02."},
+    "allowed_coincidence": "A descriptor pop can occur on the same core edge as a different active capture's rejected completion. Both A and dropped can increment independently. Subtracting dropped from A-C would make a correct stream fail.",
+    "host_policy": "Do not add/subtract dropped or no-grant to repair backlog. Positive dropped can be a handled input-quality event with no logical pipeline failure; report it independently. A-C is not a count of all physical arrivals or all queued captures."
+  },
+  "reset_sr_boundary": {
+    "source": ["SYSTEM42-48,83,107,262", "DMA30-33,88-105", "LINK51,54"],
+    "release": "System cr and DMA sr use the same core/sys clock and same raw pipeline reset, each with a two-flop release chain. Bank/stats use cr; DMA counters and source_valid stay zero during !sr. The ideal exact RTL releases these chains together after an asserted common reset.",
+    "metadata_gate": "The bank cannot consume a DMA descriptor while DMA source_valid is cleared; engine readiness also prevents acceptance during bank/core reset release. A legal steady, completed-frame-valid PGSTAT02 snapshot therefore has no ordinary sr startup exception to the invariant.",
+    "asynchronous_assertion_caveat": "DMA A resets asynchronously on raw reset while BANK C/P reset synchronously at the next core edge after cr is pulled low. Between raw assertion and that edge, arbitrary internal signals need not satisfy A-C=P. This is a reset transient, not an uninterrupted healthy measurement window; the stats path is reset and cannot establish a valid new-epoch measurement there.",
+    "host_boundary": "Reject/segregate any reset-crossing capture. Do not excuse a bad steady snapshot as a routine one-cycle sr offset. Conversely, do not use this source proof to assert invariant equality at arbitrary asynchronous reset instants or to prove that no reset occurred between otherwise plausible snapshots."
+  },
+  "native_N_edge_lower_bound": {
+    "N": 2073600,
+    "dimensions": [1920, 1080],
+    "evidence": [
+      {"source": "BOARD", "lines": [209, 210, 212], "fact": "The actual system instantiates WIDTH1920,HEIGHT1080 on the core clock."},
+      {"source": "ENGINE", "lines": [22, 28, 34, 43, 44, 82, 84, 86, 87, 96], "fact": "A frame enters SCAN; at most one coordinate can be accepted per core edge. Index increments once for each accepted coordinate, and the engine cannot enter DRAIN until the Nth coordinate."},
+      {"source": "ENGINE", "lines": [98, 99, 100], "fact": "Success/done occurs only later in DRAIN upon writer_done; no frame can complete early merely because its mapped pixels are black or out of bounds."},
+      {"source": "BANK", "lines": [76, 104, 105, 108, 109, 117], "fact": "The measured interval begins at bank source acceptance, includes engine startup/scan/writer drain and ends at bank success. It is at leastN edges; actual extra edges need not be hardcoded."}
+    ],
+    "rule": "For a valid last tuple whose legacy duration is independently proven not to wrap, require raw+1>=N. This rejects raw0 being presented as a one-edge/8ns native frame.",
+    "proof_order": "Do not first reject every raw+1<N. Establish the unwrapped duration or its impossibility bound before applying the native duration lower bound.",
+    "no_wrap_cases": [
+      "If snapshot core_tick<M in the same reset origin, the actual frame duration is belowM and at most core_tick. candidate>core_tick is a contradiction and should be rejected; otherwise the duration is proven and must be>=N.",
+      "If an adjacent healthy interval has0<dt<M and dC>=2, single-engine serialization places the last completed frame's start and finish inside this interval. candidate>dt is a contradiction; otherwise duration is proven belowM and must be>=N.",
+      "A previously proven identical completion tuple can retain its proof within the same uninterrupted epoch."
+    ],
+    "unproven_case": "At core_tick>=M with dC0/1 and no prior proof for that tuple, the last frame may have started before the window. A small legacy residue can be legitimate after wrap. Preserve raw and raw+1 candidate, mark no_wrap_unproven, and omit absolute duration/seconds; do not misclassify it as a one-cycle native frame.",
+    "whole_frame_watchdog": "TIMEOUT_BITS26 is passed to transaction-level components; the engine/bank do not expose a global duration-overflow flag or a proof that the sum of many bounded waits is belowM. Do not infer perpetual no-wrap from the local DDR watchdog alone."
+  },
+  "conservative_processed_event_bound": {
+    "rule": "dC <= floor(dt/N)+1, for0<dt<M in the same healthy epoch and this exact single-engine architecture.",
+    "proof": "Consecutive successful full-frame completions are separated by at leastN accepted-coordinate work edges, and full engine frames do not overlap. The first completion counted after the first snapshot may belong to a frame already running. That one boundary completion is allowed; every additional completion requires another serial native frame.",
+    "conservatism": "The floor-plus-one formula is deliberately loose at exact multiples and does not rely on the earliest possible first completion phase. Tighter phase/overhead limits are unnecessary for this narrow repair.",
+    "independent_of_legacy_wrap": "This bound uses real frame work and the processed event counter, not the last_cycles residue. It remains applicable when the last sample is no_wrap_unproven.",
+    "not_a_blind_ratio": "Do not require dC/dt<=1/N without the boundary allowance. Do not compare absolute processed/captured counts as a nominal FPS ratio or cap processing to a camera refresh assumption.",
+    "examples": [
+      {"dt": 1, "max_conservative_dC": 1},
+      {"dt": 2073599, "max_conservative_dC": 1},
+      {"dt": 2073600, "max_conservative_dC": 2},
+      {"dt": 2073601, "max_conservative_dC": 2},
+      {"dt": 4147200, "max_conservative_dC": 3},
+      {"dt": 2500000000, "nominal_seconds_at125MHz": 20, "max_conservative_dC": 1206}
+    ]
+  },
+  "completion_snapshot_alignment_reconfirmed": {
+    "source": ["BANK114-120", "SYSTEM101-102,265-267", "STATS3-4,84-86"],
+    "fact": "C, raw last_cycles and stats_last_valid/id/param/mode all update in the same successful-completion NBA branch. Stats reads them directly in core_clk before NBA; there is no extra source_release/CDC delay in this tuple. The adjacent completion consistency and two-completion no-wrap proof can use C without adding an observer-edge allowance."
+  },
+  "CPU_checks_performed": {
+    "kind": "Abstract event arithmetic supporting the source induction; NOT RTL execution",
+    "transition_cases": 64,
+    "coverage": "Initial C0/1/M-2/M-1, both legal P values, wait or the legal accept/complete event, and independent dropped/no-grant toggles. Point modulo identity and exact signed interval identity passed in all cases.",
+    "wrapped_counterexample": {"true_frame_duration": 4294967297, "legacy_raw": 0, "candidate_raw_plus_one": 1, "boot_age_at_first_snapshot": 5294967296, "dt": 10, "dA": 0, "dC": 1, "P1": 1, "P2": 0, "classification": "Possible wrapped last residue under the stated information limits; no-wrap unproven, so do not reject just because candidate<N."},
+    "limits": "The arithmetic check does not simulate the capture/DDR/timing implementation or certify the v1 host code. The source-line proof above supplies the architectural assumptions."
+  },
+  "suggested_host_validation_order": [
+    "Bind exact build/native dimensions and clock, request identities, ordered snapshots and an externally attested uninterrupted healthy epoch.",
+    "For every snapshot compute P from flagbit1 and require(A-C)mod32=P. Do not fold dropped into the equation.",
+    "For every bounded interval recover modulo32 dA/dC, require dA-dC=P2-P1 with signed arithmetic, and check dC<=dt//N+1.",
+    "Keep the already source-proven completion tuple/count consistency and reject contradictory repeated tuples.",
+    "Classify each last-duration sample as proven, contradictory or unproven using since-reset and within-window bounds. Apply duration>=N only to proven durations; reject a candidate that violates an independently known upper bound instead of downgrading that contradiction to unproven.",
+    "Report processed throughput from dC/(dt/nominal_hz), and keep sparse last-frame duration samples/proofs distinct from a complete per-frame distribution."
+  ],
+  "v1_host_implementation_review": "Not certified by this source-semantics review; parent owns the isolated implementation and cloud validation.",
+  "archive_mutations": "NONE",
+  "v0_mutations": "NONE",
+  "hardware": "NOT_ACCESSED",
+  "EDA": "NOT_RUN",
+  "external_E2E": "UNMEASURED"
+}

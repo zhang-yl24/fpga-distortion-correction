@@ -1,0 +1,115 @@
+--- native/b4/rtl/telemetry_uart_link.sv
++++ native/b4/rtl/telemetry_uart_link.sv
+@@ -30,6 +30,17 @@
+         if(!rst_n)uart_release<=0;else uart_release<={uart_release[0],1'b1};
+     wire rx_valid,rx_error,tx_valid,tx_busy,tx_done;
+     wire [7:0] rx_data,tx_data;
++    wire arm_rx_valid,arm_rx_error,stats_rx_valid,stats_rx_error;
++    wire [7:0] arm_rx_data,stats_rx_data;
++    generate if(STATS_ENABLE)begin: stats_rx_routing
++        measurement_rx_router #(.BYTE_TIMEOUT_CYCLES(RX_TIMEOUT_CYCLES)) router(
++            .clk(ctrl_clk),.rst_n(uart_release[1]),.rx_valid(rx_valid),.rx_error(rx_error),.rx_data(rx_data),
++            .arm_rx_valid(arm_rx_valid),.arm_rx_error(arm_rx_error),.arm_rx_data(arm_rx_data),
++            .stats_rx_valid(stats_rx_valid),.stats_rx_error(stats_rx_error),.stats_rx_data(stats_rx_data));
++    end else begin: original_rx_stream
++        assign arm_rx_valid=rx_valid;assign arm_rx_error=rx_error;assign arm_rx_data=rx_data;
++        assign stats_rx_valid=rx_valid;assign stats_rx_error=rx_error;assign stats_rx_data=rx_data;
++    end endgenerate
+     wire b4_valid,b4_idle,snapshot_hold,snapshot_owner,snapshot_tx_valid;
+     wire [7:0] b4_data,snapshot_tx_data;
+     wire stats_hold,stats_owner,stats_tx_valid;wire [7:0] stats_tx_data;
+@@ -38,7 +49,7 @@
+     generate if(STATS_ENABLE)begin: stats_enabled
+         stats_uart_mux #(.RX_TIMEOUT_CYCLES(RX_TIMEOUT_CYCLES),.LIGHT(STATS_LIGHT)) mux(
+             .ctrl_clk(ctrl_clk),.core_clk(snapshot_core_clk),.rst_n(rst_n),
+-            .rx_valid(rx_valid),.rx_error(rx_error),.rx_data(rx_data),
++            .rx_valid(stats_rx_valid),.rx_error(stats_rx_error),.rx_data(stats_rx_data),
+             .request_valid(stats_request_valid),.request_ready(stats_request_ready),.ticket(stats_ticket),.nonce(stats_nonce),
+             .response_valid(stats_response_valid),.response_ready(stats_response_ready),.response_body(stats_response_body),
+             .b4_packet_idle(b4_idle),.snapshot_hold(snapshot_hold),.snapshot_owner(snapshot_owner),
+@@ -78,7 +89,7 @@
+         .tx(uart_tx),.busy(tx_busy),.done(tx_done));
+     telemetry_session_link #(.WIDTH(WIDTH),.HEIGHT(HEIGHT),.CTRL_HZ(CLOCK_HZ),
+         .RX_TIMEOUT_CYCLES(RX_TIMEOUT_CYCLES),.SNAPSHOT_ENABLE(SNAPSHOT_ENABLE || STATS_ENABLE)) link(
+-        .ctrl_clk(ctrl_clk),.pix_clk(pix_clk),.rst_n(rst_n),.rx_valid(rx_valid),.rx_error(rx_error),.rx_data(rx_data),
++        .ctrl_clk(ctrl_clk),.pix_clk(pix_clk),.rst_n(rst_n),.rx_valid(arm_rx_valid),.rx_error(arm_rx_error),.rx_data(arm_rx_data),
+         .tx_valid(b4_valid),.tx_data(b4_data),.tx_ready(!tx_busy && !snapshot_owner && !stats_owner),.tx_done(tx_done && !snapshot_owner && !stats_owner),
+         .snapshot_hold(snapshot_hold || stats_hold),.packet_idle(b4_idle),
+         .pixel_valid(pixel_valid),.frame_start(frame_start),.frame_last(frame_last),.video_abort(video_abort),
+--- /dev/null
++++ native/b4/rtl/measurement_rx_router.sv
+@@ -0,0 +1,74 @@
++`timescale 1ns/1ps
++// Measurement profile only: SGA1 and SGT1 are both fixed 24-byte packets.
++// Route complete framing, including magic, to the unchanged validating parser.
++// A four-byte elastic prefix queue also accepts one input byte every clock.
++module measurement_rx_router #(parameter integer BYTE_TIMEOUT_CYCLES=2700000)(
++    input wire clk,rst_n,rx_valid,rx_error,input wire [7:0] rx_data,
++    output reg arm_rx_valid,arm_rx_error,output reg [7:0] arm_rx_data,
++    output reg stats_rx_valid,stats_rx_error,output reg [7:0] stats_rx_data
++);
++    reg [31:0] search,age;
++    reg [4:0] count;
++    reg packet_stats;
++    reg [8:0] pending[0:3];
++    reg [1:0] read_ptr,write_ptr;
++    reg [2:0] used;
++    wire pop=used!=0;
++    wire [31:0] next_search={rx_data,search[31:8]};
++    wire found_arm=next_search==32'h31414753;
++    wire found_stats=next_search==32'h31544753;
++    integer i;
++    always @(posedge clk or negedge rst_n)begin
++        if(!rst_n)begin
++            search<=0;age<=0;count<=0;packet_stats<=0;
++            read_ptr<=0;write_ptr<=0;used<=0;
++            arm_rx_valid<=0;arm_rx_error<=0;arm_rx_data<=0;
++            stats_rx_valid<=0;stats_rx_error<=0;stats_rx_data<=0;
++        end else begin
++            arm_rx_valid<=0;arm_rx_error<=0;stats_rx_valid<=0;stats_rx_error<=0;
++            used<=used-pop;
++            if(pop)begin
++                read_ptr<=read_ptr+1'b1;
++                if(pending[read_ptr][8])begin
++                    stats_rx_valid<=1;stats_rx_data<=pending[read_ptr][7:0];
++                end else begin
++                    arm_rx_valid<=1;arm_rx_data<=pending[read_ptr][7:0];
++                end
++            end
++            if(rx_error)begin
++                // A physical framing loss invalidates any partial command.
++                search<=0;age<=0;count<=0;used<=0;read_ptr<=0;write_ptr<=0;
++                arm_rx_valid<=0;stats_rx_valid<=0;arm_rx_error<=1;stats_rx_error<=1;
++            end else if(rx_valid)begin
++                age<=0;
++                if(count==0)begin
++                    search<=next_search;
++                    if(found_arm || found_stats)begin
++                        // Both current parsers consume exactly24 bytes even when
++                        // the received length/schema/CRC is invalid. Do not trust
++                        // packet length or search for magic inside its payload.
++                        for(i=0;i<4;i=i+1)
++                            pending[(write_ptr+i)&3]<={found_stats,next_search[i*8+:8]};
++                        used<=used-pop+4;
++                        count<=4;packet_stats<=found_stats;search<=0;
++                    end
++                end else begin
++                    pending[write_ptr]<={packet_stats,rx_data};
++                    write_ptr<=write_ptr+1'b1;used<=used-pop+1;
++                    if(count==23)begin count<=0;search<=0;end
++                    else count<=count+1'b1;
++                end
++            end else if(count!=0 || search!=0)begin
++                if(age>=BYTE_TIMEOUT_CYCLES-1)begin
++                    // Reset the selected original parser before accepting a new
++                    // packet; do not leave its delayed prefix collecting bytes.
++                    if(count!=0)begin
++                        if(packet_stats)stats_rx_error<=1;else arm_rx_error<=1;
++                    end
++                    search<=0;age<=0;count<=0;used<=0;read_ptr<=0;write_ptr<=0;
++                    arm_rx_valid<=0;stats_rx_valid<=0;
++                end else age<=age+1'b1;
++            end
++        end
++    end
++endmodule

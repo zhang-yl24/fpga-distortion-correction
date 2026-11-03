@@ -30,3 +30,17 @@ jobs:
           python-version: '3.12'
       - name: Verify byte-preserved source package and dependency boundary
         run: python -B delivery/20261103-hdmi1080-demo-source/tools/verify_package.py
+      - name: Verify source-only offline diagnostic candidate closures
+        run: python -B delivery/20261103-hdmi1080-demo-source/tools/verify_offline_candidates.py
+      - name: Check exact DMA paired-test inputs and original CPU oracle
+        run: python -B delivery/20261103-hdmi1080-demo-source/offline-candidates/20261103-night/tests/dma-grant-equivalence/run_pair.py --check-only
+      - name: Verify exact PGSTAT02 v1 sources and run 34 memory tests
+        run: python -B delivery/20261103-hdmi1080-demo-source/measurement/pgstat02-v1/run_delivery_checks.py --scratch-parent "${{ runner.temp }}"
+      - name: Verify morning RX INDEX6 and board-counter evidence boundaries
+        run: python -B delivery/20261103-hdmi1080-demo-source/progress/20261103-morning/verify_progress.py
+      - name: Verify finite continuous RTL and actual failed route identities
+        run: python -B delivery/20261103-hdmi1080-demo-source/progress/20261103-cont60-route/verify_release.py
+      - name: Verify stable30 board display identity and unmeasured boundaries
+        run: python -B delivery/20261103-hdmi1080-demo-source/progress/20261103-stable30-board/verify_evidence.py
+      - name: Verify stable30 OP source and explicit dependency boundary
+        run: python -B delivery/20261103-hdmi1080-demo-source/stable30-OP/verify_export.py

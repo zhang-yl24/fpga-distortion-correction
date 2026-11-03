@@ -1,0 +1,15 @@
+{
+  "ParentBitSHA256": "2793ab0b6f1edb6429cb26b4cc927364cc1c512fe29f7c8b1dd473291374a819",
+  "ParentADF": "85fb2bcd0db1064c54b30f96982690d28dda59df1a1a6197eae504b2232287ef",
+  "NativeCount": 130,
+  "OnlyChanged": "source/rtl/experimental/hdmi1080_input_dma.v",
+  "BaselineSHA256": "7a21acc092ba97a268cfc319521ec8fc0e9eb0dca62289ba2ffbeae68705ec2e",
+  "CandidateSHA256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29",
+  "Change": "if(grant_valid&&grant_ready)\u2192if(grant_valid),DMAacceptanceonly;capturehandshakeunchanged",
+  "Invariant": "Commonreset/samecoreclockgivesidentical2FFresetrelease;DMAactive==capturegrant_busy.Theysetatthesameacceptedgrantandclearatthesamedonehandshake;grant_validimpliessr&&!activeandthereforegrant_ready.",
+  "InductiveAbstractProof": "4reachablecontrolstates/32transitions;oldnewgrant_fireequal",
+  "StateCyclesDelta": 0,
+  "Target": "14parentDMAfailed\u2192grantLUT\u2192next_id/CRC CEcommonprefix;notarithmeticcarry",
+  "Unchanged": "AW/Wbeat0/DDRdrain/descriptor2credit/fault/reset/frameIDtiming/CRC;noFDCclockseedchange",
+  "ScannerPrecompareIncluded": false
+}
