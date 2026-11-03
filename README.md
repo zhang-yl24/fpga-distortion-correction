@@ -1,8 +1,10 @@
 # FPGA 实时图像畸变矫正
 
-> **2026-11-03 新 HDMI 鱼眼提速版已上板：** 1920×1080 矫正唯一新画面实测 **5.0 FPS**，较 C 基线约 4.276 FPS 提升 **16.94%**；HDMI 刷新仍为 30Hz。用户确认“画面正常，比之前流畅，但还是有卡顿”。处理时间约 168.66ms。SRAM 下载、器件 ID/DONE、完整物理与十项时序、位流前独立门检均通过，Flash 未写。见[已上板结果、位流和便携校验](distortion/results/hdmi-camera-fisheye-fill8r3s3-20261103-a/README.md)、[源码与重建](delivery/20261103-hdmi-camera-fisheye-fill8/README.md)、[资源占用](handoff/HDMI_CAMERA_FISHEYE_S3_RESOURCES_20261103.md)、[下一步提帧方案](handoff/HDMI_CAMERA_FISHEYE_PERFORMANCE_NEXT_AFTER_S3_20261103.md)。当前版本仍有卡顿，5 FPS 与 30Hz 刷新分别记录。
+> **2026-11-03 当前已上板 tile8 鱼眼版：** 1920×1080 矫正唯一新画面实测 **15.0 FPS**，相比 S3 的 5.0 FPS 达到 **3 倍（+200%）**；HDMI 扫描刷新为 **30 Hz**。30 秒采集、30 个连续样本及保存串口字节独立复解码通过，窗口内无新增空白帧或管线故障；SRAM 下载 DONE/器件 ID 确认，Flash 未写。末帧处理耗时 44.31 ms。资源：LUT **19.79%**、FF **10.50%**、DRM **22.90%**、APM **22.50%**。见[本轮位流与实测](distortion/results/hdmi-camera-fisheye-tile8-20261103-a/README-PUBLISHED.md)、[源码闭包与重建](delivery/20261103-hdmi-camera-fisheye-tile8/README.md)、[最终版本资源报告](handoff/HDMI_CAMERA_FISHEYE_TILE8_RESOURCES_20261103.md)。帧率来自数字遥测；尚无本轮用户视觉反馈、光学延迟或 KEY1 切换验收。
 
-> **本分支当前板上版本（2026-11-03）：新 HDMI 摄像头鱼眼矫正 C 版。** SRAM/DONE/器件 ID 已确认，用户确认矫正效果和 KEY1 原图/矫正往返切换正常。矫正实测约 **4.3 FPS**，原图 **30 FPS**，HDMI 扫描 **30Hz**。点击[完整交付](delivery/20261103-hdmi-camera-fisheye-c/README.md)查看已下载位流、源码闭包、标定图与精确参数，以及下载/UART 原始证据。分支 `codex/hdmi-camera1080-fisheye`；下方保留队友独立工程包和各路线历史记录。
+> **2026-11-03 S3 历史基线：** 1920×1080 矫正唯一新画面实测 **5.0 FPS**，较 C 基线约 4.276 FPS 提升 **16.94%**；HDMI 刷新仍为 30Hz。用户确认“画面正常，比之前流畅，但还是有卡顿”。处理时间约 168.66ms。SRAM 下载、器件 ID/DONE、完整物理与十项时序、位流前独立门检均通过，Flash 未写。见[已上板结果、位流和便携校验](distortion/results/hdmi-camera-fisheye-fill8r3s3-20261103-a/README.md)、[源码与重建](delivery/20261103-hdmi-camera-fisheye-fill8/README.md)、[资源占用](handoff/HDMI_CAMERA_FISHEYE_S3_RESOURCES_20261103.md)、[下一步提帧方案](handoff/HDMI_CAMERA_FISHEYE_PERFORMANCE_NEXT_AFTER_S3_20261103.md)。当前版本仍有卡顿，5 FPS 与 30Hz 刷新分别记录。
+
+> **C 历史基线（2026-11-03）：新 HDMI 摄像头鱼眼矫正 C 版。** SRAM/DONE/器件 ID 已确认，用户确认矫正效果和 KEY1 原图/矫正往返切换正常。矫正实测约 **4.3 FPS**，原图 **30 FPS**，HDMI 扫描 **30Hz**。点击[完整交付](delivery/20261103-hdmi-camera-fisheye-c/README.md)查看已下载位流、源码闭包、标定图与精确参数，以及下载/UART 原始证据。分支 `codex/hdmi-camera1080-fisheye`；下方保留队友独立工程包和各路线历史记录。
 
 ## 完整校正帧率优化工程包（2026-11-03）
 

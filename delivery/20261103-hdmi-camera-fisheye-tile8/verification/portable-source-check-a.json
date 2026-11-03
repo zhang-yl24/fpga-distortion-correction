@@ -1,0 +1,115 @@
+{
+  "Schema": "hdmi-camera-fisheye-tile8-portable-delivery-local-validation-v1",
+  "Passed": true,
+  "CheckedUTC": "2026-11-03T13:58:47.927674+00:00",
+  "Checks": [
+    {
+      "Command": [
+        "python",
+        "-B",
+        "delivery/20261103-hdmi-camera-fisheye-tile8/verify_source.py"
+      ],
+      "ExitCode": 0,
+      "Result": {
+        "verified": true,
+        "source_files": 110,
+        "ddr_ip_sources": 74,
+        "released_bitstream_sha256": "1236d82f113e1ddb1c5e24502ed1aa03e4758db0a7d6ff17bf9216f0fbd0e4f3",
+        "prepared_verified": false
+      },
+      "Stderr": ""
+    },
+    {
+      "Command": [
+        "python",
+        "-B",
+        "distortion/results/hdmi-camera-fisheye-tile8-20261103-a/verify_archive_portable.py",
+        "--manifest",
+        "portable-evidence-manifest-c.json"
+      ],
+      "ExitCode": 0,
+      "Result": {
+        "Passed": true,
+        "BundledFilesVerified": 449,
+        "LargePhysicalProofsBundled": false,
+        "HardwareAccessed": false
+      },
+      "Stderr": ""
+    },
+    {
+      "Command": [
+        "python",
+        "-B",
+        "distortion/tools/verify_fisheye_tile8_archive.py"
+      ],
+      "ExitCode": 0,
+      "Result": {
+        "Passed": true,
+        "BaselineUniqueFPS": 5.0,
+        "CandidateUniqueFPS": 15.0,
+        "HostRateRatio": 2.9999915067318894,
+        "HostImprovementPercent": 199.99915067318895,
+        "Samples": 30,
+        "CounterWindowSeconds": 29.0,
+        "ScanRefreshHz": 30.0,
+        "FlashWritten": false,
+        "HardwareAccessed": false,
+        "EDAExecuted": false,
+        "OpticalLatencyMeasured": false
+      },
+      "Stderr": ""
+    },
+    {
+      "Command": [
+        "python",
+        "-B",
+        "delivery/20261103-hdmi-camera-fisheye-tile8/verify_source.py",
+        "--prepared",
+        ".bld-tile8-ci"
+      ],
+      "ExitCode": 0,
+      "Result": {
+        "verified": true,
+        "source_files": 110,
+        "ddr_ip_sources": 74,
+        "released_bitstream_sha256": "1236d82f113e1ddb1c5e24502ed1aa03e4758db0a7d6ff17bf9216f0fbd0e4f3",
+        "prepared_verified": true
+      },
+      "Stderr": ""
+    }
+  ],
+  "PreparedByPriorCommand": [
+    "python",
+    "-B",
+    "delivery/20261103-hdmi-camera-fisheye-tile8/prepare_build.py",
+    "--output",
+    ".bld-tile8-ci"
+  ],
+  "PreparedInputs": 111,
+  "SourceFiles": 110,
+  "DDRExpandedSources": 74,
+  "ReadmeLocalLinks": [
+    {
+      "Document": "delivery/20261103-hdmi-camera-fisheye-tile8/README.md",
+      "Target": "distortion/results/hdmi-camera-fisheye-tile8-20261103-a/evidence/release-b/hdmi_camera_fisheye_top.sbit"
+    },
+    {
+      "Document": "delivery/20261103-hdmi-camera-fisheye-tile8/README.md",
+      "Target": "distortion/results/hdmi-camera-fisheye-tile8-20261103-a/README-PUBLISHED.md"
+    },
+    {
+      "Document": "delivery/20261103-hdmi-camera-fisheye-tile8/README.md",
+      "Target": "delivery/20261103-hdmi-camera-fisheye-tile8/SOURCE_README.md"
+    },
+    {
+      "Document": "delivery/20261103-hdmi-camera-fisheye-tile8/README.md",
+      "Target": "delivery/20261103-hdmi-camera-fisheye-tile8/VERIFY_README.md"
+    }
+  ],
+  "ReadmeLocalLinksPassed": true,
+  "MultiCommandCIUsesBashFailFast": true,
+  "EDAExecuted": false,
+  "HardwareAccessed": false,
+  "FrozenSourcesModified": false,
+  "HistoricalTimingSignoffInherited": false
+}

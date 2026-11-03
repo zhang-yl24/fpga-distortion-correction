@@ -1,4 +1,16 @@
-# 当前新 HDMI 摄像头：已上板鱼眼矫正 C 版（2026-11-03）
+# 当前新 HDMI 摄像头：已上板 tile8 鱼眼矫正（2026-11-03）
+
+当前板上是 tile8 + 双 8 行 stripe 写回候选，矫正新画面 **15.0 FPS**，S3 为 5.0 FPS，提升 **200%**；扫描刷新 **30 Hz**。SRAM 下载通过、PG2L100H/ID 0x00602899/DONE 确认，Flash 未写。30.009 秒采集含 30 连续样本，29 秒计数窗口新增 435 个完整新结果 ID，新增空白 0、CRC 拒绝/丢弃/fault 均为 0，独立主机计时 15.000262 FPS。
+
+本轮位流 SHA256 `1236d82f113e1ddb1c5e24502ed1aa03e4758db0a7d6ff17bf9216f0fbd0e4f3`；最终 ADF SHA256 `d883052e4912056a91d634e4d6887f49c45ce60dea52266db94df0659b8a3913`。原物理 worker PID30796 正常退出后接续，唯一发布 wrapper PID31916 于21:35:52正常退出；完整物理、十表时序、新STA、独立无缓存生成门禁、位流验证、SRAM与UART实测均已完成。不需要重启构建或下载。
+
+资源 LUT 13,181/66,600（19.79%）、FF 13,987/133,200（10.50%）、DRM 35.5/155（22.90%）、APM 54/240（22.50%）。相比 S3，LUT -624、FF -3,871、DRM +16。末帧处理 44.31112 ms（不是平均或相机到屏幕延迟）。本轮未取得视觉反馈、光学帧率/延迟、长稳或 KEY1 切换验收，不能沿用 S3/C 的反馈。
+
+- [已上板结果、实际位流和离线验证](../distortion/results/hdmi-camera-fisheye-tile8-20261103-a/README-PUBLISHED.md)
+- [110项生产源/IP闭包与便携重建](../delivery/20261103-hdmi-camera-fisheye-tile8/README.md)
+- [最终上板资源及来源链](HDMI_CAMERA_FISHEYE_TILE8_RESOURCES_20261103.md)
+
+发布分支 `codex/hdmi-camera-fisheye-tile8` 基于已合入S3的主分支07da49e，保留原阶段A/B证据字节与已发布S3/C。以下为历史接续截面，当前状态以上述tile8实际回执为准。
 
 **2026-11-03 17:40 当前已上板 S3 提速版，实测/用户验收完成；正在按用户要求发布与规划。** 最终 ADF8510ff44a6c5cba81b675ad3bdf249ba93e1be4f2c372f5ff76b855ba761e2a2，bit ae6be718eaa60fdcd1ba252c08133e7e24d22d247d2a649d21f0d1f7be4a4d16（3791112字节）。实际SRAM program-v2-a Passed/DONE/expectedIDtrue、Flashfalse、Cleanup[]。30包29秒矫正：145个新帧=5.0FPS，30Hz刷新含25Hz重复，新增空白0/fault0/CRC拒包0；host5.000101→基线4.275951，提升16.94%。最后处理21082909cycles=168.663272ms。用户原话“画面正常，比之前流畅，但还是有卡顿”，已反馈不能写成流畅目标完成。当前新S3原图/KEY1往返未实测，不借C往返结果。完整物理与十表/启动/位流freshSTA+无缓存gate已Passed，root唯一发布worker17812实际exit0，P已释放、COM7已关闭。源码/位流/回执见[结果包](../distortion/results/hdmi-camera-fisheye-fill8r3s3-20261103-a/README.md)，资源LUT20.73%/FF13.41%/DRM12.58%/APM22.5%见[资源报告](HDMI_CAMERA_FISHEYE_S3_RESOURCES_20261103.md)。下一步优先诊断帧交接等待、8×8缓存局部性+双8行写回，再评估双lane，见[新计划](HDMI_CAMERA_FISHEYE_PERFORMANCE_NEXT_AFTER_S3_20261103.md)。用户明确授权推送仓库；隔离发布分支codex/hdmi-camera-fisheye-fill8基于已发布C，不改其他workspace/旧证据。以下是历史截面，不覆盖本段当前状态。
 

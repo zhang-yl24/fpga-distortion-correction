@@ -1,0 +1,152 @@
+{
+  "Schema": "hdmi-camera-fisheye-tile8-architecture-property-model-v1",
+  "Passed": true,
+  "ChecksAreSpecificationOnly": true,
+  "CandidateWriterRTLExecuted": false,
+  "Geometries": [
+    {
+      "Width": 32,
+      "Height": 16,
+      "Pixels": 512,
+      "Stripes": 2,
+      "StripePixels": 256,
+      "DDRBeats": 32,
+      "DDRBursts": 2,
+      "CompleteUniqueGlobalRasterTagPermutation": true,
+      "EachStripeWritesEverySlotExactlyOnce": true,
+      "TagOrderSHA256NativeEndianUInt32": "a3cc1362ce72b0a9fdbe1cb9a52d722fb8523ba50ab1978c0fc7ecc0d3333fdb",
+      "AddressRangeChecks": [
+        {
+          "Base4ByteUnits": 0,
+          "EndExclusive4ByteUnits": 256
+        },
+        {
+          "Base4ByteUnits": 1048576,
+          "EndExclusive4ByteUnits": 1048832
+        },
+        {
+          "Base4ByteUnits": 2097152,
+          "EndExclusive4ByteUnits": 2097408
+        },
+        {
+          "Base4ByteUnits": 3145728,
+          "EndExclusive4ByteUnits": 3145984
+        }
+      ]
+    },
+    {
+      "Width": 64,
+      "Height": 24,
+      "Pixels": 1536,
+      "Stripes": 3,
+      "StripePixels": 512,
+      "DDRBeats": 96,
+      "DDRBursts": 6,
+      "CompleteUniqueGlobalRasterTagPermutation": true,
+      "EachStripeWritesEverySlotExactlyOnce": true,
+      "TagOrderSHA256NativeEndianUInt32": "c354c819b5e2642b76b53033956c1d307a89d671fe1830ce9f22c4d3271f6364",
+      "AddressRangeChecks": [
+        {
+          "Base4ByteUnits": 0,
+          "EndExclusive4ByteUnits": 768
+        },
+        {
+          "Base4ByteUnits": 1048576,
+          "EndExclusive4ByteUnits": 1049344
+        },
+        {
+          "Base4ByteUnits": 2097152,
+          "EndExclusive4ByteUnits": 2097920
+        },
+        {
+          "Base4ByteUnits": 3145728,
+          "EndExclusive4ByteUnits": 3146496
+        }
+      ]
+    },
+    {
+      "Width": 1920,
+      "Height": 1080,
+      "Pixels": 2073600,
+      "Stripes": 135,
+      "StripePixels": 15360,
+      "DDRBeats": 129600,
+      "DDRBursts": 8100,
+      "CompleteUniqueGlobalRasterTagPermutation": true,
+      "EachStripeWritesEverySlotExactlyOnce": true,
+      "TagOrderSHA256NativeEndianUInt32": "589e2fb4ace04844da39f91dd9cf92223e02d7f15df8164f1f733fcefbbd1d85",
+      "AddressRangeChecks": [
+        {
+          "Base4ByteUnits": 0,
+          "EndExclusive4ByteUnits": 1036800
+        },
+        {
+          "Base4ByteUnits": 1048576,
+          "EndExclusive4ByteUnits": 2085376
+        },
+        {
+          "Base4ByteUnits": 2097152,
+          "EndExclusive4ByteUnits": 3133952
+        },
+        {
+          "Base4ByteUnits": 3145728,
+          "EndExclusive4ByteUnits": 4182528
+        }
+      ]
+    }
+  ],
+  "CandidateBankExactEngineTypeSubstitutionOnly": true,
+  "EstimatedAddressModel": {
+    "Receipt": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-20261103-a\\cache-address-tiled-profile-a.json",
+      "SHA256": "74734ccedb2f23b5b6f7f7d804fc649d3195ef2e434cae5fdff511cfe34ea66f"
+    },
+    "CorrectedINDEX7Fills": 49465,
+    "FillBytes": 12663040,
+    "HardwareMeasured": false,
+    "FullRTLMeasuredFillCountClaimed": false
+  },
+  "WriterThroughputRequirements": {
+    "CoreClockHz": 125000000,
+    "OutputWidth": 1920,
+    "OutputHeight": 1080,
+    "TargetFPS": 30,
+    "AveragePixelsPerCoreCycle": 0.497664,
+    "FrameBudgetCycles": 4166666.6666666665,
+    "IdealConservativeBurstDrainCycles": 274,
+    "IdealConservativeFrameDrainCycles": 2219400,
+    "HardwareThroughputClaimed": false
+  },
+  "Inputs": [
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi_camera_fisheye_bank.v",
+      "SHA256": "59020a41cc9d9e89a92a4973a4e227fdd1b243d15f80c71d3df1af6a39473616"
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi_camera_fisheye_bank_tile8.v",
+      "SHA256": "9404658e762b51f8a8e9926936f6533908fbc686b90674fa03d1db2b0f43b482"
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\ddr_write_arbiter.v",
+      "SHA256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62"
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi_camera_fisheye_input_link.v",
+      "SHA256": "b07c6df5ac016b632fa2413b4d2d5d6886ee70f13d3efa050a9dff59e0166a2a"
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_adaptive_result_writer.v",
+      "SHA256": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6"
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\video_crc32.vh",
+      "SHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705"
+    },
+    {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-20261103-a\\cache-address-tiled-profile-a.json",
+      "SHA256": "74734ccedb2f23b5b6f7f7d804fc649d3195ef2e434cae5fdff511cfe34ea66f"
+    }
+  ],
+  "EDAExecuted": false,
+  "HardwareAccessed": false
+}

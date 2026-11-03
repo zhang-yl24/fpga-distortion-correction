@@ -1,0 +1,98 @@
+{
+  "Schema": "hdmi-camera-fisheye-engine-tile8-simulation-v1",
+  "Passed": true,
+  "SourceSHA256": {
+    "tests/tb_hdmi_camera_fisheye_engine_tile8.sv": "6045417f6fc8d080d65983f6ff71af2cbf6f5252848b12bb33650b20872dc9c2",
+    "rtl/experimental/hdmi_camera_fisheye_engine_tile8.v": "9b412ca5dc5563c8cbcc8bd67262377af9846da0154da9601281fed1127d4bbe",
+    "rtl/experimental/ddr_adaptive_result_writer_dualstripe.v": "f820cae06b30b0c3fb78f8ece7874e742c5008c795df10e190ff57eeb23b017b",
+    "rtl/video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+    "tools/run_hdmi_camera_fisheye_engine_tile8_sim.py": "004a935f1eb993d55ffd97b7d0a0a3ce877dbd037abdbe8aeb72fdde2016eb89",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "InputDrift": [],
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "ActualFisheyeCoreInstantiated": false,
+  "ActualCandidateWriterInstantiated": true,
+  "StartedUTC": "2026-11-03T10:16:29.796583+00:00",
+  "Commands": [
+    {
+      "Stage": "compile",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_hdmi_camera_fisheye_engine_tile8.sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi_camera_fisheye_engine_tile8.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8-20261103-a\\engine-unit-a\\relocated-sources\\rtl\\experimental\\ddr_adaptive_result_writer_dualstripe.v"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "elaborate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_hdmi_camera_fisheye_engine_tile8",
+        "-s",
+        "engine_tile8"
+      ],
+      "ReturnCode": 0
+    },
+    {
+      "Stage": "simulate",
+      "Argv": [
+        "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+        "engine_tile8",
+        "-runall",
+        "-log",
+        "simulation.log"
+      ],
+      "ReturnCode": 0
+    }
+  ],
+  "RelocatedSources": {
+    "rtl/experimental/ddr_adaptive_result_writer_dualstripe.v": {
+      "OriginalSHA256": "f820cae06b30b0c3fb78f8ece7874e742c5008c795df10e190ff57eeb23b017b",
+      "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8-20261103-a\\engine-unit-a\\relocated-sources\\rtl\\experimental\\ddr_adaptive_result_writer_dualstripe.v",
+      "CompiledSHA256": "592c0b9c007e3dbf1abf880f0cf0a8e622370c99a66178938496b733a8b0e08b",
+      "IncludePathReplacements": [
+        {
+          "Original": "    `include \"D:/English/FPGA/distortion/rtl/video_crc32.vh\"",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "CompiledHeaderPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8-20261103-a\\engine-unit-a\\relocated-headers\\rtl\\video_crc32.vh"
+        }
+      ]
+    }
+  },
+  "FramesCompleted": 4,
+  "CoordinateStalls": 1175,
+  "WriterStalls": 142,
+  "IndependentCoordinateOracle": true,
+  "RasterPixelsAndCRCChecked": true,
+  "FrameModeChangesWhileBusyExercised": true,
+  "ResetAbortedFrameExercised": true,
+  "InvalidOverlappingBanksRejected": true,
+  "SourceSHA256After": {
+    "tests/tb_hdmi_camera_fisheye_engine_tile8.sv": "6045417f6fc8d080d65983f6ff71af2cbf6f5252848b12bb33650b20872dc9c2",
+    "rtl/experimental/hdmi_camera_fisheye_engine_tile8.v": "9b412ca5dc5563c8cbcc8bd67262377af9846da0154da9601281fed1127d4bbe",
+    "rtl/experimental/ddr_adaptive_result_writer_dualstripe.v": "f820cae06b30b0c3fb78f8ece7874e742c5008c795df10e190ff57eeb23b017b",
+    "rtl/video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+    "tools/run_hdmi_camera_fisheye_engine_tile8_sim.py": "004a935f1eb993d55ffd97b7d0a0a3ce877dbd037abdbe8aeb72fdde2016eb89",
+    "tools/simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e"
+  },
+  "LogSHA256": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "40d9e55e55c065f77891d946ce51ec04db38a96cafd46fd126460d3f3b89b5b2",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "bc2b4fdf1fc2d023d3e12f3b1c2269f5ff4a4fcb4e186e3c41a217a07030b1e8",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "c422729d17a44d2ac44e240def06ba11028a7428f079ae1f9ae88e305df0f491",
+    "simulation.log": "7abd8d25fdabbee04d3f0a0f009a72e62d96a311811e55ae406a7c0e85feed8e",
+    "webtalk.log": "9681906c9187fbb287839f4977dd2dbd179989b04b35a895bae7a16022b01cbd",
+    "webtalk_18752.backup.log": "a9fa832ed4770095a764ffe14ac56a7efb84f084d2e33ed631298b5a96d04385",
+    "xelab.log": "c28a4fefef02847c55fb8d38422b5a19c2302f9c4830057af6bfb10b4c84b244",
+    "xvlog.log": "bbfb2a2a015727e0bf3a460fb750cf3c12e48f05b02f5394c29e8811719df34d"
+  },
+  "EndedUTC": "2026-11-03T10:16:53.069171+00:00",
+  "Limits": "Unit uses an independent elastic mock core to isolate tile/raster emission, masking, whole-pixel backpressure and writer raster CRC. Actual mapper/cache/system pixels require the separate real-system simulation."
+}
