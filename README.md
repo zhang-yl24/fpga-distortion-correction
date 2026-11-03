@@ -1,5 +1,7 @@
 # FPGA 实时图像畸变矫正
 
+**16:17更新：** [H鱼眼最终内部时序与首次板测](delivery/20261103-hdmi1080-demo-source/progress/20261103-H-final-board/README.md)：真实整帧CRC d3be1a4d/2076957周期；H双角内部12类0违例、slow setup+0.034ns，FF26022/LUT30990/DRM20.5/APM56/IO144。SRAM DONE但一次ARM无响应/raw0，硬件FPS与E2E未测；外部IO/物理复位/共享DDR持续性能未签核。下文H仅Map是15:22时点历史，非最新状态。
+
 ## 当前目标与证据入口（2026-11-03下午）
 
 **当前目标：新HDMI摄像头1920×1080，输入60Hz、扫描60Hz、每秒60个新校正帧；仍未完成持续实板60fps或基础/提高任务全项验收。** [最新交接：PR24合并、G启动阻塞与鱼眼RTL](delivery/20261103-hdmi1080-demo-source/progress/20261103-pr24-g-fisheye/README.md) 按源码/参数/位流区分数字模型、内部时序、板测和未测项。
