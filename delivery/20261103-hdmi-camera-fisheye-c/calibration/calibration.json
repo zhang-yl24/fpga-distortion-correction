@@ -1,0 +1,200 @@
+{
+  "schema": "hdmi-camera-fisheye-c-portable-calibration-v1",
+  "derived": true,
+  "derivation": "Portable use of the frozen C fit and deployed projection; exact original IEEE-754 float values are preserved. This file does not alter the original calibration or regenerate its fit.",
+  "camera_id": "new-hdmi-camera-20261102",
+  "lens_id": "new-hdmi-lens-20261102",
+  "model": "opencv_fisheye",
+  "distortion_order": [
+    "k1",
+    "k2",
+    "k3",
+    "k4"
+  ],
+  "native_size": [
+    1920,
+    1080
+  ],
+  "K_native": [
+    [
+      808.2272613458829,
+      0.0,
+      943.7446431879945
+    ],
+    [
+      0.0,
+      810.0804859591761,
+      556.5635877240222
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "D_normalized": [
+    -0.023025039402366058,
+    0.0010939325830845673,
+    -0.004404026888512618,
+    0.0010249559182549826
+  ],
+  "rectification": {
+    "R": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "balance": 0.5,
+    "output_size": [
+      1920,
+      1080
+    ],
+    "K_output_native": [
+      [
+        498.5237444253359,
+        0.0,
+        895.4756299331018
+      ],
+      [
+        0.0,
+        499.66683439231093,
+        561.1161479755821
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "projection": "C preview balance=.5 rectilinear, R=identity, exact native centre2*c+.5"
+  },
+  "snapshot_preview": {
+    "size": [
+      960,
+      540
+    ],
+    "native_coordinate_conversion": "u_native = 2*u_snapshot + 0.5; v_native = 2*v_snapshot + 0.5",
+    "K_snapshot": [
+      [
+        404.11363067294144,
+        0.0,
+        471.62232159399724
+      ],
+      [
+        0.0,
+        405.0402429795881,
+        278.0317938620111
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "K_output_snapshot": [
+      [
+        249.26187221266795,
+        0.0,
+        447.4878149665509
+      ],
+      [
+        0.0,
+        249.83341719615547,
+        280.30807398779103
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "corrected_image": "originals/new-lens-fisheye-preview-c.png",
+    "comparison_image": "originals/new-lens-calibration-comparison-c.png",
+    "processor": "PC OpenCV; images are not a capture of FPGA corrected HDMI output"
+  },
+  "fit_summary": {
+    "received_frames": 49,
+    "distinct_valid_views": 35,
+    "training_views": 28,
+    "held_out_views": 7,
+    "training_rms_native_px": 0.38192687125377933,
+    "held_out_mean_native_px": 0.39151887531326884,
+    "held_out_max_native_px": 0.8708752775252777,
+    "inner_corners": [
+      9,
+      6
+    ],
+    "square_mm": 25.0,
+    "full_fov_optical_acceptance": false
+  },
+  "originals": {
+    "parameters": {
+      "path": "originals/new-lens-fisheye-1080-c.json",
+      "sha256": "ed59f83e3cfbc77b0c876293129955fea96aec21784e520592111506671b81af"
+    },
+    "fit": {
+      "path": "originals/new-lens-calibration-c.json",
+      "sha256": "3c90e297603ab612ee5450594db093fd3f0ad01550d05314bd29484f2909ebc8"
+    },
+    "report": {
+      "path": "originals/CALIBRATION_RESULT_C.md",
+      "sha256": "9508a345e3622800b62a3bc0a6b27f1f9bc52b3ecdbf54d3cf5ed52b16f5b35e"
+    }
+  },
+  "deployed_projection_source": {
+    "repository_relative_source": "distortion/work/hdmi-camera-fisheye-20261103-a/profile-a/profile.json",
+    "sha256": "f176c34bec93646e82ddd0ad8755e1a828221aecf687e545ef9452331ddd9d8c"
+  },
+  "deployed_baseline": {
+    "target": "hdmi_camera_fisheye_top",
+    "bitstream_sha256": "8c43a77d9ddce72dc7015ef7f63aabe37ab6758dd698e2e811b669c5aa5ba047",
+    "profile_id": "ed59f83e3cfbc77b",
+    "sram_done_confirmed": true,
+    "flash_written": false,
+    "user_correction_effect_confirmed": true,
+    "user_reported_latency_and_stutter": true,
+    "full_fov_optical_acceptance": false,
+    "evidence_repository_relative_directory": "distortion/results/hdmi-camera-fisheye-live-20261103-a",
+    "program_receipt_sha256": "2f52c0634bb8c05d2c6a60c6d3e02e09a23cf3f57797408a436e5c321ba651cb",
+    "user_observation_sha256": "70283704aff76d4a8da46075f4cf08c0e4a4fd38e2c58a776da61e489e0a7f58",
+    "program_receipt": "../../../distortion/results/hdmi-camera-fisheye-live-20261103-a/program-c/receipt.json",
+    "user_observation": "../../../distortion/results/hdmi-camera-fisheye-live-20261103-a/user-observation.json"
+  },
+  "selected_calibration_view": {
+    "path": "calibration-board-training-view32.png",
+    "provenance": "selected-calibration-view.json",
+    "view_index_zero_based": 32,
+    "role": "training",
+    "sha256": "4b2ac0f3bdd91a33b996642751f6e01fd2766d29d1b272e60de49105f9dabaaf",
+    "dataset_path": "dataset/view-32-training-supplemental-c-20261102T184205438253Z-frame00000065.png"
+  },
+  "limitations": [
+    "Fisheye [k1,k2,k3,k4] coefficients must be used with the OpenCV fisheye equations, not Brown k1/k2/p1/p2/k3.",
+    "Frozen originals retain historical local paths and pre-deployment status. The deployed_baseline block binds the later C SRAM run; it does not rewrite those originals.",
+    "Published comparison/preview images are PC outputs. Optical full-field quantitative acceptance and end-to-end latency remain incomplete.",
+    "All 35 images used by the frozen fit are included with the original 28-training/7-held-out split. The frozen fit does not serialize corner arrays; reproducing a fit requires detecting corners again, and no new fit is claimed by this packaging."
+  ],
+  "dataset": {
+    "manifest": "dataset-manifest.json",
+    "manifest_sha256": "92cc5794d0c7791b7c72e755784866b2c175bae590af666dbb24cdb0704e84cb",
+    "directory": "dataset",
+    "image_count": 35,
+    "training_count": 28,
+    "held_out_count": 7,
+    "indices_are_zero_based": true,
+    "all_fit_images_byte_identical": true,
+    "per_corner_arrays_serialized_in_frozen_fit": false
+  }
+}

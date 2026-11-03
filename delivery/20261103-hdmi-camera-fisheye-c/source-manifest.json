@@ -1,0 +1,771 @@
+{
+  "Schema": "hdmi-camera-fisheye-c-portable-source-v1",
+  "Target": "hdmi_camera_fisheye_top",
+  "SourceManifest": "distortion/board/hdmi-camera-fisheye-c-build-sources.json",
+  "Files": [
+    {
+      "Source": "distortion/rtl/mul32_pipe.v",
+      "SourceSHA256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+      "CompiledSHA256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/bilinear_rgb.v",
+      "SourceSHA256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+      "CompiledSHA256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/video_async_fifo.v",
+      "SourceSHA256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+      "CompiledSHA256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/video_crc32.vh",
+      "SourceSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+      "CompiledSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/ddr_read_arbiter.v",
+      "SourceSHA256": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+      "CompiledSHA256": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/ddr_write_arbiter.v",
+      "SourceSHA256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+      "CompiledSHA256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/ddr_video_reader.v",
+      "SourceSHA256": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+      "CompiledSHA256": "e9256df63f5f54b2935e78bfc00861f4782d05c6557d3279e3b55fb7519160e5",
+      "BuildChanges": [
+        {
+          "Kind": "BoundHeaderIncludeRelocation",
+          "Original": "D:/English/FPGA/distortion/rtl/video_crc32.vh",
+          "Compiled": "P:/distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/rtl/video_crc32.vh",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "ReplacementCount": 1
+        }
+      ],
+      "FrozenCompiled": "frozen-compiled/rtl/ddr_video_reader.v"
+    },
+    {
+      "Source": "distortion/rtl/experimental/ddr_adaptive_result_writer.v",
+      "SourceSHA256": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+      "CompiledSHA256": "0f2e6dee8ece470b6b7b1fcf79d200a56f53fa0bd4e16fbed4294a10ede83d75",
+      "BuildChanges": [
+        {
+          "Kind": "BoundHeaderIncludeRelocation",
+          "Original": "D:/English/FPGA/distortion/rtl/video_crc32.vh",
+          "Compiled": "P:/distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/rtl/video_crc32.vh",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "ReplacementCount": 1
+        }
+      ],
+      "FrozenCompiled": "frozen-compiled/rtl/experimental/ddr_adaptive_result_writer.v"
+    },
+    {
+      "Source": "distortion/rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v",
+      "SourceSHA256": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+      "CompiledSHA256": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v",
+      "SourceSHA256": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+      "CompiledSHA256": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/hdmi_camera_fisheye_core.v",
+      "SourceSHA256": "d40e18e74f691212d7c4a28e8b8eff15f87480532c258e5f3c832a023516995c",
+      "CompiledSHA256": "d40e18e74f691212d7c4a28e8b8eff15f87480532c258e5f3c832a023516995c",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/hdmi_camera_fisheye_engine.v",
+      "SourceSHA256": "bd5a2e4b6b58f476066ce13b566df0c0be0751de54e911a8dcad993e5c9b9179",
+      "CompiledSHA256": "bd5a2e4b6b58f476066ce13b566df0c0be0751de54e911a8dcad993e5c9b9179",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/hdmi_camera_fisheye_bank.v",
+      "SourceSHA256": "59020a41cc9d9e89a92a4973a4e227fdd1b243d15f80c71d3df1af6a39473616",
+      "CompiledSHA256": "59020a41cc9d9e89a92a4973a4e227fdd1b243d15f80c71d3df1af6a39473616",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/hdmi1080_capture_cdc.v",
+      "SourceSHA256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+      "CompiledSHA256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/hdmi1080_input_dma.v",
+      "SourceSHA256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+      "CompiledSHA256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/hdmi_camera_fisheye_input_link.v",
+      "SourceSHA256": "b07c6df5ac016b632fa2413b4d2d5d6886ee70f13d3efa050a9dff59e0166a2a",
+      "CompiledSHA256": "b07c6df5ac016b632fa2413b4d2d5d6886ee70f13d3efa050a9dff59e0166a2a",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/ddr_video_output_1080_board.v",
+      "SourceSHA256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+      "CompiledSHA256": "326eea9cd78512e9da4a1090184f0774cf3691a0d9eb6915ea57ee36cda1f87c",
+      "BuildChanges": [
+        {
+          "Kind": "BoundHeaderIncludeRelocation",
+          "Original": "D:/English/FPGA/distortion/rtl/video_crc32.vh",
+          "Compiled": "P:/distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/rtl/video_crc32.vh",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "ReplacementCount": 1
+        }
+      ],
+      "FrozenCompiled": "frozen-compiled/rtl/experimental/ddr_video_output_1080_board.v"
+    },
+    {
+      "Source": "distortion/rtl/experimental/hdmi_camera_fisheye_system_c.v",
+      "SourceSHA256": "c6485f8df49ba398cad00bafbbcf223a672a99ef3eeab8932e9cf2fe8103bb6d",
+      "CompiledSHA256": "c6485f8df49ba398cad00bafbbcf223a672a99ef3eeab8932e9cf2fe8103bb6d",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/ddr3_test.idf",
+      "SourceSHA256": "b600d6102995be4e76b060dd45786b5e1497bd2e7499bbc04b870de9355f2747",
+      "CompiledSHA256": "b600d6102995be4e76b060dd45786b5e1497bd2e7499bbc04b870de9355f2747",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ips2l_rst_sync_v1_3.vp",
+      "SourceSHA256": "64b8d83f15f2ff373e6b1040405c42051d8761bd1857dec719c884c2eb59361a",
+      "CompiledSHA256": "64b8d83f15f2ff373e6b1040405c42051d8761bd1857dec719c884c2eb59361a",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrlvl_v1_0.vp",
+      "SourceSHA256": "00c086bd729be3ab8287f6eb786cfb3549c97aa92f8465c608b8fc2477df3edc",
+      "CompiledSHA256": "00c086bd729be3ab8287f6eb786cfb3549c97aa92f8465c608b8fc2477df3edc",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrcal_v1_7.vp",
+      "SourceSHA256": "0a8cb0bb70bd40809260c50bcb85d092c16fea5d9ab2e4fbbe647ccbd1bfb1b0",
+      "CompiledSHA256": "0a8cb0bb70bd40809260c50bcb85d092c16fea5d9ab2e4fbbe647ccbd1bfb1b0",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wdata_path_adj_v1_10.vp",
+      "SourceSHA256": "85f625ed4a09964442e8616074eea9e4757e43b4217589bb9e2f289c9748b272",
+      "CompiledSHA256": "85f625ed4a09964442e8616074eea9e4757e43b4217589bb9e2f289c9748b272",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_upcal_v1_0.vp",
+      "SourceSHA256": "afbca3503da609f7951ad7fbef386bd007f403c89f52377211ba521967c94455",
+      "CompiledSHA256": "afbca3503da609f7951ad7fbef386bd007f403c89f52377211ba521967c94455",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_training_ctrl_v1_0.vp",
+      "SourceSHA256": "777e8ee9d8d819fdcf04b39b5a5d6086c52369a7f19f04dbd0d06f7a7d3d6110",
+      "CompiledSHA256": "777e8ee9d8d819fdcf04b39b5a5d6086c52369a7f19f04dbd0d06f7a7d3d6110",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_slice_rddata_align_v1_0.vp",
+      "SourceSHA256": "befb44f07d851524109a6dc8e17c5b8062694aa274ed8dbc4f7326b8fe1c443e",
+      "CompiledSHA256": "befb44f07d851524109a6dc8e17c5b8062694aa274ed8dbc4f7326b8fe1c443e",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_reset_ctrl_v1_3.vp",
+      "SourceSHA256": "17189b59ed5307c4a27ec35485b33af5c98a89e6ee7f9c5d85aaed9c03a77163",
+      "CompiledSHA256": "17189b59ed5307c4a27ec35485b33af5c98a89e6ee7f9c5d85aaed9c03a77163",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rdcal_v1_10.vp",
+      "SourceSHA256": "6b4c7f3c24a4750ac69b4e7882617105c6e31f02da712aaa87932b8561ccea2b",
+      "CompiledSHA256": "6b4c7f3c24a4750ac69b4e7882617105c6e31f02da712aaa87932b8561ccea2b",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_main_ctrl_v1_10.vp",
+      "SourceSHA256": "39d5024d7364b441340b131d265d0648d8b7c1f92cc417424d7c584413c5f4a6",
+      "CompiledSHA256": "39d5024d7364b441340b131d265d0648d8b7c1f92cc417424d7c584413c5f4a6",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_init_v1_0.vp",
+      "SourceSHA256": "817f9f32b2260a4c35af446e89ff4c2d4b065381b25cb2020c538d22b4a45088",
+      "CompiledSHA256": "817f9f32b2260a4c35af446e89ff4c2d4b065381b25cb2020c538d22b4a45088",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_info_v1_0.vp",
+      "SourceSHA256": "0794201be97885e7695a16b6c35848655b08c4bf191405d26417126512ce4aa8",
+      "CompiledSHA256": "0794201be97885e7695a16b6c35848655b08c4bf191405d26417126512ce4aa8",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gatecal_v1_10.vp",
+      "SourceSHA256": "b6859250ca098e81ff05bcab08dfe8ffee77648218e90c040a1dd3838a0671f2",
+      "CompiledSHA256": "b6859250ca098e81ff05bcab08dfe8ffee77648218e90c040a1dd3838a0671f2",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gate_update_ctrl_v1_3.vp",
+      "SourceSHA256": "ce20eb3b9cbe3b392d8be0aa1d6787247bc7b2d91af36a1f734f35c9eb03d642",
+      "CompiledSHA256": "ce20eb3b9cbe3b392d8be0aa1d6787247bc7b2d91af36a1f734f35c9eb03d642",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_eyecal_v1_5.vp",
+      "SourceSHA256": "31977dd34339d163ecbd8b9949ac4b65f0eaa6fbcd9a75d787400ae73f7f51d2",
+      "CompiledSHA256": "31977dd34339d163ecbd8b9949ac4b65f0eaa6fbcd9a75d787400ae73f7f51d2",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_drift_ctrl_v1_0.vp",
+      "SourceSHA256": "8ea99ac6decf6fe14c0585b4f121d7a1acc17290d7a1c68725d984e704e277bc",
+      "CompiledSHA256": "8ea99ac6decf6fe14c0585b4f121d7a1acc17290d7a1c68725d984e704e277bc",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqsi_rdel_cal_v1_3.vp",
+      "SourceSHA256": "ef7e57755ab7558b1b518aa73999384368f349efe7077cf9283e0911e711ac1a",
+      "CompiledSHA256": "ef7e57755ab7558b1b518aa73999384368f349efe7077cf9283e0911e711ac1a",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_rddata_align_v1_10.vp",
+      "SourceSHA256": "c0cab4287a7a7b6b720977c1c5f9259c5f48f8da18e9a3ca1173a073b1ccf025",
+      "CompiledSHA256": "c0cab4287a7a7b6b720977c1c5f9259c5f48f8da18e9a3ca1173a073b1ccf025",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_gate_coarse_cal_v1_0.vp",
+      "SourceSHA256": "950a0010929854894c2c92d9f3f8e9dce0fee6985fee70d4160540a058853ede",
+      "CompiledSHA256": "950a0010929854894c2c92d9f3f8e9dce0fee6985fee70d4160540a058853ede",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dll_update_ctrl_v1_3.vp",
+      "SourceSHA256": "bc4e8f402d2fb98920e050a3c1514d44ec959877217d7865a30b22b7da73cac6",
+      "CompiledSHA256": "bc4e8f402d2fb98920e050a3c1514d44ec959877217d7865a30b22b7da73cac6",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dfi_v1_3.vp",
+      "SourceSHA256": "9828a1ef43a864d287a7a317910fe330bfc904f44e8f60c8773aafa1d8c1534e",
+      "CompiledSHA256": "9828a1ef43a864d287a7a317910fe330bfc904f44e8f60c8773aafa1d8c1534e",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gpll_phase_v1_0.vp",
+      "SourceSHA256": "ef8ebe3742d23848bd2a1492d4901f886ce49aa98dbc295873b67e4116ba8524",
+      "CompiledSHA256": "ef8ebe3742d23848bd2a1492d4901f886ce49aa98dbc295873b67e4116ba8524",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrlvl_v1_10.vp",
+      "SourceSHA256": "871874f4af0f068571416916898f83eb07052e6e015c5800ffdf65d67620cf7e",
+      "CompiledSHA256": "871874f4af0f068571416916898f83eb07052e6e015c5800ffdf65d67620cf7e",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp",
+      "SourceSHA256": "b7a9757c252f74c4b57eb0fb74738c57e4eed3e669ddd7ffeeca1acedd330b2e",
+      "CompiledSHA256": "b7a9757c252f74c4b57eb0fb74738c57e4eed3e669ddd7ffeeca1acedd330b2e",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_v1_10.vp",
+      "SourceSHA256": "e13e33d97ecbfea1838c4dd28e7f9f1c57dcb974606179523be46bba75344d50",
+      "CompiledSHA256": "e13e33d97ecbfea1838c4dd28e7f9f1c57dcb974606179523be46bba75344d50",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_dqs_gate_cal_v1_10.vp",
+      "SourceSHA256": "8764275d4eeb8d1765b3a09aba527d6d3bf3e46f5e1d17eefc685d7e0dbe1520",
+      "CompiledSHA256": "8764275d4eeb8d1765b3a09aba527d6d3bf3e46f5e1d17eefc685d7e0dbe1520",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_ctrl_v1_3.vp",
+      "SourceSHA256": "56f52683adbe720c7d43da1a9f199f4ab3add3f3b5960e3f687f87f60267c161",
+      "CompiledSHA256": "56f52683adbe720c7d43da1a9f199f4ab3add3f3b5960e3f687f87f60267c161",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_lock_v1_0.vp",
+      "SourceSHA256": "a6696f8e79e2d132a6e76ad4997d5366d6c9cf8f05c60f77feff1b47b50d0090",
+      "CompiledSHA256": "a6696f8e79e2d132a6e76ad4997d5366d6c9cf8f05c60f77feff1b47b50d0090",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_control_path_adj_v1_10.vp",
+      "SourceSHA256": "8cdd7b9ec01c143882217b038cbf840d77e52ee3037e629e75e10b03fc223a38",
+      "CompiledSHA256": "8cdd7b9ec01c143882217b038cbf840d77e52ee3037e629e75e10b03fc223a38",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_top_v1_10.vp",
+      "SourceSHA256": "04faf434cef120b5d712911dfc97c8f498901b0679fba720b806f596d688bded",
+      "CompiledSHA256": "04faf434cef120b5d712911dfc97c8f498901b0679fba720b806f596d688bded",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_mux_v1_0.vp",
+      "SourceSHA256": "676e36319e7ce80b93e3543e255d53708d9fc71606587a6e692eab1ec82ecaed",
+      "CompiledSHA256": "676e36319e7ce80b93e3543e255d53708d9fc71606587a6e692eab1ec82ecaed",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_debounce_v1_0.vp",
+      "SourceSHA256": "bff7ed95c8d305dfb88e6002c6de8453a21c72c03a5a0521a76ddd105598dc4d",
+      "CompiledSHA256": "bff7ed95c8d305dfb88e6002c6de8453a21c72c03a5a0521a76ddd105598dc4d",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_clk_phase_adj_v1_0.vp",
+      "SourceSHA256": "dd1dbae71726d968df475fe7fbb2b7321411fa67786092c0dc2e065edcf39382",
+      "CompiledSHA256": "dd1dbae71726d968df475fe7fbb2b7321411fa67786092c0dc2e065edcf39382",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_gpll_v1_3.vp",
+      "SourceSHA256": "3fecc367573a4b5bd158e1a8ff106c5c401c5f180143e8e5abe6bb068e5078d2",
+      "CompiledSHA256": "3fecc367573a4b5bd158e1a8ff106c5c401c5f180143e8e5abe6bb068e5078d2",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_ppll_v1_0.vp",
+      "SourceSHA256": "34bb46106b84eab147f130bd7526f1486d35caeb40b0258cd59656e50d19dddd",
+      "CompiledSHA256": "34bb46106b84eab147f130bd7526f1486d35caeb40b0258cd59656e50d19dddd",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_apb_cross_v1_2.vp",
+      "SourceSHA256": "62f7d55354a8afe4d02bc6f6d6dc30fc8e9960d3b21709988b887acc99d09cf5",
+      "CompiledSHA256": "62f7d55354a8afe4d02bc6f6d6dc30fc8e9960d3b21709988b887acc99d09cf5",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_calib_delay_v1_2.vp",
+      "SourceSHA256": "a52e992b9766b6cb22ed23aa01d1cc5ac9b6a429a8e49de7a13ac51dd70e9784",
+      "CompiledSHA256": "a52e992b9766b6cb22ed23aa01d1cc5ac9b6a429a8e49de7a13ac51dd70e9784",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_cfg_apb_v1_2.vp",
+      "SourceSHA256": "482cb280a614f70209f1d07892fdd773a259d2ca0f23e8f38b85a9faf00513b9",
+      "CompiledSHA256": "482cb280a614f70209f1d07892fdd773a259d2ca0f23e8f38b85a9faf00513b9",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_bm_v1_2.vp",
+      "SourceSHA256": "bfbd472dd8b427fe6b003dd510f73db89f915ac92d31fe8a779c40f9d4e56bee",
+      "CompiledSHA256": "bfbd472dd8b427fe6b003dd510f73db89f915ac92d31fe8a779c40f9d4e56bee",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_rowaddr_v1_2.vp",
+      "SourceSHA256": "4ac4721747b13020e1895be6265e55df90968f05beb8056279589039394bb9be",
+      "CompiledSHA256": "4ac4721747b13020e1895be6265e55df90968f05beb8056279589039394bb9be",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_sm_v1_2.vp",
+      "SourceSHA256": "d7e710e3ed4d1807fb0bdd4d84c264817247a4da41123c72439c555573821f49",
+      "CompiledSHA256": "d7e710e3ed4d1807fb0bdd4d84c264817247a4da41123c72439c555573821f49",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_top_v1_2.vp",
+      "SourceSHA256": "26ab4e142f555602c023f62b19df52056c6d51da5052401254066cae0655ddaa",
+      "CompiledSHA256": "26ab4e142f555602c023f62b19df52056c6d51da5052401254066cae0655ddaa",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_back_ctrl_v1_2.vp",
+      "SourceSHA256": "fe7b340b41d80ec7428cc38329a41864bcf5c209a6310610d09c7bc8579e541f",
+      "CompiledSHA256": "fe7b340b41d80ec7428cc38329a41864bcf5c209a6310610d09c7bc8579e541f",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp",
+      "SourceSHA256": "dab35fa172243ecbb5426a8ebccc2c168368ea0a6ea0558c909b815d781b17d6",
+      "CompiledSHA256": "dab35fa172243ecbb5426a8ebccc2c168368ea0a6ea0558c909b815d781b17d6",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_out_v1_2.vp",
+      "SourceSHA256": "9471082e23170b144dc619f7f7e08c94b8a03378f72da388f744d6acb728928b",
+      "CompiledSHA256": "9471082e23170b144dc619f7f7e08c94b8a03378f72da388f744d6acb728928b",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_top_v1_2.vp",
+      "SourceSHA256": "21b1f0e3b4660e1078b47000bfe50022346414f5d5e713ac9e522a4f39f76548",
+      "CompiledSHA256": "21b1f0e3b4660e1078b47000bfe50022346414f5d5e713ac9e522a4f39f76548",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dfi_v1_2.vp",
+      "SourceSHA256": "abf138d692e634fabe5f569b98d897dfece8a8ae66cee1dba830a56d7e255df1",
+      "CompiledSHA256": "abf138d692e634fabe5f569b98d897dfece8a8ae66cee1dba830a56d7e255df1",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_lp_v1_2.vp",
+      "SourceSHA256": "7a80ccb1e053e5c9d8f389169359570f256d709ff2e4ad2c51fda7a7a6a4239d",
+      "CompiledSHA256": "7a80ccb1e053e5c9d8f389169359570f256d709ff2e4ad2c51fda7a7a6a4239d",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_mrs_v1_2.vp",
+      "SourceSHA256": "f78133bc021a57cf469773daaf102817fc37069447e8accc80afa1f4b20b0ad6",
+      "CompiledSHA256": "f78133bc021a57cf469773daaf102817fc37069447e8accc80afa1f4b20b0ad6",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_prefetch_fifo_v1_2.vp",
+      "SourceSHA256": "ee3aa91e980fb3dd08231cf1806a28edf759f4ea8248adfd44407d607519b9e4",
+      "CompiledSHA256": "ee3aa91e980fb3dd08231cf1806a28edf759f4ea8248adfd44407d607519b9e4",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_rdatapath_v1_2.vp",
+      "SourceSHA256": "72dd8ece021f4ee74fd576c1628c4f7d3606ef632f0e68b9569a288a092a6b0f",
+      "CompiledSHA256": "72dd8ece021f4ee74fd576c1628c4f7d3606ef632f0e68b9569a288a092a6b0f",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_reg_fifo2_v1_2.vp",
+      "SourceSHA256": "bc9cff65e4002a51af0c20c2f0a9b9f17dacde5157b58691bbfb1c44348ee08a",
+      "CompiledSHA256": "bc9cff65e4002a51af0c20c2f0a9b9f17dacde5157b58691bbfb1c44348ee08a",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_ui_axi_v1_2a.vp",
+      "SourceSHA256": "145b69395412be2553835f9278cdf1cb1703d3beeb914abf7d985e3c69f817fb",
+      "CompiledSHA256": "145b69395412be2553835f9278cdf1cb1703d3beeb914abf7d985e3c69f817fb",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdatapath_v1_2.vp",
+      "SourceSHA256": "db648e90ff607ca2f9e2b5cca048de417439888d0b906288e0cec7cf038d9dee",
+      "CompiledSHA256": "db648e90ff607ca2f9e2b5cca048de417439888d0b906288e0cec7cf038d9dee",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_align_v1_2.vp",
+      "SourceSHA256": "1645e9eb7fac3c9c13cd3e0d7367f132293f9cec16835ce188c6345993d2b730",
+      "CompiledSHA256": "1645e9eb7fac3c9c13cd3e0d7367f132293f9cec16835ce188c6345993d2b730",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_dcp_v1_2.vp",
+      "SourceSHA256": "3f30be0f49f78f09915743995c950fa6ff8de5f14598ebc8802e73b5c6d140ee",
+      "CompiledSHA256": "3f30be0f49f78f09915743995c950fa6ff8de5f14598ebc8802e73b5c6d140ee",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wrapper_v1_2b.vp",
+      "SourceSHA256": "d35010f49be551fb15ab2655cbeffcaaaa74fdf3ccb0754b033fc979d615e805",
+      "CompiledSHA256": "d35010f49be551fb15ab2655cbeffcaaaa74fdf3ccb0754b033fc979d615e805",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_com_timing_v1_2.vp",
+      "SourceSHA256": "e3f19c4be6352ab64f07426973387f2876c540ee992f6eac9d3f2d470b3d49c2",
+      "CompiledSHA256": "e3f19c4be6352ab64f07426973387f2876c540ee992f6eac9d3f2d470b3d49c2",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_timing_v1_2.vp",
+      "SourceSHA256": "c632619f042bebb4f059df7f20eee90eb2b51b81210430cb37d01958ad3cd30f",
+      "CompiledSHA256": "c632619f042bebb4f059df7f20eee90eb2b51b81210430cb37d01958ad3cd30f",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_v1_2.vp",
+      "SourceSHA256": "ab87b7718bffc4fb2a2b27765576187f09b5266bbca7fc393c43c6dec96ff379",
+      "CompiledSHA256": "ab87b7718bffc4fb2a2b27765576187f09b5266bbca7fc393c43c6dec96ff379",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act2wr_pass_v1_2.vp",
+      "SourceSHA256": "1b3874b059923481f292ba382ad156f7dcdd9ad39da6c86dddd480290ccce498",
+      "CompiledSHA256": "1b3874b059923481f292ba382ad156f7dcdd9ad39da6c86dddd480290ccce498",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act_pass_v1_2.vp",
+      "SourceSHA256": "9f32b6936e039c15f7b07b74480179d39d1b3787965e1b90bd067a7ede7fdd4c",
+      "CompiledSHA256": "9f32b6936e039c15f7b07b74480179d39d1b3787965e1b90bd067a7ede7fdd4c",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_pre_pass_v1_2.vp",
+      "SourceSHA256": "e40a64caec9725c231cd88dde69973eab3aca38c9d2e66a2c5c0bbddf3103ae0",
+      "CompiledSHA256": "e40a64caec9725c231cd88dde69973eab3aca38c9d2e66a2c5c0bbddf3103ae0",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_rd_pass_v1_2.vp",
+      "SourceSHA256": "78b1de719a43ee0fc80e1a5464f7284439d91f1d4b3f83ef2ae5611920293988",
+      "CompiledSHA256": "78b1de719a43ee0fc80e1a5464f7284439d91f1d4b3f83ef2ae5611920293988",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_ref_pass_v1_2.vp",
+      "SourceSHA256": "c79dde6f9a682c55aff7bb89c4863f76a069b874fb154dff7d3e4d4a7a88f9d1",
+      "CompiledSHA256": "c79dde6f9a682c55aff7bb89c4863f76a069b874fb154dff7d3e4d4a7a88f9d1",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_wr_pass_v1_2.vp",
+      "SourceSHA256": "ea3470ca984554d4908ec950314f9242042417c6c4c6b3fd05ac5d6daab98c90",
+      "CompiledSHA256": "ea3470ca984554d4908ec950314f9242042417c6c4c6b3fd05ac5d6daab98c90",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_trc_timing_v1_2.vp",
+      "SourceSHA256": "7234241e5968f91ec6e396794f0bb80f6c7d1bca2038aa004d5078d3937953da",
+      "CompiledSHA256": "7234241e5968f91ec6e396794f0bb80f6c7d1bca2038aa004d5078d3937953da",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/ips2l_distributed_fifo_v1_0.vp",
+      "SourceSHA256": "d6c0b0d8560b0f22128b4883933944fc686fd7597cfea0d6c545cc6af56c0b7a",
+      "CompiledSHA256": "d6c0b0d8560b0f22128b4883933944fc686fd7597cfea0d6c545cc6af56c0b7a",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_ctr_v1_0.vp",
+      "SourceSHA256": "fe31c8f44bea653ab20bb1830ad4f8ed41566e9cfef354bd5e2d48c7682f353d",
+      "CompiledSHA256": "fe31c8f44bea653ab20bb1830ad4f8ed41566e9cfef354bd5e2d48c7682f353d",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_v1_0_distributed_fifo_v1_0.vp",
+      "SourceSHA256": "867ac91a1485dfe613a81f372d788e784bba8cd4b0497e56986135e92685ba73",
+      "CompiledSHA256": "867ac91a1485dfe613a81f372d788e784bba8cd4b0497e56986135e92685ba73",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_sdpram_v1_0_distributed_fifo_v1_0.vp",
+      "SourceSHA256": "3561bbbbd4e4432a538c3d20818d262b4f1e5517c48296f6b1b4cc8afdd19aef",
+      "CompiledSHA256": "3561bbbbd4e4432a538c3d20818d262b4f1e5517c48296f6b1b4cc8afdd19aef",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/ddr3_test.v",
+      "SourceSHA256": "3c5441b4bff33dff73811c3a025ede3b6348cb5779e21778653659b6cbfb84e0",
+      "CompiledSHA256": "3c5441b4bff33dff73811c3a025ede3b6348cb5779e21778653659b6cbfb84e0",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/ddr3_test_ddrphy_top.v",
+      "SourceSHA256": "a95c28f225d2984401a798f673efff209154ae5beb8a7356d303136b71ea49d5",
+      "CompiledSHA256": "a95c28f225d2984401a798f673efff209154ae5beb8a7356d303136b71ea49d5",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ddr3_test_slice_top_v1_10.v",
+      "SourceSHA256": "69d4135c367efbb73f83c82ecd9871519e19b0d5c48bce2df0eac6b3dff50b87",
+      "CompiledSHA256": "69d4135c367efbb73f83c82ecd9871519e19b0d5c48bce2df0eac6b3dff50b87",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/board/bringup_pll.v",
+      "SourceSHA256": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+      "CompiledSHA256": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/platform/video_base/ipcore/cfg_pll/cfg_pll.v",
+      "SourceSHA256": "a524450baa6becd30df04da4bdd00597de18b42db4628226e27546c4d601b0ec",
+      "CompiledSHA256": "a524450baa6becd30df04da4bdd00597de18b42db4628226e27546c4d601b0ec",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/iic_dri_checked.v",
+      "SourceSHA256": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+      "CompiledSHA256": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/ms7200_1080p30_rearm_ctl.v",
+      "SourceSHA256": "ea87e1e8c3588af0675c97f87408ddb115d8b0fb08fb84a93c3e820c5a3dee2e",
+      "CompiledSHA256": "ea87e1e8c3588af0675c97f87408ddb115d8b0fb08fb84a93c3e820c5a3dee2e",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/ms7210_checked_ctl.v",
+      "SourceSHA256": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+      "CompiledSHA256": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/ms72xx_rearm_observed_ctl.v",
+      "SourceSHA256": "7a4404a012d9e855bf3710f5aaa2f9926c004e378314aa1234fb6ee954f6d75d",
+      "CompiledSHA256": "7a4404a012d9e855bf3710f5aaa2f9926c004e378314aa1234fb6ee954f6d75d",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/board/hdmi_camera_fisheye_top.v",
+      "SourceSHA256": "b38ba12d17d246e6c138295e3055c6acaab64448e63a3343d0817038e7f8afce",
+      "CompiledSHA256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+      "BuildChanges": [
+        {
+          "Kind": "SelectedDigitalTimingOnly",
+          "Parameter": "INPUT_TIMING_CONFIGURED",
+          "Original": 0,
+          "Compiled": 1,
+          "ReplacementCount": 1,
+          "RGBPixelsVerified": false,
+          "CapturePhaseVerified": false,
+          "ExternalACAccepted": false
+        }
+      ],
+      "FrozenCompiled": "frozen-compiled/board/hdmi_camera_fisheye_top.v"
+    },
+    {
+      "Source": "distortion/board/hdmi-camera-fisheye-c-internal.fdc",
+      "SourceSHA256": "e27a18c4a5f228ac8543e50c9b50a145f14bf1d4e640ff34361422d32f1bf78a",
+      "CompiledSHA256": "e27a18c4a5f228ac8543e50c9b50a145f14bf1d4e640ff34361422d32f1bf78a",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/hdmi_camera_pixel_sampler.v",
+      "SourceSHA256": "b9d743264301a9b41bd10f7969edbc60cfffbda8f0d3f57a2e1bc8e0d6f1ac46",
+      "CompiledSHA256": "b9d743264301a9b41bd10f7969edbc60cfffbda8f0d3f57a2e1bc8e0d6f1ac46",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "SourceSHA256": "cb141734a32443156768563bd9ce77723e573bdc00869457af11954a039c6e3c",
+      "CompiledSHA256": "bc87b96cceb070afdc4e9700f874eafb3225671e0795eb42bc73b01f076e96c1",
+      "BuildChanges": [
+        {
+          "Kind": "BoundHeaderIncludeRelocation",
+          "Original": "D:/English/FPGA/distortion/board/hdmi-camera-fisheye-profile.vh",
+          "Compiled": "P:/distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/board/hdmi-camera-fisheye-profile.vh",
+          "Header": "board/hdmi-camera-fisheye-profile.vh",
+          "HeaderSHA256": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+          "ReplacementCount": 1
+        }
+      ],
+      "FrozenCompiled": "frozen-compiled/rtl/experimental/hdmi_camera_fisheye_mapper.v"
+    },
+    {
+      "Source": "distortion/rtl/experimental/hdmi_camera_fisheye_rom.v",
+      "SourceSHA256": "fc8e0cf143078790c1f9a5dbbd2d525f070deab349ee6bc33370e52419e11a44",
+      "CompiledSHA256": "f02c3b7392276da80c059553e0caed53bc71578406784ff5d8eb352ff5860681",
+      "BuildChanges": [
+        {
+          "Kind": "BoundHeaderIncludeRelocation",
+          "Original": "D:/English/FPGA/distortion/board/hdmi-camera-fisheye-radial-table.vh",
+          "Compiled": "P:/distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/board/hdmi-camera-fisheye-radial-table.vh",
+          "Header": "board/hdmi-camera-fisheye-radial-table.vh",
+          "HeaderSHA256": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+          "ReplacementCount": 1
+        }
+      ],
+      "FrozenCompiled": "frozen-compiled/rtl/experimental/hdmi_camera_fisheye_rom.v"
+    },
+    {
+      "Source": "distortion/rtl/experimental/hdmi_camera_rgb565_quantizer.v",
+      "SourceSHA256": "bb18483682ae0965839d4d54aadea0dcc0eec248c54ee5130be6f62e868a0ba0",
+      "CompiledSHA256": "bb18483682ae0965839d4d54aadea0dcc0eec248c54ee5130be6f62e868a0ba0",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/camera720_view_control.v",
+      "SourceSHA256": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255",
+      "CompiledSHA256": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/experimental/hdmi_camera_fisheye_status_uart.v",
+      "SourceSHA256": "1554e35ef2efd157bdb462abe67c16741d42b94696c09ac6caa04df942ddd4a0",
+      "CompiledSHA256": "1554e35ef2efd157bdb462abe67c16741d42b94696c09ac6caa04df942ddd4a0",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/rtl/uart_tx.v",
+      "SourceSHA256": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+      "CompiledSHA256": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/board/hdmi-camera-fisheye-profile.vh",
+      "SourceSHA256": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+      "CompiledSHA256": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+      "BuildChanges": []
+    },
+    {
+      "Source": "distortion/board/hdmi-camera-fisheye-radial-table.vh",
+      "SourceSHA256": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+      "CompiledSHA256": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+      "BuildChanges": []
+    }
+  ],
+  "AdditionalInputs": [
+    {
+      "Source": "distortion/board/hdmi-camera-fisheye-c-build-sources.json",
+      "SHA256": "2a02ceee984cc84a15d6854f2a3651d937abe2b7c3508915d5d8c8a616093bb7"
+    },
+    {
+      "Source": "distortion/board/board1080-ddr-ioclk-priority.rcf",
+      "SHA256": "981934688d526e8d686635859d811070752570a34738548154d544e41be48516"
+    }
+  ],
+  "Provenance": {
+    "BuildPlan": {
+      "Path": "build-inputs/build-c-plan.json",
+      "SHA256": "19f640777dc4e697a167e7e38e668898162159ee61858d1bf7b3e1ba5fe7ecf0"
+    },
+    "BuildTcl": {
+      "Path": "build-inputs/build-c.tcl",
+      "SHA256": "7e031246a1fc37eb967a77f850d47ca9884759b94a6d88c788bc3afb9acc3e59"
+    },
+    "BitstreamPlan": {
+      "Path": "build-inputs/bit-c-plan.json",
+      "SHA256": "5c146571d4fda26ec4a0fb65b72491217bcb0f59a2b645550a2364a89e48f7e7"
+    },
+    "BitstreamVerification": {
+      "Path": "build-inputs/bit-c-verification.json",
+      "SHA256": "72c566d97ac84494d7920db9d758f8d4253caaf2ee47415ed096afb3dcac2715"
+    }
+  },
+  "ReleasedBitstream": {
+    "SHA256": "8c43a77d9ddce72dc7015ef7f63aabe37ab6758dd698e2e811b669c5aa5ba047",
+    "Bytes": 3791112,
+    "FinalADFSHA256": "7b21d06112eda0213bd60780d971e90a9da492d7a29daac09eda11d388f96310",
+    "Generator": {
+      "Design": "hdmi_camera_fisheye_top",
+      "Device": "Logos2-PG2L100H--6-FBG676",
+      "Date": "11/03/26",
+      "Time": "10:50:07",
+      "Generator": "Fabric Compiler",
+      "Version": "2023.2-SP3<154097>"
+    }
+  },
+  "RebuildBoundary": "Verifies released build input bytes and prepares a new path-relocated build. New output requires its own physical, timing, bitstream and hardware validation; historical signoff is not inherited."
+}
