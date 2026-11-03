@@ -1,0 +1,310 @@
+`timescale 1ns/1ps
+// Independent board-system datapath. The external port is the real Pango DDR
+// UI contract (4B address units, no B channel), not a private frame memory.
+// Successful pixel consumption AND reader CRC AND actual FIFO drain release
+// a display bank. A bad lease is quarantined until coordinated global reset.
+module hdmi_camera_fisheye_system #(
+    parameter WIDTH=1920,HEIGHT=1080,BANK_STRIDE=1048576,RESULT_TILED=0,
+    HT=2200,VT=1125,HS=44,VS=5,X0=192,Y0=41
+)(
+    input core_clk,pix_in_clk,pix_out_clk,rst_n,
+    input capture_admit,scan_enable,external_fault,input [7:0] external_fault_code,
+    input pix_in_vsync_active,pix_in_de,input [23:0] pix_in_rgb,
+    input cfg_corrected,
+    output [27:0] awaddr,araddr,output [3:0] awlen,arlen,
+    output awvalid,arvalid,input awready,arready,
+    output [255:0] wdata,output [31:0] wstrb,input wready,wlast,
+    input [255:0] rdata,input rvalid,rlast,input [3:0] rid,
+    output pix_hs,pix_vs,pix_de,output [23:0] pix_rgb,output display_valid,
+    output failed,output [7:0] fault,
+    output [31:0] captured_frames,processed_frames,
+    output reg [31:0] presented_frames,scan_good_frames,scan_repeat_frames,scan_blank_frames,
+    output [31:0] underflows,mismatches,
+    output reg source_commit,output reg [31:0] source_commit_id,output reg [1:0] source_commit_bank,
+    output reg [31:0] source_crc,source_pixels,
+    output source_release,output [31:0] source_release_id,output [1:0] released_bank,
+    output result_publish,output [31:0] publish_id,output [1:0] publish_bank,
+    output [31:0] last_process_cycles,
+    output [31:0] pix_frame_id,output pix_frame_bank,pix_frame_start,pix_frame_last,pix_pixel_valid,
+    output pix_done_toggle,pix_done_good,output [31:0] pix_done_crc,
+    output processing,pending,display_active,write_bank,front_bank,
+    output [2:0] capture_reserved,output [9:0] fifo_used,fifo_available,
+    output reg [31:0] peak_fifo_used,
+    output [31:0] cache_hits,cache_misses,queries,output read_busy,write_busy
+);
+    localparam FRAME_BEATS=WIDTH*HEIGHT/16;
+    (* PAP_ASYNC_REG=1, syn_srlstyle="registers" *) reg [1:0] core_reset_sync=0;
+    always @(posedge core_clk or negedge rst_n)
+        if(!rst_n)core_reset_sync<=0;else core_reset_sync<={core_reset_sync[0],1'b1};
+    // DERIVED reset candidate: synchronous-reset core-only children consume
+    // the existing local release. Multiclock input/FIFO/scan retain the COMMON
+    // raw reset and their own domain release. No runtime fault resets an epoch.
+    wire cr=core_reset_sync[1];
+    wire bank_failed,input_failed,reader_failed,read_failed,scan_failed;
+    wire [7:0] bank_fault,input_fault,reader_fault,read_fault,scan_fault;
+    reg controller_failed;reg [7:0] controller_fault;
+    reg system_failed;reg [7:0] system_fault;
+    (* PAP_ASYNC_REG=1, syn_srlstyle="registers" *) reg [1:0] scan_failed_sync=0;
+    assign failed=system_failed || controller_failed || bank_failed || input_failed || reader_failed || read_failed || scan_failed_sync[1] || external_fault;
+    wire stop_admit=controller_failed || system_failed || bank_failed || reader_failed || read_failed || scan_failed_sync[1] || external_fault;
+    wire [7:0] upstream_fault=system_failed ? system_fault:controller_failed ? controller_fault:
+        external_fault ? external_fault_code:bank_failed ? bank_fault:reader_failed ? reader_fault:
+        read_failed ? read_fault:scan_failed_sync[1] ? 8'hA0:0;
+    // Do not feed input_link.fault back to its core_fault input: stopping that
+    // producer also raises its failed output, so that would create a loop.
+    assign fault=stop_admit ? upstream_fault:input_failed ? input_fault:0;
+
+    wire src_valid,src_ready;wire [1:0] src_bank;wire [31:0] src_id,src_crc,src_pixels;
+    wire [2:0] source_writable;
+    wire [27:0] sample_ar,result_aw;wire [3:0] sample_len,result_awlen;
+    wire sample_valid,sample_ready,result_awvalid,result_awready,result_wready,result_wlast;
+    wire [255:0] sample_data,result_wdata;wire [31:0] result_wstrb;
+    wire sample_rvalid,sample_rlast;wire [3:0] sample_rid;
+    wire display_req_ready,display_grant_valid;reg display_req_valid,display_grant_ready;
+    wire [27:0] display_base;wire [31:0] display_crc,display_id;
+    reg display_done_valid,display_done_bank;
+    wire bank_release_accept;
+    reg [31:0] active_process_id;
+    assign source_release_id=active_process_id;
+    assign result_publish=source_release;
+    assign publish_id=active_process_id;
+    assign publish_bank={1'b1,write_bank};
+    hdmi_camera_fisheye_bank #(.WIDTH(WIDTH),.HEIGHT(HEIGHT),.BANK_STRIDE(BANK_STRIDE),.RESULT_TILED(RESULT_TILED)) bank_core(
+        .clk(core_clk),.rst_n(cr),.source_valid(src_valid),.source_ready(src_ready),.source_bank(src_bank),.source_id(src_id),
+        .source_writable(source_writable),.source_released(source_release),.released_bank(released_bank),
+        .display_request_valid(display_req_valid),.display_request_ready(display_req_ready),
+        .display_grant_valid(display_grant_valid),.display_grant_ready(display_grant_ready),
+        .display_base(display_base),.display_crc(display_crc),.display_id(display_id),
+        // Recheck on the bank's actual consumption edge. A fault arriving
+        // after this controller registered the release pulse must quarantine
+        // the bank rather than consume a previously healthy release.
+        .display_done_valid(bank_release_accept),.display_done_bank(display_done_bank),
+        .cfg_corrected(cfg_corrected),
+        .araddr(sample_ar),.arlen(sample_len),.arvalid(sample_valid),.arready(sample_ready),
+        .rdata(sample_data),.rvalid(sample_rvalid),.rlast(sample_rlast),.rid(sample_rid),
+        .awaddr(result_aw),.awlen(result_awlen),.awvalid(result_awvalid),.awready(result_awready),
+        .wdata(result_wdata),.wstrb(result_wstrb),.wready(result_wready),.wlast(result_wlast),
+        .processing(processing),.pending(pending),.display_active(display_active),.write_bank(write_bank),.front_bank(front_bank),
+        .completed_frames(processed_frames),.last_cycles(last_process_cycles),.hits(cache_hits),.misses(cache_misses),.queries(queries),
+        .failed(bank_failed),.fault(bank_fault));
+    wire [31:0] unused_capture_bursts,unused_result_bursts,dropped_frames,overflow_frames,no_free_frames;
+    wire [7:0] last_drop_fault;
+    hdmi_camera_fisheye_input_link #(.WIDTH(WIDTH),.HEIGHT(HEIGHT),.BANK_STRIDE(BANK_STRIDE),.FIFO_ADDR_BITS(6)) input_link(
+        .pix_clk(pix_in_clk),.sys_clk(core_clk),.rst_n(rst_n),.core_rst_n(cr),.enable(capture_admit && !stop_admit),
+        .pix_vsync_active(pix_in_vsync_active),.pix_de(pix_in_de),.pix_rgb(pix_in_rgb),
+        .core_source_writable(source_writable),.core_source_released(source_release),.core_released_bank(released_bank),
+        .core_source_valid(src_valid),.core_source_ready(src_ready),.core_source_bank(src_bank),.core_source_id(src_id),
+        .source_crc(src_crc),.source_pixels(src_pixels),.capture_reserved(capture_reserved),
+        .core_failed(stop_admit),.core_fault(upstream_fault),
+        .core_awaddr(result_aw),.core_awlen(result_awlen),.core_awvalid(result_awvalid),.core_awready(result_awready),
+        .core_wdata(result_wdata),.core_wstrb(result_wstrb),.core_wready(result_wready),.core_wlast(result_wlast),
+        .awaddr(awaddr),.awlen(awlen),.awvalid(awvalid),.awready(awready),.wdata(wdata),.wstrb(wstrb),.wready(wready),.wlast(wlast),
+        .failed(input_failed),.fault(input_fault),.write_busy(write_busy),.capture_bursts(unused_capture_bursts),.result_bursts(unused_result_bursts),
+        .accepted_frames(captured_frames),.dropped_frames(dropped_frames),.overflow_frames(overflow_frames),
+        .no_free_frames(no_free_frames),.last_drop_fault(last_drop_fault));
+
+    reg reader_start;reg [27:0] reader_base;reg [31:0] reader_expected;
+    wire reader_idle,reader_done;wire [31:0] reader_beats,reader_checksum,read_frames;
+    wire [27:0] display_ar;wire [3:0] display_len;wire display_arvalid,display_arready;
+    wire [255:0] display_rdata,display_fifo_write_data,display_fifo_read_data;
+    wire display_rvalid,display_rlast;wire [3:0] display_rid;
+    wire display_fifo_push,display_fifo_pop,display_fifo_write_ready,display_fifo_read_ready,display_fifo_read_valid,display_fifo_empty;
+    ddr_video_reader #(.FRAME_BEATS(FRAME_BEATS)) reader(
+        .clk(core_clk),.rst_n(cr),.start(reader_start),.base_address(reader_base),.expected_checksum(reader_expected),
+        .fifo_used(fifo_used),.fifo_ready(display_fifo_write_ready),.fifo_wr_en(display_fifo_push),.fifo_data(display_fifo_write_data),
+        .araddr(display_ar),.arlen(display_len),.arvalid(display_arvalid),.arready(display_arready),
+        .rdata(display_rdata),.rvalid(display_rvalid),.rlast(display_rlast),.rid(display_rid),
+        .idle(reader_idle),.done(reader_done),.failed(reader_failed),.fault(reader_fault),
+        .read_beats(reader_beats),.last_checksum(reader_checksum),.completed_frames(read_frames));
+    video_async_fifo #(.DATA_BITS(256),.ADDR_BITS(9)) display_fifo(
+        .wr_clk(core_clk),.rd_clk(pix_out_clk),.rst_n(rst_n),
+        .wr_en(display_fifo_push),.wr_data(display_fifo_write_data),.wr_full(),.wr_ready(display_fifo_write_ready),.wr_used(fifo_used),
+        .rd_en(display_fifo_pop),.rd_data(display_fifo_read_data),.rd_valid(display_fifo_read_valid),
+        .rd_empty(display_fifo_empty),.rd_ready(display_fifo_read_ready),.rd_available(fifo_available));
+    wire [31:0] display_read_bursts,sample_read_bursts;
+    // Register the complete return bundle before its high-fanout consumer.
+    // Raw AR/return ownership is checked before this added cycle, so a stray
+    // return cannot acquire the owner of a later request.
+    wire [255:0] staged_rdata;wire staged_rvalid,staged_rlast;wire [3:0] staged_rid;
+    wire read_stage_failed,read_arbiter_failed;
+    wire [7:0] read_stage_fault,read_arbiter_fault;
+    assign read_failed=read_stage_failed || read_arbiter_failed;
+    assign read_fault=read_arbiter_failed ? read_arbiter_fault:read_stage_fault;
+    ddr_read_return_register read_return_stage(
+        .clk(core_clk),.rst_n(cr),.arvalid(arvalid),.arready(arready),
+        .in_rdata(rdata),.in_rvalid(rvalid),.in_rlast(rlast),.in_rid(rid),
+        .out_rdata(staged_rdata),.out_rvalid(staged_rvalid),.out_rlast(staged_rlast),.out_rid(staged_rid),
+        .protocol_fault(read_stage_failed),.fault_code(read_stage_fault));
+    ddr_read_arbiter read_bus(
+        .clk(core_clk),.rst_n(cr),.display_urgent(fifo_used<64),
+        .c0_araddr(display_ar),.c0_arlen(display_len),.c0_arvalid(display_arvalid),.c0_arready(display_arready),
+        .c0_rdata(display_rdata),.c0_rvalid(display_rvalid),.c0_rlast(display_rlast),.c0_rid(display_rid),
+        .c1_araddr(sample_ar),.c1_arlen(sample_len),.c1_arvalid(sample_valid),.c1_arready(sample_ready),
+        .c1_rdata(sample_data),.c1_rvalid(sample_rvalid),.c1_rlast(sample_rlast),.c1_rid(sample_rid),
+        .araddr(araddr),.arlen(arlen),.arvalid(arvalid),.arready(arready),.rdata(staged_rdata),.rvalid(staged_rvalid),.rlast(staged_rlast),.rid(staged_rid),
+        .failed(read_arbiter_failed),.fault(read_arbiter_fault),.busy(read_busy),.bursts0(display_read_bursts),.bursts1(sample_read_bursts));
+
+    wire scan_request_toggle,scan_grant_ack;wire [31:0] scan_request_epoch;
+    reg grant_toggle,grant_valid;reg [31:0] grant_epoch,grant_checksum,grant_id;reg grant_bank;
+    reg done_ack_toggle;
+    wire [31:0] scan_done_epoch,scan_done_id;wire scan_done_bank;
+    wire [31:0] consumed_pixels,scan_completed_frames;
+    wire scan_draining,scan_active;
+    (* PAP_ASYNC_REG=1, syn_srlstyle="registers" *) reg [1:0] scan_enable_sync=0,scan_abort_sync=0;
+    always @(posedge pix_out_clk or negedge rst_n)
+        if(!rst_n)begin scan_enable_sync<=0;scan_abort_sync<=0;end
+        else begin scan_enable_sync<={scan_enable_sync[0],scan_enable};scan_abort_sync<={scan_abort_sync[0],system_failed};end
+    ddr_video_output_1080_board #(.WIDTH(WIDTH),.HEIGHT(HEIGHT),.HT(HT),.VT(VT),.HS(HS),.VS(VS),.X0(X0),.Y0(Y0),.AW(WIDTH),.AH(HEIGHT)) output_video(
+        .clk(pix_out_clk),.rst_n(rst_n),.enable(scan_enable_sync[1]),.abort(scan_abort_sync[1]),.abort_fault(system_fault),
+        .request_toggle(scan_request_toggle),.request_epoch(scan_request_epoch),
+        .grant_toggle(grant_toggle),.grant_valid(grant_valid),.grant_epoch(grant_epoch),
+        .grant_checksum(grant_checksum),.grant_id(grant_id),.grant_bank(grant_bank),.grant_ack_toggle(scan_grant_ack),
+        .fifo_ready(display_fifo_read_ready),.fifo_valid(display_fifo_read_valid),.fifo_data(display_fifo_read_data),.fifo_rd_en(display_fifo_pop),
+        .hs(pix_hs),.vs(pix_vs),.de(pix_de),.r(pix_rgb[23:16]),.g(pix_rgb[15:8]),.b(pix_rgb[7:0]),.display_valid(display_valid),
+        .done_toggle(pix_done_toggle),.done_ack_toggle(done_ack_toggle),.done_good(pix_done_good),
+        .done_epoch(scan_done_epoch),.done_id(scan_done_id),.done_bank(scan_done_bank),.done_crc(pix_done_crc),.consumed_pixels(consumed_pixels),
+        .frame_active(scan_active),.active_id(pix_frame_id),.active_bank(pix_frame_bank),
+        .frame_start(pix_frame_start),.frame_last(pix_frame_last),.pixel_valid(pix_pixel_valid),
+        .failed(scan_failed),.fault(scan_fault),.draining(scan_draining),
+        .completed_frames(scan_completed_frames),.underflows(underflows),.mismatches(mismatches));
+
+    (* PAP_ASYNC_REG=1, syn_srlstyle="registers" *) reg [1:0] request_sync=0,grant_ack_sync=0,done_sync=0;
+    reg request_seen,done_seen,response_busy,awaiting_bank_grant;
+    reg [31:0] request_epoch_hold;
+    reg lease_active,lease_bank,reader_finished,pixel_finished;
+    reg [31:0] lease_id,lease_crc,lease_epoch,last_presented_id;
+    reg [31:0] pixel_done_id,pixel_done_crc,pixel_done_epoch,pixel_done_count;
+    reg pixel_done_bank,pixel_done_good;
+    // A lease stays owned through capture, field validation and the bank's
+    // actual release edge. The scan held bundle is acknowledged only after
+    // its local snapshot has passed through both validation stages.
+    reg [31:0] reader_done_beats_hold,reader_done_crc_hold;
+    reg [1:0] reader_check_pending,pixel_check_pending;
+    reg [3:0] reader_field_ok;
+    reg [9:0] pixel_field_ok;
+    reg reader_validated,pixel_validated,pixel_done_token;
+    reg lease_order_new,lease_order_repeat;
+    wire request_event=request_sync[1]!=request_seen;
+    wire pixel_done_event=done_sync[1]!=done_seen;
+    wire completion_healthy=lease_active && reader_validated && pixel_validated &&
+        reader_idle && fifo_used==0 && !response_busy && !failed &&
+        !reader_done && !pixel_done_event && !request_event;
+    wire completion_bank_ready=completion_healthy && display_active &&
+        !display_grant_valid && display_done_bank==front_bank &&
+        (lease_order_new || lease_order_repeat);
+    assign bank_release_accept=display_done_valid && completion_bank_ready;
+    always @(posedge core_clk)begin
+        if(!cr)begin
+            scan_failed_sync<=0;request_sync<=0;grant_ack_sync<=0;done_sync<=0;
+            system_failed<=0;system_fault<=0;controller_failed<=0;controller_fault<=0;
+            source_commit<=0;source_commit_id<=0;source_commit_bank<=0;source_crc<=0;source_pixels<=0;active_process_id<=0;
+            presented_frames<=0;scan_good_frames<=0;scan_repeat_frames<=0;scan_blank_frames<=0;last_presented_id<=0;peak_fifo_used<=0;
+            request_seen<=0;done_seen<=0;response_busy<=0;awaiting_bank_grant<=0;request_epoch_hold<=0;
+            display_req_valid<=0;display_grant_ready<=0;display_done_valid<=0;display_done_bank<=0;
+            reader_start<=0;reader_base<=0;reader_expected<=0;reader_finished<=0;pixel_finished<=0;
+            grant_toggle<=0;grant_valid<=0;grant_epoch<=0;grant_checksum<=0;grant_id<=0;grant_bank<=0;done_ack_toggle<=0;
+            lease_active<=0;lease_bank<=0;lease_id<=0;lease_crc<=0;lease_epoch<=0;
+            pixel_done_id<=0;pixel_done_crc<=0;pixel_done_epoch<=0;pixel_done_count<=0;pixel_done_bank<=0;pixel_done_good<=0;
+            reader_done_beats_hold<=0;reader_done_crc_hold<=0;reader_check_pending<=0;pixel_check_pending<=0;
+            reader_field_ok<=0;pixel_field_ok<=0;reader_validated<=0;pixel_validated<=0;pixel_done_token<=0;
+            lease_order_new<=0;lease_order_repeat<=0;
+        end else begin
+            scan_failed_sync<={scan_failed_sync[0],scan_failed};
+            request_sync<={request_sync[0],scan_request_toggle};grant_ack_sync<={grant_ack_sync[0],scan_grant_ack};done_sync<={done_sync[0],pix_done_toggle};
+            reader_start<=0;display_grant_ready<=0;display_done_valid<=0;source_commit<=0;
+            reader_check_pending<={reader_check_pending[0],1'b0};
+            pixel_check_pending<={pixel_check_pending[0],1'b0};
+            if(fifo_used>peak_fifo_used)peak_fifo_used<=fifo_used;
+            if(src_valid && src_ready)begin
+                source_commit<=1;source_commit_id<=src_id;source_commit_bank<=src_bank;source_crc<=src_crc;source_pixels<=src_pixels;active_process_id<=src_id;
+            end
+            if(failed && !system_failed)begin system_failed<=1;system_fault<=fault;end
+            if(response_busy && grant_ack_sync[1]==grant_toggle)response_busy<=0;
+            if(request_sync[1]!=request_seen)begin
+                request_seen<=request_sync[1];request_epoch_hold<=scan_request_epoch;
+                if(response_busy || awaiting_bank_grant || display_req_valid || lease_active)begin
+                    controller_failed<=1;controller_fault<=8'hB1;
+                end else if(!failed && scan_enable && display_req_ready && reader_idle && fifo_used==0)begin
+                    display_req_valid<=1;
+                end else begin
+                    // No ready front at THIS refresh boundary: promptly return
+                    // a blank grant, never a late mid-picture lease.
+                    grant_valid<=0;grant_epoch<=scan_request_epoch;grant_checksum<=0;grant_id<=0;grant_bank<=0;
+                    grant_toggle<=!grant_toggle;response_busy<=1;scan_blank_frames<=scan_blank_frames+1'b1;
+                end
+            end
+            if(display_req_valid && display_req_ready)begin display_req_valid<=0;awaiting_bank_grant<=1;end
+            if(awaiting_bank_grant && display_grant_valid && !response_busy && !failed)begin
+                display_grant_ready<=1;awaiting_bank_grant<=0;
+                lease_active<=1;lease_bank<=display_base/BANK_STRIDE-2;lease_id<=display_id;lease_crc<=display_crc;lease_epoch<=request_epoch_hold;
+                reader_base<=display_base;reader_expected<=display_crc;reader_start<=1;reader_finished<=0;pixel_finished<=0;
+                reader_check_pending<=0;pixel_check_pending<=0;reader_validated<=0;pixel_validated<=0;
+                lease_order_new<=display_id>last_presented_id;lease_order_repeat<=display_id==last_presented_id;
+                grant_valid<=1;grant_epoch<=request_epoch_hold;grant_checksum<=display_crc;grant_id<=display_id;grant_bank<=display_base/BANK_STRIDE-2;
+                grant_toggle<=!grant_toggle;response_busy<=1;
+            end
+            // Capture each completion exactly once; duplicates never replace
+            // the first held snapshot or create a fresh validation credit.
+            if(reader_done)begin
+                if(!lease_active || reader_finished)begin controller_failed<=1;controller_fault<=8'hB2;end
+                else begin
+                    reader_finished<=1;reader_done_beats_hold<=reader_beats;reader_done_crc_hold<=reader_checksum;
+                    reader_check_pending<=2'b01;
+                end
+            end
+            if(pixel_done_event)begin
+                done_seen<=done_sync[1];
+                if(!lease_active || pixel_finished)begin controller_failed<=1;controller_fault<=8'hB3;end
+                else begin
+                    pixel_done_id<=scan_done_id;pixel_done_bank<=scan_done_bank;pixel_done_epoch<=scan_done_epoch;
+                    pixel_done_crc<=pix_done_crc;pixel_done_count<=consumed_pixels;pixel_done_good<=pix_done_good;
+                    pixel_done_token<=done_sync[1];pixel_finished<=1;pixel_check_pending<=2'b01;
+                end
+            end
+            // Local 16-bit comparisons stop the full descriptor reduction
+            // from driving fault and statistics enables in the same cycle.
+            if(reader_check_pending[0])begin
+                reader_field_ok[0]<=reader_done_beats_hold[15:0]==(FRAME_BEATS & 65535);
+                reader_field_ok[1]<=reader_done_beats_hold[31:16]==(FRAME_BEATS >> 16);
+                reader_field_ok[2]<=reader_done_crc_hold[15:0]==lease_crc[15:0];
+                reader_field_ok[3]<=reader_done_crc_hold[31:16]==lease_crc[31:16];
+            end
+            if(pixel_check_pending[0])begin
+                pixel_field_ok[0]<=pixel_done_id[15:0]==lease_id[15:0];
+                pixel_field_ok[1]<=pixel_done_id[31:16]==lease_id[31:16];
+                pixel_field_ok[2]<=pixel_done_epoch[15:0]==lease_epoch[15:0];
+                pixel_field_ok[3]<=pixel_done_epoch[31:16]==lease_epoch[31:16];
+                pixel_field_ok[4]<=pixel_done_crc[15:0]==lease_crc[15:0];
+                pixel_field_ok[5]<=pixel_done_crc[31:16]==lease_crc[31:16];
+                pixel_field_ok[6]<=pixel_done_count[15:0]==((WIDTH*HEIGHT) & 65535);
+                pixel_field_ok[7]<=pixel_done_count[31:16]==((WIDTH*HEIGHT) >> 16);
+                pixel_field_ok[8]<=pixel_done_bank==lease_bank;
+                pixel_field_ok[9]<=pixel_done_good;
+            end
+            if(reader_check_pending[1])begin
+                if(!lease_active || !(&reader_field_ok))begin controller_failed<=1;controller_fault<=8'hB2;end
+                else if(!failed)reader_validated<=1;
+            end
+            if(pixel_check_pending[1])begin
+                done_ack_toggle<=pixel_done_token;
+                if(!lease_active || !(&pixel_field_ok))begin controller_failed<=1;controller_fault<=8'hB3;end
+                else if(!failed)pixel_validated<=1;
+            end
+            if(completion_healthy && !display_done_valid)begin
+                if(!lease_order_new && !lease_order_repeat)begin controller_failed<=1;controller_fault<=8'hB5;end
+                else begin display_done_valid<=1;display_done_bank<=lease_bank;end
+            end
+            // Recheck live faults and FIFO/reader/bank state on the exact edge
+            // accepted by bank_core. Statistics count only that same event.
+            if(display_done_valid && !failed && !reader_done && !pixel_done_event && !request_event && !completion_bank_ready)begin
+                controller_failed<=1;controller_fault<=8'hB4;
+            end
+            if(bank_release_accept)begin
+                lease_active<=0;pixel_finished<=0;reader_finished<=0;pixel_validated<=0;reader_validated<=0;
+                scan_good_frames<=scan_good_frames+1'b1;
+                if(lease_order_new)begin presented_frames<=presented_frames+1'b1;last_presented_id<=lease_id;end
+                else scan_repeat_frames<=scan_repeat_frames+1'b1;
+            end
+        end
+    end
+endmodule

@@ -1,0 +1,130 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "predecode": 1,
+  "index_bits": 7,
+  "row_padded_index": false,
+  "source_sha256": {
+    "rtl\\ddr_neighbour_cache_scatter4_rowpipe.v": "3fbeeed340a9fa9c880c95ce5f9bad2666d6a9b77ae4bef8849859a439b84e11",
+    "tests\\cache_direct64.sv": "6fd87188bd1577ddef0241eab7fb17d3491339ff0eb9937c9efc5004ad84b5e4"
+  },
+  "commands": [
+    {
+      "argv": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ddr_neighbour_cache_scatter4_rowpipe.v",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\cache_direct64.sv"
+      ],
+      "returncode": 0,
+      "seconds": 0.625,
+      "log_sha256": "51019f5182a1840aa19b29de845c97c8a8f4e580f4ba55bc3b2b747dc42e9519"
+    },
+    {
+      "argv": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_rowpipe_cache",
+        "-s",
+        "cache_direct64"
+      ],
+      "returncode": 0,
+      "seconds": 3.5159999999996217,
+      "log_sha256": "c8ec265c7c3ae7c41b0a12d086f1febd9ce8e0c6cb31a21dddc23862fab1f335"
+    },
+    {
+      "argv": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "cache_direct64",
+        "-runall"
+      ],
+      "returncode": 0,
+      "seconds": 6.311999999999898,
+      "log_sha256": "4c6ef4cfa909b2c84bc307e167fba62a62e7cfe0403c848a61e8f15c1dd902ee"
+    }
+  ],
+  "pass_lines": [
+    "PASS DIRECT64 generic WIDTH=639 independent signed64 six arithmetic cases and linear-index fallback",
+    "PASS DIRECT64 generic WIDTH=4096 independent signed64 six arithmetic cases and linear-index fallback",
+    "PASS DIRECT64 signed64 native1920 negative/extreme/partial-boundary arithmetic plus actual4pixel oracle",
+    "PASS DIRECT64 INDEX7 full128-pixel parity/first-last, direct-map tag replacement, same/new bank epochs and TAG25 oracle",
+    "PASS DIRECT64 AR handshake with first R beat: four8-beat fills, independent RAM/pixel/metadata oracle",
+    "PASS DIRECT64 FIFO2 full input/output stalls, stable fractions/TAG25 and pending-frame drain",
+    "PASS DIRECT64 frame_valid at beat7: no new input, exact old-result drain, same-bank invalidate and independent new-epoch refill",
+    "PASS DIRECT64 reset on last sixteen-pixel write edge, invalid metadata and mandatory refill",
+    "PASS DIRECT64 warmed first-latency5 and64 consecutive actual outputs at1 per clock",
+    "PASS DIRECT64 varying warm metadata:32 distinct XY/fraction/TAG queries,32 outputs/31 cycles, independent four-neighbour scoreboard",
+    "PASS DIRECT64 varying metadata backpressure:24 distinct queries,55 adjacent all-field changes, FIFO/pre/query/output holds and independent scoreboard",
+    "PASS DIRECT64 varying metadata hit-miss:12 queued queries, actual fast/slow switches, independent pixels/fractions/TAG order",
+    "PASS DIRECT64 RID/early-RLAST/missing-final-RLAST/unsolicited-R sticky wrapper quarantine",
+    "DIRECT64 coverage arstall=31 rgap=101 outstall=110 install=262 fifo_full=336 frame_queue=1 scatter=452 ramverify=451 last=54 publish=54 resetlast=1 queuedfault=3",
+    "DIRECT64 strengthened coverage slow_empty=29 lower_read=156 last_frame_request=1 last_frame_pending=29 last_frame_out_stall=9 last_frame_refill=1",
+    "PASS DIRECT64 independent directed regression: INDEX7 WIDTH1920 HEIGHT1080 sparse queries, real FIFO2 wrapper,8 DDR beats/128pixels, dual-write parity memories and non-vacuous pressure",
+    "PASS DIRECT64 metadata FIFO2 full=30 refill=122 refresh=7 miss_lookahead=7; no stale accepted tags",
+    "PASS DIRECT64 metadata state-select equals former address on all768 enabled neighbor reads: preload185 refresh7",
+    "PASS DIRECT64 fill-state addresses equal former addresses on all2614 enabled RAM ports: AR-first4 final-fill54 slow-LOAD91 error-suppressed3",
+    "PASS DIRECT64 index=7 row_padded=0 independently different slots=0 real-DDR address unchanged",
+    "PASS DIRECT64 candidate unit: realRTL signed32 row pre-stage, independent64bit reference,1pixel throughput, backpressure/frame/reset/fault; no STA/hardware"
+  ],
+  "summaries": {
+    "cache-direct64-generic-summary.json": {
+      "passed": true,
+      "width": 639,
+      "signed64_arithmetic_cases": 6,
+      "linear_fallback": true
+    },
+    "cache-direct64-main-summary.json": {
+      "row_padded_index": 0,
+      "padded_distinct_queries": 0,
+      "ram_address_checks": 2614,
+      "ram_ar_first": 4,
+      "ram_final_fill": 54,
+      "ram_slow_load": 91,
+      "ram_error_suppressed": 3,
+      "metadata_address_checks": 768,
+      "metadata_pre_reads": 185,
+      "metadata_refresh_reads": 7,
+      "index_bits": 7,
+      "decoded_full": 30,
+      "lookup_refill": 122,
+      "metadata_refresh": 7,
+      "miss_lookahead": 7,
+      "passed": true,
+      "width": 1920,
+      "height": 1080,
+      "sparse_queries_only": true,
+      "numeric_checks": 185,
+      "pre_hold": 238,
+      "query_hold": 338,
+      "pre_refill": 130,
+      "query_refill": 130,
+      "pending_pre": 1,
+      "first_valid_latency_cycles": 5,
+      "stream_outputs": 64,
+      "stream_span_cycles": 63,
+      "fault_cases": 4,
+      "ar_stall": 31,
+      "output_stall": 110,
+      "ram_checks": 451,
+      "reset_last_scatter": 1,
+      "metadata_inputs": 68,
+      "metadata_warm_outputs": 32,
+      "metadata_warm_span_cycles": 31,
+      "metadata_stalled_outputs": 24,
+      "metadata_all_field_changes": 55,
+      "metadata_input_stall": 17,
+      "metadata_output_hold": 20,
+      "metadata_pre_hold": 20,
+      "metadata_query_hold": 20,
+      "metadata_mixed_outputs": 12,
+      "metadata_fast_queries": 5,
+      "metadata_slow_queries": 7,
+      "metadata_hit_miss_switches": 8
+    },
+    "cache-direct64-wide-summary.json": {
+      "passed": true,
+      "width": 4096,
+      "signed64_arithmetic_cases": 6,
+      "linear_fallback": true
+    }
+  }
+}

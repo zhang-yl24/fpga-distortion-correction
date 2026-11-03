@@ -1,0 +1,171 @@
+{
+  "passed": true,
+  "hardware_tested": false,
+  "real_engine": true,
+  "tile_width": 32,
+  "width": 64,
+  "height": 64,
+  "core_hz": 125000000,
+  "input_hz": 148500000,
+  "output_hz": 148500000,
+  "scope": "Real complete datapath, scaled raster, shared-service DDR model; no native 1080p60 throughput or physical timing claim.",
+  "source_identity": "4dd4d77979396700ee638beb6cf2182b88dacd6bd4daac99663347df6aae0fb4",
+  "sources": {
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\ddr_write_arbiter.v": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\ddr_adaptive_result_writer.v": "52c6e9dbf85db34cb3443730c879f3cf91ac1a92c1615595736e152545e7718f",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\ddr_neighbour_cache_scatter4_rowpipe.v": "76e273555590d7ed81655098df4eed65033de5814ad3e30a7af266811c8264fb",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\ddr_remap_sample_scatter4_rowpipe.v": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_mapper.v": "6a66a5d44f5af4f93e56b0c0f891c120b5adaac84d0103bc5ecf9fea70b07a19",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_rom.v": "3ce0e5d8e67522c706b3ac47cfff4b2406883c296286880c7946250b14ce8ed9",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_core.v": "d40e18e74f691212d7c4a28e8b8eff15f87480532c258e5f3c832a023516995c",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_lane.v": "16f6deb20df146215fd66d75e48c7d342f7a367f80bc76a8cd1bfacb261e5ba7",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_engine.v": "929ce0e87e172859ad7a826b7c2e07418e69d8d939a8782da1e4653029292600",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_bank.v": "28b3b2b6a46c7fef959f20ef4bf9795718a53ffc18169004e33ab4c3abb9cda3",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi1080_capture_cdc.v": "65e3d6d8082d7ba16d3b5f62d2a024b04719d927bd7963f572cf659a925a510d",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi1080_input_dma.v": "a84275d82fcff345f287ea67509b0704a9155c11b29b75f837865c9260f7a1d5",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_input_link.v": "379a5b06fb58723a51f7643636811c121b36ed563a7e1ed4d86741aeedbb7d14",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\ddr_video_reader.v": "2d102ad8212b7fd46a246f652773202fc4ee073f98ae546c73a8035f7abb587b",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\ddr_video_output_1080_board.v": "7324f5a2b0b10e54ec94f779d18b73df2f8a40f93ef25f83a1ac74eddc84773d",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\ddr_read_return_register.v": "bb106a1b03d30f041b0b38eba2a687bef7fb54afa457d06f833d57787fae3427",
+    "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_system_c.v": "063f9a921fcc7c536ff00fb6f1acdcaa705e4f9f08972f6ea48f233540cc47a2",
+    "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\system_contention.sv": "992da1dd4b24464a616dcda030d94e2f11923e5446f72bff5165cad95e57649f"
+  },
+  "reference_source_sha256": "81713a8cf24d7d611bc1d775f5b4b7223fcbea9cb15a22633538c47ece54976a",
+  "reference": {
+    "coordinate_sha256": "dbab545a5482fc6894e295e537c5465323d3fcb84c116ad1a0eabc6c32cd38db",
+    "numeric_black": 0,
+    "golden_files": {
+      "corrected-crc.hex": "e1fe75e84e141e8d12d577007b4c2fd6ecf2ada6503264e7319bf58829c80520",
+      "corrected.hex": "2790a8b409f094632ff8a812ff5d0e8169232e2cad10365ebe8fe9d3b66e03e3",
+      "raw-crc.hex": "4cfcb97b1c0c500e7c59c709732bcb958e868b469e18c3781902523dd10c4854"
+    }
+  },
+  "commands": [
+    {
+      "command": [
+        "xvlog.bat",
+        "--sv",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\mul32_pipe.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\bilinear_rgb.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\ddr_read_arbiter.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\ddr_write_arbiter.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\ddr_adaptive_result_writer.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\ddr_neighbour_cache_scatter4_rowpipe.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\ddr_remap_sample_scatter4_rowpipe.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_mapper.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_rom.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_core.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_lane.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_engine.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_bank.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi1080_capture_cdc.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi1080_input_dma.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_input_link.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\video_async_fifo.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\ddr_video_reader.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\ddr_video_output_1080_board.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\ddr_read_return_register.v",
+        "D:\\f60-work\\system-contention-final32\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_system_c.v",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\system_contention.sv"
+      ],
+      "returncode": 0,
+      "seconds": 0.75,
+      "log_sha256": "cb3c1c144e4b9cd64012f5676ac825a070bf8baa712dc4381971f49bd430ef10"
+    },
+    {
+      "command": [
+        "xelab.bat",
+        "tb_system_contention",
+        "-s",
+        "system_contention"
+      ],
+      "returncode": 0,
+      "seconds": 10.765000000000327,
+      "log_sha256": "f507b30c0576dbb4abbff942ba63b1d89716b9cd2b2d90e919e1286882e8c395"
+    },
+    {
+      "command": [
+        "xsim.bat",
+        "system_contention",
+        "-runall"
+      ],
+      "returncode": 0,
+      "seconds": 43.34400000000005,
+      "log_sha256": "26f914ed7bf9aae51a4db620000619341af4ffb26ccbb87879fbcd99038a22cc"
+    }
+  ],
+  "epochs": [
+    {
+      "epoch": 0,
+      "commits": 18,
+      "publishes": 17,
+      "unique_displayed": 16,
+      "raw_displayed": 6,
+      "corrected_displayed": 10,
+      "display_frames": 19,
+      "display_pixels": 77824,
+      "repeat_displayed": 3,
+      "slot_commits": [
+        7,
+        6,
+        5
+      ],
+      "aw_stalls": 165,
+      "ar_stalls": 230,
+      "w_stalls": 3161,
+      "r_gaps": 2220,
+      "shared_busy": 1688,
+      "capture_engine_compete": 190,
+      "display_sample_compete": 345,
+      "triple_reserved_cycles": 43394,
+      "cfg_switch_busy": 5,
+      "source_pixel_checks": 73728,
+      "result_pixel_checks": 69632,
+      "source_memory_checks": 73728,
+      "result_memory_checks": 69632,
+      "dropped_input_frames": 0,
+      "no_grant_frames": 8,
+      "underflows": 0,
+      "mismatches": 0,
+      "reset_while_active": 1
+    },
+    {
+      "epoch": 1,
+      "commits": 16,
+      "publishes": 16,
+      "unique_displayed": 16,
+      "raw_displayed": 6,
+      "corrected_displayed": 10,
+      "display_frames": 18,
+      "display_pixels": 73728,
+      "repeat_displayed": 2,
+      "slot_commits": [
+        6,
+        5,
+        5
+      ],
+      "aw_stalls": 147,
+      "ar_stalls": 221,
+      "w_stalls": 2850,
+      "r_gaps": 2024,
+      "shared_busy": 1427,
+      "capture_engine_compete": 144,
+      "display_sample_compete": 346,
+      "triple_reserved_cycles": 43395,
+      "cfg_switch_busy": 5,
+      "source_pixel_checks": 65536,
+      "result_pixel_checks": 65536,
+      "source_memory_checks": 65536,
+      "result_memory_checks": 65536,
+      "dropped_input_frames": 0,
+      "no_grant_frames": 8,
+      "underflows": 0,
+      "mismatches": 0,
+      "reset_while_active": 1
+    }
+  ]
+}

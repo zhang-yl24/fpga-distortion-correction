@@ -1,0 +1,103 @@
+{
+  "status": "PASS_SYNTHESIS_LOCAL_EQUIVALENCE",
+  "project": "D:\\f60-run\\physical-g",
+  "source_identity": "7a246494adf458b607d430b9ebc60c13420f7f859352edb82ad6211e0a20eb8b",
+  "build_id": "11037003",
+  "checks": [
+    {
+      "name": "exact_single_net_synthesis_attribute",
+      "pass_": true,
+      "detail": [
+        "define_attribute {n:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/all_group_ca_dly} {syn_maxfan} {16}"
+      ]
+    },
+    {
+      "name": "native_pds_registered_fdc",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "synthesis_loaded_constraint_without_errors",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "replicated_exact_combinational_driver",
+      "pass_": true,
+      "detail": [
+        {
+          "instance": "N61_4",
+          "output": "all_group_ca_dly",
+          "init": "FFFE",
+          "inputs": [
+            "debug_data[66]",
+            "debug_data[135]",
+            "debug_data[204]",
+            "debug_data[273]"
+          ]
+        },
+        {
+          "instance": "N61_4_copy",
+          "output": "all_group_ca_dly_1",
+          "init": "FFFE",
+          "inputs": [
+            "debug_data[66]",
+            "debug_data[135]",
+            "debug_data[204]",
+            "debug_data[273]"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "native_attribute_survives_synthesis",
+      "pass_": true,
+      "detail": [
+        "all_group_ca_dly",
+        "all_group_ca_dly_1"
+      ]
+    },
+    {
+      "name": "all_16_input_assignments_equivalent",
+      "pass_": true,
+      "detail": {
+        "assignments": 16,
+        "reference": "OR of four unchanged input bits",
+        "added_registers": 0
+      }
+    },
+    {
+      "name": "previous_timing_and_route_constraints_unchanged",
+      "pass_": true,
+      "detail": [
+        "board/board1080-ddr-ioclk-priority.rcf",
+        "board/ddr-ip-clock-relations.fdc",
+        "board/hdmi-camera-fisheye-c-internal.fdc"
+      ]
+    },
+    {
+      "name": "all_compiled_vendor_ip_sources_unchanged",
+      "pass_": true,
+      "detail": {
+        "file_count": 75
+      }
+    },
+    {
+      "name": "only_added_constraint_is_exact_ca_attribute",
+      "pass_": true,
+      "detail": null
+    }
+  ],
+  "source_sha256": {
+    "D:\\f60-run\\physical-g\\candidate-plan.json": "02855455491b540c361e57756d25c7bb9f4fd80f09fec17d2fd598be767e98a4",
+    "D:\\f60-run\\physical-g\\compiled\\board\\ddr-ca-maxfan16.fdc": "129c5c1ad7e4137acd72b79f8ee32dfa8e9075ad17d7512a4b40fe855f6cb2f4",
+    "D:\\f60-run\\physical-g\\hdmi_camera_fisheye_top.pds": "9be2298fb795cb856b976775cd6f99137d9530afe4d92cda6945c9e7f9e07709",
+    "D:\\f60-run\\physical-g\\prj_tasks\\syn_1\\synthesize\\constraint_check.ccr": "f47ee64a21f43d22f1ae71f20c2dc1e5561ce441d29e07ad05aaeae5599bc217",
+    "D:\\f60-run\\physical-g\\prj_tasks\\syn_1\\synthesize\\hdmi_camera_fisheye_top_syn.vm": "ca33aeae6776e0ae8519cf147ced5841d76c52a3c519cf1ced856eef587ba3f5"
+  },
+  "limitations": [
+    "Local combinational driver equivalence only; no whole-chip formal proof.",
+    "Routed fanout, placement delay and core-to-PHY setup require implementation reports.",
+    "No timing exceptions are added by the synthesis attribute."
+  ]
+}

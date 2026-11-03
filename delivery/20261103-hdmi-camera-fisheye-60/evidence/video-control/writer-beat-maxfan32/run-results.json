@@ -1,0 +1,24 @@
+{
+  "scope": "Isolated unchanged raster writer, native compile/synthesis/device-map only; live source frozen. The single variant adds the documented register syn_maxfan=32 attribute. No placement, routing or timing pass claimed.",
+  "live_source_sha256": "c82d52ad9adc0c53901bac3e07b6fbcfa99a1e28afb1c2985808dd61ca78ec11",
+  "crc_sha256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+  "wrapper_sha256": "47926a06b8befb584e258c49d1f33bd68167c520fadf8a373264a39a9a52f3b0",
+  "wrapper_scope": "All 256 WDATA bits remain observable through a dynamic 32-bit slice; all four statistics through a dynamic 32-bit mux. These top-level observation muxes reduce package IO demand. Actual lane-1 dimensions 1920x440. No writer behavior is changed.",
+  "initial_probe_note": "The direct 569-IO module probe synthesized successfully but device-map rejected the 300-IO package limit. The r2 wrapper removes only package IO width; initial failed artifacts remain intact.",
+  "runs": [
+    {
+      "variant": "baseline",
+      "returncode": 0,
+      "seconds": 42.89706380000098,
+      "source_sha256": "f138ac391396a7408b87807cea3cc178d44325c870970ff0e9c3f85699003b82",
+      "console_sha256": "9efd012b5979145251624ad37c538a35619e9153aad5226cdf38a2853fa40173"
+    },
+    {
+      "variant": "maxfan32",
+      "returncode": 0,
+      "seconds": 45.5517961000005,
+      "source_sha256": "293e55cdd08778bfbdbd3c76ba6e33e9cc90c069daa03ce1f88f6dea7621aab9",
+      "console_sha256": "253f4f3780a8621171344ab3843ee698df0c6b4bf174e4da97cf02f01704a64d"
+    }
+  ]
+}

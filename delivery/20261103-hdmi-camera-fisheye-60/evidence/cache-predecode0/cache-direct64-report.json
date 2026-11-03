@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "predecode": 0,
+  "source_sha256": {
+    "rtl\\ddr_neighbour_cache_scatter4_rowpipe.v": "76e273555590d7ed81655098df4eed65033de5814ad3e30a7af266811c8264fb",
+    "tests\\cache_direct64.sv": "12c903ba11d15a38ec24c22d7fcf79d20994e92abe9ca98f68815df409e549cf"
+  },
+  "commands": [
+    {
+      "argv": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "-d",
+        "CACHE_PREDECODE_OFF",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ddr_neighbour_cache_scatter4_rowpipe.v",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\cache_direct64.sv"
+      ],
+      "returncode": 0,
+      "seconds": 0.5663659000001644,
+      "log_sha256": "51019f5182a1840aa19b29de845c97c8a8f4e580f4ba55bc3b2b747dc42e9519"
+    },
+    {
+      "argv": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_rowpipe_cache",
+        "-s",
+        "cache_direct64"
+      ],
+      "returncode": 0,
+      "seconds": 3.1552029999998012,
+      "log_sha256": "dd347a28d68dfab21be43a288efe333eccc0b7476e8d3fd4bc429e06bb2c9d06"
+    },
+    {
+      "argv": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "cache_direct64",
+        "-runall"
+      ],
+      "returncode": 0,
+      "seconds": 5.77497620000031,
+      "log_sha256": "dbdfe74528bf55eed2266bb34a4c703bf5ac593c51fcd32dfa73b8ed972e9787"
+    }
+  ],
+  "pass_lines": [
+    "PASS DIRECT64 generic639 independent signed64 six arithmetic cases",
+    "PASS DIRECT64 signed64 native1920 negative/extreme/partial-boundary arithmetic plus actual4pixel oracle",
+    "PASS DIRECT64 INDEX7 full128-pixel parity/first-last, direct-map tag replacement, same/new bank epochs and TAG25 oracle",
+    "PASS DIRECT64 FIFO2 full input/output stalls, stable fractions/TAG25 and pending-frame drain",
+    "PASS DIRECT64 frame_valid at beat7: no new input, exact old-result drain, same-bank invalidate and independent new-epoch refill",
+    "PASS DIRECT64 reset on last sixteen-pixel write edge, invalid metadata and mandatory refill",
+    "PASS DIRECT64 warmed first-latency4 and64 consecutive actual outputs at1 per clock",
+    "PASS DIRECT64 varying warm metadata:32 distinct XY/fraction/TAG queries,32 outputs/31 cycles, independent four-neighbour scoreboard",
+    "PASS DIRECT64 varying metadata backpressure:24 distinct queries,55 adjacent all-field changes, FIFO/pre/query/output holds and independent scoreboard",
+    "PASS DIRECT64 varying metadata hit-miss:12 queued queries, actual fast/slow switches, independent pixels/fractions/TAG order",
+    "PASS DIRECT64 RID/early-RLAST/missing-final-RLAST/unsolicited-R sticky wrapper quarantine",
+    "DIRECT64 coverage arstall=44 rgap=98 outstall=84 install=240 fifo_full=373 frame_queue=1 scatter=404 ramverify=404 last=48 publish=48 resetlast=1 queuedfault=3",
+    "DIRECT64 strengthened coverage slow_empty=27 lower_read=138 last_frame_request=1 last_frame_pending=26 last_frame_out_stall=9 last_frame_refill=1",
+    "PASS DIRECT64 independent directed regression: INDEX7 WIDTH1920 HEIGHT1080 sparse queries, real FIFO2 wrapper,8 DDR beats/128pixels, dual-write parity memories and non-vacuous pressure",
+    "PASS DIRECT64 candidate unit: realRTL signed32 row pre-stage, independent64bit reference,1pixel throughput, backpressure/frame/reset/fault; no STA/hardware"
+  ],
+  "summaries": {
+    "cache-direct64-generic-summary.json": {
+      "passed": true,
+      "width": 639,
+      "signed64_arithmetic_cases": 6
+    },
+    "cache-direct64-main-summary.json": {
+      "passed": true,
+      "width": 1920,
+      "height": 1080,
+      "sparse_queries_only": true,
+      "numeric_checks": 165,
+      "pre_hold": 358,
+      "query_hold": 325,
+      "pre_refill": 131,
+      "query_refill": 131,
+      "pending_pre": 14,
+      "first_valid_latency_cycles": 4,
+      "stream_outputs": 64,
+      "stream_span_cycles": 63,
+      "fault_cases": 4,
+      "ar_stall": 44,
+      "output_stall": 84,
+      "ram_checks": 404,
+      "reset_last_scatter": 1,
+      "metadata_inputs": 68,
+      "metadata_warm_outputs": 32,
+      "metadata_warm_span_cycles": 31,
+      "metadata_stalled_outputs": 24,
+      "metadata_all_field_changes": 55,
+      "metadata_input_stall": 20,
+      "metadata_output_hold": 20,
+      "metadata_pre_hold": 20,
+      "metadata_query_hold": 20,
+      "metadata_mixed_outputs": 12,
+      "metadata_fast_queries": 5,
+      "metadata_slow_queries": 7,
+      "metadata_hit_miss_switches": 8
+    }
+  }
+}

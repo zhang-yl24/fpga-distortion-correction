@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "script_sha256": "33c3654af1aa2b31b00e2a51afaccfcb62642ba2c962d9163dda9b5e643e3f0c",
+  "cases": [
+    {
+      "case": "probe",
+      "exit_code": 0,
+      "status": "PASS",
+      "report_sha256": "d6c50c47aaf27aa1a8c519d1bac58641c5cb981a3eafed6d2e2bc3a1abde7e4e",
+      "errors": []
+    },
+    {
+      "case": "negative-slack",
+      "exit_code": 1,
+      "status": "FAIL",
+      "report_sha256": "386c6748e635f6a60022e2da9a438aa48dd4daa8b782232bc5857daba898e99d",
+      "errors": [
+        "slow: 6 ns max-delay failed: capture_size/wr_gray_r1[5]: -0.125"
+      ]
+    },
+    {
+      "case": "missing-reports",
+      "exit_code": 1,
+      "status": "FAIL",
+      "report_sha256": "6dca4f0736a378ec4eb4efd828567e62cbc5c2999411c6d8687eb31fee3c4a66",
+      "errors": [
+        "FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\f60-work\\\\cdc\\\\missing-report-input\\\\prj_tasks\\\\pnr_1\\\\report_timing\\\\report_db\\\\exception_report_slow_set_max_delay_setup.db'"
+      ]
+    }
+  ]
+}

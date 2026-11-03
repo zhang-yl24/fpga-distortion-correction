@@ -1,0 +1,19 @@
+
+****** xsim v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/stripe8/xsim_script.tcl
+# xsim {stripe8} -testplusarg CASE3 -testplusarg TILE1 -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+METRIC case=3 tile=1 cycles=4520 input_stalls=628 pixels=3072 beats=192 crc=6a95746d
+METRIC RAMPIPE stalls=628 immediate_bank_reuses=2
+METRIC case=3 tile=1 cycles=3892 input_stalls=0 pixels=3072 beats=192 crc=6a95746d
+METRIC RAMPIPE stalls=628 immediate_bank_reuses=4
+PASS stripe writer case=3 tile=1
+$finish called at time : 67397 ns : File "D:/f60-work/writer-h-payload-prefetch/tb_stripe_writer.sv" Line 207
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Nov  3 16:12:34 2026...

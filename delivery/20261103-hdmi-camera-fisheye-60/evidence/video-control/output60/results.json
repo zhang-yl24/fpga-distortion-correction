@@ -1,0 +1,114 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "physical_timing_verified": false,
+  "cases": [
+    {
+      "name": "raster",
+      "passed": true,
+      "source_sha256": {
+        "D:\\f60\\distortion\\rtl\\experimental\\ddr_video_output_1080_board.v": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+        "D:\\f60\\distortion\\rtl\\video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+        "D:\\f60\\distortion\\rtl\\video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_output60_raster.sv": "3f3403432e8dc52655781498ce6a341699b5db264c408e003b440ca98fda1390"
+      },
+      "staged_source_sha256": "8ede1c535d806415130a9ae2796a369eb6943be3735dc4373377d4deaccedce0",
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "D:\\f60-work\\video\\output60-check-b\\raster\\ddr_video_output_1080_board.v",
+            "D:\\f60\\distortion\\rtl\\video_async_fifo.v",
+            "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_output60_raster.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.6514386999997441,
+          "log_sha256": "27674ca98a6e07b7a9b11b3d5f12dce57805736a477436d0e8864ee92e5723e8"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_output60_raster",
+            "-s",
+            "scan_test"
+          ],
+          "returncode": 0,
+          "seconds": 2.546783400000095,
+          "log_sha256": "a1b14ec8824c224af3d5470d3182e59a80177a3af83d5d5b543b63284fb80a16"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "scan_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 48.027680000000146,
+          "log_sha256": "1216ac0b73c0cb09d949b38771360e1d25eba1e5263c4c24540355b00e8e5d58"
+        }
+      ],
+      "pass_lines": [
+        "PASS OUTPUT60 RASTER frames=2 pixels_per_frame=2073600 beats_per_frame=129600 frame_cycles=2475000 refresh_hz=60 crc0=1872e3d1 crc1=9432f39a"
+      ]
+    },
+    {
+      "name": "faults",
+      "passed": true,
+      "source_sha256": {
+        "D:\\f60\\distortion\\rtl\\experimental\\ddr_video_output_1080_board.v": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+        "D:\\f60\\distortion\\rtl\\video_crc32.vh": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+        "D:\\f60\\distortion\\rtl\\video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+        "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_output60_faults.sv": "d8195176b078853b8049d57a9645e4ed5bacc930993e771b9b81e6f25a60b4f7"
+      },
+      "staged_source_sha256": "8ede1c535d806415130a9ae2796a369eb6943be3735dc4373377d4deaccedce0",
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "D:\\f60-work\\video\\output60-check-b\\faults\\ddr_video_output_1080_board.v",
+            "D:\\f60\\distortion\\rtl\\video_async_fifo.v",
+            "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\tests\\tb_output60_faults.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.620732400000179,
+          "log_sha256": "645df942c97e49fe63dc89d298db3a3ffff009ca21846c8d9e9acb7dc9d68bad"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_board1080_scan",
+            "-s",
+            "scan_test"
+          ],
+          "returncode": 0,
+          "seconds": 2.50674140000001,
+          "log_sha256": "06e7af10295e4c339e5f22b023ec7df7419670e399ae47311a998044d5bf2dc8"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "scan_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 9.459920400000101,
+          "log_sha256": "7b296e7ff8b363b3125936d91a31c3de4e28150059751faa034f776752d453c6"
+        }
+      ],
+      "pass_lines": [
+        "PASS scan new/repeated ID, held lease/result metadata, ACK admission and blank grant",
+        "PASS scan good then bad CRC revokes health/last/good and holds bad bank",
+        "PASS scan good then underflow, continued FIFO tail drain and bank quarantine",
+        "PASS scan midframe abort with inflight drain, coordinated reset and fresh frame recovery",
+        "PASS scan old epoch rejected before output, FIFO drained without release",
+        "PASS scan late closed-window grant rejected without new request/good",
+        "PASS scan older frame ID rejected while legal refresh/new IDs remain supported",
+        "PASS scan post-success unsolicited FIFO return revokes health while held good bus is preserved",
+        "PASS scan overlong FIFO stream fails final-count/empty check and drains",
+        "PASS board1080 scan: independent RGB565/CRC, held epochs/IDs, faults-black-drain, common reset; no PHY or hardware claim"
+      ]
+    }
+  ]
+}

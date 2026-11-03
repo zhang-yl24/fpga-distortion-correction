@@ -1,0 +1,22 @@
+{
+  "source": "D:\\f60-run\\physical-g\\compiled\\rtl\\experimental\\ms72xx_rearm_observed_ctl.v",
+  "destination": "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\ms72xx_rearm_observed_ctl.v",
+  "source_sha256": "7a4404a012d9e855bf3710f5aaa2f9926c004e378314aa1234fb6ee954f6d75d",
+  "overlay_sha256": "b95d3092b043306d7bc0a9b3d318468e2126229348dabfa8b07104aab89e592e",
+  "attribute_stripped_identical": true,
+  "chains": [
+    {
+      "name": "cfg_reset_pipe",
+      "stages": 3
+    },
+    {
+      "name": "seq_reset_pipe",
+      "stages": 3
+    },
+    {
+      "name": "tx_reset_pipe",
+      "stages": 3
+    }
+  ],
+  "reason": "Final G route exposed 3 reset-release chains absent from the earlier async_reg-based inventory; protect 9 stages from SRL extraction. H mapped verification still required."
+}

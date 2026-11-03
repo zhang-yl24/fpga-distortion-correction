@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "source_sha256": {
+    "rtl\\ddr_neighbour_cache_scatter4_rowpipe.v": "35ee33af1940a0b02e4c7ae9bd21d1e119bb6fd32c60a109f7b2b822fc3dee9a",
+    "tests\\cache_registered_return.sv": "a2099098f9399383e97cf58dd331aa38c45530ee887e56fbe9466e4ad830a921"
+  },
+  "commands": [
+    {
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "ddr_neighbour_cache_scatter4_rowpipe.v",
+        "cache_registered_return.sv"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_cache_registered_return",
+        "-mt",
+        "2",
+        "-s",
+        "registered_return"
+      ],
+      "returncode": 0,
+      "passed": true
+    },
+    {
+      "command": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "registered_return",
+        "-runall"
+      ],
+      "returncode": 0,
+      "passed": true
+    }
+  ],
+  "scope": "Explicit whole-bundle registered return; digital exact-cycle and independent pixel/protocol checks. No native timing or board claim.",
+  "metrics": [
+    "METRIC registered_return equivalent_edges=459 bundle_edges=508 AR_first=20 AR_stalls=9 R_gaps=39 final=22 pixels=44 pending_reset=4 errors=4 early_contract=1",
+    "PASS REGISTERED_RETURN exact-cycle legacy comparison, whole-bundle protocol, pixel/tag/boundary/reset/fault"
+  ]
+}
