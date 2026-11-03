@@ -46,3 +46,5 @@ jobs:
         run: python -B delivery/20261103-hdmi1080-demo-source/stable30-OP/verify_export.py
       - name: Verify runtime camera candidate source references and offline encoder
         run: python -B delivery/20261103-hdmi1080-demo-source/runtime-camera/20261104-a/verify_delivery.py
+      - name: Verify E2 source revision and internal timing evidence boundaries
+        run: python -B delivery/20261103-hdmi1080-demo-source/runtime-camera/20261104-e2/verify_delivery.py
