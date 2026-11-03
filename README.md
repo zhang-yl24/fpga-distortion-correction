@@ -1,5 +1,8 @@
 # FPGA 实时图像畸变矫正
 
+**稳定30fps源码交付：** [O/P保留回退及实测边界](delivery/20261103-hdmi1080-demo-source/stable30-OP/README.md)：bit99f8a734…，约63秒新处理/呈现30.011fps、数字scan60.006Hz，约半数重复；双角内部12类0违例、slow setup+0.068ns。目标仍为60个新校正帧/s，外部IO/复位/热/E2E及全项验收未完成。发布项目源码，83项厂商/生成依赖仅列SHA；R页交织30fps实验未晋升替代本回退。
+
+
 **16:17更新：** [H鱼眼最终内部时序与首次板测](delivery/20261103-hdmi1080-demo-source/progress/20261103-H-final-board/README.md)：真实整帧CRC d3be1a4d/2076957周期；H双角内部12类0违例、slow setup+0.034ns，FF26022/LUT30990/DRM20.5/APM56/IO144。SRAM DONE但一次ARM无响应/raw0，硬件FPS与E2E未测；外部IO/物理复位/共享DDR持续性能未签核。下文H仅Map是15:22时点历史，非最新状态。
 
 ## 当前目标与证据入口（2026-11-03下午）

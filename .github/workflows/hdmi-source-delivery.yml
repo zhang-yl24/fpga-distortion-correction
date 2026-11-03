@@ -42,3 +42,5 @@ jobs:
         run: python -B delivery/20261103-hdmi1080-demo-source/progress/20261103-cont60-route/verify_release.py
       - name: Verify stable30 board display identity and unmeasured boundaries
         run: python -B delivery/20261103-hdmi1080-demo-source/progress/20261103-stable30-board/verify_evidence.py
+      - name: Verify stable30 OP source and explicit dependency boundary
+        run: python -B delivery/20261103-hdmi1080-demo-source/stable30-OP/verify_export.py
