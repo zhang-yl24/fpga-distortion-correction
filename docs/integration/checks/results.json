@@ -1,0 +1,135 @@
+[
+  {
+    "command": [
+      "delivery/20261103-hdmi1080-stable30/tools/verify_candidate.py"
+    ],
+    "exit": 0,
+    "seconds": 0.44,
+    "log": "00.log"
+  },
+  {
+    "command": [
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "delivery/20261103-hdmi1080-stable30/tests",
+      "-p",
+      "test_candidate.py"
+    ],
+    "exit": 0,
+    "seconds": 1.5,
+    "log": "01.log"
+  },
+  {
+    "command": [
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "delivery/20261103-hdmi1080-throughput/tests",
+      "-p",
+      "test_*.py"
+    ],
+    "exit": 0,
+    "seconds": 2.17,
+    "log": "02.log"
+  },
+  {
+    "command": [
+      "delivery/20261103-hdmi1080-throughput/tools/verify_delivery.py"
+    ],
+    "exit": 0,
+    "seconds": 0.11,
+    "log": "03.log"
+  },
+  {
+    "command": [
+      "delivery/20261103-hdmi1080-demo-source/tools/verify_package.py"
+    ],
+    "exit": 0,
+    "seconds": 0.28,
+    "log": "04.log"
+  },
+  {
+    "command": [
+      "delivery/20261103-hdmi1080-demo-source/tools/verify_offline_candidates.py"
+    ],
+    "exit": 0,
+    "seconds": 0.39,
+    "log": "05.log"
+  },
+  {
+    "command": [
+      "delivery/20261103-hdmi1080-demo-source/offline-candidates/20261103-night/tests/dma-grant-equivalence/run_pair.py",
+      "--check-only"
+    ],
+    "exit": 0,
+    "seconds": 0.09,
+    "log": "06.log"
+  },
+  {
+    "command": [
+      "delivery/20261103-hdmi1080-demo-source/measurement/pgstat02-v1/run_delivery_checks.py",
+      "--scratch-parent",
+      "D:\\fpga-integration-audit\\checks"
+    ],
+    "exit": 0,
+    "seconds": 0.31,
+    "log": "07.log"
+  },
+  {
+    "command": [
+      "delivery/20261103-hdmi1080-demo-source/progress/20261103-morning/verify_progress.py"
+    ],
+    "exit": 0,
+    "seconds": 0.08,
+    "log": "08.log"
+  },
+  {
+    "command": [
+      "delivery/20261103-hdmi1080-demo-source/progress/20261103-cont60-route/verify_release.py"
+    ],
+    "exit": 0,
+    "seconds": 0.06,
+    "log": "09.log"
+  },
+  {
+    "command": [
+      "delivery/20261103-hdmi1080-demo-source/progress/20261103-stable30-board/verify_evidence.py"
+    ],
+    "exit": 0,
+    "seconds": 0.06,
+    "log": "10.log"
+  },
+  {
+    "command": [
+      "delivery/20261103-hdmi1080-demo-source/stable30-OP/verify_export.py"
+    ],
+    "exit": 0,
+    "seconds": 0.06,
+    "log": "11.log"
+  },
+  {
+    "command": [
+      "handoff/audit-baselines.py"
+    ],
+    "exit": 0,
+    "seconds": 0.22,
+    "log": "12.log"
+  },
+  {
+    "command": [
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_main_project.py"
+    ],
+    "exit": 0,
+    "seconds": 0.12,
+    "log": "13.log"
+  }
+]
