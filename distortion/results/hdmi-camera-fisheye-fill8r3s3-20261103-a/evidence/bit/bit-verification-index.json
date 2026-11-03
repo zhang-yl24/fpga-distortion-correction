@@ -1,0 +1,246 @@
+{
+  "Schema": "hdmi-camera-fisheye-fill8r3s3v2-bit-verification-archive-index-v1",
+  "Passed": true,
+  "SnapshotUTC": "2026-11-03T09:22:47.048865+00:00",
+  "OriginalVerification": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\verification.json",
+    "SHA256": "34a4014a754cae1a58f1f51b49c155446fc5958ba17c8b540c563f565f246b81",
+    "Bytes": 3775
+  },
+  "OriginalGate": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\pre-bit-audit.json",
+    "SHA256": "a36f5a2d61b71b5459c4d579681d127513b6d104acbe1e01cf70490bf16fdbc4",
+    "Bytes": 976
+  },
+  "OriginalExecution": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\execution-result.json",
+    "SHA256": "9531b1ab010e284761e760415c2146e6c96dbde5a2f97b5746053fd9f2b3b9b5",
+    "Bytes": 2393
+  },
+  "OriginalPlan": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\bitstream-plan.json",
+    "SHA256": "d26386c673ee8244daebfd90cbb284bc6fc9aa190ada27b090d01c2330b160c9",
+    "Bytes": 207631
+  },
+  "Bitstream": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\generate_bitstream\\hdmi_camera_fisheye_top.sbit",
+    "SHA256": "ae6be718eaa60fdcd1ba252c08133e7e24d22d247d2a649d21f0d1f7be4a4d16",
+    "Bytes": 3791112,
+    "Header": {
+      "Design": "hdmi_camera_fisheye_top",
+      "Device": "Logos2-PG2L100H--6-FBG676",
+      "Date": "11/03/26",
+      "Time": "17:14:55",
+      "Generator": "Fabric Compiler",
+      "Version": "2023.2-SP3<154097>"
+    }
+  },
+  "FinalADFSHA256": "8510ff44a6c5cba81b675ad3bdf249ba93e1be4f2c372f5ff76b855ba761e2a2",
+  "FinalPhysicalProofSHA256": "e2abc4bd5dc9de4f4be940a310974130ae0edec90023f802e8b827e0fd65f9bd",
+  "Verified": true,
+  "FreshSTA": {
+    "STAAllTenPassed": true,
+    "ClockAndSummaryIdentityPreserved": true,
+    "AllExceptionPathsPreserved": true
+  },
+  "RuntimeGatePassed": true,
+  "RootReportedUncachedGatePassed": true,
+  "ActualExecutionExitCode": 0,
+  "InputDrift": [],
+  "Diagnostics": [],
+  "ActualEvents": [
+    [
+      "Report Timing",
+      "started"
+    ],
+    [
+      "Report Timing",
+      "done"
+    ],
+    [
+      "Runtime gate",
+      "passed"
+    ],
+    [
+      "Generate Bitstream",
+      "started"
+    ],
+    [
+      "Generate Bitstream",
+      "done"
+    ],
+    [
+      "Bitstream",
+      "complete"
+    ]
+  ],
+  "GenerationEvidence": {
+    "ActualGenerationCommand": "gen_bit_stream -force_to_run -input_db_file P:/distortion/work/hdmi-camera-fisheye-fill8r3s3-20261103-a/bit-v2-a/audited-final.adf -scbv {High Voltage} -unused_io_status UNUSED",
+    "ActualCommandAfterGateBeforeNativeStart": true,
+    "BGRInputAndOutputRolesVerified": true,
+    "BGRHighVoltageVerified": true,
+    "NativeBGROmittedDefaultUnused": true,
+    "UnusedIOExplicitInTclAndStdout": true,
+    "RuntimeGateWithinExecutionWindow": true,
+    "BitArtifactNotOlderThanGate": true
+  },
+  "VerificationEvidence": [
+    {
+      "Name": "bitstream-plan.json",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\bitstream-plan.json",
+      "SHA256": "d26386c673ee8244daebfd90cbb284bc6fc9aa190ada27b090d01c2330b160c9",
+      "Bytes": 207631,
+      "MTimeNS": 1793695069427649600,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "audited-final.adf",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\audited-final.adf",
+      "SHA256": "8510ff44a6c5cba81b675ad3bdf249ba93e1be4f2c372f5ff76b855ba761e2a2",
+      "Bytes": 14913098,
+      "MTimeNS": 1793695069424133800,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "tool-fisheye.py",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\tool-fisheye.py",
+      "SHA256": "8dd3b2e407a26d16eef5f6b20493aaf3791b0a576ee05bbfcb467b19122641b2",
+      "Bytes": 34527,
+      "MTimeNS": 1793695069425135300,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "execution-result.json",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\execution-result.json",
+      "SHA256": "9531b1ab010e284761e760415c2146e6c96dbde5a2f97b5746053fd9f2b3b9b5",
+      "Bytes": 2393,
+      "MTimeNS": 1793697308155277200,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "pre-bit-audit.json",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\pre-bit-audit.json",
+      "SHA256": "a36f5a2d61b71b5459c4d579681d127513b6d104acbe1e01cf70490bf16fdbc4",
+      "Bytes": 976,
+      "MTimeNS": 1793697264575755300,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "bitstream.tcl",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\bitstream.tcl",
+      "SHA256": "408487078c3068b33e314dc1f066d950a982ad3f1d267ac151158003a90f9c2d",
+      "Bytes": 5799,
+      "MTimeNS": 1793695069425641600,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "flow.log",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\flow.log",
+      "SHA256": "44c57a5e4654b340933c45d8fd9f6721e581d98b76d45710865d174f7884b958",
+      "Bytes": 19062,
+      "MTimeNS": 1793697298529810100,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "generate_bitstream/hdmi_camera_fisheye_top.bgr",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\generate_bitstream\\hdmi_camera_fisheye_top.bgr",
+      "SHA256": "cbf48bcf6027ab503b3a461a43d652dff8f93fac5649c8f2bd46d65f24dc6f90",
+      "Bytes": 2054,
+      "MTimeNS": 1793697297607480800,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "generate_bitstream/hdmi_camera_fisheye_top.sbit",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\generate_bitstream\\hdmi_camera_fisheye_top.sbit",
+      "SHA256": "ae6be718eaa60fdcd1ba252c08133e7e24d22d247d2a649d21f0d1f7be4a4d16",
+      "Bytes": 3791112,
+      "MTimeNS": 1793697297178496100,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "generate_bitstream/run.log",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\generate_bitstream\\run.log",
+      "SHA256": "258acf0f55167bfa9d7fe7d7553e2d34745a22f94c9ce5b31023b98cc9cec50d",
+      "Bytes": 1171,
+      "MTimeNS": 1793697297607480800,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "impl.tcl",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\impl.tcl",
+      "SHA256": "716005e9554b937494244789ba85d0fe453d91953d29219231ec70f1810522b9",
+      "Bytes": 5310,
+      "MTimeNS": 1793697298528809700,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "report_timing/hdmi_camera_fisheye_top.rtr",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\report_timing\\hdmi_camera_fisheye_top.rtr",
+      "SHA256": "afb6044d8afa79724b1da25990e1bb5e0c29050940e5ae8e2d135f07208e3657",
+      "Bytes": 839672145,
+      "MTimeNS": 1793695436101517300,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "report_timing/hdmi_camera_fisheye_top_exception.rtr",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\report_timing\\hdmi_camera_fisheye_top_exception.rtr",
+      "SHA256": "06a6b3a87bfceea6f1219cb8af63813934594899b461af5f4fdef4221dce6a7b",
+      "Bytes": 317700133,
+      "MTimeNS": 1793695405721006800,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "report_timing/run.log",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\report_timing\\run.log",
+      "SHA256": "b0b8efd3f6c84369b1d0e978f33225acef8cb0937b381be634637f8f2ac505ef",
+      "Bytes": 17159,
+      "MTimeNS": 1793695436101517300,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "run.log",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\run.log",
+      "SHA256": "600091dfe5c6cdec851b1b609d96ce83ca8678e0071bb50215e4ea2640808c55",
+      "Bytes": 31626,
+      "MTimeNS": 1793697298537812900,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "sources_info.log",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\sources_info.log",
+      "SHA256": "5bdd7c8136234a8debc79c094f806c04360495976dbac0bd2c4270986d9b21e4",
+      "Bytes": 6178,
+      "MTimeNS": 1793697268202920400,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "stderr.log",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\stderr.log",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "Bytes": 0,
+      "MTimeNS": 1793695079417947800,
+      "UnchangedDuringRead": true
+    },
+    {
+      "Name": "stdout.log",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\stdout.log",
+      "SHA256": "a208ee76437957f7e00f235c32b88e477f71ad64d8f5920665de3081070762b2",
+      "Bytes": 31725,
+      "MTimeNS": 1793697298537812900,
+      "UnchangedDuringRead": true
+    }
+  ],
+  "VerificationEvidenceCount": 18,
+  "AllListedEvidenceDigestsChecked": true,
+  "GateAndExecutionEvidenceDigestsMatchVerification": true,
+  "RootReportedVerifiedLocal": "2026-11-03 17:20 Asia/Shanghai",
+  "VerificationReexecutedByPackager": false,
+  "GateReexecutedByPackager": false,
+  "PrivateCacheAccessedByPackager": false,
+  "HardwareAccessedByBitVerification": false,
+  "HardwareAccessedByPackager": false,
+  "CurrentHardwareImageVerifiedByPackager": false,
+  "NewSRAMProgrammingReceiptIncluded": false,
+  "NewCandidateFPSEvidenceIncluded": false,
+  "Limits": "Archives completed bit verification, native execution and runtime-gate receipts. The bit is referenced by exact SHA/size; no provider is executed. No new SRAM completion, board image, pixels or FPS acceptance is claimed."
+}

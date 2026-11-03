@@ -1,0 +1,96 @@
+{
+  "Schema": "hdmi-camera-fisheye-r2-profile-v1",
+  "Passed": true,
+  "Calibration": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\new-lens-fisheye-1080-c.json",
+    "SHA256": "ed59f83e3cfbc77b0c876293129955fea96aec21784e520592111506671b81af"
+  },
+  "SourceFit": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\new-lens-calibration-c.json",
+    "sha256": "3c90e297603ab612ee5450594db093fd3f0ad01550d05314bd29484f2909ebc8"
+  },
+  "SourceKNative": [
+    [
+      808.2272613458829,
+      0.0,
+      943.7446431879945
+    ],
+    [
+      0.0,
+      810.0804859591761,
+      556.5635877240222
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "OutputKNative": [
+    [
+      498.5237444253359,
+      0.0,
+      895.4756299331018
+    ],
+    [
+      0.0,
+      499.66683439231093,
+      561.1161479755821
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "DNormalized": [
+    -0.023025039402366058,
+    0.0010939325830845673,
+    -0.004404026888512618,
+    0.0010249559182549826
+  ],
+  "Projection": "C preview balance=.5 rectilinear, R=identity, exact native centre2*c+.5",
+  "Format": {
+    "NormalizedFractionBits": 22,
+    "RadialScaleFractionBits": 30,
+    "PixelFractionBits": 8,
+    "R2Domain": [
+      0,
+      8
+    ],
+    "Nodes": 1025,
+    "Segments": 1024,
+    "SegmentFractionBits": 15,
+    "ROMWord": "{signedDeltaQ30[31:0],baseQ30[31:0]}",
+    "SynchronousWordBits": 64,
+    "Expected18KHalves": 4,
+    "MemoryResourceClaim": "four18K halves by1024x64 capacity; actual mapped usage requires native build"
+  },
+  "IdentityCoordinatesExact": true,
+  "FullGridError": {
+    "NativeCoordinatesChecked": 2073600,
+    "ArithmeticMaskedCoordinates": 0,
+    "AnalyticVsOpenCVMaxNativePixels": 8.621052064163524e-05,
+    "FixedVsAnalyticMaxNativePixels": 0.006364475591620026,
+    "FixedVsAnalyticRMSNativePixels": 0.003011706741559285,
+    "FixedVsOpenCVMaxNativePixels": 0.006365096452417941,
+    "FixedVsOpenCVP99NativePixels": 0.005450891925705239,
+    "MaximumAllowedNativePixels": 0.125,
+    "Passed": true,
+    "MaximumNormalizedR2": 5.476348388058763,
+    "WithinSourceImageFraction": 0.8980198688271605
+  },
+  "GeneratedFiles": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\hdmi-camera-fisheye-profile.vh": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\hdmi-camera-fisheye-radial-table.vh": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f"
+  },
+  "Generator": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\generate_hdmi_fisheye_profile.py",
+    "SHA256": "d33494a0723be9b3b11811ec4803bacb44d88f61f142d9e3f131c3d630cde531"
+  },
+  "OpenCVVersion": "4.11.0",
+  "NumPyVersion": "2.2.5",
+  "HardwareProgrammed": false,
+  "RTLExecuted": false,
+  "ExternalACAccepted": false
+}

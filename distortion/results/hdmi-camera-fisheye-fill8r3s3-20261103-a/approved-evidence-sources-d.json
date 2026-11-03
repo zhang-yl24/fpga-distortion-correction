@@ -1,0 +1,1081 @@
+{
+  "Schema": "hdmi-camera-fisheye-fill8r3s3-approved-evidence-sources-v1",
+  "ApprovedCompletedEvidenceOnly": true,
+  "SnapshotUTC": "2026-11-03T09:22:47.048865+00:00",
+  "ProviderRevision": "s3v2-bounded-b",
+  "MaximumSingleCopyBytes": 2097152,
+  "LargeFilesReferencedOnly": true,
+  "SourceFilesOrFrozen77MayBeModified": false,
+  "Entries": [
+    {
+      "ID": "s3-build-plan",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\build-a\\plan.json",
+        "SHA256": "d7a034f83d728c377c5b36137965dfb3237eaa2dc71992fdb7a30071ac42edbf",
+        "Bytes": 210504
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Schema"
+          ],
+          "Equals": "hdmi-camera-fisheye-fill8r3s3-build-v1"
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/build/plan.json"
+    },
+    {
+      "ID": "s3-build-execution",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\build-a\\execution-result.json",
+        "SHA256": "11d0416b90d57401aa6ad07584beddc73e13e1f3575218b749ff9ca7a83dbcaf",
+        "Bytes": 10014
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "BuildCompleted"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "InputDrift"
+          ],
+          "Equals": []
+        },
+        {
+          "Keys": [
+            "NativeErrors"
+          ],
+          "Equals": []
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/build/execution-result.json"
+    },
+    {
+      "ID": "ordinary-core-ten-tables",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\raw-core-timing-a.json",
+        "SHA256": "fd8d87c77f88f3251cd1e181186e3c618774af8c19da9a22016bf162e7882734",
+        "Bytes": 2240
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/build/raw-core-timing.json"
+    },
+    {
+      "ID": "raw-native-export",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\export-a\\result.json",
+        "SHA256": "9f8d94339e3a181cb8be74598005a25d068740a615eb5005f5e3611984fd1ea8",
+        "Bytes": 90305
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "ExecutionPassed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "InputDrift"
+          ],
+          "Equals": []
+        },
+        {
+          "Keys": [
+            "SourceADFUnchanged"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "IndependentADFCopyUnchanged"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/native/export-result.json"
+    },
+    {
+      "ID": "raw-native-route",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\route-a\\result.json",
+        "SHA256": "6dedecfe461bdd63bc4e27ddf15faa38e2ca9c864abf111d748e29b893ad4af5",
+        "Bytes": 89667
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "ExecutionPassed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "InputDrift"
+          ],
+          "Equals": []
+        },
+        {
+          "Keys": [
+            "SourceADFUnchanged"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "IndependentADFCopyUnchanged"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/native/route-result.json"
+    },
+    {
+      "ID": "raw-native-handoff",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\raw-native-completed-a.json",
+        "SHA256": "57b417b37140ab29c3a52272cc7d0f0cc6042615a94556e316820ea1e3ee03c3",
+        "Bytes": 1636
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "PriorWorkerEnded"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "PDriveReleased"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/native/completed-handoff.json"
+    },
+    {
+      "ID": "actual-seed3-source-equality",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\actual-seed3-source-equality-a.json",
+        "SHA256": "c30a3803db549aac9ab4e7eb04c2f05a706b5c2a34af7f204ea1a961ccc2d0e3",
+        "Bytes": 2601
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/source/actual-seed3-source-equality.json"
+    },
+    {
+      "ID": "full-build-source-api-review",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\api-source-review-a.json",
+        "SHA256": "7ef4b811eea3ce8c9e6862bd5624308d137d4a08cff738ac5406af46b5991a03",
+        "Bytes": 30661
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "CompiledSourceAndHeaderCount"
+          ],
+          "Equals": 110
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/source/full-build-source-api-review.json"
+    },
+    {
+      "ID": "frozen-v2-77-source-manifest",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\provider-revision-v2-source-manifest-a.json",
+        "SHA256": "5d6a03f264d445c36bb62ef51be20d015108b6b99d5180ea52b19480e0ba65fe",
+        "Bytes": 30435
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "InputDrift"
+          ],
+          "Equals": []
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/source/frozen-v2-77-source-manifest.json"
+    },
+    {
+      "ID": "selected-v2-release-source-bindings",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\release-input-manifest-v2-a.json",
+        "SHA256": "ccbe9086631b8e42405a4dfbfb878ac53b6a80c7220f10ff1a368198ba5825d3",
+        "Bytes": 126716
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "AllThreeActualSelectedV2BindSimulationCallsPassed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "InputDrift"
+          ],
+          "Equals": []
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/source/selected-v2-release-source-bindings.json"
+    },
+    {
+      "ID": "v2-authority-closure-review",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\provider-revision-v2-independent-closure-review-a.json",
+        "SHA256": "d236e17dc3c819aad9126084bce7037a049ad95762bc407b08300cf640e9cc74",
+        "Bytes": 7055
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/source/v2-authority-closure-review.json"
+    },
+    {
+      "ID": "source-mappersimulation",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-20261103-a\\mapper-native-a\\simulation.json",
+        "SHA256": "ab0a28b8e11ec0b32259cab4e2b4567cbe89d6bd91f1a80a134c17d2d429d5d7",
+        "Bytes": 31929
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/simulation/MapperSimulation.json"
+    },
+    {
+      "ID": "source-systemsimulation",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3-20261103-a\\system-native-a\\simulation.json",
+        "SHA256": "b9c39033f32fd51e7707414b3b95a5875c8a6a3d3cee6c953fda149349364458",
+        "Bytes": 83578
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/simulation/SystemSimulation.json"
+    },
+    {
+      "ID": "source-iosimulation",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-20261103-a\\io-sim-c\\simulation.json",
+        "SHA256": "ee3d05639cb4cc71578fc4febbdf856cbe07b7d598c9009ea7d7da1eacc1b1c8",
+        "Bytes": 7760
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/simulation/IOSimulation.json"
+    },
+    {
+      "ID": "source-profile",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-20261103-a\\profile-a\\profile.json",
+        "SHA256": "f176c34bec93646e82ddd0ad8755e1a828221aecf687e545ef9452331ddd9d8c",
+        "Bytes": 3227
+      },
+      "JSONChecks": [],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/simulation/Profile.json"
+    },
+    {
+      "ID": "system-native-equivalence",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3-20261103-a\\system-native-comparison-a.json",
+        "SHA256": "f9e00ff8fe4be6e38c83a65a2c2d7dba619e04b22e43abf27f460991d0d88e11",
+        "Bytes": 3168
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "CacheStatisticsRefactorFullFrameCycleAndPixelEquivalent"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/simulation/system-native-comparison.json"
+    },
+    {
+      "ID": "startup-exact-34-native-fields",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\vendor-native-cell-v2-proposal-b\\actual-34-field-review-a.json",
+        "SHA256": "efc7030919761cae1767669a7eafecc8dea710a13b99a6a8641bcffe5ab2ed6d",
+        "Bytes": 37211
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "CompleteActualFFInventory"
+          ],
+          "Equals": 34
+        },
+        {
+          "Keys": [
+            "PhysicalRSPinCount"
+          ],
+          "Equals": 7
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/startup/actual-34-native-fields.json"
+    },
+    {
+      "ID": "startup-full-bounded-b-review",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\vendor-native-cell-v2-proposal-b\\full-bounded-review-a.json",
+        "SHA256": "7c36304214d644400bd59049b9915f45c41b7708b16fa57ed18043bd7e94ef0f",
+        "Bytes": 376058
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "MaximumRequiredNS"
+          ],
+          "Equals": 2.487
+        },
+        {
+          "Keys": [
+            "MinimumStartupWindowNS"
+          ],
+          "Equals": 24.0
+        },
+        {
+          "Keys": [
+            "Missing"
+          ],
+          "Equals": []
+        },
+        {
+          "Keys": [
+            "Violations"
+          ],
+          "Equals": []
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/startup/full-bounded-b-review.json"
+    },
+    {
+      "ID": "startup-own-28-tests",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\vendor-own-tests-d-bounded-b\\result.json",
+        "SHA256": "a65e705e0aa1e9bc9d2751e50fe3c9cf048c8fb7976ad20edfbb2ef85708c4b1",
+        "Bytes": 81127
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "Tests"
+          ],
+          "Equals": 28
+        },
+        {
+          "Keys": [
+            "InputDrift"
+          ],
+          "Equals": []
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/startup/own-28-tests.json"
+    },
+    {
+      "ID": "startup-parser-independent-peer",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\vendor-native-cell-peer-review-b.json",
+        "SHA256": "cb85193ada2393ebd5ccf87d3634a705053b9c6da93d0d5355cb340029e49a3b",
+        "Bytes": 17569
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/startup/independent-peer-review.json"
+    },
+    {
+      "ID": "startup-parser-12-tests-junit",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\vendor-native-cell-v2-proposal-b\\parser-tests.xml",
+        "SHA256": "1b5f81a3cbf34428b12d259b21c4b275cd01bb4fc14f9f0699166edac7c4dc5b",
+        "Bytes": 3027
+      },
+      "JSONChecks": [],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/startup/parser-12-tests.xml"
+    },
+    {
+      "ID": "v2-remapped-tests-junit",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\root-adapter-tests-v2-a\\results.xml",
+        "SHA256": "a065950e275552b5b4b558ef31d71437552346113137105d1518093c66fe55ff",
+        "Bytes": 83200
+      },
+      "JSONChecks": [],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/tests/v2-adapter-tests.xml"
+    },
+    {
+      "ID": "v2-driver-tests-junit",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\root-adapter-tests-v2-a\\driver-results.xml",
+        "SHA256": "f05cd62db2daf28ff498e201b3ff528644aaab42a586dfb2c4f81e6cdd85a09c",
+        "Bytes": 1618
+      },
+      "JSONChecks": [],
+      "Reason": "Completed approved immutable evidence",
+      "Destination": "evidence/tests/v2-driver-tests.xml"
+    },
+    {
+      "ID": "source-warning-review",
+      "Mode": "reference",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\source-warnings-a.json",
+        "SHA256": "dac88a4f66d03f756033804d49681674d3d876d0d74dbc44c5157caad46f8bba",
+        "Bytes": 10794028
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "SourceDiagnosticReviewPassed"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed source-warning review; large file referenced by exact SHA, not duplicated"
+    },
+    {
+      "ID": "physical-v2-application-execution",
+      "Mode": "reference",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\physical-v2-a\\result.json",
+        "SHA256": "d5e196dc65b6b839ce2be20dd100c52b430ce8b83fe06fd2608a24cc3947e460",
+        "Bytes": 108441853
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "ExecutionPassed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "InputDrift"
+          ],
+          "Equals": []
+        },
+        {
+          "Keys": [
+            "RoutesAndPlacementUnchanged"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "HardwareAccessed"
+          ],
+          "Equals": false
+        }
+      ],
+      "Reason": "Completed and root-bound physical-v2 execution; source ADF8510ff44; large immutable receipt referenced by exact SHA"
+    },
+    {
+      "ID": "physical-v2-scoped-native-export",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\export-scoped-v2-a\\result.json",
+        "SHA256": "f3e3416a9f0eb9ef97f091facd4ff47392c6a5d81f217876abfa183bc0f096bf",
+        "Bytes": 193853
+      },
+      "Destination": "evidence/physical/export-scoped-v2-result.json",
+      "JSONChecks": [
+        {
+          "Keys": [
+            "ExecutionPassed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "InputDrift"
+          ],
+          "Equals": []
+        },
+        {
+          "Keys": [
+            "SourceADFSHA256"
+          ],
+          "Equals": "8510ff44a6c5cba81b675ad3bdf249ba93e1be4f2c372f5ff76b855ba761e2a2"
+        }
+      ],
+      "Reason": "Completed immutable receipt approved by root progress update"
+    },
+    {
+      "ID": "physical-v2-ten-sta-table-summary",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\scoped-sta-summary-b.json",
+        "SHA256": "e333a58cdea9ba295b18d2514f53911724e1687fdcd1a976088685d6b43c27df",
+        "Bytes": 32978
+      },
+      "Destination": "evidence/physical/scoped-ten-sta-table-summary.json",
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "STAAllTenPassed"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed immutable receipt approved by root progress update"
+    },
+    {
+      "ID": "baseline-C-corrected-fps",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-20261103-a\\fps-corrected-c\\receipt.json",
+        "SHA256": "d23c2849cf9ca7e2bf4af8f39f1e3faa8482bf4589841749b3154781e217509c",
+        "Bytes": 25202
+      },
+      "Destination": "evidence/baseline-C/corrected-fps-receipt.json",
+      "JSONChecks": [
+        {
+          "Keys": [
+            "passed"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed immutable receipt approved by root progress update"
+    },
+    {
+      "ID": "baseline-C-raw-fps",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-20261103-a\\fps-raw-c\\receipt.json",
+        "SHA256": "532d25eb4dd6df52015cd809075145ee818ea02edca12e8cf74e7637f86edfa3",
+        "Bytes": 25425
+      },
+      "Destination": "evidence/baseline-C/raw-fps-receipt.json",
+      "JSONChecks": [
+        {
+          "Keys": [
+            "passed"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed immutable receipt approved by root progress update"
+    },
+    {
+      "ID": "baseline-C-corrected-return-fps",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-20261103-a\\fps-corrected-return-c\\receipt.json",
+        "SHA256": "02ed129bb7a91be618fd5c508036dd496f578542d5358b34f334380f00053b0c",
+        "Bytes": 12786
+      },
+      "Destination": "evidence/baseline-C/corrected-return-fps-receipt.json",
+      "JSONChecks": [
+        {
+          "Keys": [
+            "passed"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed immutable receipt approved by root progress update"
+    },
+    {
+      "ID": "physical-v2-root-completed-handoff",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\physical-v2-completed-root-handoff-a.json",
+        "SHA256": "03ad1cddddd2affa555491b5c659dddcba47dad685e5537d76c430d902c476b9",
+        "Bytes": 1086
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "ActualExitCode"
+          ],
+          "Equals": 0
+        },
+        {
+          "Keys": [
+            "FullProofInputHashesRechecked"
+          ],
+          "Equals": 778
+        }
+      ],
+      "Reason": "Completed immutable facts supplied by root",
+      "Destination": "evidence/physical/root-completed-handoff.json"
+    },
+    {
+      "ID": "physical-v2-final-proof",
+      "Mode": "reference",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\final-proof-v2-a.json",
+        "SHA256": "e2abc4bd5dc9de4f4be940a310974130ae0edec90023f802e8b827e0fd65f9bd",
+        "Bytes": 65478401
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Schema"
+          ],
+          "Equals": "hdmi-camera-fisheye-fill8r3s3v2-final-physical-proof-v1"
+        },
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "STAAllTenPassed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "RoutesUnchanged"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "AllFFPlacementsEquivalent"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "NetlistEquivalent"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Completed root-verified final proof; original65MB retained by SHA reference without duplication"
+    },
+    {
+      "ID": "physical-v2-final-proof-archive-index",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\final-physical-proof-index-c.json",
+        "SHA256": "4d5e6023fbf842000c2266bab4ee8dc4070a8ffcd5a612cbb3f3a9897e11e8f2",
+        "Bytes": 3699
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "RootFullProofInputHashesRechecked"
+          ],
+          "Equals": 778
+        }
+      ],
+      "Reason": "Completed immutable facts supplied by root",
+      "Destination": "evidence/physical/final-physical-proof-index.json"
+    },
+    {
+      "ID": "physical-v2-authorized-release-handoff-before-bit",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\physical-to-release-v2-go-a.json",
+        "SHA256": "bb181aed34fb5dcb4f1c66705142e16ddfe7e9d12726d2b3670069279c0ac5c1",
+        "Bytes": 1925
+      },
+      "JSONChecks": [
+        {
+          "Keys": [
+            "PriorWorkerEnded"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "PDriveReleased"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "UserAuthorizedVolatileSRAM"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "UserNotifiedBeforeExecution"
+          ],
+          "Equals": true
+        }
+      ],
+      "Reason": "Root handoff authorizes later volatile SRAM only after actual bit checks; it is not a programming receipt",
+      "Destination": "evidence/release/authorized-handoff-before-bit.json"
+    },
+    {
+      "ID": "bit-v2-verified",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\verification.json",
+        "SHA256": "34a4014a754cae1a58f1f51b49c155446fc5958ba17c8b540c563f565f246b81",
+        "Bytes": 3775
+      },
+      "Reason": "Completed immutable bit evidence supplied by root",
+      "Destination": "evidence/bit/verification.json",
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Schema"
+          ],
+          "Equals": "hdmi-camera-fisheye-fill8r3s3v2-bitstream-verification-v1"
+        },
+        {
+          "Keys": [
+            "Verified"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "FinalADFSHA256"
+          ],
+          "Equals": "8510ff44a6c5cba81b675ad3bdf249ba93e1be4f2c372f5ff76b855ba761e2a2"
+        },
+        {
+          "Keys": [
+            "Bitstream",
+            "SHA256"
+          ],
+          "Equals": "ae6be718eaa60fdcd1ba252c08133e7e24d22d247d2a649d21f0d1f7be4a4d16"
+        },
+        {
+          "Keys": [
+            "Bitstream",
+            "Bytes"
+          ],
+          "Equals": 3791112
+        },
+        {
+          "Keys": [
+            "FreshSTA",
+            "STAAllTenPassed"
+          ],
+          "Equals": true
+        }
+      ]
+    },
+    {
+      "ID": "bit-v2-runtime-gate",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\pre-bit-audit.json",
+        "SHA256": "a36f5a2d61b71b5459c4d579681d127513b6d104acbe1e01cf70490bf16fdbc4",
+        "Bytes": 976
+      },
+      "Reason": "Completed immutable bit evidence supplied by root",
+      "Destination": "evidence/bit/pre-bit-audit.json",
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Schema"
+          ],
+          "Equals": "hdmi-camera-fisheye-fill8r3s3v2-pre-bit-gate-v1"
+        },
+        {
+          "Keys": [
+            "GatePassed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "FinalADFSHA256"
+          ],
+          "Equals": "8510ff44a6c5cba81b675ad3bdf249ba93e1be4f2c372f5ff76b855ba761e2a2"
+        },
+        {
+          "Keys": [
+            "Checks",
+            "STAAllTenPassed"
+          ],
+          "Equals": true
+        }
+      ]
+    },
+    {
+      "ID": "bit-v2-execution",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\execution-result.json",
+        "SHA256": "9531b1ab010e284761e760415c2146e6c96dbde5a2f97b5746053fd9f2b3b9b5",
+        "Bytes": 2393
+      },
+      "Reason": "Completed immutable bit evidence supplied by root",
+      "Destination": "evidence/bit/execution-result.json",
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Schema"
+          ],
+          "Equals": "hdmi-camera-fisheye-fill8r3s3v2-bitstream-execution-v1"
+        },
+        {
+          "Keys": [
+            "ExitCode"
+          ],
+          "Equals": 0
+        },
+        {
+          "Keys": [
+            "TimedOut"
+          ],
+          "Equals": false
+        },
+        {
+          "Keys": [
+            "StoppedForUnexpectedStage"
+          ],
+          "Equals": false
+        },
+        {
+          "Keys": [
+            "InputDrift"
+          ],
+          "Equals": []
+        },
+        {
+          "Keys": [
+            "Diagnostics"
+          ],
+          "Equals": []
+        },
+        {
+          "Keys": [
+            "FinalADFSHA256"
+          ],
+          "Equals": "8510ff44a6c5cba81b675ad3bdf249ba93e1be4f2c372f5ff76b855ba761e2a2"
+        }
+      ]
+    },
+    {
+      "ID": "bit-v2-plan",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\bitstream-plan.json",
+        "SHA256": "d26386c673ee8244daebfd90cbb284bc6fc9aa190ada27b090d01c2330b160c9",
+        "Bytes": 207631
+      },
+      "Reason": "Completed immutable bit evidence supplied by root",
+      "Destination": "evidence/bit/bitstream-plan.json",
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Schema"
+          ],
+          "Equals": "hdmi-camera-fisheye-fill8r3s3v2-bitstream-plan-v1"
+        },
+        {
+          "Keys": [
+            "FinalADFSHA256"
+          ],
+          "Equals": "8510ff44a6c5cba81b675ad3bdf249ba93e1be4f2c372f5ff76b855ba761e2a2"
+        }
+      ]
+    },
+    {
+      "ID": "bit-v2-sbit",
+      "Mode": "reference",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-v2-a\\generate_bitstream\\hdmi_camera_fisheye_top.sbit",
+        "SHA256": "ae6be718eaa60fdcd1ba252c08133e7e24d22d247d2a649d21f0d1f7be4a4d16",
+        "Bytes": 3791112
+      },
+      "Reason": "Completed verified bit; 3,791,112 bytes is above current2MiB copy limit, exact SHA reference only"
+    },
+    {
+      "ID": "bit-v2-verification-archive-index",
+      "Mode": "copy",
+      "Source": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\results\\hdmi-camera-fisheye-fill8r3s3-20261103-a\\bit-verification-index-d.json",
+        "SHA256": "a5d9e924c7cc8ff4efb870364f3287196c3c40a62022ceacabce38b37ac5db55",
+        "Bytes": 11620
+      },
+      "Reason": "Completed immutable bit evidence supplied by root",
+      "Destination": "evidence/bit/bit-verification-index.json",
+      "JSONChecks": [
+        {
+          "Keys": [
+            "Passed"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "AllListedEvidenceDigestsChecked"
+          ],
+          "Equals": true
+        },
+        {
+          "Keys": [
+            "RuntimeGatePassed"
+          ],
+          "Equals": true
+        }
+      ]
+    }
+  ],
+  "PendingFutureRootProvidedEvidence": [
+    "new volatile SRAM programming receipt",
+    "new corrected/raw FPS measurements and view-toggle evidence"
+  ]
+}

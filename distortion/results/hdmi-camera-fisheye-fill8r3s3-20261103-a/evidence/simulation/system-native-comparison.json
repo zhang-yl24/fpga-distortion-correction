@@ -1,0 +1,66 @@
+{
+  "Schema": "hdmi-camera-fisheye-fill8r3-source-system-comparison-v1",
+  "Passed": true,
+  "CheckedUTC": "2026-11-03T05:00:04.945478+00:00",
+  "BaselineReport": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-20261103-a\\system-native-c\\simulation.json",
+    "SHA256": "f7ca49c615f6de8cf5ab4ebae48b0cbed65ded9488b67c691a21a75c5eb18bba"
+  },
+  "CandidateReport": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r3-20261103-a\\system-native-a\\simulation.json",
+    "SHA256": "b9c39033f32fd51e7707414b3b95a5875c8a6a3d3cee6c953fda149349364458"
+  },
+  "PreviousReport": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-fill8r2-20261103-a\\system-native-a\\simulation.json",
+    "SHA256": "3cce2316b9b8a75c0f9831b9ce135929ae0b634d6f0975fa31eeda5b054b85ba"
+  },
+  "BaselineWatchedInputs": 250,
+  "CandidateWatchedInputs": 259,
+  "PreviousWatchedInputs": 256,
+  "CacheStatisticsRefactorFullFrameCycleAndPixelEquivalent": true,
+  "AllowedCompilationDifferences": {
+    "tests/tb_hdmi_camera_fisheye_fill8r2_system.sv": "tests/tb_hdmi_camera_fisheye_fill8r3_system.sv",
+    "rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe.v": "rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_fill8r3.v"
+  },
+  "CommonCompiledSourcesUnchanged": true,
+  "IdenticalIndependentPixelFixtures": true,
+  "CandidateCache": "rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_fill8r3.v",
+  "CandidateCacheSource": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_neighbour_cache_scatter16_rowpipe_fill8r3.v",
+    "SHA256": "ccddbc0293698184a3695744d7fca88350969ccc5f69cb1762b39eac84a0d294"
+  },
+  "CandidateArbiter": "rtl/experimental/ddr_read_arbiter_fill8r2.v",
+  "Frames": [
+    {
+      "FrameID": 1,
+      "Corrected": true,
+      "Pixels": 2073600,
+      "SourceCRC32": "05df8f9a",
+      "ScanCRC32": "ef786fd8",
+      "Fills": 275060,
+      "BaselineScatterCycles": 8801920,
+      "CandidateScatterCycles": 2200480,
+      "BaselineProcessingCycles": 19334240,
+      "CandidateProcessingCycles": 12674663,
+      "ProcessingCyclesSaved": 6659577,
+      "ModeledProcessingSpeedup": 1.5254243840644914
+    },
+    {
+      "FrameID": 2,
+      "Corrected": false,
+      "Pixels": 2073600,
+      "SourceCRC32": "aeaa8ea4",
+      "ScanCRC32": "aeaa8ea4",
+      "Fills": 16200,
+      "BaselineScatterCycles": 518400,
+      "CandidateScatterCycles": 129600,
+      "BaselineProcessingCycles": 3266396,
+      "CandidateProcessingCycles": 2878738,
+      "ProcessingCyclesSaved": 387658,
+      "ModeledProcessingSpeedup": 1.1346624805730845
+    }
+  ],
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "Limits": "Synthetic two-frame source RTL with behavioral DDR only. Cycle reductions are not measured board FPS or optical latency; physical mapping, route and STA need separate candidate evidence."
+}

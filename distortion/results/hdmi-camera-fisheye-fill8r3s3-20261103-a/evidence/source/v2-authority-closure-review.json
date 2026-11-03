@@ -1,0 +1,193 @@
+{
+  "Schema": "hdmi-camera-fisheye-fill8r3s3v2-independent-authority-closure-review-v1",
+  "Passed": true,
+  "Roles": [
+    {
+      "Role": "physical",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\hdmi_camera_fisheye_fill8r3s3v2_physical.py",
+      "SHA256": "325d31cd8101828697f9c93a110cecb7ca667f939542ba61dd9d51585ed6e326",
+      "StaticImports": [
+        "argparse",
+        "ast",
+        "collections",
+        "copy",
+        "hashlib",
+        "importlib",
+        "json",
+        "math",
+        "os",
+        "pathlib",
+        "re",
+        "shutil",
+        "subprocess",
+        "sys",
+        "time",
+        "hdmi_camera_fisheye_fill8r3s3_build",
+        "hdmi_camera_fisheye_fill8r3s3v2_scoped_native",
+        "audit_ddr_final_timing"
+      ],
+      "LiteralDynamicImports": [
+        "hdmi_camera_fisheye_fill8r3s3_macro_we_aliases",
+        "hdmi_camera_fisheye_fill8r3s3_vendor_startup_bounded_b",
+        "hdmi_camera_fisheye_fill8r3s3_audit",
+        "hdmi_camera_fisheye_fill8r3s3_warnings",
+        "camera720_stats_delay_reset_apply",
+        "camera720_stats_delay_reset_apply",
+        "prepare_camera_vga_reset_scope"
+      ]
+    },
+    {
+      "Role": "scoped_native",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\hdmi_camera_fisheye_fill8r3s3v2_scoped_native.py",
+      "SHA256": "7a2b165d86d07254a8aefc048bdd43080e9d016be4ba0f3363f8dae34dc2a7cd",
+      "StaticImports": [
+        "argparse",
+        "pathlib",
+        "json",
+        "os",
+        "re",
+        "shutil",
+        "subprocess",
+        "time",
+        "hdmi_camera_fisheye_fill8r3s3_build",
+        "hdmi_camera_fisheye_fill8r3s3_native",
+        "importlib"
+      ],
+      "LiteralDynamicImports": [
+        "hdmi_camera_fisheye_fill8r3s3v2_physical"
+      ]
+    },
+    {
+      "Role": "target_query",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\hdmi_camera_fisheye_fill8r3s3v2_target_query.py",
+      "SHA256": "f1d1825d99bf51276162591fa251d986b46234231734f1c4d3ca41b8f52b3e9e",
+      "StaticImports": [
+        "argparse",
+        "pathlib",
+        "json",
+        "os",
+        "re",
+        "shutil",
+        "subprocess",
+        "time",
+        "hdmi_camera_fisheye_fill8r3s3_build",
+        "importlib"
+      ],
+      "LiteralDynamicImports": [
+        "hdmi_camera_fisheye_fill8r3s3v2_physical"
+      ]
+    },
+    {
+      "Role": "physical_checks",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\hdmi_camera_fisheye_fill8r3s3v2_physical_checks.py",
+      "SHA256": "5a9ff9d75aaefd86853eed16f65f6ccb8bbc8223ef23464154b5ef91b45e005a",
+      "StaticImports": [
+        "argparse",
+        "collections",
+        "copy",
+        "hashlib",
+        "json",
+        "pathlib",
+        "re",
+        "hdmi_camera_fisheye_fill8r3s3_build",
+        "hdmi_camera_fisheye_fill8r3s3v2_scoped_native",
+        "hdmi_camera_fisheye_fill8r3s3v2_physical",
+        "hdmi_camera_fisheye_fill8r3s3v2_scoped_native",
+        "hdmi_camera_fisheye_fill8r3s3_audit",
+        "camera720_io_evidence",
+        "audit_camera_vga_io",
+        "camera720_cdc_native",
+        "hdmi_camera_fisheye_fill8r3s3v2_final",
+        "hdmi_camera_fisheye_fill8r3s3v2_target_query"
+      ],
+      "LiteralDynamicImports": []
+    },
+    {
+      "Role": "final",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\hdmi_camera_fisheye_fill8r3s3v2_final.py",
+      "SHA256": "ea51d17c3537933cd573a368382fefc90f6e4be0e4f73e5ccf27f666eca50aae",
+      "StaticImports": [
+        "argparse",
+        "collections",
+        "decimal",
+        "hashlib",
+        "json",
+        "pathlib",
+        "re",
+        "tempfile",
+        "hdmi_camera_fisheye_fill8r3s3_build",
+        "hdmi_camera_fisheye_fill8r3s3v2_scoped_native",
+        "hdmi_camera_fisheye_fill8r3s3v2_physical",
+        "hdmi_camera_fisheye_fill8r3s3v2_scoped_native",
+        "hdmi_camera_fisheye_macro_consumers"
+      ],
+      "LiteralDynamicImports": [
+        "camera720_calibrated_cdc",
+        "hdmi_camera_fisheye_fill8r3s3v2_physical_checks",
+        "hdmi_camera_fisheye_fill8r3s3_audit",
+        "camera720_stats_delay_reset_apply",
+        "hdmi_camera_fisheye_fill8r3s3v2_physical_checks",
+        "hdmi_camera_fisheye_fill8r3s3_warnings",
+        "hdmi_camera_fisheye_fill8r3s3_audit"
+      ]
+    },
+    {
+      "Role": "bitstream",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\hdmi_camera_fisheye_fill8r3s3v2_bitstream.py",
+      "SHA256": "8dd3b2e407a26d16eef5f6b20493aaf3791b0a576ee05bbfcb467b19122641b2",
+      "StaticImports": [
+        "argparse",
+        "collections",
+        "copy",
+        "datetime",
+        "hashlib",
+        "importlib",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "shutil",
+        "subprocess",
+        "sys",
+        "time",
+        "hdmi_camera_fisheye_fill8r3s3_build",
+        "hdmi_camera_fisheye_fill8r3s3v2_scoped_native"
+      ],
+      "LiteralDynamicImports": [
+        "hdmi_camera_fisheye_fill8r3s3v2_final"
+      ]
+    },
+    {
+      "Role": "program",
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\hdmi_camera_fisheye_fill8r3s3v2_program.py",
+      "SHA256": "425ad45001ca1281bf840722e3c3884029a95c7aa23ad0b3876594e49fbe2fcc",
+      "StaticImports": [
+        "argparse",
+        "json",
+        "math",
+        "pathlib",
+        "hdmi_camera_fisheye_fill8r3s3v2_bitstream",
+        "program_native_raw"
+      ],
+      "LiteralDynamicImports": []
+    }
+  ],
+  "BoundedStartup": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\hdmi_camera_fisheye_fill8r3s3_vendor_startup_bounded_b.py",
+    "SHA256": "c75f3123b59e8f83efd9cfcab3486e851b1c7daa9b787385eaaadfb30b238f16",
+    "Schema": "hdmi-camera-fisheye-fill8r3s3-vendor-startup-isolation-v2-bounded-b"
+  },
+  "SelectedSevenAuthorityEdgesClosed": true,
+  "OriginalS3BuildRawAuditProtocolStartupTimingSharedIntentionally": true,
+  "OriginalS3PhysicalProofOrApplicationSchemasAccepted": false,
+  "ExactDynamicModulePathGuardsPreserved": true,
+  "AllNormalFullBuildContextPrefixesEqual": true,
+  "BitFreshTimingBeforeGateGenerationFlowStages": [
+    "Report Timing",
+    "Generate Bitstream"
+  ],
+  "EDAExecuted": false,
+  "HardwareAccessed": false,
+  "FilesEditedByReview": false,
+  "Limits": "Static/import/renderer authority closure review only; physical application and full acceptance require new own v2 receipts. Bounded helper actual34/28 and full current timing review are separate artifacts."
+}
