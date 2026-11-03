@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "hardware_accessed": false,
+  "source_sha256": {
+    "D:\\fpga-stable\\readstage\\sources\\ddr_read_return_register.v": "79af0292532a6906f330fe4e8b64b21be0f8caf9f20863e77b95c95f6db8bf7d",
+    "D:\\fpga-stable\\readstage\\sources\\ddr_read_arbiter.v": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+    "D:\\fpga-stable\\readstage\\tests\\tb_readstage_guard.sv": "b54971a5b290a839197d5d81762f398c613bc19191cc9c8311d24e07468130de"
+  },
+  "commands": [
+    {
+      "argv": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+        "--sv",
+        "D:\\fpga-stable\\readstage\\sources\\ddr_read_return_register.v",
+        "D:\\fpga-stable\\readstage\\sources\\ddr_read_arbiter.v",
+        "D:\\fpga-stable\\readstage\\tests\\tb_readstage_guard.sv"
+      ],
+      "returncode": 0,
+      "seconds": 0.8507696999877226,
+      "log_sha256": "114de9b441864be4a3b7deae737f571dc6821fad1310ad7f3c04500ab6987396"
+    },
+    {
+      "argv": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+        "tb_readstage_guard",
+        "-s",
+        "read_test"
+      ],
+      "returncode": 0,
+      "seconds": 3.064045899998746,
+      "log_sha256": "436886c81ba546f7bf641f0e9148dd6dd4970e5a6f2a6a83cd6680b2b4cac556"
+    },
+    {
+      "argv": [
+        "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+        "read_test",
+        "-runall"
+      ],
+      "returncode": 0,
+      "seconds": 8.301849099996616,
+      "log_sha256": "75be29d9c602e59a17128bc51bc6644c1ebcbd7fe3cfae86fb47ddabc43bc097"
+    }
+  ]
+}
