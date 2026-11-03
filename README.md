@@ -1,5 +1,8 @@
 # FPGA 实时图像畸变矫正
 
+**本轮团队增量：** [S-c有限DDR服务诊断](delivery/20261103-hdmi1080-demo-source/diagnostics/ddr-service-probe/20261104-sc/README.md)已有8项核心短测、480字节真实8N1短测及两角12项内部检查零违例，尚未上板；[F双读实验](delivery/20261103-hdmi1080-demo-source/experiments/dual-read-credit/20261104-f/README.md)共享显式opt-in源码与131072像素有限前缀证据，同模型周期143032→131986。完整帧、真实DDR多请求、组合功能及实板60fps仍未验收。O/P和E2保持原身份。
+
+
 **E2内部时序里程碑：** [运行时旋转＋自适应Gamma诊断候选](delivery/20261103-hdmi1080-demo-source/runtime-camera/20261104-e2/README.md)完成独立STA，两角12项内部检查均零违例（slow setup +0.016ns），本地bit已封存但未经上板。55项输入/111项输出缺少外部delay，外部IO、复位、CDC及1080p60性能仍待签核；O/P稳定版保持原身份。
 
 

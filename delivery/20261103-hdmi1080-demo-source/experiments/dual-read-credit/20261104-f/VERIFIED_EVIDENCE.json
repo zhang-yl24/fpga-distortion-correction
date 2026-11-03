@@ -1,0 +1,1359 @@
+{
+  "existing_real_xsim_runs": [
+    {
+      "case": "arbiter-b",
+      "status": "PASS_REAL_XSIM",
+      "result_sha256": "b195d995b5c0203462165b20bd6735c5bed7ecf133c95feb7071838a7778df84",
+      "simulation_log_sha256": "ddca65abda703984b2a9916b83af19d5eb288dcf6410b1da1298e50d1d801c85",
+      "all_current_input_hashes_match": true,
+      "input_hashes": [
+        {
+          "role": "source_sha256",
+          "file": "author/source/ddr_read_arbiter.v",
+          "sha256": "0fae743ecad5827863d4c8c3b81ef1f11e510a881b870ddb76b846c22beb075d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/tests/tb_dual_arbiter.sv",
+          "sha256": "82c52d70a36d16d1c9aefdaf913a07285f7b000f244b42e4f55aed5ea61b9648"
+        }
+      ],
+      "phase_exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "markers": [
+        "PASS_ARB_TWO_ORDERED_FULL_POP_PUSH_ARSTALL",
+        "PASS_ARB_EMPTY_ACCEPT_FIRST_R_SAME_EDGE",
+        "PASS_ARB_WRONG_RID_TWO_QUARANTINE",
+        "PASS_ARB_EARLY_LAST_TWO_QUARANTINE",
+        "PASS_ARB_FAILED_AR_HELD_UNTIL_ACCEPT",
+        "PASS_ARB_R04_HELD_ADDRESS",
+        "PASS_ARB_TIMEOUT_TWO_QUARANTINE",
+        "PASS_ARB_RESET_TWO_AND_DISPLAY_URGENT",
+        "PASS_DUAL_ARBITER cases=8"
+      ],
+      "configuration": {},
+      "defines": [],
+      "board": false
+    },
+    {
+      "case": "cache-a",
+      "status": "PASS_REAL_XSIM",
+      "result_sha256": "ddf5203cc5e7df48f3660a6bf3a3a51bb5549034fb4d74f56336336c24b28e95",
+      "simulation_log_sha256": "d5715e0e03cc96e8a07f3399e14c10141f2b80cf8a3d2bd6fdad413453848965",
+      "all_current_input_hashes_match": true,
+      "input_hashes": [
+        {
+          "role": "source_sha256",
+          "file": "author/source/ddr_read_arbiter.v",
+          "sha256": "0fae743ecad5827863d4c8c3b81ef1f11e510a881b870ddb76b846c22beb075d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/quad_parity_prefetch_store.sv",
+          "sha256": "cfa5d64f884edb5c35b6702832b8cf84b0c5fcec8d2d1534e694e1f013ea3548"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/d256_runtime_prefetch_cache.sv",
+          "sha256": "e9ba130275539b8acf8c11d42211f02226be772702d7eb50581f9ef0076b3199"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/sync_token_fifo.sv",
+          "sha256": "228e6f2759dcda6b02449acb39986ce94d89a8812286d83f177ce8a110f1546a"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/models/ddr_ordered_two_credit_model.sv",
+          "sha256": "1d5d293c5e5dbf5266e9c0ed76ef9d04be55fd2924f06884a8e0b703bb5bf731"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/tests/tb_dual_cache.sv",
+          "sha256": "f2645edf5c7ebd1b35e9d4e94cc2f05d091609f8b579e6ef260fc7c125a17fc5"
+        }
+      ],
+      "phase_exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "markers": [
+        "PASS_DUAL_CACHE independent_queries=328 hot_II1_run=96 peak_leases=2 simultaneous_completion_allocation=0 AR=10 R=80 source_frames=2"
+      ],
+      "configuration": {},
+      "defines": [],
+      "board": false
+    },
+    {
+      "case": "cache-onepending-a",
+      "status": "PASS_REAL_XSIM",
+      "result_sha256": "a64eb0e3c5615b19eeddd3c746b0838c23c8e856a1d6d5f5c956a2005ed6a1d6",
+      "simulation_log_sha256": "0b0bfe8225ba556bc4093c7f648643142a568f5e2a35b909b33f235b85f59437",
+      "all_current_input_hashes_match": true,
+      "input_hashes": [
+        {
+          "role": "source_sha256",
+          "file": "author/source/ddr_read_arbiter.v",
+          "sha256": "0fae743ecad5827863d4c8c3b81ef1f11e510a881b870ddb76b846c22beb075d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/quad_parity_prefetch_store.sv",
+          "sha256": "cfa5d64f884edb5c35b6702832b8cf84b0c5fcec8d2d1534e694e1f013ea3548"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/d256_runtime_prefetch_cache.sv",
+          "sha256": "e9ba130275539b8acf8c11d42211f02226be772702d7eb50581f9ef0076b3199"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/sync_token_fifo.sv",
+          "sha256": "228e6f2759dcda6b02449acb39986ce94d89a8812286d83f177ce8a110f1546a"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/ddr_shared_pressure_model.sv",
+          "sha256": "36ae20e3174b4abcd0af635ee796547e4a4199cf8fcb737109895b49083b5f7c"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/tests/tb_dual_cache.sv",
+          "sha256": "f2645edf5c7ebd1b35e9d4e94cc2f05d091609f8b579e6ef260fc7c125a17fc5"
+        }
+      ],
+      "phase_exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "markers": [
+        "PASS_DUAL_CACHE independent_queries=328 hot_II1_run=96 peak_leases=2 simultaneous_completion_allocation=0 AR=10 R=80 source_frames=2"
+      ],
+      "configuration": {},
+      "defines": [],
+      "board": false
+    },
+    {
+      "case": "store-a",
+      "status": "PASS_REAL_XSIM",
+      "result_sha256": "6bc17b220e413602d4d1375937fda7bc2bf979847978bde7735ebc6517d5fd85",
+      "simulation_log_sha256": "80f1e93c633a09d15d9a17d14e646cdc45dd2d2e7300587dfe1fd505ff7eff4a",
+      "all_current_input_hashes_match": true,
+      "input_hashes": [
+        {
+          "role": "source_sha256",
+          "file": "author/source/quad_parity_prefetch_store.sv",
+          "sha256": "cfa5d64f884edb5c35b6702832b8cf84b0c5fcec8d2d1534e694e1f013ea3548"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/tests/tb_dual_store.sv",
+          "sha256": "c63b67c12d73209c04fb082a3fbf4b79849e7485a00325bdb9e3c33c3643f364"
+        }
+      ],
+      "phase_exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "markers": [
+        "PASS_STORE_TWO_BUFFERS_ORDERED_TICKETS_PIXELS_HOT_II1 run=32",
+        "PASS_STORE_ACCEPT_FIRST_R_SAME_EDGE",
+        "PASS_STORE_WRONG_RID_TWO_RESERVED",
+        "PASS_STORE_EARLY_LAST_TWO_RESERVED",
+        "PASS_STORE_TIMEOUT_TWO_RESERVED",
+        "PASS_STORE_ABORT_TWO_HELD_AR",
+        "PASS_STORE_R04_HELD_AR",
+        "PASS_STORE_COORDINATED_RESET_TWO",
+        "PASS_DUAL_STORE cases=8"
+      ],
+      "configuration": {},
+      "defines": [],
+      "board": false
+    },
+    {
+      "case": "queued-model-b",
+      "status": "PASS_REAL_XSIM",
+      "result_sha256": "f723ac9804f6c35b613adaa5669a8aa26d0667e2e2df836dac84c6ae05be5d65",
+      "simulation_log_sha256": "282c0165a295938fc654ad26492137c20dfbed85a31f34f685a83fcea570eb0d",
+      "all_current_input_hashes_match": true,
+      "input_hashes": [
+        {
+          "role": "source_sha256",
+          "file": "author/models/ddr_ordered_two_credit_model.sv",
+          "sha256": "1d5d293c5e5dbf5266e9c0ed76ef9d04be55fd2924f06884a8e0b703bb5bf731"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/tests/tb_ordered_model.sv",
+          "sha256": "a180c156b5706d11d2404650a083e25bcca79caa8982da9ce4c9efae71c84f7e"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "author/scripts/run_xsim.py",
+          "sha256": "b7920a923aa65371f29fecc3e47e8fe7646f688517676b5e6675e11cd113b51e"
+        }
+      ],
+      "phase_exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "markers": [
+        "PASS_QUEUED_MODEL_FIXED_DELAY_ORDER_SHARED_BUS_FULL_POP_PUSH AR=3 R=24 AW=1 W=4 first0=10 first1=18 first2=26",
+        "PASS_QUEUED_MODEL_RESET_TWO_PENDING"
+      ],
+      "configuration": {},
+      "defines": [],
+      "board": false
+    },
+    {
+      "case": "native-prefix-1credit-b",
+      "status": "PASS_REAL_XSIM",
+      "result_sha256": "bd2b3332332f65d1964686465392efd55092fe9742646ebba214e931feeac14a",
+      "simulation_log_sha256": "f22b98f0a788a94c6b66fa810cc376f7bf1d78c9b12f51beae036ffdbf0cac2e",
+      "all_current_input_hashes_match": true,
+      "input_hashes": [
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/mul32_pipe.v",
+          "sha256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/pixel_inverse_rotation.v",
+          "sha256": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/bounded_brown_inverse_mapper.v",
+          "sha256": "1ff474b03bb916534dbb8bf9c42dacda094bbdedffd10066d6a13465d6a2a60b"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/bilinear_rgb.v",
+          "sha256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/video_async_fifo.v",
+          "sha256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/video_display_async_fifo.v",
+          "sha256": "3e29d6c45d9f284c86aed10ee2b8a1169f9fcce8f53a97e98ff337582f47566b"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/ddr_read_arbiter.v",
+          "sha256": "0fae743ecad5827863d4c8c3b81ef1f11e510a881b870ddb76b846c22beb075d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/ddr_write_arbiter.v",
+          "sha256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/ddr_video_reader.v",
+          "sha256": "8270ca57635114559b0f6c6ee9000fbc81c4c3d405a0dc3b32837674b9f06d6a"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_adaptive_result_writer.v",
+          "sha256": "7e01c7eb2cdacfc2017797bf9c0a2550c86b92f07628074027deae46b5e4b1db"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/adaptive_gamma_stream.v",
+          "sha256": "af7e259351345091bead06dd90b9a2187231e9b4894ccd5ccbd4168fc72824dc"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/adaptive_gamma_tagged.v",
+          "sha256": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_compact_neighbour_cache_scatter4.v",
+          "sha256": "5beb4adb691514bcc599d5d02988bd0e006e59588a8a9f9a3208301ef9970afe"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_compact_neighbour_cache_scatter8.v",
+          "sha256": "0561c3e79eb24658e5a6012cf53b90be1928994c18f934ed8342e16d67dda3ba"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/sync_token_fifo.sv",
+          "sha256": "228e6f2759dcda6b02449acb39986ce94d89a8812286d83f177ce8a110f1546a"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/quad_parity_prefetch_store.sv",
+          "sha256": "cfa5d64f884edb5c35b6702832b8cf84b0c5fcec8d2d1534e694e1f013ea3548"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/d256_runtime_prefetch_cache.sv",
+          "sha256": "e9ba130275539b8acf8c11d42211f02226be772702d7eb50581f9ef0076b3199"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_remap_sample_scatter4.v",
+          "sha256": "9d6da89737ac642700f39fbe3c15b98bfe40513e9d6bd7b62610d881bba69aa9"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/rotated_remap_core_gamma_geometry_bypass_scatter4.v",
+          "sha256": "ef9975802f159c7b3b06774862b49c60acc03b6be445f17d78bd24bffb27c495"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v",
+          "sha256": "b0820bb635b66ab2b04792da22633b72d3da2f646d297f0ae591523836e814a8"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v",
+          "sha256": "0f0db558e73da2509aab0d3138add94368c0e7f0b9a026015f663c413609d98d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/hdmi1080_capture_cdc.v",
+          "sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/hdmi1080_input_dma.v",
+          "sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/hdmi1080_input_write_link.v",
+          "sha256": "276441de0a0d5b04cb4a9564e8715a517fbec12d891489ba54ff8d6b348d44e4"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/cfg100-ce-candidate-20261030-a/candidate/ddr_video_output_1080_board_ce.v",
+          "sha256": "2424817dd4905924e4d4dbbff31c0971d1d19e53126584d34857b04caad46212"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v",
+          "sha256": "6302a55c93fc99c155a43cfdf9a1e22f398aed28fd60880ccd38195b1c9d6266"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/reuse/scan_signature_capture.sv",
+          "sha256": "b60ed24e40a4f226ce024a3f04382123d66703ace055245c36c520b80cc9c688"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/reuse/signature_packet_tx.sv",
+          "sha256": "e075ac08afd1c1c7b5bb5fff34a2c43b9b4083f8e8b869e027875dfafc8e2972"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/reuse/uart_rx_control.v",
+          "sha256": "81a6685ad2ad2f856500a3ad7c69ff72a88963c3ecca8954567d19ec046fd33e"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/reuse/uart_tx.v",
+          "sha256": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/session_arm_gate_v3.sv",
+          "sha256": "a0d811e530da3da8314cd9cf33d1d5aed91dd6f9a2352ec5beb642739fd88691"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/scan_signature_armed_v3.sv",
+          "sha256": "35ee474067063bf722e688f00f0de67a9217db5ed13bee86ee089c663db4221f"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/load_arm_parser.sv",
+          "sha256": "abdf34a872ddff9545569ef7498d88a65b110dc2df48d74f2d82e2c011b4866d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/held_bundle_cdc.sv",
+          "sha256": "075dc9270b6d86d082bffa719feedbb51f53309851d2ac7072702a16b0aadce9"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/arm_ack_tx.sv",
+          "sha256": "114efa7f14e077a7cec037ff7e54c5d98635f0308482b4755c506a9a1a46b0de"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/telemetry_packet_arbiter.sv",
+          "sha256": "3985bcbe64a5292c162c952b5098112870fd0ae5d603cb3a317a8a869d8637b2"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/telemetry_session_link.sv",
+          "sha256": "8df031847fe5a503b1637a6bde9991fb32c492323f45f985a50ae0f3de0c8875"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/telemetry_uart_link.sv",
+          "sha256": "446a5e878a2290e2d7d745910d979d5aae32ec4ecefb4bedddbcea5ec7caf627"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/held_completion_cdc.sv",
+          "sha256": "5543e72d22d127e882a94785bf4eeac0641d473187d4410e36461a6375665b50"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/snapshot/snapshot_command_parser.sv",
+          "sha256": "ce7274a9684b2d217458ad5ca7208307117d0ad2252f8fd3c492929351e30fe9"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/stats/core_stats_snapshot.sv",
+          "sha256": "c97d5522a573b85c84f98e7b004af0ec725aab5309c6a711eec37712bf91bbc4"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/stats/stats_uart_mux.sv",
+          "sha256": "df9b90cefc3846cb3a1947f2b7c4ed389476798c22ecb2e5448d235b4fa25f5e"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_raster_overlap_writer.sv",
+          "sha256": "bb698688ca666a41a8cca78b9e96de16de659e21a35cdafb9e03d6d274119bb5"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_tile8_overlap_writer.sv",
+          "sha256": "b8e0b6467dd372175a62614a51041537645ed04e0193dd32036af92250705e02"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/profile/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+          "sha256": "2f177617041214f5125158a54b4d6fa65e0e4f81385f55f9d6adf5eb88ce09fe"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/profile/rtl/experimental/hdmi_camera_fisheye_rom.v",
+          "sha256": "fa50dfc55d1f2550e56b7e26e3b02df51076773872960de18d2cbccc6de7db2f"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_tile8_rowburst_writer.sv",
+          "sha256": "94fb71b3764843ed427b5e0b70db4484e09039f781af45023f48635a745b7596"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_tile8_macro_rowburst_writer.sv",
+          "sha256": "10aa2226e038f280f6b208fad091af7c352be329dae259331b29cb18e5f27f2d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/shared_capture_write_proxy.sv",
+          "sha256": "3cc61768bfa98098c1656ab3866df1f7fa7c5b91c773af1858051a0ba9f76abc"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/shared_scan_read_proxy.sv",
+          "sha256": "83eec1f7789991fbf32cab8ea65158fb0292536944c6a1cf739b5f9f81f1aa30"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/shared_video_pacing.sv",
+          "sha256": "79fe9d927aa1f26f246b1bbf65551d81d9c3f0aed0759c3fafdafa76e3c366c6"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/models/ddr_ordered_two_credit_model.sv",
+          "sha256": "1d5d293c5e5dbf5266e9c0ed76ef9d04be55fd2924f06884a8e0b703bb5bf731"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/ddr_shared_pressure_model.sv",
+          "sha256": "36ae20e3174b4abcd0af635ee796547e4a4199cf8fcb737109895b49083b5f7c"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/models/shared_queued_service_adapter.sv",
+          "sha256": "ca04a8904880e8b5547bf156f915448d84d7e24531f48b39825a534c64ec6fcb"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/tests/tb_dual_native_engine.sv",
+          "sha256": "b1bf301285543cdd8abd79ff3018da12f7efb25c856e054cb1e5e9815dbf6e9d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/tests/run_native_prefix.sv",
+          "sha256": "e89e43b66b3564c7f6042dc72542d4e74cfd56e22733f907f3ad5dcff130f300"
+        },
+        {
+          "role": "fixture_sha256",
+          "file": "external_dependency/expected.mem",
+          "sha256": "e7a9897c5e2144f29277305f49ffba8118d24516a5eb4b8fa3bf502c5d88ba8c"
+        },
+        {
+          "role": "fixture_sha256",
+          "file": "external_dependency/expectedcrc.mem",
+          "sha256": "cb44623b5d28ceee45f7a88bc917932993ed92cbdcd73220e284c07854a0bb43"
+        },
+        {
+          "role": "fixture_sha256",
+          "file": "external_dependency/sourcecrc.mem",
+          "sha256": "6e24097045d0e72c2377c4502f4564d714582dc63c560fec33e01a96e032e3f5"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/NATIVE_SYSTEM_COMPILE_INPUTS.json",
+          "sha256": "77dea87ddd234093fa3fa42e77e6a2725f522169c9953ed72d3f144387da9ac1"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/NATIVE_SOURCE_MANIFEST.json",
+          "sha256": "5b8bade298b8fdd8dc5ba24277f7b78841d0e484f1173fa8e7173b6175daea2d"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/tb_rowburst_shared_engine.sv",
+          "sha256": "d33dff57dda9f7ecf21736d5003ed0420d7b30db1e9ef188ca13e6856f8c09b2"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/passive_critical_depth.svh",
+          "sha256": "731b4048366ff3087f6b698710cda3a186d2782e8c1e6c222ade79ee1ccd9a4b"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/GOLDEN_PROVENANCE.json",
+          "sha256": "63a6c8ae967db60cd59307d50470c334c2a5a1146b58e64c2cfb318793b951a1"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "author/scripts/run_xsim.py",
+          "sha256": "b7920a923aa65371f29fecc3e47e8fe7646f688517676b5e6675e11cd113b51e"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "author/tests/run_native_prefix.inputs.json",
+          "sha256": "a9a536874cc15bf249c31dbb5dcb83eb9a91fb7ee1f979d7ce662f2a4c1a8353"
+        }
+      ],
+      "phase_exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "markers": [
+        "FILL8_NATIVE_BINDING INDEX_BITS=6 SAMPLER_TAG_BITS=25 banks=4 word_bits=128 words_per_line=8 payload_bits=131072",
+        "DEPTH_NATIVE_BINDING query_depth=512 lookahead=256 token_bits=120 ref_bits=10 payload_bits=61440",
+        "QUEUE_MODEL_BINDING name=Q2_L32_A R_LATENCY=32 accepted_reads=2 write_commands=1 AR_DELAY=0 AW_DELAY=0 gaps=0 turn=0 REF=0 STOP=0 capture_phase=0 scan_phase=0 vendor_contract=UNVERIFIED",
+        "FIXTURE_READY width=1920 height=1080 source_crc_manifest=09dac66e expected_crc=d3be1a4d source_preloaded=1 capture=0 hdmi=0 scan=0 E2E=0",
+        "BEGIN_NATIVE_ENGINE profile=6 frame_id=2702180353 tick=10",
+        "PROGRESS_NATIVE_ENGINE profile=6 frame_id=2702180353 core_ticks=69266 written=65536 done=0 AR=670 R=5352 AW=1024 W=4096",
+        "PROGRESS_NATIVE_ENGINE profile=6 frame_id=2702180353 core_ticks=143032 written=131072 done=0 AR=1409 R=11264 AW=2048 W=8192",
+        "CRITICAL_MAIN C=11327 control=0 prefill=0 recovery=225 gen_and_full=0 gen_only=2532 fifo_only=8570 other=0",
+        "CRITICAL_AUX C_decode_load=225 C_not_started=0 GF11=0 GF10=2532 GF01=8570 GF00=225 C_output_backpressure=0",
+        "CRITICAL_FIFO head_gap=0 head_wait=8354 pipe_backpressure=0 collision=0 store_recovery=0 fifo_boundary=216",
+        "CRITICAL_HEAD C_head_wait=9455 AR=1716 FILL=7250 SCATTER=241 idle_other=248",
+        "CRITICAL_AR C_AR_wait=2155 scan_READ=1908 scan_ADDRESS=1 core_ADDRESS=0 IDLE=246 other=0",
+        "CRITICAL_PEAK fifo=512 admitted_minus_issued=513 admitted_minus_retired=516",
+        "CRITICAL_DEPTH C_headwait=9455 pending_any=9455 pending_live_victim=0 inflight_match=9452 job_match=3 unselected_eligible=74 inflight_unrelated=0 busy_unrelated=0 no_inflight=3 missing_no_pending=0",
+        "CRITICAL_DEPTH_PEAK unique_missing_blocks=3 live_victim_refs=0",
+        "QUEUE_NATIVE_CREDITS peak_source_commands=1 peak_cache_leases=1 simultaneous_completion_allocation=0",
+        "PASS_FULL_CAMERA_PILOT cache_profile=6 frame_id=2702180353 written_pixels=131072 core_ticks=143032 done=0 AR=1409 R=11264 AW=2048 W=8192 writer_stalls=0 full_frame=0"
+      ],
+      "configuration": {
+        "model": "Q2_L32_A unless ONE_PENDING_MODEL explicitly set",
+        "source_geometry": "1920x1080",
+        "macro": "64x16",
+        "cache_profile": 6,
+        "query_depth": 512,
+        "directory_entries": 64,
+        "lookahead": 256,
+        "gamma_enable": 0,
+        "rotation_degrees": 0,
+        "strict_deadline_cycles": 2083333,
+        "capture_scan": "unchanged original proxies, fixed reset calendar",
+        "physical_ordering_outstanding_contract": "UNVERIFIED",
+        "board": false
+      },
+      "defines": [],
+      "board": false
+    },
+    {
+      "case": "native-prefix-2credit-b",
+      "status": "PASS_REAL_XSIM",
+      "result_sha256": "9f0eb44e4accc1ee1b7403fcaa5bc1334cf51c7b41b953eb3c08ca25c7ec979e",
+      "simulation_log_sha256": "7e27b1c90dcbc6884399a49e6aa95438dc2b404039dc48ba92efc6e5d6dd78ce",
+      "all_current_input_hashes_match": true,
+      "input_hashes": [
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/mul32_pipe.v",
+          "sha256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/pixel_inverse_rotation.v",
+          "sha256": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/bounded_brown_inverse_mapper.v",
+          "sha256": "1ff474b03bb916534dbb8bf9c42dacda094bbdedffd10066d6a13465d6a2a60b"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/bilinear_rgb.v",
+          "sha256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/video_async_fifo.v",
+          "sha256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/video_display_async_fifo.v",
+          "sha256": "3e29d6c45d9f284c86aed10ee2b8a1169f9fcce8f53a97e98ff337582f47566b"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/ddr_read_arbiter.v",
+          "sha256": "0fae743ecad5827863d4c8c3b81ef1f11e510a881b870ddb76b846c22beb075d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/ddr_write_arbiter.v",
+          "sha256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/ddr_video_reader.v",
+          "sha256": "8270ca57635114559b0f6c6ee9000fbc81c4c3d405a0dc3b32837674b9f06d6a"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_adaptive_result_writer.v",
+          "sha256": "7e01c7eb2cdacfc2017797bf9c0a2550c86b92f07628074027deae46b5e4b1db"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/adaptive_gamma_stream.v",
+          "sha256": "af7e259351345091bead06dd90b9a2187231e9b4894ccd5ccbd4168fc72824dc"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/adaptive_gamma_tagged.v",
+          "sha256": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_compact_neighbour_cache_scatter4.v",
+          "sha256": "5beb4adb691514bcc599d5d02988bd0e006e59588a8a9f9a3208301ef9970afe"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_compact_neighbour_cache_scatter8.v",
+          "sha256": "0561c3e79eb24658e5a6012cf53b90be1928994c18f934ed8342e16d67dda3ba"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/sync_token_fifo.sv",
+          "sha256": "228e6f2759dcda6b02449acb39986ce94d89a8812286d83f177ce8a110f1546a"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/quad_parity_prefetch_store.sv",
+          "sha256": "cfa5d64f884edb5c35b6702832b8cf84b0c5fcec8d2d1534e694e1f013ea3548"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/d256_runtime_prefetch_cache.sv",
+          "sha256": "e9ba130275539b8acf8c11d42211f02226be772702d7eb50581f9ef0076b3199"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_remap_sample_scatter4.v",
+          "sha256": "9d6da89737ac642700f39fbe3c15b98bfe40513e9d6bd7b62610d881bba69aa9"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/rotated_remap_core_gamma_geometry_bypass_scatter4.v",
+          "sha256": "ef9975802f159c7b3b06774862b49c60acc03b6be445f17d78bd24bffb27c495"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v",
+          "sha256": "b0820bb635b66ab2b04792da22633b72d3da2f646d297f0ae591523836e814a8"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v",
+          "sha256": "0f0db558e73da2509aab0d3138add94368c0e7f0b9a026015f663c413609d98d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/hdmi1080_capture_cdc.v",
+          "sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/hdmi1080_input_dma.v",
+          "sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/hdmi1080_input_write_link.v",
+          "sha256": "276441de0a0d5b04cb4a9564e8715a517fbec12d891489ba54ff8d6b348d44e4"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/cfg100-ce-candidate-20261030-a/candidate/ddr_video_output_1080_board_ce.v",
+          "sha256": "2424817dd4905924e4d4dbbff31c0971d1d19e53126584d34857b04caad46212"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v",
+          "sha256": "6302a55c93fc99c155a43cfdf9a1e22f398aed28fd60880ccd38195b1c9d6266"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/reuse/scan_signature_capture.sv",
+          "sha256": "b60ed24e40a4f226ce024a3f04382123d66703ace055245c36c520b80cc9c688"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/reuse/signature_packet_tx.sv",
+          "sha256": "e075ac08afd1c1c7b5bb5fff34a2c43b9b4083f8e8b869e027875dfafc8e2972"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/reuse/uart_rx_control.v",
+          "sha256": "81a6685ad2ad2f856500a3ad7c69ff72a88963c3ecca8954567d19ec046fd33e"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/reuse/uart_tx.v",
+          "sha256": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/session_arm_gate_v3.sv",
+          "sha256": "a0d811e530da3da8314cd9cf33d1d5aed91dd6f9a2352ec5beb642739fd88691"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/scan_signature_armed_v3.sv",
+          "sha256": "35ee474067063bf722e688f00f0de67a9217db5ed13bee86ee089c663db4221f"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/load_arm_parser.sv",
+          "sha256": "abdf34a872ddff9545569ef7498d88a65b110dc2df48d74f2d82e2c011b4866d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/held_bundle_cdc.sv",
+          "sha256": "075dc9270b6d86d082bffa719feedbb51f53309851d2ac7072702a16b0aadce9"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/arm_ack_tx.sv",
+          "sha256": "114efa7f14e077a7cec037ff7e54c5d98635f0308482b4755c506a9a1a46b0de"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/telemetry_packet_arbiter.sv",
+          "sha256": "3985bcbe64a5292c162c952b5098112870fd0ae5d603cb3a317a8a869d8637b2"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/telemetry_session_link.sv",
+          "sha256": "8df031847fe5a503b1637a6bde9991fb32c492323f45f985a50ae0f3de0c8875"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/telemetry_uart_link.sv",
+          "sha256": "446a5e878a2290e2d7d745910d979d5aae32ec4ecefb4bedddbcea5ec7caf627"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/held_completion_cdc.sv",
+          "sha256": "5543e72d22d127e882a94785bf4eeac0641d473187d4410e36461a6375665b50"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/snapshot/snapshot_command_parser.sv",
+          "sha256": "ce7274a9684b2d217458ad5ca7208307117d0ad2252f8fd3c492929351e30fe9"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/stats/core_stats_snapshot.sv",
+          "sha256": "c97d5522a573b85c84f98e7b004af0ec725aab5309c6a711eec37712bf91bbc4"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/stats/stats_uart_mux.sv",
+          "sha256": "df9b90cefc3846cb3a1947f2b7c4ed389476798c22ecb2e5448d235b4fa25f5e"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_raster_overlap_writer.sv",
+          "sha256": "bb698688ca666a41a8cca78b9e96de16de659e21a35cdafb9e03d6d274119bb5"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_tile8_overlap_writer.sv",
+          "sha256": "b8e0b6467dd372175a62614a51041537645ed04e0193dd32036af92250705e02"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/profile/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+          "sha256": "2f177617041214f5125158a54b4d6fa65e0e4f81385f55f9d6adf5eb88ce09fe"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/profile/rtl/experimental/hdmi_camera_fisheye_rom.v",
+          "sha256": "fa50dfc55d1f2550e56b7e26e3b02df51076773872960de18d2cbccc6de7db2f"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_tile8_rowburst_writer.sv",
+          "sha256": "94fb71b3764843ed427b5e0b70db4484e09039f781af45023f48635a745b7596"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_tile8_macro_rowburst_writer.sv",
+          "sha256": "10aa2226e038f280f6b208fad091af7c352be329dae259331b29cb18e5f27f2d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/shared_capture_write_proxy.sv",
+          "sha256": "3cc61768bfa98098c1656ab3866df1f7fa7c5b91c773af1858051a0ba9f76abc"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/shared_scan_read_proxy.sv",
+          "sha256": "83eec1f7789991fbf32cab8ea65158fb0292536944c6a1cf739b5f9f81f1aa30"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/shared_video_pacing.sv",
+          "sha256": "79fe9d927aa1f26f246b1bbf65551d81d9c3f0aed0759c3fafdafa76e3c366c6"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/models/ddr_ordered_two_credit_model.sv",
+          "sha256": "1d5d293c5e5dbf5266e9c0ed76ef9d04be55fd2924f06884a8e0b703bb5bf731"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/ddr_shared_pressure_model.sv",
+          "sha256": "36ae20e3174b4abcd0af635ee796547e4a4199cf8fcb737109895b49083b5f7c"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/models/shared_queued_service_adapter.sv",
+          "sha256": "ca04a8904880e8b5547bf156f915448d84d7e24531f48b39825a534c64ec6fcb"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/tests/tb_dual_native_engine.sv",
+          "sha256": "b1bf301285543cdd8abd79ff3018da12f7efb25c856e054cb1e5e9815dbf6e9d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/tests/run_native_prefix.sv",
+          "sha256": "e89e43b66b3564c7f6042dc72542d4e74cfd56e22733f907f3ad5dcff130f300"
+        },
+        {
+          "role": "fixture_sha256",
+          "file": "external_dependency/expected.mem",
+          "sha256": "e7a9897c5e2144f29277305f49ffba8118d24516a5eb4b8fa3bf502c5d88ba8c"
+        },
+        {
+          "role": "fixture_sha256",
+          "file": "external_dependency/expectedcrc.mem",
+          "sha256": "cb44623b5d28ceee45f7a88bc917932993ed92cbdcd73220e284c07854a0bb43"
+        },
+        {
+          "role": "fixture_sha256",
+          "file": "external_dependency/sourcecrc.mem",
+          "sha256": "6e24097045d0e72c2377c4502f4564d714582dc63c560fec33e01a96e032e3f5"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/NATIVE_SYSTEM_COMPILE_INPUTS.json",
+          "sha256": "77dea87ddd234093fa3fa42e77e6a2725f522169c9953ed72d3f144387da9ac1"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/NATIVE_SOURCE_MANIFEST.json",
+          "sha256": "5b8bade298b8fdd8dc5ba24277f7b78841d0e484f1173fa8e7173b6175daea2d"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/tb_rowburst_shared_engine.sv",
+          "sha256": "d33dff57dda9f7ecf21736d5003ed0420d7b30db1e9ef188ca13e6856f8c09b2"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/passive_critical_depth.svh",
+          "sha256": "731b4048366ff3087f6b698710cda3a186d2782e8c1e6c222ade79ee1ccd9a4b"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/GOLDEN_PROVENANCE.json",
+          "sha256": "63a6c8ae967db60cd59307d50470c334c2a5a1146b58e64c2cfb318793b951a1"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "author/scripts/run_xsim.py",
+          "sha256": "b7920a923aa65371f29fecc3e47e8fe7646f688517676b5e6675e11cd113b51e"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "author/tests/run_native_prefix.inputs.json",
+          "sha256": "a9a536874cc15bf249c31dbb5dcb83eb9a91fb7ee1f979d7ce662f2a4c1a8353"
+        }
+      ],
+      "phase_exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "markers": [
+        "FILL8_NATIVE_BINDING INDEX_BITS=6 SAMPLER_TAG_BITS=25 banks=4 word_bits=128 words_per_line=8 payload_bits=131072",
+        "DEPTH_NATIVE_BINDING query_depth=512 lookahead=256 token_bits=120 ref_bits=10 payload_bits=61440",
+        "QUEUE_MODEL_BINDING name=Q2_L32_A R_LATENCY=32 accepted_reads=2 write_commands=1 AR_DELAY=0 AW_DELAY=0 gaps=0 turn=0 REF=0 STOP=0 capture_phase=0 scan_phase=0 vendor_contract=UNVERIFIED",
+        "FIXTURE_READY width=1920 height=1080 source_crc_manifest=09dac66e expected_crc=d3be1a4d source_preloaded=1 capture=0 hdmi=0 scan=0 E2E=0",
+        "BEGIN_NATIVE_ENGINE profile=6 frame_id=2702180353 tick=10",
+        "PROGRESS_NATIVE_ENGINE profile=6 frame_id=2702180353 core_ticks=66201 written=65536 done=0 AR=676 R=5408 AW=1024 W=4096",
+        "PROGRESS_NATIVE_ENGINE profile=6 frame_id=2702180353 core_ticks=131986 written=131072 done=0 AR=1408 R=11264 AW=2048 W=8192",
+        "CRITICAL_MAIN C=504 control=0 prefill=0 recovery=11 gen_and_full=0 gen_only=396 fifo_only=97 other=0",
+        "CRITICAL_AUX C_decode_load=11 C_not_started=0 GF11=0 GF10=396 GF01=97 GF00=11 C_output_backpressure=0",
+        "CRITICAL_FIFO head_gap=0 head_wait=89 pipe_backpressure=0 collision=0 store_recovery=0 fifo_boundary=8",
+        "CRITICAL_HEAD C_head_wait=89 AR=0 FILL=82 SCATTER=7 idle_other=0",
+        "CRITICAL_AR C_AR_wait=91 scan_READ=56 scan_ADDRESS=0 core_ADDRESS=0 IDLE=0 other=35",
+        "CRITICAL_PEAK fifo=512 admitted_minus_issued=513 admitted_minus_retired=516",
+        "CRITICAL_DEPTH C_headwait=89 pending_any=89 pending_live_victim=0 inflight_match=89 job_match=0 unselected_eligible=0 inflight_unrelated=0 busy_unrelated=0 no_inflight=0 missing_no_pending=0",
+        "CRITICAL_DEPTH_PEAK unique_missing_blocks=1 live_victim_refs=0",
+        "QUEUE_NATIVE_CREDITS peak_source_commands=2 peak_cache_leases=2 simultaneous_completion_allocation=5",
+        "PASS_FULL_CAMERA_PILOT cache_profile=6 frame_id=2702180353 written_pixels=131072 core_ticks=131986 done=0 AR=1408 R=11264 AW=2048 W=8192 writer_stalls=0 full_frame=0"
+      ],
+      "configuration": {
+        "model": "Q2_L32_A unless ONE_PENDING_MODEL explicitly set",
+        "source_geometry": "1920x1080",
+        "macro": "64x16",
+        "cache_profile": 6,
+        "query_depth": 512,
+        "directory_entries": 64,
+        "lookahead": 256,
+        "gamma_enable": 0,
+        "rotation_degrees": 0,
+        "strict_deadline_cycles": 2083333,
+        "capture_scan": "unchanged original proxies, fixed reset calendar",
+        "physical_ordering_outstanding_contract": "UNVERIFIED",
+        "board": false
+      },
+      "defines": [],
+      "board": false
+    },
+    {
+      "case": "native-prefix-onepending-2credit-b",
+      "status": "PASS_REAL_XSIM",
+      "result_sha256": "e361eb6696ce8b790cba0fb5b7ccc3fd0addfa3db02cc9a7254ae232dca56768",
+      "simulation_log_sha256": "611a7115b15fc72ca754c79003bc796f6678149acd50bd696e54a9c15c73b4f7",
+      "all_current_input_hashes_match": true,
+      "input_hashes": [
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/mul32_pipe.v",
+          "sha256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/pixel_inverse_rotation.v",
+          "sha256": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/bounded_brown_inverse_mapper.v",
+          "sha256": "1ff474b03bb916534dbb8bf9c42dacda094bbdedffd10066d6a13465d6a2a60b"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/bilinear_rgb.v",
+          "sha256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/video_async_fifo.v",
+          "sha256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/video_display_async_fifo.v",
+          "sha256": "3e29d6c45d9f284c86aed10ee2b8a1169f9fcce8f53a97e98ff337582f47566b"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/ddr_read_arbiter.v",
+          "sha256": "0fae743ecad5827863d4c8c3b81ef1f11e510a881b870ddb76b846c22beb075d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/ddr_write_arbiter.v",
+          "sha256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/ddr_video_reader.v",
+          "sha256": "8270ca57635114559b0f6c6ee9000fbc81c4c3d405a0dc3b32837674b9f06d6a"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_adaptive_result_writer.v",
+          "sha256": "7e01c7eb2cdacfc2017797bf9c0a2550c86b92f07628074027deae46b5e4b1db"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/adaptive_gamma_stream.v",
+          "sha256": "af7e259351345091bead06dd90b9a2187231e9b4894ccd5ccbd4168fc72824dc"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/adaptive_gamma_tagged.v",
+          "sha256": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_compact_neighbour_cache_scatter4.v",
+          "sha256": "5beb4adb691514bcc599d5d02988bd0e006e59588a8a9f9a3208301ef9970afe"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_compact_neighbour_cache_scatter8.v",
+          "sha256": "0561c3e79eb24658e5a6012cf53b90be1928994c18f934ed8342e16d67dda3ba"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/sync_token_fifo.sv",
+          "sha256": "228e6f2759dcda6b02449acb39986ce94d89a8812286d83f177ce8a110f1546a"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/quad_parity_prefetch_store.sv",
+          "sha256": "cfa5d64f884edb5c35b6702832b8cf84b0c5fcec8d2d1534e694e1f013ea3548"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/source/d256_runtime_prefetch_cache.sv",
+          "sha256": "e9ba130275539b8acf8c11d42211f02226be772702d7eb50581f9ef0076b3199"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_remap_sample_scatter4.v",
+          "sha256": "9d6da89737ac642700f39fbe3c15b98bfe40513e9d6bd7b62610d881bba69aa9"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/rotated_remap_core_gamma_geometry_bypass_scatter4.v",
+          "sha256": "ef9975802f159c7b3b06774862b49c60acc03b6be445f17d78bd24bffb27c495"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v",
+          "sha256": "b0820bb635b66ab2b04792da22633b72d3da2f646d297f0ae591523836e814a8"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v",
+          "sha256": "0f0db558e73da2509aab0d3138add94368c0e7f0b9a026015f663c413609d98d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/hdmi1080_capture_cdc.v",
+          "sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/hdmi1080_input_dma.v",
+          "sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/hdmi1080_input_write_link.v",
+          "sha256": "276441de0a0d5b04cb4a9564e8715a517fbec12d891489ba54ff8d6b348d44e4"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/cfg100-ce-candidate-20261030-a/candidate/ddr_video_output_1080_board_ce.v",
+          "sha256": "2424817dd4905924e4d4dbbff31c0971d1d19e53126584d34857b04caad46212"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v",
+          "sha256": "6302a55c93fc99c155a43cfdf9a1e22f398aed28fd60880ccd38195b1c9d6266"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/reuse/scan_signature_capture.sv",
+          "sha256": "b60ed24e40a4f226ce024a3f04382123d66703ace055245c36c520b80cc9c688"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/reuse/signature_packet_tx.sv",
+          "sha256": "e075ac08afd1c1c7b5bb5fff34a2c43b9b4083f8e8b869e027875dfafc8e2972"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/reuse/uart_rx_control.v",
+          "sha256": "81a6685ad2ad2f856500a3ad7c69ff72a88963c3ecca8954567d19ec046fd33e"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/reuse/uart_tx.v",
+          "sha256": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/session_arm_gate_v3.sv",
+          "sha256": "a0d811e530da3da8314cd9cf33d1d5aed91dd6f9a2352ec5beb642739fd88691"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/scan_signature_armed_v3.sv",
+          "sha256": "35ee474067063bf722e688f00f0de67a9217db5ed13bee86ee089c663db4221f"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/load_arm_parser.sv",
+          "sha256": "abdf34a872ddff9545569ef7498d88a65b110dc2df48d74f2d82e2c011b4866d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/held_bundle_cdc.sv",
+          "sha256": "075dc9270b6d86d082bffa719feedbb51f53309851d2ac7072702a16b0aadce9"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/arm_ack_tx.sv",
+          "sha256": "114efa7f14e077a7cec037ff7e54c5d98635f0308482b4755c506a9a1a46b0de"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/telemetry_packet_arbiter.sv",
+          "sha256": "3985bcbe64a5292c162c952b5098112870fd0ae5d603cb3a317a8a869d8637b2"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/telemetry_session_link.sv",
+          "sha256": "8df031847fe5a503b1637a6bde9991fb32c492323f45f985a50ae0f3de0c8875"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/telemetry_uart_link.sv",
+          "sha256": "446a5e878a2290e2d7d745910d979d5aae32ec4ecefb4bedddbcea5ec7caf627"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/b4/rtl/held_completion_cdc.sv",
+          "sha256": "5543e72d22d127e882a94785bf4eeac0641d473187d4410e36461a6375665b50"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/snapshot/snapshot_command_parser.sv",
+          "sha256": "ce7274a9684b2d217458ad5ca7208307117d0ad2252f8fd3c492929351e30fe9"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/stats/core_stats_snapshot.sv",
+          "sha256": "c97d5522a573b85c84f98e7b004af0ec725aab5309c6a711eec37712bf91bbc4"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/stats/stats_uart_mux.sv",
+          "sha256": "df9b90cefc3846cb3a1947f2b7c4ed389476798c22ecb2e5448d235b4fa25f5e"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_raster_overlap_writer.sv",
+          "sha256": "bb698688ca666a41a8cca78b9e96de16de659e21a35cdafb9e03d6d274119bb5"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_tile8_overlap_writer.sv",
+          "sha256": "b8e0b6467dd372175a62614a51041537645ed04e0193dd32036af92250705e02"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/profile/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+          "sha256": "2f177617041214f5125158a54b4d6fa65e0e4f81385f55f9d6adf5eb88ce09fe"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/profile/rtl/experimental/hdmi_camera_fisheye_rom.v",
+          "sha256": "fa50dfc55d1f2550e56b7e26e3b02df51076773872960de18d2cbccc6de7db2f"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_tile8_rowburst_writer.sv",
+          "sha256": "94fb71b3764843ed427b5e0b70db4484e09039f781af45023f48635a745b7596"
+        },
+        {
+          "role": "source_sha256",
+          "file": "E2_native/source/rtl/experimental/ddr_tile8_macro_rowburst_writer.sv",
+          "sha256": "10aa2226e038f280f6b208fad091af7c352be329dae259331b29cb18e5f27f2d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/shared_capture_write_proxy.sv",
+          "sha256": "3cc61768bfa98098c1656ab3866df1f7fa7c5b91c773af1858051a0ba9f76abc"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/shared_scan_read_proxy.sv",
+          "sha256": "83eec1f7789991fbf32cab8ea65158fb0292536944c6a1cf739b5f9f81f1aa30"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/shared_video_pacing.sv",
+          "sha256": "79fe9d927aa1f26f246b1bbf65551d81d9c3f0aed0759c3fafdafa76e3c366c6"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/models/ddr_ordered_two_credit_model.sv",
+          "sha256": "1d5d293c5e5dbf5266e9c0ed76ef9d04be55fd2924f06884a8e0b703bb5bf731"
+        },
+        {
+          "role": "source_sha256",
+          "file": "external_dependency/ddr_shared_pressure_model.sv",
+          "sha256": "36ae20e3174b4abcd0af635ee796547e4a4199cf8fcb737109895b49083b5f7c"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/models/shared_queued_service_adapter.sv",
+          "sha256": "ca04a8904880e8b5547bf156f915448d84d7e24531f48b39825a534c64ec6fcb"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/tests/tb_dual_native_engine.sv",
+          "sha256": "b1bf301285543cdd8abd79ff3018da12f7efb25c856e054cb1e5e9815dbf6e9d"
+        },
+        {
+          "role": "source_sha256",
+          "file": "author/tests/run_native_prefix.sv",
+          "sha256": "e89e43b66b3564c7f6042dc72542d4e74cfd56e22733f907f3ad5dcff130f300"
+        },
+        {
+          "role": "fixture_sha256",
+          "file": "external_dependency/expected.mem",
+          "sha256": "e7a9897c5e2144f29277305f49ffba8118d24516a5eb4b8fa3bf502c5d88ba8c"
+        },
+        {
+          "role": "fixture_sha256",
+          "file": "external_dependency/expectedcrc.mem",
+          "sha256": "cb44623b5d28ceee45f7a88bc917932993ed92cbdcd73220e284c07854a0bb43"
+        },
+        {
+          "role": "fixture_sha256",
+          "file": "external_dependency/sourcecrc.mem",
+          "sha256": "6e24097045d0e72c2377c4502f4564d714582dc63c560fec33e01a96e032e3f5"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/NATIVE_SYSTEM_COMPILE_INPUTS.json",
+          "sha256": "77dea87ddd234093fa3fa42e77e6a2725f522169c9953ed72d3f144387da9ac1"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/NATIVE_SOURCE_MANIFEST.json",
+          "sha256": "5b8bade298b8fdd8dc5ba24277f7b78841d0e484f1173fa8e7173b6175daea2d"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/tb_rowburst_shared_engine.sv",
+          "sha256": "d33dff57dda9f7ecf21736d5003ed0420d7b30db1e9ef188ca13e6856f8c09b2"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/passive_critical_depth.svh",
+          "sha256": "731b4048366ff3087f6b698710cda3a186d2782e8c1e6c222ade79ee1ccd9a4b"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "external_dependency/GOLDEN_PROVENANCE.json",
+          "sha256": "63a6c8ae967db60cd59307d50470c334c2a5a1146b58e64c2cfb318793b951a1"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "author/scripts/run_xsim.py",
+          "sha256": "b7920a923aa65371f29fecc3e47e8fe7646f688517676b5e6675e11cd113b51e"
+        },
+        {
+          "role": "provenance_sha256",
+          "file": "author/tests/run_native_prefix.inputs.json",
+          "sha256": "a9a536874cc15bf249c31dbb5dcb83eb9a91fb7ee1f979d7ce662f2a4c1a8353"
+        }
+      ],
+      "phase_exit_codes": [
+        0,
+        0,
+        0
+      ],
+      "markers": [
+        "FILL8_NATIVE_BINDING INDEX_BITS=6 SAMPLER_TAG_BITS=25 banks=4 word_bits=128 words_per_line=8 payload_bits=131072",
+        "DEPTH_NATIVE_BINDING query_depth=512 lookahead=256 token_bits=120 ref_bits=10 payload_bits=61440",
+        "QUEUE_MODEL_BINDING name=ORIGINAL_ONE_PENDING_L32_CONTROL R_LATENCY=32 AR_DELAY=0 AW_DELAY=0 gaps=0 turn=0 REF=0 STOP=0 capture_phase=0 scan_phase=0 vendor_contract=UNVERIFIED",
+        "FIXTURE_READY width=1920 height=1080 source_crc_manifest=09dac66e expected_crc=d3be1a4d source_preloaded=1 capture=0 hdmi=0 scan=0 E2E=0",
+        "BEGIN_NATIVE_ENGINE profile=6 frame_id=2702180353 tick=10",
+        "PROGRESS_NATIVE_ENGINE profile=6 frame_id=2702180353 core_ticks=69244 written=65536 done=0 AR=676 R=5408 AW=1024 W=4096",
+        "PROGRESS_NATIVE_ENGINE profile=6 frame_id=2702180353 core_ticks=145017 written=131072 done=0 AR=1411 R=11288 AW=2048 W=8192",
+        "CRITICAL_MAIN C=13102 control=0 prefill=0 recovery=241 gen_and_full=0 gen_only=2701 fifo_only=10160 other=0",
+        "CRITICAL_AUX C_decode_load=241 C_not_started=0 GF11=0 GF10=2701 GF01=10160 GF00=241 C_output_backpressure=44",
+        "CRITICAL_FIFO head_gap=0 head_wait=9883 pipe_backpressure=44 collision=0 store_recovery=2 fifo_boundary=231",
+        "CRITICAL_HEAD C_head_wait=11168 AR=2778 FILL=8119 SCATTER=260 idle_other=11",
+        "CRITICAL_AR C_AR_wait=12082 scan_READ=53 scan_ADDRESS=2794 core_ADDRESS=9152 IDLE=0 other=83",
+        "CRITICAL_PEAK fifo=512 admitted_minus_issued=513 admitted_minus_retired=518",
+        "CRITICAL_DEPTH C_headwait=11168 pending_any=11168 pending_live_victim=0 inflight_match=11124 job_match=2 unselected_eligible=219 inflight_unrelated=44 busy_unrelated=44 no_inflight=0 missing_no_pending=0",
+        "CRITICAL_DEPTH_PEAK unique_missing_blocks=3 live_victim_refs=0",
+        "QUEUE_NATIVE_CREDITS peak_source_commands=1 peak_cache_leases=2 simultaneous_completion_allocation=0",
+        "PASS_FULL_CAMERA_PILOT cache_profile=6 frame_id=2702180353 written_pixels=131072 core_ticks=145017 done=0 AR=1411 R=11288 AW=2048 W=8192 writer_stalls=50 full_frame=0"
+      ],
+      "configuration": {
+        "model": "Q2_L32_A unless ONE_PENDING_MODEL explicitly set",
+        "source_geometry": "1920x1080",
+        "macro": "64x16",
+        "cache_profile": 6,
+        "query_depth": 512,
+        "directory_entries": 64,
+        "lookahead": 256,
+        "gamma_enable": 0,
+        "rotation_degrees": 0,
+        "strict_deadline_cycles": 2083333,
+        "capture_scan": "unchanged original proxies, fixed reset calendar",
+        "physical_ordering_outstanding_contract": "UNVERIFIED",
+        "board": false
+      },
+      "defines": [
+        "ONE_PENDING_MODEL"
+      ],
+      "board": false
+    }
+  ],
+  "new_HDL_runs_by_delivery_worker": false
+}

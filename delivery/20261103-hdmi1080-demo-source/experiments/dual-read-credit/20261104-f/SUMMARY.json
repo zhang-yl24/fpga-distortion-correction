@@ -1,0 +1,146 @@
+{
+  "schema": "F-dual-read-credit-bounded-experiment-v1",
+  "snapshot_UTC": "2026-11-03T20:18:33.326601+00:00",
+  "source_manifest_sha256": "eb7e4169f5d8541b128c07d3b30c2a22cc421bca03f4a6ec00481caa41739f94",
+  "native_source_inputs": 151,
+  "authored_three_sources_verified_against_native_active_bodies": true,
+  "default_legacy_body_same_as_E2_after_explicit_one_trailing_LF_removed": true,
+  "no_legacy_logic_change": true,
+  "component_runs_PASS": [
+    "arbiter-b",
+    "cache-a",
+    "cache-onepending-a",
+    "store-a",
+    "queued-model-b"
+  ],
+  "prefix": [
+    {
+      "case": "native-prefix-1credit-b",
+      "model": "Q2_L32_A",
+      "metrics": {
+        "cache_profile": 6,
+        "frame_id": 2702180353,
+        "written_pixels": 131072,
+        "core_ticks": 143032,
+        "done": 0,
+        "AR": 1409,
+        "R": 11264,
+        "AW": 2048,
+        "W": 8192,
+        "writer_stalls": 0,
+        "full_frame": 0,
+        "peak_source_commands": 1,
+        "peak_cache_leases": 1,
+        "simultaneous_completion_allocation": 0
+      }
+    },
+    {
+      "case": "native-prefix-2credit-b",
+      "model": "Q2_L32_A",
+      "metrics": {
+        "cache_profile": 6,
+        "frame_id": 2702180353,
+        "written_pixels": 131072,
+        "core_ticks": 131986,
+        "done": 0,
+        "AR": 1408,
+        "R": 11264,
+        "AW": 2048,
+        "W": 8192,
+        "writer_stalls": 0,
+        "full_frame": 0,
+        "peak_source_commands": 2,
+        "peak_cache_leases": 2,
+        "simultaneous_completion_allocation": 5
+      }
+    },
+    {
+      "case": "native-prefix-onepending-2credit-b",
+      "model": "ORIGINAL_ONE_PENDING_L32_CONTROL",
+      "metrics": {
+        "cache_profile": 6,
+        "frame_id": 2702180353,
+        "written_pixels": 131072,
+        "core_ticks": 145017,
+        "done": 0,
+        "AR": 1411,
+        "R": 11288,
+        "AW": 2048,
+        "W": 8192,
+        "writer_stalls": 50,
+        "full_frame": 0,
+        "peak_source_commands": 1,
+        "peak_cache_leases": 2,
+        "simultaneous_completion_allocation": 0
+      }
+    }
+  ],
+  "queued_same_model_cycle_reduction": 11046,
+  "queued_same_model_cycle_reduction_percent": 7.722747,
+  "prefix_pixels": 131072,
+  "full_image_pixels": 2073600,
+  "full_frame_verified": false,
+  "prefix_gamma_enable": 0,
+  "prefix_rotation_degrees": 0,
+  "native_F_runtime_Gamma_profile_combination_fully_verified": false,
+  "vendor_ordered_two_accepted_reads_contract_verified": false,
+  "model_definition_is_experimental_not_real_DDR": "Q2_L32_A, R_LATENCY32, ordered shared-data-bus; original one-pending control kept separately",
+  "map_resources": {
+    "APM": {
+      "used": 68.0,
+      "available": 240.0,
+      "percent_used_over_available": 28.3333,
+      "vendor_integer_percent": 29.0
+    },
+    "FF": {
+      "used": 27919.0,
+      "available": 133200.0,
+      "percent_used_over_available": 20.9602,
+      "vendor_integer_percent": 21.0
+    },
+    "LUT": {
+      "used": 32611.0,
+      "available": 66600.0,
+      "percent_used_over_available": 48.9655,
+      "vendor_integer_percent": 49.0
+    },
+    "DRM": {
+      "used": 28.5,
+      "available": 155.0,
+      "percent_used_over_available": 18.3871,
+      "vendor_integer_percent": 19.0
+    },
+    "IO": {
+      "used": 144.0,
+      "available": 300.0,
+      "percent_used_over_available": 48.0,
+      "vendor_integer_percent": 48.0
+    }
+  },
+  "map_resource_report_sha256": "47ff964c5b975cbb099d2f108ec3cd1aa7e8fc814bf4f1fa591d79624c1d236a",
+  "map_source_RAM_CDC_author_review": {
+    "source_hashes_verified": true,
+    "FF_delta_vs_E2": 140,
+    "LUT_delta_vs_E2": 190.5,
+    "DRM_delta": 0,
+    "APM_delta": 0,
+    "fill_buffer_primitive": "GTP_RAM32X2X4",
+    "cells": 43,
+    "used_depth_old": 8,
+    "used_depth_new": 16,
+    "actual_slot_select_present": true
+  },
+  "physical_evidence_in_this_package": "Map only, no final STA or bit release claim",
+  "PNR_snapshot_only": {
+    "state": "RUNNING",
+    "started_CN": "2026-11-04T04:00:58.022232+08:00",
+    "receipt_sha256_at_capture": "54ccdc11babb77249ef3732705348605666f63b7eecad9f28709eaa7a3fabd63"
+  },
+  "external_IO_reset_CDC_MTBF_accepted": false,
+  "board_loaded": false,
+  "board60_or_E2E_or_frame_latency_measured": false,
+  "combined_fullframe_fault_fairness_tests_not_executed": true,
+  "no_denied_tests_retried_or_delegated_by_delivery_worker": true,
+  "new_HDL_EDA_hardware_by_delivery_worker": false,
+  "OP_and_E2_frozen_baselines_not_modified": true
+}

@@ -48,3 +48,7 @@ jobs:
         run: python -B delivery/20261103-hdmi1080-demo-source/runtime-camera/20261104-a/verify_delivery.py
       - name: Verify E2 source revision and internal timing evidence boundaries
         run: python -B delivery/20261103-hdmi1080-demo-source/runtime-camera/20261104-e2/verify_delivery.py
+      - name: Verify standalone S-c source and diagnostic evidence boundaries
+        run: python -B delivery/20261103-hdmi1080-demo-source/diagnostics/ddr-service-probe/20261104-sc/verify_delivery.py
+      - name: Verify explicit F source branches and finite prefix evidence boundaries
+        run: python -B delivery/20261103-hdmi1080-demo-source/experiments/dual-read-credit/20261104-f/verify_delivery.py
