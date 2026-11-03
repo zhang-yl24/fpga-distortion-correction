@@ -130,7 +130,7 @@
     "used_depth_new": 16,
     "actual_slot_select_present": true
   },
-  "physical_evidence_in_this_package": "Map only, no final STA or bit release claim",
+  "physical_evidence_in_this_package": "Map, independent final STA internal model, and local diagnostic bit hash only; no published bit or functional/hardware acceptance",
   "PNR_snapshot_only": {
     "state": "RUNNING",
     "started_CN": "2026-11-04T04:00:58.022232+08:00",
@@ -142,5 +142,173 @@
   "combined_fullframe_fault_fairness_tests_not_executed": true,
   "no_denied_tests_retried_or_delegated_by_delivery_worker": true,
   "new_HDL_EDA_hardware_by_delivery_worker": false,
-  "OP_and_E2_frozen_baselines_not_modified": true
+  "OP_and_E2_frozen_baselines_not_modified": true,
+  "final_internal_physical_milestone": {
+    "recovered_CN": "2026-11-04T04:26:37.997006+08:00",
+    "source_inputs_unchanged": true,
+    "independent_12_tables_reparsed": true,
+    "all12_internal_checks_zero": true,
+    "timing": {
+      "slow": {
+        "setup": {
+          "Count": 0,
+          "WNS_ns": 0.022
+        },
+        "hold": {
+          "Count": 0,
+          "WNS_ns": 0.06
+        },
+        "recovery": {
+          "Count": 0,
+          "WNS_ns": 0.783
+        },
+        "removal": {
+          "Count": 0,
+          "WNS_ns": 0.353
+        },
+        "mpw": {
+          "Count": 0,
+          "WNS_ns": 0.035
+        },
+        "skew": {
+          "Count": 0,
+          "WNS_ns": 0.223
+        }
+      },
+      "fast": {
+        "setup": {
+          "Count": 0,
+          "WNS_ns": 2.596
+        },
+        "hold": {
+          "Count": 0,
+          "WNS_ns": 0.044
+        },
+        "recovery": {
+          "Count": 0,
+          "WNS_ns": 3.471
+        },
+        "removal": {
+          "Count": 0,
+          "WNS_ns": 0.24
+        },
+        "mpw": {
+          "Count": 0,
+          "WNS_ns": 0.035
+        },
+        "skew": {
+          "Count": 0,
+          "WNS_ns": 0.24
+        }
+      }
+    },
+    "final_ADF_sha256": "ccbc98f7affb0806eb7e5d2d05ec48022565613277119ed90615d3cbdebc082c",
+    "final_ADF_bytes": 8029142,
+    "independent_report_sha256": "b19d813ebb293fe4a3a55bbda3a60bc8011898b038911e590ac05bef5103dc33",
+    "clock_network_report_sha256": "e9d9aba86e5fb0bb19aa4b73648e33078721f6dae56ed4bc9157ea7f215e229e",
+    "clock_interaction_report_sha256": "d0451a714f782d4d7ac258bfb7d68ae2464208b9c11d7a40b1554a4634666cb9",
+    "three_inherited_single_async_groups": [
+      "rst_clk",
+      "phy_dq_clk_0",
+      "phy_dq_clk_1"
+    ],
+    "actual_route_priorities_accepted": {
+      "ddrphy_ioclk_gate [0]": true,
+      "ddrphy_ioclk_gate [1]": true,
+      "all_group_ca_dly": true
+    },
+    "route_log_sha256": "f61fd49825147d094ab6ef35b4f831760e91e6c7a7a4c849d33151a77ec9bc20",
+    "constraint_input_hashes": [
+      {
+        "stage_script": "PNR_PREPARED.tcl",
+        "script_sha256": "e494db1e0ad3722f8ebab9df72be9eb63e36c369316007bfa013e66c1221069f",
+        "inputs": [
+          {
+            "name": "board1080-diagnostic.fdc",
+            "sha256": "03f9c21d37e339652be2da56b7646dae1f4088626fd4cec0db9fe322ceefd701"
+          },
+          {
+            "name": "ddr-ip-clock-relations.fdc",
+            "sha256": "e50c487f732019f59882386e558649c1777f03e540a0d5db971194ebcae6a47c"
+          },
+          {
+            "name": "uart_bound.pcf",
+            "sha256": "dd3213fe395e2a51ac0b7b01c35f753c74afe9ea4d9305ddc830aee6e0c73b5f"
+          },
+          {
+            "name": "vendor-and-critical-ca-priority.rcf",
+            "sha256": "e7c94ddab878d5a5283ada580e15f3538b8b7ab1bbff25721d06a011f8b0b99d"
+          }
+        ]
+      },
+      {
+        "stage_script": "STA_PREPARED.tcl",
+        "script_sha256": "9bf1ff71ca98b4de81882fe9004c00187c16bb3a15a8f021682e0d1a0fafecb6",
+        "inputs": [
+          {
+            "name": "board1080-diagnostic.fdc",
+            "sha256": "03f9c21d37e339652be2da56b7646dae1f4088626fd4cec0db9fe322ceefd701"
+          },
+          {
+            "name": "ddr-ip-clock-relations.fdc",
+            "sha256": "e50c487f732019f59882386e558649c1777f03e540a0d5db971194ebcae6a47c"
+          },
+          {
+            "name": "uart_bound.pcf",
+            "sha256": "dd3213fe395e2a51ac0b7b01c35f753c74afe9ea4d9305ddc830aee6e0c73b5f"
+          },
+          {
+            "name": "vendor-and-critical-ca-priority.rcf",
+            "sha256": "e7c94ddab878d5a5283ada580e15f3538b8b7ab1bbff25721d06a011f8b0b99d"
+          }
+        ]
+      }
+    ],
+    "external_IO_checks": {
+      "no_clock": 0,
+      "virtual_clock": 1,
+      "unexpandable_clocks": 0,
+      "no_input_delay": 55,
+      "no_output_delay": 111,
+      "partial_input_delay": 0,
+      "partial_output_delay": 0,
+      "io_min_max_delay_consistency": 0,
+      "input_delay_assigned_to_clock": 0,
+      "loops": 0,
+      "latch_loops": 0,
+      "latchs": 0
+    },
+    "physical_reset_external_IO_CDC_MTBF_signoff": false,
+    "stages": [
+      {
+        "stage": "PNR",
+        "exit_code": 0,
+        "finished_CN": "2026-11-04T04:22:45.436642+08:00",
+        "receipt_sha256": "398fbfdd95b95f9c0f50f4ae6773d888439f9fd69316a1d429f3b706be8c180c"
+      },
+      {
+        "stage": "STA",
+        "exit_code": 0,
+        "finished_CN": "2026-11-04T04:23:33.084926+08:00",
+        "receipt_sha256": "438bb5ea7569f3da8384e17117a2320507590543a2a5c79ee2e199146e753499"
+      },
+      {
+        "stage": "BITGEN",
+        "exit_code": 0,
+        "finished_CN": "2026-11-04T04:29:16.208396+08:00",
+        "receipt_sha256": "b6c63f8905559ca0bf22e331746fab75909a44b9a25ec71bdfe5ab8ff614f4f9"
+      }
+    ],
+    "bitgen_executed": true,
+    "frozen_CN": "2026-11-04T04:30:42.398551+08:00",
+    "frozen_bit_hash_only": {
+      "sha256": "435f37eae899b8b9ed100119c4f3a6f537e20190247851536377aa5976610cd1",
+      "bytes": 3791112,
+      "not_published": true
+    },
+    "board_loaded": false,
+    "complete_functional_verification": false,
+    "old_wrongroot_clock_audit_error_preserved": true,
+    "recovery_did_not_rerun_native": true
+  }
 }

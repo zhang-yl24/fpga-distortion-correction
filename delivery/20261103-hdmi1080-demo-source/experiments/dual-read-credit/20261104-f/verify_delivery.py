@@ -37,5 +37,16 @@ def verify():
  assert all(x['metrics']['full_frame']==0 and x['metrics']['done']==0 for x in s['prefix'])
  assert s['prefix_gamma_enable']==0
  ev=read(ROOT/'VERIFIED_EVIDENCE.json')['existing_real_xsim_runs'];assert len(ev)==8 and all(x['status']=='PASS_REAL_XSIM'and x['all_current_input_hashes_match']for x in ev)
+ final=s['final_internal_physical_milestone'];assert final['all12_internal_checks_zero']and final['bitgen_executed']and not final['board_loaded']and not final['complete_functional_verification']
+ assert not final['physical_reset_external_IO_CDC_MTBF_signoff']
+ assert final['frozen_bit_hash_only']['sha256']=='435f37eae899b8b9ed100119c4f3a6f537e20190247851536377aa5976610cd1'
+ assert final['external_IO_checks']['no_input_delay']==55 and final['external_IO_checks']['no_output_delay']==111
+ tables=read(ROOT/'STA_TABLES.json')['tables'];assert set(tables)=={'slow','fast'}
+ for corner,t in tables.items():
+  assert len(t)==6
+  for kind,row in t.items():
+   assert row['summary']['FailingEndpoints']==sum(x['failing_endpoints']for x in row['rows'])==0
+   assert row['summary']['WNS_ns']==min(x['slack_ns']for x in row['rows'])==final['timing'][corner][kind]['WNS_ns']>0
+ assert tables['slow']['setup']['summary']['WNS_ns']==0.022
  return {'guarded_modules':3,'prefix_pixels_only':131072,'same_model_cycles_saved':11046,'fullframe_or_board60_accepted':False,'new_HDL_EDA_hardware':False}
 if __name__=='__main__':print(json.dumps(verify()))
