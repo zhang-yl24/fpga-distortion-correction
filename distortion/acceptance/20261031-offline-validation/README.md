@@ -1,0 +1,13 @@
+# Offline validation increment, 2026-10-31
+
+Base: private repository delivery/20261030-b4-readback-pap at 12f9a5ac34e9d5b4925d6115c2da0117fd47cb68. Proposed additions only under this acceptance directory; no main change, merge, or production-entry replacement. This package has not been pushed by its producer.
+
+The noDDR diagnostic now has physical evidence for 156 bounded data pairs: 312 dual-corner max/setup checks, 3 Gray groups/6 corner skew groups, 324 internal checks, 736 capture CE/synchronous-RS checks, 368 capture-to-application checks, and all 8 asynchronous-reset endpoints/32 recovery-removal checks. All 92 snapshot capture bits in this fresh final mapping are gopQ/D; old intermediate-LUT input conclusions are not reused. 8 recovery failures remain (Slow -1.765ns and Fast -1.130ns at four endpoints); 44 control-first checks remain visible. Normal negative max/min counts remain 15/10 in each corner. Global timing and hardware release are false. The max/skew engineering budgets are design targets, not measured oscillator/jitter or MTBF guarantees. Datapath-only replaces incoming conventional hold only; it is not a hold repair. This is not the full CE/DDR video candidate.
+
+The real self-authored engine/arbitration/scanner/UART fault-recovery test passed in cloud simulation, as separately identified in CLOUD_RESULTS.json. To reconstruct its exact 69-file input from the base checkout and 16 incremental files, run `python -B fault/assemble_fault_case.py --repo-root REPOSITORY --out NEW_WORK_DIR`. It checks every byte against the original manifest. Then run its CPU contracts, or the documented HDL command only when admitted. No new HDL simulation is run by this delivery preparation.
+
+Contract directories retain negative witnesses and researched candidates. Complex guard differed in 2508 tested public tuples; smaller permit matched the tested comparisons and added ready phases but remains physically NOT ADMITTED. These candidates are not production changes. The readiness package omits uncertain derivative bodies and cannot independently repeat their source audit.
+
+Native1080 has 3 complete video frames/6,220,800 pixels but only 405/408 UART bytes and no terminal marker; its formal oracle does NOT pass. Small-scale and fault tests do not upgrade that boundary or constitute hardware measurement. Physical IO, external reset pulse width/RDC, jitter/MTBF and full CE DDR recovery remain unresolved.
+
+No vendor/IP body or patch, license/secret, ADF/netlist/bitstream, media or private absolute path is included. Raw native excerpts and their reparser are review-only outside the Git allowlist. The Git allowlist is DELIVERY_MANIFEST.json at the ZIP root. Review and publication belong to the parent task.

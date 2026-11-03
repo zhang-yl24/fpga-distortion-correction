@@ -1,0 +1,60 @@
+{
+  "baseline": "CE25 same device/build211867, without b4 readback",
+  "new": "CE+b4 integration plus PAP attribute candidate",
+  "stage": "device_map for both",
+  "base_dmr_sha256": "246046dbc7f590160ff011b5a5bc4929647758748add178f4fa6000184fa6b8e",
+  "new_dmr_sha256": "b87380b0d2380396118ce9b87621bc663390c96ac320d656b74a591c0d4dadaa",
+  "base_sources_verified": 111,
+  "same_after_recorded_path_relocation": 107,
+  "changed_base_files": [
+    {
+      "relative": "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v",
+      "role": "standalone-design",
+      "same_after_known_include_relocation": false
+    },
+    {
+      "relative": "source/build/offline-20261024/cfg100-ce-candidate-20261030-a/candidate/ddr_video_output_1080_board_ce.v",
+      "role": "standalone-design",
+      "same_after_known_include_relocation": false
+    },
+    {
+      "relative": "source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v",
+      "role": "standalone-design",
+      "same_after_known_include_relocation": false
+    },
+    {
+      "relative": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+      "role": "standalone-design",
+      "same_after_known_include_relocation": false
+    }
+  ],
+  "new_b4_files": 13,
+  "resources": {
+    "FF": {
+      "base": 18164.0,
+      "new": 21086.0,
+      "delta": 2922.0
+    },
+    "LUT": {
+      "base": 14291.5,
+      "new": 16852.5,
+      "delta": 2561.0
+    },
+    "DRM": {
+      "base": 17.5,
+      "new": 17.5,
+      "delta": 0.0
+    },
+    "APM": {
+      "base": 69.0,
+      "new": 69.0,
+      "delta": 0.0
+    },
+    "IO": {
+      "base": 142.0,
+      "new": 144.0,
+      "delta": 2.0
+    }
+  },
+  "causal_limit": "Useful same-tool base-family comparison. Delta combines 4 integration changes, 13 b4 files and attribute treatment; not an isolated PAP-only or UART-only effect. No c1/c4-without-PAP map exists."
+}

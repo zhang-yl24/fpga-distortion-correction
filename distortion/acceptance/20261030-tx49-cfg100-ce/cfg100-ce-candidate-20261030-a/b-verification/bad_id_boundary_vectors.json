@@ -1,0 +1,182 @@
+[
+  {
+    "name": "zero_reserved_even_invalid",
+    "gid": "0x00000000",
+    "last": "0x00000000",
+    "last_valid": false,
+    "bank_diff": false,
+    "crc_diff": false,
+    "bad_id": true,
+    "outcome": "reject"
+  },
+  {
+    "name": "zero_reserved_after_max",
+    "gid": "0x00000000",
+    "last": "0xffffffff",
+    "last_valid": true,
+    "bank_diff": false,
+    "crc_diff": false,
+    "bad_id": true,
+    "outcome": "reject"
+  },
+  {
+    "name": "initial_nonzero_with_mismatches",
+    "gid": "0x00000001",
+    "last": "0xffffffff",
+    "last_valid": false,
+    "bank_diff": true,
+    "crc_diff": true,
+    "bad_id": false,
+    "outcome": "allow"
+  },
+  {
+    "name": "forward_one",
+    "gid": "0x00000002",
+    "last": "0x00000001",
+    "last_valid": true,
+    "bank_diff": false,
+    "crc_diff": false,
+    "bad_id": false,
+    "outcome": "allow"
+  },
+  {
+    "name": "backward_one",
+    "gid": "0x00000001",
+    "last": "0x00000002",
+    "last_valid": true,
+    "bank_diff": false,
+    "crc_diff": false,
+    "bad_id": true,
+    "outcome": "reject"
+  },
+  {
+    "name": "largest_forward_gap",
+    "gid": "0x80000000",
+    "last": "0x00000001",
+    "last_valid": true,
+    "bank_diff": false,
+    "crc_diff": false,
+    "bad_id": false,
+    "outcome": "allow"
+  },
+  {
+    "name": "exact_half_range",
+    "gid": "0x80000001",
+    "last": "0x00000001",
+    "last_valid": true,
+    "bank_diff": false,
+    "crc_diff": false,
+    "bad_id": true,
+    "outcome": "reject"
+  },
+  {
+    "name": "past_half_range",
+    "gid": "0x80000002",
+    "last": "0x00000001",
+    "last_valid": true,
+    "bank_diff": false,
+    "crc_diff": false,
+    "bad_id": true,
+    "outcome": "reject"
+  },
+  {
+    "name": "forward_wrap_max_to_one",
+    "gid": "0x00000001",
+    "last": "0xffffffff",
+    "last_valid": true,
+    "bank_diff": false,
+    "crc_diff": false,
+    "bad_id": false,
+    "outcome": "allow"
+  },
+  {
+    "name": "backward_wrap_one_to_max",
+    "gid": "0xffffffff",
+    "last": "0x00000001",
+    "last_valid": true,
+    "bank_diff": false,
+    "crc_diff": false,
+    "bad_id": true,
+    "outcome": "reject"
+  },
+  {
+    "name": "same_id_match",
+    "gid": "0x00000001",
+    "last": "0x00000001",
+    "last_valid": true,
+    "bank_diff": false,
+    "crc_diff": false,
+    "bad_id": false,
+    "outcome": "allow"
+  },
+  {
+    "name": "same_id_bank_mismatch",
+    "gid": "0x00000001",
+    "last": "0x00000001",
+    "last_valid": true,
+    "bank_diff": true,
+    "crc_diff": false,
+    "bad_id": true,
+    "outcome": "reject"
+  },
+  {
+    "name": "same_id_crc_mismatch",
+    "gid": "0x00000001",
+    "last": "0x00000001",
+    "last_valid": true,
+    "bank_diff": false,
+    "crc_diff": true,
+    "bad_id": true,
+    "outcome": "reject"
+  },
+  {
+    "name": "same_id_both_mismatch",
+    "gid": "0x00000001",
+    "last": "0x00000001",
+    "last_valid": true,
+    "bank_diff": true,
+    "crc_diff": true,
+    "bad_id": true,
+    "outcome": "reject"
+  },
+  {
+    "name": "new_id_ignores_old_bank_crc",
+    "gid": "0x00000002",
+    "last": "0x00000001",
+    "last_valid": true,
+    "bank_diff": true,
+    "crc_diff": true,
+    "bad_id": false,
+    "outcome": "allow"
+  },
+  {
+    "name": "invalid_last_ignores_backward",
+    "gid": "0x00000001",
+    "last": "0x00000002",
+    "last_valid": false,
+    "bank_diff": true,
+    "crc_diff": true,
+    "bad_id": false,
+    "outcome": "allow"
+  },
+  {
+    "name": "invalid_last_ignores_half_range",
+    "gid": "0x80000001",
+    "last": "0x00000001",
+    "last_valid": false,
+    "bank_diff": true,
+    "crc_diff": true,
+    "bad_id": false,
+    "outcome": "allow"
+  },
+  {
+    "name": "half_range_from_zero",
+    "gid": "0x80000000",
+    "last": "0x00000000",
+    "last_valid": true,
+    "bank_diff": false,
+    "crc_diff": false,
+    "bad_id": true,
+    "outcome": "reject"
+  }
+]

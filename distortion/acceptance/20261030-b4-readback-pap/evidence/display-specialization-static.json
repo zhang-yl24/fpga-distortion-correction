@@ -1,0 +1,33 @@
+{
+  "status": "PASS_STATIC_EXACT_INVERSE",
+  "new_fifo_sha256": "3e29d6c45d9f284c86aed10ee2b8a1169f9fcce8f53a97e98ff337582f47566b",
+  "old_fifo_sha256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+  "new_system_sha256": "f18b2af29f1270dc559ba7a4b57e220fbc16a9c05cf0caa1805fc5b5f8bf56d8",
+  "old_system_sha256": "15d792e8f08be445b29c3f63165e4a694d9cd509c104a0789eeaedd14d23ff62",
+  "input_capture_sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+  "undo_only_attribute_split_and_module_name_recovers_original_bytes": true,
+  "undo_only_display_instance_type_recovers_system_bytes": true,
+  "instances": [
+    {
+      "owner": "hdmi1080_capture_cdc",
+      "instance": "pixels",
+      "module": "video_async_fifo",
+      "change": "none"
+    },
+    {
+      "owner": "hdmi1080_video_system_geometry_ab",
+      "instance": "display_fifo",
+      "module_before": "video_async_fifo",
+      "module_candidate": "video_display_async_fifo",
+      "parameters": "DATA_BITS=256,ADDR_BITS=9; unchanged",
+      "ports": "byte-identical"
+    }
+  ],
+  "add_new_source_entry_required": true,
+  "old_fifo_entry_retained": true,
+  "live_fifo_instance_count_change": 0,
+  "logic_port_state_clock_reset_ram_changes": false,
+  "candidate_HDL": "NOT_COMPILED_NOT_RUN",
+  "protection_hashes_unchanged": true,
+  "historical_status_note": "This static receipt predates the completed map run. See map-summary.md for later compile/synth/map; HDL simulation of new hashes remains NOT_RUN."
+}

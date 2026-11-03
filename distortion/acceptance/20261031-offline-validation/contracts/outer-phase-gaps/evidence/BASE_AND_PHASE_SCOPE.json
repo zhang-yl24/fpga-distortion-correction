@@ -1,0 +1,44 @@
+{
+  "base_library_file": "libfile_38b30da37a208191bcfb9d76abd07856",
+  "base_version": 0,
+  "base_zip_sha256": "1b81eeffb09dc48aa40f01d5e66c7327dc67972aaf11a1185dd4917d917e10f1",
+  "base_payload_files": 20,
+  "base_9case_outcome": "Parent independently reported compile/vvp exit0,9case oraclePASS,270651 baseline-small public comparisons zero diff,current guard2508 public diff; prior actual ready phases miss pre-VS and precise DE edge.",
+  "new_cases_only": 2,
+  "frozen_RTL_unchanged": [
+    {
+      "path": "rtl/dvp_mode_admission_monitor_cdc.v",
+      "sha256": "57779e03f9c29d2e168fbabf77ae540675ebfc1ebec3e6e24ba3b7f7b6c6b329"
+    },
+    {
+      "path": "rtl/dvp_mode_admission_monitor_epoch_candidate.v",
+      "sha256": "c2c908d9ec76655f18ddcc1c3be9d81bddba5c991bd3a774ed09ba0c62275064"
+    },
+    {
+      "path": "rtl/dvp_mode_admission_monitor_permit_candidate.v",
+      "sha256": "cbb64d0dff483bdb0e7abb1c53f6307fd16c3985fb1477ca950b94e95332432d"
+    },
+    {
+      "path": "rtl/hdmi1080_input_status_cdc.v",
+      "sha256": "a301a9960792921f0a8142f5d6eab070b80505ddfd3a297bc733a09ee9c8f71c"
+    },
+    {
+      "path": "rtl/hdmi1080_input_status_guard_candidate.v",
+      "sha256": "2a9c09ff2ad62b1568b523d068888d662c1db38f53afc00a275c478eff4acd21"
+    },
+    {
+      "path": "rtl/hdmi1080_input_status_permit_candidate.v",
+      "sha256": "1d8de42f99e2685f9fafdb65cc0a6ef3716bf926b27cada5304f8a58ab073828"
+    },
+    {
+      "path": "rtl/observer_epoch_guard_candidate.sv",
+      "sha256": "b43594c1972c10e20687f0218d0848be4e7254429f24df631ccf208637f447f4"
+    }
+  ],
+  "only_changed_HDL": "tb/tb_outer_threeway.sv",
+  "original_bench_sha256": "2c8a814864e6ee8f68c06445fb9b93391cb3828fb38895b6bbdef61edc26d89f",
+  "new_bench_sha256": "ab9ca66f1882eb6aa12b6f97eac50c498a0fd10d54336faa6e1fc8f9e5a830dd",
+  "source_raster_phase_retiming": "External TB source only, while all observers invalid. Resume PCLK to coincide with next registered-ready reference edge.",
+  "prior_nine_cases_rerun": false,
+  "HDL_status": "PENDING"
+}
