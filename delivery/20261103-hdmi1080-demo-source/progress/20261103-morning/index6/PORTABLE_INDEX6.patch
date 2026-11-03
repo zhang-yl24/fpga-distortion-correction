@@ -1,0 +1,11 @@
+--- a/ce/pipeline_gamma_frame_engine_1080_geometry_bypass.v
++++ b/ce/pipeline_gamma_frame_engine_1080_geometry_bypass.v
+@@ -44,7 +44,7 @@
+     wire begin_frame=frame_valid && frame_ready && valid_layout;
+     wire coordinate_valid=state==SCAN && !failed;
+     wire signed [23:0] u={3'b0,column,8'b0},v={3'b0,row,8'b0};
+-    rotated_remap_core_gamma_geometry_bypass_scatter4 #(.CACHE_PROFILE(CACHE_PROFILE),.WIDTH(WIDTH),.HEIGHT(HEIGHT),.INDEX_BITS(7),.TIMEOUT_BITS(TIMEOUT_BITS),.MAX_RADIUS_Q22(MAX_RADIUS_Q22)) core(
++    rotated_remap_core_gamma_geometry_bypass_scatter4 #(.CACHE_PROFILE(CACHE_PROFILE),.WIDTH(WIDTH),.HEIGHT(HEIGHT),.INDEX_BITS(6),.TIMEOUT_BITS(TIMEOUT_BITS),.MAX_RADIUS_Q22(MAX_RADIUS_Q22)) core(
+         .clk(clk),.rst_n(rst_n),.frame_valid(begin_frame),.frame_ready(core_frame_ready),.frame_base(source_base),.correction_enable(correction_enable),
+         .cfg_out_cx(cfg_out_cx),.cfg_out_cy(cfg_out_cy),.cfg_src_cx(cfg_src_cx),.cfg_src_cy(cfg_src_cy),
+         .cfg_src_fx(cfg_src_fx),.cfg_src_fy(cfg_src_fy),.cfg_inv_fx(cfg_inv_fx),.cfg_inv_fy(cfg_inv_fy),

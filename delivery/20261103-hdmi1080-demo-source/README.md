@@ -1,5 +1,7 @@
 # HDMI 1080p 演示源码交付与 60fps 后续目标
 
+**上午实质进展：** [独立源码与验证交付](progress/20261103-morning/README.md) 新增RX framing、INDEX6完整单帧engine及冻结57044实板计数。真实固定校正计数nominal换算23.36fps；INDEX6模型16.59ms、RX新Map资源分开记录，不拼接成60实板成绩。E2E和完整延迟分布仍未测。
+
 **最新分支复核：** [stable30@e89a2d42](LATEST_STABLE30_REVIEW.md) 确有新RTL与约束，12类原生内部时序通过、setup最小+0.009ns；30Hz候选未板测，外部IO/CDC/复位未签核。其22.65ms处理模型不是D256或持续60fps成果。只读副本与本轮交付暂存位于D盘。下文保留此前main8adda和各冻结候选的日期/身份边界。
 
 **2026-11-03当前补注：** [main8adda884工程包与D256/key/HEAD身份复核](MAIN8ADDA_BOARD_PACKAGE_REVIEW.md) 已完成。新main没有新增RTL或板测；原D256连续3帧达到60fps周期预算的RTL结果由主集成工程师报告，物理路由尚未收敛；不能推广为key/HEAD或持续实板60。下方已板显slowAB及早前离板候选的各自身份保持不变，当前目标仍为摄像头1080p60完整校正链，GitHub交付不代表竞赛已提交。

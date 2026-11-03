@@ -2,6 +2,10 @@
 
 ## 当前状态补注（2026-11-03）
 
+**10:31后合并交付：** [RX短测/Map、INDEX6单帧引擎与实板固定纯校正计数](delivery/20261103-hdmi1080-demo-source/progress/20261103-morning/README.md) 已分身份列出。冻结57044位流板测468次新完成/20.033 nominal秒=23.36fps；仅两个内部样本31.16/31.26ms，E2E未测。RX新候选仅Map/结构检查；INDEX6单帧16.591656ms不是连续/实板60。新构建与证据都按各项目D盘目录保存。
+
+
+
 **09:55请求后最新复核：** main仍为8adda884，但新分支stable30已到[e89a2d42](https://github.com/zhang-yl24/fpga-distortion-correction/commit/e89a2d42c21e6a216df00e4f0fdeb7c94439ba89)（北京时间08:57:53）。它新增三源槽、读写寄存及精确DDR IP约束；回执12类内部时序零违例、最小setup+0.009ns，仍未板测且外部IO/CDC/复位未签核。完整处理模型22.650624ms，不能称60校正fps。见[最新源码/约束与可复用范围](delivery/20261103-hdmi1080-demo-source/LATEST_STABLE30_REVIEW.md)。本轮隔离副本与测试均放D盘指定项目目录。
 
 
