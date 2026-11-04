@@ -1,5 +1,7 @@
 # 已持续实板约30fps的O/P源码交付
 
+2026-11-04：经用户明确批准，补充与既有 O/P 实测记录绑定的[原始封存位流](bitstreams/README.md)。下载后先核 SHA256；本次未重新构建或操作开发板。
+
 按用户要求封存已持续实板运行的30fps版本，继续以1920×1080、输入/输出60Hz、每秒60个新校正帧为目标。**O/P不是60个新校正帧/s，也不是全局时序、热/长期稳定或全部基础/提高任务完成版。**
 
 ## 身份与选择
@@ -36,7 +38,7 @@ tile8、Q512/LOOKAHEAD256、INDEX6/SCATTER8、GROUP64/AWLEN3、earlyjob、实际
 
 只发布项目输入66项：147份native中的65份项目RTL/参数/约束，另1份项目route priority。绝对include路径只改为native相对路径，其余字节保留。SOURCE_BINDING列原始/导出SHA及每个include变换。新构建不承诺复现历史ADF/bit哈希。
 
-**83份依赖仅列SHA、不发布文件**：厂商DDR/PLL/IP、IP时钟/route约束、生成端口约束及iic_dri/MS7200/MS7210三份供应商来源控制文件。无供应商原件、license、工具、位流、ADF、rawUART、现场图像、账号或私人路径。带penn/1080p30的历史文件名不等于当前参数或EDID时序。
+**83份依赖仅列SHA、不发布文件**：厂商DDR/PLL/IP、IP时钟/route约束、生成端口约束及iic_dri/MS7200/MS7210三份供应商来源控制文件。本次仅额外发布用户明确批准的 O/P 封存位流。供应商原件、license、工具、其他位流、ADF、rawUART、现场图像、账号或私人路径不发布。带penn/1080p30的历史文件名不等于当前参数或EDID时序。
 
 1. python -B verify_export.py：只核导出哈希/状态边界，不执行HDL/EDA。
 2. 合法已有工程/合法相容PDS-IP流程准备deps/native/<SOURCE_BINDING.path>及deps/inputs/uart_bound.pcf；83项必须精确匹配SHA，不按文件名替换不同版本或旧30Hz表。
@@ -50,4 +52,4 @@ PACKAGE_FILES绑定小包全部文件（自身除外）；父PACKAGE_MANIFEST覆
 
 已完成1080有效像素数字链路、鱼眼profile接入、固定0°/GammaOFF约63秒30fps连续处理/呈现、本构建内部模型时序零违例。未完成60个新校正帧/s、同源camera全视场光学、动态旋转/Gamma整机、延迟分布/E2E、物理复位/IO/CDC/长稳及正式基础/提高任务逐项签核。GitHub交付不等于竞赛已提交。
 
-同学main PR27合并8f365e48…保持不变；仅写既有独立交付分支，保留同学内容，不创建或批准PR。
+原源码交付时记录的同学 main 为 PR27 合并后的 8f365e48…。该记录不是当前 main 状态声明；此次仍仅更新既有独立交付分支，不修改 main 或同学分支，不创建或批准 PR。
