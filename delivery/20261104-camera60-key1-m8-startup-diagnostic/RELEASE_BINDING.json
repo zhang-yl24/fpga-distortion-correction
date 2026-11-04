@@ -1,0 +1,46 @@
+{
+  "status": "DIAGNOSTIC_TIMING_UNCLOSED_NOT_BOARD_TESTED",
+  "candidate": "camera60-key1-m8-startup-20261104-a",
+  "diagnostic_only": true,
+  "may_be_unstable": true,
+  "timing_closed": false,
+  "strict_bitgen_admitted": false,
+  "source_manifest_sha256": "347575b269ff4fc63dd9c9f17a1182830fd8ec4f72155b2b9aa6fadbecf4b62a",
+  "source_export_sha256": "342b53a751ad621d07c01986e851ea3b80568cbe612a3d49534c9d6fa7ede18d",
+  "bit_file": "bits/camera60-key1-m8-startup-20261104-a-setup-minus7ps-diagnostic.sbit",
+  "bit_sha256": "03031366e40c333e42c2dddc6d044b1996d99cc047bd38fe7fbe68f61d9ade80",
+  "bit_bytes": 3791112,
+  "sta_summary_sha256": "2ccb9e1cb6cb590d23ecaacd5c8e80d6c0f70e4b6d8c41e0ef0b8354561f8416",
+  "implementation_binding_verified_locally": true,
+  "diagnostic_identity_sha256": "bfa044a2d41b790f958843215f64eb22b22b9739732766fc1dd5ef829b0bbc90",
+  "board_test": "NOT_RUN_FOR_R",
+  "fresh_60fps_proven": false,
+  "electrical_e2e_measured": false,
+  "rollback": {
+    "rollback_a266_exact_artifact": {
+      "file": "camera-op-input-firstloss-timing-unclosed4-setup-minus32ps-diagnostic.sbit",
+      "sha256": "a266044d4da4b8883fc7fa1e9250f62aee37bbf27df349354b2a11250129c547",
+      "bytes": 3791112,
+      "local_frozen_hash_verified": true,
+      "public_ref": "5d53319c4167596cd2f577c65a3b2d8dfd54494d",
+      "public_path": "delivery/20261104-op-camera-input-unclosed4-diagnostic/camera-op-input-firstloss-timing-unclosed4-setup-minus32ps-diagnostic.sbit",
+      "camera_observation": "User/colleague reported camera success; not replayed by package preparer",
+      "timing_limit": "Four slow setup violations, worst slack -0.032 ns; not fully signed off",
+      "protocol": "PGIQ0001 diagnostic; no PGSTAT02 or SGA/SGT"
+    },
+    "rollback_peer15_exact_artifact": {
+      "sha256": "aa21991374fbeb4a6733741095f38e27336f1e47dd67b963feb243428a5b353b",
+      "file": null,
+      "bytes": null,
+      "public_url": null,
+      "local_hash_verified_by_package_preparer": false,
+      "required_before_test": "Colleague-held previously verified bit must match this SHA256",
+      "prior_observation": "599 seconds / 8985 new frames, approximately 15 fps; reported record, not our raw replay"
+    },
+    "optional_low_load_golden": {
+      "sha256": "df7eec4b4e38441183b45baf8b38d8414fdd456a5eb78fb3aeb1fd94b361b360",
+      "use_condition": "Only if the colleague already possesses and has verified this golden artifact",
+      "local_hash_verified_by_package_preparer": false
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "status": "DIAGNOSTIC_SOURCE_EXPORTS",
+  "source_manifest_sha256": "347575b269ff4fc63dd9c9f17a1182830fd8ec4f72155b2b9aa6fadbecf4b62a",
+  "parent_public_commit": "98141ea77f7163fa4390ffa84eefbb6d7bb088cb",
+  "parent_public_folder": "delivery/20261104-camera60-key1-unified",
+  "files": [
+    {
+      "file": "src/hdmi1080_video_system_geometry_ab.v",
+      "native_relative_target": "source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v",
+      "original_sha256": "5da583ee823571ad8b01cc97123228f8579eb9db8864f5c5114c0e4d9a1e1058",
+      "export_sha256": "5da583ee823571ad8b01cc97123228f8579eb9db8864f5c5114c0e4d9a1e1058",
+      "bytes": 25935,
+      "transform": "byte_exact"
+    },
+    {
+      "file": "src/ddr_video_output_1080_board_ce.v",
+      "native_relative_target": "source/build/offline-20261024/cfg100-ce-candidate-20261030-a/candidate/ddr_video_output_1080_board_ce.v",
+      "original_sha256": "04dd2990194c5ef7ff95a1d2d9f5c5a5685faeac597e9b3c711be06767e54283",
+      "export_sha256": "cae725a9c8b0f5365621e3d808356efffa70ea81b145496bba0dd3dfbd463709",
+      "bytes": 15411,
+      "transform": [
+        {
+          "kind": "absolute_include_to_native_relative",
+          "native_relative_include": "source/rtl/video_crc32.vh"
+        }
+      ]
+    },
+    {
+      "file": "src/board1080_cfg100_top.v",
+      "native_relative_target": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+      "original_sha256": "72e6e6a8e9a3e69aa19d6e9a7db700dcd027fd04e11a60b12e373460314f7291",
+      "export_sha256": "e9ece7de39b9e09317d224965a457a39273370719576fbae120f048834fe4642",
+      "bytes": 17933,
+      "transform": [
+        {
+          "kind": "absolute_include_to_native_relative",
+          "native_relative_include": "source/profile/ddr_bank_page_interleave.vh"
+        },
+        {
+          "kind": "absolute_include_to_native_relative",
+          "native_relative_include": "source/rtl/hdmi_rx_sample_bank.vh"
+        },
+        {
+          "kind": "absolute_include_to_native_relative",
+          "native_relative_include": "source/build/offline-20261024/boardtop-penn-prep-20261029-a/board1080-penn.vh"
+        }
+      ]
+    },
+    {
+      "file": "src/lens1080_bank_core_geometry_bypass.v",
+      "native_relative_target": "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v",
+      "original_sha256": "a333601300ecbae2f05dca1b1d8b0b774ebc415edd4fa550faf1bac88013d05a",
+      "export_sha256": "a333601300ecbae2f05dca1b1d8b0b774ebc415edd4fa550faf1bac88013d05a",
+      "bytes": 11492,
+      "transform": "byte_exact"
+    }
+  ],
+  "inherited_public_exports": [
+    {
+      "file": "src/pipeline_gamma_frame_engine_1080_geometry_bypass.v",
+      "native_relative_target": "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v",
+      "original_sha256": "e42b918333905c5bf3c7f693cb9bd6f28ef114aafbb14b77ced9459033174f53",
+      "export_sha256": "e42b918333905c5bf3c7f693cb9bd6f28ef114aafbb14b77ced9459033174f53",
+      "bytes": 11075,
+      "transform": "byte_exact"
+    },
+    {
+      "file": "src/camera720_view_control.v",
+      "native_relative_target": "source/rtl/experimental/camera720_view_control.v",
+      "original_sha256": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255",
+      "export_sha256": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255",
+      "bytes": 1759,
+      "transform": "byte_exact"
+    },
+    {
+      "file": "src/hdmi_rx_sample_bank.vh",
+      "native_relative_target": "source/rtl/hdmi_rx_sample_bank.vh",
+      "original_sha256": "6f157abbe220e5279828387d2063f8da49fb90974a0fdc9a138726431dad690b",
+      "export_sha256": "6f157abbe220e5279828387d2063f8da49fb90974a0fdc9a138726431dad690b",
+      "bytes": 441,
+      "transform": "byte_exact"
+    }
+  ],
+  "scope": "Four firstparty semantic changes only; include normalization applies solely to derived exports. Licensed native inputs and full private dependency inventory are not bundled."
+}

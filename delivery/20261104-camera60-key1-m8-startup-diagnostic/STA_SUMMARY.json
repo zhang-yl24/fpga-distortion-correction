@@ -1,0 +1,131 @@
+{
+  "status": "TIMING_UNCLOSED_ONE_SLOW_SETUP",
+  "timing_closed": false,
+  "checks": [
+    {
+      "corner": "slow",
+      "check": "setup",
+      "failing_endpoints": 1,
+      "worst_slack_ns": -0.007,
+      "total_negative_slack_ns": -0.007
+    },
+    {
+      "corner": "slow",
+      "check": "hold",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.059,
+      "total_negative_slack_ns": 0.0
+    },
+    {
+      "corner": "slow",
+      "check": "recovery",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.847,
+      "total_negative_slack_ns": 0.0
+    },
+    {
+      "corner": "slow",
+      "check": "removal",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.356,
+      "total_negative_slack_ns": 0.0
+    },
+    {
+      "corner": "slow",
+      "check": "mpw",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.035,
+      "total_negative_slack_ns": 0.0
+    },
+    {
+      "corner": "slow",
+      "check": "skew",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.223,
+      "total_negative_slack_ns": 0.0
+    },
+    {
+      "corner": "fast",
+      "check": "setup",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 2.585,
+      "total_negative_slack_ns": 0.0
+    },
+    {
+      "corner": "fast",
+      "check": "hold",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.044,
+      "total_negative_slack_ns": 0.0
+    },
+    {
+      "corner": "fast",
+      "check": "recovery",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 3.513,
+      "total_negative_slack_ns": 0.0
+    },
+    {
+      "corner": "fast",
+      "check": "removal",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.25,
+      "total_negative_slack_ns": 0.0
+    },
+    {
+      "corner": "fast",
+      "check": "mpw",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.035,
+      "total_negative_slack_ns": 0.0
+    },
+    {
+      "corner": "fast",
+      "check": "skew",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.24,
+      "total_negative_slack_ns": 0.0
+    }
+  ],
+  "known_negative_paths": [
+    {
+      "Slack": "-0.007",
+      "Logic Levels": "13",
+      "High Fanout": "99",
+      "Start Point": "system/bank_core/engine/core/sampler/runtime_cache.cache/pending_tag[20][6]/opit_0_L6Q_perm/CLK",
+      "End Point": "system/bank_core/engine/core/sampler/runtime_cache.cache/next_fill_ticket[31]/opit_0_inv_AQ/CE",
+      "Exception": "",
+      "Launch Clock": "ddrphy_sysclk",
+      "Capture Clock": "ddrphy_sysclk",
+      "Clock Edges": "rise-rise",
+      "Clock Skew": "-0.187",
+      "Launch Clock Delay": "5.579",
+      "Capture Clock Delay": "4.175",
+      "Clock Pessimism Removal": "1.217",
+      "Requirement": "8.000",
+      "Data delay": "7.444",
+      "Logic delay": "2.501 (33.6%)",
+      "Route delay": "4.943 (66.4%)"
+    }
+  ],
+  "final_audit_sha256": "f72485e9ad4132cfe69da5ada19ac98cb2c34384ac44c899e11e736585e1179c",
+  "original_rtr": {
+    "sha256": "3f06092752fc728b725e882ecd8c9e60a3a74c9c97e2e5ac486006c4c8e96bc0",
+    "bytes": 26240664,
+    "retained_locally": true
+  },
+  "resources": {
+    "FF": 27775.0,
+    "LUT": 32518.0,
+    "DRM": 28.5,
+    "APM": 68.0,
+    "IO": 145.0
+  },
+  "input_packing": {
+    "pads": 145,
+    "required_inputs_iregis": 19,
+    "actual_place_route_route_opt_checked": true
+  },
+  "model_boundary": "Three vendor asynchronous clock groups contain DDR IP leaf loads only. This restores the IP model, not physical reset, external I/O or CDC signoff.",
+  "external_io_reset_physical_cdc_fully_signed_off": false
+}

@@ -1,0 +1,15 @@
+# 回退
+
+旧U目录与位流不覆盖，固定父提交98141ea77f7163fa4390ffa84eefbb6d7bb088cb。
+U位流SHA：4ed2cbf1100f90ebe5301aa20a95bcd2bea4e0f9da4a56d761a4fc0cb27312aa。
+U同样尚无本线程摄像头实测，不能替代同学已有的实测回退。
+
+同学已报告相机可用的a266诊断文件：
+camera-op-input-firstloss-timing-unclosed4-setup-minus32ps-diagnostic.sbit
+SHA256 a266044d4da4b8883fc7fa1e9250f62aee37bbf27df349354b2a11250129c547
+3791112字节。它仍有4条setup违例，且为PGIQ诊断协议，不是本版PGSTAT02。
+
+同学原15fps文件SHA：
+aa21991374fbeb4a6733741095f38e27336f1e47dd67b963feb243428a5b353b。
+以上回退位流不在本包重复分发，请使用同学已持有且核对完整SHA的文件。
+出现异常后保存日志，按已有受控流程恢复，不将旧版测试成绩归到新候选。

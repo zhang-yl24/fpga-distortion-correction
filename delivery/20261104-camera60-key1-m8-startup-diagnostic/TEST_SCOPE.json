@@ -1,0 +1,32 @@
+{
+  "status": "DIAGNOSTIC_OFFBOARD_ONLY",
+  "R_combined_system_regression_passed": false,
+  "engine_scope": "Exact U-family engine, M8 configuration, preloaded source and deterministic capture/scan pressure proxies; not real capture or scan hardware. Fixed0degrees.",
+  "engine_models": {
+    "M8_A_GammaOFF_cycles": 2078737,
+    "M8_B_GammaOFF_cycles": 2079214,
+    "M8_B_cold_GammaON_curve0_cycles": 2079214,
+    "strict_integer_60Hz_budget_cycles": 2083333,
+    "B_model": "Q2_L32_B latency32, AR/AW delay2, turn2, REF0 STOP0",
+    "B_headroom_us": 32.952,
+    "sustained_or_vendor_DDR_claim": false
+  },
+  "scheduler_scope": "Separate controlled bank/startup tests; exact combined capture/core/scan test remains absent.",
+  "host_parser": {
+    "actual_synthetic_tests_passed": 13,
+    "parser_sha256": "605d076301aad375cda4b01fbff69a9140b11a4744ed4c25b1fe4bf922a7587c",
+    "test_sha256": "3b05ea159507e853da4f5744898aba2bbf6bb4a13d9a0d31296b55c9e3bd5c39",
+    "PGSIG_real_header_offset_corrected": true,
+    "measurement_epoch_or_fps_proven": false
+  },
+  "not_proven": [
+    "Timing closure: one slow setup -0.007ns remains",
+    "Camera and physical KEY1 behavior for this bit",
+    "Sustained 60 fresh complete scans per second",
+    "Warm adaptive Gamma curves or dynamic controls at full1080",
+    "Nonzero rotation full1080 throughput",
+    "FIFO prefetch deadline under real DDR",
+    "External I/O/reset and physical CDC signoff",
+    "Electrical or optical end-to-end latency"
+  ]
+}
