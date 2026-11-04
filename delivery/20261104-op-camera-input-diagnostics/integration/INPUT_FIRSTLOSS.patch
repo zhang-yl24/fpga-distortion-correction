@@ -1,0 +1,205 @@
+--- a/native/source/rtl/experimental/dvp_mode_admission_monitor.v
++++ b/native/source/rtl/experimental/dvp_mode_admission_monitor.v
+@@ -21,7 +21,8 @@
+     output wire pclk_fresh,vsync_fresh,href_fresh,frame_fresh,snapshot_fresh,
+     output wire [7:0] source_fault_ref_debug,ref_fault_debug,
+     output wire source_fault_valid_ref_debug,ref_fault_valid_debug,
+-    output wire source_domain_reset_n_debug,snapshot_seen_ref_debug
++    output wire source_domain_reset_n_debug,snapshot_seen_ref_debug,
++    output wire [15:0] qualify_reason_ref_debug
+ );
+     localparam VALID_PARAMETERS=BYTES_PER_LINE>=2 && BYTES_PER_LINE<=65534 &&
+         BYTES_PER_LINE%2==0 && LINES_PER_FRAME>=1 && LINES_PER_FRAME<=65534 &&
+@@ -236,6 +237,11 @@
+     assign fault=held_fault!=0 ? held_fault:failed_sync[1] ? 8'h80:ref_fault;
+     assign raw_authorize=enable && r_reset[1] && !failed && healthy_sync[1] && held_healthy &&
+         good_frames!=0 && pclk_fresh && vsync_fresh && href_fresh && frame_fresh && snapshot_fresh;
++    // Passive reference-domain reason bits; never feed back into admission.
++    assign qualify_reason_ref_debug={1'b0,(held_fault!=0),ref_fault_valid,
++        held_source_fault_valid,failed_sync[1],!snapshot_fresh,!frame_fresh,
++        !href_fresh,!vsync_fresh,!pclk_fresh,(good_frames==0),
++        !held_healthy,!healthy_sync[1],failed,!r_reset[1],!enable};
+     always @(posedge ref_clk or negedge monitor_reset_n)begin
+         if(!monitor_reset_n)begin
+             edge_meta<=0;edge_sync<=0;vs_meta<=0;vs_sync<=0;href_meta<=0;href_sync<=0;
+--- a/native/source/rtl/experimental/hdmi1080_input_status.v
++++ b/native/source/rtl/experimental/hdmi1080_input_status.v
+@@ -18,7 +18,8 @@
+     output wire source_domain_reset_n_debug,snapshot_seen_ref_debug,
+     output reg timing_detail_ref_valid_debug=0,
+     output reg [135:0] timing_detail_ref_debug=0,
+-    output wire functional_qualified,functional_failed,hard_overlap_fault_ref
++    output wire functional_qualified,functional_failed,hard_overlap_fault_ref,
++    output wire [31:0] qualify_reason_ref_debug
+ );
+     (* async_reg="true" *) reg [1:0] p_reset=0,r_reset=0;
+     always @(posedge pix_clk or negedge rst_n)
+@@ -165,6 +166,7 @@
+         end
+     end
+     wire geometry_ready,geometry_failed;
++    wire [15:0] geometry_reason_ref;
+     wire [7:0] geometry_fault;
+     wire unused_pclk_fresh,unused_vs_fresh,unused_de_fresh,unused_frame_fresh,unused_snapshot_fresh;
+     // One RGB888 pixel per DE/PCLK edge; BYTES_PER_LINE is an inherited port
+@@ -183,7 +185,8 @@
+         .frame_fresh(unused_frame_fresh),.snapshot_fresh(unused_snapshot_fresh),
+         .source_fault_ref_debug(source_fault_ref_debug),.ref_fault_debug(ref_fault_debug),
+         .source_fault_valid_ref_debug(source_fault_valid_ref_debug),.ref_fault_valid_debug(ref_fault_valid_debug),
+-        .source_domain_reset_n_debug(source_domain_reset_n_debug),.snapshot_seen_ref_debug(snapshot_seen_ref_debug));
++        .source_domain_reset_n_debug(source_domain_reset_n_debug),.snapshot_seen_ref_debug(snapshot_seen_ref_debug),
++        .qualify_reason_ref_debug(geometry_reason_ref));
+     (* async_reg="true" *) reg [1:0] polarity_sync,vs_level_sync,hs_level_sync,timing_good_sync,timing_bad_sync;
+     reg rate_seen,rate_failed;
+     wire rate_good=pclk_edges_per_window>=PCLK_WINDOW_MIN && pclk_edges_per_window<=PCLK_WINDOW_MAX;
+@@ -215,4 +218,9 @@
+     assign functional_failed=geometry_failed || rate_failed || hard_overlap_sync[1];
+     assign functional_qualified=r_reset[1] && polarity_sync[1] && geometry_ready &&
+         good_frames>=2 && rate_seen && rate_good && !functional_failed;
++    // bit16..29 shadow predicates; strict-only timing bits remain diagnostic.
++    assign qualify_reason_ref_debug={2'b00,!functional_qualified,!qualified,
++        functional_failed,failed,!timing_good_sync[1],timing_bad_sync[1],
++        hard_overlap_sync[1],rate_failed,geometry_failed,!rate_good,
++        !rate_seen,(good_frames<2),!polarity_sync[1],!r_reset[1],geometry_reason_ref};
+ endmodule
+--- a/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v
++++ b/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v
+@@ -5,7 +5,7 @@
+ // Runtime faults STOP ADMISSIONS and ask the system to drain; they NEVER
+ // locally reset a FIFO or withdraw an already-issued DDR AW transaction.
+ module board1080_top #(parameter STARTUP_DIAG_ONLY=0,CACHE_PROFILE=6,HDMI_FISHEYE_PROFILE=1,TILE8_GROUP_WIDTH=64,
+-    parameter DIAGNOSTIC_BLANKING_REPORT_ONLY=1,
++    parameter DIAGNOSTIC_BLANKING_REPORT_ONLY=1,INPUT_RUNTIME_DIAG_ONLY=1,
+     parameter INPUT_PCLK_WINDOW_MIN=147000,INPUT_PCLK_WINDOW_MAX=150000)(
+     input clk_27m,clk_p,clk_n,reset_n,
+     input telemetry_rx,output telemetry_tx, // logic ports only: V1.4 pin binding pending
+@@ -114,6 +114,7 @@
+     wire diag_source_domain_reset_n,diag_snapshot_seen_ref;
+     wire diag_timing_detail_valid;wire [135:0] diag_timing_detail;
+     wire functional_input_qualified,functional_input_failed,hard_overlap_fault_ref;
++    wire [31:0] input_qualify_reason_ref;
+     wire selected_input_qualified=DIAGNOSTIC_BLANKING_REPORT_ONLY ? functional_input_qualified:input_qualified;
+     wire selected_input_failed=DIAGNOSTIC_BLANKING_REPORT_ONLY ? functional_input_failed:input_failed;
+     // Existing user LEDs4/5 show first strict timing subcode1/2/3 in this
+@@ -142,7 +143,7 @@
+         .source_domain_reset_n_debug(diag_source_domain_reset_n),.snapshot_seen_ref_debug(diag_snapshot_seen_ref),
+         .timing_detail_ref_valid_debug(diag_timing_detail_valid),.timing_detail_ref_debug(diag_timing_detail),
+         .functional_qualified(functional_input_qualified),.functional_failed(functional_input_failed),
+-        .hard_overlap_fault_ref(hard_overlap_fault_ref));
++        .hard_overlap_fault_ref(hard_overlap_fault_ref),.qualify_reason_ref_debug(input_qualify_reason_ref));
+     reg [23:0] heartbeat_count=0;reg heartbeat=0;
+     always @(posedge clk_27m or negedge global_reset_n)begin
+         if(!global_reset_n)begin pipeline_release<=0;board_failed<=0;board_fault<=0;heartbeat_count<=0;heartbeat<=0;end
+@@ -186,7 +187,26 @@
+         .correction_enable(correction_enable));
+     // Temporary passive startup diagnostic. Existing system resets and RX remain exact.
+     wire normal_telemetry_tx;
+-    generate if(STARTUP_DIAG_ONLY)begin: startup_observation
++    // Passive runtime evidence: same reference edge as first qualification loss.
++    wire [31:0] runtime_ref_uptime;wire runtime_uptime_wrapped;
++    wire runtime_first_valid,runtime_follow_valid;
++    wire [255:0] runtime_first_tuple,runtime_follow_tuple;
++    wire [31:0] runtime_live_flags={8'b0,diag_source_domain_reset_n,diag_timing_detail_valid,diag_snapshot_seen_ref,diag_ref_fault_valid,diag_source_fault_valid,input_polarity,hard_overlap_fault_ref,system_failed_ref[1],board_failed,ref_reset[1],global_reset_n,ddr_ready_ref[1],tx_done_ref[1],rx_done_ref[1],video_lock_ref[1],cfg_lock_ref[1],pipeline_release,observer_startup_armed,observer_epoch_reset,observer_reset_n,input_failed,input_qualified,selected_input_failed,selected_input_qualified};
++    wire [255:0] runtime_live_tuple={{board_fault,input_fault,diag_ref_fault,diag_source_fault_ref},{monitor_lines,monitor_pixels},monitor_bad_frames,monitor_good_frames,monitor_pclk_edges,input_qualify_reason_ref,runtime_live_flags,runtime_ref_uptime};
++    hdmi_input_runtime_snapshot runtime_snapshot(.ref_clk(clk_27m),.rst_n(global_reset_n),
++        .pipeline_released(pipeline_release),.qualified(selected_input_qualified),
++        .input_failed(selected_input_failed),
++        .ready_all(observer_reset_n && !observer_epoch_reset && cfg_lock_ref[1] && video_lock_ref[1] &&
++                   rx_done_ref[1] && tx_done_ref[1] && ddr_ready_ref[1] && !board_failed),
++        .live_tuple(runtime_live_tuple),.first_valid(runtime_first_valid),.follow_valid(runtime_follow_valid),
++        .first_tuple(runtime_first_tuple),.follow_tuple(runtime_follow_tuple),
++        .ref_uptime(runtime_ref_uptime),.uptime_wrapped(runtime_uptime_wrapped));
++    generate if(INPUT_RUNTIME_DIAG_ONLY)begin: runtime_observation
++        hdmi_input_runtime_diag_uart runtime_uart(.clk_27m(clk_27m),
++            .first_valid(runtime_first_valid),.follow_valid(runtime_follow_valid),.uptime_wrapped(runtime_uptime_wrapped),
++            .first_tuple(runtime_first_tuple),.follow_tuple(runtime_follow_tuple),.live_tuple(runtime_live_tuple),
++            .telemetry_tx(telemetry_tx));
++    end else if(STARTUP_DIAG_ONLY)begin: startup_observation
+         wire startup_tx;
+         startup_status_uart boot_status(.clk_27m(clk_27m),
+             .cfg_lock_ref(cfg_lock_ref[1]),.video_lock_ref(video_lock_ref[1]),
+--- /dev/null
++++ b/native/source/rtl/diag/hdmi_input_runtime_snapshot.sv
+@@ -0,0 +1,25 @@
++`timescale 1ns/1ps
++// Passive first runtime failure plus delayed reference-domain evidence only.
++// No signal from this module controls resets, admission, DDR or scan ownership.
++module hdmi_input_runtime_snapshot #(parameter integer FOLLOWUP_REF_CYCLES=54000)(
++ input wire ref_clk,rst_n,pipeline_released,qualified,input_failed,ready_all,
++ input wire [255:0] live_tuple,
++ output reg first_valid=0,follow_valid=0,output reg [255:0] first_tuple=0,follow_tuple=0,
++ output reg [31:0] ref_uptime=0,output reg uptime_wrapped=0
++);
++ reg [31:0] follow_count=0;
++ initial if(FOLLOWUP_REF_CYCLES<1) $error("invalid followup delay");
++ always @(posedge ref_clk or negedge rst_n)begin
++  if(!rst_n)begin first_valid<=0;follow_valid<=0;first_tuple<=0;follow_tuple<=0;
++   ref_uptime<=0;uptime_wrapped<=0;follow_count<=0;end
++  else begin
++   ref_uptime<=ref_uptime+1'b1;if(&ref_uptime)uptime_wrapped<=1;
++   if(!first_valid && pipeline_released && (!qualified || input_failed || !ready_all))begin
++    first_valid<=1;first_tuple<=live_tuple;follow_count<=0;
++   end else if(first_valid && !follow_valid)begin
++    if(follow_count==FOLLOWUP_REF_CYCLES-1)begin follow_valid<=1;follow_tuple<=live_tuple;end
++    else follow_count<=follow_count+1'b1;
++   end
++  end
++ end
++endmodule
+--- /dev/null
++++ b/native/source/rtl/diag/hdmi_input_runtime_diag_uart.v
+@@ -0,0 +1,54 @@
++`timescale 1ns/1ps
++// Independent 27 MHz diagnostic UART. PGIQ0001,84 bytes,CRC32 over first80.
++// first/follow flags distinguish immutable fault snapshots from live readout.
++module hdmi_input_runtime_diag_uart #(
++ parameter integer GAP_CLKS=6750000,MAX_PACKETS=240,CLOCK_HZ=27000000,BAUD=115200
++)(input wire clk_27m,first_valid,follow_valid,uptime_wrapped,
++ input wire [255:0] first_tuple,follow_tuple,live_tuple,output wire telemetry_tx);
++ reg [1:0] release_pipe=0;
++ always @(posedge clk_27m)release_pipe<={release_pipe[0],1'b1};
++ wire local_rst_n=release_pipe[1];
++ reg [31:0] gap_count=0,packet_count=0;
++ reg [7:0] byte_index=0,tx_data=0;
++ reg [639:0] held_payload=0;
++ reg [31:0] packet_crc=32'hffffffff;
++ reg active=0,tx_start=0;wire tx_busy,tx_done;
++ function [31:0] crc_byte(input [31:0] c0,input [7:0] d);
++  integer j;reg [31:0] c;begin c=c0^d;for(j=0;j<8;j=j+1)c=c[0] ? ((c>>1)^32'hedb88320):(c>>1);crc_byte=c;end
++ endfunction
++ function [7:0] marker(input [7:0] n);
++  begin if(n<80)marker=held_payload[n*8+:8];
++   else case(n)80:marker=~packet_crc[7:0];81:marker=~packet_crc[15:8];
++    82:marker=~packet_crc[23:16];83:marker=~packet_crc[31:24];default:marker=0;endcase
++  end
++ endfunction
++ always @(posedge clk_27m)begin
++  if(!local_rst_n)begin gap_count<=0;packet_count<=0;byte_index<=0;held_payload<=0;
++   packet_crc<=32'hffffffff;active<=0;tx_start<=0;tx_data<=0;end
++  else begin
++   tx_start<=0;
++   if(!active && packet_count<MAX_PACKETS)begin
++    if(gap_count==GAP_CLKS-1)begin
++     gap_count<=0;byte_index<=0;active<=1;
++     held_payload[63:0]<=64'h3130303051494750;
++     held_payload[71:64]<={5'b0,uptime_wrapped,follow_valid,first_valid};
++     held_payload[79:72]<=8'd84;held_payload[95:80]<=0;
++     held_payload[127:96]<=packet_count;
++     held_payload[383:128]<=first_valid ? first_tuple:live_tuple;
++     held_payload[639:384]<=follow_valid ? follow_tuple:live_tuple;
++     packet_crc<=32'hffffffff;
++    end else gap_count<=gap_count+1'b1;
++   end
++   if(active && tx_done)begin
++    if(byte_index==83)begin active<=0;packet_count<=packet_count+1'b1;end
++    else byte_index<=byte_index+1'b1;
++   end
++   if(active && !tx_busy && !tx_start && !tx_done)begin
++    tx_data<=marker(byte_index);tx_start<=1;
++    if(byte_index<80)packet_crc<=crc_byte(packet_crc,marker(byte_index));
++   end
++  end
++ end
++ uart_tx #(.CLOCK_HZ(CLOCK_HZ),.BAUD(BAUD)) beacon(.clk(clk_27m),.rst_n(local_rst_n),
++  .start(tx_start),.data(tx_data),.tx(telemetry_tx),.busy(tx_busy),.done(tx_done));
++endmodule
