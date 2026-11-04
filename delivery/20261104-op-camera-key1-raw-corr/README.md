@@ -1,8 +1,50 @@
-# O/P 摄像头诊断基线：KEY1 原始／矫正画面切换源码增量
+# KEY1 原始／矫正画面切换：位流与源码
 
-**本目录先交付源码，没有新的 KEY1 位流。原生综合／布局布线／STA／本版实板测试尚未完成，时序未知。a266 基线的 4 条 setup、WNS −0.032 ns 不代表本版结果。**
+**已增加真实生成的 KEY1 位流。内部两角六类 STA 在既定模型下均零违例，但本机 PC HDMI 本轮输入资格失败、业务未启动。此版作为诊断候选供同学摄像头现场验证，不能称稳定版、实体按键已验或 60 个新矫正帧／秒通过。**
 
-这是同一个 HDMI 输入的原始／矫正画面切换，不切换电脑与摄像头两个物理输入。基于先前 A2 首故障诊断源码；用户反馈 a266 诊断位流在同学摄像头现场测试成功，这不等于本版完成实板验证。
+[下载 KEY1 位流](bits/camera-op-key1-rawcorr-pgiq-internal-timing-closed.sbit) · [最小身份](bits/BIT_IDENTITY.json) · [12 项 STA 表](bits/STA_12_CHECKS.csv)
+
+位流 3,791,112 字节，SHA256：
+cf9fcf563f7487bafccf083f5ad83f7e94c18759beea3236187e32c8b2c66731
+
+对应源码提交 7ec412b；native 150 输入绑定 SHA256 为 2b7f2e2ed904574b2367cc9e75abf1bec9e4720e5512903113a69ab81fbe67a6（仅不透明绑定值，不上传依赖清单）。最终 ADF SHA256：920a7ffc2828794920d13608e455277e4c8ceba031d0251da6e3f9f3765c0d61。PDS 2025.2 ADS / build 211867，PG2L100H-6FBG676；bitgen 2026-11-04 14:01:44→14:02:34（UTC+08:00），exit 0。
+
+## 本轮 PC HDMI 实板结果
+
+父线程唯一板操作者最终回执：184 个有效 PGIQ 包；PCLK 窗口 148352、RX/TX/DDR ready=1；good=0、bad=2348、last_pixels_per_line=1919、lines=1080、source/input fault=0x12、ref fault=0xC5，qualified=0、pipeline_release=0。**业务未启动，无法观察 RAW/CORR 切换。** first_valid／follow_valid 始终为 false，仅有 live 快照；这是 release 前的启动资格阻塞，不是运行后 A2 首故障复现。184 包 DecodeErrors 为空，UART 写入／ARM／SGT 均为 0。
+
+14:07:26.398（UTC+08:00）已结束并恢复 golden、原显示设置，温度峰值 48.422℃、回退后 34.04–34.16℃；串口、UART 线程和自有 Job 均退出，脚本 exit 0。原始采集 SHA256 为 755a01366b5ff729b5075cf1c8fe14cbe1a0c24f2803eab4befa11fd52e34a5d；本包不上传 raw UART。最终采集回执 SHA256：39b4b508a50b4d7caec303692963b35856e7746865df81fba3eabba87737d252。
+
+这不是摄像头或实体 KEY1 按压结果。PGIQ 不暴露模式或帧率，不能据它推断画面模式、新呈现率或端到端延迟。摄像头在同学处，仍需现场验证。故障精确原因在分析，不能把 1919 观测当作已修复问题。
+
+## 两角六项 STA
+
+单位 ns。原生报告身份见最小身份；本表汇总内部模型检查。
+
+| Corner | Check | Failing endpoints | Worst slack |
+|---|---|---:|---:|
+| slow | setup | 0 | 0.009 |
+| slow | hold | 0 | 0.070 |
+| slow | recovery | 0 | 0.673 |
+| slow | removal | 0 | 0.340 |
+| slow | mpw | 0 | 0.035 |
+| slow | skew | 0 | 0.223 |
+| fast | setup | 0 | 2.586 |
+| fast | hold | 0 | 0.045 |
+| fast | recovery | 0 | 3.384 |
+| fast | removal | 0 | 0.235 |
+| fast | mpw | 0 | 0.035 |
+| fast | skew | 0 | 0.240 |
+
+厂商 IP 时钟分组排除了其覆盖的跨域检查；适用的 core↔divided PHY／同域仍检查。零报告不代表物理复位、外部 IO 或新增 KEY1 CDC 完整签核；+0.009 ns 不是宽裕余量。旧 a266 四条负裕量不是此新位流结果，本表也不是实板功能通过。
+
+## 上板与回退
+
+确认相同器件／引脚合同、供电、接口、温度和可用回退后，通过官方工具仅下载到 SRAM，不写 Flash。故障时停止并恢复操作者自己已验证的位流。旧 a266 原件不变，本目录不新增 golden。
+
+串口 115200、PGIQ0001、84 字节，被动接收。使用父诊断交付 host/capture_runtime_diag.py 与 decode_runtime_diag.py；串口号按现场 CP210x 实际识别，在 SRAM 下载前打开，工具不发送命令。声明的 bit SHA 不能由串口自动验证。first_valid=0 是 live 状态，须同时看 qualified／release／sticky／计数，不能当作通过。
+
+KEY1 切换同一 HDMI 的 RAW/CORR，不选择电脑／摄像头物理输入。原 KEY1_DELTA_IDENTITY.json 保留源码阶段历史；当前位流身份以 bits/BIT_IDENTITY.json 为准。
 
 ## 使用行为
 
@@ -32,7 +74,7 @@
 
 首轮因仿真 runner 缺 include 搜索路径而编译失败，保留失败记录；只修 include 搜索路径后完成上述复测，RTL 未改。
 
-这些检查不覆盖新的全帧系统、原生时序、相机现场、长时稳定性或 60 个新矫正帧／秒。旧 a266 位流不含 KEY1；后续 KEY1 位流须以实际构建身份另交。
+以上短测不覆盖完整像素系统、相机现场、实体 KEY1 或新矫正帧率。当前位流已另完成原生构建及下表模型内 STA；本机 PC 输入本轮未通过资格，不能称业务已运行。旧 a266 不含 KEY1。
 
 父 a266 SHA256：`a266044d4da4b8883fc7fa1e9250f62aee37bbf27df349354b2a11250129c547`。旧源码和位流目录未变；现场回退使用操作者自己已验证的位流。
 

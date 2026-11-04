@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "artifact": "KEY1_RAW_CORR_PGIQ_DIAGNOSTIC_BITSTREAM",
+  "bit": {
+    "file": "camera-op-key1-rawcorr-pgiq-internal-timing-closed.sbit",
+    "bytes": 3791112,
+    "sha256": "cf9fcf563f7487bafccf083f5ad83f7e94c18759beea3236187e32c8b2c66731"
+  },
+  "source": {
+    "published_delta_commit": "7ec412bd4b53d5ae14c7cc230ed063a1399f7b24",
+    "native_inputs": 150,
+    "native_manifest_sha256": "2b7f2e2ed904574b2367cc9e75abf1bec9e4720e5512903113a69ab81fbe67a6",
+    "native_top_sha256": "f43cbeec84e28ddcd6177ab1ab2c7e7450bcf03c0b703c0bc7085069af1ad332",
+    "portable_top_sha256": "8af91bbdc6f2f791ce97e663f4566d9145d59c5b8c54dbdab64a11c49e4b37df",
+    "full_frozen_identity_sha256": "fcf7a395993309b00a5ca4ee9e163926830e5fb092293b8b844cfcca72a270d4"
+  },
+  "final_adf": {
+    "sha256": "920a7ffc2828794920d13608e455277e4c8ceba031d0251da6e3f9f3765c0d61",
+    "bytes": 7042830,
+    "not_uploaded": true
+  },
+  "tool": {
+    "product": "PDS 2025.2 ADS",
+    "compiler_build": 211867,
+    "executable_sha256": "32983ea8e0cf0498481e5ae8ff75fcdd4ee329f2efb83dea9d8eee85583931cc",
+    "device": {
+      "family": "Logos2",
+      "device": "PG2L100H",
+      "speedgrade": "-6",
+      "package": "FBG676"
+    },
+    "standard": "SystemVerilog"
+  },
+  "bitgen": {
+    "started": "2026-11-04T14:01:44.114328+08:00",
+    "finished": "2026-11-04T14:02:34.479379+08:00",
+    "exit_code": 0,
+    "all_jobs_exited": true
+  },
+  "STA": {
+    "internal_12_reported_checks_zero": true,
+    "checks": [
+      {
+        "Corner": "slow",
+        "Check": "setup",
+        "FailingEndpoints": 0,
+        "WorstSlack_ns": 0.009
+      },
+      {
+        "Corner": "slow",
+        "Check": "hold",
+        "FailingEndpoints": 0,
+        "WorstSlack_ns": 0.07
+      },
+      {
+        "Corner": "slow",
+        "Check": "recovery",
+        "FailingEndpoints": 0,
+        "WorstSlack_ns": 0.673
+      },
+      {
+        "Corner": "slow",
+        "Check": "removal",
+        "FailingEndpoints": 0,
+        "WorstSlack_ns": 0.34
+      },
+      {
+        "Corner": "slow",
+        "Check": "mpw",
+        "FailingEndpoints": 0,
+        "WorstSlack_ns": 0.035
+      },
+      {
+        "Corner": "slow",
+        "Check": "skew",
+        "FailingEndpoints": 0,
+        "WorstSlack_ns": 0.223
+      },
+      {
+        "Corner": "fast",
+        "Check": "setup",
+        "FailingEndpoints": 0,
+        "WorstSlack_ns": 2.586
+      },
+      {
+        "Corner": "fast",
+        "Check": "hold",
+        "FailingEndpoints": 0,
+        "WorstSlack_ns": 0.045
+      },
+      {
+        "Corner": "fast",
+        "Check": "recovery",
+        "FailingEndpoints": 0,
+        "WorstSlack_ns": 3.384
+      },
+      {
+        "Corner": "fast",
+        "Check": "removal",
+        "FailingEndpoints": 0,
+        "WorstSlack_ns": 0.235
+      },
+      {
+        "Corner": "fast",
+        "Check": "mpw",
+        "FailingEndpoints": 0,
+        "WorstSlack_ns": 0.035
+      },
+      {
+        "Corner": "fast",
+        "Check": "skew",
+        "FailingEndpoints": 0,
+        "WorstSlack_ns": 0.24
+      }
+    ],
+    "final_audit_sha256": "0685879bfb5ed1041e538fee62a75bf748486b88ebeab53f57b12fdfa5ffcda1",
+    "native_report_sha256": "da3339dd19f41afd35f0414c0250378a066a9cd2793a060d1edbea2726cbf76a",
+    "bound_report_files_rehashed": 23,
+    "scope": "Source-IP-matched vendor model; covered asynchronous interclock relationships excluded; applicable core/divided-PHY and same-domain checks preserved",
+    "KEY1_CDC_signed_off": false,
+    "physical_reset_external_IO_signed_off": false,
+    "complete_design_signoff": false
+  },
+  "implementation": {
+    "place_seed": 2,
+    "decongestion": 1,
+    "clocktree_hold_threshold_ps": 100,
+    "SRB_ps": 100
+  },
+  "KEY1": {
+    "pin": "C23",
+    "active_low": true,
+    "debounce_cycles_at_125MHz": 2500000,
+    "default": "CORR",
+    "mode_snapshot": "Next accepted source_valid && source_ready; current processing/pending/front/scan context preserved",
+    "LED6": "requested_CORR_only",
+    "RAW": "RGB565 identity sampler/result DDR/CRC/scan, not24bit direct passthrough",
+    "physical_input_selection": false
+  },
+  "video": {
+    "nominal_input": "1920x1080p60 decoded HDMI",
+    "output_pixel_clock_Hz": 148500000,
+    "Gamma_OFF": true,
+    "rotation_degrees": 0,
+    "PCLK_qualification_window": [
+      147000,
+      150000
+    ]
+  },
+  "protocol": {
+    "magic": "PGIQ0001",
+    "bytes": 84,
+    "baud": 115200,
+    "passive_only": true,
+    "PGSTAT02": false,
+    "SGA1": false,
+    "SGT1": false,
+    "has_mode_or_FPS_field": false
+  },
+  "PC_HDMI_observation": {
+    "scope": "PC HDMI startup test only; not camera or physical KEY1 press",
+    "terminal": "FINISHED_GOLDEN_REST",
+    "finished_local_UTCplus08": "2026-11-04T14:07:26.398+08:00",
+    "valid_PGIQ_packets": 184,
+    "good_frames": 0,
+    "bad_frames": 2348,
+    "last_pixels_per_line": 1919,
+    "last_lines": 1080,
+    "PCLK_edges_per_1ms_window": 148352,
+    "RX_TX_DDR_ready": true,
+    "source_input_fault_hex": "12",
+    "ref_fault_hex": "C5",
+    "qualified": false,
+    "pipeline_release": false,
+    "business_started": false,
+    "temperature_peak_C": 48.422,
+    "temperature_after_golden_C": [
+      34.04,
+      34.16
+    ],
+    "display_restored": true,
+    "COM_closed": true,
+    "UART_thread_exited": true,
+    "all_own_jobs_exited": true,
+    "script_exit_code": 0,
+    "raw_sha256_not_uploaded": "755a01366b5ff729b5075cf1c8fe14cbe1a0c24f2803eab4befa11fd52e34a5d",
+    "source_of_observation": "Parent unique hardware operator final receipt",
+    "final_result_sha256": "39b4b508a50b4d7caec303692963b35856e7746865df81fba3eabba87737d252",
+    "decode_errors": [],
+    "UART_writes": 0,
+    "ARM_commands": 0,
+    "SGT_commands": 0,
+    "first_valid": false,
+    "follow_valid": false,
+    "snapshot_scope": "live only; startup blocked before release; not runtime A2 reproduction"
+  },
+  "peer_camera_KEY1_verified": false,
+  "physical_KEY1_press_verified": false,
+  "hardware_FPS_proven": false,
+  "hardware_acceptance": false,
+  "fallback": "Operator own previously verified bitstream; prior a266 remains unchanged",
+  "files": {
+    "STA_12_CHECKS.csv": {
+      "bytes": 271,
+      "sha256": "e9d2862dd4c38b7bccd35ec3de9c5946e99893855444842b164e3824b41f9b79"
+    }
+  }
+}
