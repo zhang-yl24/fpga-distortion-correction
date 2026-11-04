@@ -76,65 +76,156 @@
     "uniform_scale": true,
     "retained_whitespace_meets_2D_over_15": true
   },
-  "physical_photos_pending": true,
+  "physical_photos_pending": false,
   "figure_count": 4,
   "figures": [
-    "same-image calibration pair",
-    "two-input FPGA architecture",
-    "real-VCD mapper waveforms",
-    "measured duration comparison"
+    "real 1080p original/corrected board screen photographs",
+    "real HDMI system and OV5640 board photographs",
+    "separate-input FPGA architecture",
+    "real-VCD mapper waveforms"
   ],
+  "source_images": [
+    {
+      "source_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fig\\1080p原图.jpg",
+      "source_bytes": 4315336,
+      "source_sha256": "4482356b5adfc80cab1fd80432b78a230a4867d64105b4a88a2a3470ed9672c7",
+      "source_dimensions_px": [
+        4096,
+        3072
+      ],
+      "prepared_file": "assets/1080p-original.png",
+      "prepared_sha256": "cdec8252cfa5435dc568957ee80c5adb68b0a088e66ded75b82f941f275c8dd1",
+      "prepared_dimensions_px": [
+        1600,
+        1059
+      ],
+      "crop_xyxy_px": [
+        0,
+        150,
+        4096,
+        2860
+      ],
+      "processing": "Rectangular crop followed by uniform LANCZOS downsampling; saved as lossless PNG. No perspective correction, geometric warp, screen replacement, retouching, contrast/color change or added image content.",
+      "purpose": "1080p original board output, screen photograph"
+    },
+    {
+      "source_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fig\\1080p矫正图.jpg",
+      "source_bytes": 4154397,
+      "source_sha256": "77b1c84b471c1b70187ec8e2989b5caf6501346f8c46d814a73a77c7a9b89a32",
+      "source_dimensions_px": [
+        4096,
+        3072
+      ],
+      "prepared_file": "assets/1080p-corrected.png",
+      "prepared_sha256": "94a176a38c56d88e035dc434dfbb3f4ab814fa08b5b0b3b316d4a6b4c84ab2b7",
+      "prepared_dimensions_px": [
+        1600,
+        1059
+      ],
+      "crop_xyxy_px": [
+        0,
+        150,
+        4096,
+        2860
+      ],
+      "processing": "Rectangular crop followed by uniform LANCZOS downsampling; saved as lossless PNG. No perspective correction, geometric warp, screen replacement, retouching, contrast/color change or added image content.",
+      "purpose": "1080p corrected board output, screen photograph; all black output regions retained"
+    },
+    {
+      "source_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fig\\1080p系统图.jpg",
+      "source_bytes": 3834933,
+      "source_sha256": "f34747eef42bceb1f533158de7332177cec07b3288df4b3b372ff1fddc437bff",
+      "source_dimensions_px": [
+        4096,
+        3072
+      ],
+      "prepared_file": "assets/1080p-system.png",
+      "prepared_sha256": "38cb5144279b0df8d4929be20b6b39ef2a2d9bab72c49eba08274376178ce59b",
+      "prepared_dimensions_px": [
+        1600,
+        1200
+      ],
+      "crop_xyxy_px": [
+        0,
+        0,
+        4096,
+        3072
+      ],
+      "processing": "Rectangular crop followed by uniform LANCZOS downsampling; saved as lossless PNG. No perspective correction, geometric warp, screen replacement, retouching, contrast/color change or added image content.",
+      "purpose": "Actual HDMI camera, FPGA and display system"
+    },
+    {
+      "source_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fig\\720p特写.jpg",
+      "source_bytes": 5366829,
+      "source_sha256": "5cac49f0b753394992d9cf1952f30b4b6077d075b495a449a15295f00b87ac4b",
+      "source_dimensions_px": [
+        4096,
+        3072
+      ],
+      "prepared_file": "assets/720p-board.png",
+      "prepared_sha256": "925173ce2ea4605a3aa1d984127f7e18ef58faef22ad740d5fb9550a0a430ca1",
+      "prepared_dimensions_px": [
+        1600,
+        1200
+      ],
+      "crop_xyxy_px": [
+        0,
+        0,
+        4096,
+        3072
+      ],
+      "processing": "Rectangular crop followed by uniform LANCZOS downsampling; saved as lossless PNG. No perspective correction, geometric warp, screen replacement, retouching, contrast/color change or added image content.",
+      "purpose": "Actual OV5640 system board detail"
+    }
+  ],
+  "photo_comparison_scope": "1080p photographs show the same room from slightly different screen-photography positions; qualitative board-output demonstration, not pixel-aligned comparison. Photographs do not establish FPS.",
   "waveform_sha256": "91a0db03844a080e5e73dd0960a2df7dd32a96617f5390620d549419677f850a",
   "source_vcd_sha256": "962a29800b573ea272addef03aa4435f71177917655756f3f742be45fc439f9b",
   "pages": 1,
   "visual_qa": {
     "status": "passed",
     "reviews": [
-      "author full-page render inspection after official emblem placement",
-      "root agent independent emblem and masthead visual review passed",
-      "previous independent technical and visual review retained for unchanged body"
+      "author final complete-page rendering inspection",
+      "independent agent full-page layout and technical review",
+      "independent pixel comparison of all four derived images against the source crop and uniform resize"
     ],
     "checks": [
       "A3 portrait, one page",
-      "YaHei and Arial font subsets embedded",
-      "formula indices rendered without missing glyphs",
-      "no clipping, overlaps or overflow",
-      "PC reference, real VCD and board measurements separately labelled",
-      "both selected bitstream identities and resource figures checked",
-      "official Tsinghua emblem source SHA recorded; original proportions and colors preserved",
-      "emblem diameter exceeds 9 mm and clear space exceeds 2D/15 on every side",
-      "all body content below the masthead is unchanged"
+      "four real board photographs",
+      "official emblem original proportions and adequate clear space retained",
+      "YaHei and Arial subsets embedded",
+      "no overlaps, clipping, orphan punctuation or missing formula glyphs",
+      "real screen black output regions retained",
+      "both 15 FPS results, 30 Hz scan, resource identity and 20% processing-time reduction retained",
+      "mapper waveform explicitly labelled as a unit test",
+      "original photo files and earlier poster version unchanged"
     ]
   },
-  "emblem_validation": {
-    "body_preview_below_y208_pixel_identical": true,
-    "all_pdf_extracted_text_identical": true,
-    "prepared_emblem_pixels_exact_crop_of_official_source": true,
-    "clear_margins_px": [
-      85,
-      80,
-      84,
-      90
-    ],
-    "visible_emblem_diameter_px": 431,
-    "required_clear_margin_px": 57.46666666666667,
-    "approx_emblem_diameter_mm": 27.875324074074076,
-    "no_report_or_video_modified": true
-  },
-  "source_images": [
-    {
-      "path": "distortion/work/hdmi-camera-snapshot-20261102-a/captures-b/supplemental-c-20261102T184152214712Z-frame00000063.png",
-      "sha256": "64306d413c2ad7e4d761357536f271fa539b47f3ccbb08288c536e29f569d9c5"
-    },
-    {
-      "path": "distortion/work/fisheye-output-projections-20261104-a/view-30-current.png",
-      "sha256": "3c21a7637d50792c0832460335993efc05eedd3ffe31ab3ff1ff30f8d5c8dddd"
-    }
-  ],
   "output": {
     "pdf": "作品海报_20261104.pdf",
-    "pdf_sha256": "f0e1fab0f2a6259dd7e8fed527c951a124cc4eaa07d4a38b2a47e8582b61d638",
+    "pdf_sha256": "3fdbfe7e344f0c518b56f299676edeb1eca4fcc55dbd584bde9985ef945ae905",
     "png": "作品海报_20261104.png",
-    "png_sha256": "e494e3129efffabdb92abf82ea3d7437fc1a7a936b19eb4b1de7b673c3f2eff2"
+    "png_sha256": "05bbd81eac99045a80a0e3e340c67689c5a4d798e6367af6d9a5fef6dc95e099",
+    "pdf_bytes": 18302667,
+    "png_bytes": 3567216
+  },
+  "evidence_scope": {
+    "performance_source": "Saved UART statistics bound to the selected bitstreams; photographs show physical hardware and visual output only.",
+    "1080p_statistics": {
+      "capture_duration_seconds": 600,
+      "counter_window_seconds": 599,
+      "new_display_frames": 8985,
+      "new_frame_rate_fps": 15,
+      "scan_rate_hz": 30
+    },
+    "processing_comparison": {
+      "old_ms": 44.3316,
+      "new_ms": 35.4632,
+      "reduction_percent": 20.0048,
+      "new_frame_rate_unchanged_fps": 15
+    },
+    "waveform": "Actual VCD coordinate-mapper unit test, 76 ns input acceptance to 260 ns output acceptance, 184 ns = 23 periods of 8 ns; not full-frame HDMI latency.",
+    "model": "Formal HDMI implementation remains KB4 with the current approximately 125 degree output field of view. Tangential extensions and alternate output projections are offline experiments.",
+    "photographs": "The two 1080p screen photographs show the same room with slightly different photography viewpoints, without pixel registration. Only rectangular cropping and uniform resizing were applied. All visible screen content and correction black borders were retained."
   }
 }

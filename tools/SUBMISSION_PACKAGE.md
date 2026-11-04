@@ -16,7 +16,7 @@ python -B tools/package_submission.py --ref HEAD --output <全新目录>
 - 完整 `delivery/20261104-camera720p15/`：正式位流、369项冻结源码／构建输入、18项原生报告及独立校验器。
 - 完整 `distortion/results/camera720-view-toggle-live-20261102-a/` 与包外同名 `.json`：206项原封存文件及汇总，含原位流 gzip、板测和构建身份。
 - `delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/` 与同层 `reports/`：110项生产输入、RCF、6份编译差异、唯一正式位流、同版板测与原生报告。
-- 完整 `submission/`：报告、参数、海报和离线补充证据；以及导出器明确列出的少量报告／打包支持文件。实物照片待用户提供后另行补入。
+- 完整 `submission/`：报告、参数、海报、实物照片展示副本、视频拍摄方案和离线补充证据；以及导出器明确列出的少量报告／打包支持文件。原始4096×3072实物照片在本地提交材料另行保留，仓库副本仅按原比例缩至2048像素长边。
 
 720p的 `source-manifest.json`、`reports-manifest.json` 与1080p独立 `source-manifest.json` 的相对路径、字节数和 SHA256均强校验；1080p `report_files` 只相对固定 `reports/` 根解析。来源字段 `original_path` 仅供追溯，不作为本机路径读取或执行。原始报告 gzip保留原字节，解压身份由所选交付校验器核对。
 
