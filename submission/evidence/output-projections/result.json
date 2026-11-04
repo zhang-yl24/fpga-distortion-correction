@@ -1,0 +1,227 @@
+{
+  "schema": "fisheye-output-projection-comparison-v1",
+  "source_profile": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\new-lens-calibration-c.json",
+    "sha256": "3c90e297603ab612ee5450594db093fd3f0ad01550d05314bd29484f2909ebc8"
+  },
+  "calibration_profile_sha256": "ed59f83e3cfbc77b0c876293129955fea96aec21784e520592111506671b81af",
+  "lens_model_held_fixed": "existing deployed KB4; no added tangential terms in this comparison",
+  "input_size": [
+    960,
+    540
+  ],
+  "view_indices": [
+    0,
+    5,
+    20,
+    30
+  ],
+  "models": [
+    {
+      "name": "Current perspective",
+      "id": "current",
+      "projection": "rectilinear",
+      "Kout_snapshot": [
+        [
+          249.26187221266795,
+          0.0,
+          447.4878149665509
+        ],
+        [
+          0.0,
+          249.83341719615547,
+          280.30807398779103
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "left_right_angles_deg": [
+        -60.881102631773906,
+        64.01984627262802
+      ],
+      "horizontal_fov_deg": 124.90094890440191,
+      "horizontal_angular_magnification_edge_over_center": [
+        4.222928884316332,
+        5.21114564603286
+      ],
+      "valid_source_fraction": 0.8973109567901234,
+      "all_coordinates_finite": true,
+      "Kout_native": [
+        [
+          498.5237444253359,
+          0.0,
+          895.4756299331018
+        ],
+        [
+          0.0,
+          499.66683439231093,
+          561.1161479755821
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Perspective 110 deg",
+      "id": "perspective-110",
+      "projection": "rectilinear",
+      "Kout_snapshot": [
+        [
+          335.7495145715559,
+          0.0,
+          479.5
+        ],
+        [
+          0.0,
+          335.7495145715559,
+          269.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "left_right_angles_deg": [
+        -54.99999999999999,
+        54.99999999999999
+      ],
+      "horizontal_fov_deg": 109.99999999999999,
+      "horizontal_angular_magnification_edge_over_center": [
+        3.039606729161474,
+        3.039606729161474
+      ],
+      "valid_source_fraction": 0.994795524691358,
+      "all_coordinates_finite": true,
+      "Kout_native": [
+        [
+          671.4990291431118,
+          0.0,
+          959.5
+        ],
+        [
+          0.0,
+          671.4990291431118,
+          539.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Perspective 105 deg",
+      "id": "perspective-105",
+      "projection": "rectilinear",
+      "Kout_snapshot": [
+        [
+          367.9332907359115,
+          0.0,
+          479.5
+        ],
+        [
+          0.0,
+          367.9332907359115,
+          269.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "left_right_angles_deg": [
+        -52.50000000000001,
+        52.50000000000001
+      ],
+      "horizontal_fov_deg": 105.00000000000001,
+      "horizontal_angular_magnification_edge_over_center": [
+        2.6983963724170996,
+        2.6983963724170996
+      ],
+      "valid_source_fraction": 1.0,
+      "all_coordinates_finite": true,
+      "Kout_native": [
+        [
+          735.866581471823,
+          0.0,
+          959.5
+        ],
+        [
+          0.0,
+          735.866581471823,
+          539.5
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "name": "Panini d=1, same horizontal FOV",
+      "id": "panini-d1",
+      "projection": "panini_d1",
+      "Kout_snapshot": [
+        [
+          395.3796318456384,
+          0.0,
+          464.68832327697777
+        ],
+        [
+          0.0,
+          395.3796318456384,
+          280.30807398779103
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "left_right_angles_deg": [
+        -60.881102631773906,
+        64.01984627262802
+      ],
+      "horizontal_fov_deg": 124.90094890440191,
+      "horizontal_angular_magnification_edge_over_center": [
+        1.3453305040706098,
+        1.390762754626387
+      ],
+      "valid_source_fraction": 1.0,
+      "all_coordinates_finite": true,
+      "Kout_native": [
+        [
+          790.7592636912768,
+          0.0,
+          929.8766465539555
+        ],
+        [
+          0.0,
+          790.7592636912768,
+          561.1161479755821
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ],
+  "current_map_vs_opencv_max_snapshot_px": 0.0,
+  "panini_horizontal_angular_endpoints_match_current": true,
+  "script_sha256": "167152a9c8b0d7b289cec83344f9c3b5245e0bfab968f3593d349f300ee63bd4",
+  "hardware_modified": false,
+  "RTL_modified": false,
+  "metric_definition": "horizontal angular magnification dx/d(longitude) at latitude=0, normalized by its optical-axis value; not image quality or frame rate"
+}

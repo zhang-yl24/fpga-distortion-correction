@@ -1,0 +1,505 @@
+{
+  "schema": "kb4-source-camera-fov-check-v1",
+  "analysis_date_Asia_Shanghai": "2026-11-04",
+  "camera_profile": "deployed KB4 ed59f83e3cfbc77b; not KB4-T2 experimental refit",
+  "sources": {
+    "profile": {
+      "path": "distortion/work/hdmi-camera-snapshot-20261102-a/new-lens-fisheye-1080-c.json",
+      "sha256": "ed59f83e3cfbc77b0c876293129955fea96aec21784e520592111506671b81af"
+    },
+    "calibration_manifest": {
+      "path": "distortion/work/hdmi-camera-snapshot-20261102-a/new-lens-calibration-c.json",
+      "sha256": "3c90e297603ab612ee5450594db093fd3f0ad01550d05314bd29484f2909ebc8"
+    },
+    "corners": {
+      "path": "distortion/work/hdmi-kb-tangential-20261104-a/corners.npz",
+      "sha256": "ac239b31a6259cb163de3e34f5c8a26abef7eac620c0eb42427c51dc8277688c"
+    },
+    "script": {
+      "path": "distortion/work/fisheye-fov-check-20261104-a/check_fov.py",
+      "sha256": "0f359ef0aa9a8b43582d134be792364c976dab0b44e796e03c87661573764c9c"
+    }
+  },
+  "versions": {
+    "python": "3.13.9",
+    "numpy": "2.2.5",
+    "scipy": "1.18.1",
+    "opencv": "4.11.0"
+  },
+  "K_native": [
+    [
+      808.2272613458829,
+      0.0,
+      943.7446431879945
+    ],
+    [
+      0.0,
+      810.0804859591761,
+      556.5635877240222
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "D_order": [
+    "k1",
+    "k2",
+    "k3",
+    "k4"
+  ],
+  "D": [
+    -0.023025039402366058,
+    0.0010939325830845673,
+    -0.004404026888512618,
+    0.0010249559182549826
+  ],
+  "method": "Invert KB angular polynomial on [0,pi/2], construct unit ray, atan2(norm(cross),dot) for ray-pair angle",
+  "fov": {
+    "native_pixel_centers": {
+      "extent_left_top_right_bottom": [
+        0.0,
+        0.0,
+        1919.0,
+        1079.0
+      ],
+      "point_order": [
+        "left_at_cy",
+        "right_at_cy",
+        "top_at_cx",
+        "bottom_at_cx",
+        "top_left",
+        "top_right",
+        "bottom_right",
+        "bottom_left"
+      ],
+      "pixel_coordinates": [
+        [
+          0.0,
+          556.5635877240222
+        ],
+        [
+          1919.0,
+          556.5635877240222
+        ],
+        [
+          943.7446431879945,
+          0.0
+        ],
+        [
+          943.7446431879945,
+          1079.0
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          1919.0,
+          0.0
+        ],
+        [
+          1919.0,
+          1079.0
+        ],
+        [
+          0.0,
+          1079.0
+        ]
+      ],
+      "unit_rays": [
+        [
+          -0.9383338988933758,
+          0.0,
+          0.34573037787784283
+        ],
+        [
+          0.9532663812261178,
+          0.0,
+          0.30213110800455795
+        ],
+        [
+          0.0,
+          -0.6403103074157803,
+          0.7681163389859045
+        ],
+        [
+          0.0,
+          0.6062614264551348,
+          0.7952654165702072
+        ],
+        [
+          -0.8553642355218194,
+          -0.5032881470167837,
+          0.12269093553553927
+        ],
+        [
+          0.8663004160417539,
+          -0.49325363322488625,
+          0.07889513594850812
+        ],
+        [
+          0.8770222912040275,
+          0.4687389580409295,
+          0.1054309724224413
+        ],
+        [
+          -0.8655528219096472,
+          0.4780549725226813,
+          0.14927074639923538
+        ]
+      ],
+      "theta_deg": [
+        69.77361288347295,
+        72.41435253261577,
+        39.814962234751185,
+        37.31966790178103,
+        82.95257030688296,
+        85.47493905030008,
+        83.9480027145049,
+        81.41533237875716
+      ],
+      "horizontal_through_principal_point_deg": 142.18796541608873,
+      "vertical_through_principal_point_deg": 77.13463013653222,
+      "diagonal_top_left_to_bottom_right_deg": 166.69252181489716,
+      "diagonal_top_right_to_bottom_left_deg": 166.86930048378508
+    },
+    "native_pixel_boundaries": {
+      "extent_left_top_right_bottom": [
+        -0.5,
+        -0.5,
+        1919.5,
+        1079.5
+      ],
+      "point_order": [
+        "left_at_cy",
+        "right_at_cy",
+        "top_at_cx",
+        "bottom_at_cx",
+        "top_left",
+        "top_right",
+        "bottom_right",
+        "bottom_left"
+      ],
+      "pixel_coordinates": [
+        [
+          -0.5,
+          556.5635877240222
+        ],
+        [
+          1919.5,
+          556.5635877240222
+        ],
+        [
+          943.7446431879945,
+          -0.5
+        ],
+        [
+          943.7446431879945,
+          1079.5
+        ],
+        [
+          -0.5,
+          -0.5
+        ],
+        [
+          1919.5,
+          -0.5
+        ],
+        [
+          1919.5,
+          1079.5
+        ],
+        [
+          -0.5,
+          1079.5
+        ]
+      ],
+      "unit_rays": [
+        [
+          -0.9385842335504617,
+          0.0,
+          0.34505019421888794
+        ],
+        [
+          0.9534891912552442,
+          0.0,
+          0.3014272087244624
+        ],
+        [
+          0.0,
+          -0.6408015142491053,
+          0.7677065971685105
+        ],
+        [
+          0.0,
+          0.6067675539309398,
+          0.7948793213417141
+        ],
+        [
+          -0.8553984030768303,
+          -0.5034936547664839,
+          0.12160473520178956
+        ],
+        [
+          0.8662941951680861,
+          -0.49344023222862204,
+          0.07778884647712413
+        ],
+        [
+          0.8770365351705631,
+          0.4689547602188385,
+          0.10434725125323145
+        ],
+        [
+          -0.8656062243742196,
+          0.4782886207285929,
+          0.14820883781390612
+        ]
+      ],
+      "theta_deg": [
+        69.8151401622308,
+        72.45665523433775,
+        39.85161239382268,
+        37.356141270007925,
+        83.01527453942785,
+        85.5385201851178,
+        84.0104397744398,
+        81.47685966888535
+      ],
+      "horizontal_through_principal_point_deg": 142.27179539656856,
+      "vertical_through_principal_point_deg": 77.2077536638306,
+      "diagonal_top_left_to_bottom_right_deg": 166.8159109226368,
+      "diagonal_top_right_to_bottom_left_deg": 166.99425418465614
+    },
+    "snapshot_box_centers_in_native": {
+      "extent_left_top_right_bottom": [
+        0.5,
+        0.5,
+        1918.5,
+        1078.5
+      ],
+      "point_order": [
+        "left_at_cy",
+        "right_at_cy",
+        "top_at_cx",
+        "bottom_at_cx",
+        "top_left",
+        "top_right",
+        "bottom_right",
+        "bottom_left"
+      ],
+      "pixel_coordinates": [
+        [
+          0.5,
+          556.5635877240222
+        ],
+        [
+          1918.5,
+          556.5635877240222
+        ],
+        [
+          943.7446431879945,
+          0.5
+        ],
+        [
+          943.7446431879945,
+          1078.5
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          1918.5,
+          0.5
+        ],
+        [
+          1918.5,
+          1078.5
+        ],
+        [
+          0.5,
+          1078.5
+        ]
+      ],
+      "unit_rays": [
+        [
+          -0.9380831418543198,
+          0.0,
+          0.3464101888927748
+        ],
+        [
+          0.9530431198453923,
+          0.0,
+          0.3028346276688995
+        ],
+        [
+          0.0,
+          -0.6398188753603946,
+          0.7685257358947453
+        ],
+        [
+          0.0,
+          0.6057550872012032,
+          0.7956511637205482
+        ],
+        [
+          -0.8553291593647111,
+          -0.5030819231187694,
+          0.12377644271660543
+        ],
+        [
+          0.8663056670322313,
+          -0.4930662844037014,
+          0.08000081532190068
+        ],
+        [
+          0.8770071128540443,
+          0.46852244987679625,
+          0.10651402708027975
+        ],
+        [
+          -0.8654985474738427,
+          0.4778206517019965,
+          0.15033192983444266
+        ]
+      ],
+      "theta_deg": [
+        69.73209727210072,
+        72.37206275152974,
+        39.77831481738396,
+        37.283196974729385,
+        82.88989761213807,
+        85.41138739950098,
+        83.88559684681711,
+        81.3538371383853
+      ],
+      "horizontal_through_principal_point_deg": 142.10416002363044,
+      "vertical_through_principal_point_deg": 77.06151179211334,
+      "diagonal_top_left_to_bottom_right_deg": 166.5691618633871,
+      "diagonal_top_right_to_bottom_left_deg": 166.74440518549068
+    }
+  },
+  "observed_corner_coverage": {
+    "all": {
+      "views": 35,
+      "corner_count": 1890,
+      "bbox_native_xy_min_max": [
+        [
+          166.29464721679688,
+          99.2528076171875
+        ],
+        [
+          1875.5079345703125,
+          979.9977416992188
+        ]
+      ],
+      "convex_hull_area_fraction_of_sensor_rectangle": 0.6464713243034846,
+      "max_theta_deg": 71.97301344351575,
+      "theta_percentiles": {
+        "quantiles": [
+          50,
+          90,
+          95,
+          99,
+          100
+        ],
+        "degrees": [
+          26.456191140351535,
+          50.313908475894664,
+          55.128035512033236,
+          62.83893409488729,
+          71.97301344351575
+        ]
+      },
+      "corners_above_70deg": 3,
+      "corners_above_75deg": 0
+    },
+    "training": {
+      "views": 28,
+      "corner_count": 1512,
+      "bbox_native_xy_min_max": [
+        [
+          166.29464721679688,
+          122.20577239990234
+        ],
+        [
+          1875.5079345703125,
+          979.9977416992188
+        ]
+      ],
+      "convex_hull_area_fraction_of_sensor_rectangle": 0.6102254563962355,
+      "max_theta_deg": 71.97301344351575,
+      "theta_percentiles": {
+        "quantiles": [
+          50,
+          90,
+          95,
+          99,
+          100
+        ],
+        "degrees": [
+          25.25910288075201,
+          50.13502989965826,
+          55.11221683475633,
+          64.05510466466164,
+          71.97301344351575
+        ]
+      },
+      "corners_above_70deg": 3,
+      "corners_above_75deg": 0
+    },
+    "held_out": {
+      "views": 7,
+      "corner_count": 378,
+      "bbox_native_xy_min_max": [
+        [
+          200.55014038085938,
+          99.2528076171875
+        ],
+        [
+          1779.03369140625,
+          953.0682373046875
+        ]
+      ],
+      "convex_hull_area_fraction_of_sensor_rectangle": 0.5297929574966688,
+      "max_theta_deg": 63.027150177402056,
+      "theta_percentiles": {
+        "quantiles": [
+          50,
+          90,
+          95,
+          99,
+          100
+        ],
+        "degrees": [
+          29.698511133153403,
+          50.54352460942921,
+          54.96625917674488,
+          60.86855565600063,
+          63.027150177402056
+        ]
+      },
+      "corners_above_70deg": 0,
+      "corners_above_75deg": 0
+    }
+  },
+  "checks": {
+    "radial_min_derivative_0_to_90deg": 0.7416776664851308,
+    "independent_opencv_roundtrip_max_native_px": 2.096281709166962e-12,
+    "independent_opencv_unit_ray_max_difference": 2.642616502322673e-15,
+    "validation_point_count": 1915
+  },
+  "interpretation": {
+    "source_image_not_output_projection": true,
+    "seller_160_axis_unspecified": true,
+    "horizontal_160_supported_by_this_fit": false,
+    "diagonal_160_class_is_plausible_but_not_verified": true,
+    "corner_ray_fov_uses_extrapolation_beyond_training_angles": true,
+    "precision_is_numerical_not_measurement_uncertainty": true
+  },
+  "hardware_accessed": false,
+  "formal_calibration_or_report_modified": false
+}

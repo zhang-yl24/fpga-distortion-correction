@@ -1,0 +1,57 @@
+{
+  "schema": "camera720p15-delivery-audit-v1",
+  "created_utc": "2026-11-04T02:15:04.856577+00:00",
+  "top": "camera720_view_toggle_top",
+  "build_id": "47e52e93b7238f29",
+  "profile_id": "f79c44d9bdeb5b11",
+  "bitstream_sha256": "0ca6d19bf074c73cba0346a22e54ba3afb99a595728e6420a1cbb767b963dfe5",
+  "final_adf_sha256": "f31e112a1764d8175cce5cac013c2611b4032ebcd615219c3dfc763cf338ff2d",
+  "source_manifest": {
+    "path": "source-manifest.json",
+    "sha256": "0a984215e077aaae7778db491554578073288fcc0a981f3d0830cb25785e2c59",
+    "file_count": 369,
+    "total_bytes": 6596936
+  },
+  "reports_manifest": {
+    "path": "reports-manifest.json",
+    "sha256": "192852abf162ec8f16ffdbdcaf5545bb17ba7ce9ff312aec7f98a47a5028c6af",
+    "file_count": 18,
+    "total_bytes": 10400642
+  },
+  "prepared_inputs_complete": true,
+  "original_input_sha256_checks": 240,
+  "original_repo_inputs_copied": 239,
+  "external_pds_not_redistributed": true,
+  "missing_prepared_inputs": [],
+  "native_report_adf_chain_verified": true,
+  "resource_scope": "Original build-a RouteOptimize; final implementation inherited unchanged cells/placements through documented hold-route and reset changes",
+  "board_measurement_scope": "1280x720 effective camera processing; 435 accepted/processed/newly-presented frames in 29 counter seconds = 15 fps; configured 1920x1080p30 HDMI raster, refresh not independently measured by UART",
+  "required_separate_repo_evidence": [
+    "distortion/results/camera720-view-toggle-live-20261102-a",
+    "distortion/results/camera720-view-toggle-live-20261102-a.json"
+  ],
+  "no_new_eda_or_hardware": true,
+  "limits": [
+    "Original absolute paths preserved; portable rebuild not performed.",
+    "Original RouteOptimize resources are bound to final bit through function/placement-preserving changes, not newly remeasured.",
+    "Board UART underflow counters unavailable; cannot claim proven fault-free operation."
+  ],
+  "verification_dependencies": {
+    "runtime": "Python 3 standard library only; no Git, PDS, root distortion/tools, UART or JTAG required.",
+    "verify_selected": "Uses only files within delivery/20261104-camera720p15: source-manifest.json, reports-manifest.json, their listed files, identity.json, the selected bitstream and audit.json.",
+    "verify_bundle": "Uses only its own original archive directory; the sibling summary JSON is required only when --summary is supplied.",
+    "root_distortion_tools_required": false
+  },
+  "optional_historical_context": [
+    "handoff/CAMERA_720P_VIEW_TOGGLE_20261102.md"
+  ],
+  "historical_rebuild_dependencies": {
+    "original_root_tools_path": "distortion/tools",
+    "purpose": "Historical build, board diagnostics and analysis utilities; not required by either integrity verifier.",
+    "frozen_plan_bound_tool_copies": "source/generator-inputs/distortion/tools/",
+    "frozen_production_inputs": "source/compiled/ and source/timing.tcl; original upstream inputs in source/upstream/",
+    "toolchain": "External licensed PDS 2023.2-SP3 (build 154097), device/IP installation; executable identity is recorded in source-manifest.json.",
+    "portable_rebuild_verified": false,
+    "note": "Original scripts retain historical absolute paths and may reference other historical utilities. A fresh rebuild requires relocation and dependency review; absence of the entire root distortion/tools directory from the two-version delivery package does not make its source or evidence integrity verification incomplete."
+  }
+}

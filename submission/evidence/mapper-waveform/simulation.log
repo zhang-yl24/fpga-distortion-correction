@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# xsim v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Nov  4 01:11:39 2026
+# Process ID: 42716
+# Current directory: D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/report-mapper-waveform-20261104-a
+# Command line: xsim.exe -log simulation.log -mode tcl -source {xsim.dir/report_mapper/xsim_script.tcl}
+# Log file: D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/report-mapper-waveform-20261104-a/simulation.log
+# Journal file: D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/report-mapper-waveform-20261104-a\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/report_mapper/xsim_script.tcl
+# xsim {report_mapper} -autoloadwcfg -tclbatch {waveform.tcl}
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source waveform.tcl
+## open_vcd mapper.vcd
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/clk}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/rst}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/cfg_valid}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/cfg_ready}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/cfg_corrected}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/in_valid}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/in_ready}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/in_u}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/in_v}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/in_tag}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/out_valid}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/out_ready}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/out_x}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/out_y}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/out_tag}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/out_black}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/phase}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/sent}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/received}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/stall_cycles}]
+## log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/hold_checks}]
+## run -all
+FISHEYE_MAPPER_PASS native=0 corrected=512 identity=4096 domain=1024 matched=5632 stalls=844 stable_holds=844 rejected_busy_configs=2 longest_input_run=47 enabled_latency=23
+$finish called at time : 55128 ns : File "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/tests/tb_hdmi_camera_fisheye_mapper.sv" Line 95
+## close_vcd
+## exit
+INFO: [Common 17-206] Exiting xsim at Wed Nov  4 01:11:47 2026...

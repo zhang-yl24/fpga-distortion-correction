@@ -1,0 +1,111 @@
+{
+  "Passed": true,
+  "time_unit": "ps",
+  "clock_period_ps": 8000,
+  "source_vcd_sha256": "962a29800b573ea272addef03aa4435f71177917655756f3f742be45fc439f9b",
+  "accepted": 5632,
+  "emitted": 5632,
+  "stalled_edges": 844,
+  "blocked_config_edges": [
+    {
+      "time_ps": 1012000,
+      "in_tag": 100,
+      "out_tag": 77
+    },
+    {
+      "time_ps": 1020000,
+      "in_tag": 100,
+      "out_tag": 78
+    }
+  ],
+  "first_input_accept": {
+    "time_ps": 76000,
+    "tag": 0,
+    "phase": 0
+  },
+  "first_output_accept": {
+    "time_ps": 260000,
+    "tag": 0,
+    "phase": 0
+  },
+  "first_output_valid_rise_ns": 252.0,
+  "first_latency_ns": 184.0,
+  "first_latency_cycles": 23,
+  "first_stalls": [
+    {
+      "time_ps": 276000,
+      "tag": 2,
+      "phase": 0,
+      "out_x_hex": "0003ce",
+      "out_y_hex": "000090"
+    },
+    {
+      "time_ps": 372000,
+      "tag": 13,
+      "phase": 0,
+      "out_x_hex": "000d7d",
+      "out_y_hex": "fffe35"
+    },
+    {
+      "time_ps": 412000,
+      "tag": 17,
+      "phase": 0,
+      "out_x_hex": "001256",
+      "out_y_hex": "fffe51"
+    },
+    {
+      "time_ps": 476000,
+      "tag": 24,
+      "phase": 0,
+      "out_x_hex": "0018ed",
+      "out_y_hex": "ffffd6"
+    },
+    {
+      "time_ps": 516000,
+      "tag": 28,
+      "phase": 0,
+      "out_x_hex": "001b3d",
+      "out_y_hex": "0000d6"
+    },
+    {
+      "time_ps": 564000,
+      "tag": 33,
+      "phase": 0,
+      "out_x_hex": "000302",
+      "out_y_hex": "00018c"
+    },
+    {
+      "time_ps": 708000,
+      "tag": 50,
+      "phase": 0,
+      "out_x_hex": "0013af",
+      "out_y_hex": "ffff40"
+    },
+    {
+      "time_ps": 716000,
+      "tag": 50,
+      "phase": 0,
+      "out_x_hex": "0013af",
+      "out_y_hex": "ffff40"
+    }
+  ],
+  "plot_windows_ns": {
+    "startup_latency": [
+      48,
+      300
+    ],
+    "first_backpressure": [
+      240.0,
+      328.0
+    ],
+    "two_cycle_backpressure": [
+      680,
+      744
+    ],
+    "busy_config_rejection": [
+      988.0,
+      1052.0
+    ]
+  },
+  "interpretation": "Handshakes evaluated at rising edges using values immediately BEFORE edge; VCD transitions at same timestamp include NBA updates. First out_valid rise is earlier than first sampled output acceptance."
+}

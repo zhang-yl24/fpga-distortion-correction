@@ -1,0 +1,1387 @@
+{
+  "schema": "kb4-tangential-experiment-v1",
+  "model_definition": "KB4 angular radial projection followed by two decentering terms; no thin prism; zero skew",
+  "formula": {
+    "qx_qy": "(theta*(1+k1*theta^2+k2*theta^4+k3*theta^6+k4*theta^8)/r)*[x,y]",
+    "dx": "2*p1*qx*qy+p2*(3*qx^2+qy^2)",
+    "dy": "p1*(qx^2+3*qy^2)+2*p2*qx*qy"
+  },
+  "reference_url": "https://github.com/facebookresearch/Aria_data_tools/blob/main/src/sensors/camera/projection/FisheyeRadTanThinPrism.h",
+  "capture_date_Asia_Shanghai": "2026-11-03 02:31-02:46",
+  "manifest": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\new-lens-calibration-c.json",
+  "manifest_sha256": "3c90e297603ab612ee5450594db093fd3f0ad01550d05314bd29484f2909ebc8",
+  "script_sha256": "4d6718e10f3ade21a1ae31d0ba65bf8ddd8c9a75a0c4049c1826227856e2f407",
+  "versions": {
+    "python": "3.13.9",
+    "numpy": "2.2.5",
+    "opencv": "4.11.0",
+    "scipy": "1.18.1"
+  },
+  "image_size": [
+    960,
+    540
+  ],
+  "native_equivalent_size": [
+    1920,
+    1080
+  ],
+  "native_coordinate_transform": "u_native=2*u_snapshot+0.5; v_native=2*v_snapshot+0.5",
+  "inner_corners": [
+    9,
+    6
+  ],
+  "square_mm": 25.0,
+  "train_indices": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    14,
+    16,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    24,
+    26,
+    27,
+    28,
+    29,
+    31,
+    32,
+    33,
+    34
+  ],
+  "held_out_indices": [
+    0,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30
+  ],
+  "views": [
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-bottom-e-20261102T184537152681Z-frame00000085.png",
+        "sha256": "afd787f7fcd1a06cdef5a55a157dabb601d07f6de82935ce103701999099b93a"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-bottom-e-20261102T184537152681Z-frame00000085.json",
+        "sha256": "551ae75f21cd45c5056addbf9c368edb657a0de6a3747930ad8fc4c8c04aaadb"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-bottom-e-20261102T184543783720Z-frame00000086.png",
+        "sha256": "77147ad4fc99a40976e91c3ddd58e93700da433ded179a0efcfe9a46dfa1f53a"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-bottom-e-20261102T184543783720Z-frame00000086.json",
+        "sha256": "69d79833fff7114cd4a17c0ab24bf31a5700a56d77eda0505ee21e9bfb615434"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-bottom-e-20261102T184550403077Z-frame00000087.png",
+        "sha256": "feaa0ae2262e9dfab649e7ac3beec22be85ec92f694b89197d77870a07ca097b"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-bottom-e-20261102T184550403077Z-frame00000087.json",
+        "sha256": "95d191351c77b837d231061e66ef8b0c43b95de2e220891fc4e99cfd3eb4f0fc"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-top-d-20261102T184417771228Z-frame00000079.png",
+        "sha256": "d93a3d4c8c750e5c617f036bf79bb7f88a5ab4ab03a1dee99374fc193d84a3e0"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-top-d-20261102T184417771228Z-frame00000079.json",
+        "sha256": "e72d0ab46cf721661148e3cefe2fc09652beaa2b94dce0ffd0986e09b65be203"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-top-d-20261102T184424388487Z-frame0000007a.png",
+        "sha256": "f8e52e5fa142b05752ffd4d21e2ed5099a0073b3d8c9eea2a16f929f588f1302"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-top-d-20261102T184424388487Z-frame0000007a.json",
+        "sha256": "9e9137ff6d166fdac71e6d8050e12b81eff7ee7e8cc71675693fe1061c66a006"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-top-d-20261102T184437619410Z-frame0000007c.png",
+        "sha256": "deeec5816e431579bc751e6b02710ebd452253dfc86a002b0a6075e0ee212b75"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-top-d-20261102T184437619410Z-frame0000007c.json",
+        "sha256": "8456b8bab88af88ca4b5fe07f5c45e6be94648ae0a16c7aae50906fe22147b81"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\first-b-20261102T183156714635Z-frame00000009.png",
+        "sha256": "a4e1c8df25b83387afe89a6116f1b43c14fda32f306c28ba591a0c75c171ed25"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\first-b-20261102T183156714635Z-frame00000009.json",
+        "sha256": "9ae6728ef0a8cb570132baed4c1db05b82a9148733f6800ad8f046fce767a921"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183428923865Z-frame00000020.png",
+        "sha256": "cae54edd3995eb00ff2625d9503f1c7aadb65754d5c4aa25cf32f5fa96aa23dd"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183428923865Z-frame00000020.json",
+        "sha256": "0cfa72680fcbcda8f3910424083222999424e9a549af62206e9074c018810f2f"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183435515101Z-frame00000021.png",
+        "sha256": "298b8e4a46eea00663d58cd2ff4d6669b7fb27586fa726acf0db83a541a1eace"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183435515101Z-frame00000021.json",
+        "sha256": "16d9516d698475c380ddd8cc9e04cf6d95859b0366c2ef250f01a77867c45efb"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183442133082Z-frame00000022.png",
+        "sha256": "a1b1505983b787e7a364b414643025fd913839f5971d10df7f04302bb3f97298"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183442133082Z-frame00000022.json",
+        "sha256": "2296f3ae9ff6c5f77cb44502ea499cefedaf24877399000ac576459c11691b4f"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183448746299Z-frame00000023.png",
+        "sha256": "9e51db18b01b9a84540d0d320d37b1ed28d3cbb038b7e0e9434b609fd57d0b0b"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183448746299Z-frame00000023.json",
+        "sha256": "30f37a0307b4c0305d03875b972ca77b2191797db8db93f49193fe1f882dc0c4"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183455362764Z-frame00000024.png",
+        "sha256": "da91b589fcc237163a2b56b8f9da9712d79f93bae252f7d15215e1cbf4ca54b4"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183455362764Z-frame00000024.json",
+        "sha256": "d5e4a49efbdbb898143906b02ded2cd24e2556a6514f6ede33541151f20efab5"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183501988766Z-frame00000025.png",
+        "sha256": "f2f079a99c012c836b43f2de07a0690f879b7529d8984a2bfbf534b40ad06c2a"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183501988766Z-frame00000025.json",
+        "sha256": "148e52e15568c54c27bdc7493eb12253f19b2d5db20c09171b205865996c8f80"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183508597356Z-frame00000026.png",
+        "sha256": "8874aa2285f5f6aa3b0506b7ede96fb735a39f5f1e62546d0e75396e725bc087"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183508597356Z-frame00000026.json",
+        "sha256": "72c3e3d38c58169fb7187d2b6920f2c680feb4725c910d3d966d0bf9d3e355ac"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183515225388Z-frame00000027.png",
+        "sha256": "4c5a2570694e944984ef1e35963a9e3f5f0dcebf6ff4589c18a25f70d8c5e88c"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183515225388Z-frame00000027.json",
+        "sha256": "23f751166b3335023752c0801625db06fac19ea99e84f4287f788a9ee55eabbb"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183528453245Z-frame00000029.png",
+        "sha256": "8be513ab9ff5c31d098448d30691ed3d3feb31ef1e6ab9859153b97803146d88"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183528453245Z-frame00000029.json",
+        "sha256": "18bd4dfad3789b6753400890d5cb219352d63cdd6c35ae243934b31a88271f3f"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183535071451Z-frame0000002a.png",
+        "sha256": "af787be32b89fec8517ea88a6f2bc0377fa80f371853a2ab914ea26ce2628be9"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183535071451Z-frame0000002a.json",
+        "sha256": "6d78dd3ba09f9c0d5890397d3cd6a656c3021902c645775dfc5b5f02efeeb78b"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183548298579Z-frame0000002c.png",
+        "sha256": "95533f02c901ea47036ee164c61900ced270185592446291a9d89cff40aa0aaa"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183548298579Z-frame0000002c.json",
+        "sha256": "94a729e9473838ce47b0914cb2826b39b2ee865c0bbd0e5a9de49fd3340ea68f"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183554921632Z-frame0000002d.png",
+        "sha256": "f38924dfb56ef20649cc0154363e6a16685a75a6aac8cc032a2e4421ab739dce"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183554921632Z-frame0000002d.json",
+        "sha256": "fd20183e83617eea1b56cc25de316254863b4fe46ca1efea5dfc8cd69f7361b7"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183601540226Z-frame0000002e.png",
+        "sha256": "db1f5d97e9e8219948e2d23918d3617108411490190c1498ba317678c366120b"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183601540226Z-frame0000002e.json",
+        "sha256": "874aee1a7b3e6685820850f971cdb0f30780dd76d43827e8b04bf56b6d34864a"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183608145724Z-frame0000002f.png",
+        "sha256": "ac05ecb9aa03fac673704bff806b9201dbb21c1d7efdcff43ede7585afdef5e3"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183608145724Z-frame0000002f.json",
+        "sha256": "035b695e95c8a1802b0270cbede78179a4a510d1653be56b46df859b75e9ddea"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183614767845Z-frame00000030.png",
+        "sha256": "90a225100479c6494bf3626cc87a052fa952348598f58baec1d2e7a1f5e3d3ca"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183614767845Z-frame00000030.json",
+        "sha256": "8aa15c6d920eba21e5b24ab1fa605ac7f4a374f95fa56b537286857c7a7d01d1"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183627996465Z-frame00000032.png",
+        "sha256": "50a7a4fbe3a79183bf0a78251681ba3a12a59c1ec3c1948ff75d952b30f521f8"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183627996465Z-frame00000032.json",
+        "sha256": "554571bc413580c15a78fa47a1124744d00b755ddd724d9d1d020ba95b510ea8"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183641241022Z-frame00000034.png",
+        "sha256": "fc8a8823ceb80dcca1eb984aa3b9cf5f77ba8fa60704356ee086a57e2451a907"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183641241022Z-frame00000034.json",
+        "sha256": "cccba00dc5a81119f19d94642c0c999b5eed6dfd7559dc23a7c42cc7992da0e3"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183647850994Z-frame00000035.png",
+        "sha256": "4421be53aad88f9a6a0ea3c9305555687c5bfc89c35776dfffd7a7e4aefcbaaf"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183647850994Z-frame00000035.json",
+        "sha256": "4bc8d2532637212bd416c6ae145ba613099d71f8bc14fc1fa29cc6f699608e38"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183654463049Z-frame00000036.png",
+        "sha256": "62884d770f42c3dc00461538d5362a888f2e5ea97398eb5fc9a0496b7e829089"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183654463049Z-frame00000036.json",
+        "sha256": "2ea2aae20da48b26fe3de7e935374c52ebb5c368b4164270acac7d47ff6db645"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183701083683Z-frame00000037.png",
+        "sha256": "89b52575f2f6b689919a0466aff5f218f0166994453c3531db2c9dd4afec190a"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\poses-b-20261102T183701083683Z-frame00000037.json",
+        "sha256": "63982f94219ba50f9c9a56198016b57d44c172cbe77b6ecc567186ad289d2978"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184046033980Z-frame00000059.png",
+        "sha256": "3dc4a6888cbb41b8cff139347a493ebae5d55fdb5c5762bc13ff7314af268335"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184046033980Z-frame00000059.json",
+        "sha256": "9a72c0f2641404db4fb3d3e5ca93d1b7a49207d57005dcf21d71da2b219a440d"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184132363909Z-frame00000060.png",
+        "sha256": "e1a6e5ae992d4f962bcf8f6f09b24bf236270613c3f7da7f9b523fb592e2cd1a"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184132363909Z-frame00000060.json",
+        "sha256": "176bd4d1662e58c8b822c39ac30b2403546b4d4140e4cb8ede6ff45f17e47649"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184138976445Z-frame00000061.png",
+        "sha256": "55d38841596a96a60f8ba4d0b23479131a892eabb62cba50660fd0c44f600bb4"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184138976445Z-frame00000061.json",
+        "sha256": "1219ef76808f86f6e8240c9cf0f59717fe11d73202eaa9430612e014067e6b82"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184152214712Z-frame00000063.png",
+        "sha256": "64306d413c2ad7e4d761357536f271fa539b47f3ccbb08288c536e29f569d9c5"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184152214712Z-frame00000063.json",
+        "sha256": "03f0e6afb0844d3762ec95f145d28fdd84d9ce0684f584379373a54076c5bd13"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184158826746Z-frame00000064.png",
+        "sha256": "0f2c792e50ebaab79195503cbbc138eaeb9c5abb2919e5629f1509b163458d32"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184158826746Z-frame00000064.json",
+        "sha256": "9e143ab51257de63155b95c9f2d7d6942713ecda129c670d5e2afe8df2aa5f07"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184205438253Z-frame00000065.png",
+        "sha256": "4b2ac0f3bdd91a33b996642751f6e01fd2766d29d1b272e60de49105f9dabaaf"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184205438253Z-frame00000065.json",
+        "sha256": "1f7cec159448332f5c72f942873885e7512a07d5971df7e19b595be69ed9fce5"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184212054447Z-frame00000066.png",
+        "sha256": "acbb8fc75b557ae17f683b95aa463d275c15e12b8a1d28c7c8690ecc016583d1"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184212054447Z-frame00000066.json",
+        "sha256": "64e6ed30e08653519d56288ddd291a29fb1cb007d60fbc80c569916dfc7c66ee"
+      }
+    },
+    {
+      "image": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184225286178Z-frame00000068.png",
+        "sha256": "65a5c2c32acac00451f76a8c77c2c83a0dbb485015495df89ee04d7a39b6aede"
+      },
+      "metadata": {
+        "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184225286178Z-frame00000068.json",
+        "sha256": "c500079da03164f13499f54e52ecc1826dca4a745d2cbedf7dbbbbc33a42768d"
+      }
+    }
+  ],
+  "evaluation": "Both models: ordinary pixel-space least squares; holdout intrinsics fixed, pose-only refinement; no holdout parameter tuning",
+  "previous_fisheye_validation": {
+    "mean_native_px": 0.39151887531326884,
+    "method": "undistortPoints plus normalized-plane solvePnP; not the same pose metric as this experiment"
+  },
+  "projection_checks": {
+    "zero_tangential_vs_opencv_max_px": 0.0,
+    "analytic_jacobian_scaled_max_error": 4.37038008883323e-08,
+    "explicit_kb_t2_formula_max_px": 1.1368683772161603e-13
+  },
+  "extended_training_multistart": [
+    {
+      "initial_p1_p2": [
+        0.0,
+        0.0
+      ],
+      "success": true,
+      "cost": 27.329703429757576,
+      "nfev": 7,
+      "message": "`ftol` termination condition is satisfied."
+    },
+    {
+      "initial_p1_p2": [
+        0.002,
+        -0.002
+      ],
+      "success": true,
+      "cost": 27.32970342975786,
+      "nfev": 7,
+      "message": "`ftol` termination condition is satisfied."
+    },
+    {
+      "initial_p1_p2": [
+        -0.002,
+        0.002
+      ],
+      "success": true,
+      "cost": 27.329703429757558,
+      "nfev": 7,
+      "message": "`ftol` termination condition is satisfied."
+    }
+  ],
+  "models": [
+    {
+      "name": "KB4",
+      "parameter_order": [
+        "fx",
+        "fy",
+        "cx",
+        "cy",
+        "k1",
+        "k2",
+        "k3",
+        "k4"
+      ],
+      "parameters_snapshot": [
+        404.11363061787574,
+        405.0402429302528,
+        471.62232157640875,
+        278.03179382902056,
+        -0.023025039141840217,
+        0.0010939320877579608,
+        -0.004404026600960979,
+        0.0010249559281970927
+      ],
+      "K_native": [
+        [
+          808.2272612357515,
+          0.0,
+          943.7446431528175
+        ],
+        [
+          0.0,
+          810.0804858605056,
+          556.5635876580411
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D_order": [
+        "k1",
+        "k2",
+        "k3",
+        "k4"
+      ],
+      "D": [
+        -0.023025039141840217,
+        0.0010939320877579608,
+        -0.004404026600960979,
+        0.0010249559281970927
+      ],
+      "training": {
+        "per_view_rms_native_px": [
+          0.22821422338598407,
+          0.28511631781362107,
+          0.6540181126355192,
+          0.6254571878847324,
+          0.31471856751113375,
+          0.23940546946321345,
+          0.2813530986667316,
+          0.23710813046989013,
+          0.31389103078322755,
+          0.3426332259589239,
+          0.23217890078468212,
+          0.2649195659974614,
+          0.2277848259003488,
+          0.3214424709147735,
+          0.5694325961942408,
+          0.2976238923882514,
+          0.44179986897970713,
+          0.22934679003108763,
+          0.3070025889716825,
+          0.31271325343869183,
+          0.31155519443972973,
+          0.2449455216470496,
+          0.6952569465065862,
+          0.4097970667854041,
+          0.5260083815359319,
+          0.3886845602520858,
+          0.3861953542196692,
+          0.32723260635686346
+        ],
+        "mean_view_rms_native_px": 0.3577084196399009,
+        "pooled_rms_native_px": 0.3819268712537837,
+        "max_view_rms_native_px": 0.6952569465065862,
+        "point_error_p95_native_px": 0.6867949772499503
+      },
+      "held_out": {
+        "per_view_rms_native_px": [
+          0.3450602603398468,
+          0.2514516633693314,
+          0.40891215475191,
+          0.23446916330437456,
+          0.29533278987228273,
+          0.25358270061943106,
+          0.713094764539328
+        ],
+        "mean_view_rms_native_px": 0.35741478525664355,
+        "pooled_rms_native_px": 0.3899650620178501,
+        "max_view_rms_native_px": 0.713094764539328,
+        "point_error_p95_native_px": 0.7824976803036597
+      },
+      "train_poses_rvec_tvec_mm": [
+        [
+          -0.19444510848540278,
+          0.15094249847788538,
+          0.020921555034069114,
+          -54.85586332164828,
+          43.014005770855064,
+          388.5188239337808
+        ],
+        [
+          -0.1521989370188731,
+          0.2057298566298032,
+          0.048464547806956845,
+          -38.40039775332557,
+          82.16645116719263,
+          404.04824087415943
+        ],
+        [
+          -0.6717823892228298,
+          1.290976819858922,
+          0.426322364090844,
+          245.7913006131686,
+          38.13953560695867,
+          355.09759638897276
+        ],
+        [
+          -0.638896704287115,
+          1.3301282740225835,
+          0.4266097738351498,
+          245.78289116167397,
+          21.537205462993477,
+          353.7892211327595
+        ],
+        [
+          0.0997089215044133,
+          -0.014343450122404738,
+          0.013850787199346161,
+          -99.64687391127856,
+          -101.64405965573329,
+          317.8451595397702
+        ],
+        [
+          0.12436285849357263,
+          0.4926044991571473,
+          0.0027908683874522558,
+          25.72062700430283,
+          -110.13319915495735,
+          418.72729828279637
+        ],
+        [
+          0.09535350137006571,
+          -0.5973431225587905,
+          0.005416626319960877,
+          -237.8471895133968,
+          -92.93766203468128,
+          222.7643486490158
+        ],
+        [
+          0.06432690450678649,
+          -0.631822866078934,
+          0.02561409306630519,
+          -222.3819671869766,
+          -94.30854969189714,
+          257.17634991717404
+        ],
+        [
+          0.10628263360954329,
+          0.040073842846876984,
+          -0.004420853033639032,
+          -96.6850786164859,
+          -180.16714140477262,
+          305.32711173251124
+        ],
+        [
+          0.0832142818124865,
+          -0.05849102509194665,
+          0.02055247388204689,
+          -101.43372161565274,
+          -103.57150165646104,
+          362.6874494370375
+        ],
+        [
+          0.09469074411575736,
+          0.03273271621443933,
+          0.013967542357584923,
+          -97.54415649307828,
+          71.165951723362,
+          366.2799746323665
+        ],
+        [
+          -0.19433352342521162,
+          0.09471645553347689,
+          0.01787512680428656,
+          -100.74534610632517,
+          60.03063049381146,
+          391.1488275539464
+        ],
+        [
+          -0.1401236747091685,
+          0.887389233038894,
+          0.12131835014542731,
+          153.0206799244895,
+          -9.255101226732293,
+          372.68683187901297
+        ],
+        [
+          -0.24908542052174862,
+          -0.42102860755866883,
+          0.018568921042752002,
+          -279.4256746455104,
+          -21.28985814948017,
+          228.04235781994808
+        ],
+        [
+          -0.24018713815086082,
+          -0.4136380745011682,
+          0.0008116024958558363,
+          -292.355389861164,
+          -29.120970634681942,
+          206.2530336220116
+        ],
+        [
+          -0.1957654432383143,
+          -0.13439394727636547,
+          -0.01074753451618607,
+          -193.02302518060702,
+          7.857077939521195,
+          326.64760649106347
+        ],
+        [
+          -0.22051121547310812,
+          -0.8519425899272693,
+          -0.10232745321615076,
+          -257.40902775376077,
+          -140.46151347335498,
+          186.71890515113384
+        ],
+        [
+          0.02708218614171479,
+          -0.8305061514519154,
+          0.12563303392782366,
+          -234.93796507945336,
+          -137.26222828863592,
+          178.82225200635077
+        ],
+        [
+          0.19173660391681333,
+          0.8028248384961112,
+          0.04119374203211173,
+          290.3862463803384,
+          -165.3955630849932,
+          289.1608413995044
+        ],
+        [
+          0.19450491336329204,
+          0.9784111820918273,
+          0.07345022642961538,
+          145.00669545523294,
+          -158.8616947891866,
+          330.56191183645115
+        ],
+        [
+          -0.06221896921418846,
+          0.6616117318431308,
+          -0.5682896523274916,
+          -124.15644504346297,
+          21.475783866829914,
+          411.30367197143534
+        ],
+        [
+          -0.13213581457514642,
+          -0.13352754031715158,
+          -0.049911885839210995,
+          -228.60346491552727,
+          -58.95009419110184,
+          328.1318040040001
+        ],
+        [
+          -0.13106614983771633,
+          -0.028756395300409413,
+          -0.044690889420400684,
+          -205.61929922734902,
+          -61.40528747268634,
+          322.1959349628128
+        ],
+        [
+          -0.13203143219715266,
+          0.11962998070951951,
+          -0.028413522326718402,
+          -127.81406298591938,
+          -60.328216370524395,
+          224.63475920903815
+        ],
+        [
+          -0.16651902862410553,
+          -0.10673100358869367,
+          -0.0560987444939202,
+          -35.34035191973804,
+          -68.38118977072179,
+          212.4570647676335
+        ],
+        [
+          -0.14963407377881582,
+          -0.616997911678205,
+          -0.10086948725733236,
+          -81.18852489296309,
+          -61.891215845941545,
+          208.57234553392522
+        ],
+        [
+          -0.11505847465537153,
+          0.6659744325962119,
+          0.026713424230062875,
+          -108.08900453321496,
+          -64.30256602883574,
+          330.6419829624761
+        ],
+        [
+          -0.1385324486116629,
+          -0.32617954917076997,
+          -0.07081221723721608,
+          -270.9567269658458,
+          -53.11005302173595,
+          194.46174050747706
+        ]
+      ],
+      "held_poses_rvec_tvec_mm": [
+        [
+          -0.21832614249922658,
+          -0.5521506949620529,
+          -0.0692886550720289,
+          -42.826512206972126,
+          -230.11938579645727,
+          382.30112338907327
+        ],
+        [
+          0.09731558520535787,
+          0.1528127094039612,
+          0.008509070255705574,
+          -73.24772710397353,
+          -211.56929667046364,
+          344.26904341981106
+        ],
+        [
+          0.0929029396208918,
+          0.08760206553195209,
+          0.031187375623939067,
+          -53.82464412840604,
+          -189.28733493310224,
+          338.1066781343447
+        ],
+        [
+          -0.16451016340537464,
+          0.6590960301272888,
+          0.08671497636973921,
+          149.8071718659854,
+          48.7210959005391,
+          399.87861968344686
+        ],
+        [
+          -0.22610414517808564,
+          -0.8499474194967505,
+          -0.1022382334673216,
+          -261.0025229080613,
+          14.705508486871594,
+          190.33526258043034
+        ],
+        [
+          0.12951732377497674,
+          0.36961814347300526,
+          0.10637711264035064,
+          149.98139381983717,
+          -56.16454395180934,
+          279.03309753751125
+        ],
+        [
+          -0.11674249459202285,
+          0.6153024196546552,
+          0.020359176831986247,
+          21.487399843264996,
+          -67.03614444823667,
+          223.35243096773826
+        ]
+      ],
+      "held_optimizers": [
+        {
+          "success": true,
+          "nfev": 4,
+          "optimality": 9.403373593119824e-07
+        },
+        {
+          "success": true,
+          "nfev": 5,
+          "optimality": 5.148526938114628e-09
+        },
+        {
+          "success": true,
+          "nfev": 5,
+          "optimality": 1.6806217377762778e-06
+        },
+        {
+          "success": true,
+          "nfev": 7,
+          "optimality": 4.6770921002803334e-07
+        },
+        {
+          "success": true,
+          "nfev": 5,
+          "optimality": 1.2381815537310104e-06
+        },
+        {
+          "success": true,
+          "nfev": 5,
+          "optimality": 3.392644742916673e-08
+        },
+        {
+          "success": true,
+          "nfev": 6,
+          "optimality": 1.864939530094034e-05
+        }
+      ],
+      "geometry_checks": {
+        "positive_focals": true,
+        "principal_point_inside_image": true,
+        "radial_min_derivative_0_to_90deg": 0.7416776868887995,
+        "tangential_min_determinant_on_preview_grid": 1.0,
+        "preview_all_map_finite": true,
+        "preview_valid_fraction_grid": 0.8932496075353218,
+        "min_board_depth_mm": 95.05962715182159
+      },
+      "fit": {
+        "success": true,
+        "cost": 27.569077512298108,
+        "nfev": 7,
+        "optimality": 1.2497044903074517e-05
+      }
+    },
+    {
+      "name": "KB4-T2",
+      "parameter_order": [
+        "fx",
+        "fy",
+        "cx",
+        "cy",
+        "k1",
+        "k2",
+        "k3",
+        "k4",
+        "p1",
+        "p2"
+      ],
+      "parameters_snapshot": [
+        404.12030531075874,
+        405.0607386869959,
+        470.0236914786501,
+        277.9636918682218,
+        -0.022400549508783535,
+        0.00030943642014575495,
+        -0.004059091145237918,
+        0.0009556461636885104,
+        9.335805395607391e-05,
+        0.0005584422977490047
+      ],
+      "K_native": [
+        [
+          808.2406106215175,
+          0.0,
+          940.5473829573002
+        ],
+        [
+          0.0,
+          810.1214773739918,
+          556.4273837364436
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "D_order": [
+        "k1",
+        "k2",
+        "k3",
+        "k4",
+        "p1",
+        "p2"
+      ],
+      "D": [
+        -0.022400549508783535,
+        0.00030943642014575495,
+        -0.004059091145237918,
+        0.0009556461636885104,
+        9.335805395607391e-05,
+        0.0005584422977490047
+      ],
+      "training": {
+        "per_view_rms_native_px": [
+          0.2256254349580158,
+          0.2870772292313655,
+          0.6514927296967848,
+          0.6220416281930287,
+          0.317400173477364,
+          0.2409890112156311,
+          0.26960428750161675,
+          0.23827215428005213,
+          0.30728786829487126,
+          0.3453582811635892,
+          0.24527985030952426,
+          0.26477395172188756,
+          0.22172715029949638,
+          0.3171573764812079,
+          0.5675822967971826,
+          0.30027048137983997,
+          0.4429684358808028,
+          0.21654682555070492,
+          0.307789179130994,
+          0.29809420716603285,
+          0.29873618717890293,
+          0.2392835925862526,
+          0.682098264071445,
+          0.3967653992693117,
+          0.5628707770745248,
+          0.3745678385764051,
+          0.39383836390334037,
+          0.3189298741060475
+        ],
+        "mean_view_rms_native_px": 0.35551531605343645,
+        "pooled_rms_native_px": 0.3802651778015608,
+        "max_view_rms_native_px": 0.682098264071445,
+        "point_error_p95_native_px": 0.6878032960825177
+      },
+      "held_out": {
+        "per_view_rms_native_px": [
+          0.3401974005819156,
+          0.24866910679201829,
+          0.39410138761243396,
+          0.24185385615712468,
+          0.28665054343155333,
+          0.25975556360214064,
+          0.6626559821384448
+        ],
+        "mean_view_rms_native_px": 0.3476976914736616,
+        "pooled_rms_native_px": 0.3741913614768494,
+        "max_view_rms_native_px": 0.6626559821384448,
+        "point_error_p95_native_px": 0.7250152102285767
+      },
+      "train_poses_rvec_tvec_mm": [
+        [
+          -0.19415641524927477,
+          0.15289656410868388,
+          0.020978407336445334,
+          -53.33722893237018,
+          43.09431499284057,
+          388.7254882138754
+        ],
+        [
+          -0.15185441348601467,
+          0.20774721686992667,
+          0.04835639140844176,
+          -36.80534084156403,
+          82.27197671899667,
+          404.2709809233154
+        ],
+        [
+          -0.6710010341331518,
+          1.2944371563906545,
+          0.42695626161518274,
+          247.33509038179895,
+          38.20381534223282,
+          354.8402380761315
+        ],
+        [
+          -0.6381483400219156,
+          1.3335750593485005,
+          0.42726723973958464,
+          247.31419428409433,
+          21.59741753763066,
+          353.51765015632355
+        ],
+        [
+          0.09960333929202744,
+          -0.012167970614763001,
+          0.013790798424617843,
+          -98.35993075247653,
+          -101.59495153041597,
+          318.0855819598657
+        ],
+        [
+          0.12430908342345492,
+          0.49551183263949283,
+          0.0026822484315709694,
+          27.412703701253804,
+          -110.09042406349462,
+          418.95994422813584
+        ],
+        [
+          0.09525538143441227,
+          -0.594854123365167,
+          0.005409101793655438,
+          -236.75343906147137,
+          -92.89887089386698,
+          223.19900675692858
+        ],
+        [
+          0.06406049699516266,
+          -0.6288165263450728,
+          0.025606081652548424,
+          -221.21285031831735,
+          -94.26986741574738,
+          257.6281914615483
+        ],
+        [
+          0.10609311092963887,
+          0.04245207221803936,
+          -0.004220177073102461,
+          -95.40966974983951,
+          -180.15288691144167,
+          305.6125704898713
+        ],
+        [
+          0.08301680176912772,
+          -0.05625291985023294,
+          0.020513459511848096,
+          -99.96571493998711,
+          -103.51423316458896,
+          362.9243866407944
+        ],
+        [
+          0.09510642687247473,
+          0.03563295648521279,
+          0.013302534671076956,
+          -96.0875263469293,
+          71.27988599358575,
+          366.60936109269915
+        ],
+        [
+          -0.19401360222901215,
+          0.09685592919064791,
+          0.017901676393084067,
+          -99.20820666688083,
+          60.1213478960597,
+          391.45787035970176
+        ],
+        [
+          -0.140497265254186,
+          0.8908202483458166,
+          0.12146792986938959,
+          154.66187916381764,
+          -9.156843062173674,
+          372.77535343948045
+        ],
+        [
+          -0.24921264957373157,
+          -0.41938965487229307,
+          0.018835356981500344,
+          -278.3467247769246,
+          -21.259184384526137,
+          228.56761460076424
+        ],
+        [
+          -0.24031813786551773,
+          -0.4120852148353907,
+          0.0010675648600121043,
+          -291.34837363592175,
+          -29.09395947317218,
+          206.78989462002136
+        ],
+        [
+          -0.1955950396230252,
+          -0.13210982684942543,
+          -0.01057210552327006,
+          -191.69828334894788,
+          7.919822513022461,
+          327.0950602393463
+        ],
+        [
+          -0.22099230164073985,
+          -0.8491355084029412,
+          -0.10174152925405755,
+          -256.3888618507055,
+          -140.42571638375037,
+          187.1683852326609
+        ],
+        [
+          0.026728424447594275,
+          -0.8277881630943791,
+          0.12563977242658472,
+          -233.96347444180824,
+          -137.2280516797126,
+          179.2280041545999
+        ],
+        [
+          0.19294267174277793,
+          0.8045717980540051,
+          0.04048031936139058,
+          291.7844497154286,
+          -165.357286327471,
+          288.82482675300673
+        ],
+        [
+          0.19470665481022845,
+          0.9820152652957508,
+          0.0734068227971847,
+          146.5072381559798,
+          -158.86791440724227,
+          330.58759332336587
+        ],
+        [
+          -0.06343968734277346,
+          0.6651918666880388,
+          -0.5684724202600093,
+          -122.5465016650036,
+          21.561594686054125,
+          411.7865888237808
+        ],
+        [
+          -0.13218836819825885,
+          -0.13096896616270792,
+          -0.049669499437575745,
+          -227.26447904071964,
+          -58.903608686684805,
+          328.67841307358003
+        ],
+        [
+          -0.13117252924788966,
+          -0.026033645209386374,
+          -0.04445657489349518,
+          -204.33292230964364,
+          -61.35966766711896,
+          322.72967331297315
+        ],
+        [
+          -0.13204649027629878,
+          0.12208231283269522,
+          -0.028208412029752994,
+          -126.94750801993472,
+          -60.299868976208344,
+          224.9943160594508
+        ],
+        [
+          -0.16647267548912734,
+          -0.10432446955057544,
+          -0.055768984928758286,
+          -34.48668260381389,
+          -68.35682734210944,
+          212.57144591897108
+        ],
+        [
+          -0.14990004407795066,
+          -0.6135361501790565,
+          -0.10048653116618886,
+          -80.34069237412848,
+          -61.86188019828521,
+          208.8195666685021
+        ],
+        [
+          -0.11519284693895447,
+          0.6695329045743582,
+          0.026892813149205733,
+          -106.81430771293986,
+          -64.25115132409704,
+          331.0750587351657
+        ],
+        [
+          -0.13853545202165876,
+          -0.32436059674324097,
+          -0.07056977038067071,
+          -270.0378449415936,
+          -53.088172121891034,
+          194.9806508328469
+        ]
+      ],
+      "held_poses_rvec_tvec_mm": [
+        [
+          -0.21847972276992894,
+          -0.548708707129142,
+          -0.06814721884015047,
+          -41.20667656000879,
+          -230.10016102781157,
+          382.5386644176864
+        ],
+        [
+          0.09724632523870351,
+          0.15534526605288027,
+          0.008810732897576255,
+          -71.81052222431562,
+          -211.57231028603616,
+          344.5610076807908
+        ],
+        [
+          0.09274594332432412,
+          0.08991680391382095,
+          0.031394021479395816,
+          -52.421744435049455,
+          -189.26530082876008,
+          338.31689566844045
+        ],
+        [
+          -0.16543661879300864,
+          0.6611578284481119,
+          0.0870229527470919,
+          151.54593872527784,
+          48.84820282033741,
+          399.9922717580896
+        ],
+        [
+          -0.22657811216814286,
+          -0.8469173289723552,
+          -0.10216812418683018,
+          -260.03895776353056,
+          14.73641458051478,
+          190.8535178306958
+        ],
+        [
+          0.1296967414249082,
+          0.3710756640325331,
+          0.106126043690794,
+          151.18014216550122,
+          -56.11611308671814,
+          278.87139054339576
+        ],
+        [
+          -0.11659232680328238,
+          0.6174754832635673,
+          0.020425313759985103,
+          22.35515724032077,
+          -67.01065529210709,
+          223.46318324494496
+        ]
+      ],
+      "held_optimizers": [
+        {
+          "success": true,
+          "nfev": 4,
+          "optimality": 4.8481695102964295e-08
+        },
+        {
+          "success": true,
+          "nfev": 5,
+          "optimality": 1.0423576917162336e-06
+        },
+        {
+          "success": true,
+          "nfev": 7,
+          "optimality": 1.1222638818253472e-07
+        },
+        {
+          "success": true,
+          "nfev": 6,
+          "optimality": 5.396929081413759e-07
+        },
+        {
+          "success": true,
+          "nfev": 6,
+          "optimality": 2.6172611455876904e-07
+        },
+        {
+          "success": true,
+          "nfev": 5,
+          "optimality": 9.166267116000881e-06
+        },
+        {
+          "success": true,
+          "nfev": 6,
+          "optimality": 9.463508689577793e-06
+        }
+      ],
+      "geometry_checks": {
+        "positive_focals": true,
+        "principal_point_inside_image": true,
+        "radial_min_derivative_0_to_90deg": 0.7355701716771095,
+        "tangential_min_determinant_on_preview_grid": 0.9952941644046668,
+        "preview_all_map_finite": true,
+        "preview_valid_fraction_grid": 0.8930448433554024,
+        "min_board_depth_mm": 94.84433401081216
+      },
+      "fit": {
+        "success": true,
+        "cost": 27.329703429757558,
+        "nfev": 7,
+        "optimality": 0.0001222588300260341
+      }
+    }
+  ],
+  "comparison": {
+    "held_mean_reduction_percent": 2.71871623217953,
+    "held_views_improved": 5,
+    "held_views": 7
+  },
+  "preview": {
+    "same_output_K_snapshot": [
+      [
+        249.26187221266795,
+        0.0,
+        447.4878149665509
+      ],
+      [
+        0.0,
+        249.83341719615547,
+        280.30807398779103
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "model_source_coordinate_difference_native_px": {
+      "median": 2.45595645904541,
+      "p95": 3.108466625213623,
+      "max": 3.2002222537994385
+    }
+  },
+  "hardware_modified": false,
+  "deployment_parameters_modified": false,
+  "elapsed_seconds": 3.814204699941911
+}

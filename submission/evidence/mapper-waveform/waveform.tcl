@@ -1,0 +1,25 @@
+open_vcd mapper.vcd
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/clk}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/rst}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/cfg_valid}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/cfg_ready}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/cfg_corrected}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/in_valid}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/in_ready}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/in_u}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/in_v}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/in_tag}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/out_valid}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/out_ready}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/out_x}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/out_y}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/out_tag}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/out_black}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/phase}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/sent}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/received}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/stall_cycles}]
+log_vcd [get_objects {/tb_hdmi_camera_fisheye_mapper_small/test_case/hold_checks}]
+run -all
+close_vcd
+exit

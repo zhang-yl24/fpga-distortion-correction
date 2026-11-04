@@ -1,0 +1,1360 @@
+{
+  "schema": "tile8-directfill-selected-submission-v1",
+  "frozen_commit": "45223998ce3695960297937519d37759499bb4f5",
+  "selected_variant": "1080p15 tile8 direct-fill INDEX8 v3",
+  "selected_bit_sha256": "aa21991374fbeb4a6733741095f38e27336f1e47dd67b963feb243428a5b353b",
+  "final_adf_sha256": "2b6e662fb25cfb774a494743947c80325fd4796b423b3e0756a0f877117ae430",
+  "source_file_count": 110,
+  "compiled_snapshot_count": 6,
+  "route_constraint_count": 1,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3466,
+      "sha256": "83665fe65d719c97f664cbea2c3c02d5296cf5a0097e91ed193bd6c0daf08e53",
+      "role": "selected-package-tool-or-guide"
+    },
+    {
+      "path": "assemble_selected.py",
+      "bytes": 6849,
+      "sha256": "5d1d6d618783e38695b31b14353b5b5f5252786f145bfebd4cf4750e80676dfc",
+      "role": "selected-package-tool-or-guide"
+    },
+    {
+      "path": "bitstream/hdmi_camera_fisheye_top.sbit",
+      "bytes": 3791112,
+      "sha256": "aa21991374fbeb4a6733741095f38e27336f1e47dd67b963feb243428a5b353b",
+      "role": "selected-bitstream",
+      "original_path": "evidence/next-d/df8/files/0037/hdmi_camera_fisheye_top.sbit",
+      "frozen_archive_path": "evidence/next-d/df8/files/0037/hdmi_camera_fisheye_top.sbit",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "build-plan.json",
+      "bytes": 210920,
+      "sha256": "a7a43941d0d5277f38a649fc28c6776256b5c365ad7d28d163174ce77c050acd",
+      "role": "original-build-plan",
+      "original_path": "evidence/next-d/df8/files/0014/plan.json",
+      "frozen_archive_path": "evidence/next-d/df8/files/0014/plan.json",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+      "bytes": 18242,
+      "sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+      "role": "compiled-snapshot",
+      "original_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\build-a\\compiled\\board\\hdmi_camera_fisheye_top.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0287/hdmi_camera_fisheye_top.v",
+      "copy_mode": "byte-identical",
+      "source": "board/hdmi_camera_fisheye_top.v",
+      "transformations": [
+        {
+          "Kind": "SelectedDigitalTimingOnly",
+          "Parameter": "INPUT_TIMING_CONFIGURED",
+          "Original": 0,
+          "Compiled": 1,
+          "ReplacementCount": 1,
+          "RGBPixelsVerified": false,
+          "CapturePhaseVerified": false,
+          "ExternalACAccepted": false
+        }
+      ]
+    },
+    {
+      "path": "compiled-snapshots/rtl/ddr_video_reader.v",
+      "bytes": 3181,
+      "sha256": "1047b35c1eddeb6088f67d38fd1b87559244e3b9ff26e5d9faf1563c5edf925e",
+      "role": "compiled-snapshot",
+      "original_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\build-a\\compiled\\rtl\\ddr_video_reader.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0194/ddr_video_reader.v",
+      "copy_mode": "byte-identical",
+      "source": "rtl/ddr_video_reader.v",
+      "transformations": [
+        {
+          "Kind": "BoundHeaderIncludeRelocation",
+          "Original": "D:/English/FPGA/distortion/rtl/video_crc32.vh",
+          "Compiled": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/rtl/video_crc32.vh",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "ReplacementCount": 1
+        }
+      ]
+    },
+    {
+      "path": "compiled-snapshots/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+      "bytes": 8239,
+      "sha256": "ee8705df74b495ec9bcf790099ddbe6d2b7951ef4e6bc3a2d1d9e5373851e8da",
+      "role": "compiled-snapshot",
+      "original_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\build-a\\compiled\\rtl\\experimental\\ddr_adaptive_result_writer_dualstripe.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0195/ddr_adaptive_result_writer_dualstripe.v",
+      "copy_mode": "byte-identical",
+      "source": "rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+      "transformations": [
+        {
+          "Kind": "BoundHeaderIncludeRelocation",
+          "Original": "D:/English/FPGA/distortion/rtl/video_crc32.vh",
+          "Compiled": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/rtl/video_crc32.vh",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "ReplacementCount": 1
+        }
+      ]
+    },
+    {
+      "path": "compiled-snapshots/rtl/experimental/ddr_video_output_1080_board.v",
+      "bytes": 10285,
+      "sha256": "d7c5289dc74b24861800a716f79649fbaeb8b433869745a933ebfcc30a0d041f",
+      "role": "compiled-snapshot",
+      "original_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\build-a\\compiled\\rtl\\experimental\\ddr_video_output_1080_board.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0204/ddr_video_output_1080_board.v",
+      "copy_mode": "byte-identical",
+      "source": "rtl/experimental/ddr_video_output_1080_board.v",
+      "transformations": [
+        {
+          "Kind": "BoundHeaderIncludeRelocation",
+          "Original": "D:/English/FPGA/distortion/rtl/video_crc32.vh",
+          "Compiled": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/rtl/video_crc32.vh",
+          "Header": "rtl/video_crc32.vh",
+          "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+          "ReplacementCount": 1
+        }
+      ]
+    },
+    {
+      "path": "compiled-snapshots/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "bytes": 6575,
+      "sha256": "4da53ea6dd80f0fba12546cdc1639218eba402759752de701dd93f95eb8caeea",
+      "role": "compiled-snapshot",
+      "original_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\build-a\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_mapper.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0290/hdmi_camera_fisheye_mapper.v",
+      "copy_mode": "byte-identical",
+      "source": "rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "transformations": [
+        {
+          "Kind": "BoundHeaderIncludeRelocation",
+          "Original": "D:/English/FPGA/distortion/board/hdmi-camera-fisheye-profile.vh",
+          "Compiled": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/board/hdmi-camera-fisheye-profile.vh",
+          "Header": "board/hdmi-camera-fisheye-profile.vh",
+          "HeaderSHA256": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+          "ReplacementCount": 1
+        }
+      ]
+    },
+    {
+      "path": "compiled-snapshots/rtl/experimental/hdmi_camera_fisheye_rom.v",
+      "bytes": 540,
+      "sha256": "21bb7f7d27a079aa00c601d72c1c9f3f2c11e1c8dd87e7fb275e20cb55306928",
+      "role": "compiled-snapshot",
+      "original_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\build-a\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_rom.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0291/hdmi_camera_fisheye_rom.v",
+      "copy_mode": "byte-identical",
+      "source": "rtl/experimental/hdmi_camera_fisheye_rom.v",
+      "transformations": [
+        {
+          "Kind": "BoundHeaderIncludeRelocation",
+          "Original": "D:/English/FPGA/distortion/board/hdmi-camera-fisheye-radial-table.vh",
+          "Compiled": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/board/hdmi-camera-fisheye-radial-table.vh",
+          "Header": "board/hdmi-camera-fisheye-radial-table.vh",
+          "HeaderSHA256": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+          "ReplacementCount": 1
+        }
+      ]
+    },
+    {
+      "path": "evidence/board-30s-receipt.json",
+      "bytes": 25150,
+      "sha256": "275287c3a8b919361b97a161448ed4bd8d91b499e110ccc8c5f67e243e1d73a2",
+      "role": "board-30s-receipt",
+      "original_path": "evidence/next-d/df8/files/0009/receipt.json",
+      "frozen_archive_path": "evidence/next-d/df8/files/0009/receipt.json",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "evidence/board-30s-review.json",
+      "bytes": 326727,
+      "sha256": "e9e1dfaed071c29c9f09754ddac5a5d4ee64a7c159201ed2a3da80d137d4bfd6",
+      "role": "saved-independent-30s-review",
+      "original_path": "evidence/next-d/df8/files/1259/saved-fps-df8-v3-30s-review-a.json",
+      "frozen_archive_path": "evidence/next-d/df8/files/1259/saved-fps-df8-v3-30s-review-a.json",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "evidence/board-30s-wire.bin",
+      "bytes": 2880,
+      "sha256": "2a76f1465819d196ffa5fda1c28b497f4c62087cd9b919f570af5e2cea223533",
+      "role": "board-30s-raw-wire",
+      "original_path": "evidence/next-d/df8/files/1073/wire.bin",
+      "frozen_archive_path": "evidence/next-d/df8/files/1073/wire.bin",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "evidence/board-600s-receipt.json",
+      "bytes": 429940,
+      "sha256": "f7e500cb257d88bbe4bb7cb1f8948f0afe941602fc73e8b4dccb24301b8607a5",
+      "role": "board-600s-receipt",
+      "original_path": "evidence/next-d/df8/files/0010/receipt.json",
+      "frozen_archive_path": "evidence/next-d/df8/files/0010/receipt.json",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "evidence/board-600s-review.json",
+      "bytes": 769489,
+      "sha256": "2993e59abb811f183bd0f48bc9df02ac29220814dabbed45092c106fae63ac7b",
+      "role": "saved-independent-600s-review",
+      "original_path": "evidence/next-d/df8/files/1260/saved-fps-df8-v3-600s-review-a.json",
+      "frozen_archive_path": "evidence/next-d/df8/files/1260/saved-fps-df8-v3-600s-review-a.json",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "evidence/board-600s-wire.bin",
+      "bytes": 57600,
+      "sha256": "3748f8977bf80230d3fe0a308f103cbd2e7ca56aae50894a9de55a2924308aad",
+      "role": "board-600s-raw-wire",
+      "original_path": "evidence/next-d/df8/files/1074/wire.bin",
+      "frozen_archive_path": "evidence/next-d/df8/files/1074/wire.bin",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "evidence/final-physical-summary.json",
+      "bytes": 60602,
+      "sha256": "a6a7922c22a859f861bf57034b4fed20a554c842c952d9bb7d01e4e126a41e02",
+      "role": "saved-final-physical-summary",
+      "original_path": "evidence/next-d/df8/files/1070/df8-v3-final-physical-summary-a.json",
+      "frozen_archive_path": "evidence/next-d/df8/files/1070/df8-v3-final-physical-summary-a.json",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "evidence/final-proof.json.gz",
+      "bytes": 3053349,
+      "sha256": "8b9455b9c5705f516616697ee16f059d7475b5031384df77af3fce424095c635",
+      "role": "complete-final-physical-proof",
+      "original_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\final-proof-v3-a.json",
+      "copy_mode": "lossless-gzip",
+      "decoded_sha256": "903741272bd2529ca9bc72dec2a333d44a0b74760442f8705906c6d92adb6ada",
+      "decoded_bytes": 91336236
+    },
+    {
+      "path": "evidence/independent-source-review.json",
+      "bytes": 259774,
+      "sha256": "714242e526fc1a9952cddf3eb9188437f5fed9cb7dc4c1b351077c03b6af150a",
+      "role": "saved-source-review",
+      "original_path": "evidence/next-d/df8/files/0013/root-independent-complete-source-review-v3-a.json",
+      "frozen_archive_path": "evidence/next-d/df8/files/0013/root-independent-complete-source-review-v3-a.json",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "evidence/prewarm-identity.json",
+      "bytes": 251358,
+      "sha256": "708f64d3daf7560b691c8bc734f564bb93527af961228b55a7695ffbabdc3b46",
+      "role": "saved-prewarm-identity",
+      "original_path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\release-prewarm-authority-v3-a.json",
+      "frozen_archive_path": "evidence/next-d/df8/files/0026/release-prewarm-authority-v3-a.json",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "evidence/program-receipt.json",
+      "bytes": 3199,
+      "sha256": "5023dc4c4d4260637b91345a4699e0c09a67764477821b22ceb88a9f6717257b",
+      "role": "actual-sram-program-receipt",
+      "original_path": "evidence/next-d/df8/files/0008/receipt.json",
+      "frozen_archive_path": "evidence/next-d/df8/files/0008/receipt.json",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "evidence/release-go.json",
+      "bytes": 289596,
+      "sha256": "33acf79c44065cc94e44a5b54b4a6b259d6364e7a937c582f0400544849df5c8",
+      "role": "saved-final-release-identity",
+      "original_path": "evidence/next-d/df8/files/0025/physical-to-release-v3-go-a.json",
+      "frozen_archive_path": "evidence/next-d/df8/files/0025/physical-to-release-v3-go-a.json",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "evidence/source-provider-manifest.json",
+      "bytes": 271333,
+      "sha256": "7b2c444b1e6e7d482c1875307fbc7b717689d0f5da9eaf8fac49ef249540a8fb",
+      "role": "source-provider-identity",
+      "original_path": "evidence/next-d/df8/files/0012/physical-release-provider-source-manifest-v3-a.json",
+      "frozen_archive_path": "evidence/next-d/df8/files/0012/physical-release-provider-source-manifest-v3-a.json",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "production-source-manifest.json",
+      "bytes": 37491,
+      "sha256": "ef5758832793f0ebcc0e8ee77a8410ac74baa87517256497615438f6dc5bd559",
+      "role": "original-production-manifest",
+      "original_path": "evidence/next-d/df8/files/0015/hdmi-camera-fisheye-tile8df8-build-sources.json",
+      "frozen_archive_path": "evidence/next-d/df8/files/0015/hdmi-camera-fisheye-tile8df8-build-sources.json",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/board/board1080-ddr-ioclk-priority.rcf",
+      "bytes": 144,
+      "sha256": "981934688d526e8d686635859d811070752570a34738548154d544e41be48516",
+      "role": "route-constraint",
+      "original_path": "distortion/board/board1080-ddr-ioclk-priority.rcf",
+      "frozen_archive_path": "evidence/next-d/df8/files/0399/board1080-ddr-ioclk-priority.rcf",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/board/bringup_pll.v",
+      "bytes": 11204,
+      "sha256": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+      "role": "production-source",
+      "original_path": "distortion/board/bringup_pll.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0171/bringup_pll.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/board/hdmi-camera-fisheye-profile.vh",
+      "bytes": 766,
+      "sha256": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+      "role": "production-source",
+      "original_path": "distortion/board/hdmi-camera-fisheye-profile.vh",
+      "frozen_archive_path": "evidence/next-d/df8/files/0186/hdmi-camera-fisheye-profile.vh",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/board/hdmi-camera-fisheye-radial-table.vh",
+      "bytes": 64683,
+      "sha256": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+      "role": "production-source",
+      "original_path": "distortion/board/hdmi-camera-fisheye-radial-table.vh",
+      "frozen_archive_path": "evidence/next-d/df8/files/0187/hdmi-camera-fisheye-radial-table.vh",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/board/hdmi-camera-fisheye-tile8df8-internal.fdc",
+      "bytes": 49727,
+      "sha256": "e27a18c4a5f228ac8543e50c9b50a145f14bf1d4e640ff34361422d32f1bf78a",
+      "role": "production-source",
+      "original_path": "distortion/board/hdmi-camera-fisheye-tile8df8-internal.fdc",
+      "frozen_archive_path": "evidence/next-d/df8/files/0178/hdmi-camera-fisheye-tile8df8-internal.fdc",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/board/hdmi_camera_fisheye_top.v",
+      "bytes": 18242,
+      "sha256": "b38ba12d17d246e6c138295e3055c6acaab64448e63a3343d0817038e7f8afce",
+      "role": "production-source",
+      "original_path": "distortion/board/hdmi_camera_fisheye_top.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0177/hdmi_camera_fisheye_top.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/cfg_pll/cfg_pll.v",
+      "bytes": 11205,
+      "sha256": "a524450baa6becd30df04da4bdd00597de18b42db4628226e27546c4d601b0ec",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/cfg_pll/cfg_pll.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0172/cfg_pll.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/ddr3_test.idf",
+      "bytes": 77018,
+      "sha256": "b600d6102995be4e76b060dd45786b5e1497bd2e7499bbc04b870de9355f2747",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/ddr3_test.idf",
+      "frozen_archive_path": "evidence/next-d/df8/files/0096/ddr3_test.idf",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/ddr3_test.v",
+      "bytes": 22196,
+      "sha256": "3c5441b4bff33dff73811c3a025ede3b6348cb5779e21778653659b6cbfb84e0",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/ddr3_test.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0168/ddr3_test.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/ddr3_test_ddrphy_top.v",
+      "bytes": 53206,
+      "sha256": "a95c28f225d2984401a798f673efff209154ae5beb8a7356d303136b71ea49d5",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/ddr3_test_ddrphy_top.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0169/ddr3_test_ddrphy_top.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ddr3_test_slice_top_v1_10.v",
+      "bytes": 55691,
+      "sha256": "69d4135c367efbb73f83c82ecd9871519e19b0d5c48bce2df0eac6b3dff50b87",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ddr3_test_slice_top_v1_10.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0170/ddr3_test_slice_top_v1_10.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_mux_v1_0.vp",
+      "bytes": 13948,
+      "sha256": "676e36319e7ce80b93e3543e255d53708d9fc71606587a6e692eab1ec82ecaed",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_mux_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0127/ips2l_ddrphy_calib_mux_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_top_v1_10.vp",
+      "bytes": 29035,
+      "sha256": "04faf434cef120b5d712911dfc97c8f498901b0679fba720b806f596d688bded",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_top_v1_10.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0126/ips2l_ddrphy_calib_top_v1_10.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_control_path_adj_v1_10.vp",
+      "bytes": 8870,
+      "sha256": "8cdd7b9ec01c143882217b038cbf840d77e52ee3037e629e75e10b03fc223a38",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_control_path_adj_v1_10.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0125/ips2l_ddrphy_control_path_adj_v1_10.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_ctrl_v1_3.vp",
+      "bytes": 12614,
+      "sha256": "56f52683adbe720c7d43da1a9f199f4ab3add3f3b5960e3f687f87f60267c161",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_ctrl_v1_3.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0123/ips2l_ddrphy_cpd_ctrl_v1_3.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_lock_v1_0.vp",
+      "bytes": 3988,
+      "sha256": "a6696f8e79e2d132a6e76ad4997d5366d6c9cf8f05c60f77feff1b47b50d0090",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_lock_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0124/ips2l_ddrphy_cpd_lock_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_dqs_gate_cal_v1_10.vp",
+      "bytes": 7140,
+      "sha256": "8764275d4eeb8d1765b3a09aba527d6d3bf3e46f5e1d17eefc685d7e0dbe1520",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_dqs_gate_cal_v1_10.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0122/ips2l_ddrphy_data_slice_dqs_gate_cal_v1_10.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_v1_10.vp",
+      "bytes": 43859,
+      "sha256": "e13e33d97ecbfea1838c4dd28e7f9f1c57dcb974606179523be46bba75344d50",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_v1_10.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0121/ips2l_ddrphy_data_slice_v1_10.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp",
+      "bytes": 20167,
+      "sha256": "b7a9757c252f74c4b57eb0fb74738c57e4eed3e669ddd7ffeeca1acedd330b2e",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0120/ips2l_ddrphy_data_slice_wrcal_v1_10.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrlvl_v1_10.vp",
+      "bytes": 21219,
+      "sha256": "871874f4af0f068571416916898f83eb07052e6e015c5800ffdf65d67620cf7e",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrlvl_v1_10.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0119/ips2l_ddrphy_data_slice_wrlvl_v1_10.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dfi_v1_3.vp",
+      "bytes": 23431,
+      "sha256": "9828a1ef43a864d287a7a317910fe330bfc904f44e8f60c8773aafa1d8c1534e",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dfi_v1_3.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0117/ips2l_ddrphy_dfi_v1_3.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dll_update_ctrl_v1_3.vp",
+      "bytes": 8102,
+      "sha256": "bc4e8f402d2fb98920e050a3c1514d44ec959877217d7865a30b22b7da73cac6",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dll_update_ctrl_v1_3.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0116/ips2l_ddrphy_dll_update_ctrl_v1_3.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_gate_coarse_cal_v1_0.vp",
+      "bytes": 11936,
+      "sha256": "950a0010929854894c2c92d9f3f8e9dce0fee6985fee70d4160540a058853ede",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_gate_coarse_cal_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0115/ips2l_ddrphy_dqs_gate_coarse_cal_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_rddata_align_v1_10.vp",
+      "bytes": 39545,
+      "sha256": "c0cab4287a7a7b6b720977c1c5f9259c5f48f8da18e9a3ca1173a073b1ccf025",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_rddata_align_v1_10.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0114/ips2l_ddrphy_dqs_rddata_align_v1_10.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqsi_rdel_cal_v1_3.vp",
+      "bytes": 29297,
+      "sha256": "ef7e57755ab7558b1b518aa73999384368f349efe7077cf9283e0911e711ac1a",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqsi_rdel_cal_v1_3.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0113/ips2l_ddrphy_dqsi_rdel_cal_v1_3.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_drift_ctrl_v1_0.vp",
+      "bytes": 7226,
+      "sha256": "8ea99ac6decf6fe14c0585b4f121d7a1acc17290d7a1c68725d984e704e277bc",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_drift_ctrl_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0112/ips2l_ddrphy_drift_ctrl_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_eyecal_v1_5.vp",
+      "bytes": 16271,
+      "sha256": "31977dd34339d163ecbd8b9949ac4b65f0eaa6fbcd9a75d787400ae73f7f51d2",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_eyecal_v1_5.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0111/ips2l_ddrphy_eyecal_v1_5.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gate_update_ctrl_v1_3.vp",
+      "bytes": 6262,
+      "sha256": "ce20eb3b9cbe3b392d8be0aa1d6787247bc7b2d91af36a1f734f35c9eb03d642",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gate_update_ctrl_v1_3.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0110/ips2l_ddrphy_gate_update_ctrl_v1_3.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gatecal_v1_10.vp",
+      "bytes": 17323,
+      "sha256": "b6859250ca098e81ff05bcab08dfe8ffee77648218e90c040a1dd3838a0671f2",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gatecal_v1_10.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0109/ips2l_ddrphy_gatecal_v1_10.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gpll_phase_v1_0.vp",
+      "bytes": 3812,
+      "sha256": "ef8ebe3742d23848bd2a1492d4901f886ce49aa98dbc295873b67e4116ba8524",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gpll_phase_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0118/ips2l_ddrphy_gpll_phase_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_info_v1_0.vp",
+      "bytes": 12042,
+      "sha256": "0794201be97885e7695a16b6c35848655b08c4bf191405d26417126512ce4aa8",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_info_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0108/ips2l_ddrphy_info_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_init_v1_0.vp",
+      "bytes": 43375,
+      "sha256": "817f9f32b2260a4c35af446e89ff4c2d4b065381b25cb2020c538d22b4a45088",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_init_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0107/ips2l_ddrphy_init_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_main_ctrl_v1_10.vp",
+      "bytes": 13750,
+      "sha256": "39d5024d7364b441340b131d265d0648d8b7c1f92cc417424d7c584413c5f4a6",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_main_ctrl_v1_10.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0106/ips2l_ddrphy_main_ctrl_v1_10.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rdcal_v1_10.vp",
+      "bytes": 56971,
+      "sha256": "6b4c7f3c24a4750ac69b4e7882617105c6e31f02da712aaa87932b8561ccea2b",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rdcal_v1_10.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0105/ips2l_ddrphy_rdcal_v1_10.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_reset_ctrl_v1_3.vp",
+      "bytes": 19445,
+      "sha256": "17189b59ed5307c4a27ec35485b33af5c98a89e6ee7f9c5d85aaed9c03a77163",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_reset_ctrl_v1_3.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0104/ips2l_ddrphy_reset_ctrl_v1_3.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_clk_phase_adj_v1_0.vp",
+      "bytes": 7292,
+      "sha256": "dd1dbae71726d968df475fe7fbb2b7321411fa67786092c0dc2e065edcf39382",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_clk_phase_adj_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0129/ips2l_ddrphy_rst_clk_phase_adj_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_debounce_v1_0.vp",
+      "bytes": 4580,
+      "sha256": "bff7ed95c8d305dfb88e6002c6de8453a21c72c03a5a0521a76ddd105598dc4d",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_debounce_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0128/ips2l_ddrphy_rst_debounce_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_slice_rddata_align_v1_0.vp",
+      "bytes": 6878,
+      "sha256": "befb44f07d851524109a6dc8e17c5b8062694aa274ed8dbc4f7326b8fe1c443e",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_slice_rddata_align_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0103/ips2l_ddrphy_slice_rddata_align_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_training_ctrl_v1_0.vp",
+      "bytes": 4908,
+      "sha256": "777e8ee9d8d819fdcf04b39b5a5d6086c52369a7f19f04dbd0d06f7a7d3d6110",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_training_ctrl_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0102/ips2l_ddrphy_training_ctrl_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_upcal_v1_0.vp",
+      "bytes": 10182,
+      "sha256": "afbca3503da609f7951ad7fbef386bd007f403c89f52377211ba521967c94455",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_upcal_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0101/ips2l_ddrphy_upcal_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wdata_path_adj_v1_10.vp",
+      "bytes": 16469,
+      "sha256": "85f625ed4a09964442e8616074eea9e4757e43b4217589bb9e2f289c9748b272",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wdata_path_adj_v1_10.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0100/ips2l_ddrphy_wdata_path_adj_v1_10.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrcal_v1_7.vp",
+      "bytes": 37069,
+      "sha256": "0a8cb0bb70bd40809260c50bcb85d092c16fea5d9ab2e4fbbe647ccbd1bfb1b0",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrcal_v1_7.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0099/ips2l_ddrphy_wrcal_v1_7.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrlvl_v1_0.vp",
+      "bytes": 12764,
+      "sha256": "00c086bd729be3ab8287f6eb786cfb3549c97aa92f8465c608b8fc2477df3edc",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrlvl_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0098/ips2l_ddrphy_wrlvl_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/ips2l_rst_sync_v1_3.vp",
+      "bytes": 3024,
+      "sha256": "64b8d83f15f2ff373e6b1040405c42051d8761bd1857dec719c884c2eb59361a",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/ips2l_rst_sync_v1_3.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0097/ips2l_rst_sync_v1_3.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/ips2l_distributed_fifo_v1_0.vp",
+      "bytes": 7838,
+      "sha256": "d6c0b0d8560b0f22128b4883933944fc686fd7597cfea0d6c545cc6af56c0b7a",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/ips2l_distributed_fifo_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0164/ips2l_distributed_fifo_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_ctr_v1_0.vp",
+      "bytes": 18809,
+      "sha256": "fe31c8f44bea653ab20bb1830ad4f8ed41566e9cfef354bd5e2d48c7682f353d",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_ctr_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0165/ips2l_distributed_fifo_ctr_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_v1_0_distributed_fifo_v1_0.vp",
+      "bytes": 7708,
+      "sha256": "867ac91a1485dfe613a81f372d788e784bba8cd4b0497e56986135e92685ba73",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_v1_0_distributed_fifo_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0166/ips2l_distributed_fifo_v1_0_distributed_fifo_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_sdpram_v1_0_distributed_fifo_v1_0.vp",
+      "bytes": 6854,
+      "sha256": "3561bbbbd4e4432a538c3d20818d262b4f1e5517c48296f6b1b4cc8afdd19aef",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_sdpram_v1_0_distributed_fifo_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0167/ips2l_distributed_sdpram_v1_0_distributed_fifo_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_apb_cross_v1_2.vp",
+      "bytes": 9592,
+      "sha256": "62f7d55354a8afe4d02bc6f6d6dc30fc8e9960d3b21709988b887acc99d09cf5",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_apb_cross_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0132/ips2l_mcdq_apb_cross_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_calib_delay_v1_2.vp",
+      "bytes": 6590,
+      "sha256": "a52e992b9766b6cb22ed23aa01d1cc5ac9b6a429a8e49de7a13ac51dd70e9784",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_calib_delay_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0133/ips2l_mcdq_calib_delay_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_cfg_apb_v1_2.vp",
+      "bytes": 42389,
+      "sha256": "482cb280a614f70209f1d07892fdd773a259d2ca0f23e8f38b85a9faf00513b9",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_cfg_apb_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0134/ips2l_mcdq_cfg_apb_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_bm_v1_2.vp",
+      "bytes": 17651,
+      "sha256": "bfbd472dd8b427fe6b003dd510f73db89f915ac92d31fe8a779c40f9d4e56bee",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_bm_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0135/ips2l_mcdq_dcd_bm_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_rowaddr_v1_2.vp",
+      "bytes": 4580,
+      "sha256": "4ac4721747b13020e1895be6265e55df90968f05beb8056279589039394bb9be",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_rowaddr_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0136/ips2l_mcdq_dcd_rowaddr_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_sm_v1_2.vp",
+      "bytes": 15064,
+      "sha256": "d7e710e3ed4d1807fb0bdd4d84c264817247a4da41123c72439c555573821f49",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_sm_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0137/ips2l_mcdq_dcd_sm_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_top_v1_2.vp",
+      "bytes": 12330,
+      "sha256": "26ab4e142f555602c023f62b19df52056c6d51da5052401254066cae0655ddaa",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_top_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0138/ips2l_mcdq_dcd_top_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_back_ctrl_v1_2.vp",
+      "bytes": 48957,
+      "sha256": "fe7b340b41d80ec7428cc38329a41864bcf5c209a6310610d09c7bc8579e541f",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_back_ctrl_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0139/ips2l_mcdq_dcp_back_ctrl_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp",
+      "bytes": 22007,
+      "sha256": "dab35fa172243ecbb5426a8ebccc2c168368ea0a6ea0558c909b815d781b17d6",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0140/ips2l_mcdq_dcp_buf_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_out_v1_2.vp",
+      "bytes": 15064,
+      "sha256": "9471082e23170b144dc619f7f7e08c94b8a03378f72da388f744d6acb728928b",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_out_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0141/ips2l_mcdq_dcp_out_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_top_v1_2.vp",
+      "bytes": 24371,
+      "sha256": "21b1f0e3b4660e1078b47000bfe50022346414f5d5e713ac9e522a4f39f76548",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_top_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0142/ips2l_mcdq_dcp_top_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dfi_v1_2.vp",
+      "bytes": 32495,
+      "sha256": "abf138d692e634fabe5f569b98d897dfece8a8ae66cee1dba830a56d7e255df1",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dfi_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0143/ips2l_mcdq_dfi_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_lp_v1_2.vp",
+      "bytes": 23123,
+      "sha256": "7a80ccb1e053e5c9d8f389169359570f256d709ff2e4ad2c51fda7a7a6a4239d",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_lp_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0144/ips2l_mcdq_lp_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_mrs_v1_2.vp",
+      "bytes": 23735,
+      "sha256": "f78133bc021a57cf469773daaf102817fc37069447e8accc80afa1f4b20b0ad6",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_mrs_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0145/ips2l_mcdq_mrs_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_prefetch_fifo_v1_2.vp",
+      "bytes": 6044,
+      "sha256": "ee3aa91e980fb3dd08231cf1806a28edf759f4ea8248adfd44407d607519b9e4",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_prefetch_fifo_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0146/ips2l_mcdq_prefetch_fifo_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_rdatapath_v1_2.vp",
+      "bytes": 5212,
+      "sha256": "72dd8ece021f4ee74fd576c1628c4f7d3606ef632f0e68b9569a288a092a6b0f",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_rdatapath_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0147/ips2l_mcdq_rdatapath_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_reg_fifo2_v1_2.vp",
+      "bytes": 4818,
+      "sha256": "bc9cff65e4002a51af0c20c2f0a9b9f17dacde5157b58691bbfb1c44348ee08a",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_reg_fifo2_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0148/ips2l_mcdq_reg_fifo2_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_ui_axi_v1_2a.vp",
+      "bytes": 19885,
+      "sha256": "145b69395412be2553835f9278cdf1cb1703d3beeb914abf7d985e3c69f817fb",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_ui_axi_v1_2a.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0149/ips2l_mcdq_ui_axi_v1_2a.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdatapath_v1_2.vp",
+      "bytes": 11760,
+      "sha256": "db648e90ff607ca2f9e2b5cca048de417439888d0b906288e0cec7cf038d9dee",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdatapath_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0150/ips2l_mcdq_wdatapath_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_align_v1_2.vp",
+      "bytes": 9722,
+      "sha256": "1645e9eb7fac3c9c13cd3e0d7367f132293f9cec16835ce188c6345993d2b730",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_align_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0151/ips2l_mcdq_wdp_align_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_dcp_v1_2.vp",
+      "bytes": 9132,
+      "sha256": "3f30be0f49f78f09915743995c950fa6ff8de5f14598ebc8802e73b5c6d140ee",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_dcp_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0152/ips2l_mcdq_wdp_dcp_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wrapper_v1_2b.vp",
+      "bytes": 47013,
+      "sha256": "d35010f49be551fb15ab2655cbeffcaaaa74fdf3ccb0754b033fc979d615e805",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wrapper_v1_2b.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0153/ips2l_mcdq_wrapper_v1_2b.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_com_timing_v1_2.vp",
+      "bytes": 6636,
+      "sha256": "e3f19c4be6352ab64f07426973387f2876c540ee992f6eac9d3f2d470b3d49c2",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_com_timing_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0154/ips2l_mcdq_com_timing_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_timing_v1_2.vp",
+      "bytes": 8738,
+      "sha256": "c632619f042bebb4f059df7f20eee90eb2b51b81210430cb37d01958ad3cd30f",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_timing_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0155/ips2l_mcdq_tfaw_timing_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_v1_2.vp",
+      "bytes": 4074,
+      "sha256": "ab87b7718bffc4fb2a2b27765576187f09b5266bbca7fc393c43c6dec96ff379",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0156/ips2l_mcdq_tfaw_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act2wr_pass_v1_2.vp",
+      "bytes": 7642,
+      "sha256": "1b3874b059923481f292ba382ad156f7dcdd9ad39da6c86dddd480290ccce498",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act2wr_pass_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0157/ips2l_mcdq_timing_act2wr_pass_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act_pass_v1_2.vp",
+      "bytes": 5892,
+      "sha256": "9f32b6936e039c15f7b07b74480179d39d1b3787965e1b90bd067a7ede7fdd4c",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act_pass_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0158/ips2l_mcdq_timing_act_pass_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_pre_pass_v1_2.vp",
+      "bytes": 10248,
+      "sha256": "e40a64caec9725c231cd88dde69973eab3aca38c9d2e66a2c5c0bbddf3103ae0",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_pre_pass_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0159/ips2l_mcdq_timing_pre_pass_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_rd_pass_v1_2.vp",
+      "bytes": 8652,
+      "sha256": "78b1de719a43ee0fc80e1a5464f7284439d91f1d4b3f83ef2ae5611920293988",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_rd_pass_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0160/ips2l_mcdq_timing_rd_pass_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_ref_pass_v1_2.vp",
+      "bytes": 5672,
+      "sha256": "c79dde6f9a682c55aff7bb89c4863f76a069b874fb154dff7d3e4d4a7a88f9d1",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_ref_pass_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0161/ips2l_mcdq_timing_ref_pass_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_wr_pass_v1_2.vp",
+      "bytes": 8626,
+      "sha256": "ea3470ca984554d4908ec950314f9242042417c6c4c6b3fd05ac5d6daab98c90",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_wr_pass_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0162/ips2l_mcdq_timing_wr_pass_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_trc_timing_v1_2.vp",
+      "bytes": 10424,
+      "sha256": "7234241e5968f91ec6e396794f0bb80f6c7d1bca2038aa004d5078d3937953da",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_trc_timing_v1_2.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0163/ips2l_mcdq_trc_timing_v1_2.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_gpll_v1_3.vp",
+      "bytes": 8324,
+      "sha256": "3fecc367573a4b5bd158e1a8ff106c5c401c5f180143e8e5abe6bb068e5078d2",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_gpll_v1_3.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0130/ips2l_ddrphy_gpll_v1_3.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_ppll_v1_0.vp",
+      "bytes": 17323,
+      "sha256": "34bb46106b84eab147f130bd7526f1486d35caeb40b0258cd59656e50d19dddd",
+      "role": "production-source",
+      "original_path": "distortion/platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_ppll_v1_0.vp",
+      "frozen_archive_path": "evidence/next-d/df8/files/0131/ips2l_ddrphy_ppll_v1_0.vp",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/bilinear_rgb.v",
+      "bytes": 1884,
+      "sha256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+      "role": "production-source",
+      "original_path": "distortion/rtl/bilinear_rgb.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0080/bilinear_rgb.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/ddr_video_reader.v",
+      "bytes": 3132,
+      "sha256": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+      "role": "production-source",
+      "original_path": "distortion/rtl/ddr_video_reader.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0085/ddr_video_reader.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/ddr_write_arbiter.v",
+      "bytes": 2906,
+      "sha256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+      "role": "production-source",
+      "original_path": "distortion/rtl/ddr_write_arbiter.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0084/ddr_write_arbiter.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/camera720_view_control.v",
+      "bytes": 1759,
+      "sha256": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/camera720_view_control.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0183/camera720_view_control.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+      "bytes": 8190,
+      "sha256": "f820cae06b30b0c3fb78f8ece7874e742c5008c795df10e190ff57eeb23b017b",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0086/ddr_adaptive_result_writer_dualstripe.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v",
+      "bytes": 21817,
+      "sha256": "d4730a733bc8f84886d268fcc90bb702db035a41867c812d6119694fbbf35b1e",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0067/ddr_neighbour_cache_scatter16_rowpipe_directfill.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/ddr_read_arbiter_fill8r2.v",
+      "bytes": 3698,
+      "sha256": "de0c11db399033511048ef18a90345881f8f13d2458b81ff6daa131f79393ec7",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/ddr_read_arbiter_fill8r2.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0083/ddr_read_arbiter_fill8r2.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/ddr_remap_sample_scatter16_rowpipe.v",
+      "bytes": 2196,
+      "sha256": "ea737c2b8eeb934e2018723d62f3e0fa5bbc8b959ec60104995500cc1302d994",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/ddr_remap_sample_scatter16_rowpipe.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0087/ddr_remap_sample_scatter16_rowpipe.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/ddr_video_output_1080_board.v",
+      "bytes": 10236,
+      "sha256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/ddr_video_output_1080_board.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0094/ddr_video_output_1080_board.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/hdmi1080_capture_cdc.v",
+      "bytes": 9761,
+      "sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/hdmi1080_capture_cdc.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0091/hdmi1080_capture_cdc.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/hdmi1080_input_dma.v",
+      "bytes": 9834,
+      "sha256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/hdmi1080_input_dma.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0092/hdmi1080_input_dma.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+      "bytes": 5933,
+      "sha256": "9404658e762b51f8a8e9926936f6533908fbc686b90674fa03d1db2b0f43b482",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0090/hdmi_camera_fisheye_bank_tile8.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/hdmi_camera_fisheye_core.v",
+      "bytes": 2958,
+      "sha256": "d40e18e74f691212d7c4a28e8b8eff15f87480532c258e5f3c832a023516995c",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/hdmi_camera_fisheye_core.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0088/hdmi_camera_fisheye_core.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+      "bytes": 6676,
+      "sha256": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0089/hdmi_camera_fisheye_engine_tile8df8.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/hdmi_camera_fisheye_input_link.v",
+      "bytes": 4539,
+      "sha256": "b07c6df5ac016b632fa2413b4d2d5d6886ee70f13d3efa050a9dff59e0166a2a",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/hdmi_camera_fisheye_input_link.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0093/hdmi_camera_fisheye_input_link.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "bytes": 6526,
+      "sha256": "cb141734a32443156768563bd9ce77723e573bdc00869457af11954a039c6e3c",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0180/hdmi_camera_fisheye_mapper.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/hdmi_camera_fisheye_rom.v",
+      "bytes": 491,
+      "sha256": "fc8e0cf143078790c1f9a5dbbd2d525f070deab349ee6bc33370e52419e11a44",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/hdmi_camera_fisheye_rom.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0181/hdmi_camera_fisheye_rom.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/hdmi_camera_fisheye_status_uart.v",
+      "bytes": 4153,
+      "sha256": "1554e35ef2efd157bdb462abe67c16741d42b94696c09ac6caa04df942ddd4a0",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/hdmi_camera_fisheye_status_uart.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0184/hdmi_camera_fisheye_status_uart.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/hdmi_camera_fisheye_system_c.v",
+      "bytes": 18173,
+      "sha256": "c6485f8df49ba398cad00bafbbcf223a672a99ef3eeab8932e9cf2fe8103bb6d",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/hdmi_camera_fisheye_system_c.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0095/hdmi_camera_fisheye_system_c.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/hdmi_camera_pixel_sampler.v",
+      "bytes": 1852,
+      "sha256": "b9d743264301a9b41bd10f7969edbc60cfffbda8f0d3f57a2e1bc8e0d6f1ac46",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/hdmi_camera_pixel_sampler.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0179/hdmi_camera_pixel_sampler.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/hdmi_camera_rgb565_quantizer.v",
+      "bytes": 1601,
+      "sha256": "bb18483682ae0965839d4d54aadea0dcc0eec248c54ee5130be6f62e868a0ba0",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/hdmi_camera_rgb565_quantizer.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0182/hdmi_camera_rgb565_quantizer.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/iic_dri_checked.v",
+      "bytes": 10518,
+      "sha256": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/iic_dri_checked.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0173/iic_dri_checked.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/ms7200_1080p30_rearm_ctl.v",
+      "bytes": 32272,
+      "sha256": "ea87e1e8c3588af0675c97f87408ddb115d8b0fb08fb84a93c3e820c5a3dee2e",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/ms7200_1080p30_rearm_ctl.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0174/ms7200_1080p30_rearm_ctl.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/ms7210_checked_ctl.v",
+      "bytes": 12080,
+      "sha256": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/ms7210_checked_ctl.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0175/ms7210_checked_ctl.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/experimental/ms72xx_rearm_observed_ctl.v",
+      "bytes": 7331,
+      "sha256": "7a4404a012d9e855bf3710f5aaa2f9926c004e378314aa1234fb6ee954f6d75d",
+      "role": "production-source",
+      "original_path": "distortion/rtl/experimental/ms72xx_rearm_observed_ctl.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0176/ms72xx_rearm_observed_ctl.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/mul32_pipe.v",
+      "bytes": 858,
+      "sha256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+      "role": "production-source",
+      "original_path": "distortion/rtl/mul32_pipe.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0079/mul32_pipe.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/uart_tx.v",
+      "bytes": 959,
+      "sha256": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+      "role": "production-source",
+      "original_path": "distortion/rtl/uart_tx.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0185/uart_tx.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/video_async_fifo.v",
+      "bytes": 3270,
+      "sha256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+      "role": "production-source",
+      "original_path": "distortion/rtl/video_async_fifo.v",
+      "frozen_archive_path": "evidence/next-d/df8/files/0081/video_async_fifo.v",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "source/rtl/video_crc32.vh",
+      "bytes": 74778,
+      "sha256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+      "role": "production-source",
+      "original_path": "distortion/rtl/video_crc32.vh",
+      "frozen_archive_path": "evidence/next-d/df8/files/0082/video_crc32.vh",
+      "copy_mode": "byte-identical"
+    },
+    {
+      "path": "verify_selected.py",
+      "bytes": 9764,
+      "sha256": "161008a26dc9acfda1c92a908dcba031ad4853475fbf5092981f5008db4994ad",
+      "role": "selected-package-tool-or-guide"
+    }
+  ],
+  "report_files": [
+    {
+      "path": "bit-verification.json",
+      "bytes": 3772,
+      "sha256": "2678bdb9cd2088fa8f9f14c361533434476efbf58a952f8990b0803aba3c87e2"
+    },
+    {
+      "path": "final_route_optimize.log",
+      "bytes": 6950,
+      "sha256": "5298948aa1a014f39fd6cc7d33cd476d8aafd76f972576d65bcd0478c3096539"
+    },
+    {
+      "path": "final_route_optimize_pins.prt",
+      "bytes": 16399,
+      "sha256": "4efb7cac6fa9e37af8ad62548e696e9f10c7789bfbfc96cbfc8189f1cb304197"
+    },
+    {
+      "path": "final_timing_full.rtr.gz",
+      "bytes": 24319407,
+      "sha256": "516ee70262538cc0e75e687d8ab5eeb9c270b4ba50d6fb7cb6ff9f452660a8f0"
+    },
+    {
+      "path": "final_timing_summary.rtr",
+      "bytes": 23375,
+      "sha256": "1a5e858d9950ac5b5a6c0af7559b6bd72bc0f54fea98a20c522e4e949bb572d0"
+    },
+    {
+      "path": "pre-bit-audit.json",
+      "bytes": 975,
+      "sha256": "a90b36c7b1c44bcca9b63f4b881653b07e90e5194cf2fd2bb62cbc69c74c2c5c"
+    },
+    {
+      "path": "prepare_reports.py",
+      "bytes": 13240,
+      "sha256": "f1076e03f39cbdaa840a66b64661cbe9835181718fa8612feae9ab37001d8cb0"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5394,
+      "sha256": "e98ff34137b0d21c06e65d4c52e54ad06adaa53db0c0e1fd74f2aafbdc58af1d"
+    },
+    {
+      "path": "resource-binding.json",
+      "bytes": 314435,
+      "sha256": "afe128582829ba943cb55de9e2aeed2a353fba517dd92468f4e1d071a710b1ad"
+    },
+    {
+      "path": "source-bindings.json",
+      "bytes": 9815,
+      "sha256": "caa2020e9602bcd4f7ee9c4515eaa2adc2008e68bfd7a01c6b060daba1cc12d4"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 1918,
+      "sha256": "60cd00e0d55677066427ab7a17903cca2dcd1a99a1b1bf2c89af4081d471322c"
+    }
+  ],
+  "reports_root": "../reports",
+  "default_verifier": "python verify_selected.py",
+  "other_bitstreams_included": false,
+  "original_archive_required_for_verification": false,
+  "git_required_for_verification": false,
+  "portable_eda_rebuild_claimed": false,
+  "scope": "Selected production inputs, exact changed compile snapshots, one actual bit and corresponding saved evidence. Verification checks bytes and saved identity; does not rerun 1211-input historical physical audit, EDA, UART or JTAG."
+}
