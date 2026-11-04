@@ -1,0 +1,47 @@
+proc checked {label body} {
+  if {[catch {uplevel 1 $body} result options]} {puts stderr "$label FAILED: $result"; exit 1}
+  if {[string is boolean -strict $result] && !$result} {puts stderr "$label returned failure"; exit 1}
+}
+cd {@BUILD@}
+checked STEP_0 {set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676}
+checked STEP_1 {add_design {@COMPILED@/rtl/mul32_pipe.v}}
+checked STEP_2 {add_design {@COMPILED@/rtl/bilinear_rgb.v}}
+checked STEP_3 {add_design {@COMPILED@/rtl/video_async_fifo.v}}
+checked STEP_4 {add_design {@COMPILED@/rtl/experimental/ddr_read_arbiter_fill8r2.v}}
+checked STEP_5 {add_design {@COMPILED@/rtl/ddr_write_arbiter.v}}
+checked STEP_6 {add_design {@COMPILED@/rtl/ddr_video_reader.v}}
+checked STEP_7 {add_design {@COMPILED@/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v}}
+checked STEP_8 {add_design {@COMPILED@/rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_fill8r3.v}}
+checked STEP_9 {add_design {@COMPILED@/rtl/experimental/ddr_remap_sample_scatter16_rowpipe.v}}
+checked STEP_10 {add_design {@COMPILED@/rtl/experimental/hdmi_camera_fisheye_core.v}}
+checked STEP_11 {add_design {@COMPILED@/rtl/experimental/hdmi_camera_fisheye_engine_tile8.v}}
+checked STEP_12 {add_design {@COMPILED@/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v}}
+checked STEP_13 {add_design {@COMPILED@/rtl/experimental/hdmi1080_capture_cdc.v}}
+checked STEP_14 {add_design {@COMPILED@/rtl/experimental/hdmi1080_input_dma.v}}
+checked STEP_15 {add_design {@COMPILED@/rtl/experimental/hdmi_camera_fisheye_input_link.v}}
+checked STEP_16 {add_design {@COMPILED@/rtl/experimental/ddr_video_output_1080_board.v}}
+checked STEP_17 {add_design {@COMPILED@/rtl/experimental/hdmi_camera_fisheye_system_c.v}}
+checked STEP_18 {add_design {@COMPILED@/platform/video_base/ipcore/ddr3_test/ddr3_test.idf}}
+checked STEP_19 {add_design {@COMPILED@/board/bringup_pll.v}}
+checked STEP_20 {add_design {@COMPILED@/platform/video_base/ipcore/cfg_pll/cfg_pll.v}}
+checked STEP_21 {add_design {@COMPILED@/rtl/experimental/iic_dri_checked.v}}
+checked STEP_22 {add_design {@COMPILED@/rtl/experimental/ms7200_1080p30_rearm_ctl.v}}
+checked STEP_23 {add_design {@COMPILED@/rtl/experimental/ms7210_checked_ctl.v}}
+checked STEP_24 {add_design {@COMPILED@/rtl/experimental/ms72xx_rearm_observed_ctl.v}}
+checked STEP_25 {add_design {@COMPILED@/board/hdmi_camera_fisheye_top.v}}
+checked STEP_26 {add_design {@COMPILED@/rtl/experimental/hdmi_camera_pixel_sampler.v}}
+checked STEP_27 {add_design {@COMPILED@/rtl/experimental/hdmi_camera_fisheye_mapper.v}}
+checked STEP_28 {add_design {@COMPILED@/rtl/experimental/hdmi_camera_fisheye_rom.v}}
+checked STEP_29 {add_design {@COMPILED@/rtl/experimental/hdmi_camera_rgb565_quantizer.v}}
+checked STEP_30 {add_design {@COMPILED@/rtl/experimental/camera720_view_control.v}}
+checked STEP_31 {add_design {@COMPILED@/rtl/experimental/hdmi_camera_fisheye_status_uart.v}}
+checked STEP_32 {add_design {@COMPILED@/rtl/uart_tx.v}}
+checked STEP_33 {add_constraint {@COMPILED@/board/hdmi-camera-fisheye-tile8-internal.fdc}}
+checked STEP_34 {add_constraint {@COMPILED@/board/board1080-ddr-ioclk-priority.rcf}}
+checked STEP_35 {compile -top_module hdmi_camera_fisheye_top}
+checked STEP_36 {synthesize -ads -selected_syn_tool_opt 2}
+checked STEP_37 {dev_map}
+checked STEP_38 {pnr -force_to_run -gplace_seed 3 -optimize_multi_corner_timing -fix_hold_violation -fix_hold_violation_iterations 50 -fix_hold_violation_threshold 100 -fix_hold_violation_in_route TRUE}
+checked STEP_39 {report_timing -force_to_run -delay_type min_max -max_path 10000 -nworst 4 -report_exception TRUE}
+puts {TILE8_CACHE64_IMPLEMENTATION_COMPLETE}
+flush stdout
