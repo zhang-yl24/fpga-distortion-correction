@@ -1,0 +1,26 @@
+{
+  "Schema": "tile8-next-fast-metadata-architecture-plan-v1",
+  "ResearchOnly": true,
+  "Implemented": false,
+  "HDLSimulated": false,
+  "EDAExecuted": false,
+  "HardwareAccessed": false,
+  "ETA": null,
+  "PerformanceOrTimingAcceptanceConferred": false,
+  "Options": [
+    "Two queued entries plus one separately reserved metadata-read/compare in-flight entry",
+    "Deeper complete-query queue if necessary for registered admission and II1"
+  ],
+  "RequiredProperties": [
+    "Registered enqueue credits include every in-flight read",
+    "Register returned hitway/all_hit before head issue",
+    "No full-plus-pop admission lookahead",
+    "Flush/frame epoch includes queue, reservations and refresh",
+    "Refresh every occupied younger snapshot after slow final commit/drain",
+    "Warm 64 outputs in 63 cycles must be measured"
+  ],
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\NEXT_FAST_METADATA_PLAN_A.md": "d16b6cbacaa964d7bc913360479f13f87ce449697d501278b30697a1218c9edc",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-fifo-core-failure-cause-review-a.json": "bb4503f618412cf2ead9e2ee1407eccb3874186ca42ba583dd17563ef51c90ee"
+  }
+}

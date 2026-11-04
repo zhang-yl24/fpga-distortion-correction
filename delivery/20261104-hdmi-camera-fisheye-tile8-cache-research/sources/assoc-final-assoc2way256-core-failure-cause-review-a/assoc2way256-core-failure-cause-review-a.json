@@ -1,0 +1,727 @@
+{
+  "Schema": "assoc2way256-core-failure-cause-review-v1",
+  "Passed": true,
+  "AnalysisConsistencyPassed": true,
+  "ActualOrdinaryCorePassed": false,
+  "ResearchOnly": true,
+  "All687EndpointsClassified": true,
+  "ActualSummary": {
+    "Corner": "slow",
+    "Kind": "setup",
+    "WorstSlackNS": -1.155,
+    "TotalNegativeSlackNS": -158.729,
+    "FailingChecks": 687,
+    "TotalChecks": 55862
+  },
+  "DetailedNegativePaths": 994,
+  "UniqueFailingEndpoints": 687,
+  "EndpointFamilies": {
+    "system/bank_core/engine/core/sampler/cache/inner/tags": 8,
+    "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[].query_cached_valid_way1[]": 4,
+    "system/bank_core/engine/core/sampler/cache/inner/valid_lines[]": 403,
+    "system/bank_core/engine/core/sampler/cache/inner/decoded_index_tail[]": 15,
+    "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[].query_cached_valid[]": 4,
+    "system/bank_core/engine/core/sampler/cache/inner/query_line_index[][]": 36,
+    "system/bank_core/engine/core/sampler/cache/inner/decoded_index_head[]": 22,
+    "system/scan_repeat_frames[]": 9,
+    "system/bank_core/engine/core/sampler/cache/inner/lru_way[]": 100,
+    "system/bank_core/engine/core/sampler/cache/inner/decoded_count[]": 1,
+    "system/bank_core/engine/core/sampler/cache/inner/query_tag[]": 12,
+    "system/bank_core/engine/core/sampler/cache/inner/pixel_number[][]": 36,
+    "system/bank_core/engine/writer/written_beats[]": 9,
+    "system/presented_frames[]": 5,
+    "system/bank_core/engine/core/sampler/cache/inner/query_fx[]": 4,
+    "system/bank_core/engine/core/sampler/cache/inner/query_y[]": 9,
+    "system/bank_core/engine/core/sampler/cache/inner/query_fy[]": 4,
+    "system/bank_core/engine/core/sampler/cache/inner/query_x[]": 2,
+    "system/bank_core/engine/writer/drain[]": 4
+  },
+  "LaunchFamilies": {
+    "system/bank_core/engine/writer/accepted_pixels[]": 257,
+    "system/bank_core/engine/core/reset_sync_1_copy[]": 183,
+    "system/display_fifo/rd_gray_w1[]": 14,
+    "system/bank_core/engine/core/sampler/cache/inner/tags": 170,
+    "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/ddrphy_slice_rddata_align/dqs_read_valid_r[]": 50,
+    "system/read_bus/state[]": 13
+  },
+  "LaunchToEndpoint": [
+    {
+      "Launch": "system/bank_core/engine/core/reset_sync_1_copy[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/valid_lines[]",
+      "Count": 183
+    },
+    {
+      "Launch": "system/bank_core/engine/core/sampler/cache/inner/tags",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/valid_lines[]",
+      "Count": 170
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/lru_way[]",
+      "Count": 100
+    },
+    {
+      "Launch": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/ddrphy_slice_rddata_align/dqs_read_valid_r[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/valid_lines[]",
+      "Count": 50
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/query_line_index[][]",
+      "Count": 36
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/pixel_number[][]",
+      "Count": 36
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/decoded_index_head[]",
+      "Count": 22
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/decoded_index_tail[]",
+      "Count": 15
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/query_tag[]",
+      "Count": 12
+    },
+    {
+      "Launch": "system/display_fifo/rd_gray_w1[]",
+      "Endpoint": "system/scan_repeat_frames[]",
+      "Count": 9
+    },
+    {
+      "Launch": "system/read_bus/state[]",
+      "Endpoint": "system/bank_core/engine/writer/written_beats[]",
+      "Count": 9
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/query_y[]",
+      "Count": 9
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/tags",
+      "Count": 8
+    },
+    {
+      "Launch": "system/display_fifo/rd_gray_w1[]",
+      "Endpoint": "system/presented_frames[]",
+      "Count": 5
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[].query_cached_valid_way1[]",
+      "Count": 4
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[].query_cached_valid[]",
+      "Count": 4
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/query_fx[]",
+      "Count": 4
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/query_fy[]",
+      "Count": 4
+    },
+    {
+      "Launch": "system/read_bus/state[]",
+      "Endpoint": "system/bank_core/engine/writer/drain[]",
+      "Count": 4
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/query_x[]",
+      "Count": 2
+    },
+    {
+      "Launch": "system/bank_core/engine/writer/accepted_pixels[]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/decoded_count[]",
+      "Count": 1
+    }
+  ],
+  "SixLaunchFamilyCounts": {
+    "WriterReadyFeedback": 257,
+    "ResetToValid": 183,
+    "TagChooseToFaultLineToValid": 170,
+    "RawDDRValidToValid": 50,
+    "DisplayFIFOToStatistics": 14,
+    "ReadBusToWriterCounters": 13
+  },
+  "WorstPathPerLaunchFamily": [
+    {
+      "FirstByteOffset": 168805656,
+      "Startpoint": "system/bank_core/engine/writer/accepted_pixels[12]/opit_0_inv_AQ_perm/CLK",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_10/gopdrm_36k/CEB[0]",
+      "Clocks": [
+        "ddrphy_sysclk",
+        "ddrphy_sysclk"
+      ],
+      "SlackNS": -1.155,
+      "LogicLevels": 8,
+      "LogicNS": 1.028,
+      "LogicPercent": 11.571,
+      "RouteNS": 7.856,
+      "RoutePercent": 88.429,
+      "DataPathLines": [
+        " CLMS_159_739/Q1                   tco                   0.203       5.730 r       system/bank_core/engine/writer/accepted_pixels[10]/opit_0_inv_AQ_perm/Q",
+        "                                   net (fanout=2)        0.646       6.376         system/bank_core/engine/writer/accepted_pixels [10]",
+        " CLMA_183_774/Y1                   td                    0.229       6.605 r       system/bank_core/engine/writer/N73_mux3/gateop_perm/L6",
+        "                                   net (fanout=1)        0.467       7.072         system/bank_core/engine/writer/_N7410",
+        " CLMA_165_745/Y3                   td                    0.074       7.146 r       system/bank_core/engine/writer/N2290_20/LUT6_inst_perm/L6",
+        "                                   net (fanout=3)        0.438       7.584         system/bank_core/engine/writer/_N78200",
+        " CLMS_171_769/Y2                   td                    0.074       7.658 r       system/bank_core/engine/writer/N83/gateop_perm/L6",
+        "                                   net (fanout=4)        0.831       8.489         system/bank_core/engine/writer_input_ready",
+        " CLMS_183_661/Y1                   td                    0.096       8.585 r       system/bank_core/engine/core/sampler/interpolation/N1_copy/gateop_perm/L6",
+        "                                   net (fanout=13)       0.442       9.027         system/bank_core/engine/core/sampler/interpolation/advance_1",
+        " CLMA_195_631/Y2                   td                    0.096       9.123 r       system/bank_core/engine/core/sampler/cache/inner/N68/gateop_LUT6DL5_perm/L6",
+        "                                   net (fanout=43)       1.792      10.915         system/bank_core/engine/core/sampler/cache/inner/stage1_ready",
+        " CLMS_291_373/Y2                   td                    0.074      10.989 r       system/bank_core/engine/core/sampler/cache/inner/N157_7_copy/LUT6_inst_perm/L6",
+        "                                   net (fanout=535)      1.412      12.401         system/bank_core/engine/core/sampler/cache/inner/accept_fast_1",
+        " CLMA_219_547/Y3                   td                    0.108      12.509 r       system/bank_core/engine/core/sampler/cache/inner/N124_copy/LUT6_inst_perm/L6",
+        "                                   net (fanout=4)        0.602      13.111         system/bank_core/engine/core/sampler/cache/inner/pre_to_query_1",
+        " CLMA_219_510/Y0                   td                    0.074      13.185 r       system/bank_core/engine/core/sampler/cache/inner/N391/LUT6_inst_perm/L6",
+        "                                   net (fanout=16)       1.226      14.411         system/bank_core/engine/core/sampler/cache/inner/N391",
+        " DRM_256_366/CEB[0]                                                        r       system/bank_core/engine/core/sampler/cache/inner/tags_10/gopdrm_36k/CEB[0]"
+      ],
+      "Nets": [
+        {
+          "Fanout": 2,
+          "RouteNS": 0.646,
+          "CumulativeNS": 6.376,
+          "Net": "system/bank_core/engine/writer/accepted_pixels [10]"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.467,
+          "CumulativeNS": 7.072,
+          "Net": "system/bank_core/engine/writer/_N7410"
+        },
+        {
+          "Fanout": 3,
+          "RouteNS": 0.438,
+          "CumulativeNS": 7.584,
+          "Net": "system/bank_core/engine/writer/_N78200"
+        },
+        {
+          "Fanout": 4,
+          "RouteNS": 0.831,
+          "CumulativeNS": 8.489,
+          "Net": "system/bank_core/engine/writer_input_ready"
+        },
+        {
+          "Fanout": 13,
+          "RouteNS": 0.442,
+          "CumulativeNS": 9.027,
+          "Net": "system/bank_core/engine/core/sampler/interpolation/advance_1"
+        },
+        {
+          "Fanout": 43,
+          "RouteNS": 1.792,
+          "CumulativeNS": 10.915,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/stage1_ready"
+        },
+        {
+          "Fanout": 535,
+          "RouteNS": 1.412,
+          "CumulativeNS": 12.401,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/accept_fast_1"
+        },
+        {
+          "Fanout": 4,
+          "RouteNS": 0.602,
+          "CumulativeNS": 13.111,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/pre_to_query_1"
+        },
+        {
+          "Fanout": 16,
+          "RouteNS": 1.226,
+          "CumulativeNS": 14.411,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/N391"
+        }
+      ],
+      "MaximumDataFanout": 535
+    },
+    {
+      "FirstByteOffset": 168847811,
+      "Startpoint": "system/bank_core/engine/core/reset_sync_1_copy[1]/opit_0_inv/CLK",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/valid_lines[452]/opit_0_inv_L6Q_perm/I0",
+      "Clocks": [
+        "ddrphy_sysclk",
+        "ddrphy_sysclk"
+      ],
+      "SlackNS": -0.857,
+      "LogicLevels": 9,
+      "LogicNS": 1.289,
+      "LogicPercent": 15.465,
+      "RouteNS": 7.046,
+      "RoutePercent": 84.535,
+      "DataPathLines": [
+        " CLMS_243_571/CR1                  tco                   0.251       5.791 r       system/bank_core/engine/core/reset_sync_1_copy[1]/opit_0_inv/Q",
+        "                                   net (fanout=27)       0.778       6.569         system/bank_core/engine/core/reset_sync_1",
+        " CLMS_207_613/Y2                   td                    0.108       6.677 r       system/bank_core/engine/core/N0_inv/gateop_perm/L6",
+        "                                   net (fanout=18)       0.784       7.461         system/bank_core/engine/core/N0_inv",
+        " CLMS_171_655/Y2                   td                    0.074       7.535 r       system/bank_core/engine/index[31:0]_98_30/LUT6_inst_perm/L6",
+        "                                   net (fanout=2)        0.279       7.814         system/_N84644   ",
+        " CLMA_177_660/Y2                   td                    0.074       7.888 r       system/input_link/input_dma/N1048_16_5/LUT6_inst_perm/L6",
+        "                                   net (fanout=6)        0.664       8.552         system/_N125964  ",
+        " CLMA_183_582/Y1                   td                    0.179       8.731 r       system/bank_core/engine/N105_copy/gateop_perm/L6",
+        "                                   net (fanout=110)      0.444       9.175         system/bank_core/engine/N105_1",
+        " CLMS_207_565/Y1                   td                    0.074       9.249 r       system/bank_core/engine/core/sampler/cache/inner/state_fsm[3:0]_152/gateop_perm/L6",
+        "                                   net (fanout=2)        0.649       9.898         system/bank_core/engine/core/sampler/cache/inner/_N79150",
+        " CLMS_207_511/Y1                   td                    0.096       9.994 r       system/bank_core/engine/core/sampler/cache/inner/N1305_12_1_1/LUT6_inst_perm/L6",
+        "                                   net (fanout=2)        1.100      11.094         system/bank_core/engine/core/sampler/cache/inner/_N25504",
+        " CLMA_195_342/Y1                   td                    0.108      11.202 r       system/bank_core/engine/core/sampler/cache/inner/N1305_30/gateop_perm/L6",
+        "                                   net (fanout=1661)     1.497      12.699         system/bank_core/engine/core/sampler/cache/inner/_N37165",
+        " CLMA_183_546/Y2                   td                    0.096      12.795 r       system/bank_core/engine/core/sampler/cache/inner/N1305_31[452]_4_shiftout/gateop_perm/L6",
+        "                                   net (fanout=3)        0.422      13.217         system/bank_core/engine/core/sampler/cache/inner/_N140914",
+        " CLMS_171_541/Y2                   td                    0.229      13.446 r       system/bank_core/engine/core/sampler/cache/inner/N1305_31[452]_4_pack/gateop_LUT6DL5_perm/L6",
+        "                                   net (fanout=1)        0.429      13.875         system/bank_core/engine/core/sampler/cache/inner/_N120231",
+        " CLMA_177_523/B0                                                           r       system/bank_core/engine/core/sampler/cache/inner/valid_lines[452]/opit_0_inv_L6Q_perm/I0"
+      ],
+      "Nets": [
+        {
+          "Fanout": 27,
+          "RouteNS": 0.778,
+          "CumulativeNS": 6.569,
+          "Net": "system/bank_core/engine/core/reset_sync_1"
+        },
+        {
+          "Fanout": 18,
+          "RouteNS": 0.784,
+          "CumulativeNS": 7.461,
+          "Net": "system/bank_core/engine/core/N0_inv"
+        },
+        {
+          "Fanout": 2,
+          "RouteNS": 0.279,
+          "CumulativeNS": 7.814,
+          "Net": "system/_N84644"
+        },
+        {
+          "Fanout": 6,
+          "RouteNS": 0.664,
+          "CumulativeNS": 8.552,
+          "Net": "system/_N125964"
+        },
+        {
+          "Fanout": 110,
+          "RouteNS": 0.444,
+          "CumulativeNS": 9.175,
+          "Net": "system/bank_core/engine/N105_1"
+        },
+        {
+          "Fanout": 2,
+          "RouteNS": 0.649,
+          "CumulativeNS": 9.898,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N79150"
+        },
+        {
+          "Fanout": 2,
+          "RouteNS": 1.1,
+          "CumulativeNS": 11.094,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N25504"
+        },
+        {
+          "Fanout": 1661,
+          "RouteNS": 1.497,
+          "CumulativeNS": 12.699,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N37165"
+        },
+        {
+          "Fanout": 3,
+          "RouteNS": 0.422,
+          "CumulativeNS": 13.217,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N140914"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.429,
+          "CumulativeNS": 13.875,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N120231"
+        }
+      ],
+      "MaximumDataFanout": 1661
+    },
+    {
+      "FirstByteOffset": 169240513,
+      "Startpoint": "system/display_fifo/rd_gray_w1[7]/opit_0_inv_srl/CLK",
+      "Endpoint": "system/scan_repeat_frames[31]/opit_0_inv_AQ/CE",
+      "Clocks": [
+        "ddrphy_sysclk",
+        "ddrphy_sysclk"
+      ],
+      "SlackNS": -0.666,
+      "LogicLevels": 9,
+      "LogicNS": 1.76,
+      "LogicPercent": 21.432,
+      "RouteNS": 6.452,
+      "RoutePercent": 78.568,
+      "DataPathLines": [
+        " CLMS_309_739/CR2                  tco                   0.249       5.783 r       system/display_fifo/rd_gray_w1[7]/opit_0_inv_srl/CR0",
+        "                                   net (fanout=4)        1.174       6.957         system/display_fifo/rd_gray_w2 [7]",
+        " CLMA_201_696/Y0                   td                    0.179       7.136 r       system/display_fifo/N51/gateop_perm/L6",
+        "                                   net (fanout=3)        0.653       7.789         system/display_fifo/N51",
+        " CLMA_231_720/Y0                   td                    0.096       7.885 r       system/display_fifo/N63/gateop_perm/L6",
+        "                                   net (fanout=4)        0.270       8.155         system/display_fifo/N63",
+        " CLMA_231_726/COUT                 td                    0.288       8.443 f       system/display_fifo/N76.fsub_3/gateop_perm/COUT",
+        "                                   net (fanout=1)        0.000       8.443         system/display_fifo/N76.co [3]",
+        " CLMA_231_732/COUT                 td                    0.085       8.528 f       system/display_fifo/N76.fsub_7/gateop_perm/COUT",
+        "                                   net (fanout=1)        0.000       8.528         system/display_fifo/N76.co [7]",
+        " CLMA_231_738/Y1                   td                    0.135       8.663 r       system/display_fifo/N76.fsub_9/gateop_perm/Y",
+        "                                   net (fanout=3)        0.793       9.456         system/fifo_used [8]",
+        " CLMS_201_685/Y2                   td                    0.229       9.685 r       system/bank_core/engine/writer/N2290_27_11/LUT6_inst_perm/L6",
+        "                                   net (fanout=3)        0.668      10.353         system/_N131367  ",
+        " CLMS_183_745/Y2                   td                    0.179      10.532 r       system/N410_4/gateop_perm/L6",
+        "                                   net (fanout=2)        0.769      11.301         system/N410      ",
+        " CLMA_195_691/Y0                   td                    0.108      11.409 r       system/display_done_valid/opit_0_inv_L6Q_LUT6DQL5_perm/L6",
+        "                                   net (fanout=35)       0.966      12.375         system/N775      ",
+        " CLMA_171_792/CR0                  td                    0.212      12.587 r       system/N725/gateop_LUT6DL5_perm/L5",
+        "                                   net (fanout=32)       1.159      13.746         system/N740      ",
+        " CLMA_171_960/CE                                                           r       system/scan_repeat_frames[31]/opit_0_inv_AQ/CE"
+      ],
+      "Nets": [
+        {
+          "Fanout": 4,
+          "RouteNS": 1.174,
+          "CumulativeNS": 6.957,
+          "Net": "system/display_fifo/rd_gray_w2 [7]"
+        },
+        {
+          "Fanout": 3,
+          "RouteNS": 0.653,
+          "CumulativeNS": 7.789,
+          "Net": "system/display_fifo/N51"
+        },
+        {
+          "Fanout": 4,
+          "RouteNS": 0.27,
+          "CumulativeNS": 8.155,
+          "Net": "system/display_fifo/N63"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 8.443,
+          "Net": "system/display_fifo/N76.co [3]"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 8.528,
+          "Net": "system/display_fifo/N76.co [7]"
+        },
+        {
+          "Fanout": 3,
+          "RouteNS": 0.793,
+          "CumulativeNS": 9.456,
+          "Net": "system/fifo_used [8]"
+        },
+        {
+          "Fanout": 3,
+          "RouteNS": 0.668,
+          "CumulativeNS": 10.353,
+          "Net": "system/_N131367"
+        },
+        {
+          "Fanout": 2,
+          "RouteNS": 0.769,
+          "CumulativeNS": 11.301,
+          "Net": "system/N410"
+        },
+        {
+          "Fanout": 35,
+          "RouteNS": 0.966,
+          "CumulativeNS": 12.375,
+          "Net": "system/N775"
+        },
+        {
+          "Fanout": 32,
+          "RouteNS": 1.159,
+          "CumulativeNS": 13.746,
+          "Net": "system/N740"
+        }
+      ],
+      "MaximumDataFanout": 35
+    },
+    {
+      "FirstByteOffset": 169833745,
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_4/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/valid_lines[539]/opit_0_inv_L6Q_perm/I3",
+      "Clocks": [
+        "ddrphy_sysclk",
+        "ddrphy_sysclk"
+      ],
+      "SlackNS": -0.533,
+      "LogicLevels": 8,
+      "LogicNS": 2.558,
+      "LogicPercent": 31.406,
+      "RouteNS": 5.587,
+      "RoutePercent": 68.594,
+      "DataPathLines": [
+        " DRM_256_612/QA0[13]               tco                   1.565       7.110 r       system/bank_core/engine/core/sampler/cache/inner/tags_4/gopdrm_36k/QA0[13]",
+        "                                   net (fanout=1)        0.602       7.712         system/bank_core/engine/core/sampler/cache/inner/selected_cached_tag_way1 [12]",
+        " CLMA_249_613/COUT                 td                    0.385       8.097 f       system/bank_core/engine/core/sampler/cache/inner/N25.eq_7/gateop_perm/COUT",
+        "                                   net (fanout=1)        0.000       8.097         system/bank_core/engine/core/sampler/cache/inner/N25.co [14]",
+        " CLMA_249_619/COUT                 td                    0.085       8.182 f       system/bank_core/engine/core/sampler/cache/inner/N25.eq_11/gateop_perm/COUT",
+        "                                   net (fanout=1)        0.000       8.182         system/bank_core/engine/core/sampler/cache/inner/N25.co [22]",
+        " CLMA_249_625/Y0                   td                    0.068       8.250 r       system/bank_core/engine/core/sampler/cache/inner/N25.eq_12/gateop_perm/Y",
+        "                                   net (fanout=9)        1.026       9.276         system/bank_core/engine/core/sampler/cache/inner/selected_hit1",
+        " CLMA_249_468/Y1                   td                    0.074       9.350 r       system/bank_core/engine/core/sampler/cache/inner/N36/gateop_perm/L6",
+        "                                   net (fanout=561)      0.874      10.224         system/bank_core/engine/core/sampler/cache/inner/selected_choose_way",
+        " CLMA_219_547/Y2                   td                    0.093      10.317 f       system/bank_core/engine/core/sampler/cache/inner/selected_line[9]/opit_0_inv_L6Q_LUT6DL5Q_perm/L6",
+        "                                   net (fanout=16)       1.212      11.529         system/bank_core/engine/core/sampler/cache/inner/fault_line [9]",
+        " CLMA_207_330/Y1                   td                    0.096      11.625 r       system/bank_core/engine/core/sampler/cache/inner/ND34[513]_9/gateop_perm/L6",
+        "                                   net (fanout=64)       0.757      12.382         system/bank_core/engine/core/sampler/cache/inner/_N106439",
+        " CLMS_201_271/Y1                   td                    0.096      12.478 r       system/bank_core/engine/core/sampler/cache/inner/ND34[523]_4/gateop_perm/L6",
+        "                                   net (fanout=32)       0.647      13.125         system/bank_core/engine/core/sampler/cache/inner/_N106524",
+        " CLMA_219_300/Y0                   td                    0.096      13.221 r       system/bank_core/engine/core/sampler/cache/inner/ND34[523]_2/gateop_LUT6DL5_perm/L6",
+        "                                   net (fanout=1)        0.469      13.690         system/bank_core/engine/core/sampler/cache/inner/_N106526",
+        " CLMS_207_289/A3                                                           r       system/bank_core/engine/core/sampler/cache/inner/valid_lines[539]/opit_0_inv_L6Q_perm/I3"
+      ],
+      "Nets": [
+        {
+          "Fanout": 1,
+          "RouteNS": 0.602,
+          "CumulativeNS": 7.712,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/selected_cached_tag_way1 [12]"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 8.097,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/N25.co [14]"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 8.182,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/N25.co [22]"
+        },
+        {
+          "Fanout": 9,
+          "RouteNS": 1.026,
+          "CumulativeNS": 9.276,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/selected_hit1"
+        },
+        {
+          "Fanout": 561,
+          "RouteNS": 0.874,
+          "CumulativeNS": 10.224,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/selected_choose_way"
+        },
+        {
+          "Fanout": 16,
+          "RouteNS": 1.212,
+          "CumulativeNS": 11.529,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/fault_line [9]"
+        },
+        {
+          "Fanout": 64,
+          "RouteNS": 0.757,
+          "CumulativeNS": 12.382,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N106439"
+        },
+        {
+          "Fanout": 32,
+          "RouteNS": 0.647,
+          "CumulativeNS": 13.125,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N106524"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.469,
+          "CumulativeNS": 13.69,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N106526"
+        }
+      ],
+      "MaximumDataFanout": 561
+    },
+    {
+      "FirstByteOffset": 170875507,
+      "Startpoint": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/ddrphy_slice_rddata_align/dqs_read_valid_r[1]/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/valid_lines[226]/opit_0_inv_L6Q_perm/I4",
+      "Clocks": [
+        "ddrphy_sysclk",
+        "ddrphy_sysclk"
+      ],
+      "SlackNS": -0.332,
+      "LogicLevels": 6,
+      "LogicNS": 1.154,
+      "LogicPercent": 14.434,
+      "RouteNS": 6.841,
+      "RoutePercent": 85.566,
+      "DataPathLines": [
+        " CLMS_309_775/CR0                  tco                   0.249       5.764 r       u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/ddrphy_slice_rddata_align/dqs_read_valid_r[1]/opit_0_inv_L6Q_LUT6DL5Q_perm/L5Q",
+        "                                   net (fanout=189)      1.064       6.828         u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/ddrphy_slice_rddata_align/dqs_read_valid_r [1]",
+        " CLMA_261_679/Y1                   td                    0.096       6.924 r       u_ddr3_test_h/u_ips_ddrc_top/mcdq_rdatapath/mcdq_prefetch_fifo/ips2l_distributed_fifo/u_ips2l_distributed_fifo_distributed_fifo_v1_0/u_ips2l_distributed_fifo_ctr/SYN_CTRL.rptr[5:0]_3_1_1/gateop_perm/L6",
+        "                                   net (fanout=8)        0.867       7.791         u_ddr3_test_h/u_ddrphy_top/read_valid",
+        " CLMA_231_756/Y0                   td                    0.108       7.899 r       system/read_bus/N39_27_shiftout/gateop_perm/L6",
+        "                                   net (fanout=5)        0.443       8.342         _N140855         ",
+        " CLMA_219_751/Y0                   td                    0.074       8.416 r       u_ddr3_test_h/u_ips_ddrc_top/mcdq_rdatapath/N5_1_2/gateop_perm/L6",
+        "                                   net (fanout=11)       0.810       9.226         system/read_bus/N47",
+        " CLMA_219_678/Y2                   td                    0.224       9.450 r       system/bank_core/engine/writer/N2290_44/gateop_LUT6DL5_perm/L6",
+        "                                   net (fanout=14)       1.103      10.553         system/bank_core/engine/core/sampler/cache/inner/N1326",
+        " CLMA_195_516/Y1                   td                    0.179      10.732 r       system/bank_core/engine/core/sampler/cache/inner/N1386[0]_1_copy/LUT6_inst_perm/L6",
+        "                                   net (fanout=527)      1.149      11.881         system/bank_core/engine/core/sampler/cache/inner/N1405_2",
+        " CLMA_159_420/Y1                   td                    0.224      12.105 r       system/bank_core/engine/core/sampler/cache/inner/valid_lines[211]/opit_0_inv_L6Q_LUT6DL5Q_perm/L6",
+        "                                   net (fanout=30)       1.405      13.510         system/bank_core/engine/core/sampler/cache/inner/_N136293",
+        " CLMS_135_247/B4                                                           r       system/bank_core/engine/core/sampler/cache/inner/valid_lines[226]/opit_0_inv_L6Q_perm/I4"
+      ],
+      "Nets": [
+        {
+          "Fanout": 189,
+          "RouteNS": 1.064,
+          "CumulativeNS": 6.828,
+          "Net": "u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/ddrphy_slice_rddata_align/dqs_read_valid_r [1]"
+        },
+        {
+          "Fanout": 8,
+          "RouteNS": 0.867,
+          "CumulativeNS": 7.791,
+          "Net": "u_ddr3_test_h/u_ddrphy_top/read_valid"
+        },
+        {
+          "Fanout": 5,
+          "RouteNS": 0.443,
+          "CumulativeNS": 8.342,
+          "Net": "_N140855"
+        },
+        {
+          "Fanout": 11,
+          "RouteNS": 0.81,
+          "CumulativeNS": 9.226,
+          "Net": "system/read_bus/N47"
+        },
+        {
+          "Fanout": 14,
+          "RouteNS": 1.103,
+          "CumulativeNS": 10.553,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/N1326"
+        },
+        {
+          "Fanout": 527,
+          "RouteNS": 1.149,
+          "CumulativeNS": 11.881,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/N1405_2"
+        },
+        {
+          "Fanout": 30,
+          "RouteNS": 1.405,
+          "CumulativeNS": 13.51,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N136293"
+        }
+      ],
+      "MaximumDataFanout": 527
+    },
+    {
+      "FirstByteOffset": 172451733,
+      "Startpoint": "system/read_bus/state[0]/opit_0_L6Q_perm/CLK",
+      "Endpoint": "system/bank_core/engine/writer/written_beats[30]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CE",
+      "Clocks": [
+        "ddrphy_sysclk",
+        "ddrphy_sysclk"
+      ],
+      "SlackNS": -0.203,
+      "LogicLevels": 7,
+      "LogicNS": 1.333,
+      "LogicPercent": 17.233,
+      "RouteNS": 6.402,
+      "RoutePercent": 82.767,
+      "DataPathLines": [
+        " CLMA_225_732/Q0                   tco                   0.203       5.723 r       system/read_bus/state[0]/opit_0_L6Q_perm/L6Q",
+        "                                   net (fanout=10)       0.872       6.595         system/read_bus/state [0]",
+        " CLMA_195_654/Y3                   td                    0.179       6.774 r       u_ddr3_test_h/u_ips_ddrc_top/mcdq_ui_axi/mcdq_reg_fifo2/data_0[13]/opit_0_inv_L6Q_LUT6DL5Q_perm/L6",
+        "                                   net (fanout=18)       0.273       7.047         arvalid          ",
+        " CLMS_189_655/Y1                   td                    0.102       7.149 f       u_ddr3_test_h/u_ips_ddrc_top/mcdq_ui_axi/N25_2_pack/gateop_LUT6DL5_perm/L6",
+        "                                   net (fanout=8)        0.860       8.009         _N82420          ",
+        " CLMA_201_768/Y1                   td                    0.093       8.102 f       system/input_link/shared_writes/fault[2]/opit_0_inv_L6Q_LUT6DL5Q_perm/L6",
+        "                                   net (fanout=5)        1.327       9.429         system/input_link/shared_writes/N107",
+        " CLMA_261_865/CR0                  td                    0.212       9.641 r       u_ddr3_test_h/u_ips_ddrc_top/mcdq_wdatapath/mcdq_wdp_align/r_data[128]/opit_0_inv_L6Q_LUT6DQL5_perm/L5",
+        "                                   net (fanout=11)       1.475      11.116         system/result_wready",
+        " CLMA_165_739/CR1                  td                    0.224      11.340 r       system/bank_core/engine/writer/N171/gateop_LUT6DL5_perm/L5",
+        "                                   net (fanout=7)        0.764      12.104         system/bank_core/engine/writer/N912",
+        " CLMS_183_793/Y1                   td                    0.096      12.200 r       system/bank_core/engine/writer/beat[0]/opit_0_inv_L6Q_LUT6DL5Q_perm/L6",
+        "                                   net (fanout=5)        0.271      12.471         system/bank_core/engine/writer/N2242",
+        " CLMA_189_792/Y2                   td                    0.224      12.695 r       system/bank_core/engine/writer/written_beats[13]/opit_0_inv_L6Q_LUT6DL5Q_perm/L6",
+        "                                   net (fanout=20)       0.560      13.255         system/bank_core/engine/writer/N2246",
+        " CLMA_195_810/CE                                                           r       system/bank_core/engine/writer/written_beats[30]/opit_0_inv_L6Q_LUT6DQL5Q_perm/CE"
+      ],
+      "Nets": [
+        {
+          "Fanout": 10,
+          "RouteNS": 0.872,
+          "CumulativeNS": 6.595,
+          "Net": "system/read_bus/state [0]"
+        },
+        {
+          "Fanout": 18,
+          "RouteNS": 0.273,
+          "CumulativeNS": 7.047,
+          "Net": "arvalid"
+        },
+        {
+          "Fanout": 8,
+          "RouteNS": 0.86,
+          "CumulativeNS": 8.009,
+          "Net": "_N82420"
+        },
+        {
+          "Fanout": 5,
+          "RouteNS": 1.327,
+          "CumulativeNS": 9.429,
+          "Net": "system/input_link/shared_writes/N107"
+        },
+        {
+          "Fanout": 11,
+          "RouteNS": 1.475,
+          "CumulativeNS": 11.116,
+          "Net": "system/result_wready"
+        },
+        {
+          "Fanout": 7,
+          "RouteNS": 0.764,
+          "CumulativeNS": 12.104,
+          "Net": "system/bank_core/engine/writer/N912"
+        },
+        {
+          "Fanout": 5,
+          "RouteNS": 0.271,
+          "CumulativeNS": 12.471,
+          "Net": "system/bank_core/engine/writer/N2242"
+        },
+        {
+          "Fanout": 20,
+          "RouteNS": 0.56,
+          "CumulativeNS": 13.255,
+          "Net": "system/bank_core/engine/writer/N2246"
+        }
+      ],
+      "MaximumDataFanout": 20
+    }
+  ],
+  "ProposedFirstExperiment": "Only replace engine one-entry elastic pixel buffer with count-only-ready two-entry whole-pixel FIFO. Intended to cut 257 writer-ready feedback endpoint paths. No claim about remaining 403 valid-line or 27 noncache endpoints; fresh raw STA required.",
+  "ImportantCorrectnessBoundary": "CHECK fault_line chosen-way same-cycle invalidation must be preserved; reverting b to a is not a valid timing fix. Registering DDR return alone does not cut tag-to-fault-line/reset paths.",
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-ordinary-core-failure-paths-a.json": "1a747532dbb919d98ee5fa5a781f9babf3a68c79ecd97c91a6328979ebbf2a0c",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-ordinary-core-failure-paths-a.txt": "ede87bbd0faf999ef819961960902a776263965f09aaed14d870f708da9cf21d",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-20261104-a\\raw-core-timing-a.json": "93535612734321393b3ad45491b01acc980142853697969b3205672435b392f0",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-20261104-a\\raw-research-result-a.json": "bca521bc3a55cb4e86f887e36ce803a495ac6b30af0c74b582cf1dea1af9b49a",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\analyze_assoc2way256_core_failure_paths_a.py": "edf970454a9874ef9cf8bd6baac05f800f121717e48e05aac20e3e71c1395824"
+  },
+  "EDAExecuted": false,
+  "HardwareAccessed": false,
+  "RTLModified": false,
+  "TimingExceptionProposed": false
+}
