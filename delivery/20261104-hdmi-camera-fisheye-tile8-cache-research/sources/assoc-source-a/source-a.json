@@ -1,0 +1,40 @@
+{
+  "Schema": "tile8-two-way-tagpipe-prototype-source-v1",
+  "ResearchOnly": true,
+  "Baseline": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_neighbour_cache_scatter16_rowpipe_directfill_tagpipe.v",
+    "SHA256": "cc47c00bf2458491c1def0c5be3a2f8d209269a57dc2259d46ce7ce1054486a1"
+  },
+  "Variant": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-a\\rtl\\ddr_neighbour_cache_scatter16_rowpipe_assoc2_tagpipe_a.v",
+    "SHA256": "ffb8712d7eee8b3e0fdddec1405a5a835ed1b9e4542eb63caec05e1fbcfeded6"
+  },
+  "Transformations": [
+    "equal-capacity two-way geometry",
+    "decoded set indices",
+    "both-way complete held query metadata",
+    "synchronous slow hit/invalid/LRU choice",
+    "per-neighbour full-tag way and physical RAM address",
+    "fixed held set on stalled RESULT",
+    "both-way read-old-safe refresh after slow consumption",
+    "slow both-way tag and replacement snapshot",
+    "preserve hit event timing across both ways",
+    "common reset invalidates both ways and LRU",
+    "head set decode",
+    "tail set decode",
+    "held set follows numbers and payload",
+    "one-bit LRU sequential-neighbour fast demand order",
+    "frame epoch invalidates both ways",
+    "slow block/set/offset lock before metadata read",
+    "hit/invalid/LRU victim line chosen once before owned refill",
+    "LRU insertion only on last actual RAM commit"
+  ],
+  "IndexBitsIsTotalPhysicalLines": true,
+  "Ways": 2,
+  "FullBlockTagBits": 25,
+  "PublicInterfaceUnchanged": true,
+  "NoNewOutstandingOwner": true,
+  "EDAExecuted": false,
+  "HardwareAccessed": false,
+  "PhysicalOrReleaseAccepted": false
+}

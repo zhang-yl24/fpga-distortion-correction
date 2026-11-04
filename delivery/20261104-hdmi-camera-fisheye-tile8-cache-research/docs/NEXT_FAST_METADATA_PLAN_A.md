@@ -1,0 +1,20 @@
+# Future fast-metadata timing experiment
+
+This is a design proposal, not implemented RTL, a simulation result, or a timing acceptance. Do not add it to the final CHOOSE + FRAME_CLEAR experiment. That experiment keeps the FIFO engine `d17d5659a8818427d55951d8b0e5807dd21bc9da1ca9d903a56e53f65977804e` and the separately derived cache.
+
+The completed FIFO raw report has 3,018 failing slow-setup capture pins: 366 fast-query-tag feedback, 657 slow-selected-tag to fault-line, 1,992 frame-admission/full-clear, and 3 read-bus/writer-watchdog. These are report capture pins, not distinct register bits. The measured worst fast path is synchronous tag RAM output → full-tag compare → all_hit → accept_fast (fanout 536) → pre_to_query → subsequent metadata read/valid CE. A two-entry output FIFO removed the older writer-ready launch chain but did not cut this internal loop.
+
+Proposed experiment:
+
+1. Queue complete queries with coordinates, fractions, raster tag, bounds, four full pixel numbers, physical set indices, and both-way tag/valid metadata. Metadata read enable and queue admission use only registered capacity/credit and decoded-input validity. Neither depends on current head acceptance or an all-hit result. No full-plus-pop lookahead.
+2. Keep the head and its metadata unchanged until the actual cache acceptance. Fast acceptance may drive pixel-RAM CE and LRU touches, but must not drive the next tag-read CE. Since fast operations change only replacement state, they cannot invalidate younger tag/valid snapshots. Keep slow replacement lookup fresh rather than trusting an old queued LRU bit.
+3. Consider registering per-neighbour hit-way and all-hit after tag return. Moving tags into an otherwise identical queue alone leaves tag-RAM tco + comparison driving the LRU write network; 197 of the measured fast-family endpoints are LRU pins.
+4. Count reserved in-flight reads as occupied capacity. If there is an additional comparison register, a total capacity of two with registered admission can introduce a hot-stream bubble. A candidate with two queued entries plus one separately reserved in-flight entry, or a deeper queue, must prove warm II=1; do not assume the depth is sufficient.
+5. On slow acceptance, stop new metadata fetches. After the final real RAM commit and slow transaction drain, reread both-way metadata for every occupied younger entry and every in-flight reservation. A serial refresh is acceptable. Hold head acceptance and output release during refresh. Refresh must use each entry's retained indices and coordinates; do not accidentally refresh all entries from the current head.
+6. Preserve result stalls, old-frame drain, frame-base ownership, and fault quarantine. New-frame admission requires the complete metadata queue, in-flight reservations, slow transaction, and output stages to be empty. A frame epoch may identify invalidated snapshots, but is not permission to expose old entries. Fault/reset cancels every reservation and refresh; malformed/unowned R and last-commit priority remain independently tested.
+
+Required new evidence before implementation can be accepted: independent sparse pixel/tag/fraction oracle; both-way/LRU replacement oracle; younger-entry stale refresh at every queue occupancy; duplicate-set queries; simultaneous pop/fetch; arbitrary output stalls; miss + younger hit on the replaced line; frame request while occupied; reset/fault at each read/compare/refresh stage; exact RAM final-commit publication; hot 64 outputs in 63 cycles; complete native pixel/CRC/ownership/drain simulation; fresh ordinary-core timing and actual RAM mapping. Existing unit, full-system, or STA receipts cannot be relabelled for this architecture.
+
+Measured inputs are retained in `assoc2way256-fifo-core-failure-cause-review-a.json` and the indexed full report/excerpts. No new EDA, exception, seed, bitstream, programming, or hardware action is authorized by this document.
+
+No implementation or completion time is promised. Scheduling and architecture remain subject to the next session's measured results.

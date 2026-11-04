@@ -1,0 +1,786 @@
+{
+  "Schema": "tile8df8-exact-prototype-aligned-snapshot-hitread-and-bulk-state-screen-v1",
+  "CreatedUTC": "2026-11-04T00:54:36.500177+00:00",
+  "ActualPrototypeN3SkipsBulkCheck": true,
+  "SupersedesConservativeEveryFillCheckReports": [
+    "full-bulk-state-screen-a.json",
+    "full-snapshot-and-bulk-state-screen-b.json"
+  ],
+  "FullQueryCount": 2073600,
+  "IndexBits": 8,
+  "Original128PixelBlocks": true,
+  "TraceOrigin": "existing source-derived frozen mapper Q8/native8x8 trace, not a captured per-cycle or board trace",
+  "IndependentQ8NeighbourBlockDecodePassed": true,
+  "FrozenActualCountsReproduced": true,
+  "Baseline": {
+    "FastQueries": 2038895,
+    "SlowQueries": 34705,
+    "Fills": 37483,
+    "ValidNeighbourHits": 7416463,
+    "InBoundsNeighbourSamples": 7453946,
+    "DifferentialStateCycleTotal": 2663381,
+    "BulkSuccessQueries": 0,
+    "BulkRejectedFillChecks": 0,
+    "BulkSuccessByCommittedMissNeighbour": {},
+    "SlowQueriesByLastMissNeighbour": {
+      "2": 20176,
+      "0": 6105,
+      "3": 8385,
+      "1": 39
+    },
+    "SlowQueriesByFillCount": {
+      "2": 2671,
+      "1": 31981,
+      "3": 52,
+      "4": 1
+    },
+    "GrossOldStateCyclesSkipped": 0,
+    "AddedBulkCheckCycles": 0,
+    "SameIndexDifferentTagChecks": 0,
+    "FinalTagsSHA256": "d0ac4c5accd0483be4d8f455b12dff01b9bfc581aa69f57c59e75fc267166309",
+    "SnapshotValidSELECTCyclesEliminated": 0,
+    "SnapshotHitLOADCyclesEliminated": 0,
+    "Examples": []
+  },
+  "ActualProposedBulkCheckOneCycle": {
+    "FastQueries": 2038895,
+    "SlowQueries": 34705,
+    "Fills": 37483,
+    "ValidNeighbourHits": 7416463,
+    "InBoundsNeighbourSamples": 7453946,
+    "DifferentialStateCycleTotal": 2538251,
+    "BulkSuccessQueries": 26320,
+    "BulkRejectedFillChecks": 2778,
+    "BulkSuccessByCommittedMissNeighbour": {
+      "2": 20176,
+      "0": 6105,
+      "1": 39
+    },
+    "SlowQueriesByLastMissNeighbour": {
+      "2": 20176,
+      "0": 6105,
+      "3": 8385,
+      "1": 39
+    },
+    "SlowQueriesByFillCount": {
+      "2": 2671,
+      "1": 31981,
+      "3": 52,
+      "4": 1
+    },
+    "GrossOldStateCyclesSkipped": 154228,
+    "AddedBulkCheckCycles": 29098,
+    "SameIndexDifferentTagChecks": 0,
+    "FinalTagsSHA256": "d0ac4c5accd0483be4d8f455b12dff01b9bfc581aa69f57c59e75fc267166309",
+    "SnapshotValidSELECTCyclesEliminated": 0,
+    "SnapshotHitLOADCyclesEliminated": 0,
+    "Examples": [
+      {
+        "Query": 0,
+        "Blocks": [
+          1306,
+          1306,
+          1321,
+          1321
+        ],
+        "CommittedMissNeighbour": 2,
+        "GrossOldStateCyclesSkipped": 4,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 1
+      },
+      {
+        "Query": 4,
+        "Blocks": [
+          1291,
+          1291,
+          1306,
+          1306
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 8,
+        "Blocks": [
+          1321,
+          1321,
+          1336,
+          1336
+        ],
+        "CommittedMissNeighbour": 2,
+        "GrossOldStateCyclesSkipped": 4,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 1
+      },
+      {
+        "Query": 16,
+        "Blocks": [
+          1336,
+          1336,
+          1351,
+          1351
+        ],
+        "CommittedMissNeighbour": 2,
+        "GrossOldStateCyclesSkipped": 4,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 1
+      },
+      {
+        "Query": 32,
+        "Blocks": [
+          1351,
+          1351,
+          1366,
+          1366
+        ],
+        "CommittedMissNeighbour": 2,
+        "GrossOldStateCyclesSkipped": 4,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 1
+      },
+      {
+        "Query": 40,
+        "Blocks": [
+          1366,
+          1366,
+          1381,
+          1381
+        ],
+        "CommittedMissNeighbour": 2,
+        "GrossOldStateCyclesSkipped": 4,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 1
+      },
+      {
+        "Query": 56,
+        "Blocks": [
+          1381,
+          1381,
+          1396,
+          1396
+        ],
+        "CommittedMissNeighbour": 2,
+        "GrossOldStateCyclesSkipped": 4,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 1
+      },
+      {
+        "Query": 64,
+        "Blocks": [
+          1276,
+          1276,
+          1291,
+          1291
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 68,
+        "Blocks": [
+          1261,
+          1261,
+          1276,
+          1276
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 128,
+        "Blocks": [
+          1246,
+          1246,
+          1261,
+          1261
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 131,
+        "Blocks": [
+          1231,
+          1231,
+          1246,
+          1246
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 135,
+        "Blocks": [
+          1216,
+          1216,
+          1231,
+          1231
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 195,
+        "Blocks": [
+          1201,
+          1201,
+          1216,
+          1216
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 199,
+        "Blocks": [
+          1186,
+          1186,
+          1201,
+          1201
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 259,
+        "Blocks": [
+          1171,
+          1171,
+          1186,
+          1186
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 262,
+        "Blocks": [
+          1156,
+          1156,
+          1171,
+          1171
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 322,
+        "Blocks": [
+          1141,
+          1141,
+          1156,
+          1156
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 326,
+        "Blocks": [
+          1126,
+          1126,
+          1141,
+          1141
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 386,
+        "Blocks": [
+          1111,
+          1111,
+          1126,
+          1126
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 389,
+        "Blocks": [
+          1096,
+          1096,
+          1111,
+          1111
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 12,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      }
+    ]
+  },
+  "ExactDifferentialStateCyclesSaved": 125130,
+  "DifferentialTimeAt125MHzMS": 1.00104,
+  "SnapshotSELECTAndHitLOAD": {
+    "FastQueries": 2038895,
+    "SlowQueries": 34705,
+    "Fills": 37483,
+    "ValidNeighbourHits": 7416463,
+    "InBoundsNeighbourSamples": 7453946,
+    "DifferentialStateCycleTotal": 2423360,
+    "BulkSuccessQueries": 0,
+    "BulkRejectedFillChecks": 0,
+    "BulkSuccessByCommittedMissNeighbour": {},
+    "SlowQueriesByLastMissNeighbour": {
+      "2": 20176,
+      "0": 6105,
+      "3": 8385,
+      "1": 39
+    },
+    "SlowQueriesByFillCount": {
+      "2": 2671,
+      "1": 31981,
+      "3": 52,
+      "4": 1
+    },
+    "GrossOldStateCyclesSkipped": 0,
+    "AddedBulkCheckCycles": 0,
+    "SameIndexDifferentTagChecks": 0,
+    "FinalTagsSHA256": "d0ac4c5accd0483be4d8f455b12dff01b9bfc581aa69f57c59e75fc267166309",
+    "SnapshotValidSELECTCyclesEliminated": 138752,
+    "SnapshotHitLOADCyclesEliminated": 101269,
+    "Examples": []
+  },
+  "SnapshotPlusActualBulk": {
+    "FastQueries": 2038895,
+    "SlowQueries": 34705,
+    "Fills": 37483,
+    "ValidNeighbourHits": 7416463,
+    "InBoundsNeighbourSamples": 7453946,
+    "DifferentialStateCycleTotal": 2375336,
+    "BulkSuccessQueries": 26320,
+    "BulkRejectedFillChecks": 2778,
+    "BulkSuccessByCommittedMissNeighbour": {
+      "2": 20176,
+      "0": 6105,
+      "1": 39
+    },
+    "SlowQueriesByLastMissNeighbour": {
+      "2": 20176,
+      "0": 6105,
+      "3": 8385,
+      "1": 39
+    },
+    "SlowQueriesByFillCount": {
+      "2": 2671,
+      "1": 31981,
+      "3": 52,
+      "4": 1
+    },
+    "GrossOldStateCyclesSkipped": 77122,
+    "AddedBulkCheckCycles": 29098,
+    "SameIndexDifferentTagChecks": 0,
+    "FinalTagsSHA256": "d0ac4c5accd0483be4d8f455b12dff01b9bfc581aa69f57c59e75fc267166309",
+    "SnapshotValidSELECTCyclesEliminated": 100199,
+    "SnapshotHitLOADCyclesEliminated": 62716,
+    "Examples": [
+      {
+        "Query": 0,
+        "Blocks": [
+          1306,
+          1306,
+          1321,
+          1321
+        ],
+        "CommittedMissNeighbour": 2,
+        "GrossOldStateCyclesSkipped": 2,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 1
+      },
+      {
+        "Query": 4,
+        "Blocks": [
+          1291,
+          1291,
+          1306,
+          1306
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 8,
+        "Blocks": [
+          1321,
+          1321,
+          1336,
+          1336
+        ],
+        "CommittedMissNeighbour": 2,
+        "GrossOldStateCyclesSkipped": 2,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 1
+      },
+      {
+        "Query": 16,
+        "Blocks": [
+          1336,
+          1336,
+          1351,
+          1351
+        ],
+        "CommittedMissNeighbour": 2,
+        "GrossOldStateCyclesSkipped": 2,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 1
+      },
+      {
+        "Query": 32,
+        "Blocks": [
+          1351,
+          1351,
+          1366,
+          1366
+        ],
+        "CommittedMissNeighbour": 2,
+        "GrossOldStateCyclesSkipped": 2,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 1
+      },
+      {
+        "Query": 40,
+        "Blocks": [
+          1366,
+          1366,
+          1381,
+          1381
+        ],
+        "CommittedMissNeighbour": 2,
+        "GrossOldStateCyclesSkipped": 2,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 1
+      },
+      {
+        "Query": 56,
+        "Blocks": [
+          1381,
+          1381,
+          1396,
+          1396
+        ],
+        "CommittedMissNeighbour": 2,
+        "GrossOldStateCyclesSkipped": 2,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 1
+      },
+      {
+        "Query": 64,
+        "Blocks": [
+          1276,
+          1276,
+          1291,
+          1291
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 68,
+        "Blocks": [
+          1261,
+          1261,
+          1276,
+          1276
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 128,
+        "Blocks": [
+          1246,
+          1246,
+          1261,
+          1261
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 131,
+        "Blocks": [
+          1231,
+          1231,
+          1246,
+          1246
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 135,
+        "Blocks": [
+          1216,
+          1216,
+          1231,
+          1231
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 195,
+        "Blocks": [
+          1201,
+          1201,
+          1216,
+          1216
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 199,
+        "Blocks": [
+          1186,
+          1186,
+          1201,
+          1201
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 259,
+        "Blocks": [
+          1171,
+          1171,
+          1186,
+          1186
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 262,
+        "Blocks": [
+          1156,
+          1156,
+          1171,
+          1171
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 322,
+        "Blocks": [
+          1141,
+          1141,
+          1156,
+          1156
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 326,
+        "Blocks": [
+          1126,
+          1126,
+          1141,
+          1141
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 386,
+        "Blocks": [
+          1111,
+          1111,
+          1126,
+          1126
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      },
+      {
+        "Query": 389,
+        "Blocks": [
+          1096,
+          1096,
+          1111,
+          1111
+        ],
+        "CommittedMissNeighbour": 0,
+        "GrossOldStateCyclesSkipped": 6,
+        "BulkCheckCyclesPaid": 1,
+        "RemainingHitEventsPreserved": 3
+      }
+    ]
+  },
+  "SnapshotExactLocalCyclesSaved": 240021,
+  "SnapshotLocalMSAt125MHz": 1.920168,
+  "CombinedExactLocalCyclesSaved": 288045,
+  "CombinedLocalMSAt125MHz": 2.30436,
+  "BulkIncrementBeyondSnapshotCyclesSaved": 48024,
+  "CombinedMeets266000CycleScreeningThreshold": true,
+  "Meets266000CycleScreeningThreshold": false,
+  "ReferenceOriginalSystemPerformance": {
+    "frame_id": "1",
+    "corrected": "1",
+    "coordinates_issued": "2073600",
+    "scan_active_cycles": "3231167",
+    "coordinate_blocked_cycles": "1157567",
+    "tail_drain_cycles": "16805",
+    "writer_blocked_cycles": "0",
+    "cache_ar_wait_cycles": "57081",
+    "cache_r_wait_cycles": "67223",
+    "cache_fills": "37483",
+    "scatter_cycles": "0",
+    "hardware_process_cycles": "3247973",
+    "cache_ram_write_cycles": "299864",
+    "cache_fill_valid_commits": "37483"
+  },
+  "ReferenceSustainedSystemPerformance": [
+    {
+      "frame_id": "1",
+      "corrected": "1",
+      "coordinates_issued": "2073600",
+      "scan_active_cycles": "4730925",
+      "coordinate_blocked_cycles": "2657325",
+      "tail_drain_cycles": "16807",
+      "writer_blocked_cycles": "0",
+      "cache_ar_wait_cycles": "56694",
+      "cache_r_wait_cycles": "1567368",
+      "cache_fills": "37483",
+      "scatter_cycles": "0",
+      "hardware_process_cycles": "4747733",
+      "cache_ram_write_cycles": "299864",
+      "cache_fill_valid_commits": "37483"
+    },
+    {
+      "frame_id": "2",
+      "corrected": "1",
+      "coordinates_issued": "2073600",
+      "scan_active_cycles": "4932157",
+      "coordinate_blocked_cycles": "2858557",
+      "tail_drain_cycles": "16805",
+      "writer_blocked_cycles": "0",
+      "cache_ar_wait_cycles": "258207",
+      "cache_r_wait_cycles": "1567087",
+      "cache_fills": "37483",
+      "scatter_cycles": "0",
+      "hardware_process_cycles": "4948963",
+      "cache_ram_write_cycles": "299864",
+      "cache_fill_valid_commits": "37483"
+    },
+    {
+      "frame_id": "3",
+      "corrected": "1",
+      "coordinates_issued": "2073600",
+      "scan_active_cycles": "4934046",
+      "coordinate_blocked_cycles": "2860446",
+      "tail_drain_cycles": "16806",
+      "writer_blocked_cycles": "0",
+      "cache_ar_wait_cycles": "260160",
+      "cache_r_wait_cycles": "1567023",
+      "cache_fills": "37483",
+      "scatter_cycles": "0",
+      "hardware_process_cycles": "4950853",
+      "cache_ram_write_cycles": "299864",
+      "cache_fill_valid_commits": "37483"
+    },
+    {
+      "frame_id": "4",
+      "corrected": "1",
+      "coordinates_issued": "2073600",
+      "scan_active_cycles": "4933835",
+      "coordinate_blocked_cycles": "2860235",
+      "tail_drain_cycles": "16805",
+      "writer_blocked_cycles": "0",
+      "cache_ar_wait_cycles": "259835",
+      "cache_r_wait_cycles": "1567137",
+      "cache_fills": "37483",
+      "scatter_cycles": "0",
+      "hardware_process_cycles": "4950641",
+      "cache_ram_write_cycles": "299864",
+      "cache_fill_valid_commits": "37483"
+    }
+  ],
+  "ActualDDRTransactionsUnchanged": true,
+  "RAMCommitCountExpectedBoth": 299864,
+  "NewStateRule": "WAIT_COMMIT actuallastwrite -> if n3 oldLOAD; otherwise BULK_CHECK1 -> allresident BULK_LOAD/BULK_PICK/RESULT, else oldLOAD",
+  "SnapshotRule": "accept_slow preloads snapshot neighbour0; PICK preloads next; valid CHECK replaces SELECT/CHECK, hit CHECK reads RAM then PICK; misses keep postcommitLOAD/PICK; OOB stays one cycle",
+  "Limits": [
+    "Finite address and state-edge accounting only; no new RTL or EDA run.",
+    "DDR service, pipeline drains, mapper, writer, shared arbitration and bank/scan phases are not recomputed.",
+    "Exact local skipped state edges need not equal final end-to-end savings under contention/backpressure.",
+    "No physical timing, RAM mapping or output-pixel CRC proof for the new implementation.",
+    "No new board FPS, 30FPS or unique-presentation improvement claim."
+  ],
+  "FrozenRTLModified": false,
+  "NewRTLExecuted": false,
+  "EDAExecuted": false,
+  "HardwareAccessed": false,
+  "ElapsedSeconds": 30.348126400029287,
+  "InputDrift": [],
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\miss_bulk_read_screen_c.py": "4e4be11db3a74bf7e07826f0c0581ffb862bce13af56c9c453f55e4715571872",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_neighbour_cache_scatter16_rowpipe_directfill.v": "d4730a733bc8f84886d268fcc90bb702db035a41867c812d6119694fbbf35b1e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi_camera_fisheye_engine_tile8df8.v": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df9tp-20261103-a\\trace-map-screen-a\\blocks-tile8.i32": "709df4ad4a38d55265bdd218cfd352d13f591e85e5551e3c97dc0f80442a2e13",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df9tp-20261103-a\\trace-map-screen-a\\mapped-cache-input-tile8-q8.i32": "32527599feaecf2db6a0e1ab83270e5ad530fb88f51b30c543158362d6c700fc",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df9tp-20261103-a\\trace-map-screen-a\\screen_full_tile8_cache_maps.py": "4086dbbfd91d5d07064ff4205feeb1403b1ec523a3bff3d583688f7482aae905",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df9tp-20261103-a\\trace-map-screen-a\\screening.json": "c0e7823a370d4f61e33b179190e8e2983b416f3cc2a0c5db96a6be6f0981ba90",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\system-native-a\\performance.csv": "a85a260c9796fdbb6c030c460107b9da441862b2907240ccfd85fde2501929e3",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\system-sustained-native-a\\performance.csv": "2c3a4e38e402428eb674b4d6433d866f715a145ec6696eec760e0ea388c9a450",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\bulk-cache-probe-a.v": "0d0f85ed5391e942f0310efbd39e0c57dce991bbd9e09d855adf8b13f8a70b92",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\decoded-slow-probe-b.v": "f2c16c15c7f73f93d792e63c80494c40b57522885e47c1d0e28cb7ebaaf9c1d2"
+  }
+}

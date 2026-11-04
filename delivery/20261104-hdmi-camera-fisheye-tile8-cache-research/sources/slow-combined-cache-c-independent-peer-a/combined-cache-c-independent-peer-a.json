@@ -1,0 +1,84 @@
+{
+  "Schema": "tile8-combined-cache-lab-c-independent-source-boundary-peer-v1",
+  "Passed": true,
+  "IndependentPeerReviewPerformed": true,
+  "CheckedUTC": "2026-11-04T00:57:59.942950+00:00",
+  "Source": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\combined-cache-probe-c.v",
+    "SHA256": "2828700483c478688cddf249608456f4f1253c5091687c11accc98a833b2df6e"
+  },
+  "BlockingFindings": [],
+  "ReviewScope": "Lab RTL source and exact final-commit boundary checks only;not native implementation or board acceptance.",
+  "SourceChecks": {
+    "SlowNumberBoundsFractionTagSnapshotUsesOldHeadOnSameEdgeAsYoungerPreToQuery": true,
+    "SlowStateBlocksFurtherHeadMovementAndFastPipelineIsEmptyOnMiss": true,
+    "OOBBranchesProduceZeroAndNeverIssueDDRRead": true,
+    "SpeculativeCHECKRAMReadOnlyConsumedOnValidHitViaNextPICK": true,
+    "LastActualCommitPublishesTagsBeforeBulkCheckAndLaterBulkRAMRead": true,
+    "BulkReadUsesFrozenSlowFourNeighbourAddressesAndIndependentRowParityWordLanes": true,
+    "FullTagResidentCheckPreventsSameIndexDifferentTagFalseBulkHit": true,
+    "FallbackRetainsPreviouslySavedPixelsAcrossConflictingEvictions": true,
+    "RemainingNeighbourHitIncrementCountsOnlyBoundsValidLaterNeighbours": true,
+    "FrameReadyStillRequiresAllOldQueryOutputDrainBeforeBaseEpochChange": true
+  },
+  "ReadOnlyOriginalOracleUnit": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\combined-unit-c\\simulation.json",
+    "SHA256": "587084b8fad7537a27c2578ee7fd46b3a3f09da0873328787c9ece3f377a9178",
+    "Passed": true,
+    "Cases": 4,
+    "IndependentOutputs": 1544,
+    "ExecutedByRootNotPeer": true
+  },
+  "ActuallyExecutedIndependentCollision": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\combined-peer-collision-a\\simulation.json",
+    "SHA256": "1d57371c4bf988238108b0dc6e7c1f325daee6bc19b7e1e809db63065addf429",
+    "Passed": true,
+    "ElapsedSeconds": 13.039057999965735,
+    "Summary": {
+      "Passed": true,
+      "IndexBits": 9,
+      "Cases": 4,
+      "SuccessfulCommonResetRecoveries": 4,
+      "IndependentRAMPixelsChecked": 864,
+      "NinthRAndLastCommitCollision": true,
+      "MalformedFinalRID": true,
+      "MissingFinalRLAST": true,
+      "ResetBeforeFinalRAMCommit": true,
+      "FaultQuarantineChecked": true
+    },
+    "ExecutedByThisPeer": true
+  },
+  "TimingAndIntegrationRisks": [
+    "bulk_all_hit adds four tag/valid comparisons and load-control muxes;full new timing required.",
+    "A speculative CHECK read may infer different RAM enable/address paths;native primitive mapping must be checked.",
+    "Model288045cycle saving is not full DDR/bank/writer or board performance;full pixel system must measure net gain."
+  ],
+  "FullFrameSystemRunExecutedByThisPeer": false,
+  "EDAExecuted": false,
+  "HardwareAccessed": false,
+  "OriginalProductionRTLModified": false,
+  "PhysicalOrFPSAcceptanceConferred": false,
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\combined-cache-probe-c.v": "2828700483c478688cddf249608456f4f1253c5091687c11accc98a833b2df6e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\bulk-cache-probe-a.v": "0d0f85ed5391e942f0310efbd39e0c57dce991bbd9e09d855adf8b13f8a70b92",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\decoded-slow-probe-b.v": "f2c16c15c7f73f93d792e63c80494c40b57522885e47c1d0e28cb7ebaaf9c1d2",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\make_bulk_cache_probe_a.py": "b5519b2a2841f753f71395c46effcc0170643c1dfe793d930c2cf5542cb59e35",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\make_decoded_slow_probe_b.py": "a6cb472a5e387f58c10e8d3fb3d2d9bab21f5f0d4f96accf0d0d5fa3e3591aa7",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\make_combined_cache_probe_c.py": "686c828a5d9827e0077a950b7641c105f9737965542c51553e5a7304414bd9ce",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\combined-cache-probe-source-c.json": "60773e8c074b9d4d0eaaf9d0e95188798668dcfe4d4142f19046669eac7dc834",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\combined-unit-c\\simulation.json": "587084b8fad7537a27c2578ee7fd46b3a3f09da0873328787c9ece3f377a9178",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\combined-peer-collision-a\\simulation.json": "1d57371c4bf988238108b0dc6e7c1f325daee6bc19b7e1e809db63065addf429",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\run_combined_peer_collision_a.py": "1680aa50ea647be060d194f867cc933ecd9ad3d26fcaac41a3dd8c35d1fe85a9",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_directfill_rowpipe_cache.sv": "1095a80958e59950fe2ff49a8ff10401e4a17ddb5a32e1c817515cf05c20f5f4",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_directfill_commit_collision_peer.sv": "bd7736f98ec4ac8ebd24df1bf3e72dffa8ea72d09aad1e4d818be882d740f2ab",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_neighbour_cache_scatter16_rowpipe_directfill.v": "d4730a733bc8f84886d268fcc90bb702db035a41867c812d6119694fbbf35b1e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\run_combined_cache_unit_c.py": "283c72c55067afc714fe7ff45aff4e90ac0f7dac1d03fccf8967e3fcc7d363bf",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_directfill_rowpipe_cache_sim.py": "e86fa646130c74b6eb98b2bfb888042251d6698d1e950a9935a47e2b7c9911a6",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\run_fill8_rowpipe_cache_sim.py": "7511b32ca0d03b04ffa7126a98dce01d31c701a67f654a553985fb3af0a43885",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\simulation_tools.py": "cb6f08cf764cce9c088ede89c65ce8f7da0cee447d95015b5685fde18de50a6e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\combined-peer-collision-a\\peer-commit-summary.json": "59e35d5458fdc2f79baa0ec9819ecccdd6239f96a8b450177fb2168ac5e636ec",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\combined-peer-collision-a\\peer-commit-cases.csv": "cb76928db185f0a5159d499bca7e10324453748a7d59a103283c618c4241b0e9",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\combined-peer-collision-a\\simulation.log": "8521db1ad78222b7053d7198c7888adc0a14415d17ab76c768c1409ec4608b9a"
+  },
+  "InputDrift": []
+}

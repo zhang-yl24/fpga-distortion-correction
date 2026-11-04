@@ -1,0 +1,3645 @@
+{
+  "Schema": "tile8df8-next-known-demand-lookahead-cycle-probe-v1",
+  "CreatedUTC": "2026-11-04T00:47:46.904080+00:00",
+  "SourceDerivedCoordinateTrace": true,
+  "CapturedPerQueryTrace": false,
+  "Queries": 2073600,
+  "FullNativeQuerySequence": true,
+  "AddressTraceSHA256": "f3cceb1243b883ffd632ec7bcc94e0e213751e38047b7e841b6b33c424fb5f39",
+  "BlockTraceSHA256": "709df4ad4a38d55265bdd218cfd352d13f591e85e5551e3c97dc0f80442a2e13",
+  "INDEX_BITS": 8,
+  "BlockPixels": 128,
+  "OneVariableChanged": "known later-neighbour demand AR scheduling; all other service costs identical",
+  "Runs": [
+    {
+      "FirstResponseLatencyCycles": 0,
+      "Baseline": {
+        "Cycles": 3231189,
+        "FastQueries": 2038895,
+        "SlowQueries": 34705,
+        "Fills": 37483,
+        "EarlyKnownDemandIssues": 0,
+        "RAMReadSamples": 7453946,
+        "RAMWriteCommitCycles": 299864,
+        "TagPublications": 37483,
+        "DemandWaitCycles": 461671,
+        "ReadWritePortStallCycles": 0,
+        "ARPeriodicWaitCycles": 19603,
+        "RPeriodicGapCycles": 67238,
+        "EarlyLineDemandArrivedBeforeFillComplete": 0,
+        "ProtectedIndexConflictSkips": 0,
+        "MaximumOutstandingBursts": 1,
+        "ExampleEvents": [
+          {
+            "query": 0,
+            "kind": "demand",
+            "block": 1306,
+            "line": 26,
+            "issue": 3,
+            "AR": 4,
+            "RAMCommits": [
+              7,
+              8,
+              9,
+              10,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          {
+            "query": 0,
+            "kind": "demand",
+            "block": 1321,
+            "line": 41,
+            "issue": 24,
+            "AR": 25,
+            "RAMCommits": [
+              27,
+              28,
+              29,
+              30,
+              32,
+              33,
+              34,
+              35
+            ]
+          },
+          {
+            "query": 4,
+            "kind": "demand",
+            "block": 1291,
+            "line": 11,
+            "issue": 51,
+            "AR": 52,
+            "RAMCommits": [
+              54,
+              55,
+              57,
+              58,
+              59,
+              60,
+              62,
+              63
+            ]
+          },
+          {
+            "query": 8,
+            "kind": "demand",
+            "block": 1336,
+            "line": 56,
+            "issue": 95,
+            "AR": 96,
+            "RAMCommits": [
+              98,
+              99,
+              100,
+              102,
+              103,
+              104,
+              105,
+              107
+            ]
+          },
+          {
+            "query": 16,
+            "kind": "demand",
+            "block": 1351,
+            "line": 71,
+            "issue": 135,
+            "AR": 136,
+            "RAMCommits": [
+              138,
+              139,
+              140,
+              142,
+              143,
+              144,
+              145,
+              147
+            ]
+          },
+          {
+            "query": 32,
+            "kind": "demand",
+            "block": 1366,
+            "line": 86,
+            "issue": 183,
+            "AR": 184,
+            "RAMCommits": [
+              187,
+              188,
+              189,
+              190,
+              192,
+              193,
+              194,
+              195
+            ]
+          },
+          {
+            "query": 40,
+            "kind": "demand",
+            "block": 1381,
+            "line": 101,
+            "issue": 223,
+            "AR": 226,
+            "RAMCommits": [
+              228,
+              229,
+              230,
+              232,
+              233,
+              234,
+              235,
+              237
+            ]
+          },
+          {
+            "query": 56,
+            "kind": "demand",
+            "block": 1396,
+            "line": 116,
+            "issue": 273,
+            "AR": 275,
+            "RAMCommits": [
+              277,
+              278,
+              279,
+              280,
+              282,
+              283,
+              284,
+              285
+            ]
+          },
+          {
+            "query": 64,
+            "kind": "demand",
+            "block": 1276,
+            "line": 252,
+            "issue": 305,
+            "AR": 306,
+            "RAMCommits": [
+              308,
+              309,
+              310,
+              312,
+              313,
+              314,
+              315,
+              317
+            ]
+          },
+          {
+            "query": 68,
+            "kind": "demand",
+            "block": 1261,
+            "line": 237,
+            "issue": 341,
+            "AR": 342,
+            "RAMCommits": [
+              344,
+              345,
+              347,
+              348,
+              349,
+              350,
+              352,
+              353
+            ]
+          },
+          {
+            "query": 128,
+            "kind": "demand",
+            "block": 1246,
+            "line": 222,
+            "issue": 433,
+            "AR": 436,
+            "RAMCommits": [
+              438,
+              439,
+              440,
+              442,
+              443,
+              444,
+              445,
+              447
+            ]
+          },
+          {
+            "query": 131,
+            "kind": "demand",
+            "block": 1231,
+            "line": 207,
+            "issue": 470,
+            "AR": 471,
+            "RAMCommits": [
+              473,
+              474,
+              475,
+              477,
+              478,
+              479,
+              480,
+              482
+            ]
+          },
+          {
+            "query": 135,
+            "kind": "demand",
+            "block": 1216,
+            "line": 192,
+            "issue": 506,
+            "AR": 507,
+            "RAMCommits": [
+              509,
+              510,
+              512,
+              513,
+              514,
+              515,
+              517,
+              518
+            ]
+          },
+          {
+            "query": 195,
+            "kind": "demand",
+            "block": 1201,
+            "line": 177,
+            "issue": 598,
+            "AR": 599,
+            "RAMCommits": [
+              602,
+              603,
+              604,
+              605,
+              607,
+              608,
+              609,
+              610
+            ]
+          },
+          {
+            "query": 199,
+            "kind": "demand",
+            "block": 1186,
+            "line": 162,
+            "issue": 634,
+            "AR": 635,
+            "RAMCommits": [
+              637,
+              638,
+              639,
+              640,
+              642,
+              643,
+              644,
+              645
+            ]
+          },
+          {
+            "query": 259,
+            "kind": "demand",
+            "block": 1171,
+            "line": 147,
+            "issue": 725,
+            "AR": 726,
+            "RAMCommits": [
+              728,
+              729,
+              730,
+              732,
+              733,
+              734,
+              735,
+              737
+            ]
+          },
+          {
+            "query": 262,
+            "kind": "demand",
+            "block": 1156,
+            "line": 132,
+            "issue": 760,
+            "AR": 761,
+            "RAMCommits": [
+              763,
+              764,
+              765,
+              767,
+              768,
+              769,
+              770,
+              772
+            ]
+          },
+          {
+            "query": 322,
+            "kind": "demand",
+            "block": 1141,
+            "line": 117,
+            "issue": 852,
+            "AR": 853,
+            "RAMCommits": [
+              855,
+              857,
+              858,
+              859,
+              860,
+              862,
+              863,
+              864
+            ]
+          },
+          {
+            "query": 326,
+            "kind": "demand",
+            "block": 1126,
+            "line": 102,
+            "issue": 888,
+            "AR": 891,
+            "RAMCommits": [
+              893,
+              894,
+              895,
+              897,
+              898,
+              899,
+              900,
+              902
+            ]
+          },
+          {
+            "query": 386,
+            "kind": "demand",
+            "block": 1111,
+            "line": 87,
+            "issue": 982,
+            "AR": 983,
+            "RAMCommits": [
+              985,
+              987,
+              988,
+              989,
+              990,
+              992,
+              993,
+              994
+            ]
+          },
+          {
+            "query": 389,
+            "kind": "demand",
+            "block": 1096,
+            "line": 72,
+            "issue": 1017,
+            "AR": 1018,
+            "RAMCommits": [
+              1020,
+              1022,
+              1023,
+              1024,
+              1025,
+              1027,
+              1028,
+              1029
+            ]
+          },
+          {
+            "query": 449,
+            "kind": "demand",
+            "block": 1081,
+            "line": 57,
+            "issue": 1109,
+            "AR": 1110,
+            "RAMCommits": [
+              1112,
+              1113,
+              1114,
+              1115,
+              1117,
+              1118,
+              1119,
+              1120
+            ]
+          },
+          {
+            "query": 453,
+            "kind": "demand",
+            "block": 1066,
+            "line": 42,
+            "issue": 1144,
+            "AR": 1145,
+            "RAMCommits": [
+              1147,
+              1148,
+              1149,
+              1150,
+              1152,
+              1153,
+              1154,
+              1155
+            ]
+          },
+          {
+            "query": 513,
+            "kind": "demand",
+            "block": 1051,
+            "line": 27,
+            "issue": 1235,
+            "AR": 1236,
+            "RAMCommits": [
+              1238,
+              1239,
+              1240,
+              1242,
+              1243,
+              1244,
+              1245,
+              1247
+            ]
+          },
+          {
+            "query": 516,
+            "kind": "demand",
+            "block": 1036,
+            "line": 12,
+            "issue": 1270,
+            "AR": 1271,
+            "RAMCommits": [
+              1273,
+              1274,
+              1275,
+              1277,
+              1278,
+              1279,
+              1280,
+              1282
+            ]
+          },
+          {
+            "query": 576,
+            "kind": "demand",
+            "block": 1021,
+            "line": 253,
+            "issue": 1362,
+            "AR": 1363,
+            "RAMCommits": [
+              1365,
+              1367,
+              1368,
+              1369,
+              1370,
+              1372,
+              1373,
+              1374
+            ]
+          },
+          {
+            "query": 580,
+            "kind": "demand",
+            "block": 1006,
+            "line": 238,
+            "issue": 1398,
+            "AR": 1399,
+            "RAMCommits": [
+              1402,
+              1403,
+              1404,
+              1405,
+              1407,
+              1408,
+              1409,
+              1410
+            ]
+          },
+          {
+            "query": 583,
+            "kind": "demand",
+            "block": 991,
+            "line": 223,
+            "issue": 1433,
+            "AR": 1434,
+            "RAMCommits": [
+              1437,
+              1438,
+              1439,
+              1440,
+              1442,
+              1443,
+              1444,
+              1445
+            ]
+          },
+          {
+            "query": 643,
+            "kind": "demand",
+            "block": 976,
+            "line": 208,
+            "issue": 1525,
+            "AR": 1528,
+            "RAMCommits": [
+              1530,
+              1532,
+              1533,
+              1534,
+              1535,
+              1537,
+              1538,
+              1539
+            ]
+          },
+          {
+            "query": 647,
+            "kind": "demand",
+            "block": 961,
+            "line": 193,
+            "issue": 1563,
+            "AR": 1564,
+            "RAMCommits": [
+              1567,
+              1568,
+              1569,
+              1570,
+              1572,
+              1573,
+              1574,
+              1575
+            ]
+          },
+          {
+            "query": 706,
+            "kind": "demand",
+            "block": 946,
+            "line": 178,
+            "issue": 1654,
+            "AR": 1655,
+            "RAMCommits": [
+              1657,
+              1658,
+              1659,
+              1660,
+              1662,
+              1663,
+              1664,
+              1665
+            ]
+          },
+          {
+            "query": 710,
+            "kind": "demand",
+            "block": 931,
+            "line": 163,
+            "issue": 1689,
+            "AR": 1690,
+            "RAMCommits": [
+              1692,
+              1693,
+              1694,
+              1695,
+              1697,
+              1698,
+              1699,
+              1700
+            ]
+          }
+        ]
+      },
+      "OneKnownDemandLookahead": {
+        "Cycles": 3208415,
+        "FastQueries": 2038895,
+        "SlowQueries": 34705,
+        "Fills": 37483,
+        "EarlyKnownDemandIssues": 2724,
+        "RAMReadSamples": 7453946,
+        "RAMWriteCommitCycles": 299864,
+        "TagPublications": 37483,
+        "DemandWaitCycles": 434197,
+        "ReadWritePortStallCycles": 5807,
+        "ARPeriodicWaitCycles": 21321,
+        "RPeriodicGapCycles": 67175,
+        "EarlyLineDemandArrivedBeforeFillComplete": 1617,
+        "ProtectedIndexConflictSkips": 0,
+        "MaximumOutstandingBursts": 1,
+        "ExampleEvents": [
+          {
+            "query": 0,
+            "kind": "demand",
+            "block": 1306,
+            "line": 26,
+            "issue": 3,
+            "AR": 4,
+            "RAMCommits": [
+              7,
+              8,
+              9,
+              10,
+              12,
+              13,
+              14,
+              15
+            ]
+          },
+          {
+            "query": 0,
+            "kind": "lookahead",
+            "block": 1321,
+            "line": 41,
+            "issue": 15,
+            "AR": 16,
+            "RAMCommits": [
+              18,
+              19,
+              20,
+              22,
+              23,
+              24,
+              25,
+              27
+            ]
+          },
+          {
+            "query": 4,
+            "kind": "demand",
+            "block": 1291,
+            "line": 11,
+            "issue": 43,
+            "AR": 44,
+            "RAMCommits": [
+              47,
+              48,
+              49,
+              50,
+              52,
+              53,
+              54,
+              55
+            ]
+          },
+          {
+            "query": 8,
+            "kind": "demand",
+            "block": 1336,
+            "line": 56,
+            "issue": 87,
+            "AR": 88,
+            "RAMCommits": [
+              90,
+              92,
+              93,
+              94,
+              95,
+              97,
+              98,
+              99
+            ]
+          },
+          {
+            "query": 16,
+            "kind": "demand",
+            "block": 1351,
+            "line": 71,
+            "issue": 127,
+            "AR": 128,
+            "RAMCommits": [
+              130,
+              132,
+              133,
+              134,
+              135,
+              137,
+              138,
+              139
+            ]
+          },
+          {
+            "query": 32,
+            "kind": "demand",
+            "block": 1366,
+            "line": 86,
+            "issue": 175,
+            "AR": 177,
+            "RAMCommits": [
+              179,
+              180,
+              182,
+              183,
+              184,
+              185,
+              187,
+              188
+            ]
+          },
+          {
+            "query": 40,
+            "kind": "demand",
+            "block": 1381,
+            "line": 101,
+            "issue": 216,
+            "AR": 219,
+            "RAMCommits": [
+              222,
+              223,
+              224,
+              225,
+              227,
+              228,
+              229,
+              230
+            ]
+          },
+          {
+            "query": 56,
+            "kind": "demand",
+            "block": 1396,
+            "line": 116,
+            "issue": 266,
+            "AR": 268,
+            "RAMCommits": [
+              270,
+              272,
+              273,
+              274,
+              275,
+              277,
+              278,
+              279
+            ]
+          },
+          {
+            "query": 64,
+            "kind": "demand",
+            "block": 1276,
+            "line": 252,
+            "issue": 299,
+            "AR": 300,
+            "RAMCommits": [
+              302,
+              303,
+              304,
+              305,
+              307,
+              308,
+              309,
+              310
+            ]
+          },
+          {
+            "query": 68,
+            "kind": "demand",
+            "block": 1261,
+            "line": 237,
+            "issue": 334,
+            "AR": 335,
+            "RAMCommits": [
+              337,
+              338,
+              339,
+              340,
+              342,
+              343,
+              344,
+              345
+            ]
+          },
+          {
+            "query": 128,
+            "kind": "demand",
+            "block": 1246,
+            "line": 222,
+            "issue": 425,
+            "AR": 426,
+            "RAMCommits": [
+              428,
+              429,
+              430,
+              432,
+              433,
+              434,
+              435,
+              437
+            ]
+          },
+          {
+            "query": 131,
+            "kind": "demand",
+            "block": 1231,
+            "line": 207,
+            "issue": 460,
+            "AR": 461,
+            "RAMCommits": [
+              463,
+              464,
+              465,
+              467,
+              468,
+              469,
+              470,
+              472
+            ]
+          },
+          {
+            "query": 135,
+            "kind": "demand",
+            "block": 1216,
+            "line": 192,
+            "issue": 496,
+            "AR": 499,
+            "RAMCommits": [
+              502,
+              503,
+              504,
+              505,
+              507,
+              508,
+              509,
+              510
+            ]
+          },
+          {
+            "query": 195,
+            "kind": "demand",
+            "block": 1201,
+            "line": 177,
+            "issue": 590,
+            "AR": 591,
+            "RAMCommits": [
+              593,
+              594,
+              595,
+              597,
+              598,
+              599,
+              600,
+              602
+            ]
+          },
+          {
+            "query": 199,
+            "kind": "demand",
+            "block": 1186,
+            "line": 162,
+            "issue": 626,
+            "AR": 627,
+            "RAMCommits": [
+              629,
+              630,
+              632,
+              633,
+              634,
+              635,
+              637,
+              638
+            ]
+          },
+          {
+            "query": 259,
+            "kind": "demand",
+            "block": 1171,
+            "line": 147,
+            "issue": 718,
+            "AR": 719,
+            "RAMCommits": [
+              722,
+              723,
+              724,
+              725,
+              727,
+              728,
+              729,
+              730
+            ]
+          },
+          {
+            "query": 262,
+            "kind": "demand",
+            "block": 1156,
+            "line": 132,
+            "issue": 753,
+            "AR": 754,
+            "RAMCommits": [
+              757,
+              758,
+              759,
+              760,
+              762,
+              763,
+              764,
+              765
+            ]
+          },
+          {
+            "query": 322,
+            "kind": "demand",
+            "block": 1141,
+            "line": 117,
+            "issue": 845,
+            "AR": 846,
+            "RAMCommits": [
+              848,
+              849,
+              850,
+              852,
+              853,
+              854,
+              855,
+              857
+            ]
+          },
+          {
+            "query": 326,
+            "kind": "demand",
+            "block": 1126,
+            "line": 102,
+            "issue": 881,
+            "AR": 884,
+            "RAMCommits": [
+              887,
+              888,
+              889,
+              890,
+              892,
+              893,
+              894,
+              895
+            ]
+          },
+          {
+            "query": 386,
+            "kind": "demand",
+            "block": 1111,
+            "line": 87,
+            "issue": 975,
+            "AR": 976,
+            "RAMCommits": [
+              978,
+              979,
+              980,
+              982,
+              983,
+              984,
+              985,
+              987
+            ]
+          },
+          {
+            "query": 389,
+            "kind": "demand",
+            "block": 1096,
+            "line": 72,
+            "issue": 1010,
+            "AR": 1011,
+            "RAMCommits": [
+              1013,
+              1014,
+              1015,
+              1017,
+              1018,
+              1019,
+              1020,
+              1022
+            ]
+          },
+          {
+            "query": 449,
+            "kind": "demand",
+            "block": 1081,
+            "line": 57,
+            "issue": 1102,
+            "AR": 1103,
+            "RAMCommits": [
+              1105,
+              1107,
+              1108,
+              1109,
+              1110,
+              1112,
+              1113,
+              1114
+            ]
+          },
+          {
+            "query": 453,
+            "kind": "demand",
+            "block": 1066,
+            "line": 42,
+            "issue": 1138,
+            "AR": 1139,
+            "RAMCommits": [
+              1142,
+              1143,
+              1144,
+              1145,
+              1147,
+              1148,
+              1149,
+              1150
+            ]
+          },
+          {
+            "query": 513,
+            "kind": "demand",
+            "block": 1051,
+            "line": 27,
+            "issue": 1230,
+            "AR": 1231,
+            "RAMCommits": [
+              1233,
+              1234,
+              1235,
+              1237,
+              1238,
+              1239,
+              1240,
+              1242
+            ]
+          },
+          {
+            "query": 516,
+            "kind": "demand",
+            "block": 1036,
+            "line": 12,
+            "issue": 1265,
+            "AR": 1266,
+            "RAMCommits": [
+              1268,
+              1269,
+              1270,
+              1272,
+              1273,
+              1274,
+              1275,
+              1277
+            ]
+          },
+          {
+            "query": 576,
+            "kind": "demand",
+            "block": 1021,
+            "line": 253,
+            "issue": 1357,
+            "AR": 1360,
+            "RAMCommits": [
+              1362,
+              1363,
+              1364,
+              1365,
+              1367,
+              1368,
+              1369,
+              1370
+            ]
+          },
+          {
+            "query": 580,
+            "kind": "demand",
+            "block": 1006,
+            "line": 238,
+            "issue": 1394,
+            "AR": 1395,
+            "RAMCommits": [
+              1397,
+              1398,
+              1399,
+              1400,
+              1402,
+              1403,
+              1404,
+              1405
+            ]
+          },
+          {
+            "query": 583,
+            "kind": "demand",
+            "block": 991,
+            "line": 223,
+            "issue": 1428,
+            "AR": 1430,
+            "RAMCommits": [
+              1432,
+              1433,
+              1434,
+              1435,
+              1437,
+              1438,
+              1439,
+              1440
+            ]
+          },
+          {
+            "query": 643,
+            "kind": "demand",
+            "block": 976,
+            "line": 208,
+            "issue": 1520,
+            "AR": 1521,
+            "RAMCommits": [
+              1523,
+              1524,
+              1525,
+              1527,
+              1528,
+              1529,
+              1530,
+              1532
+            ]
+          },
+          {
+            "query": 647,
+            "kind": "demand",
+            "block": 961,
+            "line": 193,
+            "issue": 1556,
+            "AR": 1557,
+            "RAMCommits": [
+              1559,
+              1560,
+              1562,
+              1563,
+              1564,
+              1565,
+              1567,
+              1568
+            ]
+          },
+          {
+            "query": 706,
+            "kind": "demand",
+            "block": 946,
+            "line": 178,
+            "issue": 1647,
+            "AR": 1648,
+            "RAMCommits": [
+              1650,
+              1652,
+              1653,
+              1654,
+              1655,
+              1657,
+              1658,
+              1659
+            ]
+          },
+          {
+            "query": 710,
+            "kind": "demand",
+            "block": 931,
+            "line": 163,
+            "issue": 1683,
+            "AR": 1684,
+            "RAMCommits": [
+              1687,
+              1688,
+              1689,
+              1690,
+              1692,
+              1693,
+              1694,
+              1695
+            ]
+          }
+        ]
+      },
+      "CycleDifference": 22774,
+      "ModelServiceImprovementPercent": 0.7048179478204463
+    },
+    {
+      "FirstResponseLatencyCycles": 8,
+      "Baseline": {
+        "Cycles": 3532027,
+        "FastQueries": 2038895,
+        "SlowQueries": 34705,
+        "Fills": 37483,
+        "EarlyKnownDemandIssues": 0,
+        "RAMReadSamples": 7453946,
+        "RAMWriteCommitCycles": 299864,
+        "TagPublications": 37483,
+        "DemandWaitCycles": 762509,
+        "ReadWritePortStallCycles": 0,
+        "ARPeriodicWaitCycles": 20573,
+        "RPeriodicGapCycles": 67242,
+        "EarlyLineDemandArrivedBeforeFillComplete": 0,
+        "ProtectedIndexConflictSkips": 0,
+        "MaximumOutstandingBursts": 1,
+        "ExampleEvents": [
+          {
+            "query": 0,
+            "kind": "demand",
+            "block": 1306,
+            "line": 26,
+            "issue": 3,
+            "AR": 4,
+            "RAMCommits": [
+              14,
+              15,
+              17,
+              18,
+              19,
+              20,
+              22,
+              23
+            ]
+          },
+          {
+            "query": 0,
+            "kind": "demand",
+            "block": 1321,
+            "line": 41,
+            "issue": 32,
+            "AR": 33,
+            "RAMCommits": [
+              43,
+              44,
+              45,
+              47,
+              48,
+              49,
+              50,
+              52
+            ]
+          },
+          {
+            "query": 4,
+            "kind": "demand",
+            "block": 1291,
+            "line": 11,
+            "issue": 68,
+            "AR": 69,
+            "RAMCommits": [
+              79,
+              80,
+              82,
+              83,
+              84,
+              85,
+              87,
+              88
+            ]
+          },
+          {
+            "query": 8,
+            "kind": "demand",
+            "block": 1336,
+            "line": 56,
+            "issue": 120,
+            "AR": 121,
+            "RAMCommits": [
+              132,
+              133,
+              134,
+              135,
+              137,
+              138,
+              139,
+              140
+            ]
+          },
+          {
+            "query": 16,
+            "kind": "demand",
+            "block": 1351,
+            "line": 71,
+            "issue": 168,
+            "AR": 170,
+            "RAMCommits": [
+              180,
+              182,
+              183,
+              184,
+              185,
+              187,
+              188,
+              189
+            ]
+          },
+          {
+            "query": 32,
+            "kind": "demand",
+            "block": 1366,
+            "line": 86,
+            "issue": 225,
+            "AR": 226,
+            "RAMCommits": [
+              237,
+              238,
+              239,
+              240,
+              242,
+              243,
+              244,
+              245
+            ]
+          },
+          {
+            "query": 40,
+            "kind": "demand",
+            "block": 1381,
+            "line": 101,
+            "issue": 273,
+            "AR": 275,
+            "RAMCommits": [
+              285,
+              287,
+              288,
+              289,
+              290,
+              292,
+              293,
+              294
+            ]
+          },
+          {
+            "query": 56,
+            "kind": "demand",
+            "block": 1396,
+            "line": 116,
+            "issue": 330,
+            "AR": 331,
+            "RAMCommits": [
+              342,
+              343,
+              344,
+              345,
+              347,
+              348,
+              349,
+              350
+            ]
+          },
+          {
+            "query": 64,
+            "kind": "demand",
+            "block": 1276,
+            "line": 252,
+            "issue": 370,
+            "AR": 373,
+            "RAMCommits": [
+              383,
+              384,
+              385,
+              387,
+              388,
+              389,
+              390,
+              392
+            ]
+          },
+          {
+            "query": 68,
+            "kind": "demand",
+            "block": 1261,
+            "line": 237,
+            "issue": 416,
+            "AR": 417,
+            "RAMCommits": [
+              427,
+              428,
+              429,
+              430,
+              432,
+              433,
+              434,
+              435
+            ]
+          },
+          {
+            "query": 128,
+            "kind": "demand",
+            "block": 1246,
+            "line": 222,
+            "issue": 515,
+            "AR": 516,
+            "RAMCommits": [
+              527,
+              528,
+              529,
+              530,
+              532,
+              533,
+              534,
+              535
+            ]
+          },
+          {
+            "query": 131,
+            "kind": "demand",
+            "block": 1231,
+            "line": 207,
+            "issue": 558,
+            "AR": 559,
+            "RAMCommits": [
+              569,
+              570,
+              572,
+              573,
+              574,
+              575,
+              577,
+              578
+            ]
+          },
+          {
+            "query": 135,
+            "kind": "demand",
+            "block": 1216,
+            "line": 192,
+            "issue": 602,
+            "AR": 604,
+            "RAMCommits": [
+              614,
+              615,
+              617,
+              618,
+              619,
+              620,
+              622,
+              623
+            ]
+          },
+          {
+            "query": 195,
+            "kind": "demand",
+            "block": 1201,
+            "line": 177,
+            "issue": 703,
+            "AR": 704,
+            "RAMCommits": [
+              714,
+              715,
+              717,
+              718,
+              719,
+              720,
+              722,
+              723
+            ]
+          },
+          {
+            "query": 199,
+            "kind": "demand",
+            "block": 1186,
+            "line": 162,
+            "issue": 747,
+            "AR": 748,
+            "RAMCommits": [
+              758,
+              759,
+              760,
+              762,
+              763,
+              764,
+              765,
+              767
+            ]
+          },
+          {
+            "query": 259,
+            "kind": "demand",
+            "block": 1171,
+            "line": 147,
+            "issue": 847,
+            "AR": 849,
+            "RAMCommits": [
+              859,
+              860,
+              862,
+              863,
+              864,
+              865,
+              867,
+              868
+            ]
+          },
+          {
+            "query": 262,
+            "kind": "demand",
+            "block": 1156,
+            "line": 132,
+            "issue": 891,
+            "AR": 892,
+            "RAMCommits": [
+              902,
+              903,
+              904,
+              905,
+              907,
+              908,
+              909,
+              910
+            ]
+          },
+          {
+            "query": 322,
+            "kind": "demand",
+            "block": 1141,
+            "line": 117,
+            "issue": 990,
+            "AR": 991,
+            "RAMCommits": [
+              1002,
+              1003,
+              1004,
+              1005,
+              1007,
+              1008,
+              1009,
+              1010
+            ]
+          },
+          {
+            "query": 326,
+            "kind": "demand",
+            "block": 1126,
+            "line": 102,
+            "issue": 1034,
+            "AR": 1035,
+            "RAMCommits": [
+              1045,
+              1047,
+              1048,
+              1049,
+              1050,
+              1052,
+              1053,
+              1054
+            ]
+          },
+          {
+            "query": 386,
+            "kind": "demand",
+            "block": 1111,
+            "line": 87,
+            "issue": 1134,
+            "AR": 1136,
+            "RAMCommits": [
+              1147,
+              1148,
+              1149,
+              1150,
+              1152,
+              1153,
+              1154,
+              1155
+            ]
+          },
+          {
+            "query": 389,
+            "kind": "demand",
+            "block": 1096,
+            "line": 72,
+            "issue": 1178,
+            "AR": 1179,
+            "RAMCommits": [
+              1189,
+              1190,
+              1192,
+              1193,
+              1194,
+              1195,
+              1197,
+              1198
+            ]
+          },
+          {
+            "query": 449,
+            "kind": "demand",
+            "block": 1081,
+            "line": 57,
+            "issue": 1278,
+            "AR": 1279,
+            "RAMCommits": [
+              1289,
+              1290,
+              1292,
+              1293,
+              1294,
+              1295,
+              1297,
+              1298
+            ]
+          },
+          {
+            "query": 453,
+            "kind": "demand",
+            "block": 1066,
+            "line": 42,
+            "issue": 1322,
+            "AR": 1325,
+            "RAMCommits": [
+              1335,
+              1337,
+              1338,
+              1339,
+              1340,
+              1342,
+              1343,
+              1344
+            ]
+          },
+          {
+            "query": 513,
+            "kind": "demand",
+            "block": 1051,
+            "line": 27,
+            "issue": 1424,
+            "AR": 1425,
+            "RAMCommits": [
+              1435,
+              1437,
+              1438,
+              1439,
+              1440,
+              1442,
+              1443,
+              1444
+            ]
+          },
+          {
+            "query": 516,
+            "kind": "demand",
+            "block": 1036,
+            "line": 12,
+            "issue": 1467,
+            "AR": 1468,
+            "RAMCommits": [
+              1478,
+              1479,
+              1480,
+              1482,
+              1483,
+              1484,
+              1485,
+              1487
+            ]
+          },
+          {
+            "query": 576,
+            "kind": "demand",
+            "block": 1021,
+            "line": 253,
+            "issue": 1567,
+            "AR": 1570,
+            "RAMCommits": [
+              1580,
+              1582,
+              1583,
+              1584,
+              1585,
+              1587,
+              1588,
+              1589
+            ]
+          },
+          {
+            "query": 580,
+            "kind": "demand",
+            "block": 1006,
+            "line": 238,
+            "issue": 1613,
+            "AR": 1614,
+            "RAMCommits": [
+              1624,
+              1625,
+              1627,
+              1628,
+              1629,
+              1630,
+              1632,
+              1633
+            ]
+          },
+          {
+            "query": 583,
+            "kind": "demand",
+            "block": 991,
+            "line": 223,
+            "issue": 1656,
+            "AR": 1657,
+            "RAMCommits": [
+              1667,
+              1668,
+              1669,
+              1670,
+              1672,
+              1673,
+              1674,
+              1675
+            ]
+          },
+          {
+            "query": 643,
+            "kind": "demand",
+            "block": 976,
+            "line": 208,
+            "issue": 1755,
+            "AR": 1756,
+            "RAMCommits": [
+              1767,
+              1768,
+              1769,
+              1770,
+              1772,
+              1773,
+              1774,
+              1775
+            ]
+          },
+          {
+            "query": 647,
+            "kind": "demand",
+            "block": 961,
+            "line": 193,
+            "issue": 1799,
+            "AR": 1801,
+            "RAMCommits": [
+              1812,
+              1813,
+              1814,
+              1815,
+              1817,
+              1818,
+              1819,
+              1820
+            ]
+          },
+          {
+            "query": 706,
+            "kind": "demand",
+            "block": 946,
+            "line": 178,
+            "issue": 1899,
+            "AR": 1900,
+            "RAMCommits": [
+              1910,
+              1912,
+              1913,
+              1914,
+              1915,
+              1917,
+              1918,
+              1919
+            ]
+          },
+          {
+            "query": 710,
+            "kind": "demand",
+            "block": 931,
+            "line": 163,
+            "issue": 1943,
+            "AR": 1944,
+            "RAMCommits": [
+              1954,
+              1955,
+              1957,
+              1958,
+              1959,
+              1960,
+              1962,
+              1963
+            ]
+          }
+        ]
+      },
+      "OneKnownDemandLookahead": {
+        "Cycles": 3509977,
+        "FastQueries": 2038895,
+        "SlowQueries": 34705,
+        "Fills": 37483,
+        "EarlyKnownDemandIssues": 2724,
+        "RAMReadSamples": 7453946,
+        "RAMWriteCommitCycles": 299864,
+        "TagPublications": 37483,
+        "DemandWaitCycles": 740459,
+        "ReadWritePortStallCycles": 0,
+        "ARPeriodicWaitCycles": 22038,
+        "RPeriodicGapCycles": 67487,
+        "EarlyLineDemandArrivedBeforeFillComplete": 2724,
+        "ProtectedIndexConflictSkips": 0,
+        "MaximumOutstandingBursts": 1,
+        "ExampleEvents": [
+          {
+            "query": 0,
+            "kind": "demand",
+            "block": 1306,
+            "line": 26,
+            "issue": 3,
+            "AR": 4,
+            "RAMCommits": [
+              14,
+              15,
+              17,
+              18,
+              19,
+              20,
+              22,
+              23
+            ]
+          },
+          {
+            "query": 0,
+            "kind": "lookahead",
+            "block": 1321,
+            "line": 41,
+            "issue": 23,
+            "AR": 24,
+            "RAMCommits": [
+              34,
+              35,
+              37,
+              38,
+              39,
+              40,
+              42,
+              43
+            ]
+          },
+          {
+            "query": 4,
+            "kind": "demand",
+            "block": 1291,
+            "line": 11,
+            "issue": 59,
+            "AR": 60,
+            "RAMCommits": [
+              70,
+              72,
+              73,
+              74,
+              75,
+              77,
+              78,
+              79
+            ]
+          },
+          {
+            "query": 8,
+            "kind": "demand",
+            "block": 1336,
+            "line": 56,
+            "issue": 111,
+            "AR": 114,
+            "RAMCommits": [
+              124,
+              125,
+              127,
+              128,
+              129,
+              130,
+              132,
+              133
+            ]
+          },
+          {
+            "query": 16,
+            "kind": "demand",
+            "block": 1351,
+            "line": 71,
+            "issue": 161,
+            "AR": 163,
+            "RAMCommits": [
+              173,
+              174,
+              175,
+              177,
+              178,
+              179,
+              180,
+              182
+            ]
+          },
+          {
+            "query": 32,
+            "kind": "demand",
+            "block": 1366,
+            "line": 86,
+            "issue": 218,
+            "AR": 219,
+            "RAMCommits": [
+              229,
+              230,
+              232,
+              233,
+              234,
+              235,
+              237,
+              238
+            ]
+          },
+          {
+            "query": 40,
+            "kind": "demand",
+            "block": 1381,
+            "line": 101,
+            "issue": 266,
+            "AR": 268,
+            "RAMCommits": [
+              278,
+              279,
+              280,
+              282,
+              283,
+              284,
+              285,
+              287
+            ]
+          },
+          {
+            "query": 56,
+            "kind": "demand",
+            "block": 1396,
+            "line": 116,
+            "issue": 323,
+            "AR": 324,
+            "RAMCommits": [
+              334,
+              335,
+              337,
+              338,
+              339,
+              340,
+              342,
+              343
+            ]
+          },
+          {
+            "query": 64,
+            "kind": "demand",
+            "block": 1276,
+            "line": 252,
+            "issue": 363,
+            "AR": 366,
+            "RAMCommits": [
+              377,
+              378,
+              379,
+              380,
+              382,
+              383,
+              384,
+              385
+            ]
+          },
+          {
+            "query": 68,
+            "kind": "demand",
+            "block": 1261,
+            "line": 237,
+            "issue": 409,
+            "AR": 410,
+            "RAMCommits": [
+              420,
+              422,
+              423,
+              424,
+              425,
+              427,
+              428,
+              429
+            ]
+          },
+          {
+            "query": 128,
+            "kind": "demand",
+            "block": 1246,
+            "line": 222,
+            "issue": 509,
+            "AR": 510,
+            "RAMCommits": [
+              520,
+              522,
+              523,
+              524,
+              525,
+              527,
+              528,
+              529
+            ]
+          },
+          {
+            "query": 131,
+            "kind": "demand",
+            "block": 1231,
+            "line": 207,
+            "issue": 552,
+            "AR": 555,
+            "RAMCommits": [
+              565,
+              567,
+              568,
+              569,
+              570,
+              572,
+              573,
+              574
+            ]
+          },
+          {
+            "query": 135,
+            "kind": "demand",
+            "block": 1216,
+            "line": 192,
+            "issue": 598,
+            "AR": 599,
+            "RAMCommits": [
+              609,
+              610,
+              612,
+              613,
+              614,
+              615,
+              617,
+              618
+            ]
+          },
+          {
+            "query": 195,
+            "kind": "demand",
+            "block": 1201,
+            "line": 177,
+            "issue": 698,
+            "AR": 699,
+            "RAMCommits": [
+              709,
+              710,
+              712,
+              713,
+              714,
+              715,
+              717,
+              718
+            ]
+          },
+          {
+            "query": 199,
+            "kind": "demand",
+            "block": 1186,
+            "line": 162,
+            "issue": 742,
+            "AR": 744,
+            "RAMCommits": [
+              754,
+              755,
+              757,
+              758,
+              759,
+              760,
+              762,
+              763
+            ]
+          },
+          {
+            "query": 259,
+            "kind": "demand",
+            "block": 1171,
+            "line": 147,
+            "issue": 843,
+            "AR": 844,
+            "RAMCommits": [
+              854,
+              855,
+              857,
+              858,
+              859,
+              860,
+              862,
+              863
+            ]
+          },
+          {
+            "query": 262,
+            "kind": "demand",
+            "block": 1156,
+            "line": 132,
+            "issue": 886,
+            "AR": 887,
+            "RAMCommits": [
+              897,
+              898,
+              899,
+              900,
+              902,
+              903,
+              904,
+              905
+            ]
+          },
+          {
+            "query": 322,
+            "kind": "demand",
+            "block": 1141,
+            "line": 117,
+            "issue": 985,
+            "AR": 986,
+            "RAMCommits": [
+              997,
+              998,
+              999,
+              1000,
+              1002,
+              1003,
+              1004,
+              1005
+            ]
+          },
+          {
+            "query": 326,
+            "kind": "demand",
+            "block": 1126,
+            "line": 102,
+            "issue": 1029,
+            "AR": 1031,
+            "RAMCommits": [
+              1042,
+              1043,
+              1044,
+              1045,
+              1047,
+              1048,
+              1049,
+              1050
+            ]
+          },
+          {
+            "query": 386,
+            "kind": "demand",
+            "block": 1111,
+            "line": 87,
+            "issue": 1130,
+            "AR": 1131,
+            "RAMCommits": [
+              1142,
+              1143,
+              1144,
+              1145,
+              1147,
+              1148,
+              1149,
+              1150
+            ]
+          },
+          {
+            "query": 389,
+            "kind": "demand",
+            "block": 1096,
+            "line": 72,
+            "issue": 1173,
+            "AR": 1174,
+            "RAMCommits": [
+              1184,
+              1185,
+              1187,
+              1188,
+              1189,
+              1190,
+              1192,
+              1193
+            ]
+          },
+          {
+            "query": 449,
+            "kind": "demand",
+            "block": 1081,
+            "line": 57,
+            "issue": 1273,
+            "AR": 1276,
+            "RAMCommits": [
+              1287,
+              1288,
+              1289,
+              1290,
+              1292,
+              1293,
+              1294,
+              1295
+            ]
+          },
+          {
+            "query": 453,
+            "kind": "demand",
+            "block": 1066,
+            "line": 42,
+            "issue": 1319,
+            "AR": 1320,
+            "RAMCommits": [
+              1330,
+              1332,
+              1333,
+              1334,
+              1335,
+              1337,
+              1338,
+              1339
+            ]
+          },
+          {
+            "query": 513,
+            "kind": "demand",
+            "block": 1051,
+            "line": 27,
+            "issue": 1419,
+            "AR": 1420,
+            "RAMCommits": [
+              1430,
+              1432,
+              1433,
+              1434,
+              1435,
+              1437,
+              1438,
+              1439
+            ]
+          },
+          {
+            "query": 516,
+            "kind": "demand",
+            "block": 1036,
+            "line": 12,
+            "issue": 1462,
+            "AR": 1465,
+            "RAMCommits": [
+              1475,
+              1477,
+              1478,
+              1479,
+              1480,
+              1482,
+              1483,
+              1484
+            ]
+          },
+          {
+            "query": 576,
+            "kind": "demand",
+            "block": 1021,
+            "line": 253,
+            "issue": 1564,
+            "AR": 1565,
+            "RAMCommits": [
+              1575,
+              1577,
+              1578,
+              1579,
+              1580,
+              1582,
+              1583,
+              1584
+            ]
+          },
+          {
+            "query": 580,
+            "kind": "demand",
+            "block": 1006,
+            "line": 238,
+            "issue": 1608,
+            "AR": 1609,
+            "RAMCommits": [
+              1619,
+              1620,
+              1622,
+              1623,
+              1624,
+              1625,
+              1627,
+              1628
+            ]
+          },
+          {
+            "query": 583,
+            "kind": "demand",
+            "block": 991,
+            "line": 223,
+            "issue": 1651,
+            "AR": 1654,
+            "RAMCommits": [
+              1664,
+              1665,
+              1667,
+              1668,
+              1669,
+              1670,
+              1672,
+              1673
+            ]
+          },
+          {
+            "query": 643,
+            "kind": "demand",
+            "block": 976,
+            "line": 208,
+            "issue": 1753,
+            "AR": 1754,
+            "RAMCommits": [
+              1764,
+              1765,
+              1767,
+              1768,
+              1769,
+              1770,
+              1772,
+              1773
+            ]
+          },
+          {
+            "query": 647,
+            "kind": "demand",
+            "block": 961,
+            "line": 193,
+            "issue": 1797,
+            "AR": 1798,
+            "RAMCommits": [
+              1808,
+              1809,
+              1810,
+              1812,
+              1813,
+              1814,
+              1815,
+              1817
+            ]
+          },
+          {
+            "query": 706,
+            "kind": "demand",
+            "block": 946,
+            "line": 178,
+            "issue": 1896,
+            "AR": 1899,
+            "RAMCommits": [
+              1909,
+              1910,
+              1912,
+              1913,
+              1914,
+              1915,
+              1917,
+              1918
+            ]
+          },
+          {
+            "query": 710,
+            "kind": "demand",
+            "block": 931,
+            "line": 163,
+            "issue": 1942,
+            "AR": 1943,
+            "RAMCommits": [
+              1953,
+              1954,
+              1955,
+              1957,
+              1958,
+              1959,
+              1960,
+              1962
+            ]
+          }
+        ]
+      },
+      "CycleDifference": 22050,
+      "ModelServiceImprovementPercent": 0.6242874134314376
+    },
+    {
+      "FirstResponseLatencyCycles": 40,
+      "Baseline": {
+        "Cycles": 4730912,
+        "FastQueries": 2038895,
+        "SlowQueries": 34705,
+        "Fills": 37483,
+        "EarlyKnownDemandIssues": 0,
+        "RAMReadSamples": 7453946,
+        "RAMWriteCommitCycles": 299864,
+        "TagPublications": 37483,
+        "DemandWaitCycles": 1961394,
+        "ReadWritePortStallCycles": 0,
+        "ARPeriodicWaitCycles": 19196,
+        "RPeriodicGapCycles": 68048,
+        "EarlyLineDemandArrivedBeforeFillComplete": 0,
+        "ProtectedIndexConflictSkips": 0,
+        "MaximumOutstandingBursts": 1,
+        "ExampleEvents": [
+          {
+            "query": 0,
+            "kind": "demand",
+            "block": 1306,
+            "line": 26,
+            "issue": 3,
+            "AR": 4,
+            "RAMCommits": [
+              47,
+              48,
+              49,
+              50,
+              52,
+              53,
+              54,
+              55
+            ]
+          },
+          {
+            "query": 0,
+            "kind": "demand",
+            "block": 1321,
+            "line": 41,
+            "issue": 64,
+            "AR": 65,
+            "RAMCommits": [
+              107,
+              108,
+              109,
+              110,
+              112,
+              113,
+              114,
+              115
+            ]
+          },
+          {
+            "query": 4,
+            "kind": "demand",
+            "block": 1291,
+            "line": 11,
+            "issue": 131,
+            "AR": 132,
+            "RAMCommits": [
+              174,
+              175,
+              177,
+              178,
+              179,
+              180,
+              182,
+              183
+            ]
+          },
+          {
+            "query": 8,
+            "kind": "demand",
+            "block": 1336,
+            "line": 56,
+            "issue": 215,
+            "AR": 216,
+            "RAMCommits": [
+              258,
+              259,
+              260,
+              262,
+              263,
+              264,
+              265,
+              267
+            ]
+          },
+          {
+            "query": 16,
+            "kind": "demand",
+            "block": 1351,
+            "line": 71,
+            "issue": 295,
+            "AR": 296,
+            "RAMCommits": [
+              338,
+              339,
+              340,
+              342,
+              343,
+              344,
+              345,
+              347
+            ]
+          },
+          {
+            "query": 32,
+            "kind": "demand",
+            "block": 1366,
+            "line": 86,
+            "issue": 383,
+            "AR": 384,
+            "RAMCommits": [
+              427,
+              428,
+              429,
+              430,
+              432,
+              433,
+              434,
+              435
+            ]
+          },
+          {
+            "query": 40,
+            "kind": "demand",
+            "block": 1381,
+            "line": 101,
+            "issue": 463,
+            "AR": 464,
+            "RAMCommits": [
+              507,
+              508,
+              509,
+              510,
+              512,
+              513,
+              514,
+              515
+            ]
+          },
+          {
+            "query": 56,
+            "kind": "demand",
+            "block": 1396,
+            "line": 116,
+            "issue": 551,
+            "AR": 552,
+            "RAMCommits": [
+              594,
+              595,
+              597,
+              598,
+              599,
+              600,
+              602,
+              603
+            ]
+          },
+          {
+            "query": 64,
+            "kind": "demand",
+            "block": 1276,
+            "line": 252,
+            "issue": 623,
+            "AR": 625,
+            "RAMCommits": [
+              667,
+              668,
+              669,
+              670,
+              672,
+              673,
+              674,
+              675
+            ]
+          },
+          {
+            "query": 68,
+            "kind": "demand",
+            "block": 1261,
+            "line": 237,
+            "issue": 699,
+            "AR": 702,
+            "RAMCommits": [
+              744,
+              745,
+              747,
+              748,
+              749,
+              750,
+              752,
+              753
+            ]
+          },
+          {
+            "query": 128,
+            "kind": "demand",
+            "block": 1246,
+            "line": 222,
+            "issue": 833,
+            "AR": 835,
+            "RAMCommits": [
+              877,
+              878,
+              879,
+              880,
+              882,
+              883,
+              884,
+              885
+            ]
+          },
+          {
+            "query": 131,
+            "kind": "demand",
+            "block": 1231,
+            "line": 207,
+            "issue": 908,
+            "AR": 909,
+            "RAMCommits": [
+              952,
+              953,
+              954,
+              955,
+              957,
+              958,
+              959,
+              960
+            ]
+          },
+          {
+            "query": 135,
+            "kind": "demand",
+            "block": 1216,
+            "line": 192,
+            "issue": 984,
+            "AR": 985,
+            "RAMCommits": [
+              1027,
+              1028,
+              1029,
+              1030,
+              1032,
+              1033,
+              1034,
+              1035
+            ]
+          },
+          {
+            "query": 195,
+            "kind": "demand",
+            "block": 1201,
+            "line": 177,
+            "issue": 1115,
+            "AR": 1116,
+            "RAMCommits": [
+              1158,
+              1159,
+              1160,
+              1162,
+              1163,
+              1164,
+              1165,
+              1167
+            ]
+          },
+          {
+            "query": 199,
+            "kind": "demand",
+            "block": 1186,
+            "line": 162,
+            "issue": 1191,
+            "AR": 1192,
+            "RAMCommits": [
+              1234,
+              1235,
+              1237,
+              1238,
+              1239,
+              1240,
+              1242,
+              1243
+            ]
+          },
+          {
+            "query": 259,
+            "kind": "demand",
+            "block": 1171,
+            "line": 147,
+            "issue": 1323,
+            "AR": 1325,
+            "RAMCommits": [
+              1367,
+              1368,
+              1369,
+              1370,
+              1372,
+              1373,
+              1374,
+              1375
+            ]
+          },
+          {
+            "query": 262,
+            "kind": "demand",
+            "block": 1156,
+            "line": 132,
+            "issue": 1398,
+            "AR": 1399,
+            "RAMCommits": [
+              1442,
+              1443,
+              1444,
+              1445,
+              1447,
+              1448,
+              1449,
+              1450
+            ]
+          },
+          {
+            "query": 322,
+            "kind": "demand",
+            "block": 1141,
+            "line": 117,
+            "issue": 1530,
+            "AR": 1531,
+            "RAMCommits": [
+              1573,
+              1574,
+              1575,
+              1577,
+              1578,
+              1579,
+              1580,
+              1582
+            ]
+          },
+          {
+            "query": 326,
+            "kind": "demand",
+            "block": 1126,
+            "line": 102,
+            "issue": 1606,
+            "AR": 1607,
+            "RAMCommits": [
+              1649,
+              1650,
+              1652,
+              1653,
+              1654,
+              1655,
+              1657,
+              1658
+            ]
+          },
+          {
+            "query": 386,
+            "kind": "demand",
+            "block": 1111,
+            "line": 87,
+            "issue": 1738,
+            "AR": 1739,
+            "RAMCommits": [
+              1782,
+              1783,
+              1784,
+              1785,
+              1787,
+              1788,
+              1789,
+              1790
+            ]
+          },
+          {
+            "query": 389,
+            "kind": "demand",
+            "block": 1096,
+            "line": 72,
+            "issue": 1813,
+            "AR": 1815,
+            "RAMCommits": [
+              1857,
+              1858,
+              1859,
+              1860,
+              1862,
+              1863,
+              1864,
+              1865
+            ]
+          },
+          {
+            "query": 449,
+            "kind": "demand",
+            "block": 1081,
+            "line": 57,
+            "issue": 1945,
+            "AR": 1948,
+            "RAMCommits": [
+              1990,
+              1992,
+              1993,
+              1994,
+              1995,
+              1997,
+              1998,
+              1999
+            ]
+          },
+          {
+            "query": 453,
+            "kind": "demand",
+            "block": 1066,
+            "line": 42,
+            "issue": 2023,
+            "AR": 2025,
+            "RAMCommits": [
+              2067,
+              2068,
+              2069,
+              2070,
+              2072,
+              2073,
+              2074,
+              2075
+            ]
+          },
+          {
+            "query": 513,
+            "kind": "demand",
+            "block": 1051,
+            "line": 27,
+            "issue": 2155,
+            "AR": 2158,
+            "RAMCommits": [
+              2200,
+              2202,
+              2203,
+              2204,
+              2205,
+              2207,
+              2208,
+              2209
+            ]
+          },
+          {
+            "query": 516,
+            "kind": "demand",
+            "block": 1036,
+            "line": 12,
+            "issue": 2232,
+            "AR": 2235,
+            "RAMCommits": [
+              2277,
+              2278,
+              2279,
+              2280,
+              2282,
+              2283,
+              2284,
+              2285
+            ]
+          },
+          {
+            "query": 576,
+            "kind": "demand",
+            "block": 1021,
+            "line": 253,
+            "issue": 2365,
+            "AR": 2368,
+            "RAMCommits": [
+              2410,
+              2412,
+              2413,
+              2414,
+              2415,
+              2417,
+              2418,
+              2419
+            ]
+          },
+          {
+            "query": 580,
+            "kind": "demand",
+            "block": 1006,
+            "line": 238,
+            "issue": 2443,
+            "AR": 2445,
+            "RAMCommits": [
+              2487,
+              2488,
+              2489,
+              2490,
+              2492,
+              2493,
+              2494,
+              2495
+            ]
+          },
+          {
+            "query": 583,
+            "kind": "demand",
+            "block": 991,
+            "line": 223,
+            "issue": 2518,
+            "AR": 2519,
+            "RAMCommits": [
+              2562,
+              2563,
+              2564,
+              2565,
+              2567,
+              2568,
+              2569,
+              2570
+            ]
+          },
+          {
+            "query": 643,
+            "kind": "demand",
+            "block": 976,
+            "line": 208,
+            "issue": 2650,
+            "AR": 2651,
+            "RAMCommits": [
+              2693,
+              2694,
+              2695,
+              2697,
+              2698,
+              2699,
+              2700,
+              2702
+            ]
+          },
+          {
+            "query": 647,
+            "kind": "demand",
+            "block": 961,
+            "line": 193,
+            "issue": 2726,
+            "AR": 2727,
+            "RAMCommits": [
+              2769,
+              2770,
+              2772,
+              2773,
+              2774,
+              2775,
+              2777,
+              2778
+            ]
+          },
+          {
+            "query": 706,
+            "kind": "demand",
+            "block": 946,
+            "line": 178,
+            "issue": 2857,
+            "AR": 2858,
+            "RAMCommits": [
+              2900,
+              2902,
+              2903,
+              2904,
+              2905,
+              2907,
+              2908,
+              2909
+            ]
+          },
+          {
+            "query": 710,
+            "kind": "demand",
+            "block": 931,
+            "line": 163,
+            "issue": 2933,
+            "AR": 2935,
+            "RAMCommits": [
+              2977,
+              2978,
+              2979,
+              2980,
+              2982,
+              2983,
+              2984,
+              2985
+            ]
+          }
+        ]
+      },
+      "OneKnownDemandLookahead": {
+        "Cycles": 4706832,
+        "FastQueries": 2038895,
+        "SlowQueries": 34705,
+        "Fills": 37483,
+        "EarlyKnownDemandIssues": 2724,
+        "RAMReadSamples": 7453946,
+        "RAMWriteCommitCycles": 299864,
+        "TagPublications": 37483,
+        "DemandWaitCycles": 1937314,
+        "ReadWritePortStallCycles": 0,
+        "ARPeriodicWaitCycles": 18631,
+        "RPeriodicGapCycles": 68293,
+        "EarlyLineDemandArrivedBeforeFillComplete": 2724,
+        "ProtectedIndexConflictSkips": 0,
+        "MaximumOutstandingBursts": 1,
+        "ExampleEvents": [
+          {
+            "query": 0,
+            "kind": "demand",
+            "block": 1306,
+            "line": 26,
+            "issue": 3,
+            "AR": 4,
+            "RAMCommits": [
+              47,
+              48,
+              49,
+              50,
+              52,
+              53,
+              54,
+              55
+            ]
+          },
+          {
+            "query": 0,
+            "kind": "lookahead",
+            "block": 1321,
+            "line": 41,
+            "issue": 55,
+            "AR": 58,
+            "RAMCommits": [
+              100,
+              102,
+              103,
+              104,
+              105,
+              107,
+              108,
+              109
+            ]
+          },
+          {
+            "query": 4,
+            "kind": "demand",
+            "block": 1291,
+            "line": 11,
+            "issue": 125,
+            "AR": 128,
+            "RAMCommits": [
+              170,
+              172,
+              173,
+              174,
+              175,
+              177,
+              178,
+              179
+            ]
+          },
+          {
+            "query": 8,
+            "kind": "demand",
+            "block": 1336,
+            "line": 56,
+            "issue": 211,
+            "AR": 212,
+            "RAMCommits": [
+              254,
+              255,
+              257,
+              258,
+              259,
+              260,
+              262,
+              263
+            ]
+          },
+          {
+            "query": 16,
+            "kind": "demand",
+            "block": 1351,
+            "line": 71,
+            "issue": 291,
+            "AR": 292,
+            "RAMCommits": [
+              334,
+              335,
+              337,
+              338,
+              339,
+              340,
+              342,
+              343
+            ]
+          },
+          {
+            "query": 32,
+            "kind": "demand",
+            "block": 1366,
+            "line": 86,
+            "issue": 379,
+            "AR": 380,
+            "RAMCommits": [
+              422,
+              423,
+              424,
+              425,
+              427,
+              428,
+              429,
+              430
+            ]
+          },
+          {
+            "query": 40,
+            "kind": "demand",
+            "block": 1381,
+            "line": 101,
+            "issue": 458,
+            "AR": 459,
+            "RAMCommits": [
+              502,
+              503,
+              504,
+              505,
+              507,
+              508,
+              509,
+              510
+            ]
+          },
+          {
+            "query": 56,
+            "kind": "demand",
+            "block": 1396,
+            "line": 116,
+            "issue": 546,
+            "AR": 548,
+            "RAMCommits": [
+              590,
+              592,
+              593,
+              594,
+              595,
+              597,
+              598,
+              599
+            ]
+          },
+          {
+            "query": 64,
+            "kind": "demand",
+            "block": 1276,
+            "line": 252,
+            "issue": 619,
+            "AR": 620,
+            "RAMCommits": [
+              662,
+              663,
+              664,
+              665,
+              667,
+              668,
+              669,
+              670
+            ]
+          },
+          {
+            "query": 68,
+            "kind": "demand",
+            "block": 1261,
+            "line": 237,
+            "issue": 694,
+            "AR": 695,
+            "RAMCommits": [
+              737,
+              738,
+              739,
+              740,
+              742,
+              743,
+              744,
+              745
+            ]
+          },
+          {
+            "query": 128,
+            "kind": "demand",
+            "block": 1246,
+            "line": 222,
+            "issue": 825,
+            "AR": 828,
+            "RAMCommits": [
+              870,
+              872,
+              873,
+              874,
+              875,
+              877,
+              878,
+              879
+            ]
+          },
+          {
+            "query": 131,
+            "kind": "demand",
+            "block": 1231,
+            "line": 207,
+            "issue": 902,
+            "AR": 905,
+            "RAMCommits": [
+              947,
+              948,
+              949,
+              950,
+              952,
+              953,
+              954,
+              955
+            ]
+          },
+          {
+            "query": 135,
+            "kind": "demand",
+            "block": 1216,
+            "line": 192,
+            "issue": 979,
+            "AR": 982,
+            "RAMCommits": [
+              1024,
+              1025,
+              1027,
+              1028,
+              1029,
+              1030,
+              1032,
+              1033
+            ]
+          },
+          {
+            "query": 195,
+            "kind": "demand",
+            "block": 1201,
+            "line": 177,
+            "issue": 1113,
+            "AR": 1115,
+            "RAMCommits": [
+              1157,
+              1158,
+              1159,
+              1160,
+              1162,
+              1163,
+              1164,
+              1165
+            ]
+          },
+          {
+            "query": 199,
+            "kind": "demand",
+            "block": 1186,
+            "line": 162,
+            "issue": 1189,
+            "AR": 1192,
+            "RAMCommits": [
+              1234,
+              1235,
+              1237,
+              1238,
+              1239,
+              1240,
+              1242,
+              1243
+            ]
+          },
+          {
+            "query": 259,
+            "kind": "demand",
+            "block": 1171,
+            "line": 147,
+            "issue": 1323,
+            "AR": 1325,
+            "RAMCommits": [
+              1367,
+              1368,
+              1369,
+              1370,
+              1372,
+              1373,
+              1374,
+              1375
+            ]
+          },
+          {
+            "query": 262,
+            "kind": "demand",
+            "block": 1156,
+            "line": 132,
+            "issue": 1398,
+            "AR": 1399,
+            "RAMCommits": [
+              1442,
+              1443,
+              1444,
+              1445,
+              1447,
+              1448,
+              1449,
+              1450
+            ]
+          },
+          {
+            "query": 322,
+            "kind": "demand",
+            "block": 1141,
+            "line": 117,
+            "issue": 1530,
+            "AR": 1531,
+            "RAMCommits": [
+              1573,
+              1574,
+              1575,
+              1577,
+              1578,
+              1579,
+              1580,
+              1582
+            ]
+          },
+          {
+            "query": 326,
+            "kind": "demand",
+            "block": 1126,
+            "line": 102,
+            "issue": 1606,
+            "AR": 1607,
+            "RAMCommits": [
+              1649,
+              1650,
+              1652,
+              1653,
+              1654,
+              1655,
+              1657,
+              1658
+            ]
+          },
+          {
+            "query": 386,
+            "kind": "demand",
+            "block": 1111,
+            "line": 87,
+            "issue": 1738,
+            "AR": 1739,
+            "RAMCommits": [
+              1782,
+              1783,
+              1784,
+              1785,
+              1787,
+              1788,
+              1789,
+              1790
+            ]
+          },
+          {
+            "query": 389,
+            "kind": "demand",
+            "block": 1096,
+            "line": 72,
+            "issue": 1813,
+            "AR": 1815,
+            "RAMCommits": [
+              1857,
+              1858,
+              1859,
+              1860,
+              1862,
+              1863,
+              1864,
+              1865
+            ]
+          },
+          {
+            "query": 449,
+            "kind": "demand",
+            "block": 1081,
+            "line": 57,
+            "issue": 1945,
+            "AR": 1948,
+            "RAMCommits": [
+              1990,
+              1992,
+              1993,
+              1994,
+              1995,
+              1997,
+              1998,
+              1999
+            ]
+          },
+          {
+            "query": 453,
+            "kind": "demand",
+            "block": 1066,
+            "line": 42,
+            "issue": 2023,
+            "AR": 2025,
+            "RAMCommits": [
+              2067,
+              2068,
+              2069,
+              2070,
+              2072,
+              2073,
+              2074,
+              2075
+            ]
+          },
+          {
+            "query": 513,
+            "kind": "demand",
+            "block": 1051,
+            "line": 27,
+            "issue": 2155,
+            "AR": 2158,
+            "RAMCommits": [
+              2200,
+              2202,
+              2203,
+              2204,
+              2205,
+              2207,
+              2208,
+              2209
+            ]
+          },
+          {
+            "query": 516,
+            "kind": "demand",
+            "block": 1036,
+            "line": 12,
+            "issue": 2232,
+            "AR": 2235,
+            "RAMCommits": [
+              2277,
+              2278,
+              2279,
+              2280,
+              2282,
+              2283,
+              2284,
+              2285
+            ]
+          },
+          {
+            "query": 576,
+            "kind": "demand",
+            "block": 1021,
+            "line": 253,
+            "issue": 2365,
+            "AR": 2368,
+            "RAMCommits": [
+              2410,
+              2412,
+              2413,
+              2414,
+              2415,
+              2417,
+              2418,
+              2419
+            ]
+          },
+          {
+            "query": 580,
+            "kind": "demand",
+            "block": 1006,
+            "line": 238,
+            "issue": 2443,
+            "AR": 2445,
+            "RAMCommits": [
+              2487,
+              2488,
+              2489,
+              2490,
+              2492,
+              2493,
+              2494,
+              2495
+            ]
+          },
+          {
+            "query": 583,
+            "kind": "demand",
+            "block": 991,
+            "line": 223,
+            "issue": 2518,
+            "AR": 2519,
+            "RAMCommits": [
+              2562,
+              2563,
+              2564,
+              2565,
+              2567,
+              2568,
+              2569,
+              2570
+            ]
+          },
+          {
+            "query": 643,
+            "kind": "demand",
+            "block": 976,
+            "line": 208,
+            "issue": 2650,
+            "AR": 2651,
+            "RAMCommits": [
+              2693,
+              2694,
+              2695,
+              2697,
+              2698,
+              2699,
+              2700,
+              2702
+            ]
+          },
+          {
+            "query": 647,
+            "kind": "demand",
+            "block": 961,
+            "line": 193,
+            "issue": 2726,
+            "AR": 2727,
+            "RAMCommits": [
+              2769,
+              2770,
+              2772,
+              2773,
+              2774,
+              2775,
+              2777,
+              2778
+            ]
+          },
+          {
+            "query": 706,
+            "kind": "demand",
+            "block": 946,
+            "line": 178,
+            "issue": 2857,
+            "AR": 2858,
+            "RAMCommits": [
+              2900,
+              2902,
+              2903,
+              2904,
+              2905,
+              2907,
+              2908,
+              2909
+            ]
+          },
+          {
+            "query": 710,
+            "kind": "demand",
+            "block": 931,
+            "line": 163,
+            "issue": 2933,
+            "AR": 2935,
+            "RAMCommits": [
+              2977,
+              2978,
+              2979,
+              2980,
+              2982,
+              2983,
+              2984,
+              2985
+            ]
+          }
+        ]
+      },
+      "CycleDifference": 24080,
+      "ModelServiceImprovementPercent": 0.5089927692588659
+    }
+  ],
+  "ReferenceActualSystemCounters": {
+    "frame_id": "1",
+    "corrected": "1",
+    "coordinates_issued": "2073600",
+    "scan_active_cycles": "3231167",
+    "coordinate_blocked_cycles": "1157567",
+    "tail_drain_cycles": "16805",
+    "writer_blocked_cycles": "0",
+    "cache_ar_wait_cycles": "57081",
+    "cache_r_wait_cycles": "67223",
+    "cache_fills": "37483",
+    "scatter_cycles": "0",
+    "hardware_process_cycles": "3247973",
+    "cache_ram_write_cycles": "299864",
+    "cache_fill_valid_commits": "37483"
+  },
+  "ElapsedSeconds": 49.87061260000337,
+  "Limits": [
+    "Cycle model only; no new RTL simulation or implementation.",
+    "Fixed latency and periodic AR/R schedule are assumptions, not measured board DDR timing.",
+    "Mapper/writer/arbiter/bank/admission/HDMI overlap are excluded from service totals.",
+    "No speculative next-query traffic, new cache storage or multiple outstanding bursts.",
+    "RAMread stalls on actual modeled write commit; tags publish only after last commit.",
+    "Address-tag correctness is asserted; full pixel/interpolation CRC is not recomputed here.",
+    "No board FPS or end-to-end latency improvement is claimed."
+  ],
+  "FrozenRTLModified": false,
+  "NewRTLExecuted": false,
+  "EDAExecuted": false,
+  "HardwareAccessed": false,
+  "InputDrift": [],
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\miss_lookahead_model_a.py": "b29ddf9943360a253ef01dea2086a9d604016d832ea7d04b8e1cb9bc6bb87b4d",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_neighbour_cache_scatter16_rowpipe_directfill.v": "d4730a733bc8f84886d268fcc90bb702db035a41867c812d6119694fbbf35b1e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi_camera_fisheye_engine_tile8df8.v": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\hdmi-camera-fisheye-profile.vh": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\board\\hdmi-camera-fisheye-radial-table.vh": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tools\\generate_hdmi_fisheye_profile.py": "d33494a0723be9b3b11811ec4803bacb44d88f61f142d9e3f131c3d630cde531",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\system-native-a\\performance.csv": "a85a260c9796fdbb6c030c460107b9da441862b2907240ccfd85fde2501929e3",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\system-sustained-native-a\\performance.csv": "2c3a4e38e402428eb674b4d6433d866f715a145ec6696eec760e0ea388c9a450",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\system-native-a\\simulation.json": "38e2b9e860ec04fa5fecce64ce1a977c7ecb56d435df0ffc44c7387ff4356465",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\system-sustained-native-a\\simulation.json": "7cbf1c64700193df6fb29aae911a3c227d2d8a9e62617753655594a5f0124e52",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df9tp-20261103-a\\trace-map-screen-a\\mapped-cache-input-tile8-q8.i32": "32527599feaecf2db6a0e1ab83270e5ad530fb88f51b30c543158362d6c700fc",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df9tp-20261103-a\\trace-map-screen-a\\blocks-tile8.i32": "709df4ad4a38d55265bdd218cfd352d13f591e85e5551e3c97dc0f80442a2e13"
+  }
+}

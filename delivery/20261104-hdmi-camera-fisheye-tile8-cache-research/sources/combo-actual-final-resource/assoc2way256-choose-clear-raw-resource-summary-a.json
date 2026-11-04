@@ -1,0 +1,191 @@
+{
+  "Schema": "assoc2way256-choose-clear-completed-raw-resource-summary-v1",
+  "ResearchOnly": true,
+  "Draft": false,
+  "ActualRouteCountsRead": true,
+  "PhysicalSignoff": false,
+  "OnBoardResourceBinding": false,
+  "CoreTimingPending": false,
+  "CacheRAMProviderFinalReceiptPending": false,
+  "Counts": {
+    "LUT": 20841,
+    "FF": 16273,
+    "DRM": 101,
+    "APM": 54
+  },
+  "Available": {
+    "LUT": 66600,
+    "FF": 133200,
+    "DRM": 155,
+    "APM": 240
+  },
+  "UtilizationPercent": {
+    "LUT": 31.292792792792795,
+    "FF": 12.216966966966968,
+    "DRM": 65.16129032258064,
+    "APM": 22.5
+  },
+  "DistributedRAM": 426,
+  "CachePixelRAM": {
+    "CachePrimitiveCounts": {
+      "GTP_DRM36K_E1": 64
+    },
+    "CachePrimitiveCount": 64,
+    "LogicalPixelBytes": 262144,
+    "LogicalBitsByParity": {
+      "even": 1048576,
+      "odd": 1048576
+    },
+    "TrueDualPortAndReadBeforeWrite": true,
+    "FullNetlistBindingPassed": true,
+    "Utilization": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\build-a\\synthesize\\apm_drm_lutram_utilization.log",
+      "SHA256": "9b11b6854aa64f34296a6053678fa6be69773d502a40168b5a3e96cf465ea3f4"
+    },
+    "SynthesisNetlist": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\build-a\\synthesize\\hdmi_camera_fisheye_top_syn.vm",
+      "SHA256": "fd3f57ea7e2a7d969b133bdf65feab90311493e4b7700724fda390ca0d5b5cdf"
+    }
+  },
+  "CacheSource": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\source\\ddr_neighbour_cache_scatter16_rowpipe_assoc2_tagpipe_choose_clear_a.v",
+    "SHA256": "62225f2694f1c7441ec8c37b219d20643fce5b3847897d4ec590d3a306a4d728",
+    "Bytes": 28493
+  },
+  "EngineSource": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\source\\hdmi_camera_fisheye_engine_index10_fifo_a.v",
+    "SHA256": "d17d5659a8818427d55951d8b0e5807dd21bc9da1ca9d903a56e53f65977804e",
+    "Bytes": 7438
+  },
+  "RouteResourceReport": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\build-a\\place_route\\hdmi_camera_fisheye_top.rur",
+    "SHA256": "ed094c49afc858818fb6a0e02541a180e859d9079f17c99c94b6729d0e724292",
+    "Bytes": 182858
+  },
+  "SynthesisUtilization": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\build-a\\synthesize\\apm_drm_lutram_utilization.log",
+    "SHA256": "9b11b6854aa64f34296a6053678fa6be69773d502a40168b5a3e96cf465ea3f4",
+    "Bytes": 289795
+  },
+  "SourceManifest": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\raw-research-source-manifest-a.json",
+    "SHA256": "362d71e897b5a98078f26d3909810803cc0e255702d9c2688329aac27c845d5d",
+    "Bytes": 529268
+  },
+  "ActualRawPlan": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\build-a\\plan.json",
+    "SHA256": "216132b0b2307c6fed0eab0bf7e4a910fa79ab062fe6cf03fbc3c833d2324eb3",
+    "Bytes": 218890
+  },
+  "EDAExecutedByThisSummaryTool": false,
+  "HardwareAccessed": false,
+  "Scope": "Completed isolated raw route resources plus actual 256KiB TDP/RBW RAM/netlist gate. Ordinary-core slow setup fails on 224 capture pins; other nine core tables pass. No physical signoff, bitstream, SRAM, native-full simulation or board FPS acceptance is conferred.",
+  "Passed": false,
+  "ResourceAndRAMBindingPassed": true,
+  "OrdinaryCoreAllTenPassed": false,
+  "CoreTiming": [
+    {
+      "Corner": "slow",
+      "Kind": "setup",
+      "WorstSlackNS": -1.481,
+      "TotalNegativeSlackNS": -46.258,
+      "FailingChecks": 224,
+      "TotalChecks": 56176
+    },
+    {
+      "Corner": "slow",
+      "Kind": "hold",
+      "WorstSlackNS": 0.06,
+      "TotalNegativeSlackNS": 0.0,
+      "FailingChecks": 0,
+      "TotalChecks": 56176
+    },
+    {
+      "Corner": "slow",
+      "Kind": "recovery",
+      "WorstSlackNS": 3.369,
+      "TotalNegativeSlackNS": 0.0,
+      "FailingChecks": 0,
+      "TotalChecks": 3729
+    },
+    {
+      "Corner": "slow",
+      "Kind": "removal",
+      "WorstSlackNS": 0.311,
+      "TotalNegativeSlackNS": 0.0,
+      "FailingChecks": 0,
+      "TotalChecks": 3729
+    },
+    {
+      "Corner": "slow",
+      "Kind": "mpw",
+      "WorstSlackNS": 2.655,
+      "TotalNegativeSlackNS": 0.0,
+      "FailingChecks": 0,
+      "TotalChecks": 11052
+    },
+    {
+      "Corner": "fast",
+      "Kind": "setup",
+      "WorstSlackNS": 1.936,
+      "TotalNegativeSlackNS": 0.0,
+      "FailingChecks": 0,
+      "TotalChecks": 56176
+    },
+    {
+      "Corner": "fast",
+      "Kind": "hold",
+      "WorstSlackNS": 0.045,
+      "TotalNegativeSlackNS": 0.0,
+      "FailingChecks": 0,
+      "TotalChecks": 56176
+    },
+    {
+      "Corner": "fast",
+      "Kind": "recovery",
+      "WorstSlackNS": 5.006,
+      "TotalNegativeSlackNS": 0.0,
+      "FailingChecks": 0,
+      "TotalChecks": 3729
+    },
+    {
+      "Corner": "fast",
+      "Kind": "removal",
+      "WorstSlackNS": 0.216,
+      "TotalNegativeSlackNS": 0.0,
+      "FailingChecks": 0,
+      "TotalChecks": 3729
+    },
+    {
+      "Corner": "fast",
+      "Kind": "mpw",
+      "WorstSlackNS": 3.202,
+      "TotalNegativeSlackNS": 0.0,
+      "FailingChecks": 0,
+      "TotalChecks": 11052
+    }
+  ],
+  "RawResearchResult": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\raw-research-result-a.json",
+    "SHA256": "01ebba4a81ce7dc7b6082a2b2cf6afa0895bca1f66ca452c05246b16917130f2",
+    "Bytes": 38894
+  },
+  "ActualCoreReceipt": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\raw-core-timing-a.json",
+    "SHA256": "9c02cf3ae420fe3c87831f42052cd014743d1316c568a8db5836e622421f6c2d",
+    "Bytes": 2219
+  },
+  "ActualRAMReceipt": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\raw-cache-ram-mapping-a.json",
+    "SHA256": "a2bcfa62929031ffab59b31524b2e3d195fb920e58d5178d9e8b3886832f2d58",
+    "Bytes": 33967
+  },
+  "SourceResourceDraft": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-choose-clear-route-resource-draft-a.json",
+    "SHA256": "8bd1c603a6e8695767ace090ec504491bac5ff88107fa8d4458d2006170b4b87",
+    "Bytes": 3279
+  },
+  "InputDrift": [],
+  "NoBitstreamProduced": true,
+  "NoSRAMProgramming": true
+}

@@ -1,0 +1,27 @@
+{
+  "Schema": "tile8-safe-stop-bench-exact-transformation-v1",
+  "OriginalBenchSHA256": "3969f1c95698c2cba3251a821a60a51cbb7ab89745c33150c4b27f623f960990",
+  "NewBench": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-fifo-a\\tests\\tb_sustained_safe_stop_b.sv",
+    "SHA256": "344e58d73e1bf9a19eda58a9633851e7e522740acf4585685572fd262b5fdd0c"
+  },
+  "OnlyNativeBenchDifference": "after 16 sources and 4 unique IDs, wait one subsequent full scan_good sequence increment before disabling on core negedge",
+  "AllOriginalAssertionsRetainedByteForByte": true,
+  "NoProductionRTLChangeFromFIFOEngineD17Cache745": true,
+  "SmallDiagnosticExtraContext": "diagnostic cases alone strictly changed expected small input count 8 to16; final system bench keeps original NATIVE?16:8 geometry guard",
+  "OldDiagnostic": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-fifo-a\\stop-old-small-a\\simulation.json",
+    "SHA256": "3049ccdca2062e8171935b7e982136b4b5e408d6cf29b88e2b01671e5dde4a0d"
+  },
+  "SafeDiagnostic": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-fifo-a\\stop-safe-small-a\\simulation.json",
+    "SHA256": "3b8302ef1ae2aff83ef79110f5ba3ea25ae061380aa4cb2b30438b6213021d81"
+  },
+  "UnifiedDiff": "--- \n+++ \n@@ -576,7 +576,13 @@\n         $fdisplay(frames_csv,\"frame_id,source_bank,result_bank,input_pixels,source_beats,result_beats,commits,releases,publishes,unique_scans,input_first_ps,input_last_ps,commit_ps,source_release_ps,publish_ps,scan_start_ps,scan_last_pixel_ps,scan_done_ps,fills,scatter_cycles,hardware_process_cycles,future_capture_write_overlap_cycles,source_crc32,scan_crc32,cache_ram_write_cycles,cache_fill_valid_commits,input_source_index\");\n         $fdisplay(scans_csv,\"phase,frame_id,physical_bank,scan_index,scanned_pixels,done_ps,crc32,unique_total\");\n         clear_scoreboard();reset_domains(0);send_frames(SIM_FRAMES);\n-        wait(unique_total==STRESS_ACCEPTED);@(negedge core_clk);scan_enable=0;wait_drain();\n+        wait(unique_total==STRESS_ACCEPTED);\n+        begin : complete_scan_before_stop\n+            integer stop_after_sequence;\n+            stop_after_sequence=scan_sequence;\n+            wait(scan_sequence>stop_after_sequence);\n+        end\n+        @(negedge core_clk);scan_enable=0;wait_drain();\n         if(captured_frames!=STRESS_ACCEPTED||processed_frames!=STRESS_ACCEPTED||presented_frames!=STRESS_ACCEPTED||\n            commit_total!=STRESS_ACCEPTED||release_total!=STRESS_ACCEPTED||publish_total!=STRESS_ACCEPTED||unique_total!=STRESS_ACCEPTED||\n            total_source_beats!=STRESS_ACCEPTED*FB||total_result_beats!=STRESS_ACCEPTED*FB||queries!=STRESS_ACCEPTED*N||\n",
+  "Runner": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-fifo-a\\run_fifo_safe_system_b.py",
+    "SHA256": "3a75496cb3f453b82e8a7fe7cb0d6f4f9a5d6ec17ff1a8866a6083829d737cac"
+  },
+  "NoEDA": true,
+  "NoHardware": true
+}
