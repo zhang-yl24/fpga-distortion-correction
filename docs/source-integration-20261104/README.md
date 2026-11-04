@@ -26,7 +26,7 @@ DMA head/tail只带bank/id/CRC/pixels，没有mode。等待队列中的旧采集
 
 ## 真正准备的新源码组合：独立DDR读返回单元
 
-代码位于 [integration-units/ddr-read-return-20261104](../../integration-units/ddr-read-return-20261104/README.md)。这不是板级候选：3份RTL已经形成无厂商IP的源码闭包，包含2份精确已有模块和1份新纯连线wrapper；3份原始TB原样保留，新增wrapper专用派生TB。10份绑定文件及14/32/36端口静态检查通过，**尚未编译或仿真**。本机不启动EDA，云端Icarus由主任务独立验证。
+代码位于 [integration-units/ddr-read-return-20261104](../../integration-units/ddr-read-return-20261104/README.md)。这不是板级候选：3份RTL已经形成无厂商IP的源码闭包，包含2份精确已有模块和1份新纯连线wrapper；3份原始TB原样保留，新增wrapper专用派生TB。原10/10绑定文件及14/32/36端口静态检查通过；随后独立云端 Icarus Verilog 12.0 对原4份TB及新增同时故障TB均编译/仿真退出0、无编译警告。3份RTL保持与测试源码提交 `2ab69332` 同字节。本机未重复运行HDL/EDA。原始回执与第5份测试见单元目录的 `CLOUD_UNIT_VALIDATION.json` 和 `tests/tb_simultaneous_faults.sv`。
 
 - `ddr_read_return_register`：旧60 blob `504d127378dc7a2633fa916f54baf0408d3f9081`，SHA256 `bb106a1b03d30f041b0b38eba2a687bef7fb54afa457d06f833d57787fae3427`。
 - `ddr_read_arbiter`：main327与O/P共同blob `dad2ea07876ad11cfeb15bca21a845d043eb639e`，SHA256 `59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be`。不是peer fill8r2实现。
@@ -34,7 +34,7 @@ DMA head/tail只带bank/id/CRC/pixels，没有mode。等待队列中的旧采集
 
 两块共用交易域clk/rst_n。failed只OR导出、fault按原inline bench以arbiter优先，独立两组故障也保留；busy只表示arbiter状态。父级仍须停新work、保留已发AR至handshake及已占用的事务epoch。guard fault为寄存粘滞信号，不是零周期release否决；同沿rawfault+lease release必须另做真实parent测试。此wrapper单独不能证明父级已经实现安全drain/lease/reset。
 
-下一步先在云端编译wrapper并跑4个TB及同时双fault导出检查；再将通过的单元与某一精确发布parent绑定，做FIFO容量/descriptor/bank/CRC/整帧scoreboard和fault/reset/drain。只有组合回归通过，才谈完整native依赖、时钟/IO/CDC/RDC、双角STA、新BuildID位流及SRAM/回退验收。本轮不把任何旧候选的通过结论移给新单元。
+云端已跑通4个发布TB及真实输入造成的同时双fault导出检查：arbiter bad RID=03与raw unsolicited guard=40同沿置位，优先码、独立sticky、无完成计数及共同reset均通过。下一步将通过的单元与某一精确发布parent绑定，做FIFO容量/descriptor/bank/CRC/整帧scoreboard和fault/reset/drain。只有组合回归通过，才谈完整native依赖、时钟/IO/CDC/RDC、双角STA、新BuildID位流及SRAM/回退验收。本轮不把任何旧候选的通过结论移给新单元。
 
 ## 同字节复用和真实冲突
 
@@ -47,8 +47,8 @@ peer/O/P写仲裁器blob同为 `424fd88d…`；generic main/O/P读仲裁器同�
 | 状态 | 本轮结论 |
 |---|---|
 | 已归档 | 第一阶段602文件身份保全；本阶段3路源码契约、完整来源和差异矩阵已形成 |
-| 真正可构建且已由本轮编译证明 | 暂无新的板级组合达到此状态；已有历史构建/板测只归原精确身份。独立unit仅证明源码闭包和静态接线，云端编译待回执 |
+| 真正可构建且已有编译证明 | 独立unit的3份RTL通过云端Icarus编译及5项仿真；仍没有新的完整板级组合达到验收状态。已有板测只归原精确身份 |
 | 仅设计建议 | KEY1按处理接收锁模式的复用计划、采集时mode方案、被动诊断wrapper/CDC/TX仲裁 |
-| 缺少依赖/组合验证 | O/P83依赖在两份已审索引中仅匹配76，7项范围内未匹配，不等于全main缺7；peer110路径齐备仍需最终物理重建链；新unit HDL/parent/物理/板测、未发布KEY1与scout身份均待补 |
+| 缺少依赖/组合验证 | O/P83依赖在两份已审索引中仅匹配76，7项范围内未匹配，不等于全main缺7；peer110路径齐备仍需最终物理重建链；实际parent/整机/物理/板测、未发布KEY1与scout身份均待补 |
 
-已有本轮检查：O/P66导出、A/E2各69项目绑定核验；A和E2的发布包离线verify通过（E2只做外部路径resolve兼容）；peer22关键源；旧60的55读取文件、23 overlay及116输入聚合身份核验；旧60 UART纯CPU27 passed、诊断CPU10项。它们不是本次新wrapper的HDL测试，也不代表摄像头或60帧上板成功。详细限制在各契约和unit VALIDATION.json。
+已有本轮检查：O/P66导出、A/E2各69项目绑定核验；A和E2的发布包离线verify通过（E2只做外部路径resolve兼容）；peer22关键源；旧60的55读取文件、23 overlay及116输入聚合身份核验；旧60 UART纯CPU27 passed、诊断CPU10项。上述CPU/绑定检查与新增云端5项HDL单元结果分开记录；后者也不代表摄像头或60帧上板成功。各原始源码契约反映先前审计时点，当前单元状态以 `CLOUD_UNIT_VALIDATION.json`、unit `VALIDATION.json` 和本页 `STATUS.json` 为准。

@@ -1,5 +1,5 @@
 {
-  "status": "SOURCE_CLOSURE_AND_STATIC_PORT_CHECK_ONLY",
+  "status": "HDL_UNIT_COMPILE_AND_SIMULATION_PASS",
   "base_reference": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
   "source_files": 3,
   "vendor_or_generated_ip_required_for_unit": false,
@@ -19,11 +19,31 @@
   "wrapper_tb_ports_connected_once": 36,
   "original_testbenches_preserved": 3,
   "new_wrapper_testbench_prepared": true,
-  "hdl_compile_executed": false,
-  "hdl_simulation_executed": false,
+  "hdl_compile_executed": true,
+  "hdl_simulation_executed": true,
   "native_build_executed": false,
   "timing_signoff": false,
   "board_top_selected": false,
   "hardware_programmed": false,
-  "not_a_peer_fill8r2_replacement": true
+  "not_a_peer_fill8r2_replacement": true,
+  "tested_source_commit": "2ab69332114ddf76ebd426076d043457b78ec56e",
+  "simulator": "Icarus Verilog 12.0",
+  "cloud_validation_utc": "2026-11-04T05:17:36.629457+00:00",
+  "cloud_receipt": "CLOUD_UNIT_VALIDATION.json",
+  "cloud_original_bound_files_verified": 10,
+  "hdl_tests_passed": 5,
+  "hdl_compile_or_simulation_executed_on_task_host": false,
+  "rtl_source_modified_since_tested_commit": false,
+  "simultaneous_faults_test": {
+    "testbench": "tests/tb_simultaneous_faults.sv",
+    "stimulus": "real input transactions; no force/hierarchical injection",
+    "arbiter_code": "03",
+    "raw_guard_code": "40",
+    "same_edge_flags": true,
+    "combined_code_priority": "arbiter",
+    "sticky_codes_and_no_completion_checked": true,
+    "common_reset_checked": true
+  },
+  "parent_integration_validated": false,
+  "full_system_validated": false
 }

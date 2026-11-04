@@ -1,13 +1,26 @@
 {
   "schema": "isolated-ddr-read-return-unit-v1",
   "base_reference": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
-  "scope": "Not a board project. Complete std-Verilog/SystemVerilog source closure; HDL compilation and combination tests pending.",
+  "scope": "Isolated three-RTL unit compiled/simulated in independent cloud; actual parent/full-system/native timing/board verification pending.",
+  "tested_source_commit": "2ab69332114ddf76ebd426076d043457b78ec56e",
+  "cloud_receipt": "CLOUD_UNIT_VALIDATION.json",
+  "rtl_source_modified_since_tested_commit": false,
   "files": [
     {
+      "path": "CLOUD_UNIT_VALIDATION.json",
+      "bytes": 3302,
+      "sha256": "773b709521c8ca1bc68d8a89a02463a891225ad747c0a9ca439b8c6767f611cd",
+      "git_blob_sha": "3672cb132b4dca1aaa4513efa48fbc6a71a8b097",
+      "provenance": {
+        "kind": "cloud_validation_receipt_or_test",
+        "tested_source_commit": "2ab69332114ddf76ebd426076d043457b78ec56e"
+      }
+    },
+    {
       "path": "README.md",
-      "bytes": 3551,
-      "sha256": "4d4e1027c6741499f2bdb77fb43768034c377da72991b737d0fb96dde7eccf6a",
-      "git_blob_sha": "e3f16ebc5d8316eb128cb7de6ce715c7a56bee9c",
+      "bytes": 4612,
+      "sha256": "6ca89018f14ce806544813c97092e319865d8461262d3903ad68b174dcf7e0c5",
+      "git_blob_sha": "610bda9937039016b212550518e37d8e19d3e16f",
       "provenance": {
         "kind": "new_isolated_unit_glue_or_documentation"
       }
@@ -96,6 +109,18 @@
       }
     },
     {
+      "path": "tests/tb_simultaneous_faults.sv",
+      "bytes": 2331,
+      "sha256": "e57b8e79b1497cded19b76a9203f63caeaadff4178731f916f2d1cb3ed91834c",
+      "git_blob_sha": "244d7103ade2bedd820dd3b6bd2f8bc68261f045",
+      "provenance": {
+        "kind": "supplemental_cloud_testbench",
+        "supplied_by": "parent cloud validation receipt",
+        "included_in_tested_source_commit": false,
+        "tested_rtl_source_commit": "2ab69332114ddf76ebd426076d043457b78ec56e"
+      }
+    },
+    {
       "path": "tests/tb_unit_wrapper.sv",
       "bytes": 7208,
       "sha256": "ae0e94ca6acea50eb0b0f3f275318a53dc508bafb4f2c1174c54778c6058f977",
@@ -118,9 +143,9 @@
     },
     {
       "path": "VALIDATION.json",
-      "bytes": 866,
-      "sha256": "9e13946df7881f20d6d6df2a6c117c80853b1b3ba8196242a134095b6f31d83a",
-      "git_blob_sha": "9158a563022c270a770174c3091223eadc6549d6",
+      "bytes": 1758,
+      "sha256": "b53a4f0769684e04ee1337632886c05b3ef5e8d51aabdfd3773b69c37be4c09c",
+      "git_blob_sha": "8b354e8bfb72a0610fb5a2b02d7c838c783ca5db",
       "provenance": {
         "kind": "new_isolated_unit_glue_or_documentation"
       }

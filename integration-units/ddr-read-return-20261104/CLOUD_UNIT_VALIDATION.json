@@ -1,0 +1,55 @@
+{
+  "source_commit": "2ab69332114ddf76ebd426076d043457b78ec56e",
+  "base": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+  "simulator": "Icarus Verilog 12.0",
+  "utc": "2026-11-04T05:17:36.629457+00:00",
+  "bound_file_hashes_verified": 10,
+  "passed": 5,
+  "tests": [
+    {
+      "testbench": "tests/original/tb_legacy_registered.sv",
+      "top": "tb_ddr_read_arbiter",
+      "compile_returncode": 0,
+      "simulation_returncode": 0,
+      "compile_output": "",
+      "simulation_output": "PASS DDR read arbitration: two simultaneous clients, 1/2/8/16-beat bursts, exclusive response routing, display urgency, fair whole-burst grants, address/response stalls, RLAST/RID faults, timeout, unsolicited data and reset recovery.\ntests/original/tb_legacy_registered.sv:84: $finish called at 8724000 (1ps)\n"
+    },
+    {
+      "testbench": "tests/original/tb_readstage_guard.sv",
+      "top": "tb_readstage_guard",
+      "compile_returncode": 0,
+      "simulation_returncode": 0,
+      "compile_output": "",
+      "simulation_output": "PASS READSTAGE GUARD checks=11 raw-owned/zero-latency/continuous/metadata/reset/unsolicited/overlap/sticky\ntests/original/tb_readstage_guard.sv:52: $finish called at 197000 (1ps)\n"
+    },
+    {
+      "testbench": "tests/original/tb_readstage_integration.sv",
+      "top": "tb_ddr_readstage_integration",
+      "compile_returncode": 0,
+      "simulation_returncode": 0,
+      "compile_output": "",
+      "simulation_output": "PASS READSTAGE zero_latency=24 checked=162 consecutive=138\nPASS READSTAGE zero_latency_gapped=24 checked=162\nPASS READSTAGE unsolicited-before-next-AR sticky fault=40 no client valid\nPASS READSTAGE INTEGRATION: two simultaneous clients, 1/2/8/16-beat bursts, exclusive response routing, display urgency, fair whole-burst grants, address/response stalls, RLAST/RID faults, timeout, unsolicited data and reset recovery.\ntests/original/tb_readstage_integration.sv:107: $finish called at 12596000 (1ps)\n"
+    },
+    {
+      "testbench": "tests/tb_unit_wrapper.sv",
+      "top": "tb_ddr_read_return_unit_wrapper",
+      "compile_returncode": 0,
+      "simulation_returncode": 0,
+      "compile_output": "",
+      "simulation_output": "PASS READSTAGE zero_latency=24 checked=162 consecutive=138\nPASS READSTAGE zero_latency_gapped=24 checked=162\nPASS READSTAGE unsolicited-before-next-AR sticky fault=40 no client valid\nPASS DDR_RETURN_UNIT_WRAPPER: two simultaneous clients, 1/2/8/16-beat bursts, exclusive response routing, display urgency, fair whole-burst grants, address/response stalls, RLAST/RID faults, timeout, unsolicited data and reset recovery.\ntests/tb_unit_wrapper.sv:107: $finish called at 12596000 (1ps)\n"
+    },
+    {
+      "testbench": "tests/tb_simultaneous_faults.sv",
+      "top": "tb_simultaneous_faults",
+      "compile_returncode": 0,
+      "simulation_returncode": 0,
+      "compile_output": "",
+      "simulation_output": "PASS SIMULTANEOUS_FAULT_EXPORT: bad RID arbiter=03 and raw unsolicited guard=40 assert same edge; arbiter priority, separate sticky codes, no completion counted, common reset clears.\ntests/tb_simultaneous_faults.sv:46: $finish called at 117000 (1ps)\n"
+    }
+  ],
+  "rtl_source_modified": false,
+  "board_integration": false,
+  "eda": false,
+  "timing_signoff": false,
+  "hardware": false
+}
