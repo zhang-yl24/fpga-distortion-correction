@@ -1,0 +1,11 @@
+--- a/distortion/rtl/experimental/hdmi_camera_fisheye_engine_tile8.v
++++ b/distortion/rtl/experimental/hdmi_camera_fisheye_engine_tile8.v
+@@ -36,7 +36,7 @@
+     wire begin_frame=frame_valid && frame_ready && valid_layout;
+     wire coordinate_valid=state==SCAN && !failed;
+     wire signed [23:0] u={3'b0,column,8'b0},v={3'b0,row,8'b0};
+-    hdmi_camera_fisheye_core #(.WIDTH(WIDTH),.HEIGHT(HEIGHT),.INDEX_BITS(7),.TIMEOUT_BITS(TIMEOUT_BITS)) core(
++    hdmi_camera_fisheye_core #(.WIDTH(WIDTH),.HEIGHT(HEIGHT),.INDEX_BITS(8),.TIMEOUT_BITS(TIMEOUT_BITS)) core(
+         .clk(clk),.rst_n(rst_n),.frame_valid(begin_frame),.frame_ready(core_frame_ready),.frame_base(source_base),
+         .cfg_corrected(cfg_corrected),
+         .in_valid(coordinate_valid),.in_ready(coordinate_ready),.in_u(u),.in_v(v),.in_tag(raster_tag[23:0]),
