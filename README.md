@@ -1,113 +1,116 @@
-# FPGA 实时图像畸变矫正
+# FPGA 实时视频畸变矫正
 
-## 2026-11-04 提交入口
+本项目基于紫光同创盘古100 Pro+开发板，对广角摄像头视频进行镜头畸变矫正，经HDMI实时显示。项目支持OV5640 DVP 720p和HDMI摄像头1080p两类输入，并配套采图、镜头标定、参数生成、RTL仿真与串口统计工具。最新HDMI优化位流已由团队成员在本地摄像头下载验证中达到**1080p 30 FPS**；两套已归档15 FPS工程提供完整的使用与校验入口。
 
-提交程序包只选两套主方案：[OV5640 720p15](delivery/20261104-camera720p15/README.md)和[HDMI 1080p15 direct-fill](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md)。两套均提供对应源码、直接可选位流、原始时序与资源报告；下方其他迭代只保留仓库历史，不进入最终两版程序包。
+[设计报告与演示材料](submission/README.md) · [版本与文件导航](docs/REPOSITORY_GUIDE.md) · [逐日分支开发记录](docs/DEVELOPMENT_HISTORY.md)
 
-最新合入今早的 **tile8 INDEX8 direct-fill**（源码 `4522399`）：1920×1080，新校正帧约 **15 FPS**，HDMI扫描约 **30 Hz**。600秒采集中，599秒核心计数窗口得到8985个新结果帧；处理耗时采样约 **35.45 ms**，较旧tile8约44.33 ms缩短约20%，新帧率仍为15 FPS。见[本版源码、位流与证据](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/README.md)。
+## 硬件与处理流程
 
-- [提交材料：22页报告、海报、参数与补充实验](submission/README.md)
-- [仓库与版本导航](docs/REPOSITORY_GUIDE.md)
-- [代码RAR导出说明](tools/SUBMISSION_PACKAGE.md)
-- [720p15源码、位流与时序／资源报告](delivery/20261104-camera720p15/README.md)
-- [1080p15选定源码与位流](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md)、[原始时序／资源报告](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/reports/README.md)
+- 开发平台：盘古100 Pro+（MES2L676-100HP），Logos2 PG2L100H-6IFBG676 FPGA，板载DDR3。
+- 输入方式：OV5640经转接板接入CAM2 DVP接口，或第三方广角摄像头接入HDMI IN。
+- 输出与调试：HDMI OUT连接显示器，JTAG下载，UART采图或接收运行统计；两套15 FPS交付支持KEY1切换原图／矫正、KEY0复位，30 FPS方案按专页的版本说明使用。
 
-按用户要求，PR #28已由`97b1397`回退，随后`eb700c8`正常合并今早分支。各版本继续使用原交付目录的独立入口；本次整理没有重新引入统一`project.py`或合并其他实验分支。记录见[提交整理说明](docs/SUBMISSION_INTEGRATION_20261104.md)。
+```text
+摄像头 → DVP／HDMI输入前端 → DDR源帧缓存
+                               ↓
+显示器 ← HDMI扫描 ← 结果帧缓存 ← 坐标反向映射＋四邻域取数＋双线性插值
 
-以下保留各日期历史记录；旧段落中的“当前”仅描述当时版本，最新交付以本节入口及对应位流身份为准。
+PC辅助流程：完整帧采图 → 棋盘格标定 → 镜头参数与定点表生成 → 软件／RTL核对
+```
 
-> **2026-11-03 当前已上板 tile8 鱼眼版：** 1920×1080 矫正唯一新画面实测 **15.0 FPS**，相比 S3 的 5.0 FPS 达到 **3 倍（+200%）**；HDMI 扫描刷新为 **30 Hz**。30 秒采集、30 个连续样本及保存串口字节独立复解码通过，窗口内无新增空白帧或管线故障；SRAM 下载 DONE/器件 ID 确认，Flash 未写。末帧处理耗时 44.31 ms。资源：LUT **19.79%**、FF **10.50%**、DRM **22.90%**、APM **22.50%**。见[本轮位流与实测](distortion/results/hdmi-camera-fisheye-tile8-20261103-a/README-PUBLISHED.md)、[源码闭包与重建](delivery/20261103-hdmi-camera-fisheye-tile8/README.md)、[最终版本资源报告](handoff/HDMI_CAMERA_FISHEYE_TILE8_RESOURCES_20261103.md)。帧率来自数字遥测；尚无本轮用户视觉反馈、光学延迟或 KEY1 切换验收。
+矫正采用输出坐标到源图坐标的反向映射，再对相邻四个像素做双线性插值。两套镜头使用独立标定参数；1080p15实现使用8×8分块访问、DDR直接填充缓存及双条带写回，1080p30路线采用前瞻预取缓存。完整帧边界负责参数生效与结果交接。
 
-> **2026-11-03 S3 历史基线：** 1920×1080 矫正唯一新画面实测 **5.0 FPS**，较 C 基线约 4.276 FPS 提升 **16.94%**；HDMI 刷新仍为 30Hz。用户确认“画面正常，比之前流畅，但还是有卡顿”。处理时间约 168.66ms。SRAM 下载、器件 ID/DONE、完整物理与十项时序、位流前独立门检均通过，Flash 未写。见[已上板结果、位流和便携校验](distortion/results/hdmi-camera-fisheye-fill8r3s3-20261103-a/README.md)、[源码与重建](delivery/20261103-hdmi-camera-fisheye-fill8/README.md)、[资源占用](handoff/HDMI_CAMERA_FISHEYE_S3_RESOURCES_20261103.md)、[下一步提帧方案](handoff/HDMI_CAMERA_FISHEYE_PERFORMANCE_NEXT_AFTER_S3_20261103.md)。当前版本仍有卡顿，5 FPS 与 30Hz 刷新分别记录。
+## 方案与验证结果
 
-> **C 历史基线（2026-11-03）：新 HDMI 摄像头鱼眼矫正 C 版。** SRAM/DONE/器件 ID 已确认，用户确认矫正效果和 KEY1 原图/矫正往返切换正常。矫正实测约 **4.3 FPS**，原图 **30 FPS**，HDMI 扫描 **30Hz**。点击[完整交付](delivery/20261103-hdmi-camera-fisheye-c/README.md)查看已下载位流、源码闭包、标定图与精确参数，以及下载/UART 原始证据。分支 `codex/hdmi-camera1080-fisheye`；下方保留队友独立工程包和各路线历史记录。
+最新1080p30方案采用前瞻预取缓存和DDR突发写回，技术说明、固定版本源码及位流入口见[1080p30方案说明](docs/HDMI1080_30FPS.md)。现场验证位流为`a266044d…`；其原始时序仍有4条DDR PHY setup负裕量。后续KEY1版本另有源码、位流与时序身份，分别列在方案说明中。
 
-## 完整校正帧率优化工程包（2026-11-03）
+以下两套15 FPS基线已整理为独立交付，均支持KEY1原图／矫正切换，可按后文完成校验与运行：
 
-[进入完整工程目录](delivery/20261103-hdmi1080-board-package/) · [下载 ZIP（约 30 MB）](delivery/20261103-hdmi1080-board-package/hdmi1080-board-delivery.zip?raw=true)
+| 方案 | 输入与有效处理图像 | 新矫正画面帧率 | HDMI输出扫描 | 工程入口 |
+| --- | --- | --- | --- | --- |
+| OV5640 DVP | CAM2，1280×720 | 15 FPS；29秒窗口435帧 | 1920×1080、30 Hz；720p居中显示 | [720p15源码、位流与报告](delivery/20261104-camera720p15/README.md) |
+| HDMI广角摄像头 | HDMI IN，1920×1080；对应板测输入约60 Hz | 15 FPS；599秒窗口8985帧 | 1920×1080、30 Hz | [1080p15 direct-fill源码、位流与报告](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md) |
 
-包含完整源码与依赖、三份诊断位流、重建脚本和验收清单。当前为 HDMI 1080p29.97/30 校正配置；组合优化在指定离线模型中减少 12.54% 处理周期，板测帧率与最终时序仍待验收。使用前请阅读目录内说明。
+新矫正帧率统计实际更新的不同画面；HDMI刷新可能重复显示上一帧。上述结果分别绑定各自的位流与镜头档案。720p已有两帧RTL仿真处理耗时均值约14.09 ms；1080p15 direct-fill基线实板串口处理耗时采样均值约35.45 ms，测试条件不同，均不代表摄像头至显示器的端到端延迟。详细口径见[设计报告](submission/report/README.md)。
 
+## 获取与校验
 
-> **已发布候选：新 HDMI 摄像头 1920×1080 @ 60Hz RGB888 直通。** 2026-11-02 SRAM下载/DONE/器件ID通过、Flash未写，用户镜头动作实屏确认“能看到，画面稳定”。输出跟随约148.501MHz输入源，不含DDR/矫正；60Hz是数字信号帧节拍，未独立测量摄像头光学唯一FPS。见[位流、闭合源码、原始回执与portable核验](distortion/results/hdmi-camera1080-direct-display-20261102-a/README.md)。本分支仅封存这次显示验收；后续采图/新镜头标定不在此发布中。下文保留其他路线和历史记录。
+建议在较短的英文路径下克隆完整仓库。只核验交付文件需要Python 3.10或更新版本，不依赖PDS、串口或开发板。
 
-## 团队 HDMI 输入路线：1080p30目标（2026-11-01）
+```powershell
+git -c core.longpaths=true clone https://github.com/zhang-yl24/fpga-distortion-correction.git
+cd fpga-distortion-correction
 
-**目标：电脑 HDMI 输入 → FPGA 畸变矫正 → HDMI 输出；有效图像 1920×1080、逐行（progressive）、30 fps，显示刷新 30 Hz。** 这是当前开发与验收目标，**不是已经实测达到的性能**。摄像头、新镜头采集或重新标定不是本主线推进的前置条件。
+python -B delivery/20261104-camera720p15/verify_selected.py
+python -B delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/verify_selected.py
+```
 
-**先读 [1080p30 HDMI 当前计划与交接契约](handoff/HDMI1080P30_CURRENT_20261101.md)、[当前交接点](handoff/CURRENT.md) 和 [环境/历史交接说明](handoff/交接说明.md)。** 外部 RX 并行像素到采集 CDC/DMA、DDR、矫正引擎及扫描/B4 的 RTL 路径已有实现；完整物理 HDMI 输入与 1080p30 实板验收仍未通过，当前保留 UART 候选未获硬件放行。不能用摄像头支线、旧候选、三帧小规模 HDL 或 CI 通过替代本主线证据。
+两条命令分别核对源码、位流、构建输入和保存的验证证据，成功时返回通过结果。若使用已导出的程序包，从包根目录按`START_HERE_SUBMISSION.md`执行校验；完整性校验不会重新编译或下载FPGA。
 
-仓库同时保留同学的摄像头 VGA/720p 分工与历史成果，**不将该支线的分辨率、帧率或“暂停 HDMI IN”安排写成全仓主线**。发布版本、未发布本地候选和两条路线的证据边界见上述计划。
+## 接线与运行
 
-## 摄像头分工：720p原图／矫正一键切换（2026-11-02）
+1. 选择输入方案：OV5640通过转接板连接CAM2；HDMI摄像头连接HDMI IN。将HDMI OUT连接显示器，并接好开发板电源与JTAG。
+2. 运行上面的对应校验器，确认交付文件完整。
+3. 在PDS Programmer中扫描JTAG器件，核对PG2L100H，选择下表对应的`.sbit`，通过JTAG配置到易失SRAM。安装环境与驱动以板卡、PDS配套说明为准。
+4. 下载完成后查看画面。默认矫正模式，按KEY1切换原图／矫正，模式在完整帧边界后生效；KEY0复位。两套方案分开运行，使用各自的输入设备与标定参数。
 
-当前摄像头板已运行 **OV5640 CAM2 → 1280×720实际镜头矫正／原图切换 → HDMI OUT**。KEY1每按一次切换，默认矫正；LED0亮为矫正请求、灭为原图请求，画面在完整帧边界后生效。KEY0仍复位。新版本SRAM下载DONE确认、Flash未写，下载后30秒UART取得30包/29有效窗口，接受/处理/唯一输出均 **15.0 FPS**，身份不符/拒包为0；不是HDMI30Hz刷新或传感器全部帧。
+| 方案 | 下载文件 | 位流SHA256前缀 |
+| --- | --- | --- |
+| OV5640 720p15 | [camera720_view_toggle_top.sbit](delivery/20261104-camera720p15/bitstream/camera720_view_toggle_top.sbit) | `0ca6d19bf074c73c` |
+| HDMI 1080p15 | [hdmi_camera_fisheye_top.sbit](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/bitstream/hdmi_camera_fisheye_top.sbit) | `aa21991374fbeb4a` |
 
-新版本100项CPU测试、三帧3686400实际显示像素仿真、双角十类内部时序、130引脚电气与2486/2486 CDC case均通过。位流SHA `0ca6d19bf074c73cba0346a22e54ba3afb99a595728e6420a1cbb767b963dfe5`。用户已确认原图／矫正实屏切换正常并授权推送；画面横纹原因仍待对照。没有调整曝光/增益/防频闪、当前镜头参数或插值，没有执行提帧。完整光学迁移验证仍只覆盖左/中区域，UART缺少故障/欠流遥测，数字检查不替代全视场实屏验收。
+完整SHA256与版本身份见各工程入口。已验证下载方式为SRAM配置，断电后需要重新下载；Flash自启动未作为这两套交付的使用方式验证。更换镜头或摄像头成像模式时，应重新标定并生成对应参数。
 
-- [当前切换版位流、下载/UART原件与可离线验哈希证据](distortion/results/camera720-view-toggle-live-20261102-a/README.md)
-- [切换实现与验证接续](handoff/CAMERA_720P_VIEW_TOGGLE_20261102.md)、[当前交接](handoff/CURRENT.md)
-- [旧统计版回退与两轮15fps证据](distortion/results/camera720-stats-live-20261102-a/README.md)、[提帧后续计划](handoff/CAMERA_720P_PERFORMANCE_PLAN_20261101.md)
-- [无UART720p回退包](distortion/results/camera720-calibrated-20261101-a/README.md)、[VGA实屏历史](distortion/results/calibrated-camera-live-20261101-a/README.md)
+## 开发环境与重建
 
-摄像头任务先做KEY1同场景原图／矫正与振动细横纹对照，再回到PCLK/传感器帧节拍和调度瓶颈。此安排不改变队友独立HDMI输入路线。原始相机照片和大型work构建不进入仓库，SRAM掉电后需重新下载。
+Python图像处理与辅助工具可按仓库依赖安装：
 
-下文保留历史阶段，不覆盖顶部项目主线及各支线的证据范围。私人现场相机像素和大型构建中间文件留在本机；封存包提供来源和哈希引用。
+```powershell
+python -m venv .venv
+.venv/Scripts/python.exe -m pip install -r requirements-team.txt
+```
 
-盘古676 / PG2L100H-6IFBG676项目。三人轮流推进的私有协作仓库。
+需要调用本机EDA工具时，在尚无本地配置的情况下复制配置模板：
 
-**先阅读 [交接说明](handoff/交接说明.md) 和 [当前交接点](handoff/CURRENT.md)。**
+```powershell
+Copy-Item team-config.example.json team-config.local.json
+```
 
-## 历史阶段：摄像头接入候选与此前断电
+修改`team-config.local.json`中的Python、PDS、Vivado路径和串口号。示例安装路径仅供填写格式参考，具体版本以所选工程的构建记录为准。720p冻结实现记录使用PDS 2023.2-SP3；厂商软件、器件支持与许可证需要在本机安装。部分RTL仿真入口使用Vivado的`xvlog`、`xelab`和`xsim`。
 
-当时的摄像头分工路线是 **OV5640 CAM2摄像头 → DDR/图像处理 → HDMI显示**，其阶段记录曾暂停电脑 HDMI IN / MS7200；该历史安排不适用于顶部当前 HDMI 主线。摄像头仍连接；此前“没有接摄像头”为误点，已更正。
+两套正式工程保留了实际编译输入、约束、Tcl及实现报告。重建时从各自的冻结源码入口开始，重定位原脚本中的工具与工作目录，再执行布局布线、时序及功能验证：
 
-**历史记录：用户当时通知开发板断电，随后已上电并完成新版本实板确认；当前状态见顶部。** 旧processed_output_top测试图曾显示成功，但易失SRAM状态不能描述为当前仍运行。此次仅同步本地文档，不代表Git提交或远端推送。
+- [720p生产源码与构建说明](delivery/20261104-camera720p15/source/README.md)
+- [1080p生产源码、编译差异与重建说明](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md)
 
-新camera_vga_output_top目标640×480 RGB565、1080p30居中输出，默认零畸变系数先验证传输。小帧DVP仿真6帧、3,584像素及板层启动/故障控制仿真通过；原生compile/synth/map/pnr/STA完整完成，但**DDR hold/recovery时序未通过**。slow/fast hold最差−0.336/−0.912ns，recovery最差−4.163/−3.156ns，两角setup/removal零失败。尚未生成或下载摄像头位流。
+归档源码中保留历史绝对路径，尚未提供经验证的一键跨机器重建命令。新的实现结果需要自身的时序、源码身份和板测记录。
 
-下一步先处理新候选时序并完成引脚/CDC/复位与接口检查，再准备位流→通知上电→验证实时画面→调整当前镜头标定和畸变参数。旧候选的时序修复或测试图实板成功不能直接作为新摄像头验收。
+## 采图、标定与运行统计
 
-依据：[摄像头接入交接](handoff/CAMERA_VGA_INPUT_20261031.md)、[原生构建摘要](distortion/results/camera-vga-native-20261031-a/summary.json)。目标分辨率/输出刷新不等于已实测相机帧率。新候选无UART接口，不沿用旧COM7/PGHDMI01命令。
+采图程序从FPGA输入链路导出完整帧，经UART回传PC，检查尺寸与CRC并保存原始像素、PNG和元数据。标定使用棋盘角点估计镜头参数，再生成定点参数并与浮点参考核对。采图固件和实时矫正固件承担不同任务，应按对应工具与工程说明选择。
 
-## 历史进展
+- [正式镜头参数](submission/parameters/LENS_CALIBRATION_PARAMETERS.json)
+- [采图、标定、映射及验证设计](submission/report/README.md)
+- [720p同版UART与板测归档](distortion/results/camera720-view-toggle-live-20261102-a/README.md)
+- [1080p帧率统计与原始证据](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md)
 
-以下记录保留各日期、各候选及各测试环境的事实，不覆盖顶部2026-11-01更正的项目主线。相机图像、HDMI IN诊断、合成测试和RTL回放分别说明来源，历史帧率不作为当前工程的实板验收。
+串口端口应按本机设备指定，统计协议和解析器需与运行位流匹配。输入帧数、处理帧数、新显示帧数、重复扫描数分别统计，不能用显示器的60 Hz或30 Hz设置代替新矫正帧率。
 
-2026-10-30 00:30–00:52（接入 HDMI 信号前的历史对照）：100 ms 等待版恢复 I²C 应答，两次共 50 个 CRC 正确包、配置错误为 0，但当时 RX/TX 尚未初始化。后续初始化与输入失败记录见[当前交接点的历史段](handoff/CURRENT.md)；旧 [诊断说明](distortion/docs/HDMI_UART_BRINGUP_20261030.md)、[结果与证据包哈希](distortion/results/hdmi-uart-20261030.json)保留。
+## 目录说明
 
-2026-10-29：已从修复后的最终 ADF 生成离线 `.sbit`，并在生成前执行原生时序/例外审计；实际 rowpipe 板级控制回归也已通过。未访问开发板，实物 HDMI/DDR/相机验收仍待完成。见[离线进展与下一步](handoff/BOARD1080_OFFLINE_NEXT_20261029.md)。
+| 目录 | 内容 |
+| --- | --- |
+| `delivery/` | 各方案的冻结源码、位流、构建与交付说明；正式使用入口见上表 |
+| `distortion/rtl/`、`distortion/board/` | RTL模块、板级顶层与约束 |
+| `distortion/tools/`、`distortion/tests/` | 主机工具、仿真入口与检查程序 |
+| `distortion/platform/`、`vendor/` | 必要厂商IP、平台资料与手册 |
+| `distortion/results/` | 保存的仿真、实现与实板验证证据 |
+| `submission/` | 设计报告、海报、镜头参数、实物照片和视频稿 |
+| `docs/` | 使用导航与逐日分支开发记录 |
+| `handoff/` | 详细交接与实验记录；按日期理解其中的阶段状态 |
 
-2026-10-29：DDR 定向时序修复候选已在同一已布线副本中通过 PDS 双角十类原生报告审计。局部 `_N173` 数据支路绕行消除 slow/fast hold 失败；精确 IP 复位例外覆盖244项内部检查及1项入口RDC，setup/hold false-path保持为空。结果仍是离板候选，外部 IO、CDC、DDR训练和实板验收未完成。详见 [DDR 时序修复](handoff/BOARD1080_DDR_TIMING_FIX_20261029.md)。
+[程序包导出说明](tools/SUBMISSION_PACKAGE.md)提供两套选定工程的文件筛选与校验方法。旧版本、独立候选、合并与回退过程统一见[开发历史](docs/DEVELOPMENT_HISTORY.md)，不作为当前运行版本说明。
 
-2026-10-28（修复前历史基线）：rowpipe已接入1080P整链，新源八帧16588800像素/CRC及稳态30.000fps数字回归通过；逐帧处理周期未下降，未声称提速或实板fps。PDS2023.2完整流程当时有每角1项PHY hold及slow245/fast234项recovery。修复后离板候选见[DDR时序修复](handoff/BOARD1080_DDR_TIMING_FIX_20261029.md)。
+## 许可与归属
 
-2026-10-28：新源1080八帧离线数字链路通过；此行记录修复前复位/RCF物理诊断，修复后状态见当前交接点。
-
-2026-10-25：新模组CAM2已取得真实640×480原图与内部彩条，七项受限控制实板测试通过；另一眼读到OV5640 ID，但启用数据输出后的SCCB读取失败，尚未采图。完整720p帧的下游数字仿真通过，传感器720p模式仍待解决时钟资料矛盾。实际视场、标定、画质、双目同步和新镜头性能分别验收；按任务推进，11月4日前完成提交。
-
-- [持续开发成果与实际图像](distortion/output/project/持续开发成果-20261025.md)
-- [开灯后房间原图与补采结果](distortion/output/project/开灯后原始采集-20261025.md)
-- [CAM1单变量诊断与最新计划调整](distortion/output/project/CAM1单变量诊断与计划更新-20261025.md)
-- [重新上电与复位隔离的最新结果](distortion/output/project/重新上电与复位隔离复查-20261025.md)
-- [FPC插紧后的复测与诊断推进](distortion/output/project/FPC插紧后复测与诊断推进-20261025.md)
-- [10月26日新事务诊断实板结果](distortion/output/project/CAM1事务诊断实板结果-20261026.md)
-
-- [本轮离线成果与接板入口](distortion/output/project/新镜头离线进展-20261025.md)
-
-- [新镜头任务计划](distortion/output/project/推进计划.md)
-- [离线工具与运行入口](distortion/output/project/新镜头离线工具说明.md)
-- [接板验收单](distortion/output/project/明日接板验收单-20261025.md)
-- [冲奖证据矩阵](distortion/output/project/冲奖证据矩阵-20261024.csv)
-
-- [已完成工作与验证范围](distortion/output/project/成果记录.md)
-- [实验操作表](distortion/output/project/实验操作表.md)
-- [推进计划](distortion/output/project/推进计划.md)
-- [原始工程说明和历史记录](distortion/README.md)
-- [首次完整交接附件](https://github.com/zhang-yl24/fpga-distortion-correction/releases/tag/handoff-20261010)
-
-源码、必要DDR/PLL IP、真实采集数据、当前实验结果和文档在仓库内。历史构建及封存证据在同版本Release附件中；已生成稳定位流可从`starter-artifacts.zip`导入，无需先重新编译。详见交接说明。
-
-首次交接整理执行文件依赖、SHA256、附件内容和远端上传核对，当时未重新访问开发板；10月25日后的本地构建和实板事件见当前交接点。GitHub Actions不具备PDS许可证和板卡，不能代替整板构建或实物验收。
-
-厂商IP及引用代码保留原有归属和许可，未为整个工程另设开源许可。PDS软件和本机许可证须在各自电脑配置，不随仓库分发。
+厂商IP、配套资料与第三方引用保留其原有归属和许可。仓库目前未为全部工程另设统一开源许可证；PDS软件及本机许可证不随工程发布。
