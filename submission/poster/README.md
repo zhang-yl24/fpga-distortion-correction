@@ -6,7 +6,7 @@
 - [海报 PNG](作品海报_20261104.png)：200 dpi 预览。
 - [设计与核验记录](design-and-evidence.json)：记录图像来源、原始 VCD 身份、输出文件 SHA256 和字体/视觉检查。
 
-版式参考[华盛顿大学科研海报模板](https://www.washington.edu/brand/templates/presentations/)的图文层级与分栏形式，布局重新绘制；紫色参考[清华大学标准色](https://vi.tsinghua.edu.cn/info/1150/1205.htm)。未使用大学校徽、名称或官方模板图稿。
+版式参考[华盛顿大学科研海报模板](https://www.washington.edu/brand/templates/presentations/)的图文层级与分栏形式，布局重新绘制；紫色参考[清华大学标准色](https://vi.tsinghua.edu.cn/info/1150/1205.htm)。题头使用[清华大学官方VI校徽](https://vi.tsinghua.edu.cn/gk/xxbz/xh.htm)原图，白底紫色，保留原始颜色、字形和比例，校徽直径约27.9 mm，四边安全空间均超过直径的2/15。仅裁去原图多余白边，不重画或变形；[来源及SHA256](assets/tsinghua-emblem-source.json)随包保存。该校徽仅用于本海报。
 
 图1为同一真实快照的原图与 PC 校正参考，不是实板校正照片。图3来自实际 VCD 的映射器单元测试，23拍不表示完整 HDMI 输入到输出延迟。两套工程分别适配不同摄像头，并非同时接入两路摄像头。
 

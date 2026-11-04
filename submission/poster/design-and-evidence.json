@@ -32,8 +32,50 @@
     "#F5EFF7"
   ],
   "template_reference": "https://www.washington.edu/brand/templates/presentations/",
-  "template_usage": "Research poster hierarchy/grid inspiration; original layout, no university marks copied",
+  "template_usage": "Research poster hierarchy/grid inspiration; original layout, no University of Washington marks copied. Tsinghua emblem is the official asset requested by the user.",
   "color_reference": "https://vi.tsinghua.edu.cn/info/1150/1205.htm",
+  "official_emblem": {
+    "source_page": "https://vi.tsinghua.edu.cn/gk/xxbz/xh.htm",
+    "source_url": "https://vi.tsinghua.edu.cn/__local/8/1C/21/2F02A66E31BF084FE340463BB47_B9A95F73_185BC.jpg",
+    "source_file": "assets/tsinghua-official-emblem.jpg",
+    "source_sha256": "90132d030d8a70f9d21375c85d8a0c614d44a6201ab82200067b10aca38986a8",
+    "source_dimensions_px": [
+      1400,
+      600
+    ],
+    "prepared_file": "assets/tsinghua-official-emblem-padded.png",
+    "prepared_sha256": "9ba7aec166ccf43beba1c516849ddef6ab263342c04b84f6ce0e6bb68f9e489d",
+    "preparation": "Crop only blank white margins to a 600x600 square, preserving all emblem pixels, original color and proportions; no redraw, recolor, opacity change, rotation or added outline.",
+    "crop_xyxy_px": [
+      386,
+      0,
+      986,
+      600
+    ],
+    "visible_emblem_bbox_xyxy_px": [
+      471,
+      80,
+      902,
+      510
+    ],
+    "display_cell_points": 110,
+    "approx_emblem_diameter_mm": 27.875324074074076,
+    "required_clearance_fraction_of_diameter": 0.13333333333333333,
+    "minimum_diameter_mm": 9,
+    "source_color_preserved": true,
+    "official_color_specification_url": "https://vi.tsinghua.edu.cn/info/1150/1205.htm"
+  },
+  "emblem_placement": {
+    "cell_xywh_points": [
+      688.8897637795277,
+      1066,
+      110,
+      110
+    ],
+    "white_background": true,
+    "uniform_scale": true,
+    "retained_whitespace_meets_2D_over_15": true
+  },
   "physical_photos_pending": true,
   "figure_count": 4,
   "figures": [
@@ -48,8 +90,9 @@
   "visual_qa": {
     "status": "passed",
     "reviews": [
-      "primary agent full-page render inspection",
-      "independent agent technical and visual review"
+      "author full-page render inspection after official emblem placement",
+      "root agent independent emblem and masthead visual review passed",
+      "previous independent technical and visual review retained for unchanged body"
     ],
     "checks": [
       "A3 portrait, one page",
@@ -57,8 +100,26 @@
       "formula indices rendered without missing glyphs",
       "no clipping, overlaps or overflow",
       "PC reference, real VCD and board measurements separately labelled",
-      "both selected bitstream identities and resource figures checked"
+      "both selected bitstream identities and resource figures checked",
+      "official Tsinghua emblem source SHA recorded; original proportions and colors preserved",
+      "emblem diameter exceeds 9 mm and clear space exceeds 2D/15 on every side",
+      "all body content below the masthead is unchanged"
     ]
+  },
+  "emblem_validation": {
+    "body_preview_below_y208_pixel_identical": true,
+    "all_pdf_extracted_text_identical": true,
+    "prepared_emblem_pixels_exact_crop_of_official_source": true,
+    "clear_margins_px": [
+      85,
+      80,
+      84,
+      90
+    ],
+    "visible_emblem_diameter_px": 431,
+    "required_clear_margin_px": 57.46666666666667,
+    "approx_emblem_diameter_mm": 27.875324074074076,
+    "no_report_or_video_modified": true
   },
   "source_images": [
     {
@@ -72,8 +133,8 @@
   ],
   "output": {
     "pdf": "作品海报_20261104.pdf",
-    "pdf_sha256": "e5b9cf5d7a7b83e2a4182f9a415f9fe4db152e07a3dda680b2bafd81229df10b",
+    "pdf_sha256": "f0e1fab0f2a6259dd7e8fed527c951a124cc4eaa07d4a38b2a47e8582b61d638",
     "png": "作品海报_20261104.png",
-    "png_sha256": "966a685cf954c67437128f04e82fb99cb424c5f50f42059fd72419bb3c482896"
+    "png_sha256": "e494e3129efffabdb92abf82ea3d7437fc1a7a936b19eb4b1de7b673c3f2eff2"
   }
 }
