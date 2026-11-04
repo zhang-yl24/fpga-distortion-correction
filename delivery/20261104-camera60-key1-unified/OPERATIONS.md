@@ -1,0 +1,13 @@
+# Camera test handoff boundary
+
+Before a supervised camera test, verify the published bit SHA256 and the publication receipt's remote-file verification. Confirm a locally hash-matched colleague-held rollback file from ROLLBACK.md, then use the hardware owner's established local loading procedure. This package does not itself program hardware. The normal U bit has not yet been tested with the colleague's camera.
+
+Use only the colleague's camera HDMI source. Record camera model/mode, actual 59.94 versus 60 timing, bit SHA256, session/epoch, source frame IDs, calibration, requested and frame-latched mode, accepted param_id, Gamma enable/curve and temperature. Keep raw serial bytes and hashes. Confirm the real serial interface and protocol from the supplied bit; do not guess a COM port or issue commands using an unrelated decoder.
+
+Normal operation uses the PGSTAT02 snapshot/control contract, including SGA/SGT only where the exact candidate decoder confirms support. STARTUP_DIAG_ONLY is a distinct diagnostic build/profile with independent PGINP telemetry; it is not a business-FPS record and is not selected by byte-muxing two serializers. A diagnostic bit must have its own identity. A quiet UART or observer loss counter of zero does not establish input absence or zero camera drops. Passive capture keeps UART writes zero; any authorized TX bytes must be logged.
+
+Calibration SHA256 is ed59f83e3cfbc77b0c876293129955fea96aec21784e520592111506671b81af. Runtime family base tag is 708006b9. SGR validates the family tag and accepts the parameter-payload CRC as runtime param_id; these identities are distinct. Display mode bit0 enables correction and bit1 enables Gamma: RAW0/GammaOFF and CORR3/GammaON. Adaptive curve mode0/1/2 is separate; mode3 is invalid.
+
+Report inputSOF, DMA admission/completion, engine acceptance, successful commit, unique complete scan, repeated complete scan, blank/invalid scan and refresh separately. Count a first-DE frame as fresh only after complete pixel coverage/identity and required CRC checks confirm the scan. Use one valid epoch and an atomic counter/timebase contract; report unknown observables as unknown. Legacy pixel CRC/sparse samples have no SOF-to-scan timestamps. The timed observer prototype is not integrated evidence. last_process_cycles is not electrical or optical E2E.
+
+TEST_SCOPE.json states the off-board limits. No result in this package establishes U board operation, 1080p60 fresh presentation or E2E latency. The parent HOST_CAPTURE.md and measurement contract remain templates pending binding to the actual candidate protocol.

@@ -1,0 +1,90 @@
+{
+  "status": "TWELVE_SUMMARIES_PASS_WITHIN_VENDOR_MODEL",
+  "checks": [
+    {
+      "corner": "slow",
+      "check": "setup",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.02
+    },
+    {
+      "corner": "slow",
+      "check": "hold",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.07
+    },
+    {
+      "corner": "slow",
+      "check": "recovery",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 1.063
+    },
+    {
+      "corner": "slow",
+      "check": "removal",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.338
+    },
+    {
+      "corner": "slow",
+      "check": "mpw",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.035
+    },
+    {
+      "corner": "slow",
+      "check": "skew",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.223
+    },
+    {
+      "corner": "fast",
+      "check": "setup",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 2.511
+    },
+    {
+      "corner": "fast",
+      "check": "hold",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.044
+    },
+    {
+      "corner": "fast",
+      "check": "recovery",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 3.506
+    },
+    {
+      "corner": "fast",
+      "check": "removal",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.235
+    },
+    {
+      "corner": "fast",
+      "check": "mpw",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.035
+    },
+    {
+      "corner": "fast",
+      "check": "skew",
+      "failing_endpoints": 0,
+      "worst_slack_ns": 0.24
+    }
+  ],
+  "external_io_and_physical_reset_signoff": false,
+  "board_acceptance": false,
+  "model_boundary": "Three vendor asynchronous groups restore the IP model only; external IO/reset and physical CDC require separate evidence.",
+  "scope": "Only aggregate final-STA checks; no device/tool/pin/resource/congestion data, private report paths or ADF.",
+  "source_evidence_sha256": {
+    "sta_execution": "962226851259b284ca3585d7ea470a717f16d03b678514f558738788df01a3e8",
+    "final_audit": "c25a7954ace1ca46a79a82e1765267b0174cdc0ce4a1b617e942ff2c84810c55"
+  },
+  "original_rtr": {
+    "retention": "Original report retained locally; not published in this package",
+    "sha256": "9cdd598241c1b88014cf39462588d594e1599c3a5092cadbedd4c0cb7edb2133",
+    "bytes": 26500862
+  }
+}

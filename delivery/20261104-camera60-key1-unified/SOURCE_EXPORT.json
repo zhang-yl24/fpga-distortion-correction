@@ -1,0 +1,53 @@
+{
+  "status": "FIRSTPARTY_EXPORTS_BOUND_FOR_PUBLICATION",
+  "public_base_commit": "5d53319c4167596cd2f577c65a3b2d8dfd54494d",
+  "candidate_source_manifest_sha256": "752d2dc5c6f9cf4eca1752914135bb3e01ab0701ecb3c518a0794c9aa93b0a52",
+  "scope": "Four firstparty source exports only; no complete dependency inventory",
+  "files": [
+    {
+      "file": "src/board1080_cfg100_top.v",
+      "native_relative_target": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+      "original_sha256": "e54436c02ec1788323b310341badbf895e262e57f5707043a4005007528dab18",
+      "export_sha256": "49f95e5e656e11efdbfa6fd0a46eef6610451297facdbca8d80944f91b9023c3",
+      "bytes": 17910,
+      "transform": [
+        {
+          "kind": "absolute_include_to_native_relative",
+          "native_relative_include": "source/profile/ddr_bank_page_interleave.vh"
+        },
+        {
+          "kind": "absolute_include_to_native_relative",
+          "native_relative_include": "source/rtl/hdmi_rx_sample_bank.vh"
+        },
+        {
+          "kind": "absolute_include_to_native_relative",
+          "native_relative_include": "source/build/offline-20261024/boardtop-penn-prep-20261029-a/board1080-penn.vh"
+        }
+      ]
+    },
+    {
+      "file": "src/pipeline_gamma_frame_engine_1080_geometry_bypass.v",
+      "native_relative_target": "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v",
+      "original_sha256": "e42b918333905c5bf3c7f693cb9bd6f28ef114aafbb14b77ced9459033174f53",
+      "export_sha256": "e42b918333905c5bf3c7f693cb9bd6f28ef114aafbb14b77ced9459033174f53",
+      "bytes": 11075,
+      "transform": "byte_exact"
+    },
+    {
+      "file": "src/camera720_view_control.v",
+      "native_relative_target": "source/rtl/experimental/camera720_view_control.v",
+      "original_sha256": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255",
+      "export_sha256": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255",
+      "bytes": 1759,
+      "transform": "byte_exact"
+    },
+    {
+      "file": "src/hdmi_rx_sample_bank.vh",
+      "native_relative_target": "source/rtl/hdmi_rx_sample_bank.vh",
+      "original_sha256": "6f157abbe220e5279828387d2063f8da49fb90974a0fdc9a138726431dad690b",
+      "export_sha256": "6f157abbe220e5279828387d2063f8da49fb90974a0fdc9a138726431dad690b",
+      "bytes": 441,
+      "transform": "byte_exact"
+    }
+  ]
+}

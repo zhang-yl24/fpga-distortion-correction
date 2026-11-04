@@ -1,0 +1,49 @@
+{
+  "status": "TARGETED_OFFBOARD_EVIDENCE_ONLY",
+  "evidence_binding": "Original candidate source manifest matches FINAL_AUDIT; no new tests run by package preparer",
+  "RAW": {
+    "old_F_RAW": "fault08 preserved",
+    "U_pixels": 1024,
+    "address_coverage": "complete tested raster; not native 1920x1080",
+    "format": "RGB565",
+    "independent_crc": "701c3d15",
+    "result": "PASS"
+  },
+  "CORR": {
+    "dimensions": "128x16",
+    "angles_degrees": [
+      0,
+      45
+    ],
+    "compared_pixels": 4096,
+    "raster_crc": [
+      "8361ed31",
+      "c8f38291"
+    ],
+    "result": "PASS",
+    "limit": "Scaled native parameters; not independent geometry math oracle or full1080 acceptance"
+  },
+  "KEY": {
+    "result": "PASS_TARGETED_CONTROLLER_BOUNDARIES",
+    "limit": "Engine ready/done/context substituted to isolate controller; actual engine pixels checked separately"
+  },
+  "not_proven": [
+    "unified full1080 capture-to-scan",
+    "camera fresh60 throughput",
+    "external or optical E2E",
+    "board function of U"
+  ],
+  "RAW1080": {
+    "result": "PASS_RAW1920X1080_TAIL8_IDENTITY_INDEPENDENT_GOLDEN",
+    "dimensions": "1920x1080",
+    "pixels": 2073600,
+    "write_beats": 129600,
+    "crc32": "a6a3ff65",
+    "unique_all_raster": true,
+    "independent_python_pixels_match": true,
+    "tail8pixels": 15360,
+    "lastrowpixels": 1920,
+    "scope": "Real engine/cache/GammaOFF/writer with AR/R/AW/W stalls; capture and scan are outside this test.",
+    "original_result_sha256": "dbdf858aeb52d30b4944e3f0286ed498fedcfc73aa30c9b283591d17a8366fa6"
+  }
+}
