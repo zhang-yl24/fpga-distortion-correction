@@ -1,0 +1,173 @@
+--- a/host/collect_measurement.py
++++ b/host/collect_measurement.py
+@@ -333,15 +333,21 @@
+     ap.add_argument("--port", required=True)
+     ap.add_argument("--baud", type=int, choices=(115200,), default=115200)
+     args = ap.parse_args()
+-    load = lambda path: json.loads(path.read_text(encoding="utf-8"))
+-    plan, manifest, attestation = load(args.plan), load(args.manifest), load(args.run_attestation)
++    # Parse and hash the SAME immutable read of each input, including any BOM.
++    input_file_bytes = {
++        "plan": args.plan.read_bytes(),
++        "manifest": args.manifest.read_bytes(),
++        "run_attestation": args.run_attestation.read_bytes(),
++    }
++    inputs = {name: json.loads(data.decode("utf-8-sig")) for name, data in input_file_bytes.items()}
++    plan, manifest, attestation = inputs["plan"], inputs["manifest"], inputs["run_attestation"]
+     validate_plan(plan); validate_attestation(manifest, attestation)
+     if not args.port.strip():
+         ap.error("--port must name the main workflow's verified serial port")
+     files = CaptureFiles(args.output_dir)
+     session = CaptureSession(None, files, plan, manifest, attestation, capture_kind="LIVE_SERIAL_CAPTURE")
+-    session.meta.update(plan_sha256=sha(args.plan.read_bytes()), manifest_sha256=sha(args.manifest.read_bytes()),
+-        run_attestation_sha256=sha(args.run_attestation.read_bytes()),
++    session.meta.update(plan_sha256=sha(input_file_bytes["plan"]), manifest_sha256=sha(input_file_bytes["manifest"]),
++        run_attestation_sha256=sha(input_file_bytes["run_attestation"]),
+         serial=dict(port=args.port, baud=args.baud, bytesize=8, parity="N", stopbits=1,
+                     DTR=False, RTS=False, xonxoff=False, rtscts=False, dsrdtr=False))
+     port = None
+--- a/host/measurement_report.py
++++ b/host/measurement_report.py
+@@ -117,9 +117,55 @@
+     return dict(count=len(values), percentile_method='nearest_rank', cycles=summary(1), seconds_nominal=summary(hz))
+ 
+ 
+-def analyze_run(raw, manifest, plan, attestation, capture_meta):
++def validate_capture_bindings(manifest, plan, attestation, capture_meta, input_file_bytes):
++    """Bind capture provenance to the actual input file bytes, not redumped JSON.
++
++    The collector already records these hashes. LIVE requires their presence;
++    synthetic fixtures without file claims remain usable. Supplied byte objects
++    must parse to the same dictionaries being analyzed, then their exact hashes
++    must match the capture log. The protocol itself has no firmware/boot digest.
++    """
++    live = capture_meta.get('capture_kind') == 'LIVE_SERIAL_CAPTURE'
++    equal_fields = {
++        'loaded_firmware_sha256': attestation['loaded_firmware_sha256'],
++        'epoch_label': attestation['epoch_label'],
++        'uninterrupted_reset_epoch_attested': True,
++        'external_boundary_offset': attestation['known_packet_boundary_offset'],
++        'boundary_evidence': attestation['boundary_evidence'],
++        'input_description': attestation['input_description'],
++    }
++    for name, expected in equal_fields.items():
++        if live and name not in capture_meta:
++            raise ValueError('live capture metadata missing input binding: ' + name)
++        if name in capture_meta and (type(capture_meta[name]) is not type(expected) or capture_meta[name] != expected):
++            raise ValueError('capture metadata contradicts report input: ' + name)
++    if 'uninterrupted_reset_epoch_attested' in capture_meta and capture_meta['uninterrupted_reset_epoch_attested'] is not True:
++        raise ValueError('capture metadata does not attest uninterrupted reset epoch')
++    specifications = {'manifest': (manifest, 'manifest_sha256'), 'plan': (plan, 'plan_sha256'),
++                      'run_attestation': (attestation, 'run_attestation_sha256')}
++    claimed_hashes = any(field in capture_meta for _, field in specifications.values())
++    if not (live or claimed_hashes or input_file_bytes is not None):
++        return dict(verified=False, scope='synthetic fixture without input-file provenance claims')
++    if not isinstance(input_file_bytes, dict):
++        raise ValueError('actual manifest/plan/attestation file bytes required for capture-hash verification')
++    computed = {}
++    for name, (parsed, field) in specifications.items():
++        raw = input_file_bytes.get(name)
++        if not isinstance(raw, bytes):
++            raise ValueError('actual input file bytes missing: ' + name)
++        if json.loads(raw.decode('utf-8-sig')) != parsed:
++            raise ValueError('input file bytes differ from parsed report input: ' + name)
++        actual = sha(raw)
++        if capture_meta.get(field) != actual:
++            raise ValueError('capture metadata input-file SHA mismatch: ' + field)
++        computed[field] = actual
++    return dict(verified=True, hashes=computed, scope='SHA256 of supplied exact file bytes; not canonicalized/redumped JSON')
++
++
++def analyze_run(raw, manifest, plan, attestation, capture_meta, *, input_file_bytes=None):
+     start = validate_attestation(manifest, attestation)
+     commands = validate_plan(plan)
++    input_binding = validate_capture_bindings(manifest, plan, attestation, capture_meta, input_file_bytes)
+     if capture_meta.get('raw_sha256') != sha(raw):
+         raise ValueError('raw capture SHA mismatch')
+     end = capture_meta.get('validated_analysis_end_offset')
+@@ -191,8 +237,16 @@
+     # Reuse the unchanged analyzer and conservative32-bit counter-window guard.
+     base = base_analyze(selected, manifest, uninterrupted_reset_epoch=True)
+     intervals, samples, unique = [], [], {}
++    pixels_per_frame = manifest['width'] * manifest['height']
+     for index, current in enumerate(snapshots):
+         candidate = current['last_process_cycles_including_final_edge']
++        processing = int(bool(current['state_flags'] & 2))
++        outstanding = (current['captured_frames'] - current['processed_frames']) % U32
++        # Exact DMA source_pop and bank source acceptance are the same event.
++        # A normal granted-capture rejection/no-grant never increments this A.
++        if outstanding != processing:
++            raise ValueError('accepted-minus-completed/processing snapshot invariant failed; window is not a coherent healthy common-reset profile')
++        key = (current['processed_frames'], current['completed_frame_id'], current['completed_param_id'], current['completed_mode'])
+         evidence = None
+         if current['core_tick'] < U32:
+             if not 0 < candidate <= current['core_tick']:
+@@ -204,6 +258,13 @@
+             if (current['sequence'] - previous['sequence']) % U32 != 1:
+                 raise ValueError('duplicate/out-of-order/missing or other-client snapshot sequence')
+             done_delta = interval['delta']['processed_frames']
++            previous_processing = int(bool(previous['state_flags'] & 2))
++            if interval['delta']['captured_frames'] - done_delta != processing - previous_processing:
++                raise ValueError('accepted/completed interval deltas do not conserve the single active processing frame')
++            # The first completion may have begun before this snapshot window.
++            # Every later completion requires at least N coordinate admissions.
++            if done_delta > interval['core_cycles'] // pixels_per_frame + 1:
++                raise ValueError('completion count exceeds native single-engine coordinate-throughput bound')
+             tuple_fields = ('completed_frame_id', 'completed_param_id', 'completed_mode', 'last_process_cycles')
+             if done_delta == 0 and any(current[k] != previous[k] for k in tuple_fields):
+                 raise ValueError('completion tuple changed without a completed frame')
+@@ -223,11 +284,17 @@
+                     raise ValueError('last process cycle candidate exceeds serial-engine in-window bound')
+                 evidence = 'at_least_two_serial_engine_completions_inside_sub_2**32_tick_window'
+             intervals.append(interval)
+-        key = (current['processed_frames'], current['completed_frame_id'], current['completed_param_id'], current['completed_mode'])
++        if evidence is None and key in unique and unique[key]['no_legacy_cycle_wrap_proven']:
++            evidence = 'same_atomic_completion_identity_as_earlier_no_wrap_proved_sample'
++        # A small raw residue alone can be a legitimately wrapped long frame.
++        # Apply the physical-coordinate lower bound only after no-wrap proof.
++        if evidence and candidate < pixels_per_frame:
++            raise ValueError('unwrapped processing duration below native2073600-coordinate edge lower bound')
+         if key in unique and unique[key]['cycles_candidate_raw_plus1'] != candidate:
+             raise ValueError('same completion identity has conflicting process cycles')
+         sample = dict(sequence=current['sequence'], core_tick=current['core_tick'],
+                       processed_frames=current['processed_frames'], frame_id=current['completed_frame_id'],
++                      accepted_minus_completed=outstanding, processing_flag=processing,
+                       param_id=current['completed_param_id'], mode=current['completed_mode'],
+                       raw_legacy_last_index=current['last_process_cycles'], cycles_candidate_raw_plus1=candidate,
+                       no_legacy_cycle_wrap_proven=evidence is not None, no_wrap_evidence=evidence,
+@@ -260,6 +327,7 @@
+                        all_packet_CRCS_valid=True, CRC_scope='complete packets from attested boundary through final stats; excluded raw prefix/tail not validated',
+                        request_ticket_nonce_matches=True, PGSTAT_version=2,
+                        transmit_journal_validated=(tx is not None),
++                       capture_input_file_binding=input_binding,
+                        PGSIG_session_nonce=commands[0]['Nonce'], complete_PGSIG_packets=len(signatures)),
+         core_window=total,
+         counter_semantics=dict(captured_frames='Complete source DMA descriptors accepted by bank source_pop; not all sensor/HDMI arrivals',
+@@ -287,6 +355,7 @@
+             'Low32 core-tick carry is supported; a decreasing full64 tick or repeated/out-of-order stats sequence is rejected.',
+             'Event counters support one modulo32 crossing under the bounded window; source frame-ID descent/wrap is rejected because this display profile uses an unsigned new-ID comparison.',
+             'The first endpoint latency may belong to a completion before the throughput window; only new in-window samples enter the coverage numerator.',
++            'Native duration lower bound is applied only to no-wrap-proved samples; low legacy residues without that proof stay unproven.',
+             'Repeat fraction excludes blank/failed scans; PGSTAT02 does not export all scan/no-grant/overflow fields.',
+             'captured_frames plus dropped_frames is not total camera frames; neither no-grant losses nor sensor exposure events are exported.',
+             'PGSIG packet CRC validates transport. FPGA PixelCRC is not an independent image-correctness or calibration oracle.',
+@@ -299,8 +368,17 @@
+     for name in ('wire', 'manifest', 'plan', 'run-attestation', 'capture-meta', 'output'):
+         ap.add_argument('--' + name, type=Path, required=True)
+     a = ap.parse_args()
+-    load = lambda p: json.loads(p.read_text(encoding='utf-8'))
+-    result = analyze_run(a.wire.read_bytes(), load(a.manifest), load(a.plan), load(a.run_attestation), load(a.capture_meta))
++    input_bytes = dict(manifest=a.manifest.read_bytes(), plan=a.plan.read_bytes(),
++                       run_attestation=a.run_attestation.read_bytes())
++    parse = lambda raw: json.loads(raw.decode('utf-8-sig'))
++    capture_meta = parse(a.capture_meta.read_bytes())
++    # Offline simple fixtures have no file-provenance claims. Live/claimed-hash
++    # captures must cross-check the exact bytes loaded once above.
++    bound = (capture_meta.get('capture_kind') == 'LIVE_SERIAL_CAPTURE' or
++             any(k in capture_meta for k in ('manifest_sha256', 'plan_sha256', 'run_attestation_sha256')))
++    result = analyze_run(a.wire.read_bytes(), parse(input_bytes['manifest']), parse(input_bytes['plan']),
++                         parse(input_bytes['run_attestation']), capture_meta,
++                         input_file_bytes=input_bytes if bound else None)
+     a.output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+     print(json.dumps(dict(status=result['status'], rates=result['rates'],
+                           latency_distribution=result['sampled_internal_sourceaccept_to_success']['distribution'],

@@ -1,0 +1,129 @@
+{
+  "status": "PASS_EXISTING_TIMELINE_EXTRACTION_WITH_QUEUE_EXPLICITLY_UNMEASURED",
+  "generated_utc": "2026-11-03T03:24:37.703745+00:00",
+  "frames": [
+    {
+      "source_id": 1,
+      "source_crc": "09dac66e",
+      "corrected_crc": "6638c734",
+      "input_SOF_drive_time_ps": 404040,
+      "raw_capture_or_DMA_ready_time_ps": null,
+      "processing_source_accept_time_ps": 16667132000,
+      "registered_source_commit_notice_observed_time_ps": 16667140000,
+      "engine_begin_time_ps": 16667140000,
+      "engine_done_clock_edge_time_ps": 33258900000,
+      "engine_done_probe_time_ps": 33258900001,
+      "first_corresponding_scan_observed_time_ps": 33942217221,
+      "last_corresponding_scan_observed_time_ps": 49940324965,
+      "capture_ready_to_processing_accept_queue_ms": null,
+      "queue_measurement_status": "UNMEASURED: no raw DMA-ready/descriptor enqueue/first-valid timestamp logged",
+      "SOF_to_accept_capture_DMA_and_possible_queue_combined_ms": 16.66672796,
+      "accept_to_engine_begin_launch_interval_ms": 8e-06,
+      "engine_clock_edge_latency_ms": 16.59176,
+      "engine_done_to_scanfirst_observation_combined_ms": 0.683317221,
+      "digital_SOF_to_scanfirst_observation_latency_ms": 33.941813181,
+      "digital_SOF_to_scanlast_observation_latency_ms": 49.939920925,
+      "engine_cycles": 2073970
+    },
+    {
+      "source_id": 2,
+      "source_crc": "b63e6590",
+      "corrected_crc": "0e2a31ee",
+      "input_SOF_drive_time_ps": 16667070707,
+      "raw_capture_or_DMA_ready_time_ps": null,
+      "processing_source_accept_time_ps": 33333804000,
+      "registered_source_commit_notice_observed_time_ps": 33333812000,
+      "engine_begin_time_ps": 33333812000,
+      "engine_done_clock_edge_time_ps": 49925580000,
+      "engine_done_probe_time_ps": 49925580001,
+      "first_corresponding_scan_observed_time_ps": 50608883887,
+      "last_corresponding_scan_observed_time_ps": 66606991631,
+      "capture_ready_to_processing_accept_queue_ms": null,
+      "queue_measurement_status": "UNMEASURED: no raw DMA-ready/descriptor enqueue/first-valid timestamp logged",
+      "SOF_to_accept_capture_DMA_and_possible_queue_combined_ms": 16.666733293,
+      "accept_to_engine_begin_launch_interval_ms": 8e-06,
+      "engine_clock_edge_latency_ms": 16.591768,
+      "engine_done_to_scanfirst_observation_combined_ms": 0.683303887,
+      "digital_SOF_to_scanfirst_observation_latency_ms": 33.94181318,
+      "digital_SOF_to_scanlast_observation_latency_ms": 49.939920924,
+      "engine_cycles": 2073971
+    },
+    {
+      "source_id": 3,
+      "source_crc": "ad6287d3",
+      "corrected_crc": "3d61da56",
+      "input_SOF_drive_time_ps": 33333737373,
+      "raw_capture_or_DMA_ready_time_ps": null,
+      "processing_source_accept_time_ps": 50000468000,
+      "registered_source_commit_notice_observed_time_ps": 50000476000,
+      "engine_begin_time_ps": 50000476000,
+      "engine_done_clock_edge_time_ps": 66592164000,
+      "engine_done_probe_time_ps": 66592164001,
+      "first_corresponding_scan_observed_time_ps": 67275550554,
+      "last_corresponding_scan_observed_time_ps": 83273658298,
+      "capture_ready_to_processing_accept_queue_ms": null,
+      "queue_measurement_status": "UNMEASURED: no raw DMA-ready/descriptor enqueue/first-valid timestamp logged",
+      "SOF_to_accept_capture_DMA_and_possible_queue_combined_ms": 16.666730627,
+      "accept_to_engine_begin_launch_interval_ms": 8e-06,
+      "engine_clock_edge_latency_ms": 16.591688,
+      "engine_done_to_scanfirst_observation_combined_ms": 0.683386554,
+      "digital_SOF_to_scanfirst_observation_latency_ms": 33.941813181,
+      "digital_SOF_to_scanlast_observation_latency_ms": 49.939920925,
+      "engine_cycles": 2073961
+    }
+  ],
+  "source_simulation_log_sha256": "fd412307a3e51b5b9ba9fd80605a30af6686623b6225723ab271b3eca588b6f6",
+  "bench_sha256": "df2f5dba1cc64a850e8b43c212703bc778cfc31693330317f6f85bf0fda4dce5",
+  "raw_capture_or_DMA_ready_timestamp_measured": false,
+  "capture_ready_to_accept_queue_measured": false,
+  "registered_source_commit_is_not_capture_completion": true,
+  "accept_to_engine_begin_launch_interval_is_not_capture_ready_queue": true,
+  "clock_conversion_crosschecked_against_all_three_engine_begin_timestamps": true,
+  "clock_conversion": "core_clk starts0 and toggles every4000ps; ticks increases only at negedge. Source accept/begin at posedge =>8000*tick+4000ps. DONE log probes1ps after that edge.",
+  "scan_observation": "SCAN_FIRST/LAST are existing output-negedge observations, after the corresponding registered posedge by half a pixel period. No physical display timing is measured.",
+  "missing_event_reason": "DMA completion/descriptor enqueue and source_valid first assertion are not in the existing log. source_commit is registered at the source-valid/ready accepting edge and the bench logs its old value one core edge later; accepted_frames also counts this acceptance. COMMIT cannot supply an independent earlier capture-ready time.",
+  "source_evidence": [
+    "candidate/source/ce/hdmi1080_video_system_geometry_ab.v:204-205",
+    "candidate/source/ce/hdmi1080_input_dma.v:111-112,166-178",
+    "tb_native_continuous.sv:118-119,151,172-175,191-196,218-250,306-336"
+  ],
+  "integer_ps_segment_sum_checks": [
+    {
+      "source_id": 1,
+      "segment_ps": [
+        16666727960,
+        8000,
+        16591760000,
+        683317221
+      ],
+      "sum_ps": 33941813181,
+      "SOF_to_scanfirst_ps": 33941813181
+    },
+    {
+      "source_id": 2,
+      "segment_ps": [
+        16666733293,
+        8000,
+        16591768000,
+        683303887
+      ],
+      "sum_ps": 33941813180,
+      "SOF_to_scanfirst_ps": 33941813180
+    },
+    {
+      "source_id": 3,
+      "segment_ps": [
+        16666730627,
+        8000,
+        16591688000,
+        683386554
+      ],
+      "sum_ps": 33941813181,
+      "SOF_to_scanfirst_ps": 33941813181
+    }
+  ],
+  "bottleneck_scope": "Measured SOF-to-accept combined stage is about16.66673ms and engine about16.5917ms; post-engine-to-scan-observation about0.6833ms. Do not assign the first combined stage to queue or sensor delay without a capture-ready event.",
+  "new_test_or_simulator_run": false,
+  "running_bench_or_RTL_modified": false,
+  "scope": "Internal digital simulation only. Excludes camera, PC, physical HDMI/PHY, display electronics, optical timing and board E2E."
+}

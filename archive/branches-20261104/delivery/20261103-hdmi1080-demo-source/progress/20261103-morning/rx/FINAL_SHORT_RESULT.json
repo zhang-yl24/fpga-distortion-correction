@@ -1,0 +1,45 @@
+{
+  "State": "ACTUAL_ISOLATED_RX_HDL_PASS_NOT_NATIVE_INTEGRATED",
+  "CompletedCN": "2026-11-03T09:54:35.602512+08:00",
+  "FinalOuterExitCode": 0,
+  "Stages": [
+    {
+      "stage": "compile",
+      "exit": 0,
+      "seconds": 1.497,
+      "timeout_seconds": 30
+    },
+    {
+      "stage": "elaborate",
+      "exit": 0,
+      "seconds": 4.201,
+      "timeout_seconds": 30
+    },
+    {
+      "stage": "simulate",
+      "exit": 0,
+      "seconds": 32.885,
+      "timeout_seconds": 180
+    }
+  ],
+  "Markers": [
+    "PASS_CONTIGUOUS_UART_EMBEDDED_MAGIC_BOTH_DIRECTIONS",
+    "PASS_ORIGINAL_PARSER_CRC_AND_SCHEMA_REJECTION",
+    "PASS_TRUNCATED_PARTIAL_MAGIC_TIMEOUT_AND_COMMON_RESET",
+    "PASS_PHYSICAL_RX_ERROR_RECOVERY_AND_DISABLED_RAW_ALIAS",
+    "PASS_ONE_BYTE_PER_CLOCK_NO_REPLAY_GAP"
+  ],
+  "OriginalManifest28Unchanged": true,
+  "CandidateManifest28VerifiedBeforeAfter": true,
+  "ChangedOnly": [
+    "testwatchdog explicit64bit same100ms",
+    "hostsimulate budget30to180seconds"
+  ],
+  "RTLStimulusAssertionsUnchanged": true,
+  "SynthesisMapPNRSTA": false,
+  "NativeProductionIntegrated": false,
+  "BoardOperations": 0,
+  "SuccessfulMeasurementBitUnmodified": true,
+  "SimulationFinalLine": "MEASUREMENT_RX_ROUTING_PASS arm=7 stats=8 raw_bytes=516 raw_errors=1 disabled_edges=1240446",
+  "derived_privacy_summary": true
+}

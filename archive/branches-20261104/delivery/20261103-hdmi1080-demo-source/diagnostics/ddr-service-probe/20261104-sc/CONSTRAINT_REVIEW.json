@@ -1,0 +1,137 @@
+{
+  "clock_model_MHz": {
+    "ref_uart": 27,
+    "core_nominal": 125
+  },
+  "clock_groups": [
+    "rst_clk",
+    "phy_dq_clk_0",
+    "phy_dq_clk_1"
+  ],
+  "single_async_groups_exclude_each_clock_against_all_others_including_derivatives": true,
+  "DDR_only_leaf_ownership_author_review": true,
+  "clock_network_report_sha256": "99127946a9ea50f805108a6a7b5b062dcf014ac0b068a4a2986763eff195d587",
+  "clock_interaction_report_sha256": "5f38b2178beee5506cf4c11885b51f26552e4a00741fcf17f2adb015099547aa",
+  "actual_route_priorities_accepted": {
+    "ddrphy_ioclk_gate [0]": true,
+    "ddrphy_ioclk_gate [1]": true,
+    "all_group_ca_dly": true
+  },
+  "route_log_sha256": "fefbbca7347039661c7e4128cdb9d551b65ba17f0782568ad954ac3860c322c8",
+  "stages": [
+    {
+      "stage_script": "MAP_PREPARED_NOT_RUN.tcl",
+      "script_sha256": "ba7cadd6f2cf1d2e40a2991ccd69a49b423c8d84e686dbf596ce0aa928b32be7",
+      "constraints": [
+        {
+          "role": "ddr_probe.fdc",
+          "sha256": "1ada5b171a90e8a7c3f2bd71ba4c452c97ddb5be95b0d4fccfbe672a39d6a8c4",
+          "raw_file_not_published": true
+        },
+        {
+          "role": "ddr-ip-clock-relations.fdc",
+          "sha256": "e50c487f732019f59882386e558649c1777f03e540a0d5db971194ebcae6a47c",
+          "raw_file_not_published": true
+        },
+        {
+          "role": "vendor-ddr.rcf",
+          "sha256": "4195e9a465a277e3e242f191d55b78bde4e713e2145121825008d83e7b2aab1d",
+          "raw_file_not_published": true
+        }
+      ]
+    },
+    {
+      "stage_script": "PNR_PREPARED.tcl",
+      "script_sha256": "3c3813e0056fa893236c365a44f3d5b38837da726ae6c5f4582094cfa8ddb325",
+      "constraints": [
+        {
+          "role": "ddr_probe.fdc",
+          "sha256": "1ada5b171a90e8a7c3f2bd71ba4c452c97ddb5be95b0d4fccfbe672a39d6a8c4",
+          "raw_file_not_published": true
+        },
+        {
+          "role": "ddr-ip-clock-relations.fdc",
+          "sha256": "e50c487f732019f59882386e558649c1777f03e540a0d5db971194ebcae6a47c",
+          "raw_file_not_published": true
+        },
+        {
+          "role": "uart_bound.pcf",
+          "sha256": "959aa3f832dcd866195e34e9459051dd48f554029676c0168d5db229abbad946",
+          "raw_file_not_published": true
+        },
+        {
+          "role": "vendor-and-critical-ca-priority.rcf",
+          "sha256": "5f75814c11fa58a9f33816cdda96ada48c0c3d458c1a2bddc71fc18beb772d66",
+          "raw_file_not_published": true
+        }
+      ]
+    },
+    {
+      "stage_script": "STA_PREPARED.tcl",
+      "script_sha256": "706eff10accf176e12e3ac39360d88e0e03f68f2967407ddde71e5ea6c6d4fe4",
+      "constraints": [
+        {
+          "role": "ddr_probe.fdc",
+          "sha256": "1ada5b171a90e8a7c3f2bd71ba4c452c97ddb5be95b0d4fccfbe672a39d6a8c4",
+          "raw_file_not_published": true
+        },
+        {
+          "role": "ddr-ip-clock-relations.fdc",
+          "sha256": "e50c487f732019f59882386e558649c1777f03e540a0d5db971194ebcae6a47c",
+          "raw_file_not_published": true
+        },
+        {
+          "role": "uart_bound.pcf",
+          "sha256": "959aa3f832dcd866195e34e9459051dd48f554029676c0168d5db229abbad946",
+          "raw_file_not_published": true
+        },
+        {
+          "role": "vendor-and-critical-ca-priority.rcf",
+          "sha256": "5f75814c11fa58a9f33816cdda96ada48c0c3d458c1a2bddc71fc18beb772d66",
+          "raw_file_not_published": true
+        }
+      ]
+    },
+    {
+      "stage_script": "BITGEN_PREPARED.tcl",
+      "script_sha256": "53c3aea78455f23347a58dfefdeab7fc72966baa1f94760ce2b250d324a66eeb",
+      "constraints": [
+        {
+          "role": "ddr_probe.fdc",
+          "sha256": "1ada5b171a90e8a7c3f2bd71ba4c452c97ddb5be95b0d4fccfbe672a39d6a8c4",
+          "raw_file_not_published": true
+        },
+        {
+          "role": "ddr-ip-clock-relations.fdc",
+          "sha256": "e50c487f732019f59882386e558649c1777f03e540a0d5db971194ebcae6a47c",
+          "raw_file_not_published": true
+        },
+        {
+          "role": "uart_bound.pcf",
+          "sha256": "959aa3f832dcd866195e34e9459051dd48f554029676c0168d5db229abbad946",
+          "raw_file_not_published": true
+        },
+        {
+          "role": "vendor-and-critical-ca-priority.rcf",
+          "sha256": "5f75814c11fa58a9f33816cdda96ada48c0c3d458c1a2bddc71fc18beb772d66",
+          "raw_file_not_published": true
+        }
+      ]
+    }
+  ],
+  "external_IO_checks": {
+    "no_clock": 0,
+    "virtual_clock": 1,
+    "unexpandable_clocks": 0,
+    "no_input_delay": 33,
+    "no_output_delay": 80,
+    "partial_input_delay": 0,
+    "partial_output_delay": 0,
+    "io_min_max_delay_consistency": 0,
+    "input_delay_assigned_to_clock": 0,
+    "loops": 0,
+    "latch_loops": 0,
+    "latchs": 0
+  },
+  "external_IO_reset_CDC_MTBF_signoff": false
+}

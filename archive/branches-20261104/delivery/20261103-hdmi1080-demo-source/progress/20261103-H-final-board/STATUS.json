@@ -1,0 +1,194 @@
+{
+  "schema": "H-final-timing-first-board-v1",
+  "source_inputs_verified": 146,
+  "bit_sha256": "efdc118b1e26169c1440d45ef2a6a40f1d8bd9955f41aff97bfc3238ee785d55",
+  "ADF_sha256": "e0f57ee14c4894631bcd26ef27f2cc2d71076bd93e2dcec9339c324bf6be265b",
+  "STA_report_sha256": "f2a114f157266692f25c408ba80e425c609839f85aff77a48d4faf2dc8455481",
+  "resources": {
+    "FF": 26022.0,
+    "LUT": 30990.0,
+    "DRM": 20.5,
+    "APM": 56.0,
+    "IO": 144.0
+  },
+  "timing": {
+    "slow": {
+      "setup": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.034,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 90360
+      },
+      "hold": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.06,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 87614
+      },
+      "recovery": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.696,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 8207
+      },
+      "removal": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.326,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 5458
+      },
+      "mpw": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.035,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 19009
+      },
+      "skew": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.223,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 222
+      }
+    },
+    "fast": {
+      "setup": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 2.548,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 90360
+      },
+      "hold": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.044,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 87614
+      },
+      "recovery": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 3.288,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 8207
+      },
+      "removal": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.221,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 5458
+      },
+      "mpw": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.035,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 19009
+      },
+      "skew": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.24,
+        "TNS_ns": 0.0,
+        "TotalEndpointChecks": 222
+      }
+    }
+  },
+  "vendor_async_interaction_rows": 10,
+  "grouped_loads_only_DDR_IP": true,
+  "global_physical_signoff": false,
+  "missing_IO_delay": {
+    "input": 55,
+    "output": 111
+  },
+  "functional_engine": {
+    "profile": "ed59f83e3cfbc77b",
+    "fixed_rotation": 0,
+    "Gamma": false,
+    "pixels": 2073600,
+    "CRC": "d3be1a4d",
+    "edge_distance_cycles": 2076957,
+    "nominal125MHz_ms": 16.615656,
+    "single_frame_capacity_only_fps": 60.18420217654963,
+    "shared_capture_scan_or_physical_DDR_included": false
+  },
+  "board": {
+    "state": "FIRST_BOARD_DONE1_NO_UART_RESPONSE_NOT_FUNCTIONALLY_ACCEPTED",
+    "started_CN": "2026-11-03T16:13:00.318665+08:00",
+    "finished_CN": "2026-11-03T16:15:05.267682+08:00",
+    "load_exit": 0,
+    "load_status_hex": "0x001ffca0",
+    "DONE_according_to_original": true,
+    "ARM_commands": 1,
+    "stats_commands": 0,
+    "capture_outcome": "STOPPED_RESPONSE_TIMEOUT",
+    "response_timeout_seconds": 15.166962800023612,
+    "raw_bytes": 0,
+    "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "selected_ACK": null,
+    "hardware_fps": null,
+    "frame_delivery_measured": false,
+    "external_E2E": null,
+    "input_initialization_resolved": false,
+    "physical_input_identity_independently_verified": false,
+    "peak_temperature_C": 45.862300000000005,
+    "golden_rest_verified": true,
+    "golden_rest_C": [
+      32.33140000000003,
+      32.33140000000003,
+      32.33140000000003
+    ],
+    "all_jobs_exited": true,
+    "flash_operations": 0,
+    "OT1_thermal_signoff": false
+  },
+  "provenance": {
+    "native_manifest": {
+      "basename": "NATIVE_SOURCE_MANIFEST.json",
+      "sha256": "38eadba6dd98af27cc2c4b3e5ba6079de7751f0cb497baa3d7851edc74b5c8db",
+      "bytes": 27569
+    },
+    "final_audit": {
+      "basename": "FINAL_AUDIT.json",
+      "sha256": "835cefa72b19f810369c81051c7599e097a268975c124d9457503c1be930bc8f",
+      "bytes": 77659
+    },
+    "clock_ownership": {
+      "basename": "FINAL_CLOCK_OWNERSHIP_AUDIT.json",
+      "sha256": "f02c70f1db148f5cf11a3aabbe86b29331d2e9fde0c25cbb87f2dbc9a696a6ec",
+      "bytes": 149613
+    },
+    "first_board": {
+      "basename": "FIRST_BOARD_RESULT.json",
+      "sha256": "9cb96fa8275368b20a6b3e2fe31184d90aba5a6b0495e7ebf3e1648e00029a23",
+      "bytes": 1243
+    },
+    "board_result": {
+      "basename": "RESULT.json",
+      "sha256": "40c7fea9293f49a9db5d8778f49d33c10a36227e8ac497f00439af5d9efb6219",
+      "bytes": 26750
+    },
+    "load_receipt": {
+      "basename": "LOAD_RECEIPT.json",
+      "sha256": "ba409708b1fc7379b5a7af90130c84bd7d5ef38ad6c4ba70fa27555dacd9b4f6",
+      "bytes": 3501
+    },
+    "capture_metadata": {
+      "basename": "capturemeta.json",
+      "sha256": "fc475a3af54edc6654319567a049516425313f8c5dc1e296463833dcaf4ea642",
+      "bytes": 4773
+    },
+    "fullframe_result": {
+      "basename": "FULL_FRAME_RESULT.json",
+      "sha256": "c3d6c3c74cf1e4ea0987dcbb06e8183dba9fab5b8c355658c01cdce5a4b3766c",
+      "bytes": 6661
+    },
+    "ram_review": {
+      "basename": "MAP_RAM_PORT_REVIEW.json",
+      "sha256": "b8ddbce0e0d1543d0b78899ffdcb501c6711b57215dac5afa2db5b96d828de32",
+      "bytes": 817
+    }
+  },
+  "scope": {
+    "derived_summary_not_original_receipts": true,
+    "no_new_hardware_EDA_HDL_by_delivery_worker": true,
+    "raw_bit_vendor_originals_or_private_paths_published": false,
+    "main_or_peer_content_modified": false,
+    "competition_submitted": false
+  }
+}

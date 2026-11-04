@@ -1,0 +1,134 @@
+{
+  "actual_vendor_groups_applied": false,
+  "vendor_group_files_registered": [
+    "rst_clk",
+    "phy_dq_clk_0",
+    "phy_dq_clk_1"
+  ],
+  "actual_async_group_interaction_rows": 0,
+  "RCF_priority_nets_applied": 2,
+  "inherited_model": "Original nongroup placed-ADF timing; later project FDC registration did not reapply groups",
+  "source_effect_sha256": "916229325aceec5f256aef8d3e0dfbffb1bffa2b30741cf0459cc8011f986052",
+  "source_final_clock_ownership_sha256": "e70c7714643a2e3f9bf6e42e597eb9457525e652370635506b804f4cf3246544",
+  "clock_interaction_sha256": "a2be91f02e2eb1463506c1d75f0c35664f1c76fcf3a66b24f22f76f8f941fe59",
+  "selected_actual_clock_interactions": [
+    {
+      "Launch Clock": "board27",
+      "Capture Clock": "rst_clk",
+      "Common Primary Clock": "NO",
+      "Inter-Clock Constrains": "Timed(unsafe)",
+      "WNS(ns)": "-1.397",
+      "TNS(ns)": "-1.397",
+      "Failing End Point(TNS)": "1",
+      "Total End Point(TNS)": "1",
+      "WHS(ns)": "-0.347",
+      "THS(ns)": "-0.347",
+      "Failing End Point(THS)": "1",
+      "Total End Point(THS)": "1"
+    },
+    {
+      "Launch Clock": "phy_dq_sysclk_0",
+      "Capture Clock": "ddrphy_sysclk",
+      "Common Primary Clock": "YES",
+      "Inter-Clock Constrains": "Timed",
+      "WNS(ns)": "3.790",
+      "TNS(ns)": "0.000",
+      "Failing End Point(TNS)": "0",
+      "Total End Point(TNS)": "1",
+      "WHS(ns)": "0.688",
+      "THS(ns)": "0.000",
+      "Failing End Point(THS)": "0",
+      "Total End Point(THS)": "1"
+    },
+    {
+      "Launch Clock": "rst_clk",
+      "Capture Clock": "phy_dq_clk_0",
+      "Common Primary Clock": "YES",
+      "Inter-Clock Constrains": "Timed",
+      "WNS(ns)": "-3.169",
+      "TNS(ns)": "-96.866",
+      "Failing End Point(TNS)": "34",
+      "Total End Point(TNS)": "34",
+      "WHS(ns)": "1.089",
+      "THS(ns)": "0.000",
+      "Failing End Point(THS)": "0",
+      "Total End Point(THS)": "34"
+    },
+    {
+      "Launch Clock": "ddrphy_sysclk",
+      "Capture Clock": "phy_dq_sysclk_0",
+      "Common Primary Clock": "YES",
+      "Inter-Clock Constrains": "Timed",
+      "WNS(ns)": "0.057",
+      "TNS(ns)": "0.000",
+      "Failing End Point(TNS)": "0",
+      "Total End Point(TNS)": "196",
+      "WHS(ns)": "0.390",
+      "THS(ns)": "0.000",
+      "Failing End Point(THS)": "0",
+      "Total End Point(THS)": "196"
+    }
+  ],
+  "leaf_ownership_scope": "FINAL_CLOCK_LEAF_OWNERSHIP_PASS_MODEL_SCOPE_REVIEW_REMAINS",
+  "domain_counts": {
+    "board27": {
+      "ToolDriveLoads": 1901,
+      "DirectDomainLeaves": 1901,
+      "OutsideDDRPrefixCount": 1901
+    },
+    "cfg_clk": {
+      "ToolDriveLoads": 179,
+      "DirectDomainLeaves": 179,
+      "OutsideDDRPrefixCount": 179
+    },
+    "pixel_clk": {
+      "ToolDriveLoads": 1987,
+      "DirectDomainLeaves": 1987,
+      "OutsideDDRPrefixCount": 1987
+    },
+    "input_pixel": {
+      "ToolDriveLoads": 807,
+      "DirectDomainLeaves": 807,
+      "OutsideDDRPrefixCount": 807
+    },
+    "ref_clk": {
+      "ToolDriveLoads": 0,
+      "DirectDomainLeaves": 0,
+      "OutsideDDRPrefixCount": 0
+    },
+    "ddrphy_sysclk": {
+      "ToolDriveLoads": 16520,
+      "DirectDomainLeaves": 16520,
+      "OutsideDDRPrefixCount": 12679
+    },
+    "rst_clk": {
+      "ToolDriveLoads": 127,
+      "DirectDomainLeaves": 127,
+      "OutsideDDRPrefixCount": 0
+    },
+    "phy_dq_clk_0": {
+      "ToolDriveLoads": 35,
+      "DirectDomainLeaves": 35,
+      "OutsideDDRPrefixCount": 0
+    },
+    "phy_dq_sysclk_0": {
+      "ToolDriveLoads": 35,
+      "DirectDomainLeaves": 35,
+      "OutsideDDRPrefixCount": 0
+    },
+    "phy_dq_clk_1": {
+      "ToolDriveLoads": 84,
+      "DirectDomainLeaves": 84,
+      "OutsideDDRPrefixCount": 0
+    },
+    "phy_dq_sysclk_1": {
+      "ToolDriveLoads": 84,
+      "DirectDomainLeaves": 84,
+      "OutsideDDRPrefixCount": 0
+    }
+  },
+  "physical_reset_or_silicon_signoff": false,
+  "external_IO_complete": false,
+  "next_boundary": "A separate fresh compile/Map must load matched IP constraints early and verify final interactions/leaf ownership; no false-path fix for user same-domain setup",
+  "registration_assumption_correction_preserved": true
+}

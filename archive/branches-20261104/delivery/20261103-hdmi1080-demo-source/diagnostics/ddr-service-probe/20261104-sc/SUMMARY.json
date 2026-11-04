@@ -1,0 +1,168 @@
+{
+  "schema": "SC-standalone-DDR-service-diagnostic-v1",
+  "frozen_CN": "2026-11-04T03:18:10.047721+08:00",
+  "native_archive_hash_verified_inputs": 156,
+  "directly_registered_designs": 8,
+  "project_RTL": 7,
+  "internal_all12_checks_zero": true,
+  "timing": {
+    "slow": {
+      "setup": {
+        "Count": 0,
+        "WNS_ns": 0.143
+      },
+      "hold": {
+        "Count": 0,
+        "WNS_ns": 0.067
+      },
+      "recovery": {
+        "Count": 0,
+        "WNS_ns": 3.854
+      },
+      "removal": {
+        "Count": 0,
+        "WNS_ns": 0.338
+      },
+      "mpw": {
+        "Count": 0,
+        "WNS_ns": 0.035
+      },
+      "skew": {
+        "Count": 0,
+        "WNS_ns": 0.223
+      }
+    },
+    "fast": {
+      "setup": {
+        "Count": 0,
+        "WNS_ns": 2.683
+      },
+      "hold": {
+        "Count": 0,
+        "WNS_ns": 0.043
+      },
+      "recovery": {
+        "Count": 0,
+        "WNS_ns": 5.25
+      },
+      "removal": {
+        "Count": 0,
+        "WNS_ns": 0.232
+      },
+      "mpw": {
+        "Count": 0,
+        "WNS_ns": 0.035
+      },
+      "skew": {
+        "Count": 0,
+        "WNS_ns": 0.24
+      }
+    }
+  },
+  "map_resources": {
+    "APM": {
+      "used": 0.0,
+      "available": 240.0,
+      "percent_used_over_available": 0.0,
+      "vendor_integer_percent": 0.0
+    },
+    "FF": {
+      "used": 11537.0,
+      "available": 133200.0,
+      "percent_used_over_available": 8.6614,
+      "vendor_integer_percent": 9.0
+    },
+    "LUT": {
+      "used": 9553.5,
+      "available": 66600.0,
+      "percent_used_over_available": 14.3446,
+      "vendor_integer_percent": 15.0
+    },
+    "DRM": {
+      "used": 0.0,
+      "available": 155.0,
+      "percent_used_over_available": 0.0,
+      "vendor_integer_percent": 0.0
+    },
+    "IO": {
+      "used": 84.0,
+      "available": 300.0,
+      "percent_used_over_available": 28.0,
+      "vendor_integer_percent": 28.0
+    }
+  },
+  "map_resource_report_sha256": "ea8bab76dda73c629e93e8550c674e136502f2a26d3d0adbb65264f5ceaf6862",
+  "independent_report_sha256": "b7b18ae3a476adf6c6f12374e3db3a608c49435b598d1277ab97f795b3a6f225",
+  "frozen_bit_hash_only": {
+    "sha256": "024944b5c8e362b1fed03c15ed43f4b1b7ffbe119267e6db0b5de6f2ac93c3b8",
+    "bytes": 3791112,
+    "not_published": true
+  },
+  "final_ADF_hash_only": {
+    "sha256": "7359ff0e4db8cbbc2579e602df4881a1501f48e38c25c07a5f2808a14d051a59",
+    "bytes": 2513642
+  },
+  "native_archive_sha256": "73d5d3d0c91f6abbe3106b910ef87652108828cf2f9087ea78d9b5dd54bca4dd",
+  "stage_receipts": [
+    {
+      "stage": "MAP",
+      "state": "MAP_EXIT0_STRUCTURE_AUDIT_PENDING",
+      "exit_code": 0,
+      "receipt_sha256": "7b2ad784207096e48b59008f127a5423a7a6b57132b5feef188ff1f5d6495169"
+    },
+    {
+      "stage": "PNR",
+      "state": "PNR_EXIT0_FINAL_STA_PENDING",
+      "exit_code": 0,
+      "receipt_sha256": "eec6129d2190941835b68796f6fe0b9f2b58011ae52d4ab01547ad9f9529c693"
+    },
+    {
+      "stage": "STA",
+      "state": "STA_EXIT0_FULL_AUDIT_PENDING",
+      "exit_code": 0,
+      "receipt_sha256": "0f2ea69d2736a4c3b69da38e801c04ea6ebd49fa8f7b9b37c1f7196c4880d944"
+    },
+    {
+      "stage": "BITGEN",
+      "state": "BITGEN_EXIT0_FREEZE_PENDING",
+      "exit_code": 0,
+      "receipt_sha256": "28db23e85ebce4cf6f8f5acc9ccd3dc018f28bdef677825fe9d88d7bdfab0b77"
+    }
+  ],
+  "probe_contract": {
+    "preload_writes": 16,
+    "groups": 3,
+    "reads_per_group": 16,
+    "beats_per_burst": 16,
+    "single_outstanding_only": true,
+    "no_RREADY_WVALID_B_channel_assumed": true,
+    "separate_AR_wait_from_accepted_AR_to_first_and_last_R": true,
+    "native_timeout_cycles": 4096,
+    "read_group_labels": [
+      "samebank-row",
+      "alternatingrows",
+      "rotatingbanks"
+    ],
+    "physical_bank_row_mapping_not_a_new_board_measurement": true
+  },
+  "wire": {
+    "magic": "PGDDR001",
+    "bytes": 80,
+    "version": 1,
+    "CRC32_offset": 76,
+    "default_packet_limit": 120,
+    "ref_nominal_Hz": 27000000,
+    "baud": 115200,
+    "format": "8N1",
+    "repeated_terminal_packets_are_same_measurement": true
+  },
+  "decoder_scope": "offline schema/CRC/field decoder; Measured tests SnapshotValid and GroupCount>0 only; not a strict LIVE acceptance gate",
+  "board_loaded": false,
+  "real_DDR_latency_measured": false,
+  "concurrent_bandwidth_proven": false,
+  "actual_multi_outstanding_DDR_support_verified": false,
+  "image_fps_or_E2E_measured": false,
+  "external_IO_reset_CDC_MTBF_accepted": false,
+  "new_HDL_EDA_hardware_by_delivery_worker": false,
+  "legacy_OP_and_E2_not_modified": true
+}

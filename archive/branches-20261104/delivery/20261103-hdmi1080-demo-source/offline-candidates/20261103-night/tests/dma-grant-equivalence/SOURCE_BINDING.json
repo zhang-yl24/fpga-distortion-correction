@@ -1,0 +1,81 @@
+{
+  "baseline_dma_sha256": "7a21acc092ba97a268cfc319521ec8fc0e9eb0dca62289ba2ffbeae68705ec2e",
+  "candidate_dma_sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29",
+  "only_dma_change": "line119 if(grant_valid && grant_ready)begin -> if(grant_valid)begin",
+  "unit_origin": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\hdmi-localcmd-dma-descriptor2-20261101-e\\package\\unit",
+  "baseline_native": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\frame-ab-dwell3s-20261102-a\\native",
+  "candidate_native": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\dma-grant-fire-20261103-a\\native",
+  "stimulus_changed": false,
+  "original_four_csv_oracle_changed": false,
+  "passive_observer": "unit/dma_public_trace.sv: all 33 public ports; pre and post every sys edge; pre-edge invariant checks",
+  "unit_coverage_retained": {
+    "data_frames": 6,
+    "pixels": 1536,
+    "DDR_beats": 96,
+    "descriptors": 3,
+    "reset_full": 1,
+    "reset_reserved": 1,
+    "pop_push": 1,
+    "stall_prefetch": true
+  },
+  "copied_sources": [
+    {
+      "origin": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\frame-ab-dwell3s-20261102-a\\native\\source\\rtl\\experimental\\hdmi1080_input_dma.v",
+      "path": "baseline/hdmi1080_input_dma.v",
+      "sha256": "7a21acc092ba97a268cfc319521ec8fc0e9eb0dca62289ba2ffbeae68705ec2e"
+    },
+    {
+      "origin": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\dma-grant-fire-20261103-a\\native\\source\\rtl\\experimental\\hdmi1080_input_dma.v",
+      "path": "candidate/hdmi1080_input_dma.v",
+      "sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29"
+    },
+    {
+      "origin": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\dma-grant-fire-20261103-a\\native\\source\\rtl\\experimental\\hdmi1080_capture_cdc.v",
+      "path": "deps/hdmi1080_capture_cdc.v",
+      "sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c"
+    },
+    {
+      "origin": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\dma-grant-fire-20261103-a\\native\\source\\rtl\\video_async_fifo.v",
+      "path": "deps/video_async_fifo.v",
+      "sha256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36"
+    },
+    {
+      "origin": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\hdmi-localcmd-dma-descriptor2-20261101-e\\package\\unit\\tb_dma_descriptor2.sv",
+      "path": "unit/tb_dma_descriptor2.sv",
+      "sha256": "607f88b99a964c0e5d0894f6ec07e5dd875221ed438d0fdf85b8d376ba080ef3"
+    },
+    {
+      "origin": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\hdmi-localcmd-dma-descriptor2-20261101-e\\package\\unit\\oracle.py",
+      "path": "unit/oracle.py",
+      "sha256": "ac6886d4a2b7377784d57d0e89c67e6c5dfd81cacd6b63e337fb14cac516005a"
+    },
+    {
+      "origin": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\hdmi-localcmd-dma-descriptor2-20261101-e\\package\\unit\\vectors\\unit_crc.mem",
+      "path": "unit/vectors/unit_crc.mem",
+      "sha256": "1a7043ba9e050d06d06d686ad9b99d6cde7164b63305c5851623bd2d9954f929"
+    },
+    {
+      "origin": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\hdmi-localcmd-dma-descriptor2-20261101-e\\package\\unit\\vectors\\unit_source.mem",
+      "path": "unit/vectors/unit_source.mem",
+      "sha256": "2a4acfc94d3e4d0acced426d7c4c6534099067eeebecc6423ab6fdfefd79779c"
+    }
+  ],
+  "historical_unit_dependencies": {
+    "hdmi1080_input_dma.v": {
+      "historical_sha256": "7a21acc092ba97a268cfc319521ec8fc0e9eb0dca62289ba2ffbeae68705ec2e",
+      "new_native_sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29",
+      "exact_match": false
+    },
+    "hdmi1080_capture_cdc.v": {
+      "historical_sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+      "new_native_sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+      "exact_match": true
+    },
+    "video_async_fifo.v": {
+      "historical_sha256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+      "new_native_sha256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+      "exact_match": true
+    }
+  },
+  "native_write_or_EDA_or_hardware_or_upload": false
+}
