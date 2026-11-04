@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "artifact": "KEY1_INPUT_PHASE_CONTRACT_SOURCE_CANDIDATE_PREPARATION",
+  "base_commit": "8c3fe2a05ae56e3338a495f5085d489506352439",
+  "base_KEY1_bit_sha256": "cf9fcf563f7487bafccf083f5ad83f7e94c18759beea3236187e32c8b2c66731",
+  "frozen_handoff_sha256": "28b29177c450bc7bc4bdd355a6b4dc2c7a9101adcc1c03788e30fda055dd71ff",
+  "frozen_batch_manifest_sha256": "d29481403317287df0af0e693dd959607abe730ab177d4c425f5502dfe9cd777",
+  "production": {
+    "wrapper": "ms72xx_cfg100_ctl",
+    "PCLK_INV_BIT": 0,
+    "register": "0x1281",
+    "mask": "(original & 0xfb) | ((bit & 1) << 2)",
+    "FPGA_sampling_edge": "posedge",
+    "request_local_IOFF": true,
+    "geometry": "1920x1080 unchanged",
+    "full_byte_readback_required": true
+  },
+  "changed_files": [
+    {
+      "relative_path": "source/rtl/hdmi_rx_sample_bank.vh",
+      "original_encoding": "utf-8",
+      "original_bytes": 429,
+      "original_sha256": "d806a5b80b47fafb732df522937932f47342a56c1664f57609e477c520fa74d9",
+      "patch_base_encoding": "utf-8 LF",
+      "patch_base_sha256": "47fae48a0043ce726e7f97cbfd1e982daaa29fcfc4b750ca6810afa19cca9ec0",
+      "candidate_encoding": "utf-8 LF",
+      "candidate_bytes": 441,
+      "candidate_sha256": "6f157abbe220e5279828387d2063f8da49fb90974a0fdc9a138726431dad690b"
+    },
+    {
+      "relative_path": "source/build/offline-20261024/night-recovery-edid-20261030-a/edid/ms7200_1080p30_ctl.v",
+      "original_encoding": "utf-8",
+      "original_bytes": 32258,
+      "original_sha256": "5ef6dc3305a01d6a38866dadfdebc97d1951e6495d684e297dba43149e519a53",
+      "patch_base_encoding": "utf-8 LF",
+      "patch_base_sha256": "5ef6dc3305a01d6a38866dadfdebc97d1951e6495d684e297dba43149e519a53",
+      "candidate_encoding": "utf-8 LF",
+      "candidate_bytes": 35169,
+      "candidate_sha256": "a576e534b5b02ef6ef800a830e7a04524deaf2e109e9f7797ae1a6f2cab1d8f7"
+    },
+    {
+      "relative_path": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/ms72xx_cfg100_ctl_reset.v",
+      "original_encoding": "utf-8",
+      "original_bytes": 7396,
+      "original_sha256": "dc52ef719ae5e74f7746632b903b8e81d60d09f7171ca98d1d7b6d7c1ae12f65",
+      "patch_base_encoding": "utf-8 LF",
+      "patch_base_sha256": "dc52ef719ae5e74f7746632b903b8e81d60d09f7171ca98d1d7b6d7c1ae12f65",
+      "candidate_encoding": "utf-8 LF",
+      "candidate_bytes": 7965,
+      "candidate_sha256": "e876806bf7dd6ff9ca10389a743d6dd25b37a8e5fb67fb74056edcdbdd163b76"
+    },
+    {
+      "relative_path": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/iic_dri_cfg100_reset.v",
+      "original_encoding": "gb18030",
+      "original_bytes": 15849,
+      "original_sha256": "9bb5bd82d05aec9bf0206b645d7f9c7c04f6545ca1ec9dee12c09632b1345d47",
+      "patch_base_encoding": "utf-8 LF",
+      "patch_base_sha256": "49386786254f4d08009261883dc0f8eab3a644e59a95decd7ba65809b5d6a56b",
+      "candidate_encoding": "utf-8 LF",
+      "candidate_bytes": 18038,
+      "candidate_sha256": "6a82e33bf7d6f3745f51c0c6666e8c20ff8a6fee6df51b8ae7f539aaf678b4fa"
+    }
+  ],
+  "verification": {
+    "existing_results": {
+      "scope": "Existing evidence only; no new simulation or EDA run for this delivery",
+      "final_d": {
+        "sha256": "e97053b9e9d43535220da241e7fa3ec1340c5ab1f3a6924fad66d69d84273c42",
+        "status": "PASS_REAL_XSIM_QUALIFICATION_DIRECTED",
+        "scope": "Frozenproductioncontractcandidate:256maskedvalues,bothphasebits,R/W/verifyNACK,readvalid,heldWRITEtimeout,reset; fullrealRXdriverwrapperowner; no native/board proof",
+        "phases_exit0": 5,
+        "markers": [
+          "PASS_PHASE_RMW target=0 all256 preserved-seven-bits exact-readback invalid-byte mismatch timeout reset",
+          "PASS_PHASE_RMW target=1 all256 preserved-seven-bits exact-readback invalid-byte mismatch timeout reset",
+          "PASS_PHASE_RMW_ALL",
+          "PASS_INTEGRATED_NACK stage=1 RXdone0 TXheld, originaldrivercompletedbus",
+          "PASS_INTEGRATED_NACK stage=2 RXdone0 TXheld, originaldrivercompletedbus",
+          "PASS_INTEGRATED_PHASE target=0 300originalwrites+7rearm+3checkedRMW, TXowner withheld untilverified",
+          "PASS_INTEGRATED_PHASE target=1 300originalwrites+7rearm+3checkedRMW, TXowner withheld untilverified",
+          "PASS_INTEGRATED_NACK stage=3 RXdone0 TXheld, originaldrivercompletedbus",
+          "PASS_PHASE_INTEGRATED_ALL"
+        ],
+        "inputs_unchanged": true,
+        "active_simulator_processes_after": 0
+      },
+      "independent_148_5MHz_model": {
+        "sha256": "2aef48e5d5083d676188afdd67527c62802399666bc84d00eef27a861286dc5f",
+        "status": "PASS_REAL_XSIM_QUALIFICATION_DIRECTED",
+        "scope": "Independent148.5MHz27lane phase propagation model; no candidate native or hardware proof",
+        "phases_exit0": 3,
+        "markers": [
+          "PASS_VENDOR_PHASE six148.5MHz/duty40-60/inv0-1 channels, all27bits and independentRGB oracle; hypothetical noPCB/hardware proof"
+        ],
+        "inputs_unchanged": true,
+        "active_simulator_processes_after": 0
+      },
+      "metadata_caveat": "Older handoff vendor-model status was not updated because that metadata write was denied. Its old NOT_VALIDATED/NotPerformed/NextRequired fields are not current execution state; the separately hashed newer RESULT is the model evidence."
+    },
+    "portable_patch_check_apply_and_four_final_SHA_equal": true,
+    "preparation_helper_AST_checked": true,
+    "new_simulation_run_for_delivery": false
+  },
+  "native": {
+    "owner": "Main implementation engineer, separate exclusive workspace",
+    "source_manifest_sha256": "0c1b7e1bf0f08415b7539cccbcb7c6f413363956304a2d35b58f34d4772b9347",
+    "source_count": 150,
+    "Map_native_exit_code": 0,
+    "placed_IREGIS": 19,
+    "final_artifacts_received_for_delivery": false,
+    "state_as_of": "2026-11-04T16:43:33+08:00",
+    "PNR": "RUNNING_NOT_TERMINAL",
+    "dependency_entries_distributed": false
+  },
+  "hardware_root_cause_proven": false,
+  "camera_KEY1_FPS_or_IO_acceptance_proven": false,
+  "no_board_access": true,
+  "published_files_except_this_identity": {
+    "integration/PHASE_CONTRACT_UTF8.patch": {
+      "bytes": 11930,
+      "sha256": "3b8c29acc4e63b037fe75ca574bd732e75478ef370b49ce2cedffda6a04b787a"
+    },
+    "README.md": {
+      "bytes": 8561,
+      "sha256": "b4f2374a73373777f76af42df87aa8411bf598366bdb3d4eb5e5d2812e8d83b3"
+    },
+    "tools/prepare_patch_base.py": {
+      "bytes": 1464,
+      "sha256": "1fd3d3b3361819af0ca0d8410658b7a94770b33e692b8cc5b5bb54ee7e4aeaf5"
+    },
+    "VERIFICATION_SUMMARY.json": {
+      "bytes": 2088,
+      "sha256": "6296bc9ccef2486ab5b35713eab783631dc1b4709fcbad1998510a0114367852"
+    }
+  },
+  "fallback": {
+    "peer_operator_must_confirm_full_file_and_sha": true,
+    "a266": {
+      "sha256": "a266044d4da4b8883fc7fa1e9250f62aee37bbf27df349354b2a11250129c547",
+      "basis": "User-reported peer camera success; no matching raw camera capture here",
+      "scope": "PGIQ diagnostic, no KEY1 or phase contract; 4 slow setup endpoints/WNS -0.032ns unclosed"
+    },
+    "peer_15fps": {
+      "sha256": "aa21991374fbeb4a6733741095f38e27336f1e47dd67b963feb243428a5b353b",
+      "scope": "User-recorded peer verified15fps fallback, not remeasured here; operator must verify actual file"
+    },
+    "cf9": {
+      "is_code_parent_only": true,
+      "PC_startup_failed": true,
+      "camera_fallback_proven": false
+    }
+  },
+  "publication_state": "SOURCE_CANDIDATE_PNR_RUNNING"
+}

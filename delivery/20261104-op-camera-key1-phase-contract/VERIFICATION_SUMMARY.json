@@ -1,0 +1,34 @@
+{
+  "scope": "Existing evidence only; no new simulation or EDA run for this delivery",
+  "final_d": {
+    "sha256": "e97053b9e9d43535220da241e7fa3ec1340c5ab1f3a6924fad66d69d84273c42",
+    "status": "PASS_REAL_XSIM_QUALIFICATION_DIRECTED",
+    "scope": "Frozenproductioncontractcandidate:256maskedvalues,bothphasebits,R/W/verifyNACK,readvalid,heldWRITEtimeout,reset; fullrealRXdriverwrapperowner; no native/board proof",
+    "phases_exit0": 5,
+    "markers": [
+      "PASS_PHASE_RMW target=0 all256 preserved-seven-bits exact-readback invalid-byte mismatch timeout reset",
+      "PASS_PHASE_RMW target=1 all256 preserved-seven-bits exact-readback invalid-byte mismatch timeout reset",
+      "PASS_PHASE_RMW_ALL",
+      "PASS_INTEGRATED_NACK stage=1 RXdone0 TXheld, originaldrivercompletedbus",
+      "PASS_INTEGRATED_NACK stage=2 RXdone0 TXheld, originaldrivercompletedbus",
+      "PASS_INTEGRATED_PHASE target=0 300originalwrites+7rearm+3checkedRMW, TXowner withheld untilverified",
+      "PASS_INTEGRATED_PHASE target=1 300originalwrites+7rearm+3checkedRMW, TXowner withheld untilverified",
+      "PASS_INTEGRATED_NACK stage=3 RXdone0 TXheld, originaldrivercompletedbus",
+      "PASS_PHASE_INTEGRATED_ALL"
+    ],
+    "inputs_unchanged": true,
+    "active_simulator_processes_after": 0
+  },
+  "independent_148_5MHz_model": {
+    "sha256": "2aef48e5d5083d676188afdd67527c62802399666bc84d00eef27a861286dc5f",
+    "status": "PASS_REAL_XSIM_QUALIFICATION_DIRECTED",
+    "scope": "Independent148.5MHz27lane phase propagation model; no candidate native or hardware proof",
+    "phases_exit0": 3,
+    "markers": [
+      "PASS_VENDOR_PHASE six148.5MHz/duty40-60/inv0-1 channels, all27bits and independentRGB oracle; hypothetical noPCB/hardware proof"
+    ],
+    "inputs_unchanged": true,
+    "active_simulator_processes_after": 0
+  },
+  "metadata_caveat": "Older handoff vendor-model status was not updated because that metadata write was denied. Its old NOT_VALIDATED/NotPerformed/NextRequired fields are not current execution state; the separately hashed newer RESULT is the model evidence."
+}
