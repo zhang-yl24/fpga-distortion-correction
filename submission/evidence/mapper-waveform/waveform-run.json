@@ -1,0 +1,186 @@
+{
+  "schema": "report-kb4-mapper-waveform-v1",
+  "Passed": true,
+  "StartedUTC": "2026-11-03T17:11:26.779571+00:00",
+  "PublishedCommit": "a6558c9",
+  "HardwareAccessed": false,
+  "PDSAccessed": false,
+  "OriginalRTLModified": false,
+  "OldSimulationDirectoryModified": false,
+  "Scope": "32x16 KB4 coordinate mapper unit regression, not full HDMI latency or board FPS",
+  "ReferenceSimulation": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-20261103-a\\mapper-small-b\\simulation.json",
+    "sha256": "5c21a9c0bc8bb3d2ad0c43c3f77edcaf8d27c4b81a20ac215a4bc36337620d9a"
+  },
+  "SourceSHA256": {
+    "rtl/mul32_pipe.v": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+    "rtl/experimental/hdmi_camera_fisheye_rom.v": "fc8e0cf143078790c1f9a5dbbd2d525f070deab349ee6bc33370e52419e11a44",
+    "rtl/experimental/hdmi_camera_fisheye_mapper.v": "cb141734a32443156768563bd9ce77723e573bdc00869457af11954a039c6e3c",
+    "tests/tb_hdmi_camera_fisheye_mapper.sv": "3600ec6313286d2cd27f4664c1b1b432ed7dba09a6ac7af21b581f3a850ab5e2",
+    "board/hdmi-camera-fisheye-profile.vh": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+    "board/hdmi-camera-fisheye-radial-table.vh": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f"
+  },
+  "IncludeRelocations": {
+    "rtl/experimental/hdmi_camera_fisheye_rom.v": {
+      "OriginalSHA256": "fc8e0cf143078790c1f9a5dbbd2d525f070deab349ee6bc33370e52419e11a44",
+      "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\report-mapper-waveform-20261104-a\\relocated-sources\\rtl\\experimental\\hdmi_camera_fisheye_rom.v",
+      "CompiledSHA256": "9c759d3002835cf22c3e9d1f809549b03d684f45cf42b32b196cc85eed2debef",
+      "IncludePathReplacements": [
+        {
+          "Original": "    `include \"D:/English/FPGA/distortion/board/hdmi-camera-fisheye-radial-table.vh\"",
+          "Header": "board/hdmi-camera-fisheye-radial-table.vh",
+          "HeaderSHA256": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+          "CompiledHeaderPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\report-mapper-waveform-20261104-a\\relocated-headers\\board\\hdmi-camera-fisheye-radial-table.vh"
+        }
+      ]
+    },
+    "rtl/experimental/hdmi_camera_fisheye_mapper.v": {
+      "OriginalSHA256": "cb141734a32443156768563bd9ce77723e573bdc00869457af11954a039c6e3c",
+      "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\report-mapper-waveform-20261104-a\\relocated-sources\\rtl\\experimental\\hdmi_camera_fisheye_mapper.v",
+      "CompiledSHA256": "115a300571a7ec2166dc9e2cf5457db93860f69ce6ff04ce6b21ee1c345fbf2f",
+      "IncludePathReplacements": [
+        {
+          "Original": "    `include \"D:/English/FPGA/distortion/board/hdmi-camera-fisheye-profile.vh\"",
+          "Header": "board/hdmi-camera-fisheye-profile.vh",
+          "HeaderSHA256": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+          "CompiledHeaderPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\report-mapper-waveform-20261104-a\\relocated-headers\\board\\hdmi-camera-fisheye-profile.vh"
+        }
+      ]
+    }
+  },
+  "VivadoBin": "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin",
+  "Commands": [
+    {
+      "tool": "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xvlog.bat",
+      "argv": [
+        "--sv",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\mul32_pipe.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\report-mapper-waveform-20261104-a\\relocated-sources\\rtl\\experimental\\hdmi_camera_fisheye_rom.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\report-mapper-waveform-20261104-a\\relocated-sources\\rtl\\experimental\\hdmi_camera_fisheye_mapper.v",
+        "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\tests\\tb_hdmi_camera_fisheye_mapper.sv"
+      ],
+      "stage": "compile"
+    },
+    {
+      "tool": "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xelab.bat",
+      "argv": [
+        "tb_hdmi_camera_fisheye_mapper_small",
+        "-s",
+        "report_mapper",
+        "-debug",
+        "typical",
+        "--timescale",
+        "1ns/1ps"
+      ],
+      "stage": "elaborate"
+    },
+    {
+      "tool": "D:\\Vivado_2017.4\\Vivado\\2017.4\\bin\\xsim.bat",
+      "argv": [
+        "report_mapper",
+        "-tclbatch",
+        "waveform.tcl",
+        "-log",
+        "simulation.log"
+      ],
+      "stage": "simulate"
+    }
+  ],
+  "Summary": {
+    "Native": 0,
+    "CorrectedCoordinates": 512,
+    "ExactIdentityCoordinates": 4096,
+    "DomainCoordinates": 1024,
+    "TotalCoordinatesMatched": 5632,
+    "StalledCycles": 844,
+    "StableOutputHoldChecks": 844,
+    "BusyConfigurationRejectCycles": 2,
+    "ConsecutiveInputAccepts": 47,
+    "PipelineEnabledStages": 23,
+    "InitiationInterval": 1
+  },
+  "VCD": {
+    "path": "mapper.vcd",
+    "bytes": 1161835,
+    "sha256": "962a29800b573ea272addef03aa4435f71177917655756f3f742be45fc439f9b",
+    "Signals": [
+      "clk",
+      "rst",
+      "cfg_valid",
+      "cfg_ready",
+      "cfg_corrected",
+      "in_valid",
+      "in_ready",
+      "in_u",
+      "in_v",
+      "in_tag",
+      "out_valid",
+      "out_ready",
+      "out_x",
+      "out_y",
+      "out_tag",
+      "out_black",
+      "phase",
+      "sent",
+      "received",
+      "stall_cycles",
+      "hold_checks"
+    ]
+  },
+  "InputDrift": [],
+  "ElapsedSeconds": 20.734300200012513,
+  "Artifacts": {
+    "compile-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-stdout.log": "a5a935a35713e6adb3f4a66ce8a9e04996cfae133b1885aa73e6a771cc7e6354",
+    "corrected.mem": "e899f3d1fd4cea3df8a6a361d7425366773f99b41fd2e9893c499b8089470061",
+    "domain.mem": "8c7f617b82fed1a7233f58b3333fb93f3162976eefc14e384622e7ef056eb0e0",
+    "elaborate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elaborate-stdout.log": "2c60e43571a49c03138d5936ac870411b6ade645570f0eb4cefc28bb9c60696b",
+    "identity.mem": "4adb87323df1491189794752edec3717aa2ef8646b8a257ae82d94351aad95f3",
+    "mapper.vcd": "962a29800b573ea272addef03aa4435f71177917655756f3f742be45fc439f9b",
+    "report_mapper.wdb": "5d8cc6a829556b3f23076cd80b2818eb167f0e684334d5238935512731b23cb4",
+    "run_waveform.py": "e48c29d22b6f510c276ff91e64a9ed68622f4967dc2d7a33410af76685a2ba43",
+    "simulate-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "simulate-stdout.log": "cfb1cd594fd3623f92a283fddc6be052324f4d13d947a64ee3fa8553ff177fe6",
+    "simulation.log": "3820bdb394059289fd38301c8c9b06931150a04f5208c4693eca3128428d0cdd",
+    "waveform.tcl": "3f2934bfe3ac8ccb18815f00627fc88500badb850091082a48013bbf6db53f61",
+    "webtalk.jou": "9bbb9dcf55a7d040e35cc4139303fd3811bdb3b72514b306f458109ffcb35c22",
+    "webtalk.log": "694819b15444bf6a5927009caedc42a6c51ddb85dc3d989c6e44c9020d2704f3",
+    "webtalk_24588.backup.jou": "24a30642ddc7bbce1cffcf59ddee0d5edeb014d46ede010ff84999fe62bcf87d",
+    "webtalk_24588.backup.log": "344a864aeb6384cd8ea54d97410251d941f4904ea125fd270d72dfc39781220b",
+    "xelab.log": "a4438ca60a185d8cbd2912f307df57e033255a7e4b2e67be4d6abf2de57f18ac",
+    "xelab.pb": "fb05cf8247d5822e9c8b70bd1fddf0b14ac42d400f4fcc0f05ccdb61b4676f3b",
+    "xsim.jou": "145edae5a62cd6eff03bb028bd73b739fb64ab972a2df41fc070a2b365a57845",
+    "xvlog.log": "cc0bce366754c299410fa4e91f4ba4fb99983e7663ca65dff379f20b2125fb7b",
+    "xvlog.pb": "e643b5fde3cd45b5adce6b025c991851b24f17b6e302e47f9e2bf0972d3ddfc7",
+    "xsim.dir/xsim.svtype": "6cc16abd70eefb90dc0ba0d14fb088630873b2c6ad943f7442356735984c35a3",
+    "xsim.dir/report_mapper/Compile_Options.txt": "c0a5188ae4171fedcbe9ae1d822f3b57e2db0424a3eaf98a78e7b57789fabbcc",
+    "xsim.dir/report_mapper/TempBreakPointFile.txt": "89bd34ab9b7056058ec7acc5470f6ec95f1ef47b9aeb329d53e24d38b9607451",
+    "xsim.dir/report_mapper/xsim.dbg": "602b3e76d192e874975b23f003a316fe5d84062a0971699ec245ecd3a9b9fcdb",
+    "xsim.dir/report_mapper/xsim.mem": "43195ea083a3c63c2b629a2ad1d4f8304e2ac22697c20be49aa98ebdf4ffc6f9",
+    "xsim.dir/report_mapper/xsim.reloc": "df0cfac72e5497516a127528e2b223d53593289fdbb722494a2154d6f34d70ea",
+    "xsim.dir/report_mapper/xsim.rtti": "da3e30642a0c72c5bd1f7a40f5fa32ce69b267f0458dccfc4a16f357c0f3cce0",
+    "xsim.dir/report_mapper/xsim.svtype": "62288d7c272e364b3860094c5034de922637ca9ff77a4e0269e9aac326091276",
+    "xsim.dir/report_mapper/xsim.type": "cf1c5a4aa3dd8007f3756f2f3d607d67751cd98e99c8f5038c3f8b9fd06aa8c8",
+    "xsim.dir/report_mapper/xsim.xdbg": "cabdd1e7fd3f98a6a8dfb6a62c706a715a6379db03d7fc9879b3e8a17707fde7",
+    "xsim.dir/report_mapper/xsimcrash.log": "4a03d5423336f5364a68b8746c402ae7a61de418347301fa147b73bc40e9b99c",
+    "xsim.dir/report_mapper/xsimk.exe": "604bbc21f8edf31f27aa27c1e6cabcf807087e0882465fdfb491d6656e0a989a",
+    "xsim.dir/report_mapper/xsimkernel.log": "cff8b14cec137a402191f465b4f67576eebf5cce4314255b310a0401cf006da2",
+    "xsim.dir/report_mapper/xsimSettings.ini": "96dbeac31b716d9931aa0af2cc5b65a640654e890b92e64536208c2eda2af15a",
+    "xsim.dir/report_mapper/xsim_script.tcl": "5f562e9565b7c6b1ce2cfd6584747dca33d5ddcdfc0ab1df259dc6762f3e1694",
+    "xsim.dir/work/hdmi_camera_fisheye_mapper.sdb": "40ab8775f61c7fbd7201446bc1df5410d624a736cf4660647b8328f01b0d8c63",
+    "xsim.dir/work/hdmi_camera_fisheye_rom.sdb": "4d92f673715130d3c8c8ef7e393fcc1051151e734e3d13461b983103acf0b5f0",
+    "xsim.dir/work/hdmi_fisheye_mapper_case.sdb": "b486a8dafac75ed82244c66a21dbe71f76d563d66dca04f25cd535a2a8e0f031",
+    "xsim.dir/work/mul32_pipe.sdb": "be87d0a4d24640e426d53f4908a142a1d1bfc829f38670bf733542c99a64b74a",
+    "xsim.dir/work/tb_hdmi_camera_fisheye_mapper_native.sdb": "b2c471e069ed89b94f7edbb420f7bb4a59ec0dad53b258aea2aa8f3f00e13d3c",
+    "xsim.dir/work/tb_hdmi_camera_fisheye_mapper_small.sdb": "81e87b5e5f0e040749277b8781625d42165a16c056470d3a6dcd7703aa1ff881",
+    "xsim.dir/work/work.rlx": "617592da77eca1f682d91523b421b113e038f67bc03141d38a5b7080e579a17b",
+    "xsim.dir/report_mapper/webtalk/.xsim_webtallk.info": "f6218d1ed5d7b5cae9389275734da624a5b4b07aa0663973a0a7c5ab9f0528fc",
+    "xsim.dir/report_mapper/webtalk/usage_statistics_ext_xsim.html": "dac242d67bad39fb0be73de14798dafb5630197d61e010a404a926022ccef1ce",
+    "xsim.dir/report_mapper/webtalk/usage_statistics_ext_xsim.xml": "42e795555d95cd3bd7bff57f2b97b4b3abaa8f62d34adf56e7c0eceed52ca932",
+    "relocated-sources/rtl/experimental/hdmi_camera_fisheye_mapper.v": "115a300571a7ec2166dc9e2cf5457db93860f69ce6ff04ce6b21ee1c345fbf2f",
+    "relocated-sources/rtl/experimental/hdmi_camera_fisheye_rom.v": "9c759d3002835cf22c3e9d1f809549b03d684f45cf42b32b196cc85eed2debef",
+    "relocated-headers/board/hdmi-camera-fisheye-profile.vh": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+    "relocated-headers/board/hdmi-camera-fisheye-radial-table.vh": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f"
+  }
+}

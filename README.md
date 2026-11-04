@@ -1,5 +1,18 @@
 # FPGA 实时图像畸变矫正
 
+## 2026-11-04 提交入口
+
+最新合入今早的 **tile8 INDEX8 direct-fill**（源码 `4522399`）：1920×1080，新校正帧约 **15 FPS**，HDMI扫描约 **30 Hz**。600秒采集中，599秒核心计数窗口得到8985个新结果帧；处理耗时采样约 **35.45 ms**，较旧tile8约44.33 ms缩短约20%，新帧率仍为15 FPS。见[本版源码、位流与证据](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/README.md)。
+
+- [提交材料：22页报告、海报、参数与补充实验](submission/README.md)
+- [仓库与版本导航](docs/REPOSITORY_GUIDE.md)
+- [代码RAR导出说明](tools/SUBMISSION_PACKAGE.md)
+- [原tile8便携重建与回退](delivery/20261103-hdmi-camera-fisheye-tile8/README.md)
+
+按用户要求，PR #28已由`97b1397`回退，随后`eb700c8`正常合并今早分支。各版本继续使用原交付目录的独立入口；本次整理没有重新引入统一`project.py`或合并其他实验分支。记录见[提交整理说明](docs/SUBMISSION_INTEGRATION_20261104.md)。
+
+以下保留各日期历史记录；旧段落中的“当前”仅描述当时版本，最新交付以本节入口及对应位流身份为准。
+
 > **2026-11-03 当前已上板 tile8 鱼眼版：** 1920×1080 矫正唯一新画面实测 **15.0 FPS**，相比 S3 的 5.0 FPS 达到 **3 倍（+200%）**；HDMI 扫描刷新为 **30 Hz**。30 秒采集、30 个连续样本及保存串口字节独立复解码通过，窗口内无新增空白帧或管线故障；SRAM 下载 DONE/器件 ID 确认，Flash 未写。末帧处理耗时 44.31 ms。资源：LUT **19.79%**、FF **10.50%**、DRM **22.90%**、APM **22.50%**。见[本轮位流与实测](distortion/results/hdmi-camera-fisheye-tile8-20261103-a/README-PUBLISHED.md)、[源码闭包与重建](delivery/20261103-hdmi-camera-fisheye-tile8/README.md)、[最终版本资源报告](handoff/HDMI_CAMERA_FISHEYE_TILE8_RESOURCES_20261103.md)。帧率来自数字遥测；尚无本轮用户视觉反馈、光学延迟或 KEY1 切换验收。
 
 > **2026-11-03 S3 历史基线：** 1920×1080 矫正唯一新画面实测 **5.0 FPS**，较 C 基线约 4.276 FPS 提升 **16.94%**；HDMI 刷新仍为 30Hz。用户确认“画面正常，比之前流畅，但还是有卡顿”。处理时间约 168.66ms。SRAM 下载、器件 ID/DONE、完整物理与十项时序、位流前独立门检均通过，Flash 未写。见[已上板结果、位流和便携校验](distortion/results/hdmi-camera-fisheye-fill8r3s3-20261103-a/README.md)、[源码与重建](delivery/20261103-hdmi-camera-fisheye-fill8/README.md)、[资源占用](handoff/HDMI_CAMERA_FISHEYE_S3_RESOURCES_20261103.md)、[下一步提帧方案](handoff/HDMI_CAMERA_FISHEYE_PERFORMANCE_NEXT_AFTER_S3_20261103.md)。当前版本仍有卡顿，5 FPS 与 30Hz 刷新分别记录。

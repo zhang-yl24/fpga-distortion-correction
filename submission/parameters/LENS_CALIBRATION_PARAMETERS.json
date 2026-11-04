@@ -1,0 +1,1305 @@
+{
+  "schema": "submission-lens-parameters-v2",
+  "date": "2026-11-03",
+  "coefficient_units": "dimensionless",
+  "intrinsic_units": "pixels",
+  "profiles": [
+    {
+      "label": "OV5640 current lens, 720p mode",
+      "camera_id": "ov5640-cam2-current-20261031",
+      "lens_id": "current-installed-lens-20261031",
+      "image_size": [
+        1280,
+        720
+      ],
+      "capture_mode_id": "current720-rgb565-upright-3820-41-3821-07",
+      "model": "opencv_fisheye",
+      "distortion_order": [
+        "k1",
+        "k2",
+        "k3",
+        "k4"
+      ],
+      "D": [
+        0.17602078811481522,
+        -0.010104992886768837,
+        -0.013110536659819092,
+        0.002201229141838536
+      ],
+      "K": [
+        [
+          319.4619654229467,
+          0.0,
+          643.7313155863241
+        ],
+        [
+          0.0,
+          320.22175835577696,
+          379.2847554789859
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "profile_id": "f79c44d9bdeb5b11",
+      "source_path": "distortion/work/camera720-calibrated/inputs-a/development-profile.json",
+      "source_sha256": "f79c44d9bdeb5b114441e53d172d2b22667ba415717dc3a49a4b0a73e15200e8",
+      "demonstrated_build_id": "47e52e93b7238f29",
+      "provenance": "Frozen VGA lens calibration and measured VGA-to-720p mode transform; not a separate physical lens.",
+      "deployment": {
+        "method": "bounded polynomial surrogate",
+        "polynomial_order": [
+          "a1",
+          "a2",
+          "a3"
+        ],
+        "a_float": [
+          -0.16063659846775363,
+          0.028898997145954005,
+          -0.0027067841254946497
+        ],
+        "a_q22_integer": [
+          -673759,
+          121211,
+          -11353
+        ],
+        "tangential_q22_integer": [
+          0,
+          0
+        ],
+        "K_output": [
+          [
+            480.0,
+            0.0,
+            639.5
+          ],
+          [
+            0.0,
+            480.0,
+            359.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "fit_source_path": "distortion/work/camera720-calibrated/inputs-a/mapping-f480.json",
+        "header_path": "distortion/results/camera720-view-toggle-live-20261102-a/candidate/compiled/board/camera720-current-lens.vh",
+        "note": "C720_K1/K2/K3 in the header name a1/a2/a3, not the first three fisheye D coefficients.",
+        "geometry_integer_order": [
+          "output_cx_q8",
+          "output_cy_q8",
+          "source_cx_q8",
+          "source_cy_q8",
+          "source_fx_q8",
+          "source_fy_q8",
+          "inverse_output_fx_q30",
+          "inverse_output_fy_q30"
+        ],
+        "geometry_integer_values": [
+          163712,
+          92032,
+          164795,
+          97097,
+          81782,
+          81977,
+          2236962,
+          2236962
+        ],
+        "radius_guard_q22": 9797642
+      },
+      "calibration": {
+        "data_class": "checkerboard_fit_and_validation",
+        "source_ref": "ov_vga_calibration",
+        "same_physical_lens": true,
+        "image_size": [
+          640,
+          480
+        ],
+        "K": [
+          [
+            159.5619212619241,
+            0.0,
+            321.22583813568514
+          ],
+          [
+            0.0,
+            159.84672477756337,
+            250.242558414983
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "D": [
+          0.17602078811481522,
+          -0.010104992886768837,
+          -0.013110536659819092,
+          0.002201229141838536
+        ],
+        "capture_mode_id": "vga640x480-rgb565-upright-3820-00-3821-06",
+        "training_rms_px": 0.21710122304708163,
+        "held_out_mean_rms_px": 0.21966463741967257,
+        "held_out_max_rms_px": 0.35801242751094287,
+        "training_views": 12,
+        "held_out_views": 6,
+        "held_out_pose_rms_px": [
+          0.35801242751094287,
+          0.17220773080978224,
+          0.18048217118885754,
+          0.23001583066234374,
+          0.12435267360852659,
+          0.2529169907375823
+        ],
+        "coverage_note": "Source calibration uses observable-region coverage; the physically occluded lower-right region is not a full-field optical acceptance claim."
+      },
+      "mode_transfer": {
+        "data_class": "fitted_from_measured_mode_correspondences",
+        "source_ref": "ov_mode_transfer",
+        "A_source_to_target": [
+          [
+            2.0021190701166316,
+            0.0,
+            0.598939240670461
+          ],
+          [
+            0.0,
+            2.003305096187522,
+            -122.02743707675319
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "pairs": [
+          {
+            "pair_id": "fit-01",
+            "pose_id": "physical-pose-01",
+            "split": "fit",
+            "corner_order": {
+              "selected": "identity",
+              "selection": "auto",
+              "rms_by_valid_symmetry_px": {
+                "identity": 0.33103675086284035
+              },
+              "held_out_matrix_refitted_for_order": false
+            },
+            "rms_px": 0.33103675086284035,
+            "maximum_px": 0.9797714519124884,
+            "mean_delta_xy_px": [
+              1.2631870857957336e-14,
+              -3.3684988954552896e-14
+            ],
+            "points": 54,
+            "within_declared_thresholds": true
+          },
+          {
+            "pair_id": "held-out-03",
+            "pose_id": "physical-pose-03",
+            "split": "held_out",
+            "corner_order": {
+              "selected": "identity",
+              "selection": "auto",
+              "rms_by_valid_symmetry_px": {
+                "identity": 0.31203113792219467,
+                "reverse_cols": 137.14885060888625,
+                "reverse_rows": 215.1934050087019,
+                "reverse_both": 254.76539840071442
+              },
+              "held_out_matrix_refitted_for_order": false
+            },
+            "rms_px": 0.31203113792219467,
+            "maximum_px": 0.7409819124189748,
+            "mean_delta_xy_px": [
+              -0.09552254206048011,
+              0.11694436484540179
+            ],
+            "points": 54,
+            "within_declared_thresholds": true
+          }
+        ],
+        "intrinsics_quantization": {
+          "format": "signed24_fraction8",
+          "rounding": "nearest_ties_to_even",
+          "encoded_fx_fy_cx_cy": [
+            81782,
+            81977,
+            164795,
+            97097
+          ],
+          "decoded_fx_fy_cx_cy": [
+            319.4609375,
+            320.22265625,
+            643.73046875,
+            379.28515625
+          ],
+          "representable": true,
+          "source_grid_pixels_checked": 921600,
+          "maximum_source_pixel_error_px": 0.003192007292142116,
+          "rms_source_pixel_error_px": 0.0016020983691404683,
+          "fpga_mapping_verified": false,
+          "brown_surrogate_verified": false,
+          "limits": "Only error caused by representing source K in signed24 Q8; no output K, distortion coefficients, inverse, address or FPGA arithmetic audit."
+        }
+      },
+      "target_validation": {
+        "data_class": "single_pose_reprojection_validation",
+        "source_ref": "ov_720_target_validation",
+        "observed_view_count": 1,
+        "observed_transfer_held_out_count": 1,
+        "observed_new_target_held_out_count": 0,
+        "intrinsics_refitted": false,
+        "pose_only_optimization": true,
+        "mean_rms_px": 0.29925465068570195,
+        "worst_view_rms_px": 0.29925465068570195,
+        "maximum_corner_error_px": 0.6176820003358409,
+        "target_corner_coverage_3x3": [
+          [
+            6,
+            8,
+            0
+          ],
+          [
+            17,
+            23,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        "optical_calibration_accepted": false
+      },
+      "numerical_audit_720p": {
+        "data_class": "software_numerical_audit_not_board_measurement",
+        "source_ref": "ov_720_mapping",
+        "output_K": [
+          [
+            480.0,
+            0.0,
+            639.5
+          ],
+          [
+            0.0,
+            480.0,
+            359.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_config": [
+          163712,
+          92032,
+          164795,
+          97097,
+          81782,
+          81977,
+          2236962,
+          2236962,
+          -673759,
+          121211,
+          -11353,
+          0,
+          0
+        ],
+        "sample_stride": 1,
+        "coordinates_checked": 921600,
+        "maximum_requested_ray_angle_deg": 56.803743539607616,
+        "required_radius_guard_q22_for_checked_rays": 9797642,
+        "frames": [
+          {
+            "angle_deg": 0.0,
+            "coordinates_checked": 921600,
+            "finite_opencv_reference": true,
+            "fixed_point_invalid_coordinates": 0,
+            "reference_folded_samples": 0,
+            "fixed_point_folded_samples": 0,
+            "reference_jacobian_min": 0.1396860109108156,
+            "fixed_point_jacobian_min": 0.139068603515625,
+            "maximum_coordinate_error_px": 0.06516648446890119,
+            "rms_coordinate_error_px": 0.020780775137125344,
+            "p95_coordinate_error_px": 0.03607385722817246,
+            "bilinear_all_neighbours_in_bounds_fraction": 1.0,
+            "opencv_all_neighbours_in_bounds_fraction": 1.0,
+            "maximum_normalized_radius_squared_q22": 9797640,
+            "scalar_oracle_spotchecks": 33,
+            "numerical_gates_passed": true
+          }
+        ]
+      },
+      "numerical_audit_vga_same_lens": {
+        "data_class": "software_numerical_audit_not_board_measurement",
+        "source_ref": "ov_vga_mapping",
+        "output_K": [
+          [
+            240.0,
+            0.0,
+            319.5
+          ],
+          [
+            0.0,
+            240.0,
+            239.5
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "integer_config": [
+          81792,
+          61312,
+          82234,
+          64062,
+          40848,
+          40921,
+          4473924,
+          4473924,
+          -674237,
+          121875,
+          -11577,
+          0,
+          0
+        ],
+        "sample_stride": 1,
+        "coordinates_checked": 307200,
+        "maximum_requested_ray_angle_deg": 58.991951563682456,
+        "required_radius_guard_q22_for_checked_rays": 11610104,
+        "frames": [
+          {
+            "angle_deg": 0.0,
+            "coordinates_checked": 307200,
+            "finite_opencv_reference": true,
+            "fixed_point_invalid_coordinates": 0,
+            "reference_folded_samples": 0,
+            "fixed_point_folded_samples": 0,
+            "reference_jacobian_min": 0.12026287266505789,
+            "fixed_point_jacobian_min": 0.11684417724609375,
+            "maximum_coordinate_error_px": 0.056592048587127616,
+            "rms_coordinate_error_px": 0.01001530392263228,
+            "p95_coordinate_error_px": 0.018913234656807783,
+            "bilinear_all_neighbours_in_bounds_fraction": 1.0,
+            "opencv_all_neighbours_in_bounds_fraction": 1.0,
+            "maximum_normalized_radius_squared_q22": 11610102,
+            "scalar_oracle_spotchecks": 33,
+            "numerical_gates_passed": true
+          }
+        ]
+      },
+      "board_measurement": {
+        "data_class": "board_uart_measurement",
+        "source_ref": "ov_board_uart",
+        "StartedUTC": "2026-11-02T07:15:03.054105+00:00",
+        "FinishedUTC": "2026-11-02T07:15:33.146292+00:00",
+        "CompletePackets": 30,
+        "ValidCounterWindows": 29,
+        "NominalCoreHz": 125000000,
+        "ElapsedSecondsAfterOpen": 30.005498200072907,
+        "SelectedWindows": {
+          "Count": 29,
+          "CoreTicks": 3625000000,
+          "NominalSeconds": 29.0,
+          "FrameDeltas": {
+            "SourceAccepted": 435,
+            "Processed": 435,
+            "UniquePresented": 435
+          },
+          "SourceAcceptedFPS": 15.0,
+          "ProcessedFPS": 15.0,
+          "UniquePresentedFPS": 15.0,
+          "IsWholeHostSessionAverage": false,
+          "AssumesContinuousResetEpochWithinEachWindow": true
+        },
+        "IdentityMismatches": 0,
+        "RejectedPackets": 0,
+        "UnderflowsAvailable": false,
+        "FaultFreeProven": false,
+        "SensorInputFPSMeasured": false,
+        "HDMIRefreshFPSMeasured": false,
+        "IndependentCoreFrequencyMeasured": false,
+        "source_camera_input_fps_independently_measured": false,
+        "hdmi_output_refresh_independently_measured": false,
+        "last_process_cycles_available": false,
+        "rate_basis": "Counter windows at configured 125 MHz; 15 new corrected frames/s is the observed pipeline rate in these selected windows."
+      },
+      "bitstream_identity": {
+        "source_ref": "ov_bit_identity",
+        "Bitstream": {
+          "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\camera720-view-toggle\\bit-c\\generate_bitstream\\camera720_view_toggle_top.sbit",
+          "SHA256": "0ca6d19bf074c73cba0346a22e54ba3afb99a595728e6420a1cbb767b963dfe5",
+          "Bytes": 3791112,
+          "Header": {
+            "Design": "camera720_view_toggle_top",
+            "Device": "Logos2-PG2L100H--6-FBG676",
+            "Date": "11/02/26",
+            "Time": "15:06:07",
+            "Generator": "Fabric Compiler",
+            "Version": "2023.2-SP3<154097>"
+          }
+        }
+      },
+      "static_timing": {
+        "data_class": "vendor_static_timing_analysis_not_board_measurement",
+        "source_ref": "ov_sta",
+        "units": "ns",
+        "slow_corner": {
+          "Setup": 0.249,
+          "Hold": 0.059,
+          "Recovery": 1.164,
+          "Removal": 0.353,
+          "Minimum Pulse Width": 0.035
+        },
+        "fast_corner": {
+          "Setup": 3.1,
+          "Hold": 0.02,
+          "Recovery": 3.522,
+          "Removal": 0.04,
+          "Minimum Pulse Width": 0.035
+        },
+        "failing_endpoints": 0
+      },
+      "scoped_digital_checks": {
+        "data_class": "scoped_digital_checks_not_board_measurement",
+        "source_ref": "ov_cdc_io",
+        "cdc_expected_cases": 2486,
+        "cdc_observed_cases": 2486,
+        "io_sites_verified": 130
+      },
+      "resources": {
+        "data_class": "vendor_resource_report_not_board_measurement",
+        "source_ref": "ov_resources",
+        "stage": "device_map",
+        "used": {
+          "APM": 70,
+          "flip_flops": 18587,
+          "LUT": 14993,
+          "distributed_RAM": 610,
+          "DRM18K": 16.5,
+          "IO": 130
+        },
+        "capacity": {
+          "APM": 240,
+          "flip_flops": 133200,
+          "LUT": 66600,
+          "distributed_RAM": 19900,
+          "DRM18K": 155,
+          "IO": 300
+        }
+      },
+      "configuration": {
+        "data_class": "frozen_rtl_and_constraint_configuration_not_independent_measurement",
+        "core_clock_nominal_hz": 125000000,
+        "reference_clock_nominal_hz": 27000000,
+        "output_pixel_clock_nominal_hz": 74250000,
+        "output_active_pixels": [
+          1920,
+          1080
+        ],
+        "output_total_pixels": [
+          2200,
+          1125
+        ],
+        "output_refresh_configured_hz": 30,
+        "hsync_width_pixels": 44,
+        "vsync_width_lines": 5,
+        "active_origin": [
+          192,
+          41
+        ],
+        "source_refs": [
+          "ov_frozen_top",
+          "ov_frozen_constraints"
+        ],
+        "image_placement": "1280x720 corrected image centered in 1920x1080 output raster"
+      },
+      "simulation": {
+        "data_class": "digital_simulation_not_board_measurement",
+        "source_ref": "ov_simulation",
+        "passed": true,
+        "frames": 3,
+        "width": 1280,
+        "height": 720,
+        "unique_scans": 3,
+        "repeat_scans": 1,
+        "scanned_pixels": 3686400,
+        "scan_crc_checks": 4,
+        "underflows": 0,
+        "crc_mismatches": 0,
+        "final_drain": true
+      }
+    },
+    {
+      "label": "HDMI new lens, 1080p mode",
+      "camera_id": "new-hdmi-camera-20261102",
+      "lens_id": "new-hdmi-lens-20261102",
+      "image_size": [
+        1920,
+        1080
+      ],
+      "model": "opencv_fisheye",
+      "distortion_order": [
+        "k1",
+        "k2",
+        "k3",
+        "k4"
+      ],
+      "D": [
+        -0.023025039402366058,
+        0.0010939325830845673,
+        -0.004404026888512618,
+        0.0010249559182549826
+      ],
+      "K": [
+        [
+          808.2272613458829,
+          0.0,
+          943.7446431879945
+        ],
+        [
+          0.0,
+          810.0804859591761,
+          556.5635877240222
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "profile_id": "ed59f83e3cfbc77b",
+      "source_path": "distortion/work/hdmi-camera-snapshot-20261102-a/new-lens-fisheye-1080-c.json",
+      "source_sha256": "ed59f83e3cfbc77b0c876293129955fea96aec21784e520592111506671b81af",
+      "demonstrated_build_id": "11030001",
+      "provenance": "Independent checkerboard calibration of the HDMI new lens.",
+      "deployment": {
+        "method": "radial LUT with linear interpolation, indexed by normalized radius squared",
+        "radial_fraction_bits": 30,
+        "segment_count": 1024,
+        "node_count": 1025,
+        "header_path": "distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/board/hdmi-camera-fisheye-profile.vh",
+        "generator_path": "distortion/tools/generate_hdmi_fisheye_profile.py",
+        "K_output": [
+          [
+            498.5237444253359,
+            0,
+            895.4756299331018
+          ],
+          [
+            0,
+            499.66683439231093,
+            561.1161479755821
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "balance": 0.5,
+        "R": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "geometry_integer_order": [
+          "output_cx_q8",
+          "output_cy_q8",
+          "source_cx_q8",
+          "source_cy_q8",
+          "source_fx_q8",
+          "source_fy_q8",
+          "inverse_output_fx_q30",
+          "inverse_output_fy_q30"
+        ],
+        "geometry_integer_values": [
+          229242,
+          143646,
+          241599,
+          142480,
+          206906,
+          207381,
+          2153843,
+          2148916
+        ],
+        "radius_guard_q22": 33554432,
+        "header_source_ref": "hdmi_frozen_header",
+        "radial_rom_source_ref": "hdmi_radial_rom",
+        "enabled_pipeline_stages": 23,
+        "initiation_interval_cycles": 1
+      },
+      "calibration": {
+        "data_class": "checkerboard_fit_and_held_out_validation",
+        "source_ref": "hdmi_calibration",
+        "received_frames": 49,
+        "distinct_valid_views": 35,
+        "training_views": 28,
+        "held_out_views": 7,
+        "inner_corners": [
+          9,
+          6
+        ],
+        "square_mm": 25.0,
+        "training_rms_native_px": 0.38192687125377933,
+        "held_out_mean_native_px": 0.39151887531326884,
+        "held_out_max_native_px": 0.8708752775252777,
+        "snapshot_geometry": {
+          "native_size": [
+            1920,
+            1080
+          ],
+          "snapshot_size": [
+            960,
+            540
+          ],
+          "native_step": [
+            2,
+            2
+          ],
+          "native_origin_half_pixels": [
+            1,
+            1
+          ],
+          "per_pixel_gray": "floor((R+2*G+B)/4)",
+          "downsample": "floor(sum(gray_2x2)/4)",
+          "distortion_correction_applied": false
+        },
+        "full_fov_optical_acceptance": false,
+        "held_out_detail_source_ref": "hdmi_calibration_details",
+        "held_out_pose_rms_native_px": [
+          0.34540740363332334,
+          0.25311864833652936,
+          0.40944516224684646,
+          0.24604112691202598,
+          0.35212333367371895,
+          0.2636211748651597,
+          0.8708752775252777
+        ]
+      },
+      "numerical_audit": {
+        "data_class": "software_numerical_audit_not_board_measurement",
+        "source_ref": "hdmi_mapping",
+        "Format": {
+          "NormalizedFractionBits": 22,
+          "RadialScaleFractionBits": 30,
+          "PixelFractionBits": 8,
+          "R2Domain": [
+            0,
+            8
+          ],
+          "Nodes": 1025,
+          "Segments": 1024,
+          "SegmentFractionBits": 15,
+          "ROMWord": "{signedDeltaQ30[31:0],baseQ30[31:0]}",
+          "SynchronousWordBits": 64,
+          "Expected18KHalves": 4,
+          "MemoryResourceClaim": "four18K halves by1024x64 capacity; actual mapped usage requires native build"
+        },
+        "FullGridError": {
+          "NativeCoordinatesChecked": 2073600,
+          "ArithmeticMaskedCoordinates": 0,
+          "AnalyticVsOpenCVMaxNativePixels": 8.621052064163524e-05,
+          "FixedVsAnalyticMaxNativePixels": 0.006364475591620026,
+          "FixedVsAnalyticRMSNativePixels": 0.003011706741559285,
+          "FixedVsOpenCVMaxNativePixels": 0.006365096452417941,
+          "FixedVsOpenCVP99NativePixels": 0.005450891925705239,
+          "MaximumAllowedNativePixels": 0.125,
+          "Passed": true,
+          "MaximumNormalizedR2": 5.476348388058763,
+          "WithinSourceImageFraction": 0.8980198688271605
+        },
+        "IdentityCoordinatesExact": true
+      },
+      "board_measurement": {
+        "data_class": "board_uart_counters_and_host_arrival_crosscheck",
+        "source_ref": "hdmi_board_uart",
+        "modes": {
+          "fps-corrected-c": {
+            "Samples": 30,
+            "NominalClockSummary": {
+              "sample_count": 30,
+              "hardware_window_seconds": 29.0,
+              "core_clock_hz": 125000000,
+              "clock_basis": "DDR IP PLL core clock; verify against this bitstream timing/PLL configuration",
+              "corrected_requested": true,
+              "counter_delta": {
+                "source_frames": 1740,
+                "captured_frames": 125,
+                "processed_frames": 125,
+                "unique_presented_frames": 124,
+                "scan_refreshes": 870,
+                "cache_hits": 891342802,
+                "cache_misses": 34177471,
+                "queries": 257537805,
+                "scan_good_frames": 870,
+                "scan_repeat_frames": 746,
+                "scan_blank_frames": 0
+              },
+              "source_frames_per_second": 60.0,
+              "captured_frames_per_second": 4.310344827586207,
+              "processed_frames_per_second": 4.310344827586207,
+              "unique_presented_frames_per_second": 4.275862068965517,
+              "scan_refreshes_per_second": 30.0,
+              "scan_good_frames_per_second": 30.0,
+              "scan_repeat_frames_per_second": 25.724137931034484,
+              "scan_blank_frames_per_second": 0.0,
+              "last_process_cycles": 27809906,
+              "last_process_seconds": 0.222479248,
+              "cache_miss_fraction": 0.036927846960301,
+              "cache_burst_fills_per_output_pixel": 0.13270855904048728,
+              "limits": "Source and scan counters measure digital timing. Unique-presented counts complete new DDR result IDs; optical exposure FPS is not inferred."
+            },
+            "IndependentHostSummary": {
+              "host_window_seconds": 28.99939400004223,
+              "observed_core_mhz_from_uart_arrival": 125.00261212336787,
+              "constrained_core_mhz": 125.0,
+              "clock_cross_check_within_3percent": true,
+              "host_timed_rates": {
+                "source_frames_per_second": 60.00125381921657,
+                "captured_frames_per_second": 4.310434900805788,
+                "processed_frames_per_second": 4.310434900805788,
+                "unique_presented_frames_per_second": 4.275951421599342,
+                "scan_refreshes_per_second": 30.000626909608286,
+                "scan_good_frames_per_second": 30.000626909608286,
+                "scan_repeat_frames_per_second": 25.724675488008945,
+                "scan_blank_frames_per_second": 0.0
+              },
+              "last_process_ms_using_observed_clock": 222.4745989512106,
+              "limits": "Independent host monotonic arrival interval; USB/UART buffering and scheduling introduce timing uncertainty. This is not a frequency-counter calibration."
+            },
+            "PerSampleCacheCounterTotals": {
+              "cache_hits": 891342802,
+              "cache_misses": 34177471,
+              "queries": 257537805
+            },
+            "CacheMissFractionUsingPerSampleTotals": 0.036927846960301
+          },
+          "fps-raw-c": {
+            "Samples": 30,
+            "NominalClockSummary": {
+              "sample_count": 30,
+              "hardware_window_seconds": 29.0,
+              "core_clock_hz": 125000000,
+              "clock_basis": "DDR IP PLL core clock; verify against this bitstream timing/PLL configuration",
+              "corrected_requested": false,
+              "counter_delta": {
+                "source_frames": 1740,
+                "captured_frames": 870,
+                "processed_frames": 870,
+                "unique_presented_frames": 870,
+                "scan_refreshes": 870,
+                "cache_hits": 2901859967,
+                "cache_misses": 14094025,
+                "queries": 1804035106,
+                "scan_good_frames": 870,
+                "scan_repeat_frames": 0,
+                "scan_blank_frames": 0
+              },
+              "source_frames_per_second": 60.0,
+              "captured_frames_per_second": 30.0,
+              "processed_frames_per_second": 30.0,
+              "unique_presented_frames_per_second": 30.0,
+              "scan_refreshes_per_second": 30.0,
+              "scan_good_frames_per_second": 30.0,
+              "scan_repeat_frames_per_second": 0.0,
+              "scan_blank_frames_per_second": 0.0,
+              "last_process_cycles": 3921452,
+              "last_process_seconds": 0.031371616,
+              "cache_miss_fraction": 0.004833418167319288,
+              "cache_burst_fills_per_output_pixel": 0.007812500407073564,
+              "limits": "Source and scan counters measure digital timing. Unique-presented counts complete new DDR result IDs; optical exposure FPS is not inferred."
+            },
+            "IndependentHostSummary": {
+              "host_window_seconds": 28.999473199946806,
+              "observed_core_mhz_from_uart_arrival": 125.00227073113346,
+              "constrained_core_mhz": 125.0,
+              "clock_cross_check_within_3percent": true,
+              "host_timed_rates": {
+                "source_frames_per_second": 60.00108995094406,
+                "captured_frames_per_second": 30.00054497547203,
+                "processed_frames_per_second": 30.00054497547203,
+                "unique_presented_frames_per_second": 30.00054497547203,
+                "scan_refreshes_per_second": 30.00054497547203,
+                "scan_good_frames_per_second": 30.00054497547203,
+                "scan_repeat_frames_per_second": 0.0,
+                "scan_blank_frames_per_second": 0.0
+              },
+              "last_process_ms_using_observed_clock": 31.371046118311117,
+              "limits": "Independent host monotonic arrival interval; USB/UART buffering and scheduling introduce timing uncertainty. This is not a frequency-counter calibration."
+            },
+            "PerSampleCacheCounterTotals": {
+              "cache_hits": 7196827263,
+              "cache_misses": 14094025,
+              "queries": 1804035106
+            },
+            "CacheMissFractionUsingPerSampleTotals": 0.0019545387388230774
+          },
+          "fps-corrected-return-c": {
+            "Samples": 12,
+            "NominalClockSummary": {
+              "sample_count": 12,
+              "hardware_window_seconds": 11.0,
+              "core_clock_hz": 125000000,
+              "clock_basis": "DDR IP PLL core clock; verify against this bitstream timing/PLL configuration",
+              "corrected_requested": true,
+              "counter_delta": {
+                "source_frames": 660,
+                "captured_frames": 47,
+                "processed_frames": 47,
+                "unique_presented_frames": 47,
+                "scan_refreshes": 330,
+                "cache_hits": 338168729,
+                "cache_misses": 12970225,
+                "queries": 97660121,
+                "scan_good_frames": 330,
+                "scan_repeat_frames": 283,
+                "scan_blank_frames": 0
+              },
+              "source_frames_per_second": 60.0,
+              "captured_frames_per_second": 4.2727272727272725,
+              "processed_frames_per_second": 4.2727272727272725,
+              "unique_presented_frames_per_second": 4.2727272727272725,
+              "scan_refreshes_per_second": 30.0,
+              "scan_good_frames_per_second": 30.0,
+              "scan_repeat_frames_per_second": 25.727272727272727,
+              "scan_blank_frames_per_second": 0.0,
+              "last_process_cycles": 27782377,
+              "last_process_seconds": 0.222259016,
+              "cache_miss_fraction": 0.03693758511338505,
+              "cache_burst_fills_per_output_pixel": 0.13280983954545786,
+              "limits": "Source and scan counters measure digital timing. Unique-presented counts complete new DDR result IDs; optical exposure FPS is not inferred."
+            },
+            "IndependentHostSummary": {
+              "host_window_seconds": 10.999851000029594,
+              "observed_core_mhz_from_uart_arrival": 125.00169320441711,
+              "constrained_core_mhz": 125.0,
+              "clock_cross_check_within_3percent": true,
+              "host_timed_rates": {
+                "source_frames_per_second": 60.00081273812021,
+                "captured_frames_per_second": 4.272785149532803,
+                "processed_frames_per_second": 4.272785149532803,
+                "unique_presented_frames_per_second": 4.272785149532803,
+                "scan_refreshes_per_second": 30.000406369060105,
+                "scan_good_frames_per_second": 30.000406369060105,
+                "scan_repeat_frames_per_second": 25.727621219527304,
+                "scan_blank_frames_per_second": 0.0
+              },
+              "last_process_ms_using_observed_clock": 222.2560054011994,
+              "limits": "Independent host monotonic arrival interval; USB/UART buffering and scheduling introduce timing uncertainty. This is not a frequency-counter calibration."
+            },
+            "PerSampleCacheCounterTotals": {
+              "cache_hits": 338168729,
+              "cache_misses": 12970225,
+              "queries": 97660121
+            },
+            "CacheMissFractionUsingPerSampleTotals": 0.03693758511338505
+          }
+        },
+        "cache_counter_note": "Use PerSampleCacheCounterTotals for cumulative cache hits across 32-bit wraps; raw mode hits=7196827263 and miss fraction=0.0019545387388230774.",
+        "measurement_scope": "HDMI digital source is 60 input frames/s in these sessions; sensor model or raw sensor refresh is not inferred. Host UART-arrival clock crosscheck is not a calibrated frequency-counter measurement.",
+        "receipts": {
+          "corrected": {
+            "source_ref": "hdmi_receipt_corrected",
+            "started_utc": "2026-11-03T02:59:10.786792+00:00",
+            "ended_utc": "2026-11-03T02:59:40.789808+00:00",
+            "crc_rejected_packets": 0,
+            "discarded_bytes": 0,
+            "all_status_valid": true,
+            "all_fault_zero": true
+          },
+          "raw": {
+            "source_ref": "hdmi_receipt_raw",
+            "started_utc": "2026-11-03T03:05:23.513154+00:00",
+            "ended_utc": "2026-11-03T03:05:53.568622+00:00",
+            "crc_rejected_packets": 0,
+            "discarded_bytes": 0,
+            "all_status_valid": true,
+            "all_fault_zero": true
+          },
+          "corrected_return": {
+            "source_ref": "hdmi_receipt_corrected_return",
+            "started_utc": "2026-11-03T03:07:51.514959+00:00",
+            "ended_utc": "2026-11-03T03:08:03.559917+00:00",
+            "crc_rejected_packets": 0,
+            "discarded_bytes": 0,
+            "all_status_valid": true,
+            "all_fault_zero": true
+          }
+        }
+      },
+      "bitstream_identity": {
+        "source_ref": "hdmi_bit_identity",
+        "Bitstream": {
+          "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-20261103-a\\bit-c\\generate_bitstream\\hdmi_camera_fisheye_top.sbit",
+          "SHA256": "8c43a77d9ddce72dc7015ef7f63aabe37ab6758dd698e2e811b669c5aa5ba047",
+          "Bytes": 3791112,
+          "Header": {
+            "Design": "hdmi_camera_fisheye_top",
+            "Device": "Logos2-PG2L100H--6-FBG676",
+            "Date": "11/03/26",
+            "Time": "10:50:07",
+            "Generator": "Fabric Compiler",
+            "Version": "2023.2-SP3<154097>"
+          }
+        }
+      },
+      "static_timing": {
+        "data_class": "vendor_static_timing_analysis_not_board_measurement",
+        "source_ref": "hdmi_sta",
+        "units": "ns",
+        "slow_corner": {
+          "Setup": 0.485,
+          "Hold": 0.061,
+          "Recovery": 0.289,
+          "Removal": 0.277,
+          "Minimum Pulse Width": 0.035
+        },
+        "fast_corner": {
+          "Setup": 1.606,
+          "Hold": 0.02,
+          "Recovery": 1.798,
+          "Removal": 0.046,
+          "Minimum Pulse Width": 0.035
+        },
+        "failing_endpoints": 0
+      },
+      "scoped_digital_checks": {
+        "data_class": "scoped_digital_checks_not_board_measurement",
+        "source_refs": [
+          "hdmi_scoped_paths",
+          "hdmi_io_sites"
+        ],
+        "path_groups": 13,
+        "paths_met": 52,
+        "minimum_path_slack_ns": 0.182,
+        "io_unique_sites": 144,
+        "exception_applied_to_these_paths": false
+      },
+      "resources": {
+        "data_class": "vendor_resource_report_not_board_measurement",
+        "source_ref": "hdmi_resources",
+        "stage": "place_route",
+        "used": {
+          "APM": 54,
+          "flip_flops": 17652,
+          "LUT": 13776,
+          "distributed_RAM": 610,
+          "DRM18K": 19.5,
+          "IO": 144,
+          "GPLL": 4,
+          "PPLL": 2
+        },
+        "capacity": {
+          "APM": 240,
+          "flip_flops": 133200,
+          "LUT": 66600,
+          "distributed_RAM": 19900,
+          "DRM18K": 155,
+          "IO": 300,
+          "GPLL": 6,
+          "PPLL": 6
+        },
+        "flip_flop_components": [
+          12949,
+          4703
+        ],
+        "LUT_components": [
+          9948,
+          3828
+        ]
+      },
+      "configuration": {
+        "data_class": "frozen_rtl_and_constraint_configuration_not_independent_measurement",
+        "core_clock_nominal_hz": 125000000,
+        "reference_clock_nominal_hz": 27000000,
+        "output_pixel_clock_nominal_hz": 74250000,
+        "output_active_pixels": [
+          1920,
+          1080
+        ],
+        "output_total_pixels": [
+          2200,
+          1125
+        ],
+        "output_refresh_configured_hz": 30,
+        "hsync_width_pixels": 44,
+        "vsync_width_lines": 5,
+        "active_origin": [
+          192,
+          41
+        ],
+        "source_refs": [
+          "hdmi_frozen_top",
+          "hdmi_frozen_system",
+          "hdmi_frozen_bank",
+          "hdmi_frozen_core",
+          "hdmi_frozen_cache"
+        ],
+        "input_clock_constraint_period_ns": 6.6667,
+        "input_clock_constraint_note": "Constraint period is not a camera-clock measurement.",
+        "pixel_format": "RGB565",
+        "bits_per_pixel": 16,
+        "source_frame_slots": 2,
+        "result_frame_slots": 2,
+        "frame_bank_stride_bytes": 4194304,
+        "total_frame_bank_bytes": 16777216,
+        "active_frame_bytes": 4147200,
+        "cache_lines": 128,
+        "cache_pixels_per_line": 128,
+        "cache_bytes": 32768,
+        "cache_fill_bytes": 256,
+        "cache_fill_beats": 8,
+        "cache_fill_beat_bits": 256,
+        "cache_arlen": 7,
+        "completed_query_queue_depth": 2,
+        "input_fifo_words": 64,
+        "input_fifo_word_bits": 256,
+        "input_fifo_bytes": 2048,
+        "display_fifo_words": 512,
+        "display_fifo_word_bits": 256,
+        "display_fifo_bytes": 16384,
+        "display_urgent_below_words": 64
+      }
+    }
+  ],
+  "physical_lens_count": 2,
+  "data_class_note": "Calibration fits, measured validation, fixed-point software audits, static timing analysis, RTL configuration, simulation and board measurements are separately labelled. VGA and 720p are modes of the same OV5640 lens. Stored JSON numbers retain full source precision.",
+  "sources": {
+    "ov_vga_calibration": {
+      "path": "distortion/results/camera-vga-calibration-20261101-a/profiles/fisheye-profile-a.json",
+      "sha256": "94181c07a4456f511853f51022eba1b55965b115e1569f3fcbad460a2d92999e",
+      "bytes": 41530,
+      "data_class": "checkerboard_fit_and_held_out_measurement"
+    },
+    "ov_mode_transfer": {
+      "path": "distortion/work/camera720-mode-pairs-20261101-a/two-pair-validation-b/paired-transfer-report.json",
+      "sha256": "d53d18ceab79d49c5fcfaf3c8bac5663e6f1735bcdcd612dfc88bb0b74121c65",
+      "bytes": 11237,
+      "data_class": "measured_correspondences_and_fitted_affine_transfer"
+    },
+    "ov_720_target_validation": {
+      "path": "distortion/work/camera720-mode-pairs-20261101-a/two-pair-validation-b/target-validation-report.json",
+      "sha256": "a5a22cdea4a36ff9df35d487cbbd1f41b4fac14cdb7214464ab1c70d64a4a32d",
+      "bytes": 12865,
+      "data_class": "single_target_pose_validation"
+    },
+    "ov_720_mapping": {
+      "path": "distortion/work/camera720-calibrated/inputs-a/mapping-f480.json",
+      "sha256": "563e47ded2488badd2ca626a774c688c1cc4e88d5f435dbaefd9f6e93fd81b50",
+      "bytes": 4121,
+      "data_class": "software_full_grid_fixed_point_audit"
+    },
+    "ov_vga_mapping": {
+      "path": "distortion/work/camera-vga-calibration-20261031/reports/brown-mapping-f240-a.json",
+      "sha256": "38c0301fb8e1096dd49523555443a1b591ec0a62eb3c238be35f0a544c4a912e",
+      "bytes": 8467,
+      "data_class": "software_full_grid_fixed_point_audit"
+    },
+    "hdmi_calibration": {
+      "path": "distortion/work/hdmi-camera-snapshot-20261102-a/new-lens-fisheye-1080-c.json",
+      "sha256": "ed59f83e3cfbc77b0c876293129955fea96aec21784e520592111506671b81af",
+      "bytes": 5205,
+      "data_class": "checkerboard_fit_and_held_out_measurement"
+    },
+    "hdmi_calibration_details": {
+      "path": "distortion/work/hdmi-camera-snapshot-20261102-a/new-lens-calibration-c.json",
+      "sha256": "3c90e297603ab612ee5450594db093fd3f0ad01550d05314bd29484f2909ebc8",
+      "bytes": 31064,
+      "data_class": "checkerboard_fit_and_held_out_measurement"
+    },
+    "hdmi_mapping": {
+      "path": "distortion/work/hdmi-camera-fisheye-20261103-a/profile-a/profile.json",
+      "sha256": "f176c34bec93646e82ddd0ad8755e1a828221aecf687e545ef9452331ddd9d8c",
+      "bytes": 3227,
+      "data_class": "software_full_grid_fixed_point_audit"
+    },
+    "ov_720_profile": {
+      "path": "distortion/work/camera720-calibrated/inputs-a/development-profile.json",
+      "sha256": "f79c44d9bdeb5b114441e53d172d2b22667ba415717dc3a49a4b0a73e15200e8",
+      "bytes": 4151,
+      "data_class": "derived_profile"
+    },
+    "ov_frozen_header": {
+      "path": "distortion/results/camera720-view-toggle-live-20261102-a/candidate/compiled/board/camera720-current-lens.vh",
+      "sha256": "01c797c6f5e327dae6977c8738ea472551f2f715b415784eaa52ffd2019b9e4a",
+      "bytes": 915,
+      "data_class": "frozen_rtl_configuration"
+    },
+    "hdmi_frozen_header": {
+      "path": "distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/board/hdmi-camera-fisheye-profile.vh",
+      "sha256": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+      "bytes": 766,
+      "data_class": "frozen_rtl_configuration"
+    },
+    "hdmi_radial_rom": {
+      "path": "distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/board/hdmi-camera-fisheye-radial-table.vh",
+      "sha256": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+      "bytes": 64683,
+      "data_class": "frozen_generated_lookup_table"
+    },
+    "hdmi_generator": {
+      "path": "distortion/tools/generate_hdmi_fisheye_profile.py",
+      "sha256": "d33494a0723be9b3b11811ec4803bacb44d88f61f142d9e3f131c3d630cde531",
+      "bytes": 11118,
+      "data_class": "software_generator"
+    },
+    "ov_board_uart": {
+      "path": "distortion/results/camera720-view-toggle-live-20261102-a/uart/live-a/session.json",
+      "sha256": "be4c450293845b58e605767dfed70e8bba5eb1073c894dfa34fc475efff25b26",
+      "bytes": 4086,
+      "data_class": "board_uart_measurement_with_nominal_clock_rates"
+    },
+    "hdmi_board_uart": {
+      "path": "distortion/results/hdmi-camera-fisheye-live-20261103-a/live-baseline-reparsed-with-return-and-wraps-resume.json",
+      "sha256": "840514ea8a21b71b979ea96a7b0199b7d00362804290d79ae4858f315abeb29f",
+      "bytes": 10028,
+      "data_class": "board_uart_and_host_arrival_measurement"
+    },
+    "hdmi_receipt_corrected": {
+      "path": "distortion/results/hdmi-camera-fisheye-live-20261103-a/fps-corrected-c/receipt.json",
+      "sha256": "d23c2849cf9ca7e2bf4af8f39f1e3faa8482bf4589841749b3154781e217509c",
+      "bytes": 25202,
+      "data_class": "board_uart_receipt"
+    },
+    "hdmi_receipt_raw": {
+      "path": "distortion/results/hdmi-camera-fisheye-live-20261103-a/fps-raw-c/receipt.json",
+      "sha256": "532d25eb4dd6df52015cd809075145ee818ea02edca12e8cf74e7637f86edfa3",
+      "bytes": 25425,
+      "data_class": "board_uart_receipt"
+    },
+    "hdmi_receipt_corrected_return": {
+      "path": "distortion/results/hdmi-camera-fisheye-live-20261103-a/fps-corrected-return-c/receipt.json",
+      "sha256": "02ed129bb7a91be618fd5c508036dd496f578542d5358b34f334380f00053b0c",
+      "bytes": 12786,
+      "data_class": "board_uart_receipt"
+    },
+    "ov_sta": {
+      "path": "distortion/results/camera720-view-toggle-live-20261102-a/timing/camera720_view_toggle_top.rtr.gz",
+      "sha256": "83a283f5ac7a7b4ad7f9c56850d3e622ae0c3337101a8fe933cab1c20bd4933e",
+      "bytes": 6041154,
+      "data_class": "vendor_static_timing_analysis",
+      "decompressed_sha256": "88c8d05a0a4e197be6e6085fae059349377a7c6faf403fa7178e9be3019bcc80"
+    },
+    "hdmi_sta": {
+      "path": "distortion/work/hdmi-camera-fisheye-20261103-a/checks-scoped-c4-00/hdmi_camera_fisheye_top.rtr",
+      "sha256": "ca7ff7025a9bb6e72cc4328a0d1ff4be588dc0a4fd6fe14a34fcefe1a8dbec01",
+      "bytes": 637243,
+      "data_class": "vendor_static_timing_analysis"
+    },
+    "ov_cdc_io": {
+      "path": "distortion/results/camera720-view-toggle-live-20261102-a/evidence/cdc-final-proof-b.json.gz",
+      "sha256": "74e1f8fe54370ba8a4bb4a6aadcfbb531257a933c09c0e1e562cad6edc7e1f95",
+      "bytes": 511987,
+      "data_class": "scoped_cdc_and_io_digital_checks",
+      "decompressed_sha256": "650f0d84d5929b410f91c9fbcca7d630d418c3749f938681bdac57fad844fdc2"
+    },
+    "hdmi_scoped_paths": {
+      "path": "distortion/work/hdmi-camera-fisheye-20261103-a/checks-scoped-c4-00/report_path_timing/report_path_timing_1/report_timing/hdmi_camera_fisheye_top.rtr",
+      "sha256": "7d72a765321c39f1bf49a7aa0a9b6751653d38677c1fc5c60c134409c1d16064",
+      "bytes": 4382063,
+      "data_class": "scoped_static_timing_analysis"
+    },
+    "hdmi_io_sites": {
+      "path": "distortion/work/hdmi-camera-fisheye-20261103-a/checks-scoped-c4-00/stdout.log",
+      "sha256": "3d3087f281626e74c81611b0c89330ccec0cdf905d522f75a39a62833c2b784d",
+      "bytes": 86670,
+      "data_class": "vendor_io_site_check"
+    },
+    "ov_resources": {
+      "path": "distortion/work/camera720-view-toggle/build-a/device_map/run.log",
+      "sha256": "5aba81bf80e19c60e5152e02e29f810d313620bc54d8f99483e20da1f95175ea",
+      "bytes": 1427535,
+      "data_class": "vendor_device_map_report"
+    },
+    "hdmi_resources": {
+      "path": "distortion/work/hdmi-camera-fisheye-20261103-a/build-c/place_route/run_route.log",
+      "sha256": "ef43a9696ee249452d5d5178147cb8fe92908f2a0e89c994d115ddea4efb58df",
+      "bytes": 17767,
+      "data_class": "vendor_place_route_report"
+    },
+    "ov_simulation": {
+      "path": "distortion/results/camera720-view-toggle-live-20261102-a/simulation/summary.json",
+      "sha256": "00ed7784734bd5f9d9bb2f0f9aa95233bba8c0aa4521cc7f92faf7e995dc3cb4",
+      "bytes": 651,
+      "data_class": "digital_simulation"
+    },
+    "ov_frozen_top": {
+      "path": "distortion/results/camera720-view-toggle-live-20261102-a/candidate/compiled/board/camera720_view_toggle_top.v",
+      "sha256": "20ee0b3df893aa9aa764d32ce4c63402cb3a9381ba669257b29a40429428bbfe",
+      "bytes": 12842,
+      "data_class": "frozen_rtl_configuration"
+    },
+    "ov_frozen_constraints": {
+      "path": "distortion/results/camera720-view-toggle-live-20261102-a/candidate/compiled/board/camera720-view-toggle.fdc",
+      "sha256": "e94d97b2d86cf8a95dabb2950e4e402283cca26664b44ea476f2885f0245a92e",
+      "bytes": 50555,
+      "data_class": "frozen_timing_constraints"
+    },
+    "hdmi_frozen_top": {
+      "path": "distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/board/hdmi_camera_fisheye_top.v",
+      "sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+      "bytes": 18242,
+      "data_class": "frozen_rtl_configuration"
+    },
+    "hdmi_frozen_system": {
+      "path": "distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/rtl/experimental/hdmi_camera_fisheye_system_c.v",
+      "sha256": "c6485f8df49ba398cad00bafbbcf223a672a99ef3eeab8932e9cf2fe8103bb6d",
+      "bytes": 18173,
+      "data_class": "frozen_rtl_configuration"
+    },
+    "hdmi_frozen_bank": {
+      "path": "distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/rtl/experimental/hdmi_camera_fisheye_bank.v",
+      "sha256": "59020a41cc9d9e89a92a4973a4e227fdd1b243d15f80c71d3df1af6a39473616",
+      "bytes": 5927,
+      "data_class": "frozen_rtl_configuration"
+    },
+    "hdmi_frozen_core": {
+      "path": "distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/rtl/experimental/hdmi_camera_fisheye_core.v",
+      "sha256": "d40e18e74f691212d7c4a28e8b8eff15f87480532c258e5f3c832a023516995c",
+      "bytes": 2958,
+      "data_class": "frozen_rtl_configuration"
+    },
+    "hdmi_frozen_cache": {
+      "path": "distortion/work/hdmi-camera-fisheye-20261103-a/build-c/compiled/rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v",
+      "sha256": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+      "bytes": 18598,
+      "data_class": "frozen_rtl_configuration"
+    },
+    "ov_bit_identity": {
+      "path": "distortion/results/camera720-view-toggle-live-20261102-a/native/bit-c/verification.json",
+      "sha256": "40402ba60efc9b345a0b40965b472aa3c2f51fda93078362bc6837fc975c6208",
+      "bytes": 2380,
+      "data_class": "frozen_bitstream_identity"
+    },
+    "hdmi_bit_identity": {
+      "path": "distortion/results/hdmi-camera-fisheye-live-20261103-a/bit-c/verification.json",
+      "sha256": "72c566d97ac84494d7920db9d758f8d4253caaf2ee47415ed096afb3dcac2715",
+      "bytes": 3737,
+      "data_class": "frozen_bitstream_identity"
+    }
+  }
+}
