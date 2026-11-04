@@ -17,3 +17,6 @@
 校验：python -B tools/verify_review_package.py
 本包不操作开发板、串口或Flash。请由硬件持有人按已有受控流程验证并保留回退。
 本包不是自包含重建工程，见 BUILD_BOUNDARY.md。
+
+完整同版原始时序报告：timing/camera60-key1-m8-startup-final-sta-unclosed7ps.rtr
+报告SHA256：3f06092752fc728b725e882ecd8c9e60a3a74c9c97e2e5ac486006c4c8e96bc0。汇总与唯一负路径见STA_SUMMARY.json。
