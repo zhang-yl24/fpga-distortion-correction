@@ -1,18 +1,19 @@
 # 作品设计报告
 
-本目录的提交整理版已更新为24页实物图版，沿用官方模板，中文宋体、西文Times New Roman，黑字白底。第13、14页加入两套系统的8张实物照片，原照片占位全部移除；PDF用于阅读与提交，DOCX用于后续编辑。全部页面完成版式检查。
+正式入口已更新为16页最终两方案版，沿用官方模板五部分，中文宋体、西文Times New Roman，黑字白底。PDF用于阅读与提交，DOCX用于编辑；16页均完成版式检查。
 
-- 两套镜头正式参数、KB4-T2和输出投影探索、真实RTL仿真波形、HDMI同帧仿真延迟均保留。
-- 第22页保留今早direct-fill同版板测、时序及资源；处理耗时采样约缩短20%，新校正帧率仍为15 FPS。
-- `final-qa.json`记录本轮交付文件SHA256、照片来源、页数及逐页视觉复核。全部数值表、原生公式、原6张技术图和模板样式均保留。
-- `报告内容_20261104_提交整理版.md`为作者正文源；例如 `![[architecture]]` 对应 `figures/architecture.png`。原六张技术图仍在figures；新增实物照片链接指向[`../photos/`](../photos/)，DOCX内嵌完整原始JPG。
-- 更新说明中的`tmp/`为本机构建记录位置；正式文件、插图与最终QA均在本目录提供。数值实验与参数另见[`../evidence/`](../evidence/)和[`../parameters/`](../parameters/)。
+- 正式方案为OV5640 720p15与HDMI 1080p15直接填充实现；S3只在性能表中保留一行基线。
+- 第5—6页说明完整帧采图程序：输入采样、帧冻结、UART封装、PC尺寸／CRC校验、原始图像与元数据存档以及标定流程。
+- 全文13张表，七张正式参数与评价表保持原数值精度；包含两套同版新帧率、快慢角时序与资源结果。
+- 五张技术图涵盖架构、帧同步、软件、采图流程和真实mapper波形。波形中的23拍是坐标映射单元延迟，系统吞吐采用板上帧计数。
+- 第14—15页包含8张实物照片。DOCX嵌入原始JPG字节；便于仓库浏览的等比照片副本与来源记录见[照片目录](../photos/README.md)。
 
-历史版本的资源、时序、位流和帧率各自绑定，不混用为本次部署成绩。PC参考图及仿真波形不替代作品实物照片。
+`报告内容_20261104_提交整理版.md`是正文源。图标记`![[architecture]]`、`![[frame]]`、`![[software]]`、`![[capture]]`和`![[mapper-waveform]]`对应`figures/`下同名PNG；`![[photos720]]`和`![[photos1080]]`分别展开对应方案的4张照片。`final-qa.json`记录最终文件SHA、模板保留检查、限字、照片身份与逐页视觉复核。
 
-## 历史引用入口
+源码、位流和原生报告入口：
 
-PR #28回退后，报告参考[7][8]的队友记录仍保留在其原始提交；本次补实物照片不重新合入这些实验目录，历史参考与技术数值保留。
+- [OV5640 720p15](../../delivery/20261104-camera720p15/README.md)。
+- [HDMI 1080p15](../../delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md)。
+- [正式镜头参数](../parameters/LENS_CALIBRATION_PARAMETERS.json)。
 
-- 参考[7]：[stable30独立重建板测](https://github.com/zhang-yl24/fpga-distortion-correction/blob/23d3fd0d1dad662ecd263863e2f69d992454ab2e/delivery/20261103-hdmi1080-demo-source/progress/20261103-stable30-board/README.md)。
-- 参考[8]：[Q512/O/P持续板测与源码交付](https://github.com/zhang-yl24/fpga-distortion-correction/blob/23d3fd0d1dad662ecd263863e2f69d992454ab2e/delivery/20261103-hdmi1080-demo-source/stable30-OP/README.md)。
+构建与渲染脚本的本地记录位置为`tmp/report-focused-20261104/`。本目录提供提交成品、正文、五张技术图和最终QA。
