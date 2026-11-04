@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | 设计报告 PDF | [FPGA作品设计报告_20261104_提交整理版.pdf](report/FPGA作品设计报告_20261104_提交整理版.pdf) | 正文与真实证据完成；三处实物照片仍待补 |
 | 可编辑报告 | [FPGA作品设计报告_20261104_提交整理版.docx](report/FPGA作品设计报告_20261104_提交整理版.docx) | 与PDF同版 |
-| 作品海报 | [作品海报_20261104.pdf](poster/作品海报_20261104.pdf) | 技术介绍；软件对照图按真实来源标注 |
+| 作品海报 | [作品海报_20261104.pdf](poster/作品海报_20261104.pdf) | 紫色图文科研展板，微软雅黑/Arial；含校正参考、架构、真实波形及板测结果 |
 | 主方案一 | [720p15源码、位流与报告](../delivery/20261104-camera720p15/README.md) | OV5640，1280×720有效处理，15 FPS新帧；配置1080p30扫描 |
 | 主方案二 | [1080p15 direct-fill源码与位流](../delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md) | HDMI鱼眼，1080p，15 FPS新校正帧，30 Hz扫描 |
 | 1080p实现报告 | [时序与资源](../delivery/20261104-hdmi-camera-fisheye-tile8-directfill/reports/README.md) | 与aa219913位流绑定的原始报告与摘要 |
