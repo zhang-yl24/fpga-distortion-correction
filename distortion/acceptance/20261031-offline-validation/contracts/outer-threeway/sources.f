@@ -1,9 +1,0 @@
-rtl/hdmi1080_input_status_cdc.v
-rtl/dvp_mode_admission_monitor_cdc.v
-rtl/observer_epoch_guard_candidate.sv
-rtl/dvp_mode_admission_monitor_epoch_candidate.v
-rtl/hdmi1080_input_status_guard_candidate.v
-rtl/dvp_mode_admission_monitor_permit_candidate.v
-rtl/hdmi1080_input_status_permit_candidate.v
-tb/outer_probe.sv
-tb/tb_outer_threeway.sv
