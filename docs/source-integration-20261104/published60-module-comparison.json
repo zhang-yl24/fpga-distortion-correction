@@ -1,0 +1,873 @@
+{
+  "schema": 1,
+  "scope": "Read-only module comparison; no source/top restoration, EDA, simulation, build or hardware. Source receipts are from published PR25, not unpublished scout-local-a.",
+  "refs": {
+    "published60": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+    "main": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+    "op": "1b9727e31f690a2598ab51cdb27ba645c0d5eda5"
+  },
+  "validation": {
+    "retrieved_utf8_sources": 64,
+    "git_blob_sha1_recomputed_pass": 64,
+    "git_blob_sha1_failed": 0,
+    "method": "GitHub exact-ref file content; SHA1(blob header+UTF-8 bytes) matches returned Git blob SHA for all64; SHA256 independently computed locally. Recursive trees nontruncated."
+  },
+  "raw_overlay_comparison": {
+    "files": 19,
+    "raw_blob_equal_anywhere_main": 0,
+    "raw_blob_equal_anywhere_op": 0,
+    "comparisons": [
+      {
+        "file": "camera720_view_control.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/camera720_view_control.v",
+          "git_blob_sha": "cf2b9dd4f842ba0ff6c118344315dd0ae69d0715",
+          "sha256": "de715caa7f6944ca6cefc6b80c32b578d9bad3aaf5868e6a004cffd74c3cd631",
+          "modules": [
+            "camera720_view_control"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/camera720_view_control.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/camera720_view_control.v",
+            "git_blob_sha": "49c5c8e36cf397a2d25b210ecc83c94ada6b46f5",
+            "sha256": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255",
+            "modules": [
+              "camera720_view_control"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/camera720_view_control.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "Same ports and control statements; only synchronizer synthesis attributes change async_reg to PAP_ASYNC_REG/syn_srlstyle. Default corrected_requested=1; active-low synchronized/debounced KEY1 requests a frame mode. This is published old source, not an implementation authorization."
+      },
+      {
+        "file": "ddr_adaptive_result_writer.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_adaptive_result_writer.v",
+          "git_blob_sha": "aa0a2714dfe5d594c2364ccdbb22ead01b1677d9",
+          "sha256": "a65636a57d7ec9cceabfbee3dbac42277c70cc1e68bd9004e3b27f8ae62c50a6",
+          "modules": [
+            "ddr_adaptive_result_writer",
+            "ddr_raster_result_writer_pingpong"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_adaptive_result_writer.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/ddr_adaptive_result_writer.v",
+            "git_blob_sha": "a6e7a39929a63bbfafc439e5f0ca66fc0349c606",
+            "sha256": "fab6d79260ce4b81a54bfd5d6befde535e7aea1230ce2e5fdd1398655ffc20a6",
+            "modules": [
+              "ddr_adaptive_result_writer"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/ddr_adaptive_result_writer.v"
+          }
+        ],
+        "op_canonical_same_basename": [
+          {
+            "ref": "1b9727e31f690a2598ab51cdb27ba645c0d5eda5",
+            "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_adaptive_result_writer.v",
+            "git_blob_sha": "65082ede1458f4be5ac0c79f7b733faa46326ed6"
+          }
+        ],
+        "classification": "Same public data/DDR handshake, new TILE_W/TILE_H parameters; replaces one-stripe collect/drain with two complete stripe banks plus raster ping-pong backend, new ddr_raster_result_writer_pingpong module. Not an interchangeable source file."
+      },
+      {
+        "file": "ddr_neighbour_cache_scatter4_rowpipe.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_neighbour_cache_scatter4_rowpipe.v",
+          "git_blob_sha": "1bb42da32bb4989ec0c2cff5bdedffa333f3af35",
+          "sha256": "35ee33af1940a0b02e4c7ae9bd21d1e119bb6fd32c60a109f7b2b822fc3dee9a",
+          "modules": [
+            "ddr_neighbour_cache_scatter4_rowpipe",
+            "ddr_compact_neighbour_cache_core_scatter4_rowpipe"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_neighbour_cache_scatter4_rowpipe.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v",
+            "git_blob_sha": "2e9c9778bb349437483299fd74c77248e1d2795a",
+            "sha256": "15e7927a6d8069e5f204c46c90956a5a5839239376da69719a659745307448bb",
+            "modules": [
+              "ddr_neighbour_cache_scatter4_rowpipe",
+              "ddr_compact_neighbour_cache_core_scatter4_rowpipe"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "Same public wrapper ports but PREDECODE/ROW_PADDED_INDEX/REGISTERED_RETURN options and changed internal core ports; 64-bit parity direct-fill storage removes scatter phase, address/payload handling differs."
+      },
+      {
+        "file": "ddr_read_return_register.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_read_return_register.v",
+          "git_blob_sha": "504d127378dc7a2633fa916f54baf0408d3f9081",
+          "sha256": "bb106a1b03d30f041b0b38eba2a687bef7fb54afa457d06f833d57787fae3427",
+          "modules": [
+            "ddr_read_return_register"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_read_return_register.v"
+        },
+        "main": [],
+        "op_canonical_same_basename": [],
+        "classification": "New single-outstanding raw-owner guard plus one-cycle complete DDR return bundle register; no same-named canonical main/OP module."
+      },
+      {
+        "file": "ddr_remap_sample_scatter4_rowpipe.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_remap_sample_scatter4_rowpipe.v",
+          "git_blob_sha": "47d2b394b2be88dc19cb012dace8d241ddfca877",
+          "sha256": "ab4a1a4a176d2706a19daafbe8ae170f57a84c1cd6b02e8ab86fffe63679bc58",
+          "modules": [
+            "ddr_remap_sample_scatter4"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_remap_sample_scatter4_rowpipe.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v",
+            "git_blob_sha": "35ec87e64b01b3fad1834b3dc0c7bbafa7ed9299",
+            "sha256": "6e7589dbf271e477a46dc5d1563b0d0e5c60f7841e96591856244945c148acdb",
+            "modules": [
+              "ddr_remap_sample_scatter4"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "File declares module ddr_remap_sample_scatter4 (same legacy module name); passes new ROW_PADDED_INDEX/REGISTERED_RETURN parameters into replacement cache. Compile exactly one implementation."
+      },
+      {
+        "file": "ddr_video_output_1080_board.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_video_output_1080_board.v",
+          "git_blob_sha": "3219bab76b31840e0bfdfcf353147c5007a0dc48",
+          "sha256": "62a2b9d90e895f36d26a15e81208c27907084b8d25a31df5403c028d16c271a0",
+          "modules": [
+            "ddr_video_output_1080_board"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_video_output_1080_board.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/ddr_video_output_1080_board.v",
+            "git_blob_sha": "4c9e9eac4fdf5f1599fd0f95ea4d2bf0f5096e4a",
+            "sha256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+            "modules": [
+              "ddr_video_output_1080_board"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/ddr_video_output_1080_board.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "Same ports but shift-register word queue/lookahead/completion pipeline and synchronizer attributes differ; source-clocked output behavior requires separate clock, timing and reset evidence."
+      },
+      {
+        "file": "hdmi1080_capture_cdc.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi1080_capture_cdc.v",
+          "git_blob_sha": "ab8ab822993c5e0ee0e912f0f584a55a39f6e93d",
+          "sha256": "43be415329ad8b3678555cf71de7aa739a390695fb915b8f67ea68f891b683b4",
+          "modules": [
+            "hdmi1080_capture_cdc"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi1080_capture_cdc.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/hdmi1080_capture_cdc.v",
+            "git_blob_sha": "81d12f60d6988aa5385bc1070411700fda31d563",
+            "sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+            "modules": [
+              "hdmi1080_capture_cdc"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/hdmi1080_capture_cdc.v"
+          }
+        ],
+        "op_canonical_same_basename": [
+          {
+            "ref": "1b9727e31f690a2598ab51cdb27ba645c0d5eda5",
+            "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/hdmi1080_capture_cdc.v",
+            "git_blob_sha": "81d12f60d6988aa5385bc1070411700fda31d563"
+          }
+        ],
+        "classification": "grant_bank/done_bank widen from 1 to 2 bits for 3-source slots; held metadata and synchronizer changes require matching widened DMA."
+      },
+      {
+        "file": "hdmi1080_input_dma.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi1080_input_dma.v",
+          "git_blob_sha": "cdf33bd6adda9f0fb6692a8fe25cdf372bec9533",
+          "sha256": "57fea0be402a24195a6b2ee66e707bc98200e51f93aa3efa80056702768db5f9",
+          "modules": [
+            "hdmi1080_input_dma"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi1080_input_dma.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/hdmi1080_input_dma.v",
+            "git_blob_sha": "6d28f912f2e980ead427024e5a4f90e5eb0d8486",
+            "sha256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+            "modules": [
+              "hdmi1080_input_dma"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/hdmi1080_input_dma.v"
+          }
+        ],
+        "op_canonical_same_basename": [
+          {
+            "ref": "1b9727e31f690a2598ab51cdb27ba645c0d5eda5",
+            "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/hdmi1080_input_dma.v",
+            "git_blob_sha": "736bcb4f4faee05cb7950fdb839033b8ac7db1f8"
+          }
+        ],
+        "classification": "source_writable/capture_reserved widen2->3, source/released_bank widen1->2; new two-slot descriptor queue; source logical2 maps physical slot4. Cannot truncate bank bits."
+      },
+      {
+        "file": "hdmi_camera_fisheye_bank.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_bank.v",
+          "git_blob_sha": "51026de631d856ffe6fdcb080cf3b5c833c8363f",
+          "sha256": "28b3b2b6a46c7fef959f20ef4bf9795718a53ffc18169004e33ab4c3abb9cda3",
+          "modules": [
+            "hdmi_camera_fisheye_bank"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_bank.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/hdmi_camera_fisheye_bank.v",
+            "git_blob_sha": "ea8fe66a2b07aaeef6a76af290273750f052ca2b",
+            "sha256": "59020a41cc9d9e89a92a4973a4e227fdd1b243d15f80c71d3df1af6a39473616",
+            "modules": [
+              "hdmi_camera_fisheye_bank"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/hdmi_camera_fisheye_bank.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "Five DDR slots rather than four; 3-source ownership, logical2->slot4, results remain2/3; RESULT_TILED must remain0."
+      },
+      {
+        "file": "hdmi_camera_fisheye_core.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_core.v",
+          "git_blob_sha": "6c42ab5a2bfe9ee22294483a2b5b67e26b1c8d33",
+          "sha256": "cc8e6577f8d72f297205877f852f321b460cce32afe678b5c62ba3c4b5c9eade",
+          "modules": [
+            "hdmi_camera_fisheye_core"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_core.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/hdmi_camera_fisheye_core.v",
+            "git_blob_sha": "e9ea69ead0914024b7b4bb3659b2a4c2c60fd8fb",
+            "sha256": "d40e18e74f691212d7c4a28e8b8eff15f87480532c258e5f3c832a023516995c",
+            "modules": [
+              "hdmi_camera_fisheye_core"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/hdmi_camera_fisheye_core.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "Same frame/input/output ports; new ROW_PADDED_INDEX/REGISTERED_RETURN parameters and native synchronizer attributes; requires mapper cfg_valid/cfg_ready and in_valid/in_ready handshakes."
+      },
+      {
+        "file": "hdmi_camera_fisheye_engine.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_engine.v",
+          "git_blob_sha": "167691f9485f226ec1b10c1567fa15fde9bcbcba",
+          "sha256": "cd2fc1b6ee59d10e881cea877af9f00e078ee38327b20aef8079cf8ee55bd77a",
+          "modules": [
+            "hdmi_camera_fisheye_engine"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_engine.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/hdmi_camera_fisheye_engine.v",
+            "git_blob_sha": "a5d80735b1e8eec61b753332519f58e554af62fa",
+            "sha256": "bd5a2e4b6b58f476066ce13b566df0c0be0751de54e911a8dcad993e5c9b9179",
+            "modules": [
+              "hdmi_camera_fisheye_engine"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/hdmi_camera_fisheye_engine.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "Same outer bus/frame ports but one sequential raster engine replaced by two tile lanes, CRC combination and lane read/write arbiters; exact prepared cache geometry differs from raw defaults."
+      },
+      {
+        "file": "hdmi_camera_fisheye_input_link.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_input_link.v",
+          "git_blob_sha": "98e580499289d8e6a6cac3f6db48923cb1c86b37",
+          "sha256": "379a5b06fb58723a51f7643636811c121b36ed563a7e1ed4d86741aeedbb7d14",
+          "modules": [
+            "hdmi_camera_fisheye_input_link"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_input_link.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/hdmi_camera_fisheye_input_link.v",
+            "git_blob_sha": "b50b3d0de46e7888b827663cb9275fb53f452f8f",
+            "sha256": "b07c6df5ac016b632fa2413b4d2d5d6886ee70f13d3efa050a9dff59e0166a2a",
+            "modules": [
+              "hdmi_camera_fisheye_input_link"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/hdmi_camera_fisheye_input_link.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "core writable/reserved2->3, source/released bank1->2; matching DMA/ownership contract required."
+      },
+      {
+        "file": "hdmi_camera_fisheye_lane.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_lane.v",
+          "git_blob_sha": "4e5d593c6948ecd25b004c13dba3539b02094a4a",
+          "sha256": "819e4e5e7b6746d6214fc45638679ece9ce9a1212e183df0fac766006cf33fcb",
+          "modules": [
+            "hdmi_camera_fisheye_lane"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_lane.v"
+        },
+        "main": [],
+        "op_canonical_same_basename": [],
+        "classification": "New tile-lane module; global image calibration/source bounds, lane-local tags/output range; no same-named canonical main/OP module."
+      },
+      {
+        "file": "hdmi_camera_fisheye_system_c.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_system_c.v",
+          "git_blob_sha": "8747500a4de586ff484fde20328cd22363fc4794",
+          "sha256": "ff16e0c39ca2e265ed2678405425639f24de58ae998423887806816cf85d83c1",
+          "modules": [
+            "hdmi_camera_fisheye_system"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_system_c.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/hdmi_camera_fisheye_system_c.v",
+            "git_blob_sha": "af363139e0df96ddaf50b44adc7b202deff312cd",
+            "sha256": "c6485f8df49ba398cad00bafbbcf223a672a99ef3eeab8932e9cf2fe8103bb6d",
+            "modules": [
+              "hdmi_camera_fisheye_system"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/hdmi_camera_fisheye_system_c.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "File declares hdmi_camera_fisheye_system; widened source metadata, return register, staged completion validation; same source_commit acceptance edge but bank width differs."
+      },
+      {
+        "file": "hdmi_camera_fisheye_top.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_top.v",
+          "git_blob_sha": "37e64731e06fcc82e06a28aacb82741a8b55c565",
+          "sha256": "1a95ebaf25fb1de31cea47116dcec135bfde9fc71c5ab5ae63f3219046c7911e",
+          "modules": [
+            "hdmi_camera_fisheye_top"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_top.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/board/hdmi_camera_fisheye_top.v",
+            "git_blob_sha": "8f9c670804c7aa1facaded3b5fbb7cc2f7550bb8",
+            "sha256": "b38ba12d17d246e6c138295e3055c6acaab64448e63a3343d0817038e7f8afce",
+            "modules": [
+              "hdmi_camera_fisheye_top"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/board/hdmi_camera_fisheye_top.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "Same board ports plus RESULT_TILED option; removes bringup_pll output clock and forwards pixclk_in; raw BUILD_ID11036003 differs prepared11037003."
+      },
+      {
+        "file": "hdmi_camera_pixel_sampler.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_pixel_sampler.v",
+          "git_blob_sha": "ee4ef2476a2686b501d99ac809ffb96cc6903cc1",
+          "sha256": "1bb57139b679dd76f98d8db26c20deaef6f86a7711e72291dc1634e3226c1ebc",
+          "modules": [
+            "hdmi_camera_pixel_sampler"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_pixel_sampler.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/hdmi_camera_pixel_sampler.v",
+            "git_blob_sha": "1eea8ff9eec7460c94bc4b96852f0f68ef3cee04",
+            "sha256": "b9d743264301a9b41bd10f7969edbc60cfffbda8f0d3f57a2e1bc8e0d6f1ac46",
+            "modules": [
+              "hdmi_camera_pixel_sampler"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/hdmi_camera_pixel_sampler.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "Same logic/ports; only p_reset synchronizer attribute uses PAP_ASYNC_REG instead of async_reg."
+      },
+      {
+        "file": "iic_dri_checked.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/iic_dri_checked.v",
+          "git_blob_sha": "ec510ae8d10b117217166407c3f72ee5c86466e5",
+          "sha256": "e585606a5950db477aa3c8963e5f919c5432b4082b3529399a1cb4f1785cec7b",
+          "modules": [
+            "iic_dri_checked"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/iic_dri_checked.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/iic_dri_checked.v",
+            "git_blob_sha": "f49930a8e95137b71c51aae64db3fc5311ef1df2",
+            "sha256": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+            "modules": [
+              "iic_dri_checked"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/iic_dri_checked.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "Same logic/ports; only input synchronizer attributes differ."
+      },
+      {
+        "file": "ms72xx_rearm_observed_ctl.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/ms72xx_rearm_observed_ctl.v",
+          "git_blob_sha": "9f6236d4bcf6078a7d1dd4d3f1abe8f6da0b9cb3",
+          "sha256": "b95d3092b043306d7bc0a9b3d318468e2126229348dabfa8b07104aab89e592e",
+          "modules": [
+            "ms72xx_rearm_observed_ctl"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/ms72xx_rearm_observed_ctl.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/experimental/ms72xx_rearm_observed_ctl.v",
+            "git_blob_sha": "b12e50964db634f8edd2c0f41c3fbaf0ff10c896",
+            "sha256": "7a4404a012d9e855bf3710f5aaa2f9926c004e378314aa1234fb6ee954f6d75d",
+            "modules": [
+              "ms72xx_rearm_observed_ctl"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/ms72xx_rearm_observed_ctl.v"
+          }
+        ],
+        "op_canonical_same_basename": [],
+        "classification": "Same ports/control statements; adds native synchronizer attributes to three reset pipes."
+      },
+      {
+        "file": "video_async_fifo.v",
+        "published": {
+          "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+          "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/video_async_fifo.v",
+          "git_blob_sha": "ead2bd2a525eddb7a4e27ccd987054231f7d2fd2",
+          "sha256": "143400186f0549f30007e64cd7dbcc6b82395099f7c2dd85e92725cb06943a16",
+          "modules": [
+            "video_async_fifo"
+          ],
+          "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/video_async_fifo.v"
+        },
+        "main": [
+          {
+            "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+            "path": "distortion/rtl/video_async_fifo.v",
+            "git_blob_sha": "37389d53015b10235b5004a67e15a1481472aabe",
+            "sha256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+            "modules": [
+              "video_async_fifo"
+            ],
+            "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/video_async_fifo.v"
+          }
+        ],
+        "op_canonical_same_basename": [
+          {
+            "ref": "1b9727e31f690a2598ab51cdb27ba645c0d5eda5",
+            "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/video_async_fifo.v",
+            "git_blob_sha": "37389d53015b10235b5004a67e15a1481472aabe"
+          }
+        ],
+        "classification": "Same ports/pointer logic; native synchronizer attributes and explanatory comment differ. Physical CDC constraints cannot be inherited from behavioral similarity."
+      }
+    ]
+  },
+  "exact_compiled_dependency_matches": [
+    {
+      "path": "distortion/rtl/bilinear_rgb.v",
+      "variant": "main_dependency",
+      "sha": "01b0227df5298d643d67fd6b245ec40b52a7e551",
+      "sha256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+      "physical_sha256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+      "same_physical": true
+    },
+    {
+      "path": "distortion/rtl/ddr_read_arbiter.v",
+      "variant": "main_dependency",
+      "sha": "dad2ea07876ad11cfeb15bca21a845d043eb639e",
+      "sha256": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+      "physical_sha256": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+      "same_physical": true
+    },
+    {
+      "path": "distortion/rtl/ddr_write_arbiter.v",
+      "variant": "main_dependency",
+      "sha": "424fd88dc6b5cffe4a4b8bf4d5cb3ca04901ddc5",
+      "sha256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+      "physical_sha256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+      "same_physical": true
+    },
+    {
+      "path": "distortion/rtl/experimental/hdmi_camera_fisheye_status_uart.v",
+      "variant": "main_dependency",
+      "sha": "62f9b73ffe0da53166e36614fda86b94eb998b22",
+      "sha256": "1554e35ef2efd157bdb462abe67c16741d42b94696c09ac6caa04df942ddd4a0",
+      "physical_sha256": "1554e35ef2efd157bdb462abe67c16741d42b94696c09ac6caa04df942ddd4a0",
+      "same_physical": true
+    },
+    {
+      "path": "distortion/rtl/experimental/hdmi_camera_rgb565_quantizer.v",
+      "variant": "main_dependency",
+      "sha": "3894b64717e7a6484c93ba9f83bb04d29f70f49b",
+      "sha256": "bb18483682ae0965839d4d54aadea0dcc0eec248c54ee5130be6f62e868a0ba0",
+      "physical_sha256": "bb18483682ae0965839d4d54aadea0dcc0eec248c54ee5130be6f62e868a0ba0",
+      "same_physical": true
+    },
+    {
+      "path": "distortion/rtl/experimental/ms7200_1080p30_rearm_ctl.v",
+      "variant": "main_dependency",
+      "sha": "1662e8cce8a57d9285f65ab3071e613df97ae3b7",
+      "sha256": "ea87e1e8c3588af0675c97f87408ddb115d8b0fb08fb84a93c3e820c5a3dee2e",
+      "physical_sha256": "ea87e1e8c3588af0675c97f87408ddb115d8b0fb08fb84a93c3e820c5a3dee2e",
+      "same_physical": true
+    },
+    {
+      "path": "distortion/rtl/experimental/ms7210_checked_ctl.v",
+      "variant": "main_dependency",
+      "sha": "d258e4066d61577fd8dd32a859c22844337d6af7",
+      "sha256": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+      "physical_sha256": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+      "same_physical": true
+    },
+    {
+      "path": "distortion/rtl/mul32_pipe.v",
+      "variant": "main_dependency",
+      "sha": "7dff5202a8b14754e3684ce13557941d9abfd680",
+      "sha256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+      "physical_sha256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+      "same_physical": true
+    },
+    {
+      "path": "distortion/rtl/uart_tx.v",
+      "variant": "main_dependency",
+      "sha": "ddad98b7368ca87c5399250654e404e5a18968e0",
+      "sha256": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+      "physical_sha256": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+      "same_physical": true
+    },
+    {
+      "path": "distortion/rtl/video_crc32.vh",
+      "variant": "main_dependency",
+      "sha": "ab23ddf9e13facb61890a8739af8f24b75b41c2d",
+      "sha256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+      "physical_sha256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+      "same_physical": true
+    },
+    {
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/bilinear_rgb.v",
+      "variant": "op_dependency",
+      "sha": "01b0227df5298d643d67fd6b245ec40b52a7e551",
+      "sha256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+      "physical_sha256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+      "same_physical": true
+    },
+    {
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/ddr_read_arbiter.v",
+      "variant": "op_dependency",
+      "sha": "dad2ea07876ad11cfeb15bca21a845d043eb639e",
+      "sha256": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+      "physical_sha256": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+      "same_physical": true
+    },
+    {
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/ddr_write_arbiter.v",
+      "variant": "op_dependency",
+      "sha": "424fd88dc6b5cffe4a4b8bf4d5cb3ca04901ddc5",
+      "sha256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+      "physical_sha256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+      "same_physical": true
+    },
+    {
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/mul32_pipe.v",
+      "variant": "op_dependency",
+      "sha": "7dff5202a8b14754e3684ce13557941d9abfd680",
+      "sha256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+      "physical_sha256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+      "same_physical": true
+    },
+    {
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/video_crc32.vh",
+      "variant": "op_dependency",
+      "sha": "ab23ddf9e13facb61890a8739af8f24b75b41c2d",
+      "sha256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+      "physical_sha256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+      "same_physical": true
+    }
+  ],
+  "other_dependency_comparisons": [
+    {
+      "path": "distortion/rtl/ddr_video_reader.v",
+      "variant": "main_dependency",
+      "sha": "5cf2ed2f962234177e3743b3faa67e776e1a8147",
+      "sha256": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+      "physical_sha256": "10d4a8ed9e68b9d7c1124ad96d79c623ebfbb077ac8cd9c68bb16b3ea94b2109",
+      "same_physical": false
+    },
+    {
+      "path": "distortion/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "variant": "main_dependency",
+      "sha": "f2a7ffb37d5e3e8a4a84e2be06f3b81c9bf6e09d",
+      "sha256": "cb141734a32443156768563bd9ce77723e573bdc00869457af11954a039c6e3c",
+      "physical_sha256": "3adee6bfcb80068b23cb234a5a94853d0a75464145189474487c95327b5a686a",
+      "same_physical": false
+    },
+    {
+      "path": "distortion/rtl/experimental/hdmi_camera_fisheye_rom.v",
+      "variant": "main_dependency",
+      "sha": "ef573dce526f602030ebb4aa0ef213e2a140a317",
+      "sha256": "fc8e0cf143078790c1f9a5dbbd2d525f070deab349ee6bc33370e52419e11a44",
+      "physical_sha256": "d45e3eac499e4ccd2eb315dfcd454dbcbdce09e39c3d5b7623faa56302331db6",
+      "same_physical": false
+    },
+    {
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "variant": "op_dependency",
+      "sha": "5302cc806ce0d980f09481d95b01efd6555cfed1",
+      "sha256": "55a6e840e142e2242ac7083e8c498268ef49757b9e0a78fea9c052eb25198855",
+      "physical_sha256": "3adee6bfcb80068b23cb234a5a94853d0a75464145189474487c95327b5a686a",
+      "same_physical": false
+    },
+    {
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/rtl/experimental/hdmi_camera_fisheye_rom.v",
+      "variant": "op_dependency",
+      "sha": "bca64399c91983056412cb3b0b698b626f8c7493",
+      "sha256": "e14d9322a7429a8da474dee448b056a024841d01843658a31c105f3d1ca81dca",
+      "physical_sha256": "d45e3eac499e4ccd2eb315dfcd454dbcbdce09e39c3d5b7623faa56302331db6",
+      "same_physical": false
+    },
+    {
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/ddr_video_reader.v",
+      "variant": "op_dependency",
+      "sha": "07d0a0a7f587d52a8d296f4088397006061af661",
+      "sha256": "34d8a827a9ac902b565c525194f607b7638cd032be995d9ae244a0325f0cc040",
+      "physical_sha256": "10d4a8ed9e68b9d7c1124ad96d79c623ebfbb077ac8cd9c68bb16b3ea94b2109",
+      "same_physical": false
+    }
+  ],
+  "op_uart_reuse": {
+    "ref": "1b9727e31f690a2598ab51cdb27ba645c0d5eda5",
+    "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/b4/rtl/reuse/uart_tx.v",
+    "git_blob_sha": "ddad98b7368ca87c5399250654e404e5a18968e0",
+    "physical_sha256": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+    "proof": "Git blob equals main uart_tx whose bytes were independently SHA256 checked against physical116 closure."
+  },
+  "mapper_comparison": {
+    "main": {
+      "ref": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+      "path": "distortion/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "git_blob_sha": "f2a7ffb37d5e3e8a4a84e2be06f3b81c9bf6e09d",
+      "sha256": "cb141734a32443156768563bd9ce77723e573bdc00869457af11954a039c6e3c",
+      "modules": [
+        "hdmi_camera_fisheye_mapper"
+      ],
+      "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8f2a5b7679ca77153bd36d52a2660e286bff7730/distortion/rtl/experimental/hdmi_camera_fisheye_mapper.v"
+    },
+    "op": {
+      "ref": "1b9727e31f690a2598ab51cdb27ba645c0d5eda5",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "git_blob_sha": "5302cc806ce0d980f09481d95b01efd6555cfed1",
+      "sha256": "55a6e840e142e2242ac7083e8c498268ef49757b9e0a78fea9c052eb25198855",
+      "modules": [
+        "hdmi_camera_fisheye_mapper"
+      ],
+      "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/1b9727e31f690a2598ab51cdb27ba645c0d5eda5/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/rtl/experimental/hdmi_camera_fisheye_mapper.v"
+    },
+    "difference": "Only line14 include path differs; source bodies/ports are otherwise exactly equal by splitlines diff. Main includes D:/English/FPGA/distortion/board/...; OP includes source/profile/board/.... These two exact raw paths both expose cfg_valid/cfg_ready/in_valid/in_ready. Do not claim they lack the handshake. Profile include contents and prepared-root hash must still be bound.",
+    "relevant_lines": {
+      "portlist": [
+        5,
+        12
+      ],
+      "include": 14,
+      "ready": [
+        28,
+        30
+      ],
+      "cfg_accept": 72,
+      "data_accept": 74
+    },
+    "caveat": "Other peer compiled/release mapper snapshots were not named and may have different interfaces; require exact ref/path before adding an adapter."
+  },
+  "source_commit_contract": {
+    "published60": {
+      "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/hdmi_camera_fisheye_system_c.v",
+      "ports_lines": [
+        23,
+        26
+      ],
+      "reset": 200,
+      "default_clear": 214,
+      "accept_edge": [
+        218,
+        219
+      ],
+      "bank_width": 2,
+      "logical_banks": [
+        0,
+        1,
+        2
+      ]
+    },
+    "main": {
+      "path": "distortion/rtl/experimental/hdmi_camera_fisheye_system_c.v",
+      "ports_lines": [
+        23,
+        26
+      ],
+      "reset": 168,
+      "default_clear": 179,
+      "accept_edge": [
+        181,
+        182
+      ],
+      "bank_width": 1,
+      "logical_banks": [
+        0,
+        1
+      ]
+    },
+    "op": {
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v",
+      "ports_lines": [
+        29,
+        32
+      ],
+      "reset": 190,
+      "default_clear": 202,
+      "accept_edge": [
+        204,
+        205
+      ],
+      "bank_width": 1,
+      "logical_banks": [
+        0,
+        1
+      ]
+    },
+    "common_fields": {
+      "source_commit": "registered one-cycle pulse",
+      "source_commit_id": 32,
+      "source_crc": 32,
+      "source_pixels": 32,
+      "source_release_id": 32,
+      "publish_id": 32,
+      "publish_bank": 2
+    },
+    "common_edge": "On rising core_clk with src_valid && src_ready, source_commit<=1 and ID/bank/CRC/pixel fields latch together; default pulse clear on other cycles. NBA registered outputs represent the accepted descriptor in the following cycle, not an arbitrary input VS edge.",
+    "publish": "All three assign result_publish=source_release, publish_id=active_process_id and publish_bank={1'b1,write_bank}; this is a different event from source_commit.",
+    "incompatible_fields": "Published60 source_commit_bank/released_bank are2bits, canonical main/OP1bit. For logical source2 -> physical slot4, silently dropping the high bit aliases source0 and corrupts ownership. Widen the complete producer/link/bank/system/telemetry consumer chain or reject bank2 explicitly in an isolated adapter; no truncation.",
+    "op_parameter_boundary": "OP system/bank/engine take gamma/correction plus17 Brown/rotation configuration fields; published60 bank/core frame-latch cfg_corrected and fixed C profile. Same metadata pulse does not make OP engine interchangeable."
+  },
+  "minimal_next_unit": {
+    "module": "ddr_read_return_register",
+    "source": {
+      "ref": "25015cf3b2c1c31d7940828ac583d5d1eb6feeb3",
+      "path": "delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_read_return_register.v",
+      "git_blob_sha": "504d127378dc7a2633fa916f54baf0408d3f9081",
+      "sha256": "bb106a1b03d30f041b0b38eba2a687bef7fb54afa457d06f833d57787fae3427",
+      "modules": [
+        "ddr_read_return_register"
+      ],
+      "source_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/25015cf3b2c1c31d7940828ac583d5d1eb6feeb3/delivery/20261103-hdmi-camera-fisheye-60/rtl/ddr_read_return_register.v"
+    },
+    "required_contract": "One outstanding unbackpressurable DDR burst, 256-bit data + valid/last/4-bit RID registered as a complete bundle, raw address/return owner guard, common transaction reset.",
+    "key_lines": {
+      "ports": [
+        7,
+        12
+      ],
+      "owner": [
+        14,
+        18
+      ],
+      "bundle_register": [
+        19,
+        25
+      ],
+      "reservation": [
+        26,
+        28
+      ],
+      "sticky_fault": [
+        29,
+        31
+      ]
+    },
+    "integration_boundary": "For a future isolated offline candidate only: between raw DDR response and unchanged ddr_read_arbiter, with raw arvalid/arready tapped for ownership. Combine protocol_fault with existing sticky read/system failure; keep common reset, never create an implicit running reset or withdraw accepted AR.",
+    "first_checks": [
+      "one-cycle exact bundle equality under gaps",
+      "same-edge AR+first response",
+      "unsolicited R -> sticky0x40",
+      "overlapping AR -> sticky0x41",
+      "last beat plus next AR ownership",
+      "reset while outstanding; no stale valid",
+      "existing legacy reader/arbiter regression plus guardbench"
+    ],
+    "not_included": "No top/clock/address-layout/KEY1 integration and no claim of physical improvement until standalone checks and actual new timing reports."
+  }
+}

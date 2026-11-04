@@ -1,0 +1,3015 @@
+{
+  "schema": "peer-selected-directfill-source-contract-v1",
+  "reviewed_main_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+  "observed_previous_main_commit": "8f2a5b7679ca77153bd36d52a2660e286bff7730",
+  "current_main_observation": "main moved by one report-only commit; delivery and distortion root subtree SHA unchanged",
+  "source_origin_commit": "45223998ce3695960297937519d37759499bb4f5",
+  "excluded_research_commit": "14397de26605b0f0422e01aa87f9fa092b3ea5b9",
+  "scope": "Read-only connected GitHub source/evidence audit; local contract files only. No production code, branches, EDA or board state changed.",
+  "facts": [
+    {
+      "key": "selected_identity",
+      "value": {
+        "package": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission",
+        "frozen_source_commit": "45223998ce3695960297937519d37759499bb4f5",
+        "top_module": "hdmi_camera_fisheye_top",
+        "compiled_top": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+        "original_top": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi_camera_fisheye_top.v",
+        "actual_bit_sha256": "aa21991374fbeb4a6733741095f38e27336f1e47dd67b963feb243428a5b353b",
+        "actual_bit_bytes": 3791112,
+        "device": "Logos2-PG2L100H--6-FBG676",
+        "bitstream_git_blob": "9c7bbc60f12e12e185fb312eca1d2590321c139e"
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md",
+          "module": null,
+          "line_start": 3,
+          "line_end": 13,
+          "git_blob_sha": "885122301a75520a641fd7502b62d04d19806769",
+          "content_sha256": "83665fe65d719c97f664cbea2c3c02d5296cf5a0097e91ed193bd6c0daf08e53",
+          "excerpt_sha256": "1529f3239017dbcbfe57b8c501ff796375259b7a13bd183d1566deb366c679f6",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md#L3"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/build-plan.json",
+          "module": null,
+          "line_start": 3,
+          "line_end": 3,
+          "git_blob_sha": "5529a4d3fe76b282cff981e6a028a7f30798a873",
+          "content_sha256": "a7a43941d0d5277f38a649fc28c6776256b5c365ad7d28d163174ce77c050acd",
+          "excerpt_sha256": "6d4c0dff5e98aca93da8eb50ee2026150194e1513e813040a1765f8fc863e632",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/build-plan.json#L3"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+          "module": "hdmi_camera_fisheye_top",
+          "line_start": 6,
+          "line_end": 19,
+          "git_blob_sha": "ba1892c621b996bff2c14226fe47a1cf17a8078e",
+          "content_sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+          "excerpt_sha256": "6521901ec5fa0bbfc208e242f3759db0adb82cfc6ee267036094fc2bd9b112ce",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L6"
+        }
+      ],
+      "limits": "This audit reads saved evidence and source; it does not download/re-hash the raw bitstream or repeat board acceptance."
+    },
+    {
+      "key": "build_closure",
+      "value": {
+        "manifest_listed_inputs": 110,
+        "all_110_source_paths_present_in_unchanged_current_main_delivery_tree": true,
+        "key_original_source_bytes_rehashed": 22,
+        "six_changed_compiled_inputs": [
+          {
+            "Source": "rtl/ddr_video_reader.v",
+            "OriginalSHA256": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+            "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\build-a\\compiled\\rtl\\ddr_video_reader.v",
+            "NativeCompiledPath": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/rtl/ddr_video_reader.v",
+            "CompiledSHA256": "1047b35c1eddeb6088f67d38fd1b87559244e3b9ff26e5d9faf1563c5edf925e",
+            "Changes": [
+              {
+                "Kind": "BoundHeaderIncludeRelocation",
+                "Original": "D:/English/FPGA/distortion/rtl/video_crc32.vh",
+                "Compiled": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/rtl/video_crc32.vh",
+                "Header": "rtl/video_crc32.vh",
+                "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+                "ReplacementCount": 1
+              }
+            ]
+          },
+          {
+            "Source": "rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+            "OriginalSHA256": "f820cae06b30b0c3fb78f8ece7874e742c5008c795df10e190ff57eeb23b017b",
+            "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\build-a\\compiled\\rtl\\experimental\\ddr_adaptive_result_writer_dualstripe.v",
+            "NativeCompiledPath": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+            "CompiledSHA256": "ee8705df74b495ec9bcf790099ddbe6d2b7951ef4e6bc3a2d1d9e5373851e8da",
+            "Changes": [
+              {
+                "Kind": "BoundHeaderIncludeRelocation",
+                "Original": "D:/English/FPGA/distortion/rtl/video_crc32.vh",
+                "Compiled": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/rtl/video_crc32.vh",
+                "Header": "rtl/video_crc32.vh",
+                "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+                "ReplacementCount": 1
+              }
+            ]
+          },
+          {
+            "Source": "rtl/experimental/ddr_video_output_1080_board.v",
+            "OriginalSHA256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+            "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\build-a\\compiled\\rtl\\experimental\\ddr_video_output_1080_board.v",
+            "NativeCompiledPath": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/rtl/experimental/ddr_video_output_1080_board.v",
+            "CompiledSHA256": "d7c5289dc74b24861800a716f79649fbaeb8b433869745a933ebfcc30a0d041f",
+            "Changes": [
+              {
+                "Kind": "BoundHeaderIncludeRelocation",
+                "Original": "D:/English/FPGA/distortion/rtl/video_crc32.vh",
+                "Compiled": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/rtl/video_crc32.vh",
+                "Header": "rtl/video_crc32.vh",
+                "HeaderSHA256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+                "ReplacementCount": 1
+              }
+            ]
+          },
+          {
+            "Source": "board/hdmi_camera_fisheye_top.v",
+            "OriginalSHA256": "b38ba12d17d246e6c138295e3055c6acaab64448e63a3343d0817038e7f8afce",
+            "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\build-a\\compiled\\board\\hdmi_camera_fisheye_top.v",
+            "NativeCompiledPath": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/board/hdmi_camera_fisheye_top.v",
+            "CompiledSHA256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+            "Changes": [
+              {
+                "Kind": "SelectedDigitalTimingOnly",
+                "Parameter": "INPUT_TIMING_CONFIGURED",
+                "Original": 0,
+                "Compiled": 1,
+                "ReplacementCount": 1,
+                "RGBPixelsVerified": false,
+                "CapturePhaseVerified": false,
+                "ExternalACAccepted": false
+              }
+            ]
+          },
+          {
+            "Source": "rtl/experimental/hdmi_camera_fisheye_mapper.v",
+            "OriginalSHA256": "cb141734a32443156768563bd9ce77723e573bdc00869457af11954a039c6e3c",
+            "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\build-a\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_mapper.v",
+            "NativeCompiledPath": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+            "CompiledSHA256": "4da53ea6dd80f0fba12546cdc1639218eba402759752de701dd93f95eb8caeea",
+            "Changes": [
+              {
+                "Kind": "BoundHeaderIncludeRelocation",
+                "Original": "D:/English/FPGA/distortion/board/hdmi-camera-fisheye-profile.vh",
+                "Compiled": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/board/hdmi-camera-fisheye-profile.vh",
+                "Header": "board/hdmi-camera-fisheye-profile.vh",
+                "HeaderSHA256": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+                "ReplacementCount": 1
+              }
+            ]
+          },
+          {
+            "Source": "rtl/experimental/hdmi_camera_fisheye_rom.v",
+            "OriginalSHA256": "fc8e0cf143078790c1f9a5dbbd2d525f070deab349ee6bc33370e52419e11a44",
+            "CompiledPath": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\build-a\\compiled\\rtl\\experimental\\hdmi_camera_fisheye_rom.v",
+            "NativeCompiledPath": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/rtl/experimental/hdmi_camera_fisheye_rom.v",
+            "CompiledSHA256": "21bb7f7d27a079aa00c601d72c1c9f3f2c11e1c8dd87e7fb275e20cb55306928",
+            "Changes": [
+              {
+                "Kind": "BoundHeaderIncludeRelocation",
+                "Original": "D:/English/FPGA/distortion/board/hdmi-camera-fisheye-radial-table.vh",
+                "Compiled": "P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/board/hdmi-camera-fisheye-radial-table.vh",
+                "Header": "board/hdmi-camera-fisheye-radial-table.vh",
+                "HeaderSHA256": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+                "ReplacementCount": 1
+              }
+            ]
+          }
+        ],
+        "source_roles": {
+          "ExplicitDesigns": [
+            "rtl/mul32_pipe.v",
+            "rtl/bilinear_rgb.v",
+            "rtl/video_async_fifo.v",
+            "rtl/experimental/ddr_read_arbiter_fill8r2.v",
+            "rtl/ddr_write_arbiter.v",
+            "rtl/ddr_video_reader.v",
+            "rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+            "rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v",
+            "rtl/experimental/ddr_remap_sample_scatter16_rowpipe.v",
+            "rtl/experimental/hdmi_camera_fisheye_core.v",
+            "rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+            "rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+            "rtl/experimental/hdmi1080_capture_cdc.v",
+            "rtl/experimental/hdmi1080_input_dma.v",
+            "rtl/experimental/hdmi_camera_fisheye_input_link.v",
+            "rtl/experimental/ddr_video_output_1080_board.v",
+            "rtl/experimental/hdmi_camera_fisheye_system_c.v",
+            "platform/video_base/ipcore/ddr3_test/ddr3_test.idf",
+            "board/bringup_pll.v",
+            "platform/video_base/ipcore/cfg_pll/cfg_pll.v",
+            "rtl/experimental/iic_dri_checked.v",
+            "rtl/experimental/ms7200_1080p30_rearm_ctl.v",
+            "rtl/experimental/ms7210_checked_ctl.v",
+            "rtl/experimental/ms72xx_rearm_observed_ctl.v",
+            "board/hdmi_camera_fisheye_top.v",
+            "rtl/experimental/hdmi_camera_pixel_sampler.v",
+            "rtl/experimental/hdmi_camera_fisheye_mapper.v",
+            "rtl/experimental/hdmi_camera_fisheye_rom.v",
+            "rtl/experimental/hdmi_camera_rgb565_quantizer.v",
+            "rtl/experimental/camera720_view_control.v",
+            "rtl/experimental/hdmi_camera_fisheye_status_uart.v",
+            "rtl/uart_tx.v"
+          ],
+          "IDFExpandedSources": [
+            "platform/video_base/ipcore/ddr3_test/rtl/ips2l_rst_sync_v1_3.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrlvl_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrcal_v1_7.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wdata_path_adj_v1_10.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_upcal_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_training_ctrl_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_slice_rddata_align_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_reset_ctrl_v1_3.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rdcal_v1_10.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_main_ctrl_v1_10.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_init_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_info_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gatecal_v1_10.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gate_update_ctrl_v1_3.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_eyecal_v1_5.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_drift_ctrl_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqsi_rdel_cal_v1_3.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_rddata_align_v1_10.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_gate_coarse_cal_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dll_update_ctrl_v1_3.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dfi_v1_3.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gpll_phase_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrlvl_v1_10.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_v1_10.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_dqs_gate_cal_v1_10.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_ctrl_v1_3.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_lock_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_control_path_adj_v1_10.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_top_v1_10.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_mux_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_debounce_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_clk_phase_adj_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_gpll_v1_3.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_ppll_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_apb_cross_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_calib_delay_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_cfg_apb_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_bm_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_rowaddr_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_sm_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_top_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_back_ctrl_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_out_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_top_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dfi_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_lp_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_mrs_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_prefetch_fifo_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_rdatapath_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_reg_fifo2_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_ui_axi_v1_2a.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdatapath_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_align_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_dcp_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wrapper_v1_2b.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_com_timing_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_timing_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act2wr_pass_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act_pass_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_pre_pass_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_rd_pass_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_ref_pass_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_wr_pass_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_trc_timing_v1_2.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/ips2l_distributed_fifo_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_ctr_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_v1_0_distributed_fifo_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_sdpram_v1_0_distributed_fifo_v1_0.vp",
+            "platform/video_base/ipcore/ddr3_test/ddr3_test.v",
+            "platform/video_base/ipcore/ddr3_test/ddr3_test_ddrphy_top.v",
+            "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ddr3_test_slice_top_v1_10.v"
+          ],
+          "Headers": [
+            "board/hdmi-camera-fisheye-profile.vh",
+            "board/hdmi-camera-fisheye-radial-table.vh",
+            "rtl/video_crc32.vh"
+          ],
+          "Modules": {
+            "mul32_pipe": "rtl/mul32_pipe.v",
+            "bilinear_rgb": "rtl/bilinear_rgb.v",
+            "video_async_fifo": "rtl/video_async_fifo.v",
+            "ddr_read_arbiter": "rtl/experimental/ddr_read_arbiter_fill8r2.v",
+            "ddr_write_arbiter": "rtl/ddr_write_arbiter.v",
+            "ddr_video_reader": "rtl/ddr_video_reader.v",
+            "ddr_adaptive_result_writer_dualstripe": "rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+            "ddr_neighbour_cache_scatter16_rowpipe": "rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v",
+            "ddr_compact_neighbour_cache_core_scatter16_rowpipe": "rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v",
+            "ddr_remap_sample_scatter4": "rtl/experimental/ddr_remap_sample_scatter16_rowpipe.v",
+            "hdmi_camera_fisheye_core": "rtl/experimental/hdmi_camera_fisheye_core.v",
+            "hdmi_camera_fisheye_engine_tile8": "rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+            "hdmi_camera_fisheye_bank": "rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+            "hdmi1080_capture_cdc": "rtl/experimental/hdmi1080_capture_cdc.v",
+            "hdmi1080_input_dma": "rtl/experimental/hdmi1080_input_dma.v",
+            "hdmi_camera_fisheye_input_link": "rtl/experimental/hdmi_camera_fisheye_input_link.v",
+            "ddr_video_output_1080_board": "rtl/experimental/ddr_video_output_1080_board.v",
+            "hdmi_camera_fisheye_system": "rtl/experimental/hdmi_camera_fisheye_system_c.v",
+            "bringup_pll": "board/bringup_pll.v",
+            "cfg_pll": "platform/video_base/ipcore/cfg_pll/cfg_pll.v",
+            "iic_dri_checked": "rtl/experimental/iic_dri_checked.v",
+            "ms7200_1080p30_rearm_ctl": "rtl/experimental/ms7200_1080p30_rearm_ctl.v",
+            "ms7210_checked_ctl": "rtl/experimental/ms7210_checked_ctl.v",
+            "ms72xx_rearm_observed_ctl": "rtl/experimental/ms72xx_rearm_observed_ctl.v",
+            "hdmi_camera_fisheye_top": "board/hdmi_camera_fisheye_top.v",
+            "hdmi_camera_pixel_sampler": "rtl/experimental/hdmi_camera_pixel_sampler.v",
+            "hdmi_camera_fisheye_mapper": "rtl/experimental/hdmi_camera_fisheye_mapper.v",
+            "hdmi_camera_fisheye_rom": "rtl/experimental/hdmi_camera_fisheye_rom.v",
+            "hdmi_camera_rgb565_quantizer": "rtl/experimental/hdmi_camera_rgb565_quantizer.v",
+            "camera720_view_control": "rtl/experimental/camera720_view_control.v",
+            "hdmi_camera_fisheye_status_uart": "rtl/experimental/hdmi_camera_fisheye_status_uart.v",
+            "uart_tx": "rtl/uart_tx.v"
+          },
+          "InstancesBySource": {
+            "rtl/mul32_pipe.v": [],
+            "rtl/bilinear_rgb.v": [],
+            "rtl/video_async_fifo.v": [],
+            "rtl/experimental/ddr_read_arbiter_fill8r2.v": [],
+            "rtl/ddr_write_arbiter.v": [],
+            "rtl/ddr_video_reader.v": [],
+            "rtl/experimental/ddr_adaptive_result_writer_dualstripe.v": [],
+            "rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v": [
+              {
+                "Module": "ddr_compact_neighbour_cache_core_scatter16_rowpipe",
+                "Instance": "inner"
+              }
+            ],
+            "rtl/experimental/ddr_remap_sample_scatter16_rowpipe.v": [
+              {
+                "Module": "ddr_neighbour_cache_scatter16_rowpipe",
+                "Instance": "cache"
+              },
+              {
+                "Module": "bilinear_rgb",
+                "Instance": "interpolation"
+              }
+            ],
+            "rtl/experimental/hdmi_camera_fisheye_core.v": [
+              {
+                "Module": "hdmi_camera_fisheye_mapper",
+                "Instance": "mapper"
+              },
+              {
+                "Module": "ddr_remap_sample_scatter4",
+                "Instance": "sampler"
+              }
+            ],
+            "rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v": [
+              {
+                "Module": "hdmi_camera_fisheye_core",
+                "Instance": "core"
+              },
+              {
+                "Module": "ddr_adaptive_result_writer_dualstripe",
+                "Instance": "writer"
+              }
+            ],
+            "rtl/experimental/hdmi_camera_fisheye_bank_tile8.v": [
+              {
+                "Module": "hdmi_camera_fisheye_engine_tile8",
+                "Instance": "engine"
+              }
+            ],
+            "rtl/experimental/hdmi1080_capture_cdc.v": [
+              {
+                "Module": "video_async_fifo",
+                "Instance": "pixels"
+              }
+            ],
+            "rtl/experimental/hdmi1080_input_dma.v": [
+              {
+                "Module": "hdmi1080_capture_cdc",
+                "Instance": "capture"
+              }
+            ],
+            "rtl/experimental/hdmi_camera_fisheye_input_link.v": [
+              {
+                "Module": "hdmi1080_input_dma",
+                "Instance": "input_dma"
+              },
+              {
+                "Module": "ddr_write_arbiter",
+                "Instance": "shared_writes"
+              }
+            ],
+            "rtl/experimental/ddr_video_output_1080_board.v": [],
+            "rtl/experimental/hdmi_camera_fisheye_system_c.v": [
+              {
+                "Module": "hdmi_camera_fisheye_bank",
+                "Instance": "bank_core"
+              },
+              {
+                "Module": "hdmi_camera_fisheye_input_link",
+                "Instance": "input_link"
+              },
+              {
+                "Module": "ddr_video_reader",
+                "Instance": "reader"
+              },
+              {
+                "Module": "video_async_fifo",
+                "Instance": "display_fifo"
+              },
+              {
+                "Module": "ddr_read_arbiter",
+                "Instance": "read_bus"
+              },
+              {
+                "Module": "ddr_video_output_1080_board",
+                "Instance": "output_video"
+              }
+            ],
+            "board/bringup_pll.v": [
+              {
+                "Module": "GTP_GPLL",
+                "Instance": "u_gpll"
+              }
+            ],
+            "platform/video_base/ipcore/cfg_pll/cfg_pll.v": [
+              {
+                "Module": "GTP_GPLL",
+                "Instance": "u_gpll"
+              }
+            ],
+            "rtl/experimental/iic_dri_checked.v": [],
+            "rtl/experimental/ms7200_1080p30_rearm_ctl.v": [],
+            "rtl/experimental/ms7210_checked_ctl.v": [],
+            "rtl/experimental/ms72xx_rearm_observed_ctl.v": [
+              {
+                "Module": "ms7200_1080p30_rearm_ctl",
+                "Instance": "rx_controller"
+              },
+              {
+                "Module": "ms7210_checked_ctl",
+                "Instance": "tx_controller"
+              },
+              {
+                "Module": "iic_dri_checked",
+                "Instance": "driver"
+              }
+            ],
+            "board/hdmi_camera_fisheye_top.v": [
+              {
+                "Module": "cfg_pll",
+                "Instance": "configuration_pll"
+              },
+              {
+                "Module": "bringup_pll",
+                "Instance": "video_pll"
+              },
+              {
+                "Module": "ms72xx_rearm_observed_ctl",
+                "Instance": "hdmi_configuration"
+              },
+              {
+                "Module": "hdmi_camera_pixel_sampler",
+                "Instance": "input_sampler"
+              },
+              {
+                "Module": "GTP_INBUFGDS",
+                "Instance": "u_gtp"
+              },
+              {
+                "Module": "ddr3_test",
+                "Instance": "u_ddr3_test_h"
+              },
+              {
+                "Module": "camera720_view_control",
+                "Instance": "view_control"
+              },
+              {
+                "Module": "hdmi_camera_rgb565_quantizer",
+                "Instance": "input_quantizer"
+              },
+              {
+                "Module": "hdmi_camera_fisheye_system",
+                "Instance": "system"
+              },
+              {
+                "Module": "hdmi_camera_fisheye_status_uart",
+                "Instance": "status_uart"
+              }
+            ],
+            "rtl/experimental/hdmi_camera_pixel_sampler.v": [],
+            "rtl/experimental/hdmi_camera_fisheye_mapper.v": [
+              {
+                "Module": "mul32_pipe",
+                "Instance": "normalize_x"
+              },
+              {
+                "Module": "mul32_pipe",
+                "Instance": "normalize_y"
+              },
+              {
+                "Module": "mul32_pipe",
+                "Instance": "square_x"
+              },
+              {
+                "Module": "mul32_pipe",
+                "Instance": "square_y"
+              },
+              {
+                "Module": "hdmi_camera_fisheye_rom",
+                "Instance": "radial_rom"
+              },
+              {
+                "Module": "mul32_pipe",
+                "Instance": "interpolate"
+              },
+              {
+                "Module": "mul32_pipe",
+                "Instance": "distort_x"
+              },
+              {
+                "Module": "mul32_pipe",
+                "Instance": "distort_y"
+              },
+              {
+                "Module": "mul32_pipe",
+                "Instance": "source_x"
+              },
+              {
+                "Module": "mul32_pipe",
+                "Instance": "source_y"
+              }
+            ],
+            "rtl/experimental/hdmi_camera_fisheye_rom.v": [],
+            "rtl/experimental/hdmi_camera_rgb565_quantizer.v": [],
+            "rtl/experimental/camera720_view_control.v": [],
+            "rtl/experimental/hdmi_camera_fisheye_status_uart.v": [
+              {
+                "Module": "uart_tx",
+                "Instance": "transmitter"
+              }
+            ],
+            "rtl/uart_tx.v": []
+          },
+          "UnresolvedModuleInstances": []
+        },
+        "route_constraint_extra_to_110": "board/board1080-ddr-ioclk-priority.rcf",
+        "source_inventory_complete_relative_to_published_manifest": true,
+        "portable_native_rebuild_proven": false,
+        "native_build_rerun": false,
+        "initial_plan_is_final_physical_replay": false
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md",
+          "module": null,
+          "line_start": 9,
+          "line_end": 15,
+          "git_blob_sha": "885122301a75520a641fd7502b62d04d19806769",
+          "content_sha256": "83665fe65d719c97f664cbea2c3c02d5296cf5a0097e91ed193bd6c0daf08e53",
+          "excerpt_sha256": "e4a1a3b0117c127e50b35f086c481556fa14ad53a58ca8f210abd6da1c51c23e",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md#L9"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md",
+          "module": null,
+          "line_start": 35,
+          "line_end": 39,
+          "git_blob_sha": "885122301a75520a641fd7502b62d04d19806769",
+          "content_sha256": "83665fe65d719c97f664cbea2c3c02d5296cf5a0097e91ed193bd6c0daf08e53",
+          "excerpt_sha256": "67e3f42c013c23e26cdf103b685c5a80b6f2400efd0d2aaaeab5d729eabb19e9",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md#L35"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/production-source-manifest.json",
+          "module": null,
+          "line_start": 35,
+          "line_end": 35,
+          "git_blob_sha": "df3de791292cf1e4a8f9b7753c329b06e4c1fe95",
+          "content_sha256": "ef5758832793f0ebcc0e8ee77a8410ac74baa87517256497615438f6dc5bd559",
+          "excerpt_sha256": "4d95cf2008be7d55a743bcbce2ccca1d7143f7cfca65cc7218dc1d2b9e450c8d",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/production-source-manifest.json#L35"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/build-plan.json",
+          "module": null,
+          "line_start": 528,
+          "line_end": 528,
+          "git_blob_sha": "5529a4d3fe76b282cff981e6a028a7f30798a873",
+          "content_sha256": "a7a43941d0d5277f38a649fc28c6776256b5c365ad7d28d163174ce77c050acd",
+          "excerpt_sha256": "3d859b741ed49c9986d62f414a46bf4baee8fc0fb3d2793310d3958ed6fb4406",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/build-plan.json#L528"
+        }
+      ],
+      "limits": "110-path inventory and selected byte identities do not prove standalone EDA closure. Historical P:/ alias, original tool installation, five bound includes, final physical constraint application, vendor primitives/license and native replay require separate reconstruction."
+    },
+    {
+      "key": "fixed_image_profile",
+      "value": {
+        "width": 1920,
+        "height": 1080,
+        "input_digital_pixels_hz_estimate": 148501164.63157895,
+        "output_pixel_hz": 74250000,
+        "output_raster": {
+          "HT": 2200,
+          "VT": 1125,
+          "HS": 44,
+          "VS": 5,
+          "X0": 192,
+          "Y0": 41
+        },
+        "output_scan_hz_nominal": 30,
+        "profile_id": "ed59f83e3cfbc77b",
+        "build_id": "11030001",
+        "fisheye_model": "OpenCV fisheye / KB4 radial ROM approximation",
+        "gamma": "off",
+        "rotation": "none",
+        "fixed_header": "// Generated from the source-bound new HDMI C calibration; no Brown surrogate.\n// Native1920x1080, C preview balance=.5, output centre transform 2*c+.5.\n// Pixel/focal Q8, inverse focal Q30; round nearest, ties toward +infinity.\nlocalparam signed [31:0] FISHEYE_OUT_CX=32'sh00037f7a;\nlocalparam signed [31:0] FISHEYE_OUT_CY=32'sh0002311e;\nlocalparam signed [31:0] FISHEYE_SRC_CX=32'sh0003afbf;\nlocalparam signed [31:0] FISHEYE_SRC_CY=32'sh00022c90;\nlocalparam signed [31:0] FISHEYE_SRC_FX=32'sh0003283a;\nlocalparam signed [31:0] FISHEYE_SRC_FY=32'sh00032a15;\nlocalparam signed [31:0] FISHEYE_INV_FX=32'sh0020dd73;\nlocalparam signed [31:0] FISHEYE_INV_FY=32'sh0020ca34;\nlocalparam integer FISHEYE_R2_MAX_Q22=33554432;\nlocalparam integer FISHEYE_RADIAL_SEGMENTS=1024;\n",
+        "calibration": {
+          "schema": "hdmi-new-lens-fisheye-calibration-v1",
+          "camera_id": "new-hdmi-camera-20261102",
+          "lens_id": "new-hdmi-lens-20261102",
+          "source_connector": "HDMI_IN",
+          "native_size": [
+            1920,
+            1080
+          ],
+          "model": "opencv_fisheye",
+          "K_native": [
+            [
+              808.2272613458829,
+              0.0,
+              943.7446431879945
+            ],
+            [
+              0.0,
+              810.0804859591761,
+              556.5635877240222
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "D_normalized": [
+            -0.023025039402366058,
+            0.0010939325830845673,
+            -0.004404026888512618,
+            0.0010249559182549826
+          ],
+          "distortion_order": [
+            "k1",
+            "k2",
+            "k3",
+            "k4"
+          ],
+          "source_fit": {
+            "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\new-lens-calibration-c.json",
+            "sha256": "3c90e297603ab612ee5450594db093fd3f0ad01550d05314bd29484f2909ebc8"
+          },
+          "snapshot_geometry": {
+            "native_size": [
+              1920,
+              1080
+            ],
+            "snapshot_size": [
+              960,
+              540
+            ],
+            "native_step": [
+              2,
+              2
+            ],
+            "native_origin_half_pixels": [
+              1,
+              1
+            ],
+            "per_pixel_gray": "floor((R+2*G+B)/4)",
+            "downsample": "floor(sum(gray_2x2)/4)",
+            "distortion_correction_applied": false
+          },
+          "received_frames": 49,
+          "source_crc_rejected_packets": 0,
+          "distinct_valid_views": 35,
+          "training_views": 28,
+          "held_out_views": 7,
+          "training_rms_native_px": 0.38192687125377933,
+          "held_out_mean_native_px": 0.39151887531326884,
+          "held_out_max_native_px": 0.8708752775252777,
+          "inner_corners": [
+            9,
+            6
+          ],
+          "square_mm": 25.0,
+          "fair_initial_vs_supplemental": {
+            "views": [
+              {
+                "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-bottom-e-20261102T184537152681Z-frame00000085.png",
+                "sha256": "afd787f7fcd1a06cdef5a55a157dabb601d07f6de82935ce103701999099b93a"
+              },
+              {
+                "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\edge-top-d-20261102T184437619410Z-frame0000007c.png",
+                "sha256": "deeec5816e431579bc751e6b02710ebd452253dfc86a002b0a6075e0ee212b75"
+              },
+              {
+                "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\supplemental-c-20261102T184152214712Z-frame00000063.png",
+                "sha256": "64306d413c2ad7e4d761357536f271fa539b47f3ccbb08288c536e29f569d9c5"
+              }
+            ],
+            "count": 3,
+            "description": "These views were used to train neither the initial B fit nor the supplemental C fit.",
+            "initial_b": {
+              "rms_native_px": [
+                0.34270267787622277,
+                0.25788519323584996,
+                0.853431817300845
+              ],
+              "mean_native_px": 0.4846732294709726
+            },
+            "supplemental_c": {
+              "rms_native_px": [
+                0.34540740363332334,
+                0.25311864833652936,
+                0.8708752775252777
+              ],
+              "mean_native_px": 0.4898004431650435
+            }
+          },
+          "projection_sanity": {
+            "positive_focal_lengths": true,
+            "principal_point_inside_image": true,
+            "fisheye_theta_distortion_monotone_to_sensor_corners": true,
+            "minimum_derivative_to_90deg": 0.7416778262633102,
+            "maximum_sensor_corner_theta_deg": 85.41138767391199,
+            "all_map_coordinates_finite": true
+          },
+          "full_fov_optical_acceptance": false,
+          "fpga_rectification_deployed": false,
+          "preview": {
+            "source": {
+              "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\captures-b\\first-b-20261102T183156714635Z-frame00000009.png",
+              "sha256": "a4e1c8df25b83387afe89a6116f1b43c14fda32f306c28ba591a0c75c171ed25"
+            },
+            "corrected": {
+              "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\new-lens-fisheye-preview-c.png",
+              "sha256": "2f31d8a13f8018fc5616c699310a2b8d1139b8a82c1a64dc47470da41d2e27d9"
+            },
+            "comparison": {
+              "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-snapshot-20261102-a\\new-lens-calibration-comparison-c.png",
+              "sha256": "6e86cef45e6b5c7c9311d37e862fbac5ef5b4904c81ba444e11641c527da04fb"
+            },
+            "processor": "PC OpenCV",
+            "balance": 0.5,
+            "new_K_snapshot": [
+              [
+                249.26187221266795,
+                0.0,
+                447.4878149665509
+              ],
+              [
+                0.0,
+                249.83341719615547,
+                280.30807398779103
+              ],
+              [
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "valid_source_coordinate_fraction": 0.8973109567901234
+          },
+          "remaining_checks": [
+            "Inspect corrected edges and straight lines on additional scenes before final full FOV optical acceptance.",
+            "Generate and independently validate the FPGA mapping before claiming corrected HDMI output."
+          ]
+        }
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+          "module": "hdmi_camera_fisheye_top",
+          "line_start": 227,
+          "line_end": 252,
+          "git_blob_sha": "ba1892c621b996bff2c14226fe47a1cf17a8078e",
+          "content_sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+          "excerpt_sha256": "cefcfa47a1a84e664237addd06f96edbf34aae0e8f37d408a4f3de019294b9eb",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L227"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+          "module": "hdmi_camera_fisheye_top",
+          "line_start": 270,
+          "line_end": 281,
+          "git_blob_sha": "ba1892c621b996bff2c14226fe47a1cf17a8078e",
+          "content_sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+          "excerpt_sha256": "d1600be1a648eaaca562b9badb5aeab6d0511fea186670b97b5e9097391184d0",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L270"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-profile.vh",
+          "module": null,
+          "line_start": 1,
+          "line_end": 13,
+          "git_blob_sha": "9b15259e26b39c4ae349f1c25e45261720f54f55",
+          "content_sha256": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+          "excerpt_sha256": "03dd65a23858c389bf4cba493c6912eacf122bd818516c8a7d1fbdd835898f67",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-profile.vh#L1"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+          "module": "hdmi_camera_fisheye_engine_tile8",
+          "line_start": 3,
+          "line_end": 5,
+          "git_blob_sha": "cd2bc3a5a126fad04465e946b7e71fa0d27e94e1",
+          "content_sha256": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+          "excerpt_sha256": "6479da6ce8485bf17b5298bd38e5229ec91c7f10a9e126efef5288b9ed10a58d",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v#L3"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+          "module": "hdmi_camera_fisheye_engine_tile8",
+          "line_start": 63,
+          "line_end": 69,
+          "git_blob_sha": "cd2bc3a5a126fad04465e946b7e71fa0d27e94e1",
+          "content_sha256": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+          "excerpt_sha256": "d5fe657a7e3fb2d0c4de2d152769053a3772e23ccf1d2bcf858004044049c747",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v#L63"
+        }
+      ],
+      "limits": "148.501MHz source timing, 30Hz scan and 15 unique result FPS are separate quantities. The original calibration JSON retains historical undeployed/full-FOV-open flags; later board receipts are separate evidence."
+    },
+    {
+      "key": "pixel_format",
+      "value": {
+        "pads": "RGB888, common positive PCLK sample stage",
+        "quantization": "two PCLK stages; round(v*31/255) or round(v*63/255), replicated RGB888 for the existing capture port",
+        "ddr_storage": "RGB565, 16 pixels per 256-bit beat, low pixel first",
+        "output": "RGB565 expanded by bit replication to RGB888",
+        "INDEX8_means": "cache index bits, not 8-bit pixels"
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+          "module": "hdmi_camera_fisheye_top",
+          "line_start": 73,
+          "line_end": 84,
+          "git_blob_sha": "ba1892c621b996bff2c14226fe47a1cf17a8078e",
+          "content_sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+          "excerpt_sha256": "d37ee64f0d91e2a825e71d05c5a133dfeaaefc6dfa391a767608229c2c18990c",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L73"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_rgb565_quantizer.v",
+          "module": "hdmi_camera_rgb565_quantizer",
+          "line_start": 2,
+          "line_end": 6,
+          "git_blob_sha": "3894b64717e7a6484c93ba9f83bb04d29f70f49b",
+          "content_sha256": "bb18483682ae0965839d4d54aadea0dcc0eec248c54ee5130be6f62e868a0ba0",
+          "excerpt_sha256": "62f436b2133de01f18373d02baea3476751c94252a8199522b2015f75ad849cd",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_rgb565_quantizer.v#L2"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_rgb565_quantizer.v",
+          "module": "hdmi_camera_rgb565_quantizer",
+          "line_start": 21,
+          "line_end": 32,
+          "git_blob_sha": "3894b64717e7a6484c93ba9f83bb04d29f70f49b",
+          "content_sha256": "bb18483682ae0965839d4d54aadea0dcc0eec248c54ee5130be6f62e868a0ba0",
+          "excerpt_sha256": "40637a5f4d096a7d6ca0aa5963d55ce3b4fab3175848fc8425b953ec4bc58f08",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_rgb565_quantizer.v#L21"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_capture_cdc.v",
+          "module": "hdmi1080_capture_cdc",
+          "line_start": 56,
+          "line_end": 71,
+          "git_blob_sha": "81d12f60d6988aa5385bc1070411700fda31d563",
+          "content_sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+          "excerpt_sha256": "313cf2e5e8708eb4b82750538316e83d01cc6d1d8280eaccb846df1b185e31fa",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_capture_cdc.v#L56"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_video_output_1080_board.v",
+          "module": "ddr_video_output_1080_board",
+          "line_start": 157,
+          "line_end": 166,
+          "git_blob_sha": "4c9e9eac4fdf5f1599fd0f95ea4d2bf0f5096e4a",
+          "content_sha256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+          "excerpt_sha256": "d1d28cff8a266faede5ae3b3ebee8ea7e40fd32f3ac58429757b8705f1d3d21f",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_video_output_1080_board.v#L157"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+          "module": "hdmi_camera_fisheye_engine_tile8",
+          "line_start": 36,
+          "line_end": 46,
+          "git_blob_sha": "cd2bc3a5a126fad04465e946b7e71fa0d27e94e1",
+          "content_sha256": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+          "excerpt_sha256": "66c1ce752d10956ac3fef90809337574c0fcad315a4f441e7bb8815251da3437",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v#L36"
+        }
+      ]
+    },
+    {
+      "key": "ddr_address_contract",
+      "value": {
+        "address_unit_bytes": 4,
+        "address_bits": 28,
+        "data_bits": 256,
+        "burst_length_encoding": "AWLEN/ARLEN=beats-1",
+        "write_interface": "Pango AW + WREADY/WLAST; no WVALID and no application B channel; beat0 may coincide with AW accept",
+        "read_interface": "RID must be 0; RVALID responses cannot be backpressured; reserve all response room before AR",
+        "stride_units": 1048576,
+        "stride_bytes": 4194304,
+        "frame_bytes": 4147200,
+        "frame_units": 1036800,
+        "frame_beats": 129600,
+        "banks": [
+          {
+            "id": 0,
+            "role": "source",
+            "base_units": 0,
+            "base_bytes": 0
+          },
+          {
+            "id": 1,
+            "role": "source",
+            "base_units": 1048576,
+            "base_bytes": 4194304
+          },
+          {
+            "id": 2,
+            "role": "result",
+            "base_units": 2097152,
+            "base_bytes": 8388608
+          },
+          {
+            "id": 3,
+            "role": "result",
+            "base_units": 3145728,
+            "base_bytes": 12582912
+          }
+        ],
+        "source_descriptor_queue": "single source_valid/bank/id/CRC/pixels mailbox; no independent queued-descriptor FIFO"
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+          "module": "hdmi_camera_fisheye_top",
+          "line_start": 108,
+          "line_end": 123,
+          "git_blob_sha": "ba1892c621b996bff2c14226fe47a1cf17a8078e",
+          "content_sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+          "excerpt_sha256": "fbde41b06a00f3d80556adbc7a9c8f2dd0eab129a3fcce47c8abe1e373ba841d",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L108"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+          "module": "hdmi_camera_fisheye_bank",
+          "line_start": 25,
+          "line_end": 44,
+          "git_blob_sha": "1a9bcb9e299daffdc92d8c1cf37a16a2c9583514",
+          "content_sha256": "9404658e762b51f8a8e9926936f6533908fbc686b90674fa03d1db2b0f43b482",
+          "excerpt_sha256": "719da6bc5ef2d19067f1317b75ddad8ecbdf1114560bf54b517b2dc915f0f24d",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v#L25"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v",
+          "module": "hdmi1080_input_dma",
+          "line_start": 34,
+          "line_end": 71,
+          "git_blob_sha": "6d28f912f2e980ead427024e5a4f90e5eb0d8486",
+          "content_sha256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+          "excerpt_sha256": "15e2cbc1678ed6a45d65b473506ea09c1614c410c9a47c1773816a566c9a54c0",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v#L34"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/ddr_video_reader.v",
+          "module": "ddr_video_reader",
+          "line_start": 1,
+          "line_end": 3,
+          "git_blob_sha": "5cf2ed2f962234177e3743b3faa67e776e1a8147",
+          "content_sha256": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+          "excerpt_sha256": "bda8c6741569c5480f76d6a982769c147b7ead161341a516a36da150e450814e",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/ddr_video_reader.v#L1"
+        }
+      ]
+    },
+    {
+      "key": "key1_mode_ownership",
+      "value": {
+        "input": "active-low KEY1 on C23 LVCMOS33 pullup",
+        "debounce": "2FF; release then press each stable 2500000 core clocks (20ms at125MHz); held-at-reset does not toggle",
+        "reset_default": "corrected_requested=1",
+        "mode_lock_edge": "bank source_valid && source_ready captures active_corrected together with source_bank/source_id",
+        "engine_start": "following start drives a joint begin_frame only while core and writer are ready; engine tile traversal, mapper and writer all latch the same frozen bank mode",
+        "raw_mode": "identity coordinates in raster order through the same DDR/CRC/display ownership pipeline",
+        "corrected_mode": "8x8 traversal, fixed fisheye coordinates and dualstripe raster restoration",
+        "display_change": "later complete result lease at output frame boundary; no asynchronous video mux",
+        "led": "LED6 reports requested mode, not confirmed visible frame mode",
+        "explicit_displayed_mode_ack": false
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+          "module": "hdmi_camera_fisheye_top",
+          "line_start": 213,
+          "line_end": 225,
+          "git_blob_sha": "ba1892c621b996bff2c14226fe47a1cf17a8078e",
+          "content_sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+          "excerpt_sha256": "17ad5e1396e867685f37ca5f78aa6ceb30e52aa06a10dfbec0733ff89a884c72",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L213"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/camera720_view_control.v",
+          "module": "camera720_view_control",
+          "line_start": 14,
+          "line_end": 40,
+          "git_blob_sha": "49c5c8e36cf397a2d25b210ecc83c94ada6b46f5",
+          "content_sha256": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255",
+          "excerpt_sha256": "0a153c1deba5fd32e7423050083e2d6013b1c83cda0233353f7ca4989bfa8586",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/camera720_view_control.v#L14"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+          "module": "hdmi_camera_fisheye_bank",
+          "line_start": 48,
+          "line_end": 65,
+          "git_blob_sha": "1a9bcb9e299daffdc92d8c1cf37a16a2c9583514",
+          "content_sha256": "9404658e762b51f8a8e9926936f6533908fbc686b90674fa03d1db2b0f43b482",
+          "excerpt_sha256": "8fa9b97b1c45faf00a2567f41217be69180138c291c474e408657315796d6d08",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v#L48"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+          "module": "hdmi_camera_fisheye_engine_tile8",
+          "line_start": 19,
+          "line_end": 46,
+          "git_blob_sha": "cd2bc3a5a126fad04465e946b7e71fa0d27e94e1",
+          "content_sha256": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+          "excerpt_sha256": "60a8fe1707cb00ecc9aeac4acaec6ad67fb01a446812621441a3378b059a917a",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v#L19"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+          "module": "hdmi_camera_fisheye_engine_tile8",
+          "line_start": 63,
+          "line_end": 95,
+          "git_blob_sha": "cd2bc3a5a126fad04465e946b7e71fa0d27e94e1",
+          "content_sha256": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+          "excerpt_sha256": "80d15d44dbddc6190083f780ec8176836cb4422a561f89a00c5aea4598372c71",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v#L63"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+          "module": "hdmi_camera_fisheye_mapper",
+          "line_start": 24,
+          "line_end": 33,
+          "git_blob_sha": "f2a7ffb37d5e3e8a4a84e2be06f3b81c9bf6e09d",
+          "content_sha256": "cb141734a32443156768563bd9ce77723e573bdc00869457af11954a039c6e3c",
+          "excerpt_sha256": "f459d13ede98721fe4666d4f0be53ed8852c58c53daad414b063b26c5188af7d",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_mapper.v#L24"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+          "module": "hdmi_camera_fisheye_mapper",
+          "line_start": 69,
+          "line_end": 76,
+          "git_blob_sha": "f2a7ffb37d5e3e8a4a84e2be06f3b81c9bf6e09d",
+          "content_sha256": "cb141734a32443156768563bd9ce77723e573bdc00869457af11954a039c6e3c",
+          "excerpt_sha256": "5ec68c0afb7540bfbfe39fdbe61c70c366e5c469686e29f3a7d2d02fbbcdcab0",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_mapper.v#L69"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+          "module": "hdmi_camera_fisheye_top",
+          "line_start": 283,
+          "line_end": 285,
+          "git_blob_sha": "ba1892c621b996bff2c14226fe47a1cf17a8078e",
+          "content_sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+          "excerpt_sha256": "a55d170606aae4cd415be4d5d6667001a8d20456bd4de1b94b68610646149799",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L283"
+        }
+      ],
+      "limits": "An input frame already captured but not yet accepted by the bank may take the new mode at its bank handshake. A processed/displayed frame has id/bank/CRC/epoch, but no explicit mode field in the saved descriptor or UART; requested bit alone is not a visible-mode acknowledgement."
+    },
+    {
+      "key": "source_commit_release",
+      "value": {
+        "capture": "reservation held across pixel/core domains; first DE after VS with grant begins whole frame; missing grant/geometry/overflow discards whole frame",
+        "commit_requires": [
+          "capture end_good",
+          "matching bank/id",
+          "2073600 pixels",
+          "129600 written beats",
+          "matching CRC",
+          "capture FIFO and registered pending return drained",
+          "CRC engine idle",
+          "no partial burst remains"
+        ],
+        "source_offer": "valid descriptor retained while bank !source_ready; capture reservation remains owned until processing release",
+        "source_bank_release": "only engine_done and matching completed result base/id; not on KEY1, timeout or display request"
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_capture_cdc.v",
+          "module": "hdmi1080_capture_cdc",
+          "line_start": 100,
+          "line_end": 145,
+          "git_blob_sha": "81d12f60d6988aa5385bc1070411700fda31d563",
+          "content_sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+          "excerpt_sha256": "52ac718ab9f1f8522ea6a7d9df7049540be4c092266542e06c9aa58cb30f7288",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_capture_cdc.v#L100"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v",
+          "module": "hdmi1080_input_dma",
+          "line_start": 44,
+          "line_end": 54,
+          "git_blob_sha": "6d28f912f2e980ead427024e5a4f90e5eb0d8486",
+          "content_sha256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+          "excerpt_sha256": "89e7fa1334a4b4f61d7d0a82575dceda4257d9bb07259bfc6797b27696c8fd18",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v#L44"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v",
+          "module": "hdmi1080_input_dma",
+          "line_start": 97,
+          "line_end": 113,
+          "git_blob_sha": "6d28f912f2e980ead427024e5a4f90e5eb0d8486",
+          "content_sha256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+          "excerpt_sha256": "f00a5dfe4e5eb1871397e0e78e80efbc540f7d3a57a5439b8f814397d1d6f40c",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v#L97"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v",
+          "module": "hdmi1080_input_dma",
+          "line_start": 151,
+          "line_end": 160,
+          "git_blob_sha": "6d28f912f2e980ead427024e5a4f90e5eb0d8486",
+          "content_sha256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+          "excerpt_sha256": "9a129c8a8b0d15c72df4886bbe1e6c731f3f6c4b0867e03908e2275b55db550d",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v#L151"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_input_link.v",
+          "module": "hdmi_camera_fisheye_input_link",
+          "line_start": 40,
+          "line_end": 49,
+          "git_blob_sha": "b50b3d0de46e7888b827663cb9275fb53f452f8f",
+          "content_sha256": "b07c6df5ac016b632fa2413b4d2d5d6886ee70f13d3efa050a9dff59e0166a2a",
+          "excerpt_sha256": "1bfdae7ae086df301af449d9f6077e6243a63adbc0225f3176c124eecb6c4008",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_input_link.v#L40"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+          "module": "hdmi_camera_fisheye_bank",
+          "line_start": 38,
+          "line_end": 44,
+          "git_blob_sha": "1a9bcb9e299daffdc92d8c1cf37a16a2c9583514",
+          "content_sha256": "9404658e762b51f8a8e9926936f6533908fbc686b90674fa03d1db2b0f43b482",
+          "excerpt_sha256": "f4deafacfe15a10dad7531c304f01f0999afeef8bd1e25066edfebce69a7955a",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v#L38"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+          "module": "hdmi_camera_fisheye_bank",
+          "line_start": 64,
+          "line_end": 89,
+          "git_blob_sha": "1a9bcb9e299daffdc92d8c1cf37a16a2c9583514",
+          "content_sha256": "9404658e762b51f8a8e9926936f6533908fbc686b90674fa03d1db2b0f43b482",
+          "excerpt_sha256": "95355262117188af5fe7d1b235c01c91aa8b1aa7c16fb58ad32a51e3b8572c78",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v#L64"
+        }
+      ]
+    },
+    {
+      "key": "result_publication_lease",
+      "value": {
+        "writer": "two complete eight-row stripe RAMs; whole RGB/tag elastic output; immutable 256-pixel/16-beat burst buffer from AW presentation through final W transfer",
+        "result_pending": "only writer_done after every beat and writer drain; bank validates completed_base/id then records pending CRC/id",
+        "lease_descriptor": [
+          "id",
+          "bank",
+          "CRC",
+          "epoch"
+        ],
+        "lease_release_requires": [
+          "reader_done with full beats and CRC",
+          "pixel done matching id/bank/epoch/CRC/full pixel count",
+          "reader_idle",
+          "display FIFO used == 0",
+          "no current failed veto"
+        ],
+        "refresh_without_ready_front": "blank grant at that refresh boundary, never late midpicture grant",
+        "repeat": "old front may be leased again; scan_repeat counted separately; unique_presented increases only for newer result id"
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+          "module": "ddr_adaptive_result_writer_dualstripe",
+          "line_start": 2,
+          "line_end": 5,
+          "git_blob_sha": "8e534a5cc454b04c34c51f752b208fa264526e4c",
+          "content_sha256": "f820cae06b30b0c3fb78f8ece7874e742c5008c795df10e190ff57eeb23b017b",
+          "excerpt_sha256": "05f69eab887161f2462c341b3a078f65297daa98a548b826a96ac82ee0ac06b0",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v#L2"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+          "module": "ddr_adaptive_result_writer_dualstripe",
+          "line_start": 45,
+          "line_end": 64,
+          "git_blob_sha": "8e534a5cc454b04c34c51f752b208fa264526e4c",
+          "content_sha256": "f820cae06b30b0c3fb78f8ece7874e742c5008c795df10e190ff57eeb23b017b",
+          "excerpt_sha256": "2cfd5b5b7bde09e0017fbdec86658fd079af3aa2478943020f218a0bc43cbf4f",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v#L45"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+          "module": "ddr_adaptive_result_writer_dualstripe",
+          "line_start": 145,
+          "line_end": 164,
+          "git_blob_sha": "8e534a5cc454b04c34c51f752b208fa264526e4c",
+          "content_sha256": "f820cae06b30b0c3fb78f8ece7874e742c5008c795df10e190ff57eeb23b017b",
+          "excerpt_sha256": "45ea32ae7316e127184593b285a905a0fd23c34bf47b64cd26dce7b0183fce4e",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v#L145"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+          "module": "hdmi_camera_fisheye_engine_tile8",
+          "line_start": 93,
+          "line_end": 101,
+          "git_blob_sha": "cd2bc3a5a126fad04465e946b7e71fa0d27e94e1",
+          "content_sha256": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+          "excerpt_sha256": "debcab3afa5f7487136e8c419fae1e921de3cf985f5086b0f547ed85000b72f8",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v#L93"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_system_c.v",
+          "module": "hdmi_camera_fisheye_system",
+          "line_start": 184,
+          "line_end": 228,
+          "git_blob_sha": "af363139e0df96ddaf50b44adc7b202deff312cd",
+          "content_sha256": "c6485f8df49ba398cad00bafbbcf223a672a99ef3eeab8932e9cf2fe8103bb6d",
+          "excerpt_sha256": "d8f5c5bda9b586d38d1e420019b8ab3cacdd774c4dd54b44369e75b38413d8b2",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_system_c.v#L184"
+        }
+      ]
+    },
+    {
+      "key": "stall_fault_reset",
+      "value": {
+        "stall": "ready/valid governs coordinate, pixel/tag and descriptor progress; read/write arbiters retain whole-burst owner and held address; never cancel a visible AW/AR on mode change",
+        "fault": "sticky quarantine; no partial result publish and no bad lease release; display fault drains queued/future returned FIFO data but remains failed until coordinated reset",
+        "runtime_watchdog": "top watches PCLK activity only; timeout is not VS/DE/frame-progress validation and does not reset a transaction or free bank",
+        "reset": "only manual/power common reset asserts DDR/capture/FIFO/scan epoch reset; two-flop local releases; startup release monotonic; runtime fault stops admission rather than local reset",
+        "address_stall_limit": "write/read arbiters do not time out a held ADDRESS before DDR acceptance; 26-bit watchdogs chiefly guard service stalls after address acceptance; reader also times ROOM/AR",
+        "simultaneous_fault_veto": "system qualifies delayed display_done_valid with !failed on bank consumption edge"
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+          "module": "hdmi_camera_fisheye_top",
+          "line_start": 179,
+          "line_end": 211,
+          "git_blob_sha": "ba1892c621b996bff2c14226fe47a1cf17a8078e",
+          "content_sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+          "excerpt_sha256": "5f233b8da67c84ce67e53acd608b0bf1f728af117045ddf06f2b4030dabb8f16",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L179"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_input_link.v",
+          "module": "hdmi_camera_fisheye_input_link",
+          "line_start": 64,
+          "line_end": 75,
+          "git_blob_sha": "b50b3d0de46e7888b827663cb9275fb53f452f8f",
+          "content_sha256": "b07c6df5ac016b632fa2413b4d2d5d6886ee70f13d3efa050a9dff59e0166a2a",
+          "excerpt_sha256": "0f11cdeee1feecf93f498ee896f70ac5e303a667b645a5b0ce3576b5650049da",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_input_link.v#L64"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/ddr_write_arbiter.v",
+          "module": "ddr_write_arbiter",
+          "line_start": 16,
+          "line_end": 53,
+          "git_blob_sha": "424fd88dc6b5cffe4a4b8bf4d5cb3ca04901ddc5",
+          "content_sha256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+          "excerpt_sha256": "e9d3228600b05194fc6e1512126fb0df020a39b25a976c6c51933d66bb979e69",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/ddr_write_arbiter.v#L16"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_read_arbiter_fill8r2.v",
+          "module": "ddr_read_arbiter",
+          "line_start": 16,
+          "line_end": 70,
+          "git_blob_sha": "16d81dd2529baf70d28ca6cbc9dc5e72f216a758",
+          "content_sha256": "de0c11db399033511048ef18a90345881f8f13d2458b81ff6daa131f79393ec7",
+          "excerpt_sha256": "3bfc628f7406350b5fdc7fe284387b275a94aa71e528b1baf70c0ffc194da17e",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_read_arbiter_fill8r2.v#L16"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_video_output_1080_board.v",
+          "module": "ddr_video_output_1080_board",
+          "line_start": 4,
+          "line_end": 10,
+          "git_blob_sha": "4c9e9eac4fdf5f1599fd0f95ea4d2bf0f5096e4a",
+          "content_sha256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+          "excerpt_sha256": "e5efccd0f89f0d428678b5e182c3791cc857503ac8c9affa312f2c0949e2debf",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_video_output_1080_board.v#L4"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_video_output_1080_board.v",
+          "module": "ddr_video_output_1080_board",
+          "line_start": 90,
+          "line_end": 130,
+          "git_blob_sha": "4c9e9eac4fdf5f1599fd0f95ea4d2bf0f5096e4a",
+          "content_sha256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+          "excerpt_sha256": "01d76e8640f16013498534ebe751dfd43844d403f5c87aba55710523e4be504f",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_video_output_1080_board.v#L90"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_system_c.v",
+          "module": "hdmi_camera_fisheye_system",
+          "line_start": 77,
+          "line_end": 80,
+          "git_blob_sha": "af363139e0df96ddaf50b44adc7b202deff312cd",
+          "content_sha256": "c6485f8df49ba398cad00bafbbcf223a672a99ef3eeab8932e9cf2fe8103bb6d",
+          "excerpt_sha256": "9fae83a71333ce4c3b92b25bd2afd3b49225d525603c06bbf7cc4951a82573c3",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_system_c.v#L77"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/ddr_video_reader.v",
+          "module": "ddr_video_reader",
+          "line_start": 31,
+          "line_end": 55,
+          "git_blob_sha": "5cf2ed2f962234177e3743b3faa67e776e1a8147",
+          "content_sha256": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+          "excerpt_sha256": "27ea1bdce0f007b3afa4511dfabc5050dd7b944969dc8cbd1aeebb2d2d004574",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/ddr_video_reader.v#L31"
+        }
+      ],
+      "limits": "Source inspection is not a new formal proof of all arbitrary fault/service combinations. Offline acceptance must retain outstanding transactions and epoch rules; do not promise general independent-domain reset or clock-stop recovery."
+    },
+    {
+      "key": "uart",
+      "value": {
+        "magic": "PGHFPS02",
+        "version": 2,
+        "length": 96,
+        "endian": "little",
+        "baud": 115200,
+        "serial": "8N1",
+        "period_core_cycles": 125000000,
+        "crc": "IEEE reflected CRC32 polynomial0xEDB88320 over bytes0..91, init/final xorFFFFFFFF, CRC in92..95",
+        "build_id": "11030001",
+        "profile_id": "ed59f83e3cfbc77b",
+        "flags": {
+          "bit0": "status_valid && failed",
+          "bit1": "status_valid",
+          "bit2": "corrected_requested"
+        },
+        "format": "<8sBBHIQ14IQII",
+        "counters": [
+          "source_frames",
+          "captured_frames",
+          "processed_frames",
+          "unique_presented_frames",
+          "scan_refreshes",
+          "last_process_cycles",
+          "cache_hits",
+          "cache_misses",
+          "queries",
+          "scan_good_frames",
+          "scan_repeat_frames",
+          "scan_blank_frames"
+        ],
+        "underflow_slot": "zero reserved32-bit slot, not live output underflow telemetry",
+        "parser_warning": "host summarizes modulo32 endpoint deltas; long cache-count windows require adjacent-sample accumulation to avoid multiple wraps",
+        "displayed_mode_ack": false,
+        "image_overflow_counter_exposed": false
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_status_uart.v",
+          "module": "hdmi_camera_fisheye_status_uart",
+          "line_start": 2,
+          "line_end": 10,
+          "git_blob_sha": "62f9b73ffe0da53166e36614fda86b94eb998b22",
+          "content_sha256": "1554e35ef2efd157bdb462abe67c16741d42b94696c09ac6caa04df942ddd4a0",
+          "excerpt_sha256": "7af5b3582eb13cfb6cf445e387404eb990c87164b9c5508f905ce6dbb8fc7376",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_status_uart.v#L2"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_status_uart.v",
+          "module": "hdmi_camera_fisheye_status_uart",
+          "line_start": 36,
+          "line_end": 45,
+          "git_blob_sha": "62f9b73ffe0da53166e36614fda86b94eb998b22",
+          "content_sha256": "1554e35ef2efd157bdb462abe67c16741d42b94696c09ac6caa04df942ddd4a0",
+          "excerpt_sha256": "ed3d6ef2ad6d3764e82b97a1108ac1fff9a17dcabbdf1942e90496ca48345717",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_status_uart.v#L36"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_status_uart.v",
+          "module": "hdmi_camera_fisheye_status_uart",
+          "line_start": 49,
+          "line_end": 92,
+          "git_blob_sha": "62f9b73ffe0da53166e36614fda86b94eb998b22",
+          "content_sha256": "1554e35ef2efd157bdb462abe67c16741d42b94696c09ac6caa04df942ddd4a0",
+          "excerpt_sha256": "ecbbb9bba73a8c700f593ed92c987098f64c2aa63f92dc822be0872cbf2530c2",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_status_uart.v#L49"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+          "module": "hdmi_camera_fisheye_top",
+          "line_start": 270,
+          "line_end": 281,
+          "git_blob_sha": "ba1892c621b996bff2c14226fe47a1cf17a8078e",
+          "content_sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+          "excerpt_sha256": "d1600be1a648eaaca562b9badb5aeab6d0511fea186670b97b5e9097391184d0",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L270"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "distortion/tools/hdmi_camera_fisheye_fps.py",
+          "module": "Parser",
+          "line_start": 11,
+          "line_end": 18,
+          "git_blob_sha": "c63cd9304784618555f4c994c57d9bd7f8538542",
+          "content_sha256": "3c44b93436c8420f4fe8194f7d19060caaeae8b6a6ab295402c351fb760734fd",
+          "excerpt_sha256": "0b0e0a6bdd7fa3556a97849c70b587eb3953d659d7cb4d38289937a35248ffc7",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/distortion/tools/hdmi_camera_fisheye_fps.py#L11"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "distortion/tools/hdmi_camera_fisheye_fps.py",
+          "module": "Parser",
+          "line_start": 33,
+          "line_end": 40,
+          "git_blob_sha": "c63cd9304784618555f4c994c57d9bd7f8538542",
+          "content_sha256": "3c44b93436c8420f4fe8194f7d19060caaeae8b6a6ab295402c351fb760734fd",
+          "excerpt_sha256": "b8f4bf080cdc0cd7030d5f6a5a96c864e1729b64eda93af18188b576ff0a2dd8",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/distortion/tools/hdmi_camera_fisheye_fps.py#L33"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "distortion/tools/hdmi_camera_fisheye_fps.py",
+          "module": "summarize",
+          "line_start": 45,
+          "line_end": 69,
+          "git_blob_sha": "c63cd9304784618555f4c994c57d9bd7f8538542",
+          "content_sha256": "3c44b93436c8420f4fe8194f7d19060caaeae8b6a6ab295402c351fb760734fd",
+          "excerpt_sha256": "4262a5bb04790f91aa4fbf9cc27bd555a989889a862dc4d8b27157e59464e9d6",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/distortion/tools/hdmi_camera_fisheye_fps.py#L45"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/uart_tx.v",
+          "module": "uart_tx",
+          "line_start": 14,
+          "line_end": 21,
+          "git_blob_sha": "ddad98b7368ca87c5399250654e404e5a18968e0",
+          "content_sha256": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+          "excerpt_sha256": "a7ae1721e32fba7ae23a54267f0b79947d6a04528f7b73be4f24bb1384f2ae59",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/uart_tx.v#L14"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md",
+          "module": null,
+          "line_start": 29,
+          "line_end": 33,
+          "git_blob_sha": "885122301a75520a641fd7502b62d04d19806769",
+          "content_sha256": "83665fe65d719c97f664cbea2c3c02d5296cf5a0097e91ed193bd6c0daf08e53",
+          "excerpt_sha256": "6047b35e52e88e285de60c1a59226a03f321b2c259d1b74a14655c65519f76cf",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md#L29"
+        }
+      ]
+    },
+    {
+      "key": "ip_constraints",
+      "value": {
+        "idf": "platform/video_base/ipcore/ddr3_test/ddr3_test.idf",
+        "vendor_ddr_expanded_source_count": 74,
+        "vendor_primitives": [
+          "GTP_GPLL",
+          "GTP_INBUFGDS"
+        ],
+        "ddr_wrapper": "ddr3_test",
+        "initial_fdc": "board/hdmi-camera-fisheye-tile8df8-internal.fdc",
+        "initial_input_period_ns": 6.6667,
+        "ddr_ref_period_ns": 8.0,
+        "rcf": "board/board1080-ddr-ioclk-priority.rcf",
+        "rcf_sha256": "981934688d526e8d686635859d811070752570a34738548154d544e41be48516",
+        "initial_plan_timing_flags_are_not_final_signoff": true,
+        "final_physical_proof_role": "saved later source/constraint-application/route/query/STA identity chain; initial source-list FDC alone does not reproduce it",
+        "current_core_basis": {
+          "Domain": "ddrphy_sysclk",
+          "FrequencyHz": 125000000,
+          "PeriodNS": 8.0,
+          "NativeRoot": "u_ddr3_test_h/u_ddrphy_top/ddrphy_gpll/u_gpll/gpll_inst/GPLL/CLKOUT0",
+          "CurrentGeneratedClockVerified": true,
+          "PLLParametersVerified": true,
+          "FrequencyBasis": "current_constraint_and_native_1_to_1_clock_trace",
+          "ConstrainedCoreMHz": 125,
+          "InputParameterMetadataMHz": 50.0,
+          "PhysicalFrequencyMeasured": false,
+          "NativeRatioNumerator": 8,
+          "NativeRatioDenominator": 8,
+          "PLLCell": "u_ddr3_test_h/u_ddrphy_top/ddrphy_gpll/u_gpll/gpll_inst/GPLL",
+          "DynamicPhaseControlChangesFrequency": false,
+          "Limits": "Native/FDC clock relationship and timing basis; absolute hardware frequency must be cross-checked by host arrival/core tick measurements.",
+          "CurrentReportClockTable": [
+            {
+              "Line": 28,
+              "Text": "   ddrphy_sysclk          8.0000       {0.0000 4.0000}     Generated (ref_clk)        10897           1  {u_ddr3_test_h/u_ddrphy_top/ddrphy_gpll/u_gpll/gpll_inst/CLKOUT0}"
+            }
+          ],
+          "Trace": [
+            {
+              "Cell": "HCKBROUTE_1/HCKB",
+              "Primitive": "V_BUF",
+              "Pin": "Z",
+              "Net": "_N26"
+            },
+            {
+              "Cell": "u_ddr3_test_h/u_ddrphy_top/u_sysclk_bufg/gopclkbufg/CLKBUFG",
+              "Primitive": "V_USCM",
+              "Pin": "CLKOUT",
+              "Net": "core_clk"
+            },
+            {
+              "Cell": "u_ddr3_test_h/u_ddrphy_top/ddrphy_gpll/u_gpll/gpll_inst/GPLL",
+              "Primitive": "V_GPLL",
+              "Pin": "CLKOUT0",
+              "Net": "u_ddr3_test_h/u_ddrphy_top/gpll_clkout0"
+            }
+          ]
+        },
+        "hardware_electrical_acceptance": false,
+        "analog_mtbf_acceptance": false,
+        "external_ac_acceptance": false
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-tile8df8-internal.fdc",
+          "module": null,
+          "line_start": 5,
+          "line_end": 6,
+          "git_blob_sha": "2333a817ede11e1760d201c28079c182c6a6901f",
+          "content_sha256": "e27a18c4a5f228ac8543e50c9b50a145f14bf1d4e640ff34361422d32f1bf78a",
+          "excerpt_sha256": "d0a89716926b16e4d4bebf2e8aae2cea00e0a94f0cb44e36563d663368927974",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-tile8df8-internal.fdc#L5"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-tile8df8-internal.fdc",
+          "module": null,
+          "line_start": 798,
+          "line_end": 798,
+          "git_blob_sha": "2333a817ede11e1760d201c28079c182c6a6901f",
+          "content_sha256": "e27a18c4a5f228ac8543e50c9b50a145f14bf1d4e640ff34361422d32f1bf78a",
+          "excerpt_sha256": "8e6f18dce2acf80009ec3494a471703e6c0d3854b8bf8372e7d6bf5e44ed3277",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-tile8df8-internal.fdc#L798"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-tile8df8-internal.fdc",
+          "module": null,
+          "line_start": 888,
+          "line_end": 893,
+          "git_blob_sha": "2333a817ede11e1760d201c28079c182c6a6901f",
+          "content_sha256": "e27a18c4a5f228ac8543e50c9b50a145f14bf1d4e640ff34361422d32f1bf78a",
+          "excerpt_sha256": "412f9f10b93c969baa09d02c00bc9c17b9ae8c792adb436c7d10b047ffbc48a2",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-tile8df8-internal.fdc#L888"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/board1080-ddr-ioclk-priority.rcf",
+          "module": null,
+          "line_start": 1,
+          "line_end": 2,
+          "git_blob_sha": "d4d9688f3e7791d913ea8fe9056fa0cc8e92f33e",
+          "content_sha256": "981934688d526e8d686635859d811070752570a34738548154d544e41be48516",
+          "excerpt_sha256": "99453d0ba617c68a39ec3e68ecfd51f2d2998bb22abf4bbae6a1de9ad89bb4c2",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/board1080-ddr-ioclk-priority.rcf#L1"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md",
+          "module": null,
+          "line_start": 35,
+          "line_end": 39,
+          "git_blob_sha": "885122301a75520a641fd7502b62d04d19806769",
+          "content_sha256": "83665fe65d719c97f664cbea2c3c02d5296cf5a0097e91ed193bd6c0daf08e53",
+          "excerpt_sha256": "67e3f42c013c23e26cdf103b685c5a80b6f2400efd0d2aaaeab5d729eabb19e9",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md#L35"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/evidence/final-physical-summary.json",
+          "module": null,
+          "line_start": 1842,
+          "line_end": 1842,
+          "git_blob_sha": "677bdcaad0ac56afa9d328a4bbf609e845ab1517",
+          "content_sha256": "a6a7922c22a859f861bf57034b4fed20a554c842c952d9bb7d01e4e126a41e02",
+          "excerpt_sha256": "5d841a14634cf1f41b4b34248a2f772c69216f1d124619d960870db9594a70a0",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/evidence/final-physical-summary.json#L1842"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/evidence/final-physical-summary.json",
+          "module": null,
+          "line_start": 1857,
+          "line_end": 1857,
+          "git_blob_sha": "677bdcaad0ac56afa9d328a4bbf609e845ab1517",
+          "content_sha256": "a6a7922c22a859f861bf57034b4fed20a554c842c952d9bb7d01e4e126a41e02",
+          "excerpt_sha256": "043ceb43a752e866ca3a15315db4995769c5b638ceeb9997d497592cb6a829f4",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/evidence/final-physical-summary.json#L1857"
+        }
+      ],
+      "limits": "No external installations, license files, final ADF or full historical physical provider closure were accessed or replayed by this audit."
+    },
+    {
+      "key": "historical_validation_boundary",
+      "value": {
+        "saved_selected_package_verification": {
+          "passed": true,
+          "schema": "tile8-directfill-selected-submission-v1",
+          "verified_files": 136,
+          "verified_report_files": 11,
+          "production_sources": 110,
+          "compiled_snapshots": 6,
+          "bit_sha256": "aa21991374fbeb4a6733741095f38e27336f1e47dd67b963feb243428a5b353b",
+          "board_windows": [
+            {
+              "window": "30s",
+              "samples": 30,
+              "core_seconds": 29.0,
+              "unique_frames": 435,
+              "nominal_unique_fps": 15.0,
+              "host_unique_fps": 15.00028764346933
+            },
+            {
+              "window": "600s",
+              "samples": 600,
+              "core_seconds": 599.0,
+              "unique_frames": 8985,
+              "nominal_unique_fps": 15.0,
+              "host_unique_fps": 15.000299990973161
+            }
+          ],
+          "timing_tables": 10,
+          "git_required": false,
+          "eda_executed": false,
+          "hardware_accessed": false,
+          "scope": "Byte verification and saved identity checks; no new physical audit or hardware measurement.",
+          "source_manifest_sha256": "3725486a7fc60a5d74daab62e0f95560b6960038b5534288c6fdd7f0b7b17256",
+          "generated_receipt_not_part_of_source_manifest": true
+        },
+        "saved_ten_sta_tables": [
+          {
+            "corner": "slow",
+            "kind": "setup",
+            "worst_slack_ns": 0.092,
+            "failing_checks": 0
+          },
+          {
+            "corner": "slow",
+            "kind": "hold",
+            "worst_slack_ns": 0.076,
+            "failing_checks": 0
+          },
+          {
+            "corner": "slow",
+            "kind": "recovery",
+            "worst_slack_ns": 1.019,
+            "failing_checks": 0
+          },
+          {
+            "corner": "slow",
+            "kind": "removal",
+            "worst_slack_ns": 0.257,
+            "failing_checks": 0
+          },
+          {
+            "corner": "slow",
+            "kind": "mpw",
+            "worst_slack_ns": 0.035,
+            "failing_checks": 0
+          },
+          {
+            "corner": "fast",
+            "kind": "setup",
+            "worst_slack_ns": 1.606,
+            "failing_checks": 0
+          },
+          {
+            "corner": "fast",
+            "kind": "hold",
+            "worst_slack_ns": 0.02,
+            "failing_checks": 0
+          },
+          {
+            "corner": "fast",
+            "kind": "recovery",
+            "worst_slack_ns": 2.184,
+            "failing_checks": 0
+          },
+          {
+            "corner": "fast",
+            "kind": "removal",
+            "worst_slack_ns": 0.03,
+            "failing_checks": 0
+          },
+          {
+            "corner": "fast",
+            "kind": "mpw",
+            "worst_slack_ns": 0.035,
+            "failing_checks": 0
+          }
+        ],
+        "saved_proof_flags": {
+          "Passed": true,
+          "STAAllTenPassed": true,
+          "NativeWarningsReviewed": true,
+          "SourceDiagnosticReviewPassed": true,
+          "NetlistEquivalent": true,
+          "AllFFPlacementsEquivalent": true,
+          "RoutesUnchanged": true,
+          "ResetAccepted": true,
+          "SourceSamplingIsolatedVerified": true,
+          "VendorDDRClockResetAccepted": true,
+          "FrameBoundaryViewSelectionAccepted": true,
+          "FisheyeProfileAccepted": true,
+          "UserCDCAccepted": true,
+          "InterstageTimingAccepted": true
+        },
+        "ports": {
+          "DeclaredTopPorts": 144,
+          "NativeRoutedPorts": 144,
+          "NativeActivePorts": 144,
+          "UnusedPads": [],
+          "UnusedPadDispositionsAccepted": true,
+          "NativeElectricalParametersVerified": true
+        },
+        "saved_fps": "30s:435 unique /29s; 600s:8985 unique /599s; approx15 FPS; scan approx30Hz; not60 unique frames/s",
+        "this_audit_executed": {
+          "rtl_simulation": false,
+          "EDA": false,
+          "hardware": false,
+          "JTAG": false,
+          "UART_read": false
+        },
+        "still_open": [
+          "portable exact physical replay on another computer",
+          "independent full-FOV optical acceptance",
+          "external AC and actual board voltage evidence",
+          "analog MTBF",
+          "KEY1 visible frame-mode acknowledgement/long varied mode board coverage"
+        ]
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md",
+          "module": null,
+          "line_start": 21,
+          "line_end": 39,
+          "git_blob_sha": "885122301a75520a641fd7502b62d04d19806769",
+          "content_sha256": "83665fe65d719c97f664cbea2c3c02d5296cf5a0097e91ed193bd6c0daf08e53",
+          "excerpt_sha256": "b2e4105fcec15a0dd8464cdeb286a9afc3eb572e4128ec9fa50010ad3377faa4",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md#L21"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/README.md",
+          "module": null,
+          "line_start": 5,
+          "line_end": 29,
+          "git_blob_sha": "173fe6532c010001aa5f271629ab20dd172fb391",
+          "content_sha256": "0e9aa494debf91ecd9241844fe32df70c743047f99746189da09d8375afa1108",
+          "excerpt_sha256": "9878f932e248dbb3bf8028eb4f9ac0f1382a640deb4e3df26faa9d0b49360d74",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/README.md#L5"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/verification-result.json",
+          "module": null,
+          "line_start": 1,
+          "line_end": 34,
+          "git_blob_sha": "5928563ce0eec0d2cb335102e70425fc29c28935",
+          "content_sha256": "6ae3afa96edaf88531fa40902b0e45aedb5fbc137374a1fd0eca7d13c7c07261",
+          "excerpt_sha256": "fac1283915ee12a04935d0ced0b67314f67e43c8614784fbaa73a20e3b9d63d6",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/verification-result.json#L1"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/evidence/final-physical-summary.json",
+          "module": null,
+          "line_start": 34,
+          "line_end": 34,
+          "git_blob_sha": "677bdcaad0ac56afa9d328a4bbf609e845ab1517",
+          "content_sha256": "a6a7922c22a859f861bf57034b4fed20a554c842c952d9bb7d01e4e126a41e02",
+          "excerpt_sha256": "4f0af18b7fc8710d70d6355cefb331f285ffdcd4d965703cdf443aa72944508c",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/evidence/final-physical-summary.json#L34"
+        }
+      ],
+      "limits": "Saved historical passes establish the published selected source/bit/evidence identity; they cannot transfer to any merged/rebuilt source or a new device."
+    }
+  ],
+  "production_source_inventory": [
+    {
+      "path": "rtl/mul32_pipe.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/mul32_pipe.v",
+      "git_blob_sha": "7dff5202a8b14754e3684ce13557941d9abfd680",
+      "manifest_sha256": "2a026510e5d5a765bad02906368aa27e4c8cc59f17e69b2d7f2d01819ee737d2",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "rtl/bilinear_rgb.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/bilinear_rgb.v",
+      "git_blob_sha": "01b0227df5298d643d67fd6b245ec40b52a7e551",
+      "manifest_sha256": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "rtl/video_async_fifo.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/video_async_fifo.v",
+      "git_blob_sha": "37389d53015b10235b5004a67e15a1481472aabe",
+      "manifest_sha256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "rtl/video_crc32.vh",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/video_crc32.vh",
+      "git_blob_sha": "ab23ddf9e13facb61890a8739af8f24b75b41c2d",
+      "manifest_sha256": "e0510f73beb1dac68f3799f99ec729808a6c133a2fa41b1f097386226fd53705",
+      "role": "header",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "rtl/experimental/ddr_read_arbiter_fill8r2.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_read_arbiter_fill8r2.v",
+      "git_blob_sha": "16d81dd2529baf70d28ca6cbc9dc5e72f216a758",
+      "manifest_sha256": "de0c11db399033511048ef18a90345881f8f13d2458b81ff6daa131f79393ec7",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/ddr_write_arbiter.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/ddr_write_arbiter.v",
+      "git_blob_sha": "424fd88dc6b5cffe4a4b8bf4d5cb3ca04901ddc5",
+      "manifest_sha256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/ddr_video_reader.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/ddr_video_reader.v",
+      "git_blob_sha": "5cf2ed2f962234177e3743b3faa67e776e1a8147",
+      "manifest_sha256": "d97955c65811b87402b68496b643e3d4996ff5b01ab0c98d83f13b2052c7c393",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+      "git_blob_sha": "8e534a5cc454b04c34c51f752b208fa264526e4c",
+      "manifest_sha256": "f820cae06b30b0c3fb78f8ece7874e742c5008c795df10e190ff57eeb23b017b",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v",
+      "git_blob_sha": "310da49b35af5e0b6de7ee18da773b7f8200f956",
+      "manifest_sha256": "d4730a733bc8f84886d268fcc90bb702db035a41867c812d6119694fbbf35b1e",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/ddr_remap_sample_scatter16_rowpipe.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_remap_sample_scatter16_rowpipe.v",
+      "git_blob_sha": "55d916659715f3b72832b49261bc2bb49bd082bb",
+      "manifest_sha256": "ea737c2b8eeb934e2018723d62f3e0fa5bbc8b959ec60104995500cc1302d994",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "rtl/experimental/hdmi_camera_fisheye_core.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_core.v",
+      "git_blob_sha": "e9ea69ead0914024b7b4bb3659b2a4c2c60fd8fb",
+      "manifest_sha256": "d40e18e74f691212d7c4a28e8b8eff15f87480532c258e5f3c832a023516995c",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+      "git_blob_sha": "cd2bc3a5a126fad04465e946b7e71fa0d27e94e1",
+      "manifest_sha256": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+      "git_blob_sha": "1a9bcb9e299daffdc92d8c1cf37a16a2c9583514",
+      "manifest_sha256": "9404658e762b51f8a8e9926936f6533908fbc686b90674fa03d1db2b0f43b482",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/hdmi1080_capture_cdc.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_capture_cdc.v",
+      "git_blob_sha": "81d12f60d6988aa5385bc1070411700fda31d563",
+      "manifest_sha256": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/hdmi1080_input_dma.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v",
+      "git_blob_sha": "6d28f912f2e980ead427024e5a4f90e5eb0d8486",
+      "manifest_sha256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/hdmi_camera_fisheye_input_link.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_input_link.v",
+      "git_blob_sha": "b50b3d0de46e7888b827663cb9275fb53f452f8f",
+      "manifest_sha256": "b07c6df5ac016b632fa2413b4d2d5d6886ee70f13d3efa050a9dff59e0166a2a",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/ddr_video_output_1080_board.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_video_output_1080_board.v",
+      "git_blob_sha": "4c9e9eac4fdf5f1599fd0f95ea4d2bf0f5096e4a",
+      "manifest_sha256": "65c7cb966e5a662df9257d4fa0e73a3ced90c2bc0a243bdaad565263fb87204e",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/hdmi_camera_fisheye_system_c.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_system_c.v",
+      "git_blob_sha": "af363139e0df96ddaf50b44adc7b202deff312cd",
+      "manifest_sha256": "c6485f8df49ba398cad00bafbbcf223a672a99ef3eeab8932e9cf2fe8103bb6d",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/ddr3_test.idf",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/ddr3_test.idf",
+      "git_blob_sha": "19d046ee4a7952d51d990c80d1910746f5161c5a",
+      "manifest_sha256": "b600d6102995be4e76b060dd45786b5e1497bd2e7499bbc04b870de9355f2747",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ips2l_rst_sync_v1_3.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ips2l_rst_sync_v1_3.vp",
+      "git_blob_sha": "1a094bfc0c7fd6ac324a66548b9d7ec796929c20",
+      "manifest_sha256": "64b8d83f15f2ff373e6b1040405c42051d8761bd1857dec719c884c2eb59361a",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrlvl_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrlvl_v1_0.vp",
+      "git_blob_sha": "b6a815a2166647be5eb3bfb71882da7e83666316",
+      "manifest_sha256": "00c086bd729be3ab8287f6eb786cfb3549c97aa92f8465c608b8fc2477df3edc",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrcal_v1_7.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wrcal_v1_7.vp",
+      "git_blob_sha": "49a82d888bff46f5bf67cfb40e617d56ee212317",
+      "manifest_sha256": "0a8cb0bb70bd40809260c50bcb85d092c16fea5d9ab2e4fbbe647ccbd1bfb1b0",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wdata_path_adj_v1_10.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_wdata_path_adj_v1_10.vp",
+      "git_blob_sha": "0fac81e2018f2f710f1d5f11e281c472fd21977c",
+      "manifest_sha256": "85f625ed4a09964442e8616074eea9e4757e43b4217589bb9e2f289c9748b272",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_upcal_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_upcal_v1_0.vp",
+      "git_blob_sha": "5b218d606a37118182f8d508ae3d506aeff0a37f",
+      "manifest_sha256": "afbca3503da609f7951ad7fbef386bd007f403c89f52377211ba521967c94455",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_training_ctrl_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_training_ctrl_v1_0.vp",
+      "git_blob_sha": "bee8c536927df0e13badf5c56214cb245d2ed757",
+      "manifest_sha256": "777e8ee9d8d819fdcf04b39b5a5d6086c52369a7f19f04dbd0d06f7a7d3d6110",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_slice_rddata_align_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_slice_rddata_align_v1_0.vp",
+      "git_blob_sha": "9a3a0a28e31be9a1519ddd242876a4774757a064",
+      "manifest_sha256": "befb44f07d851524109a6dc8e17c5b8062694aa274ed8dbc4f7326b8fe1c443e",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_reset_ctrl_v1_3.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_reset_ctrl_v1_3.vp",
+      "git_blob_sha": "36f70d8caf376b5680c49175220946159f05c4ab",
+      "manifest_sha256": "17189b59ed5307c4a27ec35485b33af5c98a89e6ee7f9c5d85aaed9c03a77163",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rdcal_v1_10.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rdcal_v1_10.vp",
+      "git_blob_sha": "89ebf6dd9b3ff09789a54927ea6eba7f60b326bd",
+      "manifest_sha256": "6b4c7f3c24a4750ac69b4e7882617105c6e31f02da712aaa87932b8561ccea2b",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_main_ctrl_v1_10.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_main_ctrl_v1_10.vp",
+      "git_blob_sha": "0c27e8f0af00ad025be0b0bc9a6eb4e704eb62eb",
+      "manifest_sha256": "39d5024d7364b441340b131d265d0648d8b7c1f92cc417424d7c584413c5f4a6",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_init_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_init_v1_0.vp",
+      "git_blob_sha": "4d7a1bd8786359b613e84905f98677ed1172c689",
+      "manifest_sha256": "817f9f32b2260a4c35af446e89ff4c2d4b065381b25cb2020c538d22b4a45088",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_info_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_info_v1_0.vp",
+      "git_blob_sha": "838298a79d26cd3bcf045beee4695bc456364047",
+      "manifest_sha256": "0794201be97885e7695a16b6c35848655b08c4bf191405d26417126512ce4aa8",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gatecal_v1_10.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gatecal_v1_10.vp",
+      "git_blob_sha": "a931fc5a59ef09bccb18a2d6a2c0c5964744ac09",
+      "manifest_sha256": "b6859250ca098e81ff05bcab08dfe8ffee77648218e90c040a1dd3838a0671f2",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gate_update_ctrl_v1_3.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gate_update_ctrl_v1_3.vp",
+      "git_blob_sha": "7cb1367b900692d744c3d485cc30afd12338e8fa",
+      "manifest_sha256": "ce20eb3b9cbe3b392d8be0aa1d6787247bc7b2d91af36a1f734f35c9eb03d642",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_eyecal_v1_5.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_eyecal_v1_5.vp",
+      "git_blob_sha": "0d9890f758e1bd420511d4be35103ecea85a3cc8",
+      "manifest_sha256": "31977dd34339d163ecbd8b9949ac4b65f0eaa6fbcd9a75d787400ae73f7f51d2",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_drift_ctrl_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_drift_ctrl_v1_0.vp",
+      "git_blob_sha": "2b22f53f5f4ef5a97751a482ab76c4cc451d46c7",
+      "manifest_sha256": "8ea99ac6decf6fe14c0585b4f121d7a1acc17290d7a1c68725d984e704e277bc",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqsi_rdel_cal_v1_3.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqsi_rdel_cal_v1_3.vp",
+      "git_blob_sha": "9417647b9cd0bab7094112c7e1efc0701d156e80",
+      "manifest_sha256": "ef7e57755ab7558b1b518aa73999384368f349efe7077cf9283e0911e711ac1a",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_rddata_align_v1_10.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_rddata_align_v1_10.vp",
+      "git_blob_sha": "a24687caa98d7bdccf4167436457595504fbe8f9",
+      "manifest_sha256": "c0cab4287a7a7b6b720977c1c5f9259c5f48f8da18e9a3ca1173a073b1ccf025",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_gate_coarse_cal_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dqs_gate_coarse_cal_v1_0.vp",
+      "git_blob_sha": "6189839cbfaf4d895e5675924c16cc8c340f5b1b",
+      "manifest_sha256": "950a0010929854894c2c92d9f3f8e9dce0fee6985fee70d4160540a058853ede",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dll_update_ctrl_v1_3.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dll_update_ctrl_v1_3.vp",
+      "git_blob_sha": "e81e10d0b3206067825663de573497157eff0472",
+      "manifest_sha256": "bc4e8f402d2fb98920e050a3c1514d44ec959877217d7865a30b22b7da73cac6",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dfi_v1_3.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_dfi_v1_3.vp",
+      "git_blob_sha": "905dc6586e0ba4bf260b1a7faed8142bb7b72ba4",
+      "manifest_sha256": "9828a1ef43a864d287a7a317910fe330bfc904f44e8f60c8773aafa1d8c1534e",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gpll_phase_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_gpll_phase_v1_0.vp",
+      "git_blob_sha": "f3ed5bfa999f050d204db0227b01803728303b21",
+      "manifest_sha256": "ef8ebe3742d23848bd2a1492d4901f886ce49aa98dbc295873b67e4116ba8524",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrlvl_v1_10.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrlvl_v1_10.vp",
+      "git_blob_sha": "94c2beacce94927c2088fec67b9fe522a7d65b69",
+      "manifest_sha256": "871874f4af0f068571416916898f83eb07052e6e015c5800ffdf65d67620cf7e",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp",
+      "git_blob_sha": "f4c5ebfe64f6cbde8d8f7553028bf4eb0301e82b",
+      "manifest_sha256": "b7a9757c252f74c4b57eb0fb74738c57e4eed3e669ddd7ffeeca1acedd330b2e",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_v1_10.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_v1_10.vp",
+      "git_blob_sha": "a5f37493c10a6bfff9d8d34d69ca632f5a9b841f",
+      "manifest_sha256": "e13e33d97ecbfea1838c4dd28e7f9f1c57dcb974606179523be46bba75344d50",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_dqs_gate_cal_v1_10.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_dqs_gate_cal_v1_10.vp",
+      "git_blob_sha": "5b5e0052004db755c043fd4f2c6606b825f8d3e6",
+      "manifest_sha256": "8764275d4eeb8d1765b3a09aba527d6d3bf3e46f5e1d17eefc685d7e0dbe1520",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_ctrl_v1_3.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_ctrl_v1_3.vp",
+      "git_blob_sha": "2efb71065d5f5069f1ca3bd3a4a2ec0eadaa1ef2",
+      "manifest_sha256": "56f52683adbe720c7d43da1a9f199f4ab3add3f3b5960e3f687f87f60267c161",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_lock_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_cpd_lock_v1_0.vp",
+      "git_blob_sha": "061d35c70890e88e1649d9a93555eec1d552bc11",
+      "manifest_sha256": "a6696f8e79e2d132a6e76ad4997d5366d6c9cf8f05c60f77feff1b47b50d0090",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_control_path_adj_v1_10.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_control_path_adj_v1_10.vp",
+      "git_blob_sha": "502d6dc4085305e44861df8b332b966910b75ed5",
+      "manifest_sha256": "8cdd7b9ec01c143882217b038cbf840d77e52ee3037e629e75e10b03fc223a38",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_top_v1_10.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_top_v1_10.vp",
+      "git_blob_sha": "9fc970885c30ab6148bb829d7dcd24fbd403cb52",
+      "manifest_sha256": "04faf434cef120b5d712911dfc97c8f498901b0679fba720b806f596d688bded",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_mux_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_calib_mux_v1_0.vp",
+      "git_blob_sha": "515c00bc3591b167336739ddb0352c169f5194b0",
+      "manifest_sha256": "676e36319e7ce80b93e3543e255d53708d9fc71606587a6e692eab1ec82ecaed",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_debounce_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_debounce_v1_0.vp",
+      "git_blob_sha": "361fc0043b57e17fd93aad6227c5202a40e90c13",
+      "manifest_sha256": "bff7ed95c8d305dfb88e6002c6de8453a21c72c03a5a0521a76ddd105598dc4d",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_clk_phase_adj_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_rst_clk_phase_adj_v1_0.vp",
+      "git_blob_sha": "00ecc26aa09a2107a479f962319f6b09b427e020",
+      "manifest_sha256": "dd1dbae71726d968df475fe7fbb2b7321411fa67786092c0dc2e065edcf39382",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_gpll_v1_3.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_gpll_v1_3.vp",
+      "git_blob_sha": "a2c88d76bac108902e02c1ad71d43ab9be8c365d",
+      "manifest_sha256": "3fecc367573a4b5bd158e1a8ff106c5c401c5f180143e8e5abe6bb068e5078d2",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_ppll_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/pll/ips2l_ddrphy_ppll_v1_0.vp",
+      "git_blob_sha": "2d556d78ddc626e769f6aa7c12a4308607771b90",
+      "manifest_sha256": "34bb46106b84eab147f130bd7526f1486d35caeb40b0258cd59656e50d19dddd",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_apb_cross_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_apb_cross_v1_2.vp",
+      "git_blob_sha": "f21e3389b5f8d0104d00702e817b0f60a3844738",
+      "manifest_sha256": "62f7d55354a8afe4d02bc6f6d6dc30fc8e9960d3b21709988b887acc99d09cf5",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_calib_delay_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_calib_delay_v1_2.vp",
+      "git_blob_sha": "e74782cbc1880ac04ff328d94f100e7e90d7a7eb",
+      "manifest_sha256": "a52e992b9766b6cb22ed23aa01d1cc5ac9b6a429a8e49de7a13ac51dd70e9784",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_cfg_apb_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_cfg_apb_v1_2.vp",
+      "git_blob_sha": "a237460146c333b44d7ac89ab5520b7c93e37237",
+      "manifest_sha256": "482cb280a614f70209f1d07892fdd773a259d2ca0f23e8f38b85a9faf00513b9",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_bm_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_bm_v1_2.vp",
+      "git_blob_sha": "5d3582901fc0a97df4ccc090077f7ed932b39001",
+      "manifest_sha256": "bfbd472dd8b427fe6b003dd510f73db89f915ac92d31fe8a779c40f9d4e56bee",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_rowaddr_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_rowaddr_v1_2.vp",
+      "git_blob_sha": "ebd5e78709b7821bff2cec4cffb9356c7c363d78",
+      "manifest_sha256": "4ac4721747b13020e1895be6265e55df90968f05beb8056279589039394bb9be",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_sm_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_sm_v1_2.vp",
+      "git_blob_sha": "e601acebdb1717ed6888edb6520d0b732f239b58",
+      "manifest_sha256": "d7e710e3ed4d1807fb0bdd4d84c264817247a4da41123c72439c555573821f49",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_top_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcd_top_v1_2.vp",
+      "git_blob_sha": "a92570d45448f57e20637433763cc69daadfd84f",
+      "manifest_sha256": "26ab4e142f555602c023f62b19df52056c6d51da5052401254066cae0655ddaa",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_back_ctrl_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_back_ctrl_v1_2.vp",
+      "git_blob_sha": "cf096da6672b7848db4c0537ef20d53472335860",
+      "manifest_sha256": "fe7b340b41d80ec7428cc38329a41864bcf5c209a6310610d09c7bc8579e541f",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp",
+      "git_blob_sha": "794bfccfc5b383fd3d592b687d647252b71c991f",
+      "manifest_sha256": "dab35fa172243ecbb5426a8ebccc2c168368ea0a6ea0558c909b815d781b17d6",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_out_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_out_v1_2.vp",
+      "git_blob_sha": "daa17dc295ad22fe3f0995dc91f197f132400b40",
+      "manifest_sha256": "9471082e23170b144dc619f7f7e08c94b8a03378f72da388f744d6acb728928b",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_top_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_top_v1_2.vp",
+      "git_blob_sha": "7b9469b672bea81cc2f3611c2859eb8bd539efd1",
+      "manifest_sha256": "21b1f0e3b4660e1078b47000bfe50022346414f5d5e713ac9e522a4f39f76548",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dfi_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dfi_v1_2.vp",
+      "git_blob_sha": "9bd86ece4fa61a512e9c2e8cbe6bc3f36bc21de2",
+      "manifest_sha256": "abf138d692e634fabe5f569b98d897dfece8a8ae66cee1dba830a56d7e255df1",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_lp_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_lp_v1_2.vp",
+      "git_blob_sha": "b6894eb82cedf7aa433c3215b02c0b3469b4a9af",
+      "manifest_sha256": "7a80ccb1e053e5c9d8f389169359570f256d709ff2e4ad2c51fda7a7a6a4239d",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_mrs_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_mrs_v1_2.vp",
+      "git_blob_sha": "4ed6bc1a7bc5b5c68ca08de66bf0fedfabb5d560",
+      "manifest_sha256": "f78133bc021a57cf469773daaf102817fc37069447e8accc80afa1f4b20b0ad6",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_prefetch_fifo_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_prefetch_fifo_v1_2.vp",
+      "git_blob_sha": "700638bfe88cb19a716d0d5f54e538b866017541",
+      "manifest_sha256": "ee3aa91e980fb3dd08231cf1806a28edf759f4ea8248adfd44407d607519b9e4",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_rdatapath_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_rdatapath_v1_2.vp",
+      "git_blob_sha": "d3eb3ec75e1a6d30e6854b288af0dc7a3088d083",
+      "manifest_sha256": "72dd8ece021f4ee74fd576c1628c4f7d3606ef632f0e68b9569a288a092a6b0f",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_reg_fifo2_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_reg_fifo2_v1_2.vp",
+      "git_blob_sha": "b4f916c9a7ff8a5ce04ba8d833711a8968b2cb2a",
+      "manifest_sha256": "bc9cff65e4002a51af0c20c2f0a9b9f17dacde5157b58691bbfb1c44348ee08a",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_ui_axi_v1_2a.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_ui_axi_v1_2a.vp",
+      "git_blob_sha": "e393a2ab46ca5a9727764ec9ff1d670ce5ebeb86",
+      "manifest_sha256": "145b69395412be2553835f9278cdf1cb1703d3beeb914abf7d985e3c69f817fb",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdatapath_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdatapath_v1_2.vp",
+      "git_blob_sha": "e620b0dbd3ec8d316cf7de8684b93b2a063a82cd",
+      "manifest_sha256": "db648e90ff607ca2f9e2b5cca048de417439888d0b906288e0cec7cf038d9dee",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_align_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_align_v1_2.vp",
+      "git_blob_sha": "d75a87cb5b989c0ae1139c5e6ad5b0228722cbd0",
+      "manifest_sha256": "1645e9eb7fac3c9c13cd3e0d7367f132293f9cec16835ce188c6345993d2b730",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_dcp_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wdp_dcp_v1_2.vp",
+      "git_blob_sha": "8cf936a72666bdcf3a6801ef2f7f1c74b25639d3",
+      "manifest_sha256": "3f30be0f49f78f09915743995c950fa6ff8de5f14598ebc8802e73b5c6d140ee",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wrapper_v1_2b.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_wrapper_v1_2b.vp",
+      "git_blob_sha": "62fad4e91d252098357001c96a5d2fe526d1c9e3",
+      "manifest_sha256": "d35010f49be551fb15ab2655cbeffcaaaa74fdf3ccb0754b033fc979d615e805",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_com_timing_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_com_timing_v1_2.vp",
+      "git_blob_sha": "acdfb920060339b024c1093e5e7d654ffc04327b",
+      "manifest_sha256": "e3f19c4be6352ab64f07426973387f2876c540ee992f6eac9d3f2d470b3d49c2",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_timing_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_timing_v1_2.vp",
+      "git_blob_sha": "514678add366b1da3dffa25ce778b8b237f2dd9e",
+      "manifest_sha256": "c632619f042bebb4f059df7f20eee90eb2b51b81210430cb37d01958ad3cd30f",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_tfaw_v1_2.vp",
+      "git_blob_sha": "bbacbf0836f297668b7d6efaeeee271a46899e82",
+      "manifest_sha256": "ab87b7718bffc4fb2a2b27765576187f09b5266bbca7fc393c43c6dec96ff379",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act2wr_pass_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act2wr_pass_v1_2.vp",
+      "git_blob_sha": "267881beba4fe24b5258246e0c5312a3d7a77628",
+      "manifest_sha256": "1b3874b059923481f292ba382ad156f7dcdd9ad39da6c86dddd480290ccce498",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act_pass_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_act_pass_v1_2.vp",
+      "git_blob_sha": "6d9e704f6911b502ea572cb5e04801f114089cd4",
+      "manifest_sha256": "9f32b6936e039c15f7b07b74480179d39d1b3787965e1b90bd067a7ede7fdd4c",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_pre_pass_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_pre_pass_v1_2.vp",
+      "git_blob_sha": "9548029c9d4dbcf237f4218cf6cd1f393a532ba3",
+      "manifest_sha256": "e40a64caec9725c231cd88dde69973eab3aca38c9d2e66a2c5c0bbddf3103ae0",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_rd_pass_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_rd_pass_v1_2.vp",
+      "git_blob_sha": "5e6f87b14a7f874d35683ba90ac2572c41541477",
+      "manifest_sha256": "78b1de719a43ee0fc80e1a5464f7284439d91f1d4b3f83ef2ae5611920293988",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_ref_pass_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_ref_pass_v1_2.vp",
+      "git_blob_sha": "57ccd836a0a63a978cdd38a12a099d9397abf5cf",
+      "manifest_sha256": "c79dde6f9a682c55aff7bb89c4863f76a069b874fb154dff7d3e4d4a7a88f9d1",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_wr_pass_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_timing_wr_pass_v1_2.vp",
+      "git_blob_sha": "2826b45aec9646cd85b209a7bffefb5623ce8cad",
+      "manifest_sha256": "ea3470ca984554d4908ec950314f9242042417c6c4c6b3fd05ac5d6daab98c90",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_trc_timing_v1_2.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/syn_mod/ips2l_mcdq_trc_timing_v1_2.vp",
+      "git_blob_sha": "b46a8032659e00d28d72252fc837b638f47758af",
+      "manifest_sha256": "7234241e5968f91ec6e396794f0bb80f6c7d1bca2038aa004d5078d3937953da",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/ips2l_distributed_fifo_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/ips2l_distributed_fifo_v1_0.vp",
+      "git_blob_sha": "3a167a46f1f3656f328258aa7c6477dca8bea56e",
+      "manifest_sha256": "d6c0b0d8560b0f22128b4883933944fc686fd7597cfea0d6c545cc6af56c0b7a",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_ctr_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_ctr_v1_0.vp",
+      "git_blob_sha": "bcfb1b358af492e7314082c70e9c3519b49f6d5b",
+      "manifest_sha256": "fe31c8f44bea653ab20bb1830ad4f8ed41566e9cfef354bd5e2d48c7682f353d",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_v1_0_distributed_fifo_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_fifo_v1_0_distributed_fifo_v1_0.vp",
+      "git_blob_sha": "5f0ff46cb2b075d043db7cdbca301db4b85abdba",
+      "manifest_sha256": "867ac91a1485dfe613a81f372d788e784bba8cd4b0497e56986135e92685ba73",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_sdpram_v1_0_distributed_fifo_v1_0.vp",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/distributed_fifo/rtl/ips2l_distributed_sdpram_v1_0_distributed_fifo_v1_0.vp",
+      "git_blob_sha": "a3a25170cb9796f48be563e345644cafbd9363a8",
+      "manifest_sha256": "3561bbbbd4e4432a538c3d20818d262b4f1e5517c48296f6b1b4cc8afdd19aef",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/ddr3_test.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/ddr3_test.v",
+      "git_blob_sha": "8a77a54fe20aea5c969c9d91784ea2449b21da68",
+      "manifest_sha256": "3c5441b4bff33dff73811c3a025ede3b6348cb5779e21778653659b6cbfb84e0",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/ddr3_test_ddrphy_top.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/ddr3_test_ddrphy_top.v",
+      "git_blob_sha": "147d9056edd2d526ec46939e7c06213a89d78370",
+      "manifest_sha256": "a95c28f225d2984401a798f673efff209154ae5beb8a7356d303136b71ea49d5",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ddr3_test_slice_top_v1_10.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ddr3_test_slice_top_v1_10.v",
+      "git_blob_sha": "bcea84d9998f02d12ba6649966aaf89b175e9224",
+      "manifest_sha256": "69d4135c367efbb73f83c82ecd9871519e19b0d5c48bce2df0eac6b3dff50b87",
+      "role": "idf-expanded",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "board/bringup_pll.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/bringup_pll.v",
+      "git_blob_sha": "9cbbe40cebecc8a0dfa950d520228683aaee6b9a",
+      "manifest_sha256": "dcf95900356fea020ab2b6a43cf2c61ba08ab14d024be3f8fff5167eaa0dc2e0",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "platform/video_base/ipcore/cfg_pll/cfg_pll.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/platform/video_base/ipcore/cfg_pll/cfg_pll.v",
+      "git_blob_sha": "ffca21a2af5b8b6b5fdd8edb27672d26c976ebfb",
+      "manifest_sha256": "a524450baa6becd30df04da4bdd00597de18b42db4628226e27546c4d601b0ec",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "rtl/experimental/iic_dri_checked.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/iic_dri_checked.v",
+      "git_blob_sha": "f49930a8e95137b71c51aae64db3fc5311ef1df2",
+      "manifest_sha256": "c43f0233a3fbee8888042f5b93de89586c8c6b188f5562a997ad1b47a819ad60",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "rtl/experimental/ms7200_1080p30_rearm_ctl.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ms7200_1080p30_rearm_ctl.v",
+      "git_blob_sha": "1662e8cce8a57d9285f65ab3071e613df97ae3b7",
+      "manifest_sha256": "ea87e1e8c3588af0675c97f87408ddb115d8b0fb08fb84a93c3e820c5a3dee2e",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "rtl/experimental/ms7210_checked_ctl.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ms7210_checked_ctl.v",
+      "git_blob_sha": "d258e4066d61577fd8dd32a859c22844337d6af7",
+      "manifest_sha256": "53d2dd9e4675126da979c87c76481e2f7705ddcad9abd784156eb76b27e79f6a",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "rtl/experimental/ms72xx_rearm_observed_ctl.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ms72xx_rearm_observed_ctl.v",
+      "git_blob_sha": "b12e50964db634f8edd2c0f41c3fbaf0ff10c896",
+      "manifest_sha256": "7a4404a012d9e855bf3710f5aaa2f9926c004e378314aa1234fb6ee954f6d75d",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "board/hdmi_camera_fisheye_top.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi_camera_fisheye_top.v",
+      "git_blob_sha": "8f9c670804c7aa1facaded3b5fbb7cc2f7550bb8",
+      "manifest_sha256": "b38ba12d17d246e6c138295e3055c6acaab64448e63a3343d0817038e7f8afce",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "board/hdmi-camera-fisheye-tile8df8-internal.fdc",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-tile8df8-internal.fdc",
+      "git_blob_sha": "2333a817ede11e1760d201c28079c182c6a6901f",
+      "manifest_sha256": "e27a18c4a5f228ac8543e50c9b50a145f14bf1d4e640ff34361422d32f1bf78a",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/hdmi_camera_pixel_sampler.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_pixel_sampler.v",
+      "git_blob_sha": "1eea8ff9eec7460c94bc4b96852f0f68ef3cee04",
+      "manifest_sha256": "b9d743264301a9b41bd10f7969edbc60cfffbda8f0d3f57a2e1bc8e0d6f1ac46",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "git_blob_sha": "f2a7ffb37d5e3e8a4a84e2be06f3b81c9bf6e09d",
+      "manifest_sha256": "cb141734a32443156768563bd9ce77723e573bdc00869457af11954a039c6e3c",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/hdmi_camera_fisheye_rom.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_rom.v",
+      "git_blob_sha": "ef573dce526f602030ebb4aa0ef213e2a140a317",
+      "manifest_sha256": "fc8e0cf143078790c1f9a5dbbd2d525f070deab349ee6bc33370e52419e11a44",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": false
+    },
+    {
+      "path": "rtl/experimental/hdmi_camera_rgb565_quantizer.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_rgb565_quantizer.v",
+      "git_blob_sha": "3894b64717e7a6484c93ba9f83bb04d29f70f49b",
+      "manifest_sha256": "bb18483682ae0965839d4d54aadea0dcc0eec248c54ee5130be6f62e868a0ba0",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/camera720_view_control.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/camera720_view_control.v",
+      "git_blob_sha": "49c5c8e36cf397a2d25b210ecc83c94ada6b46f5",
+      "manifest_sha256": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/experimental/hdmi_camera_fisheye_status_uart.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_status_uart.v",
+      "git_blob_sha": "62f9b73ffe0da53166e36614fda86b94eb998b22",
+      "manifest_sha256": "1554e35ef2efd157bdb462abe67c16741d42b94696c09ac6caa04df942ddd4a0",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "rtl/uart_tx.v",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/uart_tx.v",
+      "git_blob_sha": "ddad98b7368ca87c5399250654e404e5a18968e0",
+      "manifest_sha256": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+      "role": "explicit",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "board/hdmi-camera-fisheye-profile.vh",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-profile.vh",
+      "git_blob_sha": "9b15259e26b39c4ae349f1c25e45261720f54f55",
+      "manifest_sha256": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+      "role": "header",
+      "bytes_rehashed_in_this_audit": true
+    },
+    {
+      "path": "board/hdmi-camera-fisheye-radial-table.vh",
+      "selected_source_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-radial-table.vh",
+      "git_blob_sha": "db4d954728ae0caaaa78cae767a12cc091bacf1d",
+      "manifest_sha256": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+      "role": "header",
+      "bytes_rehashed_in_this_audit": false
+    }
+  ],
+  "same_name_and_integration_hazards": [
+    {
+      "module": "board1080_top",
+      "issue": "Both distortion/board/board1080_top.v and board1080_checked_top.v declare this name; neither is the selected directfill top, which is hdmi_camera_fisheye_top. Never glob both old board files or infer source selection from top filenames.",
+      "paths": [
+        {
+          "path": "distortion/board/board1080_top.v",
+          "git_blob_sha": "1ddfd92c292c97472f04547933a114e56fc831f6",
+          "module_line": 7
+        },
+        {
+          "path": "distortion/board/board1080_checked_top.v",
+          "git_blob_sha": "78cc251f6c7100d6afa31a6aac7680d4836294b5",
+          "module_line": 8
+        }
+      ]
+    },
+    {
+      "module": "ddr_read_arbiter",
+      "peer_path": "rtl/experimental/ddr_read_arbiter_fill8r2.v",
+      "peer_blob": "16d81dd2529baf70d28ca6cbc9dc5e72f216a758",
+      "op_path": "stable30-OP/native/source/rtl/ddr_read_arbiter.v",
+      "op_blob": "dad2ea07876ad11cfeb15bca21a845d043eb639e",
+      "issue": "same module name, different implementation/source choice; explicit selected source list required",
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_read_arbiter_fill8r2.v",
+          "module": "ddr_read_arbiter",
+          "line_start": 1,
+          "line_end": 14,
+          "git_blob_sha": "16d81dd2529baf70d28ca6cbc9dc5e72f216a758",
+          "content_sha256": "de0c11db399033511048ef18a90345881f8f13d2458b81ff6daa131f79393ec7",
+          "excerpt_sha256": "fab03e252b2dc6857a2d9a9d327945f4a941ca50a61f9f2f56bc8467d647ed78",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_read_arbiter_fill8r2.v#L1"
+        },
+        {
+          "source_commit": "1b9727e31f690a2598ab51cdb27ba645c0d5eda5",
+          "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/ddr_read_arbiter.v",
+          "module": "ddr_read_arbiter",
+          "line_start": 1,
+          "line_end": 15,
+          "git_blob_sha": "dad2ea07876ad11cfeb15bca21a845d043eb639e",
+          "content_sha256": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/1b9727e31f690a2598ab51cdb27ba645c0d5eda5/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/ddr_read_arbiter.v#L1"
+        }
+      ]
+    },
+    {
+      "module": "hdmi1080_input_dma",
+      "peer_path": "rtl/experimental/hdmi1080_input_dma.v",
+      "peer_blob": "6d28f912f2e980ead427024e5a4f90e5eb0d8486",
+      "op_blob": "736bcb4f4faee05cb7950fdb839033b8ac7db1f8",
+      "issue": "same module/path suffix, different bytes; no interchangeability proof",
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v",
+          "module": "hdmi1080_input_dma",
+          "line_start": 1,
+          "line_end": 23,
+          "git_blob_sha": "6d28f912f2e980ead427024e5a4f90e5eb0d8486",
+          "content_sha256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+          "excerpt_sha256": "0051f45471fa8d35739815d681d59f6211e1c520fc9d8bce6665179293280f88",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v#L1"
+        },
+        {
+          "source_commit": "1b9727e31f690a2598ab51cdb27ba645c0d5eda5",
+          "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/hdmi1080_input_dma.v",
+          "module": "hdmi1080_input_dma",
+          "line_start": 1,
+          "line_end": 23,
+          "git_blob_sha": "736bcb4f4faee05cb7950fdb839033b8ac7db1f8",
+          "content_sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/1b9727e31f690a2598ab51cdb27ba645c0d5eda5/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/hdmi1080_input_dma.v#L1"
+        }
+      ]
+    },
+    {
+      "module": "ddr_write_arbiter",
+      "peer_blob": "424fd88dc6b5cffe4a4b8bf4d5cb3ca04901ddc5",
+      "op_blob": "424fd88dc6b5cffe4a4b8bf4d5cb3ca04901ddc5",
+      "issue": "exact byte equality for these two selected copies only; complete integrations remain different",
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/ddr_write_arbiter.v",
+          "module": "ddr_write_arbiter",
+          "line_start": 1,
+          "line_end": 14,
+          "git_blob_sha": "424fd88dc6b5cffe4a4b8bf4d5cb3ca04901ddc5",
+          "content_sha256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+          "excerpt_sha256": "df0ef89b9e2be3ba611bc0f8f1c38152508f8df03b07e6a8cd7c3887a2227fed",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/ddr_write_arbiter.v#L1"
+        },
+        {
+          "source_commit": "1b9727e31f690a2598ab51cdb27ba645c0d5eda5",
+          "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/ddr_write_arbiter.v",
+          "module": "ddr_write_arbiter",
+          "line_start": 1,
+          "line_end": 14,
+          "git_blob_sha": "424fd88dc6b5cffe4a4b8bf4d5cb3ca04901ddc5",
+          "content_sha256": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/1b9727e31f690a2598ab51cdb27ba645c0d5eda5/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/ddr_write_arbiter.v#L1"
+        }
+      ]
+    },
+    {
+      "module": "result writer",
+      "peer_module": "ddr_adaptive_result_writer_dualstripe",
+      "op_file": "stable30-OP/native/source/rtl/experimental/ddr_adaptive_result_writer.v",
+      "op_declared_module": "ddr_adaptive_result_writer_capture_local",
+      "op_blob": "65082ede1458f4be5ac0c79f7b733faa46326ed6",
+      "issue": "O/P file also contains selectable overlap implementations; preserve explicit module/parameter selection",
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+          "module": "ddr_adaptive_result_writer_dualstripe",
+          "line_start": 1,
+          "line_end": 15,
+          "git_blob_sha": "8e534a5cc454b04c34c51f752b208fa264526e4c",
+          "content_sha256": "f820cae06b30b0c3fb78f8ece7874e742c5008c795df10e190ff57eeb23b017b",
+          "excerpt_sha256": "5eb92e86760629eba0e9d0f0da4180f1a1f4c05cc01a1c9f6ad91d488cd07f7a",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v#L1"
+        },
+        {
+          "source_commit": "1b9727e31f690a2598ab51cdb27ba645c0d5eda5",
+          "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_adaptive_result_writer.v",
+          "module": "ddr_adaptive_result_writer_capture_local",
+          "line_start": 1,
+          "line_end": 23,
+          "git_blob_sha": "65082ede1458f4be5ac0c79f7b733faa46326ed6",
+          "content_sha256": "e8f79154cd1e5404ac2f0d89de8e61f0b1f7386e258cdb681be36f38ae1491e2",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/1b9727e31f690a2598ab51cdb27ba645c0d5eda5/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_adaptive_result_writer.v#L1"
+        }
+      ]
+    },
+    {
+      "module": "pipeline/engine",
+      "issue": "Selected directfill replaces pipeline_gamma_frame_engine_1080_scatter4 with hdmi_camera_fisheye_engine_tile8df8.v declaring hdmi_camera_fisheye_engine_tile8; no Brown/rotation/gamma chain. Engine/core/cache/system filenames contain historical suffixes and declarations can differ.",
+      "published_replacement_mapping": {
+        "board/board1080_checked_top.v": "board/hdmi_camera_fisheye_top.v",
+        "rtl/experimental/ms72xx_checked_ctl.v": "rtl/experimental/ms72xx_rearm_observed_ctl.v",
+        "rtl/experimental/ms7200_1080p30_ctl.v": "rtl/experimental/ms7200_1080p30_rearm_ctl.v",
+        "board/board1080-checked-i2c.fdc": "board/hdmi-camera-fisheye-tile8df8-internal.fdc",
+        "rtl/experimental/hdmi1080_video_system_cdc_reset.v": "rtl/experimental/hdmi_camera_fisheye_system_c.v",
+        "rtl/experimental/hdmi1080_input_write_link.v": "rtl/experimental/hdmi_camera_fisheye_input_link.v",
+        "rtl/experimental/lens1080_bank_core.v": "rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+        "rtl/experimental/pipeline_gamma_frame_engine_1080_scatter4.v": "rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+        "rtl/experimental/rotated_remap_core_gamma_scatter4.v": "rtl/experimental/hdmi_camera_fisheye_core.v",
+        "rtl/experimental/ddr_neighbour_cache_scatter4_rowpipe.v": "rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v",
+        "rtl/experimental/ddr_remap_sample_scatter4_rowpipe.v": "rtl/experimental/ddr_remap_sample_scatter16_rowpipe.v",
+        "rtl/ddr_read_arbiter.v": "rtl/experimental/ddr_read_arbiter_fill8r2.v",
+        "rtl/experimental/ddr_adaptive_result_writer.v": "rtl/experimental/ddr_adaptive_result_writer_dualstripe.v"
+      },
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/production-source-manifest.json",
+          "module": null,
+          "line_start": 259,
+          "line_end": 259,
+          "git_blob_sha": "df3de791292cf1e4a8f9b7753c329b06e4c1fe95",
+          "content_sha256": "ef5758832793f0ebcc0e8ee77a8410ac74baa87517256497615438f6dc5bd559",
+          "excerpt_sha256": "5d76baa6e0fbde9a7d6c2c973b1e76ce413917c0d8aa0ebcdb4c80b36b7cb6de",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/production-source-manifest.json#L259"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+          "module": "hdmi_camera_fisheye_engine_tile8",
+          "line_start": 1,
+          "line_end": 16,
+          "git_blob_sha": "cd2bc3a5a126fad04465e946b7e71fa0d27e94e1",
+          "content_sha256": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+          "excerpt_sha256": "d99a6ee4d225776ec0d8a431a2d0d2d77de9e68602d10f2fec2ca6c1b7ab6ea4",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v#L1"
+        }
+      ]
+    },
+    {
+      "module": "KEY1 and descriptors",
+      "issue": "Reuse the selected already-connected control contract; do not launch a competing KEY1 candidate. Mode freezes with bank acceptance, not capture start or arbitrary UART sample; preserve source/result ownership, held mailbox, fault veto and common reset.",
+      "evidence": [
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+          "module": "hdmi_camera_fisheye_bank",
+          "line_start": 48,
+          "line_end": 65,
+          "git_blob_sha": "1a9bcb9e299daffdc92d8c1cf37a16a2c9583514",
+          "content_sha256": "9404658e762b51f8a8e9926936f6533908fbc686b90674fa03d1db2b0f43b482",
+          "excerpt_sha256": "8fa9b97b1c45faf00a2567f41217be69180138c291c474e408657315796d6d08",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v#L48"
+        },
+        {
+          "source_commit": "327ef108f48b467b8bbe5c4e67f9b503e4983b50",
+          "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+          "module": "hdmi_camera_fisheye_top",
+          "line_start": 213,
+          "line_end": 244,
+          "git_blob_sha": "ba1892c621b996bff2c14226fe47a1cf17a8078e",
+          "content_sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+          "excerpt_sha256": "f16125129a387477dd8301bc87788967d2e6d3071fd583596b3e4d308d08a145",
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/327ef108f48b467b8bbe5c4e67f9b503e4983b50/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L213"
+        }
+      ]
+    }
+  ],
+  "offline_acceptance_plan_not_executed": [
+    {
+      "name": "source-and-module-selection",
+      "pass_criteria": "Freeze exact main/package/110-source manifest, six compiled deltas and final selected flags; explicit module mapping finds one definition per used module; no legacy top/engine mixed in."
+    },
+    {
+      "name": "key1-debounce-and-reset",
+      "pass_criteria": "Held-low at reset no toggle; continuous release then press threshold; bounce at both edges; press hold toggles once; repeat after qualified release; corrected reset default."
+    },
+    {
+      "name": "mode-to-source-id-scoreboard",
+      "pass_criteria": "Record cfg_corrected at src_valid&&src_ready; toggle before/after that edge, during SCAN, writer drain, pending front and active scan. Every output result id matches its frozen mode, complete pixel/tag/CRC scoreboards; no mixed frame. Do not use UART request bit as completion ack."
+    },
+    {
+      "name": "stalls-and-bursts",
+      "pass_criteria": "Random stalls at core/writer ready and AW/ARREADY/WREADY/RVALID; allow beat0 with AW; whole address/owner/payload remain stable; accepted beat counts/last/id agree and no interleaving."
+    },
+    {
+      "name": "banks-and-publication",
+      "pass_criteria": "Four 4MiB slots only; no source overwrite while offered/processing; no result overwrite while leased; only complete frame publish; exact pixel count, CRC and id/epoch checks; repeats and blanks distinguished."
+    },
+    {
+      "name": "fault-and-common-epoch",
+      "pass_criteria": "Inject wrong RID/RLAST/WLAST/tag/count/CRC, missing reservation, overflow, stalled clocks and simultaneous release+fault. No false result success or lease release; outstanding AW retained; drain then sticky quarantine; only coordinated reset clears epoch."
+    },
+    {
+      "name": "physical-and-board-followup",
+      "pass_criteria": "Separate owner task reconstructs final physical flow, pins/clock/IP/constraint identity and actual bit; fresh native signoff then authorized SRAM board optical/mode tests. Offline suite does not grant timing or hardware acceptance."
+    }
+  ],
+  "read_source_files_sha256_checked": [
+    "rtl/experimental/ddr_read_arbiter_fill8r2.v",
+    "rtl/ddr_write_arbiter.v",
+    "rtl/ddr_video_reader.v",
+    "rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+    "rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v",
+    "rtl/experimental/hdmi_camera_fisheye_core.v",
+    "rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+    "rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+    "rtl/experimental/hdmi1080_capture_cdc.v",
+    "rtl/experimental/hdmi1080_input_dma.v",
+    "rtl/experimental/hdmi_camera_fisheye_input_link.v",
+    "rtl/experimental/ddr_video_output_1080_board.v",
+    "rtl/experimental/hdmi_camera_fisheye_system_c.v",
+    "board/hdmi_camera_fisheye_top.v",
+    "board/hdmi-camera-fisheye-tile8df8-internal.fdc",
+    "rtl/experimental/hdmi_camera_pixel_sampler.v",
+    "rtl/experimental/hdmi_camera_fisheye_mapper.v",
+    "rtl/experimental/hdmi_camera_rgb565_quantizer.v",
+    "rtl/experimental/camera720_view_control.v",
+    "rtl/experimental/hdmi_camera_fisheye_status_uart.v",
+    "rtl/uart_tx.v",
+    "board/hdmi-camera-fisheye-profile.vh"
+  ],
+  "no_new_buildable_or_hardware_claim": true
+}
