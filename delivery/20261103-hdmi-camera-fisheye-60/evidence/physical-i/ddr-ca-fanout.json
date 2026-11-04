@@ -1,0 +1,146 @@
+{
+  "status": "PASS_SYNTHESIS_LOCAL_EQUIVALENCE",
+  "project": "D:\\f60-run\\physical-i",
+  "source_identity": "d931793d62bc852c25be57f16528ac7d18dc70fc5760138dcf05e6f443ee8bd5",
+  "build_id": "11037003",
+  "checks": [
+    {
+      "name": "exact_single_net_synthesis_attribute",
+      "pass_": true,
+      "detail": [
+        "define_attribute {n:u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/all_group_ca_dly} {syn_maxfan} {16}"
+      ]
+    },
+    {
+      "name": "native_pds_registered_fdc",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "synthesis_loaded_constraint_without_errors",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "replicated_exact_combinational_driver",
+      "pass_": true,
+      "detail": [
+        {
+          "instance": "N61_4",
+          "output": "all_group_ca_dly",
+          "init": "FFFE",
+          "inputs": [
+            "debug_data[66]",
+            "debug_data[135]",
+            "debug_data[204]",
+            "debug_data[273]"
+          ]
+        },
+        {
+          "instance": "N61_4_copy",
+          "output": "all_group_ca_dly_1",
+          "init": "FFFE",
+          "inputs": [
+            "debug_data[66]",
+            "debug_data[135]",
+            "debug_data[204]",
+            "debug_data[273]"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "native_attribute_survives_synthesis",
+      "pass_": true,
+      "detail": [
+        "all_group_ca_dly",
+        "all_group_ca_dly_1"
+      ]
+    },
+    {
+      "name": "all_16_input_assignments_equivalent",
+      "pass_": true,
+      "detail": {
+        "assignments": 16,
+        "reference": "OR of four unchanged input bits",
+        "added_registers": 0
+      }
+    },
+    {
+      "name": "previous_timing_and_route_constraints_unchanged",
+      "pass_": true,
+      "detail": [
+        "board/board1080-ddr-ioclk-priority.rcf",
+        "board/ddr-ip-clock-relations.fdc",
+        "board/hdmi-camera-fisheye-c-internal.fdc"
+      ]
+    },
+    {
+      "name": "all_compiled_vendor_ip_sources_unchanged",
+      "pass_": true,
+      "detail": {
+        "file_count": 75
+      }
+    },
+    {
+      "name": "additional_gray_fdc_is_exact_reviewed_file",
+      "pass_": true,
+      "detail": {
+        "sha256": "9ddc95985a97c9fbc24c17e30c318a7d1a457e1e01687dc0871c869fb42526a8"
+      }
+    },
+    {
+      "name": "additional_gray_native_bounds_pass",
+      "pass_": true,
+      "detail": {
+        "status": "PASS",
+        "errors": [],
+        "reports": {
+          "slow": {
+            "maxdelay_paths": 34,
+            "worst_slack_ns": 4.558,
+            "max_data_delay_ns": 1.306
+          },
+          "fast": {
+            "maxdelay_paths": 34,
+            "worst_slack_ns": 5.127,
+            "max_data_delay_ns": 0.799
+          }
+        },
+        "report_sha256": {
+          "D:\\f60-run\\physical-i\\prj_tasks\\pnr_1\\report_timing\\report_db\\exception_report_slow_set_max_delay_setup.db": "dac2362e8461c46caad94ee352b2eb106351c8efe8f7304e882ab46098bc0072",
+          "D:\\f60-run\\physical-i\\prj_tasks\\pnr_1\\report_timing\\report_db\\report_timing_slow_path_max_skew.db": "fda0e1161217ab7ea0fa95460e70d463ef409fc4648c7b151ddef5f0b886cce9",
+          "D:\\f60-run\\physical-i\\prj_tasks\\pnr_1\\report_timing\\report_db\\exception_report_fast_set_max_delay_setup.db": "54df4e15beaf2811f31f9db57fec28aaa061820bb6ed48edaef3ea655e4184ca",
+          "D:\\f60-run\\physical-i\\prj_tasks\\pnr_1\\report_timing\\report_db\\report_timing_fast_path_max_skew.db": "f5e5e6bd2d3bf7a392b31bdb335a08357f5ce90e51b28fc8ed2b022955befada"
+        }
+      }
+    },
+    {
+      "name": "added_constraints_are_exact_ca_and_optional_audited_gray",
+      "pass_": true,
+      "detail": {
+        "added": [
+          "board/ddr-ca-maxfan16.fdc",
+          "board/gray-pointer-cdc.fdc"
+        ],
+        "allowed": [
+          "board/ddr-ca-maxfan16.fdc",
+          "board/gray-pointer-cdc.fdc"
+        ]
+      }
+    }
+  ],
+  "source_sha256": {
+    "D:\\f60-run\\physical-i\\candidate-plan.json": "bfd4ae36e5e405a7b76991d4b9e5cff5d7fdc7d0bae4434fe4657ad49717de07",
+    "D:\\f60-run\\physical-i\\compiled\\board\\ddr-ca-maxfan16.fdc": "129c5c1ad7e4137acd72b79f8ee32dfa8e9075ad17d7512a4b40fe855f6cb2f4",
+    "D:\\f60-run\\physical-i\\hdmi_camera_fisheye_top.pds": "c1ab92aa22ccb038454a2a84d0f9506b9ffbd52c03be420dd09e436ebf8463f7",
+    "D:\\f60-run\\physical-i\\prj_tasks\\syn_1\\synthesize\\constraint_check.ccr": "c6e0c95fedd43e6c5e99ec547f9bbdab9f1ceb4284d78ec56cb52980a5ea62d6",
+    "D:\\f60-run\\physical-i\\prj_tasks\\syn_1\\synthesize\\hdmi_camera_fisheye_top_syn.vm": "8fee1cc7dee646eba400af3f6bffedafb3334c1a7df870234636a2e44b1b3629",
+    "D:\\f60-run\\physical-i\\compiled\\board\\gray-pointer-cdc.fdc": "9ddc95985a97c9fbc24c17e30c318a7d1a457e1e01687dc0871c869fb42526a8"
+  },
+  "limitations": [
+    "Local combinational driver equivalence only; no whole-chip formal proof.",
+    "Routed fanout, placement delay and core-to-PHY setup require implementation reports.",
+    "No timing exceptions are added by the synthesis attribute; the optional exact Gray bounds receive a separate native audit."
+  ]
+}

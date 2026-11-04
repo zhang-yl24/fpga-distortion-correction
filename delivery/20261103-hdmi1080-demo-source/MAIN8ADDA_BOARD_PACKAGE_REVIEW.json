@@ -1,0 +1,630 @@
+{
+  "schema": "readonly-main8adda-board-package-comparison-v1",
+  "main_commit": "8adda8846f9d3d1f646c5a63d58f128aa786b1cc",
+  "parent": "0408eca0fe727763da0077d35e9daa54f5313ad3",
+  "changed_paths": [
+    "README.md",
+    "delivery/20261103-hdmi1080-board-package/README.md",
+    "delivery/20261103-hdmi1080-board-package/delivery-validation.json",
+    "delivery/20261103-hdmi1080-board-package/hdmi1080-board-delivery.zip",
+    "delivery/20261103-hdmi1080-board-package/hdmi1080-board-delivery.zip.sha256"
+  ],
+  "referenced_source_commit": "bdaf8c1527fb46cc5b8753415fa02f464a8c08b0",
+  "zip": {
+    "bytes_reported_by_git_tree": 29947602,
+    "git_blob_sha": "694b7b006ad2eb0d39f4e2889f911cf080d5e391",
+    "sha256_declared": "3164e3fca394b5a9734438329589ec476ff59b1731cfb7c90fc9084051faec81",
+    "independent_archive_byte_download": false,
+    "scope": "Official GitHub connector does not download repository binary ZIPs; this review verifies committed UTF-8 source preparation/evidence, not the 497 extracted ZIP files anew."
+  },
+  "dependency_hash_comparison": {
+    "required": 80,
+    "matching_our_frozen_source_manifest": 80,
+    "local_frozen_dependency_files_readonly_byte_verified": 80,
+    "source_inventory": 130
+  },
+  "variants": {
+    "baseline": {
+      "param_id": "b0481b1d",
+      "source_identity_sha256": "b0481b1d68ecaf52c008c42077cc0597bddbf3ef163e9008fd38d00473df17c4",
+      "source_count": 130,
+      "candidate_identity_independently_recomputed": true,
+      "authored_source_inputs_independently_reconstructed_and_byte_verified": 50,
+      "inputs_matching_frozen": 128,
+      "changes_vs_frozen": [
+        {
+          "path": "source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v",
+          "frozen_sha256": "6ef0d4bc0f5dcffe279201fa9a63360e26df65193804636259dfa5a31bde896a",
+          "candidate_input_sha256": "d84e6238b5009be168337a12d0b4174d40401576cecf7fff88b457a8f084db6d"
+        },
+        {
+          "path": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+          "frozen_sha256": "a30cec6b96449658f23b42fc295d0d5e8fc563f324b6e2a571a70adbfc02a2e1",
+          "candidate_input_sha256": "0f8b037be995144bdf406bd09ba69e73d32c6e64be9c9ec70f5a50ea78faeead"
+        }
+      ],
+      "compile_include_relocations": [
+        "source/build/offline-20261024/cfg100-ce-candidate-20261030-a/candidate/ddr_video_output_1080_board_ce.v",
+        "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+        "source/rtl/ddr_video_reader.v",
+        "source/rtl/experimental/adaptive_gamma_stream.v",
+        "source/rtl/experimental/ddr_adaptive_result_writer.v"
+      ],
+      "bitstream": {
+        "path": "D:\\fpga-build\\baseline-final\\export\\baseline_corrected_b0481b1d_DIAGNOSTIC_NOT_TIMING_SIGNOFF.sbit",
+        "sha256": "8f59217b5873e95a6c4064f69f717b663e3fe3bc3bf92aec1eddf7de8c7ad1bc",
+        "bytes": 3791112,
+        "local_archive_member": "baseline/exported_bitstream/baseline_corrected_b0481b1d_DIAGNOSTIC_NOT_TIMING_SIGNOFF.sbit"
+      },
+      "routed_adf": {
+        "path": "D:\\fpga-build\\baseline-final\\stages\\route\\prj_tasks\\pnr_1\\place_route\\board1080_top_pnr.adf",
+        "sha256": "d653fe6d1045d536ebc6d6ff2079b4f573071bd35e689ecb293285a772c03965",
+        "bytes": 4860026,
+        "local_archive_member": "baseline/route_db/board1080_top_pnr.adf"
+      },
+      "slow_setup": {
+        "worst_slack_ns": -0.659,
+        "total_negative_slack_ns": -8.277,
+        "failing_checks": 62
+      },
+      "resources": {
+        "FF": 21898,
+        "LUT": 17066,
+        "DRM": 19.5,
+        "APM": 69,
+        "IO": 144
+      },
+      "hardware_verified": false,
+      "timing_signoff": false
+    },
+    "cache": {
+      "param_id": "1a247c5b",
+      "source_identity_sha256": "1a247c5be9d710dc5c1c982508699c9fc98737124ec28737c57ab7d390ae72ef",
+      "source_count": 130,
+      "candidate_identity_independently_recomputed": true,
+      "authored_source_inputs_independently_reconstructed_and_byte_verified": 50,
+      "inputs_matching_frozen": 127,
+      "changes_vs_frozen": [
+        {
+          "path": "source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v",
+          "frozen_sha256": "6ef0d4bc0f5dcffe279201fa9a63360e26df65193804636259dfa5a31bde896a",
+          "candidate_input_sha256": "d84e6238b5009be168337a12d0b4174d40401576cecf7fff88b457a8f084db6d"
+        },
+        {
+          "path": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+          "frozen_sha256": "a30cec6b96449658f23b42fc295d0d5e8fc563f324b6e2a571a70adbfc02a2e1",
+          "candidate_input_sha256": "bab78ce90dbd2df8ba640ec5bbdedf40b1b9c7be23d8aeba82085a9815595abc"
+        },
+        {
+          "path": "source/rtl/experimental/ddr_compact_neighbour_cache_scatter4.v",
+          "frozen_sha256": "3c3e86487ad4dc8e53d9354bbc770ae8685b123b9a6896a7dea63dea12454545",
+          "candidate_input_sha256": "712d285371ba812e5cd66966657b042817b6a1ca4d010fe00e60c47f953bf1b1"
+        }
+      ],
+      "compile_include_relocations": [
+        "source/build/offline-20261024/cfg100-ce-candidate-20261030-a/candidate/ddr_video_output_1080_board_ce.v",
+        "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+        "source/rtl/ddr_video_reader.v",
+        "source/rtl/experimental/adaptive_gamma_stream.v",
+        "source/rtl/experimental/ddr_adaptive_result_writer.v"
+      ],
+      "bitstream": {
+        "path": "D:\\fpga-build\\cache-final\\export\\cache_corrected_1a247c5b_DIAGNOSTIC_NOT_TIMING_SIGNOFF.sbit",
+        "sha256": "3413cb9b7c59e25b2a238ad1ba842e2b6727f21d7f1c7f21d80a4dc27a3079d3",
+        "bytes": 3791112,
+        "local_archive_member": "cache/exported_bitstream/cache_corrected_1a247c5b_DIAGNOSTIC_NOT_TIMING_SIGNOFF.sbit"
+      },
+      "routed_adf": {
+        "path": "D:\\fpga-build\\cache-final\\stages\\route\\prj_tasks\\pnr_1\\place_route\\board1080_top_pnr.adf",
+        "sha256": "c848923ca1443adc22dbb3188dc312175825cfa589cef9b6f629688b34f8f891",
+        "bytes": 4882404,
+        "local_archive_member": "cache/route_db/board1080_top_pnr.adf"
+      },
+      "slow_setup": {
+        "worst_slack_ns": -0.762,
+        "total_negative_slack_ns": -21.033,
+        "failing_checks": 155
+      },
+      "resources": {
+        "FF": 21964,
+        "LUT": 17162.5,
+        "DRM": 19.5,
+        "APM": 69,
+        "IO": 144
+      },
+      "hardware_verified": false,
+      "timing_signoff": false
+    },
+    "both": {
+      "param_id": "f36cb459",
+      "source_identity_sha256": "f36cb45906cb21ed6de36d345124be481d1fad3ebbbdb0447237d9de7e9052ec",
+      "source_count": 130,
+      "candidate_identity_independently_recomputed": true,
+      "authored_source_inputs_independently_reconstructed_and_byte_verified": 50,
+      "inputs_matching_frozen": 126,
+      "changes_vs_frozen": [
+        {
+          "path": "source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v",
+          "frozen_sha256": "6ef0d4bc0f5dcffe279201fa9a63360e26df65193804636259dfa5a31bde896a",
+          "candidate_input_sha256": "d84e6238b5009be168337a12d0b4174d40401576cecf7fff88b457a8f084db6d"
+        },
+        {
+          "path": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+          "frozen_sha256": "a30cec6b96449658f23b42fc295d0d5e8fc563f324b6e2a571a70adbfc02a2e1",
+          "candidate_input_sha256": "c714cad1d58b05a2b3164f29032b7572a0327832e419c4525e7cba026b99946f"
+        },
+        {
+          "path": "source/rtl/experimental/ddr_adaptive_result_writer.v",
+          "frozen_sha256": "b237c9c7fce7bd06345191c9e7e3d44144472e1a5ff2830b5352e46ca0d13f84",
+          "candidate_input_sha256": "a8967320928657c8ba998031c6659da26877ddc882ef8888cbe5398c56a34507"
+        },
+        {
+          "path": "source/rtl/experimental/ddr_compact_neighbour_cache_scatter4.v",
+          "frozen_sha256": "3c3e86487ad4dc8e53d9354bbc770ae8685b123b9a6896a7dea63dea12454545",
+          "candidate_input_sha256": "712d285371ba812e5cd66966657b042817b6a1ca4d010fe00e60c47f953bf1b1"
+        }
+      ],
+      "compile_include_relocations": [
+        "source/build/offline-20261024/cfg100-ce-candidate-20261030-a/candidate/ddr_video_output_1080_board_ce.v",
+        "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+        "source/rtl/ddr_video_reader.v",
+        "source/rtl/experimental/adaptive_gamma_stream.v",
+        "source/rtl/experimental/ddr_adaptive_result_writer.v"
+      ],
+      "bitstream": {
+        "path": "D:\\fpga-build\\both-final\\export\\both_corrected_f36cb459_DIAGNOSTIC_NOT_TIMING_SIGNOFF.sbit",
+        "sha256": "cfefb855808ad5370bc6d020debfa6f4c5443c79d8df41df8cfa2a4d0ed57075",
+        "bytes": 3791112,
+        "local_archive_member": "both/exported_bitstream/both_corrected_f36cb459_DIAGNOSTIC_NOT_TIMING_SIGNOFF.sbit"
+      },
+      "routed_adf": {
+        "path": "D:\\fpga-build\\both-final\\stages\\route\\prj_tasks\\pnr_1\\place_route\\board1080_top_pnr.adf",
+        "sha256": "a10846860775974908e9aeafc01957b0b3f19cbd049bd81ca604c175896fd320",
+        "bytes": 5430271,
+        "local_archive_member": "both/route_db/board1080_top_pnr.adf"
+      },
+      "slow_setup": {
+        "worst_slack_ns": -0.619,
+        "total_negative_slack_ns": -2.992,
+        "failing_checks": 16
+      },
+      "resources": {
+        "FF": 26418,
+        "LUT": 18292.5,
+        "DRM": 19.5,
+        "APM": 69,
+        "IO": 144
+      },
+      "hardware_verified": false,
+      "timing_signoff": false
+    }
+  },
+  "our_native_profiles": {
+    "d256-compact-native-map-20261103-b": {
+      "source_count": 139,
+      "all_native_file_hashes_verified": true,
+      "manifest_sha256": "61269eff2800e52bf5957ed77e7d5326f350cb04ae3fc6a9fb3c9baae275d78b",
+      "source_binding_sha256": "65d0ab5bd6ff8a9c3dad774cd9ac19b557f1434098b6e8c0b5a75d78fa3fbb85",
+      "profile": {
+        "CACHE_PROFILE": 2,
+        "COMPACT_COORDS": 1,
+        "RASTER_DOUBLE_BUFFER": 1,
+        "FIXED_MODE": 1,
+        "STATS_LIGHT": 1,
+        "GAMMA": 0,
+        "INPUT": "1080p30"
+      },
+      "native_map_resources": {
+        "FF": 38984.0,
+        "LUT": 44338.5,
+        "DRM": 22.0,
+        "APM": 70.0,
+        "IO": 144.0
+      },
+      "native_map_adf": {
+        "Path": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\d256-compact-native-map-20261103-b\\inputs\\input_map.adf",
+        "SHA256": "5a8b0019a2d615d98c5a9719a255ae1bb7298f3daab7d0017509a869abd6dd07"
+      },
+      "physical_state_recorded": "MAP_PASS_PNR_INCOMPLETE_OWN_RUNNER_TIMEOUT",
+      "differences_vs_peer_baseline": {
+        "b4/rtl/held_completion_cdc.sv": {
+          "profile_sha256": "6ba45559bd3f71ec451ec606d126252495d61b20c970431770d51f5a3cec4105",
+          "peer_baseline_input_sha256": null
+        },
+        "b4/rtl/telemetry_packet_arbiter.sv": {
+          "profile_sha256": "c4f0ceab75fa9245a133f0e859bee807e91df2a93db441879daa2d73aa2125fe",
+          "peer_baseline_input_sha256": "8b30a7cbf8dd707c9c2a642d584d668e4a15bea7853f219a8cb16b52f59efebb"
+        },
+        "b4/rtl/telemetry_session_link.sv": {
+          "profile_sha256": "dd1afb19fd4af4d0256dc4322e4c870020b0747da9188dd20262544f2885f0d6",
+          "peer_baseline_input_sha256": "3663cb73bf1d9fe216fe4689b4786e2cccdadfb50a1f2b56991dff146e71f3d6"
+        },
+        "b4/rtl/telemetry_uart_link.sv": {
+          "profile_sha256": "ae392f99507e6331182e53033f410083e01e39219ba797e59596de7d27270fb0",
+          "peer_baseline_input_sha256": "8b754ce833587d00005aad7f4ad5fd0d1ea140bc8b4b731f3d5ece740e92bf5d"
+        },
+        "source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v": {
+          "profile_sha256": "5616da2b4d1d44e00cc28c8913e60308474f35d0cdcca5e7ae7c61a28c4bc4e6",
+          "peer_baseline_input_sha256": "d84e6238b5009be168337a12d0b4174d40401576cecf7fff88b457a8f084db6d"
+        },
+        "source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v": {
+          "profile_sha256": "1414589c05e920c716a6ff159de06e9c400806197c7ac61a1d23f16144a052f5",
+          "peer_baseline_input_sha256": "2d1b57b75081bd60778cbb0f49be91b743c3ebb4a38c2aa48c76b8d6defd1f2d"
+        },
+        "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v": {
+          "profile_sha256": "bbc0c674137b2bfdf62fbadb7f0808ffb3383898a0a5a78c594f87b12c5ba7fb",
+          "peer_baseline_input_sha256": "0f8b037be995144bdf406bd09ba69e73d32c6e64be9c9ec70f5a50ea78faeead"
+        },
+        "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v": {
+          "profile_sha256": "1cf59dbd545227c85633c280f439fe03f7b36fb625ff3a53ef1ac347b4a2008d",
+          "peer_baseline_input_sha256": "903ebe675eb9bdb526d1519c87511d8bce267d342f9bc06d2531122377d91edb"
+        },
+        "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v": {
+          "profile_sha256": "84eaf4f2cf0d3d5e9f2f223b4d893c0b8f457c30f13a594e6932ed535b258302",
+          "peer_baseline_input_sha256": "97c4b64059673325435882dcb02c3e5becad00c8e0fea049d394316856862b6e"
+        },
+        "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/rotated_remap_core_gamma_geometry_bypass_scatter4.v": {
+          "profile_sha256": "4326204c6a5e250df1c825ce2f52ebdab8c82e036dcaae297f0874fc8ca0d2aa",
+          "peer_baseline_input_sha256": "970282541984f29d9c4a4fb51e9406652fc57c40c11990ba550cd0855e8896a6"
+        },
+        "source/rtl/experimental/ddr_adaptive_result_writer.v": {
+          "profile_sha256": "5e6de34fb36e70251663f143fa2b027e707a6ddaf3d08aa22f5c461c50a2e7b5",
+          "peer_baseline_input_sha256": "b237c9c7fce7bd06345191c9e7e3d44144472e1a5ff2830b5352e46ca0d13f84"
+        },
+        "source/rtl/experimental/ddr_compact_neighbour_cache_scatter4.v": {
+          "profile_sha256": "5beb4adb691514bcc599d5d02988bd0e006e59588a8a9f9a3208301ef9970afe",
+          "peer_baseline_input_sha256": "3c3e86487ad4dc8e53d9354bbc770ae8685b123b9a6896a7dea63dea12454545"
+        },
+        "source/rtl/experimental/ddr_remap_sample_scatter4.v": {
+          "profile_sha256": "fc7f4313a2b6889e631e804d7b89f083c4a9662fea4d118cc179ccf87ddf622e",
+          "peer_baseline_input_sha256": "8ebf9567b170a96641755c70f2419a333afe435bc6b71fa879f6f62f40530ebd"
+        },
+        "source/rtl/experimental/hdmi1080_input_dma.v": {
+          "profile_sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29",
+          "peer_baseline_input_sha256": "7a21acc092ba97a268cfc319521ec8fc0e9eb0dca62289ba2ffbeae68705ec2e"
+        },
+        "source/rtl/snapshot/snapshot_command_parser.sv": {
+          "profile_sha256": "54ea7a228e878955dde5a9f6a9ba89882774b01c6936d4f001468d539be6d57b",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/stats/core_stats_snapshot.sv": {
+          "profile_sha256": "11a10ed560279d3c97b117c744d0322e7898925e5d33d5ec14821e35f0a60738",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/stats/stats_uart_mux.sv": {
+          "profile_sha256": "73e0bda7d4ed093e214c97fe256b7218963e512cc8839d8cd27dd028e9d1a7de",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/ddr_compact_neighbour_cache_scatter8.v": {
+          "profile_sha256": "0561c3e79eb24658e5a6012cf53b90be1928994c18f934ed8342e16d67dda3ba",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/sync_token_fifo.sv": {
+          "profile_sha256": "228e6f2759dcda6b02449acb39986ce94d89a8812286d83f177ce8a110f1546a",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/quad_parity_prefetch_store.sv": {
+          "profile_sha256": "e4c1684348732052b4c39b4bcf0e444eeaf8cd240ecda730600fde3478343236",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/d256_runtime_prefetch_cache.sv": {
+          "profile_sha256": "6b6a72c93087cb42be9ab179f29f9df2d3a77b0ec4afa4541c54a3f54e98f211",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/ddr_raster_overlap_writer.sv": {
+          "profile_sha256": "c69bae10a20225ea5b10cea90d42084be4bc3eb1b67740e95d13be424ea567ab",
+          "peer_baseline_input_sha256": null
+        }
+      },
+      "integration_record": {
+        "FunctionalHDLPASS": true,
+        "MapOnlyAdmitted": true,
+        "PNRAdmitted": true,
+        "NativeSources": 139,
+        "BoardOperations": 0,
+        "Evidence": "Cloud actual full pipeline and compact equivalence; strict context patches applied to current frozen measurement parent",
+        "Admission": "PHYSICAL_EXPERIMENT_ADMISSION.json",
+        "MapCapacityPASS": true,
+        "ActualRAMShapeReviewed": true
+      }
+    },
+    "d256-area2-key-pipeline-native-map-20261103-a": {
+      "source_count": 139,
+      "all_native_file_hashes_verified": true,
+      "manifest_sha256": "6dd14c464439bd413853962040953003f1d775caf0e2c3bbfde8e0380a44161e",
+      "source_binding_sha256": "7cc22e281853840e2fc20c70e4e312706eab5fa8bbaa8d253080eec321f35f60",
+      "profile": {
+        "AREA_PROFILE": 2,
+        "CANDIDATE_KEY_PIPE": 2,
+        "COMPACT_COORDS": 1,
+        "RAM_BUFFER": 1,
+        "Input": "1080p30"
+      },
+      "native_map_resources": {
+        "FF": 30261.0,
+        "LUT": 44212.0,
+        "DRM": 26.0,
+        "APM": 70.0,
+        "IO": 144.0
+      },
+      "native_map_adf": {
+        "Path": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\d256-area2-key-pipeline-native-map-20261103-a\\inputs\\input_map.adf",
+        "SHA256": "34ceae1eaad6a657fc539049d3a6be22df74c26ec37e50d9cc7d294eaf59ff03"
+      },
+      "physical_state_recorded": "MAP_PASS_RESOURCE_AND_KEY_STAGE_REVIEW",
+      "differences_vs_peer_baseline": {
+        "b4/rtl/held_completion_cdc.sv": {
+          "profile_sha256": "6ba45559bd3f71ec451ec606d126252495d61b20c970431770d51f5a3cec4105",
+          "peer_baseline_input_sha256": null
+        },
+        "b4/rtl/telemetry_packet_arbiter.sv": {
+          "profile_sha256": "c4f0ceab75fa9245a133f0e859bee807e91df2a93db441879daa2d73aa2125fe",
+          "peer_baseline_input_sha256": "8b30a7cbf8dd707c9c2a642d584d668e4a15bea7853f219a8cb16b52f59efebb"
+        },
+        "b4/rtl/telemetry_session_link.sv": {
+          "profile_sha256": "dd1afb19fd4af4d0256dc4322e4c870020b0747da9188dd20262544f2885f0d6",
+          "peer_baseline_input_sha256": "3663cb73bf1d9fe216fe4689b4786e2cccdadfb50a1f2b56991dff146e71f3d6"
+        },
+        "b4/rtl/telemetry_uart_link.sv": {
+          "profile_sha256": "ae392f99507e6331182e53033f410083e01e39219ba797e59596de7d27270fb0",
+          "peer_baseline_input_sha256": "8b754ce833587d00005aad7f4ad5fd0d1ea140bc8b4b731f3d5ece740e92bf5d"
+        },
+        "source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v": {
+          "profile_sha256": "5616da2b4d1d44e00cc28c8913e60308474f35d0cdcca5e7ae7c61a28c4bc4e6",
+          "peer_baseline_input_sha256": "d84e6238b5009be168337a12d0b4174d40401576cecf7fff88b457a8f084db6d"
+        },
+        "source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v": {
+          "profile_sha256": "1414589c05e920c716a6ff159de06e9c400806197c7ac61a1d23f16144a052f5",
+          "peer_baseline_input_sha256": "2d1b57b75081bd60778cbb0f49be91b743c3ebb4a38c2aa48c76b8d6defd1f2d"
+        },
+        "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v": {
+          "profile_sha256": "bbc0c674137b2bfdf62fbadb7f0808ffb3383898a0a5a78c594f87b12c5ba7fb",
+          "peer_baseline_input_sha256": "0f8b037be995144bdf406bd09ba69e73d32c6e64be9c9ec70f5a50ea78faeead"
+        },
+        "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v": {
+          "profile_sha256": "1cf59dbd545227c85633c280f439fe03f7b36fb625ff3a53ef1ac347b4a2008d",
+          "peer_baseline_input_sha256": "903ebe675eb9bdb526d1519c87511d8bce267d342f9bc06d2531122377d91edb"
+        },
+        "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v": {
+          "profile_sha256": "84eaf4f2cf0d3d5e9f2f223b4d893c0b8f457c30f13a594e6932ed535b258302",
+          "peer_baseline_input_sha256": "97c4b64059673325435882dcb02c3e5becad00c8e0fea049d394316856862b6e"
+        },
+        "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/rotated_remap_core_gamma_geometry_bypass_scatter4.v": {
+          "profile_sha256": "4326204c6a5e250df1c825ce2f52ebdab8c82e036dcaae297f0874fc8ca0d2aa",
+          "peer_baseline_input_sha256": "970282541984f29d9c4a4fb51e9406652fc57c40c11990ba550cd0855e8896a6"
+        },
+        "source/rtl/experimental/ddr_adaptive_result_writer.v": {
+          "profile_sha256": "507e9642e91127581d91bb3a431cc93042e15169c392fbbee54b79f8589a1fef",
+          "peer_baseline_input_sha256": "b237c9c7fce7bd06345191c9e7e3d44144472e1a5ff2830b5352e46ca0d13f84"
+        },
+        "source/rtl/experimental/ddr_compact_neighbour_cache_scatter4.v": {
+          "profile_sha256": "5beb4adb691514bcc599d5d02988bd0e006e59588a8a9f9a3208301ef9970afe",
+          "peer_baseline_input_sha256": "3c3e86487ad4dc8e53d9354bbc770ae8685b123b9a6896a7dea63dea12454545"
+        },
+        "source/rtl/experimental/ddr_remap_sample_scatter4.v": {
+          "profile_sha256": "7cee54dd1f76f6732bd1d2d574794b9d4bc168240a5548b713104f202af27297",
+          "peer_baseline_input_sha256": "8ebf9567b170a96641755c70f2419a333afe435bc6b71fa879f6f62f40530ebd"
+        },
+        "source/rtl/experimental/hdmi1080_input_dma.v": {
+          "profile_sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29",
+          "peer_baseline_input_sha256": "7a21acc092ba97a268cfc319521ec8fc0e9eb0dca62289ba2ffbeae68705ec2e"
+        },
+        "source/rtl/snapshot/snapshot_command_parser.sv": {
+          "profile_sha256": "54ea7a228e878955dde5a9f6a9ba89882774b01c6936d4f001468d539be6d57b",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/stats/core_stats_snapshot.sv": {
+          "profile_sha256": "11a10ed560279d3c97b117c744d0322e7898925e5d33d5ec14821e35f0a60738",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/stats/stats_uart_mux.sv": {
+          "profile_sha256": "73e0bda7d4ed093e214c97fe256b7218963e512cc8839d8cd27dd028e9d1a7de",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/ddr_compact_neighbour_cache_scatter8.v": {
+          "profile_sha256": "0561c3e79eb24658e5a6012cf53b90be1928994c18f934ed8342e16d67dda3ba",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/sync_token_fifo.sv": {
+          "profile_sha256": "228e6f2759dcda6b02449acb39986ce94d89a8812286d83f177ce8a110f1546a",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/quad_parity_prefetch_store.sv": {
+          "profile_sha256": "e4c1684348732052b4c39b4bcf0e444eeaf8cd240ecda730600fde3478343236",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/d256_runtime_prefetch_cache.sv": {
+          "profile_sha256": "68f9a27f37b40901e3683c1e8291aa22b5defb124a14d21d7d90b26a050106ac",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/ddr_raster_overlap_writer.sv": {
+          "profile_sha256": "b80e37c357992c91743b04ef87552187301dedbbc9fabddcf3143c529a32ff61",
+          "peer_baseline_input_sha256": null
+        }
+      },
+      "integration_record": {
+        "FunctionalHDLPASS": true,
+        "NativePrefix65536PASS": true,
+        "MapOnlyAdmitted": false,
+        "PNRAdmitted": true,
+        "NativeSources": 139,
+        "BoardOperations": 0,
+        "NewDeclaredStateBits": 160,
+        "MapResources": {
+          "FF": 30261.0,
+          "LUT": 44212.0,
+          "DRM": 26.0,
+          "APM": 70.0,
+          "IO": 144.0
+        },
+        "MapADF": "34ceae1eaad6a657fc539049d3a6be22df74c26ec37e50d9cc7d294eaf59ff03",
+        "PairedPCF": "7d7f60e38ca854b305a840d979cd4f2498c0e5da927231037de7143d39075e06",
+        "DeclaredNewBits": 160,
+        "ActualNamedKeyFF": 152,
+        "TotalFFDelta": 153,
+        "OtherOneFFDeltaUnlocalized": true,
+        "SynthesisCoreWNS": -0.916,
+        "SynthesisOnly": true,
+        "ActualOldTournamentNotWorst": true,
+        "PNRNativeSeconds": 3600,
+        "PNRTotalIncludingCleanup": 3660,
+        "AdmittedCN": "2026-11-03T06:40:08.073886+08:00",
+        "Reason": "Critical global29level groupminimum chain cut;7level queryRAMdecode now worst, legalresources. Different reducedFF/keypipelined architecture vs original24min congestion timeout; actualroute needed to assess125MHz. No timingexception/clock change."
+      }
+    },
+    "d256-fifo-head-predecode-native-map-20261103-a": {
+      "source_count": 139,
+      "all_native_file_hashes_verified": true,
+      "manifest_sha256": "06c65224b698ef340797bc6632aa7651363eb50ba785c01a15d24738a3f580f1",
+      "source_binding_sha256": "6c0aa37ff91c771c71e248969a0106867188efaaa1072e6bb7cb236e8cc92091",
+      "profile": {
+        "HEAD_PREDECODE": 1,
+        "CANDIDATE_KEY_PIPE": 2,
+        "AREA_PROFILE": 2,
+        "RAM_BUFFER": 1,
+        "COMPACT_COORDS": 1,
+        "QueryDepth": 256,
+        "TokenWidth": 124,
+        "TagWidth": 25,
+        "QIDWidth": 24
+      },
+      "native_map_resources": {
+        "FF": 30278.0,
+        "LUT": 44944.5,
+        "DRM": 27.0,
+        "APM": 68.0,
+        "IO": 144.0
+      },
+      "native_map_adf": {
+        "Path": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\d256-fifo-head-predecode-native-map-20261103-a\\inputs\\input_map.adf",
+        "SHA256": "dd252260486b1f5448677be6c4292f0d3a8651c9562b6a64cb3f028946320ed9"
+      },
+      "physical_state_recorded": "MAP_PASS_HEAD_PREDECODE_RESOURCE_MEASURED_NO_PNR",
+      "differences_vs_peer_baseline": {
+        "b4/rtl/held_completion_cdc.sv": {
+          "profile_sha256": "6ba45559bd3f71ec451ec606d126252495d61b20c970431770d51f5a3cec4105",
+          "peer_baseline_input_sha256": null
+        },
+        "b4/rtl/telemetry_packet_arbiter.sv": {
+          "profile_sha256": "c4f0ceab75fa9245a133f0e859bee807e91df2a93db441879daa2d73aa2125fe",
+          "peer_baseline_input_sha256": "8b30a7cbf8dd707c9c2a642d584d668e4a15bea7853f219a8cb16b52f59efebb"
+        },
+        "b4/rtl/telemetry_session_link.sv": {
+          "profile_sha256": "dd1afb19fd4af4d0256dc4322e4c870020b0747da9188dd20262544f2885f0d6",
+          "peer_baseline_input_sha256": "3663cb73bf1d9fe216fe4689b4786e2cccdadfb50a1f2b56991dff146e71f3d6"
+        },
+        "b4/rtl/telemetry_uart_link.sv": {
+          "profile_sha256": "ae392f99507e6331182e53033f410083e01e39219ba797e59596de7d27270fb0",
+          "peer_baseline_input_sha256": "8b754ce833587d00005aad7f4ad5fd0d1ea140bc8b4b731f3d5ece740e92bf5d"
+        },
+        "source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v": {
+          "profile_sha256": "5616da2b4d1d44e00cc28c8913e60308474f35d0cdcca5e7ae7c61a28c4bc4e6",
+          "peer_baseline_input_sha256": "d84e6238b5009be168337a12d0b4174d40401576cecf7fff88b457a8f084db6d"
+        },
+        "source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v": {
+          "profile_sha256": "1414589c05e920c716a6ff159de06e9c400806197c7ac61a1d23f16144a052f5",
+          "peer_baseline_input_sha256": "2d1b57b75081bd60778cbb0f49be91b743c3ebb4a38c2aa48c76b8d6defd1f2d"
+        },
+        "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v": {
+          "profile_sha256": "bbc0c674137b2bfdf62fbadb7f0808ffb3383898a0a5a78c594f87b12c5ba7fb",
+          "peer_baseline_input_sha256": "0f8b037be995144bdf406bd09ba69e73d32c6e64be9c9ec70f5a50ea78faeead"
+        },
+        "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v": {
+          "profile_sha256": "1cf59dbd545227c85633c280f439fe03f7b36fb625ff3a53ef1ac347b4a2008d",
+          "peer_baseline_input_sha256": "903ebe675eb9bdb526d1519c87511d8bce267d342f9bc06d2531122377d91edb"
+        },
+        "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v": {
+          "profile_sha256": "84eaf4f2cf0d3d5e9f2f223b4d893c0b8f457c30f13a594e6932ed535b258302",
+          "peer_baseline_input_sha256": "97c4b64059673325435882dcb02c3e5becad00c8e0fea049d394316856862b6e"
+        },
+        "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/rotated_remap_core_gamma_geometry_bypass_scatter4.v": {
+          "profile_sha256": "4326204c6a5e250df1c825ce2f52ebdab8c82e036dcaae297f0874fc8ca0d2aa",
+          "peer_baseline_input_sha256": "970282541984f29d9c4a4fb51e9406652fc57c40c11990ba550cd0855e8896a6"
+        },
+        "source/rtl/experimental/ddr_adaptive_result_writer.v": {
+          "profile_sha256": "507e9642e91127581d91bb3a431cc93042e15169c392fbbee54b79f8589a1fef",
+          "peer_baseline_input_sha256": "b237c9c7fce7bd06345191c9e7e3d44144472e1a5ff2830b5352e46ca0d13f84"
+        },
+        "source/rtl/experimental/ddr_compact_neighbour_cache_scatter4.v": {
+          "profile_sha256": "5beb4adb691514bcc599d5d02988bd0e006e59588a8a9f9a3208301ef9970afe",
+          "peer_baseline_input_sha256": "3c3e86487ad4dc8e53d9354bbc770ae8685b123b9a6896a7dea63dea12454545"
+        },
+        "source/rtl/experimental/ddr_remap_sample_scatter4.v": {
+          "profile_sha256": "dfe2808c4e3ddee91b9cf4ff2a88333e2b5f89d18efde849d1c78f8121186993",
+          "peer_baseline_input_sha256": "8ebf9567b170a96641755c70f2419a333afe435bc6b71fa879f6f62f40530ebd"
+        },
+        "source/rtl/experimental/hdmi1080_input_dma.v": {
+          "profile_sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29",
+          "peer_baseline_input_sha256": "7a21acc092ba97a268cfc319521ec8fc0e9eb0dca62289ba2ffbeae68705ec2e"
+        },
+        "source/rtl/snapshot/snapshot_command_parser.sv": {
+          "profile_sha256": "54ea7a228e878955dde5a9f6a9ba89882774b01c6936d4f001468d539be6d57b",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/stats/core_stats_snapshot.sv": {
+          "profile_sha256": "11a10ed560279d3c97b117c744d0322e7898925e5d33d5ec14821e35f0a60738",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/stats/stats_uart_mux.sv": {
+          "profile_sha256": "73e0bda7d4ed093e214c97fe256b7218963e512cc8839d8cd27dd028e9d1a7de",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/ddr_compact_neighbour_cache_scatter8.v": {
+          "profile_sha256": "0561c3e79eb24658e5a6012cf53b90be1928994c18f934ed8342e16d67dda3ba",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/sync_token_fifo.sv": {
+          "profile_sha256": "228e6f2759dcda6b02449acb39986ce94d89a8812286d83f177ce8a110f1546a",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/quad_parity_prefetch_store.sv": {
+          "profile_sha256": "e4c1684348732052b4c39b4bcf0e444eeaf8cd240ecda730600fde3478343236",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/d256_runtime_prefetch_cache.sv": {
+          "profile_sha256": "0fac25c83838544bb151305974ad963264a3043c7f86aa94ed564e1e1196ce95",
+          "peer_baseline_input_sha256": null
+        },
+        "source/rtl/experimental/ddr_raster_overlap_writer.sv": {
+          "profile_sha256": "b80e37c357992c91743b04ef87552187301dedbbc9fabddcf3143c529a32ff61",
+          "peer_baseline_input_sha256": null
+        }
+      },
+      "integration_record": {
+        "FunctionalHDLPASS": true,
+        "MapOnlyAdmitted": true,
+        "PNRAdmitted": false,
+        "PreparedOnlyWhileParentPNRActive": false,
+        "NativeSources": 139,
+        "BoardOperations": 0,
+        "MapStartRequiresExistingParentPNRAndSTAExited": true,
+        "ParentPhysicalTerminal": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\d256-area2-key-pipeline-native-map-20261103-a\\PNR_TERMINAL_RESULT.json",
+        "ParentPNRAllOwnedExited": true,
+        "ParentNoSTAReason": "No final route DB after controllerbudget, noSTAstarted",
+        "AdmittedCN": "2026-11-03T07:41:26.030561+08:00"
+      }
+    }
+  },
+  "new_board_measurements": false,
+  "attribution_or_authorization_inferred": false,
+  "hardware_accessed": false,
+  "EDA_executed": false,
+  "production_sources_changed": false,
+  "d256_native_three_frame_model_status": {
+    "status_reported_by_main_engineer": "PASS_1920x1080_THREE_CONSECUTIVE_FRAMES_60FPS_RTL_BUDGET",
+    "report_provenance": "Explicit parent delegation in this session",
+    "raw_cloud_log_independently_replayed_by_this_worker": false,
+    "local_author_native_bench_status_preserved": "PREPARED_NOT_RUN; this local author preparation status is not substituted for parent cloud execution evidence",
+    "not_inherited_by": [
+      "AREA2_KEY_PIPE2",
+      "HEAD_PREDECODE1"
+    ],
+    "not_proven": [
+      "HDMI60 interface configuration",
+      "physical DDR/capture/display arbitration",
+      "routed125MHz",
+      "sustained hardware60fps",
+      "external E2E"
+    ]
+  }
+}

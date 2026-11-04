@@ -1,0 +1,63 @@
+{
+  "scope": "Independent old/new digital equivalence experiment; live RTL unchanged; no native timing claim",
+  "passed": true,
+  "source_sha256": {
+    "D:\\f60\\delivery\\20261103-hdmi-camera-fisheye-60\\rtl\\hdmi_camera_pixel_sampler.v": "1bb57139b679dd76f98d8db26c20deaef6f86a7711e72291dc1634e3226c1ebc",
+    "D:\\f60\\distortion\\rtl\\experimental\\hdmi_camera_rgb565_quantizer.v": "bb18483682ae0965839d4d54aadea0dcc0eec248c54ee5130be6f62e868a0ba0",
+    "D:\\f60-work\\video\\tb_sampler_release_equivalence.sv": "3584c73967d330df871fa25eb7cd68ed8167bc2e49b4ff130ecdf12f9e2b1cfe",
+    "D:\\f60-work\\video\\sampler-release-proof-c\\old.v": "336b1c7df8316215337d2a078cffc3cf61e3ad8eabbae41a1291befc704c575e",
+    "D:\\f60-work\\video\\sampler-release-proof-c\\new.v": "a73a85163bc392ccdab29926b102ceb0d946f86c94e1fb8f36146e1f0faa3051",
+    "D:\\f60-work\\video\\sampler-release-proof-c\\test.sv": "3584c73967d330df871fa25eb7cd68ed8167bc2e49b4ff130ecdf12f9e2b1cfe"
+  },
+  "commands": [
+    {
+      "argv": [
+        "xvlog.bat",
+        "--sv",
+        "D:\\f60-work\\video\\sampler-release-proof-c\\old.v",
+        "D:\\f60-work\\video\\sampler-release-proof-c\\new.v",
+        "D:\\f60\\distortion\\rtl\\experimental\\hdmi_camera_rgb565_quantizer.v",
+        "D:\\f60-work\\video\\sampler-release-proof-c\\test.sv"
+      ],
+      "returncode": 0,
+      "seconds": 0.5792428999993717,
+      "log_sha256": "9ac3a5fd5de64837010955a884fd46dd145879cb02868ec69efbb261edf66e46"
+    },
+    {
+      "argv": [
+        "xelab.bat",
+        "tb_sampler_release_equivalence",
+        "-s",
+        "sampler"
+      ],
+      "returncode": 0,
+      "seconds": 3.189694500000769,
+      "log_sha256": "f0dfd693edc1a2e6ec527749d59dcee8aad9679e54921271912b74aba3942bdb"
+    },
+    {
+      "argv": [
+        "xsim.bat",
+        "sampler",
+        "-runall"
+      ],
+      "returncode": 0,
+      "seconds": 7.774738299998717,
+      "log_sha256": "8042f7cad2621d491c9a71d6db7e847ce7d623967633a8a2a66f58a5a4a891a9"
+    }
+  ],
+  "coverage": {
+    "passed": true,
+    "settled_checks": 37940,
+    "polarity_variants": 6,
+    "pclk_edges": 13540,
+    "reset_assertions": 3858,
+    "stopped_low": 1,
+    "stopped_high": 1,
+    "coincident_assert": 3761,
+    "coincident_release": 3846,
+    "consumer_baselines": 695,
+    "consumer_vs_edges": 424,
+    "quantizer_compared": true,
+    "first_valid_edge": 3
+  }
+}

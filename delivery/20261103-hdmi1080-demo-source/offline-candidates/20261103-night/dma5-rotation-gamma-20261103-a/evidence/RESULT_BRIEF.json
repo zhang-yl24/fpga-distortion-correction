@@ -1,0 +1,134 @@
+{
+  "Candidate": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\dma5-rotation-gamma-20261103-a",
+  "Status": "FUNCTIONAL_DIAGNOSTIC_BIT_FROZEN_NOT_TIMING_ACCEPTED",
+  "Parent": "dma-grant-fire-20261103-a",
+  "Features": {
+    "RuntimeRotation": true,
+    "Gamma": true,
+    "Stats": false,
+    "FullframeSnapshot": false,
+    "InputProfile": "1080p30",
+    "Blanking": "Controlled report-only inherited; strict timing remains visible"
+  },
+  "Bit": {
+    "Path": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\dma5-rotation-gamma-20261103-a\\frozen\\rotation-gamma-diagnostic.sbit",
+    "Bytes": 3791112,
+    "SHA256": "3421b5a2cbf291632f658bc08f8f62669b9cd15816508d7177729933efb6f82c"
+  },
+  "FinalADF": {
+    "Original": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\dma5-rotation-gamma-20261103-a\\runs\\pnr\\prj_tasks\\pnr_1\\place_route\\board1080_top_pnr.adf",
+    "Frozen": "C:\\Users\\22955\\Documents\\Codex\\2026-10-26\\task-2\\dma5-rotation-gamma-20261103-a\\inputs\\final_for_sta.adf",
+    "SHA256": "3f897c53886bbc81566b9184e9699c97ad25f27fb0c6099afac30cd3e082fc1d",
+    "Bytes": 5270809
+  },
+  "Timing": {
+    "slow": {
+      "setup": {
+        "FailingEndpoints": 194,
+        "WNS_ns": -0.894,
+        "TNS_ns": -67.343
+      },
+      "hold": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.011,
+        "TNS_ns": 0.0
+      },
+      "recovery": {
+        "FailingEndpoints": 245,
+        "WNS_ns": -3.873,
+        "TNS_ns": -503.056
+      },
+      "removal": {
+        "FailingEndpoints": 1,
+        "WNS_ns": -0.324,
+        "TNS_ns": -0.324
+      },
+      "mpw": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.035,
+        "TNS_ns": 0.0
+      }
+    },
+    "fast": {
+      "setup": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 2.441,
+        "TNS_ns": 0.0
+      },
+      "hold": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.009,
+        "TNS_ns": 0.0
+      },
+      "recovery": {
+        "FailingEndpoints": 229,
+        "WNS_ns": -2.979,
+        "TNS_ns": -256.256
+      },
+      "removal": {
+        "FailingEndpoints": 1,
+        "WNS_ns": -0.297,
+        "TNS_ns": -0.297
+      },
+      "mpw": {
+        "FailingEndpoints": 0,
+        "WNS_ns": 0.035,
+        "TNS_ns": 0.0
+      }
+    }
+  },
+  "SetupGroups": {
+    "mapper": {
+      "Count": 100,
+      "WNS_ns": -0.894
+    },
+    "cache": {
+      "Count": 31,
+      "WNS_ns": -0.671
+    },
+    "other": {
+      "Count": 35,
+      "WNS_ns": -0.665
+    },
+    "writer": {
+      "Count": 24,
+      "WNS_ns": -0.42
+    },
+    "scan": {
+      "Count": 4,
+      "WNS_ns": -0.058
+    }
+  },
+  "Resources": {
+    "FF": 23686.0,
+    "LUT": 18796.0,
+    "DRM": 27.5,
+    "APM": 81.0,
+    "IO": 144.0
+  },
+  "IO": {
+    "no_clock": 0,
+    "virtual_clock": 1,
+    "unexpandable_clocks": 0,
+    "no_input_delay": 55,
+    "no_output_delay": 111,
+    "partial_input_delay": 0,
+    "partial_output_delay": 0,
+    "io_min_max_delay_consistency": 0,
+    "input_delay_assigned_to_clock": 0,
+    "loops": 0,
+    "latch_loops": 0,
+    "latchs": 0
+  },
+  "Actual144PadElectricalRowsEqualTone": true,
+  "FeatureResourceAdmission": "FEATURE_RESOURCE_ADMISSION.json; original generic Map gate remains failed, extra 8 DRM and 12 APM explicitly admitted",
+  "InitialParamID": "93d8c49b",
+  "RotationPlus13_37ParamID": "2a624ee2",
+  "ExplicitZeroParamID": "64cfd024",
+  "Calibration": "Penn, not new-camera calibrated",
+  "HardwareOperations": 0,
+  "HardwareAcceptance": false,
+  "NoTimingExceptionsAdded": true,
+  "AllOwnJobsExited": true,
+  "FrozenCN": "2026-11-03T03:50:14.343466+08:00"
+}

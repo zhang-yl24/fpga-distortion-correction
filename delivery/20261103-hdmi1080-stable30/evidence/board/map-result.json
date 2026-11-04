@@ -1,0 +1,822 @@
+{
+  "schema": "hdmi1080-board-stage-v1",
+  "stage": "map",
+  "stage_completed": true,
+  "stage_directory": "D:\\fpga-stable\\build\\stable-a\\stages\\map",
+  "attempt": 1,
+  "previous_attempt": null,
+  "started_utc": "2026-11-03T00:33:37.779406+00:00",
+  "board_flow": {
+    "path": "D:\\fpga-stable\\build\\stable-a\\board-flow.json",
+    "sha256": "cffb7185cd7c1acb5bf42a711e3e1413dffbc31528e1e4cc5bc5c6702e7e2241"
+  },
+  "input_db": null,
+  "script": {
+    "path": "D:\\fpga-stable\\build\\stable-a\\stages\\map\\map.tcl",
+    "sha256": "ebc49f4e42218be99a0527f6f265204c59a8c9f6dcff9e0feb8b13fe2eb274df"
+  },
+  "pds_executable": {
+    "path": "E:\\PDS_2025.2-ads-win64\\pango\\PDS_2025.2-ads\\bin\\pds_shell.exe",
+    "sha256": "32983ea8e0cf0498481e5ae8ff75fcdd4ee329f2efb83dea9d8eee85583931cc"
+  },
+  "hardware_accessed": false,
+  "physical_timing_accepted": false,
+  "hardware_release_allowed": false,
+  "diagnostic_bit_requested": false,
+  "artifacts": {
+    "map_db": {
+      "path": "D:\\fpga-stable\\build\\stable-a\\stages\\map\\prj_tasks\\pnr_1\\device_map\\board1080_top_map.adf",
+      "sha256": "073afb181ee49165f130e8f13d59e4e011b7b7a69f5c5a562dffd72bb3ef9582"
+    },
+    "pcf": {
+      "path": "D:\\fpga-stable\\build\\stable-a\\stages\\map\\prj_tasks\\pnr_1\\device_map\\board1080_top.pcf",
+      "sha256": "cffe26ea0afd769273a92a4c3ed83ff0eeebc8400e85b10d69e7c4b30b52cd85"
+    },
+    "pin_report": {
+      "path": "D:\\fpga-stable\\build\\stable-a\\stages\\map\\prj_tasks\\pnr_1\\device_map\\board1080_top_dmr.prt",
+      "sha256": "70a03df9eef5c421ec5033c186263d17c33ad017dac094a18ab5fe8dd3303997"
+    }
+  },
+  "explicit_constraints": [
+    {
+      "path": "D:\\fpga-stable\\build\\stable-a\\native\\source\\build\\offline-20261024\\boardtop-penn-prep-20261029-a\\board1080-diagnostic.fdc",
+      "sha256": "2ff6dd8510e7b0566f550143561ac4138c19cd255944811b4561979f6e8b0f23"
+    },
+    {
+      "path": "D:\\fpga-stable\\build\\stable-a\\uart-pins.fdc",
+      "sha256": "70b4b2f39c0da2703216abdbf320d9dbe7a0dd95bfbda5253cfc0a518ef090e5"
+    },
+    {
+      "path": "D:\\fpga-stable\\build\\stable-a\\native\\stable-constraints\\ddr-ip-clock-relations.fdc",
+      "sha256": "e50c487f732019f59882386e558649c1777f03e540a0d5db971194ebcae6a47c"
+    },
+    {
+      "path": "D:\\fpga-stable\\build\\stable-a\\native\\stable-constraints\\vendor-ddr.rcf",
+      "sha256": "4195e9a465a277e3e242f191d55b78bde4e713e2145121825008d83e7b2aab1d"
+    }
+  ],
+  "command": [
+    "E:\\PDS_2025.2-ads-win64\\pango\\PDS_2025.2-ads\\bin\\pds_shell.exe",
+    "-file",
+    "D:\\fpga-stable\\build\\stable-a\\stages\\map\\map.tcl",
+    "-work_dir",
+    "D:\\fpga-stable\\build\\stable-a\\stages\\map",
+    "-project_name",
+    "board1080_top"
+  ],
+  "returncode": 0,
+  "device_project": {
+    "path": "D:\\fpga-stable\\build\\stable-a\\stages\\map\\board1080_top.pds",
+    "sha256": "dd56908aa260f77cc380ed9ef37225e80a9f5c2c0b9d9eaa7a9179a5404dc018"
+  },
+  "pins": {
+    "passed": true,
+    "pin_count": 144,
+    "pcf": {
+      "path": "D:\\fpga-stable\\build\\stable-a\\stages\\map\\prj_tasks\\pnr_1\\device_map\\board1080_top.pcf",
+      "sha256": "cffe26ea0afd769273a92a4c3ed83ff0eeebc8400e85b10d69e7c4b30b52cd85"
+    },
+    "pin_report": {
+      "path": "D:\\fpga-stable\\build\\stable-a\\stages\\map\\prj_tasks\\pnr_1\\device_map\\board1080_top_dmr.prt",
+      "sha256": "70a03df9eef5c421ec5033c186263d17c33ad017dac094a18ab5fe8dd3303997"
+    },
+    "bank_declared_vccio": {
+      "BANKL3": "3.3",
+      "BANKL4": "3.3",
+      "BANKL5": "3.3",
+      "BANKR4": "1.5",
+      "BANKR5": "1.5"
+    },
+    "pins": {},
+    "physical_supply_voltage_measured": false,
+    "routed_port_assignment_verified": false,
+    "reserved_pads": {
+      "C17": {
+        "bank": "BANKL3",
+        "port": "",
+        "direction": ""
+      },
+      "A17": {
+        "bank": "BANKL3",
+        "port": "",
+        "direction": ""
+      },
+      "D18": {
+        "bank": "BANKL3",
+        "port": "",
+        "direction": ""
+      },
+      "C22": {
+        "bank": "BANKL3",
+        "port": "",
+        "direction": ""
+      },
+      "C24": {
+        "bank": "BANKL3",
+        "port": "",
+        "direction": ""
+      },
+      "B17": {
+        "bank": "BANKL3",
+        "port": "",
+        "direction": ""
+      },
+      "A18": {
+        "bank": "BANKL3",
+        "port": "",
+        "direction": ""
+      },
+      "E18": {
+        "bank": "BANKL3",
+        "port": "",
+        "direction": ""
+      },
+      "C18": {
+        "bank": "BANKL3",
+        "port": "",
+        "direction": ""
+      },
+      "C19": {
+        "bank": "BANKL3",
+        "port": "",
+        "direction": ""
+      },
+      "A20": {
+        "bank": "BANKL3",
+        "port": "",
+        "direction": ""
+      },
+      "B24": {
+        "bank": "BANKL3",
+        "port": "",
+        "direction": ""
+      },
+      "K15": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "J14": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "K16": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "M14": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "M15": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "M16": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "J19": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "L17": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "K20": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "J18": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "G20": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "K21": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "J23": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "K22": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "G25": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "J16": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "J15": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "K17": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "L14": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "L15": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "M17": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "H19": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "L18": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "J20": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "H18": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "G21": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "J21": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "H22": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "H23": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "H24": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "K23": {
+        "bank": "BANKL4",
+        "port": "",
+        "direction": ""
+      },
+      "K25": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "L24": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "L22": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "M21": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "N21": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "P20": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "N23": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "P19": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "P23": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "R20": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "R25": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "T24": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "T22": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "P16": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "N18": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "K26": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "L25": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "L23": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "M22": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "N22": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "P21": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "N24": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "N19": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "P24": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "R21": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "P25": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "T25": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "R22": {
+        "bank": "BANKL5",
+        "port": "",
+        "direction": ""
+      },
+      "E6": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "H8": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "H7": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "F8": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "H6": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "H9": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "J6": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "L8": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "J4": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "K7": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "G4": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "G5": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "D4": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "B5": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "B4": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "D3": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "F3": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "C2": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "A3": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "C1": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "F2": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "E1": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "G2": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "D6": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "G8": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "G7": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "F7": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "G6": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "J5": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "H4": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "K6": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "F4": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "F5": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "D5": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "C4": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "A5": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "A4": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "C3": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "E3": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "A2": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "B1": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "E2": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "D1": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "G1": {
+        "bank": "BANKR4",
+        "port": "",
+        "direction": ""
+      },
+      "K1": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "L3": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "N1": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "H2": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "M2": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "N3": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "P4": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "R1": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "T4": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "T2": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "U2": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "P6": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "T5": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "U6": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "T8": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "J1": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "K2": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "M1": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "H1": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "L2": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "N2": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "P3": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "N4": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "P1": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "T3": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "R2": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "U1": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "U5": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      },
+      "T7": {
+        "bank": "BANKR5",
+        "port": "",
+        "direction": ""
+      }
+    },
+    "phase": "map-reservation"
+  },
+  "elapsed_seconds": 211.567,
+  "log": {
+    "path": "D:\\fpga-stable\\build\\stable-a\\stages\\map\\console.log",
+    "sha256": "266edc6e3d7ed5fbe73e4ddd058941f413ff69be31979852d94c8d897babd825"
+  }
+}

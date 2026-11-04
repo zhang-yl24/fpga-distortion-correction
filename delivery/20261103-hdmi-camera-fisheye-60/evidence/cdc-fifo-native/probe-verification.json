@@ -1,0 +1,712 @@
+{
+  "passed": true,
+  "scope": "Two FIFO pointer sizes after native PDS compile, ADS synthesis, device map, place, route and report timing. Eight-bit payload reduces probe size; native full-design CDC routing/skew is separate. External probe port IO delays are unconstrained; CDC checks here cover only the internal Gray source-to-first-stage paths.",
+  "attributes": "(* PAP_ASYNC_REG=1, syn_srlstyle=\"registers\" *)",
+  "syn_preserve_used": false,
+  "expected_gray_flops": 68,
+  "logical_reset_flops": 8,
+  "physical_reset_flops": 4,
+  "shared_reset_explanation": "Both probe instances use identical clocks and common reset. Synthesis shares the two complete two-FF local reset chains; display_size consumes capture_size stage-two reset outputs. No chain is reduced below two FFs.",
+  "shared_reset_binding_verified": {
+    "wr_reset_sync": true,
+    "rd_reset_sync": true
+  },
+  "mapped_flop_checks": [
+    {
+      "register": "capture_size/rd_gray_w1[0]",
+      "mapped": {
+        "capture_size/rd_gray_w1[0]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w1[1]",
+      "mapped": {
+        "capture_size/rd_gray_w1[1]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w1[2]",
+      "mapped": {
+        "capture_size/rd_gray_w1[2]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w1[3]",
+      "mapped": {
+        "capture_size/rd_gray_w1[3]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w1[4]",
+      "mapped": {
+        "capture_size/rd_gray_w1[4]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w1[5]",
+      "mapped": {
+        "capture_size/rd_gray_w1[5]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w1[6]",
+      "mapped": {
+        "capture_size/rd_gray_w1[6]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w2[0]",
+      "mapped": {
+        "capture_size/rd_gray_w2[0]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w2[1]",
+      "mapped": {
+        "capture_size/rd_gray_w2[1]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w2[2]",
+      "mapped": {
+        "capture_size/rd_gray_w2[2]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w2[3]",
+      "mapped": {
+        "capture_size/rd_gray_w2[3]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w2[4]",
+      "mapped": {
+        "capture_size/rd_gray_w2[4]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w2[5]",
+      "mapped": {
+        "capture_size/rd_gray_w2[5]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_gray_w2[6]",
+      "mapped": {
+        "capture_size/rd_gray_w2[6]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r1[0]",
+      "mapped": {
+        "capture_size/wr_gray_r1[0]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r1[1]",
+      "mapped": {
+        "capture_size/wr_gray_r1[1]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r1[2]",
+      "mapped": {
+        "capture_size/wr_gray_r1[2]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r1[3]",
+      "mapped": {
+        "capture_size/wr_gray_r1[3]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r1[4]",
+      "mapped": {
+        "capture_size/wr_gray_r1[4]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r1[5]",
+      "mapped": {
+        "capture_size/wr_gray_r1[5]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r1[6]",
+      "mapped": {
+        "capture_size/wr_gray_r1[6]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r2[0]",
+      "mapped": {
+        "capture_size/wr_gray_r2[0]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r2[1]",
+      "mapped": {
+        "capture_size/wr_gray_r2[1]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r2[2]",
+      "mapped": {
+        "capture_size/wr_gray_r2[2]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r2[3]",
+      "mapped": {
+        "capture_size/wr_gray_r2[3]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r2[4]",
+      "mapped": {
+        "capture_size/wr_gray_r2[4]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r2[5]",
+      "mapped": {
+        "capture_size/wr_gray_r2[5]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_gray_r2[6]",
+      "mapped": {
+        "capture_size/wr_gray_r2[6]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_reset_sync[0]",
+      "mapped": {
+        "capture_size/wr_reset_sync[0]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/wr_reset_sync[1]",
+      "mapped": {
+        "capture_size/wr_reset_sync[1]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_reset_sync[0]",
+      "mapped": {
+        "capture_size/rd_reset_sync[0]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "capture_size/rd_reset_sync[1]",
+      "mapped": {
+        "capture_size/rd_reset_sync[1]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w1[0]",
+      "mapped": {
+        "display_size/rd_gray_w1[0]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w1[1]",
+      "mapped": {
+        "display_size/rd_gray_w1[1]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w1[2]",
+      "mapped": {
+        "display_size/rd_gray_w1[2]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w1[3]",
+      "mapped": {
+        "display_size/rd_gray_w1[3]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w1[4]",
+      "mapped": {
+        "display_size/rd_gray_w1[4]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w1[5]",
+      "mapped": {
+        "display_size/rd_gray_w1[5]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w1[6]",
+      "mapped": {
+        "display_size/rd_gray_w1[6]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w1[7]",
+      "mapped": {
+        "display_size/rd_gray_w1[7]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w1[8]",
+      "mapped": {
+        "display_size/rd_gray_w1[8]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w1[9]",
+      "mapped": {
+        "display_size/rd_gray_w1[9]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w2[0]",
+      "mapped": {
+        "display_size/rd_gray_w2[0]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w2[1]",
+      "mapped": {
+        "display_size/rd_gray_w2[1]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w2[2]",
+      "mapped": {
+        "display_size/rd_gray_w2[2]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w2[3]",
+      "mapped": {
+        "display_size/rd_gray_w2[3]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w2[4]",
+      "mapped": {
+        "display_size/rd_gray_w2[4]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w2[5]",
+      "mapped": {
+        "display_size/rd_gray_w2[5]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w2[6]",
+      "mapped": {
+        "display_size/rd_gray_w2[6]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w2[7]",
+      "mapped": {
+        "display_size/rd_gray_w2[7]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w2[8]",
+      "mapped": {
+        "display_size/rd_gray_w2[8]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_gray_w2[9]",
+      "mapped": {
+        "display_size/rd_gray_w2[9]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r1[0]",
+      "mapped": {
+        "display_size/wr_gray_r1[0]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r1[1]",
+      "mapped": {
+        "display_size/wr_gray_r1[1]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r1[2]",
+      "mapped": {
+        "display_size/wr_gray_r1[2]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r1[3]",
+      "mapped": {
+        "display_size/wr_gray_r1[3]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r1[4]",
+      "mapped": {
+        "display_size/wr_gray_r1[4]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r1[5]",
+      "mapped": {
+        "display_size/wr_gray_r1[5]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r1[6]",
+      "mapped": {
+        "display_size/wr_gray_r1[6]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r1[7]",
+      "mapped": {
+        "display_size/wr_gray_r1[7]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r1[8]",
+      "mapped": {
+        "display_size/wr_gray_r1[8]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r1[9]",
+      "mapped": {
+        "display_size/wr_gray_r1[9]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r2[0]",
+      "mapped": {
+        "display_size/wr_gray_r2[0]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r2[1]",
+      "mapped": {
+        "display_size/wr_gray_r2[1]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r2[2]",
+      "mapped": {
+        "display_size/wr_gray_r2[2]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r2[3]",
+      "mapped": {
+        "display_size/wr_gray_r2[3]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r2[4]",
+      "mapped": {
+        "display_size/wr_gray_r2[4]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r2[5]",
+      "mapped": {
+        "display_size/wr_gray_r2[5]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r2[6]",
+      "mapped": {
+        "display_size/wr_gray_r2[6]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r2[7]",
+      "mapped": {
+        "display_size/wr_gray_r2[7]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r2[8]",
+      "mapped": {
+        "display_size/wr_gray_r2[8]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_gray_r2[9]",
+      "mapped": {
+        "display_size/wr_gray_r2[9]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": false,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_reset_sync[0]",
+      "mapped": {
+        "capture_size/wr_reset_sync[0]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": true,
+      "passed": true
+    },
+    {
+      "register": "display_size/wr_reset_sync[1]",
+      "mapped": {
+        "capture_size/wr_reset_sync[1]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": true,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_reset_sync[0]",
+      "mapped": {
+        "capture_size/rd_reset_sync[0]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": true,
+      "passed": true
+    },
+    {
+      "register": "display_size/rd_reset_sync[1]",
+      "mapped": {
+        "capture_size/rd_reset_sync[1]/opit_0_inv": "gopQ"
+      },
+      "shared_reset_alias": true,
+      "passed": true
+    }
+  ],
+  "native_attribute_pairs": 72,
+  "mapped_srl_cells": {},
+  "fifo_functional_tokens_equal_to_f_system": true,
+  "baseline_f_system_fifo_sha256": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+  "overlay_fifo_sha256": "143400186f0549f30007e64cd7dbcc6b82395099f7c2dd85e92725cb06943a16",
+  "f_system_report_sha256": "e2ebfb32ca87d622a281105fdae7a9b03622b749863f1cdcc706b504bb161ea4",
+  "synth_vm_sha256": "5f147abc941f0380f860a06246c7e8af090578035b54687424258587cbe8c607",
+  "mapped_netlist_sha256": "1e31ad4a928b87c579ce3045729fa6ea2b6d09273013a109b05e816d2201e25b",
+  "cdc_rows": [
+    {
+      "Severity": "Info",
+      "CDC ID": "CDC-3",
+      "Description": "Single-bit synchronized with ASYNC_REG property",
+      "Exception": "None",
+      "Startpoint": "capture_size/rd_binary[6]/CLK",
+      "Endpoint": "capture_size/rd_gray_w1[6]/D",
+      "Category": "Safe"
+    },
+    {
+      "Severity": "Info",
+      "CDC ID": "CDC-3",
+      "Description": "Single-bit synchronized with ASYNC_REG property",
+      "Exception": "None",
+      "Startpoint": "display_size/rd_binary[9]/CLK",
+      "Endpoint": "display_size/rd_gray_w1[9]/D",
+      "Category": "Safe"
+    },
+    {
+      "Severity": "Warning",
+      "CDC ID": "CDC-6",
+      "Description": "Multi-bit synchronized with ASYNC_REG property",
+      "Exception": "None",
+      "Startpoint": "capture_size/rd_gray[5:0]/CLK",
+      "Endpoint": "capture_size/rd_gray_w1[5:0]/D",
+      "Category": "Safe"
+    },
+    {
+      "Severity": "Warning",
+      "CDC ID": "CDC-6",
+      "Description": "Multi-bit synchronized with ASYNC_REG property",
+      "Exception": "None",
+      "Startpoint": "display_size/rd_gray[8:0]/CLK",
+      "Endpoint": "display_size/rd_gray_w1[8:0]/D",
+      "Category": "Safe"
+    },
+    {
+      "Severity": "Info",
+      "CDC ID": "CDC-3",
+      "Description": "Single-bit synchronized with ASYNC_REG property",
+      "Exception": "None",
+      "Startpoint": "capture_size/wr_binary[6]/CLK",
+      "Endpoint": "capture_size/wr_gray_r1[6]/D",
+      "Category": "Safe"
+    },
+    {
+      "Severity": "Info",
+      "CDC ID": "CDC-3",
+      "Description": "Single-bit synchronized with ASYNC_REG property",
+      "Exception": "None",
+      "Startpoint": "display_size/wr_binary[9]/CLK",
+      "Endpoint": "display_size/wr_gray_r1[9]/D",
+      "Category": "Safe"
+    },
+    {
+      "Severity": "Warning",
+      "CDC ID": "CDC-6",
+      "Description": "Multi-bit synchronized with ASYNC_REG property",
+      "Exception": "None",
+      "Startpoint": "capture_size/wr_gray[5:0]/CLK",
+      "Endpoint": "capture_size/wr_gray_r1[5:0]/D",
+      "Category": "Safe"
+    },
+    {
+      "Severity": "Warning",
+      "CDC ID": "CDC-6",
+      "Description": "Multi-bit synchronized with ASYNC_REG property",
+      "Exception": "None",
+      "Startpoint": "display_size/wr_gray[8:0]/CLK",
+      "Endpoint": "display_size/wr_gray_r1[8:0]/D",
+      "Category": "Safe"
+    }
+  ],
+  "cdc_categories": {
+    "CDC-3 Single-bit synchronized with ASYNC_REG property": 4,
+    "CDC-6 Multi-bit synchronized with ASYNC_REG property": 4
+  },
+  "attribute_rejection": false,
+  "broad_clock_groups_or_falsepaths_added": false
+}

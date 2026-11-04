@@ -1,0 +1,112 @@
+{
+  "passed": true,
+  "hardware_accessed": false,
+  "cases": [
+    {
+      "name": "signed",
+      "passed": true,
+      "source_sha256": {
+        "D:\\fpga-stable\\cache\\sources\\experiment.v": "9f80b781a9f154f797966f346321ae8da732dbf29eb0f12054e85c66160744ed",
+        "D:\\fpga-stable\\cache\\sources\\reference.v": "9bcad60e4f44e7a2bf4d903efc5ec89524f9390889033cb8fc3172a4bc4a5d89",
+        "D:\\fpga-stable\\cache\\supplement\\tb_cache_signed_lockstep.sv": "5bf2295b21d19fecb51832b365e60748bce7de3d60b81ef7afd58495c57d4a44"
+      },
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "-d",
+            "PACKED32",
+            "D:\\fpga-stable\\cache\\sources\\experiment.v",
+            "D:\\fpga-stable\\cache\\sources\\reference.v",
+            "D:\\fpga-stable\\cache\\supplement\\tb_cache_signed_lockstep.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.7152860000060173,
+          "log_sha256": "c0ba26efd6fe218fc774b070b669bc2f344fca341fe39e1a0c630f7e79ec5043"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_cache_directed",
+            "-s",
+            "cache_test"
+          ],
+          "returncode": 0,
+          "seconds": 3.0592524999956368,
+          "log_sha256": "3faab146dce280abf467f27f28f781926da9f43f990bd539f7a512131dc5ac5a"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "cache_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 5.254736999995657,
+          "log_sha256": "219c888092e554e92f339e047f7edacd081d130760641541eb4face5b22266c0"
+        }
+      ],
+      "pass_lines": [
+        "PASS SIGNED FIFO PREDECODE edge_queries=64",
+        "PASS SCATTER4 INDEX7 full128-pixel parity/first-last, direct-map tag replacement, same/new bank epochs and TAG25 oracle",
+        "PASS SCATTER4 FIFO2 full input/output stalls, stable fractions/TAG25 and pending-frame drain",
+        "PASS SCATTER4 frame_valid at final group: no new input, exact old-result drain, same-bank invalidate and independent new-epoch refill",
+        "PASS SCATTER4 reset on last final packed write edge, invalid metadata and mandatory refill",
+        "PASS SCATTER4 RID/early-RLAST/missing-final-RLAST/unsolicited-R sticky wrapper quarantine",
+        "PASS SCATTER4 independent directed regression: INDEX7 WIDTH256 HEIGHT128, real FIFO2 wrapper,parameterized groups/128pixels, dual-write parity memories and non-vacuous pressure",
+        "LOCKSTEP cycles=2211 known_valid_checks=22"
+      ]
+    },
+    {
+      "name": "priority",
+      "passed": true,
+      "source_sha256": {
+        "D:\\fpga-stable\\cache\\sources\\experiment.v": "9f80b781a9f154f797966f346321ae8da732dbf29eb0f12054e85c66160744ed",
+        "D:\\fpga-stable\\cache\\sources\\reference.v": "9bcad60e4f44e7a2bf4d903efc5ec89524f9390889033cb8fc3172a4bc4a5d89",
+        "D:\\fpga-stable\\cache\\tests\\tb_cache_priority_lockstep.sv": "77251f002d182f816957e895a165288a48d0fdda2af6c1bff686ac3e55f61988"
+      },
+      "commands": [
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xvlog.bat",
+            "--sv",
+            "-d",
+            "PACKED32",
+            "D:\\fpga-stable\\cache\\sources\\experiment.v",
+            "D:\\fpga-stable\\cache\\sources\\reference.v",
+            "D:\\fpga-stable\\cache\\tests\\tb_cache_priority_lockstep.sv"
+          ],
+          "returncode": 0,
+          "seconds": 0.5838233999966178,
+          "log_sha256": "63594f987318eddc123682e452d77eec6e97c770a770718a6075017063f58576"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xelab.bat",
+            "tb_cache_priority",
+            "-s",
+            "cache_test"
+          ],
+          "returncode": 0,
+          "seconds": 3.234540499994182,
+          "log_sha256": "76416b8828d3c309ac963441eafe601b1df5c78c913317c04e7f029b04e2cdf4"
+        },
+        {
+          "argv": [
+            "D:\\Vicado\\Vivado\\2017.4\\bin\\xsim.bat",
+            "cache_test",
+            "-runall"
+          ],
+          "returncode": 0,
+          "seconds": 5.831132099992828,
+          "log_sha256": "c8ec79d660c64fa9f8fbebc0d0d0778c49716f75f40fa99108f6f5fd9bfb9c9b"
+        }
+      ],
+      "pass_lines": [
+        "PASS CACHE PRIORITY checks=7 matching-invalid/conflicting-valid/CHECK-error/final-scatter-error/reset/AR-timeout/FILL-timeout",
+        "LOCKSTEP cycles=304 known_valid_checks=5"
+      ]
+    }
+  ]
+}

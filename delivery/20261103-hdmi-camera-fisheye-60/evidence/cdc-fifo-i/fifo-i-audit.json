@@ -1,0 +1,2277 @@
+{
+  "source_identity": "d931793d62bc852c25be57f16528ac7d18dc70fc5760138dcf05e6f443ee8bd5",
+  "source_fifo_sha256": "143400186f0549f30007e64cd7dbcc6b82395099f7c2dd85e92725cb06943a16",
+  "synth_vm_sha256": "8fee1cc7dee646eba400af3f6bffedafb3334c1a7df870234636a2e44b1b3629",
+  "synthesis_gray_pairs": [
+    {
+      "instance": "system/display_fifo",
+      "bit": 0,
+      "source_wire": "wr_gray[0]",
+      "source_cells": {
+        "wr_gray[0]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[0]",
+            "CE": "N107",
+            "CLK": "wr_clk",
+            "D": "N112[0]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[0]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray[0]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[0]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray_r1[0]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 1,
+      "source_wire": "wr_gray[1]",
+      "source_cells": {
+        "wr_gray[1]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[1]",
+            "CE": "N107",
+            "CLK": "wr_clk",
+            "D": "N112[1]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[1]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray[1]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[1]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray_r1[1]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 2,
+      "source_wire": "wr_gray[2]",
+      "source_cells": {
+        "wr_gray[2]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[2]",
+            "CE": "N107",
+            "CLK": "wr_clk",
+            "D": "N112[2]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[2]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray[2]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[2]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray_r1[2]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 3,
+      "source_wire": "wr_gray[3]",
+      "source_cells": {
+        "wr_gray[3]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[3]",
+            "CE": "N107",
+            "CLK": "wr_clk",
+            "D": "N112[3]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[3]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray[3]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[3]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray_r1[3]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 4,
+      "source_wire": "wr_gray[4]",
+      "source_cells": {
+        "wr_gray[4]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[4]",
+            "CE": "N107",
+            "CLK": "wr_clk",
+            "D": "N112[4]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[4]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray[4]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[4]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray_r1[4]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 5,
+      "source_wire": "wr_gray[5]",
+      "source_cells": {
+        "wr_gray[5]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[5]",
+            "CE": "N107",
+            "CLK": "wr_clk",
+            "D": "N112[5]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[5]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray[5]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[5]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray_r1[5]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 6,
+      "source_wire": "wr_gray[6]",
+      "source_cells": {
+        "wr_gray[6]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[6]",
+            "CE": "N107",
+            "CLK": "wr_clk",
+            "D": "N112[6]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[6]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray[6]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[6]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray_r1[6]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 7,
+      "source_wire": "wr_gray[7]",
+      "source_cells": {
+        "wr_gray[7]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[7]",
+            "CE": "N107",
+            "CLK": "wr_clk",
+            "D": "N112[7]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[7]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray[7]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[7]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray_r1[7]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 8,
+      "source_wire": "wr_gray[8]",
+      "source_cells": {
+        "wr_gray[8]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[8]",
+            "CE": "N107",
+            "CLK": "wr_clk",
+            "D": "N112[8]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[8]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray[8]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[8]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray_r1[8]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 9,
+      "source_wire": "wr_gray[9]",
+      "source_cells": {
+        "wr_gray[9]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[9]",
+            "CE": "N107",
+            "CLK": "wr_clk",
+            "D": "next_wr[9]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[9]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray[9]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[9]",
+          "CLK": "nt_pixclk_in",
+          "D": "wr_gray_r1[9]",
+          "R": "\\rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 0,
+      "source_wire": "rd_gray[0]",
+      "source_cells": {
+        "rd_gray[0]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[0]",
+            "CE": "rd_en",
+            "CLK": "nt_pixclk_in",
+            "D": "N134[0]",
+            "R": "\\rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[0]",
+          "CLK": "wr_clk",
+          "D": "rd_gray[0]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[0]",
+          "CLK": "wr_clk",
+          "D": "rd_gray_w1[0]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 1,
+      "source_wire": "rd_gray[1]",
+      "source_cells": {
+        "rd_gray[1]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[1]",
+            "CE": "rd_en",
+            "CLK": "nt_pixclk_in",
+            "D": "N134[1]",
+            "R": "\\rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[1]",
+          "CLK": "wr_clk",
+          "D": "rd_gray[1]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[1]",
+          "CLK": "wr_clk",
+          "D": "rd_gray_w1[1]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 2,
+      "source_wire": "rd_gray[2]",
+      "source_cells": {
+        "rd_gray[2]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[2]",
+            "CE": "rd_en",
+            "CLK": "nt_pixclk_in",
+            "D": "N134[2]",
+            "R": "\\rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[2]",
+          "CLK": "wr_clk",
+          "D": "rd_gray[2]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[2]",
+          "CLK": "wr_clk",
+          "D": "rd_gray_w1[2]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 3,
+      "source_wire": "rd_gray[3]",
+      "source_cells": {
+        "rd_gray[3]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[3]",
+            "CE": "rd_en",
+            "CLK": "nt_pixclk_in",
+            "D": "N134[3]",
+            "R": "\\rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[3]",
+          "CLK": "wr_clk",
+          "D": "rd_gray[3]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[3]",
+          "CLK": "wr_clk",
+          "D": "rd_gray_w1[3]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 4,
+      "source_wire": "rd_gray[4]",
+      "source_cells": {
+        "rd_gray[4]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[4]",
+            "CE": "rd_en",
+            "CLK": "nt_pixclk_in",
+            "D": "N134[4]",
+            "R": "\\rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[4]",
+          "CLK": "wr_clk",
+          "D": "rd_gray[4]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[4]",
+          "CLK": "wr_clk",
+          "D": "rd_gray_w1[4]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 5,
+      "source_wire": "rd_gray[5]",
+      "source_cells": {
+        "rd_gray[5]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[5]",
+            "CE": "rd_en",
+            "CLK": "nt_pixclk_in",
+            "D": "N134[5]",
+            "R": "\\rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[5]",
+          "CLK": "wr_clk",
+          "D": "rd_gray[5]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[5]",
+          "CLK": "wr_clk",
+          "D": "rd_gray_w1[5]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 6,
+      "source_wire": "rd_gray[6]",
+      "source_cells": {
+        "rd_gray[6]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[6]",
+            "CE": "rd_en",
+            "CLK": "nt_pixclk_in",
+            "D": "N134[6]",
+            "R": "\\rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[6]",
+          "CLK": "wr_clk",
+          "D": "rd_gray[6]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[6]",
+          "CLK": "wr_clk",
+          "D": "rd_gray_w1[6]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 7,
+      "source_wire": "rd_gray[7]",
+      "source_cells": {
+        "rd_gray[7]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[7]",
+            "CE": "rd_en",
+            "CLK": "nt_pixclk_in",
+            "D": "N134[7]",
+            "R": "\\rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[7]",
+          "CLK": "wr_clk",
+          "D": "rd_gray[7]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[7]",
+          "CLK": "wr_clk",
+          "D": "rd_gray_w1[7]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 8,
+      "source_wire": "rd_gray[8]",
+      "source_cells": {
+        "rd_gray[8]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[8]",
+            "CE": "rd_en",
+            "CLK": "nt_pixclk_in",
+            "D": "N134[8]",
+            "R": "\\rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[8]",
+          "CLK": "wr_clk",
+          "D": "rd_gray[8]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[8]",
+          "CLK": "wr_clk",
+          "D": "rd_gray_w1[8]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/display_fifo",
+      "bit": 9,
+      "source_wire": "rd_gray[9]",
+      "source_cells": {
+        "rd_gray[9]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[9]",
+            "CE": "rd_en",
+            "CLK": "nt_pixclk_in",
+            "D": "next_rd[9]",
+            "R": "\\rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[9]",
+          "CLK": "wr_clk",
+          "D": "rd_gray[9]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[9]",
+          "CLK": "wr_clk",
+          "D": "rd_gray_w1[9]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 0,
+      "source_wire": "wr_gray[0]",
+      "source_cells": {
+        "wr_gray[0]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[0]",
+            "CE": "N83",
+            "CLK": "nt_pixclk_in",
+            "D": "N88[0]",
+            "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[0]",
+          "CLK": "rd_clk",
+          "D": "wr_gray[0]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[0]",
+          "CLK": "rd_clk",
+          "D": "wr_gray_r1[0]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 1,
+      "source_wire": "wr_gray[1]",
+      "source_cells": {
+        "wr_gray[1]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[1]",
+            "CE": "N83",
+            "CLK": "nt_pixclk_in",
+            "D": "N88[1]",
+            "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[1]",
+          "CLK": "rd_clk",
+          "D": "wr_gray[1]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[1]",
+          "CLK": "rd_clk",
+          "D": "wr_gray_r1[1]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 2,
+      "source_wire": "wr_gray[2]",
+      "source_cells": {
+        "wr_gray[2]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[2]",
+            "CE": "N83",
+            "CLK": "nt_pixclk_in",
+            "D": "N88[2]",
+            "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[2]",
+          "CLK": "rd_clk",
+          "D": "wr_gray[2]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[2]",
+          "CLK": "rd_clk",
+          "D": "wr_gray_r1[2]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 3,
+      "source_wire": "wr_gray[3]",
+      "source_cells": {
+        "wr_gray[3]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[3]",
+            "CE": "N83",
+            "CLK": "nt_pixclk_in",
+            "D": "N88[3]",
+            "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[3]",
+          "CLK": "rd_clk",
+          "D": "wr_gray[3]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[3]",
+          "CLK": "rd_clk",
+          "D": "wr_gray_r1[3]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 4,
+      "source_wire": "wr_gray[4]",
+      "source_cells": {
+        "wr_gray[4]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[4]",
+            "CE": "N83",
+            "CLK": "nt_pixclk_in",
+            "D": "N88[4]",
+            "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[4]",
+          "CLK": "rd_clk",
+          "D": "wr_gray[4]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[4]",
+          "CLK": "rd_clk",
+          "D": "wr_gray_r1[4]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 5,
+      "source_wire": "wr_gray[5]",
+      "source_cells": {
+        "wr_gray[5]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[5]",
+            "CE": "N83",
+            "CLK": "nt_pixclk_in",
+            "D": "N88[5]",
+            "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[5]",
+          "CLK": "rd_clk",
+          "D": "wr_gray[5]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[5]",
+          "CLK": "rd_clk",
+          "D": "wr_gray_r1[5]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 6,
+      "source_wire": "wr_gray[6]",
+      "source_cells": {
+        "wr_gray[6]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "wr_gray[6]",
+            "CE": "N83",
+            "CLK": "nt_pixclk_in",
+            "D": "next_wr[6]",
+            "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+          }
+        }
+      },
+      "first": "wr_gray_r1",
+      "second": "wr_gray_r2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r1[6]",
+          "CLK": "rd_clk",
+          "D": "wr_gray[6]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "wr_gray_r2[6]",
+          "CLK": "rd_clk",
+          "D": "wr_gray_r1[6]",
+          "R": "\\core_reset[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 0,
+      "source_wire": "rd_gray[0]",
+      "source_cells": {
+        "rd_gray[0]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[0]",
+            "CE": "rd_en",
+            "CLK": "rd_clk",
+            "D": "N110[0]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[0]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray[0]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[0]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray_w1[0]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 1,
+      "source_wire": "rd_gray[1]",
+      "source_cells": {
+        "rd_gray[1]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[1]",
+            "CE": "rd_en",
+            "CLK": "rd_clk",
+            "D": "N110[1]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[1]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray[1]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[1]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray_w1[1]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 2,
+      "source_wire": "rd_gray[2]",
+      "source_cells": {
+        "rd_gray[2]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[2]",
+            "CE": "rd_en",
+            "CLK": "rd_clk",
+            "D": "N110[2]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[2]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray[2]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[2]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray_w1[2]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 3,
+      "source_wire": "rd_gray[3]",
+      "source_cells": {
+        "rd_gray[3]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[3]",
+            "CE": "rd_en",
+            "CLK": "rd_clk",
+            "D": "N110[3]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[3]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray[3]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[3]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray_w1[3]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 4,
+      "source_wire": "rd_gray[4]",
+      "source_cells": {
+        "rd_gray[4]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[4]",
+            "CE": "rd_en",
+            "CLK": "rd_clk",
+            "D": "N110[4]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[4]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray[4]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[4]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray_w1[4]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 5,
+      "source_wire": "rd_gray[5]",
+      "source_cells": {
+        "rd_gray[5]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[5]",
+            "CE": "rd_en",
+            "CLK": "rd_clk",
+            "D": "N110[5]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[5]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray[5]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[5]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray_w1[5]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    },
+    {
+      "instance": "system/input_link/input_dma/capture/pixels",
+      "bit": 6,
+      "source_wire": "rd_gray[6]",
+      "source_cells": {
+        "rd_gray[6]": {
+          "primitive": "GTP_DFF_RE",
+          "attributes": "",
+          "ports": {
+            "Q": "rd_gray[6]",
+            "CE": "rd_en",
+            "CLK": "rd_clk",
+            "D": "next_rd[6]",
+            "R": "\\core_reset[1]_inv_1"
+          }
+        }
+      },
+      "first": "rd_gray_w1",
+      "second": "rd_gray_w2",
+      "stage1": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w1[6]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray[6]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "stage2": {
+        "primitive": "GTP_DFF_R",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_gray_w2[6]",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_gray_w1[6]",
+          "R": "\\system/display_fifo/rd_reset_sync[1]_inv_1"
+        }
+      },
+      "direct_source_to_stage1": true,
+      "direct_stage1_to_stage2": true,
+      "same_destination_clock": true,
+      "native_attributes": true,
+      "passed": true
+    }
+  ],
+  "synthesis_gray_pair_count": 34,
+  "synthesis_gray_passed": true,
+  "synthesis_reset_cells": {
+    "video_async_fifo_1": {
+      "rd_reset_sync[0]": {
+        "primitive": "GTP_DFF_C",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_reset_sync[0]",
+          "C": "rst_n_inv",
+          "CLK": "nt_pixclk_in",
+          "D": "1'b1"
+        }
+      },
+      "rd_reset_sync[1]": {
+        "primitive": "GTP_DFF_C",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_reset_sync[1]",
+          "C": "rst_n_inv",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_reset_sync[0]"
+        }
+      }
+    },
+    "video_async_fifo": {}
+  },
+  "synthesis_fifo_headers": {
+    "video_async_fifo_1": "module video_async_fifo_1\n(\n    input [255:0] wr_data,\n    input [1:0] wr_reset_sync,\n    input N107,\n    input \\core_reset[1]_inv_1 ,\n    input nt_pixclk_in,\n    input rd_en,\n    input rst_n_inv,\n    input wr_clk,\n    output [255:0] rd_data,\n    output [1:0] rd_reset_sync,\n    output [9:0] wr_used,\n    output rd_ready,\n    output \\rd_reset_sync[1]_inv_1 ,\n    output rd_valid,\n    output wr_ready\n);",
+    "video_async_fifo": "module video_async_fifo\n(\n    input [255:0] wr_data,\n    input [1:0] wr_reset_sync,\n    input _N92935,\n    input \\core_reset[1]_inv_1 ,\n    input nt_pixclk_in,\n    input quantized_de,\n    input quantized_valid,\n    input quantized_vs,\n    input rd_clk,\n    input rd_en,\n    input \\system/display_fifo/rd_reset_sync[1]_inv_1 ,\n    input \\system/input_link/input_dma/capture/N1282 ,\n    input \\system/input_link/input_dma/capture/N1503_1_inv ,\n    input \\system/input_link/input_dma/capture/holding_valid ,\n    input \\system/input_link/input_dma/capture/read_pending ,\n    output [255:0] rd_data,\n    output _N88839,\n    output rd_valid,\n    output wr_ready\n);"
+  },
+  "cdc_rows": [
+    {
+      "Severity": "Warning",
+      "CDC ID": "CDC-6",
+      "Description": "Multi-bit synchronized with ASYNC_REG property",
+      "Exception": "Max Delay Datapath Only",
+      "Startpoint": "system/display_fifo/wr_gray[9:0]/CLK",
+      "Endpoint": "system/display_fifo/wr_gray_r1[9:0]/D",
+      "Category": "Safe"
+    },
+    {
+      "Severity": "Warning",
+      "CDC ID": "CDC-6",
+      "Description": "Multi-bit synchronized with ASYNC_REG property",
+      "Exception": "Max Delay Datapath Only",
+      "Startpoint": "system/input_link/input_dma/capture/pixels/rd_gray[6:0]/CLK",
+      "Endpoint": "system/input_link/input_dma/capture/pixels/rd_gray_w1[6:0]/D",
+      "Category": "Safe"
+    },
+    {
+      "Severity": "Warning",
+      "CDC ID": "CDC-6",
+      "Description": "Multi-bit synchronized with ASYNC_REG property",
+      "Exception": "Max Delay Datapath Only",
+      "Startpoint": "system/display_fifo/rd_gray[9:0]/CLK",
+      "Endpoint": "system/display_fifo/rd_gray_w1[9:0]/D",
+      "Category": "Safe"
+    },
+    {
+      "Severity": "Warning",
+      "CDC ID": "CDC-6",
+      "Description": "Multi-bit synchronized with ASYNC_REG property",
+      "Exception": "Max Delay Datapath Only",
+      "Startpoint": "system/input_link/input_dma/capture/pixels/wr_gray[6:0]/CLK",
+      "Endpoint": "system/input_link/input_dma/capture/pixels/wr_gray_r1[6:0]/D",
+      "Category": "Safe"
+    }
+  ],
+  "cdc_categories": {
+    "CDC-6 Multi-bit synchronized with ASYNC_REG property": 4
+  },
+  "route_available": true,
+  "mapped_gray_registers": [
+    {
+      "register": "system/display_fifo/wr_gray_r1[0]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r1[0]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r2[0]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r2[0]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r1[1]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r1[1]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r2[1]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r2[1]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r1[2]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r1[2]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r2[2]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r2[2]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r1[3]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r1[3]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r2[3]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r2[3]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r1[4]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r1[4]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r2[4]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r2[4]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r1[5]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r1[5]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r2[5]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r2[5]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r1[6]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r1[6]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r2[6]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r2[6]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r1[7]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r1[7]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r2[7]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r2[7]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r1[8]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r1[8]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r2[8]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r2[8]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r1[9]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r1[9]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/wr_gray_r2[9]",
+      "mapped": {
+        "system/display_fifo/wr_gray_r2[9]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w1[0]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w1[0]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w2[0]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w2[0]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w1[1]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w1[1]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w2[1]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w2[1]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w1[2]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w1[2]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w2[2]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w2[2]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w1[3]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w1[3]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w2[3]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w2[3]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w1[4]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w1[4]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w2[4]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w2[4]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w1[5]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w1[5]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w2[5]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w2[5]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w1[6]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w1[6]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w2[6]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w2[6]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w1[7]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w1[7]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w2[7]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w2[7]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w1[8]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w1[8]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w2[8]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w2[8]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w1[9]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w1[9]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_gray_w2[9]",
+      "mapped": {
+        "system/display_fifo/rd_gray_w2[9]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r2[0]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r2[0]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r2[1]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r2[1]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r2[2]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r2[2]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r1[3]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r1[3]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r2[3]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r2[3]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r2[4]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r2[4]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r1[5]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r1[5]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r2[5]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r2[5]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r1[6]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r1[6]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/wr_gray_r2[6]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/wr_gray_r2[6]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w2[0]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w2[0]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w1[1]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w1[1]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w2[1]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w2[1]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w2[2]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w2[2]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w1[3]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w1[3]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w2[3]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w2[3]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w2[4]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w2[4]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w1[5]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w1[5]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w2[5]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w2[5]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w1[6]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w1[6]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/input_link/input_dma/capture/pixels/rd_gray_w2[6]",
+      "mapped": {
+        "system/input_link/input_dma/capture/pixels/rd_gray_w2[6]/opit_0_inv": "gopQ"
+      },
+      "passed": true
+    }
+  ],
+  "mapped_fifo_srl_cells": {},
+  "route_netlist_sha256": "89fa53e32ccde7798a46d4bac6cafb50b9b741980d4fc918ac4d4baa6cd460c4",
+  "device_map_report_sha256": "d20eadbc76ef0ab4290d94502ad7875a2b1af2898fd59f25fcf71b07ff410d76",
+  "device_map_native_attributes": {
+    "system/display_fifo/wr_gray_r1[0]": true,
+    "system/display_fifo/wr_gray_r2[0]": true,
+    "system/display_fifo/wr_gray_r1[1]": true,
+    "system/display_fifo/wr_gray_r2[1]": true,
+    "system/display_fifo/wr_gray_r1[2]": true,
+    "system/display_fifo/wr_gray_r2[2]": true,
+    "system/display_fifo/wr_gray_r1[3]": true,
+    "system/display_fifo/wr_gray_r2[3]": true,
+    "system/display_fifo/wr_gray_r1[4]": true,
+    "system/display_fifo/wr_gray_r2[4]": true,
+    "system/display_fifo/wr_gray_r1[5]": true,
+    "system/display_fifo/wr_gray_r2[5]": true,
+    "system/display_fifo/wr_gray_r1[6]": true,
+    "system/display_fifo/wr_gray_r2[6]": true,
+    "system/display_fifo/wr_gray_r1[7]": true,
+    "system/display_fifo/wr_gray_r2[7]": true,
+    "system/display_fifo/wr_gray_r1[8]": true,
+    "system/display_fifo/wr_gray_r2[8]": true,
+    "system/display_fifo/wr_gray_r1[9]": true,
+    "system/display_fifo/wr_gray_r2[9]": true,
+    "system/display_fifo/rd_gray_w1[0]": true,
+    "system/display_fifo/rd_gray_w2[0]": true,
+    "system/display_fifo/rd_gray_w1[1]": true,
+    "system/display_fifo/rd_gray_w2[1]": true,
+    "system/display_fifo/rd_gray_w1[2]": true,
+    "system/display_fifo/rd_gray_w2[2]": true,
+    "system/display_fifo/rd_gray_w1[3]": true,
+    "system/display_fifo/rd_gray_w2[3]": true,
+    "system/display_fifo/rd_gray_w1[4]": true,
+    "system/display_fifo/rd_gray_w2[4]": true,
+    "system/display_fifo/rd_gray_w1[5]": true,
+    "system/display_fifo/rd_gray_w2[5]": true,
+    "system/display_fifo/rd_gray_w1[6]": true,
+    "system/display_fifo/rd_gray_w2[6]": true,
+    "system/display_fifo/rd_gray_w1[7]": true,
+    "system/display_fifo/rd_gray_w2[7]": true,
+    "system/display_fifo/rd_gray_w1[8]": true,
+    "system/display_fifo/rd_gray_w2[8]": true,
+    "system/display_fifo/rd_gray_w1[9]": true,
+    "system/display_fifo/rd_gray_w2[9]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r2[0]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r2[1]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r2[2]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r1[3]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r2[3]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r2[4]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r1[5]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r2[5]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r1[6]": true,
+    "system/input_link/input_dma/capture/pixels/wr_gray_r2[6]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w2[0]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w1[1]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w2[1]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w2[2]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w1[3]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w2[3]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w2[4]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w1[5]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w2[5]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w1[6]": true,
+    "system/input_link/input_dma/capture/pixels/rd_gray_w2[6]": true,
+    "core_reset[0]": true,
+    "core_reset[1]": true,
+    "system/display_fifo/rd_reset_sync[0]": true,
+    "system/display_fifo/rd_reset_sync[1]": true
+  },
+  "device_map_native_attributes_passed": true,
+  "mapped_gray_passed": true,
+  "reset_owner_cells": {
+    "core_reset": {
+      "core_reset[0]": {
+        "primitive": "GTP_DFF_C",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "core_reset[0]",
+          "C": "pipeline_reset_n_inv",
+          "CLK": "core_clk",
+          "D": "1'b1"
+        }
+      },
+      "core_reset[1]": {
+        "primitive": "GTP_DFF_C",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "core_reset[1]",
+          "C": "pipeline_reset_n_inv",
+          "CLK": "core_clk",
+          "D": "core_reset[0]"
+        }
+      }
+    },
+    "system/display_fifo/rd_reset_sync": {
+      "rd_reset_sync[0]": {
+        "primitive": "GTP_DFF_C",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_reset_sync[0]",
+          "C": "rst_n_inv",
+          "CLK": "nt_pixclk_in",
+          "D": "1'b1"
+        }
+      },
+      "rd_reset_sync[1]": {
+        "primitive": "GTP_DFF_C",
+        "attributes": " PAP_ASYNC_REG=\"TRUE\", PAP_SRL_STYLE=\"registers\" ",
+        "ports": {
+          "Q": "rd_reset_sync[1]",
+          "C": "rst_n_inv",
+          "CLK": "nt_pixclk_in",
+          "D": "rd_reset_sync[0]"
+        }
+      }
+    }
+  },
+  "reset_owner_checks": [
+    {
+      "owner": "core_reset",
+      "direct_stage1_to_stage2": true,
+      "stage1_constant_one": true,
+      "common_clock": true,
+      "common_async_clear": true,
+      "native_attributes": true
+    },
+    {
+      "owner": "system/display_fifo/rd_reset_sync",
+      "direct_stage1_to_stage2": true,
+      "stage1_constant_one": true,
+      "common_clock": true,
+      "common_async_clear": true,
+      "native_attributes": true
+    }
+  ],
+  "reset_shared_connection_bindings": {
+    ".core_reset_sync ({core_reset[1], 1'bx})": true,
+    ".wr_reset_sync ({core_reset_sync[1], 1'bx})": true,
+    ".\\input_dma/capture/pixels/wr_reset_sync  ({\\display_fifo/rd_reset_sync [1], 1'bx})": true,
+    ".\\capture/pixels/wr_reset_sync  ({\\input_dma/capture/pixels/wr_reset_sync [1], 1'bx})": true,
+    ".\\pixels/wr_reset_sync  ({\\capture/pixels/wr_reset_sync [1], 1'bx})": true,
+    ".wr_reset_sync ({\\pixels/wr_reset_sync [1], 1'bx})": true
+  },
+  "synthesis_reset_shared_passed": true,
+  "mapped_reset_owners": [
+    {
+      "register": "core_reset[0]",
+      "mapped": {
+        "core_reset[0]/opit_0": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "core_reset[1]",
+      "mapped": {
+        "core_reset[1]/opit_0": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_reset_sync[0]",
+      "mapped": {
+        "system/display_fifo/rd_reset_sync[0]/opit_0": "gopQ"
+      },
+      "passed": true
+    },
+    {
+      "register": "system/display_fifo/rd_reset_sync[1]",
+      "mapped": {
+        "system/display_fifo/rd_reset_sync[1]/opit_0": "gopQ"
+      },
+      "passed": true
+    }
+  ],
+  "mapped_reset_passed": true,
+  "gray_max_delay_and_bus_skew_signoff": null,
+  "limitations": [
+    "Gray source-to-first-stage max-delay/skew binding and routed results are assessed in the separate I precise-constraint report.",
+    "Final routed pair wiring is checked by companion fifo-i-mapped-audit.json.",
+    "Device-map stage records all 72 native attributes. The G tool-capability probe rejected _map.adf with Flow-0013, so this audit uses device-map attributes and final routed connectivity."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "review": "final CE candidate protocol and repaired directed-b evidence",
+  "status": "pass_with_stated_evidence_limits",
+  "prior_issue": {
+    "report": "a-protocol/candidate-review.json",
+    "finding": "tb_ce_scan.sv expected good_events25 although scenario inventory totals24",
+    "resolved_in": "candidate/tb_ce_scan_v2.sv",
+    "resolved": true,
+    "exact_only_bench_change_verified": true,
+    "change": "good_events!=25 -> good_events!=24",
+    "correct_inventory": "8 original +11 identity bases +4 accepted next identities +1 standalone high ID =24",
+    "rtl_golden_fault_criteria_unchanged": true
+  },
+  "evidence": {
+    "result": "directed-b/result.json",
+    "log": "directed-b/simulation.log",
+    "passed": true,
+    "stage_exit_codes": [
+      0,
+      0,
+      0
+    ],
+    "wall_seconds": 14.384649499996158,
+    "input_drift_count": 0,
+    "cases": 28,
+    "extra_cases": 19,
+    "identity_scenarios": 13,
+    "collision_cases": 5,
+    "legal_grant_abort_cases": 1,
+    "equivalent_edges": 157283,
+    "good_frames": 24,
+    "bad_events": 7,
+    "fault_cases": 21,
+    "ready_stall_cycles": 15076,
+    "all_public_outputs_cycle_comparison_passed": true,
+    "original_golden_pixel_crc_fifo_latency_criteria_passed": true
+  },
+  "fifo_aggregate": {
+    "reads": 1319,
+    "returns": 1318,
+    "interpretation": "Cross-reset cumulative counters; not a per-frame conservation proof.",
+    "reset_path": "candidate/tb_ce_scan_v2.sv:295-299 explicitly reaches common_reset during failed FIFO drain; counters remain aggregate while the common reset clears the consumer/FIFO protocol epoch.",
+    "cancellation_status": "aggregate reset-cancellation not separately instrumented",
+    "exact_cancellation_count_proven": false,
+    "per_frame_criteria": "Successful-frame final counts/CRC and unchanged independent pixel/FIFO scoreboard passed; paired source-reference public-output checks also passed."
+  },
+  "sha256": {
+    "candidate": "DECB0AD22222CE8C47AE8BEEFBB8AFD2C85B5A4418BD24B8815FC913A03AA253",
+    "bench_v2": "59449B9FBA58CC865C023F06596D68A22275728B70AFA98ECC8DDF71CFB493E1",
+    "simulation_log": "380C69451CBB97F02603D639F015175F059A1F103E902F3925D1C173187FEAAD",
+    "result_json": "7B75FF1BDC3DE1C3263F54C3B39632B3CC5C5F3611B1D839D299985BE949DBB9"
+  },
+  "review_actions": "Read-only artifact comparison, JSON/log inspection and hashing; only this new review file written. No CPU/RTL rerun, EDA, network, Git, or device action.",
+  "unchanged_limits": [
+    "2-state algebra and bounded small-raster simulation; no formal or X/Z/metastability guarantee.",
+    "No native timing, physical CDC, HDMI PHY, board or optical acceptance claim.",
+    "Synthesis/map or route results are outside this review."
+  ],
+  "old_reports_untouched": true
+}

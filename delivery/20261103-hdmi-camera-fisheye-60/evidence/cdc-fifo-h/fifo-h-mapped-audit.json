@@ -1,0 +1,3555 @@
+{
+  "source_identity": "fe756ccb51cbbf1ea30a337eec0c22d5419fd4cdb5cd34dad2097bcde880e44d",
+  "fifo_rtl_sha256": "143400186f0549f30007e64cd7dbcc6b82395099f7c2dd85e92725cb06943a16",
+  "input_pnr_adf": "D:\\f60-run\\physical-h\\prj_tasks\\pnr_1\\place_route\\hdmi_camera_fisheye_top_pnr.adf",
+  "input_pnr_adf_sha256": "ab73eeac15c8b3119ff2d2a41cfa85b31c1e62f5c207d03c15851a9adac40c05",
+  "mapped": {
+    "sim_netlist": "D:\\f60-work\\cdc\\h-netlist\\prj_tasks\\pnr_1\\generate_netlist\\hdmi_camera_fisheye_top_sim.v",
+    "sim_sha256": "a0d5953a9a72a039ccde8da97de70aafc9803be6f5c6ebf72bc24f2e5fcfc088",
+    "parsed_ff_count": 42172,
+    "gray_pair_count": 34,
+    "gray_pairs": [
+      {
+        "instance": "system/display_fifo",
+        "direction": "wr",
+        "bit": 0,
+        "source": {
+          "name": "system/display_fifo/wr_gray[0]/opit_0_inv/FFAPP0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray[0]",
+            "CE": "ntR1177",
+            "CK": "core_clk",
+            "D": "system/display_fifo/N112[0]",
+            "SR": "ntR3064"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/wr_gray_r1[0]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r1[0]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray[0]",
+            "SR": "CLMS_327_523/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/wr_gray_r2[0]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r2[0]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray_r1[0]",
+            "SR": "CLMS_327_523/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_327_523/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[0]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_327_523/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[0]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "wr",
+        "bit": 1,
+        "source": {
+          "name": "system/display_fifo/wr_gray[1]/opit_0_inv/FFAPP1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray[1]",
+            "CE": "ntR1177",
+            "CK": "core_clk",
+            "D": "system/display_fifo/N112[1]",
+            "SR": "ntR3064"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/wr_gray_r1[1]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r1[1]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray[1]",
+            "SR": "CLMA_303_498/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/wr_gray_r2[1]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r2[1]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray_r1[1]",
+            "SR": "CLMA_303_498/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_303_498/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_303_498/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "wr",
+        "bit": 2,
+        "source": {
+          "name": "system/display_fifo/wr_gray[2]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray[2]",
+            "CE": "ntR1177",
+            "CK": "core_clk",
+            "D": "system/display_fifo/N112[2]",
+            "SR": "ntR3064"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/wr_gray_r1[2]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r1[2]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray[2]",
+            "SR": "CLMA_303_498/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/wr_gray_r2[2]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r2[2]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray_r1[2]",
+            "SR": "CLMA_303_498/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_303_498/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_303_498/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "wr",
+        "bit": 3,
+        "source": {
+          "name": "system/display_fifo/wr_gray[3]/opit_0_inv/FFAPP1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray[3]",
+            "CE": "CLMS_309_505/ntCE",
+            "CK": "core_clk",
+            "D": "system/display_fifo/N112[3]",
+            "SR": "ntR3063"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/wr_gray_r1[3]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r1[3]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray[3]",
+            "SR": "CLMA_303_522/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/wr_gray_r2[3]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r2[3]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray_r1[3]",
+            "SR": "CLMA_303_522/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_303_522/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[3]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_303_522/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[3]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "wr",
+        "bit": 4,
+        "source": {
+          "name": "system/display_fifo/wr_gray[4]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray[4]",
+            "CE": "CLMS_309_505/ntCE",
+            "CK": "core_clk",
+            "D": "system/display_fifo/N112[4]",
+            "SR": "CLMA_309_504/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/wr_gray_r1[4]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r1[4]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray[4]",
+            "SR": "CLMS_327_523/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/wr_gray_r2[4]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r2[4]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray_r1[4]",
+            "SR": "CLMS_327_523/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_327_523/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[0]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_327_523/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[0]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "wr",
+        "bit": 5,
+        "source": {
+          "name": "system/display_fifo/wr_gray[5]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray[5]",
+            "CE": "CLMS_309_505/ntCE",
+            "CK": "core_clk",
+            "D": "system/display_fifo/N112[5]",
+            "SR": "CLMA_309_504/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/wr_gray_r1[5]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r1[5]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray[5]",
+            "SR": "CLMA_303_522/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/wr_gray_r2[5]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r2[5]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray_r1[5]",
+            "SR": "CLMA_303_522/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_303_522/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[3]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_303_522/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[3]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "wr",
+        "bit": 6,
+        "source": {
+          "name": "system/display_fifo/wr_gray[6]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray[6]",
+            "CE": "CLMS_309_505/ntCE",
+            "CK": "core_clk",
+            "D": "system/display_fifo/N112[6]",
+            "SR": "CLMA_309_504/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/wr_gray_r1[6]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r1[6]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray[6]",
+            "SR": "CLMS_291_505/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/wr_gray_r2[6]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r2[6]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray_r1[6]",
+            "SR": "CLMS_291_505/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_291_505/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[6]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_291_505/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[6]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "wr",
+        "bit": 7,
+        "source": {
+          "name": "system/display_fifo/wr_gray[7]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray[7]",
+            "CE": "CLMS_309_505/ntCE",
+            "CK": "core_clk",
+            "D": "system/display_fifo/N112[7]",
+            "SR": "CLMA_309_504/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/wr_gray_r1[7]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r1[7]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray[7]",
+            "SR": "CLMA_309_510/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/wr_gray_r2[7]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r2[7]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray_r1[7]",
+            "SR": "CLMA_309_510/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_309_510/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[7]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_309_510/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[7]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "wr",
+        "bit": 8,
+        "source": {
+          "name": "system/display_fifo/wr_gray[8]/opit_0_inv_L5Q_perm/FFAPP3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray[8]",
+            "CE": "CLMS_309_505/ntCE",
+            "CK": "core_clk",
+            "D": "CLMA_309_504/ntQC3",
+            "SR": "CLMA_309_504/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/wr_gray_r1[8]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r1[8]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray[8]",
+            "SR": "CLMA_309_510/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/wr_gray_r2[8]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r2[8]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray_r1[8]",
+            "SR": "CLMA_309_510/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_309_510/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[7]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_309_510/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[7]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "wr",
+        "bit": 9,
+        "source": {
+          "name": "system/display_fifo/wr_gray[9]/opit_0_inv/FFAPP2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray[9]",
+            "CE": "CLMS_309_505/ntCE",
+            "CK": "core_clk",
+            "D": "system/display_fifo/next_wr[9]",
+            "SR": "ntR3063"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/wr_gray_r1[9]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r1[9]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray[9]",
+            "SR": "CLMS_291_505/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/wr_gray_r2[9]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/wr_gray_r2[9]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/wr_gray_r1[9]",
+            "SR": "CLMS_291_505/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_291_505/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[6]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_291_505/ntRSCO",
+                "cell": "system/display_fifo/wr_gray_r1[6]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "rd",
+        "bit": 0,
+        "source": {
+          "name": "system/display_fifo/rd_gray[0]/opit_0_inv_L5Q_perm/FFAPP3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray[0]",
+            "CE": "CLMS_309_523/ntCE",
+            "CK": "ntclkbufg_0",
+            "D": "CLMS_309_523/ntQC3",
+            "SR": "CLMS_309_523/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/rd_gray_w1[0]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w1[0]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray[0]",
+            "SR": "ntR1745"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/rd_gray_w2[0]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w2[0]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray_w1[0]",
+            "SR": "ntR1745"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "ntR1745",
+                "cell": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "ntR1745",
+                "cell": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "rd",
+        "bit": 1,
+        "source": {
+          "name": "system/display_fifo/rd_gray[1]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray[1]",
+            "CE": "CLMS_309_523/ntCE",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/N134[1]",
+            "SR": "CLMS_309_523/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w1[1]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray[1]",
+            "SR": "ntR1745"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/rd_gray_w2[1]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w2[1]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray_w1[1]",
+            "SR": "ntR1745"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "ntR1745",
+                "cell": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "ntR1745",
+                "cell": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "rd",
+        "bit": 2,
+        "source": {
+          "name": "system/display_fifo/rd_gray[2]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray[2]",
+            "CE": "CLMS_309_523/ntCE",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/N134[2]",
+            "SR": "CLMS_309_523/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/rd_gray_w1[2]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w1[2]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray[2]",
+            "SR": "CLMS_291_517/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/rd_gray_w2[2]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w2[2]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray_w1[2]",
+            "SR": "CLMS_291_517/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_291_517/ntRSCO",
+                "cell": "system/display_fifo/rd_gray_w1[2]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_291_517/ntRSCO",
+                "cell": "system/display_fifo/rd_gray_w1[2]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "rd",
+        "bit": 3,
+        "source": {
+          "name": "system/display_fifo/rd_gray[3]/opit_0_inv/FFAPP0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray[3]",
+            "CE": "ntR593",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/N134[3]",
+            "SR": "ntR1744"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/rd_gray_w1[3]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w1[3]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray[3]",
+            "SR": "CLMA_303_528/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/rd_gray_w2[3]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w2[3]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray_w1[3]",
+            "SR": "CLMA_303_528/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_303_528/ntRSCO",
+                "cell": "system/display_fifo/rd_gray_w1[3]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_303_528/ntRSCO",
+                "cell": "system/display_fifo/rd_gray_w1[3]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "rd",
+        "bit": 4,
+        "source": {
+          "name": "system/display_fifo/rd_gray[4]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray[4]",
+            "CE": "ntR593",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/N134[4]",
+            "SR": "ntR1744"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/rd_gray_w1[4]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w1[4]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray[4]",
+            "SR": "CLMA_303_528/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/rd_gray_w2[4]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w2[4]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray_w1[4]",
+            "SR": "CLMA_303_528/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_303_528/ntRSCO",
+                "cell": "system/display_fifo/rd_gray_w1[3]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_303_528/ntRSCO",
+                "cell": "system/display_fifo/rd_gray_w1[3]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "rd",
+        "bit": 5,
+        "source": {
+          "name": "system/display_fifo/rd_gray[5]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray[5]",
+            "CE": "ntR593",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/N134[5]",
+            "SR": "ntR1744"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/rd_gray_w1[5]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w1[5]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray[5]",
+            "SR": "CLMS_291_517/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/rd_gray_w2[5]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w2[5]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray_w1[5]",
+            "SR": "CLMS_291_517/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_291_517/ntRSCO",
+                "cell": "system/display_fifo/rd_gray_w1[2]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_291_517/ntRSCO",
+                "cell": "system/display_fifo/rd_gray_w1[2]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "rd",
+        "bit": 6,
+        "source": {
+          "name": "system/display_fifo/rd_gray[6]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray[6]",
+            "CE": "ntR593",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/N134[6]",
+            "SR": "ntR1744"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/rd_gray_w1[6]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w1[6]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray[6]",
+            "SR": "ntR1745"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/rd_gray_w2[6]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w2[6]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray_w1[6]",
+            "SR": "ntR1745"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "ntR1745",
+                "cell": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "ntR1745",
+                "cell": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "rd",
+        "bit": 7,
+        "source": {
+          "name": "system/display_fifo/rd_gray[7]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray[7]",
+            "CE": "CLMS_309_523/ntCE",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/N134[7]",
+            "SR": "CLMS_309_523/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/rd_gray_w1[7]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w1[7]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray[7]",
+            "SR": "ntR1745"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/rd_gray_w2[7]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w2[7]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray_w1[7]",
+            "SR": "ntR1745"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "ntR1745",
+                "cell": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "ntR1745",
+                "cell": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "rd",
+        "bit": 8,
+        "source": {
+          "name": "system/display_fifo/rd_gray[8]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray[8]",
+            "CE": "CLMS_309_523/ntCE",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/N134[8]",
+            "SR": "CLMS_309_523/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/rd_gray_w1[8]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w1[8]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray[8]",
+            "SR": "ntR1746"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/rd_gray_w2[8]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w2[8]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray_w1[8]",
+            "SR": "ntR1746"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "ntR1746",
+                "cell": "system/display_fifo/rd_gray_w1[7]/opit_0_inv/ntRSCO",
+                "primitive": "V_BUF",
+                "input": "ntR1745"
+              },
+              {
+                "output": "ntR1745",
+                "cell": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "ntR1746",
+                "cell": "system/display_fifo/rd_gray_w1[7]/opit_0_inv/ntRSCO",
+                "primitive": "V_BUF",
+                "input": "ntR1745"
+              },
+              {
+                "output": "ntR1745",
+                "cell": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/display_fifo",
+        "direction": "rd",
+        "bit": 9,
+        "source": {
+          "name": "system/display_fifo/rd_gray[9]/opit_0_inv_L5Q_perm/FFAPP3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray[9]",
+            "CE": "ntR593",
+            "CK": "ntclkbufg_0",
+            "D": "CLMA_315_528/ntQC3",
+            "SR": "ntR1744"
+          }
+        },
+        "stage1": {
+          "name": "system/display_fifo/rd_gray_w1[9]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w1[9]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray[9]",
+            "SR": "ntR1746"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/rd_gray_w2[9]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_gray_w2[9]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/display_fifo/rd_gray_w1[9]",
+            "SR": "ntR1746"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "ntR1746",
+                "cell": "system/display_fifo/rd_gray_w1[7]/opit_0_inv/ntRSCO",
+                "primitive": "V_BUF",
+                "input": "ntR1745"
+              },
+              {
+                "output": "ntR1745",
+                "cell": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "ntR1746",
+                "cell": "system/display_fifo/rd_gray_w1[7]/opit_0_inv/ntRSCO",
+                "primitive": "V_BUF",
+                "input": "ntR1745"
+              },
+              {
+                "output": "ntR1745",
+                "cell": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "wr",
+        "bit": 0,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray[0]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray[0]",
+            "CE": "CLMS_183_637/ntCE",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/N88[0]",
+            "SR": "CLMA_225_732/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray[0]",
+            "SR": "CLMA_231_672/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r2[0]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r2[0]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]",
+            "SR": "CLMA_231_672/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_672/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_672/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "wr",
+        "bit": 1,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray[1]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray[1]",
+            "CE": "CLMS_183_637/ntCE",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/N88[1]",
+            "SR": "CLMA_225_732/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray[1]",
+            "SR": "CLMA_231_703/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r2[1]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r2[1]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]",
+            "SR": "CLMA_231_703/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_703/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_703/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "wr",
+        "bit": 2,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray[2]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray[2]",
+            "CE": "CLMS_183_637/ntCE",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/N88[2]",
+            "SR": "CLMA_225_732/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray[2]",
+            "SR": "CLMA_231_751/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r2[2]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r2[2]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]",
+            "SR": "CLMA_231_751/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_751/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_751/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "wr",
+        "bit": 3,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray[3]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray[3]",
+            "CE": "CLMS_183_637/ntCE",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/N88[3]",
+            "SR": "CLMA_225_732/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r1[3]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r1[3]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray[3]",
+            "SR": "CLMA_231_751/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r2[3]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r2[3]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray_r1[3]",
+            "SR": "CLMA_231_751/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_751/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_751/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "wr",
+        "bit": 4,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray[4]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray[4]",
+            "CE": "CLMS_183_637/ntCE",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/N88[4]",
+            "SR": "CLMA_225_672/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray[4]",
+            "SR": "CLMS_225_679/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r2[4]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r2[4]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]",
+            "SR": "CLMS_225_679/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_225_679/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_225_679/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "wr",
+        "bit": 5,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray[5]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray[5]",
+            "CE": "CLMS_183_637/ntCE",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/N88[5]",
+            "SR": "CLMA_225_672/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r1[5]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r1[5]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray[5]",
+            "SR": "CLMS_225_679/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r2[5]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r2[5]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray_r1[5]",
+            "SR": "CLMS_225_679/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_225_679/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMS_225_679/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "wr",
+        "bit": 6,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray[6]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray[6]",
+            "CE": "CLMS_183_637/ntCE",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/next_wr[6]",
+            "SR": "CLMA_225_672/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r1[6]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r1[6]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray[6]",
+            "SR": "CLMA_231_672/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/wr_gray_r2[6]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/wr_gray_r2[6]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/wr_gray_r1[6]",
+            "SR": "CLMA_231_672/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "core_reset[1]",
+        "reset_traces": [
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_672/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          },
+          {
+            "source": "core_reset[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_672/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "core_reset[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "rd",
+        "bit": 0,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray[0]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray[0]",
+            "CE": "CLMS_207_649/ntCE",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/N110[0]",
+            "SR": "CLMA_219_768/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray[0]",
+            "SR": "CLMA_219_774/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w2[0]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w2[0]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]",
+            "SR": "CLMA_219_774/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_219_774/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_219_774/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "rd",
+        "bit": 1,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray[1]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray[1]",
+            "CE": "CLMS_207_649/ntCE",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/N110[1]",
+            "SR": "CLMA_219_768/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w1[1]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w1[1]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray[1]",
+            "SR": "CLMA_219_774/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w2[1]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w2[1]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray_w1[1]",
+            "SR": "CLMA_219_774/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_219_774/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_219_774/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[0]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "rd",
+        "bit": 2,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray[2]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray[2]",
+            "CE": "CLMS_207_649/ntCE",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/N110[2]",
+            "SR": "CLMA_219_768/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray[2]",
+            "SR": "CLMA_243_750/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w2[2]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w2[2]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]",
+            "SR": "CLMA_243_750/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_243_750/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_243_750/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "rd",
+        "bit": 3,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray[3]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray[3]",
+            "CE": "CLMS_207_649/ntCE",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/N110[3]",
+            "SR": "CLMA_219_768/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w1[3]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w1[3]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray[3]",
+            "SR": "CLMA_243_750/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w2[3]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w2[3]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray_w1[3]",
+            "SR": "CLMA_243_750/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_243_750/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_243_750/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[2]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "rd",
+        "bit": 4,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray[4]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray[4]",
+            "CE": "CLMS_207_649/ntCE",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/N110[4]",
+            "SR": "CLMA_219_673/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray[4]",
+            "SR": "CLMA_231_678/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w2[4]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w2[4]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]",
+            "SR": "CLMA_231_678/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_678/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_678/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "rd",
+        "bit": 5,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray[5]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray[5]",
+            "CE": "CLMS_207_649/ntCE",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/N110[5]",
+            "SR": "CLMA_219_673/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w1[5]/opit_0_inv/FF2/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w1[5]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray[5]",
+            "SR": "CLMA_231_678/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w2[5]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w2[5]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray_w1[5]",
+            "SR": "CLMA_231_678/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_678/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_678/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[4]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      },
+      {
+        "instance": "system/input_link/input_dma/capture/pixels",
+        "direction": "rd",
+        "bit": 6,
+        "source": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray[6]/opit_0_inv/FF3/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray[6]",
+            "CE": "CLMS_207_649/ntCE",
+            "CK": "core_clk",
+            "D": "system/input_link/input_dma/capture/pixels/next_rd[6]",
+            "SR": "CLMA_219_673/ntRSCO"
+          }
+        },
+        "stage1": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w1[6]/opit_0_inv/FF0/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w1[6]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray[6]",
+            "SR": "CLMA_231_691/ntRSCO"
+          }
+        },
+        "stage2": {
+          "name": "system/input_link/input_dma/capture/pixels/rd_gray_w2[6]/opit_0_inv/FF1/FF",
+          "primitive": "V_FFSYN",
+          "ports": {
+            "Q": "system/input_link/input_dma/capture/pixels/rd_gray_w2[6]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/input_link/input_dma/capture/pixels/rd_gray_w1[6]",
+            "SR": "CLMA_231_691/ntRSCO"
+          }
+        },
+        "expected_reset_owner_stage2": "system/display_fifo/rd_reset_sync[1]",
+        "reset_traces": [
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_691/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[6]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          },
+          {
+            "source": "system/display_fifo/rd_reset_sync[1]",
+            "inverted": true,
+            "trace": [
+              {
+                "output": "CLMA_231_691/ntRSCO",
+                "cell": "system/input_link/input_dma/capture/pixels/rd_gray_w1[6]/opit_0_inv/LRSPOLMUX/LRS_INV",
+                "primitive": "V_INV",
+                "input": "system/display_fifo/rd_reset_sync[1]"
+              }
+            ]
+          }
+        ],
+        "checks": {
+          "source_q_direct_to_stage1_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "two_independent_sync_ff": true,
+          "correct_clocks": true,
+          "sync_ce_always_enabled": true,
+          "reset_both_from_expected_owner_stage2": true
+        },
+        "passed": true
+      }
+    ],
+    "gray_pairs_passed": true,
+    "reset_owners": [
+      {
+        "owner": "core_reset",
+        "stage1": {
+          "name": "core_reset[0]/opit_0/FFAPP0/FF",
+          "primitive": "V_FFASYN",
+          "ports": {
+            "Q": "core_reset[0]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "_VCC788",
+            "SR": "CLMS_225_781/ntRS"
+          }
+        },
+        "stage2": {
+          "name": "core_reset[1]/opit_0/FFAPP1/FF",
+          "primitive": "V_FFASYN",
+          "ports": {
+            "Q": "core_reset[1]",
+            "CE": "1'b1",
+            "CK": "core_clk",
+            "D": "core_reset[0]",
+            "SR": "CLMS_225_781/ntRS"
+          }
+        },
+        "constant_one_driver": {
+          "name": "VCC_788/FYC/LUT6CARRY",
+          "primitive": "V_LUT6CARRY",
+          "init": "64'hFFFFFFFFFFFFFFFF",
+          "output": "Z"
+        },
+        "checks": {
+          "two_independent_async_ff": true,
+          "constant_one_first_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "correct_clock": true,
+          "common_async_reset": true,
+          "ce_always_enabled": true
+        },
+        "passed": true
+      },
+      {
+        "owner": "system/display_fifo/rd_reset_sync",
+        "stage1": {
+          "name": "system/display_fifo/rd_reset_sync[0]/opit_0/FF0/FF",
+          "primitive": "V_FFASYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_reset_sync[0]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "1'b1",
+            "SR": "CLMS_225_781/ntRS"
+          }
+        },
+        "stage2": {
+          "name": "system/display_fifo/rd_reset_sync[1]/opit_0/FF1/FF",
+          "primitive": "V_FFASYN",
+          "ports": {
+            "Q": "system/display_fifo/rd_reset_sync[1]",
+            "CE": "1'b1",
+            "CK": "ntclkbufg_0",
+            "D": "system/display_fifo/rd_reset_sync[0]",
+            "SR": "CLMS_225_781/ntRS"
+          }
+        },
+        "constant_one_driver": null,
+        "checks": {
+          "two_independent_async_ff": true,
+          "constant_one_first_d": true,
+          "stage1_q_direct_to_stage2_d": true,
+          "correct_clock": true,
+          "common_async_reset": true,
+          "ce_always_enabled": true
+        },
+        "passed": true
+      }
+    ],
+    "reset_owners_passed": true
+  },
+  "slow_setup_paths": {
+    "source": "D:\\f60-run\\physical-h\\prj_tasks\\pnr_1\\report_timing\\report_db\\report_timing_slow_path_setup.db",
+    "sha256": "7390d733aa5a2cd93d25f03d69c9f53a01a3c8ca31cc70ec9417d65b027979d4",
+    "report_rows_examined": 6875,
+    "fifo_source_to_stage1_paths": [
+      {
+        "Slack": "4.879",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/input_link/input_dma/capture/pixels/wr_gray[0]/opit_0_inv/CLK",
+        "End Point": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.985",
+        "Logic delay": "0.203 (20.6%)",
+        "Route delay": "0.782 (79.4%)",
+        "arrival": [
+          {
+            "Location": "CLMA_225_732/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[0]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMA_225_732/Q0",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[0]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.782",
+            "Path": "0.985",
+            "Trans": " ",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray [0]"
+          },
+          {
+            "Location": "CLMA_231_672/M0",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray_r1[0]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.022",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/display_fifo/rd_gray[5]/opit_0_inv/CLK",
+        "End Point": "system/display_fifo/rd_gray_w1[5]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.842",
+        "Logic delay": "0.203 (24.1%)",
+        "Route delay": "0.639 (75.9%)",
+        "arrival": [
+          {
+            "Location": "CLMA_315_528/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[5]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMA_315_528/Q2",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[5]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.639",
+            "Path": "0.842",
+            "Trans": " ",
+            "Logical Resource": "system/display_fifo/rd_gray [5]"
+          },
+          {
+            "Location": "CLMS_291_517/M2",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray_w1[5]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.026",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/display_fifo/rd_gray[0]/opit_0_inv_L5Q_perm/CLK",
+        "End Point": "system/display_fifo/rd_gray_w1[0]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.838",
+        "Logic delay": "0.248 (29.6%)",
+        "Route delay": "0.590 (70.4%)",
+        "arrival": [
+          {
+            "Location": "CLMS_309_523/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[0]/opit_0_inv_L5Q_perm/CLK"
+          },
+          {
+            "Location": "CLMS_309_523/CR3",
+            "Delay Type": "tco",
+            "Incr": "0.248",
+            "Path": "0.248",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[0]/opit_0_inv_L5Q_perm/L5Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.590",
+            "Path": "0.838",
+            "Trans": " ",
+            "Logical Resource": "system/display_fifo/rd_gray [0]"
+          },
+          {
+            "Location": "CLMA_303_504/M0",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray_w1[0]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.052",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/display_fifo/rd_gray[9]/opit_0_inv_L5Q_perm/CLK",
+        "End Point": "system/display_fifo/rd_gray_w1[9]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.812",
+        "Logic delay": "0.248 (30.5%)",
+        "Route delay": "0.564 (69.5%)",
+        "arrival": [
+          {
+            "Location": "CLMA_315_528/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[9]/opit_0_inv_L5Q_perm/CLK"
+          },
+          {
+            "Location": "CLMA_315_528/CR3",
+            "Delay Type": "tco",
+            "Incr": "0.248",
+            "Path": "0.248",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[9]/opit_0_inv_L5Q_perm/L5Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.564",
+            "Path": "0.812",
+            "Trans": " ",
+            "Logical Resource": "system/display_fifo/rd_gray [9]"
+          },
+          {
+            "Location": "CLMA_303_516/M2",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray_w1[9]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.060",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/display_fifo/rd_gray[2]/opit_0_inv/CLK",
+        "End Point": "system/display_fifo/rd_gray_w1[2]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.804",
+        "Logic delay": "0.203 (25.2%)",
+        "Route delay": "0.601 (74.8%)",
+        "arrival": [
+          {
+            "Location": "CLMS_309_523/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[2]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMS_309_523/Q3",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[2]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.601",
+            "Path": "0.804",
+            "Trans": " ",
+            "Logical Resource": "system/display_fifo/rd_gray [2]"
+          },
+          {
+            "Location": "CLMS_291_517/M0",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray_w1[2]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.061",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/display_fifo/rd_gray[6]/opit_0_inv/CLK",
+        "End Point": "system/display_fifo/rd_gray_w1[6]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.803",
+        "Logic delay": "0.203 (25.3%)",
+        "Route delay": "0.600 (74.7%)",
+        "arrival": [
+          {
+            "Location": "CLMA_315_528/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[6]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMA_315_528/Q3",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[6]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.600",
+            "Path": "0.803",
+            "Trans": " ",
+            "Logical Resource": "system/display_fifo/rd_gray [6]"
+          },
+          {
+            "Location": "CLMA_303_510/M0",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray_w1[6]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.061",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/input_link/input_dma/capture/pixels/wr_gray[1]/opit_0_inv/CLK",
+        "End Point": "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.803",
+        "Logic delay": "0.203 (25.3%)",
+        "Route delay": "0.600 (74.7%)",
+        "arrival": [
+          {
+            "Location": "CLMA_225_732/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[1]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMA_225_732/Q3",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[1]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.600",
+            "Path": "0.803",
+            "Trans": " ",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray [1]"
+          },
+          {
+            "Location": "CLMA_231_703/M0",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray_r1[1]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.139",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/display_fifo/rd_gray[1]/opit_0_inv/CLK",
+        "End Point": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.725",
+        "Logic delay": "0.203 (28.0%)",
+        "Route delay": "0.522 (72.0%)",
+        "arrival": [
+          {
+            "Location": "CLMS_309_523/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[1]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMS_309_523/Q2",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[1]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.522",
+            "Path": "0.725",
+            "Trans": " ",
+            "Logical Resource": "system/display_fifo/rd_gray [1]"
+          },
+          {
+            "Location": "CLMA_303_504/M2",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray_w1[1]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.180",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/display_fifo/rd_gray[3]/opit_0_inv/CLK",
+        "End Point": "system/display_fifo/rd_gray_w1[3]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.684",
+        "Logic delay": "0.249 (36.4%)",
+        "Route delay": "0.435 (63.6%)",
+        "arrival": [
+          {
+            "Location": "CLMA_315_528/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[3]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMA_315_528/CR0",
+            "Delay Type": "tco",
+            "Incr": "0.249",
+            "Path": "0.249",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[3]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.435",
+            "Path": "0.684",
+            "Trans": " ",
+            "Logical Resource": "system/display_fifo/rd_gray [3]"
+          },
+          {
+            "Location": "CLMA_303_528/M0",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray_w1[3]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.211",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/display_fifo/rd_gray[7]/opit_0_inv/CLK",
+        "End Point": "system/display_fifo/rd_gray_w1[7]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.653",
+        "Logic delay": "0.203 (31.1%)",
+        "Route delay": "0.450 (68.9%)",
+        "arrival": [
+          {
+            "Location": "CLMS_309_523/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[7]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMS_309_523/Q0",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[7]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.450",
+            "Path": "0.653",
+            "Trans": " ",
+            "Logical Resource": "system/display_fifo/rd_gray [7]"
+          },
+          {
+            "Location": "CLMA_303_510/M2",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray_w1[7]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.219",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/input_link/input_dma/capture/pixels/wr_gray[3]/opit_0_inv/CLK",
+        "End Point": "system/input_link/input_dma/capture/pixels/wr_gray_r1[3]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.645",
+        "Logic delay": "0.203 (31.5%)",
+        "Route delay": "0.442 (68.5%)",
+        "arrival": [
+          {
+            "Location": "CLMA_225_732/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[3]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMA_225_732/Q2",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[3]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.442",
+            "Path": "0.645",
+            "Trans": " ",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray [3]"
+          },
+          {
+            "Location": "CLMA_231_751/M2",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray_r1[3]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.223",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/display_fifo/rd_gray[8]/opit_0_inv/CLK",
+        "End Point": "system/display_fifo/rd_gray_w1[8]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.641",
+        "Logic delay": "0.203 (31.7%)",
+        "Route delay": "0.438 (68.3%)",
+        "arrival": [
+          {
+            "Location": "CLMS_309_523/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[8]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMS_309_523/Q1",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[8]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.438",
+            "Path": "0.641",
+            "Trans": " ",
+            "Logical Resource": "system/display_fifo/rd_gray [8]"
+          },
+          {
+            "Location": "CLMA_303_516/M0",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray_w1[8]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.225",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/display_fifo/rd_gray[4]/opit_0_inv/CLK",
+        "End Point": "system/display_fifo/rd_gray_w1[4]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.639",
+        "Logic delay": "0.203 (31.8%)",
+        "Route delay": "0.436 (68.2%)",
+        "arrival": [
+          {
+            "Location": "CLMA_315_528/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[4]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMA_315_528/Q1",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray[4]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.436",
+            "Path": "0.639",
+            "Trans": " ",
+            "Logical Resource": "system/display_fifo/rd_gray [4]"
+          },
+          {
+            "Location": "CLMA_303_528/M2",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/display_fifo/rd_gray_w1[4]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.226",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/input_link/input_dma/capture/pixels/wr_gray[2]/opit_0_inv/CLK",
+        "End Point": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.638",
+        "Logic delay": "0.203 (31.8%)",
+        "Route delay": "0.435 (68.2%)",
+        "arrival": [
+          {
+            "Location": "CLMA_225_732/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[2]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMA_225_732/Q1",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[2]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.435",
+            "Path": "0.638",
+            "Trans": " ",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray [2]"
+          },
+          {
+            "Location": "CLMA_231_751/M0",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray_r1[2]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.226",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/input_link/input_dma/capture/pixels/wr_gray[6]/opit_0_inv/CLK",
+        "End Point": "system/input_link/input_dma/capture/pixels/wr_gray_r1[6]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.638",
+        "Logic delay": "0.203 (31.8%)",
+        "Route delay": "0.435 (68.2%)",
+        "arrival": [
+          {
+            "Location": "CLMA_225_672/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[6]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMA_225_672/Q3",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[6]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.435",
+            "Path": "0.638",
+            "Trans": " ",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray [6]"
+          },
+          {
+            "Location": "CLMA_231_672/M2",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray_r1[6]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.227",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/input_link/input_dma/capture/pixels/wr_gray[5]/opit_0_inv/CLK",
+        "End Point": "system/input_link/input_dma/capture/pixels/wr_gray_r1[5]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.637",
+        "Logic delay": "0.203 (31.9%)",
+        "Route delay": "0.434 (68.1%)",
+        "arrival": [
+          {
+            "Location": "CLMA_225_672/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[5]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMA_225_672/Q1",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[5]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.434",
+            "Path": "0.637",
+            "Trans": " ",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray [5]"
+          },
+          {
+            "Location": "CLMS_225_679/M2",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray_r1[5]/opit_0_inv/D"
+          }
+        ]
+      },
+      {
+        "Slack": "5.378",
+        "Logic Levels": "0",
+        "High Fanout": "2",
+        "Start Point": "system/input_link/input_dma/capture/pixels/wr_gray[4]/opit_0_inv/CLK",
+        "End Point": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]/opit_0_inv/D",
+        "Exception": "MaxDelay Path 6.000ns -datapath_only",
+        "Launch Clock": "input_pixel",
+        "Capture Clock": "ddrphy_sysclk",
+        "Clock Edges": "rise-rise",
+        "Clock Skew": "",
+        "Launch Clock Delay": "",
+        "Capture Clock Delay": "",
+        "Clock Pessimism Removal": "",
+        "Requirement": "6.000",
+        "Data delay": "0.486",
+        "Logic delay": "0.203 (41.8%)",
+        "Route delay": "0.283 (58.2%)",
+        "arrival": [
+          {
+            "Location": "CLMA_225_672/CLK",
+            "Delay Type": " ",
+            "Incr": "0.000",
+            "Path": "0.000",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[4]/opit_0_inv/CLK"
+          },
+          {
+            "Location": "CLMA_225_672/Q2",
+            "Delay Type": "tco",
+            "Incr": "0.203",
+            "Path": "0.203",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray[4]/opit_0_inv/Q"
+          },
+          {
+            "Location": "",
+            "Delay Type": "net (fanout=2)",
+            "Incr": "0.283",
+            "Path": "0.486",
+            "Trans": " ",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray [4]"
+          },
+          {
+            "Location": "CLMS_225_679/M0",
+            "Delay Type": "",
+            "Incr": "",
+            "Path": "",
+            "Trans": "r",
+            "Logical Resource": "system/input_link/input_dma/capture/pixels/wr_gray_r1[4]/opit_0_inv/D"
+          }
+        ]
+      }
+    ],
+    "reported_path_count": 17,
+    "clock_pairs": {
+      "input_pixel -> ddrphy_sysclk": 17
+    }
+  },
+  "source_period_limits_ns": {
+    "core_to_pixel": 8.0,
+    "pixel_to_core": 6.666666667
+  },
+  "gray_max_delay_and_bus_skew_signoff": null,
+  "limitations": [
+    "This script checks FIFO structure and connectivity on the full routed H design.",
+    "Explicit all-bit max-delay and bus-skew acceptance is assessed in the separate H precise-constraint report.",
+    "No clock-group, false-path, max-delay or bus-skew constraint was added by this audit."
+  ]
+}

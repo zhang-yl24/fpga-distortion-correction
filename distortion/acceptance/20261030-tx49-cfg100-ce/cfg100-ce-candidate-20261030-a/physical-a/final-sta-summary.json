@@ -1,0 +1,354 @@
+{
+  "Marker": "PDS-1029-PENN-DIAGNOSTIC-ONE",
+  "FinalRoutedADF": {
+    "Path": "D:\\English\\FPGA\\distortion\\build\\offline-20261024\\cfg100-ce-candidate-20261030-a\\physical-a\\final\\board1080_top-final-routed.adf",
+    "SHA256": "8c47cd66346d6a94cc10cd250ea8b568054128985a208b8f00e32fc4ad2a74bd"
+  },
+  "NativeXML": {
+    "Path": "D:\\English\\FPGA\\distortion\\build\\offline-20261024\\cfg100-ce-candidate-20261030-a\\physical-a\\sta-work\\report_timing\\rtr.db",
+    "SHA256": "c9db5ddc2d415c8913c3dc2b67d58ed1219d4a0330bdbce304d8be11cae47284"
+  },
+  "InputsStableDuringAudit": true,
+  "FailureCounts": {
+    "slow_setup": {
+      "FailingGroups": 0,
+      "FailedChecks": 0
+    },
+    "slow_hold": {
+      "FailingGroups": 0,
+      "FailedChecks": 0
+    },
+    "slow_recovery": {
+      "FailingGroups": 7,
+      "FailedChecks": 245
+    },
+    "slow_removal": {
+      "FailingGroups": 0,
+      "FailedChecks": 0
+    },
+    "slow_mpw": {
+      "FailingGroups": 0,
+      "FailedChecks": 0
+    },
+    "fast_setup": {
+      "FailingGroups": 0,
+      "FailedChecks": 0
+    },
+    "fast_hold": {
+      "FailingGroups": 0,
+      "FailedChecks": 0
+    },
+    "fast_recovery": {
+      "FailingGroups": 7,
+      "FailedChecks": 245
+    },
+    "fast_removal": {
+      "FailingGroups": 0,
+      "FailedChecks": 0
+    },
+    "fast_mpw": {
+      "FailingGroups": 0,
+      "FailedChecks": 0
+    }
+  },
+  "UnsafeInteractions": [
+    {
+      "Launch Clock": "board27",
+      "Capture Clock": "rst_clk",
+      "Common Primary Clock": "NO",
+      "Inter-Clock Constrains": "Timed(unsafe)",
+      "WNS(ns)": "-4.255",
+      "TNS(ns)": "-4.255",
+      "Failing End Point(TNS)": "1",
+      "Total End Point(TNS)": "1",
+      "WHS(ns)": "1.087",
+      "THS(ns)": "0.000",
+      "Failing End Point(THS)": "0",
+      "Total End Point(THS)": "1"
+    }
+  ],
+  "MissingDomainClassifications": [
+    {
+      "Clock": "ref_clk",
+      "ClockLoad": "0",
+      "Rows": {
+        "slow_setup": [],
+        "fast_setup": [],
+        "slow_hold": [],
+        "fast_hold": []
+      },
+      "MissingCornerChecks": [
+        "slow_setup",
+        "fast_setup",
+        "slow_hold",
+        "fast_hold"
+      ],
+      "Classification": "missing-same-domain-reg2reg-not-pass",
+      "Passing": false
+    },
+    {
+      "Clock": "phy_dq_clk_0",
+      "ClockLoad": "35",
+      "Rows": {
+        "slow_setup": [],
+        "fast_setup": [],
+        "slow_hold": [],
+        "fast_hold": []
+      },
+      "MissingCornerChecks": [
+        "slow_setup",
+        "fast_setup",
+        "slow_hold",
+        "fast_hold"
+      ],
+      "Classification": "missing-same-domain-reg2reg-not-pass",
+      "Passing": false
+    },
+    {
+      "Clock": "phy_dq_sysclk_0",
+      "ClockLoad": "35",
+      "Rows": {
+        "slow_setup": [],
+        "fast_setup": [],
+        "slow_hold": [],
+        "fast_hold": []
+      },
+      "MissingCornerChecks": [
+        "slow_setup",
+        "fast_setup",
+        "slow_hold",
+        "fast_hold"
+      ],
+      "Classification": "missing-same-domain-reg2reg-not-pass",
+      "Passing": false
+    },
+    {
+      "Clock": "phy_dq_clk_1",
+      "ClockLoad": "84",
+      "Rows": {
+        "slow_setup": [],
+        "fast_setup": [],
+        "slow_hold": [],
+        "fast_hold": []
+      },
+      "MissingCornerChecks": [
+        "slow_setup",
+        "fast_setup",
+        "slow_hold",
+        "fast_hold"
+      ],
+      "Classification": "missing-same-domain-reg2reg-not-pass",
+      "Passing": false
+    },
+    {
+      "Clock": "phy_dq_sysclk_1",
+      "ClockLoad": "84",
+      "Rows": {
+        "slow_setup": [],
+        "fast_setup": [],
+        "slow_hold": [],
+        "fast_hold": []
+      },
+      "MissingCornerChecks": [
+        "slow_setup",
+        "fast_setup",
+        "slow_hold",
+        "fast_hold"
+      ],
+      "Classification": "missing-same-domain-reg2reg-not-pass",
+      "Passing": false
+    }
+  ],
+  "CheckTimingCounts": {
+    "no_clock": 0,
+    "virtual_clock": 1,
+    "unexpandable_clocks": 2,
+    "no_input_delay": 54,
+    "no_output_delay": 110,
+    "partial_input_delay": 0,
+    "partial_output_delay": 0,
+    "io_min_max_delay_consistency": 0,
+    "input_delay_assigned_to_clock": 0,
+    "loops": 0,
+    "latch_loops": 0,
+    "latchs": 0
+  },
+  "CoverageNotAccepted": [
+    "ref_clk",
+    "phy_dq_clk_0",
+    "phy_dq_sysclk_0",
+    "phy_dq_clk_1",
+    "phy_dq_sysclk_1",
+    "native:no_input_delay",
+    "native:no_output_delay",
+    "native:unexpandable_clocks",
+    "same-domain:ref_clk:slow_setup,fast_setup,slow_hold,fast_hold",
+    "same-domain:phy_dq_clk_0:slow_setup,fast_setup,slow_hold,fast_hold",
+    "same-domain:phy_dq_sysclk_0:slow_setup,fast_setup,slow_hold,fast_hold",
+    "same-domain:phy_dq_clk_1:slow_setup,fast_setup,slow_hold,fast_hold",
+    "same-domain:phy_dq_sysclk_1:slow_setup,fast_setup,slow_hold,fast_hold"
+  ],
+  "AllInternalTimingChecksNonNegative": false,
+  "InternalObservedTimingAndCoveragePass": false,
+  "fullGate": false,
+  "PhysicalTimingReady": false,
+  "HardwareReleaseAllowed": false,
+  "PhysicalBlockingItems": [
+    "External HDMI AC budget and sampling edge unverified",
+    "BASE V1.4 board trace skew unverified",
+    "Gray/held-bus node matching and bus skew acceptance missing",
+    "DDR PLL/PPLL/gate/reset/training dynamic protocol acceptance missing",
+    "Broad asynchronous groups deliberately excluded pending vendor review",
+    "RCF not loaded in this diagnostic candidate"
+  ],
+  "MPWByCornerAndCheckType": {
+    "slow": {
+      "native-unspecified-check-type": [
+        {
+          "Clock": "phy_dq_clk_0",
+          "WPWS": "0.035",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "35"
+        },
+        {
+          "Clock": "phy_dq_clk_1",
+          "WPWS": "0.035",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "84"
+        },
+        {
+          "Clock": "phy_dq_sysclk_0",
+          "WPWS": "1.850",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "35"
+        },
+        {
+          "Clock": "phy_dq_sysclk_1",
+          "WPWS": "2.400",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "84"
+        },
+        {
+          "Clock": "ddrphy_sysclk",
+          "WPWS": "2.655",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "10686"
+        },
+        {
+          "Clock": "rst_clk",
+          "WPWS": "3.800",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "98"
+        },
+        {
+          "Clock": "input_pixel",
+          "WPWS": "5.697",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "562"
+        },
+        {
+          "Clock": "pixel_clk",
+          "WPWS": "5.774",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "517"
+        },
+        {
+          "Clock": "board27",
+          "WPWS": "18.318",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "257"
+        },
+        {
+          "Clock": "cfg_clk",
+          "WPWS": "49.038",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "155"
+        }
+      ]
+    },
+    "fast": {
+      "native-unspecified-check-type": [
+        {
+          "Clock": "phy_dq_clk_0",
+          "WPWS": "0.035",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "35"
+        },
+        {
+          "Clock": "phy_dq_clk_1",
+          "WPWS": "0.035",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "84"
+        },
+        {
+          "Clock": "phy_dq_sysclk_0",
+          "WPWS": "1.850",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "35"
+        },
+        {
+          "Clock": "phy_dq_sysclk_1",
+          "WPWS": "2.400",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "84"
+        },
+        {
+          "Clock": "ddrphy_sysclk",
+          "WPWS": "3.202",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "10686"
+        },
+        {
+          "Clock": "rst_clk",
+          "WPWS": "3.800",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "98"
+        },
+        {
+          "Clock": "input_pixel",
+          "WPWS": "6.087",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "562"
+        },
+        {
+          "Clock": "pixel_clk",
+          "WPWS": "6.164",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "517"
+        },
+        {
+          "Clock": "board27",
+          "WPWS": "18.318",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "257"
+        },
+        {
+          "Clock": "cfg_clk",
+          "WPWS": "49.428",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "155"
+        }
+      ]
+    }
+  }
+}

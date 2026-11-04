@@ -1,0 +1,72 @@
+source {@OUT@/scripts/checked.tcl}
+checked DESIGN_0 {add_design {@NATIVE@/source/rtl/mul32_pipe.v}}
+checked DESIGN_1 {add_design {@NATIVE@/source/rtl/pixel_inverse_rotation.v}}
+checked DESIGN_2 {add_design {@NATIVE@/source/rtl/bounded_brown_inverse_mapper.v}}
+checked DESIGN_3 {add_design {@NATIVE@/source/rtl/bilinear_rgb.v}}
+checked DESIGN_4 {add_design {@NATIVE@/source/rtl/video_async_fifo.v}}
+checked DESIGN_5 {add_design {@NATIVE@/source/rtl/video_display_async_fifo.v}}
+checked DESIGN_6 {add_design {@NATIVE@/source/rtl/ddr_read_arbiter.v}}
+checked DESIGN_7 {add_design {@NATIVE@/source/rtl/ddr_write_arbiter.v}}
+checked DESIGN_8 {add_design {@NATIVE@/source/rtl/ddr_video_reader.v}}
+checked DESIGN_9 {add_design {@NATIVE@/source/rtl/experimental/ddr_adaptive_result_writer.v}}
+checked DESIGN_10 {add_design {@NATIVE@/source/rtl/experimental/adaptive_gamma_stream.v}}
+checked DESIGN_11 {add_design {@NATIVE@/source/rtl/experimental/adaptive_gamma_tagged.v}}
+checked DESIGN_12 {add_design {@NATIVE@/source/rtl/experimental/ddr_compact_neighbour_cache_scatter4.v}}
+checked DESIGN_13 {add_design {@NATIVE@/source/rtl/experimental/ddr_remap_sample_scatter4.v}}
+checked DESIGN_14 {add_design {@NATIVE@/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/rotated_remap_core_gamma_geometry_bypass_scatter4.v}}
+checked DESIGN_15 {add_design {@NATIVE@/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v}}
+checked DESIGN_16 {add_design {@NATIVE@/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v}}
+checked DESIGN_17 {add_design {@NATIVE@/source/rtl/experimental/hdmi1080_capture_cdc.v}}
+checked DESIGN_18 {add_design {@NATIVE@/source/rtl/experimental/hdmi1080_input_dma.v}}
+checked DESIGN_19 {add_design {@NATIVE@/source/rtl/experimental/hdmi1080_input_write_link.v}}
+checked DESIGN_20 {add_design {@NATIVE@/source/build/offline-20261024/cfg100-ce-candidate-20261030-a/candidate/ddr_video_output_1080_board_ce.v}}
+checked DESIGN_21 {add_design {@NATIVE@/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v}}
+checked DESIGN_22 {add_design {@NATIVE@/source/rtl/experimental/dvp_mode_admission_monitor.v}}
+checked DESIGN_23 {add_design {@NATIVE@/source/rtl/experimental/hdmi1080_input_status.v}}
+checked DESIGN_24 {add_design {@NATIVE@/source/platform/video_base/ipcore/ddr3_test/ddr3_test.idf}}
+checked DESIGN_25 {add_design {@NATIVE@/source/board/bringup_pll.v}}
+checked DESIGN_26 {add_design {@NATIVE@/source/platform/video_base/ipcore/cfg_pll/cfg_pll.v}}
+checked DESIGN_27 {add_design {@NATIVE@/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/iic_dri_cfg100_reset.v}}
+checked DESIGN_28 {add_design {@NATIVE@/source/build/offline-20261024/night-recovery-edid-20261030-a/edid/ms7200_1080p30_ctl.v}}
+checked DESIGN_29 {add_design {@NATIVE@/source/build/offline-20261024/tx49-preamble-20261030-a/candidate/ms7210_ctl.v}}
+checked DESIGN_30 {add_design {@NATIVE@/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/cfg100_startup_hold.v}}
+checked DESIGN_31 {add_design {@NATIVE@/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/ms72xx_cfg100_ctl_reset.v}}
+checked DESIGN_32 {add_design {@NATIVE@/source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v}}
+checked DESIGN_33 {add_design {@NATIVE@/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v}}
+checked DESIGN_34 {add_design {@NATIVE@/b4/rtl/reuse/scan_signature_capture.sv}}
+checked DESIGN_35 {add_design {@NATIVE@/b4/rtl/reuse/signature_packet_tx.sv}}
+checked DESIGN_36 {add_design {@NATIVE@/b4/rtl/reuse/uart_rx_control.v}}
+checked DESIGN_37 {add_design {@NATIVE@/b4/rtl/reuse/uart_tx.v}}
+checked DESIGN_38 {add_design {@NATIVE@/b4/rtl/session_arm_gate_v3.sv}}
+checked DESIGN_39 {add_design {@NATIVE@/b4/rtl/scan_signature_armed_v3.sv}}
+checked DESIGN_40 {add_design {@NATIVE@/b4/rtl/load_arm_parser.sv}}
+checked DESIGN_41 {add_design {@NATIVE@/b4/rtl/held_bundle_cdc.sv}}
+checked DESIGN_42 {add_design {@NATIVE@/b4/rtl/arm_ack_tx.sv}}
+checked DESIGN_43 {add_design {@NATIVE@/b4/rtl/telemetry_packet_arbiter.sv}}
+checked DESIGN_44 {add_design {@NATIVE@/b4/rtl/telemetry_session_link.sv}}
+checked DESIGN_45 {add_design {@NATIVE@/b4/rtl/telemetry_uart_link.sv}}
+checked ADD_STARTUP {add_design {@NATIVE@/source/rtl/diag/startup_status_uart.v}}
+checked ADD_GUARD {add_design {@NATIVE@/source/rtl/diag/hdmi_observer_startup_guard.v}}
+checked ADD_HISTORY {add_design {@NATIVE@/source/rtl/diag/hdmi_observer_epoch_history.v}}
+checked MEASURE_0 {add_design {@NATIVE@/b4/rtl/held_completion_cdc.sv}}
+checked MEASURE_1 {add_design {@NATIVE@/source/rtl/snapshot/snapshot_command_parser.sv}}
+checked MEASURE_2 {add_design {@NATIVE@/source/rtl/stats/core_stats_snapshot.sv}}
+checked MEASURE_3 {add_design {@NATIVE@/source/rtl/stats/stats_uart_mux.sv}}
+checked BASELINE_FDC {add_constraint {@NATIVE@/source/build/offline-20261024/boardtop-penn-prep-20261029-a/board1080-diagnostic.fdc}}
+checked DDR_IP_CLOCK_RELATIONS {add_constraint {@NATIVE@/source/constraints/ddr-ip-clock-relations.fdc}}
+checked DDR_IP_ROUTE_PRIORITY {add_constraint {@NATIVE@/source/constraints/vendor-ddr.rcf}}
+checked ARCH {set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676}
+add_design {@NATIVE@/source/rtl/experimental/ddr_compact_neighbour_cache_scatter8.v}
+add_design {@NATIVE@/source/rtl/experimental/sync_token_fifo.sv}
+add_design {@NATIVE@/source/rtl/experimental/quad_parity_prefetch_store.sv}
+add_design {@NATIVE@/source/rtl/experimental/d256_runtime_prefetch_cache.sv}
+add_design {@NATIVE@/source/rtl/experimental/ddr_raster_overlap_writer.sv}
+checked CAMERA_NEW_0 {add_design {@NATIVE@/source/rtl/experimental/ddr_tile8_overlap_writer.sv}}
+checked CAMERA_NEW_1 {add_design {@NATIVE@/source/profile/rtl/experimental/hdmi_camera_fisheye_mapper.v}}
+checked CAMERA_NEW_2 {add_design {@NATIVE@/source/profile/rtl/experimental/hdmi_camera_fisheye_rom.v}}
+checked ROWBURST_SOURCE {add_design {@NATIVE@/source/rtl/experimental/ddr_tile8_rowburst_writer.sv}}
+checked COMPILE {compile -top_module board1080_top -include_path {@NATIVE@/b4/rtl}}
+checked SYNTHESIZE {synthesize -ads -selected_syn_tool_opt 2}
+checked MAP {dev_map}
+puts {NATIVE_PGFRAME_PGSTAT_MAP_COMPLETE_NO_PNR}
+flush stdout
