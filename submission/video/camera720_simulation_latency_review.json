@@ -1,0 +1,100 @@
+{
+  "schema": "camera720-saved-simulation-interval-review-v1",
+  "passed": true,
+  "new_simulation_executed": false,
+  "hardware_accessed": false,
+  "source_bitstream_family_sha256": "0ca6d19bf074c73cba0346a22e54ba3afb99a595728e6420a1cbb767b963dfe5",
+  "identity_meaning": "Simulation sources and result hashes match the archived passing run for the selected camera720 view-toggle design; this is not a bitstream or optical latency measurement.",
+  "interval_start": "source_commit observed after full source-frame DDR writes and accepted source_valid/source_ready handshake",
+  "interval_end": "source_release/result_publish observed after complete result DDR writes and correct result CRC; engine completion publishes a pending result",
+  "excluded": [
+    "sensor exposure",
+    "camera frame acquisition before commit",
+    "pending-result wait for output scan",
+    "HDMI serialization",
+    "monitor display response"
+  ],
+  "core_hz": 125000000,
+  "frames": [
+    {
+      "frame_id": 1,
+      "mode": "corrected",
+      "commit_core_cycle": 7292160,
+      "release_core_cycle": 9051220,
+      "elapsed_core_cycles": 1759060,
+      "elapsed_ms": 14.07248
+    },
+    {
+      "frame_id": 2,
+      "mode": "raw",
+      "commit_core_cycle": 14584264,
+      "release_core_cycle": 16017099,
+      "elapsed_core_cycles": 1432835,
+      "elapsed_ms": 11.462679999999999
+    },
+    {
+      "frame_id": 3,
+      "mode": "corrected",
+      "commit_core_cycle": 21876368,
+      "release_core_cycle": 23639506,
+      "elapsed_core_cycles": 1763138,
+      "elapsed_ms": 14.105104
+    }
+  ],
+  "corrected_samples": 2,
+  "corrected_mean_ms": 14.088792,
+  "corrected_min_ms": 14.07248,
+  "corrected_max_ms": 14.105104,
+  "display_latency_available_from_logged_event_timestamps": false,
+  "display_latency_limitation": "events.csv logs only commit/release; SYSTEM720_SCAN logs frame ID and pixel count without an event timestamp; scan-pixels.mem stores ID and pixel value only. No precise display-delay result is claimed.",
+  "model": {
+    "camera_byte_clock_hz": 48000000,
+    "camera_line_byte_clocks": 3784,
+    "camera_frame_lines": 740,
+    "camera_frame_period_ms": 58.336666666666666,
+    "hdmi_pixel_clock_hz": 74250000,
+    "hdmi_ht": 2200,
+    "hdmi_vt": 1125,
+    "hdmi_nominal_scan_hz": 30.0,
+    "ddr": "Behavioral external DDR UI with deterministic AW/W/AR/R backpressure; no physical DDR IP executed",
+    "awready": "reset_n && wleft == 0 && ticks % 19 >= 4",
+    "wready": "reset_n && wleft > 0 && ticks % 7 != 0",
+    "arready": "reset_n && rleft == 0 && ticks % 13 >= 3",
+    "rvalid": "reset_n && rleft > 0 && ticks % 6 != 0"
+  },
+  "report_use": "About 14.09 ms in the saved full-resolution RTL simulation, mean of two corrected frames, from accepted complete source frame in DDR to result writeback complete. Do not label as board end-to-end latency or compare directly with 1080p measured samples.",
+  "sources": [
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\_submit\\distortion\\results\\camera720-view-toggle-live-20261102-a\\simulation\\camera720-view-toggle-simulation.json",
+      "sha256": "22e0a660c9424af1ffdf291563e68fc384ec3302cf66ea8bbfc911f8565bfb1f"
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\_submit\\distortion\\results\\camera720-view-toggle-live-20261102-a\\simulation\\events.csv",
+      "sha256": "7b87f4675ac63019d4d7eb8d5365837a6d3c1f361b53f2bfa243311440d52d7e"
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\_submit\\distortion\\results\\camera720-view-toggle-live-20261102-a\\simulation\\summary.json",
+      "sha256": "00ed7784734bd5f9d9bb2f0f9aa95233bba8c0aa4521cc7f92faf7e995dc3cb4"
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\_submit\\distortion\\results\\camera720-view-toggle-live-20261102-a\\simulation\\simulation.log",
+      "sha256": "649796c9ef111de6635993733b0b65fcfb2f64a34d13c4534b751d0c443efe2d"
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\_submit\\distortion\\results\\camera720-view-toggle-live-20261102-a\\source\\tests\\tb_camera720_view_toggle.sv",
+      "sha256": "48e20c6a72e0f6e0c0d43db4cee7ee8f02b5b7db996128c7f83438274ee3d9ed"
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\_submit\\distortion\\results\\camera720-view-toggle-live-20261102-a\\source\\tools\\run_camera720_view_toggle_sim.py",
+      "sha256": "8ef54c7433442dfb3ad4e53f5ab177249c06687e8521071a792b841f5467cdf4"
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\_submit\\delivery\\20261104-camera720p15\\source\\compiled\\rtl\\experimental\\camera_vga_video_system.v",
+      "sha256": "5b45cabe9cf50f32aea2d6496cd56bec7c9e3cc755a3efa35afe8ba14b8f1d61"
+    },
+    {
+      "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\_submit\\delivery\\20261104-camera720p15\\source\\compiled\\rtl\\experimental\\lens1080_bank_core.v",
+      "sha256": "ed14a1266b39b048dcdd2687f3d4fdef13c502ce2858b7483c93d5397a22092c"
+    }
+  ]
+}
