@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "artifact": "OP_CAMERA_KEY1_RAW_CORR_SOURCE_DELTA",
+  "source_only": true,
+  "base_commit": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+  "parent_source_commit": "f8f58a161111ecbac3400d0629a5064d43c405d8",
+  "parent_diagnostic_bit_sha256": "a266044d4da4b8883fc7fa1e9250f62aee37bbf27df349354b2a11250129c547",
+  "top_binding": {
+    "parent_native_sha256": "616b2abb9c9cc2a4b1f620fb0685615bc0d0f3e6499d65159c7d057aa1c92f08",
+    "parent_portable_sha256": "70d62863088ff6d74c2530aa20218bf8d3dc3fc2cff2e38edbba36468cdf2714",
+    "key1_native_sha256": "f43cbeec84e28ddcd6177ab1ab2c7e7450bcf03c0b703c0bc7085069af1ad332",
+    "key1_portable_sha256": "8af91bbdc6f2f791ce97e663f4566d9145d59c5b8c54dbdab64a11c49e4b37df",
+    "export_transform": "Two include root paths only; native functional source unchanged"
+  },
+  "peer_control": {
+    "commit": "b3b296979c4bc7c6e2c4ebef1e61879611172e7f",
+    "git_blob": "49c5c8e36cf397a2d25b210ecc83c94ada6b46f5",
+    "sha256": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255"
+  },
+  "behavior": {
+    "default_view": "CORR",
+    "input_switch_type": "same_HDMI_RAW_vs_CORR",
+    "pin": "C23",
+    "active_low": true,
+    "debounce_cycles_at_125MHz": 2500000,
+    "frame_mode_snapshot": "source_valid && source_ready",
+    "led6": "requested_CORR_not_presented_mode",
+    "raw_path": "identity coordinates through existing RGB565 sampler/result DDR/CRC/scan",
+    "gamma_enabled": false
+  },
+  "validation": {
+    "portable_patch_apply_check": true,
+    "portable_patch_applied_bytes_equal": true,
+    "official_xsim_minimal_status": "PASS_REAL_XSIM_MINIMAL_KEY1",
+    "phase_exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "inputs_unchanged": true,
+    "active_simulator_processes_after": 0,
+    "markers": [
+      "CAMERA720_VIEW_CONTROL_PASS debounce=4,1 bounce hold reset pulse boundary",
+      "PASS_KEY1_NATIVE_RAW_EDGES queries=32 outputs=32 outstall=15 ARstall=16 CORR_RAW_frame_latch=PASS reset=PASS",
+      "PASS_KEY1_BANK_BOUNDARIES wait-ready/busy/pending/old-scan/grant-backpressure/repeat/reset, paramID+mode+CRC+lease stable"
+    ],
+    "scope": "Peer button bench,32 native RAW edge queries and real bank-controller boundary test with substituted engine completion; no full-frame or board claim",
+    "initial_short_compile_failure_preserved": true,
+    "initial_failure_correction": "Runner include search path only; RTL unchanged"
+  },
+  "native_build_completed": false,
+  "STA_completed": false,
+  "timing_closed": false,
+  "bit_generated": false,
+  "board_tested": false,
+  "parent_STA_not_inherited": true,
+  "files": {
+    "constraints/KEY1_ONLY.fdc": {
+      "bytes": 322,
+      "sha256": "b7d742a9bf5f7fe84755260388ac8aef444257d886a56292811c677f87ecd248"
+    },
+    "constraints/KEY1_ONLY.pcf": {
+      "bytes": 74,
+      "sha256": "b79f69625a7dee17cb133eb645c4a3beb8c48a0716f950fa7b35da79bcb66fc9"
+    },
+    "integration/KEY1_PORTABLE.patch": {
+      "bytes": 7143,
+      "sha256": "5aad12368eecdc6fdaf8d7b85ce6d34ca3fab563c390854d8cb9c3743e636e45"
+    },
+    "native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v": {
+      "bytes": 20035,
+      "sha256": "8af91bbdc6f2f791ce97e663f4566d9145d59c5b8c54dbdab64a11c49e4b37df"
+    },
+    "native/source/rtl/experimental/camera720_view_control.v": {
+      "bytes": 1759,
+      "sha256": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255"
+    },
+    "README.md": {
+      "bytes": 4620,
+      "sha256": "7172f46a1a75077923dc0b256ab7ac1c87f7655f2c13cceedbe544bd5f095d82"
+    }
+  }
+}

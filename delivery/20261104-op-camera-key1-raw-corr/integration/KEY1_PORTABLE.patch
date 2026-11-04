@@ -1,0 +1,121 @@
+--- a/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v
++++ b/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v
+@@ -7,7 +7,7 @@
+ module board1080_top #(parameter STARTUP_DIAG_ONLY=0,CACHE_PROFILE=6,HDMI_FISHEYE_PROFILE=1,TILE8_GROUP_WIDTH=64,
+     parameter DIAGNOSTIC_BLANKING_REPORT_ONLY=1,INPUT_RUNTIME_DIAG_ONLY=1,
+     parameter INPUT_PCLK_WINDOW_MIN=147000,INPUT_PCLK_WINDOW_MAX=150000)(
+-    input clk_27m,clk_p,clk_n,reset_n,
++    input clk_27m,clk_p,clk_n,reset_n,key1_n,
+     input telemetry_rx,output telemetry_tx, // logic ports only: V1.4 pin binding pending
+     input pixclk_in,vs_in,hs_in,de_in,input [7:0] r_in,g_in,b_in,
+     output pix_clk,hs_out,vs_out,de_out,output [7:0] r_out,g_out,b_out,
+@@ -83,21 +83,21 @@
+     always @(posedge clk_27m or negedge global_reset_n)
+         if(!global_reset_n)ref_reset<=0;else ref_reset<={ref_reset[0],1'b1};
+     (* async_reg="true" *) reg [1:0] cfg_lock_ref,video_lock_ref,rx_done_ref,tx_done_ref,ddr_ready_ref;
+-    (* async_reg="true" *) reg [1:0] system_failed_ref,processed_bit_ref;
+-    wire system_failed;wire [7:0] system_fault;
++    (* async_reg="true" *) reg [1:0] system_failed_ref,corrected_requested_ref;
++    wire system_failed;wire [7:0] system_fault;wire correction_enable;
+     wire [31:0] captured_frames,processed_frames,presented_frames,underflows;
+     always @(posedge clk_27m or negedge global_reset_n)begin
+         if(!global_reset_n)begin
+             cfg_lock_ref<=0;video_lock_ref<=0;rx_done_ref<=0;tx_done_ref<=0;ddr_ready_ref<=0;
+-            system_failed_ref<=0;processed_bit_ref<=0;
++            system_failed_ref<=0;corrected_requested_ref<=0;
+         end else if(!ref_reset[1])begin
+             cfg_lock_ref<=0;video_lock_ref<=0;rx_done_ref<=0;tx_done_ref<=0;ddr_ready_ref<=0;
+-            system_failed_ref<=0;processed_bit_ref<=0;
++            system_failed_ref<=0;corrected_requested_ref<=0;
+         end else begin
+             cfg_lock_ref<={cfg_lock_ref[0],cfg_lock};video_lock_ref<={video_lock_ref[0],video_lock};
+             rx_done_ref<={rx_done_ref[0],rx_init_done};tx_done_ref<={tx_done_ref[0],tx_init_done};
+             ddr_ready_ref<={ddr_ready_ref[0],ddr_init_done && ddr_pll_lock};
+-            system_failed_ref<={system_failed_ref[0],system_failed};processed_bit_ref<={processed_bit_ref[0],processed_frames[4]};
++            system_failed_ref<={system_failed_ref[0],system_failed};corrected_requested_ref<={corrected_requested_ref[0],correction_enable};
+         end
+     end
+     `include "source/rtl/hdmi_rx_sample_bank.vh"
+@@ -178,13 +178,15 @@
+     // the remainder of this common-reset epoch; the synchronized predicate
+     // reaches the consumer after the held code has settled.
+     `include "source/build/offline-20261024/boardtop-penn-prep-20261029-a/board1080-penn.vh"
+-    wire correction_enable,system_source_commit;
+-    // The actual bank commit snapshots the old mode; its registered
+-    // public source_commit toggles the selector at the next core edge.
+-    // All control is core-domain; failure holds mode and preserves drain.
+-    frame_ab_control #(.FIXED_MODE(1)) frame_mode_control(.clk(core_clk),.rst_n(core_reset[1]),
+-        .commit_pulse(system_source_commit),.failed(system_failed || board_failed_core[1]),
+-        .correction_enable(correction_enable));
++    wire system_source_commit;
++    // KEY1 requests RAW/CORR in the existing core domain. The peer-proven
++    // controller qualifies release and press for20ms and emits once per press.
++    // bank_core snapshots this bit on source_valid&&source_ready; the existing
++    // engine identity path still writes a complete result bank with its CRC.
++    // Source/result leases and scan publication remain unchanged.
++    camera720_view_control #(.DEBOUNCE_CYCLES(2500000)) frame_mode_control(
++        .clk(core_clk),.rst_n(core_reset[1]),.key1_n(key1_n),
++        .corrected_requested(correction_enable),.toggle_pulse());
+     // Temporary passive startup diagnostic. Existing system resets and RX remain exact.
+     wire normal_telemetry_tx;
+     // Passive runtime evidence: same reference edge as first qualification loss.
+@@ -252,10 +254,11 @@
+         .failed(system_failed),.fault(system_fault),.captured_frames(captured_frames),
+         .processed_frames(processed_frames),.presented_frames(presented_frames),.underflows(underflows));
+     assign {r_out,g_out,b_out}=pixel_rgb;
++    // LED6 is the requested view:1=CORR,0=RAW; complete frames take effect later.
+     assign led=DIAGNOSTIC_BLANKING_REPORT_ONLY ?
+-        {board_failed || system_failed_ref[1] || hard_overlap_fault_ref,processed_bit_ref[1],
++        {board_failed || system_failed_ref[1] || hard_overlap_fault_ref,corrected_requested_ref[1],
+          report_first_timing_code[1],report_first_timing_code[0],
+          tx_done_ref[1],rx_done_ref[1],ddr_ready_ref[1],heartbeat}:
+-        {board_failed || system_failed_ref[1],processed_bit_ref[1],pipeline_release,input_qualified,
++        {board_failed || system_failed_ref[1],corrected_requested_ref[1],pipeline_release,input_qualified,
+          tx_done_ref[1],rx_done_ref[1],ddr_ready_ref[1],heartbeat};
+ endmodule
+--- /dev/null
++++ b/native/source/rtl/experimental/camera720_view_control.v
+@@ -0,0 +1,43 @@
++`timescale 1ns/1ps
++// KEY1: active low, synchronized and debounced in the 125 MHz core domain.
++// This is a requested view only. The mapper latches the selected parameters
++// on its existing frame handshake, so a button press cannot split a frame.
++module camera720_view_control #(
++    parameter integer DEBOUNCE_CYCLES=2500000 // 20 ms at 125 MHz; >= 1
++)(
++    input clk,rst_n,key1_n,
++    output reg corrected_requested,
++    output reg toggle_pulse
++);
++    localparam integer COUNT_WIDTH=(DEBOUNCE_CYCLES>1) ? $clog2(DEBOUNCE_CYCLES):1;
++    localparam [COUNT_WIDTH-1:0] LAST_COUNT=DEBOUNCE_CYCLES-1;
++    // Reset to pressed: even DEBOUNCE_CYCLES=1 must observe a real release
++    // through both synchronizer stages before a held-at-reset key can trigger.
++    (* async_reg="true" *) reg [1:0] key_sync=0;
++    reg armed;
++    reg [COUNT_WIDTH-1:0] stable_count;
++    always @(posedge clk) begin
++        if(!rst_n) begin
++            key_sync<=0;
++            armed<=0;
++            stable_count<=0;
++            corrected_requested<=1;
++            toggle_pulse<=0;
++        end else begin
++            key_sync<={key_sync[0],key1_n};
++            toggle_pulse<=0;
++            // While disarmed, count a continuous release. While armed,
++            // count a continuous press. Every opposite sample restarts it.
++            if(key_sync[1]==!armed) begin
++                if(stable_count==LAST_COUNT) begin
++                    stable_count<=0;
++                    armed<=!armed;
++                    if(armed) begin
++                        corrected_requested<=!corrected_requested;
++                        toggle_pulse<=1;
++                    end
++                end else stable_count<=stable_count+1'b1;
++            end else stable_count<=0;
++        end
++    end
++endmodule
