@@ -2,11 +2,13 @@
 import importlib.util
 import json
 import hashlib
+import gzip
 from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 
 FILE = Path(__file__).resolve().parents[1] / "package_submission.py"
 SPEC = importlib.util.spec_from_file_location("package_submission", FILE)
@@ -15,15 +17,47 @@ SPEC.loader.exec_module(PACKAGE)
 
 
 class SubmissionPackageTests(unittest.TestCase):
-    def test_current_archive_is_kept_as_a_whole(self):
-        for name in ("a.json", "evidence/test.raw.bin", "evidence/test.log", "old.zip"):
-            self.assertTrue(PACKAGE.select_file(PACKAGE.CURRENT_PACKAGE + name)[0])
+    def test_only_two_selected_deliveries_are_kept(self):
+        for prefix in (PACKAGE.CAMERA720_DELIVERY, PACKAGE.DIRECT_SUBMISSION, PACKAGE.DIRECT_REPORTS):
+            for name in ("source/platform/ddr.vp", "source/board/route.rcf", "reports/fast.rtr.gz"):
+                self.assertTrue(PACKAGE.select_file(prefix + name)[0])
+        for name in ("delivery/20261103-hdmi-camera-fisheye-tile8/verify_source.py",
+                     "delivery/20261103-hdmi-camera-fisheye-c/release.zip",
+                     "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/verify_stage_d_portable.py",
+                     "distortion/results/hdmi-camera-fisheye-tile8-20261103-a/evidence/next-d/df8/old.sbit"):
+            self.assertFalse(PACKAGE.select_file(name)[0], name)
 
-    def test_code_is_not_removed_with_historical_data(self):
+    def test_720p_primary_archive_keeps_bitstream_and_external_summary(self):
+        for name in ("candidate/camera720_view_toggle_top.sbit.gz", "candidate/camera720_view_toggle_top.adf.gz",
+                     "manifest.json", "uart/live-a/session.json", "native/build-a/stdout.log.gz"):
+            self.assertTrue(PACKAGE.select_file(PACKAGE.CAMERA720_PACKAGE + name)[0], name)
+        self.assertTrue(PACKAGE.select_file(PACKAGE.CAMERA720_SUMMARY)[0])
+        self.assertFalse(PACKAGE.select_file(PACKAGE.CAMERA720_PACKAGE.rstrip('/')+'-other/candidate/a.sbit.gz')[0])
+
+    def test_primary_source_and_timing_gzip_reports_are_retained(self):
+        for name in (PACKAGE.CAMERA720_DELIVERY + 'reports/slow.rtr.gz',
+                     PACKAGE.CAMERA720_DELIVERY + 'bitstreams/camera720_view_toggle_top.sbit',
+                     PACKAGE.CAMERA720_DELIVERY + 'source/compiled/board/top.v',
+                     PACKAGE.DIRECT_REPORTS + 'reports/fast.rtr.gz'):
+            self.assertTrue(PACKAGE.select_file(name)[0], name)
+        text = PACKAGE.startup('test-commit')
+        self.assertIn('1280×720', text)
+        self.assertIn('1920×1080', text)
+        self.assertIn('verify_bundle.py', text)
+        self.assertIn(PACKAGE.CAMERA720_BIT_SHA, text)
+        self.assertIn(PACKAGE.DIRECT_BIT_SHA, text)
+        self.assertIn(PACKAGE.CAMERA720_DELIVERY + 'verify_selected.py', text)
+        self.assertIn(PACKAGE.DIRECT_SUBMISSION + 'verify_selected.py', text)
+        self.assertNotIn('verify_stage_d_portable.py', text)
+        self.assertNotIn('project.py', text)
+
+    def test_other_route_code_is_audited_without_claiming_full_repository(self):
         for name in ("distortion/results/old/input.v", "distortion/captures/calibrate.py",
                      "vendor/board/example/constraints.fdc", "handoff/baseline/fixture.mem",
                      "delivery/old/evidence/rtl/old.sv", "distortion/platform/ip/model.vp"):
-            self.assertTrue(PACKAGE.select_file(name)[0], name)
+            keep, reason = PACKAGE.select_file(name)
+            self.assertFalse(keep, name)
+            self.assertIn('other-route/historical code', reason)
         self.assertFalse(PACKAGE.select_file("distortion/results/old/route.adf")[0])
         self.assertFalse(PACKAGE.select_file("distortion/captures/old/image.png")[0])
 
@@ -32,11 +66,49 @@ class SubmissionPackageTests(unittest.TestCase):
         self.assertFalse(PACKAGE.select_file(name)[0])
         self.assertTrue(PACKAGE.select_file(name, {name})[0])
 
-    def test_expanded_delivery_is_kept_but_nested_archive_is_listed(self):
-        self.assertTrue(PACKAGE.select_file("delivery/old/evidence/huge.json")[0])
+    def test_report_support_is_kept_and_old_deliveries_are_excluded(self):
+        for name in ('submission/report/report.pdf', 'submission/evidence/original.png',
+                     'distortion/tools/calibrate_kb_tangential.py', 'tools/package_submission.py'):
+            self.assertTrue(PACKAGE.select_file(name)[0], name)
+        self.assertFalse(PACKAGE.select_file("delivery/old/evidence/huge.json")[0])
         self.assertFalse(PACKAGE.select_file("delivery/old/release.zip")[0])
         self.assertFalse(PACKAGE.select_file(".git/config")[0])
         self.assertFalse(PACKAGE.select_file("distortion/__pycache__/a.pyc")[0])
+
+    def test_only_selected_bitstream_identities_are_allowed(self):
+        raw720, raw1080 = b'720 bit', b'1080 bit'
+        with patch.object(PACKAGE, 'CAMERA720_BIT_SHA', hashlib.sha256(raw720).hexdigest()), \
+             patch.object(PACKAGE, 'DIRECT_BIT_SHA', hashlib.sha256(raw1080).hexdigest()):
+            PACKAGE.check_bitstream(PACKAGE.CAMERA720_BIT_GZ, gzip.compress(raw720))
+            PACKAGE.check_bitstream(PACKAGE.CAMERA720_DELIVERY + 'bitstream/test.sbit', raw720)
+            PACKAGE.check_bitstream(PACKAGE.DIRECT_SUBMISSION + 'bitstream/test.sbit', raw1080)
+            for name, data in ((PACKAGE.DIRECT_SUBMISSION + 'bitstream/old.sbit', raw720),
+                               (PACKAGE.CAMERA720_DELIVERY + 'old.bit.gz', gzip.compress(raw1080)),
+                               ('submission/third.sbit', raw1080)):
+                with self.assertRaises(ValueError, msg=name):
+                    PACKAGE.check_bitstream(name, data)
+
+    def test_manifest_inputs_are_bound_and_cannot_escape(self):
+        name = 'delivery/test/source-manifest.json'
+        original = b'module example; endmodule'
+        digest = hashlib.sha256(original).hexdigest()
+        manifest = {'schema': 'test-v1', 'files': [{'path': 'source/top.v', 'bytes': len(original), 'sha256': digest}]}
+        class Reader:
+            def read(self, oid):
+                return json.dumps(manifest).encode()
+        entries = {name: {'GitBlob': 'manifest'}, 'delivery/test/source/top.v': {'Bytes': len(original)}}
+        protected, hashes = set(), {}
+        PACKAGE.bound_manifest(Reader(), entries, name, 'test-v1', protected, hashes, 1)
+        self.assertEqual(hashes['delivery/test/source/top.v'], digest)
+        self.assertIn(name, protected)
+        for relative in ('../outside.v', '/absolute.v', 'missing.v'):
+            manifest['files'][0]['path'] = relative
+            with self.assertRaises(ValueError, msg=relative):
+                PACKAGE.bound_manifest(Reader(), entries, name, 'test-v1', set(), {})
+        manifest['files'][0]['path'] = 'source/top.v'
+        manifest['files'][0]['bytes'] += 1
+        with self.assertRaisesRegex(ValueError, 'size differs'):
+            PACKAGE.bound_manifest(Reader(), entries, name, 'test-v1', set(), {})
 
     def test_paths_cannot_escape_destination(self):
         for name in ("../escape", "/escape", "a/../../escape", "C:/escape", "a\\escape", "a\nname"):

@@ -1,0 +1,232 @@
+
+----------------------------------------------------------------------------------------------------
+| Tool Version : Fabric Compiler (version 2023.2-SP3 <build 154097>)
+| Date         : Mon Nov  2 14:12:54 2026
+| Design       : camera720_view_toggle_top
+| Device       : PG2L100H
+| Speed Grade  : -6
+| Package      : FBG676
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+| Timing Models: Production
+| Tcl Command  : report_timing -force_to_run -input_db_file {D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/distortion/work/camera720-view-toggle/final-export-a/input.adf} -nworst 4 -max_path 1000 
+----------------------------------------------------------------------------------------------------
+
+Timing analysis mode : multi corner
+
+ Clock Summary:                                                                                                                                                                                                     
+********************************************************************************************************************************************************************************************************************
+                                                                                      Clock   Non-clock                                                                                                             
+ Clock                    Period       Waveform            Type                       Loads       Loads  Sources                                                                                                    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ board27                  37.0370      {0.0000 18.5180}    Declared                     704           1  {clk_27m}                                                                                                  
+   pixel_clk              13.4680      {0.0000 6.7340}     Generated (board27)          658           1  {video_pll/u_gpll/gpll_inst/CLKOUT0}                                                                       
+ ref_clk                  8.0000       {0.0000 4.0000}     Declared                       0           4  {clk_p}                                                                                                    
+   rst_clk                8.0000       {0.0000 4.0000}     Generated (ref_clk)          120           0  {u_ddr3_test_h/u_ddrphy_top/rst_clk_gpll/u_gpll/gpll_inst/CLKOUT0}                                         
+   ddrphy_sysclk          8.0000       {0.0000 4.0000}     Generated (ref_clk)        14690           1  {u_ddr3_test_h/u_ddrphy_top/ddrphy_gpll/u_gpll/gpll_inst/CLKOUT0}                                          
+   phy_dq_clk_0           1.0000       {0.0000 0.5000}     Generated (ref_clk)           35           1  {u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[0].ddrphy_ppll/u_ppll/ppll_inst/CLKOUTPHY}         
+     phy_dq_sysclk_0      8.0000       {2.0000 6.0000}     Generated (phy_dq_clk_0)      35           0  {u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[0].u_ddrphy_ioclkdiv/ddrphy_ioclk_div_inst/CLKOUT} 
+   phy_dq_clk_1           1.0000       {0.0000 0.5000}     Generated (ref_clk)           84           1  {u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[1].ddrphy_ppll/u_ppll/ppll_inst/CLKOUTPHY}         
+     phy_dq_sysclk_1      8.0000       {2.0000 6.0000}     Generated (phy_dq_clk_1)      84           0  {u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_bank[1].u_ddrphy_ioclkdiv/ddrphy_ioclk_div_inst/CLKOUT} 
+ camera_pclk              20.8330      {0.0000 10.4160}    Declared                     678           0  {cam_pclk}                                                                                                 
+====================================================================================================================================================================================================================
+
+ Clock Groups:                                                                                      
+****************************************************************************************************
+ Clock Group                   Group Type                 Clocks                                    
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+
+ Performance Summary:                                                                               
+****************************************************************************************************
+                              Requested       Estimated      Requested      Estimated               
+ Clock                        Frequency       Frequency      Period         Period             Slack
+----------------------------------------------------------------------------------------------------
+ board27                    27.0000 MHz    135.8510 MHz        37.0370         7.3610         29.676
+ pixel_clk                  74.2500 MHz     81.3206 MHz        13.4680        12.2970          1.171
+ rst_clk                   125.0000 MHz    276.2431 MHz         8.0000         3.6200          4.380
+ ddrphy_sysclk             125.0000 MHz    132.0132 MHz         8.0000         7.5750          0.425
+ camera_pclk                48.0008 MHz     67.1772 MHz        20.8330        14.8860          5.947
+====================================================================================================
+
+Design Summary : All Constraints Met.
+
+Setup Summary(Slow Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ board27                board27                     29.676       0.000              0           2443
+ camera_pclk            board27                      4.487       0.000              0            133
+ ddrphy_sysclk          board27                      5.507       0.000              0              4
+ pixel_clk              pixel_clk                    1.171       0.000              0           2762
+ ddrphy_sysclk          pixel_clk                    0.249       0.000              0            723
+ ddrphy_sysclk          rst_clk                      3.920       0.000              0              5
+ rst_clk                rst_clk                      4.380       0.000              0            417
+ phy_dq_sysclk_0        rst_clk                      5.726       0.000              0              1
+ ddrphy_sysclk          ddrphy_sysclk                0.425       0.000              0          47835
+ board27                ddrphy_sysclk                3.565       0.000              0            209
+ pixel_clk              ddrphy_sysclk                2.721       0.000              0            212
+ phy_dq_sysclk_1        ddrphy_sysclk                3.311       0.000              0            260
+ rst_clk                ddrphy_sysclk                3.204       0.000              0              3
+ camera_pclk            ddrphy_sysclk                5.390       0.000              0            111
+ phy_dq_sysclk_0        ddrphy_sysclk                4.922       0.000              0              1
+ ddrphy_sysclk          phy_dq_sysclk_0              1.009       0.000              0            196
+ ddrphy_sysclk          phy_dq_sysclk_1              0.637       0.000              0            420
+ camera_pclk            camera_pclk                  5.947       0.000              0           3156
+ ddrphy_sysclk          camera_pclk                  4.534       0.000              0             44
+ board27                camera_pclk                  7.329       0.000              0              1
+====================================================================================================
+
+Hold Summary(Slow Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ board27                board27                      0.134       0.000              0           2443
+ pixel_clk              pixel_clk                    0.223       0.000              0           2762
+ ddrphy_sysclk          rst_clk                      0.261       0.000              0              5
+ rst_clk                rst_clk                      0.219       0.000              0            417
+ phy_dq_sysclk_0        rst_clk                      1.035       0.000              0              1
+ ddrphy_sysclk          ddrphy_sysclk                0.059       0.000              0          47835
+ phy_dq_sysclk_1        ddrphy_sysclk                0.335       0.000              0            260
+ rst_clk                ddrphy_sysclk                1.025       0.000              0              3
+ phy_dq_sysclk_0        ddrphy_sysclk                0.348       0.000              0              1
+ ddrphy_sysclk          phy_dq_sysclk_0              0.296       0.000              0            196
+ ddrphy_sysclk          phy_dq_sysclk_1              0.297       0.000              0            420
+ camera_pclk            camera_pclk                  0.088       0.000              0           3156
+====================================================================================================
+
+Recovery Summary(Slow Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ board27                board27                     32.602       0.000              0            193
+ board27                pixel_clk                    5.926       0.000              0              3
+ rst_clk                rst_clk                      4.745       0.000              0             99
+ ddrphy_sysclk          ddrphy_sysclk                1.164       0.000              0           3468
+ board27                ddrphy_sysclk                3.750       0.000              0            472
+ rst_clk                ddrphy_sysclk                3.516       0.000              0              3
+ board27                camera_pclk                  3.574       0.000              0            508
+====================================================================================================
+
+Removal Summary(Slow Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ board27                board27                      1.025       0.000              0            193
+ rst_clk                rst_clk                      0.408       0.000              0             99
+ ddrphy_sysclk          ddrphy_sysclk                0.353       0.000              0           3468
+ rst_clk                ddrphy_sysclk                1.017       0.000              0              3
+====================================================================================================
+
+Minimum Pulse Width Summary(Slow Corner):
+****************************************************************************************************
+                                                                         WPWS Failing     WPWS Total
+ Clock                                            WPWS(ns)    TPWS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ board27                                            18.318       0.000              0            475
+ pixel_clk                                           5.774       0.000              0            572
+ rst_clk                                             3.800       0.000              0            100
+ ddrphy_sysclk                                       2.655       0.000              0          13520
+ phy_dq_clk_0                                        0.035       0.000              0             35
+ phy_dq_sysclk_0                                     1.850       0.000              0             35
+ phy_dq_clk_1                                        0.035       0.000              0             84
+ phy_dq_sysclk_1                                     2.400       0.000              0             84
+ camera_pclk                                         9.456       0.000              0            527
+====================================================================================================
+
+Setup Summary(Fast Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ board27                board27                     32.633       0.000              0           2443
+ camera_pclk            board27                      5.781       0.000              0            133
+ ddrphy_sysclk          board27                      6.506       0.000              0              4
+ pixel_clk              pixel_clk                    5.895       0.000              0           2762
+ ddrphy_sysclk          pixel_clk                    3.343       0.000              0            723
+ ddrphy_sysclk          rst_clk                      4.688       0.000              0              5
+ rst_clk                rst_clk                      5.728       0.000              0            417
+ phy_dq_sysclk_0        rst_clk                      5.905       0.000              0              1
+ ddrphy_sysclk          ddrphy_sysclk                3.100       0.000              0          47835
+ board27                ddrphy_sysclk                5.281       0.000              0            209
+ pixel_clk              ddrphy_sysclk                4.798       0.000              0            212
+ phy_dq_sysclk_1        ddrphy_sysclk                4.884       0.000              0            260
+ rst_clk                ddrphy_sysclk                5.616       0.000              0              3
+ camera_pclk            ddrphy_sysclk                6.449       0.000              0            111
+ phy_dq_sysclk_0        ddrphy_sysclk                5.867       0.000              0              1
+ ddrphy_sysclk          phy_dq_sysclk_0              3.479       0.000              0            196
+ ddrphy_sysclk          phy_dq_sysclk_1              3.161       0.000              0            420
+ camera_pclk            camera_pclk                  9.432       0.000              0           3156
+ ddrphy_sysclk          camera_pclk                  5.898       0.000              0             44
+ board27                camera_pclk                  7.616       0.000              0              1
+====================================================================================================
+
+Hold Summary(Fast Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ board27                board27                      0.088       0.000              0           2443
+ pixel_clk              pixel_clk                    0.149       0.000              0           2762
+ ddrphy_sysclk          rst_clk                      0.632       0.000              0              5
+ rst_clk                rst_clk                      0.164       0.000              0            417
+ phy_dq_sysclk_0        rst_clk                      1.194       0.000              0              1
+ ddrphy_sysclk          ddrphy_sysclk                0.044       0.000              0          47835
+ phy_dq_sysclk_1        ddrphy_sysclk                0.022       0.000              0            260
+ rst_clk                ddrphy_sysclk                0.035       0.000              0              3
+ phy_dq_sysclk_0        ddrphy_sysclk                0.047       0.000              0              1
+ ddrphy_sysclk          phy_dq_sysclk_0              0.020       0.000              0            196
+ ddrphy_sysclk          phy_dq_sysclk_1              0.020       0.000              0            420
+ camera_pclk            camera_pclk                  0.053       0.000              0           3156
+====================================================================================================
+
+Recovery Summary(Fast Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ board27                board27                     34.302       0.000              0            193
+ board27                pixel_clk                    6.750       0.000              0              3
+ rst_clk                rst_clk                      5.967       0.000              0             99
+ ddrphy_sysclk          ddrphy_sysclk                3.522       0.000              0           3468
+ board27                ddrphy_sysclk                5.319       0.000              0            472
+ rst_clk                ddrphy_sysclk                5.503       0.000              0              3
+ board27                camera_pclk                  5.277       0.000              0            508
+====================================================================================================
+
+Removal Summary(Fast Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ board27                board27                      0.728       0.000              0            193
+ rst_clk                rst_clk                      0.284       0.000              0             99
+ ddrphy_sysclk          ddrphy_sysclk                0.249       0.000              0           3468
+ rst_clk                ddrphy_sysclk                0.040       0.000              0              3
+====================================================================================================
+
+Minimum Pulse Width Summary(Fast Corner):
+****************************************************************************************************
+                                                                         WPWS Failing     WPWS Total
+ Clock                                            WPWS(ns)    TPWS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ board27                                            18.318       0.000              0            475
+ pixel_clk                                           6.164       0.000              0            572
+ rst_clk                                             3.800       0.000              0            100
+ ddrphy_sysclk                                       3.202       0.000              0          13520
+ phy_dq_clk_0                                        0.035       0.000              0             35
+ phy_dq_sysclk_0                                     1.850       0.000              0             35
+ phy_dq_clk_1                                        0.035       0.000              0             84
+ phy_dq_sysclk_1                                     2.400       0.000              0             84
+ camera_pclk                                         9.846       0.000              0            527
+====================================================================================================
+
+Slow Corner
+****************************************************************************************************
+====================================================================================================
+
+Startpoint  : camera_configuration/initializer/action_index[8]/opit_0_AQ/CLK

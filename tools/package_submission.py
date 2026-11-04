@@ -1,4 +1,4 @@
-"""Export a source-complete competition package from an immutable Git commit.
+"""Export two selected, source-complete implementations from a Git commit.
 
 No checkout, compression, EDA, hardware access, or modification of frozen files.
 Git blob bytes are exported directly so Windows checkout conversion cannot alter
@@ -11,6 +11,7 @@ from collections import Counter
 from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
+import gzip
 import json
 import os
 from pathlib import Path, PurePosixPath
@@ -18,10 +19,19 @@ import subprocess
 import sys
 
 
-CURRENT_PACKAGE = "distortion/results/hdmi-camera-fisheye-tile8-20261103-a/"
-DIRECT_PLAN = CURRENT_PACKAGE + "evidence/next-d/df8/files/0014/plan.json"
-DIRECT_BIT = CURRENT_PACKAGE + "evidence/next-d/df8/files/0037/hdmi_camera_fisheye_top.sbit"
 DIRECT_BIT_SHA = "aa21991374fbeb4a6733741095f38e27336f1e47dd67b963feb243428a5b353b"
+CAMERA720_PACKAGE = "distortion/results/camera720-view-toggle-live-20261102-a/"
+CAMERA720_SUMMARY = CAMERA720_PACKAGE.rstrip("/") + ".json"
+CAMERA720_BIT_GZ = CAMERA720_PACKAGE + "candidate/camera720_view_toggle_top.sbit.gz"
+CAMERA720_BIT_SHA = "0ca6d19bf074c73cba0346a22e54ba3afb99a595728e6420a1cbb767b963dfe5"
+CAMERA720_DELIVERY = "delivery/20261104-camera720p15/"
+DIRECT_REPORTS = "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/reports/"
+DIRECT_SUBMISSION = "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/"
+SUPPORT_FILES = {
+    "tools/package_submission.py", "tools/SUBMISSION_PACKAGE.md", "tools/tests/test_package_submission.py",
+    "distortion/tools/calibrate_kb_tangential.py", "distortion/tools/compare_fisheye_projections.py",
+    "requirements-team.txt", "handoff/CAMERA_720P_VIEW_TOGGLE_20261102.md",
+}
 CODE_EXTENSIONS = {
     ".v", ".vh", ".vp", ".sv", ".svh", ".vhd", ".vhdl", ".py", ".pyi",
     ".tcl", ".pcf", ".fdc", ".rcf", ".idf", ".sdc", ".xdc", ".pdc",
@@ -31,7 +41,6 @@ CODE_EXTENSIONS = {
     ".cfg", ".pds", ".f", ".qsf", ".qpf", ".prj", ".xpr", ".ipx",
     ".mem", ".hex", ".mif", ".coe", ".rom", ".lut",
 }
-ARCHIVES = {".zip", ".rar", ".7z", ".tar", ".gz", ".bz2", ".xz"}
 PRIVATE_PARTS = {".git", ".venv", "venv", "node_modules", "__pycache__", ".pytest_cache"}
 GENERATED = {"SUBMISSION_MANIFEST.json", "SUBMISSION_EXCLUDED_FILES.json",
              "START_HERE_SUBMISSION.md", "VERIFY_SUBMISSION.py"}
@@ -67,31 +76,21 @@ def is_code(name):
 
 
 def select_file(name, protected=frozenset()):
-    """Return (include, auditable reason); preserve code before removing old data."""
+    """Two selected implementations only; record removal of other-route code."""
     path = safe_relative(name)
     if any(p in PRIVATE_PARTS for p in path.parts):
         return False, "environment/cache metadata, not a project input"
     if name in protected:
-        return True, "manifest-bound production input or released bitstream"
-    if name.startswith(CURRENT_PACKAGE):
-        return True, "complete current tile8/directfill A-B-C-D archive; preserve portable checks"
+        return True, "manifest-bound input of the selected 720p15/1080p15 implementations"
+    if name.startswith(CAMERA720_PACKAGE) or name == CAMERA720_SUMMARY:
+        return True, "complete primary 720p15 view-toggle archive and summary, including compressed bit/evidence"
+    if name.startswith((CAMERA720_DELIVERY, DIRECT_SUBMISSION, DIRECT_REPORTS)):
+        return True, "primary version frozen sources/reports, including original gzip timing reports"
+    if name.startswith("submission/") or name in SUPPORT_FILES:
+        return True, "competition report, parameters, selected-version notes or packaging/report support"
     if is_code(name):
-        return True, "source/constraint/script/test fixture; retained regardless of historical location"
-    if path.suffix.lower() in ARCHIVES:
-        return False, "nested release archive; expanded project code retained separately"
-    if name.startswith("vendor/"):
-        return False, "historical vendor documents/data/build outputs; code and bound inputs retained"
-    if name.startswith("distortion/captures/"):
-        if path.suffix.lower() in {".json", ".csv", ".md", ".txt"}:
-            return True, "capture/calibration metadata; bulk raw images omitted"
-        return False, "historical raw capture data; current calibration retained in delivery"
-    if name.startswith("distortion/results/"):
-        if path.suffix.lower() == ".md":
-            return True, "historical source context; full old measurement archive omitted"
-        return False, "historical measurement/build data outside current release archive"
-    if name.startswith("handoff/baseline/"):
-        return False, "historical baseline measurement data; source retained"
-    return True, "project source, delivery, tests, metadata, documentation or supporting fixture"
+        return False, "other-route/historical code outside the two selected source closures; repository unchanged"
+    return False, "other-route delivery, data, bitstream or repository history outside the selected scope"
 
 
 def git(repo, *args):
@@ -154,40 +153,90 @@ def load_json(reader, entries, name):
     return json.loads(reader.read(entries[name]["GitBlob"]))
 
 
+def bound_manifest(reader, entries, name, schema, protected, hashes, minimum=0):
+    data = load_json(reader, entries, name)
+    require(data.get("schema", data.get("Schema")) == schema, "Unexpected source manifest schema: " + name)
+    require(len(data["files"]) >= minimum, "Incomplete selected source closure: " + name)
+    protected.add(name)
+    folder = PurePosixPath(name).parent
+    seen = set()
+    for item in data["files"]:
+        relative = safe_relative(item["path"])
+        source = (folder / relative).as_posix()
+        require(source not in seen, "Duplicate selected source: " + source)
+        seen.add(source)
+        require(source in entries, "Missing selected source: " + source)
+        require(entries[source]["Bytes"] == item["bytes"], "Selected source size differs: " + source)
+        require(len(item["sha256"]) == 64 and all(c in "0123456789abcdef" for c in item["sha256"]),
+                "Invalid selected source SHA256: " + source)
+        protected.add(source)
+        hashes[source] = item["sha256"]
+    return data
+
+
 def bound_inputs(reader, entries):
-    protected = {DIRECT_PLAN, DIRECT_BIT}
-    hashes = {DIRECT_BIT: DIRECT_BIT_SHA}
-    # This is the actual directfill production closure, not the old tile8 preset.
-    plan = load_json(reader, entries, DIRECT_PLAN)
-    require(len(plan["CompiledInputs"]) == 110, "Unexpected directfill closure size")
-    require(not plan["SourceRoles"]["UnresolvedModuleInstances"], "Unresolved production modules")
-    for item in plan["CompiledInputs"]:
-        name = "distortion/" + item["Source"]
+    protected, hashes = set(), {}
+    camera_manifest_name = CAMERA720_PACKAGE + "manifest.json"
+    camera_manifest = load_json(reader, entries, camera_manifest_name)
+    camera_summary = load_json(reader, entries, CAMERA720_SUMMARY)
+    require(camera_manifest["Schema"] == "camera720-view-toggle-evidence-manifest-v1",
+            "Unexpected 720p archive manifest")
+    require(camera_summary["Bitstream"]["SHA256"] == CAMERA720_BIT_SHA,
+            "720p summary bitstream identity differs")
+    protected.update({camera_manifest_name, CAMERA720_SUMMARY})
+    hashes[camera_manifest_name] = camera_summary["EvidenceManifest"]["SHA256"]
+    stored_names = set()
+    for row in camera_manifest["Files"]:
+        safe_relative(row["File"])
+        name = CAMERA720_PACKAGE + row["File"]
+        require(name not in stored_names, "Duplicate 720p archive member: " + name)
+        stored_names.add(name)
         protected.add(name)
-        hashes[name] = item["OriginalSHA256"]
-    manifest_name = "distortion/board/hdmi-camera-fisheye-tile8df8-build-sources.json"
-    manifest = load_json(reader, entries, manifest_name)
-    protected.add(manifest_name)
-    protected.add("distortion/" + manifest["Constraint"])
-    route = "distortion/" + manifest["RouteConstraint"]
-    protected.add(route)
-    hashes[route] = manifest["RouteConstraintSHA256"]
-    # Preserve C/S3/tile8 portable source verification, including out-of-folder bits.
-    for name in entries:
-        if name.startswith("delivery/") and name.endswith("/source-manifest.json"):
-            data = load_json(reader, entries, name)
-            for item in data.get("Files", []):
-                if isinstance(item, dict) and isinstance(item.get("Source"), str):
-                    source = item["Source"]
-                    if source in entries:
-                        protected.add(source)
-            bit = data.get("ReleasedBitstream", {})
-            if isinstance(bit, dict) and bit.get("RepositoryPath"):
-                source = bit["RepositoryPath"]
-                require(source in entries, "Released bitstream missing: " + source)
-                protected.add(source)
-    require(protected <= entries.keys(), "Bound production input missing from Git tree")
+        hashes[name] = row["SHA256"]
+    require(CAMERA720_BIT_GZ in stored_names, "720p released gzip bitstream is missing")
+    bound_manifest(reader, entries, CAMERA720_DELIVERY + "source-manifest.json",
+                   "camera720p15-frozen-source-closure-v1", protected, hashes, 118)
+    bound_manifest(reader, entries, CAMERA720_DELIVERY + "reports-manifest.json",
+                   "camera720p15-native-reports-v1", protected, hashes)
+    direct = bound_manifest(reader, entries, DIRECT_SUBMISSION + "source-manifest.json",
+                           "tile8-directfill-selected-submission-v1", protected, hashes, 110)
+    seen = set()
+    for item in direct.get("report_files", []):
+        source = DIRECT_REPORTS + safe_relative(item["path"]).as_posix()
+        require(source not in seen and source in entries, "Missing/duplicate selected report: " + source)
+        seen.add(source)
+        require(entries[source]["Bytes"] == item["bytes"], "Selected report size differs: " + source)
+        protected.add(source)
+        hashes[source] = item["sha256"]
+    identity = load_json(reader, entries, CAMERA720_DELIVERY + "identity.json")
+    camera_bit = CAMERA720_DELIVERY + safe_relative(identity["bitstream"]["path"]).as_posix()
+    protected.add(camera_bit)
+    hashes[camera_bit] = CAMERA720_BIT_SHA
+    require(protected <= entries.keys(), "Selected production input missing from Git tree")
     return protected, hashes
+
+
+def check_bitstream(name, data):
+    """Reject other executable bitstreams, even inside selected directories."""
+    lower = name.lower()
+    if not lower.endswith((".sbit", ".bit", ".sbit.gz", ".bit.gz")):
+        return
+    raw = gzip.decompress(data) if lower.endswith(".gz") else data
+    expected = (CAMERA720_BIT_SHA if name.startswith((CAMERA720_PACKAGE, CAMERA720_DELIVERY))
+                else DIRECT_BIT_SHA if name.startswith(DIRECT_SUBMISSION) else None)
+    require(expected is not None, "Bitstream outside selected delivery: " + name)
+    require(hashlib.sha256(raw).hexdigest() == expected, "Unselected bitstream identity: " + name)
+
+
+def verify_selected_export(output):
+    root = filesystem_path(output)
+    for script, arguments in (
+        ("VERIFY_SUBMISSION.py", []),
+        (CAMERA720_DELIVERY + "verify_selected.py", []),
+        (CAMERA720_PACKAGE + "verify_bundle.py", ["--summary", str(root / CAMERA720_SUMMARY)]),
+        (DIRECT_SUBMISSION + "verify_selected.py", []),
+    ):
+        subprocess.run([sys.executable, "-I", "-B", str(root / script), *arguments], check=True)
 
 
 VERIFY_SCRIPT = '''"""Read-only package SHA256 check; no Git or third-party modules required."""
@@ -209,75 +258,92 @@ for entry in manifest['IncludedFiles']:
     if digest!=entry['SHA256']:
         raise SystemExit('SHA256 mismatch: '+entry['Path'])
 print(json.dumps({'verified':True,'files':len(manifest['IncludedFiles']),
- 'source_commit':manifest['SourceCommit'],'current_bit':manifest['DirectfillBitstreamSHA256']},indent=2))
+ 'source_commit':manifest['SourceCommit'],'directfill_bit':manifest['DirectfillBitstreamSHA256'],
+ 'camera720_bit':manifest.get('Camera720BitstreamSHA256')},indent=2))
 '''
 
 
 def startup(commit):
-    return f'''# 竞赛代码包入口
+    return f"""# 竞赛提交：两套选定版本
 
-本包从 Git 提交 `{commit}` 的原始 blob 导出，不含 Git 历史，不改写冻结源码或证据。
-本包选定版本为 directfill INDEX8 v3，位流 SHA256：`{DIRECT_BIT_SHA}`。
-此版本约 15 个新校正显示帧/秒、约 30 Hz 扫描；不是 30 个新校正帧/秒。
+本包从提交 `{commit}` 的原始 Git blob 导出，只提供以下两套选定工程、各自原生报告和提交材料。
+仓库其余版本保留在 Git 历史中，未重新放入本 RAR。本轮导出及校验不访问硬件。
 
-## 先校验
+| 选定工程 | 已记录的新校正显示帧率 | 位流 SHA256 |
+| --- | --- | --- |
+| OV5640 1280×720 原图/校正切换 | 15 FPS | `{CAMERA720_BIT_SHA}` |
+| HDMI 1920×1080 directfill INDEX8 v3 | 15 FPS | `{DIRECT_BIT_SHA}` |
 
-在解压根目录运行（Python 3.10+，均不访问硬件）：
+1080p 约30 Hz扫描包含重复显示，不等于30个新校正帧/秒。两版接口、镜头参数、顶层与位流分别绑定。
+
+## 两套入口
+
+- [720p15 源码、解压位流及报告](delivery/20261104-camera720p15/README.md)。
+- [1080p15 选定源码、唯一位流及证据](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md)。
+- [报告、海报及参数资料](submission/README.md)。
+
+每套工程的源清单逐项绑定文件字节和 SHA256。720p 冻结构建输入、1080p 的110项生产输入、
+RCF和编译差异均由对应清单保护；原始 STA gzip 和资源证据保留，不能用不同位流的数据互换。
+旧 fisheye C、S3、旧tile8、throughput、stable30等交付不属于本包的可选下载版本。
+
+## 在解压目录校验
+
+Python 3.10+，只用标准库，无需 Git、PDS 或板卡：
 
 ```text
 python -B VERIFY_SUBMISSION.py
-python -B delivery/20261103-hdmi-camera-fisheye-tile8/verify_source.py
-python -B delivery/20261103-hdmi-camera-fisheye-fill8/verify_source.py
-python -B delivery/20261103-hdmi-camera-fisheye-c/verify_source.py
-python -B distortion/results/hdmi-camera-fisheye-tile8-20261103-a/verify_archive_portable.py --manifest portable-evidence-manifest-c.json
-python -B delivery/20261104-hdmi-camera-fisheye-tile8-directfill/verify_stage_d_portable.py --package distortion/results/hdmi-camera-fisheye-tile8-20261103-a
+python -B delivery/20261104-camera720p15/verify_selected.py
+python -B distortion/results/camera720-view-toggle-live-20261102-a/verify_bundle.py --summary distortion/results/camera720-view-toggle-live-20261102-a.json
+python -B delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/verify_selected.py
 ```
 
-上面的校验使用各交付目录的独立脚本，重放保存的身份与数据；不重新执行 EDA、仿真、烧录
-或板测。PR #28 的统一入口和新增实验聚合已按要求撤回，本包不依赖该入口或版本目录表，
-不重新收录此次撤回的实验目录。完整原仓库与历史数据仍以项目 GitHub 为准。
+这些命令核对保存的源码、报告、位流及板测记录；不重跑EDA、HDL或板测。旧1080p C/D整包
+校验器需要完整历史归档，不是此精选包的校验入口，也不宣称其在此包可运行。
 
-Windows 包内部分历史路径超过 260 字符，导出与 SHA 验证器已自动兼容。
-执行交付校验脚本时可在 PowerShell 使用扩展路径入口（内容不变）：
+Windows 深层冻结路径可能超过260字符。总SHA校验器自动兼容；原有归档脚本可这样启动：
 
 ```powershell
 $taskPrefix = [string][char]92 + [char]92 + '?' + [char]92
-$taskEntry = $taskPrefix + (Resolve-Path ./delivery/20261104-hdmi-camera-fisheye-tile8-directfill/verify_stage_d_portable.py).Path
-$taskPackage = $taskPrefix + (Resolve-Path ./distortion/results/hdmi-camera-fisheye-tile8-20261103-a).Path
-python -B $taskEntry --package $taskPackage
+$taskScript = $taskPrefix + (Resolve-Path ./distortion/results/camera720-view-toggle-live-20261102-a/verify_bundle.py).Path
+$taskSummary = $taskPrefix + (Resolve-Path ./distortion/results/camera720-view-toggle-live-20261102-a.json).Path
+python -B $taskScript --summary $taskSummary
 ```
 
-其余脚本同样使用扩展绝对路径。解压与构建目录仍建议使用短路径。
+## 720p原gzip位流
 
-## 当前版本与构建边界
+720p独立交付提供解压位流。原206项封存证据也保留在 `{CAMERA720_PACKAGE}`；
+其中 `{CAMERA720_BIT_GZ}` 是压缩存储，不能直接把.gz文件用于下载。
+如需另行解压，在包根执行下列Python代码，输出必须不存在：
 
-- 版本说明：`delivery/20261104-hdmi-camera-fisheye-tile8-directfill/README.md`。
-- 当前实际 bit：`{DIRECT_BIT}`；下载前校验 SHA256，SRAM 与 Flash 操作应明确区分。
-- 110 项生产输入：`distortion/board/hdmi-camera-fisheye-tile8df8-build-sources.json`。
-- 绑定的实际构建计划：`{DIRECT_PLAN}`；原始 Tcl 在同一 `files/0409/build.tcl`。
-- 6 份当时编译快照在 `files/0194`、`0195`、`0204`、`0287`、`0290`、`0291`，
-  保留原 include 重定位和顶层 `INPUT_TIMING_CONFIGURED=1`。它们属于当前位流的源证据。
-- 旧 `delivery/20261103-hdmi-camera-fisheye-tile8/prepare_build.py` 准备的是旧 tile8，
-  **不是 directfill 一键重建工具**。本代码包不假装提供当前 directfill 的一键 EDA 重建。
-  对 directfill 重建须按实际清单重定位冻结 include/Tcl，并重新完成物理及板测验证。
-- PDS 程序、许可证、安装目录中的器件原语库和模拟器不随包提供；使用相容的合法安装。
-  当前归档使用 PDS 2023.2-SP3 build 154097；已入库 DDR IDF、74 项展开源、PLL/板级控制
-  和相应约束均保留原字节与来源，不由本包重新授权。
-- 标定：`delivery/20261103-hdmi-camera-fisheye-c/calibration/`；部署参数头与径向 ROM
-  在 `distortion/board/hdmi-camera-fisheye-profile.vh`、`hdmi-camera-fisheye-radial-table.vh`。
+```python
+import gzip, hashlib
+from pathlib import Path
+source = Path("{CAMERA720_BIT_GZ}")
+data = gzip.decompress(source.read_bytes())
+assert hashlib.sha256(data).hexdigest() == "{CAMERA720_BIT_SHA}"
+with Path("camera720_view_toggle_top.sbit").open("xb") as output:
+    output.write(data)
+```
 
-## 包含和裁剪范围
+## 源码重建与材料边界
 
-所有 tracked 作者源代码、脚本、约束、测试及常见向量文件保留；必要平台 IP 保留。
-当前 tile8/directfill A/B/C/D 结果包完整保留，使其 portable verifier 可执行。
-源提交实际保留的 delivery 展开目录及参数保留；嵌套 ZIP/RAR 不重复打包。
-旧 results 非代码数据、原始 capture 图像、vendor 参考资料/历史构建数据及缓存被裁剪，
-逐项路径、Git blob、字节数、原因和是否为代码见 `SUBMISSION_EXCLUDED_FILES.json`。
-故依赖这些旧测量目录的历史全仓测试可能需要原 GitHub 数据；本包不宣称重跑全部历史回归。
+两套源包保留真实编译输入和原构建说明，不承诺重新布线得到相同bit。历史生成脚本可能仍
+引用原工作区，应按各自源清单重定位后构建，并重新完成时序、接口及板测验证。
+厂商PDS安装、许可证、安装目录中的原语库与模拟器不随包提供；使用相容合法工具。
+原归档对应PDS 2023.2-SP3 build154097。已有DDR/PLL/IP输入保留原字节和来源。
 
-`SUBMISSION_MANIFEST.json` 记录 included 文件 SHA256、原提交/树和生产闭包检查。
-它不包含自身哈希；最终 RAR 的 SHA256 与压缩后小于 200 MB 的检查在外部单独完成。
-'''
+`submission/` 中标定扩展、投影比较等材料是报告的离线补充，不是第三套FPGA部署版本，
+不改变这两套位流。完整原始采图不随报告补充数据发布。
+
+## 文件审计与压缩
+
+`SUBMISSION_MANIFEST.json` 绑定所有included文件SHA、原提交与树；自身哈希不递归收录。
+`SUBMISSION_EXCLUDED_FILES.json` 逐项记录旧路线代码、数据、旧位流和非必要支持文件的裁剪原因。
+`ExcludedCodeFiles` 统计的是有记录裁剪的其他路线/历史代码，不表示所选两套源闭包缺失，
+也不宣称本包包含整个仓库的全部历史实验。仓库本身未因打包被删除文件。
+
+最终RAR需另做压缩完整性测试、解压后上述校验，且严格小于200,000,000字节。
+"""
 
 
 def json_bytes(value):
@@ -299,9 +365,11 @@ def export(repo, ref, output, plan_only=False):
             item = dict(entry, Reason=reason, CodeOrFixture=is_code(name))
             (selected if keep else omitted).append(item)
         summary = {"SourceCommit": commit, "SourceTree": tree, "TrackedFiles": len(entries),
+                   "Scope": "two-selected-implementations-720p15-and-1080p15",
                    "IncludedTrackedFiles": len(selected), "ExcludedFiles": len(omitted),
                    "IncludedBytes": sum(e["Bytes"] for e in selected),
                    "ExcludedCodeFiles": sum(e["CodeOrFixture"] for e in omitted),
+                   "ExcludedCodeMeaning": "audited other-route/history/support code outside selected source closures",
                    "ExcludedReasons": dict(Counter(e["Reason"] for e in omitted))}
         if plan_only:
             return summary
@@ -316,10 +384,13 @@ def export(repo, ref, output, plan_only=False):
             if entry["Path"] in expected:
                 require(digest == expected[entry["Path"]], "Production SHA mismatch: " + entry["Path"])
                 verified_bound += 1
+            check_bitstream(entry["Path"], data)
             target = destination_root.joinpath(*safe_relative(entry["Path"]).parts)
             target.parent.mkdir(parents=True, exist_ok=True)
             with target.open("xb") as handle:
                 handle.write(data)
+            require(hashlib.sha256(target.read_bytes()).hexdigest() == digest,
+                    "Copied byte SHA mismatch: " + entry["Path"])
             written.append(dict(entry, SHA256=digest))
         excluded_report = {"Schema": "competition-source-exclusions-v1", "SourceCommit": commit,
                            "ExcludedFiles": omitted}
@@ -331,16 +402,18 @@ def export(repo, ref, output, plan_only=False):
                 handle.write(data)
             written.append({"Path": name, "Bytes": len(data), "SHA256": hashlib.sha256(data).hexdigest(),
                             "Reason": "generated package metadata or read-only verifier", "Generated": True})
-        manifest = dict(summary, Schema="competition-source-package-v1", IncludedFiles=written,
+        manifest = dict(summary, Schema="competition-two-selected-source-package-v2", IncludedFiles=written,
                         ExportedUTC=datetime.now(timezone.utc).isoformat(),
                         DirectfillBitstreamSHA256=DIRECT_BIT_SHA,
+                        Camera720BitstreamSHA256=CAMERA720_BIT_SHA,
+                        Camera720Archive=CAMERA720_PACKAGE, Camera720Summary=CAMERA720_SUMMARY,
                         DirectfillProductionInputs=110, VerifiedExpectedHashes=verified_bound,
                         ProtectedTrackedFiles=len(protected), ManifestSelfExcluded=True,
                         CompressionPerformed=False, EDAExecuted=False, HardwareAccessed=False,
                         SizeBoundary="200 MB applies to final RAR; exporter reports uncompressed bytes")
         with (destination_root / "SUBMISSION_MANIFEST.json").open("xb") as handle:
             handle.write(json_bytes(manifest))
-    subprocess.run([sys.executable, "-B", str(output / "VERIFY_SUBMISSION.py")], check=True)
+    verify_selected_export(output)
     summary["Output"] = str(output)
     summary["TotalPackageBytes"] = sum(p.stat().st_size for p in destination_root.rglob("*") if p.is_file())
     return summary

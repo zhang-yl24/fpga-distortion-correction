@@ -2,12 +2,15 @@
 
 ## 2026-11-04 提交入口
 
+提交程序包只选两套主方案：[OV5640 720p15](delivery/20261104-camera720p15/README.md)和[HDMI 1080p15 direct-fill](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md)。两套均提供对应源码、直接可选位流、原始时序与资源报告；下方其他迭代只保留仓库历史，不进入最终两版程序包。
+
 最新合入今早的 **tile8 INDEX8 direct-fill**（源码 `4522399`）：1920×1080，新校正帧约 **15 FPS**，HDMI扫描约 **30 Hz**。600秒采集中，599秒核心计数窗口得到8985个新结果帧；处理耗时采样约 **35.45 ms**，较旧tile8约44.33 ms缩短约20%，新帧率仍为15 FPS。见[本版源码、位流与证据](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/README.md)。
 
 - [提交材料：22页报告、海报、参数与补充实验](submission/README.md)
 - [仓库与版本导航](docs/REPOSITORY_GUIDE.md)
 - [代码RAR导出说明](tools/SUBMISSION_PACKAGE.md)
-- [原tile8便携重建与回退](delivery/20261103-hdmi-camera-fisheye-tile8/README.md)
+- [720p15源码、位流与时序／资源报告](delivery/20261104-camera720p15/README.md)
+- [1080p15选定源码与位流](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md)、[原始时序／资源报告](delivery/20261104-hdmi-camera-fisheye-tile8-directfill/reports/README.md)
 
 按用户要求，PR #28已由`97b1397`回退，随后`eb700c8`正常合并今早分支。各版本继续使用原交付目录的独立入口；本次整理没有重新引入统一`project.py`或合并其他实验分支。记录见[提交整理说明](docs/SUBMISSION_INTEGRATION_20261104.md)。
 

@@ -1,0 +1,60 @@
+{
+  "schema": "camera720p15-native-report-summary-v1",
+  "bitstream_sha256": "0ca6d19bf074c73cba0346a22e54ba3afb99a595728e6420a1cbb767b963dfe5",
+  "final_adf_sha256": "f31e112a1764d8175cce5cac013c2611b4032ebcd615219c3dfc763cf338ff2d",
+  "internal_timing": {
+    "source": "reports/timing/camera720_view_toggle_top.rtr.gz",
+    "all_constraints_met": true,
+    "slow_ns": {
+      "setup": 0.249,
+      "hold": 0.059,
+      "recovery": 1.164,
+      "removal": 0.353,
+      "minimum_pulse_width": 0.035
+    },
+    "fast_ns": {
+      "setup": 3.1,
+      "hold": 0.02,
+      "recovery": 3.522,
+      "removal": 0.04,
+      "minimum_pulse_width": 0.035
+    },
+    "scope": "Native final-export-a internal multi-corner STA; external AC and physical reset acceptance remain separate."
+  },
+  "utilization": {
+    "source": "reports/utilization/place_route/run_route_optimize.log",
+    "stage": "Original build-a RouteOptimize; final implementation inherited unchanged cells/placements through documented hold-route and reset changes",
+    "LUT": {
+      "used": 14910,
+      "available": 66600,
+      "percent": 22.39
+    },
+    "FF": {
+      "used": 18596,
+      "available": 133200,
+      "percent": 13.96
+    },
+    "DRM": {
+      "used": 16.5,
+      "available": 155,
+      "percent": 10.65
+    },
+    "APM": {
+      "used": 70,
+      "available": 240,
+      "percent": 29.17
+    },
+    "IO": {
+      "used": 130,
+      "available": 300,
+      "percent": 43.33
+    },
+    "DistributedRAM": 610
+  },
+  "adf_chain": [
+    "7a75c09e0a3b2009ba7345f119ee8d3468bd21365b54d9c05ff80eea73dc6dd1",
+    "a79c822b99f0d12319f14de6dc72c1b991b50e58e980125b2da9b371df9ae9f4",
+    "f31e112a1764d8175cce5cac013c2611b4032ebcd615219c3dfc763cf338ff2d"
+  ],
+  "not_a_new_eda_run": true
+}
