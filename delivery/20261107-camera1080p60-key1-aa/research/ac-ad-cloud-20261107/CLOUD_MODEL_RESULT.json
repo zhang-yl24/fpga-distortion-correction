@@ -5,7 +5,8 @@
     "ac": "e2d641a61e20f375de0202528915e626dd3e7c43e8f40473d5308bd39cbd25e5",
     "rcfAA": "3b39508ebfb7701e379fc53d980c7790f40ce397a2647cd36ce845c417a2b684",
     "ad": "5cb550036a03c995e85eb1227e84b250d6e7d715f2cee3516aabcc5483e40170",
-    "model": "92a48ab3e63976469439cdfcff04d607ee92cd24a5d8d2c3433a8dc27393cf38"
+    "model": "d605ac40ddd93f70f847253b134b3661fd4784c6855c35c9a863155ab769e1b3",
+    "ae": "7a34f75eca6cd8e7eb74ab1adf347572431e26bb8c820b8d2e0032fcc38fed19"
   },
   "result": {
     "status": "PASS_BOUNDED_NATIVE_HEAD_MODEL",
@@ -15,14 +16,20 @@
     "width": 1920,
     "height": 1080,
     "indexBits": 7,
-    "oldTokenBits": 124,
-    "newTokenBits": 95,
+    "hypotheticalHead1OldTokenBits": 124,
+    "hypotheticalHead1NewTokenBits": 95,
+    "actualAAHeadPredecode": 0,
+    "actualAATokenBits": 63,
+    "actualAATokenBitsAfterAC": 63,
+    "actualAAFIFOStorageReduction": 0,
     "queryDepth": 4096,
-    "logicalBitsRemoved": 118784,
+    "hypotheticalHead1LogicalBitsRemoved": 118784,
     "scope": "Native bounded-neighbour identity and token packing only; no RTL, FIFO-cycle, full-frame, PDS or board claim"
   },
+  "configurationCorrection": "AA actually uses HEAD_PREDECODE=0/FIFO63. 124->95 and118784 bits apply only to hypothetical HEAD1.",
   "rtlSimulationExecuted": false,
   "pdsExecuted": false,
   "boardTestExecuted": false,
-  "localMachineAccessed": false
+  "localReadOnlyConfigurationAudit": true,
+  "localEDAJobStarted": false
 }

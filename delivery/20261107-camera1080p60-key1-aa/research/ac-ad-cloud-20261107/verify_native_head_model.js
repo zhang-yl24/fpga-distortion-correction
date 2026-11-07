@@ -48,8 +48,9 @@
    if((packed&((1n<<63n)-1n))!==payload)fail("walking payload");
  }
  const result={status:"PASS_BOUNDED_NATIVE_HEAD_MODEL",footprints,pairChecks,encodings,
-   width:WIDTH,height:HEIGHT,indexBits:INDEX_BITS,oldTokenBits:124,newTokenBits:95,
-   queryDepth:4096,logicalBitsRemoved:118784,
+   width:WIDTH,height:HEIGHT,indexBits:INDEX_BITS,hypotheticalHead1OldTokenBits:124,hypotheticalHead1NewTokenBits:95,
+   actualAAHeadPredecode:0,actualAATokenBits:63,actualAATokenBitsAfterAC:63,actualAAFIFOStorageReduction:0,
+   queryDepth:4096,hypotheticalHead1LogicalBitsRemoved:118784,
    scope:"Native bounded-neighbour identity and token packing only; no RTL, FIFO-cycle, full-frame, PDS or board claim"};
  if(typeof emit==="function")emit(result);else console.log(JSON.stringify(result,null,2));
 })();

@@ -1,120 +1,127 @@
-# AA follow-up research: AC metadata compaction and AD critical-prefix routing
+# AA follow-up research: configuration correction, AE and AD
 
-Status: cloud-only preparation. Neither candidate has been compiled by PDS,
-timed, bit-generated or board-tested. The released AA bitstream is unchanged.
+Research only. No candidate in this directory has been compiled by PDS,
+timed, bit-generated or board-tested. Released AA sources and bitstream remain
+unchanged.
 
-## Exact baseline and purpose
+## Correction: AA is HEAD0, not HEAD1
 
-Repository: zhang-yl24/fpga-distortion-correction.
-Baseline commit: 87cf6ca466ba90d4d18c5d4d82ccd8b1820fde99.
-Frozen delivery: delivery/20261107-camera1080p60-key1-aa.
+The previous revision incorrectly described AA as HEAD_PREDECODE=1 and
+attributed a 124 -> 95 bit FIFO reduction to AA. That attribution is retracted.
 
-- AC cache baseline SHA256: ff5e551c13083cecf9325b6acef0a00b58f7f1776cd7f5dbec341e52f2082088
-- AC cache candidate SHA256: e2d641a61e20f375de0202528915e626dd3e7c43e8f40473d5308bd39cbd25e5
-- AD RCF baseline SHA256: 3b39508ebfb7701e379fc53d980c7790f40ce397a2647cd36ce845c417a2b684
-- AD RCF candidate SHA256: 5cb550036a03c995e85eb1227e84b250d6e7d715f2cee3516aabcc5483e40170
+At baseline commit 87cf6ca466ba90d4d18c5d4d82ccd8b1820fde99:
+- board1080_cfg100_top.v line 9 defaults RATIONAL_BROWN_PROFILE=1.
+- line 214 passes CACHE_HEAD_PREDECODE(RATIONAL_BROWN_PROFILE ? 0:1).
+- System -> bank -> engine -> core -> sampler pass that parameter onward.
+- The sampler explicitly uses COMPACT_COORDS=1.
+- Core's 24-bit raster tag is forwarded with one masking bit, giving cache TAG_W=25.
+- Therefore actual AA query FIFO width is 38 coordinate + 25 tag = 63 bits.
+- AC does not reduce that actual AA FIFO width or storage at all.
 
-No rotation is added. Camera qualification, KEY1, parameter mapping, Gamma
-configuration, bank ownership, frame publication, DDR protocol and all timing
-constraints retain the AA contract. Gamma remains disabled in AA.
+Read-only inspection also checked the original local MAP_PREPARED.tcl and
+PDS-generated runs/map-a/impl.tcl. Neither contains a parameter override
+changing this configuration. Their exact SHA256 values and source lines are
+recorded in AA_HEAD_CONFIGURATION_AUDIT.json. No local EDA job was started.
+This is source/controller evidence, not a new netlist-parameter dump.
 
-## First priority: AD, one added priority-route net
+The original AC file is retained as explicitly conditional research:
+only a hypothetical HEAD1 native build has 124 -> 95 token bits and
+29*4096=118784 bits less logical FIFO payload. That is neither an actual AA
+saving nor a measured DRM result. Do not enable HEAD1 just to claim this number.
 
-The published AA routed slow setup path is +0.003 ns. It traverses
-debug_data [135] -> all_group_ca_dly -> adj_ba [16], with 5.706 ns
-route delay of 6.349 ns total data delay (89.872 percent).
-The current extra prefix priority names debug_data [273], not [135].
-This observation does not make [273] wrong: its previous role must be preserved.
-AD retains every original priority (both generated gate nets, common CA net,
-and [273]) and adds only [135].
+## Priority 1: AD route candidate, actual AA timing path
 
-Use an independent copy of the AA placed database and the exact same
-device/TOP/source/imports/seed/clocks/pins/exception constraints/hold settings.
-Resolve [135] against that netlist before routing; stop on missing or ambiguous
-objects. Run route and independent slow/fast setup, hold, recovery, removal,
-pulse-width and skew checks. Compare actual worst paths and all failing counts,
-including whether a new endpoint becomes critical. Do not relax clocks,
-multicycle/hold or uncertainty. Do not infer an improvement from priority alone.
-Retain AA routed database and bitstream as the comparison/rollback baseline.
+Published AA slow setup slack is +0.003 ns on a path through
+debug_data [135] -> all_group_ca_dly -> adj_ba [16].
+Route is 5.706 ns of 6.349 ns data delay (89.872 percent).
+The existing additional prefix priority names [273], not [135].
+This does not make [273] wrong; AD preserves it and every generated gate/common
+CA priority, adding only [135]. Route preference is not a timing guarantee.
 
-No RTL simulation is needed for a priority-only comparison because RTL is
-unchanged; all implementation timing checks still apply.
+Use an independent copy of AA's exact placed database and unchanged
+device/TOP/parameters/RTL/seed/clocks/pins/exception constraints/hold settings.
+Verify the added net resolves unambiguously before route. Compare all slow/fast
+setup, hold, recovery, removal, pulse-width and skew checks, endpoint counts,
+worst paths and resources against AA. Keep the original routed database.
+Never relax timing constraints or bypass hold repair to improve setup.
+No new RTL regression is required for this priority-only comparison.
 
-## Second priority: AC, remove redundant native query metadata
+## Priority 2: AE, isolate the useful HEAD0 native decode change
 
-Actual AA hierarchy forwards a 24-bit raster tag plus one masking bit:
-cache TAG_W=25, COMPACT_COORDS=1, HEAD_PREDECODE=1, QUERY_DEPTH=4096,
-WIDTH=1920, HEIGHT=1080, INDEX_BITS=7, CACHE_ROW_STRIDE=2.
+AE changes exactly one comparison expression in the exact AA cache:
+native head_unique compares head_line[h]==head_line[z] instead of full
+head_block[h]==head_block[z]. Generic geometries keep the original equality.
+No FIFO field/width/depth, pipeline stage, interface, scheduling or delay
+is changed. Both AA and AE retain HEAD_PREDECODE=0 and 63-bit FIFO tokens.
 
-AA token width = 38 coordinate bits + 25 tag bits +
-4 bounds + 28 line bits + 28 block bits + 1 crossing bit = 124.
-AC token width = 38 + 25 + 4 + 28 = 95.
-Logical storage reduction is 29*4096=118784 bits (14848 bytes, 14.5 KiB).
-This is not a measured DRM/LUT reduction; RAM primitive granularity and
-inference can change the physical result. There is no extra pipeline stage,
-query-depth change or intended cycle/performance change.
+For a bounded 2x2 footprint under WIDTH=1920, HEIGHT=1080, INDEX_BITS=7,
+CACHE_ROW_STRIDE=2, full block equality is equivalent to line equality.
+The two adjacent source rows differ in parity. Within one row, equal
+128-pixel blocks give equal line; crossing one block increments the local
+line index and cannot alias it. Validity masks exclude unsupported neighbours.
 
-For the bounded 2x2 footprint and this exact mapping, two valid neighbours
-have identical full block ID iff they have identical line ID:
-different rows have different parity, and adjacent 128-pixel blocks have
-distinct local-line IDs. The lease unique-mask may therefore compare the
-already-carried line IDs. Native foreground tag lookup already uses the
-8-bit directory code derived from coordinates.
-Generic geometries retain the original full block/crossing metadata path.
-Native full head-block aliases remain diagnostic only; far-OOB raw diagnostic
-block IDs may be canonicalized differently and are not a functional contract.
+In actual HEAD0 AA, full foreground head_block and next_head_block are
+computed only for native duplicate detection (other native tag lookups use
+coordinate-derived directory codes). After AE, those full block aliases are
+diagnostic-only and can be eliminated by synthesis. This targets arithmetic
+and foreground block-register pressure; it does not target query FIFO capacity.
+Up to four 14-bit full block registers become functionally unused, but existing
+compiler optimization may already eliminate some logic. No LUT/FF/DRM saving,
+cycle improvement or timing improvement is claimed before matched Map/STA.
 
-Cloud verification performed with the included pure-JS bounded model:
-2,076,601 coordinate footprints (x=-1..1919, y=-1..1079),
-12,429,602 valid-neighbour pair checks and matching token pack/unpack checks.
-Arbitrary validity masks at block boundaries and walking full payload bits
-are also checked. This is a mathematical model test, not execution of the
-candidate RTL. The original AA resource/timing result does not transfer to AC.
+The included bounded model ran 2,076,601 footprints and 12,429,602 valid pair
+comparisons, including all useful partial borders. It also checks arbitrary
+validity masks at block boundaries. These head_unique results apply to both
+HEAD0 and HEAD1. Token pack tests in the same file exercise hypothetical
+HEAD1 compaction only; they are not evidence that AA elaborates HEAD1.
+This remains a mathematical model, not execution of AE/AC RTL.
 
-Required next evidence before promotion:
-1. Compile the exact AC module against the existing AA cache/store/FIFO bench.
-2. Cycle-by-cycle A/B of visible accept/output pixels/tags, AR/R/fill events,
-   fail/fault and lease lifetime with queue-full stalls, OOB footprints,
-   x=127/128 and y boundaries, DDR backpressure, multiple generations,
-   reset/abort and QID wrap cases. Compare only defined diagnostic signals.
-3. Reuse the existing real camera/core/scanner full-frame test with changing
-   input fingerprints and KEY1 RAW/CORR transitions. Bind each scanned frame
-   to the expected source ID/mode/CRC and drain all leases.
-4. Same-configuration Map: actual inferred FIFO width/depth, DRM count,
-   LUT/FF/control sets and hierarchy. Stop if the intended token change is
-   absent or if a new long decode/control path appears.
-5. Only then place/route and independent full STA. No board claim until the
-   teammate tests the specifically identified bitstream.
+Required AE evidence:
+1. Compile AA and AE with the actual HEAD0 configuration and unchanged
+   cache/store/FIFO dependencies.
+2. Compare visible acceptance, pixels/tags, DDR/fill events and fault/lease
+   behavior cycle-by-cycle under full-queue stalls, x=127/128 and row borders,
+   OOB footprints, backpressure, multi-generation traffic, reset/abort and QID wrap.
+   Undefined diagnostic aliases are not an output contract.
+3. Same-configuration Map must explicitly report HEAD0 and FIFO63, source hashes,
+   hierarchy LUT/FF/control sets and inferred RAM. Inspect whether the native
+   head block arithmetic/register cone disappears and whether path timing worsens.
+4. Reuse continuous camera/core/scanner frame fingerprints and KEY1 transitions;
+   bind each scan to source ID/mode/CRC and drain all leases.
+5. Only a worthwhile Map result proceeds to physical implementation and independent
+   full STA. No board promotion without exact identified candidate verification.
 
-Do not combine AC and AD before each has an interpretable independent result.
-Existing native six/sixty-frame model evidence is useful as a regression
-target, not proof that either new candidate already passes it.
+Keep AD and AE independent until each has an interpretable result. The released
+AA six/sixty-frame behavioral model evidence does not transfer automatically.
 
-## Files and use
+## Files and exact identities
 
-- d256_runtime_prefetch_cache_AC.sv: full independent source candidate.
-- vendor-ca-debug-priority_AD.rcf: additive independent route candidate.
-- prepare_candidate.py: strict SHA-gated exclusive-output copier; never
-  overwrites an input, invokes PDS, accesses hardware or downloads anything.
-- verify_native_head_model.js: run with Node.js; also executed in the cloud JS
-  tool for this result. No npm or external library dependency.
-- CLOUD_MODEL_RESULT.json: exact model result and baseline binding.
-- SHA256SUMS.txt: source/tool/report checksums.
+Baseline frozen directory: delivery/20261107-camera1080p60-key1-aa.
 
-Example after placing this directory beside its distributed files:
-python prepare_candidate.py ac path/to/AA/d256_runtime_prefetch_cache.sv path/to/new/AC_cache.sv
-python prepare_candidate.py ad path/to/AA/vendor-ca-debug-priority.rcf path/to/new/AD.rcf
+- AA cache SHA256: ff5e551c13083cecf9325b6acef0a00b58f7f1776cd7f5dbec341e52f2082088
+- AE cache SHA256: 7a34f75eca6cd8e7eb74ab1adf347572431e26bb8c820b8d2e0032fcc38fed19
+- Conditional AC cache SHA256: e2d641a61e20f375de0202528915e626dd3e7c43e8f40473d5308bd39cbd25e5
+- AA RCF SHA256: 3b39508ebfb7701e379fc53d980c7790f40ce397a2647cd36ce845c417a2b684
+- AD RCF SHA256: 5cb550036a03c995e85eb1227e84b250d6e7d715f2cee3516aabcc5483e40170
 
-Use the outputs only in an isolated project copy and update its input manifest
-before admission. Do not edit running/frozen build inputs or the published AA
-native directory. No proprietary IP implementation or credentials are included.
+prepare_candidate.py accepts ae/ac/ad, verifies exact input and candidate hashes,
+and writes an exclusive new output file. It cannot overwrite frozen inputs,
+invoke PDS or access hardware/network. Insert output only into an isolated
+project copy with a new input manifest. No proprietary implementation, license,
+credential or private absolute path is included.
 
-## Latency and throughput boundary
+verify_native_head_model.js runs with Node.js without npm dependencies; its
+bounded checks were also executed with the cloud JS tool.
+CLOUD_MODEL_RESULT.json distinguishes actual HEAD0 widths from hypothetical HEAD1.
+AA_HEAD_CONFIGURATION_AUDIT.json records the correction and checked evidence.
+SHA256SUMS.txt binds all files except itself.
 
-AC has no intended latency reduction. AD has no intended frame-cycle change.
-They address storage pressure and implementation margin first. AA's single-pixel
-125 MHz architecture has only 9733.33 cycles above 2073600 pixels per 60 Hz
-frame before all other overhead. Positive internal STA and a short behavioral
-DDR trace do not prove sustained camera60. Keep capture/core/scan contention,
-DDR stalls/refresh and fresh FrameID timing in acceptance; no new acceptance
-threshold or fabricated board measurement is introduced.
+## Functional and performance boundaries
+
+Camera1080p60, KEY1 RAW/CORR and the fixed Brown profile remain the targets.
+No rotation is added. Gamma stays OFF, matching actual AA.
+Neither AD nor AE intentionally changes latency or pixel cycles. Actual sustained
+fresh60 requires measured capture/core/scan contention, DDR service and frame-ID
+evidence; internal STA or a bounded model is not that measurement.
+At 125 MHz, only 9733.33 cycles separate 2073600 one-pixel cycles from the 60 Hz
+budget before all overhead. Preserve protocol/fault and full-frame bank safety.
