@@ -1,13 +1,15 @@
 # 仓库与版本导航
 
-本仓库按各版本交付目录提供源码、位流、构建和验证入口。首次使用请读[项目介绍与使用说明](../README.md)。最新1080p30方案已完成本地摄像头下载验证，源码与时序按独立版本整理；现有两方案程序RAR仍选择720p15与1080p15 direct-fill。
+本仓库按各版本交付目录提供源码、位流、构建和验证入口。首次使用请读[项目介绍与使用说明](../README.md)。此前1080p30方案已完成本地摄像头下载验证，源码与时序按独立版本整理；现有两方案程序RAR仍选择720p15与1080p15 direct-fill。
 
-分支选择、当前 AA 候选与历史分支精简方案见[分支导航](../BRANCHES.md)。
+当前默认工作为 1080p60 摄像头输入＋KEY1 RAW/CORR，不另加旋转。当前候选、历史验证状态和完整文件目录统一见[项目地图](PROJECT_MAP.md)；后续补充复用已有工作线，见[发布规范](PUBLISHING.md)。
 
 | 任务 | 入口 |
 | --- | --- |
+| 当前 AA 测试、源文件与 IP/重建工具 | [固定版本入口](https://github.com/zhang-yl24/fpga-distortion-correction/blob/87cf6ca466ba90d4d18c5d4d82ccd8b1820fde99/delivery/20261107-camera1080p60-key1-aa/README.md) |
+| 全部文件与剩余工作线 | [文件联合清单](file-inventory/PROJECT_FILES.csv)、[分支导航](../BRANCHES.md) |
 | 本次报告、海报、参数与提交要求 | [submission](../submission/README.md) |
-| 最新1080p30现场结果、核心源码与时序 | [1080p30方案说明](HDMI1080_30FPS.md) |
+| 既有1080p30现场结果、核心源码与时序 | [1080p30方案说明](HDMI1080_30FPS.md) |
 | 主要方案一：720p15原图／校正切换 | [源码、位流、时序及资源](../delivery/20261104-camera720p15/README.md) |
 | 主要方案二：1080p15最优direct-fill | [独立选定包](../delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md) |
 | 最新direct-fill源码与保存的15 FPS板测证据 | [20261104 direct-fill](../delivery/20261104-hdmi-camera-fisheye-tile8-directfill/README.md) |

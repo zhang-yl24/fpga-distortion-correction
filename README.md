@@ -1,8 +1,18 @@
 # FPGA 实时视频畸变矫正
 
-本项目基于紫光同创盘古100 Pro+开发板，对广角摄像头视频进行镜头畸变矫正，经HDMI实时显示。项目支持OV5640 DVP 720p和HDMI摄像头1080p两类输入，并配套采图、镜头标定、参数生成、RTL仿真与串口统计工具。最新HDMI优化位流已由团队成员在本地摄像头下载验证中达到**1080p 30 FPS**；两套已归档15 FPS工程提供完整的使用与校验入口。
+本项目基于紫光同创盘古100 Pro+开发板，对广角摄像头视频进行镜头畸变矫正，经HDMI实时显示。项目支持OV5640 DVP 720p和HDMI摄像头1080p两类输入，并配套采图、镜头标定、参数生成、RTL仿真与串口统计工具。此前HDMI优化位流已由团队成员在本地摄像头下载验证中达到**1080p 30 FPS**；两套已归档15 FPS工程提供完整的使用与校验入口。
 
-[设计报告与演示材料](submission/README.md) · [版本与文件导航](docs/REPOSITORY_GUIDE.md) · [逐日分支开发记录](docs/DEVELOPMENT_HISTORY.md) · [分支选择与精简方案](BRANCHES.md)
+[设计报告与演示材料](submission/README.md) · [版本与文件导航](docs/REPOSITORY_GUIDE.md) · [逐日分支开发记录](docs/DEVELOPMENT_HISTORY.md) · [项目地图](docs/PROJECT_MAP.md) · [分支导航](BRANCHES.md)
+
+## 当前默认目标与入口
+
+后续开发和发布统一为 **HDMI 摄像头 1920×1080、标称 60 Hz 输入，KEY1 切换原始／校正画面，不另加旋转**。当前 AA 默认 CORR、Gamma OFF。输入/扫描 60 Hz 不等于已验证每秒 60 个新校正帧。
+
+- [当前 AA 候选、源码、位流与重建工具](https://github.com/zhang-yl24/fpga-distortion-correction/blob/87cf6ca466ba90d4d18c5d4d82ccd8b1820fde99/delivery/20261107-camera1080p60-key1-aa/README.md)
+- [完整成果脉络与项目文件地图](docs/PROJECT_MAP.md) · [固定版本索引](docs/PROJECT_INDEX.json) · [七条常驻分支与历史恢复](BRANCHES.md)
+- [全部十三个审计头的文件联合清单](docs/file-inventory/PROJECT_FILES.csv) · [后续发布规范](docs/PUBLISHING.md)
+
+AA 已提供内部时序与 IP 参数/相对重建流程，匹配原输入补齐后的静态依赖检查通过；全新 IP 生成、完整重新构建、持续摄像头新帧率和实体 KEY1 尚待独立验证。主线先统一入口，AA 的工作仍在其既有分支进行，不把未验证候选覆盖成已验证基线。下文继续保留此前正式交付、运行方式与报告入口。
 
 ## 硬件与处理流程
 
@@ -22,7 +32,7 @@ PC辅助流程：完整帧采图 → 棋盘格标定 → 镜头参数与定点�
 
 ## 方案与验证结果
 
-最新1080p30方案采用前瞻预取缓存和DDR突发写回，技术说明、固定版本源码及位流入口见[1080p30方案说明](docs/HDMI1080_30FPS.md)。现场验证位流为`a266044d…`；其原始时序仍有4条DDR PHY setup负裕量。后续KEY1版本另有源码、位流与时序身份，分别列在方案说明中。
+此前验证的1080p30方案采用前瞻预取缓存和DDR突发写回，技术说明、固定版本源码及位流入口见[1080p30方案说明](docs/HDMI1080_30FPS.md)。现场验证位流为`a266044d…`；其原始时序仍有4条DDR PHY setup负裕量。后续KEY1版本另有源码、位流与时序身份，分别列在方案说明中。
 
 以下两套15 FPS基线已整理为独立交付，均支持KEY1原图／矫正切换，可按后文完成校验与运行：
 

@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "repository": "zhang-yl24/fpga-distortion-correction",
+  "updated_date": "2026-11-07",
+  "default_target": {
+    "input": "HDMI camera",
+    "width": 1920,
+    "height": 1080,
+    "nominal_input_hz": 60,
+    "button": "KEY1",
+    "views": [
+      "RAW",
+      "CORR"
+    ],
+    "default_view": "CORR",
+    "additional_rotation": false,
+    "gamma_enabled": false,
+    "notes": [
+      "59.94 Hz should be recorded truthfully if measured.",
+      "Input/scan Hz is distinct from fresh corrected frames per second."
+    ]
+  },
+  "current_candidate": {
+    "id": "aa",
+    "ref": "delivery/20261107-camera1080p60-key1-aa",
+    "commit_sha": "87cf6ca466ba90d4d18c5d4d82ccd8b1820fde99",
+    "path": "delivery/20261107-camera1080p60-key1-aa",
+    "readme_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/87cf6ca466ba90d4d18c5d4d82ccd8b1820fde99/delivery/20261107-camera1080p60-key1-aa/README.md",
+    "rebuild_url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/87cf6ca466ba90d4d18c5d4d82ccd8b1820fde99/delivery/20261107-camera1080p60-key1-aa/rebuild/README.md",
+    "source_top": "delivery/20261107-camera1080p60-key1-aa/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+    "bitstream_sha256": "1665586da54bdbf5ed8cefa7d0bbe35f3cbb0219e03ae060fa68f6dfdb717f8a",
+    "bitstream_bytes": 3791112,
+    "source_profile": {
+      "RATIONAL_BROWN_PROFILE": 1,
+      "R34_ENABLE_GAMMA": 0,
+      "ENABLE_RUNTIME_ROTATION": 0,
+      "cfg_rot_cos_q30": 1073741824,
+      "cfg_rot_sin_q30": 0,
+      "KEY1_pin": "C23",
+      "debounce_ms": 20,
+      "frame_latch": "source_valid && source_ready"
+    },
+    "validation": {
+      "internal_sta": "12/12 zero failing endpoints under recorded models",
+      "setup_min_ns": 0.003,
+      "hold_min_ns": 0.044,
+      "portable_dependency_check": "155 files / 68 ordered imports checked with original lawful private dependencies",
+      "new_ip_generation": "not run",
+      "fresh_full_rebuild": "not run",
+      "sustained_camera_fresh_fps": "not verified",
+      "physical_key1_toggle": "not verified",
+      "external_io_cdc_reset": "not fully signed off"
+    },
+    "vendor_inputs": {
+      "omitted_count": 77,
+      "public_first_party_sources": 78,
+      "ddr_parameter_count": 371,
+      "license_files_included": false,
+      "public_vendor_implementation_rtl": false
+    },
+    "tools": {
+      "ddr_ip_generator": "IP Compiler 2022.2-SP6.4 build 146967 / HMIC_S1.10",
+      "implementation": "PDS 2025.2 build 211867"
+    }
+  },
+  "branch_roles": [
+    {
+      "branch": "main",
+      "role": "Shared project entry, reviewed organization and preserved accepted content"
+    },
+    {
+      "branch": "delivery/20261107-camera1080p60-key1-aa",
+      "role": "Current camera/KEY1 development and reproduction; reuse this existing line"
+    },
+    {
+      "branch": "codex/hdmi-camera-fisheye-tile8-directfill",
+      "role": "Peer collaboration, preserve owner workflow"
+    },
+    {
+      "branch": "codex/tile8-cache64-evaluation-20261104",
+      "role": "Open research PR #29",
+      "open_prs": [
+        29
+      ]
+    },
+    {
+      "branch": "delivery/20261103-hdmi1080-demo-source",
+      "role": "O/P/F/E2 historical foundation and required PR base",
+      "open_prs": [
+        22,
+        29
+      ]
+    },
+    {
+      "branch": "codex/hdmi1080-throughput",
+      "role": "Open collaborator PR #22 and base of #23",
+      "open_prs": [
+        22,
+        23
+      ]
+    },
+    {
+      "branch": "codex/hdmi1080-stable30",
+      "role": "Open collaborator PR #23",
+      "open_prs": [
+        23
+      ]
+    }
+  ],
+  "published_evidence": [
+    {
+      "id": "peer_1080p15",
+      "commit_sha": "136af4fedce0f4e001b455cb5cdbb320a1a124e4",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md",
+      "role": "Existing verified 1080p15 baseline, not current AA acceptance"
+    },
+    {
+      "id": "camera_720p15",
+      "commit_sha": "136af4fedce0f4e001b455cb5cdbb320a1a124e4",
+      "path": "delivery/20261104-camera720p15/README.md",
+      "role": "Historical separate DVP720 pipeline, not current default target"
+    },
+    {
+      "id": "a266",
+      "commit_sha": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261104-op-camera-input-unclosed4-diagnostic/DIAGNOSTIC_IDENTITY.json",
+      "role": "Reported camera 30 fresh FPS, four setup violations; no KEY1"
+    },
+    {
+      "id": "a266_timing",
+      "commit_sha": "8e88b3962fc03ca20c92761720f41ab886d3d34c",
+      "path": "delivery/20261104-a266044d-timing-review/README.md",
+      "role": "Separate exact original timing evidence"
+    },
+    {
+      "id": "key1_cf9f",
+      "commit_sha": "8c3fe2a05ae56e3338a495f5085d489506352439",
+      "path": "delivery/20261104-op-camera-key1-raw-corr/README.md",
+      "role": "KEY1 diagnostic candidate; internal STA passed, PC admission failed"
+    },
+    {
+      "id": "phase_contract",
+      "commit_sha": "5d53319c4167596cd2f577c65a3b2d8dfd54494d",
+      "path": "delivery/20261104-op-camera-key1-phase-contract/README.md",
+      "role": "Source candidate, implementation incomplete"
+    },
+    {
+      "id": "u_m8",
+      "commit_sha": "623e7a20cbb00d4b0da8047fcab3dce4852d3ca9",
+      "path": "delivery/20261104-camera60-key1-unified/README.md",
+      "role": "Historical U/M8 targets, not proof of 60 fresh FPS"
+    },
+    {
+      "id": "ddr_unit",
+      "commit_sha": "58490f3345e4a53b915b20768ac867f6f66f13c4",
+      "path": "integration-units/ddr-read-return-20261104/README.md",
+      "role": "Five isolated HDL tests passed; not the AA full-system test"
+    }
+  ],
+  "collaboration": {
+    "open_prs": [
+      22,
+      23,
+      29
+    ],
+    "policy": "Do not close, retarget, merge, or remove collaborator PR dependencies merely for branch-count reduction."
+  },
+  "file_policy": {
+    "frozen_paths_kept": true,
+    "mass_moves_performed": false,
+    "duplicate_blobs_not_deleted": true,
+    "missing_vendor_inputs_not_fabricated": true,
+    "legacy_integration_archive_link": "https://github.com/zhang-yl24/fpga-distortion-correction/tree/58490f3345e4a53b915b20768ac867f6f66f13c4/archive",
+    "legacy_source_audit_link": "https://github.com/zhang-yl24/fpga-distortion-correction/tree/58490f3345e4a53b915b20768ac867f6f66f13c4/docs/source-integration-20261104"
+  },
+  "inventory": {
+    "description": "All tracked files at thirteen fixed audit heads; unique case-sensitive (path, blob SHA). This predates the organization commit itself.",
+    "csv_path": "docs/file-inventory/PROJECT_FILES.csv",
+    "summary_path": "docs/file-inventory/SUMMARY.json",
+    "snapshot_count": 13,
+    "row_count": 13703,
+    "distinct_blobs": 8835,
+    "csv_sha256": "70c06e8b1943e36162f5c7107fdc93b18059a942cec3fcc34d5c3e7f3c4fea48",
+    "csv_git_blob_sha": "79e0c6ebdc32a794255e617b6048b13910eb32b4",
+    "source_refs": [
+      {
+        "id": "r01",
+        "branch": "codex/hdmi1080-stable30",
+        "commit_sha": "e89a2d42c21e6a216df00e4f0fdeb7c94439ba89"
+      },
+      {
+        "id": "r02",
+        "branch": "codex/hdmi1080-throughput",
+        "commit_sha": "bdaf8c1527fb46cc5b8753415fa02f464a8c08b0"
+      },
+      {
+        "id": "r03",
+        "branch": "codex/hdmi-camera-fisheye-tile8-directfill",
+        "commit_sha": "421f7cc9f4b4cf3a938e25b21cf24fef7072b40c"
+      },
+      {
+        "id": "r04",
+        "branch": "codex/tile8-cache64-evaluation-20261104",
+        "commit_sha": "bfd1c77c36bc790ecbd19c2fe7a53edde96ac132"
+      },
+      {
+        "id": "r05",
+        "branch": "delivery/20261103-hdmi1080-demo-source",
+        "commit_sha": "1b9727e31f690a2598ab51cdb27ba645c0d5eda5"
+      },
+      {
+        "id": "r06",
+        "branch": "delivery/20261104-a266044d-timing-review",
+        "commit_sha": "8e88b3962fc03ca20c92761720f41ab886d3d34c"
+      },
+      {
+        "id": "r07",
+        "branch": "delivery/20261104-camera60-key1-unified",
+        "commit_sha": "623e7a20cbb00d4b0da8047fcab3dce4852d3ca9"
+      },
+      {
+        "id": "r08",
+        "branch": "delivery/20261104-op-camera-input-diagnostics",
+        "commit_sha": "dbf928e91082e7c81b5a188b8b464726040da0a7"
+      },
+      {
+        "id": "r09",
+        "branch": "delivery/20261104-op-camera-key1-phase-contract",
+        "commit_sha": "5d53319c4167596cd2f577c65a3b2d8dfd54494d"
+      },
+      {
+        "id": "r10",
+        "branch": "delivery/20261104-op-camera-key1-raw-corr",
+        "commit_sha": "8c3fe2a05ae56e3338a495f5085d489506352439"
+      },
+      {
+        "id": "r11",
+        "branch": "delivery/20261107-camera1080p60-key1-aa",
+        "commit_sha": "87cf6ca466ba90d4d18c5d4d82ccd8b1820fde99"
+      },
+      {
+        "id": "r12",
+        "branch": "integration/20261104-fpga-branches",
+        "commit_sha": "58490f3345e4a53b915b20768ac867f6f66f13c4"
+      },
+      {
+        "id": "r13",
+        "branch": "main",
+        "commit_sha": "136af4fedce0f4e001b455cb5cdbb320a1a124e4"
+      }
+    ]
+  }
+}
