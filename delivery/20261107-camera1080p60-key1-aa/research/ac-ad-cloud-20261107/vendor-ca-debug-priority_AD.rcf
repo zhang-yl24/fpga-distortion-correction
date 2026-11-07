@@ -1,0 +1,13 @@
+# HMIC_S 1.10 generated pnr/ddr3_test.rcf; only the top instance prefix
+# changes from I_ips_ddr_top to u_ddr3_test_h. UG042003 2.8.5 requires
+# this priority-route file when integrating the IP into a custom project.
+def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_ioclk_gate [0]}
+def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_ioclk_gate [1]}
+# Extra CA priority is in this SAME file; do not clear the vendor gate priorities.
+def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/all_group_ca_dly}
+
+# Single-variable setup-prefix priority; all original vendor priorities retained.
+def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/debug_data [273]}
+
+# AD research only: preserve every AA priority and add the observed critical prefix.
+def_route -prior_net {u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/debug_data [135]}
