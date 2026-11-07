@@ -2,6 +2,8 @@
 
 [下载源码、位流和重建工具包](AA-camera1080p60-KEY1-rebuild-kit-20261107.zip) · [直接下载 SRAM 位流](bitstream/aa-camera1080p60-key1-1665586d.sbit?raw=1) · [测试步骤](TEST_INSTRUCTIONS.md) · [时序报告](reports/TIMING_REPORT.md) · [项目源码](native/) · [遥测工具说明](host/README.txt)
 
+[新增显式串口采集与新帧率分析](host/LIVE_CAPTURE_ZH.md)：可顺序采集原始字节、保存请求身份并按硬件 tick 分析稳定 RAW／CORR 窗口。该主机增强独立于原始冻结 ZIP，尚未连接真实串口验证，不改变位流或 RTL。
+
 本候选供同学实板测试，**尚未验证持续 60 个新校正帧/秒、KEY1 实板切换或新画质效果**。
 
 位流为 3791112 字节，SHA256：
@@ -21,3 +23,4 @@
 包中已补齐 371 项 DDR 参数、两 PLL 参数、参数写入／核对工具、155 文件相对闭包清单、68 导入及五阶段 Tcl。匹配原版 IP 补齐后的静态闭包已检查通过；全新 GUI 生成及重新 EDA 尚未实跑，不能承诺重建得到相同位流字节或 3 ps 余量。
 
 此公开副本不含受限厂商 RTL、许可证、本机路径或额外内部构建记录。77 项厂商 IP/PLL 输入仍须从合法官方组件生成／恢复，**不是免依赖的独立工程**；完整边界见 [SOURCE_AND_BUILD.md](SOURCE_AND_BUILD.md)。
+

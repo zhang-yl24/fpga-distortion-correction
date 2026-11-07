@@ -1,0 +1,76 @@
+# AA 显式串口采集与新帧率分析
+
+本工具配合本目录的 `aa_protocol.py`、`normal_function_uart.py`、`stats_protocol_legacy.py` 使用。只针对已发布 AA SRAM 位流 `1665586d…`，不修改 RTL、KEY1 模式、视频链路、DDR、复位或 Flash。
+
+这是新增主机工具，**尚未连接真实串口或开发板验证**。云端仅完成模拟串口和构造协议的回归；模拟结果不是 60 FPS 板测证据。已有位流、3 ps setup 余量和重建边界不因本工具变化。
+
+## 现场准备
+
+1. 核对加载文件 SHA256 为 `1665586da54bdbf5ed8cefa7d0bbe35f3cbb0219e03ae060fa68f6dfdb717f8a`，先保留现用回退位流。摄像头经 HDMI IN 输入 1920×1080、标称 60 Hz，HDMI OUT 接显示器。
+2. 使用唯一且明确的串口名，例如 `COM5`。UART 为 115200、8N1、无流控，RX=B24、TX=C24；逻辑电平匹配并共地。关闭会读写同一串口的其他程序。脚本不枚举、不猜测端口，也不丢弃接收缓冲。
+3. **每次采集前重新建立干净起点：**先复位 FPGA，此后不要发送过 SGA1 或启动其他采集。等待画面稳定，默认 CORR。测 RAW 时先完整短按并释放 KEY1，等待 RAW 实际呈现，再启动脚本。按下与释放各需稳定 20 ms。不要把“串口缓冲看起来为空”当作复位或整包起点证据。
+4. USB 串口适配器的 DTR/RTS 不得未经确认接到板复位。脚本在关闭状态下先将 DTR/RTS 置低，再打开端口，但操作系统/适配器仍可能产生瞬变，未承诺不会复位。
+5. 安装 Python 3.10+；只有现场采集需要 pyserial，离线分析和单元测试只用标准库：
+
+```
+python -m pip install pyserial
+```
+
+## CORR 采集示例
+
+在本 `host` 目录运行，替换为现场确认的端口和新的输出目录：
+
+```
+python aa_capture.py --port COM5 --out-dir corr-run-01 --epoch-label board1-reset1 --mode corr --seconds 10 --stats-interval 1 --loaded-bitstream-sha256 1665586da54bdbf5ed8cefa7d0bbe35f3cbb0219e03ae060fa68f6dfdb717f8a --confirm-clean-reset-boundary
+```
+
+`--confirm-clean-reset-boundary` 是操作员对上述干净起点的明确确认，脚本不能代替现场核实。位流 SHA 也由操作员提供，并非从 FPGA 回读身份。禁止为了通过检查而虚构这些证据。
+
+工具仅发送一次完整二进制 SGA1 ARM，再顺序发送带新 ticket/nonce/CRC 的 SGT1 统计请求。一次只等待一个回复，不并发发送，不重试部分写入、超时或结果不确定的请求。默认收集约 10 秒；首尾统计的真实窗口以硬件 tick 为准，串口接收耗时不用于算 FPS。
+
+输出目录必须不存在，防止覆盖已有证据：
+
+- `camera-uart.raw.bin`：原始收到的每一个字节，先保存再解析。CRC 错误和不完整字节也保留。
+- `capture.json`：明确端口、期望模式、复位标签、操作员提供的 SHA、每条实际请求及写入状态、原始文件 SHA 和采集完成/失败状态。
+
+成功结束仅说明所需协议包收集完成，**不会宣告硬件或 60 FPS 通过**。脚本不会发送停止视频或复位命令；AA 没有本工具可用的遥测 DISARM。结束后 FPGA 可能仍输出已 ARM 的被动遥测，下一次采集必须再次复位并建立新起点，不能直接重新运行后让解析器猜边界。
+
+## 离线分析
+
+确认从开始到结束没有 FPGA 复位、掉电或重新下载后，运行：
+
+```
+python aa_measure.py corr-run-01 --confirm-uninterrupted-epoch > corr-run-01-measurement.json
+```
+
+没有这项独立现场确认就停止，不能仅凭递增 tick 或 nonce 假定无复位。nonce 用于识别请求/遥测会话，不是硬件启动编号。
+
+程序要求整包起点、原始文件 SHA、一条匹配的 ARMED 回复、所有顺序统计请求一一对应、预期 AA ParameterID、Gamma 关闭、完成/签名模式一致、完整 1080 签名、无故障码，以及不倒退/回绕的 FrameID 与序号。只重复显示同一 FrameID 不能充当新画面。
+
+计算使用首尾 PGSTAT02 的 64 位 `CoreTick` 和 32 位各阶段计数。整个窗口必须短于 `2^32 / 125000000 ≈ 34.36` 秒，因此采集时长限制为 1–25 秒。计数差允许在此独立确认的连续 epoch 内按模 2^32 计算，并做每周期至多一事件的上限检查；FrameID、统计序号和签名序号回绕则拒绝，不猜测恢复。
+
+结果中 `Rates.presented_fps_nominal` 才是**新呈现帧率候选**；`captured_fps_nominal` 是源帧准入，`processed_fps_nominal` 是处理完成。`scan_repeat_fps_nominal` 单独记录。分窗口的新呈现速率、计数、PGSIG 不同 FrameID 数、遥测丢弃/中止/畸形计数同时保留。
+
+PGSIG 是经过 UART 传输的抽样交叉检查，不能与统计窗口端点精确对齐。所有速率基于声明的标称 125 MHz，并非独立测得的晶振频率。瞬时模式变化或复位可能未被数据包完整观察，仍需现场记录。60 Hz 显示扫描、ScanEpoch、Sequence 或单帧处理时间倒数都不能替代新帧率。
+
+RAW 请在新的复位 epoch、按 KEY1 切到 RAW 后独立采集，用 `--mode raw` 和新目录。切换过渡录像单独记录；不要把跨模式窗口当作稳定 RAW 或 CORR 的帧率。RAW 仍经 DDR 和 RGB565 量化，不是 HDMI 直通。
+
+## 异常与回传
+
+发现未知包边界、CRC 错、截断、身份不匹配或超时立即停止，保留原始数据与请求日志，不扫描 magic 重同步、不自动重发。若收到故障统计，离线分析拒绝接受窗口并打印首个遇到的故障字段；先保存证据再按现有流程恢复回退位流。
+
+只想查看原始包和故障详情时，使用既有离线解析器：
+
+```
+python aa_protocol.py --wire corr-run-01/camera-uart.raw.bin --known-packet-boundary
+```
+
+此选项仍须以实际整包起点证据为前提。回传整个采集目录、分析 JSON、源格式、板卡/适配器型号、KEY1 录像、配置结果和异常说明；不要只传截图或最终 FPS 数字。该工具不验证外部 I/O、CDC/reset、光学标定、端到端延迟或持续 60 新帧达标。
+
+## 离线自测
+
+```
+python -B -m unittest -v test_aa_tools.py
+```
+
+覆盖任意切包位置、逐字节输入、payload 内 magic、不重同步、CRC/截断、命令匹配、重复扫描、模式/Gamma/参数/故障拒绝、tick/序号/FrameID 回退、计数模回绕、端口打开前的许可保护、模拟串口全流程，以及部分写入/超时原始数据保留与不重试。测试不打开真实串口。

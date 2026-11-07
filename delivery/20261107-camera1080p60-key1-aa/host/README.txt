@@ -1,7 +1,14 @@
-Read-only offline host helpers for the frozen AA configuration.
-No script here imports serial or opens a device. Python3 standard library only.
-pyserial would be needed by a separately reviewed live collector, not by these
-parsers. No ready-to-run generic AA COM collector is claimed here.
+Host tools for the frozen AA configuration.
+The existing parsers and command-hex printers are read-only offline helpers;
+they use Python3 standard library only and never open a device.
+New aa_capture.py is an optional live collector requiring pyserial, an explicit
+operator-selected port and an attested clean reset/packet boundary. aa_measure.py
+calculates nominal hardware-time rates offline after independent confirmation
+that no FPGA reset occurred. See LIVE_CAPTURE_ZH.md for exact steps and limits.
+Real serial/board operation of the new collector has NOT been verified; only
+synthetic protocol and simulated-transport tests have passed.
+The original frozen rebuild ZIP is unchanged; the new host files are adjacent
+repository additions, not modifications to its RTL or bitstream.
 
 aa_protocol.py imports both sibling files:
  normal_function_uart.py (exact existing SGA1/SGK1/PGSIG001 helper)
@@ -53,10 +60,16 @@ reject FrameID rollover/backward identity rather than calling it new progress.
 New-presented rate candidate = delta(presented_frames)*nominal_core_hz/delta_tick;
 captured/processed rates use their own counters. Report nominal-clock scope and
 source, completed and displayed stages separately. PGSIG distinctFrameID is a
-freshness crosscheck, not a substitute for hardware-time/epoch proof. This
-offline parser deliberately does not calculate or certify rates automatically.
+freshness crosscheck, not a substitute for hardware-time/epoch proof. aa_protocol.py
+only decodes packets. The separate aa_measure.py now calculates nominal rates
+from a completed aa_capture.py evidence directory with strict request/mode/
+identity checks and an operator-attested uninterrupted epoch; it never certifies
+a hardware or sustained-60-FPS pass.
 Never use scan VS/Sequence/ScanEpoch/repeats, or1/last_process_duration, as fresh
 camera FPS. last_process_cycles is a32bit single-completion internal observation.
 
-No active serial client is included. Any later live collector must require an
-explicit operator-supplied port and must not select a default port or auto-open devices.
+The optional aa_capture.py never enumerates/selects a port, resets/programs the
+FPGA, changes KEY1, flushes incoming bytes, resynchronizes on magic or retries a
+partial/uncertain request. Each new capture requires a fresh quiet reset epoch.
+It sends only SGA1/SGT1 passive telemetry requests. See LIVE_CAPTURE_ZH.md.
+
