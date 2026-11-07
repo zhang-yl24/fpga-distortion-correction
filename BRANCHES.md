@@ -45,7 +45,7 @@ PR #28 的统一工程已被回退。历史头可从 Git 取回，不表示应�
 
 ## 2026-11-04 的既有成果
 
-- [原分支导航快照](docs/branches-20261107/PREVIOUS_BRANCHES_20261104.md)
+- [原分支导航快照](https://github.com/zhang-yl24/fpga-distortion-correction/blob/170303592e0f735a551fa94a72e852ff0acc9227/BRANCHES.md)
 - [原分支审计及清单](docs/branches-20261104/)
 - [原源码接口审计](docs/source-integration-20261104/)
 - [独立 DDR 读返回单元](integration-units/ddr-read-return-20261104/)，5 项 HDL 编译/仿真证据完整保留；尚未据此声明板级整合完成。
