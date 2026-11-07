@@ -1,0 +1,857 @@
+{
+  "Schema": "tile8df8-cold-full-query-capacity-associativity-screen-v1",
+  "CreatedUTC": "2026-11-04T01:52:25.536161+00:00",
+  "SourceDerivedTrace": true,
+  "CapturedRTLOrHardwarePerQueryTrace": false,
+  "FullFrameQueries": 2073600,
+  "RunLengthGroups": 460060,
+  "ColdFrameForEveryConfiguration": true,
+  "IndependentQ8BlockDecodePassed": true,
+  "PixelBlockBytes": 256,
+  "PixelsPerBlock": 128,
+  "TotalValidNeighbourSamples": 7453946,
+  "TotalOOBNeighbourSamples": 840454,
+  "UniqueRequestedBlocks": 14762,
+  "UniqueRequestedSourcePixels": 1734931,
+  "FastPathHitSnapshotBeforeDemandTouches": true,
+  "Replacement": "Set = fullBlockID mod(number of sets); retain full block ID; touch in neighbour0..3 order; exact LRU demand policy; OOB no cache or DDR action",
+  "IdenticalBlockQueryCompression": "After one query only, skip repetitions iff every valid block remains resident; repeated identical LRU demand order is idempotent; otherwise replay each query",
+  "Variants": [
+    {
+      "IndexBits": 8,
+      "CapacityLines": 256,
+      "CapacityKiB": 64,
+      "Ways": 1,
+      "Sets": 256,
+      "ReplacementPolicy": "full-tag sequential neighbour demand LRU; MRU on every in-bounds reference; lowest empty way before LRU victim",
+      "Queries": 2073600,
+      "FastQueries": 2038895,
+      "SlowQueries": 34705,
+      "Fills": 37483,
+      "InBoundsNeighbourSamples": 7453946,
+      "InBoundsNeighbourHits": 7416463,
+      "DemandHitRate": 0.9949713883089575,
+      "DDRReadPayloadBytes": 9595648,
+      "DDRReadBeats": 299864,
+      "ActualRAMCommitEventsRequired": 299864,
+      "QueryReturnedInBoundsSampleBytes": 14907892,
+      "SlowQueriesByFillCount": {
+        "2": 2671,
+        "1": 31981,
+        "3": 52,
+        "4": 1
+      },
+      "RepeatedQueryConflictFallbackIterations": 0,
+      "FinalResidentBlocks": 256,
+      "FinalResidentFullTagsSHA256": "d0ac4c5accd0483be4d8f455b12dff01b9bfc581aa69f57c59e75fc267166309",
+      "MaximumOutstandingBursts": 1,
+      "Models": [
+        {
+          "FirstResponseLatencyCycles": 0,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3144348,
+            "MillisecondsAt125MHz": 25.154784,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3231189,
+            "MillisecondsAt125MHz": 25.849512,
+            "PeriodicARWaitCycles": 19603,
+            "PeriodicRGapCycles": 67238
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 8,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3444212,
+            "MillisecondsAt125MHz": 27.553696,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3532027,
+            "MillisecondsAt125MHz": 28.256216,
+            "PeriodicARWaitCycles": 20573,
+            "PeriodicRGapCycles": 67242
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 40,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 4643668,
+            "MillisecondsAt125MHz": 37.149344,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 4730912,
+            "MillisecondsAt125MHz": 37.847296,
+            "PeriodicARWaitCycles": 19196,
+            "PeriodicRGapCycles": 68048
+          }
+        }
+      ],
+      "FillsSavedVsIndex8Direct": 0,
+      "PayloadSavedVsIndex8DirectBytes": 0,
+      "MinimumUniqueBlocks": 14762,
+      "RepeatedBlockRefillPayloadBytes": 5816576
+    },
+    {
+      "IndexBits": 9,
+      "CapacityLines": 512,
+      "CapacityKiB": 128,
+      "Ways": 1,
+      "Sets": 512,
+      "ReplacementPolicy": "full-tag sequential neighbour demand LRU; MRU on every in-bounds reference; lowest empty way before LRU victim",
+      "Queries": 2073600,
+      "FastQueries": 2045002,
+      "SlowQueries": 28598,
+      "Fills": 31110,
+      "InBoundsNeighbourSamples": 7453946,
+      "InBoundsNeighbourHits": 7422836,
+      "DemandHitRate": 0.9958263716962801,
+      "DDRReadPayloadBytes": 7964160,
+      "DDRReadBeats": 248880,
+      "ActualRAMCommitEventsRequired": 248880,
+      "QueryReturnedInBoundsSampleBytes": 14907892,
+      "SlowQueriesByFillCount": {
+        "2": 2441,
+        "1": 26122,
+        "3": 34,
+        "4": 1
+      },
+      "RepeatedQueryConflictFallbackIterations": 0,
+      "FinalResidentBlocks": 512,
+      "FinalResidentFullTagsSHA256": "bdffcdbbb78a1ab2e3b6bbd5db41b796fa5c63838e3723b54c895eba68ae3e75",
+      "MaximumOutstandingBursts": 1,
+      "Models": [
+        {
+          "FirstResponseLatencyCycles": 0,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 2958396,
+            "MillisecondsAt125MHz": 23.667168,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 185952,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 1.487616
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3030688,
+            "MillisecondsAt125MHz": 24.245504,
+            "PeriodicARWaitCycles": 16539,
+            "PeriodicRGapCycles": 55753,
+            "CyclesSavedVsIndex8Direct": 200501,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 1.604008
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 8,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3207276,
+            "MillisecondsAt125MHz": 25.658208,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 236936,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 1.895488
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3280388,
+            "MillisecondsAt125MHz": 26.243104,
+            "PeriodicARWaitCycles": 17254,
+            "PeriodicRGapCycles": 55858,
+            "CyclesSavedVsIndex8Direct": 251639,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 2.013112
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 40,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 4202796,
+            "MillisecondsAt125MHz": 33.622368,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 440872,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 3.526976
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 4275385,
+            "MillisecondsAt125MHz": 34.20308,
+            "PeriodicARWaitCycles": 16171,
+            "PeriodicRGapCycles": 56418,
+            "CyclesSavedVsIndex8Direct": 455527,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 3.644216
+          }
+        }
+      ],
+      "FillsSavedVsIndex8Direct": 6373,
+      "PayloadSavedVsIndex8DirectBytes": 1631488,
+      "MinimumUniqueBlocks": 14762,
+      "RepeatedBlockRefillPayloadBytes": 4185088
+    },
+    {
+      "IndexBits": 10,
+      "CapacityLines": 1024,
+      "CapacityKiB": 256,
+      "Ways": 1,
+      "Sets": 1024,
+      "ReplacementPolicy": "full-tag sequential neighbour demand LRU; MRU on every in-bounds reference; lowest empty way before LRU victim",
+      "Queries": 2073600,
+      "FastQueries": 2050845,
+      "SlowQueries": 22755,
+      "Fills": 24833,
+      "InBoundsNeighbourSamples": 7453946,
+      "InBoundsNeighbourHits": 7429113,
+      "DemandHitRate": 0.9966684759991553,
+      "DDRReadPayloadBytes": 6357248,
+      "DDRReadBeats": 198664,
+      "ActualRAMCommitEventsRequired": 198664,
+      "QueryReturnedInBoundsSampleBytes": 14907892,
+      "SlowQueriesByFillCount": {
+        "2": 2042,
+        "1": 20695,
+        "3": 18
+      },
+      "RepeatedQueryConflictFallbackIterations": 0,
+      "FinalResidentBlocks": 1024,
+      "FinalResidentFullTagsSHA256": "cdaf0662076e678b6dffe5c3785d34e35e7d1a83ee8ab38c8f1d839d67815421",
+      "MaximumOutstandingBursts": 1,
+      "Models": [
+        {
+          "FirstResponseLatencyCycles": 0,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 2778618,
+            "MillisecondsAt125MHz": 22.228944,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 365730,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 2.92584
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 2836368,
+            "MillisecondsAt125MHz": 22.690944,
+            "PeriodicARWaitCycles": 13228,
+            "PeriodicRGapCycles": 44522,
+            "CyclesSavedVsIndex8Direct": 394821,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 3.158568
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 8,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 2977282,
+            "MillisecondsAt125MHz": 23.818256,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 466930,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 3.73544
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3035528,
+            "MillisecondsAt125MHz": 24.284224,
+            "PeriodicARWaitCycles": 13723,
+            "PeriodicRGapCycles": 44523,
+            "CyclesSavedVsIndex8Direct": 496499,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 3.971992
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 40,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3771938,
+            "MillisecondsAt125MHz": 30.175504,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 871730,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 6.97384
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3829520,
+            "MillisecondsAt125MHz": 30.63616,
+            "PeriodicARWaitCycles": 12651,
+            "PeriodicRGapCycles": 44931,
+            "CyclesSavedVsIndex8Direct": 901392,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 7.211136
+          }
+        }
+      ],
+      "FillsSavedVsIndex8Direct": 12650,
+      "PayloadSavedVsIndex8DirectBytes": 3238400,
+      "MinimumUniqueBlocks": 14762,
+      "RepeatedBlockRefillPayloadBytes": 2578176
+    },
+    {
+      "IndexBits": 8,
+      "CapacityLines": 256,
+      "CapacityKiB": 64,
+      "Ways": 2,
+      "Sets": 128,
+      "ReplacementPolicy": "full-tag sequential neighbour demand LRU; MRU on every in-bounds reference; lowest empty way before LRU victim",
+      "Queries": 2073600,
+      "FastQueries": 2033652,
+      "SlowQueries": 39948,
+      "Fills": 42914,
+      "InBoundsNeighbourSamples": 7453946,
+      "InBoundsNeighbourHits": 7411032,
+      "DemandHitRate": 0.9942427809377744,
+      "DDRReadPayloadBytes": 10985984,
+      "DDRReadBeats": 343312,
+      "ActualRAMCommitEventsRequired": 343312,
+      "QueryReturnedInBoundsSampleBytes": 14907892,
+      "SlowQueriesByFillCount": {
+        "2": 2775,
+        "1": 37078,
+        "3": 94,
+        "4": 1
+      },
+      "RepeatedQueryConflictFallbackIterations": 0,
+      "FinalResidentBlocks": 256,
+      "FinalResidentFullTagsSHA256": "0c81a4f5cba5202f70d362dabce86bcfde483653ace4a538028ab0bb6ce87f92",
+      "MaximumOutstandingBursts": 1,
+      "Models": [
+        {
+          "FirstResponseLatencyCycles": 0,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3303570,
+            "MillisecondsAt125MHz": 26.42856,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": -159222,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": -1.273776
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3401602,
+            "MillisecondsAt125MHz": 27.212816,
+            "PeriodicARWaitCycles": 21254,
+            "PeriodicRGapCycles": 76778,
+            "CyclesSavedVsIndex8Direct": -170413,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": -1.363304
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 8,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3646882,
+            "MillisecondsAt125MHz": 29.175056,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": -202670,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": -1.62136
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3747352,
+            "MillisecondsAt125MHz": 29.978816,
+            "PeriodicARWaitCycles": 23393,
+            "PeriodicRGapCycles": 77077,
+            "CyclesSavedVsIndex8Direct": -215325,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": -1.7226
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 40,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 5020130,
+            "MillisecondsAt125MHz": 40.16104,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": -376462,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": -3.011696
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 5121547,
+            "MillisecondsAt125MHz": 40.972376,
+            "PeriodicARWaitCycles": 23864,
+            "PeriodicRGapCycles": 77553,
+            "CyclesSavedVsIndex8Direct": -390635,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": -3.12508
+          }
+        }
+      ],
+      "FillsSavedVsIndex8Direct": -5431,
+      "PayloadSavedVsIndex8DirectBytes": -1390336,
+      "MinimumUniqueBlocks": 14762,
+      "RepeatedBlockRefillPayloadBytes": 7206912
+    },
+    {
+      "IndexBits": 9,
+      "CapacityLines": 512,
+      "CapacityKiB": 128,
+      "Ways": 2,
+      "Sets": 256,
+      "ReplacementPolicy": "full-tag sequential neighbour demand LRU; MRU on every in-bounds reference; lowest empty way before LRU victim",
+      "Queries": 2073600,
+      "FastQueries": 2043385,
+      "SlowQueries": 30215,
+      "Fills": 32752,
+      "InBoundsNeighbourSamples": 7453946,
+      "InBoundsNeighbourHits": 7421194,
+      "DemandHitRate": 0.9956060856893785,
+      "DDRReadPayloadBytes": 8384512,
+      "DDRReadBeats": 262016,
+      "ActualRAMCommitEventsRequired": 262016,
+      "QueryReturnedInBoundsSampleBytes": 14907892,
+      "SlowQueriesByFillCount": {
+        "2": 2456,
+        "1": 27719,
+        "3": 39,
+        "4": 1
+      },
+      "RepeatedQueryConflictFallbackIterations": 0,
+      "FinalResidentBlocks": 512,
+      "FinalResidentFullTagsSHA256": "2cacca5305adc2a16a74207482216e3b42d4cc3283f13ebc1a4b920bf812d1d1",
+      "MaximumOutstandingBursts": 1,
+      "Models": [
+        {
+          "FirstResponseLatencyCycles": 0,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3007159,
+            "MillisecondsAt125MHz": 24.057272,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 137189,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 1.097512
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3083443,
+            "MillisecondsAt125MHz": 24.667544,
+            "PeriodicARWaitCycles": 17468,
+            "PeriodicRGapCycles": 58816,
+            "CyclesSavedVsIndex8Direct": 147746,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 1.181968
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 8,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3269175,
+            "MillisecondsAt125MHz": 26.1534,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 175037,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 1.400296
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3346177,
+            "MillisecondsAt125MHz": 26.769416,
+            "PeriodicARWaitCycles": 18370,
+            "PeriodicRGapCycles": 58632,
+            "CyclesSavedVsIndex8Direct": 185850,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 1.4868
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 40,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 4317239,
+            "MillisecondsAt125MHz": 34.537912,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 326429,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 2.611432
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 4393440,
+            "MillisecondsAt125MHz": 35.14752,
+            "PeriodicARWaitCycles": 16742,
+            "PeriodicRGapCycles": 59459,
+            "CyclesSavedVsIndex8Direct": 337472,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 2.699776
+          }
+        }
+      ],
+      "FillsSavedVsIndex8Direct": 4731,
+      "PayloadSavedVsIndex8DirectBytes": 1211136,
+      "MinimumUniqueBlocks": 14762,
+      "RepeatedBlockRefillPayloadBytes": 4605440
+    },
+    {
+      "IndexBits": 10,
+      "CapacityLines": 1024,
+      "CapacityKiB": 256,
+      "Ways": 2,
+      "Sets": 512,
+      "ReplacementPolicy": "full-tag sequential neighbour demand LRU; MRU on every in-bounds reference; lowest empty way before LRU victim",
+      "Queries": 2073600,
+      "FastQueries": 2054863,
+      "SlowQueries": 18737,
+      "Fills": 20630,
+      "InBoundsNeighbourSamples": 7453946,
+      "InBoundsNeighbourHits": 7433316,
+      "DemandHitRate": 0.9972323384151159,
+      "DDRReadPayloadBytes": 5281280,
+      "DDRReadBeats": 165040,
+      "ActualRAMCommitEventsRequired": 165040,
+      "QueryReturnedInBoundsSampleBytes": 14907892,
+      "SlowQueriesByFillCount": {
+        "2": 1861,
+        "1": 16860,
+        "3": 16
+      },
+      "RepeatedQueryConflictFallbackIterations": 0,
+      "FinalResidentBlocks": 1024,
+      "FinalResidentFullTagsSHA256": "dd186fc205f9e624686ef7c1bb6a0cf6a63b54314f64f5e3869919bbd7ae5610",
+      "MaximumOutstandingBursts": 1,
+      "Models": [
+        {
+          "FirstResponseLatencyCycles": 0,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 2656147,
+            "MillisecondsAt125MHz": 21.249176,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 488201,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 3.905608
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 2704483,
+            "MillisecondsAt125MHz": 21.635864,
+            "PeriodicARWaitCycles": 11283,
+            "PeriodicRGapCycles": 37053,
+            "CyclesSavedVsIndex8Direct": 526706,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 4.213648
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 8,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 2821187,
+            "MillisecondsAt125MHz": 22.569496,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 623025,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 4.9842
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 2869917,
+            "MillisecondsAt125MHz": 22.959336,
+            "PeriodicARWaitCycles": 11767,
+            "PeriodicRGapCycles": 36963,
+            "CyclesSavedVsIndex8Direct": 662110,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 5.29688
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 40,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3481347,
+            "MillisecondsAt125MHz": 27.850776,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 1162321,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 9.298568
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3529079,
+            "MillisecondsAt125MHz": 28.232632,
+            "PeriodicARWaitCycles": 10290,
+            "PeriodicRGapCycles": 37442,
+            "CyclesSavedVsIndex8Direct": 1201833,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 9.614664
+          }
+        }
+      ],
+      "FillsSavedVsIndex8Direct": 16853,
+      "PayloadSavedVsIndex8DirectBytes": 4314368,
+      "MinimumUniqueBlocks": 14762,
+      "RepeatedBlockRefillPayloadBytes": 1502208
+    },
+    {
+      "IndexBits": 8,
+      "CapacityLines": 256,
+      "CapacityKiB": 64,
+      "Ways": 4,
+      "Sets": 64,
+      "ReplacementPolicy": "full-tag sequential neighbour demand LRU; MRU on every in-bounds reference; lowest empty way before LRU victim",
+      "Queries": 2073600,
+      "FastQueries": 2030657,
+      "SlowQueries": 42943,
+      "Fills": 46004,
+      "InBoundsNeighbourSamples": 7453946,
+      "InBoundsNeighbourHits": 7407942,
+      "DemandHitRate": 0.9938282354071253,
+      "DDRReadPayloadBytes": 11777024,
+      "DDRReadBeats": 368032,
+      "ActualRAMCommitEventsRequired": 368032,
+      "QueryReturnedInBoundsSampleBytes": 14907892,
+      "SlowQueriesByFillCount": {
+        "2": 2837,
+        "1": 39995,
+        "3": 109,
+        "4": 2
+      },
+      "RepeatedQueryConflictFallbackIterations": 0,
+      "FinalResidentBlocks": 256,
+      "FinalResidentFullTagsSHA256": "6ab5037f2dcfdb8ec87642955631e26e578a18df39801d7a80420fe3a774f909",
+      "MaximumOutstandingBursts": 1,
+      "Models": [
+        {
+          "FirstResponseLatencyCycles": 0,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3394377,
+            "MillisecondsAt125MHz": 27.155016,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": -250029,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": -2.000232
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3499284,
+            "MillisecondsAt125MHz": 27.994272,
+            "PeriodicARWaitCycles": 22546,
+            "PeriodicRGapCycles": 82361,
+            "CyclesSavedVsIndex8Direct": -268095,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": -2.14476
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 8,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3762409,
+            "MillisecondsAt125MHz": 30.099272,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": -318197,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": -2.545576
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3869581,
+            "MillisecondsAt125MHz": 30.956648,
+            "PeriodicARWaitCycles": 24432,
+            "PeriodicRGapCycles": 82740,
+            "CyclesSavedVsIndex8Direct": -337554,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": -2.700432
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 40,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 5234537,
+            "MillisecondsAt125MHz": 41.876296,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": -590869,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": -4.726952
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 5343411,
+            "MillisecondsAt125MHz": 42.747288,
+            "PeriodicARWaitCycles": 25717,
+            "PeriodicRGapCycles": 83157,
+            "CyclesSavedVsIndex8Direct": -612499,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": -4.899992
+          }
+        }
+      ],
+      "FillsSavedVsIndex8Direct": -8521,
+      "PayloadSavedVsIndex8DirectBytes": -2181376,
+      "MinimumUniqueBlocks": 14762,
+      "RepeatedBlockRefillPayloadBytes": 7997952
+    },
+    {
+      "IndexBits": 9,
+      "CapacityLines": 512,
+      "CapacityKiB": 128,
+      "Ways": 4,
+      "Sets": 128,
+      "ReplacementPolicy": "full-tag sequential neighbour demand LRU; MRU on every in-bounds reference; lowest empty way before LRU victim",
+      "Queries": 2073600,
+      "FastQueries": 2049307,
+      "SlowQueries": 24293,
+      "Fills": 26457,
+      "InBoundsNeighbourSamples": 7453946,
+      "InBoundsNeighbourHits": 7427489,
+      "DemandHitRate": 0.9964506048205877,
+      "DDRReadPayloadBytes": 6772992,
+      "DDRReadBeats": 211656,
+      "ActualRAMCommitEventsRequired": 211656,
+      "QueryReturnedInBoundsSampleBytes": 14907892,
+      "SlowQueriesByFillCount": {
+        "2": 2106,
+        "1": 22158,
+        "3": 29
+      },
+      "RepeatedQueryConflictFallbackIterations": 0,
+      "FinalResidentBlocks": 512,
+      "FinalResidentFullTagsSHA256": "3c786bc63b409b36c7b404908840d4aa3fcb2e31f6f196e5d9ae111327a8ca58",
+      "MaximumOutstandingBursts": 1,
+      "Models": [
+        {
+          "FirstResponseLatencyCycles": 0,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 2825626,
+            "MillisecondsAt125MHz": 22.605008,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 318722,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 2.549776
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 2887624,
+            "MillisecondsAt125MHz": 23.100992,
+            "PeriodicARWaitCycles": 14371,
+            "PeriodicRGapCycles": 47627,
+            "CyclesSavedVsIndex8Direct": 343565,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 2.74852
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 8,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3037282,
+            "MillisecondsAt125MHz": 24.298256,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 406930,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 3.25544
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3099727,
+            "MillisecondsAt125MHz": 24.797816,
+            "PeriodicARWaitCycles": 15021,
+            "PeriodicRGapCycles": 47424,
+            "CyclesSavedVsIndex8Direct": 432300,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 3.4584
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 40,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3883906,
+            "MillisecondsAt125MHz": 31.071248,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 759762,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 6.078096
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3945334,
+            "MillisecondsAt125MHz": 31.562672,
+            "PeriodicARWaitCycles": 13451,
+            "PeriodicRGapCycles": 47977,
+            "CyclesSavedVsIndex8Direct": 785578,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 6.284624
+          }
+        }
+      ],
+      "FillsSavedVsIndex8Direct": 11026,
+      "PayloadSavedVsIndex8DirectBytes": 2822656,
+      "MinimumUniqueBlocks": 14762,
+      "RepeatedBlockRefillPayloadBytes": 2993920
+    },
+    {
+      "IndexBits": 10,
+      "CapacityLines": 1024,
+      "CapacityKiB": 256,
+      "Ways": 4,
+      "Sets": 256,
+      "ReplacementPolicy": "full-tag sequential neighbour demand LRU; MRU on every in-bounds reference; lowest empty way before LRU victim",
+      "Queries": 2073600,
+      "FastQueries": 2054646,
+      "SlowQueries": 18954,
+      "Fills": 20841,
+      "InBoundsNeighbourSamples": 7453946,
+      "InBoundsNeighbourHits": 7433105,
+      "DemandHitRate": 0.9972040312607577,
+      "DDRReadPayloadBytes": 5335296,
+      "DDRReadBeats": 166728,
+      "ActualRAMCommitEventsRequired": 166728,
+      "QueryReturnedInBoundsSampleBytes": 14907892,
+      "SlowQueriesByFillCount": {
+        "2": 1853,
+        "1": 17084,
+        "3": 17
+      },
+      "RepeatedQueryConflictFallbackIterations": 0,
+      "FinalResidentBlocks": 1024,
+      "FinalResidentFullTagsSHA256": "5cccd9b9a3011ccdc5f64a51532484c16e07ef0b44e066ccda0938dd4c8633ad",
+      "MaximumOutstandingBursts": 1,
+      "Models": [
+        {
+          "FirstResponseLatencyCycles": 0,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 2662569,
+            "MillisecondsAt125MHz": 21.300552,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 481779,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 3.854232
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 2711574,
+            "MillisecondsAt125MHz": 21.692592,
+            "PeriodicARWaitCycles": 11528,
+            "PeriodicRGapCycles": 37477,
+            "CyclesSavedVsIndex8Direct": 519615,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 4.15692
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 8,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 2829297,
+            "MillisecondsAt125MHz": 22.634376,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 614915,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 4.91932
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 2878772,
+            "MillisecondsAt125MHz": 23.030176,
+            "PeriodicARWaitCycles": 12038,
+            "PeriodicRGapCycles": 37437,
+            "CyclesSavedVsIndex8Direct": 653255,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 5.22604
+          }
+        },
+        {
+          "FirstResponseLatencyCycles": 40,
+          "NoArbitrationNoBeatHolesLowerBound": {
+            "Cycles": 3496209,
+            "MillisecondsAt125MHz": 27.969672,
+            "PeriodicARWaitCycles": 0,
+            "PeriodicRGapCycles": 0,
+            "CyclesSavedVsIndex8Direct": 1147459,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 9.179672
+          },
+          "PeriodicARAndBeatHoleServiceModel": {
+            "Cycles": 3544298,
+            "MillisecondsAt125MHz": 28.354384,
+            "PeriodicARWaitCycles": 10314,
+            "PeriodicRGapCycles": 37775,
+            "CyclesSavedVsIndex8Direct": 1186614,
+            "MillisecondsSavedVsIndex8DirectAt125MHz": 9.492912
+          }
+        }
+      ],
+      "FillsSavedVsIndex8Direct": 16642,
+      "PayloadSavedVsIndex8DirectBytes": 4260352,
+      "MinimumUniqueBlocks": 14762,
+      "RepeatedBlockRefillPayloadBytes": 1556224
+    }
+  ],
+  "ElapsedSeconds": 24.862046500085853,
+  "Limits": [
+    "Finite address/service model only; no new RTL, tag-port, pixel/CRC, queue, reset, fault, or read/write collision validation.",
+    "Associative cache requires a new physical bank/tag/read selection design; model LRU work and way selection have zero additional cost.",
+    "No-arbitration variant is a same-service-architecture lower bound, not a rigorous lower bound for all possible architectures.",
+    "Periodic AR/R schedules are declared synthetic assumptions; latency40 is not measured board DDR.",
+    "Mapper, writer, shared DDR arbitration, frame admission, bank ownership, scanout and presentation overlap are excluded.",
+    "No FPS, board processing time, physical timing or release acceptance is predicted.",
+    "Payload bytes are actual modeled fetched bytes; repeated block refill payload is not invalid pixel data or measured bus efficiency."
+  ],
+  "FrozenRTLModified": false,
+  "NewRTLExecuted": false,
+  "EDAExecuted": false,
+  "HardwareAccessed": false,
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\capacity_associativity_screen_a.py": "fa3e572f457b34bb0123decece435ad923f5e64c8f9f60e2f5e465fde6ab8df2",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df9tp-20261103-a\\trace-map-screen-a\\blocks-tile8.i32": "709df4ad4a38d55265bdd218cfd352d13f591e85e5551e3c97dc0f80442a2e13",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df9tp-20261103-a\\trace-map-screen-a\\mapped-cache-input-tile8-q8.i32": "32527599feaecf2db6a0e1ab83270e5ad530fb88f51b30c543158362d6c700fc",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\ddr_neighbour_cache_scatter16_rowpipe_directfill.v": "d4730a733bc8f84886d268fcc90bb702db035a41867c812d6119694fbbf35b1e",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\rtl\\experimental\\hdmi_camera_fisheye_engine_tile8df8.v": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df9tp-20261103-a\\trace-map-screen-a\\screening.json": "c0e7823a370d4f61e33b179190e8e2983b416f3cc2a0c5db96a6be6f0981ba90",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df9tp-20261103-a\\trace-map-screen-a\\screen_full_tile8_cache_maps.py": "4086dbbfd91d5d07064ff4205feeb1403b1ec523a3bff3d583688f7482aae905"
+  },
+  "InputDrift": []
+}

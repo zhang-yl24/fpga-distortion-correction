@@ -1,0 +1,660 @@
+{
+  "Schema": "assoc2way256-raw-research-result-v1",
+  "Passed": false,
+  "ResearchOnly": true,
+  "FullSimulationPending": true,
+  "ReleaseAllowed": false,
+  "HardwareAccessed": false,
+  "BitstreamRequested": false,
+  "PhysicalOrReleaseStageExecuted": false,
+  "PriorPhysicalSignoffInherited": false,
+  "StartedUTC": "2026-11-04T02:28:43.982990+00:00",
+  "SourceManifest": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-20261104-a\\raw-research-source-manifest-a.json",
+    "SHA256": "6434ab106789d8c8325a1409c01184aba91271057a0a23e64626c74448fcc3c1"
+  },
+  "IndependentPeer": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-a\\assoc2way256-raw-controller-independent-peer-a.json",
+    "SHA256": "f6767b009cbeb915a183a1b94309b95706b4656fcbeac09f7f10fa9dd75d7fca"
+  },
+  "EDAExecuted": true,
+  "InputDrift": [],
+  "BuildReceipt": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-20261104-a\\build-a\\execution-result.json",
+    "SHA256": "901c00d50eef3096bf43e5f295e41297fd768ac61ff38e5295de1a92f60eda6f"
+  },
+  "CoreTiming": {
+    "Passed": false,
+    "Rows": [
+      {
+        "Corner": "slow",
+        "Kind": "setup",
+        "WorstSlackNS": -1.155,
+        "TotalNegativeSlackNS": -158.729,
+        "FailingChecks": 687,
+        "TotalChecks": 55862
+      },
+      {
+        "Corner": "slow",
+        "Kind": "hold",
+        "WorstSlackNS": 0.06,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 55862
+      },
+      {
+        "Corner": "slow",
+        "Kind": "recovery",
+        "WorstSlackNS": 3.284,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 3735
+      },
+      {
+        "Corner": "slow",
+        "Kind": "removal",
+        "WorstSlackNS": 0.322,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 3735
+      },
+      {
+        "Corner": "slow",
+        "Kind": "mpw",
+        "WorstSlackNS": 2.655,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 11013
+      },
+      {
+        "Corner": "fast",
+        "Kind": "setup",
+        "WorstSlackNS": 2.275,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 55862
+      },
+      {
+        "Corner": "fast",
+        "Kind": "hold",
+        "WorstSlackNS": 0.044,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 55862
+      },
+      {
+        "Corner": "fast",
+        "Kind": "recovery",
+        "WorstSlackNS": 4.877,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 3735
+      },
+      {
+        "Corner": "fast",
+        "Kind": "removal",
+        "WorstSlackNS": 0.219,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 3735
+      },
+      {
+        "Corner": "fast",
+        "Kind": "mpw",
+        "WorstSlackNS": 3.202,
+        "TotalNegativeSlackNS": 0.0,
+        "FailingChecks": 0,
+        "TotalChecks": 11013
+      }
+    ],
+    "Report": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-20261104-a\\build-a\\report_timing\\hdmi_camera_fisheye_top.rtr",
+      "SHA256": "6f3d3e6a14152e45228246c4c3085765a71e0e4e564cb43190b80b9485a93ba3"
+    },
+    "AllTenRequired": true,
+    "OnlyOrdinaryCoreChecks": true,
+    "PhysicalSignoff": false
+  },
+  "RAMMapping": {
+    "Passed": true,
+    "CachePrimitiveCounts": {
+      "GTP_DRM36K_E1": 64
+    },
+    "CachePrimitiveCount": 64,
+    "LogicalPixelBytes": 262144,
+    "LogicalBitsByParity": {
+      "even": 1048576,
+      "odd": 1048576
+    },
+    "ExpectedWays": 2,
+    "ExpectedSets": 512,
+    "ExpectedPhysicalLines": 1024,
+    "DRM36Equivalent": 64.0,
+    "PrimitiveCountPresupposed": false,
+    "TrueDualPortAndReadBeforeWrite": true,
+    "Utilization": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-20261104-a\\build-a\\synthesize\\apm_drm_lutram_utilization.log",
+      "SHA256": "650585c2601d614db3130de64f6208c839e8e8e246a3735911e0d7fe922871b2"
+    },
+    "SynthesisNetlist": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-20261104-a\\build-a\\synthesize\\hdmi_camera_fisheye_top_syn.vm",
+      "SHA256": "b99f5fffcebd3ff721dbbc999a4d8eea0c8642a104f1f291dd227caaefdfea10"
+    },
+    "Rows": [
+      {
+        "Primitive": "odd_pixels_0",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_0                                                                                                                                       | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_1",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_1                                                                                                                                       | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_2",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_2                                                                                                                                       | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_3",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_3                                                                                                                                       | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_4",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_4                                                                                                                                       | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_5",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_5                                                                                                                                       | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_6",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_6                                                                                                                                       | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_7",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_7                                                                                                                                       | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_8",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_8                                                                                                                                       | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_9",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_9                                                                                                                                       | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_10",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_10                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_11",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_11                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_12",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_12                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_13",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_13                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_14",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_14                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_15",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_15                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_16",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_16                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_17",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_17                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_18",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_18                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_19",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_19                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_20",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_20                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_21",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_21                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_22",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_22                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_23",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_23                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_24",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_24                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_25",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_25                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_26",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_26                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_27",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_27                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_28",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_28                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_29",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_29                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_30",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_30                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "odd_pixels_31",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  odd_pixels_31                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_0",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_0                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_1",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_1                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_2",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_2                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_3",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_3                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_4",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_4                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_5",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_5                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_6",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_6                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_7",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_7                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_8",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_8                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_9",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_9                                                                                                                                      | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_10",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_10                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_11",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_11                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_12",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_12                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_13",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_13                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_14",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_14                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_15",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_15                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_16",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_16                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_17",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_17                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_18",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_18                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_19",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_19                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_20",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_20                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_21",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_21                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_22",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_22                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_23",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_23                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_24",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_24                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_25",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_25                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_26",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_26                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_27",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_27                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_28",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_28                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_29",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_29                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_30",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_30                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      },
+      {
+        "Primitive": "even_pixels_31",
+        "Type": "GTP_DRM36K_E1",
+        "Depth": 16384,
+        "PortDataWidth": 2,
+        "LogicalBits": 32768,
+        "ActualMappingRow": "|                                                  even_pixels_31                                                                                                                                     | 16 K x 2               | 16 K x 2               | READ_BEFORE_WRITE | READ_BEFORE_WRITE | TRUE_DUAL_PORT    | GTP_DRM36K_E1     |"
+      }
+    ]
+  },
+  "OwnedAliasReleased": true,
+  "FinishedUTC": "2026-11-04T02:53:24.302560+00:00"
+}

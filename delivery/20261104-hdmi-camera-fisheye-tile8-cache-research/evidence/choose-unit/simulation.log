@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# xsim v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Wed Nov  4 11:18:29 2026
+# Process ID: 43088
+# Current directory: D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/output/new-next-probe-20261104/assoc2way256-choose-a/unit-a
+# Command line: xsim.exe -log simulation.log -mode tcl -source {xsim.dir/tagpipe_tb/xsim_script.tcl}
+# Log file: D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/output/new-next-probe-20261104/assoc2way256-choose-a/unit-a/simulation.log
+# Journal file: D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/output/new-next-probe-20261104/assoc2way256-choose-a/unit-a\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/tagpipe_tb/xsim_script.tcl
+# xsim {tagpipe_tb} -autoloadwcfg -runall
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+run -all
+ASSOC_ORACLE WIDTH1920 INDEX10 checks306 fillways148/10 fastway1632 invalid146/8 lru3/2
+CHOOSE_CYCLES WIDTH1920 INDEX10 cycles306
+PASS DIRECTFILL independent WIDTH1920 INDEX10 fills158 outputs391 faults6
+ASSOC_ORACLE WIDTH639 INDEX6 checks310 fillways90/69 fastway1632 invalid44/35 lru47/34
+CHOOSE_CYCLES WIDTH639 INDEX6 cycles310
+PASS DIRECTFILL independent WIDTH639 INDEX6 fills159 outputs391 faults6
+ASSOC_ORACLE WIDTH2048 INDEX5 checks350 fillways89/90 fastway1593 invalid12/11 lru78/79
+CHOOSE_CYCLES WIDTH2048 INDEX5 cycles350
+PASS DIRECTFILL independent WIDTH2048 INDEX5 fills179 outputs391 faults6
+PASS TAGPIPE complete independent cache regression
+$finish called at time : 46600 ns : File "D:/GravityLRT/thu/semester_4.5/FPGAchina/fpga-distortion-correction/output/new-next-probe-20261104/assoc2way256-choose-a/tests/tb_assoc2_choose_cache_a.sv" Line 444
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Nov  4 11:18:35 2026...

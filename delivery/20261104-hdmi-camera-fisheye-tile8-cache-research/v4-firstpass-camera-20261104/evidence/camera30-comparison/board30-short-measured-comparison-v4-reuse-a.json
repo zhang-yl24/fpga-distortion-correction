@@ -1,0 +1,1691 @@
+{
+  "Schema": "fastpipe-board30-single-window-comparison-v4",
+  "ReportGenerated": true,
+  "CreatedUTC": "2026-11-04T10:01:31.485152+00:00",
+  "Source": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-fastpipe-a\\compare_board30_single_v4_reuse_a.py",
+    "SHA256": "7ef29904f507e13eeddf6a0523e85bd282b19f2e56937cff3ad6db4d799633df"
+  },
+  "ComparisonCore": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-fastpipe-a\\compare_board30_results_a.py",
+    "SHA256": "ac8d8bb632146232f9f6d9e5ad7587bda733dc40deeac2d5defca7a920ad5064"
+  },
+  "Baseline": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-fastpipe-a\\board30-baseline-comparison-a.json",
+    "SHA256": "45e2f3776971ad5e388caa0ec7b85e9cd982ff811fd99a95214e02746fa341cb"
+  },
+  "Short30Seconds": {
+    "SampleCount": 30,
+    "NominalCounterWindowSeconds": 29.0,
+    "HostCounterWindowSeconds": 28.99936980009079,
+    "Delta": {
+      "source_frames": 1740,
+      "captured_frames": 870,
+      "processed_frames": 870,
+      "unique_presented_frames": 870,
+      "scan_refreshes": 870,
+      "scan_good_frames": 870,
+      "scan_repeat_frames": 0,
+      "scan_blank_frames": 0
+    },
+    "NominalRates": {
+      "source_frames": 60.0,
+      "captured_frames": 30.0,
+      "processed_frames": 30.0,
+      "unique_presented_frames": 30.0,
+      "scan_refreshes": 30.0,
+      "scan_good_frames": 30.0,
+      "scan_repeat_frames": 0.0,
+      "scan_blank_frames": 0.0
+    },
+    "HostRates": {
+      "source_frames": 60.001303890216,
+      "captured_frames": 30.000651945108,
+      "processed_frames": 30.000651945108,
+      "unique_presented_frames": 30.000651945108,
+      "scan_refreshes": 30.000651945108,
+      "scan_good_frames": 30.000651945108,
+      "scan_repeat_frames": 0.0,
+      "scan_blank_frames": 0.0
+    },
+    "ProcessMS": {
+      "Min": 29.793015999999998,
+      "Median": 29.845248,
+      "P95NearestRank": 29.889032,
+      "Max": 29.889032
+    },
+    "ProcessMSUsingObservedHostClock": {
+      "Min": 29.79236856703523,
+      "Median": 29.84459943198,
+      "P95NearestRank": 29.888382480508522,
+      "Max": 29.888382480508522
+    },
+    "ProcessStatisticsBasis": "One last_process_cycles snapshot per telemetry sample; not every processed frame.",
+    "CaptureSourceRatio": 0.5,
+    "UniqueScanRatio": 1.0,
+    "RepeatScanRatio": 0.0,
+    "Cadence": {
+      "EverySequenceIncrementOne": true,
+      "EveryCoreIntervalExactlyOneSecond": true,
+      "EveryHostArrivalStrictlyIncreasing": true,
+      "BadIntervalIndices": [],
+      "HostIntervalSeconds": {
+        "Min": 0.9998628000030294,
+        "Median": 0.9999697000021115,
+        "P95NearestRank": 1.0000774000072852,
+        "Max": 1.000102199963294
+      }
+    },
+    "ErrorChecks": {
+      "ReceiptPassed": true,
+      "NoReceiptError": true,
+      "StatusAndFaultSamplesClean": true,
+      "CRCRejectedPacketsZero": true,
+      "DiscardedBytesZero": true,
+      "UARTTransmitBytesZero": true,
+      "BlankScanIncrementsZero": true,
+      "PlausibleCounterDeltas": true,
+      "PipelineConservation": true
+    },
+    "Assessment": {
+      "Criteria": {
+        "NominalFrameTargetFPS": 30,
+        "NominalRelativeTolerance": 0.01,
+        "HostFrameTargetFPS": 30,
+        "HostRelativeTolerance": 0.03,
+        "SourceTargetFPS": 60,
+        "SourceRelativeTolerance": 0.03,
+        "FrameCountersAssessed": [
+          "captured_frames",
+          "processed_frames",
+          "unique_presented_frames",
+          "scan_refreshes"
+        ]
+      },
+      "Nominal30Within1Percent": {
+        "captured_frames": true,
+        "processed_frames": true,
+        "unique_presented_frames": true,
+        "scan_refreshes": true
+      },
+      "Host30Within3Percent": {
+        "captured_frames": true,
+        "processed_frames": true,
+        "unique_presented_frames": true,
+        "scan_refreshes": true
+      },
+      "Source60Within3Percent": {
+        "Nominal": true,
+        "Host": true
+      },
+      "ContinuousTelemetryCadence": true,
+      "NoObservedErrors": true,
+      "MeetsRequested30FPSCriteria": true,
+      "PerIntervalFrameRateToleranceIsDiagnosticOnly": true,
+      "HardwarePixelAppearanceVerified": false,
+      "NotAReplacementForIndependentDecoderOrVisualInspection": true
+    },
+    "Intervals": [
+      {
+        "FirstSample": 0,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999640000751242,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.00216007325502,
+          "captured_frames": 30.00108003662751,
+          "processed_frames": 30.00108003662751,
+          "unique_presented_frames": 30.00108003662751,
+          "scan_refreshes": 30.00108003662751,
+          "scan_good_frames": 30.00108003662751,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 1,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999483999563381,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.00309616238183,
+          "captured_frames": 30.001548081190915,
+          "processed_frames": 30.001548081190915,
+          "unique_presented_frames": 30.001548081190915,
+          "scan_refreshes": 30.001548081190915,
+          "scan_good_frames": 30.001548081190915,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 2,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 1.0000014000106603,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 59.999915999477984,
+          "captured_frames": 29.999957999738992,
+          "processed_frames": 29.999957999738992,
+          "unique_presented_frames": 29.999957999738992,
+          "scan_refreshes": 29.999957999738992,
+          "scan_good_frames": 29.999957999738992,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 3,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999591000378132,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.002454098103726,
+          "captured_frames": 30.001227049051863,
+          "processed_frames": 30.001227049051863,
+          "unique_presented_frames": 30.001227049051863,
+          "scan_refreshes": 30.001227049051863,
+          "scan_good_frames": 30.001227049051863,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 4,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 1.0000235999468714,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 59.99858403660438,
+          "captured_frames": 29.99929201830219,
+          "processed_frames": 29.99929201830219,
+          "unique_presented_frames": 29.99929201830219,
+          "scan_refreshes": 29.99929201830219,
+          "scan_good_frames": 29.99929201830219,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 5,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 1.000102199963294,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 59.993868628828274,
+          "captured_frames": 29.996934314414137,
+          "processed_frames": 29.996934314414137,
+          "unique_presented_frames": 29.996934314414137,
+          "scan_refreshes": 29.996934314414137,
+          "scan_good_frames": 29.996934314414137,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 6,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999379999935627,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.00372023104059,
+          "captured_frames": 30.001860115520294,
+          "processed_frames": 30.001860115520294,
+          "unique_presented_frames": 30.001860115520294,
+          "scan_refreshes": 30.001860115520294,
+          "scan_good_frames": 30.001860115520294,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 7,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999168000649661,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.00499241147035,
+          "captured_frames": 30.002496205735174,
+          "processed_frames": 30.002496205735174,
+          "unique_presented_frames": 30.002496205735174,
+          "scan_refreshes": 30.002496205735174,
+          "scan_good_frames": 30.002496205735174,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 8,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999297000467777,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.004218293739186,
+          "captured_frames": 30.002109146869593,
+          "processed_frames": 30.002109146869593,
+          "unique_presented_frames": 30.002109146869593,
+          "scan_refreshes": 30.002109146869593,
+          "scan_good_frames": 30.002109146869593,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 9,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999875999055803,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.00074401489104,
+          "captured_frames": 30.00037200744552,
+          "processed_frames": 30.00037200744552,
+          "unique_presented_frames": 30.00037200744552,
+          "scan_refreshes": 30.00037200744552,
+          "scan_good_frames": 30.00037200744552,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 10,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999895000364631,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.00063000442724,
+          "captured_frames": 30.00031500221362,
+          "processed_frames": 30.00031500221362,
+          "unique_presented_frames": 30.00031500221362,
+          "scan_refreshes": 30.00031500221362,
+          "scan_good_frames": 30.00031500221362,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 11,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 1.0000016000121832,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 59.999903999422614,
+          "captured_frames": 29.999951999711307,
+          "processed_frames": 29.999951999711307,
+          "unique_presented_frames": 29.999951999711307,
+          "scan_refreshes": 29.999951999711307,
+          "scan_good_frames": 29.999951999711307,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 12,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999743000371382,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.00154203740201,
+          "captured_frames": 30.000771018701005,
+          "processed_frames": 30.000771018701005,
+          "unique_presented_frames": 30.000771018701005,
+          "scan_refreshes": 30.000771018701005,
+          "scan_good_frames": 30.000771018701005,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 13,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 1.0000445999903604,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 59.9973241199226,
+          "captured_frames": 29.9986620599613,
+          "processed_frames": 29.9986620599613,
+          "unique_presented_frames": 29.9986620599613,
+          "scan_refreshes": 29.9986620599613,
+          "scan_good_frames": 29.9986620599613,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 14,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9998644000152126,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.008137102478216,
+          "captured_frames": 30.004068551239108,
+          "processed_frames": 30.004068551239108,
+          "unique_presented_frames": 30.004068551239108,
+          "scan_refreshes": 30.004068551239108,
+          "scan_good_frames": 30.004068551239108,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 15,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999697000021115,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.001818054960374,
+          "captured_frames": 30.000909027480187,
+          "processed_frames": 30.000909027480187,
+          "unique_presented_frames": 30.000909027480187,
+          "scan_refreshes": 30.000909027480187,
+          "scan_good_frames": 30.000909027480187,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 16,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999591999221593,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.002448104553295,
+          "captured_frames": 30.001224052276648,
+          "processed_frames": 30.001224052276648,
+          "unique_presented_frames": 30.001224052276648,
+          "scan_refreshes": 30.001224052276648,
+          "scan_good_frames": 30.001224052276648,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 17,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 1.0000431999797001,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 59.99740811318745,
+          "captured_frames": 29.998704056593724,
+          "processed_frames": 29.998704056593724,
+          "unique_presented_frames": 29.998704056593724,
+          "scan_refreshes": 29.998704056593724,
+          "scan_good_frames": 29.998704056593724,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 18,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999308000551537,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.004152284028606,
+          "captured_frames": 30.002076142014303,
+          "processed_frames": 30.002076142014303,
+          "unique_presented_frames": 30.002076142014303,
+          "scan_refreshes": 30.002076142014303,
+          "scan_good_frames": 30.002076142014303,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 19,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999538999982178,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.00276612762542,
+          "captured_frames": 30.00138306381271,
+          "processed_frames": 30.00138306381271,
+          "unique_presented_frames": 30.00138306381271,
+          "scan_refreshes": 30.00138306381271,
+          "scan_good_frames": 30.00138306381271,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 20,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999453999334946,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.003276182870124,
+          "captured_frames": 30.001638091435062,
+          "processed_frames": 30.001638091435062,
+          "unique_presented_frames": 30.001638091435062,
+          "scan_refreshes": 30.001638091435062,
+          "scan_good_frames": 30.001638091435062,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 21,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 1.000046500004828,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 59.99721012943932,
+          "captured_frames": 29.99860506471966,
+          "processed_frames": 29.99860506471966,
+          "unique_presented_frames": 29.99860506471966,
+          "scan_refreshes": 29.99860506471966,
+          "scan_good_frames": 29.99860506471966,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 22,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999817000934854,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.00109801448444,
+          "captured_frames": 30.00054900724222,
+          "processed_frames": 30.00054900724222,
+          "unique_presented_frames": 30.00054900724222,
+          "scan_refreshes": 30.00054900724222,
+          "scan_good_frames": 30.00054900724222,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 23,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 1.0000774000072852,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 59.995356358980736,
+          "captured_frames": 29.997678179490368,
+          "processed_frames": 29.997678179490368,
+          "unique_presented_frames": 29.997678179490368,
+          "scan_refreshes": 29.997678179490368,
+          "scan_good_frames": 29.997678179490368,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 24,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9998628000030294,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.008233129403564,
+          "captured_frames": 30.004116564701782,
+          "processed_frames": 30.004116564701782,
+          "unique_presented_frames": 30.004116564701782,
+          "scan_refreshes": 30.004116564701782,
+          "scan_good_frames": 30.004116564701782,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 25,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 1.000034499913454,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 59.99793007660494,
+          "captured_frames": 29.99896503830247,
+          "processed_frames": 29.99896503830247,
+          "unique_presented_frames": 29.99896503830247,
+          "scan_refreshes": 29.99896503830247,
+          "scan_good_frames": 29.99896503830247,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 26,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999958000844344,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.00025199599229,
+          "captured_frames": 30.000125997996147,
+          "processed_frames": 30.000125997996147,
+          "unique_presented_frames": 30.000125997996147,
+          "scan_refreshes": 30.000125997996147,
+          "scan_good_frames": 30.000125997996147,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 27,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.999957799911499,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.00253211216542,
+          "captured_frames": 30.00126605608271,
+          "processed_frames": 30.00126605608271,
+          "unique_presented_frames": 30.00126605608271,
+          "scan_refreshes": 30.00126605608271,
+          "scan_good_frames": 30.00126605608271,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      },
+      {
+        "FirstSample": 28,
+        "SequenceIncrement": 1,
+        "NominalSeconds": 1.0,
+        "HostSeconds": 0.9999659000895917,
+        "ContiguousTelemetry": true,
+        "PlausibleCounterDeltas": true,
+        "CounterDelta": {
+          "source_frames": 60,
+          "captured_frames": 30,
+          "processed_frames": 30,
+          "unique_presented_frames": 30,
+          "scan_refreshes": 30,
+          "scan_good_frames": 30,
+          "scan_repeat_frames": 0,
+          "scan_blank_frames": 0
+        },
+        "NominalRates": {
+          "source_frames": 60.0,
+          "captured_frames": 30.0,
+          "processed_frames": 30.0,
+          "unique_presented_frames": 30.0,
+          "scan_refreshes": 30.0,
+          "scan_good_frames": 30.0,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "HostRates": {
+          "source_frames": 60.00204606439511,
+          "captured_frames": 30.001023032197555,
+          "processed_frames": 30.001023032197555,
+          "unique_presented_frames": 30.001023032197555,
+          "scan_refreshes": 30.001023032197555,
+          "scan_good_frames": 30.001023032197555,
+          "scan_repeat_frames": 0.0,
+          "scan_blank_frames": 0.0
+        },
+        "DiagnosticNominalTargetWithin1Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        },
+        "DiagnosticHostTargetWithin3Percent": {
+          "captured_frames": true,
+          "processed_frames": true,
+          "unique_presented_frames": true,
+          "scan_refreshes": true
+        }
+      }
+    ],
+    "Review": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-fastpipe-a\\board-fps30-independent-review-v4-reuse-a.json",
+      "SHA256": "372efd46b606a65fcdf858cf6a8e4712ee3a0812a4f227d5b8f892e9847bde63"
+    },
+    "Measurement": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-fastpipe-20261104-a\\fps-corrected-v4-reuse-a\\receipt.json",
+      "SHA256": "3413505c996153374e8fe382ce62d20a7b5c1676172660d69f7e7e0afd14605a"
+    },
+    "Bitstream": {
+      "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-fastpipe-20261104-a\\bit-v4-a\\generate_bitstream\\hdmi_camera_fisheye_top.sbit",
+      "SHA256": "e92cb8d00f11b1d4d1c239bd457fd9095289ac38c9215c9cfcf7e738d7eda26e",
+      "Bytes": 3791112,
+      "Header": {
+        "Design": "hdmi_camera_fisheye_top",
+        "Device": "Logos2-PG2L100H--6-FBG676",
+        "Date": "11/04/26",
+        "Time": "17:53:04",
+        "Generator": "Fabric Compiler",
+        "Version": "2023.2-SP3<154097>"
+      }
+    },
+    "AcquisitionSeconds": 30,
+    "DecoderTargetFPSNotAssertedPreserved": true,
+    "BaselineComparison": {
+      "BaselineReceipt": {
+        "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8-20261103-a\\fps-corrected-v3-a\\receipt.json",
+        "SHA256": "275287c3a8b919361b97a161448ed4bd8d91b499e110ccc8c5f67e243e1d73a2"
+      },
+      "BaselineBitSHA256": "aa21991374fbeb4a6733741095f38e27336f1e47dd67b963feb243428a5b353b",
+      "BaselineNominalRates": {
+        "source_frames": 60.0,
+        "captured_frames": 15.0,
+        "processed_frames": 15.0,
+        "unique_presented_frames": 15.0,
+        "scan_refreshes": 30.0,
+        "scan_good_frames": 30.0,
+        "scan_repeat_frames": 15.0,
+        "scan_blank_frames": 0.0
+      },
+      "BaselineHostRates": {
+        "source_frames": 60.00115057387732,
+        "captured_frames": 15.00028764346933,
+        "processed_frames": 15.00028764346933,
+        "unique_presented_frames": 15.00028764346933,
+        "scan_refreshes": 30.00057528693866,
+        "scan_good_frames": 30.00057528693866,
+        "scan_repeat_frames": 15.00028764346933,
+        "scan_blank_frames": 0.0
+      },
+      "BaselineProcessMS": {
+        "Min": 35.406232,
+        "Median": 35.468068,
+        "Mean": 35.46315306666666,
+        "P95NearestRank": 35.50556,
+        "Max": 35.512552,
+        "Last": 35.465376
+      },
+      "ObservedNominalUniqueThroughputRatio": 2.0,
+      "SameSceneOrControlledWorkloadNotEstablished": true,
+      "SimulationNotSubstitutedForBoardMeasurement": true
+    },
+    "CounterFollowUpSuggestions": [
+      "本窗口满足约定计数与连续性标准；仍需单独确认板卡实际画面。"
+    ]
+  },
+  "Assessment": {
+    "Criteria": {
+      "NominalFrameTargetFPS": 30,
+      "NominalRelativeTolerance": 0.01,
+      "HostFrameTargetFPS": 30,
+      "HostRelativeTolerance": 0.03,
+      "SourceTargetFPS": 60,
+      "SourceRelativeTolerance": 0.03,
+      "FrameCountersAssessed": [
+        "captured_frames",
+        "processed_frames",
+        "unique_presented_frames",
+        "scan_refreshes"
+      ]
+    },
+    "Nominal30Within1Percent": {
+      "captured_frames": true,
+      "processed_frames": true,
+      "unique_presented_frames": true,
+      "scan_refreshes": true
+    },
+    "Host30Within3Percent": {
+      "captured_frames": true,
+      "processed_frames": true,
+      "unique_presented_frames": true,
+      "scan_refreshes": true
+    },
+    "Source60Within3Percent": {
+      "Nominal": true,
+      "Host": true
+    },
+    "ContinuousTelemetryCadence": true,
+    "NoObservedErrors": true,
+    "MeetsRequested30FPSCriteria": true,
+    "PerIntervalFrameRateToleranceIsDiagnosticOnly": true,
+    "HardwarePixelAppearanceVerified": false,
+    "NotAReplacementForIndependentDecoderOrVisualInspection": true,
+    "Only30SecondsNot600": true,
+    "NoVisual": true,
+    "ReleaseAuthorizedByThisReport": false
+  },
+  "HardwareAccessed": false,
+  "UARTOpened": false,
+  "FullClosureRehashed": false,
+  "Only30SecondsNot600": true,
+  "NoVisual": true
+}

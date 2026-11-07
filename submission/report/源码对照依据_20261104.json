@@ -1,0 +1,1149 @@
+{
+  "schema": "fixedcorr-source-comparison-v1",
+  "checked_utc": "2026-11-04T08:10:23.100996+00:00",
+  "read_only_audit": true,
+  "hardware_accessed": false,
+  "eda_or_simulation_run": false,
+  "selected": {
+    "commit": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+    "bit_sha256": "a266044d4da4b8883fc7fa1e9250f62aee37bbf27df349354b2a11250129c547",
+    "bit_path": "delivery/20261104-op-camera-input-unclosed4-diagnostic/camera-op-input-firstloss-timing-unclosed4-setup-minus32ps-diagnostic.sbit",
+    "现场事实": "本轮用户再次本地下载并验证校正画面成功；此前用户已确认30FPS。"
+  },
+  "baseline": {
+    "commit": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+    "frozen_source_commit": "45223998ce3695960297937519d37759499bb4f5",
+    "bit_sha256": "aa21991374fbeb4a6733741095f38e27336f1e47dd67b963feb243428a5b353b",
+    "bit_path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/bitstream/hdmi_camera_fisheye_top.sbit"
+  },
+  "sources": {
+    "a_top": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261104-op-camera-input-diagnostics/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+      "blob": "ae98bf6eeead6d25102fb086062536fb825eebbe",
+      "sha256": "70d62863088ff6d74c2530aa20218bf8d3dc3fc2cff2e38edbba36468cdf2714",
+      "bytes": 19768,
+      "lines": 261,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261104-op-camera-input-diagnostics/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v"
+    },
+    "a_mode": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v",
+      "blob": "fc5189e753b8ea178c7689abc116dde2fadb5422",
+      "sha256": "5616da2b4d1d44e00cc28c8913e60308474f35d0cdcca5e7ae7c61a28c4bc4e6",
+      "bytes": 1533,
+      "lines": 34,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v"
+    },
+    "a_gamma": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/boardtop-penn-prep-20261029-a/board1080-penn.vh",
+      "blob": "6971ee0d07aeab63e35f94ce4895e30199be2e8f",
+      "sha256": "633cc52b3b5aff84c743fe7567487f871fc1e0d630f9bb121d9252db2fece607",
+      "bytes": 1096,
+      "lines": 15,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/boardtop-penn-prep-20261029-a/board1080-penn.vh"
+    },
+    "a_engine": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v",
+      "blob": "dd1b7393a688dea753647a3ac2cbe64133c73748",
+      "sha256": "52aebdbe7bf88d7f47606305ed9578af710fd791b34796007f44238778dce4d5",
+      "bytes": 8121,
+      "lines": 110,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v"
+    },
+    "a_core": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/rotated_remap_core_gamma_geometry_bypass_scatter4.v",
+      "blob": "8ed61aea0ade6d7aa25bfcd85eaf9b52657eb549",
+      "sha256": "8516bba5dd953441ab335f682bd7c4a789c21233ee18411634e32ec2a8ae7f2b",
+      "bytes": 6804,
+      "lines": 91,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/rotated_remap_core_gamma_geometry_bypass_scatter4.v"
+    },
+    "a_bank": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v",
+      "blob": "e14d8e099bf5cef492f73ecf61fc9ffee4978702",
+      "sha256": "278f9392e8c08b46c0fa9d6ddedc032efa0817c431efd4e1894e068381249234",
+      "bytes": 10293,
+      "lines": 145,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v"
+    },
+    "a_system": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v",
+      "blob": "dca028ff63f632ef95374594f22245e231e89cb1",
+      "sha256": "845180f552d68aae64e837b38f501357e9304bccf9be4850bf7a2d148023aeb6",
+      "bytes": 23530,
+      "lines": 291,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v"
+    },
+    "a_sample": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_remap_sample_scatter4.v",
+      "blob": "61176fc7a297509881959419aa7ecaec7fb3f42f",
+      "sha256": "9d6da89737ac642700f39fbe3c15b98bfe40513e9d6bd7b62610d881bba69aa9",
+      "bytes": 3449,
+      "lines": 40,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_remap_sample_scatter4.v"
+    },
+    "a_cache": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv",
+      "blob": "6e1645d056b076a2f8ff09eceb9dd9ffc58b1de8",
+      "sha256": "1485cdd8c0104f971dc14ea10bb9984c06e5b140240e8d9ebcd72deac54a8503",
+      "bytes": 30412,
+      "lines": 531,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv"
+    },
+    "a_store": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/quad_parity_prefetch_store.sv",
+      "blob": "1b5480fdc365a87cc33cf5eadbf1c74c302f778b",
+      "sha256": "d0ed6681a5c0d8fbf0d822c8f4040c69049fda969ac5d549caca4d66f7ec946c",
+      "bytes": 13833,
+      "lines": 261,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/quad_parity_prefetch_store.sv"
+    },
+    "a_writer_selector": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_adaptive_result_writer.v",
+      "blob": "65082ede1458f4be5ac0c79f7b733faa46326ed6",
+      "sha256": "e8f79154cd1e5404ac2f0d89de8e61f0b1f7386e258cdb681be36f38ae1491e2",
+      "bytes": 12202,
+      "lines": 225,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_adaptive_result_writer.v"
+    },
+    "a_writer": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_tile8_rowburst_writer.sv",
+      "blob": "0fd7694caf7e962dc17a063061c08509b5fbcba1",
+      "sha256": "0122fdce7be4122f84b4d6bd2aada90359531706651f504c5238d61112b52a48",
+      "bytes": 15775,
+      "lines": 291,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_tile8_rowburst_writer.sv"
+    },
+    "a_dma": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/hdmi1080_input_dma.v",
+      "blob": "736bcb4f4faee05cb7950fdb839033b8ac7db1f8",
+      "sha256": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29",
+      "bytes": 11402,
+      "lines": 188,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/hdmi1080_input_dma.v"
+    },
+    "a_arbiter": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/ddr_read_arbiter.v",
+      "blob": "dad2ea07876ad11cfeb15bca21a845d043eb639e",
+      "sha256": "59283dd5d5d292cf8dd6d1bff51b565c13357ce94bdead0d467421604c5f72be",
+      "bytes": 3189,
+      "lines": 61,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/ddr_read_arbiter.v"
+    },
+    "a_profile": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/board/hdmi-camera-fisheye-profile.vh",
+      "blob": "9b15259e26b39c4ae349f1c25e45261720f54f55",
+      "sha256": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+      "bytes": 766,
+      "lines": 13,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/board/hdmi-camera-fisheye-profile.vh"
+    },
+    "a_radial": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/board/hdmi-camera-fisheye-radial-table.vh",
+      "blob": "db4d954728ae0caaaa78cae767a12cc091bacf1d",
+      "sha256": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+      "bytes": 64683,
+      "lines": 1032,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/board/hdmi-camera-fisheye-radial-table.vh"
+    },
+    "a_mapper": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "blob": "5302cc806ce0d980f09481d95b01efd6555cfed1",
+      "sha256": "55a6e840e142e2242ac7083e8c498268ef49757b9e0a78fea9c052eb25198855",
+      "bytes": 6514,
+      "lines": 99,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/rtl/experimental/hdmi_camera_fisheye_mapper.v"
+    },
+    "a_rom": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/rtl/experimental/hdmi_camera_fisheye_rom.v",
+      "blob": "bca64399c91983056412cb3b0b698b626f8c7493",
+      "sha256": "e14d9322a7429a8da474dee448b056a024841d01843658a31c105f3d1ca81dca",
+      "bytes": 479,
+      "lines": 10,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/rtl/experimental/hdmi_camera_fisheye_rom.v"
+    },
+    "a_identity": {
+      "ref": "dbf928e91082e7c81b5a188b8b464726040da0a7",
+      "path": "delivery/20261104-op-camera-input-unclosed4-diagnostic/DIAGNOSTIC_IDENTITY.json",
+      "blob": "fc1433bffc5c88320d0d4306601d1a777705a6f2",
+      "sha256": "a864eb9d15e60f594081b0ac40c9ca9dfe94dc2fd9a9318a285b79164183f89f",
+      "bytes": 1302,
+      "lines": 41,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261104-op-camera-input-unclosed4-diagnostic/DIAGNOSTIC_IDENTITY.json"
+    },
+    "b_top": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v",
+      "blob": "ba1892c621b996bff2c14226fe47a1cf17a8078e",
+      "sha256": "5a929d9371d33197de2faae8863fa5a5f4d3167e7b9cc61d4a357e47a9e6a62d",
+      "bytes": 18242,
+      "lines": 286,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v"
+    },
+    "b_engine": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v",
+      "blob": "cd2bc3a5a126fad04465e946b7e71fa0d27e94e1",
+      "sha256": "3b7b35186f6dba412e8e41b8798f63e6530cc750281b3041f8a837b421ad5a28",
+      "bytes": 6676,
+      "lines": 104,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v"
+    },
+    "b_cache": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v",
+      "blob": "310da49b35af5e0b6de7ee18da773b7f8200f956",
+      "sha256": "d4730a733bc8f84886d268fcc90bb702db035a41867c812d6119694fbbf35b1e",
+      "bytes": 21817,
+      "lines": 402,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v"
+    },
+    "b_writer": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v",
+      "blob": "1825b854af77aacbd45f6eb2236922b3d85a9fe8",
+      "sha256": "ee8705df74b495ec9bcf790099ddbe6d2b7951ef4e6bc3a2d1d9e5373851e8da",
+      "bytes": 8239,
+      "lines": 168,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v"
+    },
+    "b_bank": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v",
+      "blob": "1a9bcb9e299daffdc92d8c1cf37a16a2c9583514",
+      "sha256": "9404658e762b51f8a8e9926936f6533908fbc686b90674fa03d1db2b0f43b482",
+      "bytes": 5933,
+      "lines": 94,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v"
+    },
+    "b_system": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_system_c.v",
+      "blob": "af363139e0df96ddaf50b44adc7b202deff312cd",
+      "sha256": "c6485f8df49ba398cad00bafbbcf223a672a99ef3eeab8932e9cf2fe8103bb6d",
+      "bytes": 18173,
+      "lines": 233,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_system_c.v"
+    },
+    "b_dma": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v",
+      "blob": "6d28f912f2e980ead427024e5a4f90e5eb0d8486",
+      "sha256": "ba4c24e483452bd4a3c52bc74ecece429eb793e17c73c1a037af3ebec4c48660",
+      "bytes": 9834,
+      "lines": 165,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v"
+    },
+    "b_arbiter": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_read_arbiter_fill8r2.v",
+      "blob": "16d81dd2529baf70d28ca6cbc9dc5e72f216a758",
+      "sha256": "de0c11db399033511048ef18a90345881f8f13d2458b81ff6daa131f79393ec7",
+      "bytes": 3698,
+      "lines": 74,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_read_arbiter_fill8r2.v"
+    },
+    "b_profile": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-profile.vh",
+      "blob": "9b15259e26b39c4ae349f1c25e45261720f54f55",
+      "sha256": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+      "bytes": 766,
+      "lines": 13,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-profile.vh"
+    },
+    "b_radial": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-radial-table.vh",
+      "blob": "db4d954728ae0caaaa78cae767a12cc091bacf1d",
+      "sha256": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+      "bytes": 64683,
+      "lines": 1032,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-radial-table.vh"
+    },
+    "b_mapper": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/rtl/experimental/hdmi_camera_fisheye_mapper.v",
+      "blob": "2159371e9b95992630b9ac9fc7479d6f05a0aa6a",
+      "sha256": "4da53ea6dd80f0fba12546cdc1639218eba402759752de701dd93f95eb8caeea",
+      "bytes": 6575,
+      "lines": 99,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/rtl/experimental/hdmi_camera_fisheye_mapper.v"
+    },
+    "b_rom": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/rtl/experimental/hdmi_camera_fisheye_rom.v",
+      "blob": "2b0f2e11161f7e3e46acd914ec85be23773a8f2e",
+      "sha256": "21bb7f7d27a079aa00c601d72c1c9f3f2c11e1c8dd87e7fb275e20cb55306928",
+      "bytes": 540,
+      "lines": 10,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/rtl/experimental/hdmi_camera_fisheye_rom.v"
+    },
+    "b_readme": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md",
+      "blob": "885122301a75520a641fd7502b62d04d19806769",
+      "sha256": "83665fe65d719c97f664cbea2c3c02d5296cf5a0097e91ed193bd6c0daf08e53",
+      "bytes": 3466,
+      "lines": 41,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md"
+    },
+    "b_board600": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/evidence/board-600s-review.json",
+      "blob": "ef8e1c29ffc1f8382b839d53163fbf6d1bbe7324",
+      "sha256": "2993e59abb811f183bd0f48bc9df02ac29220814dabbed45092c106fae63ac7b",
+      "bytes": 769489,
+      "lines": 16959,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/evidence/board-600s-review.json"
+    },
+    "b_sta": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/reports/final_timing_summary.rtr",
+      "blob": "8a8ae563eefafe03d70d969dd59e08f0e031a501",
+      "sha256": "1a5e858d9950ac5b5a6c0af7559b6bd72bc0f54fea98a20c522e4e949bb572d0",
+      "bytes": 23375,
+      "lines": 238,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/reports/final_timing_summary.rtr"
+    },
+    "b_resource": {
+      "ref": "f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00",
+      "path": "delivery/20261104-hdmi-camera-fisheye-tile8-directfill/reports/resource-binding.json",
+      "blob": "04941c2313c1c8f153537ac63a376832f317d320",
+      "sha256": "afe128582829ba943cb55de9e2aeed2a353fba517dd92468f4e1d071a710b1ad",
+      "bytes": 314435,
+      "lines": 1590,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/reports/resource-binding.json"
+    },
+    "a_clock": {
+      "ref": "8e88b3962fc03ca20c92761720f41ab886d3d34c",
+      "path": "delivery/20261104-a266044d-timing-review/raw/report_timing_clock_summary.db",
+      "blob": "b7c70d1c0746057cc08548c3b21d6ccd1d9afb1e",
+      "sha256": "7324af3959570d807e571cc3072e2e5fd7e19369f9e7ed54a2f24288a3d33489",
+      "bytes": 5665,
+      "lines": 149,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8e88b3962fc03ca20c92761720f41ab886d3d34c/delivery/20261104-a266044d-timing-review/raw/report_timing_clock_summary.db"
+    },
+    "a_sta": {
+      "ref": "8e88b3962fc03ca20c92761720f41ab886d3d34c",
+      "path": "delivery/20261104-a266044d-timing-review/raw/report_timing_slow_setup.db",
+      "blob": "549428fbb4d1c81397944e225452c434efee6d2a",
+      "sha256": "9bce392900f28aa917a04b5adb3b353cdcbe10a141bc561c6ad73261894a0270",
+      "bytes": 4846,
+      "lines": 165,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8e88b3962fc03ca20c92761720f41ab886d3d34c/delivery/20261104-a266044d-timing-review/raw/report_timing_slow_setup.db"
+    },
+    "a_timing_paths": {
+      "ref": "8e88b3962fc03ca20c92761720f41ab886d3d34c",
+      "path": "delivery/20261104-a266044d-timing-review/paths.csv",
+      "blob": "1bc3b351d7354975b8bd5089a30ee134168f5bd8",
+      "sha256": "39e50621a0b13bd97d2f7dbd793bc1ea896ca24734430e8a8f26b5cb9da247c6",
+      "bytes": 1698,
+      "lines": 5,
+      "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8e88b3962fc03ca20c92761720f41ab886d3d34c/delivery/20261104-a266044d-timing-review/paths.csv"
+    }
+  },
+  "comparison": [
+    {
+      "id": "function",
+      "label": "已验证结果与算法",
+      "baseline_15fps": "1920×1080鱼眼校正，新处理/新显示各15FPS；KEY1按帧切换原图和校正。",
+      "selected_30fps": "用户已本地下载a266并用摄像头验证1920×1080校正画面成功、30FPS。",
+      "evidence": [
+        {
+          "source": "b_readme",
+          "line_start": 3,
+          "line_end": 3,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md#L3-L3",
+          "excerpt": "3: 本目录只包含tile8 direct-fill INDEX8 v3一个1080p执行位流。输入1920×1080约60 Hz，输出扫描30 Hz，实测约15个新校正帧/秒；保持当前KB4镜头参数及既有输出视场。"
+        },
+        {
+          "source": "b_top",
+          "line_start": 213,
+          "line_end": 220,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L213-L220",
+          "excerpt": "213:     // Reuse the proven KEY1 control in the DDR core domain. It starts in\n214:     // corrected mode, qualifies both release and press for 20 ms, and emits\n215:     // one change for a held key. The mapper accepts the requested mode only\n216:     // at its frame handshake after all prior coordinate requests drain.\n217:     wire corrected_requested,view_toggle_pulse;\n218:     camera720_view_control #(.DEBOUNCE_CYCLES(2500000)) view_control(\n219:         .clk(core_clk),.rst_n(core_reset[1]),.key1_n(key1_n),\n220:         .corrected_requested(corrected_requested),.toggle_pulse(view_toggle_pulse));"
+        },
+        {
+          "source": "a_top",
+          "line_start": 231,
+          "line_end": 247,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261104-op-camera-input-diagnostics/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v#L231-L247",
+          "excerpt": "231:     hdmi1080_video_system_geometry_ab #(.WIDTH(1920),.HEIGHT(1080),.BANK_STRIDE(1048576),\n232:         .HDMI_FISHEYE_PROFILE(HDMI_FISHEYE_PROFILE),.STATS_ENABLE(1),.CACHE_PROFILE(CACHE_PROFILE),.TILE8_GROUP_WIDTH(TILE8_GROUP_WIDTH),.RASTER_DOUBLE_BUFFER(1),.STATS_CORE_HZ(125000000),\n233:         .MAX_RADIUS_Q22(B1080_RADIUS_Q22),.HT(2200),.VT(1125),.HS(44),.VS(5),.X0(192),.Y0(41)) system(\n234:         .core_clk(core_clk),.pix_in_clk(pixclk_in),.pix_out_clk(pix_clk),.rst_n(pipeline_reset_n),\n235:         .telemetry_clk(clk_27m),.telemetry_rx(telemetry_rx),.telemetry_tx(normal_telemetry_tx),\n236:         .telemetry_param_id(32'hed59f83e), // static manifest lookup tag, not a fresh session nonce\n237:         .gamma_enable(B1080_GAMMA_ENABLE),.correction_enable(correction_enable),\n238:         .cfg_rot_cx(B1080_ROT_CX),.cfg_rot_cy(B1080_ROT_CY),\n239:         .cfg_rot_cos(B1080_ROT_COS),.cfg_rot_sin(B1080_ROT_SIN),\n240:         .source_commit(system_source_commit),\n241:         .capture_admit(core_reset[1] && qualified_core[1] && !board_failed_core[1]),\n242:         .scan_enable(core_reset[1] && !board_failed_core[1]),\n243:         .external_fault(board_failed_core[1]),.external_fault_code(board_fault),\n244:         .pix_in_vsync_active(normalized_vs),.pix_in_de(sampled_de),.pix_in_rgb(sampled_rgb),\n245:         .cfg_out_cx(B1080_OUT_CX),.cfg_out_cy(B1080_OUT_CY),.cfg_src_cx(B1080_SRC_CX),.cfg_src_cy(B1080_SRC_CY),\n246:         .cfg_src_fx(B1080_SRC_FX),.cfg_src_fy(B1080_SRC_FY),.cfg_inv_fx(B1080_INV_FX),.cfg_inv_fy(B1080_INV_FY),\n247:         .cfg_k1(B1080_K1),.cfg_k2(B1080_K2),.cfg_k3(B1080_K3),.cfg_p1(B1080_P1),.cfg_p2(B1080_P2),"
+        },
+        {
+          "source": "a_profile",
+          "line_start": 1,
+          "line_end": 13,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/board/hdmi-camera-fisheye-profile.vh#L1-L13",
+          "excerpt": "1: // Generated from the source-bound new HDMI C calibration; no Brown surrogate.\n2: // Native1920x1080, C preview balance=.5, output centre transform 2*c+.5.\n3: // Pixel/focal Q8, inverse focal Q30; round nearest, ties toward +infinity.\n4: localparam signed [31:0] FISHEYE_OUT_CX=32'sh00037f7a;\n5: localparam signed [31:0] FISHEYE_OUT_CY=32'sh0002311e;\n6: localparam signed [31:0] FISHEYE_SRC_CX=32'sh0003afbf;\n7: localparam signed [31:0] FISHEYE_SRC_CY=32'sh00022c90;\n8: localparam signed [31:0] FISHEYE_SRC_FX=32'sh0003283a;\n9: localparam signed [31:0] FISHEYE_SRC_FY=32'sh00032a15;\n10: localparam signed [31:0] FISHEYE_INV_FX=32'sh0020dd73;\n11: localparam signed [31:0] FISHEYE_INV_FY=32'sh0020ca34;\n12: localparam integer FISHEYE_R2_MAX_Q22=33554432;\n13: localparam integer FISHEYE_RADIAL_SEGMENTS=1024;"
+        }
+      ],
+      "selected_result_source": "本轮用户现场确认；output/new-next-probe-20261104/teammate-source-review-a/FINDINGS.md 第3行。",
+      "report_wording": "1920×1080实时鱼眼校正已达到30FPS；保留15FPS长期板测基线作为工程对照。"
+    },
+    {
+      "id": "mode_audit",
+      "label": "模式绑定（内部审计）",
+      "baseline_15fps": "KEY1模式请求在帧接受时锁存。",
+      "selected_30fps": "top实例FIXED_MODE=1，控制器持续correction_enable=1；当前交付top无KEY1入口。",
+      "evidence": [
+        {
+          "source": "a_top",
+          "line_start": 184,
+          "line_end": 188,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261104-op-camera-input-diagnostics/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v#L184-L188",
+          "excerpt": "184:     // All control is core-domain; failure holds mode and preserves drain.\n185:     frame_ab_control #(.FIXED_MODE(1)) frame_mode_control(.clk(core_clk),.rst_n(core_reset[1]),\n186:         .commit_pulse(system_source_commit),.failed(system_failed || board_failed_core[1]),\n187:         .correction_enable(correction_enable));\n188:     // Temporary passive startup diagnostic. Existing system resets and RX remain exact."
+        },
+        {
+          "source": "a_mode",
+          "line_start": 10,
+          "line_end": 19,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v#L10-L19",
+          "excerpt": "10:     output reg correction_enable\n11: );\n12:     localparam integer COUNT_BITS=(HOLD_CYCLES>1)?$clog2(HOLD_CYCLES):1;\n13:     generate if(FIXED_MODE==0 || FIXED_MODE==1)begin: fixed_measurement\n14:         always @(posedge clk or negedge rst_n)begin\n15:             if(!rst_n)correction_enable<=FIXED_MODE==1;\n16:             else if(!failed)correction_enable<=FIXED_MODE==1;\n17:         end\n18:     end else if(HOLD_CYCLES<=1)begin: each_frame\n19:         always @(posedge clk or negedge rst_n)begin"
+        },
+        {
+          "source": "b_top",
+          "line_start": 213,
+          "line_end": 220,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L213-L220",
+          "excerpt": "213:     // Reuse the proven KEY1 control in the DDR core domain. It starts in\n214:     // corrected mode, qualifies both release and press for 20 ms, and emits\n215:     // one change for a held key. The mapper accepts the requested mode only\n216:     // at its frame handshake after all prior coordinate requests drain.\n217:     wire corrected_requested,view_toggle_pulse;\n218:     camera720_view_control #(.DEBOUNCE_CYCLES(2500000)) view_control(\n219:         .clk(core_clk),.rst_n(core_reset[1]),.key1_n(key1_n),\n220:         .corrected_requested(corrected_requested),.toggle_pulse(view_toggle_pulse));"
+        }
+      ],
+      "report_visibility": "正式主文正向描述校正功能；按键功能只归15方案；不得假赋30按键功能。"
+    },
+    {
+      "id": "geometry",
+      "label": "相同标定参数与几何处理",
+      "baseline_15fps": "原生1920×1080、C预览balance=.5，鱼眼profile及1024段径向表。",
+      "selected_30fps": "profile与径向表逐字相同；mapper/ROM除include重定位外相同。",
+      "evidence": [
+        {
+          "source": "a_profile",
+          "line_start": 1,
+          "line_end": 13,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/board/hdmi-camera-fisheye-profile.vh#L1-L13",
+          "excerpt": "1: // Generated from the source-bound new HDMI C calibration; no Brown surrogate.\n2: // Native1920x1080, C preview balance=.5, output centre transform 2*c+.5.\n3: // Pixel/focal Q8, inverse focal Q30; round nearest, ties toward +infinity.\n4: localparam signed [31:0] FISHEYE_OUT_CX=32'sh00037f7a;\n5: localparam signed [31:0] FISHEYE_OUT_CY=32'sh0002311e;\n6: localparam signed [31:0] FISHEYE_SRC_CX=32'sh0003afbf;\n7: localparam signed [31:0] FISHEYE_SRC_CY=32'sh00022c90;\n8: localparam signed [31:0] FISHEYE_SRC_FX=32'sh0003283a;\n9: localparam signed [31:0] FISHEYE_SRC_FY=32'sh00032a15;\n10: localparam signed [31:0] FISHEYE_INV_FX=32'sh0020dd73;\n11: localparam signed [31:0] FISHEYE_INV_FY=32'sh0020ca34;\n12: localparam integer FISHEYE_R2_MAX_Q22=33554432;\n13: localparam integer FISHEYE_RADIAL_SEGMENTS=1024;"
+        },
+        {
+          "source": "b_profile",
+          "line_start": 1,
+          "line_end": 13,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-profile.vh#L1-L13",
+          "excerpt": "1: // Generated from the source-bound new HDMI C calibration; no Brown surrogate.\n2: // Native1920x1080, C preview balance=.5, output centre transform 2*c+.5.\n3: // Pixel/focal Q8, inverse focal Q30; round nearest, ties toward +infinity.\n4: localparam signed [31:0] FISHEYE_OUT_CX=32'sh00037f7a;\n5: localparam signed [31:0] FISHEYE_OUT_CY=32'sh0002311e;\n6: localparam signed [31:0] FISHEYE_SRC_CX=32'sh0003afbf;\n7: localparam signed [31:0] FISHEYE_SRC_CY=32'sh00022c90;\n8: localparam signed [31:0] FISHEYE_SRC_FX=32'sh0003283a;\n9: localparam signed [31:0] FISHEYE_SRC_FY=32'sh00032a15;\n10: localparam signed [31:0] FISHEYE_INV_FX=32'sh0020dd73;\n11: localparam signed [31:0] FISHEYE_INV_FY=32'sh0020ca34;\n12: localparam integer FISHEYE_R2_MAX_Q22=33554432;\n13: localparam integer FISHEYE_RADIAL_SEGMENTS=1024;"
+        },
+        {
+          "source": "a_radial",
+          "line_start": 1,
+          "line_end": 12,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/board/hdmi-camera-fisheye-radial-table.vh#L1-L12",
+          "excerpt": "1: // 1025 Q30 nodes on uniform r2[0,8] packed as1024 adjacent segments.\n2: // ROM word[31:0]=baseQ30; word[63:32]=signed(next-base)Q30.\n3: function [63:0] fisheye_radial_pair(input [9:0] address);\n4:     begin\n5:         case(address)\n6:             10'd0: fisheye_radial_pair=64'hffd29be240000000;\n7:             10'd1: fisheye_radial_pair=64'hffd30c9f3fd29be2;\n8:             10'd2: fisheye_radial_pair=64'hffd37b623fa5a881;\n9:             10'd3: fisheye_radial_pair=64'hffd3e83b3f7923e3;\n10:             10'd4: fisheye_radial_pair=64'hffd453363f4d0c1e;\n11:             10'd5: fisheye_radial_pair=64'hffd4bc5e3f215f54;\n12:             10'd6: fisheye_radial_pair=64'hffd523c03ef61bb2;"
+        },
+        {
+          "source": "b_radial",
+          "line_start": 1,
+          "line_end": 12,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/board/hdmi-camera-fisheye-radial-table.vh#L1-L12",
+          "excerpt": "1: // 1025 Q30 nodes on uniform r2[0,8] packed as1024 adjacent segments.\n2: // ROM word[31:0]=baseQ30; word[63:32]=signed(next-base)Q30.\n3: function [63:0] fisheye_radial_pair(input [9:0] address);\n4:     begin\n5:         case(address)\n6:             10'd0: fisheye_radial_pair=64'hffd29be240000000;\n7:             10'd1: fisheye_radial_pair=64'hffd30c9f3fd29be2;\n8:             10'd2: fisheye_radial_pair=64'hffd37b623fa5a881;\n9:             10'd3: fisheye_radial_pair=64'hffd3e83b3f7923e3;\n10:             10'd4: fisheye_radial_pair=64'hffd453363f4d0c1e;\n11:             10'd5: fisheye_radial_pair=64'hffd4bc5e3f215f54;\n12:             10'd6: fisheye_radial_pair=64'hffd523c03ef61bb2;"
+        },
+        {
+          "source": "a_mapper",
+          "line_start": 14,
+          "line_end": 33,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/profile/rtl/experimental/hdmi_camera_fisheye_mapper.v#L14-L33",
+          "excerpt": "14:     `include \"source/profile/board/hdmi-camera-fisheye-profile.vh\"\n15:     localparam signed [63:0] WIDE_WIDTH=WIDTH,WIDE_HEIGHT=HEIGHT;\n16:     localparam signed [31:0] OCX=((FISHEYE_OUT_CX+64'sd128)*WIDE_WIDTH+960)/1920-128;\n17:     localparam signed [31:0] OCY=((FISHEYE_OUT_CY+64'sd128)*WIDE_HEIGHT+540)/1080-128;\n18:     localparam signed [31:0] SCX=((FISHEYE_SRC_CX+64'sd128)*WIDE_WIDTH+960)/1920-128;\n19:     localparam signed [31:0] SCY=((FISHEYE_SRC_CY+64'sd128)*WIDE_HEIGHT+540)/1080-128;\n20:     localparam signed [31:0] SFX=(FISHEYE_SRC_FX*WIDE_WIDTH+960)/1920;\n21:     localparam signed [31:0] SFY=(FISHEYE_SRC_FY*WIDE_HEIGHT+540)/1080;\n22:     localparam signed [31:0] IFX=(FISHEYE_INV_FX*64'sd1920+WIDTH/2)/WIDTH;\n23:     localparam signed [31:0] IFY=(FISHEYE_INV_FY*64'sd1080+HEIGHT/2)/HEIGHT;\n24:     reg configured,corrected;\n25:     reg [22:0] valid,black;\n26:     reg [TAG_W-1:0] tags[0:22];\n27:     reg signed [23:0] identity_x[0:22],identity_y[0:22];\n28:     wire advance=!valid[22] || out_ready;\n29:     assign cfg_ready=!rst && !(|valid);\n30:     assign in_ready=!rst && configured && advance && !cfg_valid;\n31:     assign out_valid=valid[22];assign out_black=black[22];assign out_tag=tags[22];\n32:     assign out_x=out_black ? 24'sh800000:(corrected ? result_x:identity_x[22]);\n33:     assign out_y=out_black ? 24'sh800000:(corrected ? result_y:identity_y[22]);"
+        },
+        {
+          "source": "b_mapper",
+          "line_start": 14,
+          "line_end": 33,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/rtl/experimental/hdmi_camera_fisheye_mapper.v#L14-L33",
+          "excerpt": "14:     `include \"P:/distortion/work/hdmi-camera-fisheye-tile8df8-20261103-a/build-a/compiled/board/hdmi-camera-fisheye-profile.vh\"\n15:     localparam signed [63:0] WIDE_WIDTH=WIDTH,WIDE_HEIGHT=HEIGHT;\n16:     localparam signed [31:0] OCX=((FISHEYE_OUT_CX+64'sd128)*WIDE_WIDTH+960)/1920-128;\n17:     localparam signed [31:0] OCY=((FISHEYE_OUT_CY+64'sd128)*WIDE_HEIGHT+540)/1080-128;\n18:     localparam signed [31:0] SCX=((FISHEYE_SRC_CX+64'sd128)*WIDE_WIDTH+960)/1920-128;\n19:     localparam signed [31:0] SCY=((FISHEYE_SRC_CY+64'sd128)*WIDE_HEIGHT+540)/1080-128;\n20:     localparam signed [31:0] SFX=(FISHEYE_SRC_FX*WIDE_WIDTH+960)/1920;\n21:     localparam signed [31:0] SFY=(FISHEYE_SRC_FY*WIDE_HEIGHT+540)/1080;\n22:     localparam signed [31:0] IFX=(FISHEYE_INV_FX*64'sd1920+WIDTH/2)/WIDTH;\n23:     localparam signed [31:0] IFY=(FISHEYE_INV_FY*64'sd1080+HEIGHT/2)/HEIGHT;\n24:     reg configured,corrected;\n25:     reg [22:0] valid,black;\n26:     reg [TAG_W-1:0] tags[0:22];\n27:     reg signed [23:0] identity_x[0:22],identity_y[0:22];\n28:     wire advance=!valid[22] || out_ready;\n29:     assign cfg_ready=!rst && !(|valid);\n30:     assign in_ready=!rst && configured && advance && !cfg_valid;\n31:     assign out_valid=valid[22];assign out_black=black[22];assign out_tag=tags[22];\n32:     assign out_x=out_black ? 24'sh800000:(corrected ? result_x:identity_x[22]);\n33:     assign out_y=out_black ? 24'sh800000:(corrected ? result_y:identity_y[22]);"
+        }
+      ],
+      "equal_sha256": {
+        "profile": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+        "radial": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f"
+      },
+      "report_wording": "保留相同鱼眼标定参数、径向查表与坐标映射，优化帧管理和DDR访存。",
+      "boundary": "源码相同不等于两次现场镜头安装、输入资格或测量窗口完全一致；旧标定误差/画质表仍归15基线。"
+    },
+    {
+      "id": "engine",
+      "label": "帧处理及Tile8遍历",
+      "baseline_15fps": "8×8 tile遍历，INDEX_BITS=8采样缓存，完整像素弹性寄存边界与双条带writer。",
+      "selected_30fps": "8×8 tile遍历，INDEX_BITS=6预取缓存；mapper→四邻域→双线性插值→Gamma关闭通路→writer。",
+      "evidence": [
+        {
+          "source": "b_engine",
+          "line_start": 38,
+          "line_end": 44,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_engine_tile8df8.v#L38-L44",
+          "excerpt": "38:     wire signed [23:0] u={3'b0,column,8'b0},v={3'b0,row,8'b0};\n39:     hdmi_camera_fisheye_core #(.WIDTH(WIDTH),.HEIGHT(HEIGHT),.INDEX_BITS(8),.TIMEOUT_BITS(TIMEOUT_BITS)) core(\n40:         .clk(clk),.rst_n(rst_n),.frame_valid(begin_frame),.frame_ready(core_frame_ready),.frame_base(source_base),\n41:         .cfg_corrected(cfg_corrected),\n42:         .in_valid(coordinate_valid),.in_ready(coordinate_ready),.in_u(u),.in_v(v),.in_tag(raster_tag[23:0]),\n43:         .out_valid(result_valid),.out_ready(result_ready),.out_rgb(result_rgb),.out_tag(result_tag),.out_masked(result_masked),\n44:         .araddr(araddr),.arlen(arlen),.arvalid(arvalid),.arready(arready),"
+        },
+        {
+          "source": "a_engine",
+          "line_start": 44,
+          "line_end": 75,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v#L44-L75",
+          "excerpt": "44:     wire begin_frame=frame_valid && frame_ready && valid_layout;\n45:     wire coordinate_valid=state==SCAN && !failed;\n46:     wire signed [23:0] u={3'b0,column,8'b0},v={3'b0,row,8'b0};\n47:     rotated_remap_core_gamma_geometry_bypass_scatter4 #(.HDMI_FISHEYE_PROFILE(HDMI_FISHEYE_PROFILE),.CACHE_PROFILE(CACHE_PROFILE),.WIDTH(WIDTH),.HEIGHT(HEIGHT),.INDEX_BITS(6),.TIMEOUT_BITS(TIMEOUT_BITS),.MAX_RADIUS_Q22(MAX_RADIUS_Q22)) core(\n48:         .clk(clk),.rst_n(rst_n),.frame_valid(begin_frame),.frame_ready(core_frame_ready),.frame_base(source_base),.correction_enable(correction_enable),\n49:         .cfg_out_cx(cfg_out_cx),.cfg_out_cy(cfg_out_cy),.cfg_src_cx(cfg_src_cx),.cfg_src_cy(cfg_src_cy),\n50:         .cfg_src_fx(cfg_src_fx),.cfg_src_fy(cfg_src_fy),.cfg_inv_fx(cfg_inv_fx),.cfg_inv_fy(cfg_inv_fy),\n51:         .cfg_k1(cfg_k1),.cfg_k2(cfg_k2),.cfg_k3(cfg_k3),.cfg_p1(cfg_p1),.cfg_p2(cfg_p2),\n52:         .cfg_rot_cx(cfg_rot_cx),.cfg_rot_cy(cfg_rot_cy),.cfg_rot_cos(cfg_rot_cos),.cfg_rot_sin(cfg_rot_sin),\n53:         .in_valid(coordinate_valid),.in_ready(coordinate_ready),.in_u(u),.in_v(v),.in_tag(raster_tag[23:0]),\n54:         .out_valid(result_valid),.out_ready(result_ready),.out_rgb(result_rgb),.out_tag(result_tag),.out_masked(result_masked),\n55:         .araddr(araddr),.arlen(arlen),.arvalid(arvalid),.arready(arready),\n56:         .rdata(rdata),.rvalid(rvalid),.rlast(rlast),.rid(rid),\n57:         .failed(core_failed),.fault(core_fault),.hits(hits),.misses(misses),.completed_queries(completed_queries));\n58:     wire tone_valid,tone_ready,tone_fault,tone_masked;\n59:     wire [15:0] tone_pixel;\n60:     wire [23:0] tone_tag;\n61:     wire [1:0] tone_next;\n62:     adaptive_gamma_tagged #(.WIDTH(WIDTH),.HEIGHT(HEIGHT)) tone(\n63:         .clk(clk),.rst_n(rst_n),.in_valid(result_valid && !failed),.in_ready(result_ready),\n64:         .in_pixel({result_rgb[23:19],result_rgb[15:10],result_rgb[7:3]}),\n65:         .in_tag(result_tag),.in_masked(result_masked),.auto_enable(gamma_enable),\n66:         .out_valid(tone_valid),.out_ready(tone_ready),.out_pixel(tone_pixel),\n67:         .out_tag(tone_tag),.out_masked(tone_masked),.out_mode(gamma_mode),\n68:         .next_mode(tone_next),.completed_frames(gamma_frames),.format_error(tone_fault));\n69:     wire [23:0] tone_rgb={tone_pixel[15:11],tone_pixel[15:13],tone_pixel[10:5],tone_pixel[10:9],tone_pixel[4:0],tone_pixel[4:2]};\n70:     ddr_adaptive_result_writer_capture_local #(.WIDTH(WIDTH),.HEIGHT(HEIGHT),.TIMEOUT_BITS(TIMEOUT_BITS),.RASTER_DOUBLE_BUFFER(RASTER_DOUBLE_BUFFER),.TILE8_OVERLAP_WRITER(TILE8_OVERLAP_WRITER),.TILE8_GROUP_WIDTH(TILE8_GROUP_WIDTH)) writer(\n71:         .clk(clk),.rst_n(rst_n),.frame_valid(begin_frame),.frame_ready(writer_frame_ready),\n72:         .frame_base(output_base),.frame_id(frame_id),.frame_tiled(use_tiles),.in_valid(tone_valid && !failed),.in_ready(tone_ready),\n73:         .in_rgb(tone_rgb),.in_tag(tone_tag),.awaddr(awaddr),.awlen(awlen),.awvalid(awvalid),.awready(awready),\n74:         .wdata(wdata),.wstrb(wstrb),.wready(wready),.wlast(wlast),.done(writer_done),.failed(writer_failed),.fault(writer_fault),\n75:         .accepted_pixels(writer_pixels),.written_beats(writer_beats),.last_checksum(writer_crc),.completed_id(writer_id));"
+        },
+        {
+          "source": "a_engine",
+          "line_start": 87,
+          "line_end": 106,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v#L87-L106",
+          "excerpt": "87:                 SCAN: if(coordinate_ready) begin\n88:                     index<=index+1'b1;\n89:                     if(!tiled_mode) begin\n90:                         raster_tag<=raster_tag+1'b1;\n91:                         if(column==WIDTH-1) begin column<=0;row<=row+1'b1;end else column<=column+1'b1;\n92:                     end else if(column[2:0]!=7) begin column<=column+1'b1;raster_tag<=raster_tag+1'b1;end\n93:                     else if(row[2:0]!=7) begin column<=tile_x;row<=row+1'b1;raster_tag<=raster_tag+WIDTH-7;end\n94:                     else if(tile_x!=WIDTH-8) begin\n95:                         tile_x<=tile_x+8;column<=tile_x+8;row<=stripe_y;raster_tag<=raster_tag-7*WIDTH+1;\n96:                     end else begin tile_x<=0;column<=0;stripe_y<=stripe_y+8;row<=row+1'b1;raster_tag<=raster_tag+1'b1;end\n97:                     if(index==WIDTH*HEIGHT-1) state<=DRAIN;\n98:                 end\n99:                 DRAIN: if(writer_done) begin\n100:                     completed_base<=destination;completed_id<=writer_id;completed_crc<=writer_crc;\n101:                     done<=1;state<=IDLE;\n102:                 end\n103:                 FAULT: state<=FAULT;\n104:             endcase\n105:             if(core_failed || writer_failed || tone_fault) begin\n106:                 failed<=1;fault<=tone_fault ? 8'h41:(core_failed ? core_fault:writer_fault);done<=0;state<=FAULT;"
+        },
+        {
+          "source": "a_sample",
+          "line_start": 20,
+          "line_end": 39,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_remap_sample_scatter4.v#L20-L39",
+          "excerpt": "20:     generate if(CACHE_PROFILE==2 || CACHE_PROFILE==3 || CACHE_PROFILE==4 || CACHE_PROFILE==5 || CACHE_PROFILE==6)begin: runtime_cache\n21:     d256_runtime_prefetch_cache #(.QUERY_DEPTH(CACHE_PROFILE==6 ? 512:256),.LOOKAHEAD(256),.COMPACT_COORDS(1),.AREA_PROFILE(2),.CANDIDATE_KEY_PIPE(2),.HEAD_PREDECODE(1),.LOCAL_INFLIGHT_MASK(1),.JOB_DONE_EDGE_SELECT(CACHE_PROFILE==5 || CACHE_PROFILE==6),.FILL_SCATTER8(CACHE_PROFILE==4 || CACHE_PROFILE==5 || CACHE_PROFILE==6),.FILL_SCATTER16(CACHE_PROFILE==3 || CACHE_PROFILE==4 || CACHE_PROFILE==5 || CACHE_PROFILE==6),.FILL_STREAM(CACHE_PROFILE==3 || CACHE_PROFILE==4 || CACHE_PROFILE==5 || CACHE_PROFILE==6),.WIDTH(WIDTH),.HEIGHT(HEIGHT),.TAG_W(TAG_W),.INDEX_BITS(INDEX_BITS),.TIMEOUT_BITS(TIMEOUT_BITS)) cache(\n22:         .clk(clk),.rst_n(rst_n),.frame_valid(frame_valid),.frame_ready(frame_ready),.frame_base(frame_base),\n23:         .in_valid(in_valid),.in_ready(in_ready),.in_x(in_x),.in_y(in_y),.in_tag(in_tag),\n24:         .out_valid(sample_valid),.out_ready(sample_ready),.p00(p00),.p10(p10),.p01(p01),.p11(p11),\n25:         .fx(fx),.fy(fy),.out_tag(sample_tag),.araddr(araddr),.arlen(arlen),.arvalid(arvalid),.arready(arready),\n26:         .rdata(rdata),.rvalid(rvalid),.rlast(rlast),.rid(rid),.failed(failed),.fault(fault),\n27:         .hits(hits),.misses(misses),.completed_queries(completed_queries));\n28:     end else begin: serial_cache\n29:     ddr_neighbour_cache_scatter4_tag_prefetch_local #(.SCATTER8(CACHE_PROFILE==1),.WIDTH(WIDTH),.HEIGHT(HEIGHT),.TAG_W(TAG_W),.INDEX_BITS(INDEX_BITS),.TIMEOUT_BITS(TIMEOUT_BITS)) cache(\n30:         .clk(clk),.rst_n(rst_n),.frame_valid(frame_valid),.frame_ready(frame_ready),.frame_base(frame_base),\n31:         .in_valid(in_valid),.in_ready(in_ready),.in_x(in_x),.in_y(in_y),.in_tag(in_tag),\n32:         .out_valid(sample_valid),.out_ready(sample_ready),.p00(p00),.p10(p10),.p01(p01),.p11(p11),\n33:         .fx(fx),.fy(fy),.out_tag(sample_tag),.araddr(araddr),.arlen(arlen),.arvalid(arvalid),.arready(arready),\n34:         .rdata(rdata),.rvalid(rvalid),.rlast(rlast),.rid(rid),.failed(failed),.fault(fault),\n35:         .hits(hits),.misses(misses),.completed_queries(completed_queries));\n36:     end endgenerate\n37:     bilinear_rgb #(.TAG_W(TAG_W)) interpolation(.clk(clk),.rst(!rst_n),.in_valid(sample_valid),.in_ready(sample_ready),\n38:         .p00(p00),.p10(p10),.p01(p01),.p11(p11),.fx(fx),.fy(fy),.black(1'b0),.in_tag(sample_tag),\n39:         .out_valid(out_valid),.out_ready(out_ready),.out_rgb(out_rgb),.out_tag(out_tag));"
+        },
+        {
+          "source": "a_gamma",
+          "line_start": 14,
+          "line_end": 14,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/boardtop-penn-prep-20261029-a/board1080-penn.vh#L14-L14",
+          "excerpt": "14: localparam B1080_GAMMA_ENABLE=1'b0;"
+        },
+        {
+          "source": "a_bank",
+          "line_start": 81,
+          "line_end": 85,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v#L81-L85",
+          "excerpt": "81:     pipeline_gamma_frame_engine_1080_geometry_bypass #(.HDMI_FISHEYE_PROFILE(HDMI_FISHEYE_PROFILE),.FORCE_TILE8(HDMI_FISHEYE_PROFILE),.TILE8_OVERLAP_WRITER(HDMI_FISHEYE_PROFILE),.CACHE_PROFILE(CACHE_PROFILE),.TILE8_GROUP_WIDTH(TILE8_GROUP_WIDTH),.WIDTH(WIDTH),.HEIGHT(HEIGHT),.MAX_RADIUS_Q22(MAX_RADIUS_Q22),.RASTER_DOUBLE_BUFFER(RASTER_DOUBLE_BUFFER)) engine(\n82:         .clk(clk),.rst_n(rst_n),.frame_valid(start),.frame_ready(engine_ready),.gamma_enable(frame_gamma_enable),.correction_enable(frame_correction_enable),\n83:         .gamma_mode(gamma_mode),.gamma_frames(gamma_frames),.source_base(source_base),.output_base(result_base),.frame_id(accepted_id),\n84:         .cfg_out_cx(frame_out_cx),.cfg_out_cy(frame_out_cy),.cfg_src_cx(frame_src_cx),.cfg_src_cy(frame_src_cy),\n85:         .cfg_src_fx(frame_src_fx),.cfg_src_fy(frame_src_fy),.cfg_inv_fx(frame_inv_fx),.cfg_inv_fy(frame_inv_fy),"
+        },
+        {
+          "source": "a_core",
+          "line_start": 54,
+          "line_end": 76,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/rotated_remap_core_gamma_geometry_bypass_scatter4.v#L54-L76",
+          "excerpt": "54:     pixel_inverse_rotation #(.TAG_W(TAG_W)) rotation(.clk(clk),.rst(!local_rst_n),\n55:         .cfg_valid(accept_frame),.cfg_ready(rotation_cfg_ready),\n56:         .cfg_cx(cfg_rot_cx),.cfg_cy(cfg_rot_cy),\n57:         .cfg_cos(HDMI_FISHEYE_PROFILE ? 32'sd1073741824:cfg_rot_cos),\n58:         .cfg_sin(HDMI_FISHEYE_PROFILE ? 32'sd0:cfg_rot_sin),\n59:         .in_valid(request_valid && frame_correction_enable),.in_ready(rotation_in_ready),.in_u(in_u),.in_v(in_v),.in_tag(in_tag),\n60:         .out_valid(rotation_valid),.out_ready(rotation_ready),.out_u(rotated_u),.out_v(rotated_v),.out_black(rotation_black),.out_tag(rotated_tag));\n61:     // Profile 1 is the source-bound HDMI fisheye, angle 0, Gamma OFF.\n62:     // It has its own K/Kout and radial ROM; Brown cfg/MAX_RADIUS do not apply.\n63:     // Selection is elaboration-time. Frame mode/source-bank ownership is unchanged.\n64:     generate if(HDMI_FISHEYE_PROFILE) begin: g_hdmi_fisheye\n65:         hdmi_camera_fisheye_mapper #(.TAG_W(TAG_W),.WIDTH(WIDTH),.HEIGHT(HEIGHT)) mapper(\n66:             .clk(clk),.rst(!local_rst_n),.cfg_valid(accept_frame),.cfg_ready(mapper_cfg_ready),.cfg_corrected(1'b1),\n67:             .in_valid(rotation_valid),.in_black(rotation_black),.in_ready(rotation_ready),\n68:             .in_u(rotated_u),.in_v(rotated_v),.in_tag(rotated_tag),\n69:             .out_valid(mapped_valid),.out_ready(mapped_ready),.out_x(mapped_x),.out_y(mapped_y),.out_black(mapped_black),.out_tag(mapped_tag));\n70:     end else begin: g_brown\n71:         bounded_brown_inverse_mapper #(.TAG_W(TAG_W),.MAX_RADIUS_Q22(MAX_RADIUS_Q22)) mapper(.clk(clk),.rst(!local_rst_n),\n72:             .cfg_valid(accept_frame),.cfg_ready(mapper_cfg_ready),\n73:             .cfg_out_cx(cfg_out_cx),.cfg_out_cy(cfg_out_cy),.cfg_src_cx(cfg_src_cx),.cfg_src_cy(cfg_src_cy),.cfg_src_fx(cfg_src_fx),.cfg_src_fy(cfg_src_fy),\n74:             .cfg_inv_fx(cfg_inv_fx),.cfg_inv_fy(cfg_inv_fy),.cfg_k1(cfg_k1),.cfg_k2(cfg_k2),.cfg_k3(cfg_k3),.cfg_p1(cfg_p1),.cfg_p2(cfg_p2),\n75:             .in_valid(rotation_valid),.in_black(rotation_black),.in_ready(rotation_ready),.in_u(rotated_u),.in_v(rotated_v),.in_tag(rotated_tag),\n76:             .out_valid(mapped_valid),.out_ready(mapped_ready),.out_x(mapped_x),.out_y(mapped_y),.out_black(mapped_black),.out_tag(mapped_tag));"
+        }
+      ],
+      "common": "两版都在writer完成后发布完整结果，故障不发布半帧。"
+    },
+    {
+      "id": "query_queue",
+      "label": "查询队列与前瞻",
+      "baseline_15fps": "入口2项完整查询寄存器，内部另有预解码与命中流水；miss按邻域处理，无Q512前瞻。",
+      "selected_30fps": "CACHE_PROFILE=6，512项查询队列，LOOKAHEAD=256；AREA_PROFILE=2/COMPACT_COORDS=1，保序交付。",
+      "evidence": [
+        {
+          "source": "b_cache",
+          "line_start": 12,
+          "line_end": 16,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v#L12-L16",
+          "excerpt": "12: // Registered-ready boundary: upstream coordinates cannot feed all_hit/ready\n13: // back into mapper/rotation global stall clock enables. This FIFO has two\n14: // complete query registers; its ready uses ONLY registered occupancy/loaded,\n15: // frame_valid and the inner registered failure. It deliberately has no\n16: // full+pop lookahead, bypass, or combinational inner_ready dependency."
+        },
+        {
+          "source": "b_cache",
+          "line_start": 31,
+          "line_end": 55,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v#L31-L55",
+          "excerpt": "31:     reg frame_loaded;\n32:     reg [1:0] queue_count;\n33:     reg read_pointer,write_pointer;\n34:     reg signed [23:0] queue_x[0:1],queue_y[0:1];\n35:     reg [TAG_W-1:0] queue_tag[0:1];\n36:     wire inner_frame_ready,inner_in_ready;\n37:     wire queue_empty=queue_count==0;\n38:     assign frame_ready=queue_empty && inner_frame_ready && !failed;\n39:     assign in_ready=frame_loaded && !frame_valid && !failed && queue_count<2;\n40:     wire push=in_valid && in_ready;\n41:     wire pop=!queue_empty && inner_in_ready && !failed;\n42:     wire accept_frame=frame_valid && frame_ready;\n43:     // Pending frame_valid stops NEW admissions but never stops queued heads.\n44:     // The inner frame request is hidden until the FIFO is empty, then its own\n45:     // frame_ready also waits for processing and downstream results to drain.\n46:     ddr_compact_neighbour_cache_core_scatter16_rowpipe #(.WIDTH(WIDTH),.HEIGHT(HEIGHT),.TAG_W(TAG_W),\n47:         .INDEX_BITS(INDEX_BITS),.TIMEOUT_BITS(TIMEOUT_BITS)) inner(\n48:         .clk(clk),.rst_n(rst_n),.frame_valid(frame_valid && queue_empty),\n49:         .frame_ready(inner_frame_ready),.frame_base(frame_base),\n50:         .in_valid(!queue_empty && !failed),.in_ready(inner_in_ready),\n51:         .in_x(queue_x[read_pointer]),.in_y(queue_y[read_pointer]),.in_tag(queue_tag[read_pointer]),\n52:         .out_valid(out_valid),.out_ready(out_ready),.p00(p00),.p10(p10),.p01(p01),.p11(p11),\n53:         .fx(fx),.fy(fy),.out_tag(out_tag),.araddr(araddr),.arlen(arlen),.arvalid(arvalid),.arready(arready),\n54:         .rdata(rdata),.rvalid(rvalid),.rlast(rlast),.rid(rid),.failed(failed),.fault(fault),\n55:         .hits(hits),.misses(misses),.completed_queries(completed_queries));"
+        },
+        {
+          "source": "b_cache",
+          "line_start": 165,
+          "line_end": 175,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v#L165-L175",
+          "excerpt": "165:     assign in_ready=frame_loaded && !frame_valid && !failed && state==IDLE &&\n166:         (!pre_valid || pre_to_query);\n167:     wire accept_frame=frame_valid && frame_ready;\n168:     // A pending next-frame request blocks new input but never the registered\n169:     // old-frame query. This is necessary for FIFO/query/result drain.\n170:     wire accept_fast=query_valid && !failed && state==IDLE && all_hit && stage0_ready;\n171:     wire accept_slow=query_valid && !failed && state==IDLE && !all_hit && empty;\n172:     assign accept_query=accept_fast || accept_slow;\n173:     wire decode_query=in_valid && in_ready;\n174:     wire consume_fast=v1 && out_ready && !failed;\n175:     wire consume_slow=state==RESULT && out_ready && !failed;"
+        },
+        {
+          "source": "a_top",
+          "line_start": 7,
+          "line_end": 9,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261104-op-camera-input-diagnostics/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v#L7-L9",
+          "excerpt": "7: module board1080_top #(parameter STARTUP_DIAG_ONLY=0,CACHE_PROFILE=6,HDMI_FISHEYE_PROFILE=1,TILE8_GROUP_WIDTH=64,\n8:     parameter DIAGNOSTIC_BLANKING_REPORT_ONLY=1,INPUT_RUNTIME_DIAG_ONLY=1,\n9:     parameter INPUT_PCLK_WINDOW_MIN=147000,INPUT_PCLK_WINDOW_MAX=150000)("
+        },
+        {
+          "source": "a_sample",
+          "line_start": 20,
+          "line_end": 27,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_remap_sample_scatter4.v#L20-L27",
+          "excerpt": "20:     generate if(CACHE_PROFILE==2 || CACHE_PROFILE==3 || CACHE_PROFILE==4 || CACHE_PROFILE==5 || CACHE_PROFILE==6)begin: runtime_cache\n21:     d256_runtime_prefetch_cache #(.QUERY_DEPTH(CACHE_PROFILE==6 ? 512:256),.LOOKAHEAD(256),.COMPACT_COORDS(1),.AREA_PROFILE(2),.CANDIDATE_KEY_PIPE(2),.HEAD_PREDECODE(1),.LOCAL_INFLIGHT_MASK(1),.JOB_DONE_EDGE_SELECT(CACHE_PROFILE==5 || CACHE_PROFILE==6),.FILL_SCATTER8(CACHE_PROFILE==4 || CACHE_PROFILE==5 || CACHE_PROFILE==6),.FILL_SCATTER16(CACHE_PROFILE==3 || CACHE_PROFILE==4 || CACHE_PROFILE==5 || CACHE_PROFILE==6),.FILL_STREAM(CACHE_PROFILE==3 || CACHE_PROFILE==4 || CACHE_PROFILE==5 || CACHE_PROFILE==6),.WIDTH(WIDTH),.HEIGHT(HEIGHT),.TAG_W(TAG_W),.INDEX_BITS(INDEX_BITS),.TIMEOUT_BITS(TIMEOUT_BITS)) cache(\n22:         .clk(clk),.rst_n(rst_n),.frame_valid(frame_valid),.frame_ready(frame_ready),.frame_base(frame_base),\n23:         .in_valid(in_valid),.in_ready(in_ready),.in_x(in_x),.in_y(in_y),.in_tag(in_tag),\n24:         .out_valid(sample_valid),.out_ready(sample_ready),.p00(p00),.p10(p10),.p01(p01),.p11(p11),\n25:         .fx(fx),.fy(fy),.out_tag(sample_tag),.araddr(araddr),.arlen(arlen),.arvalid(arvalid),.arready(arready),\n26:         .rdata(rdata),.rvalid(rvalid),.rlast(rlast),.rid(rid),.failed(failed),.fault(fault),\n27:         .hits(hits),.misses(misses),.completed_queries(completed_queries));"
+        },
+        {
+          "source": "a_cache",
+          "line_start": 13,
+          "line_end": 21,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv#L13-L21",
+          "excerpt": "13:     QUERY_DEPTH=256,LOOKAHEAD=QUERY_DEPTH,IDLE_FLUSH_CYCLES=16,TIMEOUT_BITS=16,COMPACT_COORDS=0,AREA_PROFILE=0,CANDIDATE_KEY_PIPE=0,HEAD_PREDECODE=0,LOCAL_INFLIGHT_MASK=0,FILL_SCATTER16=0,FILL_STREAM=0,FILL_SCATTER8=0,JOB_DONE_EDGE_SELECT=0\n14: )(\n15:     input clk,rst_n,\n16:     input frame_valid,output wire frame_ready,input [27:0] frame_base,\n17:     input in_valid,output wire in_ready,input signed [23:0] in_x,in_y,\n18:     input [TAG_W-1:0] in_tag,\n19:     output wire out_valid,input out_ready,output wire [23:0] p00,p10,p01,p11,\n20:     output wire [7:0] fx,fy,output wire [TAG_W-1:0] out_tag,\n21:     output wire [27:0] araddr,output wire [3:0] arlen,output wire arvalid,input arready,"
+        }
+      ],
+      "boundary": "512/256是查询调度容量，不是DDR outstanding数；入口2项也不等于15版全流水仅能容纳2个像素。"
+    },
+    {
+      "id": "cache_organization",
+      "label": "像素缓存及读填充",
+      "baseline_15fps": "INDEX_BITS=8：256行×128个RGB565像素=64KiB逻辑像素存储。8拍256-bit DDR burst，单拍返回寄存后直接写RAM，末拍commit后公布tag/valid。",
+      "selected_30fps": "INDEX_BITS=6；quad-parity四奇偶分组，SCATTER8流式填充；每读块同为8拍256 bit/256B/128个RGB565像素。活动代、待填充代及引用计数保护保序查询。",
+      "evidence": [
+        {
+          "source": "b_cache",
+          "line_start": 5,
+          "line_end": 11,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v#L5-L11",
+          "excerpt": "5: // Two 64bit even/odd true-dual-port organizations keep upper/lower read ports.\n6: // Each accepted DDR beat is registered once, then writes sixteen pixels on\n7: // the next edge. The final RAM commit publishes tag/valid; no burst staging\n8: // array or eight-cycle post-receive scatter phase remains.\n9: // Logical pixel storage is unchanged; physical DRM mapping needs a new build.\n10: // A miss drains fast hits, locks the query, then saves each neighbour BEFORE\n11: // selecting the next; four mutually conflicting lines need not coexist."
+        },
+        {
+          "source": "b_cache",
+          "line_start": 95,
+          "line_end": 123,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v#L95-L123",
+          "excerpt": "95:     localparam LINES=1<<INDEX_BITS,ADDRESS_BITS=INDEX_BITS+6,WORD_ADDRESS_BITS=INDEX_BITS+4;\n96:     localparam IDLE=0,SELECT=1,AR=2,FILL=3,WAIT_COMMIT=4,LOAD=5,PICK=6,RESULT=7,FAULT=8,CHECK=9;\n97:     reg [3:0] state;\n98:     reg frame_loaded,address_pending;\n99:     reg [27:0] base;\n100:     reg [LINES-1:0] valid_lines;\n101:     reg [24:0] tags[0:LINES-1];\n102:     reg signed [16:0] slow_x,slow_y;\n103:     reg [1:0] neighbour;\n104:     reg [7:0] slow_fx,slow_fy;\n105:     reg [TAG_W-1:0] slow_tag;\n106:     reg [23:0] slow_pixel[0:3];\n107:     reg [24:0] selected_block;\n108:     reg [INDEX_BITS-1:0] selected_line;\n109:     reg [ADDRESS_BITS-1:0] selected_pixel_address;\n110:     reg selected_parity;\n111:     reg [2:0] fill_beat;\n112:     // A one-beat owned write stage. Wide payload has no reset or validity CE;\n113:     // only the registered ownership bit can cause a RAM write.\n114:     reg [255:0] fill_write_data;\n115:     reg fill_write_valid;\n116:     reg [2:0] fill_write_beat;\n117:     reg [INDEX_BITS-1:0] fill_write_line;\n118:     reg [24:0] fill_write_block;\n119:     wire write_commit=rst_n && !failed && fill_write_valid;\n120:     wire write_commit_last=write_commit && fill_write_beat==7;\n121:     wire [INDEX_BITS-1:0] write_commit_line=fill_write_line;\n122:     wire [2:0] write_commit_beat=fill_write_beat;\n123:     always @(posedge clk)fill_write_data<=rdata;"
+        },
+        {
+          "source": "b_cache",
+          "line_start": 185,
+          "line_end": 191,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_neighbour_cache_scatter16_rowpipe_directfill.v#L185-L191",
+          "excerpt": "185:     assign araddr=base+({3'b0,selected_block}<<6);\n186:     assign arlen=7;\n187:     // Once asserted, ARVALID survives timeout/fault until its handshake. Reset\n188:     // is the recovery boundary; an asserted DDR transaction is never withdrawn.\n189:     assign arvalid=address_pending;\n190:     wire accept_address=address_pending && arready;\n191:     wire receiving=state==FILL || (state==AR && accept_address);"
+        },
+        {
+          "source": "a_engine",
+          "line_start": 47,
+          "line_end": 47,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v#L47-L47",
+          "excerpt": "47:     rotated_remap_core_gamma_geometry_bypass_scatter4 #(.HDMI_FISHEYE_PROFILE(HDMI_FISHEYE_PROFILE),.CACHE_PROFILE(CACHE_PROFILE),.WIDTH(WIDTH),.HEIGHT(HEIGHT),.INDEX_BITS(6),.TIMEOUT_BITS(TIMEOUT_BITS),.MAX_RADIUS_Q22(MAX_RADIUS_Q22)) core("
+        },
+        {
+          "source": "a_store",
+          "line_start": 25,
+          "line_end": 40,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/quad_parity_prefetch_store.sv#L25-L40",
+          "excerpt": "25:     output reg failed,output reg [7:0] fault\n26: );\n27:     localparam BLOCKS_PER_ROW=WIDTH/128,LOCAL_LINES=1<<(INDEX_BITS-1);\n28:     localparam ADDRESS_BITS=INDEX_BITS+(SCATTER8 ? 2:(SCATTER16 ? 3:4));\n29:     localparam WORD_BITS=SCATTER8 ? 128:(SCATTER16 ? 64:32);\n30:     localparam WORDS_PER_LINE=SCATTER8 ? 8:(SCATTER16 ? 16:32);\n31:     localparam IDLE=0,AR=1,FILL=2,SCATTER=3,FAULT=4;\n32:     reg [2:0] state;\n33:     reg [27:0] base;\n34:     reg [24:0] selected_block;\n35:     reg [INDEX_BITS-2:0] selected_local_line;\n36:     reg selected_y_parity,address_pending;\n37:     reg [31:0] selected_ticket;\n38:     reg [2:0] fill_beat;\n39:     reg [3:0] received_beats;\n40:     reg [4:0] scatter_word;"
+        },
+        {
+          "source": "a_store",
+          "line_start": 48,
+          "line_end": 54,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/quad_parity_prefetch_store.sv#L48-L54",
+          "excerpt": "48:     assign fill_busy=state!=IDLE;\n49:     assign araddr=base+({3'b0,selected_block}<<6);\n50:     assign arlen=7;\n51:     assign arvalid=address_pending;\n52:     wire accept_ar=address_pending && arready;\n53:     wire receiving=state==FILL || (state==AR && accept_ar);\n54:     wire progress=accept_ar || (state==FILL && rvalid);"
+        },
+        {
+          "source": "a_cache",
+          "line_start": 2,
+          "line_end": 11,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv#L2-L11",
+          "excerpt": "2: // Independent complete runtime-cache candidate. No oracle/lifetime table is\n3: // used. One active and one pending generation per line; a third generation\n4: // stalls the scout atomically while the earlier foreground prefix drains.\n5: // A pending victim lease is granted only after all old-generation references\n6: // admitted to the query FIFO have been externally consumed. Per-generation\n7: // references are counted at scout admission, not just foreground issue.\n8: // Full qids still check output order; FIFO pointers never identify leases.\n9: // DDR reset must be\n10: // coordinated: this UI has no response epoch/transaction-ID output on AR.\n11: module d256_runtime_prefetch_cache #("
+        }
+      ],
+      "boundary": "逻辑像素容量不同于物理DRM占用。两版存储组织不同，INDEX不能直接视为同一cache的单变量缩容。15 direct-fill已经消除独立8拍接收后scatter，不能将此作为30独有优化。"
+    },
+    {
+      "id": "read_concurrency",
+      "label": "DDR读服务",
+      "baseline_15fps": "display/sample单owner仲裁，等当前读burst结束后切换；miss服务和命中流水不同。",
+      "selected_30fps": "单owner仲裁，fill_inflight表明填充任务串行；查询前瞻与填充重叠调度，不能称多DDR并发事务。",
+      "evidence": [
+        {
+          "source": "b_arbiter",
+          "line_start": 16,
+          "line_end": 28,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/ddr_read_arbiter_fill8r2.v#L16-L28",
+          "excerpt": "16:     localparam IDLE=0,ADDRESS=1,READ=2,FAULT=3;\n17:     reg [1:0] state;reg owner,last_owner;reg [27:0] address;\n18:     reg [3:0] length,beat;reg [TIMEOUT_BITS-1:0] watchdog;\n19:     wire choose1=c1_arvalid && (!c0_arvalid || (!display_urgent && !last_owner));\n20:     wire accepted=state==ADDRESS && arready;\n21:     wire response=(state==READ || accepted) && !failed;\n22:     wire timeout_event=state==READ && (&watchdog) && !rvalid;\n23:     wire protocol_event=response && rvalid && (rid!=0 || rlast!=(beat==length));\n24:     wire unsolicited_event=!response && rvalid && !failed;\n25:     assign busy=state!=IDLE || failed;\n26:     assign araddr=address;assign arlen=length;assign arvalid=state==ADDRESS;\n27:     assign c0_arready=accepted && !owner && !failed;\n28:     assign c1_arready=accepted && owner && !failed;"
+        },
+        {
+          "source": "a_arbiter",
+          "line_start": 17,
+          "line_end": 29,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/ddr_read_arbiter.v#L17-L29",
+          "excerpt": "17:     localparam IDLE=0,ADDRESS=1,READ=2,FAULT=3;\n18:     reg [1:0] state;reg owner,last_owner;reg [27:0] address;\n19:     reg [3:0] length,beat;reg [TIMEOUT_BITS-1:0] watchdog;\n20:     wire choose1=c1_arvalid && (!c0_arvalid || (!display_urgent && !last_owner));\n21:     wire accepted=state==ADDRESS && arready;\n22:     wire response=(state==READ || accepted) && !failed;\n23:     assign busy=state!=IDLE || failed;\n24:     assign araddr=address;assign arlen=length;assign arvalid=state==ADDRESS;\n25:     assign c0_arready=accepted && !owner && !failed;\n26:     assign c1_arready=accepted && owner && !failed;\n27:     assign c0_rdata=rdata;assign c1_rdata=rdata;\n28:     assign c0_rvalid=response && !owner && rvalid;\n29:     assign c1_rvalid=response && owner && rvalid;"
+        },
+        {
+          "source": "a_cache",
+          "line_start": 246,
+          "line_end": 254,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv#L246-L254",
+          "excerpt": "246:     reg fill_inflight,job_hold;\n247:     // Optional exact duplicate of the existing binary inflight owner. Each\n248:     // bit is sampled at the ORIGINAL fill_accept edge, never a cycle later.\n249:     // Fault quarantine holds both representations; reset/valid frame/done\n250:     // clear them at the same original priority points below.\n251:     reg [LINES-1:0] local_inflight_owned;\n252:     reg [INDEX_BITS-1:0] inflight_line,job_line;\n253:     reg [BLOCK_W-1:0] inflight_tag,job_tag;\n254:     reg [QID_W-1:0] job_first;"
+        },
+        {
+          "source": "a_cache",
+          "line_start": 377,
+          "line_end": 382,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv#L377-L382",
+          "excerpt": "377:     wire job_select_window=!fill_inflight || job_done_edge_window;\n378:     quad_parity_prefetch_store #(.SCATTER8(FILL_SCATTER8),.SCATTER16(FILL_SCATTER16),.STREAM_FILL(FILL_STREAM),.WIDTH(WIDTH),.HEIGHT(HEIGHT),.INDEX_BITS(INDEX_BITS),\n379:         .TAG_W(STORE_TAG_W),.TIMEOUT_BITS(TIMEOUT_BITS)) store(\n380:         .clk(clk),.rst_n(rst_n),.in_valid(store_query_valid),.in_ready(store_in_ready),\n381:         .in_x(head_x),.in_y(head_y),\n382:         .in_tag({head_generations,head_lines_packed,head_unique,issued_count[QID_W-1:0],head_tag}),"
+        }
+      ],
+      "report_wording": "查询预取与像素消费解耦，按前瞻信息提前组织DDR读填充。"
+    },
+    {
+      "id": "writeback",
+      "label": "结果写回",
+      "baseline_15fps": "两组完整1920×8 RGB565条带；pack一条16拍×256-bit突发，即256像素/512B，AWLEN=15；收集另一条带可重叠。",
+      "selected_30fps": "两组64×8 RGB565小块；每块8个跨行突发，每行4拍×256-bit即64像素/128B，AWLEN=3；收集与写回重叠，按行CRC折叠为光栅CRC。",
+      "evidence": [
+        {
+          "source": "b_writer",
+          "line_start": 2,
+          "line_end": 5,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v#L2-L5",
+          "excerpt": "2: // Independent candidate: two complete eight-row stripes overlap collection\n3: // with raster draining. A synchronous RAM read is followed by a pack stage;\n4: // requests run at one pixel per clock within a stripe/burst. A complete 256\n5: // pixel buffer is immutable from AW presentation through all 16 W transfers."
+        },
+        {
+          "source": "b_writer",
+          "line_start": 17,
+          "line_end": 18,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v#L17-L18",
+          "excerpt": "17:     localparam FRAME_PIXELS=WIDTH*HEIGHT,FRAME_BEATS=FRAME_PIXELS/16;\n18:     localparam STRIPE_PIXELS=WIDTH*8;"
+        },
+        {
+          "source": "b_writer",
+          "line_start": 37,
+          "line_end": 62,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/rtl/experimental/ddr_adaptive_result_writer_dualstripe.v#L37-L62",
+          "excerpt": "37:     reg [15:0] stripe0[0:STRIPE_PIXELS-1];\n38:     reg [15:0] stripe1[0:STRIPE_PIXELS-1];\n39:     reg [15:0] pixel_q;\n40:     reg [255:0] burst[0:15];\n41: \n42:     wire [15:0] pixel={in_rgb[23:19],in_rgb[15:10],in_rgb[7:3]};\n43:     wire [31:0] write_index=expected_tag-stripe_base;\n44:     wire active=state==PACK || state==ADDRESS || state==WRITE;\n45:     assign frame_ready=rst_n && state==IDLE && !failed;\n46:     assign in_ready=rst_n && !failed && accepted_pixels<FRAME_PIXELS &&\n47:         (tiled ? (active && !stripe_full[collect_bank]) : state==PACK);\n48:     wire input_transfer=in_valid && in_ready;\n49:     wire tag_good=in_tag==expected_tag[TAG_W-1:0] && (!tiled || write_index<STRIPE_PIXELS);\n50:     wire tag_error=input_transfer && !tag_good;\n51:     wire collect_pixel=input_transfer && tag_good && tiled;\n52:     wire read_enable=rst_n && state==PACK && tiled && !failed &&\n53:         stripe_full[drain_bank] && read_index<STRIPE_PIXELS && issued<256;\n54:     wire pack_pixel=rst_n && state==PACK && !failed &&\n55:         (tiled ? read_valid : (input_transfer && tag_good));\n56:     wire [15:0] pack_data=tiled ? pixel_q : pixel;\n57:     // Pango W has no WVALID: the first requested beat can coincide with AW.\n58:     wire writing=state==WRITE || (state==ADDRESS && awready);\n59:     assign awaddr=base+(written_beats<<3);\n60:     assign awlen=15;\n61:     assign awvalid=rst_n && state==ADDRESS;\n62:     assign wdata=burst[beat];"
+        },
+        {
+          "source": "a_top",
+          "line_start": 7,
+          "line_end": 7,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261104-op-camera-input-diagnostics/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v#L7-L7",
+          "excerpt": "7: module board1080_top #(parameter STARTUP_DIAG_ONLY=0,CACHE_PROFILE=6,HDMI_FISHEYE_PROFILE=1,TILE8_GROUP_WIDTH=64,"
+        },
+        {
+          "source": "a_writer_selector",
+          "line_start": 12,
+          "line_end": 18,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_adaptive_result_writer.v#L12-L18",
+          "excerpt": "12:     generate if(TILE8_OVERLAP_WRITER && TILE8_GROUP_WIDTH!=16)begin: overlap_rowburst\n13:     ddr_tile8_rowburst_writer #(.WIDTH(WIDTH),.HEIGHT(HEIGHT),.TAG_W(TAG_W),.TIMEOUT_BITS(TIMEOUT_BITS),.GROUP_WIDTH(TILE8_GROUP_WIDTH)) implementation(\n14:         .clk(clk),.rst_n(rst_n),.frame_valid(frame_valid),.frame_tiled(frame_tiled),.frame_ready(frame_ready),\n15:         .frame_base(frame_base),.frame_id(frame_id),.in_valid(in_valid),.in_ready(in_ready),.in_rgb(in_rgb),.in_tag(in_tag),\n16:         .awaddr(awaddr),.awlen(awlen),.awvalid(awvalid),.awready(awready),.wdata(wdata),.wstrb(wstrb),.wready(wready),.wlast(wlast),\n17:         .done(done),.failed(failed),.fault(fault),.accepted_pixels(accepted_pixels),.written_beats(written_beats),\n18:         .last_checksum(last_checksum),.completed_id(completed_id));"
+        },
+        {
+          "source": "a_writer",
+          "line_start": 2,
+          "line_end": 6,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_tile8_rowburst_writer.sv#L2-L6",
+          "excerpt": "2: // Candidate only. Accept adjacent 8x8 tiles in tile-x/tile-y order, while\n3: // retaining GLOBAL RASTER pixel tags and RGB565/raster CRC semantics.\n4: // Two GROUP_WIDTH x8 banks overlap collection with eight strided row bursts.\n5: // The project DDR UI requests W beats and supplies WLAST; there is no B port.\n6: // AWLEN=B-1 for B=GROUP_WIDTH/16, as in exact HMIC_S v1.10 length+1 contract."
+        },
+        {
+          "source": "a_writer",
+          "line_start": 19,
+          "line_end": 24,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_tile8_rowburst_writer.sv#L19-L24",
+          "excerpt": "19:     localparam FRAME_PIXELS=WIDTH*HEIGHT,FRAME_BEATS=FRAME_PIXELS/16;\n20:     localparam STRIPE_PIXELS=WIDTH*8,STRIPES=HEIGHT/8;\n21:     localparam GROUP_PIXELS=GROUP_WIDTH*8,ROW_BEATS=GROUP_WIDTH/16;\n22:     localparam ROW_BEAT_LOG=$clog2(ROW_BEATS);\n23:     localparam BEAT_BITS=ROW_BEAT_LOG<1 ? 1:ROW_BEAT_LOG;\n24:     localparam SLOT_BITS=$clog2(GROUP_PIXELS),WORD_ADDR_BITS=$clog2(16*ROW_BEATS);"
+        },
+        {
+          "source": "a_writer",
+          "line_start": 110,
+          "line_end": 115,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/ddr_tile8_rowburst_writer.sv#L110-L115",
+          "excerpt": "110:     wire timed_out=tx_state==TX_WRITE && (&watchdog) && !wready;\n111:     wire abandon=failed || bad_tag || bad_wlast || timed_out;\n112:     assign awaddr=tx_address;assign awlen=ROW_BEATS-1;\n113:     assign awvalid=tx_state==TX_ADDRESS; // Held even after a concurrent fault.\n114:     assign wstrb=32'hFFFFFFFF;\n115: "
+        }
+      ],
+      "boundary": "两版都支持收集/写回重叠；30不是简单延长写burst，而是小块按行发起。不能把64×8写成1920×8。"
+    },
+    {
+      "id": "banks",
+      "label": "源帧与结果帧bank",
+      "baseline_15fps": "2源+2结果bank，4MiB地址步长；RGB565帧有效2073600×2=4147200B。",
+      "selected_30fps": "同为2源+2结果bank、4MiB步长；物理帧bank数未增加。",
+      "evidence": [
+        {
+          "source": "b_bank",
+          "line_start": 34,
+          "line_end": 44,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v#L34-L44",
+          "excerpt": "34:     wire [27:0] completed_base;\n35:     wire [31:0] engine_id,engine_crc;\n36:     wire [27:0] source_base=active_source ? BANK_STRIDE:0;\n37:     wire [27:0] result_base=write_bank ? 3*BANK_STRIDE:2*BANK_STRIDE;\n38:     // A producer offering a completed frame retains it while !source_ready.\n39:     // Do not advertise that offered bank as reusable by a future input DMA.\n40:     wire [1:0] read_lock=processing ? (active_source ? 2'b10:2'b01):2'b00;\n41:     wire [1:0] offered_lock=source_valid ? (source_bank ? 2'b10:2'b01):2'b00;\n42:     assign source_writable=(rst_n && LAYOUT_OK && !failed) ? ~(read_lock|offered_lock):2'b00;\n43:     assign source_ready=LAYOUT_OK && !failed && !processing && !pending && !start && engine_ready &&\n44:         (!display_active || write_bank!=front_bank);"
+        },
+        {
+          "source": "b_bank",
+          "line_start": 7,
+          "line_end": 11,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v#L7-L11",
+          "excerpt": "7:     parameter WIDTH=1920,HEIGHT=1080,BANK_STRIDE=1048576\n8: )(\n9:     input clk,rst_n,\n10:     input source_valid,output source_ready,input source_bank,input [31:0] source_id,\n11:     output [1:0] source_writable,output reg source_released,output reg released_bank,"
+        },
+        {
+          "source": "a_bank",
+          "line_start": 67,
+          "line_end": 77,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v#L67-L77",
+          "excerpt": "67:     wire [31:0] engine_id,engine_crc,gamma_frames;\n68:     wire [1:0] gamma_mode;\n69:     wire [27:0] source_base=active_source ? BANK_STRIDE:0;\n70:     wire [27:0] result_base=write_bank ? 3*BANK_STRIDE:2*BANK_STRIDE;\n71:     // A producer offering a completed frame retains it while !source_ready.\n72:     // Do not advertise that offered bank as reusable by a future input DMA.\n73:     wire [1:0] read_lock=processing ? (active_source ? 2'b10:2'b01):2'b00;\n74:     wire [1:0] offered_lock=source_valid ? (source_bank ? 2'b10:2'b01):2'b00;\n75:     assign source_writable=(rst_n && LAYOUT_OK && !failed) ? ~(read_lock|offered_lock):2'b00;\n76:     assign source_ready=LAYOUT_OK && !failed && !processing && !pending && !start && engine_ready &&\n77:         (!display_active || write_bank!=front_bank);"
+        },
+        {
+          "source": "a_bank",
+          "line_start": 7,
+          "line_end": 11,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v#L7-L11",
+          "excerpt": "7:     parameter WIDTH=1920,HEIGHT=1080,BANK_STRIDE=1048576,MAX_RADIUS_Q22=8388608,STATS_ENABLE=0,RASTER_DOUBLE_BUFFER=0,CACHE_PROFILE=0,HDMI_FISHEYE_PROFILE=0,TILE8_GROUP_WIDTH=16\n8: )(\n9:     input clk,rst_n,\n10:     input gamma_enable,correction_enable,\n11:     input [31:0] telemetry_param_id,"
+        }
+      ],
+      "common": "写回完成变pending；显示请求接管后更新front/翻转write_bank；当前front受显示租约保护，旧front允许重复扫描。"
+    },
+    {
+      "id": "source_descriptors",
+      "label": "源帧调度与描述符",
+      "baseline_15fps": "source_valid单项完成描述符；!source_valid且空闲源bank存在才准入下一次采集。",
+      "selected_30fps": "head+tail两项完整源帧描述符；tail空表示完成信用可用，有空闲源bank则可继续采集；head消费后tail递补。",
+      "evidence": [
+        {
+          "source": "b_dma",
+          "line_start": 44,
+          "line_end": 54,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v#L44-L54",
+          "excerpt": "44:     wire [1:0] free_bank=source_writable & ~owned;\n45:     wire grant_bank=!free_bank[0];\n46:     wire grant_valid=sr && enable && LAYOUT_OK && !failed && !active && !source_valid && |free_bank;\n47:     wire grant_ready,fifo_valid,fifo_idle,cap_done_valid,cap_done_good,cap_done_bank;\n48:     wire [255:0] fifo_data;\n49:     wire [31:0] cap_done_id,cap_done_pixels,cap_done_crc;\n50:     wire [7:0] cap_done_fault;\n51:     wire cap_done_ready=active && end_seen && end_settle==0 && fifo_idle && !crc_busy &&\n52:         state==COLLECT && (aborting || buffered==0) && !source_valid;\n53:     wire fifo_ready=active && state==COLLECT && !source_valid &&\n54:         (aborting || (buffered<16 && !crc_busy));"
+        },
+        {
+          "source": "b_dma",
+          "line_start": 151,
+          "line_end": 156,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi1080_input_dma.v#L151-L156",
+          "excerpt": "151:             if(cap_done_ready && cap_done_valid)begin\n152:                 active<=0;buffered<=0;\n153:                 if(!aborting && !failed && end_good && end_bank==active_bank && end_id==active_id &&\n154:                    end_pixels==N && written_beats==FRAME_BEATS && ~crc_state==end_crc)begin\n155:                     source_valid<=1;source_bank<=active_bank;source_id<=active_id;\n156:                     source_crc<=end_crc;source_pixels<=end_pixels;"
+        },
+        {
+          "source": "a_dma",
+          "line_start": 44,
+          "line_end": 62,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/hdmi1080_input_dma.v#L44-L62",
+          "excerpt": "44:     // Two complete descriptor slots. Existing source_* registers are the head;\n45:     // active is the existing completion-credit reservation for one capture.\n46:     reg source_tail_valid,source_tail_bank;\n47:     reg [31:0] source_tail_id,source_tail_crc,source_tail_pixels;\n48:     wire source_pop=source_valid && source_ready;\n49:     // With no active capture, an empty tail guarantees one completion slot.\n50:     // No speculative same-cycle credit from source_ready is required.\n51:     wire descriptor_credit=!source_tail_valid;\n52:     wire [1:0] free_bank=source_writable & ~owned;\n53:     wire grant_bank=!free_bank[0];\n54:     wire grant_valid=sr && enable && LAYOUT_OK && !failed && !active && descriptor_credit && |free_bank;\n55:     wire grant_ready,fifo_valid,fifo_idle,cap_done_valid,cap_done_good,cap_done_bank;\n56:     wire [255:0] fifo_data;\n57:     wire [31:0] cap_done_id,cap_done_pixels,cap_done_crc;\n58:     wire [7:0] cap_done_fault;\n59:     wire cap_done_ready=active && end_seen && end_settle==0 && fifo_idle && !crc_busy &&\n60:         state==COLLECT && (aborting || buffered==0) && descriptor_credit;\n61:     wire fifo_ready=active && state==COLLECT && descriptor_credit &&\n62:         (aborting || (buffered<16 && !crc_busy));"
+        },
+        {
+          "source": "a_dma",
+          "line_start": 111,
+          "line_end": 117,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/hdmi1080_input_dma.v#L111-L117",
+          "excerpt": "111:             if(source_pop)begin\n112:                 committed[source_bank]<=1;accepted_frames<=accepted_frames+1'b1;\n113:                 if(source_tail_valid)begin\n114:                     source_valid<=1;source_bank<=source_tail_bank;source_id<=source_tail_id;\n115:                     source_crc<=source_tail_crc;source_pixels<=source_tail_pixels;\n116:                     source_tail_valid<=0;\n117:                 end else source_valid<=0;"
+        },
+        {
+          "source": "a_dma",
+          "line_start": 166,
+          "line_end": 178,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/rtl/experimental/hdmi1080_input_dma.v#L166-L178",
+          "excerpt": "166:             if(cap_done_ready && cap_done_valid)begin\n167:                 active<=0;buffered<=0;\n168:                 if(!aborting && !failed && end_good && end_bank==active_bank && end_id==active_id &&\n169:                    end_pixels==N && written_beats==FRAME_BEATS && ~crc_state==end_crc)begin\n170:                     // A reserved completion may fill an empty head or the tail.\n171:                     // Pop+push on a one-entry queue replaces only the accepted\n172:                     // head; a stalled valid head is never overwritten.\n173:                     if(!source_valid || (source_pop && !source_tail_valid))begin\n174:                         source_valid<=1;source_bank<=active_bank;source_id<=active_id;\n175:                         source_crc<=end_crc;source_pixels<=end_pixels;\n176:                     end else begin\n177:                         source_tail_valid<=1;source_tail_bank<=active_bank;source_tail_id<=active_id;\n178:                         source_tail_crc<=end_crc;source_tail_pixels<=end_pixels;"
+        }
+      ],
+      "report_wording": "在双源bank内增加两项完成描述符队列，减少已完成源帧等待接收时对下一帧采集的阻塞。",
+      "boundary": "仍受空闲源bank和单次活动采集约束，不代表可无限缓存输入帧或增加第3个源bank。"
+    },
+    {
+      "id": "result_scheduling",
+      "label": "结果发布与显示所有权",
+      "baseline_15fps": "处理等待pending被显示接管；reader校验/像素消费/FIFO排空后释放显示租约。",
+      "selected_30fps": "相同基本pending/front/write_bank所有权策略；writer_done后发布，显示请求按刷新边界取得front。",
+      "evidence": [
+        {
+          "source": "b_bank",
+          "line_start": 43,
+          "line_end": 48,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v#L43-L48",
+          "excerpt": "43:     assign source_ready=LAYOUT_OK && !failed && !processing && !pending && !start && engine_ready &&\n44:         (!display_active || write_bank!=front_bank);\n45:     assign display_request_ready=LAYOUT_OK && !failed && !display_active && !display_grant_valid && (pending || front_valid);\n46:     assign failed=ownership_fault || engine_failed;\n47:     assign fault=ownership_fault ? 8'h71:engine_fault;\n48:     hdmi_camera_fisheye_engine_tile8 #(.WIDTH(WIDTH),.HEIGHT(HEIGHT)) engine("
+        },
+        {
+          "source": "b_bank",
+          "line_start": 68,
+          "line_end": 74,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v#L68-L74",
+          "excerpt": "68:             if(engine_done) begin\n69:                 if(!processing || pending || completed_base!=result_base || engine_id!=accepted_id)\n70:                     ownership_fault<=1;\n71:                 else begin\n72:                     processing<=0;pending<=1;pending_crc<=engine_crc;pending_id<=engine_id;\n73:                     source_released<=1;released_bank<=active_source;completed_frames<=completed_frames+1'b1;last_cycles<=cycles;\n74:                 end"
+        },
+        {
+          "source": "b_bank",
+          "line_start": 76,
+          "line_end": 88,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_bank_tile8.v#L76-L88",
+          "excerpt": "76:             if(display_request_valid && display_request_ready) begin\n77:                 display_active<=1;display_grant_valid<=1;\n78:                 if(pending) begin\n79:                     front_bank<=write_bank;front_valid<=1;front_crc<=pending_crc;front_id<=pending_id;\n80:                     display_base<=result_base;display_crc<=pending_crc;display_id<=pending_id;\n81:                     write_bank<=!write_bank;pending<=0;\n82:                 end else begin\n83:                     display_base<=front_bank ? 3*BANK_STRIDE:2*BANK_STRIDE;display_crc<=front_crc;display_id<=front_id;\n84:                 end\n85:             end\n86:             if(display_grant_valid && display_grant_ready) display_grant_valid<=0;\n87:             if(display_done_valid) begin\n88:                 if(!display_active || display_grant_valid || display_done_bank!=front_bank) ownership_fault<=1;"
+        },
+        {
+          "source": "a_bank",
+          "line_start": 76,
+          "line_end": 81,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v#L76-L81",
+          "excerpt": "76:     assign source_ready=LAYOUT_OK && !failed && !processing && !pending && !start && engine_ready &&\n77:         (!display_active || write_bank!=front_bank);\n78:     assign display_request_ready=LAYOUT_OK && !failed && !display_active && !display_grant_valid && (pending || front_valid);\n79:     assign failed=ownership_fault || engine_failed;\n80:     assign fault=ownership_fault ? 8'h71:engine_fault;\n81:     pipeline_gamma_frame_engine_1080_geometry_bypass #(.HDMI_FISHEYE_PROFILE(HDMI_FISHEYE_PROFILE),.FORCE_TILE8(HDMI_FISHEYE_PROFILE),.TILE8_OVERLAP_WRITER(HDMI_FISHEYE_PROFILE),.CACHE_PROFILE(CACHE_PROFILE),.TILE8_GROUP_WIDTH(TILE8_GROUP_WIDTH),.WIDTH(WIDTH),.HEIGHT(HEIGHT),.MAX_RADIUS_Q22(MAX_RADIUS_Q22),.RASTER_DOUBLE_BUFFER(RASTER_DOUBLE_BUFFER)) engine("
+        },
+        {
+          "source": "a_bank",
+          "line_start": 109,
+          "line_end": 117,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v#L109-L117",
+          "excerpt": "109:             if(engine_done) begin\n110:                 if(!processing || pending || completed_base!=result_base || engine_id!=accepted_id ||\n111:                     gamma_mode==2'd3 || (!frame_gamma_enable && gamma_mode!=2'd0))\n112:                     ownership_fault<=1;\n113:                 else begin\n114:                     processing<=0;pending<=1;pending_crc<=engine_crc;pending_id<=engine_id;\n115:                     pending_param_id<=frame_param_id;\n116:                     pending_mode<={6'b0,frame_gamma_enable,frame_correction_enable};\n117:                     source_released<=1;released_bank<=active_source;completed_frames<=completed_frames+1'b1;last_cycles<=cycles;"
+        },
+        {
+          "source": "a_bank",
+          "line_start": 124,
+          "line_end": 136,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v#L124-L136",
+          "excerpt": "124:             if(display_request_valid && display_request_ready) begin\n125:                 display_active<=1;display_grant_valid<=1;\n126:                 if(pending) begin\n127:                     front_bank<=write_bank;front_valid<=1;front_crc<=pending_crc;front_id<=pending_id;\n128:                     display_base<=result_base;display_crc<=pending_crc;display_id<=pending_id;\n129:                     front_param_id<=pending_param_id;front_mode<=pending_mode;\n130:                     display_param_id<=pending_param_id;display_mode<=pending_mode;\n131:                     write_bank<=!write_bank;pending<=0;\n132:                 end else begin\n133:                     display_base<=front_bank ? 3*BANK_STRIDE:2*BANK_STRIDE;display_crc<=front_crc;display_id<=front_id;\n134:                     display_param_id<=front_param_id;display_mode<=front_mode;\n135:                 end\n136:             end"
+        },
+        {
+          "source": "a_system",
+          "line_start": 209,
+          "line_end": 235,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v#L209-L235",
+          "excerpt": "209:             if(request_sync[1]!=request_seen)begin\n210:                 request_seen<=request_sync[1];request_epoch_hold<=scan_request_epoch;\n211:                 if(response_busy || awaiting_bank_grant || display_req_valid || lease_active)begin\n212:                     controller_failed<=1;controller_fault<=8'hB1;\n213:                 end else if(!failed && scan_enable && display_req_ready && reader_idle && fifo_used==0)begin\n214:                     display_req_valid<=1;\n215:                 end else begin\n216:                     // No ready front at THIS refresh boundary: promptly return\n217:                     // a blank grant, never a late mid-picture lease.\n218:                     grant_valid<=0;grant_epoch<=scan_request_epoch;grant_checksum<=0;grant_id<=0;grant_bank<=0;\n219:                     grant_param_id<=0;grant_mode<=0;\n220:                     grant_toggle<=!grant_toggle;response_busy<=1;scan_blank_frames<=scan_blank_frames+1'b1;\n221:                 end\n222:             end\n223:             if(display_req_valid && display_req_ready)begin display_req_valid<=0;awaiting_bank_grant<=1;end\n224:             if(awaiting_bank_grant && display_grant_valid && !response_busy && !failed)begin\n225:                 display_grant_ready<=1;awaiting_bank_grant<=0;\n226:                 lease_active<=1;lease_bank<=display_base/BANK_STRIDE-2;lease_id<=display_id;lease_crc<=display_crc;lease_epoch<=request_epoch_hold;\n227:                 reader_base<=display_base;reader_expected<=display_crc;reader_start<=1;reader_finished<=0;pixel_finished<=0;\n228:                 grant_valid<=1;grant_epoch<=request_epoch_hold;grant_checksum<=display_crc;grant_id<=display_id;grant_bank<=display_base/BANK_STRIDE-2;\n229:                 grant_param_id<=display_param_id;grant_mode<=display_mode;\n230:                 grant_toggle<=!grant_toggle;response_busy<=1;\n231:             end\n232:             if(reader_done)begin\n233:                 reader_finished<=1;\n234:                 if(!lease_active || reader_beats!=FRAME_BEATS || reader_checksum!=lease_crc)begin controller_failed<=1;controller_fault<=8'hB2;end\n235:             end"
+        },
+        {
+          "source": "a_system",
+          "line_start": 245,
+          "line_end": 253,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261103-hdmi1080-demo-source/stable30-OP/native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v#L245-L253",
+          "excerpt": "245:             if(lease_active && reader_finished && pixel_finished && reader_idle && fifo_used==0 && !failed)begin\n246:                 if(!pixel_done_good || pixel_done_id!=lease_id || pixel_done_bank!=lease_bank || pixel_done_epoch!=lease_epoch ||\n247:                     pixel_done_crc!=lease_crc || pixel_done_count!=WIDTH*HEIGHT)begin controller_failed<=1;controller_fault<=8'hB4;end\n248:                 else begin\n249:                     display_done_valid<=1;display_done_bank<=lease_bank;lease_active<=0;pixel_finished<=0;reader_finished<=0;\n250:                     scan_good_frames<=scan_good_frames+1'b1;\n251:                     if(lease_id>last_presented_id)begin presented_frames<=presented_frames+1'b1;last_presented_id<=lease_id;end\n252:                     else if(lease_id==last_presented_id)scan_repeat_frames<=scan_repeat_frames+1'b1;\n253:                     else begin controller_failed<=1;controller_fault<=8'hB5;end"
+        },
+        {
+          "source": "b_system",
+          "line_start": 220,
+          "line_end": 228,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/source/rtl/experimental/hdmi_camera_fisheye_system_c.v#L220-L228",
+          "excerpt": "220:             if(lease_active && reader_finished && pixel_finished && reader_idle && fifo_used==0 && !failed)begin\n221:                 if(!pixel_done_good || pixel_done_id!=lease_id || pixel_done_bank!=lease_bank || pixel_done_epoch!=lease_epoch ||\n222:                     pixel_done_crc!=lease_crc || pixel_done_count!=WIDTH*HEIGHT)begin controller_failed<=1;controller_fault<=8'hB4;end\n223:                 else begin\n224:                     display_done_valid<=1;display_done_bank<=lease_bank;lease_active<=0;pixel_finished<=0;reader_finished<=0;\n225:                     scan_good_frames<=scan_good_frames+1'b1;\n226:                     if(lease_id>last_presented_id)begin presented_frames<=presented_frames+1'b1;last_presented_id<=lease_id;end\n227:                     else if(lease_id==last_presented_id)scan_repeat_frames<=scan_repeat_frames+1'b1;\n228:                     else begin controller_failed<=1;controller_fault<=8'hB5;end"
+        }
+      ],
+      "boundary": "不能宣传30版才首次引入完整帧发布、双结果bank或显示保护。"
+    },
+    {
+      "id": "clocks_scan",
+      "label": "处理时钟与输出扫描",
+      "baseline_15fps": "核心125MHz；输出像素74.25MHz，HT2200×VT1125，30Hz扫描，实测15新帧/秒。",
+      "selected_30fps": "核心125MHz；a266绑定STA给输出像素148.5MHz，HT2200×VT1125，对应60Hz扫描；用户验证30新校正帧/秒。",
+      "evidence": [
+        {
+          "source": "b_sta",
+          "line_start": 48,
+          "line_end": 52,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/reports/final_timing_summary.rtr#L48-L52",
+          "excerpt": "48:  pixel_clk                  74.2500 MHz     82.4809 MHz        13.4680        12.1240          1.344\n49:  cfg_clk                    10.0000 MHz    178.5059 MHz       100.0000         5.6021         94.397\n50:  rst_clk                   125.0000 MHz    334.5601 MHz         8.0000         2.9890          5.011\n51:  ddrphy_sysclk             125.0000 MHz    126.4542 MHz         8.0000         7.9080          0.092\n52: ===================================================================================================="
+        },
+        {
+          "source": "b_sta",
+          "line_start": 50,
+          "line_end": 54,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/reports/final_timing_summary.rtr#L50-L54",
+          "excerpt": "50:  rst_clk                   125.0000 MHz    334.5601 MHz         8.0000         2.9890          5.011\n51:  ddrphy_sysclk             125.0000 MHz    126.4542 MHz         8.0000         7.9080          0.092\n52: ====================================================================================================\n53: \n54: Design Summary : All Constraints Met."
+        },
+        {
+          "source": "b_top",
+          "line_start": 237,
+          "line_end": 244,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L237-L244",
+          "excerpt": "237:     hdmi_camera_fisheye_system #(.WIDTH(1920),.HEIGHT(1080),.BANK_STRIDE(1048576),\n238:         .HT(2200),.VT(1125),.HS(44),.VS(5),.X0(192),.Y0(41)) system(\n239:         .core_clk(core_clk),.pix_in_clk(pixclk_in),.pix_out_clk(pix_clk),.rst_n(pipeline_reset_n),\n240:         .capture_admit(core_reset[1] && !board_failed_core[1]),\n241:         .scan_enable(core_reset[1] && !board_failed_core[1]),\n242:         .external_fault(board_failed_core[1]),.external_fault_code(board_fault),\n243:         .pix_in_vsync_active(quantized_vs && quantized_valid),.pix_in_de(quantized_de && quantized_valid),.pix_in_rgb(quantized_rgb),\n244:         .cfg_corrected(corrected_requested),"
+        },
+        {
+          "source": "a_clock",
+          "line_start": 28,
+          "line_end": 36,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8e88b3962fc03ca20c92761720f41ab886d3d34c/delivery/20261104-a266044d-timing-review/raw/report_timing_clock_summary.db#L28-L36",
+          "excerpt": "28:                 <data>pixel_clk</data>\n29:                 <data>Generated</data>\n30:                 <data>6.7340</data>\n31:                 <data>148.5000MHz</data>\n32:                 <data>0.0000</data>\n33:                 <data>3.3670</data>\n34:                 <data>705</data>\n35:                 <data>1</data>\n36:                 <data>board27</data>"
+        },
+        {
+          "source": "a_clock",
+          "line_start": 88,
+          "line_end": 96,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8e88b3962fc03ca20c92761720f41ab886d3d34c/delivery/20261104-a266044d-timing-review/raw/report_timing_clock_summary.db#L88-L96",
+          "excerpt": "88:                 <data>ddrphy_sysclk</data>\n89:                 <data>Generated</data>\n90:                 <data>8.0000</data>\n91:                 <data>125.0000MHz</data>\n92:                 <data>0.0000</data>\n93:                 <data>4.0000</data>\n94:                 <data>15616</data>\n95:                 <data>1</data>\n96:                 <data>ref_clk</data>"
+        },
+        {
+          "source": "a_top",
+          "line_start": 231,
+          "line_end": 234,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261104-op-camera-input-diagnostics/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v#L231-L234",
+          "excerpt": "231:     hdmi1080_video_system_geometry_ab #(.WIDTH(1920),.HEIGHT(1080),.BANK_STRIDE(1048576),\n232:         .HDMI_FISHEYE_PROFILE(HDMI_FISHEYE_PROFILE),.STATS_ENABLE(1),.CACHE_PROFILE(CACHE_PROFILE),.TILE8_GROUP_WIDTH(TILE8_GROUP_WIDTH),.RASTER_DOUBLE_BUFFER(1),.STATS_CORE_HZ(125000000),\n233:         .MAX_RADIUS_Q22(B1080_RADIUS_Q22),.HT(2200),.VT(1125),.HS(44),.VS(5),.X0(192),.Y0(41)) system(\n234:         .core_clk(core_clk),.pix_in_clk(pixclk_in),.pix_out_clk(pix_clk),.rst_n(pipeline_reset_n),"
+        },
+        {
+          "source": "a_identity",
+          "line_start": 26,
+          "line_end": 26,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261104-op-camera-input-unclosed4-diagnostic/DIAGNOSTIC_IDENTITY.json#L26-L26",
+          "excerpt": "26:   \"OutputNominalPixelClockHz\": 148500000,"
+        }
+      ],
+      "calculations": {
+        "baseline_scan_hz": 30.0,
+        "selected_scan_hz": 60.0
+      },
+      "boundary": "扫描频率不等于新处理帧率。a266 top L35–36保留过时74.25MHz注释，时钟应以绑定该位流的STA为准。"
+    },
+    {
+      "id": "input_qualification",
+      "label": "输入资格与采样前端",
+      "baseline_15fps": "编译top INPUT_TIMING_CONFIGURED=1，静态VS/DE极性及输入采样、配置完成和PCLK活动/超时门控；量化后送DMA。",
+      "selected_30fps": "DIAGNOSTIC_BLANKING_REPORT_ONLY=1，使用functional_qualified/functional_failed；观察器启动、输入极性与PCLK窗口门控，strict blanking作为诊断记录；采样RGB直接送DMA。",
+      "evidence": [
+        {
+          "source": "b_top",
+          "line_start": 6,
+          "line_end": 10,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L6-L10",
+          "excerpt": "6: module hdmi_camera_fisheye_top #(\n7:     parameter integer INPUT_TIMING_CONFIGURED=1,\n8:     parameter integer RX_VS_ACTIVE_LEVEL=1,\n9:     parameter integer RX_DE_ACTIVE_LEVEL=1,\n10:     parameter integer CFG_SETTLE_CYCLES=2700000,"
+        },
+        {
+          "source": "b_top",
+          "line_start": 179,
+          "line_end": 201,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L179-L201",
+          "excerpt": "179:     // Timeout watches only source-clock presence. It is not a VS/DE/frame\n180:     // progress watchdog and never releases a bank or resets a transaction.\n181:     wire pclk_stale=pclk_age>=PCLK_STALE_REF_CYCLES;\n182:     reg pipeline_release=0,board_failed=0;\n183:     reg [7:0] board_fault=0;\n184:     reg [23:0] heart_count=0;\n185:     reg heartbeat=0;\n186:     always @(posedge clk_27m or negedge global_reset_n)begin\n187:         if(!global_reset_n)begin pipeline_release<=0;board_failed<=0;board_fault<=0;heart_count<=0;heartbeat<=0;end\n188:         else if(!ref_reset[1])begin pipeline_release<=0;board_failed<=0;board_fault<=0;heart_count<=0;heartbeat<=0;end\n189:         else begin\n190:             if(heart_count==13499999)begin heart_count<=0;heartbeat<=!heartbeat;end\n191:             else heart_count<=heart_count+1'b1;\n192:             if(!pipeline_release && !board_failed && TIMING_CONFIG_OK && !cfg_failed_ref[1] &&\n193:                 cfg_lock_ref[1] && video_lock_ref[1] && rx_done_ref[1] && tx_done_ref[1] &&\n194:                 ddr_ready_ref && pclk_observed && !pclk_stale)pipeline_release<=1;\n195:             if(!board_failed && cfg_failed_ref[1])begin board_failed<=1;board_fault<=8'ha7;end\n196:             else if(pipeline_release && !board_failed)begin\n197:                 if(pclk_stale)begin board_failed<=1;board_fault<=8'ha1;end\n198:                 else if(!ddr_ready_ref)begin board_failed<=1;board_fault<=8'ha3;end\n199:                 else if(!cfg_lock_ref[1] || !video_lock_ref[1])begin board_failed<=1;board_fault<=8'ha4;end\n200:                 else if(!rx_done_ref[1] || !tx_done_ref[1])begin board_failed<=1;board_fault<=8'ha5;end\n201:                 else if(system_failed_ref[1])begin board_failed<=1;board_fault<=8'ha6;end"
+        },
+        {
+          "source": "b_top",
+          "line_start": 227,
+          "line_end": 244,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/compiled-snapshots/board/hdmi_camera_fisheye_top.v#L227-L244",
+          "excerpt": "227:     // Retain every raw RGB pad as a real color input. Quantization and timing\n228:     // have the same two-cycle PCLK delay before the unchanged RGB565 DMA.\n229:     wire quantized_valid,quantized_vs,quantized_de;\n230:     wire [23:0] quantized_rgb;\n231:     hdmi_camera_rgb565_quantizer input_quantizer(\n232:         .clk(pixclk_in),.rst_n(input_reset[1]),.in_valid(sampled_valid),\n233:         .in_vs(input_vs_active),.in_de(input_de_active),.in_rgb(sampled_rgb),\n234:         .out_valid(quantized_valid),.out_vs(quantized_vs),.out_de(quantized_de),.out_rgb(quantized_rgb));\n235:     wire [23:0] pixel_rgb;\n236:     wire display_valid;\n237:     hdmi_camera_fisheye_system #(.WIDTH(1920),.HEIGHT(1080),.BANK_STRIDE(1048576),\n238:         .HT(2200),.VT(1125),.HS(44),.VS(5),.X0(192),.Y0(41)) system(\n239:         .core_clk(core_clk),.pix_in_clk(pixclk_in),.pix_out_clk(pix_clk),.rst_n(pipeline_reset_n),\n240:         .capture_admit(core_reset[1] && !board_failed_core[1]),\n241:         .scan_enable(core_reset[1] && !board_failed_core[1]),\n242:         .external_fault(board_failed_core[1]),.external_fault_code(board_fault),\n243:         .pix_in_vsync_active(quantized_vs && quantized_valid),.pix_in_de(quantized_de && quantized_valid),.pix_in_rgb(quantized_rgb),\n244:         .cfg_corrected(corrected_requested),"
+        },
+        {
+          "source": "a_top",
+          "line_start": 7,
+          "line_end": 9,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261104-op-camera-input-diagnostics/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v#L7-L9",
+          "excerpt": "7: module board1080_top #(parameter STARTUP_DIAG_ONLY=0,CACHE_PROFILE=6,HDMI_FISHEYE_PROFILE=1,TILE8_GROUP_WIDTH=64,\n8:     parameter DIAGNOSTIC_BLANKING_REPORT_ONLY=1,INPUT_RUNTIME_DIAG_ONLY=1,\n9:     parameter INPUT_PCLK_WINDOW_MIN=147000,INPUT_PCLK_WINDOW_MAX=150000)("
+        },
+        {
+          "source": "a_top",
+          "line_start": 103,
+          "line_end": 146,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261104-op-camera-input-diagnostics/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v#L103-L146",
+          "excerpt": "103:     `include \"source/rtl/hdmi_rx_sample_bank.vh\"\n104:     wire normalized_vs,input_qualified,input_failed,input_polarity,vs_inactive,hs_inactive;\n105:     wire [7:0] input_fault;\n106:     wire [7:0] diag_source_fault_ref,diag_ref_fault;\n107:     wire diag_source_fault_valid,diag_ref_fault_valid;\n108:     wire [31:0] monitor_good_frames,monitor_bad_frames,monitor_pclk_edges;\n109:     wire [15:0] monitor_pixels,monitor_lines;\n110:     // Only the observer can be held/restarted during chip initialization. The\n111:     // real system/FIFO reset below is a separate once-released global latch.\n112:     reg pipeline_release=0,board_failed=0;reg [7:0] board_fault=0;\n113:     wire observer_startup_armed,observer_epoch_reset;\n114:     wire diag_source_domain_reset_n,diag_snapshot_seen_ref;\n115:     wire diag_timing_detail_valid;wire [135:0] diag_timing_detail;\n116:     wire functional_input_qualified,functional_input_failed,hard_overlap_fault_ref;\n117:     wire [31:0] input_qualify_reason_ref;\n118:     wire selected_input_qualified=DIAGNOSTIC_BLANKING_REPORT_ONLY ? functional_input_qualified:input_qualified;\n119:     wire selected_input_failed=DIAGNOSTIC_BLANKING_REPORT_ONLY ? functional_input_failed:input_failed;\n120:     // Existing user LEDs4/5 show first strict timing subcode1/2/3 in this\n121:     // controlled profile. No warning is described as strict timing acceptance.\n122:     wire [1:0] report_first_timing_code=diag_timing_detail_valid ? diag_timing_detail[129:128]:2'b00;\n123:     wire [7:0] diag_epoch_flags,diag_epoch_count;\n124:     wire [31:0] diag_epoch_start,diag_epoch_end,diag_first_bad_tick,diag_first_bad_value;\n125:     wire [31:0] diag_first_snapshot_tick,diag_first_snapshot_good,diag_first_snapshot_bad;\n126:     wire observer_warm_ready=ref_reset[1] && cfg_lock_ref[1] && video_lock_ref[1] &&\n127:         rx_done_ref[1] && tx_done_ref[1] && ddr_ready_ref[1] && input_polarity &&\n128:         monitor_pclk_edges>=INPUT_PCLK_WINDOW_MIN && monitor_pclk_edges<=INPUT_PCLK_WINDOW_MAX;\n129:     hdmi_observer_startup_guard startup_epoch(.clk(clk_27m),.rst_n(global_reset_n),\n130:         .pipeline_released(pipeline_release),.ready(observer_warm_ready),\n131:         .good_frames(monitor_good_frames),.bad_frames(monitor_bad_frames),\n132:         .startup_armed(observer_startup_armed),.observer_epoch_reset(observer_epoch_reset));\n133:     wire observer_reset_n=global_reset_n && rx_done_ref[1] && !observer_epoch_reset;\n134:     hdmi1080_input_status #(.PCLK_WINDOW_MIN(INPUT_PCLK_WINDOW_MIN),\n135:         .PCLK_WINDOW_MAX(INPUT_PCLK_WINDOW_MAX)) input_status(.ref_clk(clk_27m),.pix_clk(pixclk_in),.rst_n(observer_reset_n),\n136:         .pix_vs(sampled_vs),.pix_hs(sampled_hs),.pix_de(sampled_de),.normalized_vs(normalized_vs),\n137:         .qualified(input_qualified),.failed(input_failed),.fault(input_fault),\n138:         .polarity_known_ref(input_polarity),.vs_inactive_ref(vs_inactive),.hs_inactive_ref(hs_inactive),\n139:         .good_frames(monitor_good_frames),.bad_frames(monitor_bad_frames),.pclk_edges_per_window(monitor_pclk_edges),\n140:         .last_pixels_per_line(monitor_pixels),.last_lines(monitor_lines),\n141:         .source_fault_ref_debug(diag_source_fault_ref),.ref_fault_debug(diag_ref_fault),\n142:         .source_fault_valid_ref_debug(diag_source_fault_valid),.ref_fault_valid_debug(diag_ref_fault_valid),\n143:         .source_domain_reset_n_debug(diag_source_domain_reset_n),.snapshot_seen_ref_debug(diag_snapshot_seen_ref),\n144:         .timing_detail_ref_valid_debug(diag_timing_detail_valid),.timing_detail_ref_debug(diag_timing_detail),\n145:         .functional_qualified(functional_input_qualified),.functional_failed(functional_input_failed),\n146:         .hard_overlap_fault_ref(hard_overlap_fault_ref),.qualify_reason_ref_debug(input_qualify_reason_ref));"
+        },
+        {
+          "source": "a_top",
+          "line_start": 154,
+          "line_end": 162,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261104-op-camera-input-diagnostics/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v#L154-L162",
+          "excerpt": "154:             if(!pipeline_release && observer_startup_armed && !board_failed && cfg_lock_ref[1] && video_lock_ref[1] &&\n155:                 rx_done_ref[1] && tx_done_ref[1] && ddr_ready_ref[1] && selected_input_qualified)pipeline_release<=1;\n156:             if(pipeline_release && !board_failed)begin\n157:                 if(selected_input_failed)begin board_failed<=1;board_fault<=8'ha1;end\n158:                 else if(!selected_input_qualified)begin board_failed<=1;board_fault<=8'ha2;end\n159:                 else if(!ddr_ready_ref[1])begin board_failed<=1;board_fault<=8'ha3;end\n160:                 else if(!cfg_lock_ref[1] || !video_lock_ref[1])begin board_failed<=1;board_fault<=8'ha4;end\n161:                 else if(!rx_done_ref[1] || !tx_done_ref[1])begin board_failed<=1;board_fault<=8'ha5;end\n162:                 else if(system_failed_ref[1])begin board_failed<=1;board_fault<=8'ha6;end"
+        },
+        {
+          "source": "a_top",
+          "line_start": 240,
+          "line_end": 244,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/dbf928e91082e7c81b5a188b8b464726040da0a7/delivery/20261104-op-camera-input-diagnostics/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v#L240-L244",
+          "excerpt": "240:         .source_commit(system_source_commit),\n241:         .capture_admit(core_reset[1] && qualified_core[1] && !board_failed_core[1]),\n242:         .scan_enable(core_reset[1] && !board_failed_core[1]),\n243:         .external_fault(board_failed_core[1]),.external_fault_code(board_fault),\n244:         .pix_in_vsync_active(normalized_vs),.pix_in_de(sampled_de),.pix_in_rgb(sampled_rgb),"
+        }
+      ],
+      "report_visibility": "内部对照留完整逻辑；主文可简写输入管理、帧调度、访存和输出扫描均有改变。",
+      "boundary": "不能宣称两版输入资格检查完全相同，也不能用旧PC诊断记录否定本轮用户现场30FPS事实。"
+    },
+    {
+      "id": "timing",
+      "label": "版本独立STA（内部审计）",
+      "baseline_15fps": "aa219913最终报告All Constraints Met；slow setup最小+0.092ns，十类已归档。",
+      "selected_30fps": "a266核心同域slow setup +0.021ns；4条DDR PHY setup负裕量−0.032/−0.023/−0.012/−0.006ns，总−0.073ns；未全闭合。",
+      "evidence": [
+        {
+          "source": "b_sta",
+          "line_start": 54,
+          "line_end": 57,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/reports/final_timing_summary.rtr#L54-L57",
+          "excerpt": "54: Design Summary : All Constraints Met.\n55: \n56: Setup Summary(Slow Corner):\n57: ****************************************************************************************************"
+        },
+        {
+          "source": "b_sta",
+          "line_start": 51,
+          "line_end": 53,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/reports/final_timing_summary.rtr#L51-L53",
+          "excerpt": "51:  ddrphy_sysclk             125.0000 MHz    126.4542 MHz         8.0000         7.9080          0.092\n52: ====================================================================================================\n53: "
+        },
+        {
+          "source": "a_sta",
+          "line_start": 29,
+          "line_end": 34,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8e88b3962fc03ca20c92761720f41ab886d3d34c/delivery/20261104-a266044d-timing-review/raw/report_timing_slow_setup.db#L29-L34",
+          "excerpt": "29:             <data>ddrphy_sysclk</data>\n30:             <data>ddrphy_sysclk</data>\n31:             <data>0.021</data>\n32:             <data>0.000</data>\n33:             <data>0</data>\n34:             <data>63602</data>"
+        },
+        {
+          "source": "a_sta",
+          "line_start": 13,
+          "line_end": 18,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8e88b3962fc03ca20c92761720f41ab886d3d34c/delivery/20261104-a266044d-timing-review/raw/report_timing_slow_setup.db#L13-L18",
+          "excerpt": "13:             <data>ddrphy_sysclk</data>\n14:             <data>phy_dq_sysclk_0</data>\n15:             <data>-0.032</data>\n16:             <data>-0.050</data>\n17:             <data>3</data>\n18:             <data>196</data>"
+        },
+        {
+          "source": "a_sta",
+          "line_start": 21,
+          "line_end": 26,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8e88b3962fc03ca20c92761720f41ab886d3d34c/delivery/20261104-a266044d-timing-review/raw/report_timing_slow_setup.db#L21-L26",
+          "excerpt": "21:             <data>ddrphy_sysclk</data>\n22:             <data>phy_dq_sysclk_1</data>\n23:             <data>-0.023</data>\n24:             <data>-0.023</data>\n25:             <data>1</data>\n26:             <data>420</data>"
+        },
+        {
+          "source": "a_timing_paths",
+          "line_start": 1,
+          "line_end": 5,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/8e88b3962fc03ca20c92761720f41ab886d3d34c/delivery/20261104-a266044d-timing-review/paths.csv#L1-L5",
+          "excerpt": "1: Slack,Logic Levels,High Fanout,Start Point,End Point,Exception,Launch Clock,Capture Clock,Clock Edges,Clock Skew,Launch Clock Delay,Capture Clock Delay,Clock Pessimism Removal,Requirement,Data delay,Logic delay,Route delay\n2: -0.032,2,64,u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/ddrphy_dqs_rddata_align/this_group_ca_dly/opit_0_inv/CLK,u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[11].u_outbuft_addr0/opit_1/TX_DATA[0],MultiCycle Path Setup -end 2,ddrphy_sysclk,phy_dq_sysclk_0,rise-rise,-2.544,5.623,2.640,0.439,10.000,6.372,0.488 (7.7%),5.884 (92.3%)\n3: -0.023,2,36,u_ddr3_test_h/u_ddrphy_top/ddrphy_dfi/phy_wrdata_en_d[0]/opit_0_inv_L6Q_perm/CLK,u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].ddrphy_data_slice/u_tserdes0_dqs/oserdes_inst/TS_CTRL[7],MultiCycle Path Setup -end 2,ddrphy_sysclk,phy_dq_sysclk_1,rise-rise,-2.741,5.605,2.640,0.224,10.000,6.212,0.407 (6.6%),5.805 (93.4%)\n4: -0.012,2,64,u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/ddrphy_dqs_rddata_align/this_group_ca_dly/opit_0_inv/CLK,u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[14].u_outbuft_addr0/opit_1/TX_DATA[2],MultiCycle Path Setup -end 2,ddrphy_sysclk,phy_dq_sysclk_0,rise-rise,-2.544,5.623,2.640,0.439,10.000,6.352,0.594 (9.4%),5.758 (90.6%)\n5: -0.006,2,64,u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].ddrphy_data_slice/ddrphy_dqs_rddata_align/this_group_ca_dly/opit_0_inv/CLK,u_ddr3_test_h/u_ddrphy_top/ddrphy_slice_top/i_mem_addr_0[5].u_outbuft_addr0/opit_1/TX_DATA[2],MultiCycle Path Setup -end 2,ddrphy_sysclk,phy_dq_sysclk_0,rise-rise,-2.544,5.623,2.640,0.439,10.000,6.346,0.373 (5.9%),5.973 (94.1%)"
+        }
+      ],
+      "boundary": "cf9是不同位流，不得将其12项零违例或+0.009ns套到a266。报告若仅展示15STA，标题和版本归属必须清楚；不得假写a266时序通过。"
+    },
+    {
+      "id": "latency",
+      "label": "延迟与统计归属",
+      "baseline_15fps": "600秒采集的599秒核心计数窗：新处理/新显示各8985帧；LastProcessCycles每秒最近完成帧采样均值4431433.1周期，即35.4514648ms@125MHz，范围35.383328–35.524192ms。",
+      "selected_30fps": "现场30FPS已确认；当前无绑定此次现场的处理耗时、光学端到端延迟、原始计数窗或总帧数，保留null。",
+      "evidence": [
+        {
+          "source": "b_board600",
+          "line_start": 4860,
+          "line_end": 4877,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/evidence/board-600s-review.json#L4860-L4877",
+          "excerpt": "4860:     \"ActualAcquisitionWallSeconds\": 600.030666,\n4861:     \"AcquisitionWallDurationBasis\": \"receipt UTC ended-started; configured acquisition uses frozen monotonic loop\",\n4862:     \"MinimumHostFirstToLastWindowSeconds\": 595,\n4863:     \"NominalCounterWindowSeconds\": 599.0,\n4864:     \"HostFirstToLastWindowSeconds\": 598.9880206000526,\n4865:     \"AcquisitionWallIsNotCounterWindow\": true,\n4866:     \"ObservedCoreMHzFromHostArrival\": 125.00249992477634,\n4867:     \"ClockCrossCheckWithin3Percent\": true,\n4868:     \"PerAdjacentSampleModulo32Totals\": {\n4869:       \"source_frames\": 35940,\n4870:       \"captured_frames\": 8985,\n4871:       \"processed_frames\": 8985,\n4872:       \"unique_presented_frames\": 8985,\n4873:       \"scan_refreshes\": 17970,\n4874:       \"cache_hits\": 66637095732,\n4875:       \"cache_misses\": 336785410,\n4876:       \"queries\": 18631356506,\n4877:       \"scan_good_frames\": 17970,"
+        },
+        {
+          "source": "b_board600",
+          "line_start": 4914,
+          "line_end": 4922,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/evidence/board-600s-review.json#L4914-L4922",
+          "excerpt": "4914:     \"LastProcessCycles\": {\n4915:       \"First\": 4425534,\n4916:       \"Last\": 4429497,\n4917:       \"Minimum\": 4422916,\n4918:       \"Maximum\": 4440524,\n4919:       \"Mean\": 4431433.1\n4920:     },\n4921:     \"LastProcessMSUsingObservedHostClock\": 35.435267315978244,\n4922:     \"SourceMinusCapturedFrames\": 26955,"
+        },
+        {
+          "source": "b_readme",
+          "line_start": 33,
+          "line_end": 34,
+          "url": "https://github.com/zhang-yl24/fpga-distortion-correction/blob/f8a9bf6b51c7f2e087aa1e722ad4b69c1a2a0b00/delivery/20261104-hdmi-camera-fisheye-tile8-directfill/submission/README.md#L33-L34",
+          "excerpt": "33: 两窗均约15.0新帧/秒、30.0 Hz扫描；保存包无故障、新增空白为零。长窗最近完成帧处理计数采样均值约35.4515 ms；约20%的改善指相对原tile8短窗处理耗时采样，不是FPS提升。长窗缓存统计用逐相邻样本modulo-32累加，避免跨多次回卷时端点相减漏计；原始采集回执保持未改，修正口径见独立review。\n34: "
+        }
+      ],
+      "baseline_processing_ms": {
+        "mean": 35.4514648,
+        "min": 35.383328,
+        "max": 35.524192
+      },
+      "selected_processing_ms": null,
+      "selected_optical_e2e_ms": null,
+      "selected_frame_count": null,
+      "selected_counter_window_seconds": null,
+      "boundary": "35.45ms是15版每秒最近完成帧处理采样均值，不是8985帧全分布/光学E2E；O/P PC的24.21–24.53ms、122.986秒、3690帧均不能移作a266此次现场指标。"
+    }
+  ],
+  "local_findings": {
+    "path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\teammate-source-review-a\\FINDINGS.md",
+    "sha256": "13b36990ef20dc7d96d400ff74a37397e7188a35b0ac58fbc333a0f03746e38a",
+    "first_lines": [
+      "# 摄像头方案源码与时序调查",
+      "",
+      "核对日期：2026-11-04，Asia/Shanghai。用户报告 a266044d 位流在现场摄像头输入已经达到 30fps。本次只读 Git 并保存资料，没有切换分支、改运行中的 RTL、下载位流或推送。",
+      "",
+      "## 已定位的版本",
+      "",
+      "| 角色 | 分支 / 提交 | 内容 |",
+      "| --- | --- | --- |",
+      "| 用户已测位流 | delivery/20261104-op-camera-input-diagnostics / dbf928e91082e7c81b5a188b8b464726040da0a7 | a266044d4da4b8883fc7fa1e9250f62aee37bbf27df349354b2a11250129c547，3,791,112 字节 |",
+      "| 对应时序资料 | delivery/20261104-a266044d-timing-review / 8e88b3962fc03ca20c92761720f41ab886d3d34c | 原始报告、四条路径、时钟关系和例外报告 |",
+      "| 截图最上方进展 | delivery/20261104-op-camera-key1-raw-corr / 8c3fe2a05ae56e3338a495f5085d489506352439 | 2026-11-04 14:11:33 +08:00 提交，KEY1 位流和内部 12 项 STA 摘要 |",
+      ""
+    ]
+  },
+  "audit_only": {
+    "cf9_latest_observation": "用户本轮报告cf9 KEY1版未出画面；a266随后验证成功。不得为cf9继承30FPS现场结果。",
+    "rebuild": "既有FINDINGS核149输入：133精确Git blob+10 include重定位+6缺失精确依赖，不能本地精确重建该物理版本；不影响现场已成功事实。",
+    "resources": "a266未获得独立绑定资源表，不能借用O/P99f8或cf9资源。15资源/STA原表仍按aa219913呈现。",
+    "report_scope": "主文正向聚焦30FPS校正、保留几何模型、帧队列与预取写回；15按键/延迟/长期窗口归15。正式主文不出现未来60FPS目标。"
+  },
+  "recommended_report_text": "在相同1920×1080鱼眼标定参数、径向查表与坐标映射基础上，30FPS方案采用双描述符源帧队列、512项查询队列与256项前瞻，以及双64×8像素块的按行重叠写回。板端摄像头校正已验证达到30FPS；原15FPS方案保留为具有长期计数与处理耗时记录的工程对照。两方案输出分别以60Hz和30Hz扫描，扫描刷新与新校正帧率分开统计。",
+  "benchmark_boundary": "30/15=2为两版本已验证新帧率之比；输入门控、源帧调度、cache、writer、输出扫描均变化，不是单变量或严格同条件benchmark。"
+}

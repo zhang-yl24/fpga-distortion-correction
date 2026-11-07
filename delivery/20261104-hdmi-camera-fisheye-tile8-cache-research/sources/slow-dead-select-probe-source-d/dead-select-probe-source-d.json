@@ -1,0 +1,51 @@
+{
+  "Schema": "tile8-unreachable-select-elimination-source-v1",
+  "ExperimentalOnly": true,
+  "Parent": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\combined-cache-probe-c.v",
+    "SHA256": "2828700483c478688cddf249608456f4f1253c5091687c11accc98a833b2df6e"
+  },
+  "Variant": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\tile8_next15h_20261103\\new-next-probe-20261104\\dead-select-probe-d.v",
+    "SHA256": "b49ece98f46fb36d7e4435d1bd5fc9ae8fca23c51bc493a4618f82bc4be086ec"
+  },
+  "StateAssignmentRHSBefore": [
+    "IDLE",
+    "CHECK",
+    "RESULT",
+    "CHECK",
+    "RESULT",
+    "CHECK",
+    "PICK",
+    "AR",
+    "FILL",
+    "neighbour==3 ? LOAD:BULK_CHECK",
+    "bulk_all_hit ? BULK_LOAD:LOAD",
+    "BULK_PICK",
+    "RESULT",
+    "PICK",
+    "RESULT",
+    "CHECK",
+    "IDLE",
+    "FAULT",
+    "FAULT",
+    "FAULT",
+    "FAULT",
+    "WAIT_COMMIT",
+    "FAULT"
+  ],
+  "NoStateAssignmentCanEnterSELECT": true,
+  "ResetState": "IDLE",
+  "DeletedCaseSHA256": "d5c67f9790ff42a253933a313eb971caaa2bae5a0da6d3ff05181cf1ce5c1689",
+  "Changes": [
+    "remove SELECT case with no incoming reachable edge",
+    "remove private legacy coordinate registers",
+    "remove reset writes to deleted private registers",
+    "remove writes used only by deleted state",
+    "remove legacy row multiply/add and bounds feeding only SELECT"
+  ],
+  "NoReachableProtocolOrCycleChangeIntended": true,
+  "ArbitraryVerilogEquivalenceProved": false,
+  "NativeEDAExecuted": false,
+  "HardwareAccessed": false
+}

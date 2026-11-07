@@ -1,0 +1,143 @@
+{
+  "Schema": "hdmi-camera-fisheye-tile8df8bulk-build-execution-v1",
+  "Target": "hdmi_camera_fisheye_top",
+  "PlanSHA256": "0ab864d7fc63efb80852053ada24fba4fb5546a40da31c4e1bb1f039b6306eb4",
+  "StartedUTC": "2026-11-04T01:15:54.586378+00:00",
+  "Command": [
+    "D:\\pango\\PDS_2023.2\\bin\\pds_shell.exe",
+    "-file",
+    "P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/build.tcl",
+    "-work_dir",
+    "P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a",
+    "-project_name",
+    "hdmi_camera_fisheye_top"
+  ],
+  "ResearchOnly": true,
+  "FullSimulationPending": true,
+  "ReleaseAllowed": false,
+  "HardwareAccessed": false,
+  "BitstreamRequested": false,
+  "EDAExecuted": true,
+  "TimedOut": false,
+  "StoppedForUnexpectedStage": false,
+  "ExitCode": 0,
+  "TimingAccepted": false,
+  "HardwareReleaseAllowed": false,
+  "ExternalACAccepted": false,
+  "OwnedPID": 32744,
+  "Cleanup": {
+    "Complete": true,
+    "ParentExited": true
+  },
+  "ElapsedSeconds": 1024.712,
+  "FinishedUTC": "2026-11-04T01:32:59.299356+00:00",
+  "InputDrift": [],
+  "ActualEvents": [
+    [
+      "Compile",
+      "started"
+    ],
+    [
+      "Compile",
+      "done"
+    ],
+    [
+      "Synthesize",
+      "started"
+    ],
+    [
+      "Synthesize",
+      "done"
+    ],
+    [
+      "Device Map",
+      "started"
+    ],
+    [
+      "Device Map",
+      "done"
+    ],
+    [
+      "Place",
+      "started"
+    ],
+    [
+      "Place",
+      "done"
+    ],
+    [
+      "Route",
+      "started"
+    ],
+    [
+      "Route",
+      "done"
+    ],
+    [
+      "Route Optimize",
+      "started"
+    ],
+    [
+      "Route Optimize",
+      "done"
+    ],
+    [
+      "Report Timing",
+      "started"
+    ],
+    [
+      "Report Timing",
+      "done"
+    ]
+  ],
+  "Diagnostics": [
+    "compile/run.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/board/hdmi_camera_fisheye_top.v(line number: 47)] Reduce accumulator cfg_wait_count size from 32 to 22. If this is not intended behavior, please drive cfg_wait_count with valid values.",
+    "compile/run.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/board/hdmi_camera_fisheye_top.v(line number: 172)] Reduce accumulator pclk_age size from 32 to 22. If this is not intended behavior, please drive pclk_age with valid values.",
+    "compile/run.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/rtl/experimental/iic_dri_checked.v(line number: 93)] Reduce accumulator watchdog size from 32 to 17. If this is not intended behavior, please drive watchdog with valid values.",
+    "compile/run.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp(line number: 541)] Reduce accumulator cnt size from 7 to 6. If this is not intended behavior, please drive cnt with valid values.",
+    "compile/run.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp(line number: 614)] Reduce accumulator delay_cnt size from 4 to 2. If this is not intended behavior, please drive delay_cnt with valid values.",
+    "flow.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/board/hdmi_camera_fisheye_top.v(line number: 47)] Reduce accumulator cfg_wait_count size from 32 to 22. If this is not intended behavior, please drive cfg_wait_count with valid values.",
+    "flow.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/board/hdmi_camera_fisheye_top.v(line number: 172)] Reduce accumulator pclk_age size from 32 to 22. If this is not intended behavior, please drive pclk_age with valid values.",
+    "flow.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/rtl/experimental/iic_dri_checked.v(line number: 93)] Reduce accumulator watchdog size from 32 to 17. If this is not intended behavior, please drive watchdog with valid values.",
+    "flow.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp(line number: 541)] Reduce accumulator cnt size from 7 to 6. If this is not intended behavior, please drive cnt with valid values.",
+    "flow.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp(line number: 614)] Reduce accumulator delay_cnt size from 4 to 2. If this is not intended behavior, please drive delay_cnt with valid values.",
+    "run.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/board/hdmi_camera_fisheye_top.v(line number: 47)] Reduce accumulator cfg_wait_count size from 32 to 22. If this is not intended behavior, please drive cfg_wait_count with valid values.",
+    "run.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/board/hdmi_camera_fisheye_top.v(line number: 172)] Reduce accumulator pclk_age size from 32 to 22. If this is not intended behavior, please drive pclk_age with valid values.",
+    "run.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/rtl/experimental/iic_dri_checked.v(line number: 93)] Reduce accumulator watchdog size from 32 to 17. If this is not intended behavior, please drive watchdog with valid values.",
+    "run.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp(line number: 541)] Reduce accumulator cnt size from 7 to 6. If this is not intended behavior, please drive cnt with valid values.",
+    "run.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp(line number: 614)] Reduce accumulator delay_cnt size from 4 to 2. If this is not intended behavior, please drive delay_cnt with valid values.",
+    "stdout.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/board/hdmi_camera_fisheye_top.v(line number: 47)] Reduce accumulator cfg_wait_count size from 32 to 22. If this is not intended behavior, please drive cfg_wait_count with valid values.",
+    "stdout.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/board/hdmi_camera_fisheye_top.v(line number: 172)] Reduce accumulator pclk_age size from 32 to 22. If this is not intended behavior, please drive pclk_age with valid values.",
+    "stdout.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/rtl/experimental/iic_dri_checked.v(line number: 93)] Reduce accumulator watchdog size from 32 to 17. If this is not intended behavior, please drive watchdog with valid values.",
+    "stdout.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/platform/video_base/ipcore/ddr3_test/rtl/mcdq_ctrl/ips2l_mcdq_dcp_buf_v1_2.vp(line number: 541)] Reduce accumulator cnt size from 7 to 6. If this is not intended behavior, please drive cnt with valid values.",
+    "stdout.log: C: Sdm-3003: [P:/distortion/work/hdmi-camera-fisheye-tile8df8bulk-20261104-a/build-a/compiled/platform/video_base/ipcore/ddr3_test/rtl/ddrphy/ips2l_ddrphy_data_slice_wrcal_v1_10.vp(line number: 614)] Reduce accumulator delay_cnt size from 4 to 2. If this is not intended behavior, please drive delay_cnt with valid values."
+  ],
+  "ADF": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8bulk-20261104-a\\build-a\\place_route\\hdmi_camera_fisheye_top_pnr.adf",
+  "ADFSHA256": "fd476bd2e5f355bf42d5cc68065bda71b7d00037f52c2cfdd5c91f6cdde62017",
+  "TimingReport": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-tile8df8bulk-20261104-a\\build-a\\report_timing\\hdmi_camera_fisheye_top.rtr",
+    "SHA256": "9a19e6c1ef8bf06e3439391bb01b4b6fa1857d619b1d38a97ec157c00929cea5"
+  },
+  "InitialSTAADFBeforeAfterVerified": false,
+  "NativeLogSHA256": {
+    "flow.log": "3910244f3a5d88306b17dc93f2f276349eccb5db7f94ad82514796f90b76033c",
+    "run.log": "ff3e0a73e42dd34ccd83daf5952660c7205c29840105cbd18a5c83c0d1f4c68f",
+    "sources_info.log": "83c456fb2ed362bd87b03684374d74a3e841489ce8119f200e3283e08d22ef7a",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout.log": "87ab7dedf1271babdee411294c1cb418419f2a150d7048f3465df74056b0fb63",
+    "compile/run.log": "fc0675f83f07f40d1633000936d846f1cbfcc25f40629abfd1922357300521b3",
+    "device_map/run.log": "39e61f0ba18125c42755e707933c76c6ffce1afc03856cd5d2a69be152e5d1df",
+    "place_route/run_place.log": "8c85db32711aa76da87cad5d6c9c0755a044e7ec0eedad98798b65022277e7f0",
+    "place_route/run_route.log": "5017607c7882745c6c74f1cbbe764c2a822d8650ce284357dcbc3789a8b273a9",
+    "place_route/run_route_optimize.log": "1b563ee8bb8e40360d5f9d2962a4021e3dfa34b176767c26767a32a805c9ddc2",
+    "report_timing/run.log": "ebb18d9993df7aa2bbf3e648e3eb84b07c7cbea5f06b8f8173ab77691d99eb12",
+    "synthesize/add_sub_carrychain.log": "20098e23732e0a2435c8d08740a4d8e46284b5614245b428eaefe9d833b8aa5f",
+    "synthesize/apm_drm_lutram_utilization.log": "88575f5709c2b04f1b39f2cbccb2446cb6183154417a27c9f7943526d38332f5",
+    "synthesize/gtp_has_zero_input_pins.log": "e67f78cf450773fa3af731bad9c0465e90e6144d45a752dcdf1c5c5014ffff81",
+    "synthesize/run.log": "fcae206ff29974d79213a72a56e3c49640a43be80466de97a970b7145f4f9862"
+  },
+  "NativeErrors": [],
+  "BuildCompleted": true,
+  "DiagnosticsReviewed": false,
+  "DiagnosticsCleared": false
+}

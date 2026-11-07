@@ -1,0 +1,280 @@
+{
+  "Schema": "assoc2way256-choose-clear-core-failure-cause-review-v1",
+  "Passed": true,
+  "AnalysisConsistencyPassed": true,
+  "ResearchOnly": true,
+  "ActualOrdinaryCorePassed": false,
+  "AllNegativeCapturePinsClassified": true,
+  "ActualSummary": {
+    "Corner": "slow",
+    "Kind": "setup",
+    "WorstSlackNS": -1.481,
+    "TotalNegativeSlackNS": -46.258,
+    "FailingChecks": 224,
+    "TotalChecks": 56176
+  },
+  "DetailedPathsScanned": 132423,
+  "DetailedNegativePaths": 224,
+  "NegativeCapturePins": 224,
+  "RemainingDataPathFamilies": {
+    "FastQueryTagToAcceptFeedback": 224
+  },
+  "EndpointFamilies": {
+    "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[].query_cached_valid_way1[]": 4,
+    "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[].query_cached_valid[]": 4,
+    "system/bank_core/engine/core/sampler/cache/inner/tags": 8,
+    "system/bank_core/engine/core/sampler/cache/inner/lru_way[]": 101,
+    "system/bank_core/engine/core/sampler/cache/inner/decoded_index_tail[]": 25,
+    "system/bank_core/engine/core/sampler/cache/inner/query_line_index[][]": 36,
+    "system/bank_core/engine/core/sampler/cache/inner/decoded_index_head[]": 18,
+    "system/bank_core/engine/core/sampler/cache/inner/query_tag[]": 8,
+    "system/bank_core/engine/core/sampler/cache/inner/pixel_number[][]": 20
+  },
+  "ObservedNegativeWriterReadyPaths": 0,
+  "ObservedNegativeSlowSelectedTagFaultLinePaths": 0,
+  "ObservedNegativeFrameAdmissionFullClearPaths": 0,
+  "Comparison": [
+    {
+      "Candidate": "assoc2way256 cache745f / index10 enginef5c",
+      "WNS": -1.155,
+      "TNS": -158.729,
+      "FailingCapturePins": 687
+    },
+    {
+      "Candidate": "same cache745f / FIFO engined17",
+      "WNS": -2.067,
+      "TNS": -1581.232,
+      "FailingCapturePins": 3018
+    },
+    {
+      "Candidate": "CHOOSE+FRAME_CLEAR cache62225 / same FIFO engined17",
+      "WNS": -1.481,
+      "TNS": -46.258,
+      "FailingCapturePins": 224
+    }
+  ],
+  "WorstPath": {
+    "FirstByteOffset": 180092800,
+    "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CLKB[0]",
+    "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[2].query_cached_valid_way1[2]/opit_0_L6Q_perm/CE",
+    "Clocks": [
+      "ddrphy_sysclk",
+      "ddrphy_sysclk"
+    ],
+    "SlackNS": -1.481,
+    "LogicLevels": 9,
+    "LogicNS": 2.638,
+    "LogicPercent": 29.347,
+    "RouteNS": 6.351,
+    "RoutePercent": 70.653,
+    "DataPathLines": [
+      " DRM_298_642/QA0[3]                tco                   1.565       7.112 r       system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/QA0[3]",
+      "                                   net (fanout=1)        0.862       7.974         system/bank_core/engine/core/sampler/cache/inner/query_cached_tag[3] [3]",
+      " CLMA_249_630/COUT                 td                    0.375       8.349 f       system/bank_core/engine/core/sampler/cache/inner/N610.eq_3/gateop_perm/COUT",
+      "                                   net (fanout=1)        0.000       8.349         system/bank_core/engine/core/sampler/cache/inner/N610.co [6]",
+      " CLMA_249_636/COUT                 td                    0.085       8.434 f       system/bank_core/engine/core/sampler/cache/inner/N610.eq_7/gateop_perm/COUT",
+      "                                   net (fanout=1)        0.000       8.434         system/bank_core/engine/core/sampler/cache/inner/N610.co [14]",
+      " CLMA_249_642/COUT                 td                    0.085       8.519 f       system/bank_core/engine/core/sampler/cache/inner/N610.eq_11/gateop_perm/COUT",
+      "                                   net (fanout=1)        0.000       8.519         system/bank_core/engine/core/sampler/cache/inner/N610.co [22]",
+      " CLMA_249_648/Y0                   td                    0.068       8.587 r       system/bank_core/engine/core/sampler/cache/inner/N610.eq_12/gateop_perm/Y",
+      "                                   net (fanout=2)        0.768       9.355         system/bank_core/engine/core/sampler/cache/inner/neighbour_input[3].hit0",
+      " CLMA_225_594/Y2                   td                    0.108       9.463 r       system/bank_core/engine/core/sampler/cache/inner/N55_3/LUT6_inst_perm/L6",
+      "                                   net (fanout=1)        0.611      10.074         system/bank_core/engine/core/sampler/cache/inner/_N125235",
+      " CLMS_189_601/Y3                   td                    0.108      10.182 r       system/bank_core/engine/core/sampler/cache/inner/N55_4/gateop_perm/L6",
+      "                                   net (fanout=3)        0.964      11.146         system/bank_core/engine/core/sampler/cache/inner/all_hit",
+      " CLMS_159_511/Y2                   td                    0.074      11.220 r       system/bank_core/engine/core/sampler/cache/inner/N147_3_copy/LUT6_inst_perm/L6",
+      "                                   net (fanout=534)      0.907      12.127         system/bank_core/engine/core/sampler/cache/inner/accept_fast_1",
+      " CLMS_189_655/Y0                   td                    0.074      12.201 r       system/bank_core/engine/core/sampler/cache/inner/N114_copy/LUT6_inst_perm/L6",
+      "                                   net (fanout=5)        0.792      12.993         system/bank_core/engine/core/sampler/cache/inner/pre_to_query_1",
+      " CLMS_201_571/Y2                   td                    0.096      13.089 r       system/bank_core/engine/core/sampler/cache/inner/N381/LUT6_inst_perm/L6",
+      "                                   net (fanout=16)       1.447      14.536         system/bank_core/engine/core/sampler/cache/inner/N381",
+      " CLMA_249_397/CE                                                           r       system/bank_core/engine/core/sampler/cache/inner/neighbour_input[2].query_cached_valid_way1[2]/opit_0_L6Q_perm/CE"
+    ],
+    "Nets": [
+      {
+        "Fanout": 1,
+        "RouteNS": 0.862,
+        "CumulativeNS": 7.974,
+        "Net": "system/bank_core/engine/core/sampler/cache/inner/query_cached_tag[3] [3]"
+      },
+      {
+        "Fanout": 1,
+        "RouteNS": 0.0,
+        "CumulativeNS": 8.349,
+        "Net": "system/bank_core/engine/core/sampler/cache/inner/N610.co [6]"
+      },
+      {
+        "Fanout": 1,
+        "RouteNS": 0.0,
+        "CumulativeNS": 8.434,
+        "Net": "system/bank_core/engine/core/sampler/cache/inner/N610.co [14]"
+      },
+      {
+        "Fanout": 1,
+        "RouteNS": 0.0,
+        "CumulativeNS": 8.519,
+        "Net": "system/bank_core/engine/core/sampler/cache/inner/N610.co [22]"
+      },
+      {
+        "Fanout": 2,
+        "RouteNS": 0.768,
+        "CumulativeNS": 9.355,
+        "Net": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[3].hit0"
+      },
+      {
+        "Fanout": 1,
+        "RouteNS": 0.611,
+        "CumulativeNS": 10.074,
+        "Net": "system/bank_core/engine/core/sampler/cache/inner/_N125235"
+      },
+      {
+        "Fanout": 3,
+        "RouteNS": 0.964,
+        "CumulativeNS": 11.146,
+        "Net": "system/bank_core/engine/core/sampler/cache/inner/all_hit"
+      },
+      {
+        "Fanout": 534,
+        "RouteNS": 0.907,
+        "CumulativeNS": 12.127,
+        "Net": "system/bank_core/engine/core/sampler/cache/inner/accept_fast_1"
+      },
+      {
+        "Fanout": 5,
+        "RouteNS": 0.792,
+        "CumulativeNS": 12.993,
+        "Net": "system/bank_core/engine/core/sampler/cache/inner/pre_to_query_1"
+      },
+      {
+        "Fanout": 16,
+        "RouteNS": 1.447,
+        "CumulativeNS": 14.536,
+        "Net": "system/bank_core/engine/core/sampler/cache/inner/N381"
+      }
+    ],
+    "MaximumDataFanout": 534
+  },
+  "WorstTen": [
+    {
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[2].query_cached_valid_way1[2]/opit_0_L6Q_perm/CE",
+      "SlackNS": -1.481,
+      "LogicLevels": 9,
+      "LogicNS": 2.638,
+      "RouteNS": 6.351,
+      "RoutePercent": 70.653,
+      "MaximumDataFanout": 534
+    },
+    {
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[3].query_cached_valid_way1[3]/opit_0_L6Q_perm/CE",
+      "SlackNS": -1.481,
+      "LogicLevels": 9,
+      "LogicNS": 2.638,
+      "RouteNS": 6.351,
+      "RoutePercent": 70.653,
+      "MaximumDataFanout": 534
+    },
+    {
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[0].query_cached_valid_way1[0]/opit_0_L6Q_perm/CE",
+      "SlackNS": -1.333,
+      "LogicLevels": 9,
+      "LogicNS": 2.638,
+      "RouteNS": 6.2,
+      "RoutePercent": 70.152,
+      "MaximumDataFanout": 534
+    },
+    {
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[1].query_cached_valid_way1[1]/opit_0_L6Q_perm/CE",
+      "SlackNS": -1.333,
+      "LogicLevels": 9,
+      "LogicNS": 2.638,
+      "RouteNS": 6.2,
+      "RoutePercent": 70.152,
+      "MaximumDataFanout": 534
+    },
+    {
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[0].query_cached_valid[0]/opit_0_L6Q_perm/CE",
+      "SlackNS": -1.248,
+      "LogicLevels": 9,
+      "LogicNS": 2.638,
+      "RouteNS": 6.117,
+      "RoutePercent": 69.869,
+      "MaximumDataFanout": 534
+    },
+    {
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[1].query_cached_valid[1]/opit_0_L6Q_perm/CE",
+      "SlackNS": -1.248,
+      "LogicLevels": 9,
+      "LogicNS": 2.638,
+      "RouteNS": 6.117,
+      "RoutePercent": 69.869,
+      "MaximumDataFanout": 534
+    },
+    {
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[2].query_cached_valid[2]/opit_0_L6Q_perm/CE",
+      "SlackNS": -1.248,
+      "LogicLevels": 9,
+      "LogicNS": 2.638,
+      "RouteNS": 6.117,
+      "RoutePercent": 69.869,
+      "MaximumDataFanout": 534
+    },
+    {
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[3].query_cached_valid[3]/opit_0_L6Q_perm/CE",
+      "SlackNS": -1.248,
+      "LogicLevels": 9,
+      "LogicNS": 2.638,
+      "RouteNS": 6.117,
+      "RoutePercent": 69.869,
+      "MaximumDataFanout": 534
+    },
+    {
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CEB[0]",
+      "SlackNS": -0.942,
+      "LogicLevels": 9,
+      "LogicNS": 2.638,
+      "RouteNS": 6.224,
+      "RoutePercent": 70.232,
+      "MaximumDataFanout": 534
+    },
+    {
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_10/gopdrm_36k/CEB[0]",
+      "SlackNS": -0.877,
+      "LogicLevels": 9,
+      "LogicNS": 2.638,
+      "RouteNS": 5.965,
+      "RoutePercent": 69.336,
+      "MaximumDataFanout": 534
+    }
+  ],
+  "Cause": "Synchronous tag RAM output -> query_cached_tag comparison -> hit0/all_hit -> accept_fast (fanout534) -> pre_to_query -> next synchronous metadata read/valid CE; other remaining endpoints include the LRU write network.",
+  "Scope": "All 224 reported ordinary-core slow-setup negative capture pins, not distinct logical register bits. No remaining negative slow-choice/full-clear paths were observed in this build. Counts depend on this actual placement; no unreported timing, CDC, physical, bitstream or board acceptance is conferred.",
+  "NextStep": "NEXT_FAST_METADATA_PLAN_A.md only: unimplemented complete-query metadata queue with reserved in-flight credits and registered returned hit-way/all-hit. No further RTL/seed/EDA attempt in this research window.",
+  "FullTimingReport": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\build-a\\report_timing\\hdmi_camera_fisheye_top.rtr",
+    "SHA256": "5d40294e99ea8aefe4205f1cf37d7a241dcb09e6affd1a3e6f23673c734afbce",
+    "Bytes": 972272929
+  },
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-choose-clear-ordinary-core-failure-paths-a.json": "dc3663872c4ee331406df7c1173114bc7a4ad99f01de76d1705812664c16dfbe",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-choose-clear-ordinary-core-failure-paths-a.txt": "dba8cd54e0478311740a039e6118f5f4c1a6d951e1805fc48dfbbf69e092bc6f",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\analyze_assoc2way256_choose_clear_core_failure_paths_a.py": "aa450b70209aa3fb2b5729fbb28da69c167d825ea546e60340b3b598079345b8",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-fifo-core-failure-cause-review-a.json": "bb4503f618412cf2ead9e2ee1407eccb3874186ca42ba583dd17563ef51c90ee",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-core-failure-cause-review-a.json": "1fed5546048153a29f392d954ffce89ac3cf38b287594e356837bcff9011ea78",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\NEXT_FAST_METADATA_PLAN_A.md": "d16b6cbacaa964d7bc913360479f13f87ce449697d501278b30697a1218c9edc",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-choose-clear-20261104-a\\raw-research-source-manifest-a.json": "362d71e897b5a98078f26d3909810803cc0e255702d9c2688329aac27c845d5d"
+  },
+  "EDAExecuted": false,
+  "HardwareAccessed": false,
+  "RTLModified": false,
+  "TimingExceptionProposed": false
+}

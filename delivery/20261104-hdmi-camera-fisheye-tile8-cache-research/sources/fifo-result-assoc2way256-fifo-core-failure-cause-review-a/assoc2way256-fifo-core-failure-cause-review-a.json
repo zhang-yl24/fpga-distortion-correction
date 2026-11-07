@@ -1,0 +1,474 @@
+{
+  "Schema": "assoc2way256-fifo-core-failure-cause-comparison-v1",
+  "Passed": true,
+  "AnalysisConsistencyPassed": true,
+  "ActualOrdinaryCorePassed": false,
+  "ResearchOnly": true,
+  "OriginalWorstSlackNS": -1.155,
+  "OriginalTotalNegativeSlackNS": -158.729,
+  "OriginalFailingEndpoints": 687,
+  "OriginalSixLaunchFamilyCounts": {
+    "WriterReadyFeedback": 257,
+    "ResetToValid": 183,
+    "TagChooseToFaultLineToValid": 170,
+    "RawDDRValidToValid": 50,
+    "DisplayFIFOToStatistics": 14,
+    "ReadBusToWriterCounters": 13
+  },
+  "NewSummary": {
+    "Corner": "slow",
+    "Kind": "setup",
+    "WorstSlackNS": -2.067,
+    "TotalNegativeSlackNS": -1581.232,
+    "FailingChecks": 3018,
+    "TotalChecks": 55882
+  },
+  "DetailedNegativePaths": 3191,
+  "NewUniqueFailingEndpointPins": 3018,
+  "NewFourDataPathFamilyCounts": {
+    "FastQueryTagToAcceptFeedback": 366,
+    "V0ToFrameAdmissionToFullClear": 1992,
+    "SlowSelectedTagToFaultLine": 657,
+    "ReadBusToWriterWatchdog": 3
+  },
+  "WriterAcceptedPixelReadyLaunchEndpointsNow": 0,
+  "WriterReadyFeedbackCutObserved": true,
+  "WorstPathPerDataFamily": [
+    {
+      "Family": "FastQueryTagToAcceptFeedback",
+      "FirstByteOffset": 165099193,
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[0].query_cached_valid_way1[0]/opit_0_L6Q_perm/CE",
+      "Clocks": [
+        "ddrphy_sysclk",
+        "ddrphy_sysclk"
+      ],
+      "SlackNS": -2.067,
+      "LogicLevels": 8,
+      "LogicNS": 2.634,
+      "LogicPercent": 27.449,
+      "RouteNS": 6.962,
+      "RoutePercent": 72.551,
+      "DataPathLines": [
+        " DRM_40_672/QA0[14]                tco                   1.565       7.123 r       system/bank_core/engine/core/sampler/cache/inner/tags_8/gopdrm_36k/QA0[14]",
+        "                                   net (fanout=1)        1.137       8.260         system/bank_core/engine/core/sampler/cache/inner/query_cached_tag[3] [13]",
+        " CLMS_159_685/COUT                 td                    0.385       8.645 f       system/bank_core/engine/core/sampler/cache/inner/N620.eq_7/gateop_perm/COUT",
+        "                                   net (fanout=1)        0.000       8.645         system/bank_core/engine/core/sampler/cache/inner/N620.co [14]",
+        " CLMS_159_691/COUT                 td                    0.085       8.730 f       system/bank_core/engine/core/sampler/cache/inner/N620.eq_11/gateop_perm/COUT",
+        "                                   net (fanout=1)        0.000       8.730         system/bank_core/engine/core/sampler/cache/inner/N620.co [22]",
+        " CLMS_159_697/Y0                   td                    0.068       8.798 r       system/bank_core/engine/core/sampler/cache/inner/N620.eq_12/gateop_perm/Y",
+        "                                   net (fanout=2)        0.473       9.271         system/bank_core/engine/core/sampler/cache/inner/neighbour_input[3].hit0",
+        " CLMA_165_738/Y1                   td                    0.179       9.450 r       system/bank_core/engine/core/sampler/cache/inner/N65_3/LUT6_inst_perm/L6",
+        "                                   net (fanout=1)        0.424       9.874         system/bank_core/engine/core/sampler/cache/inner/_N131276",
+        " CLMS_183_745/Y0                   td                    0.096       9.970 r       system/bank_core/engine/core/sampler/cache/inner/N65_4/gateop_perm/L6",
+        "                                   net (fanout=3)        1.054      11.024         system/bank_core/engine/core/sampler/cache/inner/all_hit",
+        " CLMA_189_900/Y2                   td                    0.108      11.132 r       system/bank_core/engine/core/sampler/cache/inner/N157_7_copy/LUT6_inst_perm/L6",
+        "                                   net (fanout=536)      1.387      12.519         system/bank_core/engine/core/sampler/cache/inner/accept_fast_1",
+        " CLMA_201_666/Y1                   td                    0.074      12.593 r       system/bank_core/engine/core/sampler/cache/inner/N124_copy/LUT6_inst_perm/L6",
+        "                                   net (fanout=5)        0.881      13.474         system/bank_core/engine/core/sampler/cache/inner/pre_to_query_1",
+        " CLMA_177_787/Y1                   td                    0.074      13.548 r       system/bank_core/engine/core/sampler/cache/inner/N391/LUT6_inst_perm/L6",
+        "                                   net (fanout=16)       1.606      15.154         system/bank_core/engine/core/sampler/cache/inner/N391",
+        " CLMS_93_997/CE                                                            r       system/bank_core/engine/core/sampler/cache/inner/neighbour_input[0].query_cached_valid_way1[0]/opit_0_L6Q_perm/CE"
+      ],
+      "Nets": [
+        {
+          "Fanout": 1,
+          "RouteNS": 1.137,
+          "CumulativeNS": 8.26,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/query_cached_tag[3] [13]"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 8.645,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/N620.co [14]"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 8.73,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/N620.co [22]"
+        },
+        {
+          "Fanout": 2,
+          "RouteNS": 0.473,
+          "CumulativeNS": 9.271,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/neighbour_input[3].hit0"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.424,
+          "CumulativeNS": 9.874,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N131276"
+        },
+        {
+          "Fanout": 3,
+          "RouteNS": 1.054,
+          "CumulativeNS": 11.024,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/all_hit"
+        },
+        {
+          "Fanout": 536,
+          "RouteNS": 1.387,
+          "CumulativeNS": 12.519,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/accept_fast_1"
+        },
+        {
+          "Fanout": 5,
+          "RouteNS": 0.881,
+          "CumulativeNS": 13.474,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/pre_to_query_1"
+        },
+        {
+          "Fanout": 16,
+          "RouteNS": 1.606,
+          "CumulativeNS": 15.154,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/N391"
+        }
+      ],
+      "MaximumDataFanout": 536
+    },
+    {
+      "Family": "V0ToFrameAdmissionToFullClear",
+      "FirstByteOffset": 165131536,
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/v0/opit_0_inv_L6Q_LUT6DL5Q_perm/CLK",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/valid_lines[671]/opit_0_inv_L6Q_perm/I3",
+      "Clocks": [
+        "ddrphy_sysclk",
+        "ddrphy_sysclk"
+      ],
+      "SlackNS": -1.802,
+      "LogicLevels": 8,
+      "LogicNS": 1.186,
+      "LogicPercent": 12.557,
+      "RouteNS": 8.259,
+      "RoutePercent": 87.443,
+      "DataPathLines": [
+        " CLMA_231_894/CR0                  tco                   0.249       5.764 r       system/bank_core/engine/core/sampler/cache/inner/v0/opit_0_inv_L6Q_LUT6DL5Q_perm/L5Q",
+        "                                   net (fanout=12)       1.832       7.596         system/bank_core/engine/core/sampler/cache/inner/v0",
+        " CLMA_243_558/Y2                   td                    0.096       7.692 r       system/input_link/input_dma/N1048_16_29/LUT6_inst_perm/L6",
+        "                                   net (fanout=1)        0.614       8.306         system/input_link/input_dma/_N125158",
+        " CLMS_207_571/Y1                   td                    0.229       8.535 r       system/input_link/input_dma/N1048_16_36/gateop_perm/L6",
+        "                                   net (fanout=2)        0.280       8.815         system/_N125160  ",
+        " CLMA_219_571/Y1                   td                    0.096       8.911 r       system/bank_core/engine/N41/LUT6_inst_perm/L6",
+        "                                   net (fanout=3)        0.847       9.758         system/bank_core/engine_ready",
+        " CLMA_207_666/Y0                   td                    0.096       9.854 r       system/bank_core/engine/N108_copy/gateop_perm/L6",
+        "                                   net (fanout=108)      1.084      10.938         system/bank_core/engine/N108_1",
+        " CLMS_183_835/Y0                   td                    0.154      11.092 f       system/bank_core/engine/core/sampler/cache/inner/N1305_12_1_2/gateop_perm/L6",
+        "                                   net (fanout=2)        1.480      12.572         system/bank_core/engine/core/sampler/cache/inner/_N131397",
+        " CLMA_141_1086/Y1                  td                    0.096      12.668 r       system/bank_core/engine/core/sampler/cache/inner/N1305_30/LUT6_inst_perm/L6",
+        "                                   net (fanout=1784)     0.642      13.310         system/bank_core/engine/core/sampler/cache/inner/_N37184",
+        " CLMS_183_1111/Y1                  td                    0.096      13.406 r       system/bank_core/engine/core/sampler/cache/inner/N1305_31[141]_4_shiftout/gateop_perm/L6",
+        "                                   net (fanout=61)       1.057      14.463         system/bank_core/engine/core/sampler/cache/inner/_N143165",
+        " CLMA_129_1008/Y1                  td                    0.074      14.537 r       system/bank_core/engine/core/sampler/cache/inner/N1305_31[671]_5/gateop_perm/L6",
+        "                                   net (fanout=1)        0.423      14.960         system/bank_core/engine/core/sampler/cache/inner/_N118855",
+        " CLMS_123_997/A3                                                           r       system/bank_core/engine/core/sampler/cache/inner/valid_lines[671]/opit_0_inv_L6Q_perm/I3"
+      ],
+      "Nets": [
+        {
+          "Fanout": 12,
+          "RouteNS": 1.832,
+          "CumulativeNS": 7.596,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/v0"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.614,
+          "CumulativeNS": 8.306,
+          "Net": "system/input_link/input_dma/_N125158"
+        },
+        {
+          "Fanout": 2,
+          "RouteNS": 0.28,
+          "CumulativeNS": 8.815,
+          "Net": "system/_N125160"
+        },
+        {
+          "Fanout": 3,
+          "RouteNS": 0.847,
+          "CumulativeNS": 9.758,
+          "Net": "system/bank_core/engine_ready"
+        },
+        {
+          "Fanout": 108,
+          "RouteNS": 1.084,
+          "CumulativeNS": 10.938,
+          "Net": "system/bank_core/engine/N108_1"
+        },
+        {
+          "Fanout": 2,
+          "RouteNS": 1.48,
+          "CumulativeNS": 12.572,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N131397"
+        },
+        {
+          "Fanout": 1784,
+          "RouteNS": 0.642,
+          "CumulativeNS": 13.31,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N37184"
+        },
+        {
+          "Fanout": 61,
+          "RouteNS": 1.057,
+          "CumulativeNS": 14.463,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N143165"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.423,
+          "CumulativeNS": 14.96,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N118855"
+        }
+      ],
+      "MaximumDataFanout": 1784
+    },
+    {
+      "Family": "SlowSelectedTagToFaultLine",
+      "FirstByteOffset": 166068145,
+      "Startpoint": "system/bank_core/engine/core/sampler/cache/inner/tags_4/gopdrm_36k/CLKB[0]",
+      "Endpoint": "system/bank_core/engine/core/sampler/cache/inner/valid_lines[535]/opit_0_inv_L6Q_perm/I4",
+      "Clocks": [
+        "ddrphy_sysclk",
+        "ddrphy_sysclk"
+      ],
+      "SlackNS": -1.271,
+      "LogicLevels": 9,
+      "LogicNS": 3.131,
+      "LogicPercent": 35.136,
+      "RouteNS": 5.78,
+      "RoutePercent": 64.864,
+      "DataPathLines": [
+        " DRM_256_672/QA0[4]                tco                   1.565       7.100 r       system/bank_core/engine/core/sampler/cache/inner/tags_4/gopdrm_36k/QA0[4]",
+        "                                   net (fanout=1)        0.657       7.757         system/bank_core/engine/core/sampler/cache/inner/selected_cached_tag_way1 [4]",
+        " CLMA_249_661/COUT                 td                    0.302       8.059 f       system/bank_core/engine/core/sampler/cache/inner/N25.eq_3/gateop_perm/COUT",
+        "                                   net (fanout=1)        0.000       8.059         system/bank_core/engine/core/sampler/cache/inner/N25.co [6]",
+        " CLMA_249_667/COUT                 td                    0.085       8.144 f       system/bank_core/engine/core/sampler/cache/inner/N25.eq_7/gateop_perm/COUT",
+        "                                   net (fanout=1)        0.000       8.144         system/bank_core/engine/core/sampler/cache/inner/N25.co [14]",
+        " CLMA_249_673/COUT                 td                    0.085       8.229 f       system/bank_core/engine/core/sampler/cache/inner/N25.eq_11/gateop_perm/COUT",
+        "                                   net (fanout=1)        0.000       8.229         system/bank_core/engine/core/sampler/cache/inner/N25.co [22]",
+        " CLMA_249_679/Y0                   td                    0.052       8.281 f       system/bank_core/engine/core/sampler/cache/inner/N25.eq_12/gateop_perm/Y",
+        "                                   net (fanout=7)        1.772      10.053         system/bank_core/engine/core/sampler/cache/inner/selected_hit1",
+        " CLMS_189_931/Y1                   td                    0.096      10.149 r       system/bank_core/engine/core/sampler/cache/inner/N36/gateop_perm/L6",
+        "                                   net (fanout=586)      1.342      11.491         system/bank_core/engine/core/sampler/cache/inner/selected_choose_way",
+        " CLMS_99_1057/Y2                   td                    0.074      11.565 r       system/bank_core/engine/core/sampler/cache/inner/ND22[513]_9/gateop_perm/L6",
+        "                                   net (fanout=73)       0.592      12.157         system/bank_core/engine/core/sampler/cache/inner/_N96296",
+        " CLMS_105_1009/CR1                 td                    0.286      12.443 r       system/bank_core/engine/core/sampler/cache/inner/ND22[523]_4/gateop_LUT6DL5_perm/L5",
+        "                                   net (fanout=48)       0.551      12.994         system/bank_core/engine/core/sampler/cache/inner/_N96349",
+        " CLMA_123_996/CR1                  td                    0.224      13.218 r       system/bank_core/engine/core/sampler/cache/inner/ND22[647]_2/gateop_LUT6DL5_perm/L5",
+        "                                   net (fanout=16)       0.446      13.664         system/bank_core/engine/core/sampler/cache/inner/_N96351",
+        " CLMS_105_1015/CR2                 td                    0.362      14.026 r       system/bank_core/engine/core/sampler/cache/inner/N1305_33[535]_muxf7_perm/L7",
+        "                                   net (fanout=1)        0.420      14.446         system/bank_core/engine/core/sampler/cache/inner/N1305 [535]",
+        " CLMA_111_1003/B4                                                          r       system/bank_core/engine/core/sampler/cache/inner/valid_lines[535]/opit_0_inv_L6Q_perm/I4"
+      ],
+      "Nets": [
+        {
+          "Fanout": 1,
+          "RouteNS": 0.657,
+          "CumulativeNS": 7.757,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/selected_cached_tag_way1 [4]"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 8.059,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/N25.co [6]"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 8.144,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/N25.co [14]"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 8.229,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/N25.co [22]"
+        },
+        {
+          "Fanout": 7,
+          "RouteNS": 1.772,
+          "CumulativeNS": 10.053,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/selected_hit1"
+        },
+        {
+          "Fanout": 586,
+          "RouteNS": 1.342,
+          "CumulativeNS": 11.491,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/selected_choose_way"
+        },
+        {
+          "Fanout": 73,
+          "RouteNS": 0.592,
+          "CumulativeNS": 12.157,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N96296"
+        },
+        {
+          "Fanout": 48,
+          "RouteNS": 0.551,
+          "CumulativeNS": 12.994,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N96349"
+        },
+        {
+          "Fanout": 16,
+          "RouteNS": 0.446,
+          "CumulativeNS": 13.664,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/_N96351"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.42,
+          "CumulativeNS": 14.446,
+          "Net": "system/bank_core/engine/core/sampler/cache/inner/N1305 [535]"
+        }
+      ],
+      "MaximumDataFanout": 586
+    },
+    {
+      "Family": "ReadBusToWriterWatchdog",
+      "FirstByteOffset": 191217613,
+      "Startpoint": "system/read_bus/state[1]/opit_0_L6Q_perm/CLK",
+      "Endpoint": "system/bank_core/engine/writer/watchdog[25]/opit_0_inv_AQ_perm/CIN",
+      "Clocks": [
+        "ddrphy_sysclk",
+        "ddrphy_sysclk"
+      ],
+      "SlackNS": -0.221,
+      "LogicLevels": 12,
+      "LogicNS": 1.912,
+      "LogicPercent": 24.005,
+      "RouteNS": 6.053,
+      "RoutePercent": 75.995,
+      "DataPathLines": [
+        " CLMA_261_606/Q1                   tco                   0.203       5.752 r       system/read_bus/state[1]/opit_0_L6Q_perm/L6Q",
+        "                                   net (fanout=13)       0.627       6.379         system/read_bus/state [1]",
+        " CLMA_261_541/Y1                   td                    0.179       6.558 r       u_ddr3_test_h/u_ips_ddrc_top/mcdq_ui_axi/mcdq_reg_fifo2/data_0[13]/opit_0_inv_L6Q_LUT6DL5Q_perm/L6",
+        "                                   net (fanout=19)       0.276       6.834         arvalid          ",
+        " CLMA_267_540/Y3                   td                    0.108       6.942 r       u_ddr3_test_h/u_ips_ddrc_top/mcdq_ui_axi/mcdq_reg_fifo2/data_1[13]/opit_0_inv_L6Q_LUT6DL5Q_perm/L6",
+        "                                   net (fanout=8)        0.662       7.604         _N84788          ",
+        " CLMA_261_618/Y2                   td                    0.179       7.783 r       system/input_link/shared_writes/fault[2]/opit_0_inv_L6Q_LUT6DL5Q_perm/L6",
+        "                                   net (fanout=5)        1.386       9.169         system/input_link/shared_writes/N107",
+        " CLMA_303_828/CR0                  td                    0.195       9.364 f       u_ddr3_test_h/u_ips_ddrc_top/mcdq_wdatapath/mcdq_wdp_align/r_data[128]/opit_0_inv_L6Q_LUT6DQL5_perm/L5",
+        "                                   net (fanout=10)       1.873      11.237         system/result_wready",
+        " CLMS_243_517/Y2                   td                    0.229      11.466 r       system/bank_core/engine/writer/N998_1/gateop_LUT6DL5_perm/L6",
+        "                                   net (fanout=27)       0.839      12.305         system/bank_core/engine/writer/N255",
+        " CLMA_243_438/CR0                  td                    0.212      12.517 r       system/bank_core/engine/writer/watchdog[1]/opit_0_inv_AL6QL5_perm/L5",
+        "                                   net (fanout=1)        0.390      12.907         L5GND50          ",
+        " CLMA_243_438/COUT                 td                    0.189      13.096 f       system/bank_core/engine/writer/watchdog[4]/opit_0_inv_AQ_perm/COUT",
+        "                                   net (fanout=1)        0.000      13.096         system/bank_core/engine/writer/_N23893",
+        " CLMA_243_444/COUT                 td                    0.085      13.181 f       system/bank_core/engine/writer/watchdog[8]/opit_0_inv_AQ_perm/COUT",
+        "                                   net (fanout=1)        0.000      13.181         system/bank_core/engine/writer/_N23897",
+        " CLMA_243_450/COUT                 td                    0.085      13.266 f       system/bank_core/engine/writer/watchdog[12]/opit_0_inv_AQ_perm/COUT",
+        "                                   net (fanout=1)        0.000      13.266         system/bank_core/engine/writer/_N23901",
+        " CLMA_243_462/COUT                 td                    0.085      13.351 f       system/bank_core/engine/writer/watchdog[16]/opit_0_inv_AQ_perm/COUT",
+        "                                   net (fanout=1)        0.000      13.351         system/bank_core/engine/writer/_N23905",
+        " CLMA_243_468/COUT                 td                    0.085      13.436 f       system/bank_core/engine/writer/watchdog[20]/opit_0_inv_AQ_perm/COUT",
+        "                                   net (fanout=1)        0.000      13.436         system/bank_core/engine/writer/_N23909",
+        " CLMA_243_474/COUT                 td                    0.078      13.514 r       system/bank_core/engine/writer/watchdog[24]/opit_0_inv_AQ_perm/COUT",
+        "                                   net (fanout=1)        0.000      13.514         system/bank_core/engine/writer/_N23913",
+        " CLMA_243_480/CIN                                                          r       system/bank_core/engine/writer/watchdog[25]/opit_0_inv_AQ_perm/CIN"
+      ],
+      "Nets": [
+        {
+          "Fanout": 13,
+          "RouteNS": 0.627,
+          "CumulativeNS": 6.379,
+          "Net": "system/read_bus/state [1]"
+        },
+        {
+          "Fanout": 19,
+          "RouteNS": 0.276,
+          "CumulativeNS": 6.834,
+          "Net": "arvalid"
+        },
+        {
+          "Fanout": 8,
+          "RouteNS": 0.662,
+          "CumulativeNS": 7.604,
+          "Net": "_N84788"
+        },
+        {
+          "Fanout": 5,
+          "RouteNS": 1.386,
+          "CumulativeNS": 9.169,
+          "Net": "system/input_link/shared_writes/N107"
+        },
+        {
+          "Fanout": 10,
+          "RouteNS": 1.873,
+          "CumulativeNS": 11.237,
+          "Net": "system/result_wready"
+        },
+        {
+          "Fanout": 27,
+          "RouteNS": 0.839,
+          "CumulativeNS": 12.305,
+          "Net": "system/bank_core/engine/writer/N255"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.39,
+          "CumulativeNS": 12.907,
+          "Net": "L5GND50"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 13.096,
+          "Net": "system/bank_core/engine/writer/_N23893"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 13.181,
+          "Net": "system/bank_core/engine/writer/_N23897"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 13.266,
+          "Net": "system/bank_core/engine/writer/_N23901"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 13.351,
+          "Net": "system/bank_core/engine/writer/_N23905"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 13.436,
+          "Net": "system/bank_core/engine/writer/_N23909"
+        },
+        {
+          "Fanout": 1,
+          "RouteNS": 0.0,
+          "CumulativeNS": 13.514,
+          "Net": "system/bank_core/engine/writer/_N23913"
+        }
+      ],
+      "MaximumDataFanout": 27
+    }
+  ],
+  "CHOOSEExperimentTarget": "657 slow-selected-tag to fault-line endpoint pins; it does not cut the fast query tag feedback worst path or V0 frame-admission full clear.",
+  "Interpretation": "Endpoint identities are report capture pins, not distinct logical register bits. Placement changed: endpoint counts are measured, not additive predictions. FIFO has removed the cross-writer launch chain, but the candidate still fails ordinary core timing.",
+  "RemainingFastPath": "query_cached_tag -> full-tag comparison -> all_hit -> accept_fast fanout536 -> pre_to_query -> next metadata read/valid CE",
+  "RemainingFullClear": "v0 -> engine_ready/frame admission -> accepted frame/full valid clear fanout1784 -> valid_lines input pins",
+  "InputSHA256": {
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-fifo-ordinary-core-failure-paths-a.json": "a242ea6a8b361727b17b5ffdbf36ddc79239f706c67b99204110499df08b8b39",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-fifo-ordinary-core-failure-paths-a.txt": "950ac536233da6e7e271bc364ba574c4774e7a3f77e6ade87db50626c976d42d",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\assoc2way256-core-failure-cause-review-a.json": "1fed5546048153a29f392d954ffce89ac3cf38b287594e356837bcff9011ea78",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\output\\new-next-probe-20261104\\analyze_assoc2way256_fifo_core_failure_paths_a.py": "c1014ad316e55d339ae2416c52734c87bd2e7729a824b54d6885c613492b76ff",
+    "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-fifo-20261104-a\\raw-core-timing-a.json": "6198620c363aba75f62f4adc1f6b6df386c77975d57d4a411b7500324e209017"
+  },
+  "FullNativeReport": {
+    "Path": "D:\\GravityLRT\\thu\\semester_4.5\\FPGAchina\\fpga-distortion-correction\\distortion\\work\\hdmi-camera-fisheye-assoc2way256-fifo-20261104-a\\build-a\\report_timing\\hdmi_camera_fisheye_top.rtr",
+    "SHA256": "32a4cf2138856f309c34d30abf80056f9fd0c0213c5f5f20b719d09e6116996a",
+    "Bytes": 961562277
+  },
+  "EDAExecuted": false,
+  "HardwareAccessed": false,
+  "RTLModified": false,
+  "TimingExceptionProposed": false
+}
