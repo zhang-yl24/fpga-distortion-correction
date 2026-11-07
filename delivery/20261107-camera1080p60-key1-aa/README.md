@@ -1,6 +1,6 @@
 # AA 摄像头 1080p60＋KEY1 测试候选
 
-[下载源码、位流和时序报告 ZIP](AA-camera1080p60-KEY1-public-test-20261107.zip) · [直接下载 SRAM 位流](bitstream/aa-camera1080p60-key1-1665586d.sbit?raw=1) · [测试步骤](TEST_INSTRUCTIONS.md) · [时序报告](reports/TIMING_REPORT.md) · [项目源码](native/) · [遥测工具说明](host/README.txt)
+[下载源码、位流和重建工具包](AA-camera1080p60-KEY1-rebuild-kit-20261107.zip) · [直接下载 SRAM 位流](bitstream/aa-camera1080p60-key1-1665586d.sbit?raw=1) · [测试步骤](TEST_INSTRUCTIONS.md) · [时序报告](reports/TIMING_REPORT.md) · [项目源码](native/) · [遥测工具说明](host/README.txt)
 
 本候选供同学实板测试，**尚未验证持续 60 个新校正帧/秒、KEY1 实板切换或新画质效果**。
 
@@ -16,4 +16,8 @@
 
 先核对 SHA 并保留现用回退，作 SRAM 临时加载。稳定 CORR 与 RAW 分开采集遥测，结合新呈现 FrameID 及硬件时间计算 fresh FPS；显示器“60 Hz”不是新帧率。回传原始串口字节、操作录像、源格式、故障和回退结果。详细步骤见 [TEST_INSTRUCTIONS.md](TEST_INSTRUCTIONS.md)。
 
-此公开副本只含项目源码、位流、实际时序表／关键路径和测试工具，移除了本机路径及额外内部构建清单。77 项厂商 IP/PLL 输入未包含，**不是完整独立 PDS 工程**；源码路径移植边界见 [SOURCE_AND_BUILD.md](SOURCE_AND_BUILD.md)。
+**直接测试**使用现成位流即可。**从源码重建**请按 [重建入口](rebuild/README.md)、[IP／PLL 获取与生成步骤](ip_setup/IP_REGENERATION_STEPS.txt)、[配置工具说明](ip_setup/CONFIG_TOOLS_README.txt)补齐有权使用的厂商输入，再串行运行 Map、place、route／hold、独立 STA 和 bitgen。
+
+包中已补齐 371 项 DDR 参数、两 PLL 参数、参数写入／核对工具、155 文件相对闭包清单、68 导入及五阶段 Tcl。匹配原版 IP 补齐后的静态闭包已检查通过；全新 GUI 生成及重新 EDA 尚未实跑，不能承诺重建得到相同位流字节或 3 ps 余量。
+
+此公开副本不含受限厂商 RTL、许可证、本机路径或额外内部构建记录。77 项厂商 IP/PLL 输入仍须从合法官方组件生成／恢复，**不是免依赖的独立工程**；完整边界见 [SOURCE_AND_BUILD.md](SOURCE_AND_BUILD.md)。

@@ -1,0 +1,118 @@
+AA vendor-IP reconstruction: parameter facts and operator steps
+
+This document contains manually stated configuration facts, not vendor RTL.
+The accompanying CSV files contain numeric/string configuration values only.
+No generator was run to validate fresh output. This is not a claim of a complete
+standalone project, bit-identical regeneration, or a tested board image.
+
+Required software and model packages
+1. Implementation tool: Pango PDS 2025.2, Fabric Compiler build211867, ADS
+   synthesis and Logos2 PG2L100H device support, FBG676 package, speedgrade -6.
+2. Generation environment recorded by the actual DDR instance: IP Compiler
+   2022.2-SP6.4 build146967. Obtain that official release and the official Logos2
+   HMIC_S 1.10 model (IP identifier042003), including its encrypted synthesis
+   sources, GUI/template support and generated DDR PHY/controller dependencies.
+   Obtain required tool/IP authorization from the vendor through normal terms;
+   no license file, key or restricted implementation source is supplied here.
+3. PLL model: Logos2 28nm PLL (identifier041001). The inspected legacy installation
+   reports model1.5. Primitive/simulation/device libraries must come from the
+   official installation. The frozen PLL RTL does not record its generator
+   version, so a specific PLL generation release cannot be certified from it.
+
+Version trap
+The DDR instance says HMIC_S1.10 / generator2022.2-SP6.4 build146967, while its
+downstream completed implementation used2025.2 build211867. These are different
+roles. In the inspected legacy installation the actual model index says1.10,
+even though its catalog lists only through1.9. In the inspected2025.2 installation
+the actual HMIC model directory is absent; its catalog entry1.7 is not proof
+that it is installed or selectable. Do not silently substitute1.7/1.9 or another
+DDR controller. If1.10 cannot be selected, acquire the matching official legacy
+model package or an appropriately authorized matching generated copy from the
+project holder. GUI selection and generation have not been exercised here.
+
+Fastest supported GUI path
+The official IP Compiler User Guide documents PDS Tools -> IP Compiler,
+model/instance navigation, Customize, and Project -> Generate Instance (or the
+Generate button). Use a NEW scratch project, never overwrite the archived inputs.
+Choose Logos2 / PG2L100H / FBG676 / -6 before creating instances. Select the exact
+model version, configure the values below and in the CSV tables, then Generate.
+Use source generation, not Generate and Synthesis, for an initial restoration.
+Resolve GUI validation errors rather than silently changing frequency/pins.
+
+DDR instance
+Name: ddr3_test. Model: Logos2 HMIC_S1.10 / DDR3 Interface.
+Operating mode: Controller + PHY. Memory type DDR3.
+DDR_MEM_PART / DDR3_DFT_MEM_PART: MT41K256M16XX.
+The separate saved DDR3_BASE_MEM_PART is MT41K128M16XX; it is not the selected
+DDR_MEM_PART. Retain all saved fields instead of guessing from that base label.
+Input CLKIN_FREQ125.000MHz; desired and actual saved rate1000.000Mb/s.
+MEM_DQ_WIDTH32, MEM_DQS_WIDTH4, MEM_DM_WIDTH4; row15/column10/bank3;
+CTRL_ADDR_WIDTH28; DFI_CLK_PERIOD8000ps (125MHz user/core clock).
+DDR3_CL7, DDR3_CWL6, GUI_DDR3_AL CL-2, DDR3_AL2.
+CUSTOMIZE_CA true; USER_PINS_CON_EN false. All saved PAD/BANK/GROUP/DQS-enable
+values still matter: enter/verify the complete371 rows in DDR3_PARAMETERS.csv,
+including timing, impedance, group routing and pin selections. Inactive DDR2 and
+LPDDR fields are saved GUI state, not the active memory type. Do not reinterpret
+encoded fields as human latency values; the table preserves their exact values.
+USER_FDC_PATH is the GUI placeholder 'Please select a fdc file', not a local path.
+
+PLL instances
+Both expose clkin1, clkout0 and lock; only output0 is consumed. Input27.0MHz.
+cfg_pll output0 =10.000MHz, phase0; bringup_pll output0 =148.500MHz, phase0.
+Do not use the stale top-level74.25MHz comment as the generation target.
+Both LOCK_MODE0, STATIC_RATIOI1, STATIC_RATIOM2, INTERNAL_FB CLKOUTF,
+EXTERNAL_FB DISABLE, BANDWIDTH OPTIMIZED, SSC_MODE DISABLE; dynamic phase and
+output synchronization disabled. All exact primitive-level values, including
+unused output divider/duty/phase settings, are in PLL_PARAMETERS.csv.
+cfg_pll: STATIC_RATIOF21.25, STATIC_RATIO0=114.75, STATIC_DUTY0=114.
+bringup_pll: STATIC_RATIOF19.25, STATIC_RATIO0=7.0, STATIC_DUTY0=7.
+The effective arithmetic27*2*21.25/114.75=10 and27*2*19.25/7=148.5 agrees with
+the completed independent STA generated-clock periods100ns and6.734ns.
+Enter the requested frequencies in the PLL GUI, then compare every generated
+parameter to the table. The GUI may choose another equivalent divider solution;
+that is not yet the same primitive configuration. If it cannot reproduce the
+saved dividers/duty/feedback settings, stop and resolve with vendor documentation
+or support rather than hand-editing proprietary generated RTL.
+
+Restore layout in the separate reconstruction project
+ native/source/platform/video_base/ipcore/ddr3_test/   (complete generated closure)
+ native/source/platform/video_base/ipcore/cfg_pll/     (cfg_pll instance)
+ native/source/board/bringup_pll.v                     (bringup_pll instance)
+Keep any auxiliary generated files with their corresponding instance. The
+project's source-list integration must include the required dependencies, not
+only the three top-level wrappers. Preserve project timing,145 pin assignments
+and priority constraints; regenerating DDR's example project is not equivalent
+to restoring the camera project's constraints.
+
+Acceptance before describing configuration as reproduced
+Verify the155-entry original build closure (77 vendor/IP/PLL inputs omitted from
+the public source-only bundle), correct module ports and hierarchy, all371 DDR
+parameter values, both PLL parameter tables, selected device and frequencies.
+Then perform independent synthesis/place/route/hold repair/STA with the intended
+constraints. Require real reports for the rebuilt image and a new SRAM image
+identity. A successful generation alone does not establish timing or camera
+behavior. Generated timestamps, formatting, solver choices and tool/IP versions
+can change bytes; even matching configuration does not guarantee identical ADF
+or sbit bytes. No fresh generation/source-closure comparison has yet been run.
+
+CLI status
+Official documentation identifies ip_compiler and ip_generate executables and
+their roles, but the inspected material did not establish complete command-line
+syntax for these instances. No unsupported flags or runnable CLI are supplied.
+The GUI steps above are the documented route; a later exact CLI must be captured
+from an authorized official generation session/help before it is prescribed.
+
+References available in official installations
+ UG990203 IP Compiler User Guide: sections1.2,2.1,2.4 and3.
+ UG990205 IP Compiler Developer Reference: generator architecture diagram.
+ UG042003 Logos2 HMIC_S IP User Guide (matching1.10 model package).
+ UG041001 PLL IP User Guide (matching Logos2 PLL model package).
+These references and all generated vendor implementations remain vendor files;
+this document does not redistribute them.
+
+Official acquisition entry points (no installer or license redistributed)
+Pango official software page: https://www.pangomicro.com/resources/software/pds/
+English software page: https://www.pangomicro.com/en/resources/software/pds/
+The public Chinese page currently lists SP6.4 Patch1/Patch2 variants; this is not proof they match the recorded base generator build146967. Obtain the matching release/model and normal authorization through the official page/support when not listed. Do not silently substitute another HMIC version or claim byte-equivalent regeneration.
+
+Use CONFIG_TOOLS_README.txt to apply the complete DDR parameter table to a NEW GUI-created matching instance and read-only-check both PLL wrappers. These scripts do not generate restricted implementation RTL or invoke EDA.
