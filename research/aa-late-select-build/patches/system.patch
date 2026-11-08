@@ -1,0 +1,100 @@
+--- a/native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v
++++ b/native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v
+@@ -5,7 +5,8 @@
+ // a display bank. A bad lease is quarantined until coordinated global reset.
+ module hdmi1080_video_system_geometry_ab #(
+     parameter WIDTH=1920,HEIGHT=1080,BANK_STRIDE=1048576,MAX_RADIUS_Q22=8388608,STATS_ENABLE=0,STATS_CORE_HZ=125000000,RASTER_DOUBLE_BUFFER=0,
+-    HT=2200,VT=1125,HS=44,VS=5,X0=192,Y0=41,CACHE_PROFILE=0,HDMI_FISHEYE_PROFILE=0,TILE8_GROUP_WIDTH=16,RATIONAL_BROWN_PROFILE=0,MACRO_TILE_HEIGHT=8,CACHE_INDEX_BITS=6,PREFETCH_QUERY_DEPTH=0,PREFETCH_LOOKAHEAD=256,CACHE_ROW_STRIDE=0,CACHE_HEAD_PREDECODE=1,CRC_FOLD_BITS=1,READ_REQUEST_LOOKAHEAD=0,RESULT_BANKS=2,CORE_PRIORITY=0,ENABLE_RUNTIME_ROTATION=0,STARTUP_SCAN_ALIGN=0,STARTUP_SCAN_GUARD_CYCLES=0,STARTUP_PRIME_NEXT_SOURCE=0
++    HT=2200,VT=1125,HS=44,VS=5,X0=192,Y0=41,CACHE_PROFILE=0,HDMI_FISHEYE_PROFILE=0,TILE8_GROUP_WIDTH=16,RATIONAL_BROWN_PROFILE=0,MACRO_TILE_HEIGHT=8,CACHE_INDEX_BITS=6,PREFETCH_QUERY_DEPTH=0,PREFETCH_LOOKAHEAD=256,CACHE_ROW_STRIDE=0,CACHE_HEAD_PREDECODE=1,CRC_FOLD_BITS=1,READ_REQUEST_LOOKAHEAD=0,RESULT_BANKS=2,CORE_PRIORITY=0,ENABLE_RUNTIME_ROTATION=0,STARTUP_SCAN_ALIGN=0,STARTUP_SCAN_GUARD_CYCLES=0,STARTUP_PRIME_NEXT_SOURCE=0,
++    parameter integer DISPLAY_SELECT_GRACE_CYCLES=0
+ )(
+     input core_clk,pix_in_clk,pix_out_clk,rst_n,
+     input telemetry_clk,telemetry_rx,output telemetry_tx,
+@@ -226,6 +227,18 @@
+ 
+     (* async_reg="true" *) reg [1:0] request_sync=0,grant_ack_sync=0,done_sync=0;
+     reg request_seen,done_seen,response_busy,awaiting_bank_grant;
++    // Opt-in late selection, only before a lease exists. The raster and request
++    // epoch never move. Default zero preserves the original immediate selection.
++    // The caller must leave enough pre-active time for grant CDC and DDR prefill.
++    localparam SELECT_COUNT_BITS=DISPLAY_SELECT_GRACE_CYCLES>0 ?
++        $clog2(DISPLAY_SELECT_GRACE_CYCLES)+1:1;
++    reg select_wait_active,display_front_seen;
++    reg [SELECT_COUNT_BITS-1:0] select_grace_left;
++    wire new_scan_request=request_sync[1]!=request_seen;
++    // This prototype supports only the reviewed range, not arbitrary wait budgets.
++    // Even within this range, reduced rasters/clocks require their own deadline check.
++    initial if(DISPLAY_SELECT_GRACE_CYCLES<0 || DISPLAY_SELECT_GRACE_CYCLES>8192)
++        $fatal(1,"DISPLAY_SELECT_GRACE_CYCLES must be in [0,8192]");
+     reg [31:0] request_epoch_hold;
+     reg lease_active,lease_bank,reader_finished,pixel_finished;
+     reg [31:0] lease_id,lease_crc,lease_epoch,last_presented_id;
+@@ -238,6 +251,7 @@
+             source_commit<=0;source_commit_id<=0;source_commit_bank<=0;source_crc<=0;source_pixels<=0;active_process_id<=0;accepted_result_bank<=0;
+             presented_frames<=0;scan_good_frames<=0;scan_repeat_frames<=0;scan_blank_frames<=0;last_presented_id<=0;peak_fifo_used<=0;
+             request_seen<=0;done_seen<=0;response_busy<=0;awaiting_bank_grant<=0;request_epoch_hold<=0;
++            select_wait_active<=0;select_grace_left<=0;display_front_seen<=0;
+             display_req_valid<=0;display_grant_ready<=0;display_done_valid<=0;display_done_bank<=0;
+             reader_start<=0;reader_base<=0;reader_expected<=0;reader_finished<=0;pixel_finished<=0;
+             grant_toggle<=0;grant_valid<=0;grant_epoch<=0;grant_checksum<=0;grant_id<=0;grant_bank<=0;done_ack_toggle<=0;
+@@ -254,23 +268,48 @@
+             end
+             if(failed && !system_failed)begin system_failed<=1;system_fault<=fault;end
+             if(response_busy && grant_ack_sync[1]==grant_toggle)response_busy<=0;
+-            if(request_sync[1]!=request_seen)begin
+-                request_seen<=request_sync[1];request_epoch_hold<=scan_request_epoch;
+-                if(response_busy || awaiting_bank_grant || display_req_valid || lease_active)begin
++            if(new_scan_request)begin
++                request_seen<=request_sync[1];
++                if(response_busy || awaiting_bank_grant || display_req_valid || lease_active || select_wait_active)begin
++                    // An overlap must not replace the held epoch or issue a lease.
+                     controller_failed<=1;controller_fault<=8'hB1;
+-                end else if(!failed && scan_enable && display_req_ready && reader_idle && fifo_used==0)begin
+-                    display_req_valid<=1;
++                    select_wait_active<=0;select_grace_left<=0;
+                 end else begin
+-                    // No ready front at THIS refresh boundary: promptly return
+-                    // a blank grant, never a late mid-picture lease.
+-                    grant_valid<=0;grant_epoch<=scan_request_epoch;grant_checksum<=0;grant_id<=0;grant_bank<=0;
+-                    grant_param_id<=0;grant_mode<=0;
+-                    grant_toggle<=!grant_toggle;response_busy<=1;scan_blank_frames<=scan_blank_frames+1'b1;
++                    request_epoch_hold<=scan_request_epoch;
++                    if(!failed && scan_enable && display_req_ready && reader_idle && fifo_used==0)begin
++                        if(DISPLAY_SELECT_GRACE_CYCLES>0 && display_front_seen && processing && !pending)begin
++                            select_wait_active<=1;select_grace_left<=DISPLAY_SELECT_GRACE_CYCLES;
++                        end else display_req_valid<=1;
++                    end else begin
++                        // No ready front: preserve the original prompt blank grant.
++                        grant_valid<=0;grant_epoch<=scan_request_epoch;grant_checksum<=0;grant_id<=0;grant_bank<=0;
++                        grant_param_id<=0;grant_mode<=0;
++                        grant_toggle<=!grant_toggle;response_busy<=1;scan_blank_frames<=scan_blank_frames+1'b1;
++                    end
+                 end
+             end
++            if(select_wait_active && !new_scan_request)begin
++                if(failed || !scan_enable)begin
++                    // Abort never issues a late grant or unlocks a bank. The existing
++                    // sticky fault/scan-disable path owns quarantine and global reset.
++                    select_wait_active<=0;select_grace_left<=0;
++                end else if(pending || select_grace_left==1)begin
++                    // Dispatch exactly GRACE cycles after request recognition unless
++                    // a fresh pending result arrives earlier. The unchanged bank can
++                    // still forward a completion on the subsequent handshake edge.
++                    select_wait_active<=0;select_grace_left<=0;
++                    if(display_req_ready && reader_idle && fifo_used==0)begin
++                        display_req_valid<=1;
++                    end else begin
++                        grant_valid<=0;grant_epoch<=request_epoch_hold;grant_checksum<=0;grant_id<=0;grant_bank<=0;
++                        grant_param_id<=0;grant_mode<=0;
++                        grant_toggle<=!grant_toggle;response_busy<=1;scan_blank_frames<=scan_blank_frames+1'b1;
++                    end
++                end else select_grace_left<=select_grace_left-1'b1;
++            end
+             if(display_req_valid && display_req_ready)begin display_req_valid<=0;awaiting_bank_grant<=1;end
+-            if(awaiting_bank_grant && display_grant_valid && !response_busy && !failed)begin
+-                display_grant_ready<=1;awaiting_bank_grant<=0;
++            if(awaiting_bank_grant && display_grant_valid && !response_busy && !failed && !new_scan_request)begin
++                display_grant_ready<=1;awaiting_bank_grant<=0;display_front_seen<=1;
+                 lease_active<=1;lease_bank<=display_base/BANK_STRIDE-2;lease_id<=display_id;lease_crc<=display_crc;lease_epoch<=request_epoch_hold;
+                 reader_base<=display_base;reader_expected<=display_crc;reader_start<=1;reader_finished<=0;pixel_finished<=0;
+                 grant_valid<=1;grant_epoch<=request_epoch_hold;grant_checksum<=display_crc;grant_id<=display_id;grant_bank<=display_base/BANK_STRIDE-2;

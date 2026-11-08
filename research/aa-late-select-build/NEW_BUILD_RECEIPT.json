@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "status": "NOT_MAP_OR_STA_PASSED",
+  "build_input_identity": "a9297e1428947ff458780ab40e18c0eb4be40d8b00418f0b2443c8c8b61f301a",
+  "public_input_kit_complete": true,
+  "complete_licensed_eda_project": false,
+  "public_native_files": 78,
+  "required_native_files": 155,
+  "required_direct_imports": 68,
+  "missing_vendor_inputs": 77,
+  "tool_requirement": "PDS2025.2 / Fabric Compiler build211867",
+  "ddr_generation_requirement": "IP Compiler2022.2-SP6.4 build146967 / HMIC_S1.10",
+  "cloud_matching_tool_availability": "NOT_FOUND_IN_BOUNDED_AUDIT",
+  "cloud_matching_vendor_implementation_availability": "NOT_FOUND_IN_BOUNDED_AUDIT",
+  "installed_tool_version_verified": false,
+  "license_usability_verified": false,
+  "native_modified_from_baseline": [
+    "native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v",
+    "native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v"
+  ],
+  "candidate_wrapper_sha256": "44fa12a52082ca9e2319e7c1ad7ed1e6603efc99c4687a39353a5e8d7895c918",
+  "independent_top_sha256": "b527be836f5ba53346af20dfbff5673d4eeb3b5fe85e953ed06382ddf8c22639",
+  "unchanged_cache_sha256": "ff5e551c13083cecf9325b6acef0a00b58f7f1776cd7f5dbec341e52f2082088",
+  "original_top_recovered_byte_exact_by_removing_two_added_lines": true,
+  "all_other_public_native_and_all_constraints_identical": true,
+  "public_rebuild_and_ip_setup_identical": true,
+  "checks": {
+    "static_preflight": "PASS",
+    "guard_tests": "36/36 PASS; static/control-plane fixtures only; no vendor execution",
+    "original_source_closure": "EXPECTED_STOP_EXIT_2_MISSING_77",
+    "eda_preflight": "EXPECTED_STOP_EXIT_2_MISSING_IP_AND_TOOL_RECEIPTS",
+    "new_python_syntax": "PASS",
+    "map": "NOT_RUN",
+    "place": "NOT_RUN",
+    "route": "NOT_RUN",
+    "sta": "NOT_RUN",
+    "bitgen": "NOT_RUN",
+    "board": "NOT_RUN",
+    "HDL_regression": "NOT_RERUN_IN_THIS_TASK"
+  },
+  "prohibitions": [
+    "No inherited original AA bitstream acceptance",
+    "No inherited original AA timing margin",
+    "No blackbox or placeholder acceptance",
+    "No license or proprietary vendor implementation redistribution"
+  ],
+  "known_limits": [
+    "Public hashes do not cover omitted vendor implementation bytes",
+    "Operator-supplied runtime receipts are factual attestations, not signed vendor certificates",
+    "Recorded report identity is enforced, but report interpretation and timing/CDC/I/O signoff remain manual",
+    "Candidate functional simulation evidence belongs to earlier frozen experiments, not a new target implementation result"
+  ]
+}
