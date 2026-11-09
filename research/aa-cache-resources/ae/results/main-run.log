@@ -1,0 +1,16 @@
+PROGRESS cycle=20000 sent=15662 done=11560 target=25000 fifo=4095
+PASS_FRAME mode=4 queries=25000 cycles=36389 total_ar=24 max_fifo=4096 triple_overlap=0
+PROGRESS cycle=40000 sent=283 done=25273 target=26000 fifo=6
+PASS_FRAME mode=1 queries=1000 cycles=13003 total_ar=824 max_fifo=4096 triple_overlap=0
+PROGRESS cycle=60000 sent=395 done=26376 target=27000 fifo=15
+PASS_FRAME mode=2 queries=1000 cycles=28242 total_ar=2647 max_fifo=4096 triple_overlap=0
+PASS_FAULT bad_id code=03 quarantine=30
+PROGRESS cycle=80000 sent=100 done=80 target=100 fifo=18
+PASS_FRAME mode=2 queries=100 cycles=2845 total_ar=2830 max_fifo=4096 triple_overlap=0
+PASS_WINDOW_CROSSINGS count=4 FIRST_W=14
+PASS_BANK_WRITES stride=2 head1=0 count=2831 hist0=25841 hist1=1 hist2=1103 hist3=0 hist4=156
+PASS_PENDING_LAST_BYPASS join_publish=5 publish_other_writes=5 pending_writes=39339
+PASS_SCHEDULER_PORT select_checks=77674 held_checks=2831 selections=2831 accepts=2831 accept_done=0 select_done=2672 hold_switches=5662
+PASS_TAG8_FUNCTIONAL enabled=1 scout=321498 head=321280 scheduler=41175 done=59147 writes=2831 publish=2829 xcarry=25323 ycarry=16
+PASS_FULL_CACHE_AB queries=27100 frames=4 outputs=27100 ar=2830 max_fifo=4096 triple_overlap=0 cycles=80552 baseline=AA_ff5e551c candidate=AE_7a34f75e HEAD0_TAG25_FIFO63
+tests/tb_actual_head0.sv:279: $finish called at 644416000 (1ps)

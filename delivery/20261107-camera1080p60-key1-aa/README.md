@@ -24,3 +24,5 @@
 
 此公开副本不含受限厂商 RTL、许可证、本机路径或额外内部构建记录。77 项厂商 IP/PLL 输入仍须从合法官方组件生成／恢复，**不是免依赖的独立工程**；完整边界见 [SOURCE_AND_BUILD.md](SOURCE_AND_BUILD.md)。
 
+
+[新增独立资源研究候选 AE / AF54](../../research/aa-cache-resources/README.md)：AF54 的实际 query FIFO 声明宽度从 63 位降至 54 位，已过真实 cache 参数的离板差分；AE 另有单表达式重复检测证据。两者均未运行 Map/STA 或实板，不能直接烧板，也不替换本页冻结 AA 源码、位流或 3 ps 时序结果。

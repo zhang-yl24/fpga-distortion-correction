@@ -1,0 +1,56 @@
+{
+  "Schema": "AA_AF54_HEAD0_RTL_1",
+  "Status": "PASS_ACTUAL_HEAD0_TAG25_FIFO63_TO54_RTL_DIFFERENTIAL",
+  "Case": "actual_head0",
+  "PDSRun": false,
+  "BoardRun": false,
+  "SourceSHA256": {
+    "AA": "ff5e551c13083cecf9325b6acef0a00b58f7f1776cd7f5dbec341e52f2082088",
+    "AF54": "fc12be811483e7b8851c0cbf7157a54636c05e47859895207f5c4cdb4150cd70"
+  },
+  "ActualConfiguration": {
+    "WIDTH": 1920,
+    "HEIGHT": 1080,
+    "INDEX_BITS": 7,
+    "TAG_W": 25,
+    "QUERY_DEPTH": 4096,
+    "LOOKAHEAD": 512,
+    "CACHE_ROW_STRIDE": 2,
+    "HEAD_PREDECODE": 0,
+    "COMPACT_COORDS": 1,
+    "CANDIDATE_KEY_PIPE": 2,
+    "AREA_PROFILE": 2,
+    "TIMEOUT_BITS": 26,
+    "ExpectedBaselineTokenWidth": 63,
+    "ExpectedCandidateTokenWidth": 54,
+    "AF_AA_ORDINAL_TAG_PACK": 1
+  },
+  "MeasuredResourceOrTimingGainClaim": false,
+  "CompileExit": 0,
+  "RunExit": 0,
+  "ElapsedSeconds": 160.05805588600015,
+  "PassMarkers": [
+    "PASS_FRAME mode=4 queries=25000 cycles=36389 total_ar=24 max_fifo=4096 triple_overlap=0",
+    "PASS_FRAME mode=1 queries=1000 cycles=13003 total_ar=824 max_fifo=4096 triple_overlap=0",
+    "PASS_FRAME mode=2 queries=2048 cycles=57744 total_ar=4553 max_fifo=4096 triple_overlap=0",
+    "PASS_FAULT bad_id code=03 quarantine=30",
+    "PASS_FRAME mode=2 queries=512 cycles=14479 total_ar=5488 max_fifo=4096 triple_overlap=0",
+    "PASS_WINDOW_CROSSINGS count=4 FIRST_W=14",
+    "PASS_BANK_WRITES stride=2 head1=0 count=5489 hist0=25980 hist1=3 hist2=2413 hist3=0 hist4=165",
+    "PASS_PENDING_LAST_BYPASS join_publish=5 publish_other_writes=5 pending_writes=41997",
+    "PASS_SCHEDULER_PORT select_checks=116152 held_checks=5489 selections=5489 accepts=5489 accept_done=0 select_done=5330 hold_switches=10978",
+    "PASS_TAG8_FUNCTIONAL enabled=1 scout=483234 head=485068 scheduler=82308 done=100281 writes=5489 publish=5487 xcarry=25334 ycarry=40",
+    "PASS_FULL_CACHE_AB queries=28560 frames=4 outputs=28560 ar=5488 max_fifo=4096 triple_overlap=0 cycles=121688 baseline=AA_ff5e551c candidate=AF54_fc12be81 HEAD0_TAG25_FIFO63_to54"
+  ],
+  "Metrics": {
+    "queries": 28560,
+    "frames": 4,
+    "outputs": 28560,
+    "ar": 5488,
+    "max_fifo": 4096,
+    "triple_overlap": 0,
+    "cycles": 121688
+  },
+  "RunLogSHA256": "aac649e3a03946441bf0039f35deb39297331babffe8cdd0827634cb0dca3284",
+  "TestbenchSHA256": "d1ee8cece8f94bd094226006d321a6d0041f2c906c7cc7fe4a9ccf0c8695ea49"
+}

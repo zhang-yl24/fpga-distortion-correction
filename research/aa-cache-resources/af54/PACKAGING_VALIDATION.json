@@ -1,0 +1,339 @@
+{
+  "scope": "Packaging-only validation; unchanged HDL and testbench semantics. No full differential rerun.",
+  "frozen_native_inputs": 75,
+  "overlays": 7,
+  "unchanged_native_inputs": 68,
+  "checks": {
+    "patch_reconstructed_byte_exact": true,
+    "testbenches_byte_exact": true,
+    "source_hashes_verified": true,
+    "git_blob_hashes_verified": true,
+    "existing_output_rejected": true,
+    "existing_workspace_rejected": true,
+    "corrupt_baseline_rejected_before_output_creation": true
+  },
+  "portable_runs": {
+    "units": {
+      "mode": "units",
+      "status": "PASS",
+      "cases": [
+        {
+          "case": "enabled",
+          "parameters": {},
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_ROUNDTRIP pack=1 token=54 sent=4096 cycles=8210 replacements=1420 empty_loads=2676\n<WORKSPACE>/tests/tb_tagpack.sv:76: $finish called at 65680000 (1ps)"
+        },
+        {
+          "case": "final24",
+          "parameters": {
+            "FINAL": 1
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_ROUNDTRIP pack=1 token=54 sent=3072 cycles=6162 replacements=1420 empty_loads=1652\n<WORKSPACE>/tests/tb_tagpack.sv:76: $finish called at 49296000 (1ps)"
+        },
+        {
+          "case": "default",
+          "parameters": {
+            "PACK": 0
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_ROUNDTRIP pack=0 token=63 sent=10 cycles=715 replacements=9 empty_loads=1\n<WORKSPACE>/tests/tb_tagpack.sv:76: $finish called at 5720000 (1ps)"
+        },
+        {
+          "case": "generic_tag8",
+          "parameters": {
+            "PACK": 0,
+            "TW": 8
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_ROUNDTRIP pack=0 token=46 sent=10 cycles=715 replacements=9 empty_loads=1\n<WORKSPACE>/tests/tb_tagpack.sv:76: $finish called at 5720000 (1ps)"
+        },
+        {
+          "case": "bad_bit0",
+          "parameters": {
+            "BAD": 1
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_BAD_TAG bit=0\n<WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 104000 (1ps)"
+        },
+        {
+          "case": "bad_bit1",
+          "parameters": {
+            "BAD": 2
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_BAD_TAG bit=1\n<WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 104000 (1ps)"
+        },
+        {
+          "case": "bad_bit2",
+          "parameters": {
+            "BAD": 3
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_BAD_TAG bit=2\n<WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 104000 (1ps)"
+        },
+        {
+          "case": "bad_bit3",
+          "parameters": {
+            "BAD": 4
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_BAD_TAG bit=3\n<WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 104000 (1ps)"
+        },
+        {
+          "case": "bad_bit4",
+          "parameters": {
+            "BAD": 5
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_BAD_TAG bit=4\n<WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 104000 (1ps)"
+        },
+        {
+          "case": "bad_bit5",
+          "parameters": {
+            "BAD": 6
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_BAD_TAG bit=5\n<WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 104000 (1ps)"
+        },
+        {
+          "case": "bad_bit21",
+          "parameters": {
+            "BAD": 22
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_BAD_TAG bit=21\n<WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 88000 (1ps)"
+        },
+        {
+          "case": "bad_bit22",
+          "parameters": {
+            "BAD": 23
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_BAD_TAG bit=22\n<WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 88000 (1ps)"
+        },
+        {
+          "case": "bad_bit23",
+          "parameters": {
+            "BAD": 24
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_BAD_TAG bit=23\n<WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 88000 (1ps)"
+        },
+        {
+          "case": "incompatible_W",
+          "parameters": {
+            "W": 2048
+          },
+          "pass": true,
+          "exit": 1,
+          "output": "FATAL: <WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+        },
+        {
+          "case": "incompatible_H",
+          "parameters": {
+            "H": 1024
+          },
+          "pass": true,
+          "exit": 1,
+          "output": "FATAL: <WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+        },
+        {
+          "case": "incompatible_TW",
+          "parameters": {
+            "TW": 24
+          },
+          "pass": true,
+          "exit": 1,
+          "output": "FATAL: <WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+        },
+        {
+          "case": "incompatible_STRIDE",
+          "parameters": {
+            "STRIDE": 0
+          },
+          "pass": true,
+          "exit": 1,
+          "output": "FATAL: <WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+        },
+        {
+          "case": "incompatible_HEAD",
+          "parameters": {
+            "HEAD": 1
+          },
+          "pass": true,
+          "exit": 1,
+          "output": "FATAL: <WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+        },
+        {
+          "case": "incompatible_COMPACT",
+          "parameters": {
+            "COMPACT": 0
+          },
+          "pass": true,
+          "exit": 1,
+          "output": "FATAL: <WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+        },
+        {
+          "case": "incompatible_IB",
+          "parameters": {
+            "IB": 6
+          },
+          "pass": true,
+          "exit": 1,
+          "output": "FATAL: <WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+        },
+        {
+          "case": "incompatible_PACK",
+          "parameters": {
+            "PACK": 2
+          },
+          "pass": true,
+          "exit": 1,
+          "output": "FATAL: <WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+        }
+      ],
+      "physical_implementation": "NOT_RUN"
+    },
+    "busy": {
+      "mode": "busy",
+      "status": "PASS",
+      "cases": [
+        {
+          "case": "pressure0",
+          "parameters": {
+            "PRESSURE": 0
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_BUSY_REJECTION case=0 valid_prefix=8 fifo_before=5 ddr_inflight=1 replacement=0 bad_wait=2 fault=4a\n<WORKSPACE>/tests/tb_busy_reject.sv:311: $finish called at 416000 (1ps)"
+        },
+        {
+          "case": "pressure1",
+          "parameters": {
+            "PRESSURE": 1
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_BUSY_REJECTION case=1 valid_prefix=64 fifo_before=61 ddr_inflight=0 replacement=1 bad_wait=2 fault=4a\n<WORKSPACE>/tests/tb_busy_reject.sv:311: $finish called at 1016000 (1ps)"
+        },
+        {
+          "case": "pressure2",
+          "parameters": {
+            "PRESSURE": 2
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_BUSY_REJECTION case=2 valid_prefix=4105 fifo_before=4096 ddr_inflight=0 replacement=0 bad_wait=3 fault=4a\n<WORKSPACE>/tests/tb_busy_reject.sv:311: $finish called at 33328000 (1ps)"
+        }
+      ],
+      "physical_implementation": "NOT_RUN"
+    },
+    "proof": {
+      "mode": "proof",
+      "status": "PASS",
+      "cases": [],
+      "physical_implementation": "NOT_RUN",
+      "proof": {
+        "accepted": 2073600,
+        "maximum_tag": 2073599,
+        "final24_rows": 46080,
+        "ordinal_low6_mapping": true,
+        "post_last_invalid_tag": 2073600,
+        "post_last_invalid_row": 1080
+      }
+    },
+    "strict": {
+      "mode": "hierarchy",
+      "status": "FAILED_OR_BLOCKED",
+      "cases": [],
+      "physical_implementation": "NOT_RUN",
+      "strict_compile_exit": 5,
+      "note": "Only parameter binding. No full-board functional or implementation validity.",
+      "error": "Strict hierarchy compile failed; inspect log. Partial -i requires explicit opt-in."
+    },
+    "partial": {
+      "mode": "hierarchy",
+      "status": "PARTIAL_PARAMETER_BINDING_ONLY",
+      "cases": [
+        {
+          "case": "partial0",
+          "parameters": {
+            "PACK": 0
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_HIERARCHY pack=0 token=63 depth=4096\n<WORKSPACE>/tests/tb_hierarchy.sv:10: $finish called at 1000 (1ps)"
+        },
+        {
+          "case": "partial1",
+          "parameters": {
+            "PACK": 1
+          },
+          "pass": true,
+          "exit": 0,
+          "output": "PASS_HIERARCHY pack=1 token=54 depth=4096\n<WORKSPACE>/tests/tb_hierarchy.sv:10: $finish called at 1000 (1ps)"
+        }
+      ],
+      "physical_implementation": "NOT_RUN",
+      "strict_compile_exit": 5,
+      "note": "Only parameter binding. No full-board functional or implementation validity."
+    }
+  },
+  "full_differential": "Historical evidence retained unchanged except documented path normalization; NOT_RERUN",
+  "physical_implementation": "NOT_RUN",
+  "final_packaging_refinements": {
+    "output_boundary_checks": {
+      "frozen_nested": {
+        "pass": true,
+        "exit": 2,
+        "output_created": false
+      },
+      "publication_nested": {
+        "pass": true,
+        "exit": 2,
+        "output_created": false
+      },
+      "frozen_symlink_nested": {
+        "pass": true,
+        "exit": 2,
+        "output_created": false
+      },
+      "publication_symlink_nested": {
+        "pass": true,
+        "exit": 2,
+        "output_created": false
+      },
+      "frozen_root": {
+        "pass": true,
+        "exit": 2
+      },
+      "publication_root": {
+        "pass": true,
+        "exit": 2
+      },
+      "fresh_external_output_with_symlink_input": {
+        "pass": true,
+        "exit": 0,
+        "verified_inputs": 75,
+        "overlays": 7
+      }
+    },
+    "hdl_and_testbenches_changed": false,
+    "full_hdl_rerun": false,
+    "documentation": "Source-only research; Map parameter dump first, P&R/STA conditional; AA-only collector identity and separate AF54 identity review explicitly required."
+  }
+}

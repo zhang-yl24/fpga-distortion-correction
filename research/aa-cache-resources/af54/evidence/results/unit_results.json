@@ -1,0 +1,190 @@
+[
+  {
+    "case": "enabled",
+    "params": {},
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_ROUNDTRIP pack=1 token=54 sent=4096 cycles=8210 replacements=1420 empty_loads=2676\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:76: $finish called at 65680000 (1ps)"
+  },
+  {
+    "case": "final24",
+    "params": {
+      "FINAL": 1
+    },
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_ROUNDTRIP pack=1 token=54 sent=3072 cycles=6162 replacements=1420 empty_loads=1652\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:76: $finish called at 49296000 (1ps)"
+  },
+  {
+    "case": "default",
+    "params": {
+      "PACK": 0
+    },
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_ROUNDTRIP pack=0 token=63 sent=10 cycles=715 replacements=9 empty_loads=1\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:76: $finish called at 5720000 (1ps)"
+  },
+  {
+    "case": "generic_tag8",
+    "params": {
+      "PACK": 0,
+      "TW": 8
+    },
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_ROUNDTRIP pack=0 token=46 sent=10 cycles=715 replacements=9 empty_loads=1\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:76: $finish called at 5720000 (1ps)"
+  },
+  {
+    "case": "bad_bit0",
+    "params": {
+      "BAD": 1
+    },
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_BAD_TAG bit=0\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 104000 (1ps)"
+  },
+  {
+    "case": "bad_bit1",
+    "params": {
+      "BAD": 2
+    },
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_BAD_TAG bit=1\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 104000 (1ps)"
+  },
+  {
+    "case": "bad_bit2",
+    "params": {
+      "BAD": 3
+    },
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_BAD_TAG bit=2\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 104000 (1ps)"
+  },
+  {
+    "case": "bad_bit3",
+    "params": {
+      "BAD": 4
+    },
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_BAD_TAG bit=3\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 104000 (1ps)"
+  },
+  {
+    "case": "bad_bit4",
+    "params": {
+      "BAD": 5
+    },
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_BAD_TAG bit=4\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 104000 (1ps)"
+  },
+  {
+    "case": "bad_bit5",
+    "params": {
+      "BAD": 6
+    },
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_BAD_TAG bit=5\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 104000 (1ps)"
+  },
+  {
+    "case": "bad_bit21",
+    "params": {
+      "BAD": 22
+    },
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_BAD_TAG bit=21\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 88000 (1ps)"
+  },
+  {
+    "case": "bad_bit22",
+    "params": {
+      "BAD": 23
+    },
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_BAD_TAG bit=22\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 88000 (1ps)"
+  },
+  {
+    "case": "bad_bit23",
+    "params": {
+      "BAD": 24
+    },
+    "pass": true,
+    "exit": 0,
+    "output": "PASS_BAD_TAG bit=23\n<AF54_WORKSPACE>/tests/tb_tagpack.sv:60: $finish called at 88000 (1ps)"
+  },
+  {
+    "case": "incompatible_W",
+    "params": {
+      "W": 2048
+    },
+    "pass": true,
+    "exit": 1,
+    "output": "FATAL: <AF54_WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+  },
+  {
+    "case": "incompatible_H",
+    "params": {
+      "H": 1024
+    },
+    "pass": true,
+    "exit": 1,
+    "output": "FATAL: <AF54_WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+  },
+  {
+    "case": "incompatible_TW",
+    "params": {
+      "TW": 24
+    },
+    "pass": true,
+    "exit": 1,
+    "output": "FATAL: <AF54_WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+  },
+  {
+    "case": "incompatible_STRIDE",
+    "params": {
+      "STRIDE": 0
+    },
+    "pass": true,
+    "exit": 1,
+    "output": "FATAL: <AF54_WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+  },
+  {
+    "case": "incompatible_HEAD",
+    "params": {
+      "HEAD": 1
+    },
+    "pass": true,
+    "exit": 1,
+    "output": "FATAL: <AF54_WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+  },
+  {
+    "case": "incompatible_COMPACT",
+    "params": {
+      "COMPACT": 0
+    },
+    "pass": true,
+    "exit": 1,
+    "output": "FATAL: <AF54_WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+  },
+  {
+    "case": "incompatible_IB",
+    "params": {
+      "IB": 6
+    },
+    "pass": true,
+    "exit": 1,
+    "output": "FATAL: <AF54_WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+  },
+  {
+    "case": "incompatible_PACK",
+    "params": {
+      "PACK": 2
+    },
+    "pass": true,
+    "exit": 1,
+    "output": "FATAL: <AF54_WORKSPACE>/candidate/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv:63: AF raster-tag packing requires explicit native AA configuration\n       Time: 0  Scope: tb_tagpack.dut"
+  }
+]
