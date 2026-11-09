@@ -50,12 +50,16 @@ RAW disables geometric correction before the SAME DDR sampler; capture still
 writes DDR and display still reads DDR. RAW is not direct HDMI pass-through.
 The camera enters through the board HDMI RX, not a naked DVP/MIPI sensor port.
 
-For a fresh-frame rate, record2 PGSTAT02 responses with matched distinct request
-identities in one explicitly uninterrupted reset epoch. core_tick is64bits;
-snapshot sequence and frame counters are32bits. Require positive hardware tick
-delta, advancing snapshot sequence, and a short interval below2^32 core cycles
-(34.359738368s at nominal125MHz) to exclude multiple32bit counter wraps. Use
-delta_counter=(second-first) modulo2^32 only with that epoch/range evidence;
+For a fresh-frame rate, record at least 2 PGSTAT02 responses with matched,
+distinct request identities in one explicitly uninterrupted reset epoch.
+core_tick is 64 bits; snapshot sequence and frame counters are 32 bits. Require
+positive hardware tick differences, advancing sequence, and EVERY adjacent
+interval below 2^32 core cycles (34.359738368 seconds at nominal 125 MHz).
+This excludes multiple 32-bit counter wraps per window. A continuous total can
+exceed this duration: sum individually checked modulo-32 window deltas and
+64-bit hardware-tick differences using unbounded integers. Never use a single
+endpoint-only modulo delta for the entire long run. Use each counter difference
+modulo 2^32 only with that epoch and interval evidence;
 reject FrameID rollover/backward identity rather than calling it new progress.
 New-presented rate candidate = delta(presented_frames)*nominal_core_hz/delta_tick;
 captured/processed rates use their own counters. Report nominal-clock scope and
@@ -73,3 +77,11 @@ FPGA, changes KEY1, flushes incoming bytes, resynchronizes on magic or retries a
 partial/uncertain request. Each new capture requires a fresh quiet reset epoch.
 It sends only SGA1/SGT1 passive telemetry requests. See LIVE_CAPTURE_ZH.md.
 
+
+Continuous extension: aa_capture.py allows 1-3600 seconds with 0.25-5 second
+request intervals, still one outstanding request. The duration scheduler starts
+after the first statistics reply; always inspect actual SecondsNominal.
+aa_measure.py now streams files and outputs AA_MEASUREMENT_2. No decoded full
+signature list is retained. The existing byte-input API and nominal rate fields
+remain available. Both old and new host suites run without opening devices:
+ python -B -m unittest -v test_aa_tools.py test_aa_continuous.py

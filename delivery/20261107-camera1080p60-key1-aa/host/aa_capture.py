@@ -5,7 +5,6 @@ reset/program the FPGA, change KEY1, enumerate ports or discard input bytes.
 """
 import argparse
 from datetime import datetime, timezone
-import hashlib
 import json
 import math
 from pathlib import Path
@@ -13,7 +12,7 @@ import secrets
 import time
 
 from aa_protocol import make_arm, make_stats
-from aa_measure import AA_SHA256, WireParser
+from aa_measure import AA_SHA256, WireParser, file_sha256
 
 
 def save_manifest(directory, manifest):
@@ -28,13 +27,14 @@ def collect(transport, directory, manifest, *, seconds=10.0, interval=1.0,
     """Transport must already be open; function never retries a command write."""
     if (not all(math.isfinite(v) and v > 0 for v in
                 (seconds, interval, response_timeout, arm_timeout)) or
-            not 1 <= seconds <= 25 or not 0.25 <= interval <= seconds):
-        raise ValueError('Require 1 <= seconds <= 25 and 0.25 <= interval <= seconds')
+            not 1 <= seconds <= 3600 or not 0.25 <= interval <= min(seconds, 5)):
+        raise ValueError('Require 1 <= seconds <= 3600 and 0.25 <= interval <= min(seconds, 5)')
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=False)
     manifest = dict(manifest, Schema='AA_CAPTURE_1', Status='collecting', Requests=[],
                     StartedUTC=datetime.now(timezone.utc).isoformat(),
                     RequestedSeconds=seconds, StatsIntervalSeconds=interval,
+                    DurationAnchor='first statistics reply; analyze actual hardware tick duration',
                     SerialSettings='115200 8N1, no flow control',
                     UninterruptedResetEpochNotAutomaticallyVerified=True,
                     HardwarePassClaim=False)
@@ -54,9 +54,17 @@ def collect(transport, directory, manifest, *, seconds=10.0, interval=1.0,
     def send(kind, *, final=False):
         nonlocal ticket, outstanding
         ticket += 1
-        nonce = nonce_source()
-        if not isinstance(nonce, int) or not 0 < nonce < (1 << 32) or nonce in used_nonces:
-            raise ValueError('Nonce source did not provide a fresh nonzero uint32')
+        # A long capture has many requests. Redraw an unused random identity
+        # before transmission instead of aborting on a birthday collision.
+        # This is not a retry of an already-issued UART command.
+        for _ in range(16):
+            nonce = nonce_source()
+            if not isinstance(nonce, int) or not 0 < nonce < (1 << 32):
+                raise ValueError('Nonce source did not provide a nonzero uint32')
+            if nonce not in used_nonces:
+                break
+        else:
+            raise ValueError('Nonce source exhausted 16 fresh-identity attempts; no command sent')
         used_nonces.add(nonce)
         packet = (make_arm if kind == 'SGA1' else make_stats)(ticket, nonce)
         request = {'Kind': kind, 'Ticket': ticket, 'Nonce': nonce, 'PacketHex': packet.hex(),
@@ -95,14 +103,15 @@ def collect(transport, directory, manifest, *, seconds=10.0, interval=1.0,
                                 raise ValueError('Unexpected/stale/refused ARM acknowledgement')
                             armed = True
                             outstanding = None
-                            measurement_start = clock()
-                            next_due = measurement_start
+                            next_due = clock()
                         elif row['Kind'] == 'PGSTAT02':
                             if (not armed or outstanding is None or outstanding[0] != 'SGT1' or
                                     (decoded['Ticket'], decoded['Nonce']) != outstanding[1:3]):
                                 raise ValueError('Unmatched/duplicate statistics response')
                             final_reply = outstanding[4]
                             outstanding = None
+                            if measurement_start is None:
+                                measurement_start = clock()
                             next_due = clock() + interval
                         else:
                             arm_nonce = manifest['Requests'][0]['Nonce']
@@ -119,7 +128,8 @@ def collect(transport, directory, manifest, *, seconds=10.0, interval=1.0,
                     if now - next_due + interval > response_timeout:
                         raise TimeoutError('Final partial packet did not finish')
                 elif armed and outstanding is None and now >= next_due:
-                    send('SGT1', final=now >= measurement_start + seconds)
+                    send('SGT1', final=measurement_start is not None and
+                         now >= measurement_start + seconds)
                 if now - started > arm_timeout + seconds + 3 * response_timeout + interval:
                     raise TimeoutError('Overall collection deadline reached')
             parser.finish()
@@ -133,7 +143,7 @@ def collect(transport, directory, manifest, *, seconds=10.0, interval=1.0,
         manifest['RawBytes'] = received_bytes
         manifest['CompletePackets'] = complete_packets
         manifest['UnfinishedTailBytes'] = len(parser.buffer)
-        manifest['RawSHA256'] = hashlib.sha256(raw_path.read_bytes()).hexdigest() if raw_path.exists() else None
+        manifest['RawSHA256'] = file_sha256(raw_path) if raw_path.exists() else None
         manifest['HostElapsedSeconds'] = clock() - started
         save_manifest(directory, manifest)
     return manifest
@@ -158,8 +168,8 @@ def main():
     if args.loaded_bitstream_sha256.lower() != AA_SHA256:
         ap.error('This collector targets only the released AA bitstream SHA256')
     if (not math.isfinite(args.seconds) or not math.isfinite(args.stats_interval) or
-            not 1 <= args.seconds <= 25 or not 0.25 <= args.stats_interval <= args.seconds):
-        ap.error('Require 1 <= seconds <= 25 and 0.25 <= stats interval <= seconds')
+            not 1 <= args.seconds <= 3600 or not 0.25 <= args.stats_interval <= min(args.seconds, 5)):
+        ap.error('Require 1 <= seconds <= 3600 and 0.25 <= stats interval <= min(seconds, 5)')
     if args.out_dir.exists():
         ap.error('Output directory exists; choose a new directory')
     try:

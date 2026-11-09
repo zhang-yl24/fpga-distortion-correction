@@ -16,6 +16,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Check AA continuous UART host tools without device access
+        if: ${{ hashFiles('delivery/20261107-camera1080p60-key1-aa/host/test_aa_continuous.py') != '' }}
+        working-directory: delivery/20261107-camera1080p60-key1-aa/host
+        run: python -B -m unittest -v test_aa_tools.py test_aa_continuous.py
       - name: Install reference dependencies
         run: python -m pip install -r requirements-team.txt
       - name: Audit shipped baselines and IP dependency closure

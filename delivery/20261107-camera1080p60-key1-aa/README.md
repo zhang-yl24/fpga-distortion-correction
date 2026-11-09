@@ -2,7 +2,7 @@
 
 [下载源码、位流和重建工具包](AA-camera1080p60-KEY1-rebuild-kit-20261107.zip) · [直接下载 SRAM 位流](bitstream/aa-camera1080p60-key1-1665586d.sbit?raw=1) · [测试步骤](TEST_INSTRUCTIONS.md) · [时序报告](reports/TIMING_REPORT.md) · [项目源码](native/) · [遥测工具说明](host/README.txt)
 
-[新增显式串口采集与新帧率分析](host/LIVE_CAPTURE_ZH.md)：可顺序采集原始字节、保存请求身份并按硬件 tick 分析稳定 RAW／CORR 窗口。该主机增强独立于原始冻结 ZIP，尚未连接真实串口验证，不改变位流或 RTL。
+[新增显式串口采集与新帧率分析](host/LIVE_CAPTURE_ZH.md)：可顺序采集原始字节、保存请求身份并按硬件 tick 分析稳定 RAW／CORR 窗口；现支持同一 epoch 的 600 秒等持续记录，逐窗累计、流式校验，单次最多 1 小时。该主机增强独立于原始冻结 ZIP，尚未连接真实串口验证，不改变位流或 RTL。
 
 本候选供同学实板测试，**尚未验证持续 60 个新校正帧/秒、KEY1 实板切换或新画质效果**。
 
