@@ -1,0 +1,7 @@
+rtl/pipeline_brown_run8_key1_research.sv
+rtl/lens1080_bank_core_geometry_run8_research.sv
+rtl/hdmi1080_video_system_run8_research.sv
+rtl/fixed_brown_run8_selector.sv
+rtl/ordered_run8_merge.sv
+rtl/writer_run8.sv
+rtl/fixed_gammaoff_span_tagged.v
