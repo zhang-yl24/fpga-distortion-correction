@@ -1,0 +1,55 @@
+{
+  "PDS_executed_this_task": false,
+  "candidate_commit": "22d5b2bc09c0013939de57d47436405a380bb5fd",
+  "candidate_url": "https://github.com/zhang-yl24/fpga-distortion-correction/tree/22d5b2bc09c0013939de57d47436405a380bb5fd/research/aa-elastic-result-buffer",
+  "historical_PDS_run_is_not_candidate_acceptance": true,
+  "historical_sources": [
+    {
+      "relative_to_private_ON_record": "MAP_EXECUTION.json",
+      "sha256": "dcc7646d133d6668466dddc1429d95e35ef7fc28125071b870b3f111c7b7dbaf"
+    },
+    {
+      "relative_to_private_ON_record": "MAP_PREPARED.tcl",
+      "sha256": "552cc3896965766b8dfc51606384ee4bf3e41e16a08bee04fe0290bac73e13c0"
+    },
+    {
+      "relative_to_private_ON_record": "NATIVE_SOURCE_MANIFEST.json",
+      "sha256": "48556db12bfca3fcf283b19309b2deff2e1cc03899304d9884791b988b593eb7"
+    },
+    {
+      "relative_to_private_ON_record": "scripts/checked.tcl",
+      "sha256": "ce94594d1590629cac2a2e63fc0dfc1d7f53329fffd887695ece0845ee1b9040"
+    },
+    {
+      "relative_to_private_ON_record": "scripts/rom_bootstrap.tcl",
+      "sha256": "3fda30863529a1f98b9606394aa701ded194660c457ce33008ff195e53de66a8"
+    },
+    {
+      "relative_to_private_ON_record": "scripts/rom_compile-pre.tcl",
+      "sha256": "ebdbe8d50e092145de571daf6b830e826733e1b52f0d56b172d6c2932de7f859"
+    },
+    {
+      "relative_to_private_ON_record": "scripts/rom_synthesize-pre.tcl",
+      "sha256": "573c02fd0a41fd989ebdbd7fc5aa086654eb0cba3fd1adc45b125cbc686450fa"
+    }
+  ],
+  "observed_not_newly_executed_commands": {
+    "architecture": "set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676",
+    "compile": "compile -verilog_standard SystemVerilog -top_module <top> -include_path <paths> -pre_tcl <ROM hook>",
+    "project_entry": [
+      "pds_shell.exe",
+      "-file",
+      "<Tcl>",
+      "-work_dir",
+      "<new work directory>",
+      "-project_name",
+      "<new name>"
+    ],
+    "synthesize": "synthesize -ads -selected_syn_tool_opt 2 -pre_tcl <ROM hook>"
+  },
+  "unverified_api": [
+    "post-synthesis netlist context for get_ports/get_pins/get_clocks",
+    "collection size/enumeration API",
+    "explicit unresolved-cell/blackbox report command"
+  ]
+}
