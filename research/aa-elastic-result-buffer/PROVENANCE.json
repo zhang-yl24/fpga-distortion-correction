@@ -1,0 +1,127 @@
+{
+  "adapted_functions": {
+    "generate": "Produces the same 174 native file bytes, KEY1 constraint, 85-import plan and ROM working copy. No camera tree. Optional actual-system parameter elaboration replaces camera testbench compilation, rechecks native/source records, and records only private logs.",
+    "inspect": "Loads three independently pinned native-only recipe files; retains exact seed, normalization, overlay and 97 native-payload hash checks. Omits camera fixture, 102 camera input and historical log verification. Adds ROM and constraint presence checks.",
+    "main": "Native-only dry-run/output/optional compiler CLI; removes historical archive option. No simulation or vendor execution."
+  },
+  "address_terminology": "Result slots and publish_bank values identify logical UI storage regions. Physical DDR-bank decoding, board capacity and visibility are not verified here.",
+  "full_bundle": {
+    "bytes": 5066557,
+    "filename": "aa_elastic_public_source_replay_v2_20261111.zip",
+    "members": 74,
+    "sha256": "c7a46530720a7e2d9699611572fa5c6c3cc859887a0bbf0009d2647065b2ce6b"
+  },
+  "helpers_byte_identical": false,
+  "model_evidence_source": {
+    "member": "frozen_camera/FULL_RESULT_SUMMARY.json",
+    "sha256": "5695df359d8b7efc14762b0243f3fe7de52e2a1c50aa272ad4c1061af66407db",
+    "unchanged_from_prior_evidence": true
+  },
+  "native_recipe_projection_matches_v2": true,
+  "omitted_recipe_fields": [
+    "approval_sha256",
+    "archives",
+    "public_evidence_transforms_sha256"
+  ],
+  "omitted_recipe_fields_reason": "Historical full archives, camera approval and camera evidence-log transformation are outside the native-only handoff; no native identity field was omitted.",
+  "overlay": [
+    {
+      "bytes": 1372,
+      "path": "overlay/BOARD_ENTRY.patch",
+      "sha256": "d7519b756de94414b6b07f2599e2de08db01ce16f3d66e0aea7ef56456766092"
+    },
+    {
+      "bytes": 15516,
+      "path": "overlay/rtl/ddr_video_output_result_slot_research.sv",
+      "sha256": "94bb49a408d11c96e4b9c9b9efd20f6414a201d7f548bb1ecc2baa252e3ea9dc"
+    },
+    {
+      "bytes": 14967,
+      "path": "overlay/rtl/elastic_result_owner_integrated_research.sv",
+      "sha256": "abde9c8d05183e8f231f57e446fac0c9ec1c84dc2a62d5e3b2606703c711f8d8"
+    },
+    {
+      "bytes": 14863,
+      "path": "overlay/rtl/elastic_result_owner_research.sv",
+      "sha256": "764cdd0f782293be4ca057353b65cea39eb757de6ac6d937dd18d1cb8a67a1bb"
+    },
+    {
+      "bytes": 9691,
+      "path": "overlay/rtl/elastic_run8_engine_adapter_research.sv",
+      "sha256": "3aca7d3a45c462a8c464bb69c30574e00ea9668aa2e6e1f5607626038d2e0228"
+    },
+    {
+      "bytes": 5118,
+      "path": "overlay/rtl/hdmi1080_input_write_link_elastic_research.sv",
+      "sha256": "7795c7b60fba62830209efd86246895d486518bed9de8acf5d8d6768004fb49a"
+    },
+    {
+      "bytes": 30651,
+      "path": "overlay/rtl/hdmi1080_video_system_elastic_enabled_research.sv",
+      "sha256": "ba9abb55fbcdff4a9d3d98fc9dbc8086f65fd3246d69105a13ac924ec848882c"
+    },
+    {
+      "bytes": 13462,
+      "path": "overlay/rtl/hdmi1080_video_system_elastic_research.sv",
+      "sha256": "dc9840e5bbb88b5273382dbda9ec8effb9d5020bed41dcc662dc13cf882f3896"
+    },
+    {
+      "bytes": 2428,
+      "path": "overlay/telemetry/rtl/scan_signature_armed_v3_result_slot_research.sv",
+      "sha256": "a25aa35b0028112ea3305bdffe4788883d107b10617a603ba246c441c87a34e6"
+    },
+    {
+      "bytes": 7800,
+      "path": "overlay/telemetry/rtl/scan_signature_capture_result_slot_research.sv",
+      "sha256": "428f91db405d15baa32243a8cd4e29e3957ae0523e0969eec64571bddb62f702"
+    },
+    {
+      "bytes": 5353,
+      "path": "overlay/telemetry/rtl/telemetry_session_link_result_slot_research.sv",
+      "sha256": "9b7e40543ec6c897d2f469258e6da7ebc2dd3840b00e555b4515be9572efea57"
+    },
+    {
+      "bytes": 8261,
+      "path": "overlay/telemetry/rtl/telemetry_uart_link_result_slot_research.sv",
+      "sha256": "d0509715f60d8f76fd364238e5347630e5a98afcfb166d04ec9e9a8dac81d9ff"
+    }
+  ],
+  "private_seed_policy": "All 164 upstream bodies remain seed-only, regardless of historical FIRST_PARTY or 83-import staging labels; those labels do not prove redistribution rights. Only 11 newly authored overlay RTL/telemetry files are supplied.",
+  "public_checker_adaptation": {
+    "only_change": "Import safety utilities from prepare_native instead of prepare_private_replay; v2 compiler-source-excerpt detection retained.",
+    "thin_checker_sha256": "9c507741f16e1ef940ed7f2afb37107ed88cc7519fe3a3bc0503e8001ae826f8",
+    "v2_checker_sha256": "a841ef81eb5416ea12166a6f889c6526cd6eafbdc4d5587b8b7ed2a0d413f4a5"
+  },
+  "removed_function": "verify_archives: unrelated historical ZIP content checks are not provided by the thin handoff.",
+  "status": "V2_NATIVE_SUBSET_IDENTITY_VERIFIED_LOCAL_ONLY",
+  "test_harness_adaptation": {
+    "byte_identical": false,
+    "scope": "Separate native-only integrity, refusal and generation tests, including v2 compiler-source-excerpt refusal; no full-camera or historical-archive test claim.",
+    "thin_native_test_sha256": "284915b479647c1b08e3393acee7202451bb6c152666602f7a69976aae684dd4",
+    "v2_full_test_sha256": "66d032a13ebc599beb36405bf840d14d1b1a8bf02475aef63d50b6a3a0cd9ce5"
+  },
+  "thin_helper_sha256": "10f10a048796004283e7c04b9792eb71eb1bc8b239a6215d6cb5000fe15835f1",
+  "thin_recipe_part_sha256": {
+    "metadata/NATIVE_RECIPE.json": "73d7fff57167a6071b3623b2a17fe79246248e592c3d28524d3c9cfc4f57b5f1",
+    "metadata/NORMALIZATION.json": "434138737315c7f5983fa5fb6150e2edb1e4d77c7c1575625e52004a82cdcdc7",
+    "metadata/SEED_FILES.json": "970d93c837b5d32968ea99d2b1d486afa86c6f5e41d52d1e06b7093c55d06b18"
+  },
+  "unchanged_function_body_sha256": {
+    "auth": "bed7f0245385f101f4d81bf3d79e30a78936daf6b2277a7d0eff58ae2fe66c42",
+    "board_patch": "322e8631ba6084f5be0447d0025ee94f44fc02a20aacebb6828ae75ce4701481",
+    "checked": "887c722f7c178f5e6f0a30f3c6addd701e960116c84c35ebe7f77206105d9fef",
+    "dump": "05dc4935bc05ad3746efdd97f57169fe03de3604ffb68429b08b320541814b61",
+    "inventory": "a4f5c3591bfcad259e002eeee1747c87e42e420aef767e73c97f68e05e2a0fff",
+    "json_load": "e48c04305d149f32a62687dc05069392bc0cc40ec4b445cef4a2813a34cc3ab1",
+    "need": "34a825bc2bd3b8fb2b51c4c306904a2f380d7e58785dae98fe8047da65816421",
+    "normalized": "e9343b1a358c7760958e202362feed6d27301b78e003a8bc307bafda8bb3a9b9",
+    "output_path": "f991c3068a3536e921da0ed26df2c42bb8b6e6f7ef3b761838963cd575c0aedf",
+    "put": "68d333738fa414c4bc872986c437f4ff455dd90fc7fd459b0337f7c7f9c24600",
+    "read": "bdd62653023513a8cdb439fe6dbe2968dab77fe34bc51d3fb08bfa6bdadc9df3",
+    "rel": "eb93209e66ad7ce3f2e1a65a2ccbfc1cffcea06a735c20a6c08c408804637dc8",
+    "sha": "fc33541dab55897936faef1ad2869e455cbd6942f02508b99b41efdccc29be21",
+    "verify_package": "19648822e81179c4c4b88d025a81cda07a30b5137d45c007d94e51293b9231aa"
+  },
+  "v2_full_helper_sha256": "2f6a0edbc6522227379b3fdbcb191454a49bd214a5a409a2c57281a52369d9af",
+  "v2_reconstruction_sha256": "3b7ea9911a03a4a42e9033478a0dab70fe51e8d4dede79914169ab06a3c48c2e"
+}

@@ -1,0 +1,555 @@
+{
+  "added_modules": {
+    "source/research/aa_elastic/rtl/ddr_video_output_result_slot_research.sv": "94bb49a408d11c96e4b9c9b9efd20f6414a201d7f548bb1ecc2baa252e3ea9dc",
+    "source/research/aa_elastic/rtl/elastic_result_owner_integrated_research.sv": "abde9c8d05183e8f231f57e446fac0c9ec1c84dc2a62d5e3b2606703c711f8d8",
+    "source/research/aa_elastic/rtl/elastic_run8_engine_adapter_research.sv": "3aca7d3a45c462a8c464bb69c30574e00ea9668aa2e6e1f5607626038d2e0228",
+    "source/research/aa_elastic/rtl/hdmi1080_input_write_link_elastic_research.sv": "7795c7b60fba62830209efd86246895d486518bed9de8acf5d8d6768004fb49a",
+    "source/research/aa_elastic/rtl/hdmi1080_video_system_elastic_enabled_research.sv": "ba9abb55fbcdff4a9d3d98fc9dbc8086f65fd3246d69105a13ac924ec848882c",
+    "source/research/aa_elastic/rtl/hdmi1080_video_system_elastic_research.sv": "dc9840e5bbb88b5273382dbda9ec8effb9d5020bed41dcc662dc13cf882f3896",
+    "source/research/aa_elastic/rtl/scan_signature_armed_v3_result_slot_research.sv": "a25aa35b0028112ea3305bdffe4788883d107b10617a603ba246c441c87a34e6",
+    "source/research/aa_elastic/rtl/scan_signature_capture_result_slot_research.sv": "428f91db405d15baa32243a8cd4e29e3957ae0523e0969eec64571bddb62f702",
+    "source/research/aa_elastic/rtl/telemetry_session_link_result_slot_research.sv": "9b7e40543ec6c897d2f469258e6da7ebc2dd3840b00e555b4515be9572efea57",
+    "source/research/aa_elastic/rtl/telemetry_uart_link_result_slot_research.sv": "d0509715f60d8f76fd364238e5347630e5a98afcfb166d04ec9e9a8dac81d9ff"
+  },
+  "canonical_manifest_sha256": "48556db12bfca3fcf283b19309b2deff2e1cc03899304d9884791b988b593eb7",
+  "import_plan": {
+    "architecture_observed": "set_arch -family Logos2 -device PG2L100H -speedgrade -6 -package FBG676",
+    "compile_options_observed": "compile -verilog_standard SystemVerilog -top_module <top> -include_path <paths> -pre_tcl <rom hook>",
+    "constraints": [
+      {
+        "origin": "private_seed",
+        "path": "source/build/offline-20261024/boardtop-penn-prep-20261029-a/board1080-diagnostic.fdc"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/constraints/ddr-ip-clock-relations.fdc"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/constraints/vendor-ddr.rcf"
+      },
+      {
+        "origin": "private_record",
+        "path": "inputs/KEY1_ONLY.fdc"
+      }
+    ],
+    "execution_not_provided": [
+      "compile",
+      "synthesize",
+      "dev_map",
+      "place",
+      "route",
+      "sta",
+      "bitgen"
+    ],
+    "imports": [
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/mul32_pipe.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/pixel_inverse_rotation.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/bounded_brown_inverse_mapper.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/bilinear_rgb.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/video_async_fifo.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/video_display_async_fifo.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/ddr_read_arbiter.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/ddr_write_arbiter.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/ddr_video_reader.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/ddr_adaptive_result_writer.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/adaptive_gamma_stream.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/adaptive_gamma_tagged.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/ddr_compact_neighbour_cache_scatter4.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/ddr_remap_sample_scatter4.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/rotated_remap_core_gamma_geometry_bypass_scatter4.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/hdmi1080_capture_cdc.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/hdmi1080_input_dma.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/hdmi1080_input_write_link.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/build/offline-20261024/cfg100-ce-candidate-20261030-a/candidate/ddr_video_output_1080_board_ce.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/dvp_mode_admission_monitor.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/hdmi1080_input_status.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/platform/video_base/ipcore/ddr3_test/ddr3_test.idf"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/board/bringup_pll.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/platform/video_base/ipcore/cfg_pll/cfg_pll.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/iic_dri_cfg100_reset.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/build/offline-20261024/night-recovery-edid-20261030-a/edid/ms7200_1080p30_ctl.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/build/offline-20261024/tx49-preamble-20261030-a/candidate/ms7210_ctl.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/cfg100_startup_hold.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/ms72xx_cfg100_ctl_reset.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v"
+      },
+      {
+        "origin": "session_overlay",
+        "path": "source/research/aa_elastic/rtl/board1080_elastic_research_top.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/reuse/scan_signature_capture.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/reuse/signature_packet_tx.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/reuse/uart_rx_control.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/reuse/uart_tx.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/session_arm_gate_v3.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/scan_signature_armed_v3.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/load_arm_parser.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/held_bundle_cdc.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/arm_ack_tx.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/telemetry_packet_arbiter.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/telemetry_session_link.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/telemetry_uart_link.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/diag/startup_status_uart.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/diag/hdmi_observer_startup_guard.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/diag/hdmi_observer_epoch_history.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "b4/rtl/held_completion_cdc.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/snapshot/snapshot_command_parser.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/stats/core_stats_snapshot.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/stats/stats_uart_mux.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/ddr_compact_neighbour_cache_scatter8.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/sync_token_fifo.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/quad_parity_prefetch_store.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/d256_runtime_prefetch_cache.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/ddr_raster_overlap_writer.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/ddr_tile8_overlap_writer.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/profile/rtl/experimental/hdmi_camera_fisheye_mapper.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/profile/rtl/experimental/hdmi_camera_fisheye_rom.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/ddr_tile8_rowburst_writer.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/ddr_tile8_macro_rowburst_writer.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/features/uart_rotation_router.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/features/frame_rotation_config.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/experimental/camera720_view_control.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/rational_brown_mapper.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/rtl/rational_brown_radial_rom.v"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/research/aa_black_run8/rtl/pipeline_brown_run8_key1_research.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/research/aa_black_run8/rtl/lens1080_bank_core_geometry_run8_research.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/research/aa_black_run8/rtl/hdmi1080_video_system_run8_research.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/research/aa_black_run8/rtl/fixed_brown_run8_selector.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/research/aa_black_run8/rtl/ordered_run8_merge.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/research/aa_black_run8/rtl/writer_run8.sv"
+      },
+      {
+        "origin": "private_seed",
+        "path": "source/research/aa_black_run8/rtl/fixed_gammaoff_span_tagged.v"
+      },
+      {
+        "origin": "session_overlay",
+        "path": "source/research/aa_elastic/rtl/ddr_video_output_result_slot_research.sv"
+      },
+      {
+        "origin": "session_overlay",
+        "path": "source/research/aa_elastic/rtl/elastic_result_owner_integrated_research.sv"
+      },
+      {
+        "origin": "session_overlay",
+        "path": "source/research/aa_elastic/rtl/elastic_run8_engine_adapter_research.sv"
+      },
+      {
+        "origin": "session_overlay",
+        "path": "source/research/aa_elastic/rtl/hdmi1080_input_write_link_elastic_research.sv"
+      },
+      {
+        "origin": "session_overlay",
+        "path": "source/research/aa_elastic/rtl/hdmi1080_video_system_elastic_enabled_research.sv"
+      },
+      {
+        "origin": "session_overlay",
+        "path": "source/research/aa_elastic/rtl/hdmi1080_video_system_elastic_research.sv"
+      },
+      {
+        "origin": "session_overlay",
+        "path": "source/research/aa_elastic/rtl/scan_signature_armed_v3_result_slot_research.sv"
+      },
+      {
+        "origin": "session_overlay",
+        "path": "source/research/aa_elastic/rtl/scan_signature_capture_result_slot_research.sv"
+      },
+      {
+        "origin": "session_overlay",
+        "path": "source/research/aa_elastic/rtl/telemetry_session_link_result_slot_research.sv"
+      },
+      {
+        "origin": "session_overlay",
+        "path": "source/research/aa_elastic/rtl/telemetry_uart_link_result_slot_research.sv"
+      }
+    ],
+    "include_paths": [
+      ".",
+      "b4/rtl",
+      "b4/rtl/reuse",
+      "source/rtl",
+      "source/research/aa_black_run8/rtl",
+      "source/research/aa_elastic/rtl"
+    ],
+    "new_import_count": 85,
+    "observed_schema_sha256": "552cc3896965766b8dfc51606384ee4bf3e41e16a08bee04fe0290bac73e13c0",
+    "observed_schema_source": "MAP_PREPARED.tcl",
+    "original_import_count": 75,
+    "removed_import": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+    "replacement_import": "source/research/aa_elastic/rtl/board1080_elastic_research_top.sv",
+    "rom": {
+      "bytes": 2394,
+      "sha256": "e03f1869bf3247ed5ae84e94fa431885a20cca86b85e6d12d8a38053ecb8c8a7",
+      "source": "source/research/aa_black_run8/rom/run8_intervals_30bit.mem",
+      "working_filename": "run8_intervals_30bit.mem"
+    },
+    "status": "IMPORT_SOURCE_PLAN_ONLY_NOT_PDS_EXECUTED",
+    "top_module": "board1080_elastic_research_top",
+    "vendor_seed_note": "Externally supplied isolated native seed must retain required platform files and source/constraints files. This package never copies them or launches IP generation."
+  },
+  "native_payload_sha256": {
+    "payload/inputs/KEY1_ONLY.fdc": "b7d742a9bf5f7fe84755260388ac8aef444257d886a56292811c677f87ecd248",
+    "payload/native/b4/rtl/arm_ack_tx.sv": "ab504aae721f81ce70f4bd1cbdb22abe81edd01019c9f0c34776652004625b6f",
+    "payload/native/b4/rtl/held_bundle_cdc.sv": "075dc9270b6d86d082bffa719feedbb51f53309851d2ac7072702a16b0aadce9",
+    "payload/native/b4/rtl/held_completion_cdc.sv": "5543e72d22d127e882a94785bf4eeac0641d473187d4410e36461a6375665b50",
+    "payload/native/b4/rtl/load_arm_parser.sv": "6dfea8ec7a2a4ffe8b9cb02b6239cbee48d869d6b18a20ab740bb8804812f756",
+    "payload/native/b4/rtl/reuse/crc_byte.vh": "67322fe3255f4639badc0b8e4df41137a378e679fabc7d0f8387748950ec97f3",
+    "payload/native/b4/rtl/reuse/scan_signature_capture.sv": "01a6643ccbf352d16c9eef54bf0611ff22622c14ddcae3c6443b91d0bf6b357b",
+    "payload/native/b4/rtl/reuse/signature_packet_tx.sv": "90421176132021407b4a94bac5ecfef79f0a0d6571b008fa1f17677d644e2dc1",
+    "payload/native/b4/rtl/reuse/uart_rx_control.v": "81a6685ad2ad2f856500a3ad7c69ff72a88963c3ecca8954567d19ec046fd33e",
+    "payload/native/b4/rtl/reuse/uart_tx.v": "0a691c35b88d4305d9c74c4acd8676defa09c8c5aae7d7ee653c561f40b49d2b",
+    "payload/native/b4/rtl/scan_signature_armed_v3.sv": "35ee474067063bf722e688f00f0de67a9217db5ed13bee86ee089c663db4221f",
+    "payload/native/b4/rtl/session_arm_gate_v3.sv": "a0d811e530da3da8314cd9cf33d1d5aed91dd6f9a2352ec5beb642739fd88691",
+    "payload/native/b4/rtl/telemetry_packet_arbiter.sv": "3985bcbe64a5292c162c952b5098112870fd0ae5d603cb3a317a8a869d8637b2",
+    "payload/native/b4/rtl/telemetry_session_link.sv": "8df031847fe5a503b1637a6bde9991fb32c492323f45f985a50ae0f3de0c8875",
+    "payload/native/b4/rtl/telemetry_uart_link.sv": "446a5e878a2290e2d7d745910d979d5aae32ec4ecefb4bedddbcea5ec7caf627",
+    "payload/native/source/board/bringup_pll.v": "4c25680cccf3f1e0083439db379613207d3f622392a00cc41d82e30d1020f3e1",
+    "payload/native/source/build/offline-20261024/boardtop-penn-prep-20261029-a/board1080-diagnostic.fdc": "03f9c21d37e339652be2da56b7646dae1f4088626fd4cec0db9fe322ceefd701",
+    "payload/native/source/build/offline-20261024/boardtop-penn-prep-20261029-a/board1080-penn.vh": "633cc52b3b5aff84c743fe7567487f871fc1e0d630f9bb121d9252db2fece607",
+    "payload/native/source/build/offline-20261024/boardtop-penn-prep-20261029-a/frame_ab_control.v": "571da3beff1848263b1224ca908b37026ff244991d37e7b60a12afd7c88e4623",
+    "payload/native/source/build/offline-20261024/bypass-system1080-20261029-a/hdmi1080_video_system_geometry_ab.v": "89e855122b0b2ffa8293ef24032073bfca1c8b73900ae8abb7035658d4ba370e",
+    "payload/native/source/build/offline-20261024/cfg100-ce-candidate-20261030-a/candidate/ddr_video_output_1080_board_ce.v": "cae725a9c8b0f5365621e3d808356efffa70ea81b145496bba0dd3dfbd463709",
+    "payload/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/cfg100_startup_hold.v": "bb8742d1e6a077dad5976944ebd1b2b1f9ea6a41409c842368b8cb1c4ea64bdc",
+    "payload/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/iic_dri_cfg100_reset.v": "6a82e33bf7d6f3745f51c0c6666e8c20ff8a6fee6df51b8ae7f539aaf678b4fa",
+    "payload/native/source/build/offline-20261024/cfg100-independent-20261030-a/candidate/ms72xx_cfg100_ctl_reset.v": "e876806bf7dd6ff9ca10389a743d6dd25b37a8e5fb67fb74056edcdbdd163b76",
+    "payload/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/lens1080_bank_core_geometry_bypass.v": "f41c60456d709f3b0c30363f985046a3613d31ab458a64a04c8757d03912dce8",
+    "payload/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/pipeline_gamma_frame_engine_1080_geometry_bypass.v": "115fcd9673646637ffac0a43f9e232e1c46736854888dfbe8395fa2a0e2c5991",
+    "payload/native/source/build/offline-20261024/geometry-bypass-parallel-20261029-coordination/rotated_remap_core_gamma_geometry_bypass_scatter4.v": "f67f50326b88cd018334d0e6df612c11284ce1ad05108723349e3b41a20c3e25",
+    "payload/native/source/build/offline-20261024/night-recovery-edid-20261030-a/edid/ms7200_1080p30_ctl.v": "a576e534b5b02ef6ef800a830e7a04524deaf2e109e9f7797ae1a6f2cab1d8f7",
+    "payload/native/source/build/offline-20261024/tx49-preamble-20261030-a/candidate/ms7210_ctl.v": "04a91cb0713a0ab49f56ec9f3b06b4a858e60c0c1d87111151f630ab7ec419c2",
+    "payload/native/source/features/frame_rotation_config.sv": "7d0cb5d144801521bf6329b621f648e7607e659662e2d6940f3f0b54d839be19",
+    "payload/native/source/features/uart_rotation_router.sv": "ce148d49c2935cc34f6f8ee98f19c0fb854e7f2f7a0fdd0b8cd0c8e6ccb0259e",
+    "payload/native/source/profile/board/hdmi-camera-fisheye-profile.vh": "2814df34b94fb3de08fbe03abbe2dfff2a3062bd85ef67e6a437a4c234ea769b",
+    "payload/native/source/profile/board/hdmi-camera-fisheye-radial-table.vh": "e7a909761547a68ecc1b424e14d2592fc91918101d0b9e309081ac757cc6de3f",
+    "payload/native/source/profile/board/rational_brown_profile.vh": "9bd0b13500d16390d7c9a1b25ca568ffafd0a64add376b48e5d900d2a8d9b475",
+    "payload/native/source/profile/ddr_bank_page_interleave.vh": "74fbfe5845047c1321e29ff8420eac9f40dcbde58ec76e05fa082b76c879c851",
+    "payload/native/source/profile/rtl/experimental/hdmi_camera_fisheye_mapper.v": "55a6e840e142e2242ac7083e8c498268ef49757b9e0a78fea9c052eb25198855",
+    "payload/native/source/profile/rtl/experimental/hdmi_camera_fisheye_rom.v": "e14d9322a7429a8da474dee448b056a024841d01843658a31c105f3d1ca81dca",
+    "payload/native/source/research/aa_black_run8/rom/run8_intervals_30bit.mem": "e03f1869bf3247ed5ae84e94fa431885a20cca86b85e6d12d8a38053ecb8c8a7",
+    "payload/native/source/research/aa_black_run8/rtl/fixed_brown_run8_selector.sv": "e74b957d777a2252503baf97f01fded3563d9085a2779937daf53f121b49adf6",
+    "payload/native/source/research/aa_black_run8/rtl/fixed_gammaoff_span_tagged.v": "268765a3c6f79d564c3488d847f895eb6cd09c439f1c659b10be4d347609c7a5",
+    "payload/native/source/research/aa_black_run8/rtl/hdmi1080_video_system_run8_research.sv": "5ff630d500d500e8294faea041e7a6f2ea62d0303bcd0cb6895736c1dc609180",
+    "payload/native/source/research/aa_black_run8/rtl/lens1080_bank_core_geometry_run8_research.sv": "9141267f5757737f41e1142565cfd4dfe90f1b7ecc448ba5cfd292dd50d0a689",
+    "payload/native/source/research/aa_black_run8/rtl/ordered_run8_merge.sv": "2e306bad97ec231c990116eb35e8a1a63e5dee33c41f4ac6d31816a9a4f0f172",
+    "payload/native/source/research/aa_black_run8/rtl/pipeline_brown_run8_key1_research.sv": "87a033a95a84551728bd583b101d4c75e7969dbc884159d5d438823c97c5370e",
+    "payload/native/source/research/aa_black_run8/rtl/video_crc32.vh": "0242836f3b1e5292b2ba371963af99f41757dba4c29231242b7d9b3160d50337",
+    "payload/native/source/research/aa_black_run8/rtl/writer_run8.sv": "edee3ef56ec6e058d35ad852e6c19be0f13ba8bb72105fd378e92ecf987fb6d7",
+    "payload/native/source/research/aa_elastic/rtl/board1080_elastic_research_top.sv": "caa393c6d4aa55a46442b85c96b0acf5b2a8a65bf59134d6a7350f4dd882ffc1",
+    "payload/native/source/research/aa_elastic/rtl/ddr_video_output_result_slot_research.sv": "94bb49a408d11c96e4b9c9b9efd20f6414a201d7f548bb1ecc2baa252e3ea9dc",
+    "payload/native/source/research/aa_elastic/rtl/elastic_result_owner_integrated_research.sv": "abde9c8d05183e8f231f57e446fac0c9ec1c84dc2a62d5e3b2606703c711f8d8",
+    "payload/native/source/research/aa_elastic/rtl/elastic_run8_engine_adapter_research.sv": "3aca7d3a45c462a8c464bb69c30574e00ea9668aa2e6e1f5607626038d2e0228",
+    "payload/native/source/research/aa_elastic/rtl/hdmi1080_input_write_link_elastic_research.sv": "7795c7b60fba62830209efd86246895d486518bed9de8acf5d8d6768004fb49a",
+    "payload/native/source/research/aa_elastic/rtl/hdmi1080_video_system_elastic_enabled_research.sv": "ba9abb55fbcdff4a9d3d98fc9dbc8086f65fd3246d69105a13ac924ec848882c",
+    "payload/native/source/research/aa_elastic/rtl/hdmi1080_video_system_elastic_research.sv": "dc9840e5bbb88b5273382dbda9ec8effb9d5020bed41dcc662dc13cf882f3896",
+    "payload/native/source/research/aa_elastic/rtl/scan_signature_armed_v3_result_slot_research.sv": "a25aa35b0028112ea3305bdffe4788883d107b10617a603ba246c441c87a34e6",
+    "payload/native/source/research/aa_elastic/rtl/scan_signature_capture_result_slot_research.sv": "428f91db405d15baa32243a8cd4e29e3957ae0523e0969eec64571bddb62f702",
+    "payload/native/source/research/aa_elastic/rtl/telemetry_session_link_result_slot_research.sv": "9b7e40543ec6c897d2f469258e6da7ebc2dd3840b00e555b4515be9572efea57",
+    "payload/native/source/research/aa_elastic/rtl/telemetry_uart_link_result_slot_research.sv": "d0509715f60d8f76fd364238e5347630e5a98afcfb166d04ec9e9a8dac81d9ff",
+    "payload/native/source/rtl/bilinear_rgb.v": "ae2128289b9b3a749d6878ac6db6975af30479ba897318b4ea5045e238ec593a",
+    "payload/native/source/rtl/bounded_brown_inverse_mapper.v": "1ff474b03bb916534dbb8bf9c42dacda094bbdedffd10066d6a13465d6a2a60b",
+    "payload/native/source/rtl/ddr_read_arbiter.v": "e93f48cbc201410227ebc8d559eaf546f1cef3f5745ba0a1ed98e49c8855fdbd",
+    "payload/native/source/rtl/ddr_video_reader.v": "b28654575a717b1e98acc243f8bf00afdb8b3b7c0bf8991887d76e089a74414f",
+    "payload/native/source/rtl/ddr_write_arbiter.v": "6d88c289651bc24b5232dd6dcabce4b9e0379018e52e6ae3cd2bfc70e5732d62",
+    "payload/native/source/rtl/diag/hdmi_observer_epoch_history.v": "431d7eb893e4afa94859edae6c05d16d690235729188757f561591e8bd3c51b9",
+    "payload/native/source/rtl/diag/hdmi_observer_startup_guard.v": "4cb48c0a2ff741de693aec8422c07a945609d71419da21fd6b81c7fe36c33e9e",
+    "payload/native/source/rtl/diag/startup_status_uart.v": "0cff54885de6dd2aafdebc7fad84b2e5ecd0861b286e3c29fb1c0e592ea303ee",
+    "payload/native/source/rtl/experimental/adaptive_gamma_stream.v": "e9fa73da1589ce10feffeac2a304bcda0f4c563b458788e728663e4503849276",
+    "payload/native/source/rtl/experimental/adaptive_gamma_tagged.v": "b3fa1f2c4b07b6e616350d0488ab4478703b1c4aa3773d2a40631ed6c2e91790",
+    "payload/native/source/rtl/experimental/camera720_view_control.v": "6793037fdcf22cad71af36fff203f3ed85fe8b79c9a9dd86e0320bf49846e255",
+    "payload/native/source/rtl/experimental/d256_runtime_prefetch_cache.sv": "ff5e551c13083cecf9325b6acef0a00b58f7f1776cd7f5dbec341e52f2082088",
+    "payload/native/source/rtl/experimental/ddr_adaptive_result_writer.v": "6e984547c2f3dc1510370e441e3f569fca2d2eb0bc960078bf3e2fbdc5d3cf7f",
+    "payload/native/source/rtl/experimental/ddr_compact_neighbour_cache_scatter4.v": "5beb4adb691514bcc599d5d02988bd0e006e59588a8a9f9a3208301ef9970afe",
+    "payload/native/source/rtl/experimental/ddr_compact_neighbour_cache_scatter8.v": "0561c3e79eb24658e5a6012cf53b90be1928994c18f934ed8342e16d67dda3ba",
+    "payload/native/source/rtl/experimental/ddr_raster_overlap_writer.sv": "f7c6e6707c21af2adeb73e062601b4e510460969fbba63ee83b2ae113a3b94b7",
+    "payload/native/source/rtl/experimental/ddr_remap_sample_scatter4.v": "0e70e5665dbf97ed994179ada1c7e3bbb42fb3b2b6fe3413b116ac93fae6f262",
+    "payload/native/source/rtl/experimental/ddr_tile8_macro_rowburst_writer.sv": "bd79b14e5f94e0937d77a340781db16796878f19d2d3e44c2e7d9f1311a3f790",
+    "payload/native/source/rtl/experimental/ddr_tile8_overlap_writer.sv": "2682ded6e4935e54c2f651d0414f4b0af1469ad02ae4d13eb53c12d75638e9cb",
+    "payload/native/source/rtl/experimental/ddr_tile8_rowburst_writer.sv": "0122fdce7be4122f84b4d6bd2aada90359531706651f504c5238d61112b52a48",
+    "payload/native/source/rtl/experimental/dvp_mode_admission_monitor.v": "3e3bce92c5709dfc7fe96b66609e797954a95287e15d90fc49c4ff17326b195e",
+    "payload/native/source/rtl/experimental/gamma_curves.vh": "97062afb046b72c6d2a8aee770f8c46acfb1be82547a0d5c7c03c885f16734a7",
+    "payload/native/source/rtl/experimental/hdmi1080_capture_cdc.v": "bff4e78d9fdedb0d23c31e499044768946428ce4b70059acd1be27c582903d3c",
+    "payload/native/source/rtl/experimental/hdmi1080_input_dma.v": "8e27e93d18c3826aed51df59de48a81e8668c6461495a5c5d039b158ffb68e29",
+    "payload/native/source/rtl/experimental/hdmi1080_input_status.v": "150d89e70e9eb103dec6b00fbd93ab3a389624ec4af5bc38d69f3e5a363a0429",
+    "payload/native/source/rtl/experimental/hdmi1080_input_write_link.v": "276441de0a0d5b04cb4a9564e8715a517fbec12d891489ba54ff8d6b348d44e4",
+    "payload/native/source/rtl/experimental/quad_parity_prefetch_store.sv": "9a9be45ea045c533aecffbcb3dde9246305a8c0a9123dab3677c941c4bd44334",
+    "payload/native/source/rtl/experimental/sync_token_fifo.sv": "228e6f2759dcda6b02449acb39986ce94d89a8812286d83f177ce8a110f1546a",
+    "payload/native/source/rtl/hdmi_rx_sample_bank.vh": "6f157abbe220e5279828387d2063f8da49fb90974a0fdc9a138726431dad690b",
+    "payload/native/source/rtl/mul32_pipe.v": "7af5f158a396fd66a959624db5eca7af5f4e2708f26c1bc37760f6392bd56deb",
+    "payload/native/source/rtl/pixel_inverse_rotation.v": "73f13ad31abaf9e6141888aa0059ff62a878e157e0dd80328f01f1b060d952fd",
+    "payload/native/source/rtl/rational_brown_mapper.v": "6dfc66dec28d36712b475edc372ff780567387555edff6add2191c1aa7ef62c2",
+    "payload/native/source/rtl/rational_brown_radial_rom.v": "c0698d8718987968b9d10d3ca90d83c0443cff3224ae3c9f0898b9902ee4622f",
+    "payload/native/source/rtl/reader_crc5_functions.vh": "5ec56840c9ea1b761b0d82572d025f2698ec4fe4475c7548b219e079a1355552",
+    "payload/native/source/rtl/snapshot/snapshot_command_parser.sv": "09ed89ba42341405a8253089f3aaabfb8a7ca8bf3a7215327b6a0f068677c487",
+    "payload/native/source/rtl/stats/core_stats_snapshot.sv": "c97d5522a573b85c84f98e7b004af0ec725aab5309c6a711eec37712bf91bbc4",
+    "payload/native/source/rtl/stats/stats_uart_mux.sv": "62437d6fcd7822946945f23dff08a9fc1b22df4a8cfc19b2bc3aa35e07a7011b",
+    "payload/native/source/rtl/video_async_fifo.v": "140e97b7de1c3718d75f6bd0c657c9df602d724c5162a26386b053deafa07e36",
+    "payload/native/source/rtl/video_crc32.vh": "0242836f3b1e5292b2ba371963af99f41757dba4c29231242b7d9b3160d50337",
+    "payload/native/source/rtl/video_display_async_fifo.v": "3e29d6c45d9f284c86aed10ee2b8a1169f9fcce8f53a97e98ff337582f47566b"
+  },
+  "new_board_top_path": "source/research/aa_elastic/rtl/board1080_elastic_research_top.sv",
+  "new_board_top_sha256": "caa393c6d4aa55a46442b85c96b0acf5b2a8a65bf59134d6a7350f4dd882ffc1",
+  "original_board_top_path": "source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v",
+  "portable_original_top_sha256": "5fd710a0af31c842ad08a622e15820c462ba76eff5b99c61821f36b904ca7fa2",
+  "record_hashes": {
+    "MAP_PREPARED.tcl": "552cc3896965766b8dfc51606384ee4bf3e41e16a08bee04fe0290bac73e13c0",
+    "inputs/KEY1_ONLY.fdc": "b7d742a9bf5f7fe84755260388ac8aef444257d886a56292811c677f87ecd248"
+  },
+  "schema": 1,
+  "source_note": "Historical first_party classifications are superseded: every canonical source is seed-only in this public package.",
+  "static_system_parameters": {
+    "BANK_STRIDE": 33554432,
+    "BLACK_RUN8_RESEARCH": 1,
+    "CACHE_HEAD_PREDECODE": 1,
+    "CACHE_INDEX_BITS": 7,
+    "CACHE_PROFILE": 6,
+    "CACHE_ROW_STRIDE": 2,
+    "CORE_PRIORITY": 1,
+    "CRC_FOLD_BITS": 2,
+    "ENABLE_ELASTIC_BUFFER": 1,
+    "ENABLE_RUNTIME_ROTATION": 0,
+    "HDMI_FISHEYE_PROFILE": 0,
+    "HEIGHT": 1080,
+    "HS": 44,
+    "HT": 2200,
+    "MACRO_TILE_HEIGHT": 32,
+    "MAX_RADIUS_Q22": 0,
+    "PREFETCH_LOOKAHEAD": 512,
+    "PREFETCH_QUERY_DEPTH": 4096,
+    "RASTER_DOUBLE_BUFFER": 0,
+    "RATIONAL_BROWN_PROFILE": 1,
+    "READ_REQUEST_LOOKAHEAD": 0,
+    "RESULT_BANKS": 3,
+    "STARTUP_PRIME_NEXT_SOURCE": 1,
+    "STARTUP_SCAN_ALIGN": 1,
+    "STARTUP_SCAN_GUARD_CYCLES": 0,
+    "STATS_CORE_HZ": 125000000,
+    "STATS_ENABLE": 1,
+    "TILE8_GROUP_WIDTH": 64,
+    "VS": 5,
+    "VT": 1125,
+    "WIDTH": 1920,
+    "X0": 192,
+    "Y0": 41
+  }
+}

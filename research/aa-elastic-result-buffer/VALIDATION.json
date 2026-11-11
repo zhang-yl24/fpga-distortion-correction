@@ -1,0 +1,234 @@
+{
+  "checked_implementation_hashes": {
+    "check_public_bundle.py": "9c507741f16e1ef940ed7f2afb37107ed88cc7519fe3a3bc0503e8001ae826f8",
+    "metadata/NATIVE_RECIPE.json": "73d7fff57167a6071b3623b2a17fe79246248e592c3d28524d3c9cfc4f57b5f1",
+    "metadata/NORMALIZATION.json": "434138737315c7f5983fa5fb6150e2edb1e4d77c7c1575625e52004a82cdcdc7",
+    "metadata/SEED_FILES.json": "970d93c837b5d32968ea99d2b1d486afa86c6f5e41d52d1e06b7093c55d06b18",
+    "overlay/BOARD_ENTRY.patch": "d7519b756de94414b6b07f2599e2de08db01ce16f3d66e0aea7ef56456766092",
+    "overlay/rtl/ddr_video_output_result_slot_research.sv": "94bb49a408d11c96e4b9c9b9efd20f6414a201d7f548bb1ecc2baa252e3ea9dc",
+    "overlay/rtl/elastic_result_owner_integrated_research.sv": "abde9c8d05183e8f231f57e446fac0c9ec1c84dc2a62d5e3b2606703c711f8d8",
+    "overlay/rtl/elastic_result_owner_research.sv": "764cdd0f782293be4ca057353b65cea39eb757de6ac6d937dd18d1cb8a67a1bb",
+    "overlay/rtl/elastic_run8_engine_adapter_research.sv": "3aca7d3a45c462a8c464bb69c30574e00ea9668aa2e6e1f5607626038d2e0228",
+    "overlay/rtl/hdmi1080_input_write_link_elastic_research.sv": "7795c7b60fba62830209efd86246895d486518bed9de8acf5d8d6768004fb49a",
+    "overlay/rtl/hdmi1080_video_system_elastic_enabled_research.sv": "ba9abb55fbcdff4a9d3d98fc9dbc8086f65fd3246d69105a13ac924ec848882c",
+    "overlay/rtl/hdmi1080_video_system_elastic_research.sv": "dc9840e5bbb88b5273382dbda9ec8effb9d5020bed41dcc662dc13cf882f3896",
+    "overlay/telemetry/rtl/scan_signature_armed_v3_result_slot_research.sv": "a25aa35b0028112ea3305bdffe4788883d107b10617a603ba246c441c87a34e6",
+    "overlay/telemetry/rtl/scan_signature_capture_result_slot_research.sv": "428f91db405d15baa32243a8cd4e29e3957ae0523e0969eec64571bddb62f702",
+    "overlay/telemetry/rtl/telemetry_session_link_result_slot_research.sv": "9b7e40543ec6c897d2f469258e6da7ebc2dd3840b00e555b4515be9572efea57",
+    "overlay/telemetry/rtl/telemetry_uart_link_result_slot_research.sv": "d0509715f60d8f76fd364238e5347630e5a98afcfb166d04ec9e9a8dac81d9ff",
+    "prepare_native.py": "10f10a048796004283e7c04b9792eb71eb1bc8b239a6215d6cb5000fe15835f1",
+    "test_native.py": "284915b479647c1b08e3393acee7202451bb6c152666602f7a69976aae684dd4"
+  },
+  "cpu_tests": {
+    "PDS_executed": false,
+    "any_simulation_executed": false,
+    "original_seed_unchanged_after_tests": true,
+    "status": "PASS_SHORT_NATIVE_TESTS",
+    "tests": [
+      {
+        "status": "PASS",
+        "test": "exact_public_inventory_hashes_and_content_scan"
+      },
+      {
+        "status": "PASS",
+        "test": "exact_164_seed_174_native_85_imports_97_payload"
+      },
+      {
+        "status": "PASS",
+        "test": "reject_relative_name_2"
+      },
+      {
+        "status": "PASS",
+        "test": "reject_relative_name_3"
+      },
+      {
+        "status": "PASS",
+        "test": "reject_relative_name_4"
+      },
+      {
+        "status": "PASS",
+        "test": "reject_relative_name_5"
+      },
+      {
+        "status": "PASS",
+        "test": "reject_relative_name_6"
+      },
+      {
+        "status": "PASS",
+        "test": "reject_relative_name_7"
+      },
+      {
+        "status": "PASS",
+        "test": "reject_relative_name_8"
+      },
+      {
+        "status": "PASS",
+        "test": "reject_relative_name_9"
+      },
+      {
+        "status": "PASS",
+        "test": "reject_relative_name_10"
+      },
+      {
+        "status": "PASS",
+        "test": "reject_relative_name_11"
+      },
+      {
+        "status": "PASS",
+        "test": "duplicate_json_keys"
+      },
+      {
+        "status": "PASS",
+        "test": "board_patch_wrong_anchor"
+      },
+      {
+        "status": "PASS",
+        "test": "bad_normalization_hash"
+      },
+      {
+        "status": "PASS",
+        "test": "changed_seed_refused"
+      },
+      {
+        "status": "PASS",
+        "test": "missing_seed_file_refused"
+      },
+      {
+        "status": "PASS",
+        "test": "extra_seed_file_refused"
+      },
+      {
+        "status": "PASS",
+        "test": "symlink_seed_file_refused"
+      },
+      {
+        "status": "PASS",
+        "test": "existing_output_refused"
+      },
+      {
+        "status": "PASS",
+        "test": "output_in_seed_refused"
+      },
+      {
+        "status": "PASS",
+        "test": "output_in_package_refused"
+      },
+      {
+        "status": "PASS",
+        "test": "symlink_native_root_refused"
+      },
+      {
+        "status": "PASS",
+        "test": "normal_python_positive_cli"
+      },
+      {
+        "status": "PASS",
+        "test": "optimized_python_positive_cli"
+      },
+      {
+        "status": "PASS",
+        "test": "normal_python_identity_refusal"
+      },
+      {
+        "status": "PASS",
+        "test": "optimized_python_identity_refusal"
+      },
+      {
+        "status": "PASS",
+        "test": "compiler_cannot_run_with_dry_run"
+      },
+      {
+        "status": "PASS",
+        "test": "recipe_pin_refuses_resealed_SEED_FILES.json"
+      },
+      {
+        "status": "PASS",
+        "test": "recipe_pin_refuses_resealed_NORMALIZATION.json"
+      },
+      {
+        "status": "PASS",
+        "test": "recipe_pin_refuses_resealed_NATIVE_RECIPE.json"
+      },
+      {
+        "status": "PASS",
+        "test": "extra_public_file_refused"
+      },
+      {
+        "status": "PASS",
+        "test": "changed_public_rtl_refused"
+      },
+      {
+        "status": "PASS",
+        "test": "scanner_rejects_compiler_source_excerpt"
+      },
+      {
+        "status": "PASS",
+        "test": "scanner_rejects_proprietary_notice"
+      },
+      {
+        "status": "PASS",
+        "test": "scanner_rejects_private_path"
+      },
+      {
+        "status": "PASS",
+        "test": "scanner_rejects_encrypted_marker"
+      },
+      {
+        "status": "PASS",
+        "test": "nested_archive_refused"
+      },
+      {
+        "status": "PASS",
+        "test": "nested_zip_traversal_refused"
+      },
+      {
+        "status": "PASS",
+        "test": "fresh_private_preparation_174_byte_equal"
+      },
+      {
+        "status": "PASS",
+        "test": "private_output_cannot_be_overwritten"
+      },
+      {
+        "status": "PASS",
+        "test": "camera_replay_not_claimed"
+      }
+    ],
+    "tests_passed": 42
+  },
+  "native_board_top_hash": "caa393c6d4aa55a46442b85c96b0acf5b2a8a65bf59134d6a7350f4dd882ffc1",
+  "optimized_python_dry_run": "PASS_DRY_RUN_NO_WRITES",
+  "private_full_generator_comparison": {
+    "KEY1_constraint_bytes_equal": true,
+    "all_bytes_equal": true,
+    "full_v2_bundle_sha256": "c7a46530720a7e2d9699611572fa5c6c3cc859887a0bbf0009d2647065b2ce6b",
+    "import_plan_bytes_equal": true,
+    "independent_fresh_v2_preparation_used": true,
+    "native_files": 174,
+    "working_ROM_bytes_equal": true
+  },
+  "private_raw_logs_published": false,
+  "scope": "Short local native preparation and actual-system elaboration; no PDS, board, hardware, full simulation or camera replay run.",
+  "status": "PASS_NATIVE_PREPARATION_AND_SYSTEM_ELABORATION_ONLY",
+  "strict_system_elaboration": {
+    "PDS_executed": false,
+    "any_simulation_executed": false,
+    "board_patch_inverse_byte_equal": true,
+    "board_top_or_vendor_primitives_elaborated": false,
+    "compile_returncode": 0,
+    "compile_seconds": 0.7497,
+    "compiled_binary_removed": true,
+    "derived_native_files_verified": 174,
+    "full_camera_replay_available": false,
+    "original_native_payload_hashes_verified": 97,
+    "raw_seed_files_verified": 164,
+    "reference_raw_to_normalized_verified": 85,
+    "required_modules_resolved": true,
+    "seed_and_native_inputs_unchanged_after_operation": true,
+    "simulation_binary_executed": false,
+    "status": "PASS_PRIVATE_NATIVE_SYSTEM_ELABORATION_ONLY",
+    "strict_compile_executed": true,
+    "unique_native_imports": 85,
+    "warning_count": 34
+  }
+}

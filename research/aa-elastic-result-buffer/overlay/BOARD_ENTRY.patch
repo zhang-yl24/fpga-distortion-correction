@@ -1,0 +1,30 @@
+--- source/build/offline-20261024/cfg100-independent-20261030-a/candidate/board1080_cfg100_top.v
++++ source/research/aa_elastic/rtl/board1080_elastic_research_top.sv
+@@ -4,7 +4,7 @@
+ // source, routed CDC/STA/resources and optical calibration are NOT accepted.
+ // Runtime faults STOP ADMISSIONS and ask the system to drain; they NEVER
+ // locally reset a FIFO or withdraw an already-issued DDR AW transaction.
+-module board1080_top #(parameter STARTUP_DIAG_ONLY=0,CACHE_PROFILE=6,HDMI_FISHEYE_PROFILE=1,TILE8_GROUP_WIDTH=64,
++module board1080_elastic_research_top #(parameter STARTUP_DIAG_ONLY=0,CACHE_PROFILE=6,HDMI_FISHEYE_PROFILE=1,TILE8_GROUP_WIDTH=64,
+     parameter CAMERA_RUNTIME_GAMMA=1,
+     parameter RATIONAL_BROWN_PROFILE=1,
+     parameter R34_ENABLE_GAMMA=0,
+@@ -211,7 +211,8 @@
+         assign telemetry_tx=normal_telemetry_tx;
+     end endgenerate
+     wire [23:0] pixel_rgb;
+-    hdmi1080_video_system_run8_research #(
++    hdmi1080_video_system_elastic_research #(
++        .ENABLE_ELASTIC_BUFFER(1),
+         .BLACK_RUN8_RESEARCH(1),
+         .RATIONAL_BROWN_PROFILE(1),
+         .MACRO_TILE_HEIGHT(32),
+@@ -222,7 +223,7 @@
+         .CACHE_HEAD_PREDECODE(1),
+         .CRC_FOLD_BITS(2),
+         .READ_REQUEST_LOOKAHEAD(0),
+-        .RESULT_BANKS(2),
++        .RESULT_BANKS(3),
+         .CORE_PRIORITY(1),
+         .WIDTH(1920),
+         .HEIGHT(1080),

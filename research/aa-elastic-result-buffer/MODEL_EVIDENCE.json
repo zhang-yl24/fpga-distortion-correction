@@ -1,0 +1,243 @@
+{
+  "actual_engine_completions": [
+    {
+      "crc": "f318aae7",
+      "cycle": 3977456,
+      "id": 1,
+      "slot": 0
+    },
+    {
+      "crc": "8d356afc",
+      "cycle": 6241269,
+      "id": 2,
+      "slot": 1
+    },
+    {
+      "crc": "f318aae7",
+      "cycle": 8144114,
+      "id": 3,
+      "slot": 2
+    },
+    {
+      "crc": "f318aae7",
+      "cycle": 10227449,
+      "id": 4,
+      "slot": 0
+    }
+  ],
+  "actual_launches": [
+    {
+      "correction": 1,
+      "cycle": 2083393,
+      "id": 1,
+      "slot": 0,
+      "source": 0
+    },
+    {
+      "correction": 0,
+      "cycle": 4166726,
+      "id": 2,
+      "slot": 1,
+      "source": 1
+    },
+    {
+      "correction": 1,
+      "cycle": 6250059,
+      "id": 3,
+      "slot": 2,
+      "source": 0
+    },
+    {
+      "correction": 1,
+      "cycle": 8333392,
+      "id": 4,
+      "slot": 0,
+      "source": 1
+    }
+  ],
+  "actual_scan_releases": [
+    {
+      "crc": "f318aae7",
+      "cycle": 6242583,
+      "epoch": 1,
+      "id": 1,
+      "slot": 0
+    },
+    {
+      "crc": "8d356afc",
+      "cycle": 8325916,
+      "epoch": 2,
+      "id": 2,
+      "slot": 1
+    },
+    {
+      "crc": "f318aae7",
+      "cycle": 10409249,
+      "epoch": 3,
+      "id": 3,
+      "slot": 2
+    }
+  ],
+  "canonical_164_unchanged": true,
+  "capture_certificates": [
+    {
+      "crc": "8d356afc",
+      "cycle": 2083391,
+      "id": 1,
+      "pixels": 2073600,
+      "plane": 0
+    },
+    {
+      "crc": "8d356afc",
+      "cycle": 4166724,
+      "id": 2,
+      "pixels": 2073600,
+      "plane": 1
+    },
+    {
+      "crc": "8d356afc",
+      "cycle": 6250057,
+      "id": 3,
+      "pixels": 2073600,
+      "plane": 0
+    },
+    {
+      "crc": "8d356afc",
+      "cycle": 8333390,
+      "id": 4,
+      "pixels": 2073600,
+      "plane": 1
+    }
+  ],
+  "compile_seconds": 13.424,
+  "complete_source_frame_pixels_checked": 8294400,
+  "core_cycles": 10409250,
+  "coverage_limits": [
+    "Same camera content across all frames, so no changing-content freshness proof.",
+    "Source-descriptor and owner-launch stalled hold intervals are zero; monitors exist but those wait cases were not exercised.",
+    "Repeat/blank/no-grant counters independently reconcile to zero; those nonzero branches were not exercised.",
+    "External DDR model assumes accepted completed-write visibility; no physical HMIC evidence.",
+    "No PDS/vendor elaboration, CDC/STA/resources, hardware, confirmed bitstream identity, measured board FPS or explanation of the reported NNNR behavior."
+  ],
+  "final_review_sha256": "3d9ef7ec54f3d101b0fcd7b08f6bd4a3b99f3d3f9f35a3a4aaf1ed3db13f55fa",
+  "full_result_pixels_checked": 8294400,
+  "full_scan_pixels_checked": 6220800,
+  "markers": {
+    "CAMERA_E2E_PASS_MODEL_ONLY": {
+      "admitted": 4,
+      "blank": 0,
+      "capture_complete": 4,
+      "completed": 4,
+      "cycles": 10409250,
+      "input_sofs": 5,
+      "no_grant": 0,
+      "presented": 3,
+      "repeat": 0,
+      "reservations": 5,
+      "scanned": 3
+    },
+    "COVERAGE": {
+      "camera_aw": 40500,
+      "capture_compute": 7756722,
+      "compute_scan": 5862638,
+      "read_contention": 57505,
+      "result_ar": 24300,
+      "result_aw": 129600,
+      "source_ar": 87765,
+      "write_contention": 5794
+    },
+    "HELD_METADATA": {
+      "cycles": {
+        "done": 12,
+        "grant": 9,
+        "launch": 0,
+        "lease": 6227551,
+        "source": 0
+      },
+      "intervals": {
+        "done": 3,
+        "grant": 3,
+        "launch": 0,
+        "lease": 3,
+        "source": 0
+      }
+    },
+    "INDEPENDENT_COUNTS": {
+      "blank_grants": 0,
+      "camera_cdc_checks": 10409151,
+      "camera_no_grant": 0,
+      "camera_opportunities": 5,
+      "camera_starts": 5,
+      "new_scans": 3,
+      "repeat_scans": 0
+    },
+    "STOP_CAPTURE": {
+      "bank": 0,
+      "camera_sof": 5,
+      "capture_active": 1,
+      "capture_id": 5,
+      "captured_pixels": 2073600,
+      "descriptor_bank": 1,
+      "descriptor_id": 4,
+      "descriptor_tail_valid": 0,
+      "descriptor_valid": 0,
+      "dma_active": 1,
+      "dma_bank": 0,
+      "dma_id": 5,
+      "dma_written_beats": 129584,
+      "reserved": 1,
+      "tail_id": 0
+    },
+    "STOP_DDR": {
+      "read_beat": 0,
+      "read_busy": 0,
+      "read_id": 3,
+      "read_len": 15,
+      "read_live": 0,
+      "read_plane": 4,
+      "write_beat": 1,
+      "write_busy": 1,
+      "write_id": 5,
+      "write_len": 15,
+      "write_live": 1,
+      "write_plane": 0
+    },
+    "STOP_PIPELINE": {
+      "display_active": 0,
+      "engine_identity": 4,
+      "engine_ready": 1,
+      "fifo_available": 0,
+      "fifo_used": 0,
+      "front_slot": 2,
+      "front_valid": 1,
+      "launch_valid": 0,
+      "lease_active": 0,
+      "lease_epoch": 3,
+      "lease_id": 3,
+      "pending_count": 1,
+      "processing": 0
+    }
+  },
+  "partial_fifth_source_accepted_beats": 129585,
+  "post_run_summary_note": "Evidence-only correction: HELD_METADATA cycle and interval maps are parsed separately. The earlier generic key parser overwrote repeated launch/grant/done/lease labels. Tested sources, approval, full RESULT and raw log are unchanged.",
+  "provenance": {
+    "approved_camera_inputs": 102,
+    "camera_approval_sha256": "756c47996a9e0128e8dc5502c987de5ce2c63202ac70fd5883c5ac19cfd16016",
+    "full_public_bundle_sha256": "c7a46530720a7e2d9699611572fa5c6c3cc859887a0bbf0009d2647065b2ce6b",
+    "member": "frozen_camera/FULL_RESULT_SUMMARY.json",
+    "member_sha256": "5695df359d8b7efc14762b0243f3fe7de52e2a1c50aa272ad4c1061af66407db",
+    "new_simulation_executed_for_thin_package": false,
+    "thin_package_runs_camera_replay": false
+  },
+  "residual_state": "Frame5 capture remains active at the end of its active raster; its final source AW is accepted and W beat0 transferred, with 15 beats remaining. Frame4 is published in slot0 and pending. Engine, display lease, reader and display FIFO are idle. This is a defined coverage stop, not global drain.",
+  "run_seconds": 92.99,
+  "simulated_ms": 83.274,
+  "status": "PASS_MODEL_ONLY_INDEPENDENTLY_REVIEWED",
+  "total_accepted_source_pixels_checked": 10367760,
+  "warnings": {
+    "PINMISSING": 84,
+    "UNOPTFLAT": 3,
+    "WIDTHEXPAND": 100,
+    "WIDTHTRUNC": 51
+  }
+}

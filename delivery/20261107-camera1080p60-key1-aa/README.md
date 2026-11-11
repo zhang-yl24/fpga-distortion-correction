@@ -26,3 +26,5 @@
 
 
 [新增独立资源研究候选 AE / AF54](../../research/aa-cache-resources/README.md)：AF54 的实际 query FIFO 声明宽度从 63 位降至 54 位，已过真实 cache 参数的离板差分；AE 另有单表达式重复检测证据。两者均未运行 Map/STA 或实板，不能直接烧板，也不替换本页冻结 AA 源码、位流或 3 ps 时序结果。
+
+[新增三结果缓冲源码研究](../../research/aa-elastic-result-buffer/README.md)：通用入口默认关闭，可由独立原生入口显式选择 ENABLE_ELASTIC_BUFFER=1、RESULT_BANKS=3。离板模型覆盖连续处理、扫描交接和归一化摄像头采集链；这不是物理 HDMI、DDR 或实板验收。本研究没有新 PDS/Map/STA、资源结果或位流，不可直接烧板，也不替换本页冻结候选。
