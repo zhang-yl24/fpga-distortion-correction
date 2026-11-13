@@ -4,7 +4,7 @@
 
 当前交付为三结果槽 A，位流 SHA256 `9abf8895212af90b5c55c7fcdc442c6a75cc425187be69a8511bbd16aff6663a`。团队在 11 月 13 日反馈“验证成功60帧”。本页据此记录为**团队报告的 1920×1080、60 个新校正画面/秒实板成功**；新的原始 UART、精确统计窗口和长期稳定性数据尚未随该反馈归档，不虚构小数帧率或测试时长。显示扫描 60 Hz 与新画面 60 FPS 仍是不同指标。
 
-[当前位流、配套遥测、源码与复现入口](https://github.com/zhang-yl24/fpga-distortion-correction/blob/e160e100a272a75ab65945d99f097040eb6cd6de/delivery/20261113-camera1080p60-key1-result3-a/README.md)。保持 **HDMI 摄像头输入、KEY1 原始/校正切换、Brown 校正、Gamma OFF、旋转 0°**；不是电脑输入演示，不另加旋转。KEY1 已包含在实现中，详细按键稳定窗口仍以独立板测记录为准。
+[当前位流、配套遥测、源码与复现入口](https://github.com/zhang-yl24/fpga-distortion-correction/blob/da49722f0a6bd0e6fdc55cedb504b201ee1796ac/delivery/20261113-camera1080p60-key1-result3-a/README.md)。保持 **HDMI 摄像头输入、KEY1 原始/校正切换、Brown 校正、Gamma OFF、旋转 0°**；不是电脑输入演示，不另加旋转。KEY1 已包含在实现中，详细按键稳定窗口仍以独立板测记录为准。
 
 ### 我们完成了什么
 
